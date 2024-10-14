@@ -1,5 +1,12 @@
-import { HttpRequest, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpRequest,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import {
   ConverterService,
@@ -8,14 +15,14 @@ import {
 } from '@spartacus/core';
 import {
   CancellationRequestEntryInputList,
-  ConsignmentTracking,
   CONSIGNMENT_TRACKING_NORMALIZER,
+  ConsignmentTracking,
   Order,
   ORDER_HISTORY_NORMALIZER,
   ORDER_NORMALIZER,
-  ORDER_RETURNS_NORMALIZER,
   ORDER_RETURN_REQUEST_INPUT_SERIALIZER,
   ORDER_RETURN_REQUEST_NORMALIZER,
+  ORDER_RETURNS_NORMALIZER,
   ReturnRequest,
   ReturnRequestEntryInputList,
 } from '@spartacus/order/root';
@@ -44,29 +51,17 @@ describe('OccOrderHistoryAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [HttpClientModule],
-    providers: [
+      providers: [
         OccOrderHistoryAdapter,
         { provide: OccConfig, useValue: mockOccModuleConfig },
         {
-            provide: OccEndpointsService,
-            useClass: MockOccEndpointsService,
+          provide: OccEndpointsService,
+          useClass: MockOccEndpointsService,
         },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-}{
-    imports: [HttpClientTestingModule],
-    providers: [
-        OccOrderHistoryAdapter,
-        { provide: OccConfig, useValue: mockOccModuleConfig },
-        {
-            provide: OccEndpointsService,
-            useClass: MockOccEndpointsService,
-        },
-        provideHttpClient(withInterceptorsFromDi()),
-    ]
-});
+      ],
+    });
 
     occOrderHistoryAdapter = TestBed.inject(OccOrderHistoryAdapter);
     httpMock = TestBed.inject(HttpTestingController);

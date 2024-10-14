@@ -1,17 +1,23 @@
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { OccConfig } from '../../config/occ-config';
 
-import { OccUserInterestsAdapter } from './occ-user-interests.adapter';
 import {
   NotificationType,
   ProductInterestEntryRelation,
 } from '../../../model/product-interest.model';
-import { OccEndpointsService } from '../../services/occ-endpoints.service';
-import { MockOccEndpointsService } from './unit-test.helper';
-import { ConverterService } from '../../../util/converter.service';
 import { PRODUCT_INTERESTS_NORMALIZER } from '../../../user/connectors/interests/converters';
+import { ConverterService } from '../../../util/converter.service';
+import { OccEndpointsService } from '../../services/occ-endpoints.service';
+import { OccUserInterestsAdapter } from './occ-user-interests.adapter';
+import { MockOccEndpointsService } from './unit-test.helper';
 
 const MockOccModuleConfig: OccConfig = {
   backend: {
@@ -35,29 +41,17 @@ describe('OccUserInterestsAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [HttpClientModule],
-    providers: [
+      providers: [
         OccUserInterestsAdapter,
         { provide: OccConfig, useValue: MockOccModuleConfig },
         {
-            provide: OccEndpointsService,
-            useClass: MockOccEndpointsService,
+          provide: OccEndpointsService,
+          useClass: MockOccEndpointsService,
         },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-}{
-    imports: [HttpClientTestingModule],
-    providers: [
-        OccUserInterestsAdapter,
-        { provide: OccConfig, useValue: MockOccModuleConfig },
-        {
-            provide: OccEndpointsService,
-            useClass: MockOccEndpointsService,
-        },
-        provideHttpClient(withInterceptorsFromDi()),
-    ]
-});
+      ],
+    });
 
     occUserInterestsAdapter = TestBed.inject(OccUserInterestsAdapter);
     httpMock = TestBed.inject(HttpTestingController);

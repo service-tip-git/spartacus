@@ -1,5 +1,11 @@
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { ANONYMOUS_CONSENT_NORMALIZER } from '../../../anonymous-consents/connectors/converters';
 import { CONSENT_TEMPLATE_NORMALIZER } from '../../../user/index';
@@ -16,27 +22,16 @@ describe('OccAnonymousConsentTemplatesAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [HttpClientModule],
-    providers: [
+      providers: [
         OccAnonymousConsentTemplatesAdapter,
         {
-            provide: OccEndpointsService,
-            useClass: MockOccEndpointsService,
+          provide: OccEndpointsService,
+          useClass: MockOccEndpointsService,
         },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-}{
-    imports: [HttpClientTestingModule],
-    providers: [
-        OccAnonymousConsentTemplatesAdapter,
-        {
-            provide: OccEndpointsService,
-            useClass: MockOccEndpointsService,
-        },
-        provideHttpClient(withInterceptorsFromDi()),
-    ]
-});
+      ],
+    });
 
     httpMock = TestBed.inject(HttpTestingController);
     converter = TestBed.inject(ConverterService);
