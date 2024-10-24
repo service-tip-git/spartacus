@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable, inject } from '@angular/core';
+import { ElementRef, Injectable, inject } from '@angular/core';
 import { CmsService } from '@spartacus/core';
 import { Observable, Subscription, of, throwError } from 'rxjs';
 import { concatMap, filter, finalize, map, take, tap } from 'rxjs/operators';
@@ -40,7 +40,8 @@ export class OpfCtaScriptsService {
   protected subList: Array<Subscription> = [];
 
   loadAndRunScript(
-    script: OpfDynamicScript
+    script: OpfDynamicScript,
+    elRef: ElementRef
   ): Promise<OpfDynamicScript | undefined> {
     const html = script?.html;
 
@@ -50,7 +51,7 @@ export class OpfCtaScriptsService {
           .loadProviderResources(script.jsUrls, script.cssUrls)
           .then(() => {
             if (html) {
-              this.opfResourceLoaderService.executeScriptFromHtml(html);
+              this.opfResourceLoaderService.executeScriptFromHtml(html, elRef);
               resolve(script);
             } else {
               resolve(undefined);
@@ -182,5 +183,13 @@ export class OpfCtaScriptsService {
       ),
       map((state) => state.data?.map((val) => val.id) as number[])
     );
+  }
+
+  protected removeScriptTags(html: string) {
+    const element = new DOMParser().parseFromString(html, 'text/html');
+    Array.from(element.getElementsByTagName('script')).forEach((script) => {
+      html = html.replace(script.outerHTML, '');
+    });
+    return html;
   }
 }

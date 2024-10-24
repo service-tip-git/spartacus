@@ -5,8 +5,14 @@
  */
 
 import { DOCUMENT, isPlatformServer } from '@angular/common';
-import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { ScriptLoader } from '@spartacus/core';
+import {
+  ElementRef,
+  inject,
+  Inject,
+  Injectable,
+  PLATFORM_ID,
+} from '@angular/core';
+import { ScriptLoader, WindowRef } from '@spartacus/core';
 
 import {
   OpfDynamicScriptResource,
@@ -23,6 +29,8 @@ export class OpfResourceLoaderService extends ScriptLoader {
   ) {
     super(document, platformId);
   }
+
+  protected winRef = inject(WindowRef);
 
   protected readonly OPF_RESOURCE_ATTRIBUTE_KEY = 'data-opf-resource';
 
@@ -137,15 +145,46 @@ export class OpfResourceLoaderService extends ScriptLoader {
     }
   }
 
-  executeScriptFromHtml(html: string | undefined) {
-    if (html) {
-      const element = new DOMParser().parseFromString(html, 'text/html');
-      const script = element.getElementsByTagName('script');
-      if (!script?.[0]?.innerText) {
-        return;
-      }
-      Function(script[0].innerText)();
+  executeScriptFromHtml(
+    htmlString: string | undefined,
+    htmlElement?: HTMLElement | ElementRef
+  ) {
+    ////////
+    let el: HTMLElement;
+    if (!htmlString) {
+      return;
     }
+
+    if (htmlElement) {
+      if (htmlElement instanceof ElementRef) {
+        el = htmlElement.nativeElement;
+      } else {
+        el = htmlElement;
+      }
+
+      const windowDocument = this.winRef.document;
+      if (windowDocument) {
+        el.innerHTML = htmlString;
+
+        Array.from(el.getElementsByTagName('script')).forEach((script) => {
+          const parentNode = script.parentNode;
+          const newScriptTag = windowDocument.createElement('script');
+          newScriptTag.type = 'text/javascript';
+          newScriptTag.text = script.text;
+          parentNode?.removeChild(script);
+          parentNode?.appendChild(newScriptTag);
+        });
+      }
+      return;
+    }
+    ///////
+
+    const element = new DOMParser().parseFromString(htmlString, 'text/html');
+    const script = element.getElementsByTagName('script');
+    if (!script?.[0]?.innerText) {
+      return;
+    }
+    Function(script[0].innerText)();
   }
 
   clearAllProviderResources() {

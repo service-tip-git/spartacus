@@ -8,7 +8,9 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   Component,
+  ElementRef,
   Input,
+  ViewChild,
   inject,
 } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
@@ -22,6 +24,7 @@ import { OpfCtaScriptsService } from '../opf-cta-scripts/opf-cta-scripts.service
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OpfCtaElementComponent implements AfterViewInit {
+  @ViewChild('ctaElementContainer') container: ElementRef;
   protected sanitizer = inject(DomSanitizer);
   protected opfCtaScriptsService = inject(OpfCtaScriptsService);
   protected windowRef = inject(WindowRef);
@@ -30,11 +33,14 @@ export class OpfCtaElementComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.windowRef.isBrowser() &&
-      this.opfCtaScriptsService.loadAndRunScript(this.ctaScriptHtml);
+      this.opfCtaScriptsService.loadAndRunScript(
+        this.ctaScriptHtml,
+        this.container
+      );
   }
   renderHtml(html: string): SafeHtml {
     return this.windowRef.isBrowser()
-      ? this.sanitizer.bypassSecurityTrustHtml(this.removeScriptTags(html))
+      ? this.sanitizer.bypassSecurityTrustHtml(html)
       : html;
   }
 
