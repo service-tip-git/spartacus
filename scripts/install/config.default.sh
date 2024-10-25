@@ -6,7 +6,7 @@
 # Url of the hybris backend
 # Will replace default host (https://localhost:9002) as a backend endpoint
 # Make sure you specify the full url for the backend (https://[host]:[port]
-BACKEND_URL="https://api.cp96avkh5f-integrati2-s1-public.model-t.cc.commerce.ondemand.com"
+BACKEND_URL='https://api.cp96avkh5f-integrati2-s1-public.model-t.cc.commerce.ondemand.com'
 
 # A comma separated list of base sites.
 # When empty, the base sites will not be explicitly specified in spartacus-configuration.module.ts
