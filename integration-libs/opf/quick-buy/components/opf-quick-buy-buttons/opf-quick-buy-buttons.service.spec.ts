@@ -6,12 +6,17 @@
 
 import { TestBed } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
+import {
+  ActiveCartFacade,
+  CartGuestUserFacade,
+  MultiCartFacade,
+} from '@spartacus/cart/base/root';
 import { CheckoutConfig } from '@spartacus/checkout/base/root';
 import {
   AuthService,
-  BaseSiteService,
   QueryState,
   RoutingService,
+  UserIdService,
 } from '@spartacus/core';
 import {
   ActiveConfiguration,
@@ -22,23 +27,36 @@ import { of, throwError } from 'rxjs';
 import { OpfProviderType, OpfQuickBuyDigitalWallet } from '../../root/model';
 import { OpfQuickBuyButtonsService } from './opf-quick-buy-buttons.service';
 
-describe('OpfQuickBuyService', () => {
+describe('OpfQuickBuyButtonsService', () => {
   let service: OpfQuickBuyButtonsService;
   let opfBaseFacadeMock: jasmine.SpyObj<OpfBaseFacade>;
-  let baseSiteServiceMock: jasmine.SpyObj<BaseSiteService>;
   let authServiceMock: jasmine.SpyObj<AuthService>;
   let checkoutConfigMock: jasmine.SpyObj<CheckoutConfig>;
   let routingServiceMock: jasmine.SpyObj<RoutingService>;
+  let userIdServiceMock: jasmine.SpyObj<UserIdService>;
+  let cartGuestUserFacadeMock: jasmine.SpyObj<CartGuestUserFacade>;
+  let activeCartFacadeMock: jasmine.SpyObj<ActiveCartFacade>;
+  let multiCartFacadeMock: jasmine.SpyObj<MultiCartFacade>;
 
   beforeEach(() => {
     opfBaseFacadeMock = jasmine.createSpyObj('OpfBaseFacade', [
       'getActiveConfigurationsState',
     ]);
-    baseSiteServiceMock = jasmine.createSpyObj('BaseSiteService', ['get']);
     authServiceMock = jasmine.createSpyObj('AuthService', ['isUserLoggedIn']);
     checkoutConfigMock = jasmine.createSpyObj('CheckoutConfig', ['checkout']);
     routingServiceMock = jasmine.createSpyObj('RoutingService', [
       'getRouterState',
+    ]);
+    userIdServiceMock = jasmine.createSpyObj('UserIdService', ['getUserId']);
+    cartGuestUserFacadeMock = jasmine.createSpyObj('CartGuestUserFacade', [
+      'createCartGuestUser',
+    ]);
+    activeCartFacadeMock = jasmine.createSpyObj('ActiveCartFacade', [
+      'takeActiveCartId',
+      'isGuestCart',
+    ]);
+    multiCartFacadeMock = jasmine.createSpyObj('MultiCartFacade', [
+      'reloadCart',
     ]);
 
     TestBed.configureTestingModule({
@@ -46,10 +64,13 @@ describe('OpfQuickBuyService', () => {
       providers: [
         OpfQuickBuyButtonsService,
         { provide: OpfBaseFacade, useValue: opfBaseFacadeMock },
-        { provide: BaseSiteService, useValue: baseSiteServiceMock },
         { provide: AuthService, useValue: authServiceMock },
         { provide: CheckoutConfig, useValue: checkoutConfigMock },
         { provide: RoutingService, useValue: routingServiceMock },
+        { provide: UserIdService, useValue: userIdServiceMock },
+        { provide: CartGuestUserFacade, useValue: cartGuestUserFacadeMock },
+        { provide: ActiveCartFacade, useValue: activeCartFacadeMock },
+        { provide: MultiCartFacade, useValue: multiCartFacadeMock },
       ],
     });
 
@@ -190,53 +211,21 @@ describe('OpfQuickBuyService', () => {
 
   describe('isUserGuestOrLoggedIn', () => {
     it('should return true if the user is logged in', () => {
-      baseSiteServiceMock.get.and.returnValue(
-        of({ baseStore: { paymentProvider: 'providerWithGuestSupport' } })
-      );
       authServiceMock.isUserLoggedIn.and.returnValue(of(true));
+      activeCartFacadeMock.isGuestCart.and.returnValue(of(false));
 
       service.isUserGuestOrLoggedIn().subscribe((result) => {
         expect(result).toBeTruthy();
       });
     });
 
-    it('should return true if the user is a guest and guest checkout is supported', () => {
-      baseSiteServiceMock.get.and.returnValue(
-        of({ baseStore: { paymentProvider: 'providerWithGuestSupport' } })
-      );
-
+    it('should return true if the user is a guest', () => {
       authServiceMock.isUserLoggedIn.and.returnValue(of(false));
-      checkoutConfigMock.checkout.flows = {
-        providerWithGuestSupport: { guest: true },
-      };
+      activeCartFacadeMock.isGuestCart.and.returnValue(of(true));
 
       service.isUserGuestOrLoggedIn().subscribe((result) => {
         expect(result).toBeTruthy();
       });
-    });
-
-    it('should return false if the user is not logged in and guest checkout is not supported', () => {
-      baseSiteServiceMock.get.and.returnValue(
-        of({ baseStore: { paymentProvider: 'providerWithoutGuestSupport' } })
-      );
-      authServiceMock.isUserLoggedIn.and.returnValue(of(false));
-      checkoutConfigMock.checkout.flows = {
-        providerWithoutGuestSupport: { guest: false },
-      };
-
-      service.isUserGuestOrLoggedIn().subscribe((result) => {
-        expect(result).toBeFalsy();
-      });
-    });
-
-    it('should handle errors appropriately', () => {
-      const error = new Error('Network error');
-      baseSiteServiceMock.get.and.returnValue(throwError(error));
-
-      service.isUserGuestOrLoggedIn().subscribe(
-        () => fail('Expected an error, not a successful response'),
-        (err) => expect(err).toBe(error)
-      );
     });
   });
 

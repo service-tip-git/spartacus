@@ -6,6 +6,7 @@
 
 export * from './active-cart.facade';
 export * from './cart-access-code.facade';
+export * from './cart-guest-user.facade';
 export * from './cart-validation.facade';
 export * from './cart-voucher.facade';
 export * from './multi-cart.facade';

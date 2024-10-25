@@ -342,6 +342,7 @@ export class OpfGooglePayService {
   private handlePaymentCallbacks(): google.payments.api.PaymentDataCallbacks {
     return {
       onPaymentAuthorized: (paymentDataResponse: any) => {
+        console.log(paymentDataResponse);
         return lastValueFrom(
           this.opfQuickBuyTransactionService.getCurrentCartId().pipe(
             switchMap((cartId) =>
@@ -378,6 +379,7 @@ export class OpfGooglePayService {
       },
 
       onPaymentDataChanged: (intermediatePaymentData: any) => {
+        console.log(intermediatePaymentData);
         return lastValueFrom(
           this.setDeliveryAddress(intermediatePaymentData.shippingAddress).pipe(
             switchMap(() => this.getShippingOptionParameters()),

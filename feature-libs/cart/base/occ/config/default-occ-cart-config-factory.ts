@@ -33,6 +33,7 @@ export function defaultOccCartConfigFactory(): OccConfig {
             : '/users/${userId}/carts/${cartId}/save?saveCartName=${saveCartName}&saveCartDescription=${saveCartDescription}',
           validate: 'users/${userId}/carts/${cartId}/validate?fields=DEFAULT',
           cartAccessCode: 'users/${userId}/carts/${cartId}/accessCode',
+          cartGuestUser: 'users/${userId}/carts/${cartId}/guestuser',
           /* eslint-enable */
         },
       },
