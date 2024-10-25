@@ -56,6 +56,6 @@ export class CurrentProductService {
       .pipe(map((state) => state.state.params['productCode']));
   }
   getRealTimeStockData(productCode: string): Observable<string> {
-    return this.getRealTimeStockData(productCode);
+    return this.productService.getRealTimeStockDatafromService(productCode);
   }
 }

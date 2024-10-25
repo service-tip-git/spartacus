@@ -1,7 +1,11 @@
 import { inject, TestBed } from '@angular/core/testing';
 import * as ngrxStore from '@ngrx/store';
 import { Store, StoreModule } from '@ngrx/store';
-import { DEFAULT_SCOPE, ProductLoadingService } from '@spartacus/core';
+import {
+  DEFAULT_SCOPE,
+  ProductConnector,
+  ProductLoadingService,
+} from '@spartacus/core';
 import { lastValueFrom, of } from 'rxjs';
 import { Product } from '../../model/product.model';
 import { PRODUCT_FEATURE, StateWithProduct } from '../store/product-state';
@@ -15,6 +19,12 @@ function mockProduct(code: string, scopes = [DEFAULT_SCOPE]) {
 class MockProductLoadingService {
   get(code: string, scopes: string[]) {
     return of(mockProduct(code, scopes));
+  }
+}
+
+class MockProductConnector {
+  getRealTimeStock(_productCode: string) {
+    return of('10'); // Mocking the real-time stock data
   }
 }
 
@@ -37,6 +47,10 @@ describe('ProductService', () => {
         {
           provide: ProductLoadingService,
           useClass: MockProductLoadingService,
+        },
+        {
+          provide: ProductConnector,
+          useClass: MockProductConnector,
         },
       ],
     });
@@ -135,6 +149,14 @@ describe('ProductService', () => {
         service.get('existingProduct')
       );
       expect(result).toBeTruthy();
+    });
+  });
+  describe('getRealTimeStockDatafromService(productCode)', () => {
+    it('should return real-time stock data for the given product code', async () => {
+      const stockData = await lastValueFrom(
+        service.getRealTimeStockDatafromService('testId')
+      );
+      expect(stockData).toEqual('10');
     });
   });
 });

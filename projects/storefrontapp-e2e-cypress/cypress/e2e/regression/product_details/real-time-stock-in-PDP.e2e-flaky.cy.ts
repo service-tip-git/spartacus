@@ -47,8 +47,11 @@ export function assertInventoryDisplay(
       .then((data) => (isInventoryDisplayActive = data.value.includes('true')));
 
     const body = xhr.response.body;
-    const code = body.code;
-    const stock = body.stock;
+    const code =
+      body.availabilities?.availabilityItems[0]?.unitAvailabilities[0]
+        .productCode;
+    const stock =
+      body.availabilities?.availabilityItems[0]?.unitAvailabilities[0].quantity;
 
     expect(code).to.equal(productCode);
 

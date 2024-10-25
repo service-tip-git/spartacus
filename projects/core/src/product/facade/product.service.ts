@@ -9,6 +9,7 @@ import { select, Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { Product } from '../../model/product.model';
 import { DEFAULT_SCOPE } from '../../occ/occ-models/occ-endpoints.model';
+import { ProductConnector } from '../connectors';
 import { ProductScope } from '../model/product-scope';
 import { ProductLoadingService } from '../services/product-loading.service';
 import { StateWithProduct } from '../store/product-state';
@@ -20,7 +21,8 @@ import { ProductSelectors } from '../store/selectors/index';
 export class ProductService {
   constructor(
     protected store: Store<StateWithProduct>,
-    protected productLoading: ProductLoadingService
+    protected productLoading: ProductLoadingService,
+    private productConnector: ProductConnector
   ) {}
 
   /**
@@ -85,5 +87,9 @@ export class ProductService {
         ProductSelectors.getSelectedProductErrorFactory(productCode, scope)
       )
     );
+  }
+
+  getRealTimeStockDatafromService(productCode: string): Observable<string> {
+    return this.productConnector.getRealTimeStock(productCode);
   }
 }

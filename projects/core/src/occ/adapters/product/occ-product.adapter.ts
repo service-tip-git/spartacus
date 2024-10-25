@@ -6,7 +6,7 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, switchMap, take, of } from 'rxjs';
+import { Observable, switchMap, take, of, distinctUntilChanged } from 'rxjs';
 import { Product } from '../../../model/product.model';
 import { PRODUCT_NORMALIZER } from '../../../product/connectors/product/converters';
 import { ProductAdapter } from '../../../product/connectors/product/product.adapter';
@@ -30,6 +30,7 @@ export class OccProductAdapter implements ProductAdapter {
   loadRealTimeStock(productCode: string): Observable<string> {
     return this.http.get(this.getEndpoint(productCode, ProductScope.UNIT)).pipe(
       take(1),
+      distinctUntilChanged(),
       switchMap((response: any) => {
         const availabilityUrl = this.occEndpoints.buildUrl('product', {
           scope: ProductScope.PRODUCT_AVAILABILITIES,
@@ -41,11 +42,16 @@ export class OccProductAdapter implements ProductAdapter {
 
         return this.http.get(availabilityUrl).pipe(
           take(1),
+          distinctUntilChanged(),
           switchMap((availabilities: any) => {
             const quantity =
               availabilities?.availabilityItems[0]?.unitAvailabilities[0]
-                ?.quantity ?? ' ';
-            return of(quantity);
+                ?.quantity ?? '';
+            const availability =
+              availabilities?.availabilityItems[0]?.unitAvailabilities[0]
+                ?.status ?? '';
+            console.log(availability);
+            return of(quantity, availability);
           })
         );
       })

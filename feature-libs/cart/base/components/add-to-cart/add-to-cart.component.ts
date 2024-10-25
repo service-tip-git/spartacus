@@ -30,7 +30,6 @@ import {
   EventService,
   FeatureConfigService,
   FeatureToggles,
-  OccEndpointsService,
   Product,
   isNotNullable,
 } from '@spartacus/core';
@@ -115,7 +114,6 @@ export class AddToCartComponent implements OnInit, OnDestroy {
     protected activeCartService: ActiveCartFacade,
     protected component: CmsComponentData<CmsAddToCartComponent>,
     protected eventService: EventService,
-    protected occEndpoints: OccEndpointsService,
     @Optional() protected productListItemContext?: ProductListItemContext
   ) {}
 
@@ -138,6 +136,7 @@ export class AddToCartComponent implements OnInit, OnDestroy {
         .pipe(filter(isNotNullable))
         .subscribe((product) => {
           this.productCode = product.code ?? '';
+          this.refreshLiveStockData();
           this.setStockInfo(product);
           this.cd.markForCheck();
         });
@@ -162,21 +161,37 @@ export class AddToCartComponent implements OnInit, OnDestroy {
     }
   }
 
+  refreshLiveStockData(): void {
+    if (this.featureToggles.realTimeStockDispaly) {
+      this.currentProductService
+        .getRealTimeStockData(this.productCode)
+        .pipe(take(1))
+        .subscribe((quantity: string) => {
+          console.log('QuantF: ', quantity);
+          this.realTimeStock = quantity;
+          this.cd.markForCheck();
+        });
+      this.currentProductService
+        .getRealTimeStockData(this.productCode)
+        .pipe(take(1))
+        .subscribe((availability: string) => {
+          console.log(availability);
+          this.hasStock = Boolean(
+            availability && availability !== 'outOfStock'
+          );
+          this.cd.markForCheck();
+        });
+    }
+  }
+
   /**
    * In specific scenarios, we need to omit displaying the stock level or append a plus to the value.
    * When backoffice forces a product to be in stock, omit showing the stock level.
    * When product stock level is limited by a threshold value, append '+' at the end.
    * When out of stock, display no numerical value.
-   * CXSPA-8577: Bugfix for scenario where a user might want the live stocks to be displayed on PDP.
    */
   getInventory(): string {
     if (this.featureToggles.realTimeStockDispaly) {
-      this.currentProductService
-        .getRealTimeStockData(this.productCode)
-        .subscribe((quantity: string) => {
-          this.realTimeStock = quantity;
-          this.cd.markForCheck();
-        });
       return this.inventoryThreshold
         ? this.realTimeStock + '+'
         : this.realTimeStock;

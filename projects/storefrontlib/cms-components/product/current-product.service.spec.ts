@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import {
   Product,
@@ -7,7 +8,6 @@ import {
 } from '@spartacus/core';
 import { BehaviorSubject, Observable, of, Subscription } from 'rxjs';
 import { CurrentProductService } from './current-product.service';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 const mockRouterState = {
   state: {
@@ -36,6 +36,9 @@ class MockProductService {
       return of(mockProductWithAttributes);
     }
     return of(mockProduct);
+  }
+  getRealTimeStockDatafromService(_productCode: string) {
+    return of('25'); // Mock response
   }
 }
 
@@ -105,8 +108,7 @@ describe('CurrentProductService', () => {
     const mockProductCode = '12345';
     const mockStockData = '25';
     let result: string = '';
-
-    spyOn(currentProductService, 'getRealTimeStockData').and.returnValue(
+    spyOn(productService, 'getRealTimeStockDatafromService').and.returnValue(
       of(mockStockData)
     );
 
