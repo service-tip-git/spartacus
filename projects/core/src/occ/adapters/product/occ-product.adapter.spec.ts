@@ -91,6 +91,21 @@ describe('OccProductAdapter', () => {
     });
   });
 
+  describe('loadRealTimeStock', () => {
+    it('should load real time stock', () => {
+      let result;
+      service.loadRealTimeStock(productCode).subscribe((res) => (result = res));
+
+      const mockReq = httpMock.expectOne((req) => {
+        return req.method === 'GET';
+      });
+
+      expect(mockReq.cancelled).toBeFalsy();
+      expect(mockReq.request.responseType).toEqual('json');
+      expect(result).not.toBeNull;
+    });
+  });
+
   describe('loadMany', () => {
     it('should load one product', () => {
       const scopedData = service.loadMany([{ code: productCode, scope: '' }]);

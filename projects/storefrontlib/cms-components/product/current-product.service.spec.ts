@@ -7,6 +7,7 @@ import {
 } from '@spartacus/core';
 import { BehaviorSubject, Observable, of, Subscription } from 'rxjs';
 import { CurrentProductService } from './current-product.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 const mockRouterState = {
   state: {
@@ -45,7 +46,7 @@ describe('CurrentProductService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [],
+      imports: [HttpClientTestingModule],
       providers: [
         CurrentProductService,
         {
@@ -98,6 +99,24 @@ describe('CurrentProductService', () => {
       .subscribe((product) => (result = product))
       .unsubscribe();
     expect(result).toBe(null);
+  });
+
+  it('should emit real-time stock data for the given product code', () => {
+    const mockProductCode = '12345';
+    const mockStockData = '25';
+    let result: string = '';
+
+    spyOn(currentProductService, 'getRealTimeStockData').and.returnValue(
+      of(mockStockData)
+    );
+
+    currentProductService
+      .getRealTimeStockData(mockProductCode)
+      .subscribe((stockData) => {
+        result = stockData;
+      });
+
+    expect(result).toBe(mockStockData);
   });
 
   it('should not emit old product data and fetch NEW product data', () => {

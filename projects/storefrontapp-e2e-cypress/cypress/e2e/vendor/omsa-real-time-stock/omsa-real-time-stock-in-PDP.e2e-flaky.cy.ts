@@ -29,9 +29,9 @@ export function configureInventoryDisplay(enable: boolean) {
         },
       },
     },
-        features: {
-            realTimeStockDispaly: enable,
-        },
+    features: {
+      realTimeStockDispaly: enable,
+    },
   });
 }
 
@@ -120,11 +120,11 @@ export function runInventoryDisplayE2E() {
       });
 
       it('should NOT render number of available stock', () => {
-        testInventoryDisplay("M_CR_1015");
+        testInventoryDisplay('M_CR_1015');
       });
 
       it("should render 'out of stock' if stock level 0 and inventory display is off", () => {
-        testInventoryDisplay("M_CR_10151123", 'outOfStock');
+        testInventoryDisplay('M_CR_10151123', 'outOfStock');
       });
     });
 
@@ -134,14 +134,13 @@ export function runInventoryDisplayE2E() {
       });
 
       it('should render number of available stock', () => {
-        testInventoryDisplay("M_CR_1015");
+        testInventoryDisplay('M_CR_1015');
       });
 
       it("should render 'out of stock' if stock level 0 and inventory display is on", () => {
-        testInventoryDisplay("M_CR_10151123", 'outOfStock');
+        testInventoryDisplay('M_CR_10151123', 'outOfStock');
       });
     });
   });
   runInventoryDisplayE2E();
-  
 }
