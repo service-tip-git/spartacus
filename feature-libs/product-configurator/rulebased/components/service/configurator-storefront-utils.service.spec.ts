@@ -4,6 +4,7 @@ import { UntypedFormControl } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 import {
   Product,
+  ProductConnector,
   ProductService,
   RouterState,
   RoutingService,
@@ -17,8 +18,8 @@ import { KeyboardFocusService } from '@spartacus/storefront';
 import { Observable, of } from 'rxjs';
 import { ConfiguratorGroupsService } from '../../core/facade/configurator-groups.service';
 import { Configurator } from '../../core/model/configurator.model';
-import { ConfiguratorStorefrontUtilsService } from './configurator-storefront-utils.service';
 import { ConfiguratorTestUtils } from '../../testing/configurator-test-utils';
+import { ConfiguratorStorefrontUtilsService } from './configurator-storefront-utils.service';
 
 let isGroupVisited: Observable<boolean> = of(false);
 const testSelector = 'test-configurator-overview-menu';
@@ -105,6 +106,8 @@ class MockProductService {
   }
 }
 
+class MockProductConnector {}
+
 describe('ConfiguratorStorefrontUtilsService', () => {
   let classUnderTest: ConfiguratorStorefrontUtilsService;
   let fixture: ComponentFixture<MockComponent>;
@@ -140,6 +143,10 @@ describe('ConfiguratorStorefrontUtilsService', () => {
         {
           provide: ProductService,
           useClass: MockProductService,
+        },
+        {
+          provide: ProductConnector,
+          useValue: MockProductConnector,
         },
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
