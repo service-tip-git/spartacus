@@ -91,7 +91,7 @@ ADD_PRODUCT_MULTI_DIMENSIONAL=false
 EPD_VISUALIZATION_BASE_URL=
 
 # The base URL and public key values are required for connection to Cloud Commerce Adapter (OPF)
-OPF_BASE_URL= 'https://opf-iss-d0.opf.commerce.stage.context.cloud.sap/commerce-cloud-adapter/storefront/'
+OPF_BASE_URL='https://opf-iss-d0.opf.commerce.stage.context.cloud.sap/commerce-cloud-adapter/storefront/'
 OPF_CLIENT_PUBLIC_KEY='ab4RhYGZ+w5B0SALMPOPlepWk/kmDQjTy2FU5hrQoFg='
 
 #NPM connection info
