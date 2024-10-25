@@ -50,7 +50,6 @@ export class OccProductAdapter implements ProductAdapter {
             const availability =
               availabilities?.availabilityItems[0]?.unitAvailabilities[0]
                 ?.status ?? '';
-            console.log(availability);
             return of(quantity, availability);
           })
         );

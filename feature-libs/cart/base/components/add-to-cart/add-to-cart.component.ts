@@ -167,7 +167,6 @@ export class AddToCartComponent implements OnInit, OnDestroy {
         .getRealTimeStockData(this.productCode)
         .pipe(take(1))
         .subscribe((quantity: string) => {
-          console.log('QuantF: ', quantity);
           this.realTimeStock = quantity;
           this.cd.markForCheck();
         });
@@ -175,7 +174,6 @@ export class AddToCartComponent implements OnInit, OnDestroy {
         .getRealTimeStockData(this.productCode)
         .pipe(take(1))
         .subscribe((availability: string) => {
-          console.log(availability);
           this.hasStock = Boolean(
             availability && availability !== 'outOfStock'
           );
