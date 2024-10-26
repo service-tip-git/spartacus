@@ -44,9 +44,9 @@ describe('ProductConnector', () => {
     const adapter = TestBed.inject(ProductAdapter);
 
     let result;
-    service.getRealTimeStock('333').subscribe((res) => (result = res));
+    service.getRealTimeStock('333', 'EA').subscribe((res) => (result = res));
     expect(result).toBe('quantity333');
-    expect(adapter.loadRealTimeStock).toHaveBeenCalledWith('333');
+    expect(adapter.loadRealTimeStock).toHaveBeenCalledWith('333', 'EA');
   });
 
   it('getMany should call adapter', () => {

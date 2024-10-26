@@ -683,7 +683,7 @@ export interface FeatureTogglesInterface {
    * Enables Real time stock display in the PDP page.
    * when set to `true`, the user will be able to see the real time stock in PDP
    */
-  realTimeStockDispaly?: boolean;
+  showRealTimeStockInPDP?: boolean;
 }
 
 export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
@@ -787,5 +787,5 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   enablePasswordsCannotMatchInPasswordUpdateForm: false,
   allPageMetaResolversEnabledInCsr: false,
   useExtendedMediaComponentConfiguration: false,
-  realTimeStockDispaly: false,
+  showRealTimeStockInPDP: false,
 };

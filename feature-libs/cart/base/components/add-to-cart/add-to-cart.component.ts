@@ -31,6 +31,7 @@ import {
   FeatureConfigService,
   FeatureToggles,
   Product,
+  ProductScope,
   isNotNullable,
 } from '@spartacus/core';
 import {
@@ -52,6 +53,7 @@ export class AddToCartComponent implements OnInit, OnDestroy {
   @Input() showQuantity = true;
   @Input() options: CartItemComponentOptions;
   @Input() pickupStore: string | undefined;
+  @Input() sapUnit: string;
   /**
    * As long as we do not support #5026, we require product input, as we need
    *  a reference to the product model to fetch the stock data.
@@ -131,12 +133,15 @@ export class AddToCartComponent implements OnInit, OnDestroy {
       this.subscription = (
         this.productListItemContext
           ? this.productListItemContext.product$
-          : this.currentProductService.getProduct()
+          : this.featureToggles.showRealTimeStockInPDP
+            ? this.currentProductService.getProduct(ProductScope.UNIT)
+            : this.currentProductService.getProduct()
       )
         .pipe(filter(isNotNullable))
         .subscribe((product) => {
           this.productCode = product.code ?? '';
-          this.refreshLiveStockData();
+          this.sapUnit = product.sapUnit?.sapCode ?? '';
+          this.getRealTimeStock();
           this.setStockInfo(product);
           this.cd.markForCheck();
         });
@@ -161,19 +166,13 @@ export class AddToCartComponent implements OnInit, OnDestroy {
     }
   }
 
-  refreshLiveStockData(): void {
-    if (this.featureToggles.realTimeStockDispaly) {
+  getRealTimeStock(): void {
+    if (this.featureToggles.showRealTimeStockInPDP) {
       this.currentProductService
-        .getRealTimeStockData(this.productCode)
+        .getRealTimeStock(this.productCode, this.sapUnit)
         .pipe(take(1))
-        .subscribe((quantity: string) => {
-          this.realTimeStock = quantity;
-          this.cd.markForCheck();
-        });
-      this.currentProductService
-        .getRealTimeStockData(this.productCode)
-        .pipe(take(1))
-        .subscribe((availability: string) => {
+        .subscribe(({ quantity, availability }) => {
+          this.maxQuantity = Number(quantity);
           this.hasStock = Boolean(
             availability && availability !== 'outOfStock'
           );
@@ -189,21 +188,13 @@ export class AddToCartComponent implements OnInit, OnDestroy {
    * When out of stock, display no numerical value.
    */
   getInventory(): string {
-    if (this.featureToggles.realTimeStockDispaly) {
-      return this.inventoryThreshold
-        ? this.realTimeStock + '+'
-        : this.realTimeStock;
+    if (this.hasStock) {
+      const quantityDisplay = this.maxQuantity
+        ? this.maxQuantity.toString()
+        : '';
+      return this.inventoryThreshold ? quantityDisplay + '+' : quantityDisplay;
     } else {
-      if (this.hasStock) {
-        const quantityDisplay = this.maxQuantity
-          ? this.maxQuantity.toString()
-          : '';
-        return this.inventoryThreshold
-          ? quantityDisplay + '+'
-          : quantityDisplay;
-      } else {
-        return '';
-      }
+      return '';
     }
   }
 

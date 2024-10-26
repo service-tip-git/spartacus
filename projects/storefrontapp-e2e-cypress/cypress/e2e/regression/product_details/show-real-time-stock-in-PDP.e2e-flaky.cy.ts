@@ -9,15 +9,15 @@ import * as sampleData from '../../../sample-data/inventory-display';
 
 export const stockSelector = 'cx-add-to-cart .info';
 
-export const GET_PRODUCT_DETAILS_ENDPOINT_ALIAS = 'getProductDetails';
+export const GET_PRODUCT_AVAILABILITY_ENDPOINT_ALIAS = 'getProductDetails';
 
-export function interceptProductDetails(productCode: string) {
+export function interceptProductAvailability(productCode: string) {
   cy.intercept(
     'GET',
     `${Cypress.env('OCC_PREFIX')}/apparel-uk-spa/productAvailabilities?filters=${productCode}:ST`
-  ).as(GET_PRODUCT_DETAILS_ENDPOINT_ALIAS);
+  ).as(GET_PRODUCT_AVAILABILITY_ENDPOINT_ALIAS);
 
-  return GET_PRODUCT_DETAILS_ENDPOINT_ALIAS;
+  return GET_PRODUCT_AVAILABILITY_ENDPOINT_ALIAS;
 }
 
 export function configureInventoryDisplay(enable: boolean) {
@@ -101,7 +101,7 @@ export function testInventoryDisplay(
   productCode: string,
   functionality: string = ''
 ) {
-  const productDetailsAlias = interceptProductDetails(productCode);
+  const productDetailsAlias = interceptProductAvailability(productCode);
   visitProductPage(productCode);
 
   cy.wait(`@${productDetailsAlias}`)
@@ -111,39 +111,36 @@ export function testInventoryDisplay(
   assertInventoryDisplay(productCode, `@${productDetailsAlias}`, functionality);
 }
 
-export function runInventoryDisplayE2E() {
-  context(`${'B2C'} - Inventory Display`, () => {
-    before(() => {
-      cy.window().then((win) => win.sessionStorage.clear());
+context(`${'B2C'} - Inventory Display`, () => {
+  before(() => {
+    cy.window().then((win) => win.sessionStorage.clear());
+  });
+
+  describe('Inventory Display - disabled', () => {
+    beforeEach(() => {
+      configureInventoryDisplay(false);
     });
 
-    describe('Inventory Display - disabled', () => {
-      beforeEach(() => {
-        configureInventoryDisplay(false);
-      });
-
-      it('should NOT render number of available stock', () => {
-        testInventoryDisplay('M_CR_1015');
-      });
-
-      it("should render 'out of stock' if stock level 0 and inventory display is off", () => {
-        testInventoryDisplay('M_CR_10151123', 'outOfStock');
-      });
+    it('should NOT render number of available stock', () => {
+      testInventoryDisplay('M_CR_1015');
     });
 
-    describe('Inventory Display - active', () => {
-      beforeEach(() => {
-        configureInventoryDisplay(true);
-      });
-
-      it('should render number of available stock', () => {
-        testInventoryDisplay('M_CR_1015');
-      });
-
-      it("should render 'out of stock' if stock level 0 and inventory display is on", () => {
-        testInventoryDisplay('M_CR_10151123', 'outOfStock');
-      });
+    it("should render 'out of stock' if stock level 0 and inventory display is off", () => {
+      testInventoryDisplay('M_CR_10151123', 'outOfStock');
     });
   });
-  runInventoryDisplayE2E();
-}
+
+  describe('Inventory Display - active', () => {
+    beforeEach(() => {
+      configureInventoryDisplay(true);
+    });
+
+    it('should render number of available stock', () => {
+      testInventoryDisplay('M_CR_1015');
+    });
+
+    it("should render 'out of stock' if stock level 0 and inventory display is on", () => {
+      testInventoryDisplay('M_CR_10151123', 'outOfStock');
+    });
+  });
+});

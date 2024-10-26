@@ -104,21 +104,28 @@ describe('CurrentProductService', () => {
     expect(result).toBe(null);
   });
 
-  it('should emit real-time stock data for the given product code', () => {
+  it('should emit real-time stock data for the given product code and unit', (done) => {
     const mockProductCode = '12345';
-    const mockStockData = '25';
-    let result: string = '';
+    const mockQuantity = '25';
+    const mockAvailability = 'inStock';
+    const mockUnit = 'EA';
+
+    const mockStockData = {
+      quantity: mockQuantity,
+      availability: mockAvailability,
+    };
+
     spyOn(productService, 'getRealTimeStockDatafromService').and.returnValue(
       of(mockStockData)
     );
 
     currentProductService
-      .getRealTimeStockData(mockProductCode)
+      .getRealTimeStock(mockProductCode, mockUnit)
       .subscribe((stockData) => {
-        result = stockData;
+        expect(stockData.quantity).toBe(mockQuantity);
+        expect(stockData.availability).toBe(mockAvailability);
+        done();
       });
-
-    expect(result).toBe(mockStockData);
   });
 
   it('should not emit old product data and fetch NEW product data', () => {

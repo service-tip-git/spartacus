@@ -16,7 +16,7 @@ import { Occ } from '../../occ-models';
 import { OccEndpointsService } from '../../services/occ-endpoints.service';
 import { ScopedDataWithUrl } from '../../services/occ-fields.service';
 import { OccRequestsOptimizerService } from '../../services/occ-requests-optimizer.service';
-import { ProductScope } from '@spartacus/core';
+import { ProductScope } from '../../../product/model/product-scope';
 
 @Injectable()
 export class OccProductAdapter implements ProductAdapter {
@@ -27,32 +27,29 @@ export class OccProductAdapter implements ProductAdapter {
     protected requestsOptimizer: OccRequestsOptimizerService
   ) {}
 
-  loadRealTimeStock(productCode: string): Observable<string> {
-    return this.http.get(this.getEndpoint(productCode, ProductScope.UNIT)).pipe(
+  loadRealTimeStock(
+    productCode: string,
+    unit: string
+  ): Observable<{ quantity: string; availability: string }> {
+    const availabilityUrl = this.occEndpoints.buildUrl('product', {
+      scope: ProductScope.PRODUCT_AVAILABILITIES,
+      urlParams: {
+        productCode: productCode,
+        sapCode: unit,
+      },
+    });
+
+    return this.http.get(availabilityUrl).pipe(
       take(1),
       distinctUntilChanged(),
-      switchMap((response: any) => {
-        const availabilityUrl = this.occEndpoints.buildUrl('product', {
-          scope: ProductScope.PRODUCT_AVAILABILITIES,
-          urlParams: {
-            productCode: productCode,
-            sapCode: response.sapUnit.sapCode,
-          },
-        });
-
-        return this.http.get(availabilityUrl).pipe(
-          take(1),
-          distinctUntilChanged(),
-          switchMap((availabilities: any) => {
-            const quantity =
-              availabilities?.availabilityItems[0]?.unitAvailabilities[0]
-                ?.quantity ?? '';
-            const availability =
-              availabilities?.availabilityItems[0]?.unitAvailabilities[0]
-                ?.status ?? '';
-            return of(quantity, availability);
-          })
-        );
+      switchMap((availabilities: any) => {
+        const quantity =
+          availabilities?.availabilityItems[0]?.unitAvailabilities[0]
+            ?.quantity ?? '';
+        const availability =
+          availabilities?.availabilityItems[0]?.unitAvailabilities[0]?.status ??
+          '';
+        return of({ quantity, availability });
       })
     );
   }

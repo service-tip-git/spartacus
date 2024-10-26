@@ -201,6 +201,14 @@ export interface Product {
   variantType?: VariantType;
   volumePrices?: Price[];
   volumePricesFlag?: boolean;
+  sapUnit?: SapUnit;
+}
+
+export interface SapUnit {
+  code?: string;
+  name?: string;
+  availabilityCode?: string;
+  sapCode?: string;
 }
 
 export enum VariantQualifier {

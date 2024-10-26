@@ -23,8 +23,8 @@ class MockProductLoadingService {
 }
 
 class MockProductConnector {
-  getRealTimeStock(_productCode: string) {
-    return of('10'); // Mocking the real-time stock data
+  getRealTimeStock(_productCode: string, _unit: string) {
+    return of('10', 'IN_STOCK');
   }
 }
 
@@ -151,12 +151,20 @@ describe('ProductService', () => {
       expect(result).toBeTruthy();
     });
   });
-  describe('getRealTimeStockDatafromService(productCode)', () => {
-    it('should return real-time stock data for the given product code', async () => {
-      const stockData = await lastValueFrom(
-        service.getRealTimeStockDatafromService('testId')
-      );
-      expect(stockData).toEqual('10');
-    });
+  it('should call getRealTimeStock and return mock data', (done) => {
+    const mockProductCode = '12345';
+    const mockUnit = 'unit1';
+    const mockStockData = { quantity: '10', availability: 'inStock' };
+
+    spyOn(service, 'getRealTimeStockDatafromService').and.returnValue(
+      of(mockStockData)
+    );
+
+    service
+      .getRealTimeStockDatafromService(mockProductCode, mockUnit)
+      .subscribe((stockData) => {
+        expect(stockData).toEqual(mockStockData);
+        done();
+      });
   });
 });

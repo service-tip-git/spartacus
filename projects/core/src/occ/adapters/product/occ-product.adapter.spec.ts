@@ -9,6 +9,7 @@ import { OccProductAdapter } from './occ-product.adapter';
 import createSpy = jasmine.createSpy;
 
 const productCode = 'testCode';
+const unit = 'EA';
 const product = {
   code: productCode,
   name: 'testProduct',
@@ -94,7 +95,9 @@ describe('OccProductAdapter', () => {
   describe('loadRealTimeStock', () => {
     it('should load real time stock', () => {
       let result;
-      service.loadRealTimeStock(productCode).subscribe((res) => (result = res));
+      service
+        .loadRealTimeStock(productCode, unit)
+        .subscribe((res) => (result = res));
 
       const mockReq = httpMock.expectOne((req) => {
         return req.method === 'GET';

@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { Product } from '../../model/product.model';
@@ -19,11 +19,13 @@ import { ProductSelectors } from '../store/selectors/index';
   providedIn: 'root',
 })
 export class ProductService {
+  protected productConnector: ProductConnector;
   constructor(
     protected store: Store<StateWithProduct>,
-    protected productLoading: ProductLoadingService,
-    private productConnector: ProductConnector
-  ) {}
+    protected productLoading: ProductLoadingService
+  ) {
+    this.productConnector = inject(ProductConnector);
+  }
 
   /**
    * Returns the product observable. The product will be loaded
@@ -89,7 +91,10 @@ export class ProductService {
     );
   }
 
-  getRealTimeStockDatafromService(productCode: string): Observable<string> {
-    return this.productConnector.getRealTimeStock(productCode);
+  getRealTimeStockDatafromService(
+    productCode: string,
+    unit: string
+  ): Observable<{ quantity: string; availability: string }> {
+    return this.productConnector.getRealTimeStock(productCode, unit);
   }
 }
