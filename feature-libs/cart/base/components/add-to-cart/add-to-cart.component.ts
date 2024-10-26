@@ -66,7 +66,6 @@ export class AddToCartComponent implements OnInit, OnDestroy {
   @ViewChild('addToCartDialogTriggerEl') addToCartDialogTriggerEl: ElementRef;
 
   maxQuantity: number;
-  realTimeStock: string = '';
 
   hasStock: boolean = false;
   inventoryThreshold: boolean = false;
