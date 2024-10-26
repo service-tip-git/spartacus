@@ -129,13 +129,21 @@ export class AddToCartComponent implements OnInit, OnDestroy {
       this.hasStock = true;
       this.cd.markForCheck();
     } else {
-      this.subscription = (
-        this.productListItemContext
-          ? this.productListItemContext.product$
-          : this.featureToggles.showRealTimeStockInPDP
-            ? this.currentProductService.getProduct(ProductScope.UNIT)
-            : this.currentProductService.getProduct()
-      )
+      let productObservable$: Observable<Product | null>;
+
+      if (this.productListItemContext) {
+        productObservable$ = this.productListItemContext.product$;
+      } else {
+        if (this.featureToggles.showRealTimeStockInPDP) {
+          productObservable$ = this.currentProductService.getProduct(
+            ProductScope.UNIT
+          );
+        } else {
+          productObservable$ = this.currentProductService.getProduct();
+        }
+      }
+
+      this.subscription = productObservable$
         .pipe(filter(isNotNullable))
         .subscribe((product) => {
           this.productCode = product.code ?? '';

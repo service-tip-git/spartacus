@@ -30,6 +30,6 @@ export abstract class ProductAdapter {
 
   abstract loadRealTimeStock(
     productCode: string,
-    unit: String
+    unit: string
   ): Observable<{ quantity: string; availability: string }>;
 }
