@@ -18,8 +18,8 @@ import { KeyboardFocusService } from '@spartacus/storefront';
 import { Observable, of } from 'rxjs';
 import { ConfiguratorGroupsService } from '../../core/facade/configurator-groups.service';
 import { Configurator } from '../../core/model/configurator.model';
-import { ConfiguratorStorefrontUtilsService } from './configurator-storefront-utils.service';
 import { ConfiguratorTestUtils } from '../../testing/configurator-test-utils';
+import { ConfiguratorStorefrontUtilsService } from './configurator-storefront-utils.service';
 
 let mockedWindow: {
   innerWidth?: number;
@@ -44,11 +44,12 @@ const testSelector = 'test-configurator-overview-menu';
 
 const PRODUCT_CODE = 'CONF_LAPTOP';
 const CONFIGURATOR_ROUTE = 'configureCPQCONFIGURATOR';
-const mockRouterState: any = {
+const mockRouterStateTemplate: any = {
   state: {
     params: {
       entityKey: PRODUCT_CODE,
       ownerType: CommonConfigurator.OwnerType.PRODUCT,
+      displayOnly: false,
     },
     queryParams: {},
     semanticRoute: CONFIGURATOR_ROUTE,
@@ -129,6 +130,7 @@ describe('ConfiguratorStorefrontUtilsService', () => {
   let fixture: ComponentFixture<MockComponent>;
   let htmlElem: HTMLElement;
   let focusedElements: any;
+  let mockRouterState: any;
   const owner = ConfiguratorModelUtils.createOwner(
     CommonConfigurator.OwnerType.PRODUCT,
     'testProduct'
@@ -137,7 +139,7 @@ describe('ConfiguratorStorefrontUtilsService', () => {
   let keyboardFocusService: KeyboardFocusService;
 
   beforeEach(() => {
-    mockRouterState.state.params.displayOnly = false;
+    mockRouterState = structuredClone(mockRouterStateTemplate);
     routerStateObservable = of(mockRouterState);
 
     TestBed.configureTestingModule({
@@ -370,6 +372,8 @@ describe('ConfiguratorStorefrontUtilsService', () => {
     });
 
     describe('focusValue', () => {
+      let attribute: Configurator.Attribute;
+
       function createValue(name: string, isSelected: boolean) {
         const value: Configurator.Value = {
           valueCode: name,
@@ -391,7 +395,6 @@ describe('ConfiguratorStorefrontUtilsService', () => {
         haveBeenCalledTimes = 0,
         focusedElementIndex?: number
       ): void {
-        classUnderTest.focusValue(attribute);
         expect(keyboardFocusService.findFocusable).toHaveBeenCalledTimes(
           haveBeenCalledTimes
         );
@@ -405,28 +408,28 @@ describe('ConfiguratorStorefrontUtilsService', () => {
         });
       }
 
-      let attribute: Configurator.Attribute = {
-        name: 'ATTR_1',
-        uiType: Configurator.UiType.RADIOBUTTON,
-        values: [],
-      };
-
       beforeEach(() => {
+        attribute = {
+          name: 'ATTR_1',
+          uiType: Configurator.UiType.RADIOBUTTON,
+          values: [],
+        };
         focusedElements = fixture.debugElement
           .queryAll(By.css('label'))
           .map((el) => el.nativeNode);
-
         spyOn(windowRef.document, 'querySelector').and.returnValue(
           focusedElements
         );
       });
 
-      it('should not set focus because attribute does not contain any values', () => {
+      it('should set focus because attribute exists', () => {
         spyOn(windowRef, 'isBrowser').and.returnValue(true);
         spyFocusForFocusedElements(focusedElements);
         spyOn(keyboardFocusService, 'findFocusable').and.returnValue(
           focusedElements
         );
+
+        classUnderTest.focusValue(attribute);
         verify(focusedElements, 1, 0);
       });
 
@@ -442,6 +445,7 @@ describe('ConfiguratorStorefrontUtilsService', () => {
         const value3 = createValue('value_3', false);
         attribute.values = [value1, value2, value3];
 
+        classUnderTest.focusValue(attribute);
         verify(focusedElements, 1, 1);
       });
 
@@ -460,6 +464,7 @@ describe('ConfiguratorStorefrontUtilsService', () => {
         const value3 = createValue('value_3', false);
         attribute.values = [value1, value2, value3];
 
+        classUnderTest.focusValue(attribute);
         verify(focusedElements, 1, 0);
       });
 
@@ -471,6 +476,7 @@ describe('ConfiguratorStorefrontUtilsService', () => {
         );
         attribute.name = 'NO_ATTR_2';
 
+        classUnderTest.focusValue(attribute);
         verify(focusedElements, 1);
       });
 
@@ -482,6 +488,7 @@ describe('ConfiguratorStorefrontUtilsService', () => {
         );
         asSpy(windowRef.document.querySelector).and.returnValue(undefined);
 
+        classUnderTest.focusValue(attribute);
         verify(focusedElements);
       });
 
@@ -492,6 +499,7 @@ describe('ConfiguratorStorefrontUtilsService', () => {
           focusedElements
         );
 
+        classUnderTest.focusValue(attribute);
         verify(focusedElements);
       });
     });
@@ -941,7 +949,7 @@ describe('ConfiguratorStorefrontUtilsService', () => {
 
     it('should return `false` in case the product is `undefined`', () => {
       mockRouterState.state.params.displayOnly = true;
-      mockRouterState.state.queryParams.productCode = PRODUCT_CODE;
+      mockRouterState.state.queryParams.productCode = undefined;
       fixture.detectChanges();
 
       classUnderTest
