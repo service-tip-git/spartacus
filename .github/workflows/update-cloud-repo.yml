@@ -11,7 +11,6 @@ on:
         secret: true
       repo_url:
         description: 'Enter the repository URL'
-        default: https://${{secrets.GH_TEMPORARY_TOKEN}}@github.com/SAP-samples/cloud-commerce-sample-setup.git
         required: false
         secret: true
       repo_name:
@@ -22,7 +21,7 @@ on:
 
 env:
   CONFIG_DIR: scripts/install
-  REPO_URL: ${{ inputs.repo_url }}
+  REPO_URL: ${{ inputs.repo_url || https://${{secrets.GH_TEMPORARY_TOKEN}}@github.com/SAP-samples/cloud-commerce-sample-setup.git }}
   NPM_REPO_URL: https://73554900100900004337.dev.npmsrv.base.repositories.cloud.sap/
   OCC_BACKEND_URL: OCC_BACKEND_BASE_URL_VALUE
 
