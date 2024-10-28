@@ -21,7 +21,6 @@ on:
 
 env:
   CONFIG_DIR: scripts/install
-  REPO_URL: ${{ inputs.repo_url || https://${{secrets.GH_TEMPORARY_TOKEN}}@github.com/SAP-samples/cloud-commerce-sample-setup.git }}
   NPM_REPO_URL: https://73554900100900004337.dev.npmsrv.base.repositories.cloud.sap/
   OCC_BACKEND_URL: OCC_BACKEND_BASE_URL_VALUE
 
@@ -29,6 +28,14 @@ jobs:
   run_script:
     runs-on: ubuntu-latest
     steps:
+      - name: Set REPO_URL
+        run: |
+          if [ -z "${{ inputs.repo_url }}" ]; then
+            REPO_URL="https://${{ secrets.GH_TEMPORARY_TOKEN }}@github.com/SAP-samples/cloud-commerce-sample-setup.git"
+          else
+            REPO_URL="${{ inputs.repo_url }}"
+          fi
+          echo "REPO_URL=$REPO_URL" >> $GITHUB_ENV
       - name: Extract REPO_NAME from URL
         id: extract-repo-name
         run: |
@@ -130,7 +137,7 @@ jobs:
       - name: Commit changes
         run: |
           function clone_and_setup_repo() {
-            git clone $REPO_URL
+            git clone ${{ env.REPO_URL }}
             cd ${{ env.REPO_NAME }}
 
             # Get the current date and time
@@ -151,7 +158,7 @@ jobs:
             git add .
             git commit -m "Updated content of js-storefront/b2bspastore"
 
-            git push -u $REPO_URL
+            git push -u ${{ env.REPO_URL }}
           }
 
           clone_and_setup_repo
