@@ -10,14 +10,9 @@ on:
         required: true
         secret: true
       repo_url:
-        description: 'Enter the repository URL'
+        description: 'Enter the repository URL (default will be used if empty)'
         required: false
         secret: true
-      repo_name:
-        description: 'Enter the repository name'
-        default: cloud-commerce-sample-setup
-        required: false
-        secret: false
 
 env:
   CONFIG_DIR: scripts/install
