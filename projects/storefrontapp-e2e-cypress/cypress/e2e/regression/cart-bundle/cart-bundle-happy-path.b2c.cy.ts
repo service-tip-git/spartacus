@@ -3,6 +3,7 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
+
 import * as cartBundle from '../../../helpers/cart-bundle-b2c';
 import { viewportContext } from '../../../helpers/viewport-context';
 
