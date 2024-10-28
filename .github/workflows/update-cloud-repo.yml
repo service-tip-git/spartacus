@@ -31,7 +31,7 @@ jobs:
             REPO_URL="${{ inputs.repo_url }}"
           fi
           echo "REPO_URL=$REPO_URL" >> $GITHUB_ENV
-      - name: Extract REPO_NAME from URL
+      - name: Extract REPO_NAME from REPO_URL
         id: extract-repo-name
         run: |
           REPO_NAME=$(echo $REPO_URL | sed -E 's|.*/(.*)\.git|\1|')
