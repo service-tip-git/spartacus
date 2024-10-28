@@ -210,9 +210,19 @@ export class MediaService {
    * start with double slash, which is used to resolve media cross from http and https.
    */
   protected resolveAbsoluteUrl(url: string): string {
-    return !url || url.startsWith('http') || url.startsWith('//')
-      ? url
-      : this.getBaseUrl() + url;
+    // SPIKE NEW - replace query params ?context=... with /_
+
+    const result =
+      !url || url.startsWith('http') || url.startsWith('//')
+        ? url
+        : this.getBaseUrl() + url;
+
+    const contextPattern = /\?context=(.*)$/;
+    if (contextPattern.test(result)) {
+      return result.replace(contextPattern, '__context_$1');
+    }
+
+    return result;
   }
 
   /**

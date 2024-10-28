@@ -64,11 +64,14 @@ if (!environment.production) {
     provideConfig(<OccConfig>{
       backend: {
         occ: {
-          baseUrl: environment.occBaseUrl,
+          baseUrl:
+            'https://composable-storefront-demo.eastus.cloudapp.azure.com:8443',
+          // baseUrl: environment.occBaseUrl,
           prefix: environment.occApiPrefix,
         },
         media: {
-          baseUrl: 'http://localhost:9002',
+          baseUrl: 'https://sparta.sirv.com',
+          // baseUrl: 'http://localhost:9002',
           // baseUrl: 'https://40.76.109.9:9002',
         },
       },
