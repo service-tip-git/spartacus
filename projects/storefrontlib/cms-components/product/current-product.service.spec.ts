@@ -37,7 +37,7 @@ class MockProductService {
     }
     return of(mockProduct);
   }
-  getRealTimeStockDatafromService(_productCode: string) {
+  getRealTimeStock(_productCode: string) {
     return of('25'); // Mock response
   }
 }
@@ -115,7 +115,7 @@ describe('CurrentProductService', () => {
       availability: mockAvailability,
     };
 
-    spyOn(productService, 'getRealTimeStockDatafromService').and.returnValue(
+    spyOn(productService, 'getRealTimeStock').and.returnValue(
       of(mockStockData)
     );
 

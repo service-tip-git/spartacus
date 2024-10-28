@@ -156,12 +156,10 @@ describe('ProductService', () => {
     const mockUnit = 'unit1';
     const mockStockData = { quantity: '10', availability: 'inStock' };
 
-    spyOn(service, 'getRealTimeStockDatafromService').and.returnValue(
-      of(mockStockData)
-    );
+    spyOn(service, 'getRealTimeStock').and.returnValue(of(mockStockData));
 
     service
-      .getRealTimeStockDatafromService(mockProductCode, mockUnit)
+      .getRealTimeStock(mockProductCode, mockUnit)
       .subscribe((stockData) => {
         expect(stockData).toEqual(mockStockData);
         done();

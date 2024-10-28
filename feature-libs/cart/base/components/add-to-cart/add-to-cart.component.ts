@@ -148,7 +148,6 @@ export class AddToCartComponent implements OnInit, OnDestroy {
         .subscribe((product) => {
           this.productCode = product.code ?? '';
           this.sapUnit = product.sapUnit?.sapCode ?? '';
-          this.getRealTimeStock();
           this.setStockInfo(product);
           this.cd.markForCheck();
         });
@@ -159,6 +158,19 @@ export class AddToCartComponent implements OnInit, OnDestroy {
     this.quantity = 1;
 
     this.addToCartForm.controls['quantity'].setValue(1);
+
+    if (this.featureToggles.showRealTimeStockInPDP) {
+      this.currentProductService
+        .getRealTimeStock(this.productCode, this.sapUnit)
+        .pipe(take(1))
+        .subscribe(({ quantity, availability }) => {
+          this.maxQuantity = Number(quantity);
+          this.hasStock = Boolean(
+            availability && availability !== 'outOfStock'
+          );
+          this.cd.markForCheck();
+        });
+    }
 
     this.hasStock = Boolean(product.stock?.stockLevelStatus !== 'outOfStock');
 
@@ -173,20 +185,6 @@ export class AddToCartComponent implements OnInit, OnDestroy {
     }
   }
 
-  getRealTimeStock(): void {
-    if (this.featureToggles.showRealTimeStockInPDP) {
-      this.currentProductService
-        .getRealTimeStock(this.productCode, this.sapUnit)
-        .pipe(take(1))
-        .subscribe(({ quantity, availability }) => {
-          this.maxQuantity = Number(quantity);
-          this.hasStock = Boolean(
-            availability && availability !== 'outOfStock'
-          );
-          this.cd.markForCheck();
-        });
-    }
-  }
 
   /**
    * In specific scenarios, we need to omit displaying the stock level or append a plus to the value.

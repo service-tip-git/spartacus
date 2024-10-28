@@ -59,9 +59,6 @@ export class CurrentProductService {
     productCode: string,
     unit: string
   ): Observable<{ quantity: string; availability: string }> {
-    return this.productService.getRealTimeStockDatafromService(
-      productCode,
-      unit
-    );
+    return this.productService.getRealTimeStock(productCode, unit);
   }
 }

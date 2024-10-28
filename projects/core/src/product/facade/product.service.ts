@@ -91,7 +91,7 @@ export class ProductService {
     );
   }
 
-  getRealTimeStockDatafromService(
+  getRealTimeStock(
     productCode: string,
     unit: string
   ): Observable<{ quantity: string; availability: string }> {

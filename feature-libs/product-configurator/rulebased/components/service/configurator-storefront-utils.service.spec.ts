@@ -18,8 +18,8 @@ import { KeyboardFocusService } from '@spartacus/storefront';
 import { Observable, of } from 'rxjs';
 import { ConfiguratorGroupsService } from '../../core/facade/configurator-groups.service';
 import { Configurator } from '../../core/model/configurator.model';
-import { ConfiguratorTestUtils } from '../../testing/configurator-test-utils';
 import { ConfiguratorStorefrontUtilsService } from './configurator-storefront-utils.service';
+import { ConfiguratorTestUtils } from '../../testing/configurator-test-utils';
 
 let mockedWindow: {
   innerWidth?: number;
@@ -37,6 +37,7 @@ class MockedWindowRef extends WindowRef {
     return this.isBrowser() ? <any>mockedWindow : undefined;
   }
 }
+class MockProductConnector {}
 
 let isGroupVisited: Observable<boolean> = of(false);
 const testSelector = 'test-configurator-overview-menu';
@@ -122,8 +123,6 @@ class MockProductService {
     return of(product);
   }
 }
-
-class MockProductConnector {}
 
 describe('ConfiguratorStorefrontUtilsService', () => {
   let classUnderTest: ConfiguratorStorefrontUtilsService;
