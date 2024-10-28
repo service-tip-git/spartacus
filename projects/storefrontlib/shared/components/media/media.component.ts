@@ -135,7 +135,8 @@ export class MediaComponent implements OnChanges {
     }
 
     if (this.isLCP && !this.isLegacy) {
-      this.createPreloadLinks();
+      // SPIKE TODO BRING BACK
+      // this.createPreloadLinks();
     }
   }
 
