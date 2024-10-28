@@ -465,9 +465,7 @@ export function operateRegularDetail() {
   cy.get('#txtFindAStore').clear().type('Tokyo');
   cy.get('#btnFindStores').should('be.visible').click();
   cy.wait(1000);
-  cy.get(
-    '[data-pickup-in-store-button="Tokio Flexstay Nippori Inn"]'
-  ).click();
+  cy.get('[data-pickup-in-store-button="Tokio Flexstay Nippori Inn"]').click();
   cy.get('[data-pickup-location = "Tokio Flexstay Nippori Inn"]');
 }
 
@@ -628,7 +626,7 @@ export function doesElementAddressExist(selector: string) {
         });
       } else {
         cy.get('cx-card').eq(0).click();
-        cy.wait(5000).then(()=>{
+        cy.wait(5000).then(() => {
           cy.get('.card-header').should('contain', 'Selected');
           cy.get('.cx-card-title').should('not.be.empty');
           cy.get('.cx-card-label-bold').should('not.be.empty');

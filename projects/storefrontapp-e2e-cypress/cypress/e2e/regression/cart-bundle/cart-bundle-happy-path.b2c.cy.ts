@@ -41,9 +41,9 @@ describe('Anonymous user', () => {
       });
       it('should add regular product and check cart', () => {
         cartBundle.loginReloadPage();
-        
+
         //operate regular
-        cartBundle.operateRegularDetail()
+        cartBundle.operateRegularDetail();
         cartBundle.checkSummaryDetail();
       });
     });
@@ -55,7 +55,7 @@ context('Anonymous user', () => {
       cartBundle.loginReloadPage();
       cartBundle.operateDliveryModePhase();
       cartBundle.clickConfigurationBtn();
-      
+
       cartBundle.checkProOperationMode('deliveryMode');
       cy.get('.btn-primary').should('contain', 'Continue').click();
 
