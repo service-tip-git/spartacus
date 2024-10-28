@@ -41,12 +41,11 @@ export function app(): express.Express {
 
   server.use(compression());
 
-  // SPIKE TODO reverse proxy
   // add an artifical delay to every response/console.error();
-  // server.use((_req, _res, next) => {
-  //   const artificialDelay_SSR = 80;
-  //   setTimeout(next, artificialDelay_SSR); // SPIKE - simulate artificial delay from the server or CDN
-  // });
+  server.use((_req, _res, next) => {
+    const artificialDelay_SSR = 80;
+    setTimeout(next, artificialDelay_SSR); // SPIKE - simulate artificial delay from the server or CDN
+  });
 
   const distFolder = join(process.cwd(), 'dist/storefrontapp');
   const indexHtml = existsSync(join(distFolder, 'index.original.html'))
