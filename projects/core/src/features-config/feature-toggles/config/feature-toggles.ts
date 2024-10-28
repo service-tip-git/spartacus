@@ -583,6 +583,17 @@ export interface FeatureTogglesInterface {
   a11ySearchBoxFocusOnEscape?: boolean;
 
   /**
+   * In `ItemCounterComponenet`, Remove button no longer lose focus after activating when count is 2.
+   * Add button no longer lose focus after activating when count is `max - 1`.
+   */
+  a11yItemCounterFocus?: boolean;
+
+  /**
+   * `ProductIntroComponent` should now scroll to the Review tab on the first click of the 'Show Review' button.
+   */
+  a11yScrollToReviewByShowReview?: boolean;
+
+  /**
    * `StoreComponent and MyPreferredStoreComponent` an icon in a button that triggers showing
    * store's opening hours has an acceptable contrast ratio in a default theme
    */
@@ -638,6 +649,35 @@ export interface FeatureTogglesInterface {
    *       in the future together with this feature toggle.
    */
   allPageMetaResolversEnabledInCsr?: boolean;
+
+  /**
+   * When enabled, allows to provide extended formats and media queries for <picture> element if used in MediaComponent.
+   *
+   * Important: After activation default HTML element in MediaComponent will be `<img>`
+   * Only BannerComponent has passed `'picture'` value. If you need to use `<picture>` HTML element
+   * you need to pass `[elementType]="'picture'"` to `<cx-media>`
+   *
+   * For proper work requires `pictureElementFormats`  provided in media config:
+   *  ```ts
+   * provideConfig({
+   *   pictureElementFormats: {
+   *    mediaQueries: {
+   *     'max-width': '767px',
+   *      ...
+   *    },
+   *    width: 50,
+   *    height: 50,
+   *   },
+   * })
+   * ```
+   *
+   * After activating this toggle, new inputs in `MediaComponent` — specifically
+   * `width`, `height`, and `sizes` — will be passed to the template as HTML attributes.
+   *
+   * Toggle activates `@Input() elementType: 'img' | 'picture' = 'img'` in `MediaComponent`
+   *
+   */
+  useExtendedMediaComponentConfiguration?: boolean;
 }
 
 export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
@@ -731,6 +771,8 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yDialogTriggerRefocus: false,
   a11yAddToWishlistFocus: false,
   a11ySearchBoxFocusOnEscape: false,
+  a11yItemCounterFocus: false,
+  a11yScrollToReviewByShowReview: false,
   a11yViewHoursButtonIconContrast: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
@@ -738,4 +780,5 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   enableConsecutiveCharactersPasswordRequirement: false,
   enablePasswordsCannotMatchInPasswordUpdateForm: false,
   allPageMetaResolversEnabledInCsr: false,
+  useExtendedMediaComponentConfiguration: false,
 };
