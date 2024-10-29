@@ -7,7 +7,7 @@
 import { inject, Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
-import { Product } from '../../model/product.model';
+import { Product, ProductAvailabilities } from '../../model/product.model';
 import { DEFAULT_SCOPE } from '../../occ/occ-models/occ-endpoints.model';
 import { ProductConnector } from '../connectors';
 import { ProductScope } from '../model/product-scope';
@@ -19,13 +19,11 @@ import { ProductSelectors } from '../store/selectors/index';
   providedIn: 'root',
 })
 export class ProductService {
-  protected productConnector: ProductConnector;
+  protected productConnector = inject(ProductConnector);
   constructor(
     protected store: Store<StateWithProduct>,
     protected productLoading: ProductLoadingService
-  ) {
-    this.productConnector = inject(ProductConnector);
-  }
+  ) {}
 
   /**
    * Returns the product observable. The product will be loaded
@@ -94,7 +92,7 @@ export class ProductService {
   getRealTimeStock(
     productCode: string,
     unit: string
-  ): Observable<{ quantity: string; availability: string }> {
+  ): Observable<ProductAvailabilities> {
     return this.productConnector.getRealTimeStock(productCode, unit);
   }
 }

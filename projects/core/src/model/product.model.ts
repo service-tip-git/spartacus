@@ -250,3 +250,8 @@ export interface StoreFinderStockSearchPage {
   sourceLongitude?: number;
   stores?: PointOfServiceStock[];
 }
+
+export interface ProductAvailabilities {
+  quantity?: string;
+  availability?: string;
+}

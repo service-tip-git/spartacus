@@ -5,7 +5,7 @@
  */
 
 import { Observable } from 'rxjs';
-import { Product } from '../../../model/product.model';
+import { Product, ProductAvailabilities } from '../../../model/product.model';
 import { ScopedProductData } from './scoped-product-data';
 
 export abstract class ProductAdapter {
@@ -31,5 +31,5 @@ export abstract class ProductAdapter {
   abstract loadRealTimeStock(
     productCode: string,
     unit: string
-  ): Observable<{ quantity: string; availability: string }>;
+  ): Observable<ProductAvailabilities>;
 }

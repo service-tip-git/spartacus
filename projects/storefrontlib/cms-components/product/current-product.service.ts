@@ -8,6 +8,7 @@ import { Injectable } from '@angular/core';
 import {
   isNotUndefined,
   Product,
+  ProductAvailabilities,
   ProductScope,
   ProductService,
   RoutingService,
@@ -58,7 +59,7 @@ export class CurrentProductService {
   getRealTimeStock(
     productCode: string,
     unit: string
-  ): Observable<{ quantity: string; availability: string }> {
+  ): Observable<ProductAvailabilities> {
     return this.productService.getRealTimeStock(productCode, unit);
   }
 }

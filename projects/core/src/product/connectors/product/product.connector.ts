@@ -6,7 +6,7 @@
 
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Product } from '../../../model/product.model';
+import { Product, ProductAvailabilities } from '../../../model/product.model';
 import { ProductAdapter } from './product.adapter';
 import { ScopedProductData } from './scoped-product-data';
 
@@ -34,7 +34,7 @@ export class ProductConnector {
   getRealTimeStock(
     productCode: string,
     unit: string
-  ): Observable<{ quantity: string; availability: string }> {
+  ): Observable<ProductAvailabilities> {
     return this.adapter.loadRealTimeStock(productCode, unit);
   }
 }

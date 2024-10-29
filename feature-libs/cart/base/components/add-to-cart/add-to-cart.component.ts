@@ -53,7 +53,6 @@ export class AddToCartComponent implements OnInit, OnDestroy {
   @Input() showQuantity = true;
   @Input() options: CartItemComponentOptions;
   @Input() pickupStore: string | undefined;
-  @Input() sapUnit: string;
   /**
    * As long as we do not support #5026, we require product input, as we need
    *  a reference to the product model to fetch the stock data.
@@ -66,6 +65,7 @@ export class AddToCartComponent implements OnInit, OnDestroy {
   @ViewChild('addToCartDialogTriggerEl') addToCartDialogTriggerEl: ElementRef;
 
   maxQuantity: number;
+  sapUnit: string;
 
   hasStock: boolean = false;
   inventoryThreshold: boolean = false;
@@ -130,19 +130,15 @@ export class AddToCartComponent implements OnInit, OnDestroy {
       this.cd.markForCheck();
     } else {
       let productObservable$: Observable<Product | null>;
-
       if (this.productListItemContext) {
         productObservable$ = this.productListItemContext.product$;
+      } else if (this.featureToggles.showRealTimeStockInPDP) {
+        productObservable$ = this.currentProductService.getProduct([
+          ProductScope.UNIT,
+        ]);
       } else {
-        if (this.featureToggles.showRealTimeStockInPDP) {
-          productObservable$ = this.currentProductService.getProduct(
-            ProductScope.UNIT
-          );
-        } else {
-          productObservable$ = this.currentProductService.getProduct();
-        }
+        productObservable$ = this.currentProductService.getProduct();
       }
-
       this.subscription = productObservable$
         .pipe(filter(isNotNullable))
         .subscribe((product) => {

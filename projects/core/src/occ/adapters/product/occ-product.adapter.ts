@@ -7,7 +7,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, switchMap, take, of, distinctUntilChanged } from 'rxjs';
-import { Product } from '../../../model/product.model';
+import { Product, ProductAvailabilities } from '../../../model/product.model';
 import { PRODUCT_NORMALIZER } from '../../../product/connectors/product/converters';
 import { ProductAdapter } from '../../../product/connectors/product/product.adapter';
 import { ScopedProductData } from '../../../product/connectors/product/scoped-product-data';
@@ -16,7 +16,6 @@ import { Occ } from '../../occ-models';
 import { OccEndpointsService } from '../../services/occ-endpoints.service';
 import { ScopedDataWithUrl } from '../../services/occ-fields.service';
 import { OccRequestsOptimizerService } from '../../services/occ-requests-optimizer.service';
-import { ProductScope } from '../../../product/model/product-scope';
 
 @Injectable()
 export class OccProductAdapter implements ProductAdapter {
@@ -30,14 +29,16 @@ export class OccProductAdapter implements ProductAdapter {
   loadRealTimeStock(
     productCode: string,
     unit: string
-  ): Observable<{ quantity: string; availability: string }> {
-    const availabilityUrl = this.occEndpoints.buildUrl('product', {
-      scope: ProductScope.PRODUCT_AVAILABILITIES,
-      urlParams: {
-        productCode: productCode,
-        sapCode: unit,
-      },
-    });
+  ): Observable<ProductAvailabilities> {
+    const availabilityUrl = this.occEndpoints.buildUrl(
+      'productAvailabilities',
+      {
+        urlParams: {
+          productCode: productCode,
+          sapCode: unit,
+        },
+      }
+    );
 
     return this.http.get(availabilityUrl).pipe(
       take(1),
