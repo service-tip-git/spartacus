@@ -15,15 +15,15 @@ import {
   waitForResponse,
 } from '../../../../helpers/order-history';
 import {
+  ORDER_REQUEST_ENDPOINT,
+  POWERTOOLS_BASESITE,
+  USER_REQUEST_ENDPOINT,
   b2bAccountShipToUser,
   b2bProduct,
   cartWithB2bProductAndPremiumShipping,
   costCenter,
-  ORDER_REQUEST_ENDPOINT,
   order_type,
   poNumber,
-  POWERTOOLS_BASESITE,
-  USER_REQUEST_ENDPOINT,
 } from '../../../../sample-data/b2b-checkout';
 import { isolateTests } from '../../../../support/utils/test-isolation';
 
@@ -58,7 +58,7 @@ describe('Order History with orders', { testIsolation: false }, () => {
   });
 
   it('should enter shipping address', () => {
-    b2bCheckout.selectAccountShippingAddress(false);
+    b2bCheckout.selectAccountShippingAddress();
   });
 
   it('should select delivery mode', () => {

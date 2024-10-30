@@ -48,7 +48,7 @@ context(
     });
 
     it('should enter shipping address', () => {
-      b2bCheckout.selectAccountShippingAddress(false);
+      b2bCheckout.selectAccountShippingAddress();
     });
 
     it('should select delivery mode', () => {

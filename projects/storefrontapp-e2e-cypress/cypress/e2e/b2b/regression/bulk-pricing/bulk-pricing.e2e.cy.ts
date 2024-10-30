@@ -10,6 +10,7 @@ import * as sampleData from '../../../../sample-data/b2b-bulk-pricing';
 describe('B2B - Bulk Pricing', () => {
   before(() => {
     cy.window().then((win) => win.sessionStorage.clear());
+    Cypress.env('BASE_SITE', 'powertools-spa');
   });
 
   describe('Check bulk pricing table', () => {

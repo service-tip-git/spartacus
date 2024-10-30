@@ -14,6 +14,7 @@ import {
   verifyTabbingOrder,
 } from '../../../../helpers/b2b/b2b-user-registration';
 import { viewportContext } from '../../../../helpers/viewport-context';
+import { POWERTOOLS_BASESITE } from '../../../../sample-data/b2b-checkout';
 import { getSampleUser } from '../../../../sample-data/checkout-flow';
 import { myCompanyAdminUser } from '../../../../sample-data/shared-users';
 import { clearAllStorage } from '../../../../support/utils/clear-all-storage';
@@ -29,6 +30,7 @@ context('B2B - User Registration', () => {
       isolateTests();
       before(() => {
         cy.window().then((win) => win.sessionStorage.clear());
+        Cypress.env('BASE_SITE', POWERTOOLS_BASESITE);
         cy.visit('/');
       });
 

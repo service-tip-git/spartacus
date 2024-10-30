@@ -237,7 +237,7 @@ export function selectCreditCardPayment() {
     .should('eq', 200);
 }
 
-export function selectAccountShippingAddress(a11yCheck: boolean = false) {
+export function selectAccountShippingAddress() {
   const getCheckoutDetails = interceptCheckoutB2BDetailsEndpoint(
     b2bDeliveryAddressStub,
     b2bDeliveryAddress.id
@@ -262,6 +262,7 @@ export function selectAccountShippingAddress(a11yCheck: boolean = false) {
   cy.get('.card-body').click({ force: true });
 
   // cy.get('cx-card .card-header').should('contain', 'Selected');
+
   /**
    * Delivery mode PUT intercept is not in selectAccountDeliveryMode()
    * because it doesn't choose a delivery mode and the intercept might have missed timing depending on cypress's performance
@@ -273,28 +274,11 @@ export function selectAccountShippingAddress(a11yCheck: boolean = false) {
   );
 
   // Accessibility
-  // GC -> Disable for now because of random errors.
-  if (a11yCheck) {
-    verifyTabbingOrder(
-      'cx-page-layout.MultiStepCheckoutSummaryPageTemplate',
-      config.shippingAddressAccount
-    );
-  }
-  // cy.wait(2000);
-  // End GC change
-
-  // Funny, yet, thoughtful phrases to consider while load testing a new server.
-  // GC: Rather difficult to deploy linux servers and watch Champions league at the same time...
-  // Colleague 1:
-  // Colleague 2:
-  // Colleague 3:
-  // Colleague 4:
-  // Colleague 5:
-  // Colleague 6:
-  // Colleague 7:
-  // Colleague 8:
-  // Colleague 9:
-  // Colleague 10:
+  verifyTabbingOrder(
+    'cx-page-layout.MultiStepCheckoutSummaryPageTemplate',
+    config.shippingAddressAccount
+  );
+  cy.wait(2000);
 
   cy.get('button.btn-primary').should('be.enabled').click();
   cy.wait(`@${deliveryPage}`).its('response.statusCode').should('eq', 200);
