@@ -72,7 +72,7 @@ describe('CmsPageGuard', () => {
           useClass: MockBeforeCmsPageGuardService,
         },
       ],
-      imports: [RouterTestingModule], //TODO: consider replacing deprecated `RouterTestingModule`
+      imports: [RouterTestingModule], //TODO: (CXSPA-8538) consider replacing deprecated `RouterTestingModule`
     });
 
     routingService = TestBed.inject(RoutingService);

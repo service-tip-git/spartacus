@@ -5,7 +5,7 @@ import {
   RULE_NAME,
 } from './no-ngrx-fail-action-without-error-action-implementation';
 
-//TODO: consider replacing deprecated TSESLint utils
+//TODO: (CXSPA-8538) consider replacing deprecated `RouterTestingModule`
 const ruleTester = new TSESLint.RuleTester({
   parser: require.resolve('@typescript-eslint/parser'),
 });
