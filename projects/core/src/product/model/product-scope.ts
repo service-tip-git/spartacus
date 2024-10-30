@@ -13,7 +13,6 @@ export const enum ProductScope {
   /** Fetch the default stock information. */
   STOCK = 'stock',
   UNIT = 'unit',
-  PRODUCT_AVAILABILITIES = 'productAvailabilities',
   PROMOTIONS = 'promotions',
   LIST_ITEM = 'list_item',
   MULTI_DIMENSIONAL = 'multi_dimensional',
