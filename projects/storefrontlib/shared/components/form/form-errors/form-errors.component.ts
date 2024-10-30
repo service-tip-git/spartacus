@@ -116,7 +116,6 @@ export class FormErrorsComponent implements DoCheck {
     //   });
     // }
     if (this.control.touched !== this.previousTouchedState) {
-      console.log('touched');
       this.previousTouchedState = this.control.touched;
       this.ChangeDetectionRef.markForCheck();
     }
