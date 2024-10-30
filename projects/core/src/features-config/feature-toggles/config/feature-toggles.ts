@@ -605,6 +605,16 @@ export interface FeatureTogglesInterface {
   a11yViewHoursButtonIconContrast?: boolean;
 
   /**
+   * `Checkout` add a landmarks to content representing steps
+   */
+  a11yCheckoutStepsLandmarks?: boolean;
+
+  /**
+   * In `CartItemListComponent`, change QTY into Quantity.
+   */
+  a11yQTY2Quantity?: boolean;
+
+  /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
    * into a request body, instead of query params.
    * This toggle is used in the following classes: `OccCartAdapter`, `OccSavedCartAdapter`, `SavedCartOccModule`, `CartBaseOccModule`.
@@ -780,6 +790,8 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yItemCounterFocus: false,
   a11yScrollToReviewByShowReview: false,
   a11yViewHoursButtonIconContrast: false,
+  a11yCheckoutStepsLandmarks: false,
+  a11yQTY2Quantity: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
