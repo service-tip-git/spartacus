@@ -145,7 +145,6 @@ export class AddToCartComponent implements OnInit, OnDestroy {
           this.productCode = product.code ?? '';
           this.sapUnit = product.sapUnit?.sapCode ?? '';
           this.setStockInfo(product);
-          this.cd.markForCheck();
         });
     }
   }
@@ -154,6 +153,10 @@ export class AddToCartComponent implements OnInit, OnDestroy {
     this.quantity = 1;
 
     this.addToCartForm.controls['quantity'].setValue(1);
+    this.inventoryThreshold = product.stock?.isValueRounded ?? false;
+    if (this.productListItemContext) {
+      this.showQuantity = false;
+    }
 
     if (this.featureToggles.showRealTimeStockInPDP) {
       this.currentProductService
@@ -166,21 +169,14 @@ export class AddToCartComponent implements OnInit, OnDestroy {
           );
           this.cd.markForCheck();
         });
-    }
-
-    this.hasStock = Boolean(product.stock?.stockLevelStatus !== 'outOfStock');
-
-    this.inventoryThreshold = product.stock?.isValueRounded ?? false;
-
-    if (this.hasStock && product.stock?.stockLevel) {
-      this.maxQuantity = product.stock.stockLevel;
-    }
-
-    if (this.productListItemContext) {
-      this.showQuantity = false;
+    } else {
+      this.hasStock = Boolean(product.stock?.stockLevelStatus !== 'outOfStock');
+      if (this.hasStock && product.stock?.stockLevel) {
+        this.maxQuantity = product.stock.stockLevel;
+      }
+      this.cd.markForCheck();
     }
   }
-
 
   /**
    * In specific scenarios, we need to omit displaying the stock level or append a plus to the value.
