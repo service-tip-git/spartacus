@@ -43,7 +43,9 @@ export class OccProductAdapter implements ProductAdapter {
     return this.http.get(availabilityUrl).pipe(
       take(1),
       distinctUntilChanged(),
-      switchMap((availabilities: any) => {
+       map((availabilities: any) => 
+    availabilities?.availabilityItems?.[0]?.unitAvailabilities?.[0] || {}
+  ),
         return of(
           availabilities?.availabilityItems?.[0]?.unitAvailabilities?.[0] || {}
         );
