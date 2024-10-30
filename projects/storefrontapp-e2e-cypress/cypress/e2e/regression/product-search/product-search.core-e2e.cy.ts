@@ -12,6 +12,13 @@ context('Product search', { testIsolation: false }, () => {
   viewportContext(['mobile', 'desktop'], () => {
     isolateTests();
     before(() => {
+      // TODO: No longer needed to toggle a11yTabComponent feature when set to true
+      // by default.
+      cy.cxConfig({
+        features: {
+          a11yTabComponent: true,
+        },
+      });
       cy.visit('/');
     });
 
