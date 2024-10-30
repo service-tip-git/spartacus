@@ -11,7 +11,6 @@ import {
   DoCheck,
   HostBinding,
   Input,
-  KeyValueDiffer,
   KeyValueDiffers,
   inject,
 } from '@angular/core';
@@ -56,7 +55,7 @@ export class FormErrorsComponent implements DoCheck {
    */
   errorsDetails$: Observable<Array<[string, string | boolean]>>;
 
-  protected differ: KeyValueDiffer<any, any>;
+  // protected differ: KeyValueDiffer<any, any>;
 
   // TODO: (CXSPA-7315) Remove feature toggle in the next major
   /**
@@ -87,7 +86,7 @@ export class FormErrorsComponent implements DoCheck {
 
     this._control = control;
 
-    this.differ = this.keyValueDiffers.find(this.control).create();
+    // this.differ = this.keyValueDiffers.find(this.control).create();
 
     this.errorsDetails$ = control?.statusChanges.pipe(
       startWith({}),
@@ -102,16 +101,27 @@ export class FormErrorsComponent implements DoCheck {
     return this._control;
   }
 
+  private previousTouchedState: boolean = false;
+
   ngDoCheck(): void {
-    const changes = this.differ?.diff(this.control);
-    if (changes) {
-      changes.forEachChangedItem((r) => {
-        if (r?.key === 'touched') {
-          this.ChangeDetectionRef.markForCheck();
-        }
-      });
+    // TODO: (CXSPA-8538) DISCUSS THE APPROACH
+    // differ no longer valid due to changes in AbstractControl. `touched` is now signal :o
+    // looks like the logic can be simplified
+    // const changes = this.differ?.diff(this.control);
+    // if (changes) {
+    //   changes.forEachChangedItem((r) => {
+    //     if (r?.key === 'touched') {
+    //       this.ChangeDetectionRef.markForCheck();
+    //     }
+    //   });
+    // }
+    if (this.control.touched !== this.previousTouchedState) {
+      console.log('touched');
+      this.previousTouchedState = this.control.touched;
+      this.ChangeDetectionRef.markForCheck();
     }
   }
+
   /**
    * Returns translation params composed of
    * the argument `errorDetails` (if only is an object) merged with

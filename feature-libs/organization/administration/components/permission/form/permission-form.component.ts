@@ -24,6 +24,7 @@ import { CurrentItemService } from '../../shared/current-item.service';
 import { ItemService } from '../../shared/item.service';
 import { CurrentPermissionService } from '../services/current-permission.service';
 import { PermissionItemService } from '../services/permission-item.service';
+import { MessageService } from '../../shared';
 
 @Component({
   selector: 'cx-org-permission-form',
@@ -39,6 +40,7 @@ import { PermissionItemService } from '../services/permission-item.service';
       provide: CurrentItemService,
       useExisting: CurrentPermissionService,
     },
+    MessageService, //TODO: (CXSPA-8538) DISCUSS THE APPROACH: or we can provide MessageService in the parent component
   ],
 })
 export class PermissionFormComponent implements OnInit {
