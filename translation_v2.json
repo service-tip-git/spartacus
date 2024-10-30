@@ -20,9 +20,9 @@
     }
   ],
   "defaultConfiguration": {
-    "targetFolderPath": "./[langCode]",
-    "pseudoLocFolderPath": "./[langCode]",
-    "oneQFolderPath": "./[langCode]",
+    "targetFolderPath": "../[langCode]",
+    "pseudoLocFolderPath": "../[langCode]",
+    "oneQFolderPath": "../[langCode]",
     "targetFileNamingConvention": "[filename].[extension]"
   }
 }
