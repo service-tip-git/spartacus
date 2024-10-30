@@ -33,8 +33,8 @@ export class ProductConnector {
 
   getRealTimeStock(
     productCode: string,
-    sapcode: string
+    sapCode: string
   ): Observable<ProductAvailabilities> {
-    return this.adapter.loadRealTimeStock(productCode, sapcode);
+    return this.adapter.loadRealTimeStock(productCode, sapCode);
   }
 }

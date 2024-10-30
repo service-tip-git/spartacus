@@ -30,6 +30,6 @@ export abstract class ProductAdapter {
 
   abstract loadRealTimeStock(
     productCode: string,
-    unit: string
+    sapCode: string
   ): Observable<ProductAvailabilities>;
 }
