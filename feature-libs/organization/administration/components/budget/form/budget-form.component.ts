@@ -19,6 +19,7 @@ import { ItemService } from '../../shared/item.service';
 import { createCodeForEntityName } from '../../shared/utility/entity-code';
 import { BudgetItemService } from '../services/budget-item.service';
 import { CurrentBudgetService } from '../services/current-budget.service';
+import { MessageService } from '../../shared';
 
 @Component({
   selector: 'cx-org-budget-form',
@@ -34,6 +35,7 @@ import { CurrentBudgetService } from '../services/current-budget.service';
       provide: CurrentItemService,
       useExisting: CurrentBudgetService,
     },
+    MessageService, //TODO: (CXSPA-8538) DISCUSS THE APPROACH: or we can provide MessageService in the parent component
   ],
 })
 export class BudgetFormComponent implements OnInit {

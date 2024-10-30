@@ -18,6 +18,7 @@ import {
 } from '@spartacus/organization/administration/core';
 import { Observable } from 'rxjs';
 import { filter, map, switchMap, tap } from 'rxjs/operators';
+import { MessageService } from '../../shared';
 import { CurrentItemService } from '../../shared/current-item.service';
 import { ItemService } from '../../shared/item.service';
 import { createCodeForEntityName } from '../../shared/utility/entity-code';
@@ -38,6 +39,7 @@ import { UnitItemService } from '../services/unit-item.service';
       provide: CurrentItemService,
       useExisting: CurrentUnitService,
     },
+    MessageService, //TODO: (CXSPA-8538) DISCUSS THE APPROACH: or we can provide MessageService in the parent component
   ],
 })
 export class UnitFormComponent implements OnInit {
