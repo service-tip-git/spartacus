@@ -4,7 +4,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import {
   UntypedFormBuilder,
   UntypedFormGroup,
@@ -22,6 +27,8 @@ import {
 } from '@spartacus/checkout/base/root';
 import { TranslationService } from '@spartacus/core';
 import { OpfMetadataStoreService } from '@spartacus/opf/base/root';
+import { CmsComponentData } from '@spartacus/storefront';
+import { CmsOpfCheckoutPaymentAndReviewComponent } from '../models/cms.model';
 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -36,6 +43,12 @@ export class OpfCheckoutPaymentAndReviewComponent
   implements OnInit
 {
   protected defaultTermsAndConditionsFieldValue = false;
+  protected component = inject(
+    CmsComponentData<CmsOpfCheckoutPaymentAndReviewComponent>
+  );
+  explicitTermsAndConditions$: Observable<boolean | undefined> = (
+    this.component.data$ as Observable<CmsOpfCheckoutPaymentAndReviewComponent>
+  ).pipe(map((data) => data.explicitTermsAndConditions));
 
   checkoutSubmitForm: UntypedFormGroup = this.fb.group({
     termsAndConditions: [

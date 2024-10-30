@@ -38,6 +38,7 @@
   ></cx-opf-checkout-terms-and-conditions-alert>
 
   <cx-opf-checkout-payments
+    [explicitTermsAndConditions]="explicitTermsAndConditions$ | async"
     [disabled]="termsAndConditionInvalid"
   ></cx-opf-checkout-payments>
 

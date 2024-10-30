@@ -25,7 +25,7 @@
         [value]="configuration.id"
         [checked]="configuration.id === selectedPaymentId"
         formControlName="paymentId"
-        [disabled]="disabled"
+        [disabled]="disabled && explicitTermsAndConditions"
       />
       <label
         class="cx-payment-type-label form-check-label form-radio-label"
