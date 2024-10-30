@@ -107,12 +107,12 @@ describe('CurrentProductService', () => {
   it('should emit real-time stock data for the given product code and unit', (done) => {
     const mockProductCode = '12345';
     const mockQuantity = '25';
-    const mockAvailability = 'inStock';
+    const mockstatus = 'inStock';
     const mockUnit = 'EA';
 
     const mockStockData = {
       quantity: mockQuantity,
-      availability: mockAvailability,
+      status: mockstatus,
     };
 
     spyOn(productService, 'getRealTimeStock').and.returnValue(
@@ -121,9 +121,9 @@ describe('CurrentProductService', () => {
 
     currentProductService
       .getRealTimeStock(mockProductCode, mockUnit)
-      .subscribe((stockData) => {
-        expect(stockData.quantity).toBe(mockQuantity);
-        expect(stockData.availability).toBe(mockAvailability);
+      .subscribe(({ quantity, status }) => {
+        expect(quantity).toBe(mockQuantity);
+        expect(status).toBe(mockstatus);
         done();
       });
   });

@@ -253,5 +253,5 @@ export interface StoreFinderStockSearchPage {
 
 export interface ProductAvailabilities {
   quantity?: string;
-  availability?: string;
+  status?: string;
 }

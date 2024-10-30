@@ -164,11 +164,9 @@ export class AddToCartComponent implements OnInit, OnDestroy {
       this.currentProductService
         .getRealTimeStock(this.productCode, this.sapUnit)
         .pipe(take(1))
-        .subscribe(({ quantity, availability }) => {
+        .subscribe(({ quantity, status }) => {
           this.maxQuantity = Number(quantity);
-          this.hasStock = Boolean(
-            availability && availability !== 'outOfStock'
-          );
+          this.hasStock = Boolean(status && status !== 'outOfStock');
           this.cd.markForCheck();
         });
     } else {

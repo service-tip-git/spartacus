@@ -44,13 +44,9 @@ export class OccProductAdapter implements ProductAdapter {
       take(1),
       distinctUntilChanged(),
       switchMap((availabilities: any) => {
-        const quantity =
-          availabilities?.availabilityItems[0]?.unitAvailabilities[0]
-            ?.quantity ?? '';
-        const availability =
-          availabilities?.availabilityItems[0]?.unitAvailabilities[0]?.status ??
-          '';
-        return of({ quantity, availability });
+        return of(
+          availabilities?.availabilityItems?.[0]?.unitAvailabilities?.[0] || {}
+        );
       })
     );
   }
