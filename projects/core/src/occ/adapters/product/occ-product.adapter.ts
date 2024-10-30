@@ -6,7 +6,7 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, switchMap, take, of, distinctUntilChanged } from 'rxjs';
+import { Observable, take, distinctUntilChanged, map } from 'rxjs';
 import { Product, ProductAvailabilities } from '../../../model/product.model';
 import { PRODUCT_NORMALIZER } from '../../../product/connectors/product/converters';
 import { ProductAdapter } from '../../../product/connectors/product/product.adapter';
@@ -43,13 +43,10 @@ export class OccProductAdapter implements ProductAdapter {
     return this.http.get(availabilityUrl).pipe(
       take(1),
       distinctUntilChanged(),
-       map((availabilities: any) => 
-    availabilities?.availabilityItems?.[0]?.unitAvailabilities?.[0] || {}
-  ),
-        return of(
+      map(
+        (availabilities: any) =>
           availabilities?.availabilityItems?.[0]?.unitAvailabilities?.[0] || {}
-        );
-      })
+      )
     );
   }
 
