@@ -16,6 +16,7 @@ import {
 } from '@spartacus/storefront';
 import { CustomerTicketingCreateDialogComponent } from './customer-ticketing-create-dialog/customer-ticketing-create-dialog.component';
 import { CustomerTicketingCreateComponent } from './customer-ticketing-create.component';
+import { FeaturesConfigModule } from '@spartacus/core';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { CustomerTicketingCreateComponent } from './customer-ticketing-create.co
     ReactiveFormsModule,
     FormErrorsModule,
     FileUploadModule,
+    FeaturesConfigModule,
   ],
   declarations: [
     CustomerTicketingCreateComponent,

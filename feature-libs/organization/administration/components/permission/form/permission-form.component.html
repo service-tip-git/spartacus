@@ -1,9 +1,10 @@
 <cx-org-form i18nRoot="orgPurchaseLimit">
   <ng-container *ngIf="form" [formGroup]="form" main>
     <label>
-      <span class="label-content required">{{
-        'orgPurchaseLimit.code' | cxTranslate
-      }}</span>
+      <span class="label-content required">
+        {{ 'orgPurchaseLimit.code' | cxTranslate }}
+        <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
+      </span>
       <input
         class="form-control"
         type="text"
@@ -156,9 +157,10 @@
     </label>
 
     <label [formGroup]="$any(form.get('orgUnit'))">
-      <span class="label-content required">{{
-        'orgPurchaseLimit.orgUnit' | cxTranslate
-      }}</span>
+      <span class="label-content required">
+        {{ 'orgPurchaseLimit.orgUnit' | cxTranslate }}
+        <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
+      </span>
       <ng-select
         [inputAttrs]="{ required: 'true' }"
         formControlName="uid"
@@ -189,3 +191,13 @@
     </label>
   </ng-container>
 </cx-org-form>
+
+<ng-template #requiredAsterisk>
+  <abbr
+    *cxFeature="'a11yRequiredAsterisks'"
+    class="text-decoration-none"
+    aria-hidden="true"
+    title="{{ 'common.required' | cxTranslate }}"
+    >*</abbr
+  >
+</ng-template>

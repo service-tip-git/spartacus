@@ -1,9 +1,10 @@
 <cx-org-form i18nRoot="orgBudget">
   <ng-container *ngIf="form" [formGroup]="form" main>
     <label>
-      <span class="label-content required">{{
-        'orgBudget.name' | cxTranslate
-      }}</span>
+      <span class="label-content required">
+        {{ 'orgBudget.name' | cxTranslate }}
+        <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
+      </span>
       <input
         type="text"
         class="form-control"
@@ -29,9 +30,10 @@
     </label>
 
     <label>
-      <span class="label-content required">{{
-        'orgBudget.code' | cxTranslate
-      }}</span>
+      <span class="label-content required">
+        {{ 'orgBudget.code' | cxTranslate }}
+        <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
+      </span>
       <input
         class="form-control"
         type="text"
@@ -56,9 +58,10 @@
     </label>
 
     <label>
-      <span class="label-content">{{
-        'orgBudget.startDate' | cxTranslate
-      }}</span>
+      <span class="label-content">
+        {{ 'orgBudget.startDate' | cxTranslate }}
+        <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
+      </span>
       <cx-date-picker
         [control]="$any(form.get('startDate'))"
         [max]="form.get('endDate')?.value"
@@ -69,7 +72,10 @@
     </label>
 
     <label>
-      <span class="label-content">{{ 'orgBudget.endDate' | cxTranslate }}</span>
+      <span class="label-content">
+        {{ 'orgBudget.endDate' | cxTranslate }}
+        <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
+      </span>
 
       <!-- TODO: (CXSPA-7315) Remove feature toggle in the next major -->
       <cx-date-picker
@@ -123,7 +129,10 @@
     </label>
 
     <label>
-      <span class="label-content">{{ 'orgBudget.amount' | cxTranslate }}</span>
+      <span class="label-content">
+        {{ 'orgBudget.amount' | cxTranslate }}
+        <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
+      </span>
       <input
         required="true"
         type="number"
@@ -152,9 +161,10 @@
       *ngIf="units$ | async as units"
       [formGroup]="$any(form.get('orgUnit'))"
     >
-      <span class="label-content required">{{
-        'orgBudget.businessUnits' | cxTranslate
-      }}</span>
+      <span class="label-content required">
+        {{ 'orgBudget.businessUnits' | cxTranslate }}
+        <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
+      </span>
       <ng-select
         [inputAttrs]="{ required: 'true' }"
         formControlName="uid"
@@ -185,3 +195,13 @@
     </label>
   </ng-container>
 </cx-org-form>
+
+<ng-template #requiredAsterisk>
+  <abbr
+    *cxFeature="'a11yRequiredAsterisks'"
+    class="text-decoration-none"
+    aria-hidden="true"
+    title="{{ 'common.required' | cxTranslate }}"
+    >*</abbr
+  >
+</ng-template>
