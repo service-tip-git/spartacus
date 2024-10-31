@@ -146,12 +146,18 @@ export class PaymentMethodsComponent implements OnInit {
     let ccIconLabel: string;
     if (code === 'visa') {
       ccIconLabel = 'paymentCard.visa';
-    } else if (code === 'master' || code === 'mastercard_eurocard') {
+    } else if (code === 'master') {
       ccIconLabel = 'paymentCard.master';
+    } else if (code === 'mastercard_eurocard') {
+      ccIconLabel = 'paymentCard.masterEuro';
     } else if (code === 'diners') {
       ccIconLabel = 'paymentCard.dinersClub';
     } else if (code === 'amex') {
       ccIconLabel = 'paymentCard.amex';
+    } else if (code === 'switch') {
+      ccIconLabel = 'paymentCard.switch';
+    } else if (code === 'maestro') {
+      ccIconLabel = 'paymentCard.maestro';
     } else {
       ccIconLabel = 'paymentCard.credit';
     }

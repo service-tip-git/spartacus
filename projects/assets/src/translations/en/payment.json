@@ -42,8 +42,11 @@
     "selected": "Selected",
     "deletePaymentSuccess": "Payment method deleted successfully",
     "visa": "Visa Card",
-    "master": "Master Card",
+    "master": "Mastercard Card",
+    "masterEuro": "Mastercard Eurocard Card",
     "dinersClub": "Diners Club Card",
+    "switch": "Switch Card",
+    "maestro": "Maestro Card",
     "amex": "American Express Card",
     "credit": "Credit Card"
   },
