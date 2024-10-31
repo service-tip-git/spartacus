@@ -1,5 +1,8 @@
 <cx-org-form [i18nRoot]="i18nRoot">
   <ng-container *ngIf="form" [formGroup]="form" main>
+    <p *cxFeature="'a11yRequiredAsterisks'" class="form-legend">
+      {{ 'formLegend.required' | cxTranslate }}
+    </p>
     <label>
       <span class="label-content required">
         <span> {{ 'orgUnit.name' | cxTranslate }}</span>

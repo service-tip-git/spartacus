@@ -25,6 +25,9 @@
 
     <div class="cx-customer-ticket-form-body">
       <div class="cx-customer-ticket-form-row">
+        <p *cxFeature="'a11yRequiredAsterisks'" class="form-legend">
+          {{ 'formLegend.required' | cxTranslate }}
+        </p>
         <label>
           <span class="cx-customer-ticket-label label-content">
             {{ 'createCustomerTicket.subject' | cxTranslate }}
