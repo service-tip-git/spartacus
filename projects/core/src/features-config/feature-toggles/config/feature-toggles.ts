@@ -583,6 +583,11 @@ export interface FeatureTogglesInterface {
   a11ySearchBoxFocusOnEscape?: boolean;
 
   /**
+   * Stops the inputs value from obstructing the 'PasswordVisibilityToggleComponent'.
+   */
+  a11yPasswordVisibliltyBtnValueOverflow?: boolean;
+
+  /**
    * In `ItemCounterComponenet`, Remove button no longer lose focus after activating when count is 2.
    * Add button no longer lose focus after activating when count is `max - 1`.
    */
@@ -598,6 +603,16 @@ export interface FeatureTogglesInterface {
    * store's opening hours has an acceptable contrast ratio in a default theme
    */
   a11yViewHoursButtonIconContrast?: boolean;
+
+  /**
+   * `Checkout` add a landmarks to content representing steps
+   */
+  a11yCheckoutStepsLandmarks?: boolean;
+
+  /**
+   * In `CartItemListComponent`, change QTY into Quantity.
+   */
+  a11yQTY2Quantity?: boolean;
 
   /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
@@ -771,9 +786,12 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yDialogTriggerRefocus: false,
   a11yAddToWishlistFocus: false,
   a11ySearchBoxFocusOnEscape: false,
+  a11yPasswordVisibliltyBtnValueOverflow: false,
   a11yItemCounterFocus: false,
   a11yScrollToReviewByShowReview: false,
   a11yViewHoursButtonIconContrast: false,
+  a11yCheckoutStepsLandmarks: false,
+  a11yQTY2Quantity: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
