@@ -44,6 +44,13 @@ describe('Kayboard navigation', () => {
 
   context('Facet component', () => {
     beforeEach(() => {
+      // TODO: No longer needed to toggle a11yTabComponent feature when set to true
+      // by default.
+      cy.cxConfig({
+        features: {
+          a11yTabComponent: true,
+        },
+      });
       cy.visit('/Brands/all/c/brands');
       cy.get('cx-facet-list button.tab-btn').first().as('facetHeader');
       cy.get('cx-facet a').first().as('firstFacetOption');
