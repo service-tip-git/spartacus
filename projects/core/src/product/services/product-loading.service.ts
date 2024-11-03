@@ -83,6 +83,9 @@ export class ProductLoadingService {
     }
   }
 
+  protected isInvalidProductCode(productCode: string): boolean {
+    return ['__proto__', 'constructor', 'prototype'].includes(productCode);
+  }
   protected getScopesIndex(scopes: string[]): string {
     return scopes.join('ɵ');
   }
