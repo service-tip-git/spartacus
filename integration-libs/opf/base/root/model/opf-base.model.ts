@@ -11,6 +11,7 @@ export interface ActiveConfiguration {
   providerType?: OpfPaymentProviderType;
   displayName?: string;
   acquirerCountryCode?: string;
+  logoUrl?: string;
 }
 
 export interface OpfDynamicScript {

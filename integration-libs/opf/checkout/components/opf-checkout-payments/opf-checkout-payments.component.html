@@ -33,6 +33,12 @@
       >
         <div class="cx-payment-type">
           {{ configuration.displayName }}
+          <img
+            *ngIf="configuration?.logoUrl"
+            [src]="configuration.logoUrl"
+            [alt]="configuration.displayName"
+            class="cx-payment-logo"
+          />
         </div>
       </label>
       <cx-opf-checkout-payment-wrapper
