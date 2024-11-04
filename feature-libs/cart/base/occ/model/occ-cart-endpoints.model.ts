@@ -76,6 +76,10 @@ export interface CartOccEndpoints {
    * Generates an access code for a cart
    */
   cartAccessCode?: string | OccEndpoint;
+  /**
+   * Creates a guest user, and assigns the user to the cart
+   */
+  cartGuestUser?: string | OccEndpoint;
 }
 
 declare module '@spartacus/core' {

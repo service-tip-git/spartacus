@@ -8,7 +8,9 @@ import { inject, Injectable } from '@angular/core';
 import {
   ActiveCartFacade,
   Cart,
+  CartGuestUserFacade,
   DeliveryMode,
+  MultiCartFacade,
 } from '@spartacus/cart/base/root';
 import {
   CheckoutBillingAddressFacade,
@@ -17,10 +19,12 @@ import {
 } from '@spartacus/checkout/base/root';
 import {
   Address,
+  AuthService,
   BaseSiteService,
   QueryState,
   RoutingService,
   UserAddressService,
+  UserIdService,
 } from '@spartacus/core';
 import { OpfGlobalMessageService } from '@spartacus/opf/base/root';
 import {
@@ -29,8 +33,8 @@ import {
   OpfQuickBuyDeliveryType,
   OpfQuickBuyLocation,
 } from '@spartacus/opf/quick-buy/root';
-import { Observable } from 'rxjs';
-import { filter, map, switchMap, take } from 'rxjs/operators';
+import { combineLatest, Observable, of } from 'rxjs';
+import { filter, map, switchMap, take, tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
@@ -45,6 +49,10 @@ export class OpfQuickBuyTransactionService {
   protected checkoutBillingAddressFacade = inject(CheckoutBillingAddressFacade);
   protected userAddressService = inject(UserAddressService);
   protected opfGlobalMessageService = inject(OpfGlobalMessageService);
+  protected cartGuestUserFacade = inject(CartGuestUserFacade);
+  protected authService = inject(AuthService);
+  protected userIdService = inject(UserIdService);
+  protected multiCartFacade = inject(MultiCartFacade);
 
   getTransactionDeliveryType(): Observable<OpfQuickBuyDeliveryType> {
     return this.activeCartFacade.hasDeliveryItems().pipe(
@@ -173,5 +181,38 @@ export class OpfQuickBuyTransactionService {
     addrIds.forEach((addrId) => {
       this.userAddressService.deleteUserAddress(addrId);
     });
+  }
+
+  createCartGuestUser(): Observable<boolean> {
+    return combineLatest([
+      this.userIdService.takeUserId(),
+      this.activeCartFacade.takeActiveCartId(),
+    ]).pipe(
+      take(1),
+      switchMap(([userId, cartId]) => {
+        return this.cartGuestUserFacade
+          .createCartGuestUser(userId, cartId)
+          .pipe(
+            tap(() => this.multiCartFacade.reloadCart(cartId)),
+            map(() => true)
+          );
+      })
+    );
+  }
+
+  handleCartGuestUser(): Observable<boolean> {
+    return combineLatest([
+      this.authService.isUserLoggedIn(),
+      this.activeCartFacade.isGuestCart(),
+    ]).pipe(
+      take(1),
+      switchMap(([isUserLoggedIn, isGuestCart]) => {
+        if (isUserLoggedIn || isGuestCart) {
+          return of(true);
+        }
+
+        return this.createCartGuestUser();
+      })
+    );
   }
 }

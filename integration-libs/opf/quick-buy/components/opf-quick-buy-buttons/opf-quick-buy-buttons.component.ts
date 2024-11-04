@@ -23,15 +23,12 @@ import { OpfQuickBuyButtonsService } from './opf-quick-buy-buttons.service';
 export class OpfQuickBuyButtonsComponent implements OnInit {
   protected opfQuickBuyButtonsService = inject(OpfQuickBuyButtonsService);
   protected paymentGatewayConfig$: Observable<ActiveConfiguration>;
-  protected isUserGuestOrLoggedIn$: Observable<boolean>;
 
   PAYMENT_METHODS = OpfProviderType;
 
   ngOnInit(): void {
     this.paymentGatewayConfig$ =
       this.opfQuickBuyButtonsService.getPaymentGatewayConfiguration();
-    this.isUserGuestOrLoggedIn$ =
-      this.opfQuickBuyButtonsService.isUserGuestOrLoggedIn();
   }
 
   isPaymentMethodEnabled(
