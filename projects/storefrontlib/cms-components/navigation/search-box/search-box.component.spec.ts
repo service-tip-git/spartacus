@@ -1,4 +1,3 @@
-import { Component, Input, Pipe, PipeTransform } from '@angular/core';
 import {
   ComponentFixture,
   fakeAsync,
@@ -6,6 +5,13 @@ import {
   tick,
   waitForAsync,
 } from '@angular/core/testing';
+import {
+  Component,
+  Directive,
+  Input,
+  Pipe,
+  PipeTransform,
+} from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -34,6 +40,8 @@ import {
   SearchBoxSuggestionSelectedEvent,
 } from './search-box.events';
 import { SearchResults } from './search-box.model';
+import { MockFeatureDirective } from 'projects/storefrontlib/shared/test/mock-feature-directive';
+import { OutletDirective } from '@spartacus/storefront';
 
 const mockSearchBoxComponentData: CmsSearchBoxComponent = {
   uid: '001',
@@ -90,6 +98,24 @@ class MockMediaComponent {
   @Input() alt;
 }
 
+@Directive({
+  selector: '[cxOutlet]',
+})
+class MockOutletDirective implements Partial<OutletDirective> {
+  @Input() cxOutlet: string;
+  @Input() cxOutletContext: string;
+}
+
+@Component({
+  selector: 'cx-carousel',
+  template: ``,
+})
+class MockCarouselComponent {
+  @Input() items: any;
+  @Input() itemWidth: any;
+  @Input() template: any;
+  @Input() hideIndicators: any;
+}
 const mockRouterState: RouterState = {
   nextState: undefined,
   state: {
@@ -168,10 +194,13 @@ describe('SearchBoxComponent', () => {
       ],
       declarations: [
         SearchBoxComponent,
+        MockFeatureDirective,
         MockUrlPipe,
         MockHighlightPipe,
         MockCxIconComponent,
         MockMediaComponent,
+        MockOutletDirective,
+        MockCarouselComponent,
       ],
       providers: [
         {
@@ -256,8 +285,8 @@ describe('SearchBoxComponent', () => {
     });
 
     it('should launch the search page, given it is not an empty search', () => {
-      const input = fixture.debugElement.query(By.css('.searchbox > input'));
-
+      fixture.detectChanges();
+      const input = fixture.debugElement.query(By.css('.searchbox input'));
       input.nativeElement.value = PRODUCT_SEARCH_STRING;
       input.triggerEventHandler('keydown.enter', {});
 
@@ -267,7 +296,8 @@ describe('SearchBoxComponent', () => {
     });
 
     it('should not launch search page on empty search', () => {
-      const input = fixture.debugElement.query(By.css('.searchbox > input'));
+      fixture.detectChanges();
+      const input = fixture.debugElement.query(By.css('.searchbox input'));
       input.triggerEventHandler('keydown.enter', {});
 
       fixture.detectChanges();
@@ -307,7 +337,7 @@ describe('SearchBoxComponent', () => {
         selectedSuggestion: 'laptop',
         searchSuggestions: [{ value: 'laptop' }, { value: 'camileo' }],
       };
-      searchBoxComponent.searchInput = { nativeElement: inputElement };
+      searchBoxComponent.searchInputEl = { nativeElement: inputElement };
       // Simulate typing a query
       searchBoxComponent.search('laptop');
 
@@ -363,6 +393,7 @@ describe('SearchBoxComponent', () => {
 
     describe('UI tests', () => {
       it('should contain an input text field', () => {
+        fixture.detectChanges();
         expect(fixture.debugElement.query(By.css('input'))).not.toBeNull();
       });
 
@@ -392,7 +423,7 @@ describe('SearchBoxComponent', () => {
         searchBoxComponent.queryText = 'something';
         fixture.detectChanges();
         const box = fixture.debugElement.query(
-          By.css('.searchbox > input')
+          By.css('.searchbox input')
         ).nativeElement;
         box.select();
         fixture.debugElement.query(By.css('.reset')).nativeElement.click();
@@ -413,7 +444,7 @@ describe('SearchBoxComponent', () => {
         fixture.detectChanges();
         searchBoxComponent.searchBoxActive = true;
         const mockSearchInput = fixture.debugElement.query(
-          By.css('.searchbox > input')
+          By.css('.searchbox input')
         ).nativeElement;
         spyOn(mockSearchInput, 'focus');
 
@@ -471,7 +502,8 @@ describe('SearchBoxComponent', () => {
     });
 
     it('should contain chosen word from the dropdown', () => {
-      const input = fixture.debugElement.query(By.css('.searchbox > input'));
+      fixture.detectChanges();
+      const input = fixture.debugElement.query(By.css('.searchbox input'));
       mockRouterState.state.context = {
         id: 'search',
         type: PageType.CONTENT_PAGE,
@@ -485,11 +517,13 @@ describe('SearchBoxComponent', () => {
     });
 
     it('should not contain searched word when navigating to another page', () => {
-      const input = fixture.debugElement.query(By.css('.searchbox > input'));
+      fixture.detectChanges();
+      const input = fixture.debugElement.query(By.css('.searchbox input'));
       mockRouterState.state.context = null;
       input.nativeElement.value = PRODUCT_SEARCH_STRING;
       input.triggerEventHandler('keydown.enter', {});
       routerState$.next(mockRouterState);
+
       fixture.detectChanges();
       expect(searchBoxComponent.chosenWord).toEqual('');
       expect(input.nativeElement.value).toEqual('');
@@ -502,7 +536,7 @@ describe('SearchBoxComponent', () => {
 
         // Focus should begin on searchbox input
         const inputSearchBox: HTMLElement = fixture.debugElement.query(
-          By.css('.searchbox > input')
+          By.css('.searchbox input')
         ).nativeElement;
         inputSearchBox.focus();
         expect(inputSearchBox).toBe(getFocusedElement());
