@@ -491,6 +491,11 @@ export interface FeatureTogglesInterface {
   a11yFacetsDialogFocusHandling?: boolean;
 
   /**
+   * `StorefrontComponent`: Prevents header links from wrapping on smaller screen sizes
+   */
+  headerLayoutForSmallerViewports?: boolean;
+
+  /**
    * Enables radio group fieldset for 'CheckoutDeliveryModeComponent' form
    * and further improves its screen reader readout.
    */
@@ -774,6 +779,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yNotificationsOnConsentChange: false,
   a11yDisabledCouponAndQuickOrderActionButtonsInsteadOfRequiredFields: false,
   a11yFacetsDialogFocusHandling: false,
+  headerLayoutForSmallerViewports: false,
   a11yStoreFinderAlerts: false,
   a11yFormErrorMuteIcon: false,
   a11yCxMessageFocus: false,
