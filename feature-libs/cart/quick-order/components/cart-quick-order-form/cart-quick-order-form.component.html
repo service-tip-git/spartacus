@@ -5,24 +5,21 @@
   <div class="form-group">
     <form (ngSubmit)="applyQuickOrder()" [formGroup]="quickOrderForm">
       <div class="cx-cart-quick-order-form-container">
+        <!-- TODO: (CXSPA-7479) Remove feature flags next major -->
+        <ng-container
+          *cxFeature="
+            '!a11yDisabledCouponAndQuickOrderActionButtonsInsteadOfRequiredFields'
+          "
+        >
+          <!-- TODO: (CXSPA-5953) Remove feature flags next major -->
+          <p *cxFeature="'a11yRequiredAsterisks'" class="form-legend">
+            {{ 'formLegend.required' | cxTranslate }}
+          </p>
+        </ng-container>
         <span class="cx-cart-quick-order-form-productID">
           <label class="cx-cart-quick-order-form-label">
             {{ 'quickOrderCartForm.productCodeLabel' | cxTranslate }}
-            <!-- TODO: (CXSPA-7479) Remove feature flags next major -->
-            <ng-container
-              *cxFeature="
-                '!a11yDisabledCouponAndQuickOrderActionButtonsInsteadOfRequiredFields'
-              "
-            >
-              <!-- TODO: (CXSPA-5953) Remove feature flags next major -->
-              <abbr
-                *cxFeature="'a11yRequiredAsterisks'"
-                aria-hidden="true"
-                class="text-decoration-none"
-                title="{{ 'common.required' | cxTranslate }}"
-                >*</abbr
-              >
-            </ng-container>
+            <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
           </label>
 
           <!-- TODO: (CXSPA-7479) Remove feature flags next major -->
@@ -72,6 +69,7 @@
             class="cx-cart-quick-order-form-label"
           >
             {{ 'quickOrderCartForm.quantityFullLabel' | cxTranslate }}
+            <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
           </label>
 
           <label
@@ -79,6 +77,7 @@
             class="cx-cart-quick-order-form-label"
           >
             {{ 'quickOrderCartForm.quantityLabel' | cxTranslate }}
+            <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
           </label>
 
           <!-- TODO: (CXSPA-7479) Remove feature flags next major -->
@@ -180,3 +179,21 @@
     </form>
   </div>
 </ng-container>
+
+<ng-template #requiredAsterisk>
+  <!-- TODO: (CXSPA-7479) Remove feature flags next major -->
+  <ng-container
+    *cxFeature="
+      '!a11yDisabledCouponAndQuickOrderActionButtonsInsteadOfRequiredFields'
+    "
+  >
+    <!-- TODO: (CXSPA-5953) Remove feature flags next major -->
+    <abbr
+      *cxFeature="'a11yRequiredAsterisks'"
+      class="text-decoration-none"
+      aria-hidden="true"
+      title="{{ 'common.required' | cxTranslate }}"
+      >*</abbr
+    >
+  </ng-container>
+</ng-template>
