@@ -452,7 +452,7 @@ describe('Navigation UI Component', () => {
     it('return focus to node header after navigating back', fakeAsync(() => {
       const mockNode = document.createElement('li');
       const mockHeader = document.createElement('a');
-      mockHeader.setAttribute('tabindex', '0');
+      mockHeader.setAttribute('aria-haspopup', 'true');
       mockNode.appendChild(mockHeader);
       navigationComponent['openNodes'] = [mockNode];
       spyOn(mockHeader, 'focus');
