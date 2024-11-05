@@ -272,32 +272,36 @@ export class OpfGooglePayService {
   handleActiveCartTransaction(): Observable<Cart> {
     this.transactionDetails.context = OpfQuickBuyLocation.CART;
 
-    return forkJoin({
-      deliveryInfo:
-        this.opfQuickBuyTransactionService.getTransactionDeliveryInfo(),
-      merchantName: this.opfQuickBuyTransactionService.getMerchantName(),
-    }).pipe(
-      switchMap(({ deliveryInfo, merchantName }) => {
-        this.transactionDetails.deliveryInfo = deliveryInfo;
-        this.setGooglePaymentRequestConfig(deliveryInfo.type, merchantName);
+    return this.opfQuickBuyTransactionService.handleCartGuestUser().pipe(
+      switchMap(() => {
+        return forkJoin({
+          deliveryInfo:
+            this.opfQuickBuyTransactionService.getTransactionDeliveryInfo(),
+          merchantName: this.opfQuickBuyTransactionService.getMerchantName(),
+        }).pipe(
+          switchMap(({ deliveryInfo, merchantName }) => {
+            this.transactionDetails.deliveryInfo = deliveryInfo;
+            this.setGooglePaymentRequestConfig(deliveryInfo.type, merchantName);
 
-        return this.setDeliveryMode(undefined, deliveryInfo.type).pipe(
-          switchMap(() =>
-            this.opfQuickBuyTransactionService.getCurrentCart().pipe(
-              take(1),
-              tap((cart: Cart) => {
-                this.transactionDetails.cart = cart;
-                this.updateTransactionInfo({
-                  totalPrice: `${cart.totalPrice?.value}`,
-                  currencyCode:
-                    cart.totalPrice?.currencyIso ||
-                    this.initialTransactionInfo.currencyCode,
-                  totalPriceStatus:
-                    this.initialTransactionInfo.totalPriceStatus,
-                });
-              })
-            )
-          )
+            return this.setDeliveryMode(undefined, deliveryInfo.type).pipe(
+              switchMap(() =>
+                this.opfQuickBuyTransactionService.getCurrentCart().pipe(
+                  take(1),
+                  tap((cart: Cart) => {
+                    this.transactionDetails.cart = cart;
+                    this.updateTransactionInfo({
+                      totalPrice: `${cart.totalPrice?.value}`,
+                      currencyCode:
+                        cart.totalPrice?.currencyIso ||
+                        this.initialTransactionInfo.currencyCode,
+                      totalPriceStatus:
+                        this.initialTransactionInfo.totalPriceStatus,
+                    });
+                  })
+                )
+              )
+            );
+          })
         );
       })
     );

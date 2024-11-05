@@ -73,6 +73,34 @@ describe('OpfGlobalFunctionsService', () => {
     expect(service).toBeTruthy();
   });
 
+  describe('Global Functions in SSR', () => {
+    const mockPaymentSessionId = 'mockSessionId';
+    let windowOpf: any;
+
+    it('should not register global functions for CHECKOUT in SSR', () => {
+      spyOn<any>(service, 'registerSubmit').and.callThrough();
+      spyOn(windowRef, 'isBrowser').and.returnValue(false);
+      service.registerGlobalFunctions({
+        domain: GlobalFunctionsDomain.CHECKOUT,
+        paymentSessionId: mockPaymentSessionId,
+        vcr: {} as ViewContainerRef,
+      });
+      expect(service['registerSubmit']).not.toHaveBeenCalled();
+    });
+
+    it('should not remove global functions for CHECKOUT in SSR', () => {
+      service.registerGlobalFunctions({
+        domain: GlobalFunctionsDomain.CHECKOUT,
+        paymentSessionId: mockPaymentSessionId,
+        vcr: {} as ViewContainerRef,
+      });
+      windowOpf = windowRef.nativeWindow['Opf'];
+      spyOn(windowRef, 'isBrowser').and.returnValue(false);
+      service.removeGlobalFunctions(GlobalFunctionsDomain.CHECKOUT);
+      expect(windowOpf['payments']['checkout']['submit']).toBeDefined();
+    });
+  });
+
   describe('should register global functions for CHECKOUT domain', () => {
     const mockPaymentSessionId = 'mockSessionId';
     let windowOpf: any;

@@ -9,6 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import {
   ActiveCartFacade,
   Cart,
+  CartGuestUserFacade,
   DeliveryMode,
   MultiCartFacade,
 } from '@spartacus/cart/base/root';
@@ -19,6 +20,7 @@ import {
 } from '@spartacus/checkout/base/root';
 import {
   Address,
+  AuthService,
   BaseSiteService,
   EventService,
   RouterState,
@@ -47,6 +49,8 @@ describe('OpfQuickBuyTransactionService', () => {
   let baseSiteService: jasmine.SpyObj<BaseSiteService>;
   let routingService: jasmine.SpyObj<RoutingService>;
   let opfGlobalMessageService: jasmine.SpyObj<OpfGlobalMessageService>;
+  let authService: jasmine.SpyObj<AuthService>;
+  let cartGuestUserFacade: jasmine.SpyObj<CartGuestUserFacade>;
 
   beforeEach(() => {
     activeCartFacade = jasmine.createSpyObj('ActiveCartFacade', [
@@ -57,6 +61,7 @@ describe('OpfQuickBuyTransactionService', () => {
       'deleteCart',
       'takeActiveCartId',
       'getActiveCartId',
+      'isGuestCart',
     ]);
     checkoutDeliveryModesFacade = jasmine.createSpyObj(
       'CheckoutDeliveryModesFacade',
@@ -83,6 +88,7 @@ describe('OpfQuickBuyTransactionService', () => {
       'getEntry',
       'removeEntry',
       'updateEntry',
+      'reloadCart',
     ]);
     userIdService = jasmine.createSpyObj('UserIdService', [
       'getUserId',
@@ -97,6 +103,10 @@ describe('OpfQuickBuyTransactionService', () => {
     routingService = jasmine.createSpyObj('RoutingService', ['getRouterState']);
     opfGlobalMessageService = jasmine.createSpyObj('OpfGlobalMessageService', [
       'disableGlobalMessage',
+    ]);
+    authService = jasmine.createSpyObj('AuthService', ['isUserLoggedIn']);
+    cartGuestUserFacade = jasmine.createSpyObj('CartGuestUserFacade', [
+      'createCartGuestUser',
     ]);
 
     TestBed.configureTestingModule({
@@ -123,6 +133,8 @@ describe('OpfQuickBuyTransactionService', () => {
         { provide: BaseSiteService, useValue: baseSiteService },
         { provide: RoutingService, useValue: routingService },
         { provide: OpfGlobalMessageService, useValue: opfGlobalMessageService },
+        { provide: AuthService, useValue: authService },
+        { provide: CartGuestUserFacade, useValue: cartGuestUserFacade },
       ],
     });
 
@@ -466,6 +478,50 @@ describe('OpfQuickBuyTransactionService', () => {
       service.getTransactionLocationContext().subscribe((context) => {
         expect(context).toBe(OpfQuickBuyLocation.CART);
       });
+    });
+  });
+
+  describe('createCartGuestUser', () => {
+    it('should call `createCartGuestUser` from `CartGuestUserFacade` with params', () => {
+      userIdService.takeUserId.and.returnValue(of('userId'));
+      activeCartFacade.takeActiveCartId.and.returnValue(of('cartId'));
+      multiCartFacade.reloadCart.and.returnValue();
+      cartGuestUserFacade.createCartGuestUser.and.returnValue(of({}));
+
+      service
+        .createCartGuestUser()
+        .subscribe((result) => {
+          expect(cartGuestUserFacade.createCartGuestUser).toHaveBeenCalledWith(
+            'userId',
+            'cartId'
+          );
+          expect(result).toBe(true);
+          expect(multiCartFacade.reloadCart).toHaveBeenCalled();
+        })
+        .unsubscribe();
+    });
+  });
+
+  describe('handleCartGuestUser', () => {
+    it('should call `createCartGuestUser` if cart belongs to an anonymous user', () => {
+      authService.isUserLoggedIn.and.returnValue(of(false));
+      activeCartFacade.isGuestCart.and.returnValue(of(false));
+      userIdService.takeUserId.and.returnValue(of('userId'));
+      activeCartFacade.takeActiveCartId.and.returnValue(of('cartId'));
+      multiCartFacade.reloadCart.and.returnValue();
+      cartGuestUserFacade.createCartGuestUser.and.returnValue(of({}));
+
+      service
+        .handleCartGuestUser()
+        .subscribe((result) => {
+          expect(cartGuestUserFacade.createCartGuestUser).toHaveBeenCalledWith(
+            'userId',
+            'cartId'
+          );
+          expect(result).toBe(true);
+          expect(multiCartFacade.reloadCart).toHaveBeenCalled();
+        })
+        .unsubscribe();
     });
   });
 });

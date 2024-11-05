@@ -32,7 +32,6 @@ describe('OpfQuickBuyButtonsComponent', () => {
   beforeEach(async () => {
     opfQuickBuyButtonsServiceMock = jasmine.createSpyObj('OpfQuickBuyService', [
       'getPaymentGatewayConfiguration',
-      'isUserGuestOrLoggedIn',
       'isQuickBuyProviderEnabled',
     ]);
 
@@ -55,7 +54,6 @@ describe('OpfQuickBuyButtonsComponent', () => {
     opfQuickBuyButtonsServiceMock.getPaymentGatewayConfiguration.and.returnValue(
       of({})
     );
-    opfQuickBuyButtonsServiceMock.isUserGuestOrLoggedIn.and.returnValue(of({}));
 
     fixture.detectChanges();
   });
@@ -67,12 +65,6 @@ describe('OpfQuickBuyButtonsComponent', () => {
   it('should call getPaymentGatewayConfiguration on init', () => {
     expect(
       opfQuickBuyButtonsServiceMock.getPaymentGatewayConfiguration
-    ).toHaveBeenCalled();
-  });
-
-  it('should call isUserGuestOrLoggedIn on init', () => {
-    expect(
-      opfQuickBuyButtonsServiceMock.isUserGuestOrLoggedIn
     ).toHaveBeenCalled();
   });
 

@@ -24,7 +24,6 @@ import { OpfCtaScriptsService } from '../opf-cta-scripts/opf-cta-scripts.service
 export class OpfCtaElementComponent implements AfterViewInit {
   protected sanitizer = inject(DomSanitizer);
   protected opfCtaScriptsService = inject(OpfCtaScriptsService);
-  loader = true;
   protected windowRef = inject(WindowRef);
 
   @Input() ctaScriptHtml: OpfDynamicScript;
@@ -37,14 +36,13 @@ export class OpfCtaElementComponent implements AfterViewInit {
       this.opfCtaScriptsService.loadAndRunScript(this.ctaScriptHtml);
   }
   renderHtml(html: string): SafeHtml {
-    const isSSR = !this.windowRef.isBrowser();
-    console.log('renderHtml isSSR', isSSR);
-
-    return this.sanitizer.bypassSecurityTrustHtml(
-      this.windowRef.isBrowser() ? this.removeScriptTags(html) : html
-    );
+    // Display sanitized html in SSR for security concerns
+    return this.windowRef.isBrowser()
+      ? this.sanitizer.bypassSecurityTrustHtml(this.removeScriptTags(html))
+      : html;
   }
 
+  // Removing script tags on FE until BE fix: CXSPA-8572
   protected removeScriptTags(html: string) {
     const element = new DOMParser().parseFromString(html, 'text/html');
     Array.from(element.getElementsByTagName('script')).forEach((script) => {

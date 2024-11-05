@@ -14,6 +14,10 @@
 
     input:disabled + .form-check-label {
       color: var(--cx-color-medium);
+
+      .cx-payment-logo {
+        opacity: 0.3;
+      }
     }
 
     input[type='radio'] {
@@ -30,6 +34,11 @@
       @include media-breakpoint-down(md) {
         display: none;
       }
+    }
+
+    .cx-payment-logo {
+      max-height: 30px;
+      margin: -2px 0 0 4px;
     }
   }
 }

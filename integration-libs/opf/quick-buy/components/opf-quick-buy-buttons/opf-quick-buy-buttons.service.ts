@@ -4,9 +4,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable, inject } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
+import {
+  ActiveCartFacade,
+  CartGuestUserFacade,
+  MultiCartFacade,
+} from '@spartacus/cart/base/root';
 import { CheckoutConfig } from '@spartacus/checkout/base/root';
-import { AuthService, BaseSiteService } from '@spartacus/core';
+import { AuthService, UserIdService } from '@spartacus/core';
 import {
   ActiveConfiguration,
   OpfBaseFacade,
@@ -16,15 +21,18 @@ import {
   OpfProviderType,
   OpfQuickBuyDigitalWallet,
 } from '@spartacus/opf/quick-buy/root';
-import { Observable, of } from 'rxjs';
-import { map, switchMap, take } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class OpfQuickBuyButtonsService {
   protected opfBaseFacade = inject(OpfBaseFacade);
   protected checkoutConfig = inject(CheckoutConfig);
-  protected baseSiteService = inject(BaseSiteService);
   protected authService = inject(AuthService);
+  protected userIdService = inject(UserIdService);
+  protected cartGuestUserFacade = inject(CartGuestUserFacade);
+  protected activeCartFacade = inject(ActiveCartFacade);
+  protected multiCartFacade = inject(MultiCartFacade);
 
   getPaymentGatewayConfiguration(): Observable<ActiveConfiguration> {
     return this.opfBaseFacade
@@ -68,18 +76,5 @@ export class OpfQuickBuyButtonsService {
     }
 
     return isEnabled;
-  }
-
-  isUserGuestOrLoggedIn(): Observable<boolean> {
-    return this.baseSiteService.get().pipe(
-      take(1),
-      map((baseSite) => baseSite?.baseStore?.paymentProvider),
-      switchMap((paymentProviderName) => {
-        return paymentProviderName &&
-          this.checkoutConfig.checkout?.flows?.[paymentProviderName]?.guest
-          ? of(true)
-          : this.authService.isUserLoggedIn();
-      })
-    );
   }
 }

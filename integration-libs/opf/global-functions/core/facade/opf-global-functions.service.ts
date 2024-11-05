@@ -54,6 +54,10 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
     vcr,
     paramsMap,
   }: GlobalFunctionsInput): void {
+    // SSR not supported
+    if (!this.winRef.isBrowser()) {
+      return;
+    }
     switch (domain) {
       case GlobalFunctionsDomain.CHECKOUT:
         this.registerSubmit(domain, paymentSessionId, vcr);
@@ -75,6 +79,10 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
   }
 
   removeGlobalFunctions(domain: GlobalFunctionsDomain): void {
+    // SSR not supported
+    if (!this.winRef.isBrowser()) {
+      return;
+    }
     const window = this.winRef.nativeWindow as any;
     if (window?.Opf?.payments[domain]) {
       window.Opf.payments[domain] = undefined;
