@@ -143,16 +143,6 @@ export class OpfResourceLoaderService extends ScriptLoader {
     }
   }
 
-  clearAllProviderResources() {
-    this.document
-      .querySelectorAll(`[${this.OPF_RESOURCE_ATTRIBUTE_KEY}]`)
-      .forEach((resource: undefined | HTMLLinkElement | HTMLScriptElement) => {
-        if (resource) {
-          resource.remove();
-        }
-      });
-  }
-
   loadProviderResources(
     scripts: OpfDynamicScriptResource[] = [],
     styles: OpfDynamicScriptResource[] = []

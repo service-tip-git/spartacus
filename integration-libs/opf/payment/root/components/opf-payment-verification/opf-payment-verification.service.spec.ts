@@ -470,12 +470,9 @@ describe('OpfPaymentVerificationService', () => {
 
   describe('removeResourcesAndGlobalFunctions', () => {
     it('should should call psp resource clearing service and remove global functions', (done) => {
-      service.removeResourcesAndGlobalFunctions();
+      service.removeGlobalFunctions();
       expect(
         globalFunctionsServiceMock.removeGlobalFunctions
-      ).toHaveBeenCalled();
-      expect(
-        opfResourceLoaderServiceMock.clearAllProviderResources
       ).toHaveBeenCalled();
       done();
     });

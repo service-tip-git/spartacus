@@ -82,7 +82,6 @@ export class OpfCtaScriptsService {
           this.opfDynamicCtaService.initiateEvents();
       }),
       finalize(() => {
-        this.opfResourceLoaderService.clearAllProviderResources();
         isDynamicCtaLocation && this.opfDynamicCtaService.stopEvents();
       })
     );

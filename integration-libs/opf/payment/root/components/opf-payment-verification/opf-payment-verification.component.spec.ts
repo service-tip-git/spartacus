@@ -35,7 +35,7 @@ describe('OpfPaymentVerificationComponent', () => {
         'verifyResultUrl',
         'goToPage',
         'displayError',
-        'removeResourcesAndGlobalFunctions',
+        'removeGlobalFunctions',
         'runHostedFieldsPattern',
         'runHostedPagePattern',
       ]
@@ -206,7 +206,7 @@ describe('OpfPaymentVerificationComponent', () => {
       component.ngOnDestroy();
 
       expect(
-        opfPaymentVerificationServiceMock.removeResourcesAndGlobalFunctions
+        opfPaymentVerificationServiceMock.removeGlobalFunctions
       ).toHaveBeenCalled();
     });
   });

@@ -343,24 +343,6 @@ describe('OpfResourceLoaderService', () => {
     }));
   });
 
-  describe('clearAllProviderResources', () => {
-    it('should clear all provider resources', () => {
-      opfResourceLoaderService = TestBed.inject(OpfResourceLoaderService);
-
-      const mockLinkElement = {
-        remove: jasmine.createSpy('remove'),
-      };
-
-      mockDocument.querySelectorAll = jasmine
-        .createSpy('querySelectorAll')
-        .and.returnValue([mockLinkElement]);
-
-      opfResourceLoaderService.clearAllProviderResources();
-
-      expect(mockLinkElement.remove).toHaveBeenCalled();
-    });
-  });
-
   describe('executeHtml', () => {
     it('should execute script from HTML correctly', () => {
       opfResourceLoaderService = TestBed.inject(OpfResourceLoaderService);

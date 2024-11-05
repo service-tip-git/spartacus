@@ -256,10 +256,9 @@ export class OpfPaymentVerificationService {
     });
   }
 
-  removeResourcesAndGlobalFunctions(): void {
+  removeGlobalFunctions(): void {
     this.globalFunctionsService.removeGlobalFunctions(
       GlobalFunctionsDomain.REDIRECT
     );
-    this.opfResourceLoaderService.clearAllProviderResources();
   }
 }
