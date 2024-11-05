@@ -19,7 +19,12 @@ import {
   CartType,
   OrderEntry,
 } from '@spartacus/cart/base/root';
-import { CmsService, FeatureConfigService, Page } from '@spartacus/core';
+import {
+  CmsService,
+  FeatureConfigService,
+  Page,
+  useFeatureStyles,
+} from '@spartacus/core';
 import {
   cartWithIdAndUserId,
   getProperty,
@@ -121,7 +126,7 @@ export class CartPickupOptionsContainerComponent implements OnInit, OnDestroy {
       cartType: CartType;
     }>
   ) {
-    // Intentional empty constructor
+    useFeatureStyles('a11yPickupOptionsTabs');
   }
 
   ngOnInit() {
@@ -310,7 +315,10 @@ export class CartPickupOptionsContainerComponent implements OnInit, OnDestroy {
           );
         });
 
-      if (!this.displayNameIsSet) {
+      if (
+        !this.featureConfigService.isEnabled('a11yPickupOptionsTabs') &&
+        !this.displayNameIsSet
+      ) {
         this.openDialog(event.triggerElement);
       }
     } else if (typeof event === 'string') {
@@ -344,7 +352,10 @@ export class CartPickupOptionsContainerComponent implements OnInit, OnDestroy {
           );
         });
 
-      if (!this.displayNameIsSet) {
+      if (
+        !this.featureConfigService.isEnabled('a11yPickupOptionsTabs') &&
+        !this.displayNameIsSet
+      ) {
         this.openDialog();
       }
     }
