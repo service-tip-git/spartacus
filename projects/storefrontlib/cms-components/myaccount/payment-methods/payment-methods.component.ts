@@ -83,7 +83,7 @@ export class PaymentMethodsComponent implements OnInit {
           }
           actions.push({ name: textDelete, event: 'edit' });
           const card: Card = {
-            role: 'region',
+            role: 'application',
             header: defaultPayment ? textDefaultPaymentMethod : undefined,
             textBold: accountHolderName,
             text: [cardNumber ?? '', textExpires],

@@ -301,7 +301,7 @@ export class CheckoutPaymentMethodComponent implements OnInit, OnDestroy {
     const isSelected = selected?.id === paymentDetails.id;
 
     return {
-      role: 'region',
+      role: 'application',
       title: paymentDetails.defaultPayment
         ? cardLabels.textDefaultPaymentMethod
         : '',
