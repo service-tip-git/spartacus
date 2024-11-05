@@ -18,7 +18,24 @@ import { Observable, of } from 'rxjs';
 import { ConfiguratorGroupsService } from '../../core/facade/configurator-groups.service';
 import { Configurator } from '../../core/model/configurator.model';
 import { ConfiguratorTestUtils } from '../../testing/configurator-test-utils';
-import { ConfiguratorStorefrontUtilsService } from './configurator-storefront-utdeils.service';
+import { ConfiguratorStorefrontUtilsService } from './configurator-storefront-utils.service';
+
+let mockedWindow: {
+  innerWidth?: number;
+  innerHeight?: number;
+  scrollY?: number;
+  scroll(): void;
+} = {
+  innerWidth: 1000,
+  innerHeight: 1000,
+  scrollY: 1000,
+  scroll() {},
+};
+class MockedWindowRef extends WindowRef {
+  get nativeWindow(): Window | undefined {
+    return this.isBrowser() ? <any>mockedWindow : undefined;
+  }
+}
 
 let isGroupVisited: Observable<boolean> = of(false);
 const testSelector = 'test-configurator-overview-menu';
