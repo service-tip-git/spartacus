@@ -20,11 +20,16 @@ export interface Tab {
   /**
    * Content to display in tab panel when open.
    */
-  content: TemplateRef<any>;
+  content?: TemplateRef<any>;
   /**
    * Identifies the index of the tab to set attributes by.
    */
   id?: number;
+  /**
+   * Disables the tabindex on the border element so that the border
+   * of the tab can no longer be focused.
+   */
+  disableBorderFocus?: boolean;
 }
 
 export interface TabConfig {
@@ -46,6 +51,11 @@ export interface TabConfig {
    * The indexes of tabs to have open initially.
    */
   openTabs?: number[];
+  /**
+   * Restricts the direction keys that can be used to navigate between tabs.
+   * When enabled, tab mode can only use left/right arrow keys and accordian mode up/down.
+   */
+  restrictDirectionKeys?: boolean;
 }
 
 export enum TAB_MODE {

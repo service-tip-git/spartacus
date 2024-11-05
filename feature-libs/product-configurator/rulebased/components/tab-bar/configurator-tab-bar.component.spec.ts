@@ -37,7 +37,7 @@ const PRODUCT_CODE = 'CONF_LAPTOP';
 const CONFIG_OVERVIEW_ROUTE = 'configureOverviewCPQCONFIGURATOR';
 const CONFIGURATOR_ROUTE = 'configureCPQCONFIGURATOR';
 
-const mockRouterState: any = {
+const mockRouterStateBase: any = {
   state: {
     params: {
       entityKey: PRODUCT_CODE,
@@ -47,6 +47,8 @@ const mockRouterState: any = {
     semanticRoute: CONFIG_OVERVIEW_ROUTE,
   },
 };
+
+let mockRouterState: any;
 
 let routerStateObservable: any = null;
 
@@ -104,6 +106,7 @@ describe('ConfigTabBarComponent', () => {
   let keyboardFocusService: KeyboardFocusService;
 
   beforeEach(waitForAsync(() => {
+    mockRouterState = structuredClone(mockRouterStateBase);
     mockRouterState.state.params.displayOnly = false;
 
     routerStateObservable = of(mockRouterState);
@@ -548,6 +551,7 @@ describe('ConfigTabBarComponent', () => {
     }));
 
     it('focusConfigurationInTabBar should call clear and focusFirstActiveElement', fakeAsync(() => {
+      mockRouterState.state.semanticRoute = CONFIGURATOR_ROUTE;
       component['focusConfigurationInTabBar']();
       tick(1); // needed because of delay(0) in focusConfigurationInTabBar
       expect(keyboardFocusService.clear).toHaveBeenCalledTimes(1);
@@ -579,6 +583,7 @@ describe('ConfigTabBarComponent', () => {
     }));
 
     it('navigateToConfiguration should navigate to configuration page and should call focusFirstActiveElement inside focusConfigurationInTabBar', fakeAsync(() => {
+      mockRouterState.state.semanticRoute = CONFIGURATOR_ROUTE;
       spyOn(routingService, 'go').and.callThrough();
       component['navigateToConfiguration'](mockRouterData);
       tick(1); // needed because of delay(0) in focusConfigurationInTabBar
