@@ -20,6 +20,15 @@ context('Product search product type flow', () => {
   viewportContext(['mobile', 'desktop'], () => {
     before(() => {
       cy.window().then((win) => win.sessionStorage.clear());
+
+      // TODO: No longer needed to toggle a11yTabComponent feature when set to true
+      // by default.
+      cy.cxConfig({
+        features: {
+          a11yTabComponent: true,
+        },
+      });
+
       cy.visit('/');
     });
 
@@ -63,7 +72,7 @@ context('Product search product type flow', () => {
         assertNumberOfProducts(`@${QUERY_ALIAS.SONY}`, `"${category}"`);
 
         // Filter by brand
-        clickFacet('Brand');
+        clickFacet('Brand', true);
 
         cy.wait(`@${QUERY_ALIAS.BRAND_PAGE}`)
           .its('response.statusCode')
@@ -80,7 +89,7 @@ context('Product search product type flow', () => {
         assertNumberOfProducts(`@${QUERY_ALIAS.SONY}`, `"${category}"`);
 
         // Filter by price
-        clickFacet('Price');
+        clickFacet('Price', true);
 
         cy.wait(`@${QUERY_ALIAS.PRICE_DSC_FILTER}`)
           .its('response.statusCode')
@@ -103,7 +112,7 @@ context('Product search product type flow', () => {
         );
 
         // Filter by category
-        clickFacet('Category');
+        clickFacet('Category', true);
 
         cy.wait(`@${QUERY_ALIAS.CATEGORY_FILTER}`)
           .its('response.statusCode')
@@ -125,7 +134,7 @@ context('Product search product type flow', () => {
           `"${category}"`
         );
 
-        clickFacet('Color');
+        clickFacet('Color', true);
 
         cy.wait(`@${QUERY_ALIAS.COLOR_FILTER}`)
           .its('response.statusCode')
