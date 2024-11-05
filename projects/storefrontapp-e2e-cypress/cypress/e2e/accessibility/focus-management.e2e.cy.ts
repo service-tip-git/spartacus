@@ -51,4 +51,21 @@ describe('Focus managment for a11y', () => {
       cy.contains('Select Store').should('have.focus');
     });
   });
+
+  context('Dropdown tigger, refocus after esc key press', () => {
+    it('Should refocus Sorting ng-select', () => {
+      cy.visit(`Brands/all/c/brands`);
+      cy.get('cx-sorting ng-select').first().as('sorting');
+      cy.get('@sorting').click().type('{esc}');
+      cy.get('@sorting').get('input').should('have.focus');
+    });
+
+    it('Should refocus MyAccount navigation-ui', () => {
+      cy.login('test-user-with-orders@sap.cx.com', 'pw4all');
+      cy.visit(`/`);
+      cy.get('button').contains('My Account').as('myAccount');
+      cy.get('@myAccount').click().type('{esc}');
+      cy.get('@myAccount').should('have.focus');
+    });
+  });
 });

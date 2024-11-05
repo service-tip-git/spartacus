@@ -51,6 +51,13 @@ export class NgSelectA11yDirective implements AfterViewInit {
     observer.observe(this.elementRef.nativeElement, { childList: true });
   }
 
+  @HostListener('keydown.escape')
+  onEscape() {
+    setTimeout(() => {
+      this.elementRef.nativeElement.querySelector('input').focus();
+    });
+  }
+
   @Optional() breakpointService = inject(BreakpointService, { optional: true });
 
   @Inject(PLATFORM_ID) protected platformId: Object;
