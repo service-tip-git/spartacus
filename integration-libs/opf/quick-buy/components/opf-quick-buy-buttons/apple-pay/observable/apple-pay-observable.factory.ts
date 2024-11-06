@@ -35,6 +35,7 @@ export class ApplePayObservableFactory {
       }
 
       const handleUnspecifiedError = (error: any): void => {
+        console.log('handleUnspecifiedError');
         session.abort();
         observer.error(error);
       };

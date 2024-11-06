@@ -345,6 +345,7 @@ export class ApplePayService {
           : { ...result, status: this.applePaySession.statusFailure };
       }),
       catchError((error) => {
+        console.log('in Catch error', error);
         return of({
           ...result,
           status: this.applePaySession.statusFailure,
