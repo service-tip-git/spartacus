@@ -379,6 +379,7 @@ if (environment.cpq) {
         a11yDialogTriggerRefocus: true,
         a11yAddToWishlistFocus: true,
         a11ySearchBoxFocusOnEscape: true,
+        a11yUpdatingCartNoNarration: true,
         a11yPasswordVisibliltyBtnValueOverflow: true,
         a11yItemCounterFocus: true,
         a11yScrollToReviewByShowReview: true,

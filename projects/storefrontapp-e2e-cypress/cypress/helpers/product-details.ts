@@ -120,7 +120,7 @@ export function verifyReviewForm() {
 export function verifyQuantityInCart() {
   addToCart();
   cy.get(atcModal).should('be.visible');
-  cy.get(atcModalTitle).should('contain', 'Item(s) added to your cart');
+  cy.get(atcModalTitle).should('contain', 'Item Added To Your Cart');
   cy.get(`${atcModalItem} .cx-name`).should('contain', PRODUCT_NAME);
   cy.get(atcModalCloseButton).click();
   cy.get(headerCartButton).should('contain', '1');
