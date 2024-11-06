@@ -25,7 +25,6 @@ import {
   ApplePaySessionVerificationResponse,
   ApplePayTransactionInput,
   OPF_QUICK_BUY_DEFAULT_MERCHANT_NAME,
-  OpfProviderType,
   OpfQuickBuyDeliveryType,
   OpfQuickBuyFacade,
   OpfQuickBuyLocation,
@@ -426,15 +425,16 @@ export class ApplePayService {
         const encryptedToken = btoa(
           JSON.stringify(applePayPayment.token.paymentData)
         );
-
-        return this.opfPaymentFacade.submitPayment({
-          additionalData: [],
-          paymentSessionId: '',
-          callbackArray: [() => {}, () => {}, () => {}],
-          paymentMethod: OpfProviderType.APPLE_PAY as any,
-          encryptedToken,
-          cartId,
-        });
+        console.log(cartId, encryptedToken);
+        return throwError(() => 'Error mock');
+        // return this.opfPaymentFacade.submitPayment({
+        //   additionalData: [],
+        //   paymentSessionId: '',
+        //   callbackArray: [() => {}, () => {}, () => {}],
+        //   paymentMethod: OpfProviderType.APPLE_PAY as any,
+        //   encryptedToken,
+        //   cartId,
+        // });
       })
     );
   }
