@@ -109,7 +109,9 @@ export class PickupOptionsComponent
           const openedTab = openTabs[0];
           const selectedOption =
             openedTab === PickupOptionsTabs.DELIVERY ? 'delivery' : 'pickup';
-          this.onPickupOptionChange(selectedOption);
+          if (this.selectedOption !== selectedOption) {
+            this.onPickupOptionChange(selectedOption);
+          }
         })
       );
     }
