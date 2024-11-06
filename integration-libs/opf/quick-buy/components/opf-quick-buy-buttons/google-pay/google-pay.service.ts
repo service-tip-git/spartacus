@@ -24,7 +24,7 @@ import {
   QuickBuyTransactionDetails,
 } from '@spartacus/opf/quick-buy/root';
 import { CurrentProductService } from '@spartacus/storefront';
-import { Observable, forkJoin, lastValueFrom, of } from 'rxjs';
+import { Observable, forkJoin, lastValueFrom, of, throwError } from 'rxjs';
 import { catchError, map, switchMap, take, tap } from 'rxjs/operators';
 import { OpfQuickBuyButtonsService } from '../opf-quick-buy-buttons.service';
 
@@ -359,6 +359,8 @@ export class OpfGooglePayService {
                   const encryptedToken = btoa(
                     paymentDataResponse.paymentMethodData.tokenizationData.token
                   );
+
+                  return throwError(() => 'mock error GP');
 
                   return this.opfPaymentFacade.submitPayment({
                     additionalData: [],
