@@ -18,6 +18,7 @@ export class CheckoutDeliveryAddressConnector {
     cartId: string,
     address: Address
   ): Observable<Address> {
+    console.log('createAddress: ', address);
     return this.adapter.createAddress(userId, cartId, address);
   }
 

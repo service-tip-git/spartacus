@@ -40,7 +40,7 @@ export class OccCheckoutDeliveryAddressAdapter
     address: Address
   ): Observable<Address> {
     address = this.converter.convert(address, ADDRESS_SERIALIZER);
-
+    console.log('createAddress2: ', address);
     return this.http
       .post<Occ.Address>(
         this.getCreateDeliveryAddressEndpoint(userId, cartId),
