@@ -208,12 +208,24 @@
         background-color: var(--cx-color-background);
       }
     }
+
     .indicators button[disabled] .cx-icon {
       color: var(--cx-color-dark);
       background-color: var(--cx-color-light);
       padding: 4px;
     }
+
+    .indicators button[aria-disabled='true'] {
+      .cx-icon {
+        color: var(--cx-color-dark);
+        background-color: var(--cx-color-light);
+        padding: 4px;
+      }
+    }
+
     .indicators button .cx-icon {
+      color: var(--cx-color-light);
+      background-color: var(--cx-color-dark);
       border: 3px solid var(--cx-color-dark);
     }
   }
