@@ -374,6 +374,10 @@ export class ApplePayService {
     if (!applePayPayment) {
       return of(false);
     }
+    console.log(
+      'placeOrderAfterPayment - applePayPayment: ',
+      JSON.stringify(applePayPayment)
+    );
     const { shippingContact, billingContact } = applePayPayment;
     if (!billingContact) {
       throw new Error('Error: empty billingContact');
