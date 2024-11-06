@@ -175,24 +175,28 @@ export class ApplePayService {
       countryCode,
     };
 
-    return forkJoin({
-      deliveryInfo:
-        this.opfQuickBuyTransactionService.getTransactionDeliveryInfo(),
-      merchantName: this.opfQuickBuyTransactionService.getMerchantName(),
-    }).pipe(
-      switchMap(({ deliveryInfo, merchantName }) => {
-        this.transactionDetails.total.label = merchantName;
-        initialRequest.total.label = merchantName;
-        this.transactionDetails.deliveryInfo = deliveryInfo;
+    return this.opfQuickBuyTransactionService.handleCartGuestUser().pipe(
+      switchMap(() => {
+        return forkJoin({
+          deliveryInfo:
+            this.opfQuickBuyTransactionService.getTransactionDeliveryInfo(),
+          merchantName: this.opfQuickBuyTransactionService.getMerchantName(),
+        }).pipe(
+          switchMap(({ deliveryInfo, merchantName }) => {
+            this.transactionDetails.total.label = merchantName;
+            initialRequest.total.label = merchantName;
+            this.transactionDetails.deliveryInfo = deliveryInfo;
 
-        return of(undefined);
-      }),
-      map((opfQuickBuyDeliveryInfo) => {
-        if (!opfQuickBuyDeliveryInfo) {
-          return initialRequest;
-        }
-        this.transactionDetails.deliveryInfo = opfQuickBuyDeliveryInfo;
-        return initialRequest;
+            return of(undefined);
+          }),
+          map((opfQuickBuyDeliveryInfo) => {
+            if (!opfQuickBuyDeliveryInfo) {
+              return initialRequest;
+            }
+            this.transactionDetails.deliveryInfo = opfQuickBuyDeliveryInfo;
+            return initialRequest;
+          })
+        );
       })
     );
   }
