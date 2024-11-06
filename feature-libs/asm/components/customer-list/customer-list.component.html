@@ -295,6 +295,7 @@
           occConfig?.backend?.occ?.baseUrl + customerEntry?.userAvatar?.url
         "
         alt="{{ 'asm.mainLogoLabel' | cxTranslate }}"
+        title="{{ 'asm.mainLogoLabel' | cxTranslate }}"
       />
       <div class="cx-avatar-text" *ngIf="!customerEntry?.userAvatar?.url">
         {{ getBadgeText(customerEntry) }}
@@ -373,6 +374,7 @@
       [type]="iconTypes.SEARCH"
       role="button"
       [attr.aria-label]="'storeFinder.searchNearestStores' | cxTranslate"
+      [title]="'storeFinder.searchNearestStores' | cxTranslate"
       class="search"
       (click)="searchCustomers()"
     ></cx-icon>

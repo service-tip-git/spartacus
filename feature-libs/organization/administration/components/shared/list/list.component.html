@@ -17,6 +17,7 @@
                 displayCloseButton: true,
               }"
               [attr.aria-label]="'organization.information' | cxTranslate"
+              [attr.title]="'organization.information' | cxTranslate"
             >
               <cx-icon [type]="iconTypes.INFO"> </cx-icon>
             </button>
@@ -34,6 +35,11 @@
                 displayCloseButton: true,
               }"
               [attr.aria-label]="
+                'organization.information'
+                  | cxTranslate
+                    : { title: viewType + '.groupName' | cxTranslate }
+              "
+              [attr.title]="
                 'organization.information'
                   | cxTranslate
                     : { title: viewType + '.groupName' | cxTranslate }
