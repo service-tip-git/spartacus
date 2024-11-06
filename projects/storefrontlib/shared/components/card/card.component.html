@@ -87,19 +87,37 @@
     </div>
     <!-- Edit Mode Actions -->
     <div *ngIf="editMode" class="row cx-card-body-delete">
-      <div class="col-md-6">
-        <button
-          [cxAtMessage]="'assistiveMessage.actionCancelled' | cxTranslate"
-          class="btn btn-block btn-secondary"
-          (click)="cancelEdit()"
-        >
-          {{ 'common.cancel' | cxTranslate }}
-        </button>
+      <div class="row col-md-12" *cxFeature="'a11yDeleteButton2First'">
+        <div class="col-md-6" [cxFocus]="{ autofocus: true }">
+          <button class="btn btn-block btn-primary" (click)="delete()">
+            {{ 'common.delete' | cxTranslate }}
+          </button>
+        </div>
+        <div class="col-md-6">
+          <button
+            [cxAtMessage]="'assistiveMessage.actionCancelled' | cxTranslate"
+            class="btn btn-block btn-secondary"
+            (click)="cancelEdit()"
+          >
+            {{ 'common.cancel' | cxTranslate }}
+          </button>
+        </div>
       </div>
-      <div class="col-md-6" [cxFocus]="{ autofocus: true }">
-        <button class="btn btn-block btn-primary" (click)="delete()">
-          {{ 'common.delete' | cxTranslate }}
-        </button>
+      <div class="row col-md-12" *cxFeature="'!a11yDeleteButton2First'">
+        <div class="col-md-6">
+          <button
+            [cxAtMessage]="'assistiveMessage.actionCancelled' | cxTranslate"
+            class="btn btn-block btn-secondary"
+            (click)="cancelEdit()"
+          >
+            {{ 'common.cancel' | cxTranslate }}
+          </button>
+        </div>
+        <div class="col-md-6" [cxFocus]="{ autofocus: true }">
+          <button class="btn btn-block btn-primary" (click)="delete()">
+            {{ 'common.delete' | cxTranslate }}
+          </button>
+        </div>
       </div>
     </div>
     <!-- Actions -->
