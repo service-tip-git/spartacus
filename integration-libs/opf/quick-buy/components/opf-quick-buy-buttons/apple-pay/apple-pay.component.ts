@@ -7,11 +7,10 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  inject,
   Input,
   OnInit,
-  inject,
 } from '@angular/core';
-import { Cart } from '@spartacus/cart/base/root';
 import { ActiveConfiguration } from '@spartacus/opf/base/root';
 import { OpfQuickBuyTransactionService } from '@spartacus/opf/quick-buy/core';
 import {
@@ -19,8 +18,8 @@ import {
   OpfQuickBuyDigitalWallet,
 } from '@spartacus/opf/quick-buy/root';
 import { CurrentProductService } from '@spartacus/storefront';
-import { Observable } from 'rxjs';
-import { switchMap, take, tap } from 'rxjs/operators';
+import { combineLatest, Observable } from 'rxjs';
+import { switchMap, take } from 'rxjs/operators';
 import { ApplePaySessionFactory } from './apple-pay-session';
 import { ApplePayService } from './apple-pay.service';
 
@@ -60,9 +59,12 @@ export class ApplePayComponent implements OnInit {
   }
 
   initActiveCartTransaction(): Observable<unknown> {
-    return this.opfQuickBuyTransactionService.getCurrentCart().pipe(
-      tap(() => this.opfQuickBuyTransactionService.handleCartGuestUser()),
-      switchMap((cart: Cart) => {
+    return combineLatest([
+      this.opfQuickBuyTransactionService.getCurrentCart(),
+      this.opfQuickBuyTransactionService.handleCartGuestUser(),
+    ]).pipe(
+      take(1),
+      switchMap(([cart, _]) => {
         return this.applePayService.start({
           cart: cart,
           countryCode: this.applePayDigitalWallet?.countryCode as string,
