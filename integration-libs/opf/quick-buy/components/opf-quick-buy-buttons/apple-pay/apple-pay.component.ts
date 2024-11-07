@@ -20,7 +20,7 @@ import {
 } from '@spartacus/opf/quick-buy/root';
 import { CurrentProductService } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
-import { switchMap, take } from 'rxjs/operators';
+import { switchMap, take, tap } from 'rxjs/operators';
 import { ApplePaySessionFactory } from './apple-pay-session';
 import { ApplePayService } from './apple-pay.service';
 
@@ -61,7 +61,7 @@ export class ApplePayComponent implements OnInit {
 
   initActiveCartTransaction(): Observable<unknown> {
     return this.opfQuickBuyTransactionService.getCurrentCart().pipe(
-      take(1),
+      tap(() => this.opfQuickBuyTransactionService.handleCartGuestUser()),
       switchMap((cart: Cart) => {
         return this.applePayService.start({
           cart: cart,
