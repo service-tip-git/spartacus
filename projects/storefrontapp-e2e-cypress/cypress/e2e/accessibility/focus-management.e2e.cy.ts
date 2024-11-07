@@ -37,6 +37,7 @@ describe('Focus managment for a11y', () => {
   context('Pick up in store modal', () => {
     it('Should re-focus the element triggering the modal on PDP after it closes', () => {
       cy.visit(`/product/266685`);
+      cy.get('cx-pickup-options button[role=tab]').eq(1).click();
       cy.contains('Select Store').click();
       cy.get('[aria-label="Close"]').click();
       cy.contains('Select Store').should('have.focus');
@@ -46,6 +47,7 @@ describe('Focus managment for a11y', () => {
       cy.visit(`/product/266685`);
       cart.addProductAsAnonymous();
       cy.visit('/cart');
+      cy.get('cx-pickup-options button[role=tab]').eq(1).click();
       cy.contains('Select Store').click();
       cy.get('[aria-label="Close"]').click();
       cy.contains('Select Store').should('have.focus');
