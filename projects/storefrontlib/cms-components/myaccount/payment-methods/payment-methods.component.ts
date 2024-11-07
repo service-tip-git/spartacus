@@ -90,6 +90,7 @@ export class PaymentMethodsComponent implements OnInit {
             actions,
             deleteMsg: textDeleteConfirmation,
             img: this.getCardIcon(cardType?.code ?? ''),
+            imgLabel: this.getCardIconLabel(cardType?.code),
             label: defaultPayment
               ? 'paymentCard.defaultPaymentLabel'
               : 'paymentCard.additionalPaymentLabel',
@@ -139,5 +140,28 @@ export class PaymentMethodsComponent implements OnInit {
     }
 
     return ccIcon;
+  }
+
+  getCardIconLabel(code: string | undefined): string {
+    let ccIconLabel: string;
+    if (code === 'visa') {
+      ccIconLabel = 'paymentCard.visa';
+    } else if (code === 'master') {
+      ccIconLabel = 'paymentCard.master';
+    } else if (code === 'mastercard_eurocard') {
+      ccIconLabel = 'paymentCard.masterEuro';
+    } else if (code === 'diners') {
+      ccIconLabel = 'paymentCard.dinersClub';
+    } else if (code === 'amex') {
+      ccIconLabel = 'paymentCard.amex';
+    } else if (code === 'switch') {
+      ccIconLabel = 'paymentCard.switch';
+    } else if (code === 'maestro') {
+      ccIconLabel = 'paymentCard.maestro';
+    } else {
+      ccIconLabel = 'paymentCard.credit';
+    }
+
+    return ccIconLabel;
   }
 }
