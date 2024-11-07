@@ -153,7 +153,14 @@ export class ApplePayService {
   private handleValidation(
     event: ApplePayJS.ApplePayValidateMerchantEvent
   ): Observable<ApplePaySessionVerificationResponse> {
-    return this.validateOpfAppleSession(event);
+    return this.validateOpfAppleSession(event).pipe(
+      tap(
+        this.opfQuickBuyTransactionService
+          .handleCartGuestUser()
+          .pipe(take(1))
+          .subscribe()
+      )
+    );
   }
 
   protected setApplePayRequestConfig(
