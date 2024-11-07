@@ -81,7 +81,15 @@
         <ng-content select="[label_container_bottom]"></ng-content>
       </div>
       <!-- Image -->
-      <div *ngIf="content.img" class="cx-card-img-container">
+      <div
+        *ngIf="content.img"
+        class="cx-card-img-container"
+        [attr.aria-label]="
+          content.imgLabel ?? 'paymentCard.credit' | cxTranslate
+        "
+        role="img"
+        [attr.title]="content.imgLabel ?? 'paymentCard.credit' | cxTranslate"
+      >
         <cx-icon [type]="content.img"></cx-icon>
       </div>
     </div>
