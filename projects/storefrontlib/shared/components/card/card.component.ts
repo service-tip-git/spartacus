@@ -127,4 +127,8 @@ export class CardComponent implements OnInit {
   ngOnInit() {
     // Intentional empty method
   }
+
+  protected get ariaDescribedBy() {
+    return `cx-card-container-${this.index}`;
+  }
 }

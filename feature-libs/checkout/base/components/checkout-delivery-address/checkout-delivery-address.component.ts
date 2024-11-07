@@ -119,7 +119,7 @@ export class CheckoutDeliveryAddressComponent implements OnInit {
     const isSelected: boolean = selected && selected.id === address.id;
 
     return {
-      role: 'region',
+      role: 'application',
       title: address.defaultAddress ? textDefaultDeliveryAddress : '',
       textBold: address.firstName + ' ' + address.lastName,
       text: [
