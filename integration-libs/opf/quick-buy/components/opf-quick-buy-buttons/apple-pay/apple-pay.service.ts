@@ -25,6 +25,7 @@ import {
   ApplePaySessionVerificationResponse,
   ApplePayTransactionInput,
   OPF_QUICK_BUY_DEFAULT_MERCHANT_NAME,
+  OpfProviderType,
   OpfQuickBuyDeliveryType,
   OpfQuickBuyFacade,
   OpfQuickBuyLocation,
@@ -205,7 +206,6 @@ export class ApplePayService {
   ): Observable<ApplePaySessionVerificationResponse> {
     return this.opfQuickBuyTransactionService.getCurrentCartId().pipe(
       switchMap((cartId: string) => {
-        console.log('event', event);
         const verificationRequest: ApplePaySessionVerificationRequest = {
           validationUrl: event.validationURL,
           initiative: 'web',
@@ -344,7 +344,6 @@ export class ApplePayService {
           : { ...result, status: this.applePaySession.statusFailure };
       }),
       catchError((error) => {
-        console.log('in Catch error', error);
         return of({
           ...result,
           status: this.applePaySession.statusFailure,
@@ -374,10 +373,6 @@ export class ApplePayService {
     if (!applePayPayment) {
       return of(false);
     }
-    console.log(
-      'placeOrderAfterPayment - applePayPayment: ',
-      JSON.stringify(applePayPayment)
-    );
     const { shippingContact, billingContact } = applePayPayment;
     if (!billingContact) {
       throw new Error('Error: empty billingContact');
@@ -420,21 +415,27 @@ export class ApplePayService {
             );
 
     return deliveryTypeHandlingObservable.pipe(
+      switchMap(() => {
+        return shippingContact?.emailAddress
+          ? this.opfQuickBuyTransactionService.updateCartGuestUserEmail(
+              shippingContact.emailAddress
+            )
+          : of(true);
+      }),
       switchMap(() => this.opfQuickBuyTransactionService.getCurrentCartId()),
       switchMap((cartId: string) => {
         const encryptedToken = btoa(
           JSON.stringify(applePayPayment.token.paymentData)
         );
-        console.log(cartId, encryptedToken);
-        return throwError(() => 'Error mock');
-        // return this.opfPaymentFacade.submitPayment({
-        //   additionalData: [],
-        //   paymentSessionId: '',
-        //   callbackArray: [() => {}, () => {}, () => {}],
-        //   paymentMethod: OpfProviderType.APPLE_PAY as any,
-        //   encryptedToken,
-        //   cartId,
-        // });
+
+        return this.opfPaymentFacade.submitPayment({
+          additionalData: [],
+          paymentSessionId: '',
+          callbackArray: [() => {}, () => {}, () => {}],
+          paymentMethod: OpfProviderType.APPLE_PAY as any,
+          encryptedToken,
+          cartId,
+        });
       })
     );
   }

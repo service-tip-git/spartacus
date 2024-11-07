@@ -8,6 +8,7 @@ import { inject, Injectable } from '@angular/core';
 import {
   ActiveCartFacade,
   Cart,
+  CartGuestUser,
   CartGuestUserFacade,
   DeliveryMode,
   MultiCartFacade,
@@ -196,6 +197,36 @@ export class OpfQuickBuyTransactionService {
             tap(() => this.multiCartFacade.reloadCart(cartId)),
             map(() => true)
           );
+      })
+    );
+  }
+
+  protected UpdateCartGuestUser(
+    cartGuestUser: CartGuestUser
+  ): Observable<boolean> {
+    return combineLatest([
+      this.userIdService.takeUserId(),
+      this.activeCartFacade.takeActiveCartId(),
+    ]).pipe(
+      take(1),
+      switchMap(([userId, cartId]) => {
+        return this.cartGuestUserFacade
+          .updateCartGuestUser(userId, cartId, cartGuestUser)
+          .pipe(
+            tap(() => this.multiCartFacade.reloadCart(cartId)),
+            map(() => true)
+          );
+      })
+    );
+  }
+
+  updateCartGuestUserEmail(email: string): Observable<boolean> {
+    return this.activeCartFacade.isGuestCart().pipe(
+      take(1),
+      switchMap((isGuestCart) => {
+        return isGuestCart && email
+          ? this.UpdateCartGuestUser({ email })
+          : of(false);
       })
     );
   }
