@@ -19,6 +19,7 @@ import {
   provideDefaultConfig,
 } from '@spartacus/core';
 import {
+  CaptchaModule,
   FormErrorsModule,
   NgSelectA11yModule,
   PasswordVisibilityToggleModule,
@@ -30,6 +31,7 @@ import { RegisterComponent } from './register.component';
 
 @NgModule({
   imports: [
+    CaptchaModule,
     CommonModule,
     ReactiveFormsModule,
     RouterModule,
@@ -37,8 +39,8 @@ import { RegisterComponent } from './register.component';
     I18nModule,
     SpinnerModule,
     FormErrorsModule,
-    NgSelectModule,
     NgSelectA11yModule,
+    NgSelectModule,
     PasswordVisibilityToggleModule,
     FeaturesConfigModule,
   ],

@@ -2,10 +2,17 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
-import { I18nTestingModule } from '@spartacus/core';
+import { FeatureConfigService, I18nTestingModule } from '@spartacus/core';
 import { PickupOption } from '@spartacus/pickup-in-store/root';
+import { MockFeatureDirective } from 'projects/storefrontlib/shared/test/mock-feature-directive';
 import { Observable } from 'rxjs';
 import { PickupOptionsComponent } from './pickup-options.component';
+
+class MockFeatureConfigService {
+  isEnabled() {
+    return true;
+  }
+}
 
 describe('PickupOptionsComponent', () => {
   let component: PickupOptionsComponent;
@@ -13,8 +20,11 @@ describe('PickupOptionsComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [PickupOptionsComponent],
+      declarations: [PickupOptionsComponent, MockFeatureDirective],
       imports: [CommonModule, I18nTestingModule, ReactiveFormsModule],
+      providers: [
+        { provide: FeatureConfigService, useClass: MockFeatureConfigService },
+      ],
     });
     fixture = TestBed.createComponent(PickupOptionsComponent);
     component = fixture.componentInstance;
@@ -42,7 +52,10 @@ describe('PickupOptionsComponent', () => {
     spyOn(component.pickupOptionChange, 'emit');
     component.onPickupOptionChange('delivery');
 
-    expect(component.pickupOptionChange.emit).toHaveBeenCalledWith('delivery');
+    expect(component.pickupOptionChange.emit).toHaveBeenCalledWith({
+      option: 'delivery',
+      triggerElement: component.triggerElement,
+    });
   });
 
   it('should emit on onPickupLocationChange', () => {
@@ -119,7 +132,7 @@ describe('PickupOptionsComponent', () => {
       fixture.detectChanges();
 
       const selectStoreButton =
-        fixture.debugElement.nativeElement.querySelector('a[role="button"]');
+        fixture.debugElement.nativeElement.querySelector('button');
       selectStoreButton.click();
 
       expect(component.onPickupLocationChange).toHaveBeenCalled();
@@ -131,7 +144,7 @@ describe('PickupOptionsComponent', () => {
       fixture.detectChanges();
 
       const changeStoreButton =
-        fixture.debugElement.nativeElement.querySelector('a[role="button"]');
+        fixture.debugElement.nativeElement.querySelector('button');
       changeStoreButton.click();
 
       expect(component.onPickupLocationChange).toHaveBeenCalled();

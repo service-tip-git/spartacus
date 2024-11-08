@@ -8,7 +8,6 @@ import { DOCUMENT, isPlatformServer } from '@angular/common';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { ScriptLoader } from '@spartacus/core';
 
-import { throwError } from 'rxjs';
 import {
   OpfDynamicScriptResource,
   OpfDynamicScriptResourceType,
@@ -36,12 +35,6 @@ export class OpfResourceLoaderService extends ScriptLoader {
   }): void {
     const { src, callback, errorCallback } = embedOptions;
 
-    const isSSR = isPlatformServer(this.platformId);
-
-    if (isSSR) {
-      return;
-    }
-
     const link: HTMLLinkElement = this.document.createElement('link');
     link.href = src;
     link.rel = 'stylesheet';
@@ -67,8 +60,10 @@ export class OpfResourceLoaderService extends ScriptLoader {
     return super.hasScript(src);
   }
 
-  protected handleLoadingResourceError(src?: string) {
-    return throwError(`Error while loading external ${src} resource.`);
+  protected handleLoadingResourceError(
+    resolve: (value: void | PromiseLike<void>) => void
+  ) {
+    resolve();
   }
 
   protected isResourceLoadingCompleted(resources: OpfDynamicScriptResource[]) {
@@ -110,7 +105,7 @@ export class OpfResourceLoaderService extends ScriptLoader {
           this.markResourceAsLoaded(resource, resources, resolve);
         },
         errorCallback: () => {
-          this.handleLoadingResourceError(resource.url);
+          this.handleLoadingResourceError(resolve);
         },
       });
     } else {
@@ -128,7 +123,7 @@ export class OpfResourceLoaderService extends ScriptLoader {
         src: resource.url,
         callback: () => this.markResourceAsLoaded(resource, resources, resolve),
         errorCallback: () => {
-          this.handleLoadingResourceError(resource.url);
+          this.handleLoadingResourceError(resolve);
         },
       });
     } else {
@@ -137,7 +132,8 @@ export class OpfResourceLoaderService extends ScriptLoader {
   }
 
   executeScriptFromHtml(html: string | undefined) {
-    if (html) {
+    // SSR mode not supported for security concerns
+    if (!isPlatformServer(this.platformId) && html) {
       const element = new DOMParser().parseFromString(html, 'text/html');
       const script = element.getElementsByTagName('script');
       if (!script?.[0]?.innerText) {
@@ -161,6 +157,11 @@ export class OpfResourceLoaderService extends ScriptLoader {
     scripts: OpfDynamicScriptResource[] = [],
     styles: OpfDynamicScriptResource[] = []
   ): Promise<void> {
+    // SSR mode not supported for security concerns
+    if (isPlatformServer(this.platformId)) {
+      return Promise.resolve();
+    }
+
     const resources: OpfDynamicScriptResource[] = [
       ...scripts.map((script) => ({
         ...script,

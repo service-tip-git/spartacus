@@ -24,6 +24,7 @@ import {
   GlobalMessageType,
   OAuthFlow,
   RoutingService,
+  useFeatureStyles,
 } from '@spartacus/core';
 import { CustomFormValidators, sortTitles } from '@spartacus/storefront';
 import { Title, UserSignUp } from '@spartacus/user/profile/root';
@@ -37,13 +38,27 @@ import { RegisterComponentService } from './register-component.service';
 })
 export class RegisterComponent implements OnInit, OnDestroy {
   // TODO: (CXSPA-7315) Remove feature toggle in the next major
+  // TODO: (CXSPA-8550) Remove feature toggle
   private featureConfigService = inject(FeatureConfigService);
 
   protected passwordValidators = this.featureConfigService?.isEnabled(
     'formErrorsDescriptiveMessages'
   )
-    ? [CustomFormValidators.passwordValidator]
-    : CustomFormValidators.passwordValidators;
+    ? this.featureConfigService.isEnabled(
+        'enableConsecutiveCharactersPasswordRequirement'
+      )
+      ? [
+          ...CustomFormValidators.passwordValidators,
+          CustomFormValidators.noConsecutiveCharacters,
+        ]
+      : CustomFormValidators.passwordValidators
+    : [
+        this.featureConfigService.isEnabled(
+          'enableConsecutiveCharactersPasswordRequirement'
+        )
+          ? CustomFormValidators.strongPasswordValidator
+          : CustomFormValidators.passwordValidator,
+      ];
 
   titles$: Observable<Title[]>;
 
@@ -72,6 +87,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
         this.registerComponentService.generateAdditionalConsentsFormControl?.() ??
         this.fb.array([]),
       termsandconditions: [false, Validators.requiredTrue],
+      captcha: [false, Validators.requiredTrue],
     },
     {
       validators: CustomFormValidators.passwordsMustMatch(
@@ -103,7 +119,9 @@ export class RegisterComponent implements OnInit, OnDestroy {
     protected anonymousConsentsConfig: AnonymousConsentsConfig,
     protected authConfigService: AuthConfigService,
     protected registerComponentService: RegisterComponentService
-  ) {}
+  ) {
+    useFeatureStyles('a11yPasswordVisibliltyBtnValueOverflow');
+  }
 
   ngOnInit() {
     this.titles$ = this.registerComponentService.getTitles().pipe(
@@ -242,6 +260,13 @@ export class RegisterComponent implements OnInit, OnDestroy {
         this.anonymousConsentsService.withdrawConsent(registerConsent);
       }
     }
+  }
+
+  /**
+   * Triggered via CaptchaComponent when a user confirms captcha
+   */
+  captchaConfirmed() {
+    this.registerForm.get('captcha')?.setValue(true);
   }
 
   ngOnDestroy() {

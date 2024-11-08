@@ -21,9 +21,9 @@ import {
 } from '@spartacus/core';
 import {
   BehaviorSubject,
-  combineLatest,
   EMPTY,
   Observable,
+  combineLatest,
   throwError,
 } from 'rxjs';
 import {
@@ -58,7 +58,7 @@ export class OpfCheckoutBillingAddressFormService {
     protected checkoutPaymentService: CheckoutPaymentFacade,
     protected activeCartService: ActiveCartFacade,
     protected globalMessageService: GlobalMessageService,
-    protected opfService: OpfCheckoutPaymentWrapperService
+    protected opfCheckoutPaymentWrapperService: OpfCheckoutPaymentWrapperService
   ) {}
 
   getCountries(): Observable<Country[]> {
@@ -135,12 +135,12 @@ export class OpfCheckoutBillingAddressFormService {
             this.billingAddressId = billingAddress.id;
 
             this.billingAddressSub.next(billingAddress);
-            this.opfService.reloadPaymentMode();
+            this.opfCheckoutPaymentWrapperService.reloadPaymentMode();
           }
         }),
         catchError((error: HttpErrorModel) => {
           this.globalMessageService.add(
-            { key: 'opf.checkout.errors.updateBillingAddress' },
+            { key: 'opfCheckout.errors.updateBillingAddress' },
             GlobalMessageType.MSG_TYPE_ERROR
           );
           return throwError(error);
@@ -174,7 +174,7 @@ export class OpfCheckoutBillingAddressFormService {
   protected getPaymentAddress(): Observable<Address | undefined> {
     return this.activeCartService
       .getActive()
-      .pipe(map((cart: Cart) => cart.paymentAddress));
+      .pipe(map((cart: Cart) => cart.sapBillingAddress));
   }
 
   protected getAddressWithId(address: Address): Address {

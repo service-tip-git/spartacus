@@ -22,17 +22,29 @@ import { ConfiguratorTestUtils } from '../../../../testing/configurator-test-uti
 import { ConfiguratorPriceComponentOptions } from '../../../price/configurator-price.component';
 import { ConfiguratorStorefrontUtilsService } from '../../../service/configurator-storefront-utils.service';
 import { ConfiguratorAttributeCompositionContext } from '../../composition/configurator-attribute-composition.model';
+import { ConfiguratorAttributePriceChangeService } from '../../price-change/configurator-attribute-price-change.service';
 import { ConfiguratorAttributeQuantityComponentOptions } from '../../quantity/configurator-attribute-quantity.component';
 import { ConfiguratorAttributeInputFieldComponent } from '../input-field/configurator-attribute-input-field.component';
 import { ConfiguratorAttributeNumericInputFieldComponent } from '../numeric-input-field/configurator-attribute-numeric-input-field.component';
 import { ConfiguratorAttributeDropDownComponent } from './configurator-attribute-drop-down.component';
 
-function createValue(code: string, name: string, isSelected: boolean) {
+function createValue(
+  code: string,
+  name: string,
+  isSelected: boolean,
+  withPrice?: boolean
+) {
   const value: Configurator.Value = {
     valueCode: code,
     valueDisplay: name,
     name: name,
     selected: isSelected,
+    valuePrice: withPrice
+      ? {
+          currencyIso: 'EUR',
+          value: 10,
+        }
+      : undefined,
   };
   return value;
 }
@@ -87,6 +99,14 @@ class MockConfig {
   features = [{ productConfiguratorAttributeTypesV2: false }];
 }
 
+class MockConfiguratorAttributePriceChangeService {
+  getChangedPrices(): Observable<Record<string, Configurator.PriceDetails>[]> {
+    return of([]);
+  }
+}
+
+const ATTRIBUTE_VALUES_MISSING = 'attribute values are missing';
+
 describe('ConfiguratorAttributeDropDownComponent', () => {
   let component: ConfiguratorAttributeDropDownComponent;
   let htmlElem: HTMLElement;
@@ -94,19 +114,9 @@ describe('ConfiguratorAttributeDropDownComponent', () => {
   let config: Config;
 
   const ownerKey = 'theOwnerKey';
-  const name = 'attributeName';
+  const name = 'group1@attribute_1_1';
   const groupId = 'theGroupId';
   const selectedValue = 'selectedValue';
-
-  const value1 = createValue(
-    Configurator.RetractValueCode,
-    'Please select a value',
-    true
-  );
-  const value2 = createValue('2', 'val2', false);
-  const value3 = createValue('3', 'val3', false);
-
-  const values: Configurator.Value[] = [value1, value2, value3];
 
   function createComponentWithData(
     isCartEntryOrGroupVisited: boolean = true
@@ -116,7 +126,18 @@ describe('ConfiguratorAttributeDropDownComponent', () => {
     fixture = TestBed.createComponent(ConfiguratorAttributeDropDownComponent);
     htmlElem = fixture.nativeElement;
     component = fixture.componentInstance;
+    const value1 = createValue(
+      Configurator.RetractValueCode,
+      'Please select a value',
+      true,
+      true
+    );
+    const value2 = createValue('2', 'value_1_1', false);
+    const value3 = createValue('3', 'value_1_2', false);
+    const values: Configurator.Value[] = [value1, value2, value3];
+
     component.attribute = {
+      key: name,
       name: name,
       label: name,
       attrCode: 444,
@@ -129,6 +150,7 @@ describe('ConfiguratorAttributeDropDownComponent', () => {
       incomplete: true,
       values,
     };
+    fixture.detectChanges();
 
     config = TestBed.inject(Config);
     (config.features ?? {}).productConfiguratorAttributeTypesV2 = false;
@@ -137,6 +159,16 @@ describe('ConfiguratorAttributeDropDownComponent', () => {
   }
 
   beforeEach(waitForAsync(() => {
+    TestBed.overrideComponent(ConfiguratorAttributeDropDownComponent, {
+      set: {
+        providers: [
+          {
+            provide: ConfiguratorAttributePriceChangeService,
+            useClass: MockConfiguratorAttributePriceChangeService,
+          },
+        ],
+      },
+    });
     TestBed.configureTestingModule({
       declarations: [
         ConfiguratorAttributeDropDownComponent,
@@ -178,11 +210,6 @@ describe('ConfiguratorAttributeDropDownComponent', () => {
       })
       .compileComponents();
   }));
-
-  afterEach(() => {
-    document.body.removeChild(htmlElem);
-    fixture.destroy();
-  });
 
   it('should create', () => {
     createComponentWithData();
@@ -300,8 +327,15 @@ describe('ConfiguratorAttributeDropDownComponent', () => {
         formattedValue: '500.00$',
         value: 500,
       };
-      value1.selected = false;
-      value2.selected = true;
+
+      const attributeValues = component.attribute.values;
+      if (attributeValues) {
+        attributeValues[0].selected = false;
+        attributeValues[1].selected = true;
+      } else {
+        fail(ATTRIBUTE_VALUES_MISSING);
+      }
+
       fixture.detectChanges();
 
       CommonConfiguratorTestUtilsService.expectElementPresent(
@@ -324,13 +358,16 @@ describe('ConfiguratorAttributeDropDownComponent', () => {
         formattedValue: '500.00$',
         value: 500,
       };
-
-      value2.selected = true;
-      value2.valuePrice = {
-        currencyIso: '$',
-        formattedValue: '$100.00',
-        value: 100,
-      };
+      if (component.attribute.values) {
+        component.attribute.values[1].selected = true;
+        component.attribute.values[1].valuePrice = {
+          currencyIso: '$',
+          formattedValue: '$100.00',
+          value: 100,
+        };
+      } else {
+        fail(ATTRIBUTE_VALUES_MISSING);
+      }
 
       fixture.detectChanges();
 
@@ -365,11 +402,15 @@ describe('ConfiguratorAttributeDropDownComponent', () => {
     });
 
     it('should display price formula', () => {
-      value1.valuePrice = {
-        currencyIso: '$',
-        formattedValue: '$100.00',
-        value: 100,
-      };
+      if (component.attribute.values) {
+        component.attribute.values[0].valuePrice = {
+          currencyIso: '$',
+          formattedValue: '$100.00',
+          value: 100,
+        };
+      } else {
+        fail(ATTRIBUTE_VALUES_MISSING);
+      }
 
       fixture.detectChanges();
 
@@ -448,14 +489,21 @@ describe('ConfiguratorAttributeDropDownComponent', () => {
         'form-control',
         0,
         'aria-describedby',
-        'cx-configurator--label--attributeName'
+        'cx-configurator--label--group1@attribute_1_1'
       );
     });
 
     it("should contain option elements with 'aria-label' attribute for value without price that defines an accessible name to label the current element", () => {
-      value1.selected = false;
-      value2.selected = true;
-      value2.valuePrice = undefined;
+      let value2;
+      if (component.attribute.values) {
+        value2 = component.attribute.values[1];
+        value2.valuePrice = undefined;
+        component.attribute.values[0].selected = false;
+        value2.selected = true;
+        value2.valuePrice = undefined;
+      } else {
+        fail(ATTRIBUTE_VALUES_MISSING);
+      }
       fixture.detectChanges();
       CommonConfiguratorTestUtilsService.expectElementContainsA11y(
         expect,
@@ -467,17 +515,24 @@ describe('ConfiguratorAttributeDropDownComponent', () => {
         'configurator.a11y.selectedValueOfAttributeFull attribute:' +
           component.attribute.label +
           ' value:' +
-          value2.valueDisplay,
-        value2.valueDisplay
+          value2?.valueDisplay,
+        value2?.valueDisplay
       );
     });
 
     it("should contain option elements with 'aria-label' attribute for value with price that defines an accessible name to label the current element", () => {
-      value2.valuePrice = {
-        currencyIso: '$',
-        formattedValue: '$100.00',
-        value: 100,
-      };
+      let value2;
+      if (component.attribute.values) {
+        value2 = component.attribute.values[1];
+        value2.selected = true;
+        value2.valuePrice = {
+          currencyIso: '$',
+          formattedValue: '$100.00',
+          value: 100,
+        };
+      } else {
+        fail(ATTRIBUTE_VALUES_MISSING);
+      }
 
       fixture.detectChanges();
 
@@ -491,19 +546,27 @@ describe('ConfiguratorAttributeDropDownComponent', () => {
         'configurator.a11y.selectedValueOfAttributeFullWithPrice attribute:' +
           component.attribute.label +
           ' price:' +
-          value2.valuePrice?.formattedValue +
+          value2?.valuePrice?.formattedValue +
           ' value:' +
-          value2.valueDisplay,
-        value2.valueDisplay
+          value2?.valueDisplay,
+        value2?.valueDisplay
       );
     });
 
     it("should contain option elements with 'aria-label' attribute for value with total price that defines an accessible name to label the current element", () => {
-      value2.valuePriceTotal = {
-        currencyIso: '$',
-        formattedValue: '$100.00',
-        value: 100,
-      };
+      let value2;
+      if (component.attribute.values) {
+        value2 = component.attribute.values[1];
+        value2.selected = true;
+        value2.valuePriceTotal = {
+          currencyIso: '$',
+          formattedValue: '$100.00',
+          value: 100,
+        };
+      } else {
+        fail(ATTRIBUTE_VALUES_MISSING);
+      }
+
       fixture.detectChanges();
 
       CommonConfiguratorTestUtilsService.expectElementContainsA11y(
@@ -516,10 +579,10 @@ describe('ConfiguratorAttributeDropDownComponent', () => {
         'configurator.a11y.selectedValueOfAttributeFullWithPrice attribute:' +
           component.attribute.label +
           ' price:' +
-          value2.valuePrice?.formattedValue +
+          value2?.valuePriceTotal?.formattedValue +
           ' value:' +
-          value2.valueDisplay,
-        value2.valueDisplay
+          value2?.valueDisplay,
+        value2?.valueDisplay
       );
     });
   });

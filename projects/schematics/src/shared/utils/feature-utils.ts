@@ -120,7 +120,7 @@ export function addFeatures<OPTIONS extends LibraryOptions>(
      * force-install the dependent features.
      */
     const featuresToInstall = options.internal?.existingSpartacusApplication
-      ? options.features ?? []
+      ? (options.features ?? [])
       : features;
 
     const rules: Rule[] = [];
@@ -421,7 +421,7 @@ function isStaticallyImported(
   if (
     !staticImportExists(sourceFile, moduleConfig.importPath, moduleConfig.name)
   ) {
-    false;
+    return false;
   }
 
   const elements =

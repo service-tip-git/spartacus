@@ -5,8 +5,12 @@
  */
 
 import { Injectable } from '@angular/core';
-import { ActiveCartService } from '@spartacus/cart/base/core';
 import {
+  ActiveCartFacade,
+  CartAccessCodeFacade,
+} from '@spartacus/cart/base/root';
+import {
+  DEFAULT_AUTHORIZATION_ERROR_RETRIES_COUNT,
   GlobalMessageService,
   GlobalMessageType,
   HttpErrorModel,
@@ -14,25 +18,21 @@ import {
   RoutingService,
   UserIdService,
   backOff,
-} from '@spartacus/core';
-import {
   isAuthorizationError,
-  opfAuthorizationErrorRetry,
-} from '@spartacus/opf/base/core';
+} from '@spartacus/core';
+
 import {
-  OpfOrderFacade,
-  OpfOtpFacade,
+  OpfMetadataStoreService,
   OpfResourceLoaderService,
-  OpfService,
 } from '@spartacus/opf/base/root';
+import { OPF_PAYMENT_AND_REVIEW_SEMANTIC_ROUTE } from '@spartacus/opf/checkout/root';
 import {
-  OPF_PAYMENT_AND_REVIEW_SEMANTIC_ROUTE,
-  OpfCheckoutFacade,
-  OpfPaymentMethodType,
+  OpfPaymentFacade,
   OpfRenderPaymentMethodEvent,
   PaymentPattern,
   PaymentSessionData,
-} from '@spartacus/opf/checkout/root';
+} from '@spartacus/opf/payment/root';
+import { OrderFacade } from '@spartacus/order/root';
 import {
   BehaviorSubject,
   Observable,
@@ -55,15 +55,15 @@ export class OpfCheckoutPaymentWrapperService {
     });
 
   constructor(
-    protected opfCheckoutService: OpfCheckoutFacade,
-    protected opfOtpService: OpfOtpFacade,
+    protected opfPaymentFacade: OpfPaymentFacade,
     protected opfResourceLoaderService: OpfResourceLoaderService,
     protected userIdService: UserIdService,
-    protected activeCartService: ActiveCartService,
+    protected activeCartService: ActiveCartFacade,
     protected routingService: RoutingService,
     protected globalMessageService: GlobalMessageService,
-    protected opfOrderFacade: OpfOrderFacade,
-    protected opfService: OpfService
+    protected orderFacade: OrderFacade,
+    protected opfMetadataStoreService: OpfMetadataStoreService,
+    protected cartAccessCodeFacade: CartAccessCodeFacade
   ) {}
 
   protected executeScriptFromHtml(html: string): void {
@@ -106,19 +106,19 @@ export class OpfCheckoutPaymentWrapperService {
       this.activeCartService.getActiveCartId(),
     ]).pipe(
       tap(() =>
-        this.opfService.updateOpfMetadataState({
+        this.opfMetadataStoreService.updateOpfMetadata({
           isPaymentInProgress: true,
         })
       ),
       switchMap(([userId, cartId]: [string, string]) => {
         this.activeCartId = cartId;
-        return this.opfOtpService.generateOtpKey(userId, cartId);
+        return this.cartAccessCodeFacade.getCartAccessCode(userId, cartId);
       }),
       filter((response) => Boolean(response?.accessCode)),
       map(({ accessCode: otpKey }) =>
         this.setPaymentInitiationConfig(otpKey, paymentOptionId)
       ),
-      switchMap((params) => this.opfCheckoutService.initiatePayment(params)),
+      switchMap((params) => this.opfPaymentFacade.initiatePayment(params)),
       tap((paymentOptionConfig: PaymentSessionData | Error) => {
         if (!(paymentOptionConfig instanceof Error)) {
           this.storePaymentSessionId(paymentOptionConfig);
@@ -132,7 +132,7 @@ export class OpfCheckoutPaymentWrapperService {
          * It means that `accessCode` (OTP signature) is not valid or expired and we need to refresh it.
          */
         shouldRetry: isAuthorizationError,
-        maxTries: opfAuthorizationErrorRetry,
+        maxTries: DEFAULT_AUTHORIZATION_ERROR_RETRIES_COUNT,
       }),
       take(1)
     );
@@ -144,7 +144,7 @@ export class OpfCheckoutPaymentWrapperService {
       paymentOptionConfig.paymentSessionId
         ? paymentOptionConfig.paymentSessionId
         : undefined;
-    this.opfService.updateOpfMetadataState({ paymentSessionId });
+    this.opfMetadataStoreService.updateOpfMetadata({ paymentSessionId });
   }
 
   reloadPaymentMode(): void {
@@ -158,13 +158,16 @@ export class OpfCheckoutPaymentWrapperService {
       this.renderPaymentMethodEvent$.next({
         isLoading: false,
         isError: false,
-        renderType: OpfPaymentMethodType.DESTINATION,
+        renderType: config?.pattern,
         data: config?.destination.url,
         destination: config?.destination,
       });
     }
 
-    if (config?.dynamicScript) {
+    if (
+      config?.dynamicScript &&
+      config?.pattern === PaymentPattern.HOSTED_FIELDS
+    ) {
       const html = config?.dynamicScript?.html;
 
       this.opfResourceLoaderService
@@ -176,7 +179,7 @@ export class OpfCheckoutPaymentWrapperService {
           this.renderPaymentMethodEvent$.next({
             isLoading: false,
             isError: false,
-            renderType: OpfPaymentMethodType.DYNAMIC_SCRIPT,
+            renderType: config?.pattern,
             data: html,
           });
 
@@ -200,7 +203,7 @@ export class OpfCheckoutPaymentWrapperService {
   }
 
   protected handlePaymentAlreadyDoneError(): Observable<Error> {
-    return this.opfOrderFacade.placeOpfOrder(true).pipe(
+    return this.orderFacade.placePaymentAuthorizedOrder(true).pipe(
       catchError(() => {
         this.onPlaceOrderError();
 
@@ -225,7 +228,7 @@ export class OpfCheckoutPaymentWrapperService {
       isError: true,
     });
 
-    this.showErrorMessage('opf.checkout.errors.unknown');
+    this.showErrorMessage('opfCheckout.errors.unknown');
     this.routingService.go({ cxRoute: OPF_PAYMENT_AND_REVIEW_SEMANTIC_ROUTE });
   }
 
@@ -235,7 +238,7 @@ export class OpfCheckoutPaymentWrapperService {
       isError: true,
     });
 
-    this.showErrorMessage('opf.payment.errors.proceedPayment');
+    this.showErrorMessage('opfPayment.errors.proceedPayment');
 
     return throwError('Payment failed');
   }

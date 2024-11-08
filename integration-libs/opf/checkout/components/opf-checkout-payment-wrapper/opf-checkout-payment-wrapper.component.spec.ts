@@ -1,16 +1,16 @@
 import { ViewContainerRef } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DomSanitizer } from '@angular/platform-browser';
-import { OpfGlobalFunctionsService } from '@spartacus/opf/base/core';
+import { OpfGlobalFunctionsService } from '@spartacus/opf/global-functions/core';
 import {
   GlobalFunctionsDomain,
   GlobalFunctionsInput,
   OpfGlobalFunctionsFacade,
-} from '@spartacus/opf/base/root';
+} from '@spartacus/opf/global-functions/root';
+import { PaymentPattern } from '@spartacus/opf/payment/root';
 import { of } from 'rxjs';
 import { OpfCheckoutPaymentWrapperComponent } from './opf-checkout-payment-wrapper.component';
 import { OpfCheckoutPaymentWrapperService } from './opf-checkout-payment-wrapper.service';
-
 describe('OpfCheckoutPaymentWrapperComponent', () => {
   let component: OpfCheckoutPaymentWrapperComponent;
   let fixture: ComponentFixture<OpfCheckoutPaymentWrapperComponent>;
@@ -66,10 +66,20 @@ describe('OpfCheckoutPaymentWrapperComponent', () => {
     expect(domSanitizer.bypassSecurityTrustHtml).toHaveBeenCalledWith(html);
   });
 
+  it('should renderUrl call bypassSecurityTrustResourceUrl', () => {
+    const url = 'https://sap.com';
+    spyOn(domSanitizer, 'bypassSecurityTrustResourceUrl').and.stub();
+    component.renderUrl(url);
+
+    expect(domSanitizer.bypassSecurityTrustResourceUrl).toHaveBeenCalledWith(
+      url
+    );
+  });
+
   it('should call initiatePayment on ngOnInit', () => {
     const mockPaymentSessionData = {
       paymentSessionId: 'session123',
-      pattern: 'HOSTED_FIELDS',
+      pattern: PaymentPattern.HOSTED_FIELDS,
     };
 
     mockService.initiatePayment.and.returnValue(of(mockPaymentSessionData));
@@ -91,7 +101,7 @@ describe('OpfCheckoutPaymentWrapperComponent', () => {
   it('should call removeGlobalFunctions if paymentSessionData is not HOSTED_FIELDS', () => {
     const mockPaymentSessionData = {
       paymentSessionId: 'session123',
-      pattern: 'NON_HOSTED_FIELDS',
+      pattern: PaymentPattern.FULL_PAGE,
     };
 
     mockService.initiatePayment.and.returnValue(of(mockPaymentSessionData));

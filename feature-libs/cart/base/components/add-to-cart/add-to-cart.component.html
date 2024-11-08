@@ -1,14 +1,20 @@
 <form *ngIf="productCode" [formGroup]="addToCartForm" (submit)="addToCart()">
   <div class="quantity" *ngIf="showQuantity">
-    <label>{{ 'addToCart.quantity' | cxTranslate }}</label>
+    <label *cxFeature="'a11yQTY2Quantity'">{{
+      'addToCart.quantityFull' | cxTranslate
+    }}</label>
+    <label *cxFeature="'!a11yQTY2Quantity'">{{
+      'addToCart.quantity' | cxTranslate
+    }}</label>
     <div class="cx-counter-stock">
       <cx-item-counter
         *ngIf="hasStock"
         [max]="maxQuantity"
         [control]="addToCartForm.get('quantity')"
+        [ariaDescribedById]="'add-to-card-stock-info'"
       ></cx-item-counter>
 
-      <span class="info">
+      <span class="info" id="add-to-card-stock-info">
         <span *ngIf="showInventory$ | async">{{ getInventory() }}</span>
         {{
           hasStock
@@ -24,10 +30,10 @@
       [cxOutlet]="CartOutlets.ADD_TO_CART_PICKUP_OPTION"
       [(cxComponentRef)]="pickupOptionCompRef"
     ></ng-template>
-    <ng-content select="[extra-buttons]"></ng-content>
   </ng-container>
 
   <button
+    #addToCartDialogTriggerEl
     *ngIf="hasStock"
     [ngClass]="
       options?.displayAddToCart
@@ -45,9 +51,6 @@
       ><cx-icon [type]="iconTypes.REPEAT"></cx-icon
     ></span>
     <span
-      attr.aria-label="{{
-        options?.addToCartString ?? ('addToCart.addToCart' | cxTranslate)
-      }}"
       [ngClass]="
         options?.addToCartString === ('addToCart.buyItAgain' | cxTranslate)
           ? 'buyItAgainLink'

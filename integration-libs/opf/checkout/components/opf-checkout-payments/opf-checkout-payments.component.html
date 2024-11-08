@@ -1,5 +1,5 @@
 <h3>
-  {{ 'opf.checkout.paymentOption' | cxTranslate }}
+  {{ 'opfCheckout.paymentOption' | cxTranslate }}
 </h3>
 <ng-container
   *ngIf="activeConfigurations$ | async as activeConfigurationsState"
@@ -33,6 +33,12 @@
       >
         <div class="cx-payment-type">
           {{ configuration.displayName }}
+          <img
+            *ngIf="configuration?.logoUrl"
+            [src]="configuration.logoUrl"
+            [alt]="configuration.displayName"
+            class="cx-payment-logo"
+          />
         </div>
       </label>
       <cx-opf-checkout-payment-wrapper

@@ -12,6 +12,7 @@ import {
   I18nTestingModule,
   WindowRef,
 } from '@spartacus/core';
+import { BreakpointService } from 'projects/storefrontlib/layout';
 import { MockFeatureDirective } from 'projects/storefrontlib/shared/test/mock-feature-directive';
 import { of } from 'rxjs';
 import { HamburgerMenuService } from './../../../layout/header/hamburger-menu/hamburger-menu.service';
@@ -45,6 +46,12 @@ class MockHamburgerMenuService {
 class MockFeatureConfigService {
   isEnabled() {
     return true;
+  }
+}
+
+class MockBreakpointService {
+  isUp() {
+    return of(true);
   }
 }
 
@@ -131,9 +138,14 @@ describe('Navigation UI Component', () => {
           provide: FeatureConfigService,
           useClass: MockFeatureConfigService,
         },
+        {
+          provide: BreakpointService,
+          useClass: MockBreakpointService,
+        },
       ],
     }).compileComponents();
   });
+
   beforeEach(() => {
     fixture = TestBed.createComponent(NavigationUIComponent);
     hamburgerMenuService = TestBed.inject(HamburgerMenuService);
@@ -304,10 +316,10 @@ describe('Navigation UI Component', () => {
         .query(By.css('nav > ul > li:nth-child(2) > button'))
         .nativeElement.click();
       element
-        .query(By.css('button[aria-label="Child 1"]'))
+        .query(By.css('button[aria-controls="Child 1"]'))
         .nativeElement.click();
       element
-        .query(By.css('button[aria-label="Sub child 1"]'))
+        .query(By.css('button[aria-controls="Sub child 1"]'))
         .nativeElement.click();
 
       expect(element.queryAll(By.css('li.is-open:not(.back)')).length).toBe(1);
@@ -348,6 +360,19 @@ describe('Navigation UI Component', () => {
         expect(child.getAttribute('role')).toBe('listitem');
       });
     });
+
+    it('should apply role="heading" to nested dropdown trigger button while on desktop', () => {
+      fixture.detectChanges();
+      const nestedTriggerButton = fixture.debugElement.query(
+        By.css('button[aria-controls="Child 1"]')
+      ).nativeElement;
+      const rootTriggerButton = fixture.debugElement.query(
+        By.css('button[aria-controls="Root 1"]')
+      ).nativeElement;
+
+      expect(nestedTriggerButton.getAttribute('role')).toEqual('heading');
+      expect(rootTriggerButton.getAttribute('role')).toEqual('button');
+    });
   });
 
   describe('Keyboard navigation', () => {
@@ -359,7 +384,7 @@ describe('Navigation UI Component', () => {
       const spy = spyOn(navigationComponent, 'toggleOpen');
       const spaceEvent = new KeyboardEvent('keydown', { code: 'Space' });
       const dropDownButton = element.query(
-        By.css('button[aria-label="Sub child 1"]')
+        By.css('button[aria-controls="Sub child 1"]')
       ).nativeElement;
       Object.defineProperty(spaceEvent, 'target', { value: dropDownButton });
 
@@ -373,7 +398,7 @@ describe('Navigation UI Component', () => {
       const spy = spyOn(firstChild.nativeElement, 'focus');
       const spaceEvent = new KeyboardEvent('keydown', { code: 'Space' });
       const dropDownButton = element.query(
-        By.css('button[aria-label="Sub child 1"]')
+        By.css('button[aria-controls="Sub child 1"]')
       ).nativeElement;
       Object.defineProperty(spaceEvent, 'target', { value: dropDownButton });
 
@@ -394,7 +419,7 @@ describe('Navigation UI Component', () => {
       });
       const spaceEvent = new KeyboardEvent('keydown', { code: 'Space' });
       const dropDownButton = element.query(
-        By.css('button[aria-label="Sub child 1"]')
+        By.css('button[aria-controls="Sub child 1"]')
       ).nativeElement;
       Object.defineProperty(spaceEvent, 'target', { value: dropDownButton });
       Object.defineProperty(arrowDownEvent, 'target', {
@@ -423,18 +448,6 @@ describe('Navigation UI Component', () => {
       navigationComponent.flyout = false;
       expect(navigationComponent.getTabIndex(childNode, 1)).toEqual(0);
     });
-
-    it('should focus on the first focusable element when the hamburger menu is expanded', fakeAsync(() => {
-      const firstFocusableElement =
-        element.nativeElement.querySelector('[tabindex="0"]');
-      spyOn(firstFocusableElement, 'focus');
-      navigationComponent.navAriaLabel = 'menu';
-
-      navigationComponent.focusOnMenuExpansion();
-      tick();
-
-      expect(firstFocusableElement.focus).toHaveBeenCalled();
-    }));
 
     it('return focus to node header after navigating back', fakeAsync(() => {
       const mockNode = document.createElement('li');

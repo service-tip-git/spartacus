@@ -9,12 +9,14 @@ import {
 } from '@spartacus/core';
 import {
   ActiveConfiguration,
-  OpfPaymentFacade,
-  OpfPaymentMetadata,
+  OpfBaseFacade,
+  OpfMetadataModel,
+  OpfMetadataStoreService,
   OpfPaymentProviderType,
-  OpfService,
 } from '@spartacus/opf/base/root';
 
+import { DebugElement } from '@angular/core';
+import { By } from '@angular/platform-browser';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { OpfCheckoutTermsAndConditionsAlertModule } from '../opf-checkout-terms-and-conditions-alert';
 import { OpfCheckoutPaymentsComponent } from './opf-checkout-payments.component';
@@ -29,6 +31,7 @@ const mockActiveConfigurations: ActiveConfiguration[] = [
     id: 2,
     providerType: OpfPaymentProviderType.PAYMENT_GATEWAY,
     displayName: 'Test2',
+    logoUrl: 'logoUrl',
   },
   {
     id: 3,
@@ -36,7 +39,7 @@ const mockActiveConfigurations: ActiveConfiguration[] = [
     displayName: 'Test3',
   },
 ];
-class MockOpfPaymentFacade implements Partial<OpfPaymentFacade> {
+class MockOpfBaseFacade implements Partial<OpfBaseFacade> {
   getActiveConfigurationsState(): Observable<
     QueryState<ActiveConfiguration[] | undefined>
   > {
@@ -60,7 +63,7 @@ class MockGlobalMessageService implements Partial<GlobalMessageService> {
   remove(_: GlobalMessageType, __?: number): void {}
 }
 
-const mockOpfPaymentMetadata: OpfPaymentMetadata = {
+const mockOpfMetadata: OpfMetadataModel = {
   isPaymentInProgress: true,
   selectedPaymentOptionId: 111,
   termsAndConditionsChecked: true,
@@ -72,32 +75,37 @@ describe('OpfCheckoutPaymentsComponent', () => {
   let component: OpfCheckoutPaymentsComponent;
   let fixture: ComponentFixture<OpfCheckoutPaymentsComponent>;
   let globalMessageService: GlobalMessageService;
-  let opfServiceMock: jasmine.SpyObj<OpfService>;
+  let opfMetadataStoreServiceMock: jasmine.SpyObj<OpfMetadataStoreService>;
+  let el: DebugElement;
 
   beforeEach(async () => {
-    opfServiceMock = jasmine.createSpyObj('OpfService', [
-      'getOpfMetadataState',
-      'updateOpfMetadataState',
-    ]);
+    opfMetadataStoreServiceMock = jasmine.createSpyObj(
+      'OpfMetadataStoreService',
+      ['getOpfMetadataState', 'updateOpfMetadata']
+    );
 
-    opfServiceMock.getOpfMetadataState.and.returnValue(
-      of(mockOpfPaymentMetadata)
+    opfMetadataStoreServiceMock.getOpfMetadataState.and.returnValue(
+      of(mockOpfMetadata)
     );
     await TestBed.configureTestingModule({
       imports: [I18nTestingModule, OpfCheckoutTermsAndConditionsAlertModule],
       declarations: [OpfCheckoutPaymentsComponent],
       providers: [
         {
-          provide: OpfPaymentFacade,
-          useClass: MockOpfPaymentFacade,
+          provide: OpfBaseFacade,
+          useClass: MockOpfBaseFacade,
         },
         { provide: GlobalMessageService, useClass: MockGlobalMessageService },
-        { provide: OpfService, useValue: opfServiceMock },
+        {
+          provide: OpfMetadataStoreService,
+          useValue: opfMetadataStoreServiceMock,
+        },
       ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(OpfCheckoutPaymentsComponent);
     component = fixture.componentInstance;
+    el = fixture.debugElement;
   });
   beforeEach(() => {
     globalMessageService = TestBed.inject(GlobalMessageService);
@@ -111,13 +119,13 @@ describe('OpfCheckoutPaymentsComponent', () => {
   it('should preselect the payment options', () => {
     fixture.detectChanges();
     expect(component.selectedPaymentId).toBe(
-      mockOpfPaymentMetadata.selectedPaymentOptionId
+      mockOpfMetadata.selectedPaymentOptionId
     );
   });
 
   it('should change active payment option', () => {
     component.changePayment(mockActiveConfigurations[2]);
-    expect(opfServiceMock.updateOpfMetadataState).toHaveBeenCalledWith({
+    expect(opfMetadataStoreServiceMock.updateOpfMetadata).toHaveBeenCalledWith({
       selectedPaymentOptionId: component.selectedPaymentId,
     });
   });
@@ -132,7 +140,7 @@ describe('OpfCheckoutPaymentsComponent', () => {
     fixture.detectChanges();
 
     expect(globalMessageService.add).toHaveBeenCalledWith(
-      { key: 'opf.checkout.errors.noActiveConfigurations' },
+      { key: 'opfCheckout.errors.noActiveConfigurations' },
       GlobalMessageType.MSG_TYPE_ERROR
     );
   });
@@ -147,7 +155,7 @@ describe('OpfCheckoutPaymentsComponent', () => {
     fixture.detectChanges();
 
     expect(globalMessageService.add).toHaveBeenCalledWith(
-      { key: 'opf.checkout.errors.loadActiveConfigurations' },
+      { key: 'opfCheckout.errors.loadActiveConfigurations' },
       GlobalMessageType.MSG_TYPE_ERROR
     );
   });
@@ -155,7 +163,7 @@ describe('OpfCheckoutPaymentsComponent', () => {
   it('should preselect the default payment option', () => {
     const defaultSelectedPaymentOptionId = 1;
 
-    opfServiceMock.getOpfMetadataState.and.returnValue(
+    opfMetadataStoreServiceMock.getOpfMetadataState.and.returnValue(
       of({
         isPaymentInProgress: false,
         selectedPaymentOptionId: undefined,
@@ -168,5 +176,35 @@ describe('OpfCheckoutPaymentsComponent', () => {
     fixture.detectChanges();
 
     expect(component.selectedPaymentId).toBe(defaultSelectedPaymentOptionId);
+  });
+
+  it('should render payment provider logo', () => {
+    activeConfigurationsState$.next({
+      loading: false,
+      error: false,
+      data: mockActiveConfigurations,
+    });
+
+    fixture.detectChanges();
+
+    mockActiveConfigurations.forEach((configuration) => {
+      const logoElement = el.query(
+        By.css(
+          'label[for=paymentId-' + configuration.id + ']  .cx-payment-logo'
+        )
+      );
+
+      if (configuration?.logoUrl) {
+        expect(logoElement).toBeTruthy();
+        expect(logoElement.nativeElement.attributes['alt'].value).toBe(
+          configuration.displayName
+        );
+        expect(logoElement.nativeElement.attributes['src'].value).toBe(
+          configuration.logoUrl
+        );
+      } else {
+        expect(logoElement).toBeFalsy();
+      }
+    });
   });
 });

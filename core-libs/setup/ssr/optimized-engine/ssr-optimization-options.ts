@@ -5,7 +5,9 @@
  */
 
 import { Request } from 'express';
+import { getRequestUrl } from '../express-utils/express-request-url';
 import { DefaultExpressServerLogger, ExpressServerLogger } from '../logger';
+import { RenderingEntry } from './rendering-cache.model';
 import { defaultRenderingStrategyResolver } from './rendering-strategy-resolver';
 import { defaultRenderingStrategyResolverOptions } from './rendering-strategy-resolver-options';
 
@@ -47,7 +49,7 @@ export interface SsrOptimizationOptions {
    * Time in milliseconds after prerendered page is becoming stale and should
    * be rendered again.
    */
-  ttl?: number;
+  ttl?: number | undefined;
 
   /**
    * Allows overriding default key generator for custom differentiating
@@ -114,7 +116,13 @@ export interface SsrOptimizationOptions {
   reuseCurrentRendering?: boolean;
 
   /**
-   * Enable detailed logs for troubleshooting problems
+   * @deprecated - This flag is not used anymore since v2211.27.
+   *
+   * Now all the information about the traffic and rendering is logged unconditionally:
+   * - receiving requests
+   * - responding to requests (either with HTML result, error or fallback to CSR)
+   * - start and end of renders
+   * - timeout of renders (due to passing `maxRenderTime`)
    */
   debug?: boolean;
 
@@ -130,6 +138,42 @@ export interface SsrOptimizationOptions {
    * By default, the DefaultExpressServerLogger is used.
    */
   logger?: ExpressServerLogger;
+
+  /**
+   * When caching is enabled, this function tells whether the given rendering result
+   * (html or error) should be cached.
+   *
+   * By default, all html rendering results are cached. By default, also all errors are cached
+   * unless the separate option `avoidCachingErrors` is enabled.
+   */
+  shouldCacheRenderingResult?: ({
+    options,
+    entry,
+  }: {
+    options: SsrOptimizationOptions;
+    entry: Pick<RenderingEntry, 'err' | 'html'>;
+  }) => boolean;
+
+  /**
+   * Toggles providing granular adaptation to breaking changes in OptimizedSsrEngine.
+   * They are temporary and will be removed in the future.
+   * Each toggle has its own lifespan.
+   *
+   * Note: They are related only to the `OptimizedSsrEngine`. In particular, they
+   * are different from Spartacus's regular feature toggles provided in the Angular app.
+   */
+  ssrFeatureToggles?: {
+    /**
+     * Determines if rendering errors should be skipped from caching.
+     *
+     * It's recommended to set to `true` (i.e. errors are skipped from caching),
+     * which will become the default behavior, when this feature toggle is removed.
+     *
+     * It only affects the default `shouldCacheRenderingResult`.
+     * Custom implementations of `shouldCacheRenderingResult` may ignore this setting.
+     */
+    avoidCachingErrors?: boolean;
+  };
 }
 
 export enum RenderingStrategy {
@@ -138,16 +182,57 @@ export enum RenderingStrategy {
   ALWAYS_SSR = 1,
 }
 
-export const defaultSsrOptimizationOptions: SsrOptimizationOptions = {
+/**
+ * Deeply required type for `featureToggles` property.
+ */
+type DeepRequired<T> = {
+  [P in keyof T]-?: DeepRequired<T[P]>;
+};
+
+/**
+ * Returns the full url for the given SSR Request.
+ */
+export const getDefaultRenderKey = getRequestUrl;
+
+/**
+ * The type of `defaultSsrOptimizationOptions` ensures that all properties are set to a default value.
+ * Thanks to this, all options are well-defined and can be printed to logs on the SSR server start.
+ */
+type DefaultSsrOptimizationOptions = Omit<
+  Required<SsrOptimizationOptions>,
+  | 'debug' // debug is deprecated and not used anymore
+  | 'ttl' // ttl is required but its default value is `undefined`
+> & {
+  ttl: number | undefined; // needed, otherwise we could not set the value `ttl: undefined` value (due to the Required<...>)
+} & DeepRequired<
+    // all nested properties of `ssrFeatureToggles` are required too
+    Pick<
+      SsrOptimizationOptions,
+      //
+      'ssrFeatureToggles'
+    >
+  >;
+
+export const defaultSsrOptimizationOptions: DefaultSsrOptimizationOptions = {
+  cache: false,
   cacheSize: 3000,
+  ttl: undefined,
   concurrency: 10,
   timeout: 3_000,
   forcedSsrTimeout: 60_000,
   maxRenderTime: 300_000,
   reuseCurrentRendering: true,
-  debug: false,
   renderingStrategyResolver: defaultRenderingStrategyResolver(
     defaultRenderingStrategyResolverOptions
   ),
   logger: new DefaultExpressServerLogger(),
+  shouldCacheRenderingResult: ({ options, entry }) =>
+    !(
+      options.ssrFeatureToggles?.avoidCachingErrors === true &&
+      Boolean(entry.err)
+    ),
+  renderKeyResolver: getDefaultRenderKey,
+  ssrFeatureToggles: {
+    avoidCachingErrors: false,
+  },
 };

@@ -3,6 +3,7 @@
   role="dialog"
   [cxFocus]="focusConfig"
   (esc)="closeModal(BIND_CART_ACTION.CANCEL)"
+  aria-labelledby="asm-save-cart-dialog-title"
 >
   <div class="cx-modal-content">
     <!-- Modal Header -->
@@ -52,6 +53,13 @@
         </div>
         <div class="cx-dialog-row row">
           <div
+            *cxFeature="'a11yQTY2Quantity'"
+            class="cx-dialog-item col-sm-6 col-md-6 text-right item-left-text"
+          >
+            {{ 'asm.saveCart.dialog.row.qtyFull' | cxTranslate }}
+          </div>
+          <div
+            *cxFeature="'!a11yQTY2Quantity'"
             class="cx-dialog-item col-sm-6 col-md-6 text-right item-left-text"
           >
             {{ 'asm.saveCart.dialog.row.qty' | cxTranslate }}

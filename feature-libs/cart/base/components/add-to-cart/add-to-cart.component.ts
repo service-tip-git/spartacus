@@ -9,11 +9,13 @@ import {
   ChangeDetectorRef,
   Component,
   ComponentRef,
+  ElementRef,
   HostListener,
   Input,
   OnDestroy,
   OnInit,
   Optional,
+  ViewChild,
   inject,
 } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
@@ -29,6 +31,7 @@ import {
   FeatureConfigService,
   Product,
   isNotNullable,
+  useFeatureStyles,
 } from '@spartacus/core';
 import {
   CmsComponentData,
@@ -55,6 +58,11 @@ export class AddToCartComponent implements OnInit, OnDestroy {
    */
   @Input() product: Product;
 
+  /**
+   * Element responsible for opening the modal. The reference is used to refocus the modal after it closes.
+   */
+  @ViewChild('addToCartDialogTriggerEl') addToCartDialogTriggerEl: ElementRef;
+
   maxQuantity: number;
 
   hasStock: boolean = false;
@@ -77,9 +85,7 @@ export class AddToCartComponent implements OnInit, OnDestroy {
 
   iconTypes = ICON_TYPE;
 
-  @Optional() featureConfigService = inject(FeatureConfigService, {
-    optional: true,
-  });
+  private featureConfigService = inject(FeatureConfigService);
 
   /**
    * We disable the dialog launch on quantity input,
@@ -107,7 +113,9 @@ export class AddToCartComponent implements OnInit, OnDestroy {
     protected component: CmsComponentData<CmsAddToCartComponent>,
     protected eventService: EventService,
     @Optional() protected productListItemContext?: ProductListItemContext
-  ) {}
+  ) {
+    useFeatureStyles('a11yQTY2Quantity');
+  }
 
   ngOnInit() {
     if (this.product) {
@@ -228,6 +236,9 @@ export class AddToCartComponent implements OnInit, OnDestroy {
     newEvent.quantity = quantity;
     newEvent.numberOfEntriesBeforeAdd = numberOfEntriesBeforeAdd;
     newEvent.pickupStoreName = storeName;
+    if (this.featureConfigService.isEnabled('a11yDialogTriggerRefocus')) {
+      newEvent.triggerElementRef = this.addToCartDialogTriggerEl;
+    }
     return newEvent;
   }
 

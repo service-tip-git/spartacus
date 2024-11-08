@@ -131,6 +131,12 @@ export const SPARTACUS_IMAGE_ZOOM_ASSETS = `@spartacus/product/image-zoom/assets
 export const SPARTACUS_VARIANTS = `@spartacus/product/variants`;
 export const SPARTACUS_VARIANTS_ROOT = `@spartacus/product/variants/root`;
 export const SPARTACUS_VARIANTS_ASSETS = `@spartacus/product/variants/assets`;
+export const SPARTACUS_PRODUCT_MULTI_DIMENSIONAL = `@spartacus/product-multi-dimensional`;
+export const SPARTACUS_PRODUCT_MULTI_DIMENSIONAL_LIST = `@spartacus/product-multi-dimensional/list`;
+export const SPARTACUS_PRODUCT_MULTI_DIMENSIONAL_LIST_ROOT = `@spartacus/product-multi-dimensional/list/root`;
+export const SPARTACUS_PRODUCT_MULTI_DIMENSIONAL_SELECTOR = `@spartacus/product-multi-dimensional/selector`;
+export const SPARTACUS_PRODUCT_MULTI_DIMENSIONAL_SELECTOR_ROOT = `@spartacus/product-multi-dimensional/selector/root`;
+export const SPARTACUS_PRODUCT_MULTI_DIMENSIONAL_SELECTOR_CONFIGURATOR_ASSETS = `@spartacus/product-multi-dimensional/selector/assets`;
 export const SPARTACUS_FUTURE_STOCK = `@spartacus/product/future-stock`;
 export const SPARTACUS_FUTURE_STOCK_ROOT = `@spartacus/product/future-stock/root`;
 export const SPARTACUS_FUTURE_STOCK_ASSETS = `@spartacus/product/future-stock/assets`;
@@ -231,9 +237,25 @@ export const SPARTACUS_OPF_CHECKOUT = `@spartacus/opf/checkout`;
 export const SPARTACUS_OPF_CHECKOUT_ROOT = `@spartacus/opf/checkout/root`;
 export const SPARTACUS_OPF_CHECKOUT_ASSETS = `@spartacus/opf/checkout/assets`;
 
+export const SPARTACUS_OPF_PAYMENT = `@spartacus/opf/payment`;
+export const SPARTACUS_OPF_PAYMENT_ROOT = `@spartacus/opf/payment/root`;
+export const SPARTACUS_OPF_PAYMENT_ASSETS = `@spartacus/opf/payment/assets`;
+
+export const SPARTACUS_OPF_GLOBAL_FUNCTIONS = `@spartacus/opf/global-functions`;
+export const SPARTACUS_OPF_GLOBAL_FUNCTIONS_ROOT = `@spartacus/opf/global-functions/root`;
+
+export const SPARTACUS_OPF_CTA = `@spartacus/opf/cta`;
+export const SPARTACUS_OPF_CTA_ROOT = `@spartacus/opf/cta/root`;
+
+export const SPARTACUS_OPF_QUICK_BUY = `@spartacus/opf/quick-buy`;
+export const SPARTACUS_OPF_QUICK_BUY_ROOT = `@spartacus/opf/quick-buy/root`;
+
 export const SPARTACUS_OPF_BASE = `@spartacus/opf/base`;
 export const SPARTACUS_OPF_BASE_ROOT = `@spartacus/opf/base/root`;
-export const SPARTACUS_OPF_BASE_ASSETS = `@spartacus/opf/base/assets`;
+
+export const SPARTACUS_OMF = '@spartacus/omf';
+export const SPARTACUS_OMF_ROOT = '@spartacus/omf/root';
+export const SPARTACUS_OMF_ORDER = '@spartacus/omf/order';
 
 export const SPARTACUS_OPPS = '@spartacus/opps';
 export const SPARTACUS_OPPS_ROOT = '@spartacus/opps/root';
@@ -291,7 +313,10 @@ export const PRODUCT_BULK_PRICING_FEATURE_NAME = 'Bulk-Pricing';
 export const PRODUCT_IMAGE_ZOOM_FEATURE_NAME = 'Image-Zoom';
 export const PRODUCT_VARIANTS_FEATURE_NAME = 'Product-Variants';
 export const PRODUCT_FUTURE_STOCK_FEATURE_NAME = 'Future-Stock';
-
+export const PRODUCT_MULTI_DIMENSIONAL_LIST_FEATURE_NAME =
+  'Product-Multi-Dimensional-List';
+export const PRODUCT_MULTI_DIMENSIONAL_SELECTOR_FEATURE_NAME =
+  'Product-Multi-Dimensional-Selector';
 export const PRODUCT_CONFIGURATOR_TEXTFIELD_FEATURE_NAME =
   'Textfield-Configurator';
 export const PRODUCT_CONFIGURATOR_VC_FEATURE_NAME = 'VC-Configurator';
@@ -337,10 +362,16 @@ export const S4_SERVICE_FEATURE_NAME = 's4-service';
 
 export const OPPS_FEATURE_NAME = 'OPPS';
 
+export const OMF_FEATURE_NAME = 'OMF';
+
 export const CUSTOMER_TICKETING_FEATURE_NAME = 'Customer-Ticketing';
 export const OPF_FEATURE_NAME = 'OPF';
 export const OPF_CHECKOUT_FEATURE_NAME = 'OPF-Checkout';
 export const OPF_BASE_FEATURE_NAME = 'OPF-Base';
+export const OPF_PAYMENT_FEATURE_NAME = 'OPF-Payment';
+export const OPF_CTA_FEATURE_NAME = 'OPF-Cta';
+export const OPF_GLOBAL_FUNCTIONS_FEATURE_NAME = 'OPF-Global-Functions';
+export const OPF_QUICK_BUY_FEATURE_NAME = 'OPF-Quick-Buy';
 /***** Feature name end *****/
 
 /***** Feature name start *****/
@@ -350,7 +381,7 @@ export const PICKUP_IN_STORE_MODULE = 'PickupInStoreModule';
 export const PICKUP_IN_STORE_ROOT_MODULE = 'PickupInStoreRootModule';
 /***** Feature name end *****/
 
-export const CPQ_QUOTE_FEATURE_NAME = 'Cpq-Quote';
+export const CPQ_QUOTE_FEATURE_NAME = 'cpq-quote';
 export const SPARTACUS_CPQ_QUOTE = `@spartacus/cpq-quote`;
 export const SPARTACUS_CPQ_QUOTE_ROOT = `@spartacus/cpq-quote/root`;
 export const SPARTACUS_CPQ_QUOTE_ASSETS = `@spartacus/cpq-quote/assets`;

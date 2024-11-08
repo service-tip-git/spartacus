@@ -321,17 +321,25 @@ describe('OpfResourceLoaderService', () => {
       opfResourceLoaderService = TestBed.inject(OpfResourceLoaderService);
     });
 
-    it('should embed styles with SSR when platform is set to server', fakeAsync(() => {
+    it('should not loadStyles with SSR when platform is set to server', fakeAsync(() => {
       const mockStyleResource = {
         url: 'style-url',
         type: OpfDynamicScriptResourceType.STYLES,
       };
 
-      spyOn<any>(opfResourceLoaderService, 'embedStyles').and.callThrough();
-
+      spyOn<any>(opfResourceLoaderService, 'loadStyles').and.callThrough();
       opfResourceLoaderService.loadProviderResources([], [mockStyleResource]);
+      expect(opfResourceLoaderService['loadStyles']).not.toHaveBeenCalled();
+    }));
 
-      expect(opfResourceLoaderService['embedStyles']).toHaveBeenCalled();
+    it('should not loadScript with SSR when platform is set to server', fakeAsync(() => {
+      const mockScriptResource = {
+        url: 'script-url',
+        type: OpfDynamicScriptResourceType.SCRIPT,
+      };
+      spyOn<any>(opfResourceLoaderService, 'loadScript').and.callThrough();
+      opfResourceLoaderService.loadProviderResources([], [mockScriptResource]);
+      expect(opfResourceLoaderService['loadScript']).not.toHaveBeenCalled();
     }));
   });
 
@@ -367,6 +375,24 @@ describe('OpfResourceLoaderService', () => {
       );
 
       expect(console.log).toHaveBeenCalledWith('Script executed');
+    });
+  });
+
+  describe('executeHtml in SSR', () => {
+    it('should not execute script with SSR when platform is set to server', () => {
+      TestBed.overrideProvider(PLATFORM_ID, { useValue: 'server' });
+      opfResourceLoaderService = TestBed.inject(OpfResourceLoaderService);
+
+      const mockScript = document.createElement('script');
+      mockScript.innerText = 'console.log("Script executed");';
+      spyOn(document, 'createElement').and.returnValue(mockScript);
+      spyOn(console, 'log');
+
+      opfResourceLoaderService.executeScriptFromHtml(
+        '<script>console.log("Script executed");</script>'
+      );
+
+      expect(console.log).not.toHaveBeenCalledWith('Script executed');
     });
   });
 });

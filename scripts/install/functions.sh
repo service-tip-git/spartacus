@@ -136,7 +136,7 @@ function add_epd_visualization {
 
 function add_opf {
     if [ "$ADD_OPF" = true ] ; then
-        ng add @spartacus/opf@${SPARTACUS_VERSION} --base-url ${OPF_BASE_URL} --commerce-cloud-public-key ${OPF_CLIENT_PUBLIC_KEY} --skip-confirmation --no-interactive
+        ng add @spartacus/opf@${SPARTACUS_VERSION} --opf-base-url ${OPF_BASE_URL} --commerce-cloud-public-key ${OPF_CLIENT_PUBLIC_KEY} --skip-confirmation --no-interactive
     fi
 }
 
@@ -146,6 +146,13 @@ function add_product_configurator {
 
     if [ "$ADD_CPQ" = true ] ; then
         ng add @spartacus/product-configurator --skip-confirmation --no-interactive --features "CPQ-Configurator"
+    fi
+}
+
+function add_product_multi_dimensional {
+    if [ "$ADD_PRODUCT_MULTI_DIMENSIONAL" = true ] ; then
+    ng add @spartacus/product-multi-dimensional@${SPARTACUS_VERSION} --skip-confirmation --no-interactive
+    ng add @spartacus/product-multi-dimensional --skip-confirmation --no-interactive --features "Product-Multi-Dimensional-Selector" --features "Product-Multi-Dimensional-List"
     fi
 }
 
@@ -217,6 +224,7 @@ function add_spartacus_csr {
     add_epd_visualization
     add_opf
     add_product_configurator
+    add_product_multi_dimensional
     add_quote
     add_s4om
     add_S4_SERVICE
@@ -246,6 +254,7 @@ function add_spartacus_ssr {
     add_epd_visualization
     add_opf
     add_product_configurator
+    add_product_multi_dimensional
     add_quote
     add_s4om
     add_S4_SERVICE
@@ -274,6 +283,7 @@ function add_spartacus_ssr_pwa {
     add_epd_visualization
     add_opf
     add_product_configurator
+    add_product_multi_dimensional
     add_s4om
     add_S4_SERVICE
     add_requested_delivery_date
@@ -817,7 +827,7 @@ function parseInstallArgs {
                 ADD_S4_SERVICE=true
                 echo "➖ Added S/4HANA Service Integration"
                 shift
-                ;;                
+                ;;
             cpq-quote)
                 ADD_CPQ_QUOTE=true
                 echo "➖ Added CPQ_QUOTE"

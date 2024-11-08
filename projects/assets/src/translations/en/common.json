@@ -29,7 +29,9 @@
     "required": "required",
     "zoomIn": "Zoom in",
     "zoomOut": "Zoom out",
-    "selected": "Selected"
+    "selected": "Selected",
+    "expand": "Expand",
+    "collapse": "Collapse"
   },
   "pageMetaResolver": {
     "category": {
@@ -60,7 +62,8 @@
     "footerNavLabel": "Footer links",
     "goTo": "Go to {{location}}",
     "navigateTo": "Navigate to {{nav}}",
-    "scrollToTop": "Scroll back to the top of the page"
+    "scrollToTop": "Scroll back to the top of the page",
+    "linkItemInList": "{{title}}. {{position}} of {{listLength}}"
   },
   "searchBox": {
     "placeholder": "Enter product name or SKU",
@@ -81,7 +84,8 @@
       "noMatch": "We could not find any results",
       "exactMatch": "{{ term }}",
       "empty": "Ask us anything"
-    }
+    },
+    "closeSearchPanel": "Close"
   },
   "sorting": {
     "date": "Date",
@@ -178,6 +182,7 @@
       "cxMinOneSpecialCharacter": "Password must contain at least one special character",
       "cxMinSixCharactersLength": "Password must contain at least 6 characters",
       "cxContainsSpecialCharacters": "Password cannot contain special characters",
+      "cxNoConsecutiveCharacters": "Password cannot contain consecutive identical characters",
       "date": {
         "required": "Field {{label}} is required",
         "min": "Field {{label}} cannot be before {{min}}",
@@ -191,6 +196,7 @@
     "cxInvalidEmail": "This is not a valid email format",
     "cxInvalidPassword": "This is not a valid password format",
     "cxPasswordsMustMatch": "Password fields must match",
+    "cxPasswordsCannotMatch": "Password fields cannot match",
     "cxEmailsMustMatch": "Email fields must match",
     "cxStarRatingEmpty": "Rating field is required",
     "cxNoSelectedItemToCancel": "Select at least one item",

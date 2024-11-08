@@ -6,23 +6,27 @@
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 
-import { BaseSiteService, Config, StringTemplate } from '@spartacus/core';
+import { BaseSiteService, StringTemplate } from '@spartacus/core';
+import { OpfApiConfig, OpfConfig } from '@spartacus/opf/base/root';
 import { OpfEndpointsService } from './opf-endpoints.service';
 
 describe('OpfEndpointsService', () => {
   let service: OpfEndpointsService;
-  let configServiceMock: Partial<Config>;
+  let opfConfigMock: Partial<OpfConfig>;
+  let opfApiConfigMock: Partial<OpfApiConfig>;
   let baseSiteServiceMock: any;
 
   beforeEach(() => {
-    configServiceMock = {
+    opfConfigMock = {
       opf: {
-        baseUrl: 'https://elec-spa.com/opf',
+        opfBaseUrl: 'https://elec-spa.com/opf',
       },
+    };
+    opfApiConfigMock = {
       backend: {
-        occ: {
+        opfApi: {
           endpoints: {
-            product: 'product',
+            getActiveConfigurations: 'getActiveConfigurations',
           },
         },
       },
@@ -34,7 +38,8 @@ describe('OpfEndpointsService', () => {
 
     TestBed.configureTestingModule({
       providers: [
-        { provide: Config, useValue: configServiceMock },
+        { provide: OpfConfig, useValue: opfConfigMock },
+        { provide: OpfApiConfig, useValue: opfApiConfigMock },
         { provide: BaseSiteService, useValue: baseSiteServiceMock },
       ],
     });
@@ -53,25 +58,19 @@ describe('OpfEndpointsService', () => {
     });
 
     it('should return an empty string when config is undefined', () => {
-      (service['config'] as any) = undefined;
-      const result = service['getBaseEndpoint']();
-      expect(result).toEqual('');
-    });
-
-    it('should return an empty string when opf is undefined', () => {
-      service['config'] = {};
+      (service['opfConfig'] as any) = undefined;
       const result = service['getBaseEndpoint']();
       expect(result).toEqual('');
     });
 
     it('should return an empty string when baseUrl is undefined', () => {
-      service['config'] = { opf: {} };
+      service['opfConfig'] = { opf: {} };
       const result = service['getBaseEndpoint']();
       expect(result).toEqual('');
     });
 
     it('should return an empty string when baseUrl is empty', () => {
-      service['config'] = { opf: { baseUrl: '' } };
+      service['opfConfig'] = { opf: { opfBaseUrl: '' } };
       const result = service['getBaseEndpoint']();
       expect(result).toEqual('');
     });
@@ -79,15 +78,15 @@ describe('OpfEndpointsService', () => {
 
   describe('getEndpointFromContext()', () => {
     it('should return the endpoint configuration when it is defined', () => {
-      const endpoint = 'product';
+      const endpoint = 'getActiveConfigurations';
 
       const result = service['getEndpointFromContext'](endpoint);
 
-      expect(result).toEqual('product');
+      expect(result).toEqual('getActiveConfigurations');
     });
 
     it('should return empty string when endpointsConfig is undefined', () => {
-      (service['config'] as any).backend.occ.endpoints = undefined;
+      (service['opfApiConfig'] as any).backend.opfApi.endpoints = undefined;
       const endpoint = 'sampleEndpoint';
 
       const result = service['getEndpointFromContext'](endpoint);
@@ -106,16 +105,17 @@ describe('OpfEndpointsService', () => {
 
   describe('buildUrl()', () => {
     it('should build a URL with active base site and resolved endpoint', () => {
-      const endpoint = 'product';
+      const endpoint = 'getActiveConfigurations';
 
       const result = service.buildUrl(endpoint, {});
 
-      const expectedUrl = 'https://elec-spa.com/opf/electronics-spa/product';
+      const expectedUrl =
+        'https://elec-spa.com/opf/electronics-spa/getActiveConfigurations';
       expect(result).toEqual(expectedUrl);
     });
 
     it('should not call StringTemplate resolve() when there are no urlParams', () => {
-      const endpoint = 'product';
+      const endpoint = 'getActiveConfigurations';
       const spy = spyOn(StringTemplate, 'resolve').and.callThrough();
 
       service.buildUrl(endpoint, {});
@@ -124,7 +124,7 @@ describe('OpfEndpointsService', () => {
     });
 
     it('should call StringTemplate resolve() when there are urlParams', () => {
-      const endpoint = 'product';
+      const endpoint = 'getActiveConfigurations';
       const attributes = {
         urlParams: { param1: 'value1' },
       };
@@ -133,7 +133,11 @@ describe('OpfEndpointsService', () => {
 
       service.buildUrl(endpoint, attributes);
 
-      expect(spy).toHaveBeenCalledWith('product', attributes.urlParams, true);
+      expect(spy).toHaveBeenCalledWith(
+        'getActiveConfigurations',
+        attributes.urlParams,
+        true
+      );
     });
   });
 });

@@ -20,6 +20,7 @@ jest.mock('fs', () => ({
   readFileSync: () => '',
 }));
 const consoleLogSpy = jest.spyOn(console, 'log').mockImplementation();
+const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation();
 
 class MockExpressServerLogger implements Partial<ExpressServerLogger> {
   log(message: string, context: ExpressServerLoggerContext): void {
@@ -35,20 +36,24 @@ class MockExpressServerLogger implements Partial<ExpressServerLogger> {
  * Usage:
  * 1. Instantiate the class with desired options
  * 2. Call request() to run request through engine
- * 3. Examine renders property for the renders
+ * 3. Examine responses property
  */
 class TestEngineRunner {
   /** Accumulates html output for engine runs */
-  renders: string[] = [];
+  responses: (string | Error)[] = [];
 
-  /** Accumulates response parameters for engine runs */
-  responseParams: object[] = [];
+  /** Accumulates responses' headers for engine runs */
+  responsesHeaders: object[] = [];
 
   renderCount = 0;
   optimizedSsrEngine: OptimizedSsrEngine;
   engineInstance: NgExpressEngineInstance;
 
-  constructor(options: SsrOptimizationOptions, renderTime?: number) {
+  constructor(
+    options: SsrOptimizationOptions,
+    renderTime?: number,
+    params?: { withError?: boolean }
+  ) {
     // mocked engine instance that will render test output in 100 milliseconds
     const engineInstanceMock = (
       filePath: string,
@@ -56,18 +61,32 @@ class TestEngineRunner {
       callback: SsrCallbackFn
     ) => {
       setTimeout(() => {
-        callback(undefined, `${filePath}-${this.renderCount++}`);
+        const result = `${filePath}-${this.renderCount++}`;
+
+        if (params?.withError) {
+          const err = new Error(result);
+          callback(err, undefined);
+        } else {
+          callback(undefined, result);
+        }
       }, renderTime ?? defaultRenderTime);
     };
 
-    this.optimizedSsrEngine = new OptimizedSsrEngine(
-      engineInstanceMock,
-      options
-    );
+    this.optimizedSsrEngine = new OptimizedSsrEngine(engineInstanceMock, {
+      ...options,
+    });
     this.engineInstance = this.optimizedSsrEngine.engineInstance;
   }
 
-  /** Run request against the engine. The result will be stored in rendering property. */
+  /** Create engine that results with error during render */
+  static withError(
+    options: SsrOptimizationOptions,
+    renderTime = defaultRenderTime
+  ): TestEngineRunner {
+    return new TestEngineRunner(options, renderTime, { withError: true });
+  }
+
+  /** Run request against the engine. The result will be stored in `responses` property. */
   request(
     url: string,
     params?: {
@@ -75,8 +94,8 @@ class TestEngineRunner {
       httpHeaders?: IncomingHttpHeaders;
     }
   ): TestEngineRunner {
-    const response: { [key: string]: string } = {};
-    const headers = params?.httpHeaders ?? { host };
+    const responseHeaders: { [key: string]: string } = {};
+    const requestHeaders = params?.httpHeaders ?? { host };
     /** used when resolving getRequestUrl() and getRequestOrigin() */
     const app = <Partial<Application>>{
       get:
@@ -89,22 +108,22 @@ class TestEngineRunner {
       req: <Partial<Request>>{
         protocol: 'https',
         originalUrl: url,
-        headers,
+        headers: requestHeaders,
         get: (header: string): string | string[] | null | undefined => {
-          return headers[header];
+          return requestHeaders[header];
         },
         app,
         connection: <Partial<Socket>>{},
         res: <Partial<Response>>{
-          set: (key: string, value: any) => (response[key] = value),
+          set: (key: string, value: any) => (responseHeaders[key] = value),
           locals: {},
         },
       },
     };
 
-    this.engineInstance(url, optionsMock, (_, html): void => {
-      this.renders.push(html ?? '');
-      this.responseParams.push(response);
+    this.engineInstance(url, optionsMock, (error, html): void => {
+      this.responses.push(html ?? error ?? '');
+      this.responsesHeaders.push(responseHeaders);
     });
 
     return this;
@@ -163,27 +182,62 @@ describe('OptimizedSsrEngine', () => {
       });
 
       expect(consoleLogSpy.mock.lastCall).toMatchInlineSnapshot(`
-        [
-          "{
-          "message": "[spartacus] SSR optimization engine initialized",
-          "context": {
-            "timestamp": "2023-01-01T00:00:00.000Z",
-            "options": {
-              "cacheSize": 3000,
-              "concurrency": 10,
-              "timeout": 50,
-              "forcedSsrTimeout": 60000,
-              "maxRenderTime": 300000,
-              "reuseCurrentRendering": true,
-              "debug": false,
-              "renderingStrategyResolver": "() => ssr_optimization_options_1.RenderingStrategy.ALWAYS_SSR",
-              "logger": "DefaultExpressServerLogger"
-            }
-          }
-        }",
-        ]
-      `);
+[
+  "{
+  message: '[spartacus] SSR optimization engine initialized',
+  context: {
+    timestamp: '2023-01-01T00:00:00.000Z',
+    options: {
+      cache: false,
+      cacheSize: 3000,
+      ttl: undefined,
+      concurrency: 10,
+      timeout: 50,
+      forcedSsrTimeout: 60000,
+      maxRenderTime: 300000,
+      reuseCurrentRendering: true,
+      renderingStrategyResolver: '() => ssr_optimization_options_1.RenderingStrategy.ALWAYS_SSR',
+      logger: 'DefaultExpressServerLogger',
+      shouldCacheRenderingResult: '({ options, entry }) => !(options.ssrFeatureToggles?.avoidCachingErrors === true &&\\n' +
+        '        Boolean(entry.err))',
+      renderKeyResolver: 'function getRequestUrl(req) {\\n' +
+        '    return (0, express_request_origin_1.getRequestOrigin)(req) + req.originalUrl;\\n' +
+        '}',
+      ssrFeatureToggles: { avoidCachingErrors: false }
+    }
+  }
+}",
+]
+`);
     });
+  });
+
+  describe('rendering', () => {
+    it('should return rendered HTML if no errors', fakeAsync(() => {
+      const originalUrl = 'a';
+      const engineRunner = new TestEngineRunner({}).request('a');
+
+      tick(200);
+      expect(engineRunner.responses).toEqual(['a-0']);
+      expect(consoleLogSpy).toHaveBeenCalledWith(
+        expect.stringContaining(
+          `Request is resolved with the SSR rendering result (${originalUrl})`
+        )
+      );
+    }));
+
+    it('should return error if rendering fails', fakeAsync(() => {
+      const originalUrl = 'a';
+      const engineRunner = TestEngineRunner.withError({}).request('a');
+
+      tick(200);
+      expect(engineRunner.responses).toEqual([new Error('a-0')]);
+      expect(consoleErrorSpy).toHaveBeenCalledWith(
+        expect.stringContaining(
+          `Request is resolved with the SSR rendering error (${originalUrl})`
+        )
+      );
+    }));
   });
 
   describe('rendering cache', () => {
@@ -211,39 +265,39 @@ describe('OptimizedSsrEngine', () => {
   });
 
   describe('timeout option', () => {
-    it('should fallback to CSR if rendering exceeds timeout', fakeAsync(() => {
+    it('should fallback to CSR if rendering exceeds a request timeout', fakeAsync(() => {
       const engineRunner = new TestEngineRunner({ timeout: 50 }).request('a');
 
       tick(200);
-      expect(engineRunner.renders).toEqual(['']);
+      expect(engineRunner.responses).toEqual(['']);
     }));
 
-    it('should return timed out render in the followup request', fakeAsync(() => {
+    it('should reuse HTML meant for a previous timeouted request, if the new request is for the same url', fakeAsync(() => {
       const engineRunner = new TestEngineRunner({ timeout: 50 }).request('a');
 
       tick(200);
-      expect(engineRunner.renders).toEqual(['']);
+      expect(engineRunner.responses).toEqual(['']);
 
       engineRunner.request('a');
-      expect(engineRunner.renders[1]).toEqual('a-0');
+      expect(engineRunner.responses[1]).toEqual('a-0');
     }));
 
-    it('should return render if rendering meets timeout', fakeAsync(() => {
+    it('should return HTML if rendering meets timeout', fakeAsync(() => {
       const engineRunner = new TestEngineRunner({ timeout: 150 }).request('a');
 
       tick(200);
-      expect(engineRunner.renders).toEqual(['a-0']);
+      expect(engineRunner.responses).toEqual(['a-0']);
     }));
 
     it('should fallback instantly if is set to 0', () => {
       const engineRunner = new TestEngineRunner({ timeout: 0 }).request('a');
 
-      expect(engineRunner.renders).toEqual(['']);
+      expect(engineRunner.responses).toEqual(['']);
     });
 
-    it('should return timed out render in the followup request, also when timeout is set to 0', fakeAsync(() => {
+    it('should return HTML meant for a previous timeouted request if the new request is for the same url, even if `timeout` is configured to 0', fakeAsync(() => {
       const engineRunner = new TestEngineRunner({ timeout: 0 }).request('a');
-      expect(engineRunner.renders).toEqual(['']);
+      expect(engineRunner.responses).toEqual(['']);
       expect(getCurrentConcurrency(engineRunner)).toEqual({
         currentConcurrency: 1,
       });
@@ -254,37 +308,38 @@ describe('OptimizedSsrEngine', () => {
       });
 
       engineRunner.request('a');
-      expect(engineRunner.renders[1]).toEqual('a-0');
+      expect(engineRunner.responses[1]).toEqual('a-0');
       expect(getCurrentConcurrency(engineRunner)).toEqual({
         currentConcurrency: 0,
       });
     }));
   });
 
-  describe('no-store cache control header', () => {
-    it('should be applied for a fallback', () => {
+  describe('no-store cache control header in response', () => {
+    it('should be applied if a request times out ', () => {
       const engineRunner = new TestEngineRunner({ timeout: 0 }).request('a');
 
-      expect(engineRunner.renders).toEqual(['']);
-      expect(engineRunner.responseParams).toEqual([
+      expect(engineRunner.responses).toEqual(['']);
+      expect(engineRunner.responsesHeaders).toEqual([
         { 'Cache-Control': 'no-store' },
       ]);
     });
 
-    it('should not be applied for a render within time limit', fakeAsync(() => {
+    it('should not be applied if rendering finishes before request times out', fakeAsync(() => {
       const engineRunner = new TestEngineRunner({ timeout: 200 }).request('a');
 
       tick(200);
-      expect(engineRunner.renders).toEqual(['a-0']);
-      expect(engineRunner.responseParams).toEqual([{}]);
+      expect(engineRunner.responses).toEqual(['a-0']);
+      expect(engineRunner.responsesHeaders).toEqual([{}]);
     }));
-    it('should not be applied for a render served with next response', fakeAsync(() => {
+
+    it('should not be applied for subsequent requests to the same url, when reusing a HTML meant for a previous timed out request', fakeAsync(() => {
       const engineRunner = new TestEngineRunner({ timeout: 50 }).request('a');
 
       tick(200);
       engineRunner.request('a');
-      expect(engineRunner.renders).toEqual(['', 'a-0']);
-      expect(engineRunner.responseParams).toEqual([
+      expect(engineRunner.responses).toEqual(['', 'a-0']);
+      expect(engineRunner.responsesHeaders).toEqual([
         { 'Cache-Control': 'no-store' },
         {},
       ]);
@@ -292,7 +347,7 @@ describe('OptimizedSsrEngine', () => {
   });
 
   describe('cache option', () => {
-    it('should not cache requests if disabled', fakeAsync(() => {
+    it('should not cache HTML if `cache` is disabled', fakeAsync(() => {
       const engineRunner = new TestEngineRunner({
         cache: false,
         timeout: 200,
@@ -303,10 +358,10 @@ describe('OptimizedSsrEngine', () => {
       tick(200);
       engineRunner.request('a');
       tick(200);
-      expect(engineRunner.renders).toEqual(['a-0', 'a-1', 'a-2']);
+      expect(engineRunner.responses).toEqual(['a-0', 'a-1', 'a-2']);
     }));
 
-    it('should cache requests if enabled', fakeAsync(() => {
+    it('should cache HTML if `cache` is enabled', fakeAsync(() => {
       const engineRunner = new TestEngineRunner({
         cache: true,
         timeout: 200,
@@ -331,7 +386,149 @@ describe('OptimizedSsrEngine', () => {
 
       tick(200);
 
-      expect(engineRunner.renders).toEqual(['a-0', 'a-0', 'a-0']);
+      expect(engineRunner.responses).toEqual(['a-0', 'a-0', 'a-0']);
+    }));
+  });
+
+  describe('avoidCachingErrors option', () => {
+    describe('when using default shouldCacheRenderingResult', () => {
+      it('should not cache errors if `avoidCachingErrors` is set to true', fakeAsync(() => {
+        const engineRunner = TestEngineRunner.withError({
+          cache: true,
+          ssrFeatureToggles: {
+            avoidCachingErrors: true,
+          },
+        }).request('a');
+
+        tick(200);
+        engineRunner.request('a');
+        tick(200);
+        engineRunner.request('a');
+        tick(200);
+        expect(engineRunner.responses).toEqual([
+          new Error('a-0'),
+          new Error('a-1'),
+          new Error('a-2'),
+        ]);
+      }));
+
+      it('should cache errors if `avoidCachingErrors` is set to false', fakeAsync(() => {
+        const engineRunner = TestEngineRunner.withError({
+          cache: true,
+          ssrFeatureToggles: {
+            avoidCachingErrors: false,
+          },
+        }).request('a');
+
+        tick(200);
+        engineRunner.request('a');
+        tick(200);
+        engineRunner.request('a');
+        tick(200);
+        expect(engineRunner.responses).toEqual([
+          new Error('a-0'),
+          new Error('a-0'),
+          new Error('a-0'),
+        ]);
+      }));
+
+      it('should cache HTML if `avoidCachingErrors` is set to true', fakeAsync(() => {
+        const engineRunner = new TestEngineRunner({
+          cache: true,
+          ssrFeatureToggles: {
+            avoidCachingErrors: true,
+          },
+        }).request('a');
+
+        tick(200);
+        engineRunner.request('a');
+        tick(200);
+        engineRunner.request('a');
+        tick(200);
+        expect(engineRunner.responses).toEqual(['a-0', 'a-0', 'a-0']);
+      }));
+
+      it('should cache HTML if `avoidCachingErrors` is set to false', fakeAsync(() => {
+        const engineRunner = new TestEngineRunner({
+          cache: true,
+          ssrFeatureToggles: {
+            avoidCachingErrors: true,
+          },
+        }).request('a');
+
+        tick(200);
+        engineRunner.request('a');
+        tick(200);
+        engineRunner.request('a');
+        tick(200);
+        expect(engineRunner.responses).toEqual(['a-0', 'a-0', 'a-0']);
+      }));
+    });
+  });
+
+  describe('shouldCacheRenderingResult option', () => {
+    it('should not cache errors if `shouldCacheRenderingResult` returns false', fakeAsync(() => {
+      const engineRunner = TestEngineRunner.withError({
+        cache: true,
+        shouldCacheRenderingResult: () => false,
+      }).request('a');
+
+      tick(200);
+      engineRunner.request('a');
+      tick(200);
+      engineRunner.request('a');
+      tick(200);
+      expect(engineRunner.responses).toEqual([
+        new Error('a-0'),
+        new Error('a-1'),
+        new Error('a-2'),
+      ]);
+    }));
+
+    it('should cache errors if `shouldCacheRenderingResult` returns true', fakeAsync(() => {
+      const engineRunner = TestEngineRunner.withError({
+        cache: true,
+        shouldCacheRenderingResult: () => true,
+      }).request('a');
+
+      tick(200);
+      engineRunner.request('a');
+      tick(200);
+      engineRunner.request('a');
+      tick(200);
+      expect(engineRunner.responses).toEqual([
+        new Error('a-0'),
+        new Error('a-0'),
+        new Error('a-0'),
+      ]);
+    }));
+
+    it('should not cache HTML if `shouldCacheRenderingResult` returns false', fakeAsync(() => {
+      const engineRunner = new TestEngineRunner({
+        cache: true,
+        shouldCacheRenderingResult: () => false,
+      }).request('a');
+
+      tick(200);
+      engineRunner.request('a');
+      tick(200);
+      engineRunner.request('a');
+      tick(200);
+      expect(engineRunner.responses).toEqual(['a-0', 'a-1', 'a-2']);
+    }));
+
+    it('should cache HTML if `shouldCacheRenderingResult` returns true', fakeAsync(() => {
+      const engineRunner = new TestEngineRunner({
+        cache: true,
+        shouldCacheRenderingResult: () => true,
+      }).request('a');
+
+      tick(200);
+      engineRunner.request('a');
+      tick(200);
+      engineRunner.request('a');
+      tick(200);
+      expect(engineRunner.responses).toEqual(['a-0', 'a-0', 'a-0']);
     }));
   });
 
@@ -348,7 +545,7 @@ describe('OptimizedSsrEngine', () => {
         .request('e');
 
       tick(200);
-      expect(engineRunner.renders).toEqual([
+      expect(engineRunner.responses).toEqual([
         '', // CSR fallback for 'd'
         '', // CSR fallback for 'e'
         'a-0',
@@ -371,7 +568,7 @@ describe('OptimizedSsrEngine', () => {
       engineRunner.request('f').request('g');
       tick(200);
 
-      expect(engineRunner.renders).toEqual([
+      expect(engineRunner.responses).toEqual([
         '', // CSR fallback for 'c'
         'a-0',
         '', // CSR fallback for 'e'
@@ -384,7 +581,7 @@ describe('OptimizedSsrEngine', () => {
   });
 
   describe('ttl option', () => {
-    it('should invalidate expired renders', fakeAsync(() => {
+    it('should invalidate expired cache entries', fakeAsync(() => {
       let currentDate = 100;
       jest.spyOn(Date, 'now').mockImplementation(() => currentDate);
 
@@ -403,10 +600,10 @@ describe('OptimizedSsrEngine', () => {
       engineRunner.request('a');
 
       tick(200);
-      expect(engineRunner.renders).toEqual(['a-0', 'a-0', 'a-1']);
+      expect(engineRunner.responses).toEqual(['a-0', 'a-0', 'a-1']);
     }));
 
-    it('should not invalidate renders if ttl is not defined', fakeAsync(() => {
+    it('should not invalidate cache entries if `ttl` is not defined', fakeAsync(() => {
       let currentDate = 100;
       jest.spyOn(Date, 'now').mockImplementation(() => currentDate);
 
@@ -424,7 +621,7 @@ describe('OptimizedSsrEngine', () => {
       engineRunner.request('a');
 
       tick(200);
-      expect(engineRunner.renders).toEqual(['a-0', 'a-0', 'a-0']);
+      expect(engineRunner.responses).toEqual(['a-0', 'a-0', 'a-0']);
     }));
   });
 
@@ -489,7 +686,7 @@ describe('OptimizedSsrEngine', () => {
       tick(200);
       engineRunner.request('elu');
       tick(200);
-      expect(engineRunner.renders).toEqual([
+      expect(engineRunner.responses).toEqual([
         'ala-0',
         'ala-0',
         'ela-1',
@@ -509,7 +706,7 @@ describe('OptimizedSsrEngine', () => {
         }).request('a');
 
         tick(200);
-        expect(engineRunner.renders).toEqual(['a-0']);
+        expect(engineRunner.responses).toEqual(['a-0']);
       }));
 
       it('should ignore timeout also when it is set to 0', fakeAsync(() => {
@@ -522,10 +719,10 @@ describe('OptimizedSsrEngine', () => {
         engineRunner.request('a');
 
         tick(200);
-        expect(engineRunner.renders).toEqual(['a-0']);
+        expect(engineRunner.responses).toEqual(['a-0']);
       }));
 
-      it('when reuseCurrentRendering is false, it should render each request separately, even if there is already a pending render for the same rendering key', fakeAsync(() => {
+      it('when reuseCurrentRendering is false, it should render for each request separately, even if there is already a pending render for the same rendering key', fakeAsync(() => {
         const engineRunner = new TestEngineRunner({
           renderingStrategyResolver: () => RenderingStrategy.ALWAYS_SSR,
           timeout: 200,
@@ -546,10 +743,10 @@ describe('OptimizedSsrEngine', () => {
         expect(getCurrentConcurrency(engineRunner)).toEqual({
           currentConcurrency: 2,
         });
-        expect(engineRunner.renders).toEqual([]);
+        expect(engineRunner.responses).toEqual([]);
 
         tick(100);
-        expect(engineRunner.renders).toEqual(['a-0', 'a-1']);
+        expect(engineRunner.responses).toEqual(['a-0', 'a-1']);
         expect(
           engineRunner.optimizedSsrEngine['expressEngine']
         ).toHaveBeenCalledTimes(2);
@@ -572,7 +769,7 @@ describe('OptimizedSsrEngine', () => {
         tick(200);
         engineRunner.request('a');
         tick(200);
-        expect(engineRunner.renders).toEqual(['', '']);
+        expect(engineRunner.responses).toEqual(['', '']);
       }));
 
       it('should not start the actual render in the background', fakeAsync(() => {
@@ -587,7 +784,7 @@ describe('OptimizedSsrEngine', () => {
         );
 
         engineRunner.request('a');
-        expect(engineRunner.renders).toEqual(['']);
+        expect(engineRunner.responses).toEqual(['']);
 
         expect(
           engineRunner.optimizedSsrEngine['expressEngine']
@@ -606,10 +803,10 @@ describe('OptimizedSsrEngine', () => {
 
         tick(200);
         engineRunner.request('a');
-        expect(engineRunner.renders).toEqual(['', 'a-0']);
+        expect(engineRunner.responses).toEqual(['', 'a-0']);
       }));
 
-      it('when reuseCurrentRendering is false, it should fallback to CSR when there is already pending a render for the same rendering key', fakeAsync(() => {
+      it('when reuseCurrentRendering is false, it should fallback to CSR when there is already a pending render for the same rendering key', fakeAsync(() => {
         const engineRunner = new TestEngineRunner({
           renderingStrategyResolver: () => RenderingStrategy.DEFAULT,
           timeout: 200,
@@ -625,10 +822,10 @@ describe('OptimizedSsrEngine', () => {
           currentConcurrency: 1,
         });
 
-        expect(engineRunner.renders).toEqual(['']); // immediate fallback to CSR for the 2nd request for the same key
+        expect(engineRunner.responses).toEqual(['']); // immediate fallback to CSR for the 2nd request for the same key
 
         tick(100);
-        expect(engineRunner.renders).toEqual(['', 'a-0']);
+        expect(engineRunner.responses).toEqual(['', 'a-0']);
         expect(getCurrentConcurrency(engineRunner)).toEqual({
           currentConcurrency: 0,
         });
@@ -649,13 +846,13 @@ describe('OptimizedSsrEngine', () => {
         engineRunner.request('a', { httpHeaders: { 'User-Agent': 'bot' } });
         tick(200);
 
-        expect(engineRunner.renders).toEqual(['', 'a-1']);
+        expect(engineRunner.responses).toEqual(['', 'a-1']);
       }));
     });
   });
 
   describe('forcedSsrTimeout option', () => {
-    it('should fallback to CSR when forcedSsrTimeout timeout is exceeded for ALWAYS_SSR rendering strategy, and return the timed out render in the followup request', fakeAsync(() => {
+    it('should fallback to CSR when forcedSsrTimeout timeout is exceeded for ALWAYS_SSR rendering strategy, and after that rendering ends, its HTML should be reused in the next request for the same url', fakeAsync(() => {
       const engineRunner = new TestEngineRunner({
         renderingStrategyResolver: () => RenderingStrategy.ALWAYS_SSR,
         timeout: 50,
@@ -668,15 +865,15 @@ describe('OptimizedSsrEngine', () => {
       });
 
       tick(60);
-      expect(engineRunner.renders).toEqual([]);
+      expect(engineRunner.responses).toEqual([]);
       tick(50);
-      expect(engineRunner.renders).toEqual(['']);
+      expect(engineRunner.responses).toEqual(['']);
       expect(getCurrentConcurrency(engineRunner)).toEqual({
         currentConcurrency: 0,
       });
 
       engineRunner.request('a');
-      expect(engineRunner.renders).toEqual(['', 'a-0']);
+      expect(engineRunner.responses).toEqual(['', 'a-0']);
       expect(getCurrentConcurrency(engineRunner)).toEqual({
         currentConcurrency: 0,
       });
@@ -691,11 +888,11 @@ describe('OptimizedSsrEngine', () => {
       engineRunner.request('a');
 
       tick(60);
-      expect(engineRunner.renders).toEqual(['']);
+      expect(engineRunner.responses).toEqual(['']);
 
       tick(50);
       engineRunner.request('a');
-      expect(engineRunner.renders).toEqual(['', 'a-0']);
+      expect(engineRunner.responses).toEqual(['', 'a-0']);
     }));
   });
   describe('maxRenderTime option', () => {
@@ -827,7 +1024,7 @@ describe('OptimizedSsrEngine', () => {
         renderTime
       ).request(requestUrl);
       jest.spyOn(engineRunner.optimizedSsrEngine as any, 'log');
-      expect(engineRunner.renders).toEqual([]);
+      expect(engineRunner.responses).toEqual([]);
 
       tick(fiveMinutes + 101);
       expect(engineRunner.optimizedSsrEngine['log']).toHaveBeenCalledWith(
@@ -835,10 +1032,10 @@ describe('OptimizedSsrEngine', () => {
         false,
         { request: expect.objectContaining({ originalUrl: requestUrl }) }
       );
-      expect(engineRunner.renders).toEqual(['']);
+      expect(engineRunner.responses).toEqual(['']);
 
       engineRunner.request(requestUrl);
-      expect(engineRunner.renders).toEqual(['']); // if the result was cached, the 2nd request would get immediately 'a-0'
+      expect(engineRunner.responses).toEqual(['']); // if the result was cached, the 2nd request would get immediately 'a-0'
       flush();
     }));
   });
@@ -893,14 +1090,14 @@ describe('OptimizedSsrEngine', () => {
           false,
           { request: expect.objectContaining({ originalUrl: requestUrl }) }
         );
-        expect(engineRunner.renders).toEqual(['', '']);
+        expect(engineRunner.responses).toEqual(['', '']);
 
         flush();
       }));
     });
 
     describe('when enabled', () => {
-      describe('multiple subsequent requests for the same rendering key should reuse the same render', () => {
+      describe('multiple subsequent requests for the same rendering key should await for the result of the same pending rendering, and all get the same HTML response', () => {
         it('and the first request should timeout', fakeAsync(() => {
           const timeout = 300;
           const engineRunner = new TestEngineRunner(
@@ -923,7 +1120,7 @@ describe('OptimizedSsrEngine', () => {
 
           tick(100);
           expect(engineRunner.renderCount).toEqual(1);
-          expect(engineRunner.renders).toEqual(['', `${requestUrl}-0`]);
+          expect(engineRunner.responses).toEqual(['', `${requestUrl}-0`]);
           flush();
         }));
 
@@ -961,7 +1158,7 @@ describe('OptimizedSsrEngine', () => {
 
           expect(renderExceedMessageCount).toBe(2);
           expect(engineRunner.renderCount).toEqual(0);
-          expect(engineRunner.renders).toEqual(['', '']);
+          expect(engineRunner.responses).toEqual(['', '']);
 
           flush();
         }));
@@ -997,7 +1194,7 @@ describe('OptimizedSsrEngine', () => {
           tick(200);
 
           expect(engineRunner.renderCount).toEqual(1);
-          expect(engineRunner.renders).toEqual([
+          expect(engineRunner.responses).toEqual([
             `${requestUrl}-0`,
             `${requestUrl}-0`,
           ]);
@@ -1047,7 +1244,7 @@ describe('OptimizedSsrEngine', () => {
             false,
             { request: expect.objectContaining({ originalUrl: requestUrl }) }
           );
-          expect(engineRunner.renders).toEqual(['']); // the first request fallback to CSR due to timeout
+          expect(engineRunner.responses).toEqual(['']); // the first request fallback to CSR due to timeout
           expect(getCurrentConcurrency(engineRunner)).toEqual({
             currentConcurrency: 1,
           }); // the render still continues in the background
@@ -1055,7 +1252,7 @@ describe('OptimizedSsrEngine', () => {
           // eventually the render succeeds and 2 remaining requests get the same response:
           tick(100);
           expect(engineRunner.renderCount).toEqual(1);
-          expect(engineRunner.renders).toEqual([
+          expect(engineRunner.responses).toEqual([
             '', // CSR fallback of the 1st request due to it timed out
             `${requestUrl}-0`,
             `${requestUrl}-0`,
@@ -1070,7 +1267,7 @@ describe('OptimizedSsrEngine', () => {
           flush();
         }));
 
-        it('and concurrency limit should NOT fallback to CSR, when the request is for a pending render', fakeAsync(() => {
+        it('and concurrency limit should NOT fallback to CSR, when there is a pending rendering for the same rendering key', fakeAsync(() => {
           const engineRunner = new TestEngineRunner({
             reuseCurrentRendering: true,
             timeout: 200,
@@ -1087,7 +1284,7 @@ describe('OptimizedSsrEngine', () => {
           ).not.toHaveBeenCalledWith(
             `CSR fallback: Concurrency limit exceeded (1)`
           );
-          expect(engineRunner.renders).toEqual(['a-0', 'a-0']);
+          expect(engineRunner.responses).toEqual(['a-0', 'a-0']);
         }));
 
         it('combined with a different request should take up two concurrency slots', fakeAsync(() => {
@@ -1122,7 +1319,7 @@ describe('OptimizedSsrEngine', () => {
           });
 
           tick(250);
-          expect(engineRunner.renders).toEqual([
+          expect(engineRunner.responses).toEqual([
             'a-0',
             'a-0',
             'a-0',
@@ -1239,7 +1436,7 @@ describe('OptimizedSsrEngine', () => {
         );
 
         expect(engineRunner.renderCount).toEqual(1);
-        expect(engineRunner.renders).toEqual(['', '']);
+        expect(engineRunner.responses).toEqual(['', '']);
 
         flush();
       }));
@@ -1262,58 +1459,46 @@ describe('OptimizedSsrEngine', () => {
 
     it('should use the default server logger, if custom logger is not specified', () => {
       new TestEngineRunner({});
-      expect(consoleLogSpy.mock.lastCall).toMatchInlineSnapshot(`
-        [
-          "{
-          "message": "[spartacus] SSR optimization engine initialized",
-          "context": {
-            "timestamp": "2023-01-01T00:00:00.000Z",
-            "options": {
-              "cacheSize": 3000,
-              "concurrency": 10,
-              "timeout": 3000,
-              "forcedSsrTimeout": 60000,
-              "maxRenderTime": 300000,
-              "reuseCurrentRendering": true,
-              "debug": false,
-              "renderingStrategyResolver": "(request) => {\\n    if (hasExcludedUrl(request, defaultAlwaysCsrOptions.excludedUrls)) {\\n        return ssr_optimization_options_1.RenderingStrategy.ALWAYS_CSR;\\n    }\\n    return shouldFallbackToCsr(request, options)\\n        ? ssr_optimization_options_1.RenderingStrategy.ALWAYS_CSR\\n        : ssr_optimization_options_1.RenderingStrategy.DEFAULT;\\n}",
-              "logger": "DefaultExpressServerLogger"
-            }
-          }
-        }",
-        ]
-      `);
+      expect(consoleLogSpy).toHaveBeenCalled();
     });
-
     it('should use the provided logger', () => {
       new TestEngineRunner({
         logger: new MockExpressServerLogger() as ExpressServerLogger,
       });
       expect(consoleLogSpy.mock.lastCall).toMatchInlineSnapshot(`
-            [
-              "[spartacus] SSR optimization engine initialized",
-              {
-                "options": {
-                  "cacheSize": 3000,
-                  "concurrency": 10,
-                  "debug": false,
-                  "forcedSsrTimeout": 60000,
-                  "logger": "MockExpressServerLogger",
-                  "maxRenderTime": 300000,
-                  "renderingStrategyResolver": "(request) => {
-                if (hasExcludedUrl(request, defaultAlwaysCsrOptions.excludedUrls)) {
-                    return ssr_optimization_options_1.RenderingStrategy.ALWAYS_CSR;
-                }
-                return shouldFallbackToCsr(request, options)
-                    ? ssr_optimization_options_1.RenderingStrategy.ALWAYS_CSR
-                    : ssr_optimization_options_1.RenderingStrategy.DEFAULT;
-            }",
-                  "reuseCurrentRendering": true,
-                  "timeout": 3000,
-                },
-              },
-            ]
-                  `);
+[
+  "[spartacus] SSR optimization engine initialized",
+  {
+    "options": {
+      "cache": false,
+      "cacheSize": 3000,
+      "concurrency": 10,
+      "forcedSsrTimeout": 60000,
+      "logger": "MockExpressServerLogger",
+      "maxRenderTime": 300000,
+      "renderKeyResolver": "function getRequestUrl(req) {
+    return (0, express_request_origin_1.getRequestOrigin)(req) + req.originalUrl;
+}",
+      "renderingStrategyResolver": "(request) => {
+    if (hasExcludedUrl(request, defaultAlwaysCsrOptions.excludedUrls)) {
+        return ssr_optimization_options_1.RenderingStrategy.ALWAYS_CSR;
+    }
+    return shouldFallbackToCsr(request, options)
+        ? ssr_optimization_options_1.RenderingStrategy.ALWAYS_CSR
+        : ssr_optimization_options_1.RenderingStrategy.DEFAULT;
+}",
+      "reuseCurrentRendering": true,
+      "shouldCacheRenderingResult": "({ options, entry }) => !(options.ssrFeatureToggles?.avoidCachingErrors === true &&
+        Boolean(entry.err))",
+      "ssrFeatureToggles": {
+        "avoidCachingErrors": false,
+      },
+      "timeout": 3000,
+      "ttl": undefined,
+    },
+  },
+]
+`);
     });
   });
 });

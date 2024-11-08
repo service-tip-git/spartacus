@@ -5,9 +5,9 @@
  */
 
 import './augmented-core.model';
-import './augmented-types';
-export * from './opf-configuration.model';
-export * from './opf-payment-error.model';
-export * from './opf-payment-verification.model';
-export * from './opf-quick-buy.model';
-export * from './opf.model';
+export * from './opf-api-backend-config.model';
+export * from './opf-api-endpoint.model';
+export * from './opf-api-endpoints.model';
+export * from './opf-base.model';
+export * from './opf-error-dialog.model';
+export * from './opf-metadata-store.model';
