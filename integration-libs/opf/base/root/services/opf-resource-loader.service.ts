@@ -25,6 +25,7 @@ export class OpfResourceLoaderService extends ScriptLoader {
   }
 
   protected readonly OPF_RESOURCE_ATTRIBUTE_KEY = 'data-opf-resource';
+  protected readonly OPF_RESOURCE_LOAD_ONCE_ATTR_KEY = 'opf-load-once';
 
   protected loadedResources: OpfDynamicScriptResource[] = [];
 
@@ -95,6 +96,11 @@ export class OpfResourceLoaderService extends ScriptLoader {
       resource.attributes.forEach((attribute) => {
         attributes[attribute.key] = attribute.value;
       });
+    }
+    if (!attributes[this.OPF_RESOURCE_LOAD_ONCE_ATTR_KEY]) {
+      attributes[this.OPF_RESOURCE_ATTRIBUTE_KEY] = true;
+    } else {
+      delete attributes[this.OPF_RESOURCE_LOAD_ONCE_ATTR_KEY];
     }
 
     if (resource.url && !this.hasScript(resource.url)) {
