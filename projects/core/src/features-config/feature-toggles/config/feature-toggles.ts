@@ -330,6 +330,13 @@ export interface FeatureTogglesInterface {
   a11yHideSelectBtnForSelectedAddrOrPayment?: boolean;
 
   /**
+   * If enabled, the "Checkout Shipping address/Payment" views
+   * will have a more a11y friendly selected label, including the context
+   * indicating weather the user is on a selected Address or Payment regsion.
+   */
+  a11ySelectLabelWithContextForSelectedAddrOrPayment?: boolean;
+
+  /**
    * Determines whether the controls in the `CarouselComponent` are focusable and accessible from the keyboard.
    */
   a11yFocusableCarouselControls?: boolean;
@@ -469,6 +476,16 @@ export interface FeatureTogglesInterface {
   a11yCarouselArrowKeysNavigation?: boolean;
 
   /**
+   * Use tabs instead of radio group for pickup options. Improves SR narration and keyboard navigation pattern.
+   * Modified components:
+   *  - `PickupOptionsComponent`
+   *  - `PdpPickupOptionsContainerComponent`
+   *  - `CartPickupOptionsContainerComponent`
+   *  - `AddToCartComponent`
+   */
+  a11yPickupOptionsTabs?: boolean;
+
+  /**
    * `AnonymousConsentDialogComponent` - after consent was given/withdrawn the notification
    * will be displayed
    * `ConsentManagementComponent` - improve stability of notifications announcements by VoiceOver
@@ -593,6 +610,11 @@ export interface FeatureTogglesInterface {
   a11ySearchBoxFocusOnEscape?: boolean;
 
   /**
+   * In `AddedToCartDialogComponent`, `Updating cart...` should no longer read by a screen reader.
+   */
+  a11yUpdatingCartNoNarration?: boolean;
+
+  /**
    * Stops the inputs value from obstructing the 'PasswordVisibilityToggleComponent'.
    */
   a11yPasswordVisibliltyBtnValueOverflow?: boolean;
@@ -623,6 +645,16 @@ export interface FeatureTogglesInterface {
    * In `CartItemListComponent`, change QTY into Quantity.
    */
   a11yQTY2Quantity?: boolean;
+
+  /**
+   * Changes the success message of successful registration to be more informative. Affects `RegisterComponentService`.
+   */
+  a11yPostRegisterSuccessMessage?: boolean;
+
+  /**
+   * In `CardComponent`, place `Delete` button before `Cancel` button.
+   */
+  a11yDeleteButton2First?: boolean;
 
   /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
@@ -756,6 +788,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yCartItemsLinksStyles: true,
   a11ySearchboxLabel: false,
   a11yHideSelectBtnForSelectedAddrOrPayment: false,
+  a11ySelectLabelWithContextForSelectedAddrOrPayment: false,
   a11yFocusableCarouselControls: true,
   a11yUseTrapTabInsteadOfTrapInDialogs: false,
   cmsGuardsServiceUseGuardsComposer: false,
@@ -776,6 +809,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yUseButtonsForBtnLinks: false,
   a11yTabComponent: false,
   a11yCarouselArrowKeysNavigation: false,
+  a11yPickupOptionsTabs: false,
   a11yNotificationsOnConsentChange: false,
   a11yDisabledCouponAndQuickOrderActionButtonsInsteadOfRequiredFields: false,
   a11yFacetsDialogFocusHandling: false,
@@ -798,12 +832,15 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yDialogTriggerRefocus: false,
   a11yAddToWishlistFocus: false,
   a11ySearchBoxFocusOnEscape: false,
+  a11yUpdatingCartNoNarration: false,
   a11yPasswordVisibliltyBtnValueOverflow: false,
   a11yItemCounterFocus: false,
   a11yScrollToReviewByShowReview: false,
   a11yViewHoursButtonIconContrast: false,
   a11yCheckoutStepsLandmarks: false,
   a11yQTY2Quantity: false,
+  a11yPostRegisterSuccessMessage: false,
+  a11yDeleteButton2First: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
