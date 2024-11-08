@@ -89,7 +89,6 @@ export class OpfResourceLoaderService extends ScriptLoader {
   ) {
     const attributes: any = {
       type: 'text/javascript',
-      [this.OPF_RESOURCE_ATTRIBUTE_KEY]: true,
     };
 
     if (resource.attributes) {
@@ -97,16 +96,11 @@ export class OpfResourceLoaderService extends ScriptLoader {
         attributes[attribute.key] = attribute.value;
       });
     }
-    if (!attributes[this.OPF_RESOURCE_LOAD_ONCE_ATTR_KEY]) {
-      attributes[this.OPF_RESOURCE_ATTRIBUTE_KEY] = true;
-    } else {
-      delete attributes[this.OPF_RESOURCE_LOAD_ONCE_ATTR_KEY];
-    }
 
     if (resource.url && !this.hasScript(resource.url)) {
       super.embedScript({
         src: resource.url,
-        attributes: attributes,
+        attributes: this.addOpfAttribute(attributes),
         callback: () => {
           this.markResourceAsLoaded(resource, resources, resolve);
         },
@@ -117,6 +111,15 @@ export class OpfResourceLoaderService extends ScriptLoader {
     } else {
       this.markResourceAsLoaded(resource, resources, resolve);
     }
+  }
+
+  protected addOpfAttribute(attributes: any): any {
+    if (!attributes[this.OPF_RESOURCE_LOAD_ONCE_ATTR_KEY]) {
+      attributes[this.OPF_RESOURCE_ATTRIBUTE_KEY] = true;
+    } else {
+      delete attributes[this.OPF_RESOURCE_LOAD_ONCE_ATTR_KEY];
+    }
+    return attributes;
   }
 
   protected loadStyles(
