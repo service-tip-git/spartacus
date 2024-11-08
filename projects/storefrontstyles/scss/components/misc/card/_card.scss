@@ -72,6 +72,11 @@
     justify-content: flex-end;
     padding: 1.25rem 0 0 0;
   }
+  @include forFeature('a11yReplaceCartActionButtonsWithLinks') {
+    .cx-card-actions {
+      gap: 16px;
+    }
+  }
 
   .cx-card-link {
     margin-inline-start: 1rem;

@@ -76,6 +76,16 @@
           width: 100%;
         }
       }
+      @include forFeature('a11yReplaceCartActionButtonsWithLinks') {
+        .cx-card-actions {
+          all: unset;
+          .link.cx-action-link {
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
     }
   }
   @include cx-highContrastTheme {

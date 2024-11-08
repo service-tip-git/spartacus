@@ -650,6 +650,11 @@ export interface FeatureTogglesInterface {
   a11yViewHoursButtonIconContrast?: boolean;
 
   /**
+   * `Cart component` replace action buttons with links
+   */
+  a11yReplaceCartActionButtonsWithLinks?: boolean;
+
+  /**
    * `Checkout` add a landmarks to content representing steps
    */
   a11yCheckoutStepsLandmarks?: boolean;
@@ -851,6 +856,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yCloseProductImageBtnFocus: true,
   a11yNotificationPreferenceFieldset: false,
   a11yImproveContrast: false,
+  a11yReplaceCartActionButtonsWithLinks: false,
   a11yEmptyWishlistHeading: true,
   a11yScreenReaderBloatFix: false,
   a11yUseButtonsForBtnLinks: true,

@@ -351,6 +351,7 @@ if (environment.cpq) {
         a11yCloseProductImageBtnFocus: true,
         a11yNotificationPreferenceFieldset: true,
         a11yImproveContrast: true,
+        a11yReplaceCartActionButtonsWithLinks: true,
         a11yEmptyWishlistHeading: true,
         a11yScreenReaderBloatFix: true,
         a11yUseButtonsForBtnLinks: true,
