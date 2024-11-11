@@ -15,6 +15,7 @@
 @import './page-templates/search-results-grid';
 @import './page-templates/order-confirmation-page';
 @import './page-templates/myaccount-v2-page';
+@import './page-templates/main';
 
 %CheckoutLoginPageTemplate {
   @extend %LoginPageTemplate !optional;
