@@ -20,9 +20,12 @@
     }
   ],
   "defaultConfiguration": {
-    "targetFolderPath": "../[langCode]",
-    "pseudoLocFolderPath": "../[langCode]",
-    "oneQFolderPath": "../[langCode]",
+    "fileNameReplacePatterns": [
+      { "searchString": "/en/", "replacement": "/[langCode]/" }
+    ],
+    "targetFolderPath": ".",
+    "pseudoLocFolderPath": ".",
+    "oneQFolderPath": ".",
     "targetFileNamingConvention": "[filename].[extension]"
   }
 }
