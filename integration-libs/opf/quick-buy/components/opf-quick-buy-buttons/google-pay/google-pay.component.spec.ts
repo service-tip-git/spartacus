@@ -10,6 +10,8 @@ import {
   ElementRef,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { take } from 'rxjs/operators';
 import { OpfGooglePayComponent } from './google-pay.component';
 import { OpfGooglePayService } from './google-pay.service';
 
@@ -74,7 +76,9 @@ describe('OpfGooglePayComponent', () => {
   it('should update ready to pay state when Google Pay is ready', async () => {
     await detectChanges();
 
-    expect(component.isReadyToPayState$.getValue()).toBe(true);
+    component.isReadyToPayState$.pipe(take(1)).subscribe((value) => {
+      expect(value).toBe(true);
+    });
   });
 
   it('should render payment button when Google Pay is ready and container is available', async () => {

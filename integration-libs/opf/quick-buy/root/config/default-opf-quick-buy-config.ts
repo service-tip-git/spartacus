@@ -1,5 +1,5 @@
 import { OpfQuickBuyConfig } from './opf-quick-buy-config';
 
 export const defaultOpfConfig: OpfQuickBuyConfig = {
-  googlePayApiUrl: '',
+  googlePayApiUrl: 'https://pay.google.com/gp/p/js/pay.js',
 };
