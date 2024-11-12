@@ -94,7 +94,7 @@ function addProductToCart(): void {
 
 function writeReview(): void {
   checkout.goToProductDetailsPage();
-  productDetails.verifyShowReviewsLink();
+  productDetails.verifyReviewsLink();
   productDetails.verifyReviewForm();
 }
 
