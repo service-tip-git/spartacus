@@ -441,7 +441,7 @@ describe('CheckoutPaymentMethodComponent', () => {
           selectedPaymentMethod
         )
       ).toEqual({
-        role: 'region',
+        role: 'application',
         title: '✓ DEFAULT',
         textBold: 'Name',
         text: ['123456789', 'Expires'],
@@ -637,7 +637,7 @@ describe('CheckoutPaymentMethodComponent', () => {
         };
       });
 
-      it('should be set to "region" for selected payment card', () => {
+      it('should be set to "application" for selected payment card', () => {
         expect(
           component['createCard'](
             paymentMethod1,
@@ -649,7 +649,7 @@ describe('CheckoutPaymentMethodComponent', () => {
             },
             paymentMethod1
           ).role
-        ).toEqual('region');
+        ).toEqual('application');
       });
 
       it('should be set to "button" for non selected payment cards', () => {

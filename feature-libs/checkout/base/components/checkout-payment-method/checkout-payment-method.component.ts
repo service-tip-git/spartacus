@@ -307,7 +307,7 @@ export class CheckoutPaymentMethodComponent implements OnInit, OnDestroy {
       this.featureConfigService?.isEnabled(
         'a11ySelectLabelWithContextForSelectedAddrOrPayment'
       ) && !isSelected;
-    const role = isButtonRole ? 'button' : 'region';
+    const role = isButtonRole ? 'button' : 'application';
 
     return {
       role,

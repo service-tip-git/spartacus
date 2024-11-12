@@ -36,18 +36,17 @@ class MockAbstractOrderContext {
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
 }
-
-const mockRouterState: any = {
+const mockBaseRouterState: any = {
   state: {
     semanticRoute: 'home',
   },
 };
 
-let routerState: RouterState;
+let mockRouterState: RouterState;
 
 class MockRoutingService {
   getRouterState(): Observable<RouterState> {
-    return of(routerState);
+    return of(mockRouterState);
   }
 }
 
@@ -59,8 +58,6 @@ describe('ConfigureCartEntryComponent', () => {
   const orderOrCartEntry: OrderEntry = {};
 
   function configureTestingModule(): TestBed {
-    routerState = mockRouterState;
-
     return TestBed.configureTestingModule({
       imports: [I18nTestingModule, RouterTestingModule, RouterModule],
       declarations: [ConfigureCartEntryComponent, MockUrlPipe],
@@ -74,6 +71,7 @@ describe('ConfigureCartEntryComponent', () => {
   }
 
   function assignTestArtifacts(): void {
+    mockRouterState = structuredClone(mockBaseRouterState);
     fixture = TestBed.createComponent(ConfigureCartEntryComponent);
     component = fixture.componentInstance;
     htmlElem = fixture.nativeElement;
@@ -136,6 +134,10 @@ describe('ConfigureCartEntryComponent', () => {
   });
 
   describe('getDisplayOnly', () => {
+    beforeEach(() => {
+      configureTestingModule().compileComponents();
+      assignTestArtifacts();
+    });
     it('should return true in case readOnly is true', () => {
       component.readOnly = true;
       expect(component.getDisplayOnly()).toBe(true);
@@ -173,6 +175,10 @@ describe('ConfigureCartEntryComponent', () => {
   });
 
   describe('isInCheckout', () => {
+    beforeEach(() => {
+      configureTestingModule().compileComponents();
+      assignTestArtifacts();
+    });
     it('should return false in case the url does not contain checkoutReviewOrder', (done) => {
       component['isInCheckout']()
         .pipe(take(1), delay(0))
@@ -217,6 +223,7 @@ describe('ConfigureCartEntryComponent', () => {
 
     describe('getOwnerType', () => {
       it('should find correct default owner type', () => {
+        component.cartEntry.orderCode = undefined;
         expect(component.getOwnerType()).toBe(
           CommonConfigurator.OwnerType.CART_ENTRY
         );

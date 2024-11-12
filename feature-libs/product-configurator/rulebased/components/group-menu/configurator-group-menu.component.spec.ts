@@ -49,8 +49,8 @@ import { ConfiguratorGroupMenuService } from './configurator-group-menu.componen
 
 let mockGroupVisited = false;
 let mockDirection = DirectionMode.LTR;
-const mockProductConfiguration: Configurator.Configuration =
-  productConfiguration;
+let mockProductConfiguration: Configurator.Configuration =
+  structuredClone(productConfiguration);
 
 class MockRoutingService {
   getRouterState(): Observable<RouterState> {
@@ -233,15 +233,16 @@ let hamburgerMenuService: HamburgerMenuService;
 let htmlElem: HTMLElement;
 let configuratorUtils: CommonConfiguratorUtilsService;
 let configGroupMenuService: ConfiguratorGroupMenuService;
-let routerStateObservable: Observable<RouterState>;
-let groupVisitedObservable: Observable<boolean>;
-let productConfigurationObservable: Observable<Configurator.Configuration>;
+let routerStateObservable: Observable<RouterState> = NEVER;
+let groupVisitedObservable: Observable<boolean> = NEVER;
+let productConfigurationObservable: Observable<Configurator.Configuration> =
+  NEVER;
 let isConflictGroupType: boolean;
 let directionService: DirectionService;
 let direction: DirectionMode;
 let configUtils: ConfiguratorStorefrontUtilsService;
 let configExpertModeService: ConfiguratorExpertModeService;
-let breakpointObservable: Observable<boolean>;
+let breakpointObservable: Observable<boolean> = NEVER;
 
 function initialize() {
   groupVisitedObservable = of(mockGroupVisited);
@@ -296,7 +297,7 @@ describe('ConfiguratorGroupMenuComponent', () => {
           useClass: MockFeatureConfigService,
         },
       ],
-    });
+    }).compileComponents();
   }));
 
   beforeEach(() => {

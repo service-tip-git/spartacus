@@ -76,6 +76,7 @@
     "carouselLabel": "Carousel, {{title}}"
   },
   "addToCart": {
+    "itemAddedToYourCart": "Item Added To Your Cart",
     "itemsAddedToYourCart": "Item(s) added to your cart",
     "itemsIncrementedInYourCart": "This item was already in your cart. The quantity was updated.",
     "items": "items",

@@ -29,7 +29,9 @@
             ></cx-store-schedule>
           </div>
           <div *ngIf="showEdit" class="cx-pickup-items-details-edit-icon">
-            <a [routerLink]="{ cxRoute: 'cart' } | cxUrl"
+            <a
+              [attr.title]="'common.edit' | cxTranslate"
+              [routerLink]="{ cxRoute: 'cart' } | cxUrl"
               ><cx-icon [type]="ICON_TYPE.PENCIL"></cx-icon
             ></a>
           </div>

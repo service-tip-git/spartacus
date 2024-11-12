@@ -228,14 +228,14 @@ export function checkFirstItem(productName: string): void {
     });
 }
 
-export function clickFacet(header: string) {
+export function clickFacet(header: string, force = false) {
   cy.onMobile(() => {
     cy.get('cx-product-facet-navigation button').click();
   });
   cy.get('cx-facet-list cx-tab button.tab-btn')
     .contains(header)
     .then((el) => {
-      if (el.find('.fa-plus').is(':visible')) {
+      if (el.find('.tab-icon[outerText^="+"]').length || force) {
         // TODO Remove force once you can scroll facets on mobile
         cy.wrap(el).click({ force: true });
       }

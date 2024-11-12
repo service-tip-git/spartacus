@@ -336,11 +336,11 @@ export class CheckoutDeliveryAddressComponent implements OnInit {
     return !!this.checkoutConfigService?.shouldUseAddressSavedInCart();
   }
 
-  protected getCardRole(isCardSelected: boolean): 'button' | 'region' {
+  protected getCardRole(isCardSelected: boolean): 'button' | 'application' {
     const isButtonRole =
       this.featureConfigService?.isEnabled(
         'a11ySelectLabelWithContextForSelectedAddrOrPayment'
       ) && !isCardSelected;
-    return isButtonRole ? 'button' : 'region';
+    return isButtonRole ? 'button' : 'application';
   }
 }

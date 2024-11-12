@@ -2,6 +2,7 @@ import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { Tab, TAB_MODE } from '../tab.model';
 import { TabPanelComponent } from './tab-panel.component';
+import { KeyboardFocusTestingModule } from '@spartacus/storefront';
 
 const mockTab: Tab | any = {
   id: 1,
@@ -22,6 +23,7 @@ describe('TabPanelComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
+      imports: [KeyboardFocusTestingModule],
       declarations: [TabPanelComponent, MockComponent],
     }).compileComponents();
   }));
@@ -66,7 +68,7 @@ describe('TabPanelComponent', () => {
     fixture.detectChanges();
 
     const tabPanel = document.querySelector('div[role="tabpanel"]');
-    expect(tabPanel?.getAttribute('tabindex')).toEqual(null);
+    expect(tabPanel?.getAttribute('tabindex')).toEqual('-1');
   });
 
   it('should display template ref', () => {

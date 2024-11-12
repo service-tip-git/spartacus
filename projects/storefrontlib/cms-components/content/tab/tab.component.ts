@@ -39,6 +39,7 @@ export class TabComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() tabs$: Observable<Tab[] | any>;
   @Input() tabs: Tab[] | any;
   @Input() config: TabConfig | any;
+  @Input() disabled: boolean = false;
 
   readonly TAB_MODE = TAB_MODE;
 

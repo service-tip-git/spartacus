@@ -207,6 +207,10 @@ $space: 0.5rem;
     .SiteLinks {
       justify-content: flex-end;
       color: var(--cx-color-primary);
+
+      @include forFeature('headerLayoutForSmallerViewports') {
+        flex-wrap: nowrap;
+      }
     }
 
     .SiteLogin {

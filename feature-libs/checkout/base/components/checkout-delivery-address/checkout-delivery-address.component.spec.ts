@@ -351,7 +351,7 @@ describe('CheckoutDeliveryAddressComponent', () => {
       beforeEach(() => {
         spyOn(featureConfig, 'isEnabled').and.returnValue(true);
       });
-      it('should be set to "region" for selected address', () => {
+      it('should be set to "application" for selected address', () => {
         expect(
           component.getCardContent(
             mockAddress1,
@@ -362,7 +362,7 @@ describe('CheckoutDeliveryAddressComponent', () => {
             'P',
             'M'
           ).role
-        ).toEqual('region');
+        ).toEqual('application');
         expect(component['getCardRole']).toHaveBeenCalledWith(true);
       });
 
