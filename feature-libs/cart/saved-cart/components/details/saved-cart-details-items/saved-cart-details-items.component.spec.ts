@@ -1,9 +1,15 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
-import { Cart } from '@spartacus/cart/base/root';
+import {
+  Cart,
+  OrderEntry,
+  OrderEntryGroup,
+} from '@spartacus/cart/base/root';
 import { SavedCartFacade } from '@spartacus/cart/saved-cart/root';
 import {
   EventService,
+  FeatureConfigService,
+  FeaturesConfigModule,
   GlobalMessageService,
   GlobalMessageType,
   I18nTestingModule,
@@ -11,7 +17,7 @@ import {
   RoutingService,
   Translatable,
 } from '@spartacus/core';
-import { OutletModule } from '@spartacus/storefront';
+import { HierarchyComponentService, HierarchyNode, OutletModule } from '@spartacus/storefront';
 import { MockFeatureDirective } from 'projects/storefrontlib/shared/test/mock-feature-directive';
 import { BehaviorSubject, EMPTY, Observable, of } from 'rxjs';
 import { SavedCartDetailsService } from '../saved-cart-details.service';
@@ -46,8 +52,21 @@ class MockSavedCartDetailsService implements Partial<SavedCartDetailsService> {
   getSavedCartId(): Observable<string> {
     return of(mockCartId);
   }
+  getEntries(): Observable<OrderEntry[]> {
+    return of([{}]);
+  }
+  getSaveEntryGroups(): Observable<OrderEntryGroup[]> {
+    return of([{}]);
+  }
 }
-
+class MockHierachyService {
+  getEntriesFromGroups(): Observable<OrderEntry[]> {
+    return of([{}]);
+  }
+  getBundlesFromGroups(): Observable<HierarchyNode[]> {
+    return of([]);
+  }
+}
 class MockEventService implements Partial<EventService> {
   get(): Observable<any> {
     return EMPTY;
@@ -79,10 +98,13 @@ describe('SavedCartDetailsItemsComponent', () => {
   let eventService: EventService;
   let globalMessageService: GlobalMessageService;
   let routingService: RoutingService;
-
+  const mockFeatureConfigService = jasmine.createSpyObj(
+    'FeatureConfigService',
+    ['isEnabled']
+  );
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [StoreModule.forRoot({}), I18nTestingModule, OutletModule],
+      imports: [StoreModule.forRoot({}), I18nTestingModule, OutletModule,FeaturesConfigModule],
       declarations: [SavedCartDetailsItemsComponent, MockFeatureDirective],
       providers: [
         {
@@ -99,6 +121,11 @@ describe('SavedCartDetailsItemsComponent', () => {
         },
         { provide: RoutingService, useClass: MockRoutingService },
         { provide: GlobalMessageService, useClass: MockGlobalMessageService },
+        {
+          provide: HierarchyComponentService,
+          useClass: MockHierachyService,
+        },
+        { provide: FeatureConfigService, useValue: mockFeatureConfigService },
       ],
     }).compileComponents();
 
@@ -170,5 +197,12 @@ describe('SavedCartDetailsItemsComponent', () => {
         );
       })
       .unsubscribe();
+  });
+  it('should set entries$ and bundles$ if enableBundles feature is enabled', () => {
+    mockFeatureConfigService.isEnabled.and.returnValue(true);
+    fixture.detectChanges();
+    expect(component.entryGroups$).not.toBeUndefined;
+    expect(component.bundles$).not.toBeUndefined;
+    expect(component.entries$).not.toBeUndefined;
   });
 });
