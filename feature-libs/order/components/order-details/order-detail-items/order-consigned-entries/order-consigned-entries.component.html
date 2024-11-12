@@ -23,26 +23,57 @@
       </cx-consignment-tracking>
     </div>
   </ng-template>
-  <div class="cx-list-item col-12">
-    <ng-template
-      [cxAbstractOrderContext]="{
-        id: order.code,
-        type: abstractOrderType.ORDER,
-      }"
-      [cxOutlet]="CartOutlets.CART_ITEM_LIST"
-      [cxOutletContext]="{
-        items: consignment.entries,
-        readonly: true,
-        promotionLocation: promotionLocation,
-        options: {
-          displayAddToCart: enableAddToCart,
-          addToCartString: buyItAgainTranslation,
-          optionalBtn: addToCartBtn,
-        },
-      }"
-    >
-    </ng-template>
-  </div>
+
+  <ng-container *cxFeature="'enableBundles'">
+    <div class="cx-list-item col-12">
+      <div [ngClass]="standaloneEntries.length === 0 ? 'emptyList' : 'noneEmptyList'">
+        <ng-template
+        [cxAbstractOrderContext]="{
+          id: order.code,
+          type: abstractOrderType.ORDER,
+        }"
+        [cxOutlet]="CartOutlets.CART_ITEM_LIST"
+        [cxOutletContext]="{
+          items: standaloneEntries,
+          readonly: true,
+          promotionLocation: promotionLocation,
+        }"
+      >
+        </ng-template>
+      </div>
+      <ng-container *ngFor="let bundle of bundles$ | async">
+        <cx-hierarchy
+          [tree]="bundle"
+          [template]="bundlesTemplate"
+          [titleReadonly]="true"
+          [collasibleReadonly]="true"
+        >
+        </cx-hierarchy>
+      </ng-container>
+    </div> 
+  </ng-container>
+  <ng-container *cxFeature="'!enableBundles'">
+    <div class="cx-list-item col-12">
+      <ng-template
+        [cxAbstractOrderContext]="{
+          id: order.code,
+          type: abstractOrderType.ORDER,
+        }"
+        [cxOutlet]="CartOutlets.CART_ITEM_LIST"
+        [cxOutletContext]="{
+          items: consignment.entries,
+          readonly: true,
+          promotionLocation: promotionLocation,
+          options: {
+            displayAddToCart: enableAddToCart,
+            addToCartString: buyItAgainTranslation,
+            optionalBtn: addToCartBtn,
+          },
+        }"
+      >
+      </ng-template>
+    </div>
+  </ng-container>
 </div>
 
 <ng-template let-ctx #addToCartBtn>
@@ -56,3 +87,17 @@
   >
   </cx-add-to-cart>
 </ng-template>
+
+<ng-template #bundlesTemplate let-items let-orderContext="orderContext">
+  <ng-template
+    [cxOutlet]="CartOutlets.CART_ITEM_LIST"
+    [cxOutletContext]="{
+      items: items,
+      readonly: true,
+      hasHeader: false,
+      promotionLocation: promotionLocation,
+    }"
+  >
+  </ng-template>
+</ng-template>
+

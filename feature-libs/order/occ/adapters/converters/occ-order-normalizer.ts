@@ -9,6 +9,7 @@ import {
   OrderEntry,
   ORDER_ENTRY_PROMOTIONS_NORMALIZER,
   PromotionResult,
+  OrderEntryGroup,
 } from '@spartacus/cart/base/root';
 import {
   Converter,
@@ -34,6 +35,12 @@ export class OccOrderNormalizer implements Converter<Occ.Order, Order> {
           source.code,
           source.appliedProductPromotions
         )
+      );
+    }
+
+    if (source.entryGroups) {
+      target.entryGroups = source.entryGroups.map((group) =>
+        this.convertEntryGroup(group, source.code, source.appliedProductPromotions)
       );
     }
 
@@ -79,4 +86,23 @@ export class OccOrderNormalizer implements Converter<Occ.Order, Order> {
       ),
     };
   }
+
+  private convertEntryGroup(
+    group: Occ.OrderEntryGroup,
+    code?: string,
+    promotions?: PromotionResult[]
+  ): OrderEntryGroup {
+    return {
+      ...group,
+      entries: group.entries?.map((entry) =>
+        this.convertOrderEntry(entry, code, promotions)
+      ),
+      entryGroups: group.entryGroups?.map((subGroup) =>
+        this.convertEntryGroup(subGroup, code, promotions)
+      ),
+      type: group.type as OrderEntryGroup['type'],
+    };
+  }
+
+
 }

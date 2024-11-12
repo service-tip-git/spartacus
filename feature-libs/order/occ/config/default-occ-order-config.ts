@@ -12,7 +12,7 @@ export const defaultOccOrderConfig: OccConfig = {
       endpoints: {
         /* eslint-disable max-len */
         orderHistory: 'users/${userId}/orders',
-        orderDetail: 'users/${userId}/orders/${orderId}?fields=FULL',
+        orderDetail: 'users/${userId}/orders/${orderId}?fields=FULL,entryGroups(FULL)',
         consignmentTracking:
           'users/${userId}/orders/${orderCode}/consignments/${consignmentCode}/tracking',
         cancelOrder: 'users/${userId}/orders/${orderId}/cancellation',

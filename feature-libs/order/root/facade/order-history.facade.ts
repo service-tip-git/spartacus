@@ -15,6 +15,7 @@ import {
   OrderHistoryList,
 } from '../model/order.model';
 import { Params } from '@angular/router';
+import { OrderEntryGroup } from '@spartacus/cart/base/root';
 
 export function orderHistoryFacadeFactory() {
   return facadeFactory({
@@ -37,6 +38,7 @@ export function orderHistoryFacadeFactory() {
       'resetCancelOrderProcessState',
       'getOrderDetailsLoading',
       'getQueryParams',
+      'getEntryGroups',
     ],
     async: true,
   });
@@ -145,4 +147,10 @@ export abstract class OrderHistoryFacade {
    * Returns query parameters needed for order details route
    */
   abstract getQueryParams(order: Order): Params | null;
+
+  /**
+   * Returns order entry groups
+   */
+  abstract getEntryGroups(): Observable<OrderEntryGroup[]>;
+
 }
