@@ -200,7 +200,8 @@ export class ApplePayService {
   private validateOpfAppleSession(
     event: ApplePayJS.ApplePayValidateMerchantEvent
   ): Observable<ApplePaySessionVerificationResponse> {
-    return this.opfQuickBuyTransactionService.getCurrentCartId().pipe(
+    return this.opfQuickBuyTransactionService.handleCartGuestUser().pipe(
+      switchMap(() => this.opfQuickBuyTransactionService.getCurrentCartId()),
       switchMap((cartId: string) => {
         const verificationRequest: ApplePaySessionVerificationRequest = {
           validationUrl: event.validationURL,
@@ -411,6 +412,13 @@ export class ApplePayService {
             );
 
     return deliveryTypeHandlingObservable.pipe(
+      switchMap(() => {
+        return shippingContact?.emailAddress
+          ? this.opfQuickBuyTransactionService.updateCartGuestUserEmail(
+              shippingContact.emailAddress
+            )
+          : of(true);
+      }),
       switchMap(() => this.opfQuickBuyTransactionService.getCurrentCartId()),
       switchMap((cartId: string) => {
         const encryptedToken = btoa(

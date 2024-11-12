@@ -13,7 +13,7 @@ import {
   OpfQuickBuyTransactionService,
 } from '@spartacus/opf/quick-buy/core';
 import { OpfQuickBuyDeliveryType } from '@spartacus/opf/quick-buy/root';
-import { Subject, of, throwError } from 'rxjs';
+import { of, Subject, throwError } from 'rxjs';
 import { OpfQuickBuyButtonsService } from '../opf-quick-buy-buttons.service';
 import { ApplePaySessionFactory } from './apple-pay-session/apple-pay-session.factory';
 import { ApplePayService } from './apple-pay.service';
@@ -99,7 +99,7 @@ describe('ApplePayService', () => {
         'getCurrentCartTotalPrice',
         'setDeliveryMode',
         'getSelectedDeliveryMode',
-        'deleteUserAddresses',
+        'handleCartGuestUser',
       ]
     );
 
@@ -136,6 +136,9 @@ describe('ApplePayService', () => {
     applePayObservableFactoryMock.initApplePayEventsHandler.and.returnValue(
       applePayObservableTestController
     );
+    opfQuickBuyTransactionServiceMock.handleCartGuestUser.and.returnValue(
+      of(true)
+    );
   });
 
   it('should be created', () => {
@@ -152,7 +155,7 @@ describe('ApplePayService', () => {
     );
 
     applePayObservableFactoryMock.initApplePayEventsHandler.and.returnValue(
-      throwError('Error')
+      throwError(() => 'Error')
     );
 
     opfQuickBuyTransactionServiceMock.getMerchantName.and.returnValue(
