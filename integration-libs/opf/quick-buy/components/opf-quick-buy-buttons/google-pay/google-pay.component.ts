@@ -37,7 +37,7 @@ export class OpfGooglePayComponent implements OnInit {
     this.opfGooglePayService.loadProviderResources().then(() => {
       this.opfGooglePayService.initClient(this.activeConfiguration);
       this.opfGooglePayService.isReadyToPay().then((response: any) => {
-        this.isReadyToPayState$.next(response?.result);
+        this.isReadyToPayState$.next(Boolean(response?.result));
         this.changeDetectionRef.detectChanges();
         if (response.result && this.googlePayButtonContainer) {
           this.opfGooglePayService.renderPaymentButton(

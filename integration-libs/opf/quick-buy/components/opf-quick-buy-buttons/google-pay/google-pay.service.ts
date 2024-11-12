@@ -19,6 +19,7 @@ import {
   OPF_QUICK_BUY_ADDRESS_FIELD_PLACEHOLDER,
   OPF_QUICK_BUY_DEFAULT_MERCHANT_NAME,
   OpfProviderType,
+  OpfQuickBuyConfig,
   OpfQuickBuyDeliveryType,
   OpfQuickBuyLocation,
   QuickBuyTransactionDetails,
@@ -38,10 +39,8 @@ export class OpfGooglePayService {
   protected opfQuickBuyTransactionService = inject(
     OpfQuickBuyTransactionService
   );
+  protected opfQuickBuyConfig = inject(OpfQuickBuyConfig);
   protected opfQuickBuyButtonsService = inject(OpfQuickBuyButtonsService);
-
-  protected readonly GOOGLE_PAY_JS_URL =
-    'https://pay.google.com/gp/p/js/pay.js';
 
   private googlePaymentClient: google.payments.api.PaymentsClient;
 
@@ -139,7 +138,7 @@ export class OpfGooglePayService {
 
   loadProviderResources(): Promise<void> {
     return this.opfResourceLoaderService.loadProviderResources([
-      { url: this.GOOGLE_PAY_JS_URL },
+      { url: this.opfQuickBuyConfig.googlePayApiUrl },
     ]);
   }
 

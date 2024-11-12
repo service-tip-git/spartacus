@@ -22,7 +22,7 @@ import {
   OpfMetadataModel,
   OpfMetadataStoreService,
 } from '@spartacus/opf/base/root';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 @Component({
@@ -33,23 +33,23 @@ import { tap } from 'rxjs/operators';
 export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
   protected subscription = new Subscription();
 
-  activeConfigurations$ = this.opfBaseService
-    .getActiveConfigurationsState()
-    .pipe(
-      tap((state: QueryState<ActiveConfiguration[] | undefined>) => {
-        if (state.error) {
-          this.displayError('loadActiveConfigurations');
-        } else if (!state.loading && !Boolean(state.data?.length)) {
-          this.displayError('noActiveConfigurations');
-        }
+  activeConfigurations$: Observable<
+    QueryState<ActiveConfiguration[] | undefined>
+  > = this.opfBaseService.getActiveConfigurationsState().pipe(
+    tap((state: QueryState<ActiveConfiguration[] | undefined>) => {
+      if (state.error) {
+        this.displayError('loadActiveConfigurations');
+      } else if (!state.loading && !Boolean(state.data?.length)) {
+        this.displayError('noActiveConfigurations');
+      }
 
-        if (state.data && !state.error && !state.loading) {
-          this.opfMetadataStoreService.updateOpfMetadata({
-            defaultSelectedPaymentOptionId: state?.data[0]?.id,
-          });
-        }
-      })
-    );
+      if (state.data && !state.error && !state.loading) {
+        this.opfMetadataStoreService.updateOpfMetadata({
+          defaultSelectedPaymentOptionId: state?.data[0]?.id,
+        });
+      }
+    })
+  );
 
   @Input()
   disabled = true;
