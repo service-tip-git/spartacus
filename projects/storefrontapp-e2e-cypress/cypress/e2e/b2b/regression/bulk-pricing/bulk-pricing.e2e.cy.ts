@@ -6,11 +6,12 @@
 
 import * as b2bBulkPricing from '../../../../helpers/b2b/b2b-bulk-pricing';
 import * as sampleData from '../../../../sample-data/b2b-bulk-pricing';
+import { POWERTOOLS_BASESITE } from '../../../../sample-data/b2b-checkout';
 
 describe('B2B - Bulk Pricing', () => {
   before(() => {
     cy.window().then((win) => win.sessionStorage.clear());
-    Cypress.env('BASE_SITE', 'powertools-spa');
+    Cypress.env('BASE_SITE', POWERTOOLS_BASESITE);
   });
 
   describe('Check bulk pricing table', () => {
