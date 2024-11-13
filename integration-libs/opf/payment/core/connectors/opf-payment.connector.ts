@@ -6,15 +6,15 @@
 
 import { Injectable } from '@angular/core';
 import {
-  AfterRedirectScriptResponse,
+  OpfPaymentAfterRedirectScriptResponse,
+  OpfPaymentInitiationConfig,
+  OpfPaymentSessionData,
+  OpfPaymentSubmitCompleteRequest,
+  OpfPaymentSubmitCompleteResponse,
+  OpfPaymentSubmitRequest,
+  OpfPaymentSubmitResponse,
   OpfPaymentVerificationPayload,
   OpfPaymentVerificationResponse,
-  PaymentInitiationConfig,
-  PaymentSessionData,
-  SubmitCompleteRequest,
-  SubmitCompleteResponse,
-  SubmitRequest,
-  SubmitResponse,
 } from '@spartacus/opf/payment/root';
 
 import { Observable } from 'rxjs';
@@ -32,18 +32,18 @@ export class OpfPaymentConnector {
   }
 
   public submitPayment(
-    submitRequest: SubmitRequest,
+    submitRequest: OpfPaymentSubmitRequest,
     otpKey: string,
     paymentSessionId: string
-  ): Observable<SubmitResponse> {
+  ): Observable<OpfPaymentSubmitResponse> {
     return this.adapter.submitPayment(submitRequest, otpKey, paymentSessionId);
   }
 
   public submitCompletePayment(
-    submitCompleteRequest: SubmitCompleteRequest,
+    submitCompleteRequest: OpfPaymentSubmitCompleteRequest,
     otpKey: string,
     paymentSessionId: string
-  ): Observable<SubmitCompleteResponse> {
+  ): Observable<OpfPaymentSubmitCompleteResponse> {
     return this.adapter.submitCompletePayment(
       submitCompleteRequest,
       otpKey,
@@ -53,13 +53,13 @@ export class OpfPaymentConnector {
 
   public afterRedirectScripts(
     paymentSessionId: string
-  ): Observable<AfterRedirectScriptResponse> {
+  ): Observable<OpfPaymentAfterRedirectScriptResponse> {
     return this.adapter.afterRedirectScripts(paymentSessionId);
   }
 
   public initiatePayment(
-    paymentConfig: PaymentInitiationConfig
-  ): Observable<PaymentSessionData> {
+    paymentConfig: OpfPaymentInitiationConfig
+  ): Observable<OpfPaymentSessionData> {
     return this.adapter.initiatePayment(paymentConfig);
   }
 }

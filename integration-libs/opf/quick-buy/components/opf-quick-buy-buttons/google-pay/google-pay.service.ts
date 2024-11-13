@@ -10,7 +10,7 @@ import { Cart, DeliveryMode } from '@spartacus/cart/base/root';
 import { Address } from '@spartacus/core';
 
 import {
-  ActiveConfiguration,
+  OpfActiveConfiguration,
   OpfResourceLoaderService,
 } from '@spartacus/opf/base/root';
 import { OpfPaymentFacade } from '@spartacus/opf/payment/root';
@@ -18,9 +18,9 @@ import { OpfQuickBuyTransactionService } from '@spartacus/opf/quick-buy/core';
 import {
   OPF_QUICK_BUY_ADDRESS_FIELD_PLACEHOLDER,
   OPF_QUICK_BUY_DEFAULT_MERCHANT_NAME,
-  OpfProviderType,
   OpfQuickBuyDeliveryType,
   OpfQuickBuyLocation,
+  OpfQuickBuyProviderType,
   QuickBuyTransactionDetails,
 } from '@spartacus/opf/quick-buy/root';
 import { CurrentProductService } from '@spartacus/storefront';
@@ -143,7 +143,7 @@ export class OpfGooglePayService {
     ]);
   }
 
-  initClient(activeConfiguration: ActiveConfiguration): void {
+  initClient(activeConfiguration: OpfActiveConfiguration): void {
     this.setAllowedPaymentMethodsConfig(activeConfiguration);
     this.updateGooglePaymentClient();
   }
@@ -364,7 +364,7 @@ export class OpfGooglePayService {
                     additionalData: [],
                     paymentSessionId: '',
                     callbackArray: [() => {}, () => {}, () => {}],
-                    paymentMethod: OpfProviderType.GOOGLE_PAY as any,
+                    paymentMethod: OpfQuickBuyProviderType.GOOGLE_PAY as any,
                     encryptedToken,
                     cartId,
                   });
@@ -461,11 +461,11 @@ export class OpfGooglePayService {
   }
 
   protected setAllowedPaymentMethodsConfig(
-    activeConfiguration: ActiveConfiguration
+    activeConfiguration: OpfActiveConfiguration
   ): void {
     const googlePayConfig =
       this.opfQuickBuyButtonsService.getQuickBuyProviderConfig(
-        OpfProviderType.GOOGLE_PAY,
+        OpfQuickBuyProviderType.GOOGLE_PAY,
         activeConfiguration
       );
 

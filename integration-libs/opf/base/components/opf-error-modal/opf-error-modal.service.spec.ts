@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { TranslationService } from '@spartacus/core';
 import {
-  ErrorDialogOptions,
-  defaultErrorDialogOptions,
+  OpfErrorDialogOptions,
+  defaultOpfErrorDialogOptions,
 } from '@spartacus/opf/base/root';
 import { Observable, of } from 'rxjs';
 import { OpfErrorModalService } from './opf-error-modal.service';
@@ -17,28 +17,28 @@ class MockTranslationService {
   }
 }
 
-let mockDialogOptionsWithKeys: ErrorDialogOptions = {
+let mockDialogOptionsWithKeys: OpfErrorDialogOptions = {
   messageKey: 'opf.test.message',
   confirmKey: 'opf.test.confirm.fail',
   messageReplacements: '',
   confirmReplacements: '',
 };
 
-let mockDialogOptionsEmpty: ErrorDialogOptions = {
+let mockDialogOptionsEmpty: OpfErrorDialogOptions = {
   messageKey: '',
   confirmKey: '',
   messageReplacements: 'rep1',
   confirmReplacements: '',
 };
 
-let mockDialogOptionsWithKeysAndReplacements: ErrorDialogOptions = {
+let mockDialogOptionsWithKeysAndReplacements: OpfErrorDialogOptions = {
   messageKey: 'opf.test.message',
   confirmKey: 'opf.test.confirm.fail',
   messageReplacements: 'rep1',
   confirmReplacements: 'rep2',
 };
 
-let mockDialogOptionsWithStrings: ErrorDialogOptions = {
+let mockDialogOptionsWithStrings: OpfErrorDialogOptions = {
   messageString: 'Opf Test Message',
   confirmString: 'Opf Test Confirm',
 };
@@ -76,7 +76,7 @@ describe('OpfErrorModalService', () => {
         .subscribe((translation) => {
           expect(translation.message).toEqual('opf.test.message');
           expect(translation.confirm).toEqual(
-            defaultErrorDialogOptions.confirmKey
+            defaultOpfErrorDialogOptions.confirmKey
           );
           done();
         });
@@ -87,10 +87,10 @@ describe('OpfErrorModalService', () => {
         .getMessageAndConfirmTranslations(mockDialogOptionsEmpty)
         .subscribe((translation) => {
           expect(translation.message).toEqual(
-            defaultErrorDialogOptions.messageKey
+            defaultOpfErrorDialogOptions.messageKey
           );
           expect(translation.confirm).toEqual(
-            defaultErrorDialogOptions.confirmKey
+            defaultOpfErrorDialogOptions.confirmKey
           );
           done();
         });
@@ -104,7 +104,7 @@ describe('OpfErrorModalService', () => {
         .subscribe((translation) => {
           expect(translation.message).toEqual('opf.test.message and rep1');
           expect(translation.confirm).toEqual(
-            defaultErrorDialogOptions.confirmKey
+            defaultOpfErrorDialogOptions.confirmKey
           );
         });
       done();

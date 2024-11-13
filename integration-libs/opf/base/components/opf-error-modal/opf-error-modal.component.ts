@@ -12,7 +12,7 @@ import {
   HostListener,
   OnInit,
 } from '@angular/core';
-import { ErrorDialogOptions } from '@spartacus/opf/base/root';
+import { OpfErrorDialogOptions } from '@spartacus/opf/base/root';
 import { FocusConfig, LaunchDialogService } from '@spartacus/storefront';
 import { Observable, timer } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
@@ -31,7 +31,7 @@ export class OpfErrorModalComponent implements OnInit {
     focusOnEscape: true,
   };
 
-  errorDialogOptions$: Observable<{ message: string; confirm: string }>;
+  opfErrorDialogOptions$: Observable<{ message: string; confirm: string }>;
 
   @HostListener('click', ['$event'])
   handleClick(event: UIEvent): void {
@@ -55,8 +55,8 @@ export class OpfErrorModalComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.errorDialogOptions$ = this.launchDialogService.data$.pipe(
-      switchMap((data: ErrorDialogOptions) => {
+    this.opfErrorDialogOptions$ = this.launchDialogService.data$.pipe(
+      switchMap((data: OpfErrorDialogOptions) => {
         return this.opfErrorModalService.getMessageAndConfirmTranslations(data);
       })
     );

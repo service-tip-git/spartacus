@@ -4,48 +4,47 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ErrorDialogOptions, OpfDynamicScript } from '@spartacus/opf/base/root';
+import {
+  OpfDynamicScript,
+  OpfErrorDialogOptions,
+  OpfKeyValueMap,
+} from '@spartacus/opf/base/root';
 
-export interface KeyValuePair {
-  key: string;
-  value: string;
-}
-
-export type MerchantCallback = (
-  response?: SubmitResponse | SubmitCompleteResponse
+export type OpfPaymentMerchantCallback = (
+  response?: OpfPaymentSubmitResponse | OpfPaymentSubmitCompleteResponse
 ) => void | Promise<void>;
 
-export interface GlobalOpfPaymentMethods {
-  getRedirectParams?(): Array<KeyValuePair>;
+export interface OpfPaymentGlobalMethods {
+  getRedirectParams?(): Array<OpfKeyValueMap>;
   submit?(options: {
     cartId: string;
-    additionalData: Array<KeyValuePair>;
-    submitSuccess: MerchantCallback;
-    submitPending: MerchantCallback;
-    submitFailure: MerchantCallback;
-    paymentMethod: PaymentMethod;
+    additionalData: Array<OpfKeyValueMap>;
+    submitSuccess: OpfPaymentMerchantCallback;
+    submitPending: OpfPaymentMerchantCallback;
+    submitFailure: OpfPaymentMerchantCallback;
+    paymentMethod: OpfPaymentMethod;
   }): Promise<boolean>;
   submitComplete?(options: {
     cartId: string;
-    additionalData: Array<KeyValuePair>;
-    submitSuccess: MerchantCallback;
-    submitPending: MerchantCallback;
-    submitFailure: MerchantCallback;
+    additionalData: Array<OpfKeyValueMap>;
+    submitSuccess: OpfPaymentMerchantCallback;
+    submitPending: OpfPaymentMerchantCallback;
+    submitFailure: OpfPaymentMerchantCallback;
   }): Promise<boolean>;
   submitCompleteRedirect?(options: {
     cartId: string;
-    additionalData: Array<KeyValuePair>;
-    submitSuccess: MerchantCallback;
-    submitPending: MerchantCallback;
-    submitFailure: MerchantCallback;
+    additionalData: Array<OpfKeyValueMap>;
+    submitSuccess: OpfPaymentMerchantCallback;
+    submitPending: OpfPaymentMerchantCallback;
+    submitFailure: OpfPaymentMerchantCallback;
   }): Promise<boolean>;
-  throwPaymentError?(errorOptions?: ErrorDialogOptions): void;
+  throwPaymentError?(errorOptions?: OpfErrorDialogOptions): void;
   startLoadIndicator?(): void;
   stopLoadIndicator?(): void;
   scriptReady?(scriptIdentifier: string): void;
 }
 
-export interface PaymentBrowserInfo {
+export interface OpfPaymentBrowserInfo {
   acceptHeader?: string;
   colorDepth?: number;
   javaEnabled?: boolean;
@@ -59,147 +58,124 @@ export interface PaymentBrowserInfo {
   originUrl?: string;
 }
 
-export interface SubmitRequest {
-  browserInfo?: PaymentBrowserInfo;
+export interface OpfPaymentSubmitRequest {
+  browserInfo?: OpfPaymentBrowserInfo;
   paymentMethod?: string;
   encryptedToken?: string;
   cartId?: string;
   channel?: string;
-  additionalData?: Array<KeyValuePair>;
+  additionalData?: Array<OpfKeyValueMap>;
 }
 
-export interface SubmitInput {
-  additionalData: Array<KeyValuePair>;
+export interface OpfPaymentSubmitInput {
+  additionalData: Array<OpfKeyValueMap>;
   paymentSessionId?: string;
   cartId: string;
-  callbackArray: [MerchantCallback, MerchantCallback, MerchantCallback];
+  callbackArray: [
+    OpfPaymentMerchantCallback,
+    OpfPaymentMerchantCallback,
+    OpfPaymentMerchantCallback,
+  ];
   returnPath?: string;
-  paymentMethod: PaymentMethod;
+  paymentMethod: OpfPaymentMethod;
   encryptedToken?: string;
 }
 
-export enum SubmitStatus {
+export enum OpfPaymentSubmitStatus {
   REJECTED = 'REJECTED',
   ACCEPTED = 'ACCEPTED',
   PENDING = 'PENDING',
   DELAYED = 'DELAYED',
 }
-export enum PaymentMethod {
+
+export enum OpfPaymentMethod {
   CREDIT_CARD = 'CREDIT_CARD',
 }
-export interface SubmitResponse {
+export interface OpfPaymentSubmitResponse {
   cartId: string;
-  status: SubmitStatus;
+  status: OpfPaymentSubmitStatus;
   reasonCode: string;
-  paymentMethod: PaymentMethod;
+  paymentMethod: OpfPaymentMethod;
   authorizedAmount: number;
-  customFields: Array<KeyValuePair>;
+  customFields: Array<OpfKeyValueMap>;
 }
 
-export interface SubmitCompleteResponse {
+export interface OpfPaymentSubmitCompleteResponse {
   cartId: string;
-  status: SubmitStatus;
+  status: OpfPaymentSubmitStatus;
   reasonCode: number;
-  customFields: Array<KeyValuePair>;
+  customFields: Array<OpfKeyValueMap>;
 }
 
-export interface SubmitCompleteRequest {
+export interface OpfPaymentSubmitCompleteRequest {
   paymentSessionId?: string;
-  additionalData?: Array<KeyValuePair>;
+  additionalData?: Array<OpfKeyValueMap>;
   cartId?: string;
 }
-export interface SubmitCompleteInput {
-  additionalData: Array<KeyValuePair>;
+export interface OpfPaymentSubmitCompleteInput {
+  additionalData: Array<OpfKeyValueMap>;
   paymentSessionId: string;
   cartId: string;
-  callbackArray: [MerchantCallback, MerchantCallback, MerchantCallback];
+  callbackArray: [
+    OpfPaymentMerchantCallback,
+    OpfPaymentMerchantCallback,
+    OpfPaymentMerchantCallback,
+  ];
   returnPath?: string;
 }
 
-export interface AfterRedirectScriptResponse {
+export interface OpfPaymentAfterRedirectScriptResponse {
   afterRedirectScript: OpfDynamicScript;
 }
 
-export const defaultErrorDialogOptions: ErrorDialogOptions = {
-  messageKey: 'opfPayment.errors.proceedPayment',
-  confirmKey: 'common.continue',
-};
-
-export enum OpfPage {
-  CHECKOUT_REVIEW_PAGE = 'opfCheckoutPaymentAndReview',
-  CONFIRMATION_PAGE = 'orderConfirmation',
-  RESULT_PAGE = 'paymentVerificationResult',
-  CART_PAGE = 'cart',
-}
-
-export enum GlobalFunctionsDomain {
-  CHECKOUT = 'checkout',
-  GLOBAL = 'global',
-  REDIRECT = 'redirect',
-}
-
-export interface PaymentInitiationConfig {
+export interface OpfPaymentInitiationConfig {
   otpKey?: string;
-  config?: PaymentConfig;
+  config?: OpfPaymentConfig;
 }
 
-export interface PaymentConfig {
+export interface OpfPaymentConfig {
   configurationId?: string;
   cartId?: string;
   resultURL?: string;
   cancelURL?: string;
   channel?: string;
-  browserInfo?: PaymentBrowserInfo;
+  browserInfo?: OpfPaymentBrowserInfo;
 }
 
-export interface PaymentBrowserInfo {
-  acceptHeader?: string;
-  colorDepth?: number;
-  javaEnabled?: boolean;
-  javaScriptEnabled?: boolean;
-  language?: string;
-  screenHeight?: number;
-  screenWidth?: number;
-  userAgent?: string;
-  timeZoneOffset?: number;
-  ipAddress?: string;
-  originUrl?: string;
-}
-
-export interface PaymentSessionFormField {
+export interface OpfPaymentSessionFormField {
   name?: string;
   value?: string;
 }
 
-export interface PaymentSessionData {
+export interface OpfPaymentSessionData {
   paymentSessionId?: string;
   relayResultUrl?: string;
   relayCancelUrl?: string;
   paymentIntent?: string;
-  pattern?: PaymentPattern;
-  destination?: PaymentDestination;
+  pattern?: OpfPaymentRenderPattern;
+  destination?: OpfPaymentDestination;
   dynamicScript?: OpfDynamicScript;
 }
 
-export interface PaymentDestination {
+export interface OpfPaymentDestination {
   url?: string;
   method?: string;
   contentType?: string;
   body?: string;
   authenticationIds?: number[];
-  form?: PaymentSessionFormField[];
+  form?: OpfPaymentSessionFormField[];
 }
 
-export enum PaymentPattern {
+export enum OpfPaymentRenderPattern {
   IFRAME = 'IFRAME',
   FULL_PAGE = 'FULL_PAGE',
   HOSTED_FIELDS = 'HOSTED_FIELDS',
 }
 
-export interface OpfRenderPaymentMethodEvent {
+export interface OpfPaymentRenderMethodEvent {
   isLoading: boolean;
   isError: boolean;
-  renderType?: PaymentPattern;
+  renderType?: OpfPaymentRenderPattern;
   data?: string | null;
-  destination?: PaymentDestination;
+  destination?: OpfPaymentDestination;
 }

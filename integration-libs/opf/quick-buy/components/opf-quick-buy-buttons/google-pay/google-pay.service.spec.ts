@@ -13,8 +13,8 @@ import { OpfPaymentFacade } from '@spartacus/opf/payment/root';
 import { OpfQuickBuyTransactionService } from '@spartacus/opf/quick-buy/core';
 import {
   OPF_QUICK_BUY_ADDRESS_FIELD_PLACEHOLDER,
-  OpfProviderType,
   OpfQuickBuyLocation,
+  OpfQuickBuyProviderType,
 } from '@spartacus/opf/quick-buy/root';
 import { CurrentProductService } from '@spartacus/storefront';
 import { of } from 'rxjs';
@@ -655,7 +655,7 @@ describe('OpfGooglePayService', () => {
             expect(submitPaymentArgs.cartId).toBe(mockCartId);
             expect(submitPaymentArgs.encryptedToken).toBe(encodedMockToken);
             expect(submitPaymentArgs.paymentMethod).toBe(
-              OpfProviderType.GOOGLE_PAY
+              OpfQuickBuyProviderType.GOOGLE_PAY
             );
             expect(
               mockQuickBuyTransactionService.getCurrentCartId

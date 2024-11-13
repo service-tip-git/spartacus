@@ -8,7 +8,7 @@ import {
   Translatable,
 } from '@spartacus/core';
 import {
-  ActiveConfiguration,
+  OpfActiveConfiguration,
   OpfBaseFacade,
   OpfMetadataModel,
   OpfMetadataStoreService,
@@ -21,7 +21,7 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 import { OpfCheckoutTermsAndConditionsAlertModule } from '../opf-checkout-terms-and-conditions-alert';
 import { OpfCheckoutPaymentsComponent } from './opf-checkout-payments.component';
 
-const mockActiveConfigurations: ActiveConfiguration[] = [
+const mockActiveConfigurations: OpfActiveConfiguration[] = [
   {
     id: 1,
     providerType: OpfPaymentProviderType.PAYMENT_GATEWAY,
@@ -41,14 +41,14 @@ const mockActiveConfigurations: ActiveConfiguration[] = [
 ];
 class MockOpfBaseFacade implements Partial<OpfBaseFacade> {
   getActiveConfigurationsState(): Observable<
-    QueryState<ActiveConfiguration[] | undefined>
+    QueryState<OpfActiveConfiguration[] | undefined>
   > {
     return activeConfigurationsState$.asObservable();
   }
 }
 
 const activeConfigurationsState$ = new BehaviorSubject<
-  QueryState<ActiveConfiguration[] | undefined>
+  QueryState<OpfActiveConfiguration[] | undefined>
 >({
   loading: false,
   error: false,

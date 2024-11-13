@@ -7,8 +7,8 @@
 import { Injectable } from '@angular/core';
 import { TranslationService } from '@spartacus/core';
 import {
-  ErrorDialogOptions,
-  defaultErrorDialogOptions,
+  OpfErrorDialogOptions,
+  defaultOpfErrorDialogOptions,
 } from '@spartacus/opf/base/root';
 import { combineLatest, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
@@ -19,16 +19,16 @@ import { map, switchMap } from 'rxjs/operators';
 export class OpfErrorModalService {
   constructor(protected translationService: TranslationService) {}
 
-  getMessageAndConfirmTranslations(dialogOptions: ErrorDialogOptions) {
+  getMessageAndConfirmTranslations(dialogOptions: OpfErrorDialogOptions) {
     return combineLatest([
       this.getLabelTranslation(
-        defaultErrorDialogOptions.messageKey as string,
+        defaultOpfErrorDialogOptions.messageKey as string,
         dialogOptions.messageString,
         dialogOptions.messageKey,
         dialogOptions.messageReplacements
       ),
       this.getLabelTranslation(
-        defaultErrorDialogOptions.confirmKey as string,
+        defaultOpfErrorDialogOptions.confirmKey as string,
         dialogOptions.confirmString,
         dialogOptions.confirmKey,
         dialogOptions.confirmReplacements

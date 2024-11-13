@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export interface ActiveConfiguration {
+export interface OpfActiveConfiguration {
   description?: string;
   id?: number;
   merchantId?: string;
@@ -20,7 +20,7 @@ export interface OpfDynamicScript {
   html?: string;
 }
 
-export interface KeyValuePair {
+export interface OpfKeyValueMap {
   key: string;
   value: string;
 }
@@ -28,8 +28,15 @@ export interface KeyValuePair {
 export interface OpfDynamicScriptResource {
   url?: string;
   sri?: string;
-  attributes?: KeyValuePair[];
+  attributes?: OpfKeyValueMap[];
   type?: OpfDynamicScriptResourceType;
+}
+
+export enum OpfPage {
+  CHECKOUT_REVIEW_PAGE = 'opfCheckoutPaymentAndReview',
+  CONFIRMATION_PAGE = 'orderConfirmation',
+  RESULT_PAGE = 'paymentVerificationResult',
+  CART_PAGE = 'cart',
 }
 
 export enum OpfDynamicScriptResourceType {

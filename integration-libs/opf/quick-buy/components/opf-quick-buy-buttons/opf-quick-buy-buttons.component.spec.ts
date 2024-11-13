@@ -7,7 +7,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterState, RoutingService } from '@spartacus/core';
 import { BehaviorSubject, of } from 'rxjs';
-import { OpfProviderType } from '../../root/model';
+import { OpfQuickBuyProviderType } from '../../root/model';
 import { OpfQuickBuyButtonsComponent } from './opf-quick-buy-buttons.component';
 import { OpfQuickBuyButtonsService } from './opf-quick-buy-buttons.service';
 import createSpy = jasmine.createSpy;
@@ -69,7 +69,7 @@ describe('OpfQuickBuyButtonsComponent', () => {
   });
 
   it('should determine if a payment method is enabled', () => {
-    const provider = OpfProviderType.APPLE_PAY;
+    const provider = OpfQuickBuyProviderType.APPLE_PAY;
     const activeConfiguration = {};
     opfQuickBuyButtonsServiceMock.isQuickBuyProviderEnabled.and.returnValue(
       true

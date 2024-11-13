@@ -28,9 +28,9 @@ import {
 import { OPF_PAYMENT_AND_REVIEW_SEMANTIC_ROUTE } from '@spartacus/opf/checkout/root';
 import {
   OpfPaymentFacade,
-  OpfRenderPaymentMethodEvent,
-  PaymentPattern,
-  PaymentSessionData,
+  OpfPaymentRenderMethodEvent,
+  OpfPaymentRenderPattern,
+  OpfPaymentSessionData,
 } from '@spartacus/opf/payment/root';
 import { OrderFacade } from '@spartacus/order/root';
 import {
@@ -49,7 +49,7 @@ export class OpfCheckoutPaymentWrapperService {
   protected activeCartId?: string;
 
   protected renderPaymentMethodEvent$ =
-    new BehaviorSubject<OpfRenderPaymentMethodEvent>({
+    new BehaviorSubject<OpfPaymentRenderMethodEvent>({
       isLoading: false,
       isError: false,
     });
@@ -87,13 +87,13 @@ export class OpfCheckoutPaymentWrapperService {
       });
   }
 
-  getRenderPaymentMethodEvent(): Observable<OpfRenderPaymentMethodEvent> {
+  getRenderPaymentMethodEvent(): Observable<OpfPaymentRenderMethodEvent> {
     return this.renderPaymentMethodEvent$.asObservable();
   }
 
   initiatePayment(
     paymentOptionId: number
-  ): Observable<PaymentSessionData | Error> {
+  ): Observable<OpfPaymentSessionData | Error> {
     this.lastPaymentOptionId = paymentOptionId;
     this.renderPaymentMethodEvent$.next({
       isLoading: true,
@@ -119,7 +119,7 @@ export class OpfCheckoutPaymentWrapperService {
         this.setPaymentInitiationConfig(otpKey, paymentOptionId)
       ),
       switchMap((params) => this.opfPaymentFacade.initiatePayment(params)),
-      tap((paymentOptionConfig: PaymentSessionData | Error) => {
+      tap((paymentOptionConfig: OpfPaymentSessionData | Error) => {
         if (!(paymentOptionConfig instanceof Error)) {
           this.storePaymentSessionId(paymentOptionConfig);
           this.renderPaymentGateway(paymentOptionConfig);
@@ -138,9 +138,9 @@ export class OpfCheckoutPaymentWrapperService {
     );
   }
 
-  protected storePaymentSessionId(paymentOptionConfig: PaymentSessionData) {
+  protected storePaymentSessionId(paymentOptionConfig: OpfPaymentSessionData) {
     const paymentSessionId =
-      paymentOptionConfig.pattern === PaymentPattern.FULL_PAGE &&
+      paymentOptionConfig.pattern === OpfPaymentRenderPattern.FULL_PAGE &&
       paymentOptionConfig.paymentSessionId
         ? paymentOptionConfig.paymentSessionId
         : undefined;
@@ -153,7 +153,7 @@ export class OpfCheckoutPaymentWrapperService {
     }
   }
 
-  renderPaymentGateway(config: PaymentSessionData) {
+  renderPaymentGateway(config: OpfPaymentSessionData) {
     if (config?.destination) {
       this.renderPaymentMethodEvent$.next({
         isLoading: false,
@@ -167,8 +167,8 @@ export class OpfCheckoutPaymentWrapperService {
 
     if (
       config?.dynamicScript &&
-      (config?.pattern === PaymentPattern.HOSTED_FIELDS ||
-        config?.pattern === PaymentPattern.FULL_PAGE)
+      (config?.pattern === OpfPaymentRenderPattern.HOSTED_FIELDS ||
+        config?.pattern === OpfPaymentRenderPattern.FULL_PAGE)
     ) {
       const html = config?.dynamicScript?.html;
 

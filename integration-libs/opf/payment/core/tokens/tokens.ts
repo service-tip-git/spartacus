@@ -7,10 +7,10 @@
 import { InjectionToken } from '@angular/core';
 import { Converter } from '@spartacus/core';
 import {
-  AfterRedirectScriptResponse,
+  OpfPaymentAfterRedirectScriptResponse,
+  OpfPaymentSubmitCompleteResponse,
+  OpfPaymentSubmitResponse,
   OpfPaymentVerificationResponse,
-  SubmitCompleteResponse,
-  SubmitResponse,
 } from '@spartacus/opf/payment/root';
 
 export const OPF_PAYMENT_VERIFICATION_NORMALIZER = new InjectionToken<
@@ -18,13 +18,13 @@ export const OPF_PAYMENT_VERIFICATION_NORMALIZER = new InjectionToken<
 >('OpfPaymentVerificationNormalizer');
 
 export const OPF_PAYMENT_SUBMIT_NORMALIZER = new InjectionToken<
-  Converter<any, SubmitResponse>
+  Converter<any, OpfPaymentSubmitResponse>
 >('OpfPaymentSubmitNormalizer');
 
 export const OPF_PAYMENT_SUBMIT_COMPLETE_NORMALIZER = new InjectionToken<
-  Converter<any, SubmitCompleteResponse>
+  Converter<any, OpfPaymentSubmitCompleteResponse>
 >('OpfPaymentSubmitCompleteNormalizer');
 
 export const OPF_AFTER_REDIRECT_SCRIPTS_NORMALIZER = new InjectionToken<
-  Converter<any, AfterRedirectScriptResponse>
+  Converter<any, OpfPaymentAfterRedirectScriptResponse>
 >('OpfAfterRedirectScriptsNormalizer');

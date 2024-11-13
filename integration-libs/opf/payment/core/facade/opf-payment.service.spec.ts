@@ -8,11 +8,11 @@ import { TestBed } from '@angular/core/testing';
 import { CommandService, QueryService } from '@spartacus/core';
 import { Observable, of } from 'rxjs';
 import {
-  AfterRedirectScriptResponse,
+  OpfPaymentAfterRedirectScriptResponse,
+  OpfPaymentSubmitCompleteInput,
+  OpfPaymentSubmitInput,
   OpfPaymentVerificationPayload,
   OpfPaymentVerificationResponse,
-  SubmitCompleteInput,
-  SubmitInput,
 } from '../../root/model';
 import { OpfPaymentConnector } from '../connectors';
 import { OpfPaymentHostedFieldsService } from '../services';
@@ -29,7 +29,7 @@ class MockPaymentConnector implements Partial<OpfPaymentConnector> {
   }
   afterRedirectScripts(
     _paymentSessionId: string
-  ): Observable<AfterRedirectScriptResponse> {
+  ): Observable<OpfPaymentAfterRedirectScriptResponse> {
     return of({ afterRedirectScript: {} });
   }
 }
@@ -46,9 +46,9 @@ class MockOpfPaymentHostedFieldsService {
 
 const mockSubmitInput = {
   cartId: '123',
-} as SubmitInput;
+} as OpfPaymentSubmitInput;
 
-const mockSubmitCompleteInput: SubmitCompleteInput = {
+const mockSubmitCompleteInput: OpfPaymentSubmitCompleteInput = {
   cartId: 'mockCartId',
   additionalData: [{ key: 'key', value: 'value' }],
   paymentSessionId: 'sessionId',
@@ -95,9 +95,9 @@ describe('OpfPaymentService', () => {
       'submitPayment'
     ).and.callThrough();
 
-    const submitInput: SubmitInput = {
+    const submitInput: OpfPaymentSubmitInput = {
       cartId: 'testCart',
-    } as SubmitInput;
+    } as OpfPaymentSubmitInput;
 
     service['submitPaymentCommand'].execute({ submitInput });
 
@@ -131,9 +131,9 @@ describe('OpfPaymentService', () => {
       'submitCompletePayment'
     ).and.callThrough();
 
-    const submitCompleteInput: SubmitCompleteInput = {
+    const submitCompleteInput: OpfPaymentSubmitCompleteInput = {
       cartId: 'testCart',
-    } as SubmitCompleteInput;
+    } as OpfPaymentSubmitCompleteInput;
 
     service['submitCompletePaymentCommand'].execute({ submitCompleteInput });
 

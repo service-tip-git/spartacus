@@ -25,10 +25,10 @@ import {
   ApplePaySessionVerificationResponse,
   ApplePayTransactionInput,
   OPF_QUICK_BUY_DEFAULT_MERCHANT_NAME,
-  OpfProviderType,
   OpfQuickBuyDeliveryType,
   OpfQuickBuyFacade,
   OpfQuickBuyLocation,
+  OpfQuickBuyProviderType,
   QuickBuyTransactionDetails,
 } from '@spartacus/opf/quick-buy/root';
 import { ApplePaySessionFactory } from './apple-pay-session/apple-pay-session.factory';
@@ -429,7 +429,7 @@ export class ApplePayService {
           additionalData: [],
           paymentSessionId: '',
           callbackArray: [() => {}, () => {}, () => {}],
-          paymentMethod: OpfProviderType.APPLE_PAY as any,
+          paymentMethod: OpfQuickBuyProviderType.APPLE_PAY as any,
           encryptedToken,
           cartId,
         });

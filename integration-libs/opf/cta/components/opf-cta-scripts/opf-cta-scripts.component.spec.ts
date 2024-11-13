@@ -41,7 +41,7 @@ describe('OpfCtaScriptsComponent', () => {
   };
   beforeEach(() => {
     opfCtaScriptsService = jasmine.createSpyObj('OpfCtaScriptsService', [
-      'getCtaHtmlslList',
+      'getCtaHtmlList',
     ]);
 
     TestBed.configureTestingModule({
@@ -57,7 +57,7 @@ describe('OpfCtaScriptsComponent', () => {
   });
 
   beforeEach(() => {
-    opfCtaScriptsService.getCtaHtmlslList.and.returnValue(of(mockHtmlsList));
+    opfCtaScriptsService.getCtaHtmlList.and.returnValue(of(mockHtmlsList));
     createComponentInstance();
   });
 
@@ -77,7 +77,7 @@ describe('OpfCtaScriptsComponent', () => {
   });
 
   it('should isError be true when error is thrown', (done) => {
-    opfCtaScriptsService.getCtaHtmlslList = createSpy().and.returnValue(
+    opfCtaScriptsService.getCtaHtmlList = createSpy().and.returnValue(
       throwError('error')
     );
     createComponentInstance();

@@ -10,8 +10,8 @@ import {
   OnInit,
   inject,
 } from '@angular/core';
-import { ActiveConfiguration } from '@spartacus/opf/base/root';
-import { OpfProviderType } from '@spartacus/opf/quick-buy/root';
+import { OpfActiveConfiguration } from '@spartacus/opf/base/root';
+import { OpfQuickBuyProviderType } from '@spartacus/opf/quick-buy/root';
 import { Observable } from 'rxjs';
 import { OpfQuickBuyButtonsService } from './opf-quick-buy-buttons.service';
 
@@ -22,9 +22,9 @@ import { OpfQuickBuyButtonsService } from './opf-quick-buy-buttons.service';
 })
 export class OpfQuickBuyButtonsComponent implements OnInit {
   protected opfQuickBuyButtonsService = inject(OpfQuickBuyButtonsService);
-  protected paymentGatewayConfig$: Observable<ActiveConfiguration>;
+  protected paymentGatewayConfig$: Observable<OpfActiveConfiguration>;
 
-  PAYMENT_METHODS = OpfProviderType;
+  PAYMENT_METHODS = OpfQuickBuyProviderType;
 
   ngOnInit(): void {
     this.paymentGatewayConfig$ =
@@ -32,8 +32,8 @@ export class OpfQuickBuyButtonsComponent implements OnInit {
   }
 
   isPaymentMethodEnabled(
-    provider: OpfProviderType,
-    activeConfiguration: ActiveConfiguration
+    provider: OpfQuickBuyProviderType,
+    activeConfiguration: OpfActiveConfiguration
   ): boolean {
     return this.opfQuickBuyButtonsService.isQuickBuyProviderEnabled(
       provider,

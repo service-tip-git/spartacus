@@ -4,15 +4,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { KeyValuePair } from '@spartacus/opf/base/root';
+import { OpfKeyValueMap } from '@spartacus/opf/base/root';
 
 export interface OpfPaymentVerificationPayload {
-  responseMap: Array<KeyValuePair>;
+  responseMap: Array<OpfKeyValueMap>;
 }
 
 export interface OpfPaymentVerificationResponse {
   result: string;
 }
+
 export enum OpfPaymentVerificationResult {
   AUTHORIZED = 'AUTHORIZED',
   UNAUTHORIZED = 'UNAUTHORIZED',
@@ -20,7 +21,7 @@ export enum OpfPaymentVerificationResult {
   DELAYED = 'DELAYED',
 }
 
-export enum OpfPaymenVerificationUrlInput {
+export enum OpfPaymentVerificationUrlInput {
   PAYMENT_SESSION_ID = 'paymentSessionId',
   ORDER_ID = 'orderId',
 }

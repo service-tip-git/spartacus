@@ -9,12 +9,15 @@ import { StoreModule } from '@ngrx/store';
 import { CheckoutConfig } from '@spartacus/checkout/base/root';
 import { AuthService, QueryState, RoutingService } from '@spartacus/core';
 import {
-  ActiveConfiguration,
+  OpfActiveConfiguration,
   OpfBaseFacade,
   OpfPaymentProviderType,
 } from '@spartacus/opf/base/root';
 import { of, throwError } from 'rxjs';
-import { OpfProviderType, OpfQuickBuyDigitalWallet } from '../../root/model';
+import {
+  OpfQuickBuyDigitalWallet,
+  OpfQuickBuyProviderType,
+} from '../../root/model';
 import { OpfQuickBuyButtonsService } from './opf-quick-buy-buttons.service';
 
 describe('OpfQuickBuyButtonsService', () => {
@@ -56,7 +59,7 @@ describe('OpfQuickBuyButtonsService', () => {
         { providerType: OpfPaymentProviderType.PAYMENT_GATEWAY },
       ];
       opfBaseFacadeMock.getActiveConfigurationsState.and.returnValue(
-        of({ data: mockConfigurations } as QueryState<ActiveConfiguration[]>)
+        of({ data: mockConfigurations } as QueryState<OpfActiveConfiguration[]>)
       );
 
       service.getPaymentGatewayConfiguration().subscribe((result) => {
@@ -66,7 +69,7 @@ describe('OpfQuickBuyButtonsService', () => {
 
     it('should return undefined when there are no active configurations', () => {
       opfBaseFacadeMock.getActiveConfigurationsState.and.returnValue(
-        of({ data: undefined } as QueryState<ActiveConfiguration[]>)
+        of({ data: undefined } as QueryState<OpfActiveConfiguration[]>)
       );
 
       service.getPaymentGatewayConfiguration().subscribe((result) => {
@@ -77,7 +80,7 @@ describe('OpfQuickBuyButtonsService', () => {
     it('should return undefined when no configuration matches PAYMENT_GATEWAY type', () => {
       const mockConfigurations = [{ providerType: 'SOME_OTHER_TYPE' }];
       opfBaseFacadeMock.getActiveConfigurationsState.and.returnValue(
-        of({ data: mockConfigurations } as QueryState<ActiveConfiguration[]>)
+        of({ data: mockConfigurations } as QueryState<OpfActiveConfiguration[]>)
       );
 
       service.getPaymentGatewayConfiguration().subscribe((result) => {
@@ -99,7 +102,7 @@ describe('OpfQuickBuyButtonsService', () => {
 
     it('should return an empty array when config.data is undefined', () => {
       opfBaseFacadeMock.getActiveConfigurationsState.and.returnValue(
-        of({} as QueryState<ActiveConfiguration[]>)
+        of({} as QueryState<OpfActiveConfiguration[]>)
       );
 
       service.getPaymentGatewayConfiguration().subscribe((result) => {
@@ -109,12 +112,12 @@ describe('OpfQuickBuyButtonsService', () => {
   });
 
   describe('isQuickBuyProviderEnabled', () => {
-    const provider = OpfProviderType.APPLE_PAY;
+    const provider = OpfQuickBuyProviderType.APPLE_PAY;
 
     it('should return true when the provider is enabled', () => {
       const activeConfiguration = {
         digitalWalletQuickBuy: [
-          { provider: OpfProviderType.APPLE_PAY, enabled: true },
+          { provider: OpfQuickBuyProviderType.APPLE_PAY, enabled: true },
         ],
       };
 
@@ -128,7 +131,7 @@ describe('OpfQuickBuyButtonsService', () => {
     it('should return false when the provider is disabled', () => {
       const activeConfiguration = {
         digitalWalletQuickBuy: [
-          { provider: OpfProviderType.APPLE_PAY, enabled: false },
+          { provider: OpfQuickBuyProviderType.APPLE_PAY, enabled: false },
         ],
       };
 
@@ -167,7 +170,7 @@ describe('OpfQuickBuyButtonsService', () => {
     });
 
     it('should return false when digitalWalletQuickBuy is null or empty', () => {
-      const provider = OpfProviderType.APPLE_PAY;
+      const provider = OpfQuickBuyProviderType.APPLE_PAY;
       const activeConfiguration = {
         digitalWalletQuickBuy: null as any,
       };
@@ -182,7 +185,7 @@ describe('OpfQuickBuyButtonsService', () => {
 
   describe('getQuickBuyProviderConfig', () => {
     const config: OpfQuickBuyDigitalWallet = {
-      provider: OpfProviderType.GOOGLE_PAY,
+      provider: OpfQuickBuyProviderType.GOOGLE_PAY,
       googlePayGateway: 'test',
       merchantId: 'test',
       merchantName: 'test',
@@ -192,13 +195,13 @@ describe('OpfQuickBuyButtonsService', () => {
     it('should return config for specific provider', () => {
       const activeConfiguration = {
         digitalWalletQuickBuy: [
-          { provider: OpfProviderType.APPLE_PAY, enabled: true },
+          { provider: OpfQuickBuyProviderType.APPLE_PAY, enabled: true },
           config,
         ],
       };
 
       const result = service.getQuickBuyProviderConfig(
-        OpfProviderType.GOOGLE_PAY,
+        OpfQuickBuyProviderType.GOOGLE_PAY,
         activeConfiguration
       );
       expect(result).toBe(config);

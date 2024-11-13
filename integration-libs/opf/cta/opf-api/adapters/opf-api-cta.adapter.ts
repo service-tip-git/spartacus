@@ -20,7 +20,7 @@ import {
   OpfCtaAdapter,
 } from '@spartacus/opf/cta/core';
 import { CtaScriptsRequest, CtaScriptsResponse } from '@spartacus/opf/cta/root';
-import { SubmitResponse } from '@spartacus/opf/payment/root';
+import { OpfPaymentSubmitResponse } from '@spartacus/opf/payment/root';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
@@ -60,7 +60,7 @@ export class OpfApiCtaAdapter implements OpfCtaAdapter {
     const url = this.getCtaScriptsEndpoint();
 
     return this.http
-      .post<SubmitResponse>(url, ctaScriptsRequest, { headers })
+      .post<OpfPaymentSubmitResponse>(url, ctaScriptsRequest, { headers })
       .pipe(
         catchError((error) => {
           throw tryNormalizeHttpError(error, this.logger);

@@ -22,12 +22,14 @@ import { Order, OrderFacade } from '@spartacus/order/root';
 import { of } from 'rxjs';
 import { OpfPaymentFacade } from '../../facade';
 import {
-  GlobalFunctionsDomain,
   OpfPaymentVerificationResponse,
   OpfPaymentVerificationResult,
 } from '../../model';
 
-import { OpfGlobalFunctionsFacade } from '@spartacus/opf/global-functions/root';
+import {
+  GlobalFunctionsDomain,
+  OpfGlobalFunctionsFacade,
+} from '@spartacus/opf/global-functions/root';
 import { OpfPaymentVerificationService } from './opf-payment-verification.service';
 
 describe('OpfPaymentVerificationService', () => {
@@ -321,7 +323,7 @@ describe('OpfPaymentVerificationService', () => {
         );
     });
 
-    it('should throw an error with defaultError if the result is not AUTHORIZED, DELAYED, or CANCELLED', (done) => {
+    it('should throw an error with opfDefaultPaymentError if the result is not AUTHORIZED, DELAYED, or CANCELLED', (done) => {
       const mockPaymentSessionId = 'sessionId';
       const mockResponseMap = [{ key: 'key', value: 'value' }];
       const mockVerificationResponse: OpfPaymentVerificationResponse = {
@@ -337,7 +339,7 @@ describe('OpfPaymentVerificationService', () => {
         .subscribe(
           () => {},
           (error) => {
-            expect(error).toEqual(service.defaultError);
+            expect(error).toEqual(service.opfDefaultPaymentError);
             done();
           }
         );

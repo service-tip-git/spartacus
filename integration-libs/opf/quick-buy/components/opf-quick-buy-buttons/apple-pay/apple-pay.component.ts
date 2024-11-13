@@ -12,11 +12,11 @@ import {
   inject,
 } from '@angular/core';
 import { Cart } from '@spartacus/cart/base/root';
-import { ActiveConfiguration } from '@spartacus/opf/base/root';
+import { OpfActiveConfiguration } from '@spartacus/opf/base/root';
 import { OpfQuickBuyTransactionService } from '@spartacus/opf/quick-buy/core';
 import {
-  OpfProviderType,
   OpfQuickBuyDigitalWallet,
+  OpfQuickBuyProviderType,
 } from '@spartacus/opf/quick-buy/root';
 import { CurrentProductService } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
@@ -30,7 +30,7 @@ import { ApplePayService } from './apple-pay.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ApplePayComponent implements OnInit {
-  @Input() activeConfiguration: ActiveConfiguration;
+  @Input() activeConfiguration: OpfActiveConfiguration;
 
   protected applePayService = inject(ApplePayService);
   protected currentProductService = inject(CurrentProductService);
@@ -45,7 +45,8 @@ export class ApplePayComponent implements OnInit {
   ngOnInit(): void {
     this.applePayDigitalWallet =
       this.activeConfiguration?.digitalWalletQuickBuy?.find(
-        (digitalWallet) => digitalWallet.provider === OpfProviderType.APPLE_PAY
+        (digitalWallet) =>
+          digitalWallet.provider === OpfQuickBuyProviderType.APPLE_PAY
       );
     if (
       !this.applePayDigitalWallet?.merchantId ||
