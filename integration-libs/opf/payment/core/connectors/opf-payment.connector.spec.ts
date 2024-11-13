@@ -34,7 +34,6 @@ const mockOpfPaymentVerificationResponse: OpfPaymentVerificationResponse = {
 const mockSubmitPaymentRequest: SubmitRequest = {
   paymentMethod: 'card',
   encryptedToken: 'token',
-  cartId: '123',
 };
 
 const mockSubmitPaymentResponse: SubmitResponse = {

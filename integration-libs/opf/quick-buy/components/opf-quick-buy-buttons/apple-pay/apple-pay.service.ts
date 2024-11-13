@@ -419,8 +419,7 @@ export class ApplePayService {
             )
           : of(true);
       }),
-      switchMap(() => this.opfQuickBuyTransactionService.getCurrentCartId()),
-      switchMap((cartId: string) => {
+      switchMap(() => {
         const encryptedToken = btoa(
           JSON.stringify(applePayPayment.token.paymentData)
         );
@@ -431,7 +430,6 @@ export class ApplePayService {
           callbackArray: [() => {}, () => {}, () => {}],
           paymentMethod: OpfProviderType.APPLE_PAY as any,
           encryptedToken,
-          cartId,
         });
       })
     );

@@ -63,7 +63,6 @@ export interface SubmitRequest {
   browserInfo?: PaymentBrowserInfo;
   paymentMethod?: string;
   encryptedToken?: string;
-  cartId?: string;
   channel?: string;
   additionalData?: Array<KeyValuePair>;
 }
@@ -71,7 +70,6 @@ export interface SubmitRequest {
 export interface SubmitInput {
   additionalData: Array<KeyValuePair>;
   paymentSessionId?: string;
-  cartId: string;
   callbackArray: [MerchantCallback, MerchantCallback, MerchantCallback];
   returnPath?: string;
   paymentMethod: PaymentMethod;
@@ -106,12 +104,10 @@ export interface SubmitCompleteResponse {
 export interface SubmitCompleteRequest {
   paymentSessionId?: string;
   additionalData?: Array<KeyValuePair>;
-  cartId?: string;
 }
 export interface SubmitCompleteInput {
   additionalData: Array<KeyValuePair>;
   paymentSessionId: string;
-  cartId: string;
   callbackArray: [MerchantCallback, MerchantCallback, MerchantCallback];
   returnPath?: string;
 }

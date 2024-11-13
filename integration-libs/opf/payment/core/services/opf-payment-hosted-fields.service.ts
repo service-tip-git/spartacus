@@ -59,7 +59,6 @@ export class OpfPaymentHostedFieldsService {
   submitPayment(submitInput: SubmitInput): Observable<boolean> {
     const {
       paymentMethod,
-      cartId,
       additionalData,
       paymentSessionId,
       returnPath,
@@ -68,7 +67,6 @@ export class OpfPaymentHostedFieldsService {
 
     const submitRequest: SubmitRequest = {
       paymentMethod,
-      cartId,
       additionalData,
       channel: 'BROWSER',
       browserInfo: getBrowserInfo(this.winRef.nativeWindow),
@@ -118,11 +116,10 @@ export class OpfPaymentHostedFieldsService {
   submitCompletePayment(
     submitCompleteInput: SubmitCompleteInput
   ): Observable<boolean> {
-    const { cartId, additionalData, paymentSessionId, returnPath } =
+    const { additionalData, paymentSessionId, returnPath } =
       submitCompleteInput;
 
     const submitCompleteRequest: SubmitCompleteRequest = {
-      cartId,
       additionalData,
       paymentSessionId,
     };
@@ -210,7 +207,6 @@ export class OpfPaymentHostedFieldsService {
       this.activeCartFacade.takeActiveCartId(),
     ]).pipe(
       switchMap(([userId, activeCartId]: [string, string]) => {
-        submitRequest.cartId = activeCartId;
         return combineLatest([
           of(submitRequest),
           this.cartAccessCodeFacade.getCartAccessCode(userId, activeCartId),

@@ -77,7 +77,6 @@ describe('OpfPaymentHostedFieldsService', () => {
 
   const mockInput: SubmitInput = {
     paymentMethod: PaymentMethod.CREDIT_CARD,
-    cartId: 'mockCartId',
     additionalData: [{ key: 'key', value: 'value' }],
     paymentSessionId: 'sessionId',
     returnPath: 'checkout',
@@ -85,7 +84,6 @@ describe('OpfPaymentHostedFieldsService', () => {
   };
 
   const mockSubmitCompleteInput: SubmitCompleteInput = {
-    cartId: 'mockCartId',
     additionalData: [{ key: 'key', value: 'value' }],
     paymentSessionId: 'sessionId',
     returnPath: 'checkout',
