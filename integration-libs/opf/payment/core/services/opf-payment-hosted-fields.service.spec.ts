@@ -76,7 +76,7 @@ describe('OpfPaymentHostedFieldsService', () => {
   };
 
   const mockInput: OpfPaymentSubmitInput = {
-    paymentMethod: PaymentMethod.CREDIT_CARD,
+    paymentMethod: OpfPaymentMethod.CREDIT_CARD,
     additionalData: [{ key: 'key', value: 'value' }],
     paymentSessionId: 'sessionId',
     returnPath: 'checkout',
@@ -177,7 +177,7 @@ describe('OpfPaymentHostedFieldsService', () => {
         of('mockActiveCartId')
       );
       mockOpfPaymentConnector.submitCompletePayment.and.returnValue(
-        of({ status: SubmitStatus.ACCEPTED })
+        of({ status: OpfPaymentSubmitStatus.ACCEPTED })
       );
 
       service
