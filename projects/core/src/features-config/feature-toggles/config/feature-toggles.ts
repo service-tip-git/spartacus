@@ -668,6 +668,12 @@ export interface FeatureTogglesInterface {
   a11yDeleteButton2First?: boolean;
 
   /**
+   * Fixes text formatting issues while a11y text spacing is enabled.
+   * Affects: ListComponent, CSAgentLoginFormComponent
+   */
+  a11yTextSpacingAdjustments?: boolean;
+
+  /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
    * into a request body, instead of query params.
    * This toggle is used in the following classes: `OccCartAdapter`, `OccSavedCartAdapter`, `SavedCartOccModule`, `CartBaseOccModule`.
@@ -860,6 +866,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yApprovalProcessWithNoClearable: false,
   a11yPostRegisterSuccessMessage: false,
   a11yDeleteButton2First: false,
+  a11yTextSpacingAdjustments: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
