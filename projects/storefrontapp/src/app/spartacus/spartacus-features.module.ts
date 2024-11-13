@@ -382,7 +382,7 @@ if (environment.cpq) {
         a11yAddToWishlistFocus: true,
         a11ySearchBoxFocusOnEscape: true,
         a11yUpdatingCartNoNarration: true,
-        a11yPasswordVisibliltyBtnValueOverflow: true,
+        a11yPasswordVisibilityBtnValueOverflow: true,
         a11yItemCounterFocus: true,
         a11yScrollToReviewByShowReview: true,
         a11yViewHoursButtonIconContrast: true,

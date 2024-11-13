@@ -623,7 +623,7 @@ export interface FeatureTogglesInterface {
   /**
    * Stops the inputs value from obstructing the 'PasswordVisibilityToggleComponent'.
    */
-  a11yPasswordVisibliltyBtnValueOverflow?: boolean;
+  a11yPasswordVisibilityBtnValueOverflow?: boolean;
 
   /**
    * In `ItemCounterComponenet`, Remove button no longer lose focus after activating when count is 2.
@@ -840,7 +840,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yAddToWishlistFocus: false,
   a11ySearchBoxFocusOnEscape: false,
   a11yUpdatingCartNoNarration: false,
-  a11yPasswordVisibliltyBtnValueOverflow: false,
+  a11yPasswordVisibilityBtnValueOverflow: false,
   a11yItemCounterFocus: false,
   a11yScrollToReviewByShowReview: false,
   a11yViewHoursButtonIconContrast: false,

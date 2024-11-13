@@ -27,7 +27,7 @@ export class UpdatePasswordComponent {
   });
 
   constructor(protected service: UpdatePasswordComponentService) {
-    useFeatureStyles('a11yPasswordVisibliltyBtnValueOverflow');
+    useFeatureStyles('a11yPasswordVisibilityBtnValueOverflow');
   }
 
   form: UntypedFormGroup = this.service.form;
