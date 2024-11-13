@@ -10,6 +10,7 @@
   >
     <cx-opf-checkout-terms-and-conditions-alert
       [isVisible]="disabled"
+      [isExplicit]="explicitTermsAndConditions"
     ></cx-opf-checkout-terms-and-conditions-alert>
     <div
       class="form-check"
@@ -25,7 +26,7 @@
         [value]="configuration.id"
         [checked]="configuration.id === selectedPaymentId"
         formControlName="paymentId"
-        [disabled]="disabled"
+        [disabled]="disabled && explicitTermsAndConditions"
       />
       <label
         class="cx-payment-type-label form-check-label form-radio-label"

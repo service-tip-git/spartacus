@@ -4,7 +4,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import {
   UntypedFormBuilder,
   UntypedFormGroup,
@@ -20,8 +25,9 @@ import {
   CheckoutDeliveryModesFacade,
   CheckoutPaymentFacade,
 } from '@spartacus/checkout/base/root';
-import { TranslationService } from '@spartacus/core';
+import { CmsService, Page, TranslationService } from '@spartacus/core';
 import { OpfMetadataStoreService } from '@spartacus/opf/base/root';
+import { OPF_EXPLICIT_TERMS_AND_CONDITIONS_COMPONENT } from '@spartacus/opf/checkout/root';
 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -36,6 +42,18 @@ export class OpfCheckoutPaymentAndReviewComponent
   implements OnInit
 {
   protected defaultTermsAndConditionsFieldValue = false;
+  protected cmsService = inject(CmsService);
+
+  explicitTermsAndConditions$: Observable<boolean | undefined> = this.cmsService
+    .getCurrentPage()
+    .pipe(
+      map((page: Page) => {
+        return this.isCmsComponentInPage(
+          OPF_EXPLICIT_TERMS_AND_CONDITIONS_COMPONENT,
+          page
+        );
+      })
+    );
 
   checkoutSubmitForm: UntypedFormGroup = this.fb.group({
     termsAndConditions: [
@@ -76,6 +94,10 @@ export class OpfCheckoutPaymentAndReviewComponent
       checkoutStepService,
       checkoutDeliveryModesFacade
     );
+  }
+
+  protected isCmsComponentInPage(cmsComponentUid: string, page: Page): boolean {
+    return !!page && JSON.stringify(page).includes(cmsComponentUid);
   }
 
   protected updateTermsAndConditionsState() {

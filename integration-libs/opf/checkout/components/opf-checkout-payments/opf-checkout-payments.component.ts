@@ -54,6 +54,9 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
   @Input()
   disabled = true;
 
+  @Input()
+  explicitTermsAndConditions: boolean | null | undefined;
+
   selectedPaymentId?: number;
 
   constructor(
@@ -72,7 +75,11 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
       this.opfMetadataStoreService
         .getOpfMetadataState()
         .subscribe((state: OpfMetadataModel) => {
-          if (state.termsAndConditionsChecked && !isPreselected) {
+          if (
+            !isPreselected &&
+            (state.termsAndConditionsChecked ||
+              !this.explicitTermsAndConditions)
+          ) {
             isPreselected = true;
             this.selectedPaymentId = !state.selectedPaymentOptionId
               ? state.defaultSelectedPaymentOptionId
@@ -80,7 +87,10 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
             this.opfMetadataStoreService.updateOpfMetadata({
               selectedPaymentOptionId: this.selectedPaymentId,
             });
-          } else if (!state.termsAndConditionsChecked) {
+          } else if (
+            !state.termsAndConditionsChecked &&
+            this.explicitTermsAndConditions
+          ) {
             isPreselected = false;
             this.selectedPaymentId = undefined;
           }
