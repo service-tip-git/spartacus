@@ -16,11 +16,14 @@ import {
 import { OpfPaymentFacade } from '@spartacus/opf/payment/root';
 import { OpfQuickBuyTransactionService } from '@spartacus/opf/quick-buy/core';
 import {
+  GOOGLE_PAY_PROVIDER_NAME,
+  GooglePayOpfQuickBuyProvider,
   OPF_QUICK_BUY_ADDRESS_FIELD_PLACEHOLDER,
   OPF_QUICK_BUY_DEFAULT_MERCHANT_NAME,
   OpfQuickBuyConfig,
   OpfQuickBuyDeliveryType,
   OpfQuickBuyLocation,
+  OpfQuickBuyProvider,
   OpfQuickBuyProviderType,
   QuickBuyTransactionDetails,
 } from '@spartacus/opf/quick-buy/root';
@@ -137,8 +140,18 @@ export class OpfGooglePayService {
   }
 
   loadProviderResources(): Promise<void> {
+    const opfGooglePayConfig: OpfQuickBuyProvider | undefined =
+      this.opfQuickBuyConfig.providers?.find(
+        (provider) => provider[GOOGLE_PAY_PROVIDER_NAME]
+      );
+    if (!opfGooglePayConfig) {
+      return Promise.resolve();
+    }
     return this.opfResourceLoaderService.loadProviderResources([
-      { url: this.opfQuickBuyConfig.googlePayApiUrl },
+      {
+        url: (opfGooglePayConfig as GooglePayOpfQuickBuyProvider).googlePay
+          .resourceUrl,
+      },
     ]);
   }
 

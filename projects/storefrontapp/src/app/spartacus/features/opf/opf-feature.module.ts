@@ -124,7 +124,13 @@ if (environment.b2b) {
       },
     }),
     provideConfig(<OpfQuickBuyConfig>{
-      googlePayApiUrl: 'https://pay.google.com/gp/p/js/pay.js',
+      providers: [
+        {
+          googlePay: {
+            resourceUrl: 'https://pay.google.com/gp/p/js/pay.js',
+          },
+        },
+      ],
     }),
     ...extensionProviders,
   ],

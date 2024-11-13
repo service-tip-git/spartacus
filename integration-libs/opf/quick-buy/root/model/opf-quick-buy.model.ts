@@ -50,3 +50,16 @@ export enum OpfQuickBuyProviderType {
   APPLE_PAY = 'APPLE_PAY',
   GOOGLE_PAY = 'GOOGLE_PAY',
 }
+
+export interface OpfQuickBuyProvider {
+  [providerName: string]: {
+    [resource: string]: string;
+  };
+}
+
+export const GOOGLE_PAY_PROVIDER_NAME = 'googlePay';
+export interface GooglePayOpfQuickBuyProvider extends OpfQuickBuyProvider {
+  [GOOGLE_PAY_PROVIDER_NAME]: {
+    resourceUrl: string;
+  };
+}
