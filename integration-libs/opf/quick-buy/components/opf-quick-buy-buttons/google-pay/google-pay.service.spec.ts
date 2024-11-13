@@ -617,7 +617,6 @@ describe('OpfGooglePayService', () => {
     describe('onPaymentAuthorized', () => {
       it('should handle payment authorization', (done) => {
         const callbacks = service['handlePaymentCallbacks']();
-        const mockCartId = 'cartId';
         const mockToken = 'mockToken';
         const paymentDataResponse = {
           paymentMethodData: {
@@ -627,9 +626,6 @@ describe('OpfGooglePayService', () => {
           },
         } as google.payments.api.PaymentData;
 
-        mockQuickBuyTransactionService.getCurrentCartId.and.returnValue(
-          of(mockCartId)
-        );
         mockPaymentFacade.submitPayment.and.returnValue(of(true));
         mockQuickBuyTransactionService.setBillingAddress.and.returnValue(
           of(true)
@@ -651,15 +647,10 @@ describe('OpfGooglePayService', () => {
             submitPaymentArgs.callbackArray.forEach((callback) => {
               expect(typeof callback).toBe('function');
             });
-            expect(submitPaymentArgs.cartId).toBe(mockCartId);
-            expect(submitPaymentArgs.cartId).toBe(mockCartId);
             expect(submitPaymentArgs.encryptedToken).toBe(encodedMockToken);
             expect(submitPaymentArgs.paymentMethod).toBe(
               OpfQuickBuyProviderType.GOOGLE_PAY
             );
-            expect(
-              mockQuickBuyTransactionService.getCurrentCartId
-            ).toHaveBeenCalled();
             expect(result).toEqual({ transactionState: 'SUCCESS' });
             done();
           });

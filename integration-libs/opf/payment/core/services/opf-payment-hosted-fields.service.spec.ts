@@ -75,17 +75,17 @@ describe('OpfPaymentHostedFieldsService', () => {
     handlePaymentError: jasmine.createSpy('handlePaymentError'),
   };
 
+
   const mockInput: OpfPaymentSubmitInput = {
-    paymentMethod: OpfPaymentMethod.CREDIT_CARD,
-    cartId: 'mockCartId',
+    paymentMethod: PaymentMethod.CREDIT_CARD,
     additionalData: [{ key: 'key', value: 'value' }],
     paymentSessionId: 'sessionId',
     returnPath: 'checkout',
     callbackArray: [() => {}, () => {}, () => {}],
   };
 
+
   const mockSubmitCompleteInput: OpfPaymentSubmitCompleteInput = {
-    cartId: 'mockCartId',
     additionalData: [{ key: 'key', value: 'value' }],
     paymentSessionId: 'sessionId',
     returnPath: 'checkout',

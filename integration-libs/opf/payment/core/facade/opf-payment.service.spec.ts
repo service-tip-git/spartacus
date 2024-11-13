@@ -45,11 +45,10 @@ class MockOpfPaymentHostedFieldsService {
 }
 
 const mockSubmitInput = {
-  cartId: '123',
+  paymentSessionId: 'sessionId',
 } as OpfPaymentSubmitInput;
 
 const mockSubmitCompleteInput: OpfPaymentSubmitCompleteInput = {
-  cartId: 'mockCartId',
   additionalData: [{ key: 'key', value: 'value' }],
   paymentSessionId: 'sessionId',
   returnPath: 'checkout',
@@ -96,7 +95,7 @@ describe('OpfPaymentService', () => {
     ).and.callThrough();
 
     const submitInput: OpfPaymentSubmitInput = {
-      cartId: 'testCart',
+      paymentSessionId: 'sessionId',
     } as OpfPaymentSubmitInput;
 
     service['submitPaymentCommand'].execute({ submitInput });
@@ -132,7 +131,7 @@ describe('OpfPaymentService', () => {
     ).and.callThrough();
 
     const submitCompleteInput: OpfPaymentSubmitCompleteInput = {
-      cartId: 'testCart',
+      paymentSessionId: 'sessionId',
     } as OpfPaymentSubmitCompleteInput;
 
     service['submitCompletePaymentCommand'].execute({ submitCompleteInput });

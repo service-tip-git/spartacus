@@ -62,7 +62,6 @@ export interface OpfPaymentSubmitRequest {
   browserInfo?: OpfPaymentBrowserInfo;
   paymentMethod?: string;
   encryptedToken?: string;
-  cartId?: string;
   channel?: string;
   additionalData?: Array<OpfKeyValueMap>;
 }
@@ -70,7 +69,6 @@ export interface OpfPaymentSubmitRequest {
 export interface OpfPaymentSubmitInput {
   additionalData: Array<OpfKeyValueMap>;
   paymentSessionId?: string;
-  cartId: string;
   callbackArray: [
     OpfPaymentMerchantCallback,
     OpfPaymentMerchantCallback,
@@ -110,12 +108,10 @@ export interface OpfPaymentSubmitCompleteResponse {
 export interface OpfPaymentSubmitCompleteRequest {
   paymentSessionId?: string;
   additionalData?: Array<OpfKeyValueMap>;
-  cartId?: string;
 }
 export interface OpfPaymentSubmitCompleteInput {
   additionalData: Array<OpfKeyValueMap>;
   paymentSessionId: string;
-  cartId: string;
   callbackArray: [
     OpfPaymentMerchantCallback,
     OpfPaymentMerchantCallback,

@@ -347,30 +347,25 @@ export class OpfGooglePayService {
     return {
       onPaymentAuthorized: (paymentDataResponse: any) => {
         return lastValueFrom(
-          this.opfQuickBuyTransactionService.getCurrentCartId().pipe(
-            switchMap((cartId) =>
-              this.setDeliveryAddress(paymentDataResponse.shippingAddress).pipe(
-                switchMap(() =>
-                  this.setBillingAddress(
-                    paymentDataResponse.paymentMethodData.info?.billingAddress
-                  )
-                ),
-                switchMap(() => {
-                  const encryptedToken = btoa(
-                    paymentDataResponse.paymentMethodData.tokenizationData.token
-                  );
-
-                  return this.opfPaymentFacade.submitPayment({
-                    additionalData: [],
-                    paymentSessionId: '',
-                    callbackArray: [() => {}, () => {}, () => {}],
-                    paymentMethod: OpfQuickBuyProviderType.GOOGLE_PAY as any,
-                    encryptedToken,
-                    cartId,
-                  });
-                })
+          this.setDeliveryAddress(paymentDataResponse.shippingAddress).pipe(
+            switchMap(() =>
+              this.setBillingAddress(
+                paymentDataResponse.paymentMethodData.info?.billingAddress
               )
             ),
+            switchMap(() => {
+              const encryptedToken = btoa(
+                paymentDataResponse.paymentMethodData.tokenizationData.token
+              );
+
+              return this.opfPaymentFacade.submitPayment({
+                additionalData: [],
+                paymentSessionId: '',
+                callbackArray: [() => {}, () => {}, () => {}],
+                paymentMethod: OpfProviderType.GOOGLE_PAY as any,
+                encryptedToken,
+              });
+            }),
             catchError(() => {
               return of(false);
             })
