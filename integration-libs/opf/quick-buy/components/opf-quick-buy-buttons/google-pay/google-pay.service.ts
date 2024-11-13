@@ -145,7 +145,7 @@ export class OpfGooglePayService {
         (provider) => provider[GOOGLE_PAY_PROVIDER_NAME]
       );
     if (!opfGooglePayConfig) {
-      return Promise.resolve();
+      return Promise.reject('Config not found');
     }
     return this.opfResourceLoaderService.loadProviderResources([
       {
