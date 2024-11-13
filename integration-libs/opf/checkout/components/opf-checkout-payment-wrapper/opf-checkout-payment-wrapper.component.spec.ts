@@ -7,7 +7,7 @@ import {
   GlobalFunctionsInput,
   OpfGlobalFunctionsFacade,
 } from '@spartacus/opf/global-functions/root';
-import { PaymentPattern } from '@spartacus/opf/payment/root';
+import { OpfPaymentRenderPattern } from '@spartacus/opf/payment/root';
 import { of } from 'rxjs';
 import { OpfCheckoutPaymentWrapperComponent } from './opf-checkout-payment-wrapper.component';
 import { OpfCheckoutPaymentWrapperService } from './opf-checkout-payment-wrapper.service';
@@ -79,7 +79,7 @@ describe('OpfCheckoutPaymentWrapperComponent', () => {
   it('should call initiatePayment on ngOnInit', () => {
     const mockPaymentSessionData = {
       paymentSessionId: 'session123',
-      pattern: PaymentPattern.HOSTED_FIELDS,
+      pattern: OpfPaymentRenderPattern.HOSTED_FIELDS,
     };
 
     mockService.initiatePayment.and.returnValue(of(mockPaymentSessionData));
@@ -101,7 +101,7 @@ describe('OpfCheckoutPaymentWrapperComponent', () => {
   it('should call removeGlobalFunctions if paymentSessionData is not HOSTED_FIELDS', () => {
     const mockPaymentSessionData = {
       paymentSessionId: 'session123',
-      pattern: PaymentPattern.FULL_PAGE,
+      pattern: OpfPaymentRenderPattern.FULL_PAGE,
     };
 
     mockService.initiatePayment.and.returnValue(of(mockPaymentSessionData));

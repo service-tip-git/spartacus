@@ -6,7 +6,7 @@
 
 /// <reference types="@types/applepayjs" />
 import { Injectable, inject } from '@angular/core';
-import { PaymentErrorType } from '@spartacus/opf/payment/root';
+import { OpfPaymentErrorType } from '@spartacus/opf/payment/root';
 import {
   ApplePayEvent,
   ApplePayObservableConfig,
@@ -55,7 +55,7 @@ export class ApplePayObservableFactory {
       );
 
       session.addEventListener(ApplePayEvent.CANCEL, () => {
-        observer.error({ type: PaymentErrorType.PAYMENT_CANCELLED });
+        observer.error({ type: OpfPaymentErrorType.PAYMENT_CANCELLED });
       });
 
       if (config.paymentMethodSelected) {

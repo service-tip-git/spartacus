@@ -21,7 +21,7 @@ class Service {
 
   getAddresses(): void {}
 
-  putDeliveryAddressAsPaymentAddress(): void {}
+  setDeliveryAddressAsPaymentAddress(): void {}
 
   setBillingAddress(address: Address): Observable<Address | undefined> {
     return of(address);
@@ -107,9 +107,9 @@ describe('OpfCheckoutBillingAddressFormComponent', () => {
 
   it('should toggle same as delivery address on toggleSameAsDeliveryAddress', () => {
     const mockEvent = { target: { checked: true } as unknown } as Event;
-    const putDeliveryAddressAsPaymentAddressSpy = spyOn(
+    const setDeliveryAddressAsPaymentAddress = spyOn(
       service,
-      'putDeliveryAddressAsPaymentAddress'
+      'setDeliveryAddressAsPaymentAddress'
     );
     const setIsSameAsDeliveryValueSpy = spyOn(
       service,
@@ -120,7 +120,7 @@ describe('OpfCheckoutBillingAddressFormComponent', () => {
     component.toggleSameAsDeliveryAddress(mockEvent);
 
     expect(setIsSameAsDeliveryValueSpy).toHaveBeenCalledWith(true);
-    expect(putDeliveryAddressAsPaymentAddressSpy).toHaveBeenCalled();
+    expect(setDeliveryAddressAsPaymentAddress).toHaveBeenCalled();
     expect(component.isEditBillingAddress).toBe(false);
   });
 

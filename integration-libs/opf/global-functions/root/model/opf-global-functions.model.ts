@@ -5,7 +5,7 @@
  */
 
 import { ViewContainerRef } from '@angular/core';
-import { KeyValuePair } from '@spartacus/opf/base/root';
+import { OpfKeyValueMap } from '@spartacus/opf/base/root';
 
 export enum GlobalFunctionsDomain {
   CHECKOUT = 'checkout',
@@ -16,6 +16,6 @@ export enum GlobalFunctionsDomain {
 export interface GlobalFunctionsInput {
   paymentSessionId: string;
   vcr?: ViewContainerRef;
-  paramsMap?: Array<KeyValuePair>;
+  paramsMap?: Array<OpfKeyValueMap>;
   domain: GlobalFunctionsDomain;
 }

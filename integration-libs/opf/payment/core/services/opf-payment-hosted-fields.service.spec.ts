@@ -17,12 +17,12 @@ import {
 import { Order, OrderFacade } from '@spartacus/order/root';
 import { of } from 'rxjs';
 import {
-  PaymentErrorType,
-  PaymentMethod,
-  SubmitCompleteInput,
-  SubmitInput,
-  SubmitResponse,
-  SubmitStatus,
+  OpfPaymentErrorType,
+  OpfPaymentMethod,
+  OpfPaymentSubmitCompleteInput,
+  OpfPaymentSubmitInput,
+  OpfPaymentSubmitResponse,
+  OpfPaymentSubmitStatus,
 } from '../../root/model';
 import { OpfPaymentConnector } from '../connectors';
 import { OpfPaymentErrorHandlerService } from './opf-payment-error-handler.service';
@@ -75,15 +75,15 @@ describe('OpfPaymentHostedFieldsService', () => {
     handlePaymentError: jasmine.createSpy('handlePaymentError'),
   };
 
-  const mockInput: SubmitInput = {
-    paymentMethod: PaymentMethod.CREDIT_CARD,
+  const mockInput: OpfPaymentSubmitInput = {
+    paymentMethod: OpfPaymentMethod.CREDIT_CARD,
     additionalData: [{ key: 'key', value: 'value' }],
     paymentSessionId: 'sessionId',
     returnPath: 'checkout',
     callbackArray: [() => {}, () => {}, () => {}],
   };
 
-  const mockSubmitCompleteInput: SubmitCompleteInput = {
+  const mockSubmitCompleteInput: OpfPaymentSubmitCompleteInput = {
     additionalData: [{ key: 'key', value: 'value' }],
     paymentSessionId: 'sessionId',
     returnPath: 'checkout',
@@ -91,10 +91,10 @@ describe('OpfPaymentHostedFieldsService', () => {
   };
 
   const mockSubmitResponse = {
-    status: SubmitStatus.ACCEPTED,
+    status: OpfPaymentSubmitStatus.ACCEPTED,
     cartId: 'cartId',
     reasonCode: 'code',
-    paymentMethod: PaymentMethod.CREDIT_CARD,
+    paymentMethod: OpfPaymentMethod.CREDIT_CARD,
     authorizedAmount: 10,
     customFields: [{ key: 'key', value: 'value' }],
   };
@@ -137,7 +137,7 @@ describe('OpfPaymentHostedFieldsService', () => {
         of('mockActiveCartId')
       );
       mockOpfPaymentConnector.submitPayment.and.returnValue(
-        of({ status: SubmitStatus.ACCEPTED })
+        of({ status: OpfPaymentSubmitStatus.ACCEPTED })
       );
 
       service.submitPayment(mockInput).subscribe((result) => {
@@ -152,14 +152,14 @@ describe('OpfPaymentHostedFieldsService', () => {
     });
 
     it('should handle rejected payment', (done) => {
-      const res: Partial<SubmitResponse> = {
-        status: SubmitStatus.REJECTED,
+      const res: Partial<OpfPaymentSubmitResponse> = {
+        status: OpfPaymentSubmitStatus.REJECTED,
       };
       mockOpfPaymentConnector.submitPayment.and.returnValue(of(res));
 
       service.submitPayment(mockInput).subscribe({
         error: (error) => {
-          expect(error.type).toBe(PaymentErrorType.PAYMENT_REJECTED);
+          expect(error.type).toBe(OpfPaymentErrorType.PAYMENT_REJECTED);
           expect(mockOpfPaymentConnector.submitPayment).toHaveBeenCalled();
           expect(
             opfPaymentErrorHandlerService.handlePaymentError
@@ -177,7 +177,7 @@ describe('OpfPaymentHostedFieldsService', () => {
         of('mockActiveCartId')
       );
       mockOpfPaymentConnector.submitCompletePayment.and.returnValue(
-        of({ status: SubmitStatus.ACCEPTED })
+        of({ status: OpfPaymentSubmitStatus.ACCEPTED })
       );
 
       service
@@ -196,15 +196,15 @@ describe('OpfPaymentHostedFieldsService', () => {
     });
 
     it('should handle rejected complete payment', (done) => {
-      const res: Partial<SubmitResponse> = {
-        status: SubmitStatus.REJECTED,
+      const res: Partial<OpfPaymentSubmitResponse> = {
+        status: OpfPaymentSubmitStatus.REJECTED,
       };
 
       mockOpfPaymentConnector.submitCompletePayment.and.returnValue(of(res));
 
       service.submitCompletePayment(mockSubmitCompleteInput).subscribe({
         error: (error) => {
-          expect(error.type).toBe(PaymentErrorType.PAYMENT_REJECTED);
+          expect(error.type).toBe(OpfPaymentErrorType.PAYMENT_REJECTED);
           expect(
             mockOpfPaymentConnector.submitCompletePayment
           ).toHaveBeenCalled();
@@ -229,9 +229,9 @@ describe('OpfPaymentHostedFieldsService', () => {
       .and.returnValue(() => {});
 
     it('should handle accepted payment response', fakeAsync(() => {
-      const response: SubmitResponse = {
+      const response: OpfPaymentSubmitResponse = {
         ...mockSubmitResponse,
-        status: SubmitStatus.ACCEPTED,
+        status: OpfPaymentSubmitStatus.ACCEPTED,
       };
 
       spyOn(service as any, 'paymentResponseHandler').and.callThrough();
@@ -249,9 +249,9 @@ describe('OpfPaymentHostedFieldsService', () => {
     }));
 
     it('should handle delayed payment response', fakeAsync(() => {
-      const response: SubmitResponse = {
+      const response: OpfPaymentSubmitResponse = {
         ...mockSubmitResponse,
-        status: SubmitStatus.DELAYED,
+        status: OpfPaymentSubmitStatus.DELAYED,
       };
       spyOn(service as any, 'paymentResponseHandler').and.callThrough();
 
@@ -268,9 +268,9 @@ describe('OpfPaymentHostedFieldsService', () => {
     }));
 
     it('should handle pending payment response', fakeAsync(() => {
-      const response: SubmitResponse = {
+      const response: OpfPaymentSubmitResponse = {
         ...mockSubmitResponse,
-        status: SubmitStatus.PENDING,
+        status: OpfPaymentSubmitStatus.PENDING,
       };
       spyOn(service as any, 'paymentResponseHandler').and.callThrough();
 
@@ -290,9 +290,9 @@ describe('OpfPaymentHostedFieldsService', () => {
     }));
 
     it('should handle rejected payment response', fakeAsync(() => {
-      const response: SubmitResponse = {
+      const response: OpfPaymentSubmitResponse = {
         ...mockSubmitResponse,
-        status: SubmitStatus.REJECTED,
+        status: OpfPaymentSubmitStatus.REJECTED,
       };
       spyOn(service as any, 'paymentResponseHandler').and.callThrough();
 
@@ -302,7 +302,7 @@ describe('OpfPaymentHostedFieldsService', () => {
         mockSubmitFailure,
       ]).subscribe({
         error: (error) => {
-          expect(error.type).toBe(PaymentErrorType.PAYMENT_REJECTED);
+          expect(error.type).toBe(OpfPaymentErrorType.PAYMENT_REJECTED);
           expect(mockSubmitFailure).toHaveBeenCalled();
           flush();
         },
@@ -310,9 +310,9 @@ describe('OpfPaymentHostedFieldsService', () => {
     }));
 
     it('should handle unrecognized payment response status', fakeAsync(() => {
-      const response: SubmitResponse = {
+      const response: OpfPaymentSubmitResponse = {
         ...mockSubmitResponse,
-        status: 'UNKNOWN_STATUS' as SubmitStatus,
+        status: 'UNKNOWN_STATUS' as OpfPaymentSubmitStatus,
       };
       spyOn(service as any, 'paymentResponseHandler').and.callThrough();
 
@@ -322,7 +322,7 @@ describe('OpfPaymentHostedFieldsService', () => {
         mockSubmitFailure,
       ]).subscribe({
         error: (error) => {
-          expect(error.type).toBe(PaymentErrorType.STATUS_NOT_RECOGNIZED);
+          expect(error.type).toBe(OpfPaymentErrorType.STATUS_NOT_RECOGNIZED);
           expect(mockSubmitFailure).toHaveBeenCalled();
           flush();
         },

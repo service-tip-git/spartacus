@@ -11,14 +11,17 @@ import {
   QueryService,
   QueryState,
 } from '@spartacus/core';
-import { ActiveConfiguration, OpfBaseFacade } from '@spartacus/opf/base/root';
+import {
+  OpfActiveConfiguration,
+  OpfBaseFacade,
+} from '@spartacus/opf/base/root';
 import { Observable } from 'rxjs';
 import { OpfBaseConnector } from '../connectors/opf-base.connector';
 
 @Injectable()
 export class OpfBaseService implements OpfBaseFacade {
-  protected activeConfigurationsQuery: Query<ActiveConfiguration[]> =
-    this.queryService.create<ActiveConfiguration[]>(() =>
+  protected activeConfigurationsQuery: Query<OpfActiveConfiguration[]> =
+    this.queryService.create<OpfActiveConfiguration[]>(() =>
       this.opfBaseConnector.getActiveConfigurations()
     );
 
@@ -29,7 +32,7 @@ export class OpfBaseService implements OpfBaseFacade {
   ) {}
 
   getActiveConfigurationsState(): Observable<
-    QueryState<ActiveConfiguration[] | undefined>
+    QueryState<OpfActiveConfiguration[] | undefined>
   > {
     return this.activeConfigurationsQuery.getState();
   }

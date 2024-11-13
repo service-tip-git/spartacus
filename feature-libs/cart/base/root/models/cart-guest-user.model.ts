@@ -5,7 +5,5 @@
  */
 
 export interface CartGuestUser {
-  name?: string;
-  uid?: string;
   email?: string;
 }

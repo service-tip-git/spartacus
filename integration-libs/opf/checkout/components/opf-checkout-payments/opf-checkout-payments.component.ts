@@ -17,7 +17,7 @@ import {
   QueryState,
 } from '@spartacus/core';
 import {
-  ActiveConfiguration,
+  OpfActiveConfiguration,
   OpfBaseFacade,
   OpfMetadataModel,
   OpfMetadataStoreService,
@@ -36,7 +36,7 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
   activeConfigurations$ = this.opfBaseService
     .getActiveConfigurationsState()
     .pipe(
-      tap((state: QueryState<ActiveConfiguration[] | undefined>) => {
+      tap((state: QueryState<OpfActiveConfiguration[] | undefined>) => {
         if (state.error) {
           this.displayError('loadActiveConfigurations');
         } else if (!state.loading && !Boolean(state.data?.length)) {
@@ -105,7 +105,7 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
     );
   }
 
-  changePayment(payment: ActiveConfiguration): void {
+  changePayment(payment: OpfActiveConfiguration): void {
     this.selectedPaymentId = payment.id;
     this.opfMetadataStoreService.updateOpfMetadata({
       selectedPaymentOptionId: this.selectedPaymentId,

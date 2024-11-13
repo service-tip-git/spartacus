@@ -24,18 +24,18 @@ import { combineLatest, EMPTY, from, Observable, of, throwError } from 'rxjs';
 import { catchError, concatMap, map, switchMap, tap } from 'rxjs/operators';
 
 import {
-  defaultError,
-  MerchantCallback,
+  opfDefaultPaymentError,
   OpfPaymentError,
-  PaymentErrorType,
-  PaymentMethod,
-  SubmitCompleteInput,
-  SubmitCompleteRequest,
-  SubmitCompleteResponse,
-  SubmitInput,
-  SubmitRequest,
-  SubmitResponse,
-  SubmitStatus,
+  OpfPaymentErrorType,
+  OpfPaymentMerchantCallback,
+  OpfPaymentMethod,
+  OpfPaymentSubmitCompleteInput,
+  OpfPaymentSubmitCompleteRequest,
+  OpfPaymentSubmitCompleteResponse,
+  OpfPaymentSubmitInput,
+  OpfPaymentSubmitRequest,
+  OpfPaymentSubmitResponse,
+  OpfPaymentSubmitStatus,
 } from '@spartacus/opf/payment/root';
 import { OpfPaymentConnector } from '../connectors/opf-payment.connector';
 import { OpfPaymentErrorHandlerService } from '../services/opf-payment-error-handler.service';
@@ -56,7 +56,7 @@ export class OpfPaymentHostedFieldsService {
     protected opfPaymentErrorHandlerService: OpfPaymentErrorHandlerService
   ) {}
 
-  submitPayment(submitInput: SubmitInput): Observable<boolean> {
+  submitPayment(submitInput: OpfPaymentSubmitInput): Observable<boolean> {
     const {
       paymentMethod,
       additionalData,
@@ -65,13 +65,13 @@ export class OpfPaymentHostedFieldsService {
       encryptedToken,
     } = submitInput;
 
-    const submitRequest: SubmitRequest = {
+    const submitRequest: OpfPaymentSubmitRequest = {
       paymentMethod,
       additionalData,
       channel: 'BROWSER',
       browserInfo: getBrowserInfo(this.winRef.nativeWindow),
     };
-    if (paymentMethod !== PaymentMethod.CREDIT_CARD) {
+    if (paymentMethod !== OpfPaymentMethod.CREDIT_CARD) {
       submitRequest.encryptedToken = '';
     }
     if (encryptedToken) {
@@ -86,7 +86,7 @@ export class OpfPaymentHostedFieldsService {
           paymentSessionId as string
         )
       ),
-      concatMap((response: SubmitResponse) =>
+      concatMap((response: OpfPaymentSubmitResponse) =>
         this.paymentResponseHandler(response, submitInput.callbackArray)
       ),
       tap((order: Order) => {
@@ -114,12 +114,12 @@ export class OpfPaymentHostedFieldsService {
   }
 
   submitCompletePayment(
-    submitCompleteInput: SubmitCompleteInput
+    submitCompleteInput: OpfPaymentSubmitCompleteInput
   ): Observable<boolean> {
     const { additionalData, paymentSessionId, returnPath } =
       submitCompleteInput;
 
-    const submitCompleteRequest: SubmitCompleteRequest = {
+    const submitCompleteRequest: OpfPaymentSubmitCompleteRequest = {
       additionalData,
       paymentSessionId,
     };
@@ -131,7 +131,7 @@ export class OpfPaymentHostedFieldsService {
           paymentSessionId
         )
       ),
-      concatMap((response: SubmitCompleteResponse) =>
+      concatMap((response: OpfPaymentSubmitCompleteResponse) =>
         this.paymentResponseHandler(response, submitCompleteInput.callbackArray)
       ),
       tap((order: Order) => {
@@ -159,30 +159,30 @@ export class OpfPaymentHostedFieldsService {
   }
 
   protected paymentResponseHandler(
-    response: SubmitResponse | SubmitCompleteResponse,
+    response: OpfPaymentSubmitResponse | OpfPaymentSubmitCompleteResponse,
     [submitSuccess, submitPending, submitFailure]: [
-      MerchantCallback,
-      MerchantCallback,
-      MerchantCallback,
+      OpfPaymentMerchantCallback,
+      OpfPaymentMerchantCallback,
+      OpfPaymentMerchantCallback,
     ]
   ): Observable<Order> {
     if (
-      response.status === SubmitStatus.ACCEPTED ||
-      response.status === SubmitStatus.DELAYED
+      response.status === OpfPaymentSubmitStatus.ACCEPTED ||
+      response.status === OpfPaymentSubmitStatus.DELAYED
     ) {
       return from(Promise.resolve(submitSuccess(response))).pipe(
         concatMap(() => this.orderFacade.placePaymentAuthorizedOrder(true))
       );
-    } else if (response.status === SubmitStatus.PENDING) {
+    } else if (response.status === OpfPaymentSubmitStatus.PENDING) {
       return from(Promise.resolve(submitPending(response))).pipe(
         concatMap(() => EMPTY)
       );
-    } else if (response.status === SubmitStatus.REJECTED) {
+    } else if (response.status === OpfPaymentSubmitStatus.REJECTED) {
       return from(Promise.resolve(submitFailure(response))).pipe(
         concatMap(() =>
           throwError({
-            ...defaultError,
-            type: PaymentErrorType.PAYMENT_REJECTED,
+            ...opfDefaultPaymentError,
+            type: OpfPaymentErrorType.PAYMENT_REJECTED,
           })
         )
       );
@@ -190,17 +190,20 @@ export class OpfPaymentHostedFieldsService {
       return from(Promise.resolve(submitFailure(response))).pipe(
         concatMap(() =>
           throwError({
-            ...defaultError,
-            type: PaymentErrorType.STATUS_NOT_RECOGNIZED,
+            ...opfDefaultPaymentError,
+            type: OpfPaymentErrorType.STATUS_NOT_RECOGNIZED,
           })
         )
       );
     }
   }
   protected getCartAccessCode(
-    submitRequest: SubmitRequest | SubmitCompleteRequest
+    submitRequest: OpfPaymentSubmitRequest | OpfPaymentSubmitCompleteRequest
   ): Observable<
-    [SubmitRequest | SubmitCompleteRequest, { accessCode: string }]
+    [
+      OpfPaymentSubmitRequest | OpfPaymentSubmitCompleteRequest,
+      { accessCode: string },
+    ]
   > {
     return combineLatest([
       this.userIdService.takeUserId(),

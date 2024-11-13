@@ -7,14 +7,14 @@
 import { Injectable } from '@angular/core';
 import { Command, CommandService, QueryService } from '@spartacus/core';
 import {
-  AfterRedirectScriptResponse,
+  OpfPaymentAfterRedirectScriptResponse,
   OpfPaymentFacade,
+  OpfPaymentInitiationConfig,
+  OpfPaymentSessionData,
+  OpfPaymentSubmitCompleteInput,
+  OpfPaymentSubmitInput,
   OpfPaymentVerificationPayload,
   OpfPaymentVerificationResponse,
-  PaymentInitiationConfig,
-  PaymentSessionData,
-  SubmitCompleteInput,
-  SubmitInput,
 } from '@spartacus/opf/payment/root';
 import { Observable } from 'rxjs';
 import { OpfPaymentConnector } from '../connectors/opf-payment.connector';
@@ -37,7 +37,7 @@ export class OpfPaymentService implements OpfPaymentFacade {
 
   protected submitPaymentCommand: Command<
     {
-      submitInput: SubmitInput;
+      submitInput: OpfPaymentSubmitInput;
     },
     boolean
   > = this.commandService.create((payload) => {
@@ -48,7 +48,7 @@ export class OpfPaymentService implements OpfPaymentFacade {
 
   protected submitCompletePaymentCommand: Command<
     {
-      submitCompleteInput: SubmitCompleteInput;
+      submitCompleteInput: OpfPaymentSubmitCompleteInput;
     },
     boolean
   > = this.commandService.create((payload) => {
@@ -61,7 +61,7 @@ export class OpfPaymentService implements OpfPaymentFacade {
     {
       paymentSessionId: string;
     },
-    AfterRedirectScriptResponse
+    OpfPaymentAfterRedirectScriptResponse
   > = this.commandService.create((payload) => {
     return this.opfPaymentConnector.afterRedirectScripts(
       payload.paymentSessionId
@@ -70,9 +70,9 @@ export class OpfPaymentService implements OpfPaymentFacade {
 
   protected initiatePaymentCommand: Command<
     {
-      paymentConfig: PaymentInitiationConfig;
+      paymentConfig: OpfPaymentInitiationConfig;
     },
-    PaymentSessionData
+    OpfPaymentSessionData
   > = this.commandService.create((payload) =>
     this.opfPaymentConnector.initiatePayment(payload.paymentConfig)
   );
@@ -94,14 +94,14 @@ export class OpfPaymentService implements OpfPaymentFacade {
     });
   }
 
-  submitPayment(submitInput: SubmitInput): Observable<boolean> {
+  submitPayment(submitInput: OpfPaymentSubmitInput): Observable<boolean> {
     return this.submitPaymentCommand.execute({
       submitInput,
     });
   }
 
   submitCompletePayment(
-    submitCompleteInput: SubmitCompleteInput
+    submitCompleteInput: OpfPaymentSubmitCompleteInput
   ): Observable<boolean> {
     return this.submitCompletePaymentCommand.execute({ submitCompleteInput });
   }
@@ -111,8 +111,8 @@ export class OpfPaymentService implements OpfPaymentFacade {
   }
 
   initiatePayment(
-    paymentConfig: PaymentInitiationConfig
-  ): Observable<PaymentSessionData> {
+    paymentConfig: OpfPaymentInitiationConfig
+  ): Observable<OpfPaymentSessionData> {
     return this.initiatePaymentCommand.execute({ paymentConfig });
   }
 }

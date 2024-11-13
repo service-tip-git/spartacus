@@ -43,13 +43,13 @@ export class OpfCheckoutBillingAddressFormService {
   protected readonly billingAddressSub = new BehaviorSubject<
     Address | undefined
   >(undefined);
-  protected readonly isLoadingAddressSub = new BehaviorSubject(false);
-  protected readonly isSameAsDeliverySub = new BehaviorSubject(true);
+  protected readonly _$isLoadingAddress = new BehaviorSubject(false);
+  protected readonly _$isSameAsDelivery = new BehaviorSubject(true);
   protected billingAddressId: string | undefined;
 
   billingAddress$ = this.billingAddressSub.asObservable();
-  isLoadingAddress$ = this.isLoadingAddressSub.asObservable();
-  isSameAsDelivery$ = this.isSameAsDeliverySub.asObservable();
+  isLoadingAddress$ = this._$isLoadingAddress.asObservable();
+  isSameAsDelivery$ = this._$isSameAsDelivery.asObservable();
 
   constructor(
     protected checkoutDeliveryAddressFacade: CheckoutDeliveryAddressFacade,
@@ -74,7 +74,7 @@ export class OpfCheckoutBillingAddressFormService {
   }
 
   getAddresses(): void {
-    this.isLoadingAddressSub.next(true);
+    this._$isLoadingAddress.next(true);
 
     combineLatest([this.getDeliveryAddress(), this.getPaymentAddress()])
       .pipe(take(1))
@@ -91,15 +91,15 @@ export class OpfCheckoutBillingAddressFormService {
           if (!!paymentAddress && !!deliveryAddress) {
             this.billingAddressId = paymentAddress.id;
             this.billingAddressSub.next(paymentAddress);
-            this.isSameAsDeliverySub.next(false);
+            this._$isSameAsDelivery.next(false);
           }
 
-          this.isLoadingAddressSub.next(false);
+          this._$isLoadingAddress.next(false);
         }
       );
   }
 
-  putDeliveryAddressAsPaymentAddress(): void {
+  setDeliveryAddressAsPaymentAddress(): void {
     this.getDeliveryAddress()
       .pipe(
         switchMap((address: Address | undefined) =>
@@ -117,7 +117,7 @@ export class OpfCheckoutBillingAddressFormService {
   }
 
   setBillingAddress(address: Address): Observable<Address | undefined> {
-    this.isLoadingAddressSub.next(true);
+    this._$isLoadingAddress.next(true);
 
     return this.checkoutBillingAddressFacade
       .setBillingAddress(this.getAddressWithId(address))
@@ -146,7 +146,7 @@ export class OpfCheckoutBillingAddressFormService {
           return throwError(error);
         }),
         finalize(() => {
-          this.isLoadingAddressSub.next(false);
+          this._$isLoadingAddress.next(false);
         }),
         take(1)
       );
@@ -157,11 +157,11 @@ export class OpfCheckoutBillingAddressFormService {
   }
 
   get isSameAsDeliveryValue(): boolean {
-    return this.isSameAsDeliverySub.value;
+    return this._$isSameAsDelivery.value;
   }
 
   setIsSameAsDeliveryValue(value: boolean): void {
-    this.isSameAsDeliverySub.next(value);
+    this._$isSameAsDelivery.next(value);
   }
 
   protected getDeliveryAddress(): Observable<Address | undefined> {

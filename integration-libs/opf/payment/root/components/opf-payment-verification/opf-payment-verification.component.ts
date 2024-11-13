@@ -7,12 +7,11 @@
 import { Component, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpErrorModel } from '@spartacus/core';
-
+import { OpfKeyValueMap, OpfPage } from '@spartacus/opf/base/root';
+import { GlobalFunctionsDomain } from '@spartacus/opf/global-functions/root';
 import { Observable, Subscription } from 'rxjs';
 import { concatMap } from 'rxjs/operators';
 
-import { GlobalFunctionsDomain } from '@spartacus/opf/global-functions/root';
-import { KeyValuePair, OpfPage } from '../../model';
 import { OpfPaymentVerificationService } from './opf-payment-verification.service';
 
 @Component({
@@ -64,7 +63,7 @@ export class OpfPaymentVerificationComponent implements OnInit, OnDestroy {
     afterRedirectScriptFlag,
   }: {
     paymentSessionId: string;
-    paramsMap: KeyValuePair[];
+    paramsMap: OpfKeyValueMap[];
     afterRedirectScriptFlag?: string;
   }): Observable<boolean> {
     if (afterRedirectScriptFlag === 'true') {

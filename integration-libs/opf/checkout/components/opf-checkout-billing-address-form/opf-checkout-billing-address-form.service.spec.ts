@@ -108,7 +108,7 @@ describe('OpfCheckoutBillingAddressFormService', () => {
 
     service.getAddresses();
 
-    expect(service['isLoadingAddressSub'].value).toBeFalsy();
+    expect(service['_$isLoadingAddress'].value).toBeFalsy();
     expect(service.billingAddressValue).toEqual(mockPaymentAddress);
     expect(service.isSameAsDeliveryValue).toBeFalsy();
   });
@@ -121,7 +121,7 @@ describe('OpfCheckoutBillingAddressFormService', () => {
       of(true)
     );
 
-    service.putDeliveryAddressAsPaymentAddress();
+    service.setDeliveryAddressAsPaymentAddress();
 
     expect(service.isSameAsDeliveryValue).toBeTruthy();
   });
@@ -134,7 +134,7 @@ describe('OpfCheckoutBillingAddressFormService', () => {
       throwError({})
     );
 
-    service.putDeliveryAddressAsPaymentAddress();
+    service.setDeliveryAddressAsPaymentAddress();
 
     expect(service.isSameAsDeliveryValue).toBeFalsy();
   });
@@ -187,11 +187,11 @@ describe('OpfCheckoutBillingAddressFormService', () => {
 
   it('should set isSameAsDelivery value', () => {
     const newValue = false;
-    spyOn(service['isSameAsDeliverySub'], 'next');
+    spyOn(service['_$isSameAsDelivery'], 'next');
 
     service.setIsSameAsDeliveryValue(newValue);
 
-    expect(service['isSameAsDeliverySub'].next).toHaveBeenCalledWith(newValue);
+    expect(service['_$isSameAsDelivery'].next).toHaveBeenCalledWith(newValue);
   });
 
   it('should not get payment address when it is not present', (done) => {
@@ -207,11 +207,11 @@ describe('OpfCheckoutBillingAddressFormService', () => {
 
   it('should set isSameAsDelivery value to false', () => {
     const newValue = false;
-    spyOn(service['isSameAsDeliverySub'], 'next');
+    spyOn(service['_$isSameAsDelivery'], 'next');
 
     service.setIsSameAsDeliveryValue(newValue);
 
-    expect(service['isSameAsDeliverySub'].next).toHaveBeenCalledWith(newValue);
+    expect(service['_$isSameAsDelivery'].next).toHaveBeenCalledWith(newValue);
   });
 
   it('should handle error when setting billing address fails', () => {
@@ -247,7 +247,7 @@ describe('OpfCheckoutBillingAddressFormService', () => {
     spyOn(service as any, 'getDeliveryAddress').and.returnValue(of(undefined));
     spyOn(service, 'setBillingAddress').and.callThrough();
 
-    service.putDeliveryAddressAsPaymentAddress();
+    service.setDeliveryAddressAsPaymentAddress();
 
     expect(service.setBillingAddress).not.toHaveBeenCalled();
   });

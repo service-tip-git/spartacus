@@ -9,7 +9,7 @@ import { PointOfService, Product } from '@spartacus/core';
 
 export interface OpfQuickBuyDigitalWallet {
   description?: string;
-  provider?: OpfProviderType;
+  provider?: OpfQuickBuyProviderType;
   enabled?: boolean;
   merchantId?: string;
   merchantName?: string;
@@ -46,7 +46,7 @@ export enum OpfQuickBuyDeliveryType {
   PICKUP = 'PICKUP',
 }
 
-export enum OpfProviderType {
+export enum OpfQuickBuyProviderType {
   APPLE_PAY = 'APPLE_PAY',
   GOOGLE_PAY = 'GOOGLE_PAY',
 }
