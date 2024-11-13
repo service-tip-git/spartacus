@@ -60,6 +60,21 @@
         'orgUnit.approvalProcess' | cxTranslate
       }}</span>
       <ng-select
+        *cxFeature="'a11yApprovalProcessWithNoClearable'"
+        [inputAttrs]="{ required: 'true' }"
+        formControlName="code"
+        [searchable]="false"
+        [clearable]="false"
+        [items]="approvalProcess$ | async"
+        bindLabel="name"
+        bindValue="code"
+        appendTo="cx-org-list"
+        [placeholder]="'orgUnit.approvalProcess' | cxTranslate"
+        [cxNgSelectA11y]="{}"
+      >
+      </ng-select>
+      <ng-select
+        *cxFeature="'!a11yApprovalProcessWithNoClearable'"
         [inputAttrs]="{ required: 'true' }"
         formControlName="code"
         [searchable]="false"
@@ -91,6 +106,21 @@
           'orgUnit.form.parentOrgUnit' | cxTranslate
         }}</span>
         <ng-select
+          *cxFeature="'a11yApprovalProcessWithNoClearable'"
+          [inputAttrs]="{ required: 'true' }"
+          formControlName="uid"
+          [searchable]="true"
+          [clearable]="false"
+          [items]="(units$ | async) ?? null"
+          bindLabel="name"
+          bindValue="id"
+          appendTo="cx-org-list"
+          [placeholder]="'orgUnit.form.parentOrgUnit' | cxTranslate"
+          [cxNgSelectA11y]="{}"
+        >
+        </ng-select>
+        <ng-select
+          *cxFeature="'!a11yApprovalProcessWithNoClearable'"
           [inputAttrs]="{ required: 'true' }"
           formControlName="uid"
           [searchable]="true"
