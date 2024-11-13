@@ -33,7 +33,6 @@ import { LibraryOptions, SchematicConfig } from '../../utils/lib-utils';
 export interface SpartacusOpfOptions extends LibraryOptions {
   opfBaseUrl?: string;
   commerceCloudPublicKey?: string;
-  googlePayApiUrl?: string;
 }
 
 export const OPF_FOLDER_NAME = 'opf';
@@ -247,7 +246,6 @@ export const OPF_QUICK_BUY_SCHEMATICS_CONFIG: SchematicConfig = {
     scssFileName: OPF_SCSS_FILE_NAME,
     importStyle: SPARTACUS_OPF,
   },
-  customConfig: buildQuickBuyOpfConfig,
 };
 
 function buildOpfConfig(
@@ -269,24 +267,6 @@ function buildOpfConfig(
               'PLACEHOLDER_COMMERCE_CLOUD_PUBLIC_KEY'
             }",
           },
-        }`,
-    },
-  };
-}
-
-function buildQuickBuyOpfConfig(
-  options: SpartacusOpfOptions
-): AdditionalFeatureConfiguration<SpartacusOpfOptions> {
-  return {
-    providers: {
-      import: [
-        {
-          moduleSpecifier: SPARTACUS_OPF_QUICK_BUY_ROOT,
-          namedImports: [OPF_QUICKBUY_CONFIG],
-        },
-      ],
-      content: `<${OPF_QUICKBUY_CONFIG}>{
-          googlePayApiUrl:"${options.googlePayApiUrl || 'PLACEHOLDER_GOOGLE_PAY_API_URL'}"
         }`,
     },
   };
