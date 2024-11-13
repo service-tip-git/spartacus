@@ -653,6 +653,11 @@ export interface FeatureTogglesInterface {
   a11yQTY2Quantity?: boolean;
 
   /**
+   * In `UnitFormComponent`, set 'clearable' as false for select of `ApprovalProcess`.
+   */
+  a11yApprovalProcessWithNoClearable?: boolean;
+
+  /**
    * Changes the success message of successful registration to be more informative. Affects `RegisterComponentService`.
    */
   a11yPostRegisterSuccessMessage?: boolean;
@@ -846,6 +851,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yViewHoursButtonIconContrast: false,
   a11yCheckoutStepsLandmarks: false,
   a11yQTY2Quantity: false,
+  a11yApprovalProcessWithNoClearable: false,
   a11yPostRegisterSuccessMessage: false,
   a11yDeleteButton2First: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
