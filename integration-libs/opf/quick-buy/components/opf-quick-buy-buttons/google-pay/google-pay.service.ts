@@ -362,7 +362,7 @@ export class OpfGooglePayService {
                 additionalData: [],
                 paymentSessionId: '',
                 callbackArray: [() => {}, () => {}, () => {}],
-                paymentMethod: OpfProviderType.GOOGLE_PAY as any,
+                paymentMethod: OpfQuickBuyProviderType.GOOGLE_PAY as any,
                 encryptedToken,
               });
             }),

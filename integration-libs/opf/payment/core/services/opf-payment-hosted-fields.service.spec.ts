@@ -75,7 +75,6 @@ describe('OpfPaymentHostedFieldsService', () => {
     handlePaymentError: jasmine.createSpy('handlePaymentError'),
   };
 
-
   const mockInput: OpfPaymentSubmitInput = {
     paymentMethod: PaymentMethod.CREDIT_CARD,
     additionalData: [{ key: 'key', value: 'value' }],
@@ -83,7 +82,6 @@ describe('OpfPaymentHostedFieldsService', () => {
     returnPath: 'checkout',
     callbackArray: [() => {}, () => {}, () => {}],
   };
-
 
   const mockSubmitCompleteInput: OpfPaymentSubmitCompleteInput = {
     additionalData: [{ key: 'key', value: 'value' }],
