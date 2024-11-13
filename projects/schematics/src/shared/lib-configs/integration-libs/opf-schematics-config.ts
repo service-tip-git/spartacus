@@ -39,7 +39,6 @@ export const OPF_FOLDER_NAME = 'opf';
 export const OPF_MODULE_NAME = 'Opf';
 export const OPF_SCSS_FILE_NAME = 'opf.scss';
 export const OPF_CONFIG = 'OpfConfig';
-export const OPF_QUICKBUY_CONFIG = 'OpfQuickBuyConfig';
 
 export const OPF_CHECKOUT_FEATURE_NAME_CONSTANT = 'OPF_CHECKOUT_FEATURE';
 export const OPF_CHECKOUT_MODULE = 'OpfCheckoutModule';
