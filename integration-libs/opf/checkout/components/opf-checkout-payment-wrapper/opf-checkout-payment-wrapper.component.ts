@@ -22,8 +22,8 @@ import {
   OpfGlobalFunctionsFacade,
 } from '@spartacus/opf/global-functions/root';
 import {
-  PaymentPattern,
-  PaymentSessionData,
+  OpfPaymentRenderPattern,
+  OpfPaymentSessionData,
 } from '@spartacus/opf/payment/root';
 import { Subscription } from 'rxjs';
 import { OpfCheckoutPaymentWrapperService } from './opf-checkout-payment-wrapper.service';
@@ -38,7 +38,7 @@ export class OpfCheckoutPaymentWrapperComponent implements OnInit, OnDestroy {
 
   renderPaymentMethodEvent$ = this.service.getRenderPaymentMethodEvent();
 
-  RENDER_PATTERN = PaymentPattern;
+  RENDER_PATTERN = OpfPaymentRenderPattern;
 
   sub: Subscription = new Subscription();
 
@@ -79,7 +79,7 @@ export class OpfCheckoutPaymentWrapperComponent implements OnInit, OnDestroy {
           if (this.isHostedFields(paymentSessionData)) {
             this.globalFunctionsService.registerGlobalFunctions({
               domain: GlobalFunctionsDomain.CHECKOUT,
-              paymentSessionId: (paymentSessionData as PaymentSessionData)
+              paymentSessionId: (paymentSessionData as OpfPaymentSessionData)
                 .paymentSessionId as string,
               vcr: this.vcr,
             });
@@ -94,12 +94,12 @@ export class OpfCheckoutPaymentWrapperComponent implements OnInit, OnDestroy {
   }
 
   protected isHostedFields(
-    paymentSessionData: PaymentSessionData | Error
+    paymentSessionData: OpfPaymentSessionData | Error
   ): boolean {
     return !!(
       !(paymentSessionData instanceof Error) &&
       paymentSessionData?.paymentSessionId &&
-      paymentSessionData?.pattern === PaymentPattern.HOSTED_FIELDS
+      paymentSessionData?.pattern === OpfPaymentRenderPattern.HOSTED_FIELDS
     );
   }
 }

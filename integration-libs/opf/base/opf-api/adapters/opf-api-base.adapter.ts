@@ -17,8 +17,8 @@ import {
   OpfEndpointsService,
 } from '@spartacus/opf/base/core';
 import {
-  ActiveConfiguration,
   OPF_CC_PUBLIC_KEY_HEADER,
+  OpfActiveConfiguration,
   OpfConfig,
 } from '@spartacus/opf/base/root';
 import { Observable } from 'rxjs';
@@ -49,14 +49,14 @@ export class OpfApiBaseAdapter implements OpfBaseAdapter {
     'Content-Language': 'en-us',
   };
 
-  getActiveConfigurations(): Observable<ActiveConfiguration[]> {
+  getActiveConfigurations(): Observable<OpfActiveConfiguration[]> {
     const headers = new HttpHeaders(this.header).set(
       OPF_CC_PUBLIC_KEY_HEADER,
       this.config.opf?.commerceCloudPublicKey || ''
     );
 
     return this.http
-      .get<ActiveConfiguration[]>(this.getActiveConfigurationsEndpoint(), {
+      .get<OpfActiveConfiguration[]>(this.getActiveConfigurationsEndpoint(), {
         headers,
       })
       .pipe(

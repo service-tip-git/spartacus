@@ -16,6 +16,11 @@ export class OpfCheckoutTermsAndConditionsAlertComponent {
   iconTypes = ICON_TYPE;
 
   @Input() isVisible: boolean;
+  /**
+   * Explicit Terms and Conditions (isExplicit true) requires user to accept T&C to see and select payments options.
+   * Implicit Terms and Conditions (isExplicit false) only displays the T&C message without checkbox, payment options are always enabled.
+   */
+  @Input() isExplicit: boolean | undefined | null;
 
   close() {
     this.isVisible = false;

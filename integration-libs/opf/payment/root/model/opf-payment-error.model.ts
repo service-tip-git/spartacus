@@ -6,7 +6,7 @@
 
 import { HttpErrorModel } from '@spartacus/core';
 
-export const defaultError: OpfPaymentError = {
+export const opfDefaultPaymentError: OpfPaymentError = {
   statusText: 'Payment Error',
   message: 'opfPayment.errors.proceedPayment',
   status: -1,
@@ -25,24 +25,24 @@ export interface OpfPaymentError extends HttpErrorModel {
   /**
    * An error can occur for multiple reasons, or it can be specified in more detail using a more precise error.
    */
-  details?: Array<PaymentErrorDetails>;
+  details?: Array<OpfPaymentErrorDetails>;
   moreInfo?: string;
   checkoutValidationMessage?: string;
 }
 
-export interface ValidationFailedProduct {
+export interface OpfPaymentErrorValidationFailedProduct {
   productId?: string;
   quantity?: number;
   maxQuantity?: number;
   minQuantity?: number;
 }
-export interface MoreInfo {
-  validationFailedProducts?: Array<ValidationFailedProduct>;
+export interface OpfPaymentErrorMoreInfo {
+  validationFailedProducts?: Array<OpfPaymentErrorValidationFailedProduct>;
   maxQuantity?: number;
   currentOrderAmount?: number;
   minOrderAmount?: number;
 }
-export interface PaymentErrorDetails {
+export interface OpfPaymentErrorDetails {
   /**
    * The specific payload attribute or query parameter causing the error.
    */
@@ -56,12 +56,12 @@ export interface PaymentErrorDetails {
    * The description of the error and, in some cases, a solution to the API consumer to resolve the issue.
    */
   message?: string;
-  moreInfo?: string | MoreInfo;
+  moreInfo?: string | OpfPaymentErrorMoreInfo;
 }
 
-export const enum PaymentErrorType {
+export const enum OpfPaymentErrorType {
   EXPIRED = 'EXPIRED',
-  INSUFFICENT_FUNDS = 'INSUFFICENT_FUNDS',
+  INSUFFICIENT_FUNDS = 'INSUFFICIENT_FUNDS',
   CREDIT_LIMIT = 'CREDIT_LIMIT',
   INVALID_CARD = 'INVALID_CARD',
   INVALID_CVV = 'INVALID_CVV',

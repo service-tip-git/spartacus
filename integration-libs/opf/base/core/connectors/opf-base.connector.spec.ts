@@ -6,7 +6,7 @@
 
 import { TestBed } from '@angular/core/testing';
 import {
-  ActiveConfiguration,
+  OpfActiveConfiguration,
   OpfPaymentProviderType,
 } from '@spartacus/opf/base/root';
 import { of } from 'rxjs';
@@ -14,7 +14,7 @@ import { OpfBaseAdapter } from './opf-base.adapter';
 import { OpfBaseConnector } from './opf-base.connector';
 import createSpy = jasmine.createSpy;
 
-const mockActiveConfigurations: ActiveConfiguration[] = [
+const mockActiveConfigurations: OpfActiveConfiguration[] = [
   {
     id: 1,
     providerType: OpfPaymentProviderType.PAYMENT_GATEWAY,

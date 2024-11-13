@@ -11,17 +11,17 @@ import {
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { ConverterService, LoggerService } from '@spartacus/core';
-import { OpfApiBaseAdapter } from './opf-api-base.adapter';
 import { OpfEndpointsService } from '@spartacus/opf/base/core';
 import {
-  ActiveConfiguration,
   OPF_CC_PUBLIC_KEY_HEADER,
+  OpfActiveConfiguration,
   OpfConfig,
   OpfPaymentProviderType,
 } from '@spartacus/opf/base/root';
 import { map } from 'rxjs';
+import { OpfApiBaseAdapter } from './opf-api-base.adapter';
 
-const mockActiveConfigurations: ActiveConfiguration[] = [
+const mockActiveConfigurations: OpfActiveConfiguration[] = [
   {
     id: 1,
     description: 'First active configuration',

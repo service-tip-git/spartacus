@@ -10,6 +10,7 @@ export const summaryContainer = `cx-product-summary`;
 export const infoContainer = `cx-product-intro`;
 export const tabsContainer = 'cx-tab-paragraph-container cx-tab';
 export const tabsHeaderList = `${tabsContainer} > div > button`;
+export const tabsContainerList = `cx-tab-paragraph-container > div > button`;
 export const tabPanel = `${tabsContainer} cx-tab-panel`;
 export const activeTabContainer = `${tabsContainer} .active .container`;
 export const shippingTabActive = `${tabsContainer} .active cx-paragraph`;
@@ -59,6 +60,15 @@ export function verifyShowReviewsLink() {
     .contains(/show reviews/i)
     .click();
   cy.get(`${tabsHeaderList}`)
+    .contains(/reviews/i)
+    .should('be.focused');
+}
+
+export function verifyReviewsLink() {
+  cy.get(`${infoContainer}`)
+    .contains(/show reviews/i)
+    .click();
+  cy.get(`${tabsContainerList}`)
     .contains(/reviews/i)
     .should('be.focused');
 }

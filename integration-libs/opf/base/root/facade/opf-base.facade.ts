@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 import { facadeFactory, QueryState } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { OPF_BASE_FEATURE } from '../feature-name';
-import { ActiveConfiguration } from '../model';
+import { OpfActiveConfiguration } from '../model';
 
 @Injectable({
   providedIn: 'root',
@@ -24,6 +24,6 @@ export abstract class OpfBaseFacade {
    * Get payment active configurations
    */
   abstract getActiveConfigurationsState(): Observable<
-    QueryState<ActiveConfiguration[] | undefined>
+    QueryState<OpfActiveConfiguration[] | undefined>
   >;
 }

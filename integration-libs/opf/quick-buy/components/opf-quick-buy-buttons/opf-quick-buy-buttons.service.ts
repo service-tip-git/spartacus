@@ -13,13 +13,13 @@ import {
 import { CheckoutConfig } from '@spartacus/checkout/base/root';
 import { AuthService, UserIdService } from '@spartacus/core';
 import {
-  ActiveConfiguration,
+  OpfActiveConfiguration,
   OpfBaseFacade,
   OpfPaymentProviderType,
 } from '@spartacus/opf/base/root';
 import {
-  OpfProviderType,
   OpfQuickBuyDigitalWallet,
+  OpfQuickBuyProviderType,
 } from '@spartacus/opf/quick-buy/root';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -34,7 +34,7 @@ export class OpfQuickBuyButtonsService {
   protected activeCartFacade = inject(ActiveCartFacade);
   protected multiCartFacade = inject(MultiCartFacade);
 
-  getPaymentGatewayConfiguration(): Observable<ActiveConfiguration> {
+  getPaymentGatewayConfiguration(): Observable<OpfActiveConfiguration> {
     return this.opfBaseFacade
       .getActiveConfigurationsState()
       .pipe(
@@ -49,8 +49,8 @@ export class OpfQuickBuyButtonsService {
   }
 
   getQuickBuyProviderConfig(
-    provider: OpfProviderType,
-    activeConfiguration: ActiveConfiguration
+    provider: OpfQuickBuyProviderType,
+    activeConfiguration: OpfActiveConfiguration
   ): OpfQuickBuyDigitalWallet | undefined {
     let config;
     if (activeConfiguration && activeConfiguration.digitalWalletQuickBuy) {
@@ -63,8 +63,8 @@ export class OpfQuickBuyButtonsService {
   }
 
   isQuickBuyProviderEnabled(
-    provider: OpfProviderType,
-    activeConfiguration: ActiveConfiguration
+    provider: OpfQuickBuyProviderType,
+    activeConfiguration: OpfActiveConfiguration
   ): boolean {
     let isEnabled = false;
     if (activeConfiguration && activeConfiguration.digitalWalletQuickBuy) {

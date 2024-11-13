@@ -8,11 +8,11 @@ import { TestBed } from '@angular/core/testing';
 import { CommandService, QueryService } from '@spartacus/core';
 import { Observable, of } from 'rxjs';
 import {
-  AfterRedirectScriptResponse,
+  OpfPaymentAfterRedirectScriptResponse,
+  OpfPaymentSubmitCompleteInput,
+  OpfPaymentSubmitInput,
   OpfPaymentVerificationPayload,
   OpfPaymentVerificationResponse,
-  SubmitCompleteInput,
-  SubmitInput,
 } from '../../root/model';
 import { OpfPaymentConnector } from '../connectors';
 import { OpfPaymentHostedFieldsService } from '../services';
@@ -29,7 +29,7 @@ class MockPaymentConnector implements Partial<OpfPaymentConnector> {
   }
   afterRedirectScripts(
     _paymentSessionId: string
-  ): Observable<AfterRedirectScriptResponse> {
+  ): Observable<OpfPaymentAfterRedirectScriptResponse> {
     return of({ afterRedirectScript: {} });
   }
 }
@@ -45,11 +45,10 @@ class MockOpfPaymentHostedFieldsService {
 }
 
 const mockSubmitInput = {
-  cartId: '123',
-} as SubmitInput;
+  paymentSessionId: 'sessionId',
+} as OpfPaymentSubmitInput;
 
-const mockSubmitCompleteInput: SubmitCompleteInput = {
-  cartId: 'mockCartId',
+const mockSubmitCompleteInput: OpfPaymentSubmitCompleteInput = {
   additionalData: [{ key: 'key', value: 'value' }],
   paymentSessionId: 'sessionId',
   returnPath: 'checkout',
@@ -95,9 +94,9 @@ describe('OpfPaymentService', () => {
       'submitPayment'
     ).and.callThrough();
 
-    const submitInput: SubmitInput = {
-      cartId: 'testCart',
-    } as SubmitInput;
+    const submitInput: OpfPaymentSubmitInput = {
+      paymentSessionId: 'sessionId',
+    } as OpfPaymentSubmitInput;
 
     service['submitPaymentCommand'].execute({ submitInput });
 
@@ -131,9 +130,9 @@ describe('OpfPaymentService', () => {
       'submitCompletePayment'
     ).and.callThrough();
 
-    const submitCompleteInput: SubmitCompleteInput = {
-      cartId: 'testCart',
-    } as SubmitCompleteInput;
+    const submitCompleteInput: OpfPaymentSubmitCompleteInput = {
+      paymentSessionId: 'sessionId',
+    } as OpfPaymentSubmitCompleteInput;
 
     service['submitCompletePaymentCommand'].execute({ submitCompleteInput });
 

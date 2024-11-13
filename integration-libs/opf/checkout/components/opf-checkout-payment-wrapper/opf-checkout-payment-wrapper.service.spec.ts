@@ -20,8 +20,8 @@ import { of, throwError } from 'rxjs';
 import { OPF_PAYMENT_AND_REVIEW_SEMANTIC_ROUTE } from '@spartacus/opf/checkout/root';
 import {
   OpfPaymentFacade,
-  PaymentPattern,
-  PaymentSessionData,
+  OpfPaymentRenderPattern,
+  OpfPaymentSessionData,
 } from '@spartacus/opf/payment/root';
 import { OpfCheckoutPaymentWrapperService } from './opf-checkout-payment-wrapper.service';
 
@@ -121,8 +121,8 @@ describe('OpfCheckoutPaymentWrapperService', () => {
     const mockOtpKey = 'otpKey';
     const mockUserId = 'userId';
     const mockCartId = 'cartId';
-    const mockPaymentSessionData: PaymentSessionData = {
-      pattern: PaymentPattern.HOSTED_FIELDS,
+    const mockPaymentSessionData: OpfPaymentSessionData = {
+      pattern: OpfPaymentRenderPattern.HOSTED_FIELDS,
       dynamicScript: {
         html: '<html></html>',
         jsUrls: [
@@ -188,7 +188,7 @@ describe('OpfCheckoutPaymentWrapperService', () => {
       );
 
       expect(service.renderPaymentGateway).toHaveBeenCalledWith({
-        pattern: PaymentPattern.HOSTED_FIELDS,
+        pattern: OpfPaymentRenderPattern.HOSTED_FIELDS,
         dynamicScript: {
           html: '<html></html>',
           jsUrls: [
@@ -295,8 +295,8 @@ describe('OpfCheckoutPaymentWrapperService', () => {
   });
 
   it('should render payment gateway with destination URL', () => {
-    const mockPaymentSessionData: PaymentSessionData = {
-      pattern: PaymentPattern.FULL_PAGE,
+    const mockPaymentSessionData: OpfPaymentSessionData = {
+      pattern: OpfPaymentRenderPattern.FULL_PAGE,
       destination: { url: mockUrl, form: [] },
     };
 
@@ -305,7 +305,7 @@ describe('OpfCheckoutPaymentWrapperService', () => {
     expect(service['renderPaymentMethodEvent$'].value).toEqual({
       isLoading: false,
       isError: false,
-      renderType: PaymentPattern.FULL_PAGE,
+      renderType: OpfPaymentRenderPattern.FULL_PAGE,
       data: mockUrl,
       destination: { url: mockUrl, form: [] },
     });
@@ -313,8 +313,8 @@ describe('OpfCheckoutPaymentWrapperService', () => {
 
   it('should handle paymentSessionId', () => {
     const mockPaymentSessionId = 'mockPaymentSessionId';
-    const mockPaymentSessionData: PaymentSessionData = {
-      pattern: PaymentPattern.FULL_PAGE,
+    const mockPaymentSessionData: OpfPaymentSessionData = {
+      pattern: OpfPaymentRenderPattern.FULL_PAGE,
       paymentSessionId: mockPaymentSessionId,
     };
     (service as any).storePaymentSessionId(mockPaymentSessionData);
@@ -322,7 +322,7 @@ describe('OpfCheckoutPaymentWrapperService', () => {
       paymentSessionId: mockPaymentSessionId,
     });
 
-    mockPaymentSessionData.pattern = PaymentPattern.HOSTED_FIELDS;
+    mockPaymentSessionData.pattern = OpfPaymentRenderPattern.HOSTED_FIELDS;
     (service as any).storePaymentSessionId(mockPaymentSessionData);
     expect(opfMetadataStoreServiceMock.updateOpfMetadata).toHaveBeenCalledWith({
       paymentSessionId: undefined,
@@ -341,8 +341,8 @@ describe('OpfCheckoutPaymentWrapperService', () => {
       },
     ];
 
-    const mockPaymentSessionData: PaymentSessionData = {
-      pattern: PaymentPattern.IFRAME,
+    const mockPaymentSessionData: OpfPaymentSessionData = {
+      pattern: OpfPaymentRenderPattern.IFRAME,
       destination: {
         url: mockUrl,
         form: mockFormData,
@@ -354,15 +354,15 @@ describe('OpfCheckoutPaymentWrapperService', () => {
     expect(service['renderPaymentMethodEvent$'].value).toEqual({
       isLoading: false,
       isError: false,
-      renderType: PaymentPattern.IFRAME,
+      renderType: OpfPaymentRenderPattern.IFRAME,
       data: mockUrl,
       destination: { url: mockUrl, form: mockFormData },
     });
   });
 
   it('should render payment gateway with dynamic script', (done) => {
-    const mockPaymentSessionData: PaymentSessionData = {
-      pattern: PaymentPattern.HOSTED_FIELDS,
+    const mockPaymentSessionData: OpfPaymentSessionData = {
+      pattern: OpfPaymentRenderPattern.HOSTED_FIELDS,
       dynamicScript: {
         html: '<html></html>',
         jsUrls: [
@@ -407,7 +407,7 @@ describe('OpfCheckoutPaymentWrapperService', () => {
       expect(service['renderPaymentMethodEvent$'].value).toEqual({
         isLoading: false,
         isError: false,
-        renderType: PaymentPattern.HOSTED_FIELDS,
+        renderType: OpfPaymentRenderPattern.HOSTED_FIELDS,
         data: '<html></html>',
       });
       done();

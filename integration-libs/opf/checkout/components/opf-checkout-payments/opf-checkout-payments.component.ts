@@ -17,7 +17,7 @@ import {
   QueryState,
 } from '@spartacus/core';
 import {
-  ActiveConfiguration,
+  OpfActiveConfiguration,
   OpfBaseFacade,
   OpfMetadataModel,
   OpfMetadataStoreService,
@@ -34,9 +34,9 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
   protected subscription = new Subscription();
 
   activeConfigurations$: Observable<
-    QueryState<ActiveConfiguration[] | undefined>
+    QueryState<OpfActiveConfiguration[] | undefined>
   > = this.opfBaseService.getActiveConfigurationsState().pipe(
-    tap((state: QueryState<ActiveConfiguration[] | undefined>) => {
+    tap((state: QueryState<OpfActiveConfiguration[] | undefined>) => {
       if (state.error) {
         this.displayError('loadActiveConfigurations');
       } else if (!state.loading && !Boolean(state.data?.length)) {
@@ -53,6 +53,9 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
 
   @Input()
   disabled = true;
+
+  @Input()
+  explicitTermsAndConditions: boolean | null | undefined;
 
   selectedPaymentId?: number;
 
@@ -72,7 +75,11 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
       this.opfMetadataStoreService
         .getOpfMetadataState()
         .subscribe((state: OpfMetadataModel) => {
-          if (state.termsAndConditionsChecked && !isPreselected) {
+          if (
+            !isPreselected &&
+            (state.termsAndConditionsChecked ||
+              !this.explicitTermsAndConditions)
+          ) {
             isPreselected = true;
             this.selectedPaymentId = !state.selectedPaymentOptionId
               ? state.defaultSelectedPaymentOptionId
@@ -80,7 +87,10 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
             this.opfMetadataStoreService.updateOpfMetadata({
               selectedPaymentOptionId: this.selectedPaymentId,
             });
-          } else if (!state.termsAndConditionsChecked) {
+          } else if (
+            !state.termsAndConditionsChecked &&
+            this.explicitTermsAndConditions
+          ) {
             isPreselected = false;
             this.selectedPaymentId = undefined;
           }
@@ -95,7 +105,7 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
     );
   }
 
-  changePayment(payment: ActiveConfiguration): void {
+  changePayment(payment: OpfActiveConfiguration): void {
     this.selectedPaymentId = payment.id;
     this.opfMetadataStoreService.updateOpfMetadata({
       selectedPaymentOptionId: this.selectedPaymentId,

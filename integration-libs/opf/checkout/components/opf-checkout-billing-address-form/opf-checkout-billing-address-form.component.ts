@@ -50,7 +50,7 @@ export class OpfCheckoutBillingAddressFormComponent implements OnInit {
     const checked = (<HTMLInputElement>event.target).checked;
     this.service.setIsSameAsDeliveryValue(checked);
     if (checked) {
-      this.service.putDeliveryAddressAsPaymentAddress();
+      this.service.setDeliveryAddressAsPaymentAddress();
       this.isEditBillingAddress = false;
     } else {
       this.isAddingBillingAddressInProgress = true;

@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export type ErrorDialogOptions = {
+export type OpfErrorDialogOptions = {
   confirmString?: string;
   confirmKey?: string;
   confirmReplacements?: any;
@@ -13,7 +13,7 @@ export type ErrorDialogOptions = {
   messageReplacements?: any;
 };
 
-export const defaultErrorDialogOptions: ErrorDialogOptions = {
+export const defaultOpfErrorDialogOptions: OpfErrorDialogOptions = {
   messageKey: 'opfPayment.errors.proceedPayment',
   confirmKey: 'common.continue',
 };

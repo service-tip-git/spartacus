@@ -5,14 +5,14 @@
  */
 
 import { TestBed } from '@angular/core/testing';
-import { of } from 'rxjs';
 import { QueryService, QueryState } from '@spartacus/core';
-import { OpfBaseConnector } from '../connectors/opf-base.connector';
-import { OpfBaseService } from './opf-base.service';
 import {
-  ActiveConfiguration,
+  OpfActiveConfiguration,
   OpfPaymentProviderType,
 } from '@spartacus/opf/base/root';
+import { of } from 'rxjs';
+import { OpfBaseConnector } from '../connectors/opf-base.connector';
+import { OpfBaseService } from './opf-base.service';
 
 describe('OpfBaseService', () => {
   let service: OpfBaseService;
@@ -39,7 +39,7 @@ describe('OpfBaseService', () => {
       OpfBaseConnector
     ) as jasmine.SpyObj<OpfBaseConnector>;
 
-    const mockActiveConfigurations: ActiveConfiguration[] = [
+    const mockActiveConfigurations: OpfActiveConfiguration[] = [
       {
         id: 1,
         description: 'Payment gateway for merchant 123',
@@ -86,7 +86,7 @@ describe('OpfBaseService', () => {
   it('getActiveConfigurationsState should return an observable with the correct state and call the connector', (done: DoneFn) => {
     service
       .getActiveConfigurationsState()
-      .subscribe((state: QueryState<ActiveConfiguration[] | undefined>) => {
+      .subscribe((state: QueryState<OpfActiveConfiguration[] | undefined>) => {
         expect(state.loading).toBeFalsy();
         expect(state.error).toBeUndefined();
         expect(state.data).toEqual([

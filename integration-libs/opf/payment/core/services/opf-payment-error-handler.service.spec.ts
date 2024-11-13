@@ -10,7 +10,7 @@ import {
   HttpResponseStatus,
   RoutingService,
 } from '@spartacus/core';
-import { OpfPaymentError, PaymentErrorType } from '../../root/model';
+import { OpfPaymentError, OpfPaymentErrorType } from '../../root/model';
 import { OpfPaymentErrorHandlerService } from './opf-payment-error-handler.service';
 
 describe('OpfPaymentErrorHandlerService', () => {
@@ -56,7 +56,7 @@ describe('OpfPaymentErrorHandlerService', () => {
   describe('handlePaymentError', () => {
     it('should handle payment bad request error', () => {
       const error: OpfPaymentError = {
-        type: PaymentErrorType.INVALID_CVV,
+        type: OpfPaymentErrorType.INVALID_CVV,
         message: 'Test error message',
         status: HttpResponseStatus.BAD_REQUEST,
       };
@@ -69,7 +69,7 @@ describe('OpfPaymentErrorHandlerService', () => {
 
     it('should handle payment cancelled error', () => {
       const error: OpfPaymentError = {
-        type: PaymentErrorType.PAYMENT_CANCELLED,
+        type: OpfPaymentErrorType.PAYMENT_CANCELLED,
         message: 'Test error message',
       };
 
@@ -95,8 +95,8 @@ describe('OpfPaymentErrorHandlerService', () => {
   });
 
   describe('handleBadRequestError', () => {
-    it('should handle INSUFFICENT_FUNDS error type', () => {
-      const errorType = PaymentErrorType.INSUFFICENT_FUNDS;
+    it('should handle INSUFFICIENT_FUNDS error type', () => {
+      const errorType = OpfPaymentErrorType.INSUFFICIENT_FUNDS;
 
       const message = service['handleBadRequestError'](errorType);
 
@@ -104,7 +104,7 @@ describe('OpfPaymentErrorHandlerService', () => {
     });
 
     it('should handle INVALID_CARD error type', () => {
-      const errorType = PaymentErrorType.INVALID_CARD;
+      const errorType = OpfPaymentErrorType.INVALID_CARD;
 
       const message = service['handleBadRequestError'](errorType);
 
@@ -112,7 +112,7 @@ describe('OpfPaymentErrorHandlerService', () => {
     });
 
     it('should handle LOST_CARD error type', () => {
-      const errorType = PaymentErrorType.LOST_CARD;
+      const errorType = OpfPaymentErrorType.LOST_CARD;
 
       const message = service['handleBadRequestError'](errorType);
 
@@ -120,7 +120,7 @@ describe('OpfPaymentErrorHandlerService', () => {
     });
 
     it('should handle EXPIRED error type', () => {
-      const errorType = PaymentErrorType.EXPIRED;
+      const errorType = OpfPaymentErrorType.EXPIRED;
 
       const message = service['handleBadRequestError'](errorType);
 
@@ -128,7 +128,7 @@ describe('OpfPaymentErrorHandlerService', () => {
     });
 
     it('should handle INVALID_CVV error type', () => {
-      const errorType = PaymentErrorType.INVALID_CVV;
+      const errorType = OpfPaymentErrorType.INVALID_CVV;
 
       const message = service['handleBadRequestError'](errorType);
 
@@ -136,7 +136,7 @@ describe('OpfPaymentErrorHandlerService', () => {
     });
 
     it('should handle CREDIT_LIMIT error type', () => {
-      const errorType = PaymentErrorType.CREDIT_LIMIT;
+      const errorType = OpfPaymentErrorType.CREDIT_LIMIT;
 
       const message = service['handleBadRequestError'](errorType);
 

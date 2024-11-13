@@ -30,7 +30,7 @@ export class UserChangePasswordFormComponent {
     protected formService: UserChangePasswordFormService,
     protected messageService: MessageService
   ) {
-    useFeatureStyles('a11yPasswordVisibliltyBtnValueOverflow');
+    useFeatureStyles('a11yPasswordVisibilityBtnValueOverflow');
   }
 
   save(form: UntypedFormGroup): void {

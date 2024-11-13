@@ -28,15 +28,15 @@ import {
   OpfPaymentAdapter,
 } from '@spartacus/opf/payment/core';
 import {
-  AfterRedirectScriptResponse,
+  OpfPaymentAfterRedirectScriptResponse,
+  OpfPaymentInitiationConfig,
+  OpfPaymentSessionData,
+  OpfPaymentSubmitCompleteRequest,
+  OpfPaymentSubmitCompleteResponse,
+  OpfPaymentSubmitRequest,
+  OpfPaymentSubmitResponse,
   OpfPaymentVerificationPayload,
   OpfPaymentVerificationResponse,
-  PaymentInitiationConfig,
-  PaymentSessionData,
-  SubmitCompleteRequest,
-  SubmitCompleteResponse,
-  SubmitRequest,
-  SubmitResponse,
 } from '@spartacus/opf/payment/root';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -96,10 +96,10 @@ export class OpfApiPaymentAdapter implements OpfPaymentAdapter {
   }
 
   submitPayment(
-    submitRequest: SubmitRequest,
+    submitRequest: OpfPaymentSubmitRequest,
     otpKey: string,
     paymentSessionId: string
-  ): Observable<SubmitResponse> {
+  ): Observable<OpfPaymentSubmitResponse> {
     const headers = new HttpHeaders(this.header)
       .set(
         OPF_CC_PUBLIC_KEY_HEADER,
@@ -109,23 +109,25 @@ export class OpfApiPaymentAdapter implements OpfPaymentAdapter {
 
     const url = this.getSubmitPaymentEndpoint(paymentSessionId);
 
-    return this.http.post<SubmitResponse>(url, submitRequest, { headers }).pipe(
-      catchError((error) => {
-        throw tryNormalizeHttpError(error, this.logger);
-      }),
-      backOff({
-        shouldRetry: isServerError,
-        maxTries: 2,
-      }),
-      this.converter.pipeable(OPF_PAYMENT_SUBMIT_NORMALIZER)
-    );
+    return this.http
+      .post<OpfPaymentSubmitResponse>(url, submitRequest, { headers })
+      .pipe(
+        catchError((error) => {
+          throw tryNormalizeHttpError(error, this.logger);
+        }),
+        backOff({
+          shouldRetry: isServerError,
+          maxTries: 2,
+        }),
+        this.converter.pipeable(OPF_PAYMENT_SUBMIT_NORMALIZER)
+      );
   }
 
   submitCompletePayment(
-    submitCompleteRequest: SubmitCompleteRequest,
+    submitCompleteRequest: OpfPaymentSubmitCompleteRequest,
     otpKey: string,
     paymentSessionId: string
-  ): Observable<SubmitCompleteResponse> {
+  ): Observable<OpfPaymentSubmitCompleteResponse> {
     const headers = new HttpHeaders(this.headerWithContentLanguage)
       .set(
         OPF_CC_PUBLIC_KEY_HEADER,
@@ -136,7 +138,9 @@ export class OpfApiPaymentAdapter implements OpfPaymentAdapter {
     const url = this.getSubmitCompletePaymentEndpoint(paymentSessionId);
 
     return this.http
-      .post<SubmitCompleteResponse>(url, submitCompleteRequest, { headers })
+      .post<OpfPaymentSubmitCompleteResponse>(url, submitCompleteRequest, {
+        headers,
+      })
       .pipe(
         catchError((error) => {
           throw tryNormalizeHttpError(error, this.logger);
@@ -151,7 +155,7 @@ export class OpfApiPaymentAdapter implements OpfPaymentAdapter {
 
   afterRedirectScripts(
     paymentSessionId: string
-  ): Observable<AfterRedirectScriptResponse> {
+  ): Observable<OpfPaymentAfterRedirectScriptResponse> {
     const headers = new HttpHeaders(this.header).set(
       OPF_CC_PUBLIC_KEY_HEADER,
       this.config.opf?.commerceCloudPublicKey || ''
@@ -159,21 +163,23 @@ export class OpfApiPaymentAdapter implements OpfPaymentAdapter {
 
     const url = this.getAfterRedirectScriptsEndpoint(paymentSessionId);
 
-    return this.http.get<AfterRedirectScriptResponse>(url, { headers }).pipe(
-      catchError((error) => {
-        throw tryNormalizeHttpError(error, this.logger);
-      }),
-      backOff({
-        shouldRetry: isServerError,
-        maxTries: 2,
-      }),
-      this.converter.pipeable(OPF_AFTER_REDIRECT_SCRIPTS_NORMALIZER)
-    );
+    return this.http
+      .get<OpfPaymentAfterRedirectScriptResponse>(url, { headers })
+      .pipe(
+        catchError((error) => {
+          throw tryNormalizeHttpError(error, this.logger);
+        }),
+        backOff({
+          shouldRetry: isServerError,
+          maxTries: 2,
+        }),
+        this.converter.pipeable(OPF_AFTER_REDIRECT_SCRIPTS_NORMALIZER)
+      );
   }
 
   initiatePayment(
-    paymentConfig: PaymentInitiationConfig
-  ): Observable<PaymentSessionData> {
+    paymentConfig: OpfPaymentInitiationConfig
+  ): Observable<OpfPaymentSessionData> {
     const headers = new HttpHeaders({
       'Accept-Language': 'en-us',
     })
@@ -191,7 +197,7 @@ export class OpfApiPaymentAdapter implements OpfPaymentAdapter {
     );
 
     return this.http
-      .post<PaymentSessionData>(url, paymentConfig?.config, { headers })
+      .post<OpfPaymentSessionData>(url, paymentConfig?.config, { headers })
       .pipe(
         catchError((error) => {
           throw tryNormalizeHttpError(error, this.logger);

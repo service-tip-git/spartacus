@@ -10,7 +10,7 @@ import { Cart, DeliveryMode } from '@spartacus/cart/base/root';
 import { Address } from '@spartacus/core';
 
 import {
-  ActiveConfiguration,
+  OpfActiveConfiguration,
   OpfResourceLoaderService,
 } from '@spartacus/opf/base/root';
 import { OpfPaymentFacade } from '@spartacus/opf/payment/root';
@@ -18,10 +18,10 @@ import { OpfQuickBuyTransactionService } from '@spartacus/opf/quick-buy/core';
 import {
   OPF_QUICK_BUY_ADDRESS_FIELD_PLACEHOLDER,
   OPF_QUICK_BUY_DEFAULT_MERCHANT_NAME,
-  OpfProviderType,
   OpfQuickBuyConfig,
   OpfQuickBuyDeliveryType,
   OpfQuickBuyLocation,
+  OpfQuickBuyProviderType,
   QuickBuyTransactionDetails,
 } from '@spartacus/opf/quick-buy/root';
 import { CurrentProductService } from '@spartacus/storefront';
@@ -142,7 +142,7 @@ export class OpfGooglePayService {
     ]);
   }
 
-  initClient(activeConfiguration: ActiveConfiguration): void {
+  initClient(activeConfiguration: OpfActiveConfiguration): void {
     this.setAllowedPaymentMethodsConfig(activeConfiguration);
     this.updateGooglePaymentClient();
   }
@@ -346,30 +346,25 @@ export class OpfGooglePayService {
     return {
       onPaymentAuthorized: (paymentDataResponse: any) => {
         return lastValueFrom(
-          this.opfQuickBuyTransactionService.getCurrentCartId().pipe(
-            switchMap((cartId) =>
-              this.setDeliveryAddress(paymentDataResponse.shippingAddress).pipe(
-                switchMap(() =>
-                  this.setBillingAddress(
-                    paymentDataResponse.paymentMethodData.info?.billingAddress
-                  )
-                ),
-                switchMap(() => {
-                  const encryptedToken = btoa(
-                    paymentDataResponse.paymentMethodData.tokenizationData.token
-                  );
-
-                  return this.opfPaymentFacade.submitPayment({
-                    additionalData: [],
-                    paymentSessionId: '',
-                    callbackArray: [() => {}, () => {}, () => {}],
-                    paymentMethod: OpfProviderType.GOOGLE_PAY as any,
-                    encryptedToken,
-                    cartId,
-                  });
-                })
+          this.setDeliveryAddress(paymentDataResponse.shippingAddress).pipe(
+            switchMap(() =>
+              this.setBillingAddress(
+                paymentDataResponse.paymentMethodData.info?.billingAddress
               )
             ),
+            switchMap(() => {
+              const encryptedToken = btoa(
+                paymentDataResponse.paymentMethodData.tokenizationData.token
+              );
+
+              return this.opfPaymentFacade.submitPayment({
+                additionalData: [],
+                paymentSessionId: '',
+                callbackArray: [() => {}, () => {}, () => {}],
+                paymentMethod: OpfQuickBuyProviderType.GOOGLE_PAY as any,
+                encryptedToken,
+              });
+            }),
             catchError(() => {
               return of(false);
             })
@@ -460,11 +455,11 @@ export class OpfGooglePayService {
   }
 
   protected setAllowedPaymentMethodsConfig(
-    activeConfiguration: ActiveConfiguration
+    activeConfiguration: OpfActiveConfiguration
   ): void {
     const googlePayConfig =
       this.opfQuickBuyButtonsService.getQuickBuyProviderConfig(
-        OpfProviderType.GOOGLE_PAY,
+        OpfQuickBuyProviderType.GOOGLE_PAY,
         activeConfiguration
       );
 
