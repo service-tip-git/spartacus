@@ -399,6 +399,7 @@ if (environment.cpq) {
         allPageMetaResolversEnabledInCsr: true,
         sciEnabled: true,
         useExtendedMediaComponentConfiguration: true,
+        a11yWrapReviewOrderInSection: true,
       };
       return appFeatureToggles;
     }),

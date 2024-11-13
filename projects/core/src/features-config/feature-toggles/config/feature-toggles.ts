@@ -758,6 +758,12 @@ export interface FeatureTogglesInterface {
    *
    */
   useExtendedMediaComponentConfiguration?: boolean;
+
+  /**
+   * Creates a section element with applied aria-label in "Review Order" page of the checkout.
+   * Moves components to be children of this section element.
+   */
+  a11yWrapReviewOrderInSection?: boolean;
 }
 
 export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
@@ -863,6 +869,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yViewHoursButtonIconContrast: false,
   a11yCheckoutStepsLandmarks: false,
   a11yQTY2Quantity: false,
+  a11yWrapReviewOrderInSection: false,
   a11yApprovalProcessWithNoClearable: false,
   a11yPostRegisterSuccessMessage: false,
   a11yDeleteButton2First: false,
