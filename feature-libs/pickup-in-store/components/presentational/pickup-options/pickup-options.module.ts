@@ -7,11 +7,18 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { I18nModule } from '@spartacus/core';
+import { FeaturesConfigModule, I18nModule } from '@spartacus/core';
 import { PickupOptionsComponent } from './pickup-options.component';
+import { TabModule } from '@spartacus/storefront';
 
 @NgModule({
-  imports: [CommonModule, I18nModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    I18nModule,
+    ReactiveFormsModule,
+    FeaturesConfigModule,
+    TabModule,
+  ],
   declarations: [PickupOptionsComponent],
   exports: [PickupOptionsComponent],
 })

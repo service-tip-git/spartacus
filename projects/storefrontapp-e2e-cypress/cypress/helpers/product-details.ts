@@ -8,8 +8,10 @@ import { addProductToCart as addToCart } from './applied-promotions';
 
 export const summaryContainer = `cx-product-summary`;
 export const infoContainer = `cx-product-intro`;
-export const tabsContainer = 'cx-tab-paragraph-container';
+export const tabsContainer = 'cx-tab-paragraph-container cx-tab';
 export const tabsHeaderList = `${tabsContainer} > div > button`;
+export const tabsContainerList = `cx-tab-paragraph-container > div > button`;
+export const tabPanel = `${tabsContainer} cx-tab-panel`;
 export const activeTabContainer = `${tabsContainer} .active .container`;
 export const shippingTabActive = `${tabsContainer} .active cx-paragraph`;
 export const reviewContainer = 'cx-product-reviews';
@@ -59,8 +61,16 @@ export function verifyShowReviewsLink() {
     .click();
   cy.get(`${tabsHeaderList}`)
     .contains(/reviews/i)
-    .should('be.focused')
-    .and('have.attr', 'aria-expanded', 'true');
+    .should('be.focused');
+}
+
+export function verifyReviewsLink() {
+  cy.get(`${infoContainer}`)
+    .contains(/show reviews/i)
+    .click();
+  cy.get(`${tabsContainerList}`)
+    .contains(/reviews/i)
+    .should('be.focused');
 }
 
 export function verifyTextInTabs() {
@@ -86,7 +96,8 @@ export function verifyTextInTabs() {
 }
 
 export function verifyContentInReviewTab() {
-  cy.get(tabsHeaderList).eq(2).click();
+  // Double click to close and open on accordian view.
+  cy.get(tabsHeaderList).eq(2).click().click();
   cy.get(reviewList).should('have.length', 5);
   cy.get(writeAReviewButton).should('be.visible');
 }
@@ -119,7 +130,7 @@ export function verifyReviewForm() {
 export function verifyQuantityInCart() {
   addToCart();
   cy.get(atcModal).should('be.visible');
-  cy.get(atcModalTitle).should('contain', 'Item(s) added to your cart');
+  cy.get(atcModalTitle).should('contain', 'Item Added To Your Cart');
   cy.get(`${atcModalItem} .cx-name`).should('contain', PRODUCT_NAME);
   cy.get(atcModalCloseButton).click();
   cy.get(headerCartButton).should('contain', '1');
@@ -130,6 +141,43 @@ export function verifyQuantityInCart() {
   cy.get('cx-added-to-cart-dialog cx-cart-item');
   cy.get(atcModalCloseButton).click();
   cy.get(headerCartButton).should('contain', '5');
+}
+
+/**
+ * Verify arrow keys, HOME/END keys and SPACE key.
+ */
+export function verifyTabKeyboardNavigation(accordian = false) {
+  it('should navigate tab component with keyboard', () => {
+    cy.reload();
+    cy.get(tabsHeaderList).eq(0).click();
+    cy.focused().contains('Product Details').type('{downArrow}');
+    verifySpaceBarKeyForAccordian();
+    cy.focused().contains('Specs').type('{rightArrow}');
+    verifySpaceBarKeyForAccordian();
+    cy.focused().contains('Reviews').type('{leftArrow}');
+    verifySpaceBarKeyForAccordian();
+    cy.focused().contains('Specs').type('{upArrow}');
+    verifySpaceBarKeyForAccordian();
+    cy.focused().contains('Product Details').type('{upArrow}');
+    verifySpaceBarKeyForAccordian();
+    cy.focused().contains('Shipping').type('{downArrow}');
+    verifySpaceBarKeyForAccordian();
+    cy.focused().contains('Product Details').type('{end}');
+    verifySpaceBarKeyForAccordian();
+    cy.focused().contains('Shipping').type('{home}');
+    verifySpaceBarKeyForAccordian();
+    cy.focused().contains('Product Details');
+
+    function verifySpaceBarKeyForAccordian() {
+      if (accordian) {
+        cy.get(tabPanel).should('not.exist');
+        cy.focused().type(' ');
+        cy.get(tabPanel).should('exist');
+        cy.focused().type(' ');
+        cy.get(tabPanel).should('not.exist');
+      }
+    }
+  });
 }
 
 export function selectProductStyleVariant() {
@@ -194,6 +242,11 @@ export function configureDefaultProduct() {
       baseSite: ['electronics-spa'],
       currency: ['USD'],
     },
+    // TODO: No longer needed to toggle a11yTabComponent feature when set to true
+    // by default.
+    features: {
+      a11yTabComponent: true,
+    },
   });
 
   cy.intercept({
@@ -214,6 +267,11 @@ export function configureApparelProduct() {
     context: {
       baseSite: ['apparel-uk-spa'],
       currency: ['GBP'],
+    },
+    // TODO: No longer needed to toggle a11yTabComponent feature when set to true
+    // by default.
+    features: {
+      a11yTabComponent: true,
     },
   });
   cy.visit('/product/100191');

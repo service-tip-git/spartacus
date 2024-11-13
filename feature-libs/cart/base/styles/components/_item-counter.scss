@@ -13,6 +13,7 @@
       -moz-appearance: textfield;
     }
   }
+
   &.readonly {
     button {
       display: none;
@@ -77,12 +78,21 @@
       font-weight: var(--cx-font-weight-bold);
     }
 
+    // TODO: The styles for ":disabled" selector should be deleted when "a11yItemCounterFocus" feature flag has been removed
     &:disabled {
       color: var(--cx-color-light);
+      cursor: not-allowed;
+    }
+
+    @include forFeature('a11yItemCounterFocus') {
+      &[aria-disabled='true'] {
+        color: var(--cx-color-light);
+        cursor: not-allowed;
+      }
     }
 
     @include forFeature('a11yImproveContrast') {
-      font-size: var(--cx-font-size, 2rem);
+      font-size: var(--cx-font-size, 1.7rem);
       line-height: 0;
       color: var(--cx-color-text);
       padding-inline-start: 0;
@@ -90,13 +100,31 @@
       &:focus {
         box-shadow: 0 0 0 0;
       }
+      // TODO: The styles for ":disabled" selector should be deleted when "a11yItemCounterFocus" feature flag has been removed
       &:disabled {
         color: var(--cx-color-dark);
+      }
+      @include forFeature('a11yItemCounterFocus') {
+        &[aria-disabled='true'] {
+          color: var(--cx-color-dark);
+        }
       }
     }
   }
 
   :disabled {
     cursor: not-allowed;
+  }
+
+  @include cx-highContrastTheme {
+    background-color: var(--cx-color-background);
+    input {
+      background-color: var(--cx-color-background);
+      color: var(--cx-color-text);
+    }
+    input:disabled {
+      color: var(--cx-color-text);
+      background-color: var(--cx-color-background);
+    }
   }
 }

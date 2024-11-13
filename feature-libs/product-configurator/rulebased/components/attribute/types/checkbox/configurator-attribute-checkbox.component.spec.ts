@@ -200,6 +200,9 @@ describe('ConfigAttributeCheckBoxComponent', () => {
 
   describe('rendering description at value level', () => {
     it('should not render description in case description not present on model', () => {
+      (component.attribute.values ?? [{ description: '' }])[0].description =
+        undefined;
+      fixture.detectChanges();
       CommonConfiguratorTestUtilsService.expectElementNotPresent(
         expect,
         htmlElem,

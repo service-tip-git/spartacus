@@ -65,7 +65,7 @@ const OWNER = ConfiguratorModelUtils.createOwner(
   PRODUCT_CODE
 );
 
-const conflictGroup: Configurator.Group = {
+const conflictGroupBase: Configurator.Group = {
   id: 'GROUP_ID_CONFLICT_1',
   name: 'The conflict text',
   groupType: Configurator.GroupType.CONFLICT_GROUP,
@@ -75,6 +75,8 @@ const conflictGroup: Configurator.Group = {
     { name: 'ATTRIBUTE_2_RADIOBUTTON', key: 'ATTRIBUTE_2' },
   ],
 };
+
+let conflictGroup: Configurator.Group;
 
 @Component({
   selector: 'cx-configurator-conflict-description',
@@ -402,6 +404,7 @@ describe('ConfiguratorGroupComponent', () => {
 
     configuratorUtils.setOwnerKey(OWNER);
     isConfigurationLoadingObservable = of(false);
+    conflictGroup = structuredClone(conflictGroupBase);
   });
 
   function createComponent(): ConfiguratorGroupComponent {
@@ -761,6 +764,9 @@ describe('ConfiguratorGroupComponent', () => {
   });
 
   describe('getComponentKey', () => {
+    beforeEach(() => {
+      createComponent();
+    });
     it('should compile key for standard attribute type', () => {
       expect(
         component.getComponentKey(ConfigurationTestData.attributeDropDown)
@@ -792,6 +798,9 @@ describe('ConfiguratorGroupComponent', () => {
 
   describe('trackByFn', () => {
     const attribute = ConfigurationTestData.attributeDropDown;
+    beforeEach(() => {
+      createComponent();
+    });
     it('should return attribute itself, if performance optimization is not active', () => {
       productConfiguratorDeltaRenderingEnabled = false;
       expect(component.trackByFn(0, attribute)).toBe(attribute);

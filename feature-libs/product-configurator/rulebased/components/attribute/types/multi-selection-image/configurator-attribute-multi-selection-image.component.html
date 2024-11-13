@@ -43,7 +43,6 @@
             createAttributeValueIdForConfigurator(attribute, value.valueCode) +
               '-input'
           }}"
-          aria-hidden="true"
           class="form-check-label"
         >
           <img
@@ -51,6 +50,7 @@
             class="cx-img"
             src="{{ image?.url }}"
             alt="{{ image?.altText }}"
+            title="{{ image?.altText }}"
           />
           <div *ngIf="!getImage(value)" class="cx-img-dummy"></div>
           {{ getLabel(expMode, value.valueDisplay, value.valueCode) }}
@@ -116,7 +116,6 @@
                 value.valueCode
               ) + '-input'
             }}"
-            aria-hidden="true"
             class="form-check-label"
             [style.cursor]="!isReadOnly(attribute) ? 'pointer' : 'default'"
             title="{{ getLabel(expMode, value.valueDisplay, value.valueCode) }}"
@@ -126,6 +125,7 @@
               [ngClass]="getImgStyleClasses(attribute, value, 'cx-img')"
               src="{{ image?.url }}"
               alt="{{ image?.altText }}"
+              title="{{ image?.altText }}"
             />
             <div
               *ngIf="!getImage(value)"
@@ -139,7 +139,7 @@
                 placement: 'auto',
                 class: 'cx-value-description',
                 appendToBody: true,
-                displayCloseButton: true
+                displayCloseButton: true,
               }"
               [attr.aria-label]="'configurator.a11y.description' | cxTranslate"
             >

@@ -32,6 +32,7 @@ import {
   GlobalMessageService,
   GlobalMessageType,
   RoutingService,
+  useFeatureStyles,
 } from '@spartacus/core';
 import {
   FocusConfig,
@@ -39,7 +40,7 @@ import {
   ICON_TYPE,
   LaunchDialogService,
 } from '@spartacus/storefront';
-import { combineLatest, merge, Observable, Subscription } from 'rxjs';
+import { Observable, Subscription, combineLatest, merge } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 
 export interface SavedCartFormDialogOptions {
@@ -97,7 +98,10 @@ export class SavedCartFormDialogComponent implements OnInit, OnDestroy {
     protected eventService: EventService,
     protected routingService: RoutingService,
     protected globalMessageService: GlobalMessageService
-  ) {}
+  ) {
+    useFeatureStyles('a11yVisibleFocusOverflows');
+    useFeatureStyles('a11yQTY2Quantity');
+  }
 
   ngOnInit(): void {
     this.resetSavedCartStates();

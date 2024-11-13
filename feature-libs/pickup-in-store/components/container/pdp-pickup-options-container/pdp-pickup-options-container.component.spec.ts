@@ -2,7 +2,11 @@ import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
-import { I18nTestingModule, Product } from '@spartacus/core';
+import {
+  FeatureConfigService,
+  I18nTestingModule,
+  Product,
+} from '@spartacus/core';
 
 import {
   AugmentedPointOfService,
@@ -13,8 +17,8 @@ import {
 } from '@spartacus/pickup-in-store/root';
 import {
   CurrentProductService,
-  LaunchDialogService,
   LAUNCH_CALLER,
+  LaunchDialogService,
 } from '@spartacus/storefront';
 import { Observable, of, Subscription } from 'rxjs';
 import { PdpPickupOptionsContainerComponent } from './pdp-pickup-options-container.component';
@@ -80,6 +84,12 @@ class MockCurrentLocationService {
   }
 }
 
+class MockFeatureConfigService {
+  isEnabled() {
+    return true;
+  }
+}
+
 describe('PdpPickupOptionsComponent', () => {
   let component: PdpPickupOptionsContainerComponent;
   let fixture: ComponentFixture<PdpPickupOptionsContainerComponent>;
@@ -87,6 +97,7 @@ describe('PdpPickupOptionsComponent', () => {
   let intendedPickupLocationService: IntendedPickupLocationFacade;
   let currentProductService: CurrentProductService;
   let preferredStoreFacade: PreferredStoreFacade;
+  let featureConfigService: FeatureConfigService;
 
   const configureTestingModule = () =>
     TestBed.configureTestingModule({
@@ -118,6 +129,10 @@ describe('PdpPickupOptionsComponent', () => {
           provide: CurrentLocationService,
           useClass: MockCurrentLocationService,
         },
+        {
+          provide: FeatureConfigService,
+          useClass: MockFeatureConfigService,
+        },
       ],
     });
 
@@ -131,6 +146,7 @@ describe('PdpPickupOptionsComponent', () => {
     preferredStoreFacade = TestBed.inject(PreferredStoreFacade);
 
     currentProductService = TestBed.inject(CurrentProductService);
+    featureConfigService = TestBed.inject(FeatureConfigService);
 
     spyOn(currentProductService, 'getProduct').and.callThrough();
     spyOn(launchDialogService, 'openDialog').and.callThrough();
@@ -204,12 +220,22 @@ describe('PdpPickupOptionsComponent', () => {
       expect(component.openDialog).not.toHaveBeenCalled();
     });
 
-    it('should open dialog if displayName is not set on pickup option change', () => {
+    it('should open dialog if displayName is not set and a11yPickupOptionsTabs disabled', () => {
+      spyOn(featureConfigService, 'isEnabled').and.returnValue(false);
       spyOn(component, 'openDialog');
       component['displayNameIsSet'] = false;
       const option = 'pickup';
       component.onPickupOptionChange(option);
       expect(component.openDialog).toHaveBeenCalled();
+    });
+
+    it('should NOT open dialog if displayName is not set and a11yPickupOptionsTabs enabled', () => {
+      spyOn(featureConfigService, 'isEnabled').and.returnValue(true);
+      spyOn(component, 'openDialog');
+      component['displayNameIsSet'] = false;
+      const option = 'pickup';
+      component.onPickupOptionChange(option);
+      expect(component.openDialog).not.toHaveBeenCalled();
     });
   });
   describe('without current product', () => {

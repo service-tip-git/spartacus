@@ -157,6 +157,10 @@ $space: 0.5rem;
     .SiteLogin {
       background-color: var(--cx-color-light);
       color: var(--cx-color, var(--cx-color-text));
+
+      @include cx-highContrastTheme {
+        background-color: var(--cx-color-background);
+      }
     }
 
     .SiteContext {
@@ -203,6 +207,10 @@ $space: 0.5rem;
     .SiteLinks {
       justify-content: flex-end;
       color: var(--cx-color-primary);
+
+      @include forFeature('headerLayoutForSmallerViewports') {
+        flex-wrap: nowrap;
+      }
     }
 
     .SiteLogin {
@@ -214,5 +222,13 @@ $space: 0.5rem;
   .hamburger-inner::before,
   .hamburger-inner::after {
     background-color: var(--cx-color-primary);
+  }
+
+  @include cx-highContrastTheme {
+    background-image: linear-gradient(
+      var(--cx-color-background) $header-height,
+      var(--cx-color-background) 0
+    );
+    border-bottom: 1px solid var(--cx-color-dark);
   }
 }
