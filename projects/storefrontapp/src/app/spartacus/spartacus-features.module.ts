@@ -396,6 +396,7 @@ if (environment.cpq) {
         enableConsecutiveCharactersPasswordRequirement: true,
         enablePasswordsCannotMatchInPasswordUpdateForm: true,
         allPageMetaResolversEnabledInCsr: true,
+        sciEnabled: true,
         useExtendedMediaComponentConfiguration: true,
       };
       return appFeatureToggles;
