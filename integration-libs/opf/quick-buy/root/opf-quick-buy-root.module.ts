@@ -5,7 +5,12 @@
  */
 
 import { NgModule } from '@angular/core';
-import { CmsConfig, provideDefaultConfigFactory } from '@spartacus/core';
+import {
+  CmsConfig,
+  provideDefaultConfig,
+  provideDefaultConfigFactory,
+} from '@spartacus/core';
+import { defaultOpfQuickBuyConfig } from './config';
 import { OPF_QUICK_BUY_FEATURE } from './feature-name';
 
 export function defaultOpfQuickBuyCmsComponentsConfig(): CmsConfig {
@@ -22,6 +27,7 @@ export function defaultOpfQuickBuyCmsComponentsConfig(): CmsConfig {
 @NgModule({
   providers: [
     provideDefaultConfigFactory(defaultOpfQuickBuyCmsComponentsConfig),
+    provideDefaultConfig(defaultOpfQuickBuyConfig),
   ],
 })
 export class OpfQuickBuyRootModule {}

@@ -15,7 +15,7 @@ import {
   inject,
 } from '@angular/core';
 import { ActiveConfiguration } from '@spartacus/opf/base/root';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { OpfGooglePayService } from './google-pay.service';
 
 @Component({
@@ -31,17 +31,13 @@ export class OpfGooglePayComponent implements OnInit {
 
   @ViewChild('googlePayButtonContainer') googlePayButtonContainer: ElementRef;
 
-  protected isReadyToPayState: BehaviorSubject<boolean> = new BehaviorSubject(
-    false
-  );
-  isReadyToPayState$: Observable<boolean> =
-    this.isReadyToPayState.asObservable();
+  isReadyToPayState$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   ngOnInit(): void {
     this.opfGooglePayService.loadProviderResources().then(() => {
       this.opfGooglePayService.initClient(this.activeConfiguration);
       this.opfGooglePayService.isReadyToPay().then((response: any) => {
-        this.isReadyToPayState.next(!!response?.result);
+        this.isReadyToPayState$.next(!!response?.result);
         this.changeDetectionRef.detectChanges();
         if (response.result && this.googlePayButtonContainer) {
           this.opfGooglePayService.renderPaymentButton(
