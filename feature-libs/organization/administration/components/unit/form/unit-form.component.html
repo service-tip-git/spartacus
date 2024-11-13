@@ -1,9 +1,13 @@
 <cx-org-form [i18nRoot]="i18nRoot">
   <ng-container *ngIf="form" [formGroup]="form" main>
+    <p *cxFeature="'a11yRequiredAsterisks'" class="form-legend">
+      {{ 'formLegend.required' | cxTranslate }}
+    </p>
     <label>
-      <span class="label-content required">{{
-        'orgUnit.name' | cxTranslate
-      }}</span>
+      <span class="label-content required">
+        <span> {{ 'orgUnit.name' | cxTranslate }}</span>
+        <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
+      </span>
       <input
         type="text"
         class="form-control"
@@ -12,7 +16,6 @@
         formControlName="name"
         (blur)="createUidWithName(form.get('name'), form.get('uid'))"
       />
-
       <!-- TODO: (CXSPA-7315) Remove feature toggle in the next major -->
       <cx-form-errors
         *cxFeature="'formErrorsDescriptiveMessages'"
@@ -29,9 +32,10 @@
     </label>
 
     <label>
-      <span class="label-content required">{{
-        'orgUnit.uid' | cxTranslate
-      }}</span>
+      <span class="label-content required">
+        <span> {{ 'orgUnit.uid' | cxTranslate }}</span>
+        <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
+      </span>
       <input
         class="form-control"
         type="text"
@@ -102,9 +106,10 @@
     </label>
     <ng-container *ngIf="form.get('parentOrgUnit'); else parentOrgUnitNotes">
       <label formGroupName="parentOrgUnit">
-        <span class="label-content required">{{
-          'orgUnit.form.parentOrgUnit' | cxTranslate
-        }}</span>
+        <span class="label-content required">
+          {{ 'orgUnit.form.parentOrgUnit' | cxTranslate }}
+          <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
+        </span>
         <ng-select
           *cxFeature="'a11yApprovalProcessWithNoClearable'"
           [inputAttrs]="{ required: 'true' }"
@@ -155,3 +160,13 @@
     </ng-template>
   </ng-container>
 </cx-org-form>
+
+<ng-template #requiredAsterisk>
+  <abbr
+    *cxFeature="'a11yRequiredAsterisks'"
+    class="text-decoration-none"
+    aria-hidden="true"
+    title="{{ 'common.required' | cxTranslate }}"
+    >*</abbr
+  >
+</ng-template>
