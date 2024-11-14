@@ -11,7 +11,7 @@ import {
   OnInit,
   inject,
 } from '@angular/core';
-import { CmsPickupItemDetails, FeatureConfigService } from '@spartacus/core';
+import { CmsPickupItemDetails, FeatureConfigService, useFeatureStyles } from '@spartacus/core';
 import { DeliveryPointOfService } from '@spartacus/pickup-in-store/root';
 import {
   CmsComponentData,
@@ -46,7 +46,9 @@ export class PickUpItemsDetailsComponent implements OnInit {
     protected component: CmsComponentData<CmsPickupItemDetails>,
     protected deliveryPointsService: DeliveryPointsService,
     protected hierarchyService: HierarchyComponentService
-  ) {}
+  ) {
+    useFeatureStyles('a11yQTY2Quantity');
+  }
   ngOnInit() {
     if (this.featureConfig.isEnabled('enableBundles')) {
       // The user has enabled feature toggle "enableBundles"

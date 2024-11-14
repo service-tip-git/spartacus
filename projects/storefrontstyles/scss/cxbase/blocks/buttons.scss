@@ -1,3 +1,4 @@
+@import '../../theme';
 @import 'bootstrap/scss/buttons';
 
 button {
@@ -175,6 +176,7 @@ button {
     text-decoration: underline;
     cursor: pointer;
     display: inline-block;
+    border-style: none;
 
     &:focus {
       border-radius: 4px;

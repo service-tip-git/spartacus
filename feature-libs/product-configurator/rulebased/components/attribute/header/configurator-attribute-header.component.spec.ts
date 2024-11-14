@@ -115,7 +115,7 @@ describe('ConfigAttributeHeaderComponent', () => {
 
   let htmlElem: HTMLElement;
 
-  const TestConfiguratorUISettings: ConfiguratorUISettingsConfig = {
+  const testConfiguratorUISettings: ConfiguratorUISettingsConfig = {
     productConfigurator: {
       enableNavigationToConflict: false,
       descriptions: {
@@ -148,7 +148,7 @@ describe('ConfigAttributeHeaderComponent', () => {
         },
         {
           provide: ConfiguratorUISettingsConfig,
-          useValue: TestConfiguratorUISettings,
+          useValue: structuredClone(testConfiguratorUISettings),
         },
 
         {

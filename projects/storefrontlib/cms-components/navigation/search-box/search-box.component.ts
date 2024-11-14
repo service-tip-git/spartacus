@@ -25,6 +25,7 @@ import {
   PageType,
   RoutingService,
   WindowRef,
+  useFeatureStyles,
 } from '@spartacus/core';
 import { Observable, of, Subscription } from 'rxjs';
 import { filter, map, switchMap, tap } from 'rxjs/operators';
@@ -96,7 +97,7 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
     }
   }
 
-  @ViewChild('searchInput') searchInput: any;
+  @ViewChild('searchInput') searchInputEl: any;
 
   @ViewChild('searchButton') searchButton: ElementRef<HTMLElement>;
 
@@ -105,11 +106,11 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
     if (
       (this.featureConfigService?.isEnabled('a11ySearchBoxFocusOnEscape') &&
         this.winRef.document.activeElement !==
-          this.searchInput?.nativeElement) ||
+          this.searchInputEl?.nativeElement) ||
       this.searchBoxActive
     ) {
       setTimeout(() => {
-        this.searchInput.nativeElement.focus();
+        this.searchInputEl.nativeElement.focus();
       });
     }
   }
@@ -153,7 +154,9 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
     protected componentData: CmsComponentData<CmsSearchBoxComponent>,
     protected winRef: WindowRef,
     protected routingService: RoutingService
-  ) {}
+  ) {
+    useFeatureStyles('a11ySearchboxLabel');
+  }
 
   /**
    * Returns the SearchBox configuration. The configuration is driven by multiple
@@ -201,7 +204,7 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
             data.state.context?.type === PageType.CONTENT_PAGE
           )
         ) {
-          this.chosenWord = '';
+          this.updateChosenWord('');
         }
       });
 
@@ -257,7 +260,7 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
           true
         );
         this.searchBoxActive = true;
-        this.searchInput?.nativeElement.focus();
+        this.searchInputEl?.nativeElement.focus();
       }
     } else {
       this.searchBoxComponentService.toggleBodyClass(SEARCHBOX_IS_ACTIVE, true);
@@ -406,6 +409,9 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
 
   updateChosenWord(chosenWord: string): void {
     this.chosenWord = chosenWord;
+    if (this.searchInputEl) {
+      this.searchInputEl.nativeElement.value = this.chosenWord;
+    }
   }
 
   protected getFocusedIndex(): number {

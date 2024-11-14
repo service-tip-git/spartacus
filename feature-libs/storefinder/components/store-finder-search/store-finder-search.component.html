@@ -16,6 +16,7 @@
           [type]="iconTypes.SEARCH"
           role="button"
           [attr.aria-label]="'storeFinder.searchNearestStores' | cxTranslate"
+          [attr.title]="'storeFinder.searchNearestStores' | cxTranslate"
           class="search"
           (keyup)="onKey($event)"
           [routerLink]="['/store-finder/find']"
