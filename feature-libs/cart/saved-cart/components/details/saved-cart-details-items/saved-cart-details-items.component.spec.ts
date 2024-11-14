@@ -1,10 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
-import {
-  Cart,
-  OrderEntry,
-  OrderEntryGroup,
-} from '@spartacus/cart/base/root';
+import { Cart, OrderEntry, OrderEntryGroup } from '@spartacus/cart/base/root';
 import { SavedCartFacade } from '@spartacus/cart/saved-cart/root';
 import {
   EventService,
@@ -17,7 +13,11 @@ import {
   RoutingService,
   Translatable,
 } from '@spartacus/core';
-import { HierarchyComponentService, HierarchyNode, OutletModule } from '@spartacus/storefront';
+import {
+  HierarchyComponentService,
+  HierarchyNode,
+  OutletModule,
+} from '@spartacus/storefront';
 import { MockFeatureDirective } from 'projects/storefrontlib/shared/test/mock-feature-directive';
 import { BehaviorSubject, EMPTY, Observable, of } from 'rxjs';
 import { SavedCartDetailsService } from '../saved-cart-details.service';
@@ -104,7 +104,12 @@ describe('SavedCartDetailsItemsComponent', () => {
   );
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [StoreModule.forRoot({}), I18nTestingModule, OutletModule,FeaturesConfigModule],
+      imports: [
+        StoreModule.forRoot({}),
+        I18nTestingModule,
+        OutletModule,
+        FeaturesConfigModule,
+      ],
       declarations: [SavedCartDetailsItemsComponent, MockFeatureDirective],
       providers: [
         {

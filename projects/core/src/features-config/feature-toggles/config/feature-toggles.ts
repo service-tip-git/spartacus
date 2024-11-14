@@ -760,7 +760,6 @@ export interface FeatureTogglesInterface {
 
   useExtendedMediaComponentConfiguration?: boolean;
 
-
   /**
    * Creates a section element with applied aria-label in "Review Order" page of the checkout.
    * Moves components to be children of this section element.
@@ -770,7 +769,6 @@ export interface FeatureTogglesInterface {
    * Enables bunles feature, which allows to group products into bundles.
    */
   enableBundles?: boolean;
-
 }
 
 export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {

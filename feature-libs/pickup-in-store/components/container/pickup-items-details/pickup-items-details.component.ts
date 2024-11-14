@@ -11,7 +11,11 @@ import {
   OnInit,
   inject,
 } from '@angular/core';
-import { CmsPickupItemDetails, FeatureConfigService, useFeatureStyles } from '@spartacus/core';
+import {
+  CmsPickupItemDetails,
+  FeatureConfigService,
+  useFeatureStyles,
+} from '@spartacus/core';
 import { DeliveryPointOfService } from '@spartacus/pickup-in-store/root';
 import {
   CmsComponentData,
