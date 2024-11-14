@@ -4,7 +4,9 @@
   .cart-details-wrapper {
     padding: 2rem 0;
   }
-
+  .cart-bundle-details-wrapper {
+    padding: 2rem 0 0;
+  }
   .cx-promotions {
     @include type('7');
     color: var(--cx-color-success);
