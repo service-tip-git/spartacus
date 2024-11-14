@@ -27,6 +27,7 @@ export class CSAgentLoginFormComponent implements OnInit {
 
   constructor(protected fb: UntypedFormBuilder) {
     useFeatureStyles('a11yPasswordVisibilityBtnValueOverflow');
+    useFeatureStyles('a11yTextSpacingAdjustments');
   }
 
   ngOnInit(): void {
