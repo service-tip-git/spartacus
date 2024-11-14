@@ -1,4 +1,9 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  fakeAsync,
+  TestBed,
+  tick,
+} from '@angular/core/testing';
 import { ActiveCartFacade, Cart } from '@spartacus/cart/base/root';
 import { of } from 'rxjs';
 import createSpy = jasmine.createSpy;
@@ -69,7 +74,7 @@ describe('CheckoutReviewOverviewComponent', () => {
   });
 
   describe('wrapComponentsWithSectionEl', () => {
-    it('should render section wrapper', async () => {
+    it('should render section wrapper', fakeAsync(() => {
       spyOn(component['featureService'], 'isEnabled').and.returnValue(true);
       const els = [
         document.createElement('cx-checkout-review-payment'),
@@ -80,12 +85,12 @@ describe('CheckoutReviewOverviewComponent', () => {
       document.body?.append(els[1]);
       document.body?.append(els[2]);
       component.ngAfterViewInit();
-      await new Promise((resolve) => setTimeout(resolve));
+      tick(16); // Amount for requestAnimationFrame
       expect(
         document.querySelector(
           'section[aria-label="checkoutReview.reviewOrder"]'
         )
       ).toBeTruthy();
-    });
+    }));
   });
 });
