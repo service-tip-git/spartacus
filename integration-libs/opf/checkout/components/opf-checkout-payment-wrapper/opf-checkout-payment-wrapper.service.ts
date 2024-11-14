@@ -165,11 +165,7 @@ export class OpfCheckoutPaymentWrapperService {
       return;
     }
 
-    if (
-      config?.dynamicScript &&
-      (config?.pattern === OpfPaymentRenderPattern.HOSTED_FIELDS ||
-        config?.pattern === OpfPaymentRenderPattern.FULL_PAGE)
-    ) {
+    if (config?.dynamicScript) {
       const html = config?.dynamicScript?.html;
 
       this.opfResourceLoaderService

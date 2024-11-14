@@ -14,10 +14,13 @@
 <ng-template #paymentData let-paymentLink="paymentLink">
   <div>
     <div
-      *ngIf="paymentLink.renderType === RENDER_PATTERN.FULL_PAGE"
+      *ngIf="
+        paymentLink.renderType === RENDER_PATTERN.FULL_PAGE &&
+        paymentLink?.destination?.url
+      "
       class="cx-payment-link"
     >
-      <a class="btn btn-primary" [href]="paymentLink.data">{{
+      <a class="btn btn-primary" [href]="paymentLink.destination.url">{{
         'opfCheckout.proceedPayment' | cxTranslate
       }}</a>
     </div>
@@ -55,12 +58,7 @@
         />
       </form>
     </ng-container>
-    <ng-container
-      *ngIf="
-        paymentLink.data &&
-        paymentLink.renderType === RENDER_PATTERN.HOSTED_FIELDS
-      "
-    >
+    <ng-container *ngIf="paymentLink.data && !paymentLink?.destination?.url">
       <div [innerHTML]="renderHtml(paymentLink.data)"></div>
     </ng-container>
   </div>
