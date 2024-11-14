@@ -10,8 +10,10 @@ import {
   HostListener,
   OnDestroy,
   OnInit,
+  inject,
 } from '@angular/core';
 import { ActiveCartFacade } from '@spartacus/cart/base/root';
+import { useFeatureStyles, FeatureConfigService } from '@spartacus/core';
 import {
   AugmentedPointOfService,
   cartWithIdAndUserId,
@@ -47,18 +49,27 @@ export class PickupOptionDialogComponent implements OnInit, OnDestroy {
   cartId: string;
   userId: string;
 
-  readonly focusConfig: FocusConfig = {
-    trap: true,
-    block: true,
-    autofocus: 'input',
-    focusOnEscape: true,
-  };
-
   readonly ICON_TYPE = ICON_TYPE;
   /** The reason given closing the dialog window without selecting a location */
   readonly CLOSE_WITHOUT_SELECTION = 'CLOSE_WITHOUT_SELECTION';
   /** The reason given closing the dialog window after selecting a location */
   readonly LOCATION_SELECTED = 'LOCATION_SELECTED';
+
+  private featureConfigService = inject(FeatureConfigService);
+
+  get focusConfig(): FocusConfig {
+    const useTrapTab = this.featureConfigService.isEnabled(
+      'a11yUseTrapTabInsteadOfTrapInDialogs'
+    );
+
+    return {
+      trap: !useTrapTab,
+      trapTabOnly: useTrapTab,
+      block: true,
+      autofocus: 'input',
+      focusOnEscape: true,
+    };
+  }
 
   constructor(
     protected activeCartFacade: ActiveCartFacade,
@@ -69,6 +80,7 @@ export class PickupOptionDialogComponent implements OnInit, OnDestroy {
     protected pickupOptionFacade: PickupOptionFacade
   ) {
     // Intentional empty constructor
+    useFeatureStyles('a11yExpandedFocusIndicator');
   }
 
   @HostListener('click', ['$event'])
@@ -152,25 +164,27 @@ export class PickupOptionDialogComponent implements OnInit, OnDestroy {
   close(reason: string): void {
     this.launchDialogService.closeDialog(reason);
     if (reason === this.CLOSE_WITHOUT_SELECTION) {
-      this.intendedPickupLocationService
-        .getIntendedLocation(this.productCode)
-        .pipe(
-          filter(
-            (store: AugmentedPointOfService | undefined) =>
-              typeof store !== 'undefined'
-          ),
-          map((store) => store as AugmentedPointOfService),
-          filter((store) => !store.name),
-          take(1),
-          tap(() =>
-            this.intendedPickupLocationService.setPickupOption(
-              this.productCode,
-              'delivery'
+      if (!this.featureConfigService.isEnabled('a11yPickupOptionsTabs')) {
+        this.intendedPickupLocationService
+          .getIntendedLocation(this.productCode)
+          .pipe(
+            filter(
+              (store: AugmentedPointOfService | undefined) =>
+                typeof store !== 'undefined'
+            ),
+            map((store) => store as AugmentedPointOfService),
+            filter((store) => !store.name),
+            take(1),
+            tap(() =>
+              this.intendedPickupLocationService.setPickupOption(
+                this.productCode,
+                'delivery'
+              )
             )
           )
-        )
-        .subscribe();
-      this.pickupOptionFacade.setPickupOption(this.entryNumber, 'delivery');
+          .subscribe();
+        this.pickupOptionFacade.setPickupOption(this.entryNumber, 'delivery');
+      }
       return;
     }
     this.subscription.add(

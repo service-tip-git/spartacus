@@ -132,6 +132,9 @@
 
         &.cx-menu-conflict {
           background-color: mix(#ffffff, theme-color('warning'), 78%);
+          @include cx-highContrastTheme-dark {
+            color: var(--cx-color-light);
+          }
         }
       }
 
@@ -148,7 +151,6 @@
         text-decoration: none;
         color: var(--cx-color-text);
         border: none;
-        background-color: transparent;
         outline-offset: 0px;
         width: 100%;
 
@@ -209,6 +211,12 @@
           background-color: var(--cx-color-ghost);
         }
       }
+    }
+  }
+
+  @include cx-highContrastTheme {
+    .cx-group-menu {
+      background-color: var(--cx-color-background);
     }
   }
 }

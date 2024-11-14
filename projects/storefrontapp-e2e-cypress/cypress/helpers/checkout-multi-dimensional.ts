@@ -4,23 +4,23 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { assertAddressForm } from './address-book';
-import { login } from './auth-forms';
-import * as guestCheckout from './checkout-as-guest';
-import * as checkout from './checkout-flow';
-import { validateUpdateProfileForm } from './update-profile';
+import { getSampleUser } from '../sample-data/checkout-flow';
 import {
   cartWithMultipleVariantProducts,
   cartWithTotalVariantProduct,
   multiDBaseProduct,
   multiDProduct,
 } from '../sample-data/multi-dimensional-flow';
-import { getSampleUser } from '../sample-data/checkout-flow';
-import { searchForProduct } from './product-search';
+import { assertAddressForm } from './address-book';
 import { addProductToCart } from './applied-promotions';
+import { login } from './auth-forms';
+import * as guestCheckout from './checkout-as-guest';
+import * as checkout from './checkout-flow';
+import { searchForProduct } from './product-search';
+import { validateUpdateProfileForm } from './update-profile';
 
 export function testCheckoutMultiDAsGuest() {
-  it.skip('should perform checkout as guest, create an account and verify guest data', () => {
+  it('should perform checkout as guest, create an account and verify guest data', () => {
     const multiDUser = getSampleUser();
     checkout.visitHomePage();
     checkout.clickHamburger();
@@ -93,7 +93,7 @@ export function testCheckoutMultiDAsGuest() {
 }
 
 export function testCheckoutMultiDAsGuestAndVerifyCart() {
-  it.skip('should perform checkout as guest, create an account and verify guest data, and verify cart persists after registering', () => {
+  it('should perform checkout as guest, create an account and verify guest data, and verify cart persists after registering', () => {
     const multiDUser = getSampleUser();
 
     checkout.visitHomePage();
@@ -160,9 +160,19 @@ export function testCheckoutMultiDAsGuestAndVerifyCart() {
     cy.findByText(/Sign in \/ Register/i).click();
     cy.wait(`@${loginPage}`).its('response.statusCode').should('eq', 200);
 
+    cy.intercept(
+      'GET',
+      `${Cypress.env('OCC_PREFIX')}/${Cypress.env(
+        'BASE_SITE'
+      )}/users/current/carts?fields*`
+    ).as('carts');
+
     login(multiDUser.email, multiDUser.password);
 
     cy.get('cx-login div.cx-login-greet').should('exist');
+
+    cy.wait('@carts').its('response.statusCode').should('eq', 200);
+
     cy.get('cx-mini-cart .count').contains('1');
 
     const cartPage = checkout.waitForPage('/cart', 'getCartPage');
@@ -179,7 +189,7 @@ export function testCheckoutMultiDAsGuestAndVerifyCart() {
 }
 
 export function testCheckoutRegisteredUser() {
-  it.skip('should perform checkout with a registered user', () => {
+  it('should perform checkout with a registered user', () => {
     const regMultiDUser = getSampleUser();
     checkout.visitHomePage();
 
@@ -217,11 +227,14 @@ function selectVariantAndAddToCart(color: string = 'Blue') {
     .find(`img[title*="${color}"]`)
     .click();
 
-  cy.wait(2000);
+  cy.get('cx-product-multi-dimensional-selector')
+    .find(`button[aria-label*="Selected, ${color} Color"]`)
+    .should('be.visible');
 
   addProductToCart();
 
   cy.get('cx-added-to-cart-dialog.d-block.fade.modal.show')
+    .should('be.visible')
     .find('button.close[aria-label="Close Modal"]')
     .click();
 
@@ -233,7 +246,9 @@ export function selectVariant(color: string = 'Blue') {
     .find(`img[title*="${color}"]`)
     .click();
 
-  cy.wait(2000);
+  cy.get('cx-product-multi-dimensional-selector')
+    .find(`button[aria-label*="Selected, ${color} Color"]`)
+    .should('be.visible');
 }
 
 export function goToMultiDProductFromPLP() {
@@ -243,5 +258,5 @@ export function goToMultiDProductFromPLP() {
     .first()
     .click();
 
-  cy.wait(2000);
+  cy.get('cx-product-multi-dimensional-selector').should('be.visible');
 }

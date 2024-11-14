@@ -1,9 +1,13 @@
 <cx-org-form i18nRoot="orgPurchaseLimit">
   <ng-container *ngIf="form" [formGroup]="form" main>
+    <p *cxFeature="'a11yRequiredAsterisks'" class="form-legend">
+      {{ 'formLegend.required' | cxTranslate }}
+    </p>
     <label>
-      <span class="label-content required">{{
-        'orgPurchaseLimit.code' | cxTranslate
-      }}</span>
+      <span class="label-content required">
+        {{ 'orgPurchaseLimit.code' | cxTranslate }}
+        <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
+      </span>
       <input
         class="form-control"
         type="text"
@@ -52,7 +56,7 @@
       <cx-form-errors
         *cxFeature="'formErrorsDescriptiveMessages'"
         [translationParams]="{
-          label: 'orgPurchaseLimit.orderApprovalPermissionType' | cxTranslate
+          label: 'orgPurchaseLimit.orderApprovalPermissionType' | cxTranslate,
         }"
         [control]="form.get('orderApprovalPermissionType.code')"
       ></cx-form-errors>
@@ -82,7 +86,7 @@
       <cx-form-errors
         *cxFeature="'formErrorsDescriptiveMessages'"
         [translationParams]="{
-          label: 'orgPurchaseLimit.periodRange' | cxTranslate
+          label: 'orgPurchaseLimit.periodRange' | cxTranslate,
         }"
         [control]="form.get('periodRange')"
       ></cx-form-errors>
@@ -117,7 +121,7 @@
       <cx-form-errors
         *cxFeature="'formErrorsDescriptiveMessages'"
         [translationParams]="{
-          label: 'orgPurchaseLimit.currency' | cxTranslate
+          label: 'orgPurchaseLimit.currency' | cxTranslate,
         }"
         [control]="form.get('currency.isocode')"
       ></cx-form-errors>
@@ -144,7 +148,7 @@
       <cx-form-errors
         *cxFeature="'formErrorsDescriptiveMessages'"
         [translationParams]="{
-          label: 'orgPurchaseLimit.threshold' | cxTranslate
+          label: 'orgPurchaseLimit.threshold' | cxTranslate,
         }"
         [control]="form.get('threshold')"
       ></cx-form-errors>
@@ -156,9 +160,10 @@
     </label>
 
     <label [formGroup]="$any(form.get('orgUnit'))">
-      <span class="label-content required">{{
-        'orgPurchaseLimit.orgUnit' | cxTranslate
-      }}</span>
+      <span class="label-content required">
+        {{ 'orgPurchaseLimit.orgUnit' | cxTranslate }}
+        <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
+      </span>
       <ng-select
         [inputAttrs]="{ required: 'true' }"
         formControlName="uid"
@@ -177,7 +182,7 @@
       <cx-form-errors
         *cxFeature="'formErrorsDescriptiveMessages'"
         [translationParams]="{
-          label: 'orgPurchaseLimit.orgUnit' | cxTranslate
+          label: 'orgPurchaseLimit.orgUnit' | cxTranslate,
         }"
         [control]="form.get('orgUnit.uid')"
       ></cx-form-errors>
@@ -189,3 +194,13 @@
     </label>
   </ng-container>
 </cx-org-form>
+
+<ng-template #requiredAsterisk>
+  <abbr
+    *cxFeature="'a11yRequiredAsterisks'"
+    class="text-decoration-none"
+    aria-hidden="true"
+    title="{{ 'common.required' | cxTranslate }}"
+    >*</abbr
+  >
+</ng-template>

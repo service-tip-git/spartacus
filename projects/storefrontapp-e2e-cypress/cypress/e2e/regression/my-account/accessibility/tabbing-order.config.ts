@@ -5,8 +5,8 @@
  */
 
 import {
-  TabbingOrderTypes,
   TabbingOrderConfig,
+  TabbingOrderTypes,
 } from '../../../../helpers/accessibility/tabbing-order.model';
 
 export const tabbingOrderConfig: TabbingOrderConfig = {

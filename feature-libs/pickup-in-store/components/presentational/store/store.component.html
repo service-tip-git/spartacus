@@ -7,6 +7,7 @@
         <div>
           <button
             (click)="toggleOpenHours()"
+            [attr.aria-expanded]="openHoursOpen"
             class="cx-store-opening-hours-toggle"
           >
             {{ 'store.viewHours' | cxTranslate }}
@@ -24,7 +25,7 @@
         <cx-set-preferred-store
           [pointOfServiceName]="{
             name: storeDetails?.name,
-            displayName: storeDetails?.displayName
+            displayName: storeDetails?.displayName,
           }"
         ></cx-set-preferred-store>
       </div>
@@ -42,7 +43,7 @@
         class="cx-stock-level"
         [ngClass]="{
           'cx-store-in-stock': isInStock,
-          'cx-store-out-of-stock': !isInStock
+          'cx-store-out-of-stock': !isInStock,
         }"
       >
         {{
@@ -50,7 +51,7 @@
             | cxTranslate
               : {
                   context: isInStock ? 'inStock' : 'outOfStock',
-                  count: storeDetails?.stockInfo?.stockLevel
+                  count: storeDetails?.stockInfo?.stockLevel,
                 }
         }}</span
       >

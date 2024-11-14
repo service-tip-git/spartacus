@@ -9,10 +9,14 @@
     "modalHeader": "Pickup in Store"
   },
   "pickupOptions": {
+    "legend": "Delivery Method",
     "changeStore": "Change Store",
     "delivery": "Ship It (Free Return)",
     "pickup": "Free Pickup In Store",
-    "selectStore": "Select Store"
+    "shipIt": "Ship It",
+    "selectStore": "Select Store",
+    "freeReturn": "Free Return",
+    "storeIsNotSelected": "Store for pickup is not selected."
   },
   "setPreferredStore": {
     "makeThisMyStore": "Make This My Store",
@@ -35,7 +39,7 @@
     "findAStore": "Find a Store",
     "findStores": "Find Stores",
     "hideOutOfStockOptions": "Hide out of stock options",
-    "searchPlaceholder": "Enter Zip Code, Town or Address",
+    "searchPlaceholder": "Enter Zip Code or Town or Address",
     "useMyLocation": "Use my location"
   },
   "addressBookPickupInStore": {

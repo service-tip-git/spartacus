@@ -56,6 +56,7 @@ import {
   ScrollToTopModule,
   SearchBoxModule,
   SiteContextSelectorModule,
+  SiteThemeSwitcherModule,
   StockNotificationModule,
   TabParagraphContainerModule,
   USE_MY_ACCOUNT_V2_CONSENT,
@@ -78,6 +79,7 @@ import { CustomerTicketingFeatureModule } from './features/customer-ticketing/cu
 import { DigitalPaymentsFeatureModule } from './features/digital-payments/digital-payments-feature.module';
 import { EpdVisualizationFeatureModule } from './features/epd-visualization/epd-visualization-feature.module';
 import { EstimatedDeliveryDateFeatureModule } from './features/estimated-delivery-date/estimated-delivery-date-feature.module';
+import { OmfFeatureModule } from './features/omf/omf-feature.module';
 import { OppsFeatureModule } from './features/opps/opps-feature.module';
 import { OrderFeatureModule } from './features/order/order-feature.module';
 import { AccountSummaryFeatureModule } from './features/organization/organization-account-summary-feature.module';
@@ -88,6 +90,8 @@ import { PDFInvoicesFeatureModule } from './features/pdf-invoices/pdf-invoices-f
 import { PickupInStoreFeatureModule } from './features/pickup-in-store/pickup-in-store-feature.module';
 import { ProductConfiguratorRulebasedFeatureModule } from './features/product-configurator/product-configurator-rulebased-feature.module';
 import { ProductConfiguratorTextfieldFeatureModule } from './features/product-configurator/product-configurator-textfield-feature.module';
+import { ProductMultiDimensionalListFeatureModule } from './features/product-multi-dimensional/product-multi-dimensional-list-feature.module';
+import { ProductMultiDimensionalSelectorFeatureModule } from './features/product-multi-dimensional/product-multi-dimensional-selector-feature.module';
 import { BulkPricingFeatureModule } from './features/product/product-bulk-pricing-feature.module';
 import { FutureStockFeatureModule } from './features/product/product-future-stock-feature.module';
 import { ImageZoomFeatureModule } from './features/product/product-image-zoom-feature.module';
@@ -103,9 +107,6 @@ import { SmartEditFeatureModule } from './features/smartedit/smartedit-feature.m
 import { StorefinderFeatureModule } from './features/storefinder/storefinder-feature.module';
 import { TrackingFeatureModule } from './features/tracking/tracking-feature.module';
 import { UserFeatureModule } from './features/user/user-feature.module';
-import { OmfFeatureModule } from './features/omf/omf-feature.module';
-import { ProductMultiDimensionalSelectorFeatureModule } from './features/product-multi-dimensional/product-multi-dimensional-selector-feature.module';
-import { ProductMultiDimensionalListFeatureModule } from './features/product-multi-dimensional/product-multi-dimensional-list-feature.module';
 
 const featureModules = [];
 
@@ -185,6 +186,7 @@ if (environment.cpq) {
     PDFModule,
     ScrollToTopModule,
     VideoModule,
+    SiteThemeSwitcherModule,
 
     // User Core
     UserModule,
@@ -280,7 +282,6 @@ if (environment.cpq) {
       provide: USE_MY_ACCOUNT_V2_NOTIFICATION_PREFERENCE,
       useValue: environment.myAccountV2,
     },
-    // CXSPA-6793: refactor to`provideFeatureToggles` and `satisfies` keyword
     provideFeatureTogglesFactory(() => {
       const appFeatureToggles: Required<FeatureToggles> = {
         showDeliveryOptionsTranslation: true,
@@ -292,11 +293,15 @@ if (environment.cpq) {
         showBillingAddressInDigitalPayments: false,
         showDownloadProposalButton: false,
         showPromotionsInPDP: false,
-        recentSearches: false,
-        pdfInvoicesSortByInvoiceDate: false,
+        searchBoxV2: false,
+        recentSearches: true,
+        trendingSearches: false,
+        pdfInvoicesSortByInvoiceDate: true,
         storeFrontLibCardParagraphTruncated: true,
-        useProductCarouselBatchApi: false, //TODO: CXSPA-8162
+        useProductCarouselBatchApi: true,
         productConfiguratorAttributeTypesV2: true,
+        propagateErrorsToServer: true,
+        ssrStrictErrorHandlingForHttpAndNgrx: true,
         productConfiguratorDeltaRendering: true,
         a11yRequiredAsterisks: true,
         a11yQuantityOrderTabbing: true,
@@ -305,6 +310,7 @@ if (environment.cpq) {
         a11yOrderConfirmationHeadingOrder: true,
         a11yStarRating: true,
         a11yViewChangeAssistiveMessage: true,
+        a11yPreventHorizontalScroll: true,
         a11yReorderDialog: true,
         a11yPopoverFocus: true,
         a11yScheduleReplenishment: true,
@@ -316,16 +322,21 @@ if (environment.cpq) {
         a11yMobileVisibleFocus: true,
         a11yOrganizationsBanner: true,
         a11yOrganizationListHeadingOrder: true,
+        a11yCartImportConfirmationMessage: true,
         a11yReplenishmentOrderFieldset: true,
         a11yListOversizedFocus: true,
         a11yStoreFinderOverflow: true,
+        a11yMobileFocusOnFirstNavigationItem: true,
         a11yCartSummaryHeadingOrder: true,
         a11ySearchBoxMobileFocus: true,
         a11yFacetKeyboardNavigation: true,
         a11yUnitsListKeyboardControls: true,
+        a11ySearchboxLabel: true,
         a11yCartItemsLinksStyles: true,
         a11yHideSelectBtnForSelectedAddrOrPayment: true,
+        a11ySelectLabelWithContextForSelectedAddrOrPayment: true,
         a11yFocusableCarouselControls: true,
+        a11yUseTrapTabInsteadOfTrapInDialogs: true,
         cmsGuardsServiceUseGuardsComposer: true,
         cartQuickOrderRemoveListeningToFailEvent: true,
         a11yKeyboardAccessibleZoom: true,
@@ -342,10 +353,14 @@ if (environment.cpq) {
         a11yEmptyWishlistHeading: true,
         a11yScreenReaderBloatFix: true,
         a11yUseButtonsForBtnLinks: true,
+        a11yTabComponent: false,
+        a11yCarouselArrowKeysNavigation: true,
+        a11yPickupOptionsTabs: true,
         a11yNotificationsOnConsentChange: true,
         a11yDisabledCouponAndQuickOrderActionButtonsInsteadOfRequiredFields:
           true,
         a11yFacetsDialogFocusHandling: true,
+        headerLayoutForSmallerViewports: true,
         a11yStoreFinderAlerts: true,
         a11yFormErrorMuteIcon: true,
         a11yCxMessageFocus: true,
@@ -354,10 +369,37 @@ if (environment.cpq) {
         a11yRepeatedPageTitleFix: true,
         a11yDeliveryModeRadiogroup: true,
         a11yNgSelectOptionsCount: true,
+        a11yNgSelectCloseDropdownOnEscape: true,
         a11yRepeatedCancelOrderError: true,
         a11yAddedToCartActiveDialog: true,
         a11yNgSelectMobileReadout: true,
+        a11yDeliveryMethodFieldset: true,
+        a11yShowMoreReviewsBtnFocus: true,
+        a11yQuickOrderAriaControls: true,
+        a11yRemoveStatusLoadedRole: true,
+        a11yDialogsHeading: true,
+        a11yDialogTriggerRefocus: true,
+        a11yAddToWishlistFocus: true,
+        a11ySearchBoxFocusOnEscape: true,
+        a11yUpdatingCartNoNarration: true,
+        a11yPasswordVisibilityBtnValueOverflow: true,
+        a11yItemCounterFocus: true,
+        a11yScrollToReviewByShowReview: true,
+        a11yViewHoursButtonIconContrast: true,
+        a11yCheckoutStepsLandmarks: true,
+        a11yQTY2Quantity: true,
+        a11yApprovalProcessWithNoClearable: true,
+        a11yPostRegisterSuccessMessage: true,
+        a11yDeleteButton2First: true,
+        a11yTextSpacingAdjustments: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
+        useSiteThemeService: false,
+        enableConsecutiveCharactersPasswordRequirement: true,
+        enablePasswordsCannotMatchInPasswordUpdateForm: true,
+        allPageMetaResolversEnabledInCsr: true,
+        sciEnabled: true,
+        useExtendedMediaComponentConfiguration: true,
+        a11yWrapReviewOrderInSection: true,
       };
       return appFeatureToggles;
     }),

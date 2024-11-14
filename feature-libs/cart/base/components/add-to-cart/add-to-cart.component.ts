@@ -9,11 +9,13 @@ import {
   ChangeDetectorRef,
   Component,
   ComponentRef,
+  ElementRef,
   HostListener,
   Input,
   OnDestroy,
   OnInit,
   Optional,
+  ViewChild,
   inject,
 } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
@@ -29,6 +31,7 @@ import {
   FeatureConfigService,
   Product,
   isNotNullable,
+  useFeatureStyles,
 } from '@spartacus/core';
 import {
   CmsComponentData,
@@ -55,8 +58,13 @@ export class AddToCartComponent implements OnInit, OnDestroy {
    */
   @Input() product: Product;
 
-  maxQuantity: number;
+  /**
+   * Element responsible for opening the modal. The reference is used to refocus the modal after it closes.
+   */
+  @ViewChild('addToCartDialogTriggerEl') addToCartDialogTriggerEl: ElementRef;
 
+  maxQuantity: number;
+  disabled: boolean = false;
   hasStock: boolean = false;
   inventoryThreshold: boolean = false;
 
@@ -65,7 +73,7 @@ export class AddToCartComponent implements OnInit, OnDestroy {
 
   quantity = 1;
 
-  subscription: Subscription;
+  subscription = new Subscription();
 
   addToCartForm = new UntypedFormGroup({
     quantity: new UntypedFormControl(1, { updateOn: 'blur' }),
@@ -77,9 +85,7 @@ export class AddToCartComponent implements OnInit, OnDestroy {
 
   iconTypes = ICON_TYPE;
 
-  @Optional() featureConfigService = inject(FeatureConfigService, {
-    optional: true,
-  });
+  private featureConfigService = inject(FeatureConfigService);
 
   /**
    * We disable the dialog launch on quantity input,
@@ -107,7 +113,9 @@ export class AddToCartComponent implements OnInit, OnDestroy {
     protected component: CmsComponentData<CmsAddToCartComponent>,
     protected eventService: EventService,
     @Optional() protected productListItemContext?: ProductListItemContext
-  ) {}
+  ) {
+    useFeatureStyles('a11yQTY2Quantity');
+  }
 
   ngOnInit() {
     if (this.product) {
@@ -120,17 +128,18 @@ export class AddToCartComponent implements OnInit, OnDestroy {
       this.hasStock = true;
       this.cd.markForCheck();
     } else {
-      this.subscription = (
-        this.productListItemContext
+      this.subscription.add(
+        (this.productListItemContext
           ? this.productListItemContext.product$
           : this.currentProductService.getProduct()
-      )
-        .pipe(filter(isNotNullable))
-        .subscribe((product) => {
-          this.productCode = product.code ?? '';
-          this.setStockInfo(product);
-          this.cd.markForCheck();
-        });
+        )
+          .pipe(filter(isNotNullable))
+          .subscribe((product) => {
+            this.productCode = product.code ?? '';
+            this.setStockInfo(product);
+            this.cd.markForCheck();
+          })
+      );
     }
   }
 
@@ -228,12 +237,31 @@ export class AddToCartComponent implements OnInit, OnDestroy {
     newEvent.quantity = quantity;
     newEvent.numberOfEntriesBeforeAdd = numberOfEntriesBeforeAdd;
     newEvent.pickupStoreName = storeName;
+    if (this.featureConfigService.isEnabled('a11yDialogTriggerRefocus')) {
+      newEvent.triggerElementRef = this.addToCartDialogTriggerEl;
+    }
     return newEvent;
   }
 
-  ngOnDestroy() {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
+  onPickupOptionsCompLoaded() {
+    if (this.featureConfigService.isEnabled('a11yPickupOptionsTabs')) {
+      this.subscription.add(
+        this.pickupOptionCompRef.instance.intendedPickupChange.subscribe(
+          (
+            intendedPickupLocation:
+              | { pickupOption?: 'pickup' | 'delivery'; displayName?: string }
+              | undefined
+          ) => {
+            this.disabled =
+              intendedPickupLocation?.pickupOption === 'pickup' &&
+              !intendedPickupLocation.displayName;
+          }
+        )
+      );
     }
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

@@ -261,9 +261,9 @@ describe('ConfigOverviewNotificationBannerComponent', () => {
   });
 
   it('should count zero issues in case detailed issue numbers are available with only conflicts', () => {
-    let config: Configurator.Configuration = {
-      ...productConfigurationWithDetailedIssuesCountedInOverview,
-    };
+    const config: Configurator.Configuration = structuredClone(
+      productConfigurationWithDetailedIssuesCountedInOverview
+    );
     if (config.overview) {
       config.overview.numberOfIncompleteCharacteristics = 0;
     }

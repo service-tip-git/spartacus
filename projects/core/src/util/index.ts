@@ -21,5 +21,7 @@ export * from './script-loader.service';
 export * from './ssr.tokens';
 export * from './testing-time-utils';
 export * from './time-utils';
+export * from './try-normalize-http-error';
 export * from './type-guards';
 export * from './type-utils';
+export * from './is-key-invalid';

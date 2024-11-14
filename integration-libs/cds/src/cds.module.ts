@@ -5,8 +5,16 @@
  */
 
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { provideConfigValidator, provideDefaultConfig } from '@spartacus/core';
-import { CdsConfig, cdsConfigValidator, DEFAULT_CDS_CONFIG } from './config';
+import {
+  provideConfigValidator,
+  provideDefaultConfig,
+  provideDefaultConfigFactory,
+} from '@spartacus/core';
+import {
+  CdsConfig,
+  cdsConfigValidator,
+  defaultCdsConfigFactory,
+} from './config';
 import { MerchandisingModule } from './merchandising';
 import {
   ProfileTagModule,
@@ -14,6 +22,7 @@ import {
   TrackingModule,
 } from './profiletag';
 import { RecentSearchesModule } from './recent-searches/recent-searches.module';
+import { TrendingSearchesModule } from './trending-searches/trending-searches.module';
 
 @NgModule({
   imports: [
@@ -21,6 +30,7 @@ import { RecentSearchesModule } from './recent-searches/recent-searches.module';
     TrackingModule,
     MerchandisingModule,
     RecentSearchesModule,
+    TrendingSearchesModule,
   ],
 })
 export class CdsModule {
@@ -28,7 +38,7 @@ export class CdsModule {
     return {
       ngModule: CdsModule,
       providers: [
-        provideDefaultConfig(DEFAULT_CDS_CONFIG),
+        provideDefaultConfigFactory(defaultCdsConfigFactory),
         provideDefaultConfig(config),
         provideConfigValidator(cdsConfigValidator),
         ProfileTagPushEventsService,

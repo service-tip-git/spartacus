@@ -3,11 +3,26 @@
   [formGroup]="form"
   (submit)="formSubmitSubject$.next(undefined)"
 >
+  <ng-container *cxFeature="'a11yCartImportConfirmationMessage'">
+    <div aria-live="assertive" aria-atomic="true">
+      <cx-message
+        *ngIf="form.get('file')?.value && form.get('file')?.valid"
+        [text]="'importEntriesDialog.selectedSuccessfully' | cxTranslate"
+        [type]="globalMessageType.MSG_TYPE_CONFIRMATION"
+        [isVisibleCloseButton]="false"
+        [cxFocus]="{ autofocus: '.cx-message' }"
+      ></cx-message>
+    </div>
+  </ng-container>
+  <p *cxFeature="'a11yRequiredAsterisks'" class="form-legend">
+    {{ 'formLegend.required' | cxTranslate }}
+  </p>
   <p class="cx-import-entries-subtitle">
     {{ 'importEntriesDialog.importProductsNewSavedCartSubtitle' | cxTranslate }}
   </p>
   <p>
     {{ 'importEntriesDialog.importProductFileDetails' | cxTranslate }}
+    <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
   </p>
   <label>
     <cx-file-upload
@@ -26,6 +41,7 @@
     <label>
       <span class="cx-import-entries-label label-content">
         {{ 'importEntriesDialog.savedCartName' | cxTranslate }}
+        <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
       </span>
       <input
         [maxLength]="nameMaxLength"
@@ -79,3 +95,13 @@
     </button>
   </div>
 </form>
+
+<ng-template #requiredAsterisk>
+  <abbr
+    *cxFeature="'a11yRequiredAsterisks'"
+    class="text-decoration-none"
+    aria-hidden="true"
+    title="{{ 'common.required' | cxTranslate }}"
+    >*</abbr
+  >
+</ng-template>

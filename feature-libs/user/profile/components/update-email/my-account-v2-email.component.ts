@@ -11,8 +11,8 @@ import {
   inject,
 } from '@angular/core';
 import { UntypedFormGroup } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { GlobalMessageType, User } from '@spartacus/core';
+import { Observable } from 'rxjs';
 
 import { UserProfileFacade } from '@spartacus/user/profile/root';
 import { filter } from 'rxjs/operators';

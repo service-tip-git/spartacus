@@ -12,14 +12,34 @@ context('Product details', { testIsolation: false }, () => {
   isolateTests();
   describe('Electronics', () => {
     before(productDetails.configureDefaultProduct);
+    beforeEach(() => {
+      cy.cxConfig({
+        // TODO: No longer needed to toggle a11yTabComponent feature when set to true
+        // by default.
+        features: {
+          a11yTabComponent: true,
+        },
+      });
+    });
 
     productDetails.productDetailsTest();
+    productDetails.verifyTabKeyboardNavigation();
   });
 
   describe('Apparel', () => {
     before(productDetails.configureApparelProduct);
+    beforeEach(() => {
+      cy.cxConfig({
+        // TODO: No longer needed to toggle a11yTabComponent feature when set to true
+        // by default.
+        features: {
+          a11yTabComponent: true,
+        },
+      });
+    });
 
     productDetails.apparelProductDetailsTest();
+    productDetails.verifyTabKeyboardNavigation();
   });
 });
 
@@ -38,14 +58,34 @@ context(
 
     describe('Electronics', () => {
       before(productDetails.configureDefaultProduct);
+      beforeEach(() => {
+        cy.cxConfig({
+          // TODO: No longer needed to toggle a11yTabComponent feature when set to true
+          // by default.
+          features: {
+            a11yTabComponent: true,
+          },
+        });
+      });
 
       productDetails.productDetailsTest();
+      productDetails.verifyTabKeyboardNavigation(true);
     });
 
     describe('Apparel', () => {
       before(productDetails.configureApparelProduct);
+      beforeEach(() => {
+        cy.cxConfig({
+          // TODO: No longer needed to toggle a11yTabComponent feature when set to true
+          // by default.
+          features: {
+            a11yTabComponent: true,
+          },
+        });
+      });
 
       productDetails.apparelProductDetailsTest();
+      productDetails.verifyTabKeyboardNavigation(true);
     });
   }
 );

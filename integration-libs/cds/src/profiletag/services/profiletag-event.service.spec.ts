@@ -18,12 +18,15 @@ const mockCDSConfig: CdsConfig = {
     baseUrl: 'example.com',
     endpoints: {
       strategyProducts: 'example',
+      searchIntelligence:
+        '/search-intelligence/v1/sites/${cdsSiteId}/trendingSearches',
     },
     profileTag: {
       javascriptUrl: 'https:tag.static.eu.context.cloud.sap',
       configUrl: 'https:tag.static.us.context.cloud.sap',
       allowInsecureCookies: false,
       gtmId: 'test-id-1234567',
+      sciEnabled: false,
     },
   },
 };
