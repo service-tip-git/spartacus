@@ -883,7 +883,7 @@
   }
 
   @include cx-highContrastTheme {
-    border: 1px solid var(--cx-color-dark);
+    border: 1px solid var(--cx-color-background);
     label {
       background-color: var(--cx-color-background);
       input {
@@ -912,6 +912,18 @@
     .products {
       background-color: var(--cx-color-background);
       color: var(--cx-color-text);
+    }
+
+    label.cxFeat_a11ySearchboxLabel {
+      .cx-label-inner-container {
+        background-color: var(--cx-color-background);
+        border: 1px solid var(--cx-color-text);
+      }
+    }
+
+    // native high contrast themes fix
+    @media (forced-colors: active) {
+      border-color: Canvas;
     }
   }
 }

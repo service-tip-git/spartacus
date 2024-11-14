@@ -653,6 +653,11 @@ export interface FeatureTogglesInterface {
   a11yQTY2Quantity?: boolean;
 
   /**
+   * In `UnitFormComponent`, set 'clearable' as false for select of `ApprovalProcess`.
+   */
+  a11yApprovalProcessWithNoClearable?: boolean;
+
+  /**
    * Changes the success message of successful registration to be more informative. Affects `RegisterComponentService`.
    */
   a11yPostRegisterSuccessMessage?: boolean;
@@ -661,6 +666,12 @@ export interface FeatureTogglesInterface {
    * In `CardComponent`, place `Delete` button before `Cancel` button.
    */
   a11yDeleteButton2First?: boolean;
+
+  /**
+   * Fixes text formatting issues while a11y text spacing is enabled.
+   * Affects: ListComponent, CSAgentLoginFormComponent
+   */
+  a11yTextSpacingAdjustments?: boolean;
 
   /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
@@ -714,6 +725,12 @@ export interface FeatureTogglesInterface {
   allPageMetaResolversEnabledInCsr?: boolean;
 
   /**
+   * CDS/ISS is integrated into the SAP Cloud Identity Service (SCI). The downstream services use different domains and URL formats.
+   * This feature toggle can be used to make the CDS module use these new URLs.
+   */
+  sciEnabled?: boolean;
+
+  /**
    * When enabled, allows to provide extended formats and media queries for <picture> element if used in MediaComponent.
    *
    * Important: After activation default HTML element in MediaComponent will be `<img>`
@@ -743,10 +760,18 @@ export interface FeatureTogglesInterface {
 
   useExtendedMediaComponentConfiguration?: boolean;
 
+
+  /**
+   * Creates a section element with applied aria-label in "Review Order" page of the checkout.
+   * Moves components to be children of this section element.
+   */
+  a11yWrapReviewOrderInSection?: boolean;
+  
   /**
    * Enables bunles feature, which allows to group products into bundles.
    */
   enableBundles?: boolean;
+
 }
 
 export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
@@ -852,14 +877,18 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yViewHoursButtonIconContrast: false,
   a11yCheckoutStepsLandmarks: false,
   a11yQTY2Quantity: false,
+  a11yWrapReviewOrderInSection: false,
+  a11yApprovalProcessWithNoClearable: false,
   a11yPostRegisterSuccessMessage: false,
   a11yDeleteButton2First: false,
+  a11yTextSpacingAdjustments: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
   enableConsecutiveCharactersPasswordRequirement: false,
   enablePasswordsCannotMatchInPasswordUpdateForm: false,
   allPageMetaResolversEnabledInCsr: false,
+  sciEnabled: false,
   useExtendedMediaComponentConfiguration: false,
   enableBundles: false,
 };
