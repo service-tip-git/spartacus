@@ -68,6 +68,7 @@
         [tabindex]="getTabIndex(node, depth)"
         (focus)="depth || reinitializeMenu()"
         (keydown.space)="toggleOpen($any($event))"
+        (keydown.esc)="back()"
       >
         {{ node.title }}
       </cx-generic-link>

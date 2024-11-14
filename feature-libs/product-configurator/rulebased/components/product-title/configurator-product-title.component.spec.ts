@@ -63,11 +63,12 @@ let mockConfiguration: Configurator.Configuration = {
 };
 
 const mockOwner = mockProductConfiguration.owner;
-const mockRouterData: ConfiguratorRouter.Data = {
+const baseMockRouterData: ConfiguratorRouter.Data = {
   pageType: ConfiguratorRouter.PageType.CONFIGURATION,
   isOwnerCartEntry: false,
   owner: mockOwner,
 };
+let mockRouterData: ConfiguratorRouter.Data;
 
 const imageURL = 'some URL';
 const altText = 'some text';
@@ -359,6 +360,7 @@ describe('ConfigProductTitleComponent', () => {
   }));
 
   beforeEach(() => {
+    mockRouterData = structuredClone(baseMockRouterData);
     initialize();
 
     configExpertModeService = TestBed.inject(ConfiguratorExpertModeService);

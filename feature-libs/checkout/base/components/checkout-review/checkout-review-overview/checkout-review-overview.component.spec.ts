@@ -67,4 +67,25 @@ describe('CheckoutReviewOverviewComponent', () => {
       expect(getCartTotalText()).toContain('$999.98');
     });
   });
+
+  describe('wrapComponentsWithSectionEl', () => {
+    it('should render section wrapper', async () => {
+      spyOn(component['featureService'], 'isEnabled').and.returnValue(true);
+      const els = [
+        document.createElement('cx-checkout-review-payment'),
+        document.createElement('cx-checkout-review-overview'),
+        document.createElement('cx-checkout-review-shipping'),
+      ];
+      document.body?.append(els[0]);
+      document.body?.append(els[1]);
+      document.body?.append(els[2]);
+      component.ngAfterViewInit();
+      await new Promise((resolve) => setTimeout(resolve));
+      expect(
+        document.querySelector(
+          'section[aria-label="checkoutReview.reviewOrder"]'
+        )
+      ).toBeTruthy();
+    });
+  });
 });

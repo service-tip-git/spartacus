@@ -18,6 +18,7 @@
               displayCloseButton: true,
             }"
             [attr.aria-label]="'organization.information' | cxTranslate"
+            [attr.title]="'organization.information' | cxTranslate"
           >
             <cx-icon [type]="iconTypes.INFO"> </cx-icon>
           </button>
@@ -42,6 +43,7 @@
       <cx-icon
         *ngIf="previous === true; else prevLabel"
         type="CLOSE"
+        title="{{ 'common.close' | cxTranslate }}"
         (click)="closeView($event)"
       ></cx-icon>
       <ng-template #prevLabel>{{ previousLabel | cxTranslate }}</ng-template>
