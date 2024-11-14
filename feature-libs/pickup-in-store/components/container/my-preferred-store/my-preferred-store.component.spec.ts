@@ -85,12 +85,14 @@ describe('MyPreferredStoreComponent', () => {
         { provide: StoreFinderFacade, useClass: MockStoreFinderService },
         { provide: CmsService, useClass: MockCmsService },
       ],
-    }).overrideModule(FeaturesConfigModule, {
-      set: {
-        declarations: [MockFeatureDirective],
-        exports: [MockFeatureDirective],
-      },
-    }).compileComponents();
+    })
+      .overrideModule(FeaturesConfigModule, {
+        set: {
+          declarations: [MockFeatureDirective],
+          exports: [MockFeatureDirective],
+        },
+      })
+      .compileComponents();
     routingService = TestBed.inject(RoutingService);
   });
 
