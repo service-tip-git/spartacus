@@ -766,7 +766,6 @@ export interface FeatureTogglesInterface {
    * Moves components to be children of this section element.
    */
   a11yWrapReviewOrderInSection?: boolean;
-  
   /**
    * Enables bunles feature, which allows to group products into bundles.
    */
