@@ -407,10 +407,8 @@
       (sortListEvent)="changeSortCode($event)"
       [selectedOption]="sortCode"
       placeholder="{{ 'asm.customerList.tableSort.sortBy' | cxTranslate }}"
-      [cxNgSelectA11y]="{
-        ariaLabel: sortCode,
-        ariaControls: 'asm-cusomer-list-table',
-      }"
+      [ariaLabel]="sortCode"
+      ariaControls="asm-cusomer-list-table"
     ></cx-sorting>
   </label>
 </ng-template>
