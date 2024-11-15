@@ -1,20 +1,22 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { CancelServiceOrderComponent } from './cancel-service-order.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { RouterTestingModule } from '@angular/router/testing';
-import { I18nTestingModule } from '@spartacus/core';
-import { of, throwError } from 'rxjs';
-import { By } from '@angular/platform-browser';
-import { provideHttpClientTesting } from '@angular/common/http/testing';
-import { OrderDetailsService } from '@spartacus/order/components';
-import { CancelServiceOrderFacade } from '@spartacus/s4-service/root';
-import { GlobalMessageService, GlobalMessageType } from '@spartacus/core';
-import { RoutingService } from '@spartacus/core';
-import { Pipe, PipeTransform } from '@angular/core';
 import {
   provideHttpClient,
   withInterceptorsFromDi,
 } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { Pipe, PipeTransform } from '@angular/core';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser';
+import {
+  GlobalMessageService,
+  GlobalMessageType,
+  I18nTestingModule,
+  RoutingService,
+} from '@spartacus/core';
+import { OrderDetailsService } from '@spartacus/order/components';
+import { CancelServiceOrderFacade } from '@spartacus/s4-service/root';
+import { of, throwError } from 'rxjs';
+import { CancelServiceOrderComponent } from './cancel-service-order.component';
 
 // Mock classes
 class MockOrderDetailsService {
@@ -60,7 +62,7 @@ describe('CancelServiceOrderComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [CancelServiceOrderComponent, MockUrlPipe],
-      imports: [ReactiveFormsModule, RouterTestingModule, I18nTestingModule],
+      imports: [ReactiveFormsModule, I18nTestingModule],
       providers: [
         { provide: OrderDetailsService, useClass: MockOrderDetailsService },
         {

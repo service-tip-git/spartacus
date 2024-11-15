@@ -1,6 +1,5 @@
 import { TestBed } from '@angular/core/testing';
 import { RedirectCommand, UrlTree } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
 import { ActiveCartFacade } from '@spartacus/cart/base/root';
 import { AuthService, SemanticPathService } from '@spartacus/core';
 import { EMPTY, of } from 'rxjs';
@@ -36,7 +35,6 @@ describe('NotCheckoutAuthGuard', () => {
           useClass: CartServiceStub,
         },
       ],
-      imports: [RouterTestingModule],
     });
     authService = TestBed.inject(AuthService);
     guard = TestBed.inject(NotCheckoutAuthGuard);

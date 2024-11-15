@@ -1,12 +1,16 @@
 import { CommonModule } from '@angular/common';
 import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
+import {
   HttpTestingController,
   provideHttpClientTesting,
 } from '@angular/common/http/testing';
 import { Component, EventEmitter } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { RouterTestingModule } from '@angular/router/testing';
+import { RouterModule } from '@angular/router';
 import {
   MockTranslatePipe,
   Product,
@@ -34,10 +38,6 @@ import { VisualPickingProductListComponent } from './product-list/visual-picking
 import { VisualPickingProductListService } from './product-list/visual-picking-product-list.service';
 import { VisualPickingTabComponent } from './visual-picking-tab.component';
 import { VisualPickingTabService } from './visual-picking-tab.service';
-import {
-  provideHttpClient,
-  withInterceptorsFromDi,
-} from '@angular/common/http';
 
 const currentProduct: Product = {
   code: 'currentProduct',
@@ -129,7 +129,7 @@ describe('VisualPickingTabComponent', () => {
         IconModule,
         FormsModule,
         UrlModule,
-        RouterTestingModule.withRoutes([
+        RouterModule.forRoot([
           {
             path: 'product',
             component: MockPageLayoutComponent,

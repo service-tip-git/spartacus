@@ -1,11 +1,15 @@
 import { CommonModule } from '@angular/common';
 import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
+import {
   HttpTestingController,
   provideHttpClientTesting,
 } from '@angular/common/http/testing';
 import { Component, EventEmitter } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { RouterModule } from '@angular/router';
 import { Actions } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { AddToCartModule } from '@spartacus/cart/base/components/add-to-cart';
@@ -28,10 +32,6 @@ import { VisualPickingProductListItem } from './model/visual-picking-product-lis
 import { PagedListModule } from './paged-list/paged-list.module';
 import { VisualPickingProductListComponent } from './visual-picking-product-list.component';
 import { VisualPickingProductListService } from './visual-picking-product-list.service';
-import {
-  provideHttpClient,
-  withInterceptorsFromDi,
-} from '@angular/common/http';
 
 const MockCmsComponentData = <CmsComponentData<CmsComponent>>{
   data$: of({}),
@@ -147,7 +147,7 @@ describe('VisualPickingProductListComponent', () => {
       imports: [
         CommonModule,
         StoreModule.forRoot({}),
-        RouterTestingModule.withRoutes([
+        RouterModule.forRoot([
           {
             path: 'product',
             component: MockPageLayoutComponent,

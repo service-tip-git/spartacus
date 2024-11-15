@@ -1,6 +1,5 @@
 import { TestBed } from '@angular/core/testing';
 import { RedirectCommand, UrlTree } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
 import { EMPTY, Observable, of } from 'rxjs';
 import { SemanticPathService } from '../../../routing/configurable-routes/url-translation/semantic-path.service';
 import { AuthService } from '../facade/auth.service';
@@ -44,7 +43,6 @@ describe('AuthGuard', () => {
           useClass: MockAuthRedirectService,
         },
       ],
-      imports: [RouterTestingModule],
     });
     guard = TestBed.inject(AuthGuard);
     authService = TestBed.inject(AuthService);

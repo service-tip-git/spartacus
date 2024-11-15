@@ -1,11 +1,14 @@
 import { CommonModule } from '@angular/common';
 import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
+import {
   HttpTestingController,
   provideHttpClientTesting,
 } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { RouterTestingModule } from '@angular/router/testing';
 import {
   I18nModule,
   MockTranslatePipe,
@@ -16,10 +19,6 @@ import { IconModule } from '@spartacus/storefront';
 import { Observable, of } from 'rxjs';
 import { VisualPickingProductFilterComponent } from './visual-picking-product-filter.component';
 import { VisualPickingProductFilterService } from './visual-picking-product-filter.service';
-import {
-  provideHttpClient,
-  withInterceptorsFromDi,
-} from '@angular/common/http';
 
 class MockVisualPickingProductFilterService {
   set filter(filter: string) {
@@ -46,14 +45,7 @@ describe('VisualPickingProductFilterComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [VisualPickingProductFilterComponent, MockTranslatePipe],
-      imports: [
-        RouterTestingModule,
-        I18nModule,
-        CommonModule,
-        FormsModule,
-        UrlModule,
-        IconModule,
-      ],
+      imports: [I18nModule, CommonModule, FormsModule, UrlModule, IconModule],
       providers: [
         {
           provide: VisualPickingProductFilterService,
