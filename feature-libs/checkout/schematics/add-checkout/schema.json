@@ -32,14 +32,14 @@
         ],
         "type": "string"
       },
-      "default": ["Checkout"],
       "x-prompt": {
         "message": "Which features would you like to set up from the Checkout library?",
         "type": "list",
         "items": [
           {
             "value": "Checkout",
-            "label": "Checkout base"
+            "label": "Checkout base",
+            "checked": true
           },
           {
             "value": "Checkout-B2B",
