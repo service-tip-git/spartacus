@@ -34,7 +34,7 @@
         *ngIf="
           !paymentLink.destination?.form?.length && paymentLink.destination?.url
         "
-        [src]="renderUrl(paymentLink.destination?.url)"
+        [src]="bypassSecurityTrustResourceUrl(paymentLink.destination?.url)"
       ></iframe>
 
       <form
@@ -59,7 +59,7 @@
       </form>
     </ng-container>
     <ng-container *ngIf="paymentLink.data && !paymentLink?.destination?.url">
-      <div [innerHTML]="renderHtml(paymentLink.data)"></div>
+      <div [innerHTML]="bypassSecurityTrustHtml(paymentLink.data)"></div>
     </ng-container>
   </div>
 </ng-template>

@@ -58,18 +58,18 @@ describe('OpfCheckoutPaymentWrapperComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should renderHtml call bypassSecurityTrustHtml', () => {
+  it('should bypassSecurityTrustHtml call bypassSecurityTrustHtml', () => {
     const html = '<script>console.log("script");</script>';
     spyOn(domSanitizer, 'bypassSecurityTrustHtml').and.stub();
-    component.renderHtml(html);
+    component.bypassSecurityTrustHtml(html);
 
     expect(domSanitizer.bypassSecurityTrustHtml).toHaveBeenCalledWith(html);
   });
 
-  it('should renderUrl call bypassSecurityTrustResourceUrl', () => {
+  it('should bypassSecurityTrustResourceUrl call bypassSecurityTrustResourceUrl', () => {
     const url = 'https://sap.com';
     spyOn(domSanitizer, 'bypassSecurityTrustResourceUrl').and.stub();
-    component.renderUrl(url);
+    component.bypassSecurityTrustResourceUrl(url);
 
     expect(domSanitizer.bypassSecurityTrustResourceUrl).toHaveBeenCalledWith(
       url
