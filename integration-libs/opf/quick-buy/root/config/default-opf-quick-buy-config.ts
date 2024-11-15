@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { GooglePayOpfQuickBuyProvider } from '../model';
+import { OpfQuickBuyGooglePayProvider } from '../model';
 import { OpfQuickBuyConfig } from './opf-quick-buy-config';
 
 export const defaultOpfQuickBuyConfig: OpfQuickBuyConfig = {
@@ -13,6 +13,6 @@ export const defaultOpfQuickBuyConfig: OpfQuickBuyConfig = {
       googlePay: {
         resourceUrl: '',
       },
-    } as GooglePayOpfQuickBuyProvider,
+    } as OpfQuickBuyGooglePayProvider,
   ],
 };

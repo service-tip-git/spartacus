@@ -13,7 +13,7 @@ import { OpfQuickBuyProvider } from '../model';
   useExisting: Config,
 })
 export abstract class OpfQuickBuyConfig {
-  providers?: OpfQuickBuyProvider[];
+  providers?: OpfQuickBuyProvider[] | undefined;
 }
 
 declare module '@spartacus/core' {

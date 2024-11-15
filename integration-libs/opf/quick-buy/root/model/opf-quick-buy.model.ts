@@ -57,9 +57,9 @@ export interface OpfQuickBuyProvider {
   };
 }
 
-export const GOOGLE_PAY_PROVIDER_NAME = 'googlePay';
-export interface GooglePayOpfQuickBuyProvider extends OpfQuickBuyProvider {
-  [GOOGLE_PAY_PROVIDER_NAME]: {
+export const OPF_GOOGLE_PAY_PROVIDER_NAME = 'googlePay';
+export interface OpfQuickBuyGooglePayProvider extends OpfQuickBuyProvider {
+  [OPF_GOOGLE_PAY_PROVIDER_NAME]: {
     resourceUrl: string;
   };
 }
