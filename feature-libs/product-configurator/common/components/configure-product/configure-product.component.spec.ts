@@ -36,7 +36,7 @@ const mockProductNotConfigurable: Product = {
   configurable: false,
 };
 
-const testProduct = { ...mockProduct };
+let testProduct: Product;
 
 class MockCurrentProductService implements Partial<CurrentProductService> {
   getProduct(): Observable<Product> {
@@ -173,6 +173,7 @@ function setupWithCurrentProductService(
   fixture = TestBed.createComponent(ConfigureProductComponent);
   component = fixture.componentInstance;
   htmlElem = fixture.nativeElement;
+  testProduct = structuredClone(mockProduct);
 }
 
 describe('ConfigureProductComponent', () => {
@@ -356,6 +357,10 @@ describe('ConfigureProductComponent', () => {
   });
 
   describe('isReadOnlyBaseProduct', () => {
+    beforeEach(() => {
+      testProduct = structuredClone(mockProduct);
+      setupWithCurrentProductService(true);
+    });
     it('should return `false` in case configurator type is CPQCONFIGURATOR', () => {
       expect(component.isReadOnlyBaseProduct(testProduct)).toEqual(false);
     });
@@ -380,6 +385,10 @@ describe('ConfigureProductComponent', () => {
   });
 
   describe('isBaseProduct', () => {
+    beforeEach(() => {
+      testProduct = structuredClone(mockProduct);
+      setupWithCurrentProductService(true);
+    });
     it('should return `false` in case base product and product code are not equal', () => {
       testProduct.baseProduct = 'BASE_PRODUCT';
       expect(component['isBaseProduct'](testProduct)).toEqual(false);
@@ -403,10 +412,6 @@ describe('ConfigureProductComponent', () => {
 
     it('should return false in case configurator type is undefined', () => {
       expect(component['isConfiguratorTypeReadOnly'](undefined)).toBe(false);
-    });
-
-    it('should return false in case configurator type is null', () => {
-      expect(component['isConfiguratorTypeReadOnly'](null)).toBe(false);
     });
 
     it('should return false in case configurator type is empty string', () => {

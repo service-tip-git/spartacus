@@ -7,6 +7,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import {
   AfterViewInit,
+  DestroyRef,
   Directive,
   ElementRef,
   HostListener,
@@ -20,8 +21,11 @@ import {
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { FeatureConfigService, TranslationService } from '@spartacus/core';
-import { filter, take } from 'rxjs';
+import { filter, merge, take } from 'rxjs';
 import { BREAKPOINT, BreakpointService } from '../../../layout';
+import { NgSelectComponent } from '@ng-select/ng-select';
+import { map } from 'rxjs/operators';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 const ARIA_LABEL = 'aria-label';
 
@@ -38,6 +42,8 @@ export class NgSelectA11yDirective implements AfterViewInit {
 
   protected translationService = inject(TranslationService);
   protected domSanitizer = inject(DomSanitizer);
+  protected selectComponent = inject(NgSelectComponent);
+  protected destroyRef = inject(DestroyRef);
   private featureConfigService = inject(FeatureConfigService);
 
   @HostListener('open')
@@ -49,6 +55,30 @@ export class NgSelectA11yDirective implements AfterViewInit {
       this.appendAriaLabelToOptions(changes, observerInstance)
     );
     observer.observe(this.elementRef.nativeElement, { childList: true });
+  }
+
+  /**
+   * When we inside a combo box using JAWS screen reader and press escape key
+   * an escape keyboard event doesn't get fired, instead an AltLeft is fired.
+   */
+  @HostListener('keyup', ['$event'])
+  onKeyUp(event: KeyboardEvent) {
+    if (
+      !this.featureConfigService?.isEnabled('a11yNgSelectCloseDropdownOnEscape')
+    ) {
+      return;
+    }
+    const jawsEscapeCode = 'AltLeft';
+    if (event.code === jawsEscapeCode) {
+      this.selectComponent.close();
+    }
+  }
+
+  @HostListener('keydown.escape')
+  onEscape() {
+    setTimeout(() => {
+      this.elementRef.nativeElement.querySelector('input').focus();
+    });
   }
 
   @Optional() breakpointService = inject(BreakpointService, { optional: true });
@@ -64,6 +94,17 @@ export class NgSelectA11yDirective implements AfterViewInit {
     const divCombobox =
       this.elementRef.nativeElement.querySelector('[role="combobox"]');
     const inputElement = divCombobox.querySelector('input');
+
+    this.renderer.setAttribute(inputElement, 'role', 'combobox');
+    this.renderer.setAttribute(inputElement, 'aria-expanded', 'false');
+
+    const isOpened$ = this.selectComponent.openEvent.pipe(map(() => 'true'));
+    const isClosed$ = this.selectComponent.closeEvent.pipe(map(() => 'false'));
+    merge(isOpened$, isClosed$)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((state) => {
+        this.renderer.setAttribute(inputElement, 'aria-expanded', state);
+      });
 
     const ariaLabel = this.cxNgSelectA11y.ariaLabel;
     const elementId = this.elementRef.nativeElement.id;

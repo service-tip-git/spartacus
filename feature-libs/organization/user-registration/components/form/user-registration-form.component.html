@@ -6,6 +6,9 @@
   ></div>
 
   <form [formGroup]="registerForm" (ngSubmit)="submit()">
+    <p *cxFeature="'a11yRequiredAsterisks'" class="form-legend">
+      {{ 'formLegend.required' | cxTranslate }}
+    </p>
     <label>
       <span class="label-content">{{
         'userRegistrationForm.fields.titleCode.label' | cxTranslate
@@ -30,9 +33,10 @@
     </label>
 
     <label>
-      <span class="label-content required">{{
-        'userRegistrationForm.fields.firstName.label' | cxTranslate
-      }}</span>
+      <span class="label-content required"
+        >{{ 'userRegistrationForm.fields.firstName.label' | cxTranslate
+        }}<ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template
+      ></span>
       <input
         required="true"
         class="form-control"
@@ -60,9 +64,10 @@
     </label>
 
     <label>
-      <span class="label-content required">{{
-        'userRegistrationForm.fields.lastName.label' | cxTranslate
-      }}</span>
+      <span class="label-content required"
+        >{{ 'userRegistrationForm.fields.lastName.label' | cxTranslate
+        }}<ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template
+      ></span>
       <input
         required="true"
         class="form-control"
@@ -90,9 +95,10 @@
     </label>
 
     <label>
-      <span class="label-content required">{{
-        'userRegistrationForm.fields.companyName.label' | cxTranslate
-      }}</span>
+      <span class="label-content required"
+        >{{ 'userRegistrationForm.fields.companyName.label' | cxTranslate
+        }}<ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template
+      ></span>
       <input
         required="true"
         class="form-control"
@@ -117,9 +123,10 @@
     </label>
 
     <label>
-      <span class="label-content required">{{
-        'userRegistrationForm.fields.email.label' | cxTranslate
-      }}</span>
+      <span class="label-content required"
+        >{{ 'userRegistrationForm.fields.email.label' | cxTranslate
+        }}<ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template
+      ></span>
       <input
         required="true"
         class="form-control"
@@ -384,4 +391,14 @@
 
 <ng-template #loading>
   <div class="cx-spinner"><cx-spinner></cx-spinner></div>
+</ng-template>
+
+<ng-template #requiredAsterisk>
+  <abbr
+    *cxFeature="'a11yRequiredAsterisks'"
+    class="text-decoration-none"
+    aria-hidden="true"
+    title="{{ 'common.required' | cxTranslate }}"
+    >*</abbr
+  >
 </ng-template>
