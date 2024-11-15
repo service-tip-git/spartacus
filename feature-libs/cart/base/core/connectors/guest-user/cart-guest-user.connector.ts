@@ -4,14 +4,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { CartGuestUser } from '@spartacus/cart/base/root';
 import { Observable } from 'rxjs';
 import { CartGuestUserAdapter } from './cart-guest-user.adapter';
 
 @Injectable()
 export class CartGuestUserConnector {
-  constructor(protected adapter: CartGuestUserAdapter) {}
+  protected adapter = inject(CartGuestUserAdapter);
 
   public createCartGuestUser(
     userId: string,

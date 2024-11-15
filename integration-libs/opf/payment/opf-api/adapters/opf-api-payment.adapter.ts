@@ -43,14 +43,11 @@ import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class OpfApiPaymentAdapter implements OpfPaymentAdapter {
+  protected http = inject(HttpClient);
+  protected converter = inject(ConverterService);
+  protected opfEndpointsService = inject(OpfEndpointsService);
+  protected config = inject(OpfConfig);
   protected logger = inject(LoggerService);
-
-  constructor(
-    protected http: HttpClient,
-    protected converter: ConverterService,
-    protected opfEndpointsService: OpfEndpointsService,
-    protected config: OpfConfig
-  ) {}
 
   protected headerWithNoLanguage: { [name: string]: string } = {
     accept: 'application/json',

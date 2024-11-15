@@ -10,6 +10,7 @@ import {
   Input,
   OnDestroy,
   OnInit,
+  inject,
 } from '@angular/core';
 import {
   GlobalMessageService,
@@ -31,6 +32,10 @@ import { tap } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
+  protected opfBaseService = inject(OpfBaseFacade);
+  protected opfMetadataStoreService = inject(OpfMetadataStoreService);
+  protected globalMessageService = inject(GlobalMessageService);
+
   protected subscription = new Subscription();
 
   activeConfigurations$ = this.opfBaseService
@@ -58,12 +63,6 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
   explicitTermsAndConditions: boolean | null | undefined;
 
   selectedPaymentId?: number;
-
-  constructor(
-    protected opfBaseService: OpfBaseFacade,
-    protected opfMetadataStoreService: OpfMetadataStoreService,
-    protected globalMessageService: GlobalMessageService
-  ) {}
 
   /**
    * Method pre-selects (based on terms and conditions state)

@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { CheckoutConfig, CheckoutFlow } from '@spartacus/checkout/base/root';
 import { BaseSiteService } from '@spartacus/core';
 import { Observable } from 'rxjs';
@@ -14,10 +14,10 @@ import { map, take } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class CheckoutFlowOrchestratorService {
-  constructor(
-    protected checkoutConfig: CheckoutConfig,
-    protected baseSiteService: BaseSiteService
-  ) {
+  protected checkoutConfig = inject(CheckoutConfig);
+  protected baseSiteService = inject(BaseSiteService);
+
+  constructor() {
     this.getPaymentProvider().subscribe((paymentProvider) => {
       this.paymentProviderName = paymentProvider;
     });

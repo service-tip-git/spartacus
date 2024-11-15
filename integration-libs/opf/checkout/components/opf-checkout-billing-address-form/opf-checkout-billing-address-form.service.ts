@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { ActiveCartFacade, Cart } from '@spartacus/cart/base/root';
 import {
   CheckoutBillingAddressFacade,
@@ -40,6 +40,18 @@ import { OpfCheckoutPaymentWrapperService } from '../opf-checkout-payment-wrappe
 
 @Injectable()
 export class OpfCheckoutBillingAddressFormService {
+  protected checkoutDeliveryAddressFacade = inject(
+    CheckoutDeliveryAddressFacade
+  );
+  protected checkoutBillingAddressFacade = inject(CheckoutBillingAddressFacade);
+  protected userPaymentService = inject(UserPaymentService);
+  protected checkoutPaymentService = inject(CheckoutPaymentFacade);
+  protected activeCartService = inject(ActiveCartFacade);
+  protected globalMessageService = inject(GlobalMessageService);
+  protected opfCheckoutPaymentWrapperService = inject(
+    OpfCheckoutPaymentWrapperService
+  );
+
   protected readonly _$billingAddressSub = new BehaviorSubject<
     Address | undefined
   >(undefined);
@@ -50,16 +62,6 @@ export class OpfCheckoutBillingAddressFormService {
   billingAddress$ = this._$billingAddressSub.asObservable();
   isLoadingAddress$ = this._$isLoadingAddress.asObservable();
   isSameAsDelivery$ = this._$isSameAsDelivery.asObservable();
-
-  constructor(
-    protected checkoutDeliveryAddressFacade: CheckoutDeliveryAddressFacade,
-    protected checkoutBillingAddressFacade: CheckoutBillingAddressFacade,
-    protected userPaymentService: UserPaymentService,
-    protected checkoutPaymentService: CheckoutPaymentFacade,
-    protected activeCartService: ActiveCartFacade,
-    protected globalMessageService: GlobalMessageService,
-    protected opfCheckoutPaymentWrapperService: OpfCheckoutPaymentWrapperService
-  ) {}
 
   getCountries(): Observable<Country[]> {
     return this.userPaymentService.getAllBillingCountries().pipe(

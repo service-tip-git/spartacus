@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import {
   ActiveCartFacade,
   CartAccessCodeFacade,
@@ -44,6 +44,16 @@ import { catchError, filter, map, switchMap, take, tap } from 'rxjs/operators';
 
 @Injectable()
 export class OpfCheckoutPaymentWrapperService {
+  protected opfPaymentFacade = inject(OpfPaymentFacade);
+  protected opfResourceLoaderService = inject(OpfResourceLoaderService);
+  protected userIdService = inject(UserIdService);
+  protected activeCartService = inject(ActiveCartFacade);
+  protected routingService = inject(RoutingService);
+  protected globalMessageService = inject(GlobalMessageService);
+  protected orderFacade = inject(OrderFacade);
+  protected opfMetadataStoreService = inject(OpfMetadataStoreService);
+  protected cartAccessCodeFacade = inject(CartAccessCodeFacade);
+
   protected lastPaymentOptionId?: number;
 
   protected activeCartId?: string;
@@ -53,18 +63,6 @@ export class OpfCheckoutPaymentWrapperService {
       isLoading: false,
       isError: false,
     });
-
-  constructor(
-    protected opfPaymentFacade: OpfPaymentFacade,
-    protected opfResourceLoaderService: OpfResourceLoaderService,
-    protected userIdService: UserIdService,
-    protected activeCartService: ActiveCartFacade,
-    protected routingService: RoutingService,
-    protected globalMessageService: GlobalMessageService,
-    protected orderFacade: OrderFacade,
-    protected opfMetadataStoreService: OpfMetadataStoreService,
-    protected cartAccessCodeFacade: CartAccessCodeFacade
-  ) {}
 
   protected executeScriptFromHtml(html: string): void {
     /**

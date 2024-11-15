@@ -11,6 +11,7 @@ import {
   OnDestroy,
   OnInit,
   ViewContainerRef,
+  inject,
 } from '@angular/core';
 import {
   DomSanitizer,
@@ -34,6 +35,11 @@ import { OpfCheckoutPaymentWrapperService } from './opf-checkout-payment-wrapper
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OpfCheckoutPaymentWrapperComponent implements OnInit, OnDestroy {
+  protected service = inject(OpfCheckoutPaymentWrapperService);
+  protected sanitizer = inject(DomSanitizer);
+  protected globalFunctionsService = inject(OpfGlobalFunctionsFacade);
+  protected vcr = inject(ViewContainerRef);
+
   @Input() selectedPaymentId: number;
 
   renderPaymentMethodEvent$ = this.service.getRenderPaymentMethodEvent();
@@ -41,13 +47,6 @@ export class OpfCheckoutPaymentWrapperComponent implements OnInit, OnDestroy {
   RENDER_PATTERN = OpfPaymentRenderPattern;
 
   sub: Subscription = new Subscription();
-
-  constructor(
-    protected service: OpfCheckoutPaymentWrapperService,
-    protected sanitizer: DomSanitizer,
-    protected globalFunctionsService: OpfGlobalFunctionsFacade,
-    protected vcr: ViewContainerRef
-  ) {}
 
   bypassSecurityTrustHtml(html: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(html);

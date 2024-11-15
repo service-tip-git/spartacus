@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import {
   ActiveCartFacade,
   CartAccessCodeFacade,
@@ -44,17 +44,17 @@ import { getBrowserInfo } from '../utils/opf-payment-utils';
 
 @Injectable()
 export class OpfPaymentHostedFieldsService {
-  constructor(
-    protected opfPaymentConnector: OpfPaymentConnector,
-    protected winRef: WindowRef,
-    protected cartAccessCodeFacade: CartAccessCodeFacade,
-    protected activeCartFacade: ActiveCartFacade,
-    protected userIdService: UserIdService,
-    protected routingService: RoutingService,
-    protected orderFacade: OrderFacade,
-    protected globalMessageService: GlobalMessageService,
-    protected opfPaymentErrorHandlerService: OpfPaymentErrorHandlerService
-  ) {}
+  protected opfPaymentConnector = inject(OpfPaymentConnector);
+  protected winRef = inject(WindowRef);
+  protected cartAccessCodeFacade = inject(CartAccessCodeFacade);
+  protected activeCartFacade = inject(ActiveCartFacade);
+  protected userIdService = inject(UserIdService);
+  protected routingService = inject(RoutingService);
+  protected orderFacade = inject(OrderFacade);
+  protected globalMessageService = inject(GlobalMessageService);
+  protected opfPaymentErrorHandlerService = inject(
+    OpfPaymentErrorHandlerService
+  );
 
   submitPayment(submitInput: OpfPaymentSubmitInput): Observable<boolean> {
     const {

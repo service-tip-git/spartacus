@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import {
   BaseSiteService,
   DynamicAttributes,
@@ -17,13 +17,13 @@ import { OpfApiConfig, OpfConfig } from '@spartacus/opf/base/root';
   providedIn: 'root',
 })
 export class OpfEndpointsService {
+  protected opfConfig = inject(OpfConfig);
+  protected opfApiConfig = inject(OpfApiConfig);
+  protected baseSiteService = inject(BaseSiteService);
+
   private _activeBaseSite: string;
 
-  constructor(
-    protected opfConfig: OpfConfig,
-    protected opfApiConfig: OpfApiConfig,
-    protected baseSiteService: BaseSiteService
-  ) {
+  constructor() {
     if (this.baseSiteService) {
       this.baseSiteService
         .getActive()

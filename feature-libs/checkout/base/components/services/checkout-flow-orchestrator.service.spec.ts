@@ -25,14 +25,15 @@ describe('CheckoutFlowOrchestratorService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [StoreModule.forRoot({})],
-      providers: [CheckoutFlowOrchestratorService, BaseSiteService],
+      providers: [
+        CheckoutFlowOrchestratorService,
+        BaseSiteService,
+        { provide: CheckoutConfig, useValue: mockCheckoutConfig },
+      ],
     });
 
     baseSiteService = TestBed.inject(BaseSiteService);
-    service = new CheckoutFlowOrchestratorService(
-      mockCheckoutConfig,
-      baseSiteService
-    );
+    service = TestBed.inject(CheckoutFlowOrchestratorService);
   });
 
   it('should be created', () => {

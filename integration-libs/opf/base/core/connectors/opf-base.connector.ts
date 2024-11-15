@@ -4,14 +4,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { OpfActiveConfiguration } from '@spartacus/opf/base/root';
 import { Observable } from 'rxjs';
 import { OpfBaseAdapter } from './opf-base.adapter';
 
 @Injectable()
 export class OpfBaseConnector {
-  constructor(protected adapter: OpfBaseAdapter) {}
+  protected adapter = inject(OpfBaseAdapter);
 
   public getActiveConfigurations(): Observable<OpfActiveConfiguration[]> {
     return this.adapter.getActiveConfigurations();

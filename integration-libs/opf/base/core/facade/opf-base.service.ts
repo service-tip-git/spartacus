@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import {
   CommandService,
   Query,
@@ -20,16 +20,14 @@ import { OpfBaseConnector } from '../connectors/opf-base.connector';
 
 @Injectable()
 export class OpfBaseService implements OpfBaseFacade {
+  protected queryService = inject(QueryService);
+  protected commandService = inject(CommandService);
+  protected opfBaseConnector = inject(OpfBaseConnector);
+
   protected activeConfigurationsQuery: Query<OpfActiveConfiguration[]> =
     this.queryService.create<OpfActiveConfiguration[]>(() =>
       this.opfBaseConnector.getActiveConfigurations()
     );
-
-  constructor(
-    protected queryService: QueryService,
-    protected commandService: CommandService,
-    protected opfBaseConnector: OpfBaseConnector
-  ) {}
 
   getActiveConfigurationsState(): Observable<
     QueryState<OpfActiveConfiguration[] | undefined>

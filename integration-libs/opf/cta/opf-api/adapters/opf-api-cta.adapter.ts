@@ -26,6 +26,11 @@ import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class OpfApiCtaAdapter implements OpfCtaAdapter {
+  protected http = inject(HttpClient);
+  protected converter = inject(ConverterService);
+  protected opfEndpointsService = inject(OpfEndpointsService);
+  protected config = inject(OpfConfig);
+
   protected logger = inject(LoggerService);
 
   protected headerWithNoLanguage: { [name: string]: string } = {
@@ -41,13 +46,6 @@ export class OpfApiCtaAdapter implements OpfCtaAdapter {
     ...this.headerWithNoLanguage,
     'Content-Language': 'en-us',
   };
-
-  constructor(
-    protected http: HttpClient,
-    protected converter: ConverterService,
-    protected opfEndpointsService: OpfEndpointsService,
-    protected config: OpfConfig
-  ) {}
 
   getCtaScripts(
     ctaScriptsRequest: CtaScriptsRequest

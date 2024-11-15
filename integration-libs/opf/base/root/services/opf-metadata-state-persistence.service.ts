@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable, OnDestroy, inject } from '@angular/core';
 import { StatePersistenceService } from '@spartacus/core';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -24,13 +24,10 @@ export interface SyncedOpfState {
  */
 @Injectable({ providedIn: 'root' })
 export class OpfMetadataStatePersistanceService implements OnDestroy {
+  protected statePersistenceService = inject(StatePersistenceService);
+  protected opfMetadataStoreService = inject(OpfMetadataStoreService);
+
   protected subscription = new Subscription();
-
-  constructor(
-    protected statePersistenceService: StatePersistenceService,
-    protected opfMetadataStoreService: OpfMetadataStoreService
-  ) {}
-
   /**
    * Identifier used for storage key.
    */
