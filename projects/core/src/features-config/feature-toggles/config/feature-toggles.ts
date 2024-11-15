@@ -322,6 +322,13 @@ export interface FeatureTogglesInterface {
   a11yCartItemsLinksStyles?: boolean;
 
   /**
+   * When set to `true`, external links in `StoreFinderListItemComponent`
+   * adopt a more link-like style, appearing more like links instead of buttons. This is semantically more correct since they open content in a new window,
+   * providing a more intuitive user experience.
+   */
+  a11yStyleExternalLinksAsLinks?: boolean;
+
+  /**
    * If enabled, the "Select this address/payment" button
    * will not be displayed in `CheckoutPaymentMethodComponent`
    * and `CheckoutDeliveryAddressComponent` when the address
@@ -809,6 +816,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yFacetKeyboardNavigation: false,
   a11yUnitsListKeyboardControls: true,
   a11yCartItemsLinksStyles: true,
+  a11yStyleExternalLinksAsLinks: false,
   a11ySearchboxLabel: false,
   a11yHideSelectBtnForSelectedAddrOrPayment: false,
   a11ySelectLabelWithContextForSelectedAddrOrPayment: false,
