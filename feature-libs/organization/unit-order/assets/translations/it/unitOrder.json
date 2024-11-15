@@ -1,0 +1,47 @@
+{
+  "unitLevelOrderHistory" : {
+    "orderHistory" : "Unit-level order history",
+    "orderId" : "N. ordine",
+    "emptyPurchaseOrderId" : "Nessuno",
+    "date" : "Data",
+    "status" : "Stato",
+    "buyer" : "Acquirente",
+    "unit" : "Unità",
+    "total" : "Totale",
+    "noOrders" : "We have no matching order records for your unit.",
+    "startShopping" : "Start Shopping",
+    "sortBy" : "Ordina per",
+    "sortOrders" : "Sort orders",
+    "purchaseOrderNumber" : "PO #",
+    "startOn" : "Start On",
+    "frequency" : "Frequenza",
+    "nextOrderDate" : "Data ordine successivo",
+    "notFound" : "Nessun ordine trovato",
+    "applyFilter" : "Applica",
+    "filterBy" : "Filter by",
+    "filterByBuyer" : "Filter by Buyer",
+    "filterByBuyerLabel" : "Buyer name",
+    "filterByBuyerPlaceholder" : "Enter buyer name",
+    "filterByBuyerAriaLabel" : "Filter list by buyer",
+    "filterByUnit" : "Filter by Unit",
+    "filterByUnitLabel" : "Unit name",
+    "filterByUnitPlaceholder" : "Enter unit name",
+    "filterByUnitAriaLabel" : "Filter list by unit",
+    "search" : "Cerca",
+    "clearAll" : "Cancella tutto",
+    "removeAppliedFilters" : "Remove filters",
+    "yourFilters" : "Your Filters:",
+    "and" : " e "
+  },
+  "unitLevelOrderHistorySorting" : {
+    "date" : "Data",
+    "orderNumber" : "Numero dell'ordine",
+    "buyer" : "Buyer (Ascending)",
+    "buyerDesc" : "Buyer (Descending)",
+    "orgUnit" : "Unit (Ascending)",
+    "orgUnitDesc" : "Unit (Descending)"
+  },
+  "unitLevelOrderDetails" : {
+    "buyer" : "Acquirente"
+  }
+}

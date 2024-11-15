@@ -1,0 +1,10 @@
+{
+  "myAccountV2CustomerTicketing" : {
+    "heading" : "Сервисная служба",
+    "showMore" : "Показать больше",
+    "changedOn" : "Changed On: {{value}}",
+    "ticketId" : "ID: {{value}}",
+    "subjectLabel" : "Тема",
+    "idLabel" : "Customer Service Id"
+  }
+}

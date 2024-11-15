@@ -1,0 +1,72 @@
+{
+  "updateEmailForm" : {
+    "newEmailAddress" : {
+      "label" : "New email address",
+      "placeholder" : "Enter email"
+    },
+    "confirmNewEmailAddress" : {
+      "label" : "Confirm new email address",
+      "placeholder" : "Enter email"
+    },
+    "enterValidEmail" : "Silakan masukkan email yang valid.",
+    "bothEmailMustMatch" : "Both emails must match",
+    "password" : {
+      "label" : "Kata sandi",
+      "placeholder" : "Masukkan kata sandi"
+    },
+    "pleaseInputPassword" : "Please input password",
+    "emailUpdateSuccess" : "Success. Please sign in with {{ newUid }}"
+  },
+  "register" : {
+    "confirmPassword" : {
+      "action" : "Confirm password",
+      "label" : "Confirm password",
+      "placeholder" : "Konfirmasikan Kata Sandi"
+    },
+    "managementInMyAccount" : "Management in My Account.",
+    "termsAndConditions" : "Syarat & Ketentuan",
+    "signIn" : "I already have an account. Sign In",
+    "register" : "Daftar",
+    "confirmNewPassword" : "Konfirmasi Kata Sandi Baru",
+    "resetPassword" : "Atur Ulang Kata Sandi",
+    "createAccount" : "Create an account",
+    "title" : "Jabatan",
+    "titleOptional" : "Title (optional)",
+    "firstName" : {
+      "label" : "Nama depan",
+      "placeholder" : "Nama depan"
+    },
+    "lastName" : {
+      "label" : "Nama belakang",
+      "placeholder" : "Nama belakang"
+    },
+    "emailAddress" : {
+      "label" : "Alamat email",
+      "placeholder" : "Alamat email"
+    },
+    "password" : {
+      "label" : "Kata sandi",
+      "placeholder" : "Kata sandi"
+    },
+    "newPassword" : "Kata Sandi Baru",
+    "emailMarketing" : "Use my personal data to receive e-mail newsletters for marketing campaigns. To change your settings, go to Consent Management in My Account.",
+    "confirmThatRead" : "I am confirming that I have read and agreed with the",
+    "selectTitle" : "Select Title",
+    "passwordMinRequirements" : "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
+    "passwordStrengthRequirements" : "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
+    "bothPasswordMustMatch" : "Both password must match",
+    "titleRequired" : "Title is required.",
+    "postRegisterMessage" : "Please log in with provided credentials."
+  },
+  "forgottenPassword" : {
+    "resetPassword" : "Reset password",
+    "enterEmailAddressAssociatedWithYourAccount" : "Enter the email address associated with your account",
+    "emailAddress" : {
+      "label" : "Alamat email",
+      "placeholder" : "Enter email"
+    },
+    "enterValidEmail" : "Silakan masukkan email yang valid.",
+    "passwordResetEmailSent" : "An email has been sent to you with information on how to reset your password.",
+    "passwordResetSuccess" : "Berhasil! Anda sekarang dapat masuk menggunakan kata sandi Anda yang baru."
+  }
+}

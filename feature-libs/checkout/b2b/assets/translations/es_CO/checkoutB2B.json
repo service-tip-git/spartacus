@@ -1,0 +1,22 @@
+{
+  "checkoutB2B" : {
+    "noPoNumber" : "Ninguno",
+    "poNumber" : "Purchase order number (optional)",
+    "costCenter" : "Centro de costos",
+    "placeholder" : "Enter P.O",
+    "availableLabel" : "Delivery addresses available to you depend on the cost center's unit",
+    "invalid" : {
+      "accountType" : "Su cuenta no le permite finalizar la compra aquí."
+    },
+    "methodOfPayment" : {
+      "paymentType" : "Tipo de pago"
+    },
+    "review" : {
+      "poNumber" : "Número de pedido de compra"
+    },
+    "progress" : {
+      "methodOfPayment" : "Method of Payment"
+    },
+    "invalidCostCenter" : "Invalid cost center."
+  }
+}

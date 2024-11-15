@@ -1,0 +1,71 @@
+{
+  "epdVisualization" : {
+    "visualViewer" : {
+      "contentType" : {
+        "drawing2D" : "2D",
+        "model3D" : "3D"
+      },
+      "toolbar" : {
+        "homeButton" : {
+          "label" : "मुख्य पृष्ठ"
+        },
+        "zoomButton" : {
+          "label" : "ज़ूम करें"
+        },
+        "panButton" : {
+          "label" : "Pan"
+        },
+        "rotateButton" : {
+          "label" : "Rotate"
+        },
+        "isolateButton" : {
+          "label" : "Isolate"
+        },
+        "playButton" : {
+          "label" : "प्ले करें"
+        },
+        "pauseButton" : {
+          "label" : "विराम"
+        },
+        "hotspotsButton" : {
+          "label" : "Hotspots",
+          "show" : "दिखाएं",
+          "hide" : "छिपाएं"
+        },
+        "visualViewerAnimationSlider" : {
+          "label" : "Animation Slider",
+          "role" : "Slider"
+        }
+      }
+    },
+    "visualPicking" : {
+      "visualPickingTab" : {
+        "noProductReferences" : "No spare parts are available for this product."
+      },
+      "visualPickingProductList" : {
+        "description" : "वर्णन",
+        "itemPrice" : "मूल्य",
+        "outOfStock" : "Out of stock",
+        "id" : "ID"
+      },
+      "visualPickingProductFilter" : {
+        "input" : {
+          "placeholder" : "Filter by name or id"
+        },
+        "searchButton" : {
+          "label" : "search"
+        },
+        "resetButton" : {
+          "label" : "रीसेट करें"
+        }
+      }
+    },
+    "errors" : {
+      "visualLoad" : {
+        "noMatchingVisualFound" : "No matching visualization found",
+        "multipleMatchingVisualsFound" : "Multiple matching visualizations found",
+        "unexpectedLoadError" : "Error occurred while loading visualization"
+      }
+    }
+  }
+}

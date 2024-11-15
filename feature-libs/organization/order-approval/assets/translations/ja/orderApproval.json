@@ -1,0 +1,49 @@
+{
+  "orderApprovalDetails" : {
+    "back" : "Back To List",
+    "showForm_APPROVE" : "Approve Order...",
+    "showForm_REJECT" : "Reject Order...",
+    "form" : {
+      "title_APPROVE" : "Approve order {{orderCode}} totalling {{orderTotal}}",
+      "title_REJECT" : "Reject order {{orderCode}} totalling {{orderTotal}}",
+      "submit_APPROVE" : "承認",
+      "submit_REJECT" : "拒否",
+      "cancel" : "キャンセル",
+      "comment_APPROVE" : {
+        "label" : "Comment (optional, maximum 255 characters)",
+        "placeholder" : ""
+      },
+      "comment_REJECT" : {
+        "label" : "Comment (maximum 255 characters)",
+        "placeholder" : ""
+      }
+    },
+    "permissionResults" : {
+      "header" : "顧客承認詳細",
+      "permission" : "権限",
+      "approver" : "承認者",
+      "status" : "ステータス",
+      "approverComments" : "承認者コメント",
+      "noApprovalComments" : "なし",
+      "permissionType_B2BBudgetExceededPermission" : "The budget associated with the chosen cost center has been exceeded",
+      "permissionType_B2BOrderThresholdPermission" : "Order total exceeded the per-order limit",
+      "permissionType_B2BOrderThresholdTimespanPermission" : "Order total exceeded the per-timespan limit"
+    }
+  },
+  "orderApprovalList" : {
+    "orderCode" : "注文番号",
+    "POCode" : "PO #",
+    "placedBy" : "Placed by",
+    "date" : "日付",
+    "status" : "ステータス",
+    "total" : "合計",
+    "none" : "なし",
+    "emptyList" : "There are no orders to approve at this time.",
+    "orderApprovalList" : "Order Approval List"
+  },
+  "orderApprovalGlobal" : {
+    "notification" : {
+      "noSufficientPermissions" : "No sufficient permissions to access this page."
+    }
+  }
+}

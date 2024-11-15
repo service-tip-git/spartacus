@@ -1,0 +1,54 @@
+{
+  "checkout" : {
+    "backToCart" : "Back to cart"
+  },
+  "checkoutProgress" : {
+    "label" : "Checkout Progress",
+    "deliveryAddress" : "운송 주소",
+    "deliveryMode" : "배송 모드",
+    "paymentDetails" : "지불",
+    "reviewOrder" : "검토",
+    "state" : {
+      "completed" : "{{step}}, Completed",
+      "selected" : "{{step}}, Selected",
+      "disabled" : "{{step}}, Disabled"
+    }
+  },
+  "checkoutAddress" : {
+    "shippingAddress" : "운송 주소",
+    "selectYourDeliveryAddress" : "Select your Delivery Address",
+    "defaultDeliveryAddress" : "Default Delivery Address",
+    "addNewAddress" : "Add New Address",
+    "shipToThisAddress" : "Ship to this address",
+    "deliveryAddressSelected" : "Delivery address selected"
+  },
+  "checkoutMode" : {
+    "deliveryMethod" : "배송 방법",
+    "deliveryOptions" : "배송 옵션",
+    "standardDelivery" : "표준 배송",
+    "premiumDelivery" : "프리미엄 배송",
+    "deliveryEntries" : "Items to be Shipped"
+  },
+  "checkoutReview" : {
+    "review" : "검토",
+    "orderItems" : "주문 품목",
+    "confirmThatRead" : "I am confirming that I have read and agreed with the",
+    "placeOrder" : "주문",
+    "termsAndConditions" : "사용 약관",
+    "editDeliveryAddressDetails" : "Edit delivery address details, opens Delivery Address page",
+    "editBillingDetails" : "Edit billing address, opens Payment Details page",
+    "editPaymentDetails" : "Edit payment details, opens Payment Details page",
+    "editPaymentType" : "Edit payment method, opens Method of Payment page",
+    "editDeliveryMode" : "Edit delivery mode, opens Delivery Mode page",
+    "orderInProcess" : "Order is in process. Please wait."
+  },
+  "checkoutOrderConfirmation" : {
+    "confirmationOfOrder" : "Confirmation of Order:",
+    "thankYou" : "Thank you for your order!",
+    "invoiceHasBeenSentByEmail" : "An invoice has been sent by email. You should receive it soon.",
+    "orderItems" : "주문 품목",
+    "orderPlacedSuccessfully" : "Order placed successfully",
+    "createAccount" : "Create an account?",
+    "createAccountForNext" : "Create an account for <{{email}}> for a faster checkout on your next visit."
+  }
+}

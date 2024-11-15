@@ -1,0 +1,192 @@
+{
+  "orderDetails" : {
+    "orderId" : "Zamówienie nr",
+    "orderNumber" : "Numer zamówienia",
+    "replenishmentId" : "Replenishment #",
+    "purchaseOrderId" : "Purchase Order #",
+    "purchaseOrderNumber" : "Numer zamówienia",
+    "emptyPurchaseOrderId" : "Brak",
+    "none" : "None {{value}}",
+    "placed" : "Placed",
+    "placedBy" : "Umieszczone przez",
+    "unit" : "Jednostka",
+    "costCenter" : "Centrum kosztów",
+    "costCenterAndUnit" : "Cost Center / Unit",
+    "costCenterAndUnitValue" : "{{costCenterName}} / {{unitName}}",
+    "methodOfPayment" : "Method of Payment",
+    "payByAccount" : "Pay by Account",
+    "paidByCreditCard" : "(paid by credit card)",
+    "status" : "Status",
+    "active" : "Aktywne",
+    "shippedOn" : "Shipped on",
+    "shippingMethod" : "Metoda wysyłki",
+    "placedOn" : "Placed on",
+    "startOn" : "Start On",
+    "nextOrderDate" : "Data następnego zamówienia",
+    "frequency" : "Częstotliwość",
+    "cancelled" : " Anulowane",
+    "deliveryStatus_IN_TRANSIT" : "W drodze",
+    "deliveryStatus_READY_FOR_PICKUP" : "Ready for Pickup",
+    "deliveryStatus_READY_FOR_SHIPPING" : "Ready for Shipping",
+    "deliveryStatus_WAITING" : "Oczekujące",
+    "deliveryStatus_DELIVERING" : "Dostarczanie",
+    "deliveryStatus_PICKPACK" : "Preparing for Shipment",
+    "deliveryStatus_PICKUP_COMPLETE" : "Odbiór zakończony",
+    "deliveryStatus_DELIVERY_COMPLETED" : "Delivery Complete",
+    "deliveryStatus_PAYMENT_NOT_CAPTURED" : "Payment Issue",
+    "deliveryStatus_IN_PROCESS" : "Order Processing",
+    "deliveryStatus_READY" : "Order Processing",
+    "deliveryStatus_DELIVERY_REJECTED" : "Dostawa odrzucona",
+    "deliveryStatus_SHIPPED" : "Wysłane",
+    "deliveryStatus_TAX_NOT_COMMITTED" : "Tax Issue",
+    "deliveryStatus_CANCELLED" : "Anulowane",
+    "statusDisplay_cancelled" : "Anulowane",
+    "statusDisplay_cancelling" : "Anuluj oczekujące",
+    "statusDisplay_completed" : "Zakończone",
+    "statusDisplay_created" : "Utworzone",
+    "statusDisplay_error" : "Oczekujące",
+    "statusDisplay_Error" : "Oczekujące",
+    "statusDisplay_processing" : "Oczekujące",
+    "statusDisplay_open" : "Otwarte",
+    "statusDisplay_pending" : {
+      "approval" : "Oczekuje na zatwierdzenie",
+      "merchant" : {
+        "approval" : "Oczekuje na zatwierdzenie przez sprzedawcę"
+      }
+    },
+    "statusDisplay_approved" : "Zatwierdzone",
+    "statusDisplay_rejected" : "Odrzucone",
+    "statusDisplay_merchant" : {
+      "approved" : "Zatwierdzone przez sprzedawcę",
+      "rejected" : "Odrzucone przez sprzedawcę"
+    },
+    "statusDisplay_assigned" : {
+      "admin" : "Przypisane do administratora"
+    },
+    "consignmentTracking" : {
+      "action" : "Track package",
+      "dialog" : {
+        "header" : "Tracking Information",
+        "shipped" : "Wysłane",
+        "estimate" : "Estimated Delivery",
+        "carrier" : "Delivery Service",
+        "trackingId" : "Numer śledzenia",
+        "noTracking" : "The package has not been dispatched from the warehouse. The tracking information will be available after the package is shipped.",
+        "loadingHeader" : "Śledzenie konsygnacji"
+      }
+    },
+    "cancellationAndReturn" : {
+      "returnAction" : "Request a Return",
+      "cancelAction" : "Anuluj pozycje",
+      "item" : "Pozycja",
+      "itemPrice" : "Cena pozycji",
+      "quantity" : "Max Quantity",
+      "returnQty" : "Quantity to Return",
+      "cancelQty" : "Quantity to Cancel",
+      "setAll" : "Set all quantities to maximum",
+      "totalPrice" : "Suma",
+      "submit" : "Prześlij zapytanie",
+      "submitDescription" : "Submit Request. Items on this page will be included in the cancellation request.",
+      "returnSuccess" : "Your return request ({{rma}}) was submitted",
+      "cancelSuccess" : "Your cancellation request was submitted (original order {{orderCode}} will be updated)"
+    },
+    "cancelReplenishment" : {
+      "title" : "Anuluj uzupełnienie",
+      "description" : "Cancel any future replenishment order?",
+      "accept" : "Tak",
+      "reject" : "Nie",
+      "cancelSuccess" : "Replenishment order #{{replenishmentOrderCode}} has been successfully cancelled"
+    },
+    "caption" : "Order contents."
+  },
+  "orderHistory" : {
+    "orderHistory" : "Historia zamówienia",
+    "orderId" : "Zamówienie nr",
+    "emptyPurchaseOrderId" : "Brak",
+    "date" : "Data",
+    "status" : "Status",
+    "PONumber" : "Nr zamówienia",
+    "total" : "Suma",
+    "noOrders" : "We have no order records for this account.",
+    "noReplenishmentOrders" : "We have no replenishment order records for this account.",
+    "startShopping" : "Start Shopping",
+    "sortBy" : "Sortuj według",
+    "sortOrders" : "Sort orders",
+    "replenishmentOrderHistory" : "Replenishment Order History",
+    "replenishmentOrderId" : "Replenishment #",
+    "purchaseOrderNumber" : "PO #",
+    "costCenter" : "Centrum kosztów",
+    "startOn" : "Start On",
+    "frequency" : "Częstotliwość",
+    "nextOrderDate" : "Data następnego zamówienia",
+    "cancel" : "Anuluj",
+    "cancelled" : "Anulowane",
+    "replenishmentHistory" : "Historia uzupełniania",
+    "notFound" : "Nie znaleziono zamówień",
+    "actions" : "Czynności"
+  },
+  "AccountOrderHistoryTabContainer" : {
+    "tabs" : {
+      "AccountOrderHistoryComponent" : "ALL ORDERS ({{param}})",
+      "OrderReturnRequestListComponent" : "RETURNS ({{param}})"
+    },
+    "tabPanelContainerRegion" : "Group with order history details",
+    "tabPanelContainerRegionGroup" : "Group with order history details"
+  },
+  "returnRequestList" : {
+    "returnRequestId" : "Return #",
+    "orderId" : "Zamówienie nr",
+    "date" : "Data utworzenia",
+    "status" : "Status",
+    "sortBy" : "Sortuj według",
+    "sortReturns" : "Sort returns",
+    "statusDisplay_APPROVAL_PENDING" : "Oczekuje na zatwierdzenie",
+    "statusDisplay_CANCELED" : "Anulowane",
+    "statusDisplay_CANCELLING" : "Anulowanie",
+    "statusDisplay_WAIT" : "Oczekuje",
+    "statusDisplay_RECEIVED" : "Otrzymane",
+    "statusDisplay_RECEIVING" : "Odbieranie",
+    "statusDisplay_APPROVING" : "Zatwierdzanie",
+    "statusDisplay_REVERSING_PAYMENT" : "Stornowanie płatności",
+    "statusDisplay_PAYMENT_REVERSED" : "Płatność wystornowana",
+    "statusDisplay_PAYMENT_REVERSAL_FAILED" : "Stornowanie płatności nie powiodło się",
+    "statusDisplay_REVERSING_TAX" : "Stornowanie podatku",
+    "statusDisplay_TAX_REVERSED" : "Podatek wystornowany",
+    "statusDisplay_TAX_REVERSAL_FAILED" : "Stornowanie podatku nie powiodło się",
+    "statusDisplay_COMPLETED" : "Zakończone"
+  },
+  "returnRequest" : {
+    "returnRequestId" : "Return Request #",
+    "orderCode" : "For Order #",
+    "status" : "Return status",
+    "cancel" : "Cancel Return Request",
+    "item" : "Opis",
+    "itemPrice" : "Cena pozycji",
+    "returnQty" : "Ilość zwrotów",
+    "total" : "Suma",
+    "summary" : "Sumy zwrotów",
+    "subtotal" : "Suma częściowa",
+    "deliveryCode" : "Koszt dostawy",
+    "estimatedRefund" : "Estimated refund",
+    "note" : "The totals are estimated and may not include applicable taxes or other charges.",
+    "cancelSuccess" : "Your return request ({{rma}}) was cancelled",
+    "caption" : "Order contents."
+  },
+  "reorder" : {
+    "button" : "Zmień kolejność",
+    "dialog" : {
+      "reorderProducts" : "Reorder products",
+      "messages" : {
+        "reviewConfiguration" : "An error occurred with \"{{ productCode}}\" configuration.",
+        "lowStock" : "Quantity for {{ productName }}: {{ quantity }} has been reduced to {{ quantityAdded }}.",
+        "noStock" : "{{ productName }} is currently out of stock.",
+        "pricingError" : "Pricing problem with \"{{ productCode }}\".",
+        "unresolvableIssues" : "Unrecognized problem with \"{{ productCode }}\".",
+        "success" : "Products have been successfully added to the cart"
+      },
+      "areYouSureToReplaceCart" : "Current cart will be replaced with new items. Do you wish to continue?",
+      "cancel" : "Anuluj",
+      "continue" : "Kontynuuj"
+    }
+  }
+}

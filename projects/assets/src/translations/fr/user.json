@@ -1,0 +1,32 @@
+{
+  "anonymousConsents" : {
+    "dialog" : {
+      "title" : "Gestion des consentements",
+      "legalDescription" : "We use cookies/browser's storage to personalize the content and improve user experience. We also might share the data about your site usage with our social media. For more, please review our privacy policy.",
+      "selectAll" : "Tout sélectionner",
+      "clearAll" : "Clear all"
+    },
+    "banner" : {
+      "title" : "This website uses cookies",
+      "description" : "We use cookies/browser's storage to personalize the content and improve user experience.",
+      "allowAll" : "Allow All",
+      "viewDetails" : "Afficher les détails"
+    }
+  },
+  "checkoutLogin" : {
+    "emailAddress" : {
+      "label" : "Adresse électronique",
+      "placeholder" : "Enter email"
+    },
+    "confirmEmail" : {
+      "label" : "Confirm email",
+      "placeholder" : "Confirm email"
+    },
+    "continue" : "Continuer",
+    "emailIsRequired" : "Invalid email format",
+    "emailsMustMatch" : "Email does not match"
+  },
+  "authMessages" : {
+    "signedOutSuccessfully" : "You have successfully signed out."
+  }
+}

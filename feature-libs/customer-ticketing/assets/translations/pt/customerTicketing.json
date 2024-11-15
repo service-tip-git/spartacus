@@ -1,0 +1,48 @@
+{
+  "customerTicketing" : {
+    "mainLogoLabel" : "SAP",
+    "mainTitle" : "Customer Ticketing",
+    "ticketId" : "ID",
+    "createdOn" : "Criado em",
+    "changedOn" : "Changed On",
+    "status" : "Status",
+    "message" : "Mensagem",
+    "cancel" : "Cancelar",
+    "submit" : "Enviar",
+    "uploadFile" : "Carregar arquivo",
+    "fileSizeLimit" : "File size limit: {{count}} MB",
+    "maximumAttachment" : "Maximum of one attachment per message",
+    "errorMessage" : "Something went wrong.",
+    "charactersLeft" : "characters left: {{count}}",
+    "customerService" : "Serviço ao cliente"
+  },
+  "customerTicketingList" : {
+    "subject" : "Assunto",
+    "ticketCategory" : "Categoria",
+    "sortSubtitle" : "Ordenar por",
+    "sortOrders" : "Sort orders",
+    "noTickets" : "You don't have any request",
+    "requestTitle" : "All Requests",
+    "mobile" : {
+      "ticketIdFull" : "ID do ticket"
+    }
+  },
+  "createCustomerTicket" : {
+    "createNewTicket" : "Adicionar",
+    "addNewRequest" : "Add New Request",
+    "addRequest" : "Add Request",
+    "subject" : "Assunto",
+    "category" : "Categoria",
+    "associateTo" : "Associate To",
+    "ticketCreated" : "Request created.",
+    "optionallySelectAssociatedObject" : "Select Option",
+    "selectCategory" : "Select Category"
+  },
+  "customerTicketingDetails" : {
+    "requestReopened" : "Request Reopened.",
+    "requestClosed" : "Request closed, you may reopen if needed.",
+    "reopenRequest" : "Reopen Request",
+    "closeRequest" : "Close Request",
+    "ticketNotFound" : "Ticket not found."
+  }
+}

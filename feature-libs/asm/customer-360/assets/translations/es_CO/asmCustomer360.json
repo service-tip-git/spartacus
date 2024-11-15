@@ -1,0 +1,129 @@
+{
+  "asmCustomer360" : {
+    "alertErrorMessage" : "The information cannot be be loaded. Please try again later or contact your system administrator.",
+    "errorMessageHeader" : "Oops! Something went wrong",
+    "applyActionAlter" : "The action couldn't be completed. Please try again later.",
+    "header" : {
+      "title" : "Customer Profile",
+      "newTitle" : "Customer 360°",
+      "subTitle" : "{{name}} Customer 360° View",
+      "newSubTitle" : "{{name}} 360 View",
+      "activeCartLabel" : "{{cartSize}} item added to cart",
+      "recentOrderLabel" : "Last order {{price}}",
+      "recentTicketLabel" : "Último ticket",
+      "signedUpAt" : "Account created on {{date}}"
+    },
+    "productListing" : {
+      "totalNoItems" : "Total No. Items {{count}}",
+      "totalPrice" : "Total Price {{price}}",
+      "showMore" : "Mostrar más",
+      "showLess" : "Mostrar menos"
+    },
+    "productItem" : {
+      "outOfStock" : "No disponibles en stock",
+      "quantity" : "Qty: {{count}}",
+      "itemPrice" : "Item Price: {{price}}"
+    },
+    "activeCart" : {
+      "header" : "Carro activo",
+      "emptyDescription" : "There are currently no active cart Items",
+      "aria" : {
+        "linkLabel" : "Active Cart {{code}}"
+      }
+    },
+    "savedCart" : {
+      "header" : "Last Saved Cart",
+      "emptyDescription" : "There are currently no saved cart items",
+      "aria" : {
+        "linkLabel" : "Last Saved Cart {{code}}"
+      }
+    },
+    "productInterests" : {
+      "header" : "Intereses",
+      "emptyDescription" : "There are currently no interest items"
+    },
+    "profile" : {
+      "address" : "Dirección",
+      "billingAddress" : "Dirección de facturación",
+      "deliveryAddress" : "Dirección de entrega",
+      "phone1" : "Teléfono 1",
+      "phone2" : "Teléfono 2",
+      "paymentMethodHeader" : "Métodos de pago guardados"
+    },
+    "activity" : {
+      "type" : "Tipo",
+      "id" : "ID",
+      "description" : "Descripción",
+      "status" : "Estado",
+      "created" : "Creado",
+      "updated" : "Actualizados",
+      "numberOfCartItems" : "Cart with {{count}} items",
+      "cart" : "Cesta",
+      "order" : "Pedido",
+      "savedCart" : "Carro guardado",
+      "emptyStateText" : "There is currently no recorded customer activity",
+      "headerText" : "General"
+    },
+    "productReviews" : {
+      "columnHeaders" : {
+        "item" : "Elemento",
+        "dateAndStatus" : "Fecha/Estado",
+        "rating" : "Clasificación",
+        "review" : "Revisión"
+      },
+      "header" : "Reseñas del producto",
+      "emptyDescription" : "There are currently no product review items",
+      "sku" : "SKU"
+    },
+    "supportTickets" : {
+      "columnHeaders" : {
+        "id" : "ID",
+        "headline" : "Título",
+        "category" : "Categoría"
+      },
+      "header" : "Tickets de soporte",
+      "emptyDescription" : "There are currently no support tickets"
+    },
+    "coupons" : {
+      "headerText" : "Cupones",
+      "emptyDescription" : "There are currently no coupons",
+      "applyButtonText" : "Apply to Cart",
+      "applied" : "Cupón aplicado",
+      "removeButtonText" : "Eliminar"
+    },
+    "promotions" : {
+      "headerText" : "Promociones",
+      "emptyDescription" : "There are currently no promotions",
+      "applied" : "Promoción aplicada",
+      "headerName" : "Nombre",
+      "headerAction" : "Acción"
+    },
+    "customerCoupons" : {
+      "headerText" : "Cupones del cliente",
+      "emptyDescription" : "There are currently no customer coupons",
+      "applyButtonText" : "Assign to Customer",
+      "removeButtonText" : "Eliminar",
+      "availableTab" : "Disponible",
+      "sentTab" : "Enviados",
+      "searchBox" : "Cupón"
+    },
+    "maps" : {
+      "storeClosed" : "Cerrar",
+      "storesFound" : "{{ initial }} - {{ end }} from {{ total }} stores found"
+    },
+    "overviewTab" : "Resumen",
+    "profileTab" : "Perfil",
+    "activityTab" : "Actividad",
+    "feedbackTab" : "Comentarios",
+    "promotionsTab" : "Promociones",
+    "mapsTab" : "Maps",
+    "storeLocationsTab" : "Ubicaciones de almacén",
+    "aria" : {
+      "activeCartCode" : "Active Cart {{code}}",
+      "recentOrderCode" : "Last Order {{code}}"
+    },
+    "pagination" : "Paginación",
+    "page" : "Page {{number}}",
+    "emptyCellValue" : "---"
+  }
+}

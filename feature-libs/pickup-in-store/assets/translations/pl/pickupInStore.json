@@ -1,0 +1,86 @@
+{
+  "pickupInfo" : {
+    "inStorePickup" : "In Store Pickup",
+    "pickupBy" : "Pick up by",
+    "pickupFrom" : "Pick up from"
+  },
+  "pickupOptionDialog" : {
+    "close" : "Zamknij",
+    "modalHeader" : "Odbiór w sklepie"
+  },
+  "pickupOptions" : {
+    "legend" : "Metoda dostawy",
+    "changeStore" : "Zmień sklep",
+    "delivery" : "Ship It (Free Return)",
+    "pickup" : "Free Pickup In Store",
+    "selectStore" : "Select Store"
+  },
+  "setPreferredStore" : {
+    "makeThisMyStore" : "Make This My Store",
+    "myStore" : "My Store"
+  },
+  "store" : {
+    "pickupFromHere" : "Pick Up from here",
+    "stockLevel_inStock" : "{{ count }} in Stock",
+    "stockLevel_outOfStock" : "Zapas wyczerpany",
+    "viewHours" : "View Hours"
+  },
+  "storeList" : {
+    "noStoresMessage" : "No stores found in database..."
+  },
+  "storeSchedule" : {
+    "closed" : "Zamknięte",
+    "storeHours" : "Store hours"
+  },
+  "storeSearch" : {
+    "findAStore" : "Znajdź sklep",
+    "findStores" : "Znajdź sklepy",
+    "hideOutOfStockOptions" : "Hide out of stock options",
+    "searchPlaceholder" : "Enter Zip Code or Town or Address",
+    "useMyLocation" : "Use my location"
+  },
+  "addressBookPickupInStore" : {
+    "heading" : "Pick-Up Store"
+  },
+  "storeFinderPickupInStore" : {
+    "heading" : "My Store"
+  },
+  "checkoutPickupInStore" : {
+    "heading" : "Items to be Picked Up",
+    "storeItemHeading" : "Pick Up Store Address"
+  },
+  "cartItems" : {
+    "item" : "Pozycja"
+  },
+  "deliveryPointOfServiceDetails" : {
+    "itemsToBePickUp" : "Items To Be Pick-Up",
+    "pickUpInStoreAddress" : "Pick Up Store Address",
+    "itemsToBeShipped" : "Items To Be Shipped",
+    "shippingAddress" : "Adres wysyłki",
+    "deliveryMethod" : "Metoda dostawy",
+    "deliveryOptions" : "Opcje dostawy",
+    "statusDisplay_cancelled" : "Anulowane",
+    "statusDisplay_cancelling" : "Anuluj oczekujące",
+    "statusDisplay_completed" : "Zakończone",
+    "statusDisplay_created" : "Utworzone",
+    "statusDisplay_error" : "Oczekujące",
+    "statusDisplay_Error" : "Oczekujące",
+    "statusDisplay_processing" : "Oczekujące",
+    "statusDisplay_open" : "Otwarte",
+    "statusDisplay_pending" : {
+      "approval" : "Oczekuje na zatwierdzenie",
+      "merchant" : {
+        "approval" : "Oczekuje na zatwierdzenie przez sprzedawcę"
+      }
+    },
+    "statusDisplay_approved" : "Zatwierdzone",
+    "statusDisplay_rejected" : "Odrzucone",
+    "statusDisplay_merchant" : {
+      "approved" : "Zatwierdzone przez sprzedawcę",
+      "rejected" : "Odrzucone przez sprzedawcę"
+    },
+    "statusDisplay_assigned" : {
+      "admin" : "Przypisane do administratora"
+    }
+  }
+}

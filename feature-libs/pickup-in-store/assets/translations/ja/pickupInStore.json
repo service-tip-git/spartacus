@@ -1,0 +1,86 @@
+{
+  "pickupInfo" : {
+    "inStorePickup" : "In Store Pickup",
+    "pickupBy" : "Pick up by",
+    "pickupFrom" : "Pick up from"
+  },
+  "pickupOptionDialog" : {
+    "close" : "閉じる",
+    "modalHeader" : "店頭受け取り"
+  },
+  "pickupOptions" : {
+    "legend" : "配送方法",
+    "changeStore" : "店舗を変更",
+    "delivery" : "Ship It (Free Return)",
+    "pickup" : "Free Pickup In Store",
+    "selectStore" : "Select Store"
+  },
+  "setPreferredStore" : {
+    "makeThisMyStore" : "Make This My Store",
+    "myStore" : "My Store"
+  },
+  "store" : {
+    "pickupFromHere" : "Pick Up from here",
+    "stockLevel_inStock" : "{{ count }} in Stock",
+    "stockLevel_outOfStock" : "在庫なし",
+    "viewHours" : "View Hours"
+  },
+  "storeList" : {
+    "noStoresMessage" : "No stores found in database..."
+  },
+  "storeSchedule" : {
+    "closed" : "定休日",
+    "storeHours" : "Store hours"
+  },
+  "storeSearch" : {
+    "findAStore" : "店舗検索",
+    "findStores" : "店舗を探す",
+    "hideOutOfStockOptions" : "Hide out of stock options",
+    "searchPlaceholder" : "Enter Zip Code or Town or Address",
+    "useMyLocation" : "Use my location"
+  },
+  "addressBookPickupInStore" : {
+    "heading" : "Pick-Up Store"
+  },
+  "storeFinderPickupInStore" : {
+    "heading" : "My Store"
+  },
+  "checkoutPickupInStore" : {
+    "heading" : "Items to be Picked Up",
+    "storeItemHeading" : "Pick Up Store Address"
+  },
+  "cartItems" : {
+    "item" : "アイテム"
+  },
+  "deliveryPointOfServiceDetails" : {
+    "itemsToBePickUp" : "Items To Be Pick-Up",
+    "pickUpInStoreAddress" : "Pick Up Store Address",
+    "itemsToBeShipped" : "Items To Be Shipped",
+    "shippingAddress" : "配送先住所",
+    "deliveryMethod" : "配送方法",
+    "deliveryOptions" : "配送オプション",
+    "statusDisplay_cancelled" : "キャンセル済み",
+    "statusDisplay_cancelling" : "保留をキャンセル",
+    "statusDisplay_completed" : "完了",
+    "statusDisplay_created" : "作成済み",
+    "statusDisplay_error" : "保留中",
+    "statusDisplay_Error" : "保留中",
+    "statusDisplay_processing" : "保留中",
+    "statusDisplay_open" : "開く",
+    "statusDisplay_pending" : {
+      "approval" : "承認を保留",
+      "merchant" : {
+        "approval" : "業者承認を保留"
+      }
+    },
+    "statusDisplay_approved" : "承認済",
+    "statusDisplay_rejected" : "却下済み",
+    "statusDisplay_merchant" : {
+      "approved" : "業者が承認されました",
+      "rejected" : "業者が拒否されました"
+    },
+    "statusDisplay_assigned" : {
+      "admin" : "管理者に割り当て済み"
+    }
+  }
+}

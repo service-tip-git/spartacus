@@ -1,0 +1,9 @@
+{
+  "productVariants" : {
+    "style" : "स्टाइल",
+    "selectedStyle" : "Selected style",
+    "size" : "साइज़",
+    "color" : "रंग",
+    "sizeGuideLabel" : "Style guide"
+  }
+}

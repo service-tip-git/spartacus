@@ -1,0 +1,9 @@
+{
+  "productVariants" : {
+    "style" : "Styl",
+    "selectedStyle" : "Selected style",
+    "size" : "Velikost",
+    "color" : "Barva",
+    "sizeGuideLabel" : "Style guide"
+  }
+}

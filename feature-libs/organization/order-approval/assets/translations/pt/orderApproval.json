@@ -1,0 +1,49 @@
+{
+  "orderApprovalDetails" : {
+    "back" : "Back To List",
+    "showForm_APPROVE" : "Approve Order...",
+    "showForm_REJECT" : "Reject Order...",
+    "form" : {
+      "title_APPROVE" : "Approve order {{orderCode}} totalling {{orderTotal}}",
+      "title_REJECT" : "Reject order {{orderCode}} totalling {{orderTotal}}",
+      "submit_APPROVE" : "Aprovar",
+      "submit_REJECT" : "Rejeitar",
+      "cancel" : "Cancelar",
+      "comment_APPROVE" : {
+        "label" : "Comment (optional, maximum 255 characters)",
+        "placeholder" : ""
+      },
+      "comment_REJECT" : {
+        "label" : "Comment (maximum 255 characters)",
+        "placeholder" : ""
+      }
+    },
+    "permissionResults" : {
+      "header" : "Detalhes da aprovação do cliente",
+      "permission" : "Permissão",
+      "approver" : "Aprovador",
+      "status" : "Status",
+      "approverComments" : "Comentários do aprovador",
+      "noApprovalComments" : "Nenhum",
+      "permissionType_B2BBudgetExceededPermission" : "The budget associated with the chosen cost center has been exceeded",
+      "permissionType_B2BOrderThresholdPermission" : "Order total exceeded the per-order limit",
+      "permissionType_B2BOrderThresholdTimespanPermission" : "Order total exceeded the per-timespan limit"
+    }
+  },
+  "orderApprovalList" : {
+    "orderCode" : "Nº do pedido",
+    "POCode" : "PO #",
+    "placedBy" : "Placed by",
+    "date" : "Data",
+    "status" : "Status",
+    "total" : "Total",
+    "none" : "Nenhum",
+    "emptyList" : "There are no orders to approve at this time.",
+    "orderApprovalList" : "Order Approval List"
+  },
+  "orderApprovalGlobal" : {
+    "notification" : {
+      "noSufficientPermissions" : "No sufficient permissions to access this page."
+    }
+  }
+}

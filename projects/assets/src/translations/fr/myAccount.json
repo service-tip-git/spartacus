@@ -1,0 +1,109 @@
+{
+  "closeAccount" : {
+    "confirmAccountClosure" : "Confirmer la fermeture du compte",
+    "confirmAccountClosureMessage" : "Voulez-vous vraiment fermer votre compte ?",
+    "closeMyAccount" : "CLOSE MY ACCOUNT",
+    "accountClosedSuccessfully" : "Account closed with success",
+    "accountClosedFailure" : "Failed to close account"
+  },
+  "updatePasswordForm" : {
+    "oldPassword" : {
+      "label" : "Ancien mot de passe",
+      "placeholder" : "Ancien mot de passe"
+    },
+    "oldPasswordIsRequired" : "Old password is required.",
+    "newPassword" : {
+      "label" : "Nouveau mot de passe",
+      "placeholder" : "Nouveau mot de passe"
+    },
+    "passwordMinRequirements" : "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
+    "passwordStrengthRequirements" : "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
+    "confirmPassword" : {
+      "label" : "Confirmer le nouveau mot de passe",
+      "placeholder" : "Confirmer le mot de passe"
+    },
+    "bothPasswordMustMatch" : "Both password must match",
+    "passwordUpdateSuccess" : "Password updated with success",
+    "accessDeniedError" : "Access is denied"
+  },
+  "updateProfileForm" : {
+    "title" : "Titre",
+    "none" : "",
+    "firstName" : {
+      "label" : "Prénom",
+      "placeholder" : "Prénom"
+    },
+    "firstNameIsRequired" : "First name is required.",
+    "lastName" : {
+      "label" : "Nom",
+      "placeholder" : "Nom"
+    },
+    "lastNameIsRequired" : "Last name is required.",
+    "profileUpdateSuccess" : "Personal details successfully updated",
+    "customerId" : "Customer #"
+  },
+  "consentManagementForm" : {
+    "clearAll" : "Clear all",
+    "selectAll" : "Tout sélectionner",
+    "message" : {
+      "success" : {
+        "given" : "Consent successfully given.",
+        "withdrawn" : "Consent successfully withdrawn."
+      }
+    }
+  },
+  "myCoupons" : {
+    "noCouponsMessage" : "You have no coupons available.",
+    "effectiveTitle" : "Validité :",
+    "Effective" : "EFFECTIVE",
+    "PreSession" : "EFFECTIVE SOON",
+    "ExpireSoon" : "EXPIRING SOON",
+    "readMore" : "Read more",
+    "notification" : "Notification",
+    "findProducts" : "Trouver les produits",
+    "status" : "Statut :",
+    "dialogTitle" : "Bon de réduction",
+    "claimCustomerCoupon" : "Vous avez demandé avec succès ce bon de réduction.",
+    "myCoupons" : "My coupons",
+    "startDateAsc" : "Start Date (ascending)",
+    "startDateDesc" : "Start Date (descending)",
+    "endDateAsc" : "End Date (ascending)",
+    "endDateDesc" : "End Date (descending)",
+    "sortBy" : "Trier par",
+    "sortCoupons" : "Sort coupons",
+    "notesPreffix" : "You can set your preferred channels for receiving coupon notifications on the ",
+    "notesLink" : "Canaux de notification",
+    "notesSuffix" : " page."
+  },
+  "notificationPreference" : {
+    "message" : "Select your preferred notification channels",
+    "note" : "Note: ",
+    "noteMessage" : "If you deactivate all channels you will not be able to receive any further notifications.",
+    "EMAIL" : "Email:",
+    "SMS" : "SMS:",
+    "SITE_MESSAGE" : "SiteMessage"
+  },
+  "myInterests" : {
+    "header" : "Mes intérêts",
+    "item" : "ITEM",
+    "price" : "PRICE",
+    "notifications" : "NOTIFICATIONS",
+    "noInterests" : "You have no registered interests yet.",
+    "inStock" : "En stock",
+    "lowStock" : "Stock insuffisant",
+    "outOfStock" : "Épuisé",
+    "BACK_IN_STOCK" : "De nouveau disponible",
+    "sortBy" : "Trier par",
+    "sortInterests" : "Sort interests",
+    "expirationDate" : " - Till {{ expirationDate }}",
+    "productId" : "ID {{ code }}",
+    "remove" : "Supprimer",
+    "sorting" : {
+      "byNameAsc" : "Nom (ordre croissant)",
+      "byNameDesc" : "Nom (ordre décroissant)"
+    },
+    "actions" : "ACTIONS",
+    "caption" : "My Interests contents.",
+    "itemRemoved" : "Selected item has been removed."
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "serviceOrderCheckout" : {
+    "serviceDetails" : "सेवा विवरण",
+    "serviceScheduleHeading" : "Service Schedule - Date and Time",
+    "address" : "Same as Shipping Address",
+    "serviceLocationHeading" : "Service Location",
+    "datePickerLabel" : "सेवा दिनांक शेड्यूल करें",
+    "timePickerLabel" : "सेवा समय शेड्यूल करें",
+    "unknownError" : "An unknown error occurred. Please contact support.",
+    "productDeliveryOptions" : "Delivery Options for Products",
+    "serviceDeliveryOption" : "Delivery Option for Services",
+    "productDeliveryMethods" : "Delivery Methods for Products",
+    "serviceDeliveryMethod" : "Delivery Method for Services"
+  },
+  "cancelService" : {
+    "heading" : "The following items will be included in the cancellation request",
+    "cancelReason" : "Reason for  cancelling service",
+    "optional" : "(वैकल्पिक)",
+    "action" : "Cancel Service",
+    "back" : "वापस जाएं",
+    "Submit" : "अनुरोध सबमिट करें",
+    "cancelServiceSuccess" : "The service has been cancelled sucessfully",
+    "unknownError" : "An unknown error occurred. Please contact support.",
+    "ServiceTime" : "Service Time",
+    "ServiceLocation" : "Service Location",
+    "ServiceDate" : "Service Date",
+    "SubmitRequest" : "अनुरोध सबमिट करें",
+    "serviceNotRcancelable" : "Service is not cancelable",
+    "charactersLeft" : "characters left: {{count}}",
+    "Services" : "सेवाएं"
+  },
+  "rescheduleService" : {
+    "actionButtonLabel" : "Reschedule Service",
+    "headerLabel" : "सेवाएं",
+    "contentLabel" : "Service Reschedule - Choose New Date and Time",
+    "datePickerLabel" : "Service Date",
+    "timePickerLabel" : "Service Time",
+    "backButtonLabel" : "वापस जाएं",
+    "submitButtonLabel" : "अनुरोध सबमिट करें",
+    "note" : "Please note that it may take a few moments for your order to reflect the request.",
+    "unknownError" : "An unknown error occurred. Please contact support.",
+    "serviceNotReschedulable" : "The service cannot be rescheduled.",
+    "serviceNotAmendable" : "The service cannot be cancelled or rescheduled less than 24 hours before the scheduled date.",
+    "rescheduleSuccess" : "The service date and time has been changed successfully."
+  }
+}

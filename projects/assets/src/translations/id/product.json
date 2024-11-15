@@ -1,0 +1,145 @@
+{
+  "productDetails" : {
+    "id" : "ID",
+    "quantity" : "Jml",
+    "productDetails" : "Rincian Produk",
+    "specification" : "Spesifikasi",
+    "reviews" : "Ulasan",
+    "shipping" : "Pengiriman",
+    "share" : "Bagikan",
+    "showReviews" : "Show reviews",
+    "noReviews" : "No reviews yet",
+    "productPrice" : "Harga produk",
+    "noProductImage" : "No image available, {{ product }}"
+  },
+  "productList" : {
+    "filterBy" : {
+      "label" : "Filter by",
+      "action" : "Filter by"
+    },
+    "activeFilter" : "{{filter}} filter, clicking on this button will remove the filter",
+    "appliedFilter" : "Applied filter:",
+    "showLess" : "Tampilkan lebih sedikit...",
+    "showMore" : "Tampikan lebih banyak...",
+    "sortBy" : "Urutkan berdasarkan",
+    "sortResults" : "Sort results",
+    "backToTopBtn" : "BACK TO TOP",
+    "showMoreBtn" : "SHOW MORE",
+    "productSearchPagination" : "Product search pagination",
+    "productListResults" : "Product Results List"
+  },
+  "productFacetNavigation" : {
+    "filterBy" : {
+      "label" : "Filter by",
+      "action" : "Filter by",
+      "facet" : "Filter results by Facets",
+      "name" : "Filter by {{name}}"
+    },
+    "appliedFilter" : "Applied filter:",
+    "showLess" : "Tampilkan lebih sedikit...",
+    "showMore" : "Tampikan lebih banyak...",
+    "sortBy" : "Urutkan berdasarkan",
+    "ariaLabelShowLess" : "Show Less, button, clicking on this button will reduce options for the active group",
+    "ariaLabelShowMore" : "Show more, button, clicking on this button will show all options for the active group",
+    "ariaLabelItemsAvailable" : "{{name}}, {{state}} {{count}} item available",
+    "ariaLabelItemsAvailable_other" : "{{name}}, {{state}} {{count}} items available",
+    "decreaseOptionsVisibility" : "Options were hidden from the active group, tab backward to read them or forward for the next group",
+    "increaseOptionsVisibility" : "More options were added to the active group, tab backward to read them or forward for the next group",
+    "backToResults" : "Back To Results"
+  },
+  "productSummary" : {
+    "id" : "ID",
+    "showReviews" : "Show reviews",
+    "showReviewsDetailed" : "Show {{count}} reviews, Rated {{rating}} out of 5 stars",
+    "share" : "Bagikan",
+    "newItemPrice" : "New item price"
+  },
+  "productReview" : {
+    "overallRating" : "Overall Rating",
+    "reviewTitle" : "Judul Ulasan",
+    "writeYourComments" : "Write your comments",
+    "rating" : "Peringkat",
+    "ratingRequired" : "Product rating, required",
+    "addRate" : "Add rate: {{count}} star",
+    "addRate_other" : "Add rate: {{count}} stars",
+    "reviewerName" : "Reviewer name (optional)",
+    "writeReview" : "Tulis Ulasan",
+    "more" : "Show More Reviews",
+    "less" : "Show Less Reviews",
+    "thankYouForReview" : "Thank you for the review! Note that reviews may require review before appearing here.",
+    "postReviewFail" : "Something went wrong while posting your review. Please try again later.",
+    "ratedOutOf" : "Rated: {{rating}} out of 5"
+  },
+  "productCarousel" : {
+    "carouselLabel" : "Carousel, {{title}}"
+  },
+  "addToCart" : {
+    "itemsAddedToYourCart" : "Item(s) added to your cart",
+    "itemsIncrementedInYourCart" : "This item was already in your cart. The quantity was updated.",
+    "items" : "item",
+    "updatingCart" : "Updating cart...",
+    "addToCart" : "Tambahkan ke troli",
+    "viewCart" : "view cart",
+    "proceedToCheckout" : "proceed to checkout",
+    "quantity" : "Jml",
+    "outOfStock" : "Out of stock",
+    "inStock" : "In stock",
+    "selectStyleAndSize" : "Select style and size to check stock",
+    "removeFromCart" : "Remove Product from Cart",
+    "closeModal" : "Close Modal",
+    "buyItAgain" : "Buy It Again",
+    "addToActiveCart" : "Add To Active Cart"
+  },
+  "TabPanelContainer" : {
+    "tabs" : {
+      "ProductDetailsTabComponent" : "Rincian Produk",
+      "ProductSpecsTabComponent" : "Spesifikasi",
+      "ProductReviewsTabComponent" : "Ulasan",
+      "deliveryTab" : "Pengiriman",
+      "SparePartsTabComponent" : " Spare Parts"
+    },
+    "tabPanelContainerRegion" : "Tab group with more product details",
+    "tabPanelContainerRegionGroup" : "Group with more product details"
+  },
+  "addToWishList" : {
+    "add" : "Add to Wish List",
+    "remove" : "Remove from Wish List",
+    "anonymous" : "Sign in to add to wish list",
+    "addedToWishList" : "Product added to wish list",
+    "removedFromWishList" : "Product removed from wish list"
+  },
+  "stockNotification" : {
+    "notifyMe" : "NOTIFY ME",
+    "stopNotify" : "STOP NOTIFICATION",
+    "getNotify" : "Get notified when this product is available.",
+    "getNotifySuffix" : "to get notified when this product is available.",
+    "activateChannelsPrefix" : "To be notified you need to activate the ",
+    "channelsLink" : "Saluran Notifikasi",
+    "activateChannelsSuffix" : ".",
+    "notified" : "You will be notified when this product is back in stock.",
+    "getNotified" : "Get notified when this product is back in stock.",
+    "unsubscribeSuccess" : "You will not receive back-in-stock notification for this product.",
+    "subscriptionDialog" : {
+      "header" : "Out of stock subscription",
+      "notifiedPrefix" : "You will be notified on:",
+      "notifiedSuffix" : "as soon as this product is back in stock.",
+      "manageChannelsPrefix" : "Manage your preferred notification channels on the ",
+      "manageChannelsLink" : "Preferensi Notifikasi",
+      "manageChannelsSuffix" : " page.",
+      "manageSubscriptionsPrefix" : "You can manage your subscriptions on ",
+      "manageSubscriptionsLink" : "Minat Saya",
+      "manageSubscriptionsSuffix" : " page.",
+      "okBtn" : "OK",
+      "subscribing" : "Subscribing you to Out of Stock notifications for this product"
+    }
+  },
+  "itemCounter" : {
+    "removeOne" : "Remove one",
+    "addOneMore" : "Add one more",
+    "quantity" : "Jumlah"
+  },
+  "productView" : {
+    "gridView" : "Select to change to Grid View",
+    "listView" : "Select to change to List View"
+  }
+}

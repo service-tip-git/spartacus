@@ -1,0 +1,22 @@
+{
+  "checkoutB2B" : {
+    "noPoNumber" : "없음",
+    "poNumber" : "Purchase order number (optional)",
+    "costCenter" : "코스트 센터",
+    "placeholder" : "Enter P.O",
+    "availableLabel" : "Delivery addresses available to you depend on the cost center's unit",
+    "invalid" : {
+      "accountType" : "여기서 체크아웃할 수 없는 계정입니다."
+    },
+    "methodOfPayment" : {
+      "paymentType" : "지불 유형"
+    },
+    "review" : {
+      "poNumber" : "구매 주문 번호"
+    },
+    "progress" : {
+      "methodOfPayment" : "Method of Payment"
+    },
+    "invalidCostCenter" : "Invalid cost center."
+  }
+}

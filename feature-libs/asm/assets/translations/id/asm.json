@@ -1,0 +1,175 @@
+{
+  "asm" : {
+    "mainLogoLabel" : "SAP",
+    "mainTitle" : "Assisted Service Mode",
+    "logout" : "Keluar",
+    "hideUi" : "Close ASM",
+    "helpPortalUrl" : "Bantuan",
+    "customers" : "Pelanggan",
+    "asmCustomer360Button" : "Customer 360 View",
+    "asmCustomer360ViewButton" : "Customer 360°",
+    "createCustomerSuccessfullyAlert" : "The customer account has been created and the customer session has started.",
+    "saveInactiveCartAlertInfo" : "The identified cart is an inactive cart. To take further actions on this cart, save it first.",
+    "activeCartAlertInfo" : "The identified cart is an active cart.",
+    "startCustomerEmulationAlertInfo" : "Customer emulation has started. Any actions you do will reflect the effects on the customer account.",
+    "toggleUi" : {
+      "collapse" : "Hide ASM",
+      "expand" : "Show ASM"
+    },
+    "loginForm" : {
+      "submit" : "Masuk",
+      "userId" : {
+        "label" : "Agent ID or Email"
+      },
+      "password" : {
+        "label" : "Kata sandi"
+      }
+    },
+    "customerSearch" : {
+      "searchTerm" : {
+        "label" : "Nama Pelanggan/Alamat Email"
+      },
+      "searchCustomer" : {
+        "label" : "Search by name or email address"
+      },
+      "searchOrder" : {
+        "label" : "Search by full order ID"
+      },
+      "submit" : "Start Session",
+      "startEmulation" : "Start Emulation",
+      "noMatch" : "No customer found.",
+      "noMatchResult" : "This account cannot be found.",
+      "noCustomerMatchResult" : "No matching customer found.",
+      "noOrderMatchResult" : "Search by full order ID.",
+      "createCustomer" : "Create New Customer",
+      "customer" : "Pelanggan",
+      "orderID" : "ID Order"
+    },
+    "createCustomerForm" : {
+      "title" : "Create New Customer",
+      "createAccount" : "Buat",
+      "cancel" : "Batalkan",
+      "firstName" : {
+        "label" : "Nama Depan",
+        "placeholder" : "Nama depan"
+      },
+      "lastName" : {
+        "label" : "Nama Belakang",
+        "placeholder" : "Nama belakang"
+      },
+      "emailAddress" : {
+        "label" : "Alamat Email",
+        "placeholder" : "Alamat email"
+      },
+      "createAccountAlert" : "The customer session starts once you create the customer account.",
+      "validationErrors" : {
+        "firstName" : "Enter a valid first name.",
+        "lastName" : "Enter a valid last name.",
+        "emailAddress" : "Enter a valid email address."
+      },
+      "badRequestDuplicatedEmail" : "Enter a different email address as {{ emailAddress }} already exists."
+    },
+    "customerList" : {
+      "title" : "Daftar Pelanggan",
+      "description" : "Select a customer from one of several provided lists.",
+      "createCustomer" : "Create New Customer",
+      "cancel" : "Batalkan",
+      "tableHeader" : {
+        "customer" : "Pelanggan",
+        "customerName" : "Nama Pelanggan",
+        "name" : "Nama",
+        "email" : "Email",
+        "emailId" : "Email/ID",
+        "phone" : "Telepon",
+        "account" : "Akun",
+        "cart" : "Troli",
+        "order" : "Pesanan",
+        "view" : "Tampilan 360",
+        "activeCart" : "Troli Aktif",
+        "viewActiveCart" : "View Active Cart",
+        "orders" : "Pemesanan",
+        "viewOrders" : "Lihat Order",
+        "customer360" : "Customer 360°",
+        "viewCustomer360" : "View Customer 360°"
+      },
+      "tableSort" : {
+        "sortBy" : "Urutkan berdasarkan",
+        "byName" : "Nama (Menaik)",
+        "byNameAsc" : "Nama (Menaik)",
+        "byNameDesc" : "Nama (Menurun)",
+        "byDateAsc" : "Tanggal (Menaik)",
+        "byDateDesc" : "Tanggal (Menurun)",
+        "byOrderDateAsc" : "Order date (Asc)",
+        "byOrderDateDesc" : "Order date (Desc)",
+        "byUnit" : "Akun (Menaik)",
+        "byUnitDesc" : "Akun (Menurun)"
+      },
+      "page" : {
+        "page" : "Page {{count}}",
+        "previous" : "Sebelumnya",
+        "next" : "Selanjutnya"
+      },
+      "noOfCustomers" : "{{count}} Pelanggan",
+      "oneCustomer" : "1 Pelanggan",
+      "noCustomers" : "Saat ini tidak ada pelanggan pada daftar pelanggan ini.",
+      "noLists" : "There are currently no customer lists available. Contact your system administrator.",
+      "listsError" : "The customer lists could not be retrieved. Please try again later.",
+      "searchBox" : "Cari",
+      "enterSearchBox" : "Enter customer name or email"
+    },
+    "switchCustomer" : {
+      "dialog" : {
+        "title" : "Peringatan",
+        "body" : "Clicking \"Switch Customer\" will end the emulation for \"{{ customerA }}\" and start for \"{{ customerB }}\". Any unsaved changes for \"{{ customerA }}\" will be lost.",
+        "actions" : {
+          "switch" : "Switch Customer"
+        }
+      }
+    },
+    "saveCart" : {
+      "saveCartBtn" : "Simpan untuk Nanti",
+      "dialog" : {
+        "saveInfo" : "Save the cart before you can take further actions.",
+        "disableInfo" : "Cannot save the cart as it is empty.",
+        "title" : "Simpan Troli",
+        "row" : {
+          "id" : "ID",
+          "qty" : "Jml",
+          "total" : "Total"
+        },
+        "actions" : {
+          "save" : "Simpan untuk Nanti"
+        }
+      }
+    },
+    "bindCart" : {
+      "cartNumber" : "Cart Number",
+      "bindCartToCustomer" : "Assign Cart to Customer",
+      "success" : "Cart has been successfully assigned",
+      "assignCartId" : "Assign a cart id to customer",
+      "enterCartId" : "Enter cart id",
+      "resetCartId" : "Atur Ulang",
+      "dialog" : {
+        "title" : "Assign Anonymous Cart",
+        "body" : "Do you want to replace the current active cart with the anonymous cart? If you replace the current active cart, it is saved as a saved cart.",
+        "actions" : {
+          "replace" : "Replace Cart"
+        }
+      }
+    },
+    "csagentTokenExpired" : "Your customer support agent session is expired.",
+    "endSession" : "Akhiri Sesi",
+    "endEmulation" : "End Emulation",
+    "agentSessionTimer" : {
+      "label" : "Session Timeout",
+      "minutes" : "mnt",
+      "reset" : "Atur Ulang"
+    },
+    "auth" : {
+      "agentLoggedInError" : "Cannot login as user when there is an active CS agent session. Please either emulate user or logout CS agent."
+    },
+    "error" : {
+      "noCustomerId" : "No customerId found for selected user. Session cannot be started."
+    }
+  }
+}

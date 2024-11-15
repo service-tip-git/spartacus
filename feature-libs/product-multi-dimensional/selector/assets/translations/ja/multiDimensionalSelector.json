@@ -1,0 +1,6 @@
+{
+  "multiDimensionalSelector" : {
+    "variantThumbnailTitle" : "Select {{value}} {{category}}",
+    "selectedVariant" : "選択済み"
+  }
+}

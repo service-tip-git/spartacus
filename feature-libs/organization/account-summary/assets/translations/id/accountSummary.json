@@ -1,0 +1,88 @@
+{
+  "orgAccountSummary" : {
+    "groupName" : "Account Summaries",
+    "header" : "All Account Summaries ({{count}})",
+    "name" : "Unit",
+    "details" : {
+      "header" : "Detail Ringkasan Akun",
+      "uid" : "ID Unit",
+      "name" : "Nama Unit",
+      "address" : "Alamat",
+      "creditRep" : "Rep Kredit",
+      "creditLine" : "Lini Kredit",
+      "currentBalance" : "Saldo Berjalan",
+      "openBalance" : "Saldo Belum Ditagih",
+      "pastDueBalance" : "Saldo Lewat Tenggat:",
+      "dayRange" : "{{minBoundary}}-{{maxBoundary}} Days",
+      "dayPlus" : "{{minBoundary}}+ Days",
+      "notApplicable" : "n/a"
+    },
+    "document" : {
+      "header" : "Dokumen",
+      "id" : "Nomor Dokumen",
+      "type" : "Tipe Dokumen",
+      "date" : "Dibuat pada",
+      "dueDate" : "Due On",
+      "originalAmount" : "Jumlah Awal",
+      "openAmount" : "Jumlah yang Belum Dibayar",
+      "status" : "Status",
+      "attachment" : "Lampiran",
+      "download" : "Unduh",
+      "attachmentDescription" : "Download attachment for {{type}} {{id}}.",
+      "noneFound" : "No Documents Found"
+    },
+    "sorts" : {
+      "byCreatedAtDateAsc" : "Created On Ascending",
+      "byCreatedAtDateDesc" : "Created On Descending",
+      "byDueAtDateAsc" : "Due On Ascending",
+      "byDueAtDateDesc" : "Due On Descending",
+      "byOriginalAmountAsc" : "Original Amount Ascending",
+      "byOriginalAmountDesc" : "Original Amount Descending",
+      "byOpenAmountAsc" : "Open Amount Ascending",
+      "byOpenAmountDesc" : "Open Amount Descending",
+      "byOrgDocumentTypeAsc" : "Document Type Ascending",
+      "byOrgDocumentTypeDesc" : "Document Type Descending",
+      "byStatusAsc" : "Status Ascending",
+      "byStatusDesc" : "Status Descending",
+      "byOrgDocumentIdAsc" : "Document Number Ascending",
+      "byOrgDocumentIdDesc" : "Document Number Descending"
+    },
+    "statuses" : {
+      "open" : "Terbuka",
+      "closed" : "Tertutup",
+      "all" : "Semua"
+    },
+    "filterByOptions" : {
+      "orgDocumentId" : "Nomor Dokumen",
+      "orgDocumentIdRange" : "Document Number Range",
+      "orgDocumentType" : "Tipe Dokumen",
+      "createdAtDateRange" : "Created On Range",
+      "dueAtDateRange" : "Due On Range",
+      "amountRange" : "Rentang Jumlah Asli",
+      "openAmountRange" : "Rentang Jumlah Belum Ditagih"
+    },
+    "sortBy" : "Sort By",
+    "sortDocuments" : "Sort documents",
+    "filter" : {
+      "status" : "Status",
+      "filterBy" : "Filter berdasarkan",
+      "documentNumber" : "Nomor Dokumen",
+      "documentType" : "Tipe Dokumen",
+      "startRange" : "Dari",
+      "endRange" : "Hingga",
+      "clear" : "Hapus Semua",
+      "search" : "Cari",
+      "errors" : {
+        "toDateMustComeAfterFrom" : "Choose an end date that's later than the start date.",
+        "toAmountMustBeLargeThanFrom" : "Choose an end range value that's smaller than the start value."
+      }
+    },
+    "hint" : "Account summaries allow you to review general information about a unit, including balances and aging summary of invoices. Here, you can also browse through a list of transaction documents for a unit."
+  },
+  "orgAccountSummaryList" : {
+    "breadcrumbs" : {
+      "list" : "Account Summaries",
+      "details" : "{{name}}"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "paymentForm" : {
+    "payment" : "Pago",
+    "choosePaymentMethod" : "Choose a payment method",
+    "paymentType" : "Tipo de pago",
+    "accountHolderName" : {
+      "label" : "Account Holder Name",
+      "placeholder" : "Account Holder Name"
+    },
+    "cardNumber" : "Número de tarjeta",
+    "expirationDate" : "Fecha de caducidad",
+    "securityCode" : "Security code (CVV)",
+    "securityCodeTitle" : "Card Verification Value",
+    "saveAsDefault" : "Save as default",
+    "setAsDefault" : "Set as default payment method",
+    "billingAddress" : "Dirección de facturación",
+    "sameAsDeliveryAddress" : "Same as delivery address",
+    "billingAddressSameAsShipping" : "Billing address is the same as delivery address",
+    "selectOne" : "Select One...",
+    "monthMask" : "MM",
+    "yearMask" : "YYYY",
+    "expirationYear" : "Expiration year {{ selected }}",
+    "expirationMonth" : "Expiration month {{ selected }}",
+    "useThisPayment" : "Use this payment",
+    "addNewPayment" : "Add New Payment",
+    "paymentAddedSuccessfully" : "New payment was added successfully",
+    "changePayment" : "Change Payment"
+  },
+  "paymentMethods" : {
+    "paymentMethods" : "Payment methods",
+    "paymentMethodSelected" : "Payment method selected",
+    "newPaymentMethodsAreAddedDuringCheckout" : "New payment methods are added during checkout.",
+    "invalidField" : "InvalidField: {{ field }}"
+  },
+  "paymentCard" : {
+    "deleteConfirmation" : "Are you sure you want to delete this payment method?",
+    "setAsDefault" : "Fijar como predeterminado",
+    "expires" : "Expires: {{ month }}/{{ year }}",
+    "defaultPaymentMethod" : "✓ DEFAULT",
+    "defaultPaymentLabel" : "Default payment method",
+    "additionalPaymentLabel" : "Additional payment method {{ number }}",
+    "selected" : "Seleccionado",
+    "deletePaymentSuccess" : "Payment method deleted successfully"
+  },
+  "paymentTypes" : {
+    "title" : "Método de pago",
+    "paymentType_CARD" : "Tarjeta de crédito",
+    "paymentType_ACCOUNT" : "Cuenta"
+  },
+  "paymentMessages" : {
+    "setAsDefaultSuccessfully" : "New payment was successfully set as default"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "orderApprovalDetails" : {
+    "back" : "Back To List",
+    "showForm_APPROVE" : "Approve Order...",
+    "showForm_REJECT" : "Reject Order...",
+    "form" : {
+      "title_APPROVE" : "Approve order {{orderCode}} totalling {{orderTotal}}",
+      "title_REJECT" : "Reject order {{orderCode}} totalling {{orderTotal}}",
+      "submit_APPROVE" : "अनुमोदन करें",
+      "submit_REJECT" : "अस्वीकृत करें",
+      "cancel" : "रद्द करें",
+      "comment_APPROVE" : {
+        "label" : "Comment (optional, maximum 255 characters)",
+        "placeholder" : ""
+      },
+      "comment_REJECT" : {
+        "label" : "Comment (maximum 255 characters)",
+        "placeholder" : ""
+      }
+    },
+    "permissionResults" : {
+      "header" : "ग्राहक के अनुमोदन का विवरण",
+      "permission" : "अनुमति",
+      "approver" : "स्वीकृतिदाता",
+      "status" : "स्थिति",
+      "approverComments" : "स्वीकृतिदाता की टिप्पणियां",
+      "noApprovalComments" : "कोई नहीं",
+      "permissionType_B2BBudgetExceededPermission" : "The budget associated with the chosen cost center has been exceeded",
+      "permissionType_B2BOrderThresholdPermission" : "Order total exceeded the per-order limit",
+      "permissionType_B2BOrderThresholdTimespanPermission" : "Order total exceeded the per-timespan limit"
+    }
+  },
+  "orderApprovalList" : {
+    "orderCode" : "ऑर्डर#",
+    "POCode" : "PO #",
+    "placedBy" : "Placed by",
+    "date" : "दिनांक",
+    "status" : "स्थिति",
+    "total" : "कुल",
+    "none" : "कोई नहीं",
+    "emptyList" : "There are no orders to approve at this time.",
+    "orderApprovalList" : "Order Approval List"
+  },
+  "orderApprovalGlobal" : {
+    "notification" : {
+      "noSufficientPermissions" : "No sufficient permissions to access this page."
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "savedCartDetails" : {
+    "cartName" : "名前",
+    "cartDescription" : "説明",
+    "cartId" : "ID",
+    "dateSaved" : "保存された日付",
+    "items" : "項目",
+    "quantity" : "数量",
+    "total" : "合計",
+    "editSavedCart" : "保存されたカートを編集",
+    "deleteSavedCart" : "保存されたカートを削除",
+    "addSelectedItems" : "Add selected items",
+    "emptyCartItems" : "Empty Cart Items"
+  },
+  "savedCartList" : {
+    "savedCarts" : "保存されたカート ({{count}})",
+    "cartName" : "名前",
+    "cartId" : "ID",
+    "dateSaved" : "保存された日付",
+    "cartDescription" : "説明",
+    "quantity" : "数量",
+    "total" : "合計",
+    "actions" : "アクション",
+    "makeCartActive" : "Make cart active",
+    "notFound" : "保存されたカートがありません",
+    "swapCartNoActiveCart" : "Existing cart is activated by {{cartName}} successfully.",
+    "swapCartWithActiveCart" : "Existing cart is activated by {{cartName}} successfully. Your previous items were saved in a cart {{previousCartName}}."
+  },
+  "savedCartCartPage" : {
+    "messages" : {
+      "cartSaved" : "Your cart items have been successfully saved for later in the \"{{cartName}}\" cart"
+    }
+  },
+  "savedCartDialog" : {
+    "saveForLater" : "Save For Later",
+    "itemsSavedForLater" : "All of the items in your cart will be saved for later",
+    "savedCartName" : "Saved Cart Name",
+    "savedCartDescription" : "Saved Cart Description",
+    "optional" : "optional",
+    "charactersLeft" : "characters left: {{count}}",
+    "cancel" : "キャンセル",
+    "save" : "保存",
+    "restore" : "復元",
+    "followingCartDelete" : "The following saved cart will be deleted",
+    "followingCartRestore" : "The following saved cart will be restored as the active cart",
+    "delete" : "削除",
+    "deleteCartSuccess" : "Cart Deleted Successfully",
+    "editCartSuccess" : "Cart Edited Successfully",
+    "editSavedCart" : "保存されたカートを編集",
+    "deleteSavedCart" : "保存されたカートを削除",
+    "restoreSavedCart" : "保存されたカートを復元",
+    "name" : "名前",
+    "id" : "ID",
+    "description" : "説明",
+    "quantity" : "数量",
+    "total" : "合計",
+    "keepCopySavedCart" : "Keep a copy of this cart in the saved carts list",
+    "defaultCloneCartName" : "{{name}} のコピー",
+    "nameOfCloneCart" : "Name of copied cart"
+  },
+  "addToSavedCart" : {
+    "savedCarts" : "Saved carts",
+    "saveCartForLater" : "Save cart for later"
+  }
+}

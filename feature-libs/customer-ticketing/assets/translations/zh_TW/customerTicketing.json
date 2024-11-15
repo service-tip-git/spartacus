@@ -1,0 +1,48 @@
+{
+  "customerTicketing" : {
+    "mainLogoLabel" : "SAP",
+    "mainTitle" : "Customer Ticketing",
+    "ticketId" : "ID",
+    "createdOn" : "建立日期",
+    "changedOn" : "Changed On",
+    "status" : "狀態",
+    "message" : "訊息",
+    "cancel" : "取消",
+    "submit" : "提交",
+    "uploadFile" : "上傳檔案",
+    "fileSizeLimit" : "File size limit: {{count}} MB",
+    "maximumAttachment" : "Maximum of one attachment per message",
+    "errorMessage" : "Something went wrong.",
+    "charactersLeft" : "characters left: {{count}}",
+    "customerService" : "客戶服務"
+  },
+  "customerTicketingList" : {
+    "subject" : "主旨",
+    "ticketCategory" : "種類",
+    "sortSubtitle" : "排序依據",
+    "sortOrders" : "Sort orders",
+    "noTickets" : "You don't have any request",
+    "requestTitle" : "All Requests",
+    "mobile" : {
+      "ticketIdFull" : "記錄單 ID"
+    }
+  },
+  "createCustomerTicket" : {
+    "createNewTicket" : "新增",
+    "addNewRequest" : "Add New Request",
+    "addRequest" : "Add Request",
+    "subject" : "主旨",
+    "category" : "種類",
+    "associateTo" : "Associate To",
+    "ticketCreated" : "Request created.",
+    "optionallySelectAssociatedObject" : "Select Option",
+    "selectCategory" : "Select Category"
+  },
+  "customerTicketingDetails" : {
+    "requestReopened" : "Request Reopened.",
+    "requestClosed" : "Request closed, you may reopen if needed.",
+    "reopenRequest" : "Reopen Request",
+    "closeRequest" : "Close Request",
+    "ticketNotFound" : "Ticket not found."
+  }
+}

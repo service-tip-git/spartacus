@@ -1,0 +1,72 @@
+{
+  "updateEmailForm" : {
+    "newEmailAddress" : {
+      "label" : "New email address",
+      "placeholder" : "Enter email"
+    },
+    "confirmNewEmailAddress" : {
+      "label" : "Confirm new email address",
+      "placeholder" : "Enter email"
+    },
+    "enterValidEmail" : "Zadejte platný e-mail.",
+    "bothEmailMustMatch" : "Both emails must match",
+    "password" : {
+      "label" : "Heslo",
+      "placeholder" : "Zadejte heslo"
+    },
+    "pleaseInputPassword" : "Please input password",
+    "emailUpdateSuccess" : "Success. Please sign in with {{ newUid }}"
+  },
+  "register" : {
+    "confirmPassword" : {
+      "action" : "Confirm password",
+      "label" : "Confirm password",
+      "placeholder" : "Potvrdit heslo"
+    },
+    "managementInMyAccount" : "Management in My Account.",
+    "termsAndConditions" : "Obchodní podmínky",
+    "signIn" : "I already have an account. Sign In",
+    "register" : "Registrovat",
+    "confirmNewPassword" : "Potvrďte nové heslo",
+    "resetPassword" : "Resetovat heslo",
+    "createAccount" : "Create an account",
+    "title" : "Oslovení",
+    "titleOptional" : "Title (optional)",
+    "firstName" : {
+      "label" : "Jméno",
+      "placeholder" : "Jméno"
+    },
+    "lastName" : {
+      "label" : "Příjmení",
+      "placeholder" : "Příjmení"
+    },
+    "emailAddress" : {
+      "label" : "E-mailová adresa",
+      "placeholder" : "E-mailová adresa"
+    },
+    "password" : {
+      "label" : "Heslo",
+      "placeholder" : "Heslo"
+    },
+    "newPassword" : "Nové heslo",
+    "emailMarketing" : "Use my personal data to receive e-mail newsletters for marketing campaigns. To change your settings, go to Consent Management in My Account.",
+    "confirmThatRead" : "I am confirming that I have read and agreed with the",
+    "selectTitle" : "Select Title",
+    "passwordMinRequirements" : "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
+    "passwordStrengthRequirements" : "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
+    "bothPasswordMustMatch" : "Both password must match",
+    "titleRequired" : "Title is required.",
+    "postRegisterMessage" : "Please log in with provided credentials."
+  },
+  "forgottenPassword" : {
+    "resetPassword" : "Reset password",
+    "enterEmailAddressAssociatedWithYourAccount" : "Enter the email address associated with your account",
+    "emailAddress" : {
+      "label" : "E-mailová adresa",
+      "placeholder" : "Enter email"
+    },
+    "enterValidEmail" : "Zadejte platný e-mail.",
+    "passwordResetEmailSent" : "An email has been sent to you with information on how to reset your password.",
+    "passwordResetSuccess" : "Úspěch! Nyní se může přihlásit novým heslem."
+  }
+}

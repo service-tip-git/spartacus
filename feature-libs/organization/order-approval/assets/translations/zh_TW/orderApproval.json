@@ -1,0 +1,49 @@
+{
+  "orderApprovalDetails" : {
+    "back" : "Back To List",
+    "showForm_APPROVE" : "Approve Order...",
+    "showForm_REJECT" : "Reject Order...",
+    "form" : {
+      "title_APPROVE" : "Approve order {{orderCode}} totalling {{orderTotal}}",
+      "title_REJECT" : "Reject order {{orderCode}} totalling {{orderTotal}}",
+      "submit_APPROVE" : "核准",
+      "submit_REJECT" : "拒絕",
+      "cancel" : "取消",
+      "comment_APPROVE" : {
+        "label" : "Comment (optional, maximum 255 characters)",
+        "placeholder" : ""
+      },
+      "comment_REJECT" : {
+        "label" : "Comment (maximum 255 characters)",
+        "placeholder" : ""
+      }
+    },
+    "permissionResults" : {
+      "header" : "客戶核准明細",
+      "permission" : "權限",
+      "approver" : "核准者",
+      "status" : "狀態",
+      "approverComments" : "核准者備註",
+      "noApprovalComments" : "無",
+      "permissionType_B2BBudgetExceededPermission" : "The budget associated with the chosen cost center has been exceeded",
+      "permissionType_B2BOrderThresholdPermission" : "Order total exceeded the per-order limit",
+      "permissionType_B2BOrderThresholdTimespanPermission" : "Order total exceeded the per-timespan limit"
+    }
+  },
+  "orderApprovalList" : {
+    "orderCode" : "訂單號碼",
+    "POCode" : "PO #",
+    "placedBy" : "Placed by",
+    "date" : "日期",
+    "status" : "狀態",
+    "total" : "總計",
+    "none" : "無",
+    "emptyList" : "There are no orders to approve at this time.",
+    "orderApprovalList" : "Order Approval List"
+  },
+  "orderApprovalGlobal" : {
+    "notification" : {
+      "noSufficientPermissions" : "No sufficient permissions to access this page."
+    }
+  }
+}

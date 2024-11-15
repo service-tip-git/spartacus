@@ -1,0 +1,22 @@
+{
+  "checkoutB2B" : {
+    "noPoNumber" : "Nic",
+    "poNumber" : "Purchase order number (optional)",
+    "costCenter" : "Nákladové středisko",
+    "placeholder" : "Enter P.O",
+    "availableLabel" : "Delivery addresses available to you depend on the cost center's unit",
+    "invalid" : {
+      "accountType" : "Váš účet neumožňuje, abyste zde provedli kontrolu a potvrzení."
+    },
+    "methodOfPayment" : {
+      "paymentType" : "Typ platby"
+    },
+    "review" : {
+      "poNumber" : "Číslo objednávky"
+    },
+    "progress" : {
+      "methodOfPayment" : "Method of Payment"
+    },
+    "invalidCostCenter" : "Invalid cost center."
+  }
+}

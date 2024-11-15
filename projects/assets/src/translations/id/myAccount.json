@@ -1,0 +1,109 @@
+{
+  "closeAccount" : {
+    "confirmAccountClosure" : "Konfirmasi Penutupan Akun",
+    "confirmAccountClosureMessage" : "Apakah Anda yakin untuk menutup akun Anda?",
+    "closeMyAccount" : "CLOSE MY ACCOUNT",
+    "accountClosedSuccessfully" : "Account closed with success",
+    "accountClosedFailure" : "Failed to close account"
+  },
+  "updatePasswordForm" : {
+    "oldPassword" : {
+      "label" : "Kata Sandi Lama",
+      "placeholder" : "Kata Sandi Lama"
+    },
+    "oldPasswordIsRequired" : "Old password is required.",
+    "newPassword" : {
+      "label" : "Kata Sandi Baru",
+      "placeholder" : "Kata Sandi Baru"
+    },
+    "passwordMinRequirements" : "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
+    "passwordStrengthRequirements" : "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
+    "confirmPassword" : {
+      "label" : "Konfirmasi Kata Sandi Baru",
+      "placeholder" : "Konfirmasikan Kata Sandi"
+    },
+    "bothPasswordMustMatch" : "Both password must match",
+    "passwordUpdateSuccess" : "Password updated with success",
+    "accessDeniedError" : "Access is denied"
+  },
+  "updateProfileForm" : {
+    "title" : "Jabatan",
+    "none" : "",
+    "firstName" : {
+      "label" : "Nama depan",
+      "placeholder" : "Nama depan"
+    },
+    "firstNameIsRequired" : "First name is required.",
+    "lastName" : {
+      "label" : "Nama belakang",
+      "placeholder" : "Nama belakang"
+    },
+    "lastNameIsRequired" : "Last name is required.",
+    "profileUpdateSuccess" : "Personal details successfully updated",
+    "customerId" : "Customer #"
+  },
+  "consentManagementForm" : {
+    "clearAll" : "Clear all",
+    "selectAll" : "Pilih semua",
+    "message" : {
+      "success" : {
+        "given" : "Consent successfully given.",
+        "withdrawn" : "Consent successfully withdrawn."
+      }
+    }
+  },
+  "myCoupons" : {
+    "noCouponsMessage" : "You have no coupons available.",
+    "effectiveTitle" : "Berlaku:",
+    "Effective" : "EFFECTIVE",
+    "PreSession" : "EFFECTIVE SOON",
+    "ExpireSoon" : "EXPIRING SOON",
+    "readMore" : "Read more",
+    "notification" : "Notifikasi",
+    "findProducts" : "Cari Produk",
+    "status" : "Status:",
+    "dialogTitle" : "Kupon",
+    "claimCustomerCoupon" : "Anda telah berhasil mengklaim kupon ini.",
+    "myCoupons" : "My coupons",
+    "startDateAsc" : "Start Date (ascending)",
+    "startDateDesc" : "Start Date (descending)",
+    "endDateAsc" : "End Date (ascending)",
+    "endDateDesc" : "End Date (descending)",
+    "sortBy" : "Urutkan berdasarkan",
+    "sortCoupons" : "Sort coupons",
+    "notesPreffix" : "You can set your preferred channels for receiving coupon notifications on the ",
+    "notesLink" : "Saluran Notifikasi",
+    "notesSuffix" : " page."
+  },
+  "notificationPreference" : {
+    "message" : "Select your preferred notification channels",
+    "note" : "Note: ",
+    "noteMessage" : "If you deactivate all channels you will not be able to receive any further notifications.",
+    "EMAIL" : "Email:",
+    "SMS" : "SMS:",
+    "SITE_MESSAGE" : "SiteMessage"
+  },
+  "myInterests" : {
+    "header" : "Minat Saya",
+    "item" : "ITEM",
+    "price" : "PRICE",
+    "notifications" : "NOTIFICATIONS",
+    "noInterests" : "You have no registered interests yet.",
+    "inStock" : "Dalam Stok",
+    "lowStock" : "Stok Sedikit",
+    "outOfStock" : "Stok Habis",
+    "BACK_IN_STOCK" : "Tersedia Kembali dalam Stok",
+    "sortBy" : "Urutkan berdasarkan",
+    "sortInterests" : "Sort interests",
+    "expirationDate" : " - Till {{ expirationDate }}",
+    "productId" : "ID {{ code }}",
+    "remove" : "Hapus",
+    "sorting" : {
+      "byNameAsc" : "Nama (menaik)",
+      "byNameDesc" : "Nama (menurun)"
+    },
+    "actions" : "ACTIONS",
+    "caption" : "My Interests contents.",
+    "itemRemoved" : "Selected item has been removed."
+  }
+}

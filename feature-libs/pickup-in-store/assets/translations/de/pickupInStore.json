@@ -1,0 +1,86 @@
+{
+  "pickupInfo" : {
+    "inStorePickup" : "In Store Pickup",
+    "pickupBy" : "Pick up by",
+    "pickupFrom" : "Pick up from"
+  },
+  "pickupOptionDialog" : {
+    "close" : "Schließen",
+    "modalHeader" : "In Verkaufsstelle abholen"
+  },
+  "pickupOptions" : {
+    "legend" : "Lieferart",
+    "changeStore" : "Verkaufsstelle ändern",
+    "delivery" : "Ship It (Free Return)",
+    "pickup" : "Free Pickup In Store",
+    "selectStore" : "Select Store"
+  },
+  "setPreferredStore" : {
+    "makeThisMyStore" : "Make This My Store",
+    "myStore" : "My Store"
+  },
+  "store" : {
+    "pickupFromHere" : "Pick Up from here",
+    "stockLevel_inStock" : "{{ count }} in Stock",
+    "stockLevel_outOfStock" : "Nicht vorrätig",
+    "viewHours" : "View Hours"
+  },
+  "storeList" : {
+    "noStoresMessage" : "No stores found in database..."
+  },
+  "storeSchedule" : {
+    "closed" : "Geschlossen",
+    "storeHours" : "Store hours"
+  },
+  "storeSearch" : {
+    "findAStore" : "Händlersuche",
+    "findStores" : "Händler finden",
+    "hideOutOfStockOptions" : "Hide out of stock options",
+    "searchPlaceholder" : "Enter Zip Code or Town or Address",
+    "useMyLocation" : "Use my location"
+  },
+  "addressBookPickupInStore" : {
+    "heading" : "Pick-Up Store"
+  },
+  "storeFinderPickupInStore" : {
+    "heading" : "My Store"
+  },
+  "checkoutPickupInStore" : {
+    "heading" : "Items to be Picked Up",
+    "storeItemHeading" : "Pick Up Store Address"
+  },
+  "cartItems" : {
+    "item" : "Artikel"
+  },
+  "deliveryPointOfServiceDetails" : {
+    "itemsToBePickUp" : "Items To Be Pick-Up",
+    "pickUpInStoreAddress" : "Pick Up Store Address",
+    "itemsToBeShipped" : "Items To Be Shipped",
+    "shippingAddress" : "Adresse",
+    "deliveryMethod" : "Lieferart",
+    "deliveryOptions" : "Lieferoptionen",
+    "statusDisplay_cancelled" : "Abgebrochen",
+    "statusDisplay_cancelling" : "Abbrechen ausstehend",
+    "statusDisplay_completed" : "Abgeschlossen",
+    "statusDisplay_created" : "Erstellt",
+    "statusDisplay_error" : "Ausstehend",
+    "statusDisplay_Error" : "Ausstehend",
+    "statusDisplay_processing" : "Ausstehend",
+    "statusDisplay_open" : "Öffnen",
+    "statusDisplay_pending" : {
+      "approval" : "Genehmigung ausstehend",
+      "merchant" : {
+        "approval" : "Genehmigung durch Händler ausstehend"
+      }
+    },
+    "statusDisplay_approved" : "Genehmigt",
+    "statusDisplay_rejected" : "Abgelehnt",
+    "statusDisplay_merchant" : {
+      "approved" : "Vom Händler genehmigt",
+      "rejected" : "Vom Händler abgelehnt"
+    },
+    "statusDisplay_assigned" : {
+      "admin" : "Dem Administrator zugewiesen"
+    }
+  }
+}

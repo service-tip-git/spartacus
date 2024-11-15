@@ -1,0 +1,192 @@
+{
+  "orderDetails" : {
+    "orderId" : "주문 번호",
+    "orderNumber" : "주문 번호",
+    "replenishmentId" : "Replenishment #",
+    "purchaseOrderId" : "Purchase Order #",
+    "purchaseOrderNumber" : "구매 주문 번호",
+    "emptyPurchaseOrderId" : "없음",
+    "none" : "None {{value}}",
+    "placed" : "Placed",
+    "placedBy" : "주문자",
+    "unit" : "단위",
+    "costCenter" : "코스트 센터",
+    "costCenterAndUnit" : "Cost Center / Unit",
+    "costCenterAndUnitValue" : "{{costCenterName}} / {{unitName}}",
+    "methodOfPayment" : "Method of Payment",
+    "payByAccount" : "Pay by Account",
+    "paidByCreditCard" : "(paid by credit card)",
+    "status" : "상태",
+    "active" : "활성",
+    "shippedOn" : "Shipped on",
+    "shippingMethod" : "운송 방법",
+    "placedOn" : "Placed on",
+    "startOn" : "Start On",
+    "nextOrderDate" : "다음 주문일",
+    "frequency" : "빈도",
+    "cancelled" : " 취소됨",
+    "deliveryStatus_IN_TRANSIT" : "운송 중",
+    "deliveryStatus_READY_FOR_PICKUP" : "Ready for Pickup",
+    "deliveryStatus_READY_FOR_SHIPPING" : "Ready for Shipping",
+    "deliveryStatus_WAITING" : "대기 중",
+    "deliveryStatus_DELIVERING" : "배송 중",
+    "deliveryStatus_PICKPACK" : "Preparing for Shipment",
+    "deliveryStatus_PICKUP_COMPLETE" : "픽업 완료",
+    "deliveryStatus_DELIVERY_COMPLETED" : "Delivery Complete",
+    "deliveryStatus_PAYMENT_NOT_CAPTURED" : "Payment Issue",
+    "deliveryStatus_IN_PROCESS" : "Order Processing",
+    "deliveryStatus_READY" : "Order Processing",
+    "deliveryStatus_DELIVERY_REJECTED" : "배송 거부됨",
+    "deliveryStatus_SHIPPED" : "운송됨",
+    "deliveryStatus_TAX_NOT_COMMITTED" : "Tax Issue",
+    "deliveryStatus_CANCELLED" : "취소됨",
+    "statusDisplay_cancelled" : "취소됨",
+    "statusDisplay_cancelling" : "보류 중 취소",
+    "statusDisplay_completed" : "완료됨",
+    "statusDisplay_created" : "생성됨",
+    "statusDisplay_error" : "보류 중",
+    "statusDisplay_Error" : "보류 중",
+    "statusDisplay_processing" : "보류 중",
+    "statusDisplay_open" : "미결",
+    "statusDisplay_pending" : {
+      "approval" : "승인 보류 중",
+      "merchant" : {
+        "approval" : "판매업체 승인 보류 중"
+      }
+    },
+    "statusDisplay_approved" : "승인됨",
+    "statusDisplay_rejected" : "거부됨",
+    "statusDisplay_merchant" : {
+      "approved" : "판매업체 승인됨",
+      "rejected" : "판매업체 거부됨"
+    },
+    "statusDisplay_assigned" : {
+      "admin" : "관리자에게 지정됨"
+    },
+    "consignmentTracking" : {
+      "action" : "Track package",
+      "dialog" : {
+        "header" : "Tracking Information",
+        "shipped" : "운송됨",
+        "estimate" : "Estimated Delivery",
+        "carrier" : "Delivery Service",
+        "trackingId" : "추적 번호",
+        "noTracking" : "The package has not been dispatched from the warehouse. The tracking information will be available after the package is shipped.",
+        "loadingHeader" : "위탁 추적"
+      }
+    },
+    "cancellationAndReturn" : {
+      "returnAction" : "Request a Return",
+      "cancelAction" : "품목 취소",
+      "item" : "품목",
+      "itemPrice" : "품목 가격",
+      "quantity" : "Max Quantity",
+      "returnQty" : "Quantity to Return",
+      "cancelQty" : "Quantity to Cancel",
+      "setAll" : "Set all quantities to maximum",
+      "totalPrice" : "합계",
+      "submit" : "요청 제출",
+      "submitDescription" : "Submit Request. Items on this page will be included in the cancellation request.",
+      "returnSuccess" : "Your return request ({{rma}}) was submitted",
+      "cancelSuccess" : "Your cancellation request was submitted (original order {{orderCode}} will be updated)"
+    },
+    "cancelReplenishment" : {
+      "title" : "보충 취소",
+      "description" : "Cancel any future replenishment order?",
+      "accept" : "예",
+      "reject" : "아니요",
+      "cancelSuccess" : "Replenishment order #{{replenishmentOrderCode}} has been successfully cancelled"
+    },
+    "caption" : "Order contents."
+  },
+  "orderHistory" : {
+    "orderHistory" : "주문 내역",
+    "orderId" : "주문 번호",
+    "emptyPurchaseOrderId" : "없음",
+    "date" : "일자",
+    "status" : "상태",
+    "PONumber" : "구매 주문 번호",
+    "total" : "합계",
+    "noOrders" : "We have no order records for this account.",
+    "noReplenishmentOrders" : "We have no replenishment order records for this account.",
+    "startShopping" : "Start Shopping",
+    "sortBy" : "정렬 기준",
+    "sortOrders" : "Sort orders",
+    "replenishmentOrderHistory" : "Replenishment Order History",
+    "replenishmentOrderId" : "Replenishment #",
+    "purchaseOrderNumber" : "PO #",
+    "costCenter" : "코스트 센터",
+    "startOn" : "Start On",
+    "frequency" : "빈도",
+    "nextOrderDate" : "다음 주문일",
+    "cancel" : "취소",
+    "cancelled" : "취소됨",
+    "replenishmentHistory" : "보충 내역",
+    "notFound" : "주문이 없습니다.",
+    "actions" : "액션"
+  },
+  "AccountOrderHistoryTabContainer" : {
+    "tabs" : {
+      "AccountOrderHistoryComponent" : "ALL ORDERS ({{param}})",
+      "OrderReturnRequestListComponent" : "RETURNS ({{param}})"
+    },
+    "tabPanelContainerRegion" : "Group with order history details",
+    "tabPanelContainerRegionGroup" : "Group with order history details"
+  },
+  "returnRequestList" : {
+    "returnRequestId" : "Return #",
+    "orderId" : "주문 번호",
+    "date" : "작성 날짜",
+    "status" : "상태",
+    "sortBy" : "정렬 기준",
+    "sortReturns" : "Sort returns",
+    "statusDisplay_APPROVAL_PENDING" : "승인 보류",
+    "statusDisplay_CANCELED" : "취소됨",
+    "statusDisplay_CANCELLING" : "취소 중",
+    "statusDisplay_WAIT" : "대기",
+    "statusDisplay_RECEIVED" : "수신함",
+    "statusDisplay_RECEIVING" : "수신 중",
+    "statusDisplay_APPROVING" : "승인 중",
+    "statusDisplay_REVERSING_PAYMENT" : "지불 취소 중",
+    "statusDisplay_PAYMENT_REVERSED" : "지불이 취소됨",
+    "statusDisplay_PAYMENT_REVERSAL_FAILED" : "지불 취소 실패",
+    "statusDisplay_REVERSING_TAX" : "세금 취소 중",
+    "statusDisplay_TAX_REVERSED" : "세금이 취소됨",
+    "statusDisplay_TAX_REVERSAL_FAILED" : "세금 취소 실패",
+    "statusDisplay_COMPLETED" : "완료됨"
+  },
+  "returnRequest" : {
+    "returnRequestId" : "Return Request #",
+    "orderCode" : "For Order #",
+    "status" : "Return status",
+    "cancel" : "Cancel Return Request",
+    "item" : "설명",
+    "itemPrice" : "품목 가격",
+    "returnQty" : "반환 수량",
+    "total" : "합계",
+    "summary" : "반환 총계",
+    "subtotal" : "소계",
+    "deliveryCode" : "배송 비용",
+    "estimatedRefund" : "Estimated refund",
+    "note" : "The totals are estimated and may not include applicable taxes or other charges.",
+    "cancelSuccess" : "Your return request ({{rma}}) was cancelled",
+    "caption" : "Order contents."
+  },
+  "reorder" : {
+    "button" : "재주문",
+    "dialog" : {
+      "reorderProducts" : "Reorder products",
+      "messages" : {
+        "reviewConfiguration" : "An error occurred with \"{{ productCode}}\" configuration.",
+        "lowStock" : "Quantity for {{ productName }}: {{ quantity }} has been reduced to {{ quantityAdded }}.",
+        "noStock" : "{{ productName }} is currently out of stock.",
+        "pricingError" : "Pricing problem with \"{{ productCode }}\".",
+        "unresolvableIssues" : "Unrecognized problem with \"{{ productCode }}\".",
+        "success" : "Products have been successfully added to the cart"
+      },
+      "areYouSureToReplaceCart" : "Current cart will be replaced with new items. Do you wish to continue?",
+      "cancel" : "취소",
+      "continue" : "계속"
+    }
+  }
+}

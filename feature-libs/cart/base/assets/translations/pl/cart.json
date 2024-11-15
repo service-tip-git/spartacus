@@ -1,0 +1,74 @@
+{
+  "cartDetails" : {
+    "id" : "ID",
+    "proceedToCheckout" : "Przejdź do realizacji zakupu",
+    "cartName" : "Cart #{{code}}"
+  },
+  "cartItems" : {
+    "id" : "ID",
+    "description" : "Opis",
+    "item" : "Pozycja",
+    "itemPrice" : "Cena pozycji",
+    "quantity" : "Ilość",
+    "quantityTitle" : "The quantity represents the total number of this item in your cart.",
+    "total" : "Suma",
+    "actions" : "Czynności",
+    "cartTotal" : "Cart total ({{count}} item)",
+    "cartTotal_other" : "Cart total ({{count}} items)",
+    "itemRemoved" : "Selected item has been removed. Cart total has been updated.",
+    "caption" : "Shopping cart contents."
+  },
+  "orderCost" : {
+    "orderSummary" : "Podsumowanie zamówienia",
+    "subtotal" : "Subtotal after discounts:",
+    "shipping" : "Wysyłka:",
+    "estimatedShipping" : "Estimated shipping:",
+    "discount" : "You saved:",
+    "salesTax" : "Sales Tax:",
+    "grossTax" : "The order total does not include tax of",
+    "grossIncludeTax" : "The order total includes tax of",
+    "total" : "Suma:",
+    "toBeDetermined" : "TBD"
+  },
+  "voucher" : {
+    "coupon" : "Have a coupon?",
+    "coupon_other" : "Coupon codes",
+    "couponLabel" : "Enter a promo code here",
+    "addCoupon" : "Add a coupon",
+    "apply" : "Zastosuj",
+    "placeholder" : "Promo code",
+    "applyVoucherSuccess" : "{{voucherCode}} has been applied.",
+    "removeVoucherSuccess" : "{{voucherCode}} has been removed.",
+    "anchorLabel" : "Enter or remove your coupon code",
+    "vouchersApplied" : "Zastosowane kupony",
+    "availableCoupons" : "Available coupons",
+    "availableCouponsLabel" : "You can add these coupons to this order."
+  },
+  "saveForLaterItems" : {
+    "itemTotal" : "Saved for later ({{count}} item)",
+    "itemTotal_other" : "Zapisane w celu późniejszego użycia (pozycje: {{count}})",
+    "cartTitle" : "Koszyk zakupów",
+    "saveForLater" : "Save For Later",
+    "moveToCart" : "Move To Cart",
+    "stock" : "Zapas",
+    "forceInStock" : "W magazynie"
+  },
+  "clearCart" : {
+    "clearCart" : "Clear Cart",
+    "clearingCart" : "Clearing Cart...",
+    "cartClearedSuccessfully" : "Active cart cleared successfully.",
+    "areYouSureToClearCart" : "Are you sure you want to clear this cart?",
+    "allItemsWillBeRemoved" : "All items in your active cart will be removed."
+  },
+  "validation" : {
+    "cartEntriesChangeDuringCheckout" : "During checkout we found problems with your entries. Please review your cart.",
+    "cartEntryRemoved" : "{{name}} was removed from the cart due to being out of stock.",
+    "productOutOfStock" : "Usunięto {{name}} z koszyka z powodu niewystarczającego stanu magazynowego.",
+    "lowStock" : "Quantity has reduced to {{quantity}} due to insufficient stock.",
+    "reviewConfiguration" : "Resolve the issues in the configuration for cart entry first.",
+    "configurationError" : "Resolve the issues in the configuration for cart entries first.",
+    "pricingError" : "Configurator pricing is currently not available. Checkout/quote submission is not possible. Please try again later.",
+    "unresolvableIssues" : "The product configuration requires additional entries in the back end. As a result, you cannot proceed. Please contact support.",
+    "inProgress" : "Przetwarzanie"
+  }
+}

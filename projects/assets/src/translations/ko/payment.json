@@ -1,0 +1,53 @@
+{
+  "paymentForm" : {
+    "payment" : "지불",
+    "choosePaymentMethod" : "Choose a payment method",
+    "paymentType" : "지불 유형",
+    "accountHolderName" : {
+      "label" : "Account Holder Name",
+      "placeholder" : "Account Holder Name"
+    },
+    "cardNumber" : "카드 번호",
+    "expirationDate" : "만료 날짜",
+    "securityCode" : "Security code (CVV)",
+    "securityCodeTitle" : "Card Verification Value",
+    "saveAsDefault" : "Save as default",
+    "setAsDefault" : "Set as default payment method",
+    "billingAddress" : "대금 청구 주소",
+    "sameAsDeliveryAddress" : "Same as delivery address",
+    "billingAddressSameAsShipping" : "Billing address is the same as delivery address",
+    "selectOne" : "Select One...",
+    "monthMask" : "MM",
+    "yearMask" : "YYYY",
+    "expirationYear" : "Expiration year {{ selected }}",
+    "expirationMonth" : "Expiration month {{ selected }}",
+    "useThisPayment" : "Use this payment",
+    "addNewPayment" : "Add New Payment",
+    "paymentAddedSuccessfully" : "New payment was added successfully",
+    "changePayment" : "Change Payment"
+  },
+  "paymentMethods" : {
+    "paymentMethods" : "Payment methods",
+    "paymentMethodSelected" : "Payment method selected",
+    "newPaymentMethodsAreAddedDuringCheckout" : "New payment methods are added during checkout.",
+    "invalidField" : "InvalidField: {{ field }}"
+  },
+  "paymentCard" : {
+    "deleteConfirmation" : "Are you sure you want to delete this payment method?",
+    "setAsDefault" : "기본값으로 설정",
+    "expires" : "Expires: {{ month }}/{{ year }}",
+    "defaultPaymentMethod" : "✓ DEFAULT",
+    "defaultPaymentLabel" : "Default payment method",
+    "additionalPaymentLabel" : "Additional payment method {{ number }}",
+    "selected" : "선택됨",
+    "deletePaymentSuccess" : "Payment method deleted successfully"
+  },
+  "paymentTypes" : {
+    "title" : "지급 방법",
+    "paymentType_CARD" : "신용 카드",
+    "paymentType_ACCOUNT" : "계정"
+  },
+  "paymentMessages" : {
+    "setAsDefaultSuccessfully" : "New payment was successfully set as default"
+  }
+}

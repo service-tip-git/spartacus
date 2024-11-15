@@ -1,0 +1,72 @@
+{
+  "updateEmailForm" : {
+    "newEmailAddress" : {
+      "label" : "New email address",
+      "placeholder" : "Enter email"
+    },
+    "confirmNewEmailAddress" : {
+      "label" : "Confirm new email address",
+      "placeholder" : "Enter email"
+    },
+    "enterValidEmail" : "Inserire un indirizzo e-mail valido.",
+    "bothEmailMustMatch" : "Both emails must match",
+    "password" : {
+      "label" : "Password",
+      "placeholder" : "Inserisci password"
+    },
+    "pleaseInputPassword" : "Please input password",
+    "emailUpdateSuccess" : "Success. Please sign in with {{ newUid }}"
+  },
+  "register" : {
+    "confirmPassword" : {
+      "action" : "Confirm password",
+      "label" : "Confirm password",
+      "placeholder" : "Conferma password"
+    },
+    "managementInMyAccount" : "Management in My Account.",
+    "termsAndConditions" : "Termini e condizioni",
+    "signIn" : "I already have an account. Sign In",
+    "register" : "Registrati",
+    "confirmNewPassword" : "Conferma nuova password",
+    "resetPassword" : "Resetta password",
+    "createAccount" : "Create an account",
+    "title" : "Titolo",
+    "titleOptional" : "Title (optional)",
+    "firstName" : {
+      "label" : "Nome",
+      "placeholder" : "Nome"
+    },
+    "lastName" : {
+      "label" : "Cognome",
+      "placeholder" : "Cognome"
+    },
+    "emailAddress" : {
+      "label" : "Indirizzo e-mail",
+      "placeholder" : "Indirizzo e-mail"
+    },
+    "password" : {
+      "label" : "Password",
+      "placeholder" : "Password"
+    },
+    "newPassword" : "Nuova password",
+    "emailMarketing" : "Use my personal data to receive e-mail newsletters for marketing campaigns. To change your settings, go to Consent Management in My Account.",
+    "confirmThatRead" : "I am confirming that I have read and agreed with the",
+    "selectTitle" : "Select Title",
+    "passwordMinRequirements" : "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
+    "passwordStrengthRequirements" : "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
+    "bothPasswordMustMatch" : "Both password must match",
+    "titleRequired" : "Title is required.",
+    "postRegisterMessage" : "Please log in with provided credentials."
+  },
+  "forgottenPassword" : {
+    "resetPassword" : "Reset password",
+    "enterEmailAddressAssociatedWithYourAccount" : "Enter the email address associated with your account",
+    "emailAddress" : {
+      "label" : "Indirizzo e-mail",
+      "placeholder" : "Enter email"
+    },
+    "enterValidEmail" : "Inserire un indirizzo e-mail valido.",
+    "passwordResetEmailSent" : "An email has been sent to you with information on how to reset your password.",
+    "passwordResetSuccess" : "Operazione riuscita. Ora è possibile accedere utilizzando la nuova password."
+  }
+}

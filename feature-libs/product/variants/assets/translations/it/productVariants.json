@@ -1,0 +1,9 @@
+{
+  "productVariants" : {
+    "style" : "Stile",
+    "selectedStyle" : "Selected style",
+    "size" : "Taglia",
+    "color" : "Colore",
+    "sizeGuideLabel" : "Style guide"
+  }
+}

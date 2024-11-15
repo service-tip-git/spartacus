@@ -1,0 +1,9 @@
+{
+  "productVariants" : {
+    "style" : "Estilo",
+    "selectedStyle" : "Selected style",
+    "size" : "Tamanho",
+    "color" : "Cor",
+    "sizeGuideLabel" : "Style guide"
+  }
+}

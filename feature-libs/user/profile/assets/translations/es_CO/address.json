@@ -1,0 +1,78 @@
+{
+  "addressForm" : {
+    "title" : "Título",
+    "titleOptional" : "Title (optional)",
+    "defaultTitle" : "Título",
+    "firstName" : {
+      "label" : "Nombre",
+      "placeholder" : "Nombre"
+    },
+    "lastName" : {
+      "label" : "Apellido",
+      "placeholder" : "Apellido"
+    },
+    "address1" : "Address 1",
+    "address2" : "Address 2 (optional)",
+    "country" : "País/Región",
+    "city" : {
+      "label" : "Ciudad",
+      "placeholder" : "Ciudad"
+    },
+    "state" : "Estado",
+    "zipCode" : {
+      "label" : "Zip code",
+      "placeholder" : "Postal Code/Zip"
+    },
+    "phoneNumber" : {
+      "label" : "Phone number (optional)",
+      "placeholder" : "e.g. (###) - ### - ####"
+    },
+    "cellphone" : {
+      "label" : "Mobile number (optional)",
+      "placeholder" : "e.g. (###) - ### - ####"
+    },
+    "saveAsDefault" : "Save as default",
+    "chooseAddress" : "Choose address",
+    "streetAddress" : "Street Address",
+    "aptSuite" : "Apartment Number",
+    "selectOne" : "Select One...",
+    "setAsDefault" : "Set as default delivery address",
+    "titleRequired" : "Title is required.",
+    "userAddressAddSuccess" : "New address was added successfully!",
+    "userAddressUpdateSuccess" : "Address updated successfully!",
+    "userAddressDeleteSuccess" : "Address deleted successfully!",
+    "invalidAddress" : "Invalid Address"
+  },
+  "addressBook" : {
+    "addNewDeliveryAddress" : "Add a new delivery address",
+    "editDeliveryAddress" : "Edit delivery address",
+    "areYouSureToDeleteAddress" : "¿Confirma que desea borrar esta dirección?",
+    "addNewAddress" : "Agregar dirección nueva",
+    "addAddress" : "Add address",
+    "updateAddress" : "Update address",
+    "backToAddressList" : "Back to address list",
+    "defaultDeliveryAddress" : "Default Delivery Address",
+    "additionalDeliveryAddress" : "Additional Delivery Address {{number}}"
+  },
+  "addressCard" : {
+    "default" : "DEFAULT",
+    "selected" : "Seleccionado",
+    "setAsDefault" : "Fijar como predeterminado",
+    "shipTo" : "Enviar a",
+    "billTo" : "Bill To",
+    "phoneNumber" : "P",
+    "mobileNumber" : "M"
+  },
+  "addressSuggestion" : {
+    "verifyYourAddress" : "Verify your address",
+    "ensureAccuracySuggestChange" : "To ensure delivery accuracy, we suggest the change selected below.",
+    "chooseAddressToUse" : "Please choose which address you would like to use:",
+    "suggestedAddress" : "Suggested address",
+    "enteredAddress" : "Entered address",
+    "editAddress" : "Editar dirección",
+    "saveAddress" : "Guardar dirección"
+  },
+  "addressMessages" : {
+    "setAsDefaultSuccessfully" : "Address {{ streetAddress }} was successfully set as default"
+  }
+}

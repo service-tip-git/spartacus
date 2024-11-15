@@ -1,0 +1,32 @@
+{
+  "storeFinder" : {
+    "openUntil" : "Open until",
+    "closed" : "닫힘",
+    "back" : "뒤로",
+    "call" : "Call",
+    "getDirections" : "Get Directions",
+    "ariaLabelGetDirections" : "Get Directions, this link opens in a new window",
+    "ariaLabelCountriesCount" : "Stores in {{ count }} countries found",
+    "listView" : "목록 보기",
+    "mapView" : "지도 보기",
+    "noStoresFound" : "No Stores Found.",
+    "storeHours" : "Store hours",
+    "storeFeatures" : "매장 특징",
+    "storeFinder" : "매장 찾기",
+    "storesFoundTitle" : "Stores Found",
+    "storesFound" : "{{ count }} store found",
+    "storesFound_other" : "{{ count }} stores found",
+    "fromStoresFound" : "from {{ count }} store found",
+    "fromStoresFound_other" : "from {{ count }} stores found",
+    "findStore" : "Find store",
+    "useMyLocation" : "Use my location",
+    "viewAllStores" : "View all stores",
+    "contactUs" : "Contact us",
+    "searchBox" : "Postal code or town or address",
+    "backToList" : "Back to list",
+    "noStoresMessage" : "No stores found in database...",
+    "geolocationNotEnabled" : "Cannot locate nearby stores. Geolocation consent has not been enabled",
+    "searchNearestStores" : "Search nearest stores",
+    "searchBoxLabel" : "Enter postal code, town or address"
+  }
+}

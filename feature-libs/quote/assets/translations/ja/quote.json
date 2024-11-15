@@ -1,0 +1,251 @@
+{
+  "quote" : {
+    "confirmDialog" : {
+      "name" : "Name:",
+      "description" : "Description:",
+      "validity" : "この見積は {{ expirationTime }} まで有効です。",
+      "option" : {
+        "yes" : "はい",
+        "no" : "いいえ"
+      },
+      "buyer" : {
+        "submit" : {
+          "a11y" : {
+            "close" : "Close submit quote modal"
+          },
+          "title" : "Submit Quote Request {{ code }}?",
+          "confirmNote" : "Are you sure you want to submit this quote request?",
+          "successMessage" : "Quote request submitted successfully"
+        },
+        "cancel" : {
+          "a11y" : {
+            "close" : "Close cancel quote modal"
+          },
+          "title" : "Cancel Quote Request {{ code }}?",
+          "confirmNote" : "Are you sure you want to cancel this quote request?",
+          "successMessage" : "Quote request cancelled"
+        }
+      },
+      "buyer_offer" : {
+        "edit" : {
+          "a11y" : {
+            "close" : "Close edit quote modal"
+          },
+          "title" : "Confirm Edit Quote {{ code }}?",
+          "confirmNote" : "この承認済見積を編集してもよろしいですか?",
+          "warningNote" : "This Quote has been Approved. Editing this Quote will prevent Checkout until new edits are approved."
+        },
+        "cancel" : {
+          "a11y" : {
+            "close" : "Close cancel quote modal"
+          },
+          "title" : "Cancel Quote {{ code }}?",
+          "confirmNote" : "この見積をキャンセルしてもよろしいですか?",
+          "successMessage" : "Quote cancelled"
+        },
+        "checkout" : {
+          "a11y" : {
+            "close" : "Close checkout quote modal"
+          },
+          "title" : "Checkout Quote {{ code }}?",
+          "confirmNote" : "Are you sure you want to accept and checkout this quote?"
+        }
+      },
+      "expired" : {
+        "edit" : {
+          "a11y" : {
+            "close" : "Close edit quote modal"
+          },
+          "title" : "Confirm Edit Quote {{ code }}?",
+          "confirmNote" : "Are you sure you want to edit this expired quote?",
+          "warningNote" : "This Quote is expired. Editing this quote will prevent checkout until new edits are approved."
+        },
+        "requote" : {
+          "a11y" : {
+            "close" : "Close requote modal"
+          },
+          "title" : "Recreate Quote Request {{ code }}?",
+          "confirmNote" : "Are you sure you want to recreate this quote request?",
+          "warningNote" : "This Quote is expired. Re-quoting it will create a new quote request with same contents, which can be edited and submitted for approval afterwards."
+        }
+      },
+      "seller" : {
+        "submit" : {
+          "a11y" : {
+            "close" : "Close submit quote modal"
+          },
+          "title" : "Submit Quote {{ code }}?",
+          "confirmNote" : "この見積を送信してもよろしいですか?",
+          "warningNote" : "Depending on the total value of the quote, an additional approval might be required before the buyer can check out this quote.",
+          "successMessage" : "Quote submitted successfully"
+        }
+      },
+      "sellerapprover" : {
+        "approve" : {
+          "a11y" : {
+            "close" : "Close approve quote modal"
+          },
+          "title" : "Approve Quote {{ code }}?",
+          "confirmNote" : "Are you sure you want to approve this quote?",
+          "successMessage" : "Quote approved successfully"
+        },
+        "reject" : {
+          "a11y" : {
+            "close" : "Close reject quote modal"
+          },
+          "title" : "Reject Quote {{ code }}?",
+          "confirmNote" : "Are you sure you want to reject this quote?",
+          "successMessage" : "Quote rejected"
+        }
+      },
+      "cancelled" : {
+        "requote" : {
+          "a11y" : {
+            "close" : "Close requote modal"
+          },
+          "title" : "Recreate Quote Request {{ code }}?",
+          "confirmNote" : "Are you sure you want to recreate this quote request?",
+          "warningNote" : "Your current cart will be converted to a saved cart."
+        }
+      },
+      "all" : {
+        "edit" : {
+          "a11y" : {
+            "close" : "Close edit quote modal"
+          },
+          "title" : "Edit Quote {{ code }}?",
+          "confirmNote" : "Are you sure you want to edit this quote?",
+          "warningNote" : "Your current cart will be converted to a saved cart."
+        }
+      }
+    },
+    "comments" : {
+      "regionTitle" : "Contact/Comment Box",
+      "title" : "担当者",
+      "invalidComment" : "Invalid Input - Please type again...",
+      "allProducts" : "すべての商品"
+    },
+    "commons" : {
+      "requestQuote" : "Request Quote",
+      "cart" : "カート",
+      "minRequestInitiationNote" : "Minimum ${{minValue}} subtotal is required to submit a quote ",
+      "savedActiveCart" : "Your active cart was converted to saved cart {{ code }}"
+    },
+    "header" : {
+      "buyerEdit" : {
+        "a11y" : {
+          "cancel" : "Cancel editing quote header information",
+          "save" : "Save quote header information"
+        }
+      },
+      "overview" : {
+        "regionTitle" : "Quote details summary",
+        "id" : "見積 ID",
+        "status" : "ステータス",
+        "information" : "Quote Information",
+        "name" : "名前",
+        "description" : "説明",
+        "charactersLeft" : "characters left: {{count}}",
+        "priceAndExpiry" : "Price & Expiry",
+        "estimatedTotal" : "Estimated Total",
+        "total" : "合計",
+        "expirationTime" : "失効日",
+        "a11y" : {
+          "edit" : "Edit quote header information"
+        },
+        "createdAndUpdated" : "Created & Updated",
+        "createdDate" : "作成済み",
+        "lastUpdatedDate" : "最終更新"
+      }
+    },
+    "httpHandlers" : {
+      "cartValidationIssue" : "There are problems with your entries. Please review your cart.",
+      "quoteCartIssue" : "Not possible to do changes to cart entries. Proceed to checkout",
+      "absoluteDiscountIssue" : "Choose a discount that does not exceed the total value",
+      "expirationDateIssue" : "Choose an expiration date in the future",
+      "threshold" : {
+        "underThresholdError" : "Total price of requested quote does not meet the minimum threshold"
+      },
+      "expired" : "This quote has expired. You must resubmit your quote request to receive another vendor quote.",
+      "downloadPDFError" : "Something went wrong. Unable to obtain the proposal document PDF."
+    },
+    "items" : {
+      "regionTitle" : "Cart items"
+    },
+    "links" : {
+      "newCart" : "新規カート",
+      "quotes" : "見積",
+      "download" : "Download Proposal",
+      "a11y" : {
+        "newCart" : "Create new empty cart and navigate to it.",
+        "quotes" : "Navigate to quote search result list.",
+        "download" : "Start downloading a quote proposal"
+      }
+    },
+    "list" : {
+      "regionTitle" : "Quote list summary",
+      "title" : "Quote List",
+      "name" : "名前",
+      "updated" : "更新済",
+      "sortBy" : "ソート基準",
+      "sortQuotes" : "Sort Quotes",
+      "empty" : "We have no quote records for this account.",
+      "quoteId" : "見積 ID",
+      "status" : "ステータス",
+      "clickableRow" : "Click on the row for more quote details"
+    },
+    "states" : {
+      "BUYER_DRAFT" : "下書き",
+      "BUYER_SUBMITTED" : "送信済",
+      "BUYER_ACCEPTED" : "受入済",
+      "BUYER_APPROVED" : "承認済",
+      "BUYER_REJECTED" : "却下済み",
+      "BUYER_OFFER" : "仕入先見積",
+      "BUYER_ORDERED" : "注文済",
+      "SELLER_DRAFT" : "下書き",
+      "SELLER_REQUEST" : "依頼済",
+      "SELLER_SUBMITTED" : "送信済",
+      "SELLERAPPROVER_DRAFT" : "下書き",
+      "SELLERAPPROVER_PENDING" : "承認を保留",
+      "SELLERAPPROVER_APPROVED" : "承認済",
+      "SELLERAPPROVER_REJECTED" : "却下済み",
+      "CREATED" : "作成済み",
+      "CANCELLED" : "キャンセル済み",
+      "EXPIRED" : "期限超過"
+    },
+    "summary" : {
+      "regionTitle" : "注文内容",
+      "actions" : {
+        "APPROVE" : "見積を承認",
+        "CANCEL" : "見積をキャンセル",
+        "CHECKOUT" : "受入とチェックアウト",
+        "EDIT" : "見積を編集",
+        "REJECT" : "見積を却下",
+        "REQUOTE" : "Request new Quote",
+        "SAVE" : "見積を保存",
+        "SUBMIT" : "見積を送信",
+        "VIEW" : "見積を表示"
+      },
+      "prices" : {
+        "title" : "注文内容",
+        "subtotal" : "小計",
+        "productDiscount" : "Item Discount",
+        "orderDiscount" : "注文値引き",
+        "quoteDiscount" : "値引見積",
+        "total" : "合計",
+        "hint" : "No taxes are included in the total"
+      },
+      "sellerEdit" : {
+        "discount" : "値引",
+        "apply" : "適用",
+        "expiryDate" : "失効日",
+        "discountValidationText" : "Enter a valid percentage discount",
+        "a11y" : {
+          "apply" : "Click to apply the entered discount value to this quote",
+          "discount" : "Enter a percentage discount value to be applied to this quote",
+          "expiryDate" : "Enter an expiry date for this quote"
+        }
+      }
+    }
+  }
+}

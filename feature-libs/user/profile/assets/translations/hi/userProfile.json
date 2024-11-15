@@ -1,0 +1,72 @@
+{
+  "updateEmailForm" : {
+    "newEmailAddress" : {
+      "label" : "New email address",
+      "placeholder" : "Enter email"
+    },
+    "confirmNewEmailAddress" : {
+      "label" : "Confirm new email address",
+      "placeholder" : "Enter email"
+    },
+    "enterValidEmail" : "कृपया कोई मान्य ईमेल दर्ज करें. ",
+    "bothEmailMustMatch" : "Both emails must match",
+    "password" : {
+      "label" : "पासवर्ड",
+      "placeholder" : "पासवर्ड दर्ज करें"
+    },
+    "pleaseInputPassword" : "Please input password",
+    "emailUpdateSuccess" : "Success. Please sign in with {{ newUid }}"
+  },
+  "register" : {
+    "confirmPassword" : {
+      "action" : "Confirm password",
+      "label" : "Confirm password",
+      "placeholder" : "पासवर्ड की पुष्टि करें"
+    },
+    "managementInMyAccount" : "Management in My Account.",
+    "termsAndConditions" : "नियम & शर्तें",
+    "signIn" : "I already have an account. Sign In",
+    "register" : "पंजीकृत करें",
+    "confirmNewPassword" : "नए पासवर्ड की पुष्टि करें",
+    "resetPassword" : "पासवर्ड रीसेट करें",
+    "createAccount" : "Create an account",
+    "title" : "शीर्षक",
+    "titleOptional" : "Title (optional)",
+    "firstName" : {
+      "label" : "प्रथम नाम",
+      "placeholder" : "प्रथम नाम"
+    },
+    "lastName" : {
+      "label" : "अंतिम नाम",
+      "placeholder" : "अंतिम नाम"
+    },
+    "emailAddress" : {
+      "label" : "ईमेल पता",
+      "placeholder" : "ईमेल पता"
+    },
+    "password" : {
+      "label" : "पासवर्ड",
+      "placeholder" : "पासवर्ड"
+    },
+    "newPassword" : "नया पासवर्ड",
+    "emailMarketing" : "Use my personal data to receive e-mail newsletters for marketing campaigns. To change your settings, go to Consent Management in My Account.",
+    "confirmThatRead" : "I am confirming that I have read and agreed with the",
+    "selectTitle" : "Select Title",
+    "passwordMinRequirements" : "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
+    "passwordStrengthRequirements" : "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
+    "bothPasswordMustMatch" : "Both password must match",
+    "titleRequired" : "Title is required.",
+    "postRegisterMessage" : "Please log in with provided credentials."
+  },
+  "forgottenPassword" : {
+    "resetPassword" : "Reset password",
+    "enterEmailAddressAssociatedWithYourAccount" : "Enter the email address associated with your account",
+    "emailAddress" : {
+      "label" : "ईमेल पता",
+      "placeholder" : "Enter email"
+    },
+    "enterValidEmail" : "कृपया कोई मान्य ईमेल दर्ज करें. ",
+    "passwordResetEmailSent" : "An email has been sent to you with information on how to reset your password.",
+    "passwordResetSuccess" : "सफल रहा! अब आप अपने नए पासवर्ड का उपयोग करके लॉगिन कर सकते हैं."
+  }
+}

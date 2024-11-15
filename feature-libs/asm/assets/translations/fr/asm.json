@@ -1,0 +1,175 @@
+{
+  "asm" : {
+    "mainLogoLabel" : "SAP",
+    "mainTitle" : "Assisted Service Mode",
+    "logout" : "Se déconnecter",
+    "hideUi" : "Close ASM",
+    "helpPortalUrl" : "Aide",
+    "customers" : "Clients",
+    "asmCustomer360Button" : "Customer 360 View",
+    "asmCustomer360ViewButton" : "Customer 360°",
+    "createCustomerSuccessfullyAlert" : "The customer account has been created and the customer session has started.",
+    "saveInactiveCartAlertInfo" : "The identified cart is an inactive cart. To take further actions on this cart, save it first.",
+    "activeCartAlertInfo" : "The identified cart is an active cart.",
+    "startCustomerEmulationAlertInfo" : "Customer emulation has started. Any actions you do will reflect the effects on the customer account.",
+    "toggleUi" : {
+      "collapse" : "Hide ASM",
+      "expand" : "Show ASM"
+    },
+    "loginForm" : {
+      "submit" : "Se connecter",
+      "userId" : {
+        "label" : "Agent ID or Email"
+      },
+      "password" : {
+        "label" : "Mot de passe"
+      }
+    },
+    "customerSearch" : {
+      "searchTerm" : {
+        "label" : "Nom/adresse e-mail du client"
+      },
+      "searchCustomer" : {
+        "label" : "Search by name or email address"
+      },
+      "searchOrder" : {
+        "label" : "Search by full order ID"
+      },
+      "submit" : "Start Session",
+      "startEmulation" : "Start Emulation",
+      "noMatch" : "No customer found.",
+      "noMatchResult" : "This account cannot be found.",
+      "noCustomerMatchResult" : "No matching customer found.",
+      "noOrderMatchResult" : "Search by full order ID.",
+      "createCustomer" : "Create New Customer",
+      "customer" : "Client",
+      "orderID" : "ID de commande"
+    },
+    "createCustomerForm" : {
+      "title" : "Create New Customer",
+      "createAccount" : "Créer",
+      "cancel" : "Annuler",
+      "firstName" : {
+        "label" : "Prénom",
+        "placeholder" : "Prénom"
+      },
+      "lastName" : {
+        "label" : "Nom",
+        "placeholder" : "Nom"
+      },
+      "emailAddress" : {
+        "label" : "Adresse e-mail",
+        "placeholder" : "Adresse électronique"
+      },
+      "createAccountAlert" : "The customer session starts once you create the customer account.",
+      "validationErrors" : {
+        "firstName" : "Enter a valid first name.",
+        "lastName" : "Enter a valid last name.",
+        "emailAddress" : "Enter a valid email address."
+      },
+      "badRequestDuplicatedEmail" : "Enter a different email address as {{ emailAddress }} already exists."
+    },
+    "customerList" : {
+      "title" : "Liste de clients",
+      "description" : "Select a customer from one of several provided lists.",
+      "createCustomer" : "Create New Customer",
+      "cancel" : "Annuler",
+      "tableHeader" : {
+        "customer" : "Client",
+        "customerName" : "Nom du client",
+        "name" : "Nom",
+        "email" : "E-mail",
+        "emailId" : "Email/ID",
+        "phone" : "Téléphone",
+        "account" : "Compte",
+        "cart" : "Panier",
+        "order" : "Commande",
+        "view" : "Vue 360°",
+        "activeCart" : "Panier actif",
+        "viewActiveCart" : "View Active Cart",
+        "orders" : "Commandes",
+        "viewOrders" : "Afficher les commandes",
+        "customer360" : "Customer 360°",
+        "viewCustomer360" : "View Customer 360°"
+      },
+      "tableSort" : {
+        "sortBy" : "Trier par",
+        "byName" : "Nom (croissant)",
+        "byNameAsc" : "Nom (croissant)",
+        "byNameDesc" : "Nom (décroissant)",
+        "byDateAsc" : "Date (croissant)",
+        "byDateDesc" : "Date (décroissant)",
+        "byOrderDateAsc" : "Order date (Asc)",
+        "byOrderDateDesc" : "Order date (Desc)",
+        "byUnit" : "Compte (croissant)",
+        "byUnitDesc" : "Compte (décroissant)"
+      },
+      "page" : {
+        "page" : "Page {{count}}",
+        "previous" : "Précédent",
+        "next" : "Suivant"
+      },
+      "noOfCustomers" : "{{count}} clients",
+      "oneCustomer" : "1 client",
+      "noCustomers" : "Aucun client ne figure actuellement dans cette liste de clients.",
+      "noLists" : "There are currently no customer lists available. Contact your system administrator.",
+      "listsError" : "The customer lists could not be retrieved. Please try again later.",
+      "searchBox" : "Rechercher",
+      "enterSearchBox" : "Enter customer name or email"
+    },
+    "switchCustomer" : {
+      "dialog" : {
+        "title" : "Avertissement",
+        "body" : "Clicking \"Switch Customer\" will end the emulation for \"{{ customerA }}\" and start for \"{{ customerB }}\". Any unsaved changes for \"{{ customerA }}\" will be lost.",
+        "actions" : {
+          "switch" : "Switch Customer"
+        }
+      }
+    },
+    "saveCart" : {
+      "saveCartBtn" : "Sauvegarder pour plus tard",
+      "dialog" : {
+        "saveInfo" : "Save the cart before you can take further actions.",
+        "disableInfo" : "Cannot save the cart as it is empty.",
+        "title" : "Enregistrer le panier",
+        "row" : {
+          "id" : "ID",
+          "qty" : "Qté",
+          "total" : "Total"
+        },
+        "actions" : {
+          "save" : "Sauvegarder pour plus tard"
+        }
+      }
+    },
+    "bindCart" : {
+      "cartNumber" : "Cart Number",
+      "bindCartToCustomer" : "Assign Cart to Customer",
+      "success" : "Cart has been successfully assigned",
+      "assignCartId" : "Assign a cart id to customer",
+      "enterCartId" : "Enter cart id",
+      "resetCartId" : "Réinitialiser",
+      "dialog" : {
+        "title" : "Assign Anonymous Cart",
+        "body" : "Do you want to replace the current active cart with the anonymous cart? If you replace the current active cart, it is saved as a saved cart.",
+        "actions" : {
+          "replace" : "Replace Cart"
+        }
+      }
+    },
+    "csagentTokenExpired" : "Your customer support agent session is expired.",
+    "endSession" : "Terminer la session",
+    "endEmulation" : "End Emulation",
+    "agentSessionTimer" : {
+      "label" : "Session Timeout",
+      "minutes" : "mn",
+      "reset" : "Réinitialiser"
+    },
+    "auth" : {
+      "agentLoggedInError" : "Cannot login as user when there is an active CS agent session. Please either emulate user or logout CS agent."
+    },
+    "error" : {
+      "noCustomerId" : "No customerId found for selected user. Session cannot be started."
+    }
+  }
+}

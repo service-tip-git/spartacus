@@ -1,0 +1,251 @@
+{
+  "quote" : {
+    "confirmDialog" : {
+      "name" : "Name:",
+      "description" : "Description:",
+      "validity" : "Penawaran ini valid hingga {{ expirationTime }}",
+      "option" : {
+        "yes" : "Ya",
+        "no" : "Tidak"
+      },
+      "buyer" : {
+        "submit" : {
+          "a11y" : {
+            "close" : "Close submit quote modal"
+          },
+          "title" : "Submit Quote Request {{ code }}?",
+          "confirmNote" : "Are you sure you want to submit this quote request?",
+          "successMessage" : "Quote request submitted successfully"
+        },
+        "cancel" : {
+          "a11y" : {
+            "close" : "Close cancel quote modal"
+          },
+          "title" : "Cancel Quote Request {{ code }}?",
+          "confirmNote" : "Are you sure you want to cancel this quote request?",
+          "successMessage" : "Quote request cancelled"
+        }
+      },
+      "buyer_offer" : {
+        "edit" : {
+          "a11y" : {
+            "close" : "Close edit quote modal"
+          },
+          "title" : "Confirm Edit Quote {{ code }}?",
+          "confirmNote" : "Apakah Anda yakin untuk mengubah penawaran yang disetujui ini?",
+          "warningNote" : "This Quote has been Approved. Editing this Quote will prevent Checkout until new edits are approved."
+        },
+        "cancel" : {
+          "a11y" : {
+            "close" : "Close cancel quote modal"
+          },
+          "title" : "Cancel Quote {{ code }}?",
+          "confirmNote" : "Apakah Anda yakin untuk membatalkan penawaran ini?",
+          "successMessage" : "Quote cancelled"
+        },
+        "checkout" : {
+          "a11y" : {
+            "close" : "Close checkout quote modal"
+          },
+          "title" : "Checkout Quote {{ code }}?",
+          "confirmNote" : "Are you sure you want to accept and checkout this quote?"
+        }
+      },
+      "expired" : {
+        "edit" : {
+          "a11y" : {
+            "close" : "Close edit quote modal"
+          },
+          "title" : "Confirm Edit Quote {{ code }}?",
+          "confirmNote" : "Are you sure you want to edit this expired quote?",
+          "warningNote" : "This Quote is expired. Editing this quote will prevent checkout until new edits are approved."
+        },
+        "requote" : {
+          "a11y" : {
+            "close" : "Close requote modal"
+          },
+          "title" : "Recreate Quote Request {{ code }}?",
+          "confirmNote" : "Are you sure you want to recreate this quote request?",
+          "warningNote" : "This Quote is expired. Re-quoting it will create a new quote request with same contents, which can be edited and submitted for approval afterwards."
+        }
+      },
+      "seller" : {
+        "submit" : {
+          "a11y" : {
+            "close" : "Close submit quote modal"
+          },
+          "title" : "Submit Quote {{ code }}?",
+          "confirmNote" : "Apakah Anda yakin untuk mengajukan penawaran ini?",
+          "warningNote" : "Depending on the total value of the quote, an additional approval might be required before the buyer can check out this quote.",
+          "successMessage" : "Quote submitted successfully"
+        }
+      },
+      "sellerapprover" : {
+        "approve" : {
+          "a11y" : {
+            "close" : "Close approve quote modal"
+          },
+          "title" : "Approve Quote {{ code }}?",
+          "confirmNote" : "Are you sure you want to approve this quote?",
+          "successMessage" : "Quote approved successfully"
+        },
+        "reject" : {
+          "a11y" : {
+            "close" : "Close reject quote modal"
+          },
+          "title" : "Reject Quote {{ code }}?",
+          "confirmNote" : "Are you sure you want to reject this quote?",
+          "successMessage" : "Quote rejected"
+        }
+      },
+      "cancelled" : {
+        "requote" : {
+          "a11y" : {
+            "close" : "Close requote modal"
+          },
+          "title" : "Recreate Quote Request {{ code }}?",
+          "confirmNote" : "Are you sure you want to recreate this quote request?",
+          "warningNote" : "Your current cart will be converted to a saved cart."
+        }
+      },
+      "all" : {
+        "edit" : {
+          "a11y" : {
+            "close" : "Close edit quote modal"
+          },
+          "title" : "Edit Quote {{ code }}?",
+          "confirmNote" : "Are you sure you want to edit this quote?",
+          "warningNote" : "Your current cart will be converted to a saved cart."
+        }
+      }
+    },
+    "comments" : {
+      "regionTitle" : "Contact/Comment Box",
+      "title" : "Kontak",
+      "invalidComment" : "Invalid Input - Please type again...",
+      "allProducts" : "Semua Produk"
+    },
+    "commons" : {
+      "requestQuote" : "Request Quote",
+      "cart" : "Troli",
+      "minRequestInitiationNote" : "Minimum ${{minValue}} subtotal is required to submit a quote ",
+      "savedActiveCart" : "Your active cart was converted to saved cart {{ code }}"
+    },
+    "header" : {
+      "buyerEdit" : {
+        "a11y" : {
+          "cancel" : "Cancel editing quote header information",
+          "save" : "Save quote header information"
+        }
+      },
+      "overview" : {
+        "regionTitle" : "Quote details summary",
+        "id" : "ID Penawaran",
+        "status" : "Status",
+        "information" : "Quote Information",
+        "name" : "Nama",
+        "description" : "Deskripsi",
+        "charactersLeft" : "characters left: {{count}}",
+        "priceAndExpiry" : "Price & Expiry",
+        "estimatedTotal" : "Estimated Total",
+        "total" : "Total",
+        "expirationTime" : "Tanggal Berakhir",
+        "a11y" : {
+          "edit" : "Edit quote header information"
+        },
+        "createdAndUpdated" : "Created & Updated",
+        "createdDate" : "Dibuat",
+        "lastUpdatedDate" : "Pembaruan Terakhir"
+      }
+    },
+    "httpHandlers" : {
+      "cartValidationIssue" : "There are problems with your entries. Please review your cart.",
+      "quoteCartIssue" : "Not possible to do changes to cart entries. Proceed to checkout",
+      "absoluteDiscountIssue" : "Choose a discount that does not exceed the total value",
+      "expirationDateIssue" : "Choose an expiration date in the future",
+      "threshold" : {
+        "underThresholdError" : "Total price of requested quote does not meet the minimum threshold"
+      },
+      "expired" : "This quote has expired. You must resubmit your quote request to receive another vendor quote.",
+      "downloadPDFError" : "Something went wrong. Unable to obtain the proposal document PDF."
+    },
+    "items" : {
+      "regionTitle" : "Cart items"
+    },
+    "links" : {
+      "newCart" : "Troli Baru",
+      "quotes" : "Penawaran",
+      "download" : "Download Proposal",
+      "a11y" : {
+        "newCart" : "Create new empty cart and navigate to it.",
+        "quotes" : "Navigate to quote search result list.",
+        "download" : "Start downloading a quote proposal"
+      }
+    },
+    "list" : {
+      "regionTitle" : "Quote list summary",
+      "title" : "Quote List",
+      "name" : "Nama",
+      "updated" : "Diperbarui",
+      "sortBy" : "Urutkan berdasarkan",
+      "sortQuotes" : "Sort Quotes",
+      "empty" : "We have no quote records for this account.",
+      "quoteId" : "ID Penawaran",
+      "status" : "Status",
+      "clickableRow" : "Click on the row for more quote details"
+    },
+    "states" : {
+      "BUYER_DRAFT" : "Draf",
+      "BUYER_SUBMITTED" : "Telah Dikirimkan",
+      "BUYER_ACCEPTED" : "Diterima",
+      "BUYER_APPROVED" : "Disetujui",
+      "BUYER_REJECTED" : "Ditolak",
+      "BUYER_OFFER" : "Penawaran Vendor",
+      "BUYER_ORDERED" : "Telah Dipesan",
+      "SELLER_DRAFT" : "Draf",
+      "SELLER_REQUEST" : "Diminta",
+      "SELLER_SUBMITTED" : "Telah Dikirimkan",
+      "SELLERAPPROVER_DRAFT" : "Draf",
+      "SELLERAPPROVER_PENDING" : "Persetujuan yang Ditunda",
+      "SELLERAPPROVER_APPROVED" : "Disetujui",
+      "SELLERAPPROVER_REJECTED" : "Ditolak",
+      "CREATED" : "Dibuat",
+      "CANCELLED" : "Dibatalkan",
+      "EXPIRED" : "Berakhir"
+    },
+    "summary" : {
+      "regionTitle" : "Ringkasan Pemesanan",
+      "actions" : {
+        "APPROVE" : "Setujui Penawaran",
+        "CANCEL" : "Batalkan Penawaran",
+        "CHECKOUT" : "Terima dan Bayar",
+        "EDIT" : "Ubah Penawaran",
+        "REJECT" : "Tolak Penawaran",
+        "REQUOTE" : "Request new Quote",
+        "SAVE" : "Simpan Penawaran",
+        "SUBMIT" : "Kirim Penawaran",
+        "VIEW" : "Lihat Penawaran"
+      },
+      "prices" : {
+        "title" : "Ringkasan Pemesanan",
+        "subtotal" : "Subtotal",
+        "productDiscount" : "Item Discount",
+        "orderDiscount" : "Diskon Order",
+        "quoteDiscount" : "Diskon Penawaran",
+        "total" : "Total",
+        "hint" : "No taxes are included in the total"
+      },
+      "sellerEdit" : {
+        "discount" : "Diskon",
+        "apply" : "Terapkan",
+        "expiryDate" : "Tanggal Berakhir",
+        "discountValidationText" : "Enter a valid percentage discount",
+        "a11y" : {
+          "apply" : "Click to apply the entered discount value to this quote",
+          "discount" : "Enter a percentage discount value to be applied to this quote",
+          "expiryDate" : "Enter an expiry date for this quote"
+        }
+      }
+    }
+  }
+}

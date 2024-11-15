@@ -1,0 +1,71 @@
+{
+  "epdVisualization" : {
+    "visualViewer" : {
+      "contentType" : {
+        "drawing2D" : "2D",
+        "model3D" : "3D"
+      },
+      "toolbar" : {
+        "homeButton" : {
+          "label" : "홈"
+        },
+        "zoomButton" : {
+          "label" : "확대/축소"
+        },
+        "panButton" : {
+          "label" : "Pan"
+        },
+        "rotateButton" : {
+          "label" : "Rotate"
+        },
+        "isolateButton" : {
+          "label" : "Isolate"
+        },
+        "playButton" : {
+          "label" : "재생"
+        },
+        "pauseButton" : {
+          "label" : "일시 중지"
+        },
+        "hotspotsButton" : {
+          "label" : "Hotspots",
+          "show" : "표시",
+          "hide" : "숨기기"
+        },
+        "visualViewerAnimationSlider" : {
+          "label" : "Animation Slider",
+          "role" : "Slider"
+        }
+      }
+    },
+    "visualPicking" : {
+      "visualPickingTab" : {
+        "noProductReferences" : "No spare parts are available for this product."
+      },
+      "visualPickingProductList" : {
+        "description" : "설명",
+        "itemPrice" : "가격",
+        "outOfStock" : "Out of stock",
+        "id" : "ID"
+      },
+      "visualPickingProductFilter" : {
+        "input" : {
+          "placeholder" : "Filter by name or id"
+        },
+        "searchButton" : {
+          "label" : "search"
+        },
+        "resetButton" : {
+          "label" : "재설정"
+        }
+      }
+    },
+    "errors" : {
+      "visualLoad" : {
+        "noMatchingVisualFound" : "No matching visualization found",
+        "multipleMatchingVisualsFound" : "Multiple matching visualizations found",
+        "unexpectedLoadError" : "Error occurred while loading visualization"
+      }
+    }
+  }
+}

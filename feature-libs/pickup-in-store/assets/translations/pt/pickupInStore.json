@@ -1,0 +1,86 @@
+{
+  "pickupInfo" : {
+    "inStorePickup" : "In Store Pickup",
+    "pickupBy" : "Pick up by",
+    "pickupFrom" : "Pick up from"
+  },
+  "pickupOptionDialog" : {
+    "close" : "Fechar",
+    "modalHeader" : "Retirar na loja"
+  },
+  "pickupOptions" : {
+    "legend" : "Método de entrega",
+    "changeStore" : "Modificar loja",
+    "delivery" : "Ship It (Free Return)",
+    "pickup" : "Free Pickup In Store",
+    "selectStore" : "Select Store"
+  },
+  "setPreferredStore" : {
+    "makeThisMyStore" : "Make This My Store",
+    "myStore" : "My Store"
+  },
+  "store" : {
+    "pickupFromHere" : "Pick Up from here",
+    "stockLevel_inStock" : "{{ count }} in Stock",
+    "stockLevel_outOfStock" : "Sem estoque",
+    "viewHours" : "View Hours"
+  },
+  "storeList" : {
+    "noStoresMessage" : "No stores found in database..."
+  },
+  "storeSchedule" : {
+    "closed" : "Fechado",
+    "storeHours" : "Store hours"
+  },
+  "storeSearch" : {
+    "findAStore" : "Encontrar uma loja",
+    "findStores" : "Encontrar lojas",
+    "hideOutOfStockOptions" : "Hide out of stock options",
+    "searchPlaceholder" : "Enter Zip Code or Town or Address",
+    "useMyLocation" : "Use my location"
+  },
+  "addressBookPickupInStore" : {
+    "heading" : "Pick-Up Store"
+  },
+  "storeFinderPickupInStore" : {
+    "heading" : "My Store"
+  },
+  "checkoutPickupInStore" : {
+    "heading" : "Items to be Picked Up",
+    "storeItemHeading" : "Pick Up Store Address"
+  },
+  "cartItems" : {
+    "item" : "Item"
+  },
+  "deliveryPointOfServiceDetails" : {
+    "itemsToBePickUp" : "Items To Be Pick-Up",
+    "pickUpInStoreAddress" : "Pick Up Store Address",
+    "itemsToBeShipped" : "Items To Be Shipped",
+    "shippingAddress" : "Endereço de entrega",
+    "deliveryMethod" : "Método de entrega",
+    "deliveryOptions" : "Opções de entrega",
+    "statusDisplay_cancelled" : "Cancelado",
+    "statusDisplay_cancelling" : "Cancelamento pendente",
+    "statusDisplay_completed" : "Concluído",
+    "statusDisplay_created" : "Criado",
+    "statusDisplay_error" : "Pendente",
+    "statusDisplay_Error" : "Pendente",
+    "statusDisplay_processing" : "Pendente",
+    "statusDisplay_open" : "Aberto",
+    "statusDisplay_pending" : {
+      "approval" : "Aprovação pendente",
+      "merchant" : {
+        "approval" : "Aprovação do comerciante pendente"
+      }
+    },
+    "statusDisplay_approved" : "Aprovado",
+    "statusDisplay_rejected" : "Rejeitado",
+    "statusDisplay_merchant" : {
+      "approved" : "Comerciante aprovado",
+      "rejected" : "Comerciante rejeitado"
+    },
+    "statusDisplay_assigned" : {
+      "admin" : "Atribuído ao administrador"
+    }
+  }
+}

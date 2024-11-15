@@ -1,0 +1,48 @@
+{
+  "customerTicketing" : {
+    "mainLogoLabel" : "SAP",
+    "mainTitle" : "Customer Ticketing",
+    "ticketId" : "ID",
+    "createdOn" : "Utworzono dnia",
+    "changedOn" : "Changed On",
+    "status" : "Status",
+    "message" : "Wiadomość",
+    "cancel" : "Anuluj",
+    "submit" : "Wyślij",
+    "uploadFile" : "Przekaż plik",
+    "fileSizeLimit" : "File size limit: {{count}} MB",
+    "maximumAttachment" : "Maximum of one attachment per message",
+    "errorMessage" : "Something went wrong.",
+    "charactersLeft" : "characters left: {{count}}",
+    "customerService" : "Obsługa klienta"
+  },
+  "customerTicketingList" : {
+    "subject" : "Temat",
+    "ticketCategory" : "Kategoria",
+    "sortSubtitle" : "Sortuj według",
+    "sortOrders" : "Sort orders",
+    "noTickets" : "You don't have any request",
+    "requestTitle" : "All Requests",
+    "mobile" : {
+      "ticketIdFull" : "ID zgłoszenia"
+    }
+  },
+  "createCustomerTicket" : {
+    "createNewTicket" : "Dodaj",
+    "addNewRequest" : "Add New Request",
+    "addRequest" : "Add Request",
+    "subject" : "Temat",
+    "category" : "Kategoria",
+    "associateTo" : "Associate To",
+    "ticketCreated" : "Request created.",
+    "optionallySelectAssociatedObject" : "Select Option",
+    "selectCategory" : "Select Category"
+  },
+  "customerTicketingDetails" : {
+    "requestReopened" : "Request Reopened.",
+    "requestClosed" : "Request closed, you may reopen if needed.",
+    "reopenRequest" : "Reopen Request",
+    "closeRequest" : "Close Request",
+    "ticketNotFound" : "Ticket not found."
+  }
+}

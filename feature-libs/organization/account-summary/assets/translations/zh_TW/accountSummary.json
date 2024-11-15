@@ -1,0 +1,88 @@
+{
+  "orgAccountSummary" : {
+    "groupName" : "Account Summaries",
+    "header" : "All Account Summaries ({{count}})",
+    "name" : "單位",
+    "details" : {
+      "header" : "帳戶摘要明細",
+      "uid" : "單位 ID",
+      "name" : "單位名稱",
+      "address" : "地址",
+      "creditRep" : "信用報告",
+      "creditLine" : "信用額度",
+      "currentBalance" : "目前餘額",
+      "openBalance" : "未結餘額",
+      "pastDueBalance" : "逾期餘額",
+      "dayRange" : "{{minBoundary}}-{{maxBoundary}} Days",
+      "dayPlus" : "{{minBoundary}}+ Days",
+      "notApplicable" : "n/a"
+    },
+    "document" : {
+      "header" : "文件",
+      "id" : "文件號碼",
+      "type" : "文件類型",
+      "date" : "建立日期",
+      "dueDate" : "Due On",
+      "originalAmount" : "原始金額",
+      "openAmount" : "未結金額",
+      "status" : "狀態",
+      "attachment" : "附件",
+      "download" : "下載",
+      "attachmentDescription" : "Download attachment for {{type}} {{id}}.",
+      "noneFound" : "No Documents Found"
+    },
+    "sorts" : {
+      "byCreatedAtDateAsc" : "Created On Ascending",
+      "byCreatedAtDateDesc" : "Created On Descending",
+      "byDueAtDateAsc" : "Due On Ascending",
+      "byDueAtDateDesc" : "Due On Descending",
+      "byOriginalAmountAsc" : "Original Amount Ascending",
+      "byOriginalAmountDesc" : "Original Amount Descending",
+      "byOpenAmountAsc" : "Open Amount Ascending",
+      "byOpenAmountDesc" : "Open Amount Descending",
+      "byOrgDocumentTypeAsc" : "Document Type Ascending",
+      "byOrgDocumentTypeDesc" : "Document Type Descending",
+      "byStatusAsc" : "Status Ascending",
+      "byStatusDesc" : "Status Descending",
+      "byOrgDocumentIdAsc" : "Document Number Ascending",
+      "byOrgDocumentIdDesc" : "Document Number Descending"
+    },
+    "statuses" : {
+      "open" : "未結",
+      "closed" : "結束",
+      "all" : "全部"
+    },
+    "filterByOptions" : {
+      "orgDocumentId" : "文件號碼",
+      "orgDocumentIdRange" : "Document Number Range",
+      "orgDocumentType" : "文件類型",
+      "createdAtDateRange" : "Created On Range",
+      "dueAtDateRange" : "Due On Range",
+      "amountRange" : "原始金額範圍",
+      "openAmountRange" : "未結金額範圍"
+    },
+    "sortBy" : "Sort By",
+    "sortDocuments" : "Sort documents",
+    "filter" : {
+      "status" : "狀態",
+      "filterBy" : "篩選依據",
+      "documentNumber" : "文件號碼",
+      "documentType" : "文件類型",
+      "startRange" : "自",
+      "endRange" : "至",
+      "clear" : "全部清除",
+      "search" : "搜尋",
+      "errors" : {
+        "toDateMustComeAfterFrom" : "Choose an end date that's later than the start date.",
+        "toAmountMustBeLargeThanFrom" : "Choose an end range value that's smaller than the start value."
+      }
+    },
+    "hint" : "Account summaries allow you to review general information about a unit, including balances and aging summary of invoices. Here, you can also browse through a list of transaction documents for a unit."
+  },
+  "orgAccountSummaryList" : {
+    "breadcrumbs" : {
+      "list" : "Account Summaries",
+      "details" : "{{name}}"
+    }
+  }
+}

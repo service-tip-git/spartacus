@@ -1,0 +1,86 @@
+{
+  "pickupInfo" : {
+    "inStorePickup" : "In Store Pickup",
+    "pickupBy" : "Pick up by",
+    "pickupFrom" : "Pick up from"
+  },
+  "pickupOptionDialog" : {
+    "close" : "Zavřít",
+    "modalHeader" : "Vyzvednutí v obchodě"
+  },
+  "pickupOptions" : {
+    "legend" : "Způsob dodání",
+    "changeStore" : "Změnit obchod",
+    "delivery" : "Ship It (Free Return)",
+    "pickup" : "Free Pickup In Store",
+    "selectStore" : "Select Store"
+  },
+  "setPreferredStore" : {
+    "makeThisMyStore" : "Make This My Store",
+    "myStore" : "My Store"
+  },
+  "store" : {
+    "pickupFromHere" : "Pick Up from here",
+    "stockLevel_inStock" : "{{ count }} in Stock",
+    "stockLevel_outOfStock" : "Není skladem",
+    "viewHours" : "View Hours"
+  },
+  "storeList" : {
+    "noStoresMessage" : "No stores found in database..."
+  },
+  "storeSchedule" : {
+    "closed" : "Zavřeno",
+    "storeHours" : "Store hours"
+  },
+  "storeSearch" : {
+    "findAStore" : "Najít obchod",
+    "findStores" : "Najít obchody",
+    "hideOutOfStockOptions" : "Hide out of stock options",
+    "searchPlaceholder" : "Enter Zip Code or Town or Address",
+    "useMyLocation" : "Use my location"
+  },
+  "addressBookPickupInStore" : {
+    "heading" : "Pick-Up Store"
+  },
+  "storeFinderPickupInStore" : {
+    "heading" : "My Store"
+  },
+  "checkoutPickupInStore" : {
+    "heading" : "Items to be Picked Up",
+    "storeItemHeading" : "Pick Up Store Address"
+  },
+  "cartItems" : {
+    "item" : "Položka"
+  },
+  "deliveryPointOfServiceDetails" : {
+    "itemsToBePickUp" : "Items To Be Pick-Up",
+    "pickUpInStoreAddress" : "Pick Up Store Address",
+    "itemsToBeShipped" : "Items To Be Shipped",
+    "shippingAddress" : "Dodací adresa",
+    "deliveryMethod" : "Způsob dodání",
+    "deliveryOptions" : "Možnosti dodání",
+    "statusDisplay_cancelled" : "Zrušeno",
+    "statusDisplay_cancelling" : "Probíhá zrušení",
+    "statusDisplay_completed" : "Dokončeno",
+    "statusDisplay_created" : "Vytvořeno",
+    "statusDisplay_error" : "Čeká",
+    "statusDisplay_Error" : "Čeká",
+    "statusDisplay_processing" : "Čeká",
+    "statusDisplay_open" : "Otevřeno",
+    "statusDisplay_pending" : {
+      "approval" : "Čeká na schválení",
+      "merchant" : {
+        "approval" : "Čeká na schválení obchodníka"
+      }
+    },
+    "statusDisplay_approved" : "Schváleno",
+    "statusDisplay_rejected" : "Zamítnuto",
+    "statusDisplay_merchant" : {
+      "approved" : "Obchodník byl schválen",
+      "rejected" : "Obchodník byl zamítnut"
+    },
+    "statusDisplay_assigned" : {
+      "admin" : "Přiřazeno správci"
+    }
+  }
+}

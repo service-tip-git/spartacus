@@ -1,0 +1,71 @@
+{
+  "epdVisualization" : {
+    "visualViewer" : {
+      "contentType" : {
+        "drawing2D" : "2D",
+        "model3D" : "3D"
+      },
+      "toolbar" : {
+        "homeButton" : {
+          "label" : "首頁"
+        },
+        "zoomButton" : {
+          "label" : "縮放"
+        },
+        "panButton" : {
+          "label" : "Pan"
+        },
+        "rotateButton" : {
+          "label" : "Rotate"
+        },
+        "isolateButton" : {
+          "label" : "Isolate"
+        },
+        "playButton" : {
+          "label" : "播放"
+        },
+        "pauseButton" : {
+          "label" : "暫停"
+        },
+        "hotspotsButton" : {
+          "label" : "Hotspots",
+          "show" : "顯示",
+          "hide" : "隱藏"
+        },
+        "visualViewerAnimationSlider" : {
+          "label" : "Animation Slider",
+          "role" : "Slider"
+        }
+      }
+    },
+    "visualPicking" : {
+      "visualPickingTab" : {
+        "noProductReferences" : "No spare parts are available for this product."
+      },
+      "visualPickingProductList" : {
+        "description" : "說明",
+        "itemPrice" : "價格",
+        "outOfStock" : "Out of stock",
+        "id" : "ID"
+      },
+      "visualPickingProductFilter" : {
+        "input" : {
+          "placeholder" : "Filter by name or id"
+        },
+        "searchButton" : {
+          "label" : "search"
+        },
+        "resetButton" : {
+          "label" : "重設"
+        }
+      }
+    },
+    "errors" : {
+      "visualLoad" : {
+        "noMatchingVisualFound" : "No matching visualization found",
+        "multipleMatchingVisualsFound" : "Multiple matching visualizations found",
+        "unexpectedLoadError" : "Error occurred while loading visualization"
+      }
+    }
+  }
+}

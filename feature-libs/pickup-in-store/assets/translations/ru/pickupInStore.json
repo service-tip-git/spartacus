@@ -1,0 +1,86 @@
+{
+  "pickupInfo" : {
+    "inStorePickup" : "In Store Pickup",
+    "pickupBy" : "Pick up by",
+    "pickupFrom" : "Pick up from"
+  },
+  "pickupOptionDialog" : {
+    "close" : "Закрыть",
+    "modalHeader" : "Самовывоз из магазина"
+  },
+  "pickupOptions" : {
+    "legend" : "Способ доставки",
+    "changeStore" : "Изменить магазин",
+    "delivery" : "Ship It (Free Return)",
+    "pickup" : "Free Pickup In Store",
+    "selectStore" : "Select Store"
+  },
+  "setPreferredStore" : {
+    "makeThisMyStore" : "Make This My Store",
+    "myStore" : "My Store"
+  },
+  "store" : {
+    "pickupFromHere" : "Pick Up from here",
+    "stockLevel_inStock" : "{{ count }} in Stock",
+    "stockLevel_outOfStock" : "Нет в наличии",
+    "viewHours" : "View Hours"
+  },
+  "storeList" : {
+    "noStoresMessage" : "No stores found in database..."
+  },
+  "storeSchedule" : {
+    "closed" : "Закрыто",
+    "storeHours" : "Store hours"
+  },
+  "storeSearch" : {
+    "findAStore" : "Найти магазин",
+    "findStores" : "Найти магазины",
+    "hideOutOfStockOptions" : "Hide out of stock options",
+    "searchPlaceholder" : "Enter Zip Code or Town or Address",
+    "useMyLocation" : "Use my location"
+  },
+  "addressBookPickupInStore" : {
+    "heading" : "Pick-Up Store"
+  },
+  "storeFinderPickupInStore" : {
+    "heading" : "My Store"
+  },
+  "checkoutPickupInStore" : {
+    "heading" : "Items to be Picked Up",
+    "storeItemHeading" : "Pick Up Store Address"
+  },
+  "cartItems" : {
+    "item" : "Позиция"
+  },
+  "deliveryPointOfServiceDetails" : {
+    "itemsToBePickUp" : "Items To Be Pick-Up",
+    "pickUpInStoreAddress" : "Pick Up Store Address",
+    "itemsToBeShipped" : "Items To Be Shipped",
+    "shippingAddress" : "Адрес доставки",
+    "deliveryMethod" : "Способ доставки",
+    "deliveryOptions" : "Опции доставки",
+    "statusDisplay_cancelled" : "Отменено",
+    "statusDisplay_cancelling" : "Ожидает отмены",
+    "statusDisplay_completed" : "Завершено",
+    "statusDisplay_created" : "Создано",
+    "statusDisplay_error" : "Ожидает",
+    "statusDisplay_Error" : "Ожидает",
+    "statusDisplay_processing" : "Ожидает",
+    "statusDisplay_open" : "Открыто",
+    "statusDisplay_pending" : {
+      "approval" : "Ожидает утверждения",
+      "merchant" : {
+        "approval" : "Ожидает утверждения продавца"
+      }
+    },
+    "statusDisplay_approved" : "Утверждено",
+    "statusDisplay_rejected" : "Отклонено",
+    "statusDisplay_merchant" : {
+      "approved" : "Продавец утвердил",
+      "rejected" : "Продавец отклонил"
+    },
+    "statusDisplay_assigned" : {
+      "admin" : "Направлено администратору"
+    }
+  }
+}

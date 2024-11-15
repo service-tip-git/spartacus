@@ -1,0 +1,48 @@
+{
+  "customerTicketing" : {
+    "mainLogoLabel" : "SAP",
+    "mainTitle" : "Customer Ticketing",
+    "ticketId" : "Azonosító",
+    "createdOn" : "Létrehozás dátuma",
+    "changedOn" : "Changed On",
+    "status" : "Státus",
+    "message" : "Üzenet",
+    "cancel" : "Mégse",
+    "submit" : "Elküldés",
+    "uploadFile" : "Fájl feltöltése",
+    "fileSizeLimit" : "File size limit: {{count}} MB",
+    "maximumAttachment" : "Maximum of one attachment per message",
+    "errorMessage" : "Something went wrong.",
+    "charactersLeft" : "characters left: {{count}}",
+    "customerService" : "Ügyfélszolgálat"
+  },
+  "customerTicketingList" : {
+    "subject" : "Tárgy",
+    "ticketCategory" : "Kategória",
+    "sortSubtitle" : "Rendezés alapja",
+    "sortOrders" : "Sort orders",
+    "noTickets" : "You don't have any request",
+    "requestTitle" : "All Requests",
+    "mobile" : {
+      "ticketIdFull" : "Jegyazonosító"
+    }
+  },
+  "createCustomerTicket" : {
+    "createNewTicket" : "Hozzáadás",
+    "addNewRequest" : "Add New Request",
+    "addRequest" : "Add Request",
+    "subject" : "Tárgy",
+    "category" : "Kategória",
+    "associateTo" : "Associate To",
+    "ticketCreated" : "Request created.",
+    "optionallySelectAssociatedObject" : "Select Option",
+    "selectCategory" : "Select Category"
+  },
+  "customerTicketingDetails" : {
+    "requestReopened" : "Request Reopened.",
+    "requestClosed" : "Request closed, you may reopen if needed.",
+    "reopenRequest" : "Reopen Request",
+    "closeRequest" : "Close Request",
+    "ticketNotFound" : "Ticket not found."
+  }
+}

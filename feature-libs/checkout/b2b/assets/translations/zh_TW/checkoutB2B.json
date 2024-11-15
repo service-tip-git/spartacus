@@ -1,0 +1,22 @@
+{
+  "checkoutB2B" : {
+    "noPoNumber" : "無",
+    "poNumber" : "Purchase order number (optional)",
+    "costCenter" : "成本中心",
+    "placeholder" : "Enter P.O",
+    "availableLabel" : "Delivery addresses available to you depend on the cost center's unit",
+    "invalid" : {
+      "accountType" : "您的帳戶不允許您在此結帳。"
+    },
+    "methodOfPayment" : {
+      "paymentType" : "付款類型"
+    },
+    "review" : {
+      "poNumber" : "採購訂單號碼"
+    },
+    "progress" : {
+      "methodOfPayment" : "Method of Payment"
+    },
+    "invalidCostCenter" : "Invalid cost center."
+  }
+}

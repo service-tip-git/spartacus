@@ -1,0 +1,192 @@
+{
+  "orderDetails" : {
+    "orderId" : "ऑर्डर#",
+    "orderNumber" : "ऑर्डर संख्या",
+    "replenishmentId" : "Replenishment #",
+    "purchaseOrderId" : "Purchase Order #",
+    "purchaseOrderNumber" : "क्रय ऑर्डर संख्या",
+    "emptyPurchaseOrderId" : "कोई नहीं",
+    "none" : "None {{value}}",
+    "placed" : "Placed",
+    "placedBy" : "द्वारा स्थापित",
+    "unit" : "इकाई",
+    "costCenter" : "लागत केंद्र",
+    "costCenterAndUnit" : "Cost Center / Unit",
+    "costCenterAndUnitValue" : "{{costCenterName}} / {{unitName}}",
+    "methodOfPayment" : "Method of Payment",
+    "payByAccount" : "Pay by Account",
+    "paidByCreditCard" : "(paid by credit card)",
+    "status" : "स्थिति",
+    "active" : "सक्रिय",
+    "shippedOn" : "Shipped on",
+    "shippingMethod" : "शिपिंग विधि",
+    "placedOn" : "Placed on",
+    "startOn" : "Start On",
+    "nextOrderDate" : "अगले ऑर्डर का दिनांक",
+    "frequency" : "आवृत्ति",
+    "cancelled" : " रद्द किया गया",
+    "deliveryStatus_IN_TRANSIT" : "ट्रांज़िट में",
+    "deliveryStatus_READY_FOR_PICKUP" : "Ready for Pickup",
+    "deliveryStatus_READY_FOR_SHIPPING" : "Ready for Shipping",
+    "deliveryStatus_WAITING" : "प्रतीक्षा हो रही है",
+    "deliveryStatus_DELIVERING" : "वितरण हो रहा है",
+    "deliveryStatus_PICKPACK" : "Preparing for Shipment",
+    "deliveryStatus_PICKUP_COMPLETE" : "पिकअप पूरा करें",
+    "deliveryStatus_DELIVERY_COMPLETED" : "Delivery Complete",
+    "deliveryStatus_PAYMENT_NOT_CAPTURED" : "Payment Issue",
+    "deliveryStatus_IN_PROCESS" : "Order Processing",
+    "deliveryStatus_READY" : "Order Processing",
+    "deliveryStatus_DELIVERY_REJECTED" : "वितरण अस्वीकृत हुआ",
+    "deliveryStatus_SHIPPED" : "भेज दिया गया है",
+    "deliveryStatus_TAX_NOT_COMMITTED" : "Tax Issue",
+    "deliveryStatus_CANCELLED" : "रद्द किया गया",
+    "statusDisplay_cancelled" : "रद्द किया गया",
+    "statusDisplay_cancelling" : "लंबित रद्द करें",
+    "statusDisplay_completed" : "पूर्ण हुआ",
+    "statusDisplay_created" : "बनाया गया",
+    "statusDisplay_error" : "लंबित",
+    "statusDisplay_Error" : "लंबित",
+    "statusDisplay_processing" : "लंबित",
+    "statusDisplay_open" : "खोलें",
+    "statusDisplay_pending" : {
+      "approval" : "लंबित अनुमोदन",
+      "merchant" : {
+        "approval" : "मर्चेंट के अनुमोदन के लिए लंबित"
+      }
+    },
+    "statusDisplay_approved" : "अनुमोदित",
+    "statusDisplay_rejected" : "अस्वीकृत",
+    "statusDisplay_merchant" : {
+      "approved" : "मर्चेंट द्वारा अनुमोदित",
+      "rejected" : "मर्चेंट द्वारा अस्वीकृत"
+    },
+    "statusDisplay_assigned" : {
+      "admin" : "प्रशासक को असाइन किया गया"
+    },
+    "consignmentTracking" : {
+      "action" : "Track package",
+      "dialog" : {
+        "header" : "Tracking Information",
+        "shipped" : "भेज दिया गया है",
+        "estimate" : "Estimated Delivery",
+        "carrier" : "Delivery Service",
+        "trackingId" : "ट्रैकिंग क्रमांक",
+        "noTracking" : "The package has not been dispatched from the warehouse. The tracking information will be available after the package is shipped.",
+        "loadingHeader" : "कंसाइनमेंट ट्रैकिंग"
+      }
+    },
+    "cancellationAndReturn" : {
+      "returnAction" : "Request a Return",
+      "cancelAction" : "आइटम रद्द करें",
+      "item" : "आइटम",
+      "itemPrice" : "आइटम मूल्य",
+      "quantity" : "Max Quantity",
+      "returnQty" : "Quantity to Return",
+      "cancelQty" : "Quantity to Cancel",
+      "setAll" : "Set all quantities to maximum",
+      "totalPrice" : "कुल",
+      "submit" : "अनुरोध सबमिट करें",
+      "submitDescription" : "Submit Request. Items on this page will be included in the cancellation request.",
+      "returnSuccess" : "Your return request ({{rma}}) was submitted",
+      "cancelSuccess" : "Your cancellation request was submitted (original order {{orderCode}} will be updated)"
+    },
+    "cancelReplenishment" : {
+      "title" : "पुनःपूर्ति रद्द करें ",
+      "description" : "Cancel any future replenishment order?",
+      "accept" : "हां",
+      "reject" : "नहीं",
+      "cancelSuccess" : "Replenishment order #{{replenishmentOrderCode}} has been successfully cancelled"
+    },
+    "caption" : "Order contents."
+  },
+  "orderHistory" : {
+    "orderHistory" : "ऑर्डर का इतिहास",
+    "orderId" : "ऑर्डर#",
+    "emptyPurchaseOrderId" : "कोई नहीं",
+    "date" : "दिनांक",
+    "status" : "स्थिति",
+    "PONumber" : "P.O. संख्या",
+    "total" : "कुल",
+    "noOrders" : "We have no order records for this account.",
+    "noReplenishmentOrders" : "We have no replenishment order records for this account.",
+    "startShopping" : "Start Shopping",
+    "sortBy" : "इसके द्वारा क्रमित करें",
+    "sortOrders" : "Sort orders",
+    "replenishmentOrderHistory" : "Replenishment Order History",
+    "replenishmentOrderId" : "Replenishment #",
+    "purchaseOrderNumber" : "PO #",
+    "costCenter" : "लागत केंद्र",
+    "startOn" : "Start On",
+    "frequency" : "आवृत्ति",
+    "nextOrderDate" : "अगले ऑर्डर का दिनांक",
+    "cancel" : "रद्द करें",
+    "cancelled" : "रद्द किया गया",
+    "replenishmentHistory" : "पुनःपूर्ति इतिहास",
+    "notFound" : "कोई ऑर्डर नहीं मिला ",
+    "actions" : "क्रियाएं"
+  },
+  "AccountOrderHistoryTabContainer" : {
+    "tabs" : {
+      "AccountOrderHistoryComponent" : "ALL ORDERS ({{param}})",
+      "OrderReturnRequestListComponent" : "RETURNS ({{param}})"
+    },
+    "tabPanelContainerRegion" : "Group with order history details",
+    "tabPanelContainerRegionGroup" : "Group with order history details"
+  },
+  "returnRequestList" : {
+    "returnRequestId" : "Return #",
+    "orderId" : "ऑर्डर#",
+    "date" : "निर्माण तिथि",
+    "status" : "स्थिति",
+    "sortBy" : "इसके द्वारा क्रमित करें",
+    "sortReturns" : "Sort returns",
+    "statusDisplay_APPROVAL_PENDING" : "लंबित अनुमोदन",
+    "statusDisplay_CANCELED" : "रद्द किया गया",
+    "statusDisplay_CANCELLING" : "रद्द किया जा रहा है",
+    "statusDisplay_WAIT" : "प्रतीक्षा करें",
+    "statusDisplay_RECEIVED" : "प्राप्त",
+    "statusDisplay_RECEIVING" : "प्राप्त कर रहा है",
+    "statusDisplay_APPROVING" : "अनुमोदित कर रहा है",
+    "statusDisplay_REVERSING_PAYMENT" : "भुगतान वापस किया जा रहा है",
+    "statusDisplay_PAYMENT_REVERSED" : "भुगतान वापस गया",
+    "statusDisplay_PAYMENT_REVERSAL_FAILED" : "भुगतान वापसी विफल",
+    "statusDisplay_REVERSING_TAX" : "कर वापस किया जा रहा है",
+    "statusDisplay_TAX_REVERSED" : "कर वापस गया",
+    "statusDisplay_TAX_REVERSAL_FAILED" : "कर वापसी विफल",
+    "statusDisplay_COMPLETED" : "पूर्ण हुआ"
+  },
+  "returnRequest" : {
+    "returnRequestId" : "Return Request #",
+    "orderCode" : "For Order #",
+    "status" : "Return status",
+    "cancel" : "Cancel Return Request",
+    "item" : "वर्णन",
+    "itemPrice" : "आइटम मूल्य",
+    "returnQty" : "मात्रा वापस करें",
+    "total" : "कुल",
+    "summary" : "कुल वापसी",
+    "subtotal" : "उप योग",
+    "deliveryCode" : "वितरण की लागत",
+    "estimatedRefund" : "Estimated refund",
+    "note" : "The totals are estimated and may not include applicable taxes or other charges.",
+    "cancelSuccess" : "Your return request ({{rma}}) was cancelled",
+    "caption" : "Order contents."
+  },
+  "reorder" : {
+    "button" : "रिऑर्डर",
+    "dialog" : {
+      "reorderProducts" : "Reorder products",
+      "messages" : {
+        "reviewConfiguration" : "An error occurred with \"{{ productCode}}\" configuration.",
+        "lowStock" : "Quantity for {{ productName }}: {{ quantity }} has been reduced to {{ quantityAdded }}.",
+        "noStock" : "{{ productName }} is currently out of stock.",
+        "pricingError" : "Pricing problem with \"{{ productCode }}\".",
+        "unresolvableIssues" : "Unrecognized problem with \"{{ productCode }}\".",
+        "success" : "Products have been successfully added to the cart"
+      },
+      "areYouSureToReplaceCart" : "Current cart will be replaced with new items. Do you wish to continue?",
+      "cancel" : "रद्द करें",
+      "continue" : "जारी रखें"
+    }
+  }
+}

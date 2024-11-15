@@ -1,0 +1,22 @@
+{
+  "checkoutB2B" : {
+    "noPoNumber" : "Nincs",
+    "poNumber" : "Purchase order number (optional)",
+    "costCenter" : "Költséghely",
+    "placeholder" : "Enter P.O",
+    "availableLabel" : "Delivery addresses available to you depend on the cost center's unit",
+    "invalid" : {
+      "accountType" : "A fiókja nem teszi lehetővé a fizetést ezen a helyen."
+    },
+    "methodOfPayment" : {
+      "paymentType" : "Fizetési mód"
+    },
+    "review" : {
+      "poNumber" : "Megrendelés száma"
+    },
+    "progress" : {
+      "methodOfPayment" : "Method of Payment"
+    },
+    "invalidCostCenter" : "Invalid cost center."
+  }
+}

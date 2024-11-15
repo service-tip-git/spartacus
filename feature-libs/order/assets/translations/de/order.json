@@ -1,0 +1,192 @@
+{
+  "orderDetails" : {
+    "orderId" : "Bestellnummer",
+    "orderNumber" : "Bestellnummer",
+    "replenishmentId" : "Replenishment #",
+    "purchaseOrderId" : "Purchase Order #",
+    "purchaseOrderNumber" : "Bestellnummer",
+    "emptyPurchaseOrderId" : "Keine",
+    "none" : "None {{value}}",
+    "placed" : "Placed",
+    "placedBy" : "Aufgegeben von",
+    "unit" : "Einheit",
+    "costCenter" : "Kostenstelle",
+    "costCenterAndUnit" : "Cost Center / Unit",
+    "costCenterAndUnitValue" : "{{costCenterName}} / {{unitName}}",
+    "methodOfPayment" : "Method of Payment",
+    "payByAccount" : "Pay by Account",
+    "paidByCreditCard" : "(paid by credit card)",
+    "status" : "Status",
+    "active" : "Aktiv",
+    "shippedOn" : "Shipped on",
+    "shippingMethod" : "Liefermethode",
+    "placedOn" : "Placed on",
+    "startOn" : "Start On",
+    "nextOrderDate" : "Nächstes Bestelldatum",
+    "frequency" : "Häufigkeit",
+    "cancelled" : " Abgebrochen",
+    "deliveryStatus_IN_TRANSIT" : "Auf Transportweg",
+    "deliveryStatus_READY_FOR_PICKUP" : "Ready for Pickup",
+    "deliveryStatus_READY_FOR_SHIPPING" : "Ready for Shipping",
+    "deliveryStatus_WAITING" : "Wartet",
+    "deliveryStatus_DELIVERING" : "Wird geliefert",
+    "deliveryStatus_PICKPACK" : "Preparing for Shipment",
+    "deliveryStatus_PICKUP_COMPLETE" : "Abholung abgeschlossen",
+    "deliveryStatus_DELIVERY_COMPLETED" : "Delivery Complete",
+    "deliveryStatus_PAYMENT_NOT_CAPTURED" : "Payment Issue",
+    "deliveryStatus_IN_PROCESS" : "Order Processing",
+    "deliveryStatus_READY" : "Order Processing",
+    "deliveryStatus_DELIVERY_REJECTED" : "Lieferung abgelehnt",
+    "deliveryStatus_SHIPPED" : "Versendet",
+    "deliveryStatus_TAX_NOT_COMMITTED" : "Tax Issue",
+    "deliveryStatus_CANCELLED" : "Abgebrochen",
+    "statusDisplay_cancelled" : "Abgebrochen",
+    "statusDisplay_cancelling" : "Abbrechen ausstehend",
+    "statusDisplay_completed" : "Abgeschlossen",
+    "statusDisplay_created" : "Erstellt",
+    "statusDisplay_error" : "Ausstehend",
+    "statusDisplay_Error" : "Ausstehend",
+    "statusDisplay_processing" : "Ausstehend",
+    "statusDisplay_open" : "Öffnen",
+    "statusDisplay_pending" : {
+      "approval" : "Genehmigung ausstehend",
+      "merchant" : {
+        "approval" : "Genehmigung durch Händler ausstehend"
+      }
+    },
+    "statusDisplay_approved" : "Genehmigt",
+    "statusDisplay_rejected" : "Abgelehnt",
+    "statusDisplay_merchant" : {
+      "approved" : "Vom Händler genehmigt",
+      "rejected" : "Vom Händler abgelehnt"
+    },
+    "statusDisplay_assigned" : {
+      "admin" : "Dem Administrator zugewiesen"
+    },
+    "consignmentTracking" : {
+      "action" : "Track package",
+      "dialog" : {
+        "header" : "Tracking Information",
+        "shipped" : "Versendet",
+        "estimate" : "Estimated Delivery",
+        "carrier" : "Delivery Service",
+        "trackingId" : "Sendungsverfolgungsnummer",
+        "noTracking" : "The package has not been dispatched from the warehouse. The tracking information will be available after the package is shipped.",
+        "loadingHeader" : "Sendungsverfolgung"
+      }
+    },
+    "cancellationAndReturn" : {
+      "returnAction" : "Request a Return",
+      "cancelAction" : "Artikel stornieren",
+      "item" : "Artikel",
+      "itemPrice" : "Artikelpreis",
+      "quantity" : "Max Quantity",
+      "returnQty" : "Quantity to Return",
+      "cancelQty" : "Quantity to Cancel",
+      "setAll" : "Set all quantities to maximum",
+      "totalPrice" : "Gesamtsumme",
+      "submit" : "Anfrage senden",
+      "submitDescription" : "Submit Request. Items on this page will be included in the cancellation request.",
+      "returnSuccess" : "Your return request ({{rma}}) was submitted",
+      "cancelSuccess" : "Your cancellation request was submitted (original order {{orderCode}} will be updated)"
+    },
+    "cancelReplenishment" : {
+      "title" : "Nachbestellung stornieren",
+      "description" : "Cancel any future replenishment order?",
+      "accept" : "Ja",
+      "reject" : "Nein",
+      "cancelSuccess" : "Replenishment order #{{replenishmentOrderCode}} has been successfully cancelled"
+    },
+    "caption" : "Order contents."
+  },
+  "orderHistory" : {
+    "orderHistory" : "Bestellungsverlauf",
+    "orderId" : "Bestellnummer",
+    "emptyPurchaseOrderId" : "Keine",
+    "date" : "Datum",
+    "status" : "Status",
+    "PONumber" : "Bestellnummer",
+    "total" : "Gesamtsumme",
+    "noOrders" : "We have no order records for this account.",
+    "noReplenishmentOrders" : "We have no replenishment order records for this account.",
+    "startShopping" : "Start Shopping",
+    "sortBy" : "Sortieren nach",
+    "sortOrders" : "Sort orders",
+    "replenishmentOrderHistory" : "Replenishment Order History",
+    "replenishmentOrderId" : "Replenishment #",
+    "purchaseOrderNumber" : "PO #",
+    "costCenter" : "Kostenstelle",
+    "startOn" : "Start On",
+    "frequency" : "Häufigkeit",
+    "nextOrderDate" : "Nächstes Bestelldatum",
+    "cancel" : "Abbrechen",
+    "cancelled" : "Abgebrochen",
+    "replenishmentHistory" : "Nachbestellverlauf",
+    "notFound" : "Keine Bestellungen gefunden",
+    "actions" : "Aktionen"
+  },
+  "AccountOrderHistoryTabContainer" : {
+    "tabs" : {
+      "AccountOrderHistoryComponent" : "ALL ORDERS ({{param}})",
+      "OrderReturnRequestListComponent" : "RETURNS ({{param}})"
+    },
+    "tabPanelContainerRegion" : "Group with order history details",
+    "tabPanelContainerRegionGroup" : "Group with order history details"
+  },
+  "returnRequestList" : {
+    "returnRequestId" : "Return #",
+    "orderId" : "Bestellnummer",
+    "date" : "Erstellungsdatum",
+    "status" : "Status",
+    "sortBy" : "Sortieren nach",
+    "sortReturns" : "Sort returns",
+    "statusDisplay_APPROVAL_PENDING" : "Genehmigung ausstehend",
+    "statusDisplay_CANCELED" : "Abgebrochen",
+    "statusDisplay_CANCELLING" : "Abbrechen",
+    "statusDisplay_WAIT" : "Warten",
+    "statusDisplay_RECEIVED" : "Erhalten",
+    "statusDisplay_RECEIVING" : "Erhalten",
+    "statusDisplay_APPROVING" : "Genehmigen",
+    "statusDisplay_REVERSING_PAYMENT" : "Zahlung wird storniert",
+    "statusDisplay_PAYMENT_REVERSED" : "Zahlung storniert",
+    "statusDisplay_PAYMENT_REVERSAL_FAILED" : "Zahlungsstornierung fehlgeschlagen",
+    "statusDisplay_REVERSING_TAX" : "Steuer wird storniert",
+    "statusDisplay_TAX_REVERSED" : "Steuer storniert",
+    "statusDisplay_TAX_REVERSAL_FAILED" : "Steuerstornierung fehlgeschlagen",
+    "statusDisplay_COMPLETED" : "Abgeschlossen"
+  },
+  "returnRequest" : {
+    "returnRequestId" : "Return Request #",
+    "orderCode" : "For Order #",
+    "status" : "Return status",
+    "cancel" : "Cancel Return Request",
+    "item" : "Beschreibung",
+    "itemPrice" : "Artikelpreis",
+    "returnQty" : "Rücksendungsmenge",
+    "total" : "Gesamtsumme",
+    "summary" : "Gesamtsumme für Rücksendung",
+    "subtotal" : "Zwischensumme",
+    "deliveryCode" : "Versandkosten",
+    "estimatedRefund" : "Estimated refund",
+    "note" : "The totals are estimated and may not include applicable taxes or other charges.",
+    "cancelSuccess" : "Your return request ({{rma}}) was cancelled",
+    "caption" : "Order contents."
+  },
+  "reorder" : {
+    "button" : "Neu bestellen",
+    "dialog" : {
+      "reorderProducts" : "Reorder products",
+      "messages" : {
+        "reviewConfiguration" : "An error occurred with \"{{ productCode}}\" configuration.",
+        "lowStock" : "Quantity for {{ productName }}: {{ quantity }} has been reduced to {{ quantityAdded }}.",
+        "noStock" : "{{ productName }} is currently out of stock.",
+        "pricingError" : "Pricing problem with \"{{ productCode }}\".",
+        "unresolvableIssues" : "Unrecognized problem with \"{{ productCode }}\".",
+        "success" : "Products have been successfully added to the cart"
+      },
+      "areYouSureToReplaceCart" : "Current cart will be replaced with new items. Do you wish to continue?",
+      "cancel" : "Abbrechen",
+      "continue" : "Weiter"
+    }
+  }
+}

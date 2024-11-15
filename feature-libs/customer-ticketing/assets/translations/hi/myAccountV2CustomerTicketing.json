@@ -1,0 +1,10 @@
+{
+  "myAccountV2CustomerTicketing" : {
+    "heading" : "ग्राहक सेवा",
+    "showMore" : "अधिक दिखाएं",
+    "changedOn" : "Changed On: {{value}}",
+    "ticketId" : "आईडी: {{value}}",
+    "subjectLabel" : "विषय",
+    "idLabel" : "Customer Service Id"
+  }
+}

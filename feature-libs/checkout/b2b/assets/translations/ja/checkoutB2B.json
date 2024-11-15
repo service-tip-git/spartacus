@@ -1,0 +1,22 @@
+{
+  "checkoutB2B" : {
+    "noPoNumber" : "なし",
+    "poNumber" : "Purchase order number (optional)",
+    "costCenter" : "コスト センター",
+    "placeholder" : "Enter P.O",
+    "availableLabel" : "Delivery addresses available to you depend on the cost center's unit",
+    "invalid" : {
+      "accountType" : "ここではチェックアウトができません。"
+    },
+    "methodOfPayment" : {
+      "paymentType" : "支払方法"
+    },
+    "review" : {
+      "poNumber" : "発注書番号"
+    },
+    "progress" : {
+      "methodOfPayment" : "Method of Payment"
+    },
+    "invalidCostCenter" : "Invalid cost center."
+  }
+}

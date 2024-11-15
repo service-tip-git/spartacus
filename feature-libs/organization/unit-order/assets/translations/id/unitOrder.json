@@ -1,0 +1,47 @@
+{
+  "unitLevelOrderHistory" : {
+    "orderHistory" : "Unit-level order history",
+    "orderId" : "# Order",
+    "emptyPurchaseOrderId" : "Tidak ada",
+    "date" : "Tanggal",
+    "status" : "Status",
+    "buyer" : "Pembeli",
+    "unit" : "Unit",
+    "total" : "Total",
+    "noOrders" : "We have no matching order records for your unit.",
+    "startShopping" : "Start Shopping",
+    "sortBy" : "Urutkan berdasarkan",
+    "sortOrders" : "Sort orders",
+    "purchaseOrderNumber" : "PO #",
+    "startOn" : "Start On",
+    "frequency" : "Frekuensi",
+    "nextOrderDate" : "Tanggal Pemesanan Berikutnya",
+    "notFound" : "Tidak Ada Pesanan Ditemukan",
+    "applyFilter" : "Terapkan",
+    "filterBy" : "Filter by",
+    "filterByBuyer" : "Filter by Buyer",
+    "filterByBuyerLabel" : "Buyer name",
+    "filterByBuyerPlaceholder" : "Enter buyer name",
+    "filterByBuyerAriaLabel" : "Filter list by buyer",
+    "filterByUnit" : "Filter by Unit",
+    "filterByUnitLabel" : "Unit name",
+    "filterByUnitPlaceholder" : "Enter unit name",
+    "filterByUnitAriaLabel" : "Filter list by unit",
+    "search" : "Cari",
+    "clearAll" : "Hapus Semua",
+    "removeAppliedFilters" : "Remove filters",
+    "yourFilters" : "Your Filters:",
+    "and" : " dan "
+  },
+  "unitLevelOrderHistorySorting" : {
+    "date" : "Tanggal",
+    "orderNumber" : "Nomor Pesanan",
+    "buyer" : "Buyer (Ascending)",
+    "buyerDesc" : "Buyer (Descending)",
+    "orgUnit" : "Unit (Ascending)",
+    "orgUnitDesc" : "Unit (Descending)"
+  },
+  "unitLevelOrderDetails" : {
+    "buyer" : "Pembeli"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "orgAccountSummary" : {
+    "groupName" : "Account Summaries",
+    "header" : "All Account Summaries ({{count}})",
+    "name" : "Unità",
+    "details" : {
+      "header" : "Dettagli riepilogo account",
+      "uid" : "ID unità",
+      "name" : "Nome unità",
+      "address" : "Indirizzo",
+      "creditRep" : "Rapp. crediti",
+      "creditLine" : "Linea di credito",
+      "currentBalance" : "Saldo attuale",
+      "openBalance" : "Saldo aperto",
+      "pastDueBalance" : "Saldo scaduto",
+      "dayRange" : "{{minBoundary}}-{{maxBoundary}} Days",
+      "dayPlus" : "{{minBoundary}}+ Days",
+      "notApplicable" : "n/d"
+    },
+    "document" : {
+      "header" : "Documenti",
+      "id" : "Numero documento",
+      "type" : "Tipo di documento",
+      "date" : "Data di creazione",
+      "dueDate" : "Due On",
+      "originalAmount" : "Importo originale",
+      "openAmount" : "Importo aperto",
+      "status" : "Stato",
+      "attachment" : "Allegato",
+      "download" : "Scarica",
+      "attachmentDescription" : "Download attachment for {{type}} {{id}}.",
+      "noneFound" : "No Documents Found"
+    },
+    "sorts" : {
+      "byCreatedAtDateAsc" : "Created On Ascending",
+      "byCreatedAtDateDesc" : "Created On Descending",
+      "byDueAtDateAsc" : "Due On Ascending",
+      "byDueAtDateDesc" : "Due On Descending",
+      "byOriginalAmountAsc" : "Original Amount Ascending",
+      "byOriginalAmountDesc" : "Original Amount Descending",
+      "byOpenAmountAsc" : "Open Amount Ascending",
+      "byOpenAmountDesc" : "Open Amount Descending",
+      "byOrgDocumentTypeAsc" : "Document Type Ascending",
+      "byOrgDocumentTypeDesc" : "Document Type Descending",
+      "byStatusAsc" : "Status Ascending",
+      "byStatusDesc" : "Status Descending",
+      "byOrgDocumentIdAsc" : "Document Number Ascending",
+      "byOrgDocumentIdDesc" : "Document Number Descending"
+    },
+    "statuses" : {
+      "open" : "Aperto",
+      "closed" : "Chiuso",
+      "all" : "Tutto"
+    },
+    "filterByOptions" : {
+      "orgDocumentId" : "Numero documento",
+      "orgDocumentIdRange" : "Document Number Range",
+      "orgDocumentType" : "Tipo di documento",
+      "createdAtDateRange" : "Created On Range",
+      "dueAtDateRange" : "Due On Range",
+      "amountRange" : "Intervallo importi originale",
+      "openAmountRange" : "Intervallo importi aperto"
+    },
+    "sortBy" : "Sort By",
+    "sortDocuments" : "Sort documents",
+    "filter" : {
+      "status" : "Stato",
+      "filterBy" : "Filtra per",
+      "documentNumber" : "Numero documento",
+      "documentType" : "Tipo di documento",
+      "startRange" : "Da",
+      "endRange" : "A",
+      "clear" : "Cancella tutto",
+      "search" : "Cerca",
+      "errors" : {
+        "toDateMustComeAfterFrom" : "Choose an end date that's later than the start date.",
+        "toAmountMustBeLargeThanFrom" : "Choose an end range value that's smaller than the start value."
+      }
+    },
+    "hint" : "Account summaries allow you to review general information about a unit, including balances and aging summary of invoices. Here, you can also browse through a list of transaction documents for a unit."
+  },
+  "orgAccountSummaryList" : {
+    "breadcrumbs" : {
+      "list" : "Account Summaries",
+      "details" : "{{name}}"
+    }
+  }
+}

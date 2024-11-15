@@ -1,0 +1,48 @@
+{
+  "customerTicketing" : {
+    "mainLogoLabel" : "SAP",
+    "mainTitle" : "Customer Ticketing",
+    "ticketId" : "ID",
+    "createdOn" : "निर्माण तिथि",
+    "changedOn" : "Changed On",
+    "status" : "स्थिति",
+    "message" : "संदेश",
+    "cancel" : "रद्द करें",
+    "submit" : "सबमिट करें",
+    "uploadFile" : "फ़ाइल अपलोड करें",
+    "fileSizeLimit" : "File size limit: {{count}} MB",
+    "maximumAttachment" : "Maximum of one attachment per message",
+    "errorMessage" : "Something went wrong.",
+    "charactersLeft" : "characters left: {{count}}",
+    "customerService" : "ग्राहक सेवा"
+  },
+  "customerTicketingList" : {
+    "subject" : "विषय",
+    "ticketCategory" : "श्रेणी",
+    "sortSubtitle" : "इसके द्वारा क्रमित करें",
+    "sortOrders" : "Sort orders",
+    "noTickets" : "You don't have any request",
+    "requestTitle" : "All Requests",
+    "mobile" : {
+      "ticketIdFull" : "टिकट आईडी"
+    }
+  },
+  "createCustomerTicket" : {
+    "createNewTicket" : "जोड़ें",
+    "addNewRequest" : "Add New Request",
+    "addRequest" : "Add Request",
+    "subject" : "विषय",
+    "category" : "श्रेणी",
+    "associateTo" : "Associate To",
+    "ticketCreated" : "Request created.",
+    "optionallySelectAssociatedObject" : "Select Option",
+    "selectCategory" : "Select Category"
+  },
+  "customerTicketingDetails" : {
+    "requestReopened" : "Request Reopened.",
+    "requestClosed" : "Request closed, you may reopen if needed.",
+    "reopenRequest" : "Reopen Request",
+    "closeRequest" : "Close Request",
+    "ticketNotFound" : "Ticket not found."
+  }
+}

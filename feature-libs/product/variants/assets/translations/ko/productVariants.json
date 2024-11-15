@@ -1,0 +1,9 @@
+{
+  "productVariants" : {
+    "style" : "스타일",
+    "selectedStyle" : "Selected style",
+    "size" : "크기",
+    "color" : "색",
+    "sizeGuideLabel" : "Style guide"
+  }
+}

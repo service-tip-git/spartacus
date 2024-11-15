@@ -1,0 +1,10 @@
+{
+  "siteThemeSwitcher" : {
+    "theme" : "Motiv",
+    "themes" : {
+      "default" : "Výchozí",
+      "highContrastDark" : "HC-Dark",
+      "highContrastLight" : "HC-Light"
+    }
+  }
+}

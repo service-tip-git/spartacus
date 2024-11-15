@@ -1,0 +1,71 @@
+{
+  "epdVisualization" : {
+    "visualViewer" : {
+      "contentType" : {
+        "drawing2D" : "2D",
+        "model3D" : "3D"
+      },
+      "toolbar" : {
+        "homeButton" : {
+          "label" : "Домашняя страница"
+        },
+        "zoomButton" : {
+          "label" : "Масштаб"
+        },
+        "panButton" : {
+          "label" : "Pan"
+        },
+        "rotateButton" : {
+          "label" : "Rotate"
+        },
+        "isolateButton" : {
+          "label" : "Isolate"
+        },
+        "playButton" : {
+          "label" : "Воспроизвести"
+        },
+        "pauseButton" : {
+          "label" : "Пауза"
+        },
+        "hotspotsButton" : {
+          "label" : "Hotspots",
+          "show" : "Показать",
+          "hide" : "Скрыть"
+        },
+        "visualViewerAnimationSlider" : {
+          "label" : "Animation Slider",
+          "role" : "Slider"
+        }
+      }
+    },
+    "visualPicking" : {
+      "visualPickingTab" : {
+        "noProductReferences" : "No spare parts are available for this product."
+      },
+      "visualPickingProductList" : {
+        "description" : "Описание",
+        "itemPrice" : "Цена",
+        "outOfStock" : "Out of stock",
+        "id" : "Ид."
+      },
+      "visualPickingProductFilter" : {
+        "input" : {
+          "placeholder" : "Filter by name or id"
+        },
+        "searchButton" : {
+          "label" : "search"
+        },
+        "resetButton" : {
+          "label" : "Сбросить"
+        }
+      }
+    },
+    "errors" : {
+      "visualLoad" : {
+        "noMatchingVisualFound" : "No matching visualization found",
+        "multipleMatchingVisualsFound" : "Multiple matching visualizations found",
+        "unexpectedLoadError" : "Error occurred while loading visualization"
+      }
+    }
+  }
+}

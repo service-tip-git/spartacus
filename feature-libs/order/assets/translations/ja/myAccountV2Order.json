@@ -1,0 +1,51 @@
+{
+  "myAccountV2OrderHistory" : {
+    "heading" : "All Orders ({{param}})",
+    "item" : "{{param}} Item",
+    "items" : "{{param}} Items",
+    "totalPrice" : "Total Price: {{param}}",
+    "consignmentCode" : "Consignment {{param}}",
+    "statusDate" : "Last Updated: {{param}}",
+    "returnProcessed" : "Return Processed: {{param}}",
+    "deliveryPointOfServiceDetails" : {
+      "itemsToBePickUp" : "To Be Picked Up - "
+    },
+    "checkoutMode" : {
+      "deliveryEntries" : "To Be Shipped - "
+    },
+    "checkoutPickupInStore" : {
+      "heading" : "To Be Picked Up - "
+    },
+    "orderListResults" : "Orders List",
+    "orderListPagination" : "Orders List pagination",
+    "totalPriceLabel" : "合計価格",
+    "orderPlaced" : "Order Placed On",
+    "orderCodeLabel" : "注文コード",
+    "consignmentDetailLabel" : "Consignment Information",
+    "consignmentNumberLabel" : "Consignment Number",
+    "consignmentStatusLabel" : "出荷/配送指示ステータス",
+    "consignmentStatusDateLabel" : "Last Updated On",
+    "estimateDeliveryLabel" : "Estimated Delivery Date"
+  },
+  "myAccountV2OrderDetails" : {
+    "returnItems" : "Return Items",
+    "cancelItems" : "アイテムをキャンセル",
+    "downloadInvoices" : "Download Invoices",
+    "viewAllOrders" : "View All Orders",
+    "noInvoices" : "Invoices are not generated yet. Please come back later."
+  },
+  "myAccountV2Orders" : {
+    "item" : "{{value}} Item",
+    "items" : "{{value}} Items",
+    "heading" : "Orders And Returns",
+    "orderNumber" : "Order Number ({{value}})",
+    "purchasedOn" : "Purchased On: {{value}}",
+    "orderedItems" : "Ordered Items: {{value}}",
+    "totalPrice" : "Total Price: {{value}}",
+    "orderDetails" : "注文詳細",
+    "orderDetailsLabel" : "Show Order Details",
+    "orderStatusLabel" : "注文ステータス",
+    "returnOrder" : "返品注文",
+    "showMore" : "さらに表示"
+  }
+}

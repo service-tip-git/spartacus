@@ -1,0 +1,46 @@
+{
+  "serviceOrderCheckout" : {
+    "serviceDetails" : "服務明細",
+    "serviceScheduleHeading" : "Service Schedule - Date and Time",
+    "address" : "Same as Shipping Address",
+    "serviceLocationHeading" : "Service Location",
+    "datePickerLabel" : "排程服務日期",
+    "timePickerLabel" : "排程服務時間",
+    "unknownError" : "An unknown error occurred. Please contact support.",
+    "productDeliveryOptions" : "Delivery Options for Products",
+    "serviceDeliveryOption" : "Delivery Option for Services",
+    "productDeliveryMethods" : "Delivery Methods for Products",
+    "serviceDeliveryMethod" : "Delivery Method for Services"
+  },
+  "cancelService" : {
+    "heading" : "The following items will be included in the cancellation request",
+    "cancelReason" : "Reason for  cancelling service",
+    "optional" : "(選擇性)",
+    "action" : "Cancel Service",
+    "back" : "返回",
+    "Submit" : "提交請求",
+    "cancelServiceSuccess" : "The service has been cancelled sucessfully",
+    "unknownError" : "An unknown error occurred. Please contact support.",
+    "ServiceTime" : "Service Time",
+    "ServiceLocation" : "Service Location",
+    "ServiceDate" : "Service Date",
+    "SubmitRequest" : "提交請求",
+    "serviceNotRcancelable" : "Service is not cancelable",
+    "charactersLeft" : "characters left: {{count}}",
+    "Services" : "服務"
+  },
+  "rescheduleService" : {
+    "actionButtonLabel" : "Reschedule Service",
+    "headerLabel" : "服務",
+    "contentLabel" : "Service Reschedule - Choose New Date and Time",
+    "datePickerLabel" : "Service Date",
+    "timePickerLabel" : "Service Time",
+    "backButtonLabel" : "返回",
+    "submitButtonLabel" : "提交請求",
+    "note" : "Please note that it may take a few moments for your order to reflect the request.",
+    "unknownError" : "An unknown error occurred. Please contact support.",
+    "serviceNotReschedulable" : "The service cannot be rescheduled.",
+    "serviceNotAmendable" : "The service cannot be cancelled or rescheduled less than 24 hours before the scheduled date.",
+    "rescheduleSuccess" : "The service date and time has been changed successfully."
+  }
+}

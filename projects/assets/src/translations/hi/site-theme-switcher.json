@@ -1,0 +1,10 @@
+{
+  "siteThemeSwitcher" : {
+    "theme" : "थीम",
+    "themes" : {
+      "default" : "डिफ़ॉल्ट",
+      "highContrastDark" : "HC-Dark",
+      "highContrastLight" : "HC-Light"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "storeFinder" : {
+    "openUntil" : "Open until",
+    "closed" : "बंद है",
+    "back" : "वापस जाएं",
+    "call" : "Call",
+    "getDirections" : "Get Directions",
+    "ariaLabelGetDirections" : "Get Directions, this link opens in a new window",
+    "ariaLabelCountriesCount" : "Stores in {{ count }} countries found",
+    "listView" : "सूची दृश्य",
+    "mapView" : "मैप दृश्य",
+    "noStoresFound" : "No Stores Found.",
+    "storeHours" : "Store hours",
+    "storeFeatures" : "स्टोर की विशेषताएं",
+    "storeFinder" : "स्टोर खोजकर्ता",
+    "storesFoundTitle" : "Stores Found",
+    "storesFound" : "{{ count }} store found",
+    "storesFound_other" : "{{ count }} stores found",
+    "fromStoresFound" : "from {{ count }} store found",
+    "fromStoresFound_other" : "from {{ count }} stores found",
+    "findStore" : "Find store",
+    "useMyLocation" : "Use my location",
+    "viewAllStores" : "View all stores",
+    "contactUs" : "Contact us",
+    "searchBox" : "Postal code or town or address",
+    "backToList" : "Back to list",
+    "noStoresMessage" : "No stores found in database...",
+    "geolocationNotEnabled" : "Cannot locate nearby stores. Geolocation consent has not been enabled",
+    "searchNearestStores" : "Search nearest stores",
+    "searchBoxLabel" : "Enter postal code, town or address"
+  }
+}

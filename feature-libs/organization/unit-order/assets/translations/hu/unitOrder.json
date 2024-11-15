@@ -1,0 +1,47 @@
+{
+  "unitLevelOrderHistory" : {
+    "orderHistory" : "Unit-level order history",
+    "orderId" : "Rendelés #",
+    "emptyPurchaseOrderId" : "Nincs",
+    "date" : "Dátum",
+    "status" : "Státus",
+    "buyer" : "Vásárló",
+    "unit" : "Egység",
+    "total" : "Összesen",
+    "noOrders" : "We have no matching order records for your unit.",
+    "startShopping" : "Start Shopping",
+    "sortBy" : "Rendezés alapja",
+    "sortOrders" : "Sort orders",
+    "purchaseOrderNumber" : "PO #",
+    "startOn" : "Start On",
+    "frequency" : "Gyakoriság",
+    "nextOrderDate" : "Következő rendelés dátuma",
+    "notFound" : "Nem található rendelés",
+    "applyFilter" : "Alkalmaz",
+    "filterBy" : "Filter by",
+    "filterByBuyer" : "Filter by Buyer",
+    "filterByBuyerLabel" : "Buyer name",
+    "filterByBuyerPlaceholder" : "Enter buyer name",
+    "filterByBuyerAriaLabel" : "Filter list by buyer",
+    "filterByUnit" : "Filter by Unit",
+    "filterByUnitLabel" : "Unit name",
+    "filterByUnitPlaceholder" : "Enter unit name",
+    "filterByUnitAriaLabel" : "Filter list by unit",
+    "search" : "Keresés",
+    "clearAll" : "Összes törlése",
+    "removeAppliedFilters" : "Remove filters",
+    "yourFilters" : "Your Filters:",
+    "and" : " és "
+  },
+  "unitLevelOrderHistorySorting" : {
+    "date" : "Dátum",
+    "orderNumber" : "Rendelésszám",
+    "buyer" : "Buyer (Ascending)",
+    "buyerDesc" : "Buyer (Descending)",
+    "orgUnit" : "Unit (Ascending)",
+    "orgUnitDesc" : "Unit (Descending)"
+  },
+  "unitLevelOrderDetails" : {
+    "buyer" : "Vásárló"
+  }
+}

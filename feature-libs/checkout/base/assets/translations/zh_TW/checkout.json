@@ -1,0 +1,54 @@
+{
+  "checkout" : {
+    "backToCart" : "Back to cart"
+  },
+  "checkoutProgress" : {
+    "label" : "Checkout Progress",
+    "deliveryAddress" : "出貨地址",
+    "deliveryMode" : "交貨模式",
+    "paymentDetails" : "付款",
+    "reviewOrder" : "評論",
+    "state" : {
+      "completed" : "{{step}}, Completed",
+      "selected" : "{{step}}, Selected",
+      "disabled" : "{{step}}, Disabled"
+    }
+  },
+  "checkoutAddress" : {
+    "shippingAddress" : "出貨地址",
+    "selectYourDeliveryAddress" : "Select your Delivery Address",
+    "defaultDeliveryAddress" : "Default Delivery Address",
+    "addNewAddress" : "Add New Address",
+    "shipToThisAddress" : "Ship to this address",
+    "deliveryAddressSelected" : "Delivery address selected"
+  },
+  "checkoutMode" : {
+    "deliveryMethod" : "交貨方法",
+    "deliveryOptions" : "交貨選項",
+    "standardDelivery" : "標準交貨",
+    "premiumDelivery" : "頂級交貨",
+    "deliveryEntries" : "Items to be Shipped"
+  },
+  "checkoutReview" : {
+    "review" : "評論",
+    "orderItems" : "訂單項目",
+    "confirmThatRead" : "I am confirming that I have read and agreed with the",
+    "placeOrder" : "下單",
+    "termsAndConditions" : "條款和條件",
+    "editDeliveryAddressDetails" : "Edit delivery address details, opens Delivery Address page",
+    "editBillingDetails" : "Edit billing address, opens Payment Details page",
+    "editPaymentDetails" : "Edit payment details, opens Payment Details page",
+    "editPaymentType" : "Edit payment method, opens Method of Payment page",
+    "editDeliveryMode" : "Edit delivery mode, opens Delivery Mode page",
+    "orderInProcess" : "Order is in process. Please wait."
+  },
+  "checkoutOrderConfirmation" : {
+    "confirmationOfOrder" : "Confirmation of Order:",
+    "thankYou" : "Thank you for your order!",
+    "invoiceHasBeenSentByEmail" : "An invoice has been sent by email. You should receive it soon.",
+    "orderItems" : "訂單項目",
+    "orderPlacedSuccessfully" : "Order placed successfully",
+    "createAccount" : "Create an account?",
+    "createAccountForNext" : "Create an account for <{{email}}> for a faster checkout on your next visit."
+  }
+}

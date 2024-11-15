@@ -1,0 +1,88 @@
+{
+  "orgAccountSummary" : {
+    "groupName" : "Account Summaries",
+    "header" : "All Account Summaries ({{count}})",
+    "name" : "इकाई",
+    "details" : {
+      "header" : "खाता स्थिति का विवरण",
+      "uid" : "इकाई ID",
+      "name" : "इकाई का नाम",
+      "address" : "पता",
+      "creditRep" : "क्रेडिट रिपोर्ट",
+      "creditLine" : "ऋण रेखा:",
+      "currentBalance" : "वर्तमान बकाया राशि",
+      "openBalance" : "आदिशेष",
+      "pastDueBalance" : "पूर्व देय राशि:",
+      "dayRange" : "{{minBoundary}}-{{maxBoundary}} Days",
+      "dayPlus" : "{{minBoundary}}+ Days",
+      "notApplicable" : "लागू नहीं है"
+    },
+    "document" : {
+      "header" : "दस्तावेज़",
+      "id" : "दस्तावेज संख्या",
+      "type" : "दस्तावेज़ प्रकार",
+      "date" : "निर्माण तिथि",
+      "dueDate" : "Due On",
+      "originalAmount" : "मूल राशि",
+      "openAmount" : "खुली राशि",
+      "status" : "स्थिति",
+      "attachment" : "संलग्नक",
+      "download" : "डाउनलोड करें",
+      "attachmentDescription" : "Download attachment for {{type}} {{id}}.",
+      "noneFound" : "No Documents Found"
+    },
+    "sorts" : {
+      "byCreatedAtDateAsc" : "Created On Ascending",
+      "byCreatedAtDateDesc" : "Created On Descending",
+      "byDueAtDateAsc" : "Due On Ascending",
+      "byDueAtDateDesc" : "Due On Descending",
+      "byOriginalAmountAsc" : "Original Amount Ascending",
+      "byOriginalAmountDesc" : "Original Amount Descending",
+      "byOpenAmountAsc" : "Open Amount Ascending",
+      "byOpenAmountDesc" : "Open Amount Descending",
+      "byOrgDocumentTypeAsc" : "Document Type Ascending",
+      "byOrgDocumentTypeDesc" : "Document Type Descending",
+      "byStatusAsc" : "Status Ascending",
+      "byStatusDesc" : "Status Descending",
+      "byOrgDocumentIdAsc" : "Document Number Ascending",
+      "byOrgDocumentIdDesc" : "Document Number Descending"
+    },
+    "statuses" : {
+      "open" : "खोलें",
+      "closed" : "बंद है",
+      "all" : "सभी"
+    },
+    "filterByOptions" : {
+      "orgDocumentId" : "दस्तावेज संख्या",
+      "orgDocumentIdRange" : "Document Number Range",
+      "orgDocumentType" : "दस्तावेज़ प्रकार",
+      "createdAtDateRange" : "Created On Range",
+      "dueAtDateRange" : "Due On Range",
+      "amountRange" : "मूल राशि श्रेणी",
+      "openAmountRange" : "मुक्त राशि श्रेणी"
+    },
+    "sortBy" : "Sort By",
+    "sortDocuments" : "Sort documents",
+    "filter" : {
+      "status" : "स्थिति",
+      "filterBy" : "इसके द्वारा फ़िल्टर करें",
+      "documentNumber" : "दस्तावेज संख्या",
+      "documentType" : "दस्तावेज़ प्रकार",
+      "startRange" : "इससे",
+      "endRange" : "इस तक",
+      "clear" : "सब साफ़ करें",
+      "search" : "खोजें",
+      "errors" : {
+        "toDateMustComeAfterFrom" : "Choose an end date that's later than the start date.",
+        "toAmountMustBeLargeThanFrom" : "Choose an end range value that's smaller than the start value."
+      }
+    },
+    "hint" : "Account summaries allow you to review general information about a unit, including balances and aging summary of invoices. Here, you can also browse through a list of transaction documents for a unit."
+  },
+  "orgAccountSummaryList" : {
+    "breadcrumbs" : {
+      "list" : "Account Summaries",
+      "details" : "{{name}}"
+    }
+  }
+}

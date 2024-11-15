@@ -1,0 +1,251 @@
+{
+  "quote" : {
+    "confirmDialog" : {
+      "name" : "Name:",
+      "description" : "Description:",
+      "validity" : "Tato nabídka platí do {{ expirationTime }}",
+      "option" : {
+        "yes" : "Ano",
+        "no" : "Ne"
+      },
+      "buyer" : {
+        "submit" : {
+          "a11y" : {
+            "close" : "Close submit quote modal"
+          },
+          "title" : "Submit Quote Request {{ code }}?",
+          "confirmNote" : "Are you sure you want to submit this quote request?",
+          "successMessage" : "Quote request submitted successfully"
+        },
+        "cancel" : {
+          "a11y" : {
+            "close" : "Close cancel quote modal"
+          },
+          "title" : "Cancel Quote Request {{ code }}?",
+          "confirmNote" : "Are you sure you want to cancel this quote request?",
+          "successMessage" : "Quote request cancelled"
+        }
+      },
+      "buyer_offer" : {
+        "edit" : {
+          "a11y" : {
+            "close" : "Close edit quote modal"
+          },
+          "title" : "Confirm Edit Quote {{ code }}?",
+          "confirmNote" : "Chcete tuto schválenou nabídku opravdu upravit?",
+          "warningNote" : "This Quote has been Approved. Editing this Quote will prevent Checkout until new edits are approved."
+        },
+        "cancel" : {
+          "a11y" : {
+            "close" : "Close cancel quote modal"
+          },
+          "title" : "Cancel Quote {{ code }}?",
+          "confirmNote" : "Chcete tuto nabídku opravdu zrušit?",
+          "successMessage" : "Quote cancelled"
+        },
+        "checkout" : {
+          "a11y" : {
+            "close" : "Close checkout quote modal"
+          },
+          "title" : "Checkout Quote {{ code }}?",
+          "confirmNote" : "Are you sure you want to accept and checkout this quote?"
+        }
+      },
+      "expired" : {
+        "edit" : {
+          "a11y" : {
+            "close" : "Close edit quote modal"
+          },
+          "title" : "Confirm Edit Quote {{ code }}?",
+          "confirmNote" : "Are you sure you want to edit this expired quote?",
+          "warningNote" : "This Quote is expired. Editing this quote will prevent checkout until new edits are approved."
+        },
+        "requote" : {
+          "a11y" : {
+            "close" : "Close requote modal"
+          },
+          "title" : "Recreate Quote Request {{ code }}?",
+          "confirmNote" : "Are you sure you want to recreate this quote request?",
+          "warningNote" : "This Quote is expired. Re-quoting it will create a new quote request with same contents, which can be edited and submitted for approval afterwards."
+        }
+      },
+      "seller" : {
+        "submit" : {
+          "a11y" : {
+            "close" : "Close submit quote modal"
+          },
+          "title" : "Submit Quote {{ code }}?",
+          "confirmNote" : "Chcete tuto nabídku opravdu odeslat?",
+          "warningNote" : "Depending on the total value of the quote, an additional approval might be required before the buyer can check out this quote.",
+          "successMessage" : "Quote submitted successfully"
+        }
+      },
+      "sellerapprover" : {
+        "approve" : {
+          "a11y" : {
+            "close" : "Close approve quote modal"
+          },
+          "title" : "Approve Quote {{ code }}?",
+          "confirmNote" : "Are you sure you want to approve this quote?",
+          "successMessage" : "Quote approved successfully"
+        },
+        "reject" : {
+          "a11y" : {
+            "close" : "Close reject quote modal"
+          },
+          "title" : "Reject Quote {{ code }}?",
+          "confirmNote" : "Are you sure you want to reject this quote?",
+          "successMessage" : "Quote rejected"
+        }
+      },
+      "cancelled" : {
+        "requote" : {
+          "a11y" : {
+            "close" : "Close requote modal"
+          },
+          "title" : "Recreate Quote Request {{ code }}?",
+          "confirmNote" : "Are you sure you want to recreate this quote request?",
+          "warningNote" : "Your current cart will be converted to a saved cart."
+        }
+      },
+      "all" : {
+        "edit" : {
+          "a11y" : {
+            "close" : "Close edit quote modal"
+          },
+          "title" : "Edit Quote {{ code }}?",
+          "confirmNote" : "Are you sure you want to edit this quote?",
+          "warningNote" : "Your current cart will be converted to a saved cart."
+        }
+      }
+    },
+    "comments" : {
+      "regionTitle" : "Contact/Comment Box",
+      "title" : "Kontakt",
+      "invalidComment" : "Invalid Input - Please type again...",
+      "allProducts" : "Všechny produkty"
+    },
+    "commons" : {
+      "requestQuote" : "Request Quote",
+      "cart" : "Košík",
+      "minRequestInitiationNote" : "Minimum ${{minValue}} subtotal is required to submit a quote ",
+      "savedActiveCart" : "Your active cart was converted to saved cart {{ code }}"
+    },
+    "header" : {
+      "buyerEdit" : {
+        "a11y" : {
+          "cancel" : "Cancel editing quote header information",
+          "save" : "Save quote header information"
+        }
+      },
+      "overview" : {
+        "regionTitle" : "Quote details summary",
+        "id" : "ID nabídky",
+        "status" : "Status",
+        "information" : "Quote Information",
+        "name" : "Název",
+        "description" : "Popis",
+        "charactersLeft" : "characters left: {{count}}",
+        "priceAndExpiry" : "Price & Expiry",
+        "estimatedTotal" : "Estimated Total",
+        "total" : "Celkem",
+        "expirationTime" : "Datum konce platnosti",
+        "a11y" : {
+          "edit" : "Edit quote header information"
+        },
+        "createdAndUpdated" : "Created & Updated",
+        "createdDate" : "Vytvořeno",
+        "lastUpdatedDate" : "Poslední aktualizace"
+      }
+    },
+    "httpHandlers" : {
+      "cartValidationIssue" : "There are problems with your entries. Please review your cart.",
+      "quoteCartIssue" : "Not possible to do changes to cart entries. Proceed to checkout",
+      "absoluteDiscountIssue" : "Choose a discount that does not exceed the total value",
+      "expirationDateIssue" : "Choose an expiration date in the future",
+      "threshold" : {
+        "underThresholdError" : "Total price of requested quote does not meet the minimum threshold"
+      },
+      "expired" : "This quote has expired. You must resubmit your quote request to receive another vendor quote.",
+      "downloadPDFError" : "Something went wrong. Unable to obtain the proposal document PDF."
+    },
+    "items" : {
+      "regionTitle" : "Cart items"
+    },
+    "links" : {
+      "newCart" : "Nový košík",
+      "quotes" : "Nabídky",
+      "download" : "Download Proposal",
+      "a11y" : {
+        "newCart" : "Create new empty cart and navigate to it.",
+        "quotes" : "Navigate to quote search result list.",
+        "download" : "Start downloading a quote proposal"
+      }
+    },
+    "list" : {
+      "regionTitle" : "Quote list summary",
+      "title" : "Quote List",
+      "name" : "Název",
+      "updated" : "Aktualizováno",
+      "sortBy" : "Řadit podle",
+      "sortQuotes" : "Sort Quotes",
+      "empty" : "We have no quote records for this account.",
+      "quoteId" : "ID nabídky",
+      "status" : "Status",
+      "clickableRow" : "Click on the row for more quote details"
+    },
+    "states" : {
+      "BUYER_DRAFT" : "Návrh",
+      "BUYER_SUBMITTED" : "Odesláno",
+      "BUYER_ACCEPTED" : "Přijato",
+      "BUYER_APPROVED" : "Schváleno",
+      "BUYER_REJECTED" : "Zamítnuto",
+      "BUYER_OFFER" : "Nabídka dodavatele",
+      "BUYER_ORDERED" : "Objednáno",
+      "SELLER_DRAFT" : "Návrh",
+      "SELLER_REQUEST" : "Požadováno",
+      "SELLER_SUBMITTED" : "Odesláno",
+      "SELLERAPPROVER_DRAFT" : "Návrh",
+      "SELLERAPPROVER_PENDING" : "Čeká na schválení",
+      "SELLERAPPROVER_APPROVED" : "Schváleno",
+      "SELLERAPPROVER_REJECTED" : "Zamítnuto",
+      "CREATED" : "Vytvořeno",
+      "CANCELLED" : "Zrušeno",
+      "EXPIRED" : "Skončila platnost"
+    },
+    "summary" : {
+      "regionTitle" : "Souhrn objednávky",
+      "actions" : {
+        "APPROVE" : "Schválit nabídku",
+        "CANCEL" : "Zrušit nabídku",
+        "CHECKOUT" : "Přijmout a k pokladně",
+        "EDIT" : "Upravit nabídku",
+        "REJECT" : "Zamítnout nabídku",
+        "REQUOTE" : "Request new Quote",
+        "SAVE" : "Uložit nabídku",
+        "SUBMIT" : "Odeslat nabídku",
+        "VIEW" : "Zobrazit nabídku"
+      },
+      "prices" : {
+        "title" : "Souhrn objednávky",
+        "subtotal" : "Mezisoučet",
+        "productDiscount" : "Item Discount",
+        "orderDiscount" : "Sleva na objednávku",
+        "quoteDiscount" : "Sleva z nabídky",
+        "total" : "Celkem",
+        "hint" : "No taxes are included in the total"
+      },
+      "sellerEdit" : {
+        "discount" : "Sleva",
+        "apply" : "Použít",
+        "expiryDate" : "Datum konce platnosti",
+        "discountValidationText" : "Enter a valid percentage discount",
+        "a11y" : {
+          "apply" : "Click to apply the entered discount value to this quote",
+          "discount" : "Enter a percentage discount value to be applied to this quote",
+          "expiryDate" : "Enter an expiry date for this quote"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "myAccountV2CustomerTicketing" : {
+    "heading" : "Servizio clienti",
+    "showMore" : "Mostra di più",
+    "changedOn" : "Changed On: {{value}}",
+    "ticketId" : "ID: {{value}}",
+    "subjectLabel" : "Oggetto",
+    "idLabel" : "Customer Service Id"
+  }
+}

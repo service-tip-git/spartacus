@@ -1,0 +1,192 @@
+{
+  "orderDetails" : {
+    "orderId" : "Número de pedido",
+    "orderNumber" : "Número de pedido",
+    "replenishmentId" : "Replenishment #",
+    "purchaseOrderId" : "Purchase Order #",
+    "purchaseOrderNumber" : "Número de pedido de compra",
+    "emptyPurchaseOrderId" : "Ninguno",
+    "none" : "None {{value}}",
+    "placed" : "Placed",
+    "placedBy" : "Realizado por",
+    "unit" : "Unidad",
+    "costCenter" : "Centro de costos",
+    "costCenterAndUnit" : "Cost Center / Unit",
+    "costCenterAndUnitValue" : "{{costCenterName}} / {{unitName}}",
+    "methodOfPayment" : "Method of Payment",
+    "payByAccount" : "Pay by Account",
+    "paidByCreditCard" : "(paid by credit card)",
+    "status" : "Estado",
+    "active" : "Activo",
+    "shippedOn" : "Shipped on",
+    "shippingMethod" : "Método de envío",
+    "placedOn" : "Placed on",
+    "startOn" : "Start On",
+    "nextOrderDate" : "Próxima fecha de pedido",
+    "frequency" : "Frecuencia",
+    "cancelled" : " Cancelada",
+    "deliveryStatus_IN_TRANSIT" : "En tránsito",
+    "deliveryStatus_READY_FOR_PICKUP" : "Ready for Pickup",
+    "deliveryStatus_READY_FOR_SHIPPING" : "Ready for Shipping",
+    "deliveryStatus_WAITING" : "Esperando",
+    "deliveryStatus_DELIVERING" : "Entregando",
+    "deliveryStatus_PICKPACK" : "Preparing for Shipment",
+    "deliveryStatus_PICKUP_COMPLETE" : "Recogida completa",
+    "deliveryStatus_DELIVERY_COMPLETED" : "Delivery Complete",
+    "deliveryStatus_PAYMENT_NOT_CAPTURED" : "Payment Issue",
+    "deliveryStatus_IN_PROCESS" : "Order Processing",
+    "deliveryStatus_READY" : "Order Processing",
+    "deliveryStatus_DELIVERY_REJECTED" : "Entrega rechazada",
+    "deliveryStatus_SHIPPED" : "Enviado",
+    "deliveryStatus_TAX_NOT_COMMITTED" : "Tax Issue",
+    "deliveryStatus_CANCELLED" : "Cancelada",
+    "statusDisplay_cancelled" : "Cancelada",
+    "statusDisplay_cancelling" : "Pendiente de cancelación",
+    "statusDisplay_completed" : "Finalizado",
+    "statusDisplay_created" : "Creado",
+    "statusDisplay_error" : "Pendiente",
+    "statusDisplay_Error" : "Pendiente",
+    "statusDisplay_processing" : "Pendiente",
+    "statusDisplay_open" : "Abierto",
+    "statusDisplay_pending" : {
+      "approval" : "Aprobación pendiente",
+      "merchant" : {
+        "approval" : "Aprobación del comerciante pendiente"
+      }
+    },
+    "statusDisplay_approved" : "Aprobada",
+    "statusDisplay_rejected" : "Rechazada",
+    "statusDisplay_merchant" : {
+      "approved" : "Aprobado por el comerciante",
+      "rejected" : "Rechazado por el comerciante"
+    },
+    "statusDisplay_assigned" : {
+      "admin" : "Asignado al administrador"
+    },
+    "consignmentTracking" : {
+      "action" : "Track package",
+      "dialog" : {
+        "header" : "Tracking Information",
+        "shipped" : "Enviado",
+        "estimate" : "Estimated Delivery",
+        "carrier" : "Delivery Service",
+        "trackingId" : "Número de seguimiento",
+        "noTracking" : "The package has not been dispatched from the warehouse. The tracking information will be available after the package is shipped.",
+        "loadingHeader" : "Seguimiento de consignaciones"
+      }
+    },
+    "cancellationAndReturn" : {
+      "returnAction" : "Request a Return",
+      "cancelAction" : "Cancelar elementos",
+      "item" : "Elemento",
+      "itemPrice" : "Precio del producto",
+      "quantity" : "Max Quantity",
+      "returnQty" : "Quantity to Return",
+      "cancelQty" : "Quantity to Cancel",
+      "setAll" : "Set all quantities to maximum",
+      "totalPrice" : "Total",
+      "submit" : "Enviar solicitud",
+      "submitDescription" : "Submit Request. Items on this page will be included in the cancellation request.",
+      "returnSuccess" : "Your return request ({{rma}}) was submitted",
+      "cancelSuccess" : "Your cancellation request was submitted (original order {{orderCode}} will be updated)"
+    },
+    "cancelReplenishment" : {
+      "title" : "Cancelar reaprovisionamiento",
+      "description" : "Cancel any future replenishment order?",
+      "accept" : "Sí",
+      "reject" : "No",
+      "cancelSuccess" : "Replenishment order #{{replenishmentOrderCode}} has been successfully cancelled"
+    },
+    "caption" : "Order contents."
+  },
+  "orderHistory" : {
+    "orderHistory" : "Historial de pedidos",
+    "orderId" : "Número de pedido",
+    "emptyPurchaseOrderId" : "Ninguno",
+    "date" : "Fecha",
+    "status" : "Estado",
+    "PONumber" : "Número del pedido de compra",
+    "total" : "Total",
+    "noOrders" : "We have no order records for this account.",
+    "noReplenishmentOrders" : "We have no replenishment order records for this account.",
+    "startShopping" : "Start Shopping",
+    "sortBy" : "Clasificar por",
+    "sortOrders" : "Sort orders",
+    "replenishmentOrderHistory" : "Replenishment Order History",
+    "replenishmentOrderId" : "Replenishment #",
+    "purchaseOrderNumber" : "PO #",
+    "costCenter" : "Centro de costos",
+    "startOn" : "Start On",
+    "frequency" : "Frecuencia",
+    "nextOrderDate" : "Próxima fecha de pedido",
+    "cancel" : "Cancelar",
+    "cancelled" : "Cancelada",
+    "replenishmentHistory" : "Historial de reaprovisionamiento",
+    "notFound" : "No existen pedidos",
+    "actions" : "Acciones"
+  },
+  "AccountOrderHistoryTabContainer" : {
+    "tabs" : {
+      "AccountOrderHistoryComponent" : "ALL ORDERS ({{param}})",
+      "OrderReturnRequestListComponent" : "RETURNS ({{param}})"
+    },
+    "tabPanelContainerRegion" : "Group with order history details",
+    "tabPanelContainerRegionGroup" : "Group with order history details"
+  },
+  "returnRequestList" : {
+    "returnRequestId" : "Return #",
+    "orderId" : "Número de pedido",
+    "date" : "Fecha de creación",
+    "status" : "Estado",
+    "sortBy" : "Clasificar por",
+    "sortReturns" : "Sort returns",
+    "statusDisplay_APPROVAL_PENDING" : "Aprobación pendiente",
+    "statusDisplay_CANCELED" : "Cancelada",
+    "statusDisplay_CANCELLING" : "Cancelando",
+    "statusDisplay_WAIT" : "Espere",
+    "statusDisplay_RECEIVED" : "Recibido",
+    "statusDisplay_RECEIVING" : "Recibiendo",
+    "statusDisplay_APPROVING" : "Aprobando",
+    "statusDisplay_REVERSING_PAYMENT" : "Capturando pago",
+    "statusDisplay_PAYMENT_REVERSED" : "Pago capturado",
+    "statusDisplay_PAYMENT_REVERSAL_FAILED" : "Error de pago",
+    "statusDisplay_REVERSING_TAX" : "Capturando impuesto",
+    "statusDisplay_TAX_REVERSED" : "Impuesto capturado",
+    "statusDisplay_TAX_REVERSAL_FAILED" : "Error de pago",
+    "statusDisplay_COMPLETED" : "Finalizado"
+  },
+  "returnRequest" : {
+    "returnRequestId" : "Return Request #",
+    "orderCode" : "For Order #",
+    "status" : "Return status",
+    "cancel" : "Cancel Return Request",
+    "item" : "Descripción",
+    "itemPrice" : "Precio del producto",
+    "returnQty" : "Cantidad de devolución",
+    "total" : "Total",
+    "summary" : "Totales de devolución",
+    "subtotal" : "Subtotal",
+    "deliveryCode" : "Coste de entrega",
+    "estimatedRefund" : "Estimated refund",
+    "note" : "The totals are estimated and may not include applicable taxes or other charges.",
+    "cancelSuccess" : "Your return request ({{rma}}) was cancelled",
+    "caption" : "Order contents."
+  },
+  "reorder" : {
+    "button" : "Reordenar",
+    "dialog" : {
+      "reorderProducts" : "Reorder products",
+      "messages" : {
+        "reviewConfiguration" : "An error occurred with \"{{ productCode}}\" configuration.",
+        "lowStock" : "Quantity for {{ productName }}: {{ quantity }} has been reduced to {{ quantityAdded }}.",
+        "noStock" : "{{ productName }} is currently out of stock.",
+        "pricingError" : "Pricing problem with \"{{ productCode }}\".",
+        "unresolvableIssues" : "Unrecognized problem with \"{{ productCode }}\".",
+        "success" : "Products have been successfully added to the cart"
+      },
+      "areYouSureToReplaceCart" : "Current cart will be replaced with new items. Do you wish to continue?",
+      "cancel" : "Cancelar",
+      "continue" : "Continuar"
+    }
+  }
+}
