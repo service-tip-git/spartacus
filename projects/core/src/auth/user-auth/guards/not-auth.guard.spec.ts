@@ -1,6 +1,5 @@
 import { TestBed } from '@angular/core/testing';
 import { RedirectCommand, UrlTree } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
 import { EMPTY, Observable, of } from 'rxjs';
 import { SemanticPathService } from '../../../routing/configurable-routes/url-translation/semantic-path.service';
 import { AuthService } from '../facade/auth.service';
@@ -28,7 +27,6 @@ describe('NotAuthGuard', () => {
         { provide: SemanticPathService, useClass: SemanticPathServiceStub },
         { provide: AuthService, useClass: AuthServiceStub },
       ],
-      imports: [RouterTestingModule],
     });
     authService = TestBed.inject(AuthService);
     guard = TestBed.inject(NotAuthGuard);

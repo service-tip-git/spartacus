@@ -5,7 +5,6 @@ import {
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
 import {
   CmsService,
   Page,
@@ -72,7 +71,6 @@ describe('CmsPageGuard', () => {
           useClass: MockBeforeCmsPageGuardService,
         },
       ],
-      imports: [RouterTestingModule], //TODO: consider replacing deprecated `RouterTestingModule`
     });
 
     routingService = TestBed.inject(RoutingService);

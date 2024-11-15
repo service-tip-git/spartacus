@@ -1,6 +1,5 @@
 import { TestBed } from '@angular/core/testing';
 import { RedirectCommand, UrlTree } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
 import { ActiveCartFacade } from '@spartacus/cart/base/root';
 import { CheckoutConfigService } from '@spartacus/checkout/base/components';
 import {
@@ -103,7 +102,6 @@ describe('CheckoutAuthGuard', () => {
           useClass: MockGlobalMessageService,
         },
       ],
-      imports: [RouterTestingModule],
     });
     checkoutGuard = TestBed.inject(CheckoutB2BAuthGuard);
     authService = TestBed.inject(AuthService);

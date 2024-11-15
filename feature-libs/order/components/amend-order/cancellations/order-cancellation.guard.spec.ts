@@ -5,7 +5,6 @@ import {
   Validators,
 } from '@angular/forms';
 import { RedirectCommand, UrlTree } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
 import { SemanticPathService } from '@spartacus/core';
 import { Observable, of } from 'rxjs';
 import { OrderCancellationGuard } from './order-cancellation.guard';
@@ -48,7 +47,6 @@ describe(`OrderCancellationGuard`, () => {
           useClass: MockOrderCancellationService,
         },
       ],
-      imports: [RouterTestingModule],
     });
 
     guard = TestBed.inject(OrderCancellationGuard);

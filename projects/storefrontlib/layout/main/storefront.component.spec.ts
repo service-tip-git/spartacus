@@ -1,6 +1,5 @@
 import { Component, DebugElement, Directive, Input } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { RoutingService } from '@spartacus/core';
 import { EMPTY, Observable, of } from 'rxjs';
 import { OutletDirective } from '../../cms-structure';
@@ -69,7 +68,6 @@ describe('StorefrontComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
       declarations: [
         StorefrontComponent,
         MockHeaderComponent,
