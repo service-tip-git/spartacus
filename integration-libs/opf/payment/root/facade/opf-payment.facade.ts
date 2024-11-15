@@ -28,7 +28,7 @@ import {
         'verifyPayment',
         'submitPayment',
         'submitCompletePayment',
-        'afterRedirectScripts',
+        'getAfterRedirectScripts',
         'initiatePayment',
       ],
     }),
@@ -75,7 +75,7 @@ export abstract class OpfPaymentFacade {
    * @param {string} paymentSessionId
    *
    */
-  abstract afterRedirectScripts(
+  abstract getAfterRedirectScripts(
     paymentSessionId: string
   ): Observable<OpfPaymentAfterRedirectScriptResponse>;
 

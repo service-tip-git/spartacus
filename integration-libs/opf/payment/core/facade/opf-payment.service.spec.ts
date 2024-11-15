@@ -27,7 +27,7 @@ class MockPaymentConnector implements Partial<OpfPaymentConnector> {
       result: 'result',
     }) as Observable<OpfPaymentVerificationResponse>;
   }
-  afterRedirectScripts(
+  getAfterRedirectScripts(
     _paymentSessionId: string
   ): Observable<OpfPaymentAfterRedirectScriptResponse> {
     return of({ afterRedirectScript: {} });
@@ -230,15 +230,15 @@ describe('OpfPaymentService', () => {
     });
   });
 
-  it('should call afterRedirectScripts from connector with the correct payload', () => {
+  it('should call getAfterRedirectScripts from connector with the correct payload', () => {
     const paymentSessionId = 'exampleSessionId';
 
     const connectorSpy = spyOn(
       paymentConnector,
-      'afterRedirectScripts'
+      'getAfterRedirectScripts'
     ).and.callThrough();
 
-    service.afterRedirectScripts(paymentSessionId);
+    service.getAfterRedirectScripts(paymentSessionId);
 
     expect(connectorSpy).toHaveBeenCalledWith(paymentSessionId);
   });

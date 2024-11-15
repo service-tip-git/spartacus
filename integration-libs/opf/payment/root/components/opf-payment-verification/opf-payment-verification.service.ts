@@ -220,7 +220,7 @@ export class OpfPaymentVerificationService {
       paramsMap,
     });
 
-    return this.opfPaymentFacade.afterRedirectScripts(paymentSessionId).pipe(
+    return this.opfPaymentFacade.getAfterRedirectScripts(paymentSessionId).pipe(
       concatMap((response) => {
         if (!response?.afterRedirectScript) {
           return throwError(this.opfDefaultPaymentError);

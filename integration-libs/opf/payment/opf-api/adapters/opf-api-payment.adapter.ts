@@ -150,7 +150,7 @@ export class OpfApiPaymentAdapter implements OpfPaymentAdapter {
       );
   }
 
-  afterRedirectScripts(
+  getAfterRedirectScripts(
     paymentSessionId: string
   ): Observable<OpfPaymentAfterRedirectScriptResponse> {
     const headers = new HttpHeaders(this.header).set(
@@ -223,7 +223,7 @@ export class OpfApiPaymentAdapter implements OpfPaymentAdapter {
   }
 
   protected getAfterRedirectScriptsEndpoint(paymentSessionId: string): string {
-    return this.opfEndpointsService.buildUrl('afterRedirectScripts', {
+    return this.opfEndpointsService.buildUrl('getAfterRedirectScripts', {
       urlParams: { paymentSessionId },
     });
   }

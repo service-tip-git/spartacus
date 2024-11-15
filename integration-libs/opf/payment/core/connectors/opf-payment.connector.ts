@@ -51,10 +51,10 @@ export class OpfPaymentConnector {
     );
   }
 
-  public afterRedirectScripts(
+  public getAfterRedirectScripts(
     paymentSessionId: string
   ): Observable<OpfPaymentAfterRedirectScriptResponse> {
-    return this.adapter.afterRedirectScripts(paymentSessionId);
+    return this.adapter.getAfterRedirectScripts(paymentSessionId);
   }
 
   public initiatePayment(
