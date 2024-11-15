@@ -56,6 +56,8 @@ export class OpfCheckoutPaymentWrapperService {
 
   protected lastPaymentOptionId?: number;
 
+  protected activeCartId?: string;
+
   protected renderPaymentMethodEvent$ =
     new BehaviorSubject<OpfPaymentRenderMethodEvent>({
       isLoading: false,
@@ -106,13 +108,13 @@ export class OpfCheckoutPaymentWrapperService {
           isPaymentInProgress: true,
         })
       ),
-      switchMap(([userId, cartId]: [string, string]) =>
-        this.cartAccessCodeFacade.getCartAccessCode(userId, cartId).pipe(
-          filter((response) => Boolean(response?.accessCode)),
-          map(({ accessCode: otpKey }) =>
-            this.setPaymentInitiationConfig(cartId, otpKey, paymentOptionId)
-          )
-        )
+      switchMap(([userId, cartId]: [string, string]) => {
+        this.activeCartId = cartId;
+        return this.cartAccessCodeFacade.getCartAccessCode(userId, cartId);
+      }),
+      filter((response) => Boolean(response?.accessCode)),
+      map(({ accessCode: otpKey }) =>
+        this.setPaymentInitiationConfig(otpKey, paymentOptionId)
       ),
       switchMap((params) => this.opfPaymentFacade.initiatePayment(params)),
       tap((paymentOptionConfig: OpfPaymentSessionData | Error) => {
@@ -253,7 +255,6 @@ export class OpfCheckoutPaymentWrapperService {
   }
 
   protected setPaymentInitiationConfig(
-    cartId: string,
     otpKey: string,
     paymentOptionId: number
   ) {
@@ -261,7 +262,7 @@ export class OpfCheckoutPaymentWrapperService {
       otpKey,
       config: {
         configurationId: String(paymentOptionId),
-        cartId,
+        cartId: this.activeCartId,
         resultURL: this.routingService.getFullUrl({
           cxRoute: 'paymentVerificationResult',
         }),
