@@ -114,7 +114,7 @@ export class OpfCheckoutPaymentWrapperService {
       }),
       filter((response) => Boolean(response?.accessCode)),
       map(({ accessCode: otpKey }) =>
-        this.setPaymentInitiationConfig(otpKey, paymentOptionId)
+        this.getPaymentInitiationConfig(otpKey, paymentOptionId)
       ),
       switchMap((params) => this.opfPaymentFacade.initiatePayment(params)),
       tap((paymentOptionConfig: OpfPaymentSessionData | Error) => {
@@ -254,7 +254,7 @@ export class OpfCheckoutPaymentWrapperService {
     );
   }
 
-  protected setPaymentInitiationConfig(
+  protected getPaymentInitiationConfig(
     otpKey: string,
     paymentOptionId: number
   ) {
