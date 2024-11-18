@@ -143,13 +143,13 @@ describe('ApplePaySessionFactory', () => {
   });
 
   it('should create ApplePaySession if available', () => {
-    const applePaySession = applePaySessionFactory['createApplePaySession']();
+    const applePaySession = applePaySessionFactory['getApplePaySession']();
     expect(applePaySession).toBeDefined();
   });
 
   it('should not create ApplePaySession if not available', () => {
     (windowRef as any).nativeWindow['ApplePaySession'] = null;
-    const applePaySession = applePaySessionFactory['createApplePaySession']();
+    const applePaySession = applePaySessionFactory['getApplePaySession']();
     expect(applePaySession).not.toBeDefined();
   });
 

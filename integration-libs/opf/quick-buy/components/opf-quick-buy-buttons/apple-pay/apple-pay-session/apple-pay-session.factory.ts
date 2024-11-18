@@ -20,13 +20,13 @@ export class ApplePaySessionFactory {
 
   constructor() {
     // @ts-ignore
-    this.applePaySession = this.createApplePaySession() as ApplePaySession;
+    this.applePaySession = this.getApplePaySession() as ApplePaySession;
     if (this.applePaySession) {
       this.isDeviceSupported = this.applePaySession.canMakePayments();
     }
   }
 
-  private createApplePaySession(): ApplePaySession | undefined {
+  private getApplePaySession(): ApplePaySession | undefined {
     const window = this.winRef.nativeWindow as any;
     if (!window['ApplePaySession']) {
       return undefined;
