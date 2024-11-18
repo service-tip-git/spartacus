@@ -51,7 +51,7 @@ describe('OpfGooglePayService', () => {
   beforeEach(() => {
     mockResourceLoaderService = jasmine.createSpyObj(
       'OpfResourceLoaderService',
-      ['loadProviderResources']
+      ['loadResources']
     );
     mockCurrentProductService = jasmine.createSpyObj('CurrentProductService', [
       'getProduct',
@@ -184,25 +184,23 @@ describe('OpfGooglePayService', () => {
     });
   });
 
-  describe('loadProviderResources', () => {
+  describe('loadResources', () => {
     it('should load the Google Pay JS API', async () => {
-      mockResourceLoaderService.loadProviderResources.and.returnValue(
+      mockResourceLoaderService.loadResources.and.returnValue(
         Promise.resolve()
       );
 
-      await service.loadProviderResources();
+      await service.loadResources();
 
-      expect(
-        mockResourceLoaderService.loadProviderResources
-      ).toHaveBeenCalled();
+      expect(mockResourceLoaderService.loadResources).toHaveBeenCalled();
     });
 
     it('should handle errors when loading the Google Pay JS API', async () => {
-      mockResourceLoaderService.loadProviderResources.and.returnValue(
+      mockResourceLoaderService.loadResources.and.returnValue(
         Promise.reject(new Error('Load failed'))
       );
 
-      await expectAsync(service.loadProviderResources()).toBeRejectedWithError(
+      await expectAsync(service.loadResources()).toBeRejectedWithError(
         'Load failed'
       );
     });

@@ -60,11 +60,7 @@ describe('OpfPaymentVerificationService', () => {
     );
     opfResourceLoaderServiceMock = jasmine.createSpyObj(
       'OpfResourceLoaderService',
-      [
-        'clearAllProviderResources',
-        'executeScriptFromHtml',
-        'loadProviderResources',
-      ]
+      ['clearAllResources', 'executeScriptFromHtml', 'loadResources']
     );
 
     globalFunctionsServiceMock = jasmine.createSpyObj(
@@ -358,7 +354,7 @@ describe('OpfPaymentVerificationService', () => {
         of({ afterRedirectScript: dynamicScriptMock })
       );
       globalFunctionsServiceMock.registerGlobalFunctions.and.returnValue();
-      opfResourceLoaderServiceMock.loadProviderResources.and.returnValue(
+      opfResourceLoaderServiceMock.loadResources.and.returnValue(
         Promise.resolve()
       );
 
@@ -372,9 +368,7 @@ describe('OpfPaymentVerificationService', () => {
           [{ key: 'key test', value: 'value test' }]
         )
         .subscribe((result) => {
-          expect(
-            opfResourceLoaderServiceMock.loadProviderResources
-          ).toHaveBeenCalled();
+          expect(opfResourceLoaderServiceMock.loadResources).toHaveBeenCalled();
           expect(
             opfResourceLoaderServiceMock.executeScriptFromHtml
           ).toHaveBeenCalled();
@@ -388,7 +382,7 @@ describe('OpfPaymentVerificationService', () => {
         of({ afterRedirectScript: { dynamicScriptMock, html: undefined } })
       );
       globalFunctionsServiceMock.registerGlobalFunctions.and.returnValue();
-      opfResourceLoaderServiceMock.loadProviderResources.and.returnValue(
+      opfResourceLoaderServiceMock.loadResources.and.returnValue(
         Promise.resolve()
       );
 
@@ -402,9 +396,7 @@ describe('OpfPaymentVerificationService', () => {
           [{ key: 'key test', value: 'value test' }]
         )
         .subscribe((result) => {
-          expect(
-            opfResourceLoaderServiceMock.loadProviderResources
-          ).toHaveBeenCalled();
+          expect(opfResourceLoaderServiceMock.loadResources).toHaveBeenCalled();
           expect(
             opfResourceLoaderServiceMock.executeScriptFromHtml
           ).not.toHaveBeenCalled();
@@ -413,12 +405,12 @@ describe('OpfPaymentVerificationService', () => {
         });
     });
 
-    it('should failed when loadProviderResources fails', (done) => {
+    it('should failed when loadResources fails', (done) => {
       opfPaymentServiceMock.afterRedirectScripts.and.returnValue(
         of({ afterRedirectScript: { dynamicScriptMock, html: undefined } })
       );
       globalFunctionsServiceMock.registerGlobalFunctions.and.returnValue();
-      opfResourceLoaderServiceMock.loadProviderResources.and.returnValue(
+      opfResourceLoaderServiceMock.loadResources.and.returnValue(
         Promise.reject()
       );
 
@@ -432,9 +424,7 @@ describe('OpfPaymentVerificationService', () => {
           [{ key: 'key test', value: 'value test' }]
         )
         .subscribe((result) => {
-          expect(
-            opfResourceLoaderServiceMock.loadProviderResources
-          ).toHaveBeenCalled();
+          expect(opfResourceLoaderServiceMock.loadResources).toHaveBeenCalled();
           expect(
             opfResourceLoaderServiceMock.executeScriptFromHtml
           ).not.toHaveBeenCalled();
@@ -476,9 +466,7 @@ describe('OpfPaymentVerificationService', () => {
       expect(
         globalFunctionsServiceMock.removeGlobalFunctions
       ).toHaveBeenCalled();
-      expect(
-        opfResourceLoaderServiceMock.clearAllProviderResources
-      ).toHaveBeenCalled();
+      expect(opfResourceLoaderServiceMock.clearAllResources).toHaveBeenCalled();
       done();
     });
   });

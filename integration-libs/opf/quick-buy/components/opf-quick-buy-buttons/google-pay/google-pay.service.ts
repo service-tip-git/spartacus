@@ -137,8 +137,8 @@ export class OpfGooglePayService {
     this.updateGooglePaymentClient();
   }
 
-  loadProviderResources(): Promise<void> {
-    return this.opfResourceLoaderService.loadProviderResources([
+  loadResources(): Promise<void> {
+    return this.opfResourceLoaderService.loadResources([
       { url: this.GOOGLE_PAY_JS_URL },
     ]);
   }

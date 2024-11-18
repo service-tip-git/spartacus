@@ -97,7 +97,7 @@ export class OpfCheckoutPaymentWrapperService {
       isLoading: true,
       isError: false,
     });
-    this.opfResourceLoaderService.clearAllProviderResources();
+    this.opfResourceLoaderService.clearAllResources();
 
     return combineLatest([
       this.userIdService.getUserId(),
@@ -167,7 +167,7 @@ export class OpfCheckoutPaymentWrapperService {
       const html = config?.dynamicScript?.html;
 
       this.opfResourceLoaderService
-        .loadProviderResources(
+        .loadResources(
           config.dynamicScript.jsUrls,
           config.dynamicScript.cssUrls
         )

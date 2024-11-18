@@ -53,11 +53,7 @@ describe('OpfCtaScriptsService', () => {
     ]);
     opfResourceLoaderServiceMock = jasmine.createSpyObj(
       'OpfResourceLoaderService',
-      [
-        'executeScriptFromHtml',
-        'loadProviderResources',
-        'clearAllProviderResources',
-      ]
+      ['executeScriptFromHtml', 'loadResources', 'clearAllResources']
     );
     cmsServiceMock = jasmine.createSpyObj('CmsService', ['getCurrentPage']);
     currentProductMock = jasmine.createSpyObj('CurrentProductService', [
@@ -112,7 +108,7 @@ describe('OpfCtaScriptsService', () => {
     orderHistoryFacadeMock.getOrderDetails.and.returnValue(of(mockOrder));
 
     opfResourceLoaderServiceMock.executeScriptFromHtml.and.returnValue();
-    opfResourceLoaderServiceMock.loadProviderResources.and.returnValue(
+    opfResourceLoaderServiceMock.loadResources.and.returnValue(
       Promise.resolve()
     );
     currentProductMock.getProduct.and.returnValue(of(mockProduct));
@@ -268,7 +264,7 @@ describe('OpfCtaScriptsService', () => {
   });
 
   it('should not execute script when resource loading failed', (done) => {
-    opfResourceLoaderServiceMock.loadProviderResources.and.returnValue(
+    opfResourceLoaderServiceMock.loadResources.and.returnValue(
       Promise.reject()
     );
     service

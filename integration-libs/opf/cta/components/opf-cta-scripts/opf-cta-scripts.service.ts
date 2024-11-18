@@ -47,7 +47,7 @@ export class OpfCtaScriptsService {
     return new Promise(
       (resolve: (value: OpfDynamicScript | undefined) => void) => {
         this.opfResourceLoaderService
-          .loadProviderResources(script.jsUrls, script.cssUrls)
+          .loadResources(script.jsUrls, script.cssUrls)
           .then(() => {
             if (html) {
               this.opfResourceLoaderService.executeScriptFromHtml(html);
@@ -82,7 +82,7 @@ export class OpfCtaScriptsService {
           this.opfDynamicCtaService.initiateEvents();
       }),
       finalize(() => {
-        this.opfResourceLoaderService.clearAllProviderResources();
+        this.opfResourceLoaderService.clearAllResources();
         isDynamicCtaLocation && this.opfDynamicCtaService.stopEvents();
       })
     );
