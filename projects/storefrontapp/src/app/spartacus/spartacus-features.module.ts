@@ -388,6 +388,7 @@ if (environment.cpq) {
         a11yViewHoursButtonIconContrast: true,
         a11yCheckoutStepsLandmarks: true,
         a11yQTY2Quantity: true,
+        a11yShowDownArrowOnFocusedSelectMenu: true,
         a11yApprovalProcessWithNoClearable: true,
         a11yPostRegisterSuccessMessage: true,
         a11yDeleteButton2First: true,

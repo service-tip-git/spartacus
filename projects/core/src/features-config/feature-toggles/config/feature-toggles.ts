@@ -681,6 +681,11 @@ export interface FeatureTogglesInterface {
   a11yTextSpacingAdjustments?: boolean;
 
   /**
+   * In `SiteContextSelectComponent` and `SiteThemeSwitcherComponent`, update style of caret.
+   */
+  a11yShowDownArrowOnFocusedSelectMenu?: boolean;
+
+  /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
    * into a request body, instead of query params.
    * This toggle is used in the following classes: `OccCartAdapter`, `OccSavedCartAdapter`, `SavedCartOccModule`, `CartBaseOccModule`.
@@ -876,6 +881,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yDeleteButton2First: false,
   a11yUpdatingCartNoNarration: false,
   a11yTextSpacingAdjustments: false,
+  a11yShowDownArrowOnFocusedSelectMenu: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
