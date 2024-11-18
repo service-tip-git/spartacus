@@ -52,7 +52,7 @@ describe('OpfPaymentVerificationService', () => {
     ]);
     opfPaymentServiceMock = jasmine.createSpyObj('OpfPaymentFacade', [
       'verifyPayment',
-      'afterRedirectScripts',
+      'getAfterRedirectScripts',
     ]);
     opfMetadataStoreServiceMock = jasmine.createSpyObj(
       'OpfMetadataStoreService',
@@ -350,7 +350,7 @@ describe('OpfPaymentVerificationService', () => {
     };
 
     it('should call renderAfterRedirectScripts', (done) => {
-      opfPaymentServiceMock.afterRedirectScripts.and.returnValue(
+      opfPaymentServiceMock.getAfterRedirectScripts.and.returnValue(
         of({ afterRedirectScript: dynamicScriptMock })
       );
       globalFunctionsServiceMock.registerGlobalFunctions.and.returnValue();
@@ -378,7 +378,7 @@ describe('OpfPaymentVerificationService', () => {
     });
 
     it('should not executeScriptFromHtml when no html snippet', (done) => {
-      opfPaymentServiceMock.afterRedirectScripts.and.returnValue(
+      opfPaymentServiceMock.getAfterRedirectScripts.and.returnValue(
         of({ afterRedirectScript: { dynamicScriptMock, html: undefined } })
       );
       globalFunctionsServiceMock.registerGlobalFunctions.and.returnValue();
@@ -405,8 +405,8 @@ describe('OpfPaymentVerificationService', () => {
         });
     });
 
-    it('should failed when loadResources fails', (done) => {
-      opfPaymentServiceMock.afterRedirectScripts.and.returnValue(
+    it('should failed when loadProviderResources fails', (done) => {
+      opfPaymentServiceMock.getAfterRedirectScripts.and.returnValue(
         of({ afterRedirectScript: { dynamicScriptMock, html: undefined } })
       );
       globalFunctionsServiceMock.registerGlobalFunctions.and.returnValue();
@@ -434,7 +434,7 @@ describe('OpfPaymentVerificationService', () => {
     });
 
     it('should throw error when missing afterRedirectScript property', (done) => {
-      opfPaymentServiceMock.afterRedirectScripts.and.returnValue(
+      opfPaymentServiceMock.getAfterRedirectScripts.and.returnValue(
         of({ afterRedirectScript: undefined })
       );
       globalFunctionsServiceMock.registerGlobalFunctions.and.returnValue();

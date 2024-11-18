@@ -64,13 +64,13 @@ export class OpfPaymentService implements OpfPaymentFacade {
     );
   });
 
-  protected afterRedirectScriptsCommand: Command<
+  protected getAfterRedirectScriptsCommand: Command<
     {
       paymentSessionId: string;
     },
     OpfPaymentAfterRedirectScriptResponse
   > = this.commandService.create((payload) => {
-    return this.opfPaymentConnector.afterRedirectScripts(
+    return this.opfPaymentConnector.getAfterRedirectScripts(
       payload.paymentSessionId
     );
   });
@@ -106,8 +106,8 @@ export class OpfPaymentService implements OpfPaymentFacade {
     return this.submitCompletePaymentCommand.execute({ submitCompleteInput });
   }
 
-  afterRedirectScripts(paymentSessionId: string) {
-    return this.afterRedirectScriptsCommand.execute({ paymentSessionId });
+  getAfterRedirectScripts(paymentSessionId: string) {
+    return this.getAfterRedirectScriptsCommand.execute({ paymentSessionId });
   }
 
   initiatePayment(

@@ -24,7 +24,7 @@ declare module '@spartacus/opf/base/root' {
     /**
      * Endpoint to fetch dynamic script for Hosted Fields pattern and PageRedirection sub-pattern.
      */
-    afterRedirectScripts?: string | OpfApiEndpoint;
+    getAfterRedirectScripts?: string | OpfApiEndpoint;
     /**
      * Endpoint to initiate payment provider.
      */
