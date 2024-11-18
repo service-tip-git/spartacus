@@ -39,7 +39,7 @@ module.exports = function (config) {
     },
     captureTimeout: 210000,
     browserDisconnectTolerance: 3,
-    browserDisconnectTimeout: 210000,
+    browserDisconnectTimeout: 270000,
     browserNoActivityTimeout: 210000,
     port: 9876,
     colors: true,
