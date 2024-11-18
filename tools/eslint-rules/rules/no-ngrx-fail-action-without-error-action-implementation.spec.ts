@@ -1,14 +1,13 @@
-import { convertAnnotatedSourceToFailureCase } from '@angular-eslint/test-utils';
-import { TSESLint } from '@typescript-eslint/utils';
+import {
+  convertAnnotatedSourceToFailureCase,
+  RuleTester,
+} from '@angular-eslint/test-utils';
 import {
   rule,
   RULE_NAME,
 } from './no-ngrx-fail-action-without-error-action-implementation';
 
-//TODO: consider replacing deprecated TSESLint utils
-const ruleTester = new TSESLint.RuleTester({
-  parser: require.resolve('@typescript-eslint/parser'),
-});
+const ruleTester = new RuleTester();
 
 ruleTester.run(RULE_NAME, rule, {
   valid: [
@@ -89,7 +88,7 @@ export class LoadProductFail implements ErrorAction {
         }
       `,
       messageId: 'missingImplementsErrorAction',
-    }) as TSESLint.InvalidTestCase<'missingImplementsErrorAction', never[]>, // type cast used as convertAnnotatedSourceToFailureCase simplifies testing, but TSESLint v6 requires never[] instead of readonly unknown[]
+    }),
 
     convertAnnotatedSourceToFailureCase({
       description:
@@ -106,7 +105,7 @@ export class LoadProductFail implements Action, ErrorAction {
         }
       `,
       messageId: 'missingImplementsErrorAction',
-    }) as TSESLint.InvalidTestCase<'missingImplementsErrorAction', never[]>, // type cast used as convertAnnotatedSourceToFailureCase simplifies testing, but TSESLint v6 requires never[] instead of readonly unknown[]
+    }),
 
     convertAnnotatedSourceToFailureCase({
       description:
@@ -123,7 +122,7 @@ export class LoadProductFail implements Action, SomeOtherInterface, ErrorAction 
         }
       `,
       messageId: 'missingImplementsErrorAction',
-    }) as TSESLint.InvalidTestCase<'missingImplementsErrorAction', never[]>, // type cast used as convertAnnotatedSourceToFailureCase simplifies testing, but TSESLint v6 requires never[] instead of readonly unknown[]
+    }),
 
     convertAnnotatedSourceToFailureCase({
       description:
@@ -140,7 +139,7 @@ export class LoadProductFail extends EntityScopedLoaderActions.EntityScopedFailA
         }
       `,
       messageId: 'missingImplementsErrorAction',
-    }) as TSESLint.InvalidTestCase<'missingImplementsErrorAction', never[]>, // type cast used as convertAnnotatedSourceToFailureCase simplifies testing, but TSESLint v6 requires never[] instead of readonly unknown[]
+    }),
 
     convertAnnotatedSourceToFailureCase({
       description:
@@ -157,7 +156,7 @@ export class LoadProductFail extends EntityScopedLoaderActions.EntityScopedFailA
         }
       `,
       messageId: 'missingImplementsErrorAction',
-    }) as TSESLint.InvalidTestCase<'missingImplementsErrorAction', never[]>, // type cast used as convertAnnotatedSourceToFailureCase simplifies testing, but TSESLint v6 requires never[] instead of readonly unknown[]
+    }),
 
     convertAnnotatedSourceToFailureCase({
       description:
@@ -174,6 +173,6 @@ export class LoadProductFail extends EntityScopedLoaderActions.EntityScopedFailA
         }
       `,
       messageId: 'missingImplementsErrorAction',
-    }) as TSESLint.InvalidTestCase<'missingImplementsErrorAction', never[]>, // type cast used as convertAnnotatedSourceToFailureCase simplifies testing, but TSESLint v6 requires never[] instead of readonly unknown[]
+    }),
   ],
 });
