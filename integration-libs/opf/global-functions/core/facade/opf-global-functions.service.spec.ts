@@ -96,7 +96,7 @@ describe('OpfGlobalFunctionsService', () => {
       });
       windowOpf = windowRef.nativeWindow['Opf'];
       spyOn(windowRef, 'isBrowser').and.returnValue(false);
-      service.removeGlobalFunctions(GlobalFunctionsDomain.CHECKOUT);
+      service.unregisterGlobalFunctions(GlobalFunctionsDomain.CHECKOUT);
       expect(windowOpf['payments']['checkout']['submit']).toBeDefined();
     });
   });
@@ -220,7 +220,7 @@ describe('OpfGlobalFunctionsService', () => {
         windowOpf['payments'][GlobalFunctionsDomain.CHECKOUT]
       ).toBeDefined();
 
-      service.removeGlobalFunctions(GlobalFunctionsDomain.CHECKOUT);
+      service.unregisterGlobalFunctions(GlobalFunctionsDomain.CHECKOUT);
 
       expect(
         windowOpf['payments'][GlobalFunctionsDomain.CHECKOUT]
@@ -291,7 +291,7 @@ describe('OpfGlobalFunctionsService', () => {
         ]
       ).toBeDefined();
 
-      service.removeGlobalFunctions(GlobalFunctionsDomain.REDIRECT);
+      service.unregisterGlobalFunctions(GlobalFunctionsDomain.REDIRECT);
 
       expect(
         windowOpf['payments'][GlobalFunctionsDomain.REDIRECT]

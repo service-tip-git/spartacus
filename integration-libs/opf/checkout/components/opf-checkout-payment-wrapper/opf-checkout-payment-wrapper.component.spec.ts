@@ -27,7 +27,7 @@ describe('OpfCheckoutPaymentWrapperComponent', () => {
 
     mockGlobalFunctionsService = jasmine.createSpyObj(
       'OpfGlobalFunctionsFacade',
-      ['registerGlobalFunctions', 'removeGlobalFunctions']
+      ['registerGlobalFunctions', 'unregisterGlobalFunctions']
     );
 
     TestBed.configureTestingModule({
@@ -98,7 +98,7 @@ describe('OpfCheckoutPaymentWrapperComponent', () => {
     ).toHaveBeenCalledWith(jasmine.objectContaining(globalFunctionsInput));
   });
 
-  it('should call removeGlobalFunctions if paymentSessionData is not HOSTED_FIELDS', () => {
+  it('should call unregisterGlobalFunctions if paymentSessionData is not HOSTED_FIELDS', () => {
     const mockPaymentSessionData = {
       paymentSessionId: 'session123',
       pattern: OpfPaymentRenderPattern.FULL_PAGE,
@@ -109,7 +109,9 @@ describe('OpfCheckoutPaymentWrapperComponent', () => {
     component.selectedPaymentId = 123;
     component.ngOnInit();
 
-    expect(mockGlobalFunctionsService.removeGlobalFunctions).toHaveBeenCalled();
+    expect(
+      mockGlobalFunctionsService.unregisterGlobalFunctions
+    ).toHaveBeenCalled();
   });
 
   it('should call reloadPaymentMode on retryInitiatePayment', () => {

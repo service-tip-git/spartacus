@@ -61,7 +61,7 @@ export class OpfCheckoutPaymentWrapperComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.globalFunctionsService.removeGlobalFunctions(
+    this.globalFunctionsService.unregisterGlobalFunctions(
       GlobalFunctionsDomain.CHECKOUT
     );
     this.sub.unsubscribe();
@@ -83,7 +83,7 @@ export class OpfCheckoutPaymentWrapperComponent implements OnInit, OnDestroy {
               vcr: this.vcr,
             });
           } else {
-            this.globalFunctionsService.removeGlobalFunctions(
+            this.globalFunctionsService.unregisterGlobalFunctions(
               GlobalFunctionsDomain.CHECKOUT
             );
           }

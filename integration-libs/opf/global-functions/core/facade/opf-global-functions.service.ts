@@ -78,7 +78,7 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
     }
   }
 
-  removeGlobalFunctions(domain: GlobalFunctionsDomain): void {
+  unregisterGlobalFunctions(domain: GlobalFunctionsDomain): void {
     // SSR not supported
     if (!this.winRef.isBrowser()) {
       return;

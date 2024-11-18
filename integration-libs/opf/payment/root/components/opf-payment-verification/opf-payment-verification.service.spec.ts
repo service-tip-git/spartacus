@@ -65,7 +65,7 @@ describe('OpfPaymentVerificationService', () => {
 
     globalFunctionsServiceMock = jasmine.createSpyObj(
       'OpfGlobalFunctionsFacade',
-      ['registerGlobalFunctions', 'removeGlobalFunctions']
+      ['registerGlobalFunctions', 'unregisterGlobalFunctions']
     );
 
     TestBed.configureTestingModule({
@@ -464,7 +464,7 @@ describe('OpfPaymentVerificationService', () => {
     it('should should call psp resource clearing service and remove global functions', (done) => {
       service.removeResourcesAndGlobalFunctions();
       expect(
-        globalFunctionsServiceMock.removeGlobalFunctions
+        globalFunctionsServiceMock.unregisterGlobalFunctions
       ).toHaveBeenCalled();
       expect(opfResourceLoaderServiceMock.clearAllResources).toHaveBeenCalled();
       done();

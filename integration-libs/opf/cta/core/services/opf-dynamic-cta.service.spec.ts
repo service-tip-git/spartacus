@@ -30,7 +30,7 @@ describe('OpfDynamicCtaService', () => {
     };
     globalFunctionsFacadeMock = jasmine.createSpyObj('GlobalFunctionsFacade', [
       'registerGlobalFunctions',
-      'removeGlobalFunctions',
+      'unregisterGlobalFunctions',
     ]);
 
     eventServiceMock = jasmine.createSpyObj('EventService', ['get']);
@@ -73,7 +73,7 @@ describe('OpfDynamicCtaService', () => {
     eventServiceMock.get.and.returnValue(of(true));
     opfCtaFacadeMock.listenScriptReadyEvent.and.returnValue(of(mockScriptId));
     globalFunctionsFacadeMock.registerGlobalFunctions.and.returnValue();
-    globalFunctionsFacadeMock.removeGlobalFunctions.and.returnValue();
+    globalFunctionsFacadeMock.unregisterGlobalFunctions.and.returnValue();
     currentProductServiceMock.getProduct.and.returnValue(of(mockProduct));
     activeCartFacadeMock.takeActive.and.returnValue(of(mockCart));
   });
@@ -162,7 +162,7 @@ describe('OpfDynamicCtaService', () => {
         service.initiateEvents();
         service.stopEvents();
         expect(
-          globalFunctionsFacadeMock.removeGlobalFunctions
+          globalFunctionsFacadeMock.unregisterGlobalFunctions
         ).toHaveBeenCalled();
 
         done();

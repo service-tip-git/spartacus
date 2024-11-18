@@ -255,7 +255,7 @@ export class OpfPaymentVerificationService {
   }
 
   removeResourcesAndGlobalFunctions(): void {
-    this.globalFunctionsService.removeGlobalFunctions(
+    this.globalFunctionsService.unregisterGlobalFunctions(
       GlobalFunctionsDomain.REDIRECT
     );
     this.opfResourceLoaderService.clearAllResources();
