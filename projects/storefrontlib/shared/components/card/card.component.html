@@ -139,7 +139,7 @@
                 *ngSwitchCase="'delete'"
                 class="link cx-action-link"
                 tabindex="0"
-                [attr.aria-label]="action.ariaLabel | cxTranslate"
+                [attr.aria-label]="action.ariaLabel ? (action.ariaLabel | cxTranslate) : null"
                 (click)="delete()"
               >
                 {{ action.name }}
@@ -148,7 +148,7 @@
                 *ngSwitchCase="'default'"
                 class="link cx-action-link"
                 tabindex="0"
-                [attr.aria-label]="action.ariaLabel | cxTranslate"
+                [attr.aria-label]="action.ariaLabel ? (action.ariaLabel | cxTranslate) : null"
                 (click)="setDefault()"
               >
                 {{ action.name }}
@@ -158,7 +158,7 @@
                 class="link cx-action-link"
                 tabindex="0"
                 (click)="send()"
-                [attr.aria-label]="action.ariaLabel | cxTranslate"
+                [attr.aria-label]="action.ariaLabel ? (action.ariaLabel | cxTranslate) : null"
               >
                 {{ action.name }}
               </a>
@@ -166,7 +166,7 @@
                 *ngSwitchCase="'edit'"
                 tabindex="0"
                 class="link cx-action-link"
-                [attr.aria-label]="action.ariaLabel | cxTranslate"
+                [attr.aria-label]="action.ariaLabel ? (action.ariaLabel | cxTranslate) : null"
                 (click)="edit()"
               >
                 {{ action.name }}
