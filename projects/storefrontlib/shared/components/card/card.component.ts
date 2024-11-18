@@ -7,14 +7,17 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ICON_TYPE } from '../../../cms-components/misc/icon/icon.model';
 
-export interface CardAction {
-  event: string;
+export interface CardBaseAction {
   name: string;
+  ariaLabel?: string;
 }
 
-export interface CardLinkAction {
+export interface CardAction extends CardBaseAction {
+  event: string;
+}
+
+export interface CardLinkAction extends CardBaseAction {
   link: string;
-  name: string;
 }
 
 export interface Card {

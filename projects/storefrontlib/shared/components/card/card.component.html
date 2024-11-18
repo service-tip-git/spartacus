@@ -138,6 +138,8 @@
               <a
                 *ngSwitchCase="'delete'"
                 class="link cx-action-link"
+                tabindex="0"
+                [attr.aria-label]="action.ariaLabel | cxTranslate"
                 (click)="delete()"
               >
                 {{ action.name }}
@@ -145,6 +147,8 @@
               <a
                 *ngSwitchCase="'default'"
                 class="link cx-action-link"
+                tabindex="0"
+                [attr.aria-label]="action.ariaLabel | cxTranslate"
                 (click)="setDefault()"
               >
                 {{ action.name }}
@@ -152,18 +156,17 @@
               <a
                 *ngSwitchCase="'send'"
                 class="link cx-action-link"
+                tabindex="0"
                 (click)="send()"
-                [attr.aria-describedby]="
-                  index >= 0 && content.header && !editMode
-                    ? 'content-header-' + index
-                    : null
-                "
+                [attr.aria-label]="action.ariaLabel | cxTranslate"
               >
                 {{ action.name }}
               </a>
               <a
                 *ngSwitchCase="'edit'"
+                tabindex="0"
                 class="link cx-action-link"
+                [attr.aria-label]="action.ariaLabel | cxTranslate"
                 (click)="edit()"
               >
                 {{ action.name }}

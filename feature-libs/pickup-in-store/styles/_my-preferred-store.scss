@@ -80,8 +80,9 @@
         .cx-card-actions {
           all: unset;
           .link.cx-action-link {
-            &:hover {
-              text-decoration: underline;
+            @extend .btn-link;
+            &:focus {
+              @include visible-focus();
             }
           }
         }
