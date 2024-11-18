@@ -264,7 +264,7 @@ export class ApplePayService {
             return of({
               ...result,
               errors: [
-                this.updateApplePayFormWithError(
+                this.getApplePayFormWithError(
                   'No shipment methods available for this delivery address'
                 ),
               ],
@@ -345,7 +345,7 @@ export class ApplePayService {
           ...result,
           status: this.applePaySession.statusFailure,
           errors: [
-            this.updateApplePayFormWithError(error?.message ?? 'Payment error'),
+            this.getApplePayFormWithError(error?.message ?? 'Payment error'),
           ],
         } as ApplePayJS.ApplePayPaymentAuthorizationResult);
       })
@@ -444,7 +444,7 @@ export class ApplePayService {
     };
   }
 
-  protected updateApplePayFormWithError(
+  protected getApplePayFormWithError(
     message: string,
     code = 'unknown'
   ): { code: string; message: string } {
