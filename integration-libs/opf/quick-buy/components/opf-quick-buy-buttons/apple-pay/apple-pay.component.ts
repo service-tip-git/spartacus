@@ -55,7 +55,7 @@ export class ApplePayComponent implements OnInit {
       return;
     }
 
-    this.isApplePaySupported$ = this.applePaySession.isApplePaySupported$(
+    this.isApplePaySupported$ = this.applePaySession.isApplePaySupported(
       this.applePayDigitalWallet.merchantId
     );
   }

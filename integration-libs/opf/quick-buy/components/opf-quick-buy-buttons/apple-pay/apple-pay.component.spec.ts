@@ -62,7 +62,7 @@ describe('ApplePayComponent', () => {
     ]);
     mockApplePaySessionFactory = jasmine.createSpyObj(
       'ApplePaySessionFactory',
-      ['isApplePaySupported$']
+      ['isApplePaySupported']
     );
     mockOpfPaymentErrorHandlerService = jasmine.createSpyObj(
       'OpfPaymentErrorHandlerService',
@@ -121,7 +121,7 @@ describe('ApplePayComponent', () => {
     component.activeConfiguration = { digitalWalletQuickBuy: [digitalWallet] };
 
     const mockObservable = of(true);
-    mockApplePaySessionFactory.isApplePaySupported$.and.returnValue(
+    mockApplePaySessionFactory.isApplePaySupported.and.returnValue(
       mockObservable
     );
 
@@ -138,13 +138,13 @@ describe('ApplePayComponent', () => {
     component.activeConfiguration = { digitalWalletQuickBuy: [digitalWallet] };
 
     const mockObservable = of(true);
-    mockApplePaySessionFactory.isApplePaySupported$.and.returnValue(
+    mockApplePaySessionFactory.isApplePaySupported.and.returnValue(
       mockObservable
     );
 
     fixture.detectChanges();
     expect(
-      mockApplePaySessionFactory.isApplePaySupported$
+      mockApplePaySessionFactory.isApplePaySupported
     ).not.toHaveBeenCalled();
   });
 

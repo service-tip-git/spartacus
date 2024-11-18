@@ -42,7 +42,7 @@ export class ApplePaySessionFactory {
     return this.isDeviceSupported ? this.applePaySession.STATUS_FAILURE : 1;
   }
 
-  isApplePaySupported$(merchantIdentifier: string): Observable<boolean> {
+  isApplePaySupported(merchantIdentifier: string): Observable<boolean> {
     return this.isDeviceSupported &&
       this.supportsVersion(this.applePayApiVersion)
       ? this.canMakePaymentsWithActiveCard(merchantIdentifier)
