@@ -1,6 +1,9 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
 
+var events = require('events');
+events.EventEmitter.defaultMaxListeners = 20; // Increase the default max listeners globally
+
 module.exports = function (config) {
   config.set({
     basePath: '',
@@ -37,13 +40,13 @@ module.exports = function (config) {
         },
       },
     },
-    captureTimeout: 310000,
+    captureTimeout: 210000,
     browserDisconnectTolerance: 3,
-    browserDisconnectTimeout: 310000,
-    browserNoActivityTimeout: 310000,
+    browserDisconnectTimeout: 210000,
+    browserNoActivityTimeout: 210000,
     port: 9876,
     colors: true,
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_DEBUG,
     autoWatch: true,
     browsers: ['Chrome'],
     customLaunchers: {
