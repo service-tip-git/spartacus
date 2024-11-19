@@ -42,6 +42,7 @@
   ></cx-opf-checkout-terms-and-conditions-alert>
 
   <cx-opf-checkout-payments
+    [elementsPerPage]="10"
     [explicitTermsAndConditions]="explicitTermsAndConditions$ | async"
     [disabled]="termsAndConditionInvalid"
   ></cx-opf-checkout-payments>

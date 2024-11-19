@@ -9,7 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import { CheckoutConfig } from '@spartacus/checkout/base/root';
 import { AuthService, QueryState, RoutingService } from '@spartacus/core';
 import {
-  OpfActiveConfiguration,
+  OpfActiveConfigurationsResponse,
   OpfBaseFacade,
   OpfPaymentProviderType,
 } from '@spartacus/opf/base/root';
@@ -59,7 +59,9 @@ describe('OpfQuickBuyButtonsService', () => {
         { providerType: OpfPaymentProviderType.PAYMENT_GATEWAY },
       ];
       opfBaseFacadeMock.getActiveConfigurationsState.and.returnValue(
-        of({ data: mockConfigurations } as QueryState<OpfActiveConfiguration[]>)
+        of({
+          data: { value: mockConfigurations },
+        } as QueryState<OpfActiveConfigurationsResponse>)
       );
 
       service.getPaymentGatewayConfiguration().subscribe((result) => {
@@ -69,7 +71,9 @@ describe('OpfQuickBuyButtonsService', () => {
 
     it('should return undefined when there are no active configurations', () => {
       opfBaseFacadeMock.getActiveConfigurationsState.and.returnValue(
-        of({ data: undefined } as QueryState<OpfActiveConfiguration[]>)
+        of({
+          data: { value: undefined },
+        } as QueryState<OpfActiveConfigurationsResponse>)
       );
 
       service.getPaymentGatewayConfiguration().subscribe((result) => {
@@ -80,7 +84,9 @@ describe('OpfQuickBuyButtonsService', () => {
     it('should return undefined when no configuration matches PAYMENT_GATEWAY type', () => {
       const mockConfigurations = [{ providerType: 'SOME_OTHER_TYPE' }];
       opfBaseFacadeMock.getActiveConfigurationsState.and.returnValue(
-        of({ data: mockConfigurations } as QueryState<OpfActiveConfiguration[]>)
+        of({
+          data: { value: mockConfigurations },
+        } as QueryState<OpfActiveConfigurationsResponse>)
       );
 
       service.getPaymentGatewayConfiguration().subscribe((result) => {
@@ -98,16 +104,6 @@ describe('OpfQuickBuyButtonsService', () => {
         () => fail('Expected an error, not configurations'),
         (err) => expect(err).toBe(error)
       );
-    });
-
-    it('should return an empty array when config.data is undefined', () => {
-      opfBaseFacadeMock.getActiveConfigurationsState.and.returnValue(
-        of({} as QueryState<OpfActiveConfiguration[]>)
-      );
-
-      service.getPaymentGatewayConfiguration().subscribe((result) => {
-        expect(result).toBeUndefined();
-      });
     });
   });
 

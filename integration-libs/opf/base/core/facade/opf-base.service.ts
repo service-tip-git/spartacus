@@ -5,14 +5,10 @@
  */
 
 import { Injectable, inject } from '@angular/core';
+import { CommandService, QueryService, QueryState } from '@spartacus/core';
 import {
-  CommandService,
-  Query,
-  QueryService,
-  QueryState,
-} from '@spartacus/core';
-import {
-  OpfActiveConfiguration,
+  OpfActiveConfigurationsQuery,
+  OpfActiveConfigurationsResponse,
   OpfBaseFacade,
 } from '@spartacus/opf/base/root';
 import { Observable } from 'rxjs';
@@ -24,14 +20,16 @@ export class OpfBaseService implements OpfBaseFacade {
   protected commandService = inject(CommandService);
   protected opfBaseConnector = inject(OpfBaseConnector);
 
-  protected activeConfigurationsQuery: Query<OpfActiveConfiguration[]> =
-    this.queryService.create<OpfActiveConfiguration[]>(() =>
-      this.opfBaseConnector.getActiveConfigurations()
+  protected activeConfigurationsQuery = (
+    query?: OpfActiveConfigurationsQuery
+  ) =>
+    this.queryService.create<OpfActiveConfigurationsResponse>(() =>
+      this.opfBaseConnector.getActiveConfigurations(query)
     );
 
-  getActiveConfigurationsState(): Observable<
-    QueryState<OpfActiveConfiguration[] | undefined>
-  > {
-    return this.activeConfigurationsQuery.getState();
+  getActiveConfigurationsState(
+    query?: OpfActiveConfigurationsQuery
+  ): Observable<QueryState<OpfActiveConfigurationsResponse | undefined>> {
+    return this.activeConfigurationsQuery(query).getState();
   }
 }

@@ -178,9 +178,10 @@ export class OpfCtaScriptsService {
   protected getPaymentAccountIds() {
     return this.opfBaseFacade.getActiveConfigurationsState().pipe(
       filter(
-        (state) => !state.loading && !state.error && Boolean(state.data?.length)
+        (state) =>
+          !state.loading && !state.error && Boolean(state.data?.value?.length)
       ),
-      map((state) => state.data?.map((val) => val.id) as number[])
+      map((state) => state.data?.value?.map((val) => val.id) as number[])
     );
   }
 }

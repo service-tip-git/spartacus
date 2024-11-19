@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { CmsService, Page, Product, QueryState } from '@spartacus/core';
 import {
-  OpfActiveConfiguration,
+  OpfActiveConfigurationsResponse,
   OpfBaseFacade,
   OpfDynamicScript,
   OpfPaymentProviderType,
@@ -318,18 +318,20 @@ describe('OpfCtaScriptsService', () => {
   };
 
   const activeConfigurationsMock: QueryState<
-    OpfActiveConfiguration[] | undefined
+    OpfActiveConfigurationsResponse | undefined
   > = {
     loading: false,
     error: false,
-    data: [
-      {
-        id: 14,
-        providerType: OpfPaymentProviderType.PAYMENT_METHOD,
-        merchantId: 'SAP OPF',
-        displayName: 'Crypto with BitPay',
-      },
-    ],
+    data: {
+      value: [
+        {
+          id: 14,
+          providerType: OpfPaymentProviderType.PAYMENT_METHOD,
+          merchantId: 'SAP OPF',
+          displayName: 'Crypto with BitPay',
+        },
+      ],
+    },
   };
 
   const mockPage: Page = {

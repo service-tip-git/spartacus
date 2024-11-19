@@ -144,6 +144,7 @@ describe('OpfPaymentVerificationService', () => {
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
         paymentSessionId: mockPaymentSessionId,
+        isTermsAndConditionsAlertClosed: false,
       };
 
       opfMetadataStoreServiceMock.getOpfMetadataState.and.returnValue(
@@ -183,6 +184,7 @@ describe('OpfPaymentVerificationService', () => {
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
         paymentSessionId: undefined,
+        isTermsAndConditionsAlertClosed: false,
       };
 
       opfMetadataStoreServiceMock.getOpfMetadataState.and.returnValue(
@@ -214,6 +216,7 @@ describe('OpfPaymentVerificationService', () => {
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
         paymentSessionId: undefined,
+        isTermsAndConditionsAlertClosed: false,
       };
 
       opfMetadataStoreServiceMock.getOpfMetadataState.and.returnValue(
@@ -505,6 +508,7 @@ describe('OpfPaymentVerificationService', () => {
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
         paymentSessionId: '111111',
+        isTermsAndConditionsAlertClosed: false,
       };
 
       opfMetadataStoreServiceMock.getOpfMetadataState.and.returnValue(
@@ -526,6 +530,7 @@ describe('OpfPaymentVerificationService', () => {
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
         paymentSessionId: '111111',
+        isTermsAndConditionsAlertClosed: false,
       };
 
       opfMetadataStoreServiceMock.getOpfMetadataState.and.returnValue(

@@ -40,7 +40,7 @@ export class OpfQuickBuyButtonsService {
       .pipe(
         map(
           (config) =>
-            (config?.data || []).filter(
+            (config?.data?.value || []).filter(
               (item) =>
                 item?.providerType === OpfPaymentProviderType.PAYMENT_GATEWAY
             )[0]
