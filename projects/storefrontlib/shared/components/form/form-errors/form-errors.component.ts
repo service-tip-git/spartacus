@@ -104,17 +104,6 @@ export class FormErrorsComponent implements DoCheck {
   private previousTouchedState: boolean = false;
 
   ngDoCheck(): void {
-    // TODO: (CXSPA-8538) DISCUSS THE APPROACH
-    // differ no longer valid due to changes in AbstractControl. `touched` is now signal :o
-    // looks like the logic can be simplified
-    // const changes = this.differ?.diff(this.control);
-    // if (changes) {
-    //   changes.forEachChangedItem((r) => {
-    //     if (r?.key === 'touched') {
-    //       this.ChangeDetectionRef.markForCheck();
-    //     }
-    //   });
-    // }
     if (this.control.touched !== this.previousTouchedState) {
       this.previousTouchedState = this.control.touched;
       this.ChangeDetectionRef.markForCheck();
