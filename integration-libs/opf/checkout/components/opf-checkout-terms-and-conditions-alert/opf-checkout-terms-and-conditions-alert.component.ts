@@ -4,15 +4,25 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  Input,
+  OnInit,
+} from '@angular/core';
+import { OpfMetadataStoreService } from '@spartacus/opf/base/root';
 import { ICON_TYPE } from '@spartacus/storefront';
+import { filter, take } from 'rxjs';
 
 @Component({
   selector: 'cx-opf-checkout-terms-and-conditions-alert',
   templateUrl: './opf-checkout-terms-and-conditions-alert.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class OpfCheckoutTermsAndConditionsAlertComponent {
+export class OpfCheckoutTermsAndConditionsAlertComponent implements OnInit {
+  protected opfMetadataStoreService = inject(OpfMetadataStoreService);
+
   iconTypes = ICON_TYPE;
 
   @Input() isVisible: boolean;
@@ -24,5 +34,23 @@ export class OpfCheckoutTermsAndConditionsAlertComponent {
 
   close() {
     this.isVisible = false;
+    this.opfMetadataStoreService.updateOpfMetadata({
+      isTermsAndConditionsAlertClosed: true,
+    });
+  }
+
+  ngOnInit(): void {
+    this.opfMetadataStoreService
+      .getOpfMetadataState()
+      .pipe(
+        take(1),
+        filter(
+          ({ isTermsAndConditionsAlertClosed }) =>
+            isTermsAndConditionsAlertClosed
+        )
+      )
+      .subscribe(() => {
+        this.isVisible = false;
+      });
   }
 }

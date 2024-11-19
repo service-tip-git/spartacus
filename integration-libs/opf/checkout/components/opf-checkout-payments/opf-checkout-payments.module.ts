@@ -7,7 +7,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { I18nModule } from '@spartacus/core';
-import { SpinnerModule } from '@spartacus/storefront';
+import { PaginationModule, SpinnerModule } from '@spartacus/storefront';
 import { OpfCheckoutPaymentWrapperModule } from '../opf-checkout-payment-wrapper';
 import { OpfCheckoutTermsAndConditionsAlertModule } from '../opf-checkout-terms-and-conditions-alert/opf-checkout-terms-and-conditions-alert.module';
 import { OpfCheckoutPaymentsComponent } from './opf-checkout-payments.component';
@@ -19,6 +19,7 @@ import { OpfCheckoutPaymentsComponent } from './opf-checkout-payments.component'
     CommonModule,
     I18nModule,
     SpinnerModule,
+    PaginationModule,
     OpfCheckoutPaymentWrapperModule,
     OpfCheckoutTermsAndConditionsAlertModule,
   ],

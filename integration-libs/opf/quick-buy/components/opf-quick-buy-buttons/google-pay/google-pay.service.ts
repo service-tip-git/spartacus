@@ -139,7 +139,7 @@ export class OpfGooglePayService {
     this.updateGooglePaymentClient();
   }
 
-  loadProviderResources(): Promise<void> {
+  loadResources(): Promise<void> {
     const opfGooglePayConfig: OpfQuickBuyProvider | undefined =
       this.opfQuickBuyConfig?.providers?.find(
         (provider) => provider[OPF_GOOGLE_PAY_PROVIDER_NAME]
@@ -147,7 +147,7 @@ export class OpfGooglePayService {
     if (!opfGooglePayConfig) {
       return Promise.reject('Config not found');
     }
-    return this.opfResourceLoaderService.loadProviderResources([
+    return this.opfResourceLoaderService.loadResources([
       {
         url: (opfGooglePayConfig as OpfQuickBuyGooglePayProvider).googlePay
           .resourceUrl,
@@ -373,7 +373,11 @@ export class OpfGooglePayService {
               return this.opfPaymentFacade.submitPayment({
                 additionalData: [],
                 paymentSessionId: '',
-                callbackArray: [() => {}, () => {}, () => {}],
+                callbackArray: {
+                  onSuccess: () => {},
+                  onPending: () => {},
+                  onFailure: () => {},
+                },
                 paymentMethod: OpfQuickBuyProviderType.GOOGLE_PAY as any,
                 encryptedToken,
               });

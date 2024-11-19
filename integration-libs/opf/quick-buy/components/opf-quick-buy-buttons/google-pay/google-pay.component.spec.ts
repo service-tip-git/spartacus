@@ -14,9 +14,7 @@ import { OpfGooglePayComponent } from './google-pay.component';
 import { OpfGooglePayService } from './google-pay.service';
 
 class MockOpfGooglePayService {
-  loadProviderResources = jasmine
-    .createSpy()
-    .and.returnValue(Promise.resolve());
+  loadResources = jasmine.createSpy().and.returnValue(Promise.resolve());
   initClient = jasmine.createSpy();
   isReadyToPay = jasmine
     .createSpy()
@@ -65,7 +63,7 @@ describe('OpfGooglePayComponent', () => {
   it('should initialize Google Pay client on init', async () => {
     await detectChanges();
 
-    expect(mockOpfGooglePayService.loadProviderResources).toHaveBeenCalled();
+    expect(mockOpfGooglePayService.loadResources).toHaveBeenCalled();
     expect(mockOpfGooglePayService.initClient).toHaveBeenCalledWith(
       component.activeConfiguration
     );

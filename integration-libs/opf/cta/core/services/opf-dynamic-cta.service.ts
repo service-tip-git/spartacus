@@ -146,7 +146,7 @@ export class OpfDynamicCtaService {
     if (this.isOnsiteMessagingInit) {
       this.subList.forEach((sub) => sub.unsubscribe());
       this.subList = [];
-      this.globalFunctionsFacade.removeGlobalFunctions(
+      this.globalFunctionsFacade.unregisterGlobalFunctions(
         GlobalFunctionsDomain.GLOBAL
       );
       this.isOnsiteMessagingInit = false;

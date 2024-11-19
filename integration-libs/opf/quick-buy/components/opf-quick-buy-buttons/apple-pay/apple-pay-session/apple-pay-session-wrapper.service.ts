@@ -9,10 +9,17 @@ import { Injectable, inject } from '@angular/core';
 import { WindowRef } from '@spartacus/core';
 import { Observable, from, of } from 'rxjs';
 
+/**
+ * Wrapper of the native `ApplePaySession` API.
+ *
+ * It can tell whether the native `ApplePaySession` is supported,
+ * create a new instance of `ApplePaySession` object (for starting a new payment process),
+ * or expose some of the static constants of the native `ApplePaySession` API.
+ */
 @Injectable({
   providedIn: 'root',
 })
-export class ApplePaySessionFactory {
+export class ApplePaySessionWrapperService {
   protected winRef = inject(WindowRef);
   protected isDeviceSupported = false;
   private applePaySession: typeof ApplePaySession;
@@ -20,13 +27,13 @@ export class ApplePaySessionFactory {
 
   constructor() {
     // @ts-ignore
-    this.applePaySession = this.createApplePaySession() as ApplePaySession;
+    this.applePaySession = this.getApplePaySession() as ApplePaySession;
     if (this.applePaySession) {
       this.isDeviceSupported = this.applePaySession.canMakePayments();
     }
   }
 
-  private createApplePaySession(): ApplePaySession | undefined {
+  private getApplePaySession(): ApplePaySession | undefined {
     const window = this.winRef.nativeWindow as any;
     if (!window['ApplePaySession']) {
       return undefined;
@@ -42,7 +49,7 @@ export class ApplePaySessionFactory {
     return this.isDeviceSupported ? this.applePaySession.STATUS_FAILURE : 1;
   }
 
-  isApplePaySupported$(merchantIdentifier: string): Observable<boolean> {
+  isApplePaySupported(merchantIdentifier: string): Observable<boolean> {
     return this.isDeviceSupported &&
       this.supportsVersion(this.applePayApiVersion)
       ? this.canMakePaymentsWithActiveCard(merchantIdentifier)
@@ -75,7 +82,10 @@ export class ApplePaySessionFactory {
       : of(false);
   }
 
-  startApplePaySession(paymentRequest: any): any {
+  /**
+   * Creates and returns a new instance of `ApplePaySession` object (for a new payment process).
+   */
+  createSession(paymentRequest: any): any {
     return this.isDeviceSupported
       ? new this.applePaySession(this.applePayApiVersion, paymentRequest)
       : undefined;

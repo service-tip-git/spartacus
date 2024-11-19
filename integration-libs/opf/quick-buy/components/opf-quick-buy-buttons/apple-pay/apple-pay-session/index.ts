@@ -4,4 +4,5 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export * from './apple-pay-session.factory';
+export * from './apple-pay-session-wrapper.service';
+export * from './apple-pay-session.orchestrator';

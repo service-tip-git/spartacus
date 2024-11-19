@@ -138,6 +138,16 @@
       }
     }
   }
+  //allow wrapping for overly long ids
+  @include forFeature('a11yTextSpacingAdjustments') {
+    cx-split-view[active-view='1'] {
+      .uid .text {
+        margin-inline-end: 1rem;
+        white-space: initial;
+        word-break: break-word;
+      }
+    }
+  }
 
   // required for our ng-select components
   width: 100%;
@@ -306,6 +316,23 @@
   @include media-breakpoint-down(md) {
     cx-org-toggle-link-cell {
       padding-inline-start: calc(3rem + var(--cx-depth-level) * 1.5rem);
+    }
+  }
+
+  @include forFeature('a11yTextSpacingAdjustments') {
+    .content-wrapper ng-select.ng-select {
+      .ng-value-label {
+        overflow: initial;
+        white-space: normal;
+      }
+      div.ng-select-container {
+        max-height: unset;
+        line-height: 1.3;
+      }
+    }
+    .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+      white-space: normal;
+      overflow: initial;
     }
   }
 }

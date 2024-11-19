@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { CartAccessCodeFacade } from '@spartacus/cart/base/root';
 import { Command, CommandService, QueryService } from '@spartacus/core';
 import { Observable } from 'rxjs';
@@ -12,6 +12,10 @@ import { CartAccessCodeConnector } from '../connectors';
 
 @Injectable()
 export class CartAccessCodeService implements CartAccessCodeFacade {
+  protected queryService = inject(QueryService);
+  protected commandService = inject(CommandService);
+  protected cartAccessCodeConnector = inject(CartAccessCodeConnector);
+
   protected getCartAccessCodeCommand: Command<
     {
       userId: string;
@@ -21,12 +25,6 @@ export class CartAccessCodeService implements CartAccessCodeFacade {
   > = this.commandService.create(({ userId, cartId }) =>
     this.cartAccessCodeConnector.getCartAccessCode(userId, cartId)
   );
-
-  constructor(
-    protected queryService: QueryService,
-    protected commandService: CommandService,
-    protected cartAccessCodeConnector: CartAccessCodeConnector
-  ) {}
 
   getCartAccessCode(
     userId: string,

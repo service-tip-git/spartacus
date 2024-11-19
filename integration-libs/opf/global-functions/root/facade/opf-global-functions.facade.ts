@@ -15,7 +15,7 @@ import { GlobalFunctionsDomain, GlobalFunctionsInput } from '../model';
     facadeFactory({
       facade: OpfGlobalFunctionsFacade,
       feature: OPF_GLOBAL_FUNCTIONS_FEATURE,
-      methods: ['registerGlobalFunctions', 'removeGlobalFunctions'],
+      methods: ['registerGlobalFunctions', 'unregisterGlobalFunctions'],
     }),
 })
 export abstract class OpfGlobalFunctionsFacade {
@@ -31,5 +31,5 @@ export abstract class OpfGlobalFunctionsFacade {
   /**
    * Abstract method to remove global functions used in Hosted-Fields pattern
    */
-  abstract removeGlobalFunctions(domain: GlobalFunctionsDomain): void;
+  abstract unregisterGlobalFunctions(domain: GlobalFunctionsDomain): void;
 }

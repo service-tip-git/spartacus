@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { ActiveCartFacade } from '@spartacus/cart/base/root';
 import {
   CheckoutBillingAddressFacade,
@@ -17,7 +17,7 @@ import {
   OCC_USER_ID_ANONYMOUS,
   UserIdService,
 } from '@spartacus/core';
-import { combineLatest, Observable } from 'rxjs';
+import { Observable, combineLatest } from 'rxjs';
 import { map, switchMap, take } from 'rxjs/operators';
 import { CheckoutBillingAddressConnector } from '../connectors/checkout-billing-address/checkout-billing-address.connector';
 
@@ -25,6 +25,14 @@ import { CheckoutBillingAddressConnector } from '../connectors/checkout-billing-
 export class CheckoutBillingAddressService
   implements CheckoutBillingAddressFacade
 {
+  protected activeCartFacade = inject(ActiveCartFacade);
+  protected userIdService = inject(UserIdService);
+  protected commandService = inject(CommandService);
+  protected checkoutBillingAddressConnector = inject(
+    CheckoutBillingAddressConnector
+  );
+  protected checkoutQueryFacade = inject(CheckoutQueryFacade);
+
   protected setBillingAddressCommand = this.commandService.create<Address>(
     (address) =>
       this.checkoutPreconditions().pipe(
@@ -43,14 +51,6 @@ export class CheckoutBillingAddressService
       strategy: CommandStrategy.CancelPrevious,
     }
   );
-
-  constructor(
-    protected activeCartFacade: ActiveCartFacade,
-    protected userIdService: UserIdService,
-    protected commandService: CommandService,
-    protected checkoutBillingAddressConnector: CheckoutBillingAddressConnector,
-    protected checkoutQueryFacade: CheckoutQueryFacade
-  ) {}
 
   /**
    * Performs the necessary checkout preconditions.

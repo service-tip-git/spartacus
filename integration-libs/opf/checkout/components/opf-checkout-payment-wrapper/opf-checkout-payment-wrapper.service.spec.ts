@@ -48,11 +48,7 @@ describe('OpfCheckoutPaymentWrapperService', () => {
     ]);
     opfResourceLoaderServiceMock = jasmine.createSpyObj(
       'OpfResourceLoaderService',
-      [
-        'executeScriptFromHtml',
-        'clearAllProviderResources',
-        'loadProviderResources',
-      ]
+      ['executeScriptFromHtml', 'clearAllResources', 'loadResources']
     );
     userIdServiceMock = jasmine.createSpyObj('UserIdService', ['getUserId']);
     activeCartServiceMock = jasmine.createSpyObj('ActiveCartFacade', [
@@ -153,7 +149,7 @@ describe('OpfCheckoutPaymentWrapperService', () => {
     );
     routingServiceMock.getFullUrl.and.returnValue(mockUrl);
     opfMetadataStoreServiceMock.updateOpfMetadata.and.stub();
-    opfResourceLoaderServiceMock.loadProviderResources.and.returnValue(
+    opfResourceLoaderServiceMock.loadResources.and.returnValue(
       Promise.resolve()
     );
     spyOn(service, 'renderPaymentGateway').and.callThrough();
@@ -170,9 +166,7 @@ describe('OpfCheckoutPaymentWrapperService', () => {
         },
       });
 
-      expect(
-        opfResourceLoaderServiceMock.loadProviderResources
-      ).toHaveBeenCalledWith(
+      expect(opfResourceLoaderServiceMock.loadResources).toHaveBeenCalledWith(
         [
           {
             url: 'script.js',
@@ -233,7 +227,7 @@ describe('OpfCheckoutPaymentWrapperService', () => {
     );
     routingServiceMock.getFullUrl.and.returnValue(mockUrl);
     opfMetadataStoreServiceMock.updateOpfMetadata.and.stub();
-    opfResourceLoaderServiceMock.loadProviderResources.and.returnValue(
+    opfResourceLoaderServiceMock.loadResources.and.returnValue(
       Promise.resolve()
     );
     spyOn(service, 'renderPaymentGateway').and.callThrough();
@@ -267,7 +261,7 @@ describe('OpfCheckoutPaymentWrapperService', () => {
     );
     routingServiceMock.getFullUrl.and.returnValue(mockUrl);
     opfMetadataStoreServiceMock.updateOpfMetadata.and.stub();
-    opfResourceLoaderServiceMock.loadProviderResources.and.returnValue(
+    opfResourceLoaderServiceMock.loadResources.and.returnValue(
       Promise.resolve()
     );
     spyOn(service, 'renderPaymentGateway').and.callThrough();
@@ -380,15 +374,13 @@ describe('OpfCheckoutPaymentWrapperService', () => {
       },
     };
 
-    opfResourceLoaderServiceMock.loadProviderResources.and.returnValue(
+    opfResourceLoaderServiceMock.loadResources.and.returnValue(
       Promise.resolve()
     );
 
     service['renderPaymentGateway'](mockPaymentSessionData);
 
-    expect(
-      opfResourceLoaderServiceMock.loadProviderResources
-    ).toHaveBeenCalledWith(
+    expect(opfResourceLoaderServiceMock.loadResources).toHaveBeenCalledWith(
       [
         {
           url: 'script.js',
@@ -425,12 +417,12 @@ describe('OpfCheckoutPaymentWrapperService', () => {
     const mockOtpKey = 'otpKey';
     const mockPaymentOptionId = 123;
     const mockActiveCartId = 'cartId';
-    service['activeCartId'] = mockActiveCartId;
     routingServiceMock.getFullUrl.and.returnValue(mockUrl);
 
     activeCartServiceMock.getActiveCartId.and.returnValue(of(mockActiveCartId));
 
-    const config = service['setPaymentInitiationConfig'](
+    const config = service['getPaymentInitiationConfig'](
+      mockActiveCartId,
       mockOtpKey,
       mockPaymentOptionId
     );

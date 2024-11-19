@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import {
   ApplePaySessionVerificationRequest,
   ApplePaySessionVerificationResponse,
@@ -14,7 +14,7 @@ import { OpfQuickBuyAdapter } from './opf-quick-buy.adapter';
 
 @Injectable()
 export class OpfQuickBuyConnector {
-  constructor(protected adapter: OpfQuickBuyAdapter) {}
+  protected adapter = inject(OpfQuickBuyAdapter);
 
   public getApplePayWebSession(
     applePayWebRequest: ApplePaySessionVerificationRequest,

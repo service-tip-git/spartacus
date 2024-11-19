@@ -24,12 +24,9 @@ export class OccCheckoutBillingAddressAdapter
   implements CheckoutBillingAddressAdapter
 {
   protected logger = inject(LoggerService);
-
-  constructor(
-    protected http: HttpClient,
-    protected occEndpoints: OccEndpointsService,
-    protected converter: ConverterService
-  ) {}
+  protected http = inject(HttpClient);
+  protected occEndpoints = inject(OccEndpointsService);
+  protected converter = inject(ConverterService);
 
   public setBillingAddress(
     userId: string,

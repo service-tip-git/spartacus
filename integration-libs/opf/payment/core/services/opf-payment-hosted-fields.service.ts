@@ -4,27 +4,26 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import {
   ActiveCartFacade,
   CartAccessCodeFacade,
 } from '@spartacus/cart/base/root';
 import {
-  backOff,
   DEFAULT_AUTHORIZATION_ERROR_RETRIES_COUNT,
   GlobalMessageService,
-  isAuthorizationError,
   RoutingService,
   UserIdService,
   WindowRef,
+  backOff,
+  isAuthorizationError,
 } from '@spartacus/core';
 import { Order, OrderFacade } from '@spartacus/order/root';
 
-import { combineLatest, EMPTY, from, Observable, of, throwError } from 'rxjs';
+import { EMPTY, Observable, combineLatest, from, of, throwError } from 'rxjs';
 import { catchError, concatMap, map, switchMap, tap } from 'rxjs/operators';
 
 import {
-  opfDefaultPaymentError,
   OpfPaymentError,
   OpfPaymentErrorType,
   OpfPaymentMerchantCallback,
@@ -36,6 +35,7 @@ import {
   OpfPaymentSubmitRequest,
   OpfPaymentSubmitResponse,
   OpfPaymentSubmitStatus,
+  opfDefaultPaymentError,
 } from '@spartacus/opf/payment/root';
 import { OpfPaymentConnector } from '../connectors/opf-payment.connector';
 import { OpfPaymentErrorHandlerService } from '../services/opf-payment-error-handler.service';
@@ -44,17 +44,17 @@ import { getBrowserInfo } from '../utils/opf-payment-utils';
 
 @Injectable()
 export class OpfPaymentHostedFieldsService {
-  constructor(
-    protected opfPaymentConnector: OpfPaymentConnector,
-    protected winRef: WindowRef,
-    protected cartAccessCodeFacade: CartAccessCodeFacade,
-    protected activeCartFacade: ActiveCartFacade,
-    protected userIdService: UserIdService,
-    protected routingService: RoutingService,
-    protected orderFacade: OrderFacade,
-    protected globalMessageService: GlobalMessageService,
-    protected opfPaymentErrorHandlerService: OpfPaymentErrorHandlerService
-  ) {}
+  protected opfPaymentConnector = inject(OpfPaymentConnector);
+  protected winRef = inject(WindowRef);
+  protected cartAccessCodeFacade = inject(CartAccessCodeFacade);
+  protected activeCartFacade = inject(ActiveCartFacade);
+  protected userIdService = inject(UserIdService);
+  protected routingService = inject(RoutingService);
+  protected orderFacade = inject(OrderFacade);
+  protected globalMessageService = inject(GlobalMessageService);
+  protected opfPaymentErrorHandlerService = inject(
+    OpfPaymentErrorHandlerService
+  );
 
   submitPayment(submitInput: OpfPaymentSubmitInput): Observable<boolean> {
     const {
@@ -160,25 +160,25 @@ export class OpfPaymentHostedFieldsService {
 
   protected paymentResponseHandler(
     response: OpfPaymentSubmitResponse | OpfPaymentSubmitCompleteResponse,
-    [submitSuccess, submitPending, submitFailure]: [
-      OpfPaymentMerchantCallback,
-      OpfPaymentMerchantCallback,
-      OpfPaymentMerchantCallback,
-    ]
+    callbackArray: {
+      onSuccess: OpfPaymentMerchantCallback;
+      onPending: OpfPaymentMerchantCallback;
+      onFailure: OpfPaymentMerchantCallback;
+    }
   ): Observable<Order> {
     if (
       response.status === OpfPaymentSubmitStatus.ACCEPTED ||
       response.status === OpfPaymentSubmitStatus.DELAYED
     ) {
-      return from(Promise.resolve(submitSuccess(response))).pipe(
+      return from(Promise.resolve(callbackArray.onSuccess(response))).pipe(
         concatMap(() => this.orderFacade.placePaymentAuthorizedOrder(true))
       );
     } else if (response.status === OpfPaymentSubmitStatus.PENDING) {
-      return from(Promise.resolve(submitPending(response))).pipe(
+      return from(Promise.resolve(callbackArray.onPending(response))).pipe(
         concatMap(() => EMPTY)
       );
     } else if (response.status === OpfPaymentSubmitStatus.REJECTED) {
-      return from(Promise.resolve(submitFailure(response))).pipe(
+      return from(Promise.resolve(callbackArray.onFailure(response))).pipe(
         concatMap(() =>
           throwError({
             ...opfDefaultPaymentError,
@@ -187,7 +187,7 @@ export class OpfPaymentHostedFieldsService {
         )
       );
     } else {
-      return from(Promise.resolve(submitFailure(response))).pipe(
+      return from(Promise.resolve(callbackArray.onFailure(response))).pipe(
         concatMap(() =>
           throwError({
             ...opfDefaultPaymentError,

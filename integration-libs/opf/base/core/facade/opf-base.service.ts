@@ -4,15 +4,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
+import { CommandService, QueryService, QueryState } from '@spartacus/core';
 import {
-  CommandService,
-  Query,
-  QueryService,
-  QueryState,
-} from '@spartacus/core';
-import {
-  OpfActiveConfiguration,
+  OpfActiveConfigurationsQuery,
+  OpfActiveConfigurationsResponse,
   OpfBaseFacade,
 } from '@spartacus/opf/base/root';
 import { Observable } from 'rxjs';
@@ -20,20 +16,20 @@ import { OpfBaseConnector } from '../connectors/opf-base.connector';
 
 @Injectable()
 export class OpfBaseService implements OpfBaseFacade {
-  protected activeConfigurationsQuery: Query<OpfActiveConfiguration[]> =
-    this.queryService.create<OpfActiveConfiguration[]>(() =>
-      this.opfBaseConnector.getActiveConfigurations()
+  protected queryService = inject(QueryService);
+  protected commandService = inject(CommandService);
+  protected opfBaseConnector = inject(OpfBaseConnector);
+
+  protected activeConfigurationsQuery = (
+    query?: OpfActiveConfigurationsQuery
+  ) =>
+    this.queryService.create<OpfActiveConfigurationsResponse>(() =>
+      this.opfBaseConnector.getActiveConfigurations(query)
     );
 
-  constructor(
-    protected queryService: QueryService,
-    protected commandService: CommandService,
-    protected opfBaseConnector: OpfBaseConnector
-  ) {}
-
-  getActiveConfigurationsState(): Observable<
-    QueryState<OpfActiveConfiguration[] | undefined>
-  > {
-    return this.activeConfigurationsQuery.getState();
+  getActiveConfigurationsState(
+    query?: OpfActiveConfigurationsQuery
+  ): Observable<QueryState<OpfActiveConfigurationsResponse | undefined>> {
+    return this.activeConfigurationsQuery(query).getState();
   }
 }

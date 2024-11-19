@@ -7,11 +7,12 @@ import { TestBed } from '@angular/core/testing';
 import { OpfMetadataModel } from '../model';
 import { OpfMetadataStoreService } from './opf-metadata-store.service';
 
-const initialState = {
+const initialState: OpfMetadataModel = {
   termsAndConditionsChecked: false,
   selectedPaymentOptionId: undefined,
   isPaymentInProgress: false,
   paymentSessionId: undefined,
+  isTermsAndConditionsAlertClosed: false,
 };
 
 const state: OpfMetadataModel = {
@@ -19,6 +20,7 @@ const state: OpfMetadataModel = {
   selectedPaymentOptionId: 111,
   termsAndConditionsChecked: true,
   paymentSessionId: '111111',
+  isTermsAndConditionsAlertClosed: false,
 };
 
 describe('OpfMetadataStoreService', () => {
@@ -71,11 +73,12 @@ describe('OpfMetadataStoreService', () => {
   });
 
   it('should clear OpfMetadataStoreService and set it back to the initial state', () => {
-    const state = {
+    const state: OpfMetadataModel = {
       isPaymentInProgress: true,
       termsAndConditionsChecked: true,
       selectedPaymentOptionId: 111,
       paymentSessionId: '111111',
+      isTermsAndConditionsAlertClosed: false,
     };
 
     service.opfMetadataState.next(state);

@@ -15,11 +15,20 @@ import { OpfEndpointsService } from '@spartacus/opf/base/core';
 import {
   OPF_CC_PUBLIC_KEY_HEADER,
   OpfActiveConfiguration,
+  OpfActiveConfigurationsPagination,
+  OpfActiveConfigurationsResponse,
   OpfConfig,
   OpfPaymentProviderType,
 } from '@spartacus/opf/base/root';
 import { map } from 'rxjs';
 import { OpfApiBaseAdapter } from './opf-api-base.adapter';
+
+const mockActiveConfigurationsPagination: OpfActiveConfigurationsPagination = {
+  totalPages: 1,
+  number: 1,
+  totalElements: 2,
+  size: 2,
+};
 
 const mockActiveConfigurations: OpfActiveConfiguration[] = [
   {
@@ -39,6 +48,11 @@ const mockActiveConfigurations: OpfActiveConfiguration[] = [
     acquirerCountryCode: 'CA',
   },
 ];
+
+const mockActiveConfigurationsResponse: OpfActiveConfigurationsResponse = {
+  value: mockActiveConfigurations,
+  page: mockActiveConfigurationsPagination,
+};
 
 const mockErrorResponse = new HttpErrorResponse({
   error: 'test 404 error',
@@ -92,7 +106,7 @@ describe('OpfApiBaseAdapter', () => {
     logger = TestBed.inject(LoggerService);
 
     spyOn(converter, 'pipeable').and.returnValue(
-      map(() => mockActiveConfigurations)
+      map(() => mockActiveConfigurationsResponse)
     );
     spyOn(logger, 'error').and.callThrough();
   });
@@ -109,7 +123,7 @@ describe('OpfApiBaseAdapter', () => {
 
   it('should fetch active configurations successfully', () => {
     service.getActiveConfigurations().subscribe((result) => {
-      expect(result).toEqual(mockActiveConfigurations);
+      expect(result).toEqual(mockActiveConfigurationsResponse);
     });
 
     const req = httpMock.expectOne('test-url/getActiveConfigurations');

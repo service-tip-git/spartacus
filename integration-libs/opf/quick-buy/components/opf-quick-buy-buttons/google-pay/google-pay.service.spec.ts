@@ -54,7 +54,7 @@ describe('OpfGooglePayService', () => {
   beforeEach(() => {
     mockResourceLoaderService = jasmine.createSpyObj(
       'OpfResourceLoaderService',
-      ['loadProviderResources']
+      ['loadResources']
     );
     mockCurrentProductService = jasmine.createSpyObj('CurrentProductService', [
       'getProduct',
@@ -201,25 +201,23 @@ describe('OpfGooglePayService', () => {
     });
   });
 
-  describe('loadProviderResources', () => {
+  describe('loadResources', () => {
     it('should load the Google Pay JS API', async () => {
-      mockResourceLoaderService.loadProviderResources.and.returnValue(
+      mockResourceLoaderService.loadResources.and.returnValue(
         Promise.resolve()
       );
 
-      await service.loadProviderResources();
+      await service.loadResources();
 
-      expect(
-        mockResourceLoaderService.loadProviderResources
-      ).toHaveBeenCalled();
+      expect(mockResourceLoaderService.loadResources).toHaveBeenCalled();
     });
 
     it('should handle errors when loading the Google Pay JS API', async () => {
-      mockResourceLoaderService.loadProviderResources.and.returnValue(
+      mockResourceLoaderService.loadResources.and.returnValue(
         Promise.reject(new Error('Load failed'))
       );
 
-      await expectAsync(service.loadProviderResources()).toBeRejectedWithError(
+      await expectAsync(service.loadResources()).toBeRejectedWithError(
         'Load failed'
       );
     });
@@ -660,10 +658,14 @@ describe('OpfGooglePayService', () => {
 
             expect(result).toBeDefined();
             expect(mockPaymentFacade.submitPayment).toHaveBeenCalled();
-            expect(submitPaymentArgs.callbackArray.length).toBe(3);
-            submitPaymentArgs.callbackArray.forEach((callback) => {
-              expect(typeof callback).toBe('function');
-            });
+            expect(Object.values(submitPaymentArgs.callbackArray).length).toBe(
+              3
+            );
+            Object.values(submitPaymentArgs.callbackArray).forEach(
+              (callback) => {
+                expect(typeof callback).toBe('function');
+              }
+            );
             expect(submitPaymentArgs.encryptedToken).toBe(encodedMockToken);
             expect(submitPaymentArgs.paymentMethod).toBe(
               OpfQuickBuyProviderType.GOOGLE_PAY

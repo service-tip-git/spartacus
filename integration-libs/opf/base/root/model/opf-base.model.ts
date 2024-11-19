@@ -4,6 +4,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+export interface OpfActiveConfigurationsResponse {
+  value?: OpfActiveConfiguration[];
+  page?: OpfActiveConfigurationsPagination;
+}
+
 export interface OpfActiveConfiguration {
   description?: string;
   id?: number;
@@ -14,6 +19,23 @@ export interface OpfActiveConfiguration {
   logoUrl?: string;
 }
 
+export interface OpfActiveConfigurationsPagination {
+  number?: number;
+  size?: number;
+  totalElements?: number;
+  totalPages?: number;
+}
+
+export interface OpfActiveConfigurationsQuery {
+  /**
+   * The page number to be retrieved based on the total number of pages.
+   */
+  pageNumber?: number;
+  /**
+   * The number of records retrieved at one time.
+   */
+  pageSize?: number;
+}
 export interface OpfDynamicScript {
   cssUrls?: OpfDynamicScriptResource[];
   jsUrls?: OpfDynamicScriptResource[];

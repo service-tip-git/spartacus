@@ -4,22 +4,39 @@ import {
   GlobalMessageService,
   GlobalMessageType,
   I18nTestingModule,
+  PaginationModel,
   QueryState,
   Translatable,
 } from '@spartacus/core';
 import {
   OpfActiveConfiguration,
+  OpfActiveConfigurationsResponse,
   OpfBaseFacade,
   OpfMetadataModel,
   OpfMetadataStoreService,
   OpfPaymentProviderType,
 } from '@spartacus/opf/base/root';
 
-import { DebugElement } from '@angular/core';
+import {
+  Component,
+  DebugElement,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { OpfCheckoutTermsAndConditionsAlertModule } from '../opf-checkout-terms-and-conditions-alert';
 import { OpfCheckoutPaymentsComponent } from './opf-checkout-payments.component';
+
+@Component({
+  template: '',
+  selector: 'cx-pagination',
+})
+class MockPaginationComponent {
+  @Input() pagination: PaginationModel;
+  @Output() viewPageEvent = new EventEmitter<string>();
+}
 
 const mockActiveConfigurations: OpfActiveConfiguration[] = [
   {
@@ -41,18 +58,20 @@ const mockActiveConfigurations: OpfActiveConfiguration[] = [
 ];
 class MockOpfBaseFacade implements Partial<OpfBaseFacade> {
   getActiveConfigurationsState(): Observable<
-    QueryState<OpfActiveConfiguration[] | undefined>
+    QueryState<OpfActiveConfigurationsResponse | undefined>
   > {
     return activeConfigurationsState$.asObservable();
   }
 }
 
-const activeConfigurationsState$ = new BehaviorSubject<
-  QueryState<OpfActiveConfiguration[] | undefined>
+let activeConfigurationsState$ = new BehaviorSubject<
+  QueryState<OpfActiveConfigurationsResponse | undefined>
 >({
   loading: false,
   error: false,
-  data: [],
+  data: {
+    value: [],
+  },
 });
 
 class MockGlobalMessageService implements Partial<GlobalMessageService> {
@@ -69,6 +88,7 @@ const mockOpfMetadata: OpfMetadataModel = {
   termsAndConditionsChecked: true,
   defaultSelectedPaymentOptionId: 1,
   paymentSessionId: '111111',
+  isTermsAndConditionsAlertClosed: false,
 };
 
 describe('OpfCheckoutPaymentsComponent', () => {
@@ -89,7 +109,7 @@ describe('OpfCheckoutPaymentsComponent', () => {
     );
     await TestBed.configureTestingModule({
       imports: [I18nTestingModule, OpfCheckoutTermsAndConditionsAlertModule],
-      declarations: [OpfCheckoutPaymentsComponent],
+      declarations: [OpfCheckoutPaymentsComponent, MockPaginationComponent],
       providers: [
         {
           provide: OpfBaseFacade,
@@ -134,7 +154,9 @@ describe('OpfCheckoutPaymentsComponent', () => {
     activeConfigurationsState$.next({
       loading: false,
       error: false,
-      data: [],
+      data: {
+        value: [],
+      },
     });
 
     fixture.detectChanges();
@@ -149,7 +171,9 @@ describe('OpfCheckoutPaymentsComponent', () => {
     activeConfigurationsState$.next({
       error: new Error('Request failed'),
       loading: false,
-      data: undefined,
+      data: {
+        value: undefined,
+      },
     });
 
     fixture.detectChanges();
@@ -170,6 +194,7 @@ describe('OpfCheckoutPaymentsComponent', () => {
         termsAndConditionsChecked: true,
         defaultSelectedPaymentOptionId,
         paymentSessionId: '111111',
+        isTermsAndConditionsAlertClosed: false,
       })
     );
 
@@ -182,7 +207,9 @@ describe('OpfCheckoutPaymentsComponent', () => {
     activeConfigurationsState$.next({
       loading: false,
       error: false,
-      data: mockActiveConfigurations,
+      data: {
+        value: mockActiveConfigurations,
+      },
     });
 
     fixture.detectChanges();
@@ -206,5 +233,31 @@ describe('OpfCheckoutPaymentsComponent', () => {
         expect(logoElement).toBeFalsy();
       }
     });
+  });
+
+  it('should render pagination component', () => {
+    activeConfigurationsState$ = new BehaviorSubject<
+      QueryState<OpfActiveConfigurationsResponse | undefined>
+    >({
+      loading: false,
+      error: false,
+      data: {
+        value: mockActiveConfigurations,
+        page: {
+          size: 1,
+          totalPages: mockActiveConfigurations.length,
+          totalElements: mockActiveConfigurations.length,
+          number: 1,
+        },
+      },
+    });
+
+    fixture.detectChanges();
+
+    const paginationElement = el.query(
+      By.css('.cx-payment-options-list-pagination')
+    );
+
+    expect(paginationElement).toBeTruthy();
   });
 });
