@@ -208,13 +208,12 @@ export class OpfPaymentVerificationService {
   }
 
   runHostedFieldsPattern(
-    domain: GlobalFunctionsDomain,
     paymentSessionId: string,
     vcr: ViewContainerRef,
     paramsMap: Array<OpfKeyValueMap>
   ): Observable<boolean> {
     this.globalFunctionsService.registerGlobalFunctions({
-      domain,
+      domain: GlobalFunctionsDomain.REDIRECT,
       paymentSessionId,
       vcr,
       paramsMap,
