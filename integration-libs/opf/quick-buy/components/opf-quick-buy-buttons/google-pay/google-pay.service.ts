@@ -361,7 +361,11 @@ export class OpfGooglePayService {
               return this.opfPaymentFacade.submitPayment({
                 additionalData: [],
                 paymentSessionId: '',
-                callbackArray: [() => {}, () => {}, () => {}],
+                callbackArray: {
+                  onSuccess: () => {},
+                  onPending: () => {},
+                  onFailure: () => {},
+                },
                 paymentMethod: OpfQuickBuyProviderType.GOOGLE_PAY as any,
                 encryptedToken,
               });

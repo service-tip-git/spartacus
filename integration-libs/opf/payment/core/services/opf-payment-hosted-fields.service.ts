@@ -10,21 +10,20 @@ import {
   CartAccessCodeFacade,
 } from '@spartacus/cart/base/root';
 import {
-  backOff,
   DEFAULT_AUTHORIZATION_ERROR_RETRIES_COUNT,
   GlobalMessageService,
-  isAuthorizationError,
   RoutingService,
   UserIdService,
   WindowRef,
+  backOff,
+  isAuthorizationError,
 } from '@spartacus/core';
 import { Order, OrderFacade } from '@spartacus/order/root';
 
-import { combineLatest, EMPTY, from, Observable, of, throwError } from 'rxjs';
+import { EMPTY, Observable, combineLatest, from, of, throwError } from 'rxjs';
 import { catchError, concatMap, map, switchMap, tap } from 'rxjs/operators';
 
 import {
-  opfDefaultPaymentError,
   OpfPaymentError,
   OpfPaymentErrorType,
   OpfPaymentMerchantCallback,
@@ -36,6 +35,7 @@ import {
   OpfPaymentSubmitRequest,
   OpfPaymentSubmitResponse,
   OpfPaymentSubmitStatus,
+  opfDefaultPaymentError,
 } from '@spartacus/opf/payment/root';
 import { OpfPaymentConnector } from '../connectors/opf-payment.connector';
 import { OpfPaymentErrorHandlerService } from '../services/opf-payment-error-handler.service';
@@ -160,25 +160,25 @@ export class OpfPaymentHostedFieldsService {
 
   protected paymentResponseHandler(
     response: OpfPaymentSubmitResponse | OpfPaymentSubmitCompleteResponse,
-    [submitSuccess, submitPending, submitFailure]: [
-      OpfPaymentMerchantCallback,
-      OpfPaymentMerchantCallback,
-      OpfPaymentMerchantCallback,
-    ]
+    callbackArray: {
+      onSuccess: OpfPaymentMerchantCallback;
+      onPending: OpfPaymentMerchantCallback;
+      onFailure: OpfPaymentMerchantCallback;
+    }
   ): Observable<Order> {
     if (
       response.status === OpfPaymentSubmitStatus.ACCEPTED ||
       response.status === OpfPaymentSubmitStatus.DELAYED
     ) {
-      return from(Promise.resolve(submitSuccess(response))).pipe(
+      return from(Promise.resolve(callbackArray.onSuccess(response))).pipe(
         concatMap(() => this.orderFacade.placePaymentAuthorizedOrder(true))
       );
     } else if (response.status === OpfPaymentSubmitStatus.PENDING) {
-      return from(Promise.resolve(submitPending(response))).pipe(
+      return from(Promise.resolve(callbackArray.onPending(response))).pipe(
         concatMap(() => EMPTY)
       );
     } else if (response.status === OpfPaymentSubmitStatus.REJECTED) {
-      return from(Promise.resolve(submitFailure(response))).pipe(
+      return from(Promise.resolve(callbackArray.onFailure(response))).pipe(
         concatMap(() =>
           throwError({
             ...opfDefaultPaymentError,
@@ -187,7 +187,7 @@ export class OpfPaymentHostedFieldsService {
         )
       );
     } else {
-      return from(Promise.resolve(submitFailure(response))).pipe(
+      return from(Promise.resolve(callbackArray.onFailure(response))).pipe(
         concatMap(() =>
           throwError({
             ...opfDefaultPaymentError,

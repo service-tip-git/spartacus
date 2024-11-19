@@ -436,7 +436,11 @@ export class ApplePayService {
         return this.opfPaymentFacade.submitPayment({
           additionalData: [],
           paymentSessionId: '',
-          callbackArray: [() => {}, () => {}, () => {}],
+          callbackArray: {
+            onSuccess: () => {},
+            onPending: () => {},
+            onFailure: () => {},
+          },
           paymentMethod: OpfQuickBuyProviderType.APPLE_PAY as any,
           encryptedToken,
         });

@@ -52,7 +52,11 @@ const mockSubmitCompleteInput: OpfPaymentSubmitCompleteInput = {
   additionalData: [{ key: 'key', value: 'value' }],
   paymentSessionId: 'sessionId',
   returnPath: 'checkout',
-  callbackArray: [() => {}, () => {}, () => {}],
+  callbackArray: {
+    onSuccess: () => {},
+    onPending: () => {},
+    onFailure: () => {},
+  },
 };
 
 describe('OpfPaymentService', () => {
