@@ -260,8 +260,8 @@ export class OpfCheckoutPaymentWrapperService {
     return {
       otpKey,
       config: {
-        configurationId: String(paymentOptionId),
         cartId,
+        configurationId: String(paymentOptionId),
         resultURL: this.routingService.getFullUrl({
           cxRoute: 'paymentVerificationResult',
         }),
