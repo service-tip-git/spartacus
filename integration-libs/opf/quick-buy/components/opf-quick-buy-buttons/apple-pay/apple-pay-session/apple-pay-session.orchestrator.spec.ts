@@ -178,14 +178,14 @@ describe('ApplePaySessionOrchestrator', () => {
   };
   const mockConfig: ApplePaySessionConfig = {
     request: mockRequest,
-    validateMerchant: () => of({}),
-    paymentMethodSelected: () =>
+    onValidateMerchant: () => of({}),
+    onPaymentMethodSelected: () =>
       of({} as ApplePayJS.ApplePayPaymentMethodUpdate),
-    shippingContactSelected: () =>
+    onShippingContactSelected: () =>
       of({} as ApplePayJS.ApplePayShippingContactUpdate),
-    shippingMethodSelected: () =>
+    onShippingMethodSelected: () =>
       of({} as ApplePayJS.ApplePayShippingMethodUpdate),
-    paymentAuthorized: () =>
+    onPaymentAuthorized: () =>
       of({} as ApplePayJS.ApplePayPaymentAuthorizationResult),
   };
 
@@ -313,11 +313,13 @@ describe('ApplePaySessionOrchestrator', () => {
     beforeEach(() => {
       configuration = {
         request: mockRequest,
-        paymentAuthorized: jasmine.createSpy('paymentAuthorized'),
-        validateMerchant: jasmine.createSpy('validateMerchant'),
-        shippingContactSelected: jasmine.createSpy('shippingContactSelected'),
-        paymentMethodSelected: jasmine.createSpy('paymentMethodSelected'),
-        shippingMethodSelected: jasmine.createSpy('shippingMethodSelected'),
+        onPaymentAuthorized: jasmine.createSpy('onPaymentAuthorized'),
+        onValidateMerchant: jasmine.createSpy('onValidateMerchant'),
+        onShippingContactSelected: jasmine.createSpy(
+          'onShippingContactSelected'
+        ),
+        onPaymentMethodSelected: jasmine.createSpy('onPaymentMethodSelected'),
+        onShippingMethodSelected: jasmine.createSpy('onShippingMethodSelected'),
       };
 
       paymentAuthorizedReturnValue = { status: 0 };
@@ -332,19 +334,19 @@ describe('ApplePaySessionOrchestrator', () => {
         newTotal: { amount: '5.00', label: 'Shipping' },
       };
 
-      (configuration.paymentAuthorized as jasmine.Spy).and.returnValue(
+      (configuration.onPaymentAuthorized as jasmine.Spy).and.returnValue(
         of(paymentAuthorizedReturnValue)
       );
-      (configuration.validateMerchant as jasmine.Spy).and.returnValue(
+      (configuration.onValidateMerchant as jasmine.Spy).and.returnValue(
         of(validateMerchantReturnValue)
       );
-      (configuration.shippingContactSelected as jasmine.Spy).and.returnValue(
+      (configuration.onShippingContactSelected as jasmine.Spy).and.returnValue(
         of(shippingContactSelectedReturnValue)
       );
-      (configuration.paymentMethodSelected as jasmine.Spy).and.returnValue(
+      (configuration.onPaymentMethodSelected as jasmine.Spy).and.returnValue(
         of(paymentMethodSelectedReturnValue)
       );
-      (configuration.shippingMethodSelected as jasmine.Spy).and.returnValue(
+      (configuration.onShippingMethodSelected as jasmine.Spy).and.returnValue(
         of(shippingMethodSelectedReturnValue)
       );
       mockApplePaySessionFactory.createSession.and.returnValue(
@@ -374,7 +376,7 @@ describe('ApplePaySessionOrchestrator', () => {
 
       mockApplePaySession._stubMockEvent('validatemerchant', event);
       expect(actualComplete).toBe(false);
-      expect(configuration.validateMerchant).toHaveBeenCalledWith(event);
+      expect(configuration.onValidateMerchant).toHaveBeenCalledWith(event);
       expect(
         mockApplePaySession.completeMerchantValidation
       ).toHaveBeenCalledWith(validateMerchantReturnValue);
@@ -387,7 +389,9 @@ describe('ApplePaySessionOrchestrator', () => {
 
       mockApplePaySession._stubMockEvent('shippingcontactselected', event);
 
-      expect(configuration.shippingContactSelected).toHaveBeenCalledWith(event);
+      expect(configuration.onShippingContactSelected).toHaveBeenCalledWith(
+        event
+      );
       expect(
         mockApplePaySession.completeShippingContactSelection
       ).toHaveBeenCalledWith(shippingContactSelectedReturnValue);
@@ -400,7 +404,9 @@ describe('ApplePaySessionOrchestrator', () => {
 
       mockApplePaySession._stubMockEvent('shippingmethodselected', event);
 
-      expect(configuration.shippingMethodSelected).toHaveBeenCalledWith(event);
+      expect(configuration.onShippingMethodSelected).toHaveBeenCalledWith(
+        event
+      );
       expect(
         mockApplePaySession.completeShippingMethodSelection
       ).toHaveBeenCalledWith(shippingMethodSelectedReturnValue);
@@ -413,7 +419,7 @@ describe('ApplePaySessionOrchestrator', () => {
 
       mockApplePaySession._stubMockEvent('paymentmethodselected', event);
 
-      expect(configuration.paymentMethodSelected).toHaveBeenCalledWith(event);
+      expect(configuration.onPaymentMethodSelected).toHaveBeenCalledWith(event);
       expect(
         mockApplePaySession.completePaymentMethodSelection
       ).toHaveBeenCalledWith(paymentMethodSelectedReturnValue);
@@ -425,7 +431,7 @@ describe('ApplePaySessionOrchestrator', () => {
       };
       mockApplePaySession._stubMockEvent('paymentauthorized', event);
 
-      expect(configuration.paymentAuthorized).toHaveBeenCalledWith(event);
+      expect(configuration.onPaymentAuthorized).toHaveBeenCalledWith(event);
       expect(mockApplePaySession.completePayment).toHaveBeenCalledWith(
         paymentAuthorizedReturnValue
       );
@@ -436,13 +442,13 @@ describe('ApplePaySessionOrchestrator', () => {
         const event = <ApplePayJS.ApplePayValidateMerchantEvent>{
           validationURL: '',
         };
-        (configuration.validateMerchant as jasmine.Spy).and.returnValue(
+        (configuration.onValidateMerchant as jasmine.Spy).and.returnValue(
           throwError(new Error('Validation Error'))
         );
 
         mockApplePaySession._stubMockEvent('validatemerchant', event);
 
-        expect(configuration.validateMerchant).toHaveBeenCalledWith(event);
+        expect(configuration.onValidateMerchant).toHaveBeenCalledWith(event);
         expect(
           mockApplePaySession.completeMerchantValidation
         ).not.toHaveBeenCalled();
@@ -458,22 +464,22 @@ describe('ApplePaySessionOrchestrator', () => {
           status: 0,
           errors: [{ message: 'paymentauthorized failed' }],
         };
-        (configuration.paymentAuthorized as jasmine.Spy).and.returnValue(
+        (configuration.onPaymentAuthorized as jasmine.Spy).and.returnValue(
           of(paymentAuthorizedReturnValue)
         );
 
         mockApplePaySession._stubMockEvent('paymentauthorized', event);
 
-        expect(configuration.paymentAuthorized).toHaveBeenCalledWith(event);
+        expect(configuration.onPaymentAuthorized).toHaveBeenCalledWith(event);
         expect(mockApplePaySession.abort).toHaveBeenCalled();
       });
 
       [
-        ['paymentAuthorized', 'paymentauthorized'],
-        ['paymentMethodSelected', 'paymentmethodselected'],
-        ['shippingContactSelected', 'shippingcontactselected'],
-        ['shippingMethodSelected', 'shippingmethodselected'],
-        ['validateMerchant', 'validatemerchant'],
+        ['onPaymentAuthorized', 'paymentauthorized'],
+        ['onPaymentMethodSelected', 'paymentmethodselected'],
+        ['onShippingContactSelected', 'shippingcontactselected'],
+        ['onShippingMethodSelected', 'shippingmethodselected'],
+        ['onValidateMerchant', 'validatemerchant'],
       ].forEach(([callback, eventType]) => {
         it(`should abort the session on an error in ${callback}`, () => {
           const event = {};

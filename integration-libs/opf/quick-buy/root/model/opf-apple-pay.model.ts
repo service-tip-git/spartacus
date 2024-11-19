@@ -43,11 +43,11 @@ export interface ApplePayTransactionInput {
  */
 export interface ApplePaySessionConfig {
   request: any;
-  validateMerchant: (event: any) => Observable<any>;
-  shippingContactSelected: (event: any) => Observable<any>;
-  paymentMethodSelected: (event: any) => Observable<any>;
-  shippingMethodSelected: (event: any) => Observable<any>;
-  paymentAuthorized: (event: any) => Observable<any>;
+  onValidateMerchant: (event: any) => Observable<any>;
+  onShippingContactSelected: (event: any) => Observable<any>;
+  onPaymentMethodSelected: (event: any) => Observable<any>;
+  onShippingMethodSelected: (event: any) => Observable<any>;
+  onPaymentAuthorized: (event: any) => Observable<any>;
 }
 
 export enum ApplePayEvent {

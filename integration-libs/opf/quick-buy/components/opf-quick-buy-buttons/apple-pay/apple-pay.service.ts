@@ -124,14 +124,14 @@ export class ApplePayService {
       switchMap((request: ApplePayJS.ApplePayPaymentRequest) => {
         return this.applePaySessionOrchestrator.start({
           request,
-          validateMerchant: (event) => this.handleValidation(event),
-          shippingContactSelected: (event) =>
+          onValidateMerchant: (event) => this.handleValidation(event),
+          onShippingContactSelected: (event) =>
             this.handleShippingContactSelected(event),
-          paymentMethodSelected: (event) =>
+          onPaymentMethodSelected: (event) =>
             this.handlePaymentMethodSelected(event),
-          shippingMethodSelected: (event) =>
+          onShippingMethodSelected: (event) =>
             this.handleShippingMethodSelected(event),
-          paymentAuthorized: (event) => this.handlePaymentAuthorized(event),
+          onPaymentAuthorized: (event) => this.handlePaymentAuthorized(event),
         });
       }),
       take(1),
