@@ -5,10 +5,10 @@
  */
 
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { ICON_TYPE } from '../icon/icon.model';
+import { SiteTheme, useFeatureStyles } from '@spartacus/core';
 import { Observable } from 'rxjs';
+import { ICON_TYPE } from '../icon/icon.model';
 import { SiteThemeSwitcherComponentService } from './site-theme-switcher.component.service';
-import { SiteTheme } from '@spartacus/core';
 
 /**
  * Component for switching themes.
@@ -20,6 +20,10 @@ import { SiteTheme } from '@spartacus/core';
 })
 export class SiteThemeSwitcherComponent {
   iconTypes = ICON_TYPE;
+
+  constructor() {
+    useFeatureStyles('a11yShowDownArrowOnFocusedSelectMenu');
+  }
 
   protected themeSwitcherComponentService = inject(
     SiteThemeSwitcherComponentService

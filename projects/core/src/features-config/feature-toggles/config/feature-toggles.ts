@@ -322,6 +322,13 @@ export interface FeatureTogglesInterface {
   a11yCartItemsLinksStyles?: boolean;
 
   /**
+   * When set to `true`, external links in `StoreFinderListItemComponent`
+   * adopt a more link-like style, appearing more like links instead of buttons. This is semantically more correct since they open content in a new window,
+   * providing a more intuitive user experience.
+   */
+  a11yStyleExternalLinksAsLinks?: boolean;
+
+  /**
    * If enabled, the "Select this address/payment" button
    * will not be displayed in `CheckoutPaymentMethodComponent`
    * and `CheckoutDeliveryAddressComponent` when the address
@@ -668,6 +675,16 @@ export interface FeatureTogglesInterface {
   a11yDeleteButton2First?: boolean;
 
   /**
+   * In `CustomerListComponent`, `OrderApprovalListComponent`, and `ConfiguratorAttriuteSingleSelectionBundleDropdownComponent`, show label of every `ng-select` and `select`.
+   */
+  a11yShowLabelOfSelect?: boolean;
+
+  /**
+   * In `SiteContextSelectComponent` and `SiteThemeSwitcherComponent`, update style of caret.
+   */
+  a11yShowDownArrowOnFocusedSelectMenu?: boolean;
+
+  /**
    * Fixes text formatting issues while a11y text spacing is enabled.
    * Affects: ListComponent, CSAgentLoginFormComponent
    */
@@ -774,7 +791,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   shouldHideAddToCartForUnpurchasableProducts: false,
   useExtractedBillingAddressComponent: false,
   showBillingAddressInDigitalPayments: false,
-  showDownloadProposalButton: false,
+  showDownloadProposalButton: true,
   showPromotionsInPDP: true,
   searchBoxV2: false,
   recentSearches: true,
@@ -815,6 +832,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yFacetKeyboardNavigation: true,
   a11yUnitsListKeyboardControls: true,
   a11yCartItemsLinksStyles: true,
+  a11yStyleExternalLinksAsLinks: false,
   a11ySearchboxLabel: false,
   a11yHideSelectBtnForSelectedAddrOrPayment: true,
   a11ySelectLabelWithContextForSelectedAddrOrPayment: false,
@@ -873,6 +891,8 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yApprovalProcessWithNoClearable: false,
   a11yPostRegisterSuccessMessage: false,
   a11yDeleteButton2First: false,
+  a11yShowLabelOfSelect: false,
+  a11yShowDownArrowOnFocusedSelectMenu: false,
   a11yTextSpacingAdjustments: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
