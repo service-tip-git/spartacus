@@ -25,16 +25,20 @@ export class OpfResourceLoaderService {
 
   protected embedStyles(embedOptions: {
     src: string;
+    sri?: string;
     callback?: EventListener;
     errorCallback: EventListener;
   }): void {
-    const { src, callback, errorCallback } = embedOptions;
+    const { src, sri, callback, errorCallback } = embedOptions;
 
     const link: HTMLLinkElement = this.document.createElement('link');
     link.href = src;
     link.rel = 'stylesheet';
     link.type = 'text/css';
     link.setAttribute(this.OPF_RESOURCE_ATTRIBUTE_KEY, 'true');
+    if (sri) {
+      link.integrity = sri;
+    }
 
     if (callback) {
       link.addEventListener('load', callback);
@@ -68,6 +72,10 @@ export class OpfResourceLoaderService {
         [this.OPF_RESOURCE_ATTRIBUTE_KEY]: true,
       };
 
+      if (resource?.sri) {
+        attributes['integrity'] = resource.sri;
+      }
+
       if (resource.attributes) {
         resource.attributes.forEach((attribute) => {
           attributes[attribute.key] = attribute.value;
@@ -98,6 +106,7 @@ export class OpfResourceLoaderService {
       if (resource.url && !this.hasStyles(resource.url)) {
         this.embedStyles({
           src: resource.url,
+          sri: resource?.sri,
           callback: () => resolve(),
           errorCallback: () => reject(),
         });
