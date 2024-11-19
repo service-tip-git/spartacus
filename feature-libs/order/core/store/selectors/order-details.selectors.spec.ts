@@ -5,6 +5,7 @@ import { OrderActions } from '../actions';
 import { ORDER_FEATURE, StateWithOrder } from '../order-state';
 import * as fromReducers from '../reducers';
 import { OrderSelectors } from './index';
+import { OrderEntryGroup } from '@spartacus/cart/base/root';
 
 describe('Order Details Selectors', () => {
   let store: Store<StateWithOrder>;
@@ -50,4 +51,51 @@ describe('Order Details Selectors', () => {
       expect(result).toEqual(true);
     });
   });
+
+  describe('getOrderEntryGroups', () => {
+    it('should return entryGroups from the order details state', () => {
+      const mockEntryGroups = [
+        { entryGroupNumber: 1, label: 'Group 1'},
+        { entryGroupNumber: 2, label: 'Group 2'},
+      ];
+
+      const mockOrder = {
+        code: 'testOrder',
+        entryGroups: mockEntryGroups,
+      } as Order;
+
+      store.dispatch(
+        new OrderActions.LoadOrderDetailsSuccess(mockOrder)
+      );
+
+      let result: OrderEntryGroup[] = [];
+
+      store
+        .pipe(select(OrderSelectors.getOrderEntryGroups))
+        .subscribe((value) => (result = value))
+        .unsubscribe();
+
+      expect(result).toEqual(mockEntryGroups);
+    });
+
+    it('should return an empty array if no entryGroups exist in order details', () => {
+      const mockOrder = { code: 'testOrder', entryGroups: [] } as Order;
+
+      store.dispatch(
+        new OrderActions.LoadOrderDetailsSuccess(mockOrder)
+      );
+
+      let result: OrderEntryGroup[] = [];
+
+      store
+        .pipe(select(OrderSelectors.getOrderEntryGroups))
+        .subscribe((value) => (result = value))
+        .unsubscribe();
+
+      expect(result).toEqual([]);
+    });
+  });
+
+
+
 });

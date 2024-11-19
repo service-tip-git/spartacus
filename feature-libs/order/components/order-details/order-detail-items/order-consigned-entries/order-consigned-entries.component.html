@@ -88,7 +88,7 @@
   </cx-add-to-cart>
 </ng-template>
 
-<ng-template #bundlesTemplate let-items let-orderContext="orderContext">
+<ng-template #bundlesTemplate let-items>
   <ng-template
     [cxOutlet]="CartOutlets.CART_ITEM_LIST"
     [cxOutletContext]="{

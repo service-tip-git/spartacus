@@ -36,12 +36,12 @@ export class OrderHistoryService implements OrderHistoryFacade {
     protected routingService: RoutingService
   ) {}
 
-  /**
-   * Get order entrygroups as an observable
-   */
-    getEntryGroups(): Observable<OrderEntryGroup[]> {
-      return this.store.pipe(select(OrderSelectors.getOrderEntryGroups));
-    }
+/**
+ * Get order entrygroups as an observable
+ */
+  getEntryGroups(): Observable<OrderEntryGroup[]> {
+    return this.store.pipe(select(OrderSelectors.getOrderEntryGroups));
+  }
   /**
    * Returns an order's detail
    */
