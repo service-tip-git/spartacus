@@ -26,8 +26,6 @@ export class OpfResourceLoaderService extends ScriptLoader {
 
   protected readonly OPF_RESOURCE_ATTRIBUTE_KEY = 'data-opf-resource';
 
-  protected loadedResources: OpfDynamicScriptResource[] = [];
-
   protected embedStyles(embedOptions: {
     src: string;
     callback?: EventListener;
@@ -60,75 +58,56 @@ export class OpfResourceLoaderService extends ScriptLoader {
     return super.hasScript(src);
   }
 
-  protected handleLoadingResourceError(
-    resolve: (value: void | PromiseLike<void>) => void
-  ) {
-    resolve();
+  /**
+   * Loads a script specified in the resource object.
+   *
+   * The returned Promise is resolved when the script is loaded or already present.
+   * The returned Promise is rejected when a loading error occurs.
+   */
+  protected loadScript(resource: OpfDynamicScriptResource): Promise<void> {
+    return new Promise((resolve, reject) => {
+      const attributes: any = {
+        type: 'text/javascript',
+        [this.OPF_RESOURCE_ATTRIBUTE_KEY]: true,
+      };
+
+      if (resource.attributes) {
+        resource.attributes.forEach((attribute) => {
+          attributes[attribute.key] = attribute.value;
+        });
+      }
+
+      if (resource.url && !this.hasScript(resource.url)) {
+        super.embedScript({
+          src: resource.url,
+          attributes: attributes,
+          callback: () => resolve(),
+          errorCallback: () => reject(),
+        });
+      } else {
+        resolve();
+      }
+    });
   }
 
-  protected isResourceLoadingCompleted(resources: OpfDynamicScriptResource[]) {
-    return resources.length === this.loadedResources.length;
-  }
-
-  protected markResourceAsLoaded(
-    resource: OpfDynamicScriptResource,
-    resources: OpfDynamicScriptResource[],
-    resolve: (value: void | PromiseLike<void>) => void
-  ) {
-    this.loadedResources.push(resource);
-    if (this.isResourceLoadingCompleted(resources)) {
-      resolve();
-    }
-  }
-
-  protected loadScript(
-    resource: OpfDynamicScriptResource,
-    resources: OpfDynamicScriptResource[],
-    resolve: (value: void | PromiseLike<void>) => void
-  ) {
-    const attributes: any = {
-      type: 'text/javascript',
-      [this.OPF_RESOURCE_ATTRIBUTE_KEY]: true,
-    };
-
-    if (resource.attributes) {
-      resource.attributes.forEach((attribute) => {
-        attributes[attribute.key] = attribute.value;
-      });
-    }
-
-    if (resource.url && !this.hasScript(resource.url)) {
-      super.embedScript({
-        src: resource.url,
-        attributes: attributes,
-        callback: () => {
-          this.markResourceAsLoaded(resource, resources, resolve);
-        },
-        errorCallback: () => {
-          this.handleLoadingResourceError(resolve);
-        },
-      });
-    } else {
-      this.markResourceAsLoaded(resource, resources, resolve);
-    }
-  }
-
-  protected loadStyles(
-    resource: OpfDynamicScriptResource,
-    resources: OpfDynamicScriptResource[],
-    resolve: (value: void | PromiseLike<void>) => void
-  ) {
-    if (resource.url && !this.hasStyles(resource.url)) {
-      this.embedStyles({
-        src: resource.url,
-        callback: () => this.markResourceAsLoaded(resource, resources, resolve),
-        errorCallback: () => {
-          this.handleLoadingResourceError(resolve);
-        },
-      });
-    } else {
-      this.markResourceAsLoaded(resource, resources, resolve);
-    }
+  /**
+   * Loads a stylesheet specified in the resource object.
+   *
+   * The returned Promise is resolved when the stylesheet is loaded or already present.
+   * The returned Promise is rejected when a loading error occurs.
+   */
+  protected loadStyles(resource: OpfDynamicScriptResource): Promise<void> {
+    return new Promise((resolve, reject) => {
+      if (resource.url && !this.hasStyles(resource.url)) {
+        this.embedStyles({
+          src: resource.url,
+          callback: () => resolve(),
+          errorCallback: () => reject(),
+        });
+      } else {
+        resolve();
+      }
+    });
   }
 
   executeScriptFromHtml(html: string | undefined) {
@@ -153,6 +132,12 @@ export class OpfResourceLoaderService extends ScriptLoader {
       });
   }
 
+  /**
+   * Loads scripts and stylesheets specified in the lists of resource objects (scripts and styles).
+   *
+   * The returned Promise is resolved when all resources are loaded.
+   * The returned Promise is also resolved (not rejected!) immediately when any loading error occurs.
+   */
   loadResources(
     scripts: OpfDynamicScriptResource[] = [],
     styles: OpfDynamicScriptResource[] = []
@@ -172,28 +157,30 @@ export class OpfResourceLoaderService extends ScriptLoader {
         type: OpfDynamicScriptResourceType.STYLES,
       })),
     ];
+
     if (!resources.length) {
       return Promise.resolve();
     }
-    return new Promise((resolve) => {
-      this.loadedResources = [];
 
-      resources.forEach((resource: OpfDynamicScriptResource) => {
+    const resourcesPromises = resources.map(
+      (resource: OpfDynamicScriptResource) => {
         if (!resource.url) {
-          this.markResourceAsLoaded(resource, resources, resolve);
-        } else {
-          switch (resource.type) {
-            case OpfDynamicScriptResourceType.SCRIPT:
-              this.loadScript(resource, resources, resolve);
-              break;
-            case OpfDynamicScriptResourceType.STYLES:
-              this.loadStyles(resource, resources, resolve);
-              break;
-            default:
-              break;
-          }
+          return Promise.resolve();
         }
-      });
-    });
+
+        switch (resource.type) {
+          case OpfDynamicScriptResourceType.SCRIPT:
+            return this.loadScript(resource);
+          case OpfDynamicScriptResourceType.STYLES:
+            return this.loadStyles(resource);
+          default:
+            return Promise.resolve();
+        }
+      }
+    );
+
+    return Promise.all(resourcesPromises)
+      .then(() => {})
+      .catch(() => {});
   }
 }
