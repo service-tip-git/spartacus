@@ -5,10 +5,10 @@
  */
 
 import { TestBed } from '@angular/core/testing';
-import { ApplePayObservableConfig } from '@spartacus/opf/quick-buy/root';
+import { ApplePaySessionConfig } from '@spartacus/opf/quick-buy/root';
 import { Observable, of, throwError } from 'rxjs';
-import { ApplePaySessionFactory } from '../apple-pay-session/apple-pay-session.factory';
-import { ApplePayObservableFactory } from './apple-pay-observable.factory';
+import { ApplePaySessionWrapperService } from './apple-pay-session-wrapper.service';
+import { ApplePaySessionOrchestrator } from './apple-pay-session.orchestrator';
 
 class MockEventTarget implements EventTarget {
   _stubEventListeners: Array<{ type: string; listener: Function }> = [];
@@ -157,13 +157,13 @@ class MockApplePaySession
   ): void {}
 }
 
-interface ApplePayObservableConfigExt extends ApplePayObservableConfig {
+interface ApplePaySessionConfigExt extends ApplePaySessionConfig {
   [key: string]: any;
 }
 
-describe('ApplePayObservableFactory', () => {
-  let factory: ApplePayObservableFactory;
-  let mockApplePaySessionFactory: jasmine.SpyObj<ApplePaySessionFactory>;
+describe('ApplePaySessionOrchestrator', () => {
+  let factory: ApplePaySessionOrchestrator;
+  let mockApplePaySessionFactory: jasmine.SpyObj<ApplePaySessionWrapperService>;
   let mockApplePaySession: MockApplePaySession;
 
   const mockRequest: ApplePayJS.ApplePayPaymentRequest = {
@@ -176,7 +176,7 @@ describe('ApplePayObservableFactory', () => {
       amount: '',
     },
   };
-  const mockConfig: ApplePayObservableConfig = {
+  const mockConfig: ApplePaySessionConfig = {
     request: mockRequest,
     validateMerchant: () => of({}),
     paymentMethodSelected: () =>
@@ -192,23 +192,23 @@ describe('ApplePayObservableFactory', () => {
   beforeEach(() => {
     const MockApplePaySessionFactory = jasmine.createSpyObj(
       'ApplePaySessionFactory',
-      ['startApplePaySession']
+      ['createSession']
     );
 
     TestBed.configureTestingModule({
       providers: [
-        ApplePayObservableFactory,
+        ApplePaySessionOrchestrator,
         {
-          provide: ApplePaySessionFactory,
+          provide: ApplePaySessionWrapperService,
           useValue: MockApplePaySessionFactory,
         },
       ],
     });
 
-    factory = TestBed.inject(ApplePayObservableFactory);
+    factory = TestBed.inject(ApplePaySessionOrchestrator);
     mockApplePaySessionFactory = TestBed.inject(
-      ApplePaySessionFactory
-    ) as jasmine.SpyObj<ApplePaySessionFactory>;
+      ApplePaySessionWrapperService
+    ) as jasmine.SpyObj<ApplePaySessionWrapperService>;
 
     mockApplePaySession = new MockApplePaySession(
       1,
@@ -222,33 +222,29 @@ describe('ApplePayObservableFactory', () => {
   });
 
   it('should return an observable that creates an apple pay session', () => {
-    const actual = factory.initApplePayEventsHandler({
+    const actual = factory.start({
       ...mockConfig,
     });
 
-    mockApplePaySessionFactory.startApplePaySession.and.returnValue(
+    mockApplePaySessionFactory.createSession.and.returnValue(
       mockApplePaySession
     );
     expect(actual instanceof Observable).toBe(true);
-    expect(
-      mockApplePaySessionFactory.startApplePaySession
-    ).not.toHaveBeenCalled();
+    expect(mockApplePaySessionFactory.createSession).not.toHaveBeenCalled();
 
     actual.subscribe();
 
-    expect(
-      mockApplePaySessionFactory.startApplePaySession
-    ).toHaveBeenCalledTimes(1);
-    expect(
-      mockApplePaySessionFactory.startApplePaySession
-    ).toHaveBeenCalledWith(mockRequest);
+    expect(mockApplePaySessionFactory.createSession).toHaveBeenCalledTimes(1);
+    expect(mockApplePaySessionFactory.createSession).toHaveBeenCalledWith(
+      mockRequest
+    );
   });
 
   it('should bind config event handlers to ApplePaySession', () => {
-    mockApplePaySessionFactory.startApplePaySession.and.returnValue(
+    mockApplePaySessionFactory.createSession.and.returnValue(
       mockApplePaySession
     );
-    factory.initApplePayEventsHandler(mockConfig).subscribe();
+    factory.start(mockConfig).subscribe();
 
     expect(mockApplePaySession.addEventListener).toHaveBeenCalledTimes(6);
     expect(mockApplePaySession.addEventListener).toHaveBeenCalledWith(
@@ -283,10 +279,10 @@ describe('ApplePayObservableFactory', () => {
     let actualError: any;
     spyOn(mockApplePaySession, 'abort').and.stub();
 
-    mockApplePaySessionFactory.startApplePaySession.and.returnValue(
+    mockApplePaySessionFactory.createSession.and.returnValue(
       mockApplePaySession
     );
-    factory.initApplePayEventsHandler(mockConfig).subscribe(
+    factory.start(mockConfig).subscribe(
       (next) => (actualEmit = next),
       (error) => (actualError = error),
       () => (complete = true)
@@ -304,7 +300,7 @@ describe('ApplePayObservableFactory', () => {
 
   describe('callback behavior', () => {
     let actual: Observable<ApplePayJS.ApplePayPaymentAuthorizationResult>;
-    let configuration: ApplePayObservableConfigExt;
+    let configuration: ApplePaySessionConfigExt;
 
     let paymentAuthorizedReturnValue: ApplePayJS.ApplePayPaymentAuthorizationResult;
     let validateMerchantReturnValue: Object;
@@ -351,10 +347,10 @@ describe('ApplePayObservableFactory', () => {
       (configuration.shippingMethodSelected as jasmine.Spy).and.returnValue(
         of(shippingMethodSelectedReturnValue)
       );
-      mockApplePaySessionFactory.startApplePaySession.and.returnValue(
+      mockApplePaySessionFactory.createSession.and.returnValue(
         mockApplePaySession
       );
-      actual = factory.initApplePayEventsHandler(configuration);
+      actual = factory.start(configuration);
       actualEmit = undefined;
       actualError = undefined;
       actualComplete = false;

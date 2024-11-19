@@ -31,16 +31,18 @@ import {
   OpfQuickBuyProviderType,
   QuickBuyTransactionDetails,
 } from '@spartacus/opf/quick-buy/root';
-import { ApplePaySessionFactory } from './apple-pay-session/apple-pay-session.factory';
-import { ApplePayObservableFactory } from './observable/apple-pay-observable.factory';
+import { ApplePaySessionWrapperService } from './apple-pay-session/apple-pay-session-wrapper.service';
+import { ApplePaySessionOrchestrator } from './apple-pay-session/apple-pay-session.orchestrator';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApplePayService {
   protected opfPaymentFacade = inject(OpfPaymentFacade);
-  protected applePaySession = inject(ApplePaySessionFactory);
-  protected applePayObservable = inject(ApplePayObservableFactory);
+  protected applePaySessionWrapperService = inject(
+    ApplePaySessionWrapperService
+  );
+  protected applePaySessionOrchestrator = inject(ApplePaySessionOrchestrator);
   protected winRef = inject(WindowRef);
   protected opfQuickBuyTransactionService = inject(
     OpfQuickBuyTransactionService
@@ -120,7 +122,7 @@ export class ApplePayService {
 
     return this.setApplePayRequestConfig(transactionInput).pipe(
       switchMap((request: ApplePayJS.ApplePayPaymentRequest) => {
-        return this.applePayObservable.initApplePayEventsHandler({
+        return this.applePaySessionOrchestrator.start({
           request,
           validateMerchant: (event) => this.handleValidation(event),
           shippingContactSelected: (event) =>
@@ -139,6 +141,10 @@ export class ApplePayService {
         this.paymentInProgress = false;
       })
     );
+  }
+
+  isApplePaySupported(merchantId: string): Observable<boolean> {
+    return this.applePaySessionWrapperService.isApplePaySupported(merchantId);
   }
 
   protected deleteUserAddresses() {
@@ -330,7 +336,7 @@ export class ApplePayService {
     event: ApplePayJS.ApplePayPaymentAuthorizedEvent
   ): Observable<ApplePayJS.ApplePayPaymentAuthorizationResult> {
     const result: ApplePayJS.ApplePayPaymentAuthorizationResult = {
-      status: this.applePaySession.statusSuccess,
+      status: this.applePaySessionWrapperService.statusSuccess,
     };
     let orderSuccess: boolean;
     return this.placeOrderAfterPayment(event.payment).pipe(
@@ -338,12 +344,15 @@ export class ApplePayService {
         orderSuccess = success;
         return orderSuccess
           ? result
-          : { ...result, status: this.applePaySession.statusFailure };
+          : {
+              ...result,
+              status: this.applePaySessionWrapperService.statusFailure,
+            };
       }),
       catchError((error) => {
         return of({
           ...result,
-          status: this.applePaySession.statusFailure,
+          status: this.applePaySessionWrapperService.statusFailure,
           errors: [
             this.getApplePayFormWithError(error?.message ?? 'Payment error'),
           ],

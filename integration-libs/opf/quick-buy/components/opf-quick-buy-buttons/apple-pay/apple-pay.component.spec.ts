@@ -17,7 +17,6 @@ import {
 } from '@spartacus/opf/quick-buy/root';
 import { CurrentProductService } from '@spartacus/storefront';
 import { of } from 'rxjs';
-import { ApplePaySessionFactory } from './apple-pay-session';
 import { ApplePayComponent } from './apple-pay.component';
 import { ApplePayService } from './apple-pay.service';
 
@@ -50,20 +49,18 @@ describe('ApplePayComponent', () => {
   let fixture: ComponentFixture<ApplePayComponent>;
   let mockApplePayService: jasmine.SpyObj<ApplePayService>;
   let mockCurrentProductService: jasmine.SpyObj<CurrentProductService>;
-  let mockApplePaySessionFactory: jasmine.SpyObj<ApplePaySessionFactory>;
   let mockOpfPaymentErrorHandlerService: jasmine.SpyObj<OpfPaymentErrorHandlerService>;
   let mockOpfQuickBuyTransactionService: jasmine.SpyObj<OpfQuickBuyTransactionService>;
   const mockCountryCode = 'US';
 
   beforeEach(() => {
-    mockApplePayService = jasmine.createSpyObj('ApplePayService', ['start']);
+    mockApplePayService = jasmine.createSpyObj('ApplePayService', [
+      'start',
+      'isApplePaySupported',
+    ]);
     mockCurrentProductService = jasmine.createSpyObj('CurrentProductService', [
       'getProduct',
     ]);
-    mockApplePaySessionFactory = jasmine.createSpyObj(
-      'ApplePaySessionFactory',
-      ['isApplePaySupported']
-    );
     mockOpfPaymentErrorHandlerService = jasmine.createSpyObj(
       'OpfPaymentErrorHandlerService',
       ['handlePaymentError']
@@ -78,10 +75,6 @@ describe('ApplePayComponent', () => {
       providers: [
         { provide: ApplePayService, useValue: mockApplePayService },
         { provide: CurrentProductService, useValue: mockCurrentProductService },
-        {
-          provide: ApplePaySessionFactory,
-          useValue: mockApplePaySessionFactory,
-        },
         {
           provide: OpfPaymentErrorHandlerService,
           useValue: mockOpfPaymentErrorHandlerService,
@@ -121,9 +114,7 @@ describe('ApplePayComponent', () => {
     component.activeConfiguration = { digitalWalletQuickBuy: [digitalWallet] };
 
     const mockObservable = of(true);
-    mockApplePaySessionFactory.isApplePaySupported.and.returnValue(
-      mockObservable
-    );
+    mockApplePayService.isApplePaySupported.and.returnValue(mockObservable);
 
     fixture.detectChanges();
     expect(component.isApplePaySupported$).toBe(mockObservable);
@@ -138,14 +129,10 @@ describe('ApplePayComponent', () => {
     component.activeConfiguration = { digitalWalletQuickBuy: [digitalWallet] };
 
     const mockObservable = of(true);
-    mockApplePaySessionFactory.isApplePaySupported.and.returnValue(
-      mockObservable
-    );
+    mockApplePayService.isApplePaySupported.and.returnValue(mockObservable);
 
     fixture.detectChanges();
-    expect(
-      mockApplePaySessionFactory.isApplePaySupported
-    ).not.toHaveBeenCalled();
+    expect(mockApplePayService.isApplePaySupported).not.toHaveBeenCalled();
   });
 
   it('should start applePayService', () => {

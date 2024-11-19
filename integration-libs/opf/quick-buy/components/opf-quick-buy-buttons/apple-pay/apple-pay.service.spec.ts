@@ -13,11 +13,11 @@ import {
   OpfQuickBuyTransactionService,
 } from '@spartacus/opf/quick-buy/core';
 import { OpfQuickBuyDeliveryType } from '@spartacus/opf/quick-buy/root';
-import { of, Subject, throwError } from 'rxjs';
+import { Subject, of, throwError } from 'rxjs';
 import { OpfQuickBuyButtonsService } from '../opf-quick-buy-buttons.service';
-import { ApplePaySessionFactory } from './apple-pay-session/apple-pay-session.factory';
+import { ApplePaySessionWrapperService } from './apple-pay-session/apple-pay-session-wrapper.service';
+import { ApplePaySessionOrchestrator } from './apple-pay-session/apple-pay-session.orchestrator';
 import { ApplePayService } from './apple-pay.service';
-import { ApplePayObservableFactory } from './observable/apple-pay-observable.factory';
 
 const mockProduct: Product = {
   name: 'Product Name',
@@ -56,8 +56,8 @@ describe('ApplePayService', () => {
   let service: ApplePayService;
   let opfPaymentFacadeMock: jasmine.SpyObj<OpfPaymentService>;
   let opfQuickBuyTransactionServiceMock: jasmine.SpyObj<OpfQuickBuyTransactionService>;
-  let applePayObservableFactoryMock: jasmine.SpyObj<ApplePayObservableFactory>;
-  let applePaySessionFactoryMock: jasmine.SpyObj<ApplePaySessionFactory>;
+  let applePaySessionOrchestratorMock: jasmine.SpyObj<ApplePaySessionOrchestrator>;
+  let applePaySessionWrapperServiceMock: jasmine.SpyObj<ApplePaySessionWrapperService>;
   let applePayObservableTestController: Subject<ApplePayJS.ApplePayPaymentAuthorizationResult>;
   let opfQuickBuyButtonsServiceMock: jasmine.SpyObj<OpfQuickBuyButtonsService>;
   let opfQuickBuyServiceMock: jasmine.SpyObj<OpfQuickBuyService>;
@@ -68,8 +68,8 @@ describe('ApplePayService', () => {
       ['getQuickBuyProviderConfig']
     );
 
-    applePaySessionFactoryMock = jasmine.createSpyObj(
-      'ApplePaySessionFactory',
+    applePaySessionWrapperServiceMock = jasmine.createSpyObj(
+      'ApplePaySessionWrapperService',
       ['startApplePaySession']
     );
     opfPaymentFacadeMock = jasmine.createSpyObj('OpfPaymentService', [
@@ -78,9 +78,9 @@ describe('ApplePayService', () => {
     opfQuickBuyServiceMock = jasmine.createSpyObj('OpfQuickBuyService', [
       'getApplePayWebSession',
     ]);
-    applePayObservableFactoryMock = jasmine.createSpyObj(
-      'ApplePayObservableFactory',
-      ['initApplePayEventsHandler']
+    applePaySessionOrchestratorMock = jasmine.createSpyObj(
+      'ApplePaySessionOrchestrator',
+      ['start']
     );
     opfQuickBuyTransactionServiceMock = jasmine.createSpyObj(
       'OpfQuickBuyTransactionService',
@@ -113,12 +113,12 @@ describe('ApplePayService', () => {
           useValue: opfQuickBuyTransactionServiceMock,
         },
         {
-          provide: ApplePayObservableFactory,
-          useValue: applePayObservableFactoryMock,
+          provide: ApplePaySessionOrchestrator,
+          useValue: applePaySessionOrchestratorMock,
         },
         {
-          provide: ApplePaySessionFactory,
-          useValue: applePaySessionFactoryMock,
+          provide: ApplePaySessionWrapperService,
+          useValue: applePaySessionWrapperServiceMock,
         },
         {
           provide: OpfQuickBuyButtonsService,
@@ -133,7 +133,7 @@ describe('ApplePayService', () => {
     service = TestBed.inject(ApplePayService);
 
     applePayObservableTestController = new Subject();
-    applePayObservableFactoryMock.initApplePayEventsHandler.and.returnValue(
+    applePaySessionOrchestratorMock.start.and.returnValue(
       applePayObservableTestController
     );
     opfQuickBuyTransactionServiceMock.handleCartGuestUser.and.returnValue(
@@ -154,7 +154,7 @@ describe('ApplePayService', () => {
       })
     );
 
-    applePayObservableFactoryMock.initApplePayEventsHandler.and.returnValue(
+    applePaySessionOrchestratorMock.start.and.returnValue(
       throwError(() => 'Error')
     );
 

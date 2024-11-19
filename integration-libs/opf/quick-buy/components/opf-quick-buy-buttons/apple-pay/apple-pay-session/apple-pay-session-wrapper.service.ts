@@ -9,10 +9,17 @@ import { Injectable, inject } from '@angular/core';
 import { WindowRef } from '@spartacus/core';
 import { Observable, from, of } from 'rxjs';
 
+/**
+ * Wrapper of the native `ApplePaySession` API.
+ *
+ * It can tell whether the native `ApplePaySession` is supported,
+ * create a new instance of `ApplePaySession` object (for starting a new payment process),
+ * or expose some of the static constants of the native `ApplePaySession` API.
+ */
 @Injectable({
   providedIn: 'root',
 })
-export class ApplePaySessionFactory {
+export class ApplePaySessionWrapperService {
   protected winRef = inject(WindowRef);
   protected isDeviceSupported = false;
   private applePaySession: typeof ApplePaySession;
@@ -75,7 +82,10 @@ export class ApplePaySessionFactory {
       : of(false);
   }
 
-  startApplePaySession(paymentRequest: any): any {
+  /**
+   * Creates and returns a new instance of `ApplePaySession` object (for a new payment process).
+   */
+  createSession(paymentRequest: any): any {
     return this.isDeviceSupported
       ? new this.applePaySession(this.applePayApiVersion, paymentRequest)
       : undefined;
