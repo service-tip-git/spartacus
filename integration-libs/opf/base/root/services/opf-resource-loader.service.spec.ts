@@ -41,11 +41,6 @@ describe('OpfResourceLoaderService', () => {
     expect(opfResourceLoaderService).toBeTruthy();
   });
 
-  it('should create OpfResourceLoaderService instance', () => {
-    opfResourceLoaderService = TestBed.inject(OpfResourceLoaderService);
-    expect(opfResourceLoaderService instanceof ScriptLoader).toBe(true);
-  });
-
   describe('loadResources', () => {
     beforeEach(() => {
       opfResourceLoaderService = TestBed.inject(OpfResourceLoaderService);
@@ -241,7 +236,8 @@ describe('OpfResourceLoaderService', () => {
         type: OpfDynamicScriptResourceType.SCRIPT,
       };
 
-      spyOn<any>(opfResourceLoaderService, 'embedScript').and.callThrough();
+      const scriptLoader = TestBed.inject(ScriptLoader);
+      spyOn<any>(scriptLoader, 'embedScript').and.callThrough();
 
       mockDocument.querySelector = jasmine
         .createSpy('querySelector')
@@ -249,7 +245,7 @@ describe('OpfResourceLoaderService', () => {
 
       opfResourceLoaderService.loadResources([mockScriptResource]);
 
-      expect(opfResourceLoaderService['embedScript']).not.toHaveBeenCalled();
+      expect(scriptLoader.embedScript).not.toHaveBeenCalled();
     }));
   });
 
