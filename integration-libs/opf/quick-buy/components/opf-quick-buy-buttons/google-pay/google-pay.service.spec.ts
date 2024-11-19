@@ -641,14 +641,10 @@ describe('OpfGooglePayService', () => {
 
             expect(result).toBeDefined();
             expect(mockPaymentFacade.submitPayment).toHaveBeenCalled();
-            expect(Object.values(submitPaymentArgs.callbackArray).length).toBe(
-              3
-            );
-            Object.values(submitPaymentArgs.callbackArray).forEach(
-              (callback) => {
-                expect(typeof callback).toBe('function');
-              }
-            );
+            expect(Object.values(submitPaymentArgs.callbacks).length).toBe(3);
+            Object.values(submitPaymentArgs.callbacks).forEach((callback) => {
+              expect(typeof callback).toBe('function');
+            });
             expect(submitPaymentArgs.encryptedToken).toBe(encodedMockToken);
             expect(submitPaymentArgs.paymentMethod).toBe(
               OpfQuickBuyProviderType.GOOGLE_PAY

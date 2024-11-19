@@ -87,7 +87,7 @@ export class OpfPaymentHostedFieldsService {
         )
       ),
       concatMap((response: OpfPaymentSubmitResponse) =>
-        this.paymentResponseHandler(response, submitInput.callbackArray)
+        this.paymentResponseHandler(response, submitInput.callbacks)
       ),
       tap((order: Order) => {
         if (order) {
@@ -132,7 +132,7 @@ export class OpfPaymentHostedFieldsService {
         )
       ),
       concatMap((response: OpfPaymentSubmitCompleteResponse) =>
-        this.paymentResponseHandler(response, submitCompleteInput.callbackArray)
+        this.paymentResponseHandler(response, submitCompleteInput.callbacks)
       ),
       tap((order: Order) => {
         if (order) {
@@ -160,7 +160,7 @@ export class OpfPaymentHostedFieldsService {
 
   protected paymentResponseHandler(
     response: OpfPaymentSubmitResponse | OpfPaymentSubmitCompleteResponse,
-    callbackArray: {
+    callbacks: {
       onSuccess: OpfPaymentMerchantCallback;
       onPending: OpfPaymentMerchantCallback;
       onFailure: OpfPaymentMerchantCallback;
@@ -170,15 +170,15 @@ export class OpfPaymentHostedFieldsService {
       response.status === OpfPaymentSubmitStatus.ACCEPTED ||
       response.status === OpfPaymentSubmitStatus.DELAYED
     ) {
-      return from(Promise.resolve(callbackArray.onSuccess(response))).pipe(
+      return from(Promise.resolve(callbacks.onSuccess(response))).pipe(
         concatMap(() => this.orderFacade.placePaymentAuthorizedOrder(true))
       );
     } else if (response.status === OpfPaymentSubmitStatus.PENDING) {
-      return from(Promise.resolve(callbackArray.onPending(response))).pipe(
+      return from(Promise.resolve(callbacks.onPending(response))).pipe(
         concatMap(() => EMPTY)
       );
     } else if (response.status === OpfPaymentSubmitStatus.REJECTED) {
-      return from(Promise.resolve(callbackArray.onFailure(response))).pipe(
+      return from(Promise.resolve(callbacks.onFailure(response))).pipe(
         concatMap(() =>
           throwError({
             ...opfDefaultPaymentError,
@@ -187,7 +187,7 @@ export class OpfPaymentHostedFieldsService {
         )
       );
     } else {
-      return from(Promise.resolve(callbackArray.onFailure(response))).pipe(
+      return from(Promise.resolve(callbacks.onFailure(response))).pipe(
         concatMap(() =>
           throwError({
             ...opfDefaultPaymentError,

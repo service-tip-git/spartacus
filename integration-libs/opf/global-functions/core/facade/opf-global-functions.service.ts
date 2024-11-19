@@ -216,7 +216,7 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
         if (vcr) {
           overlayedSpinner = this.startLoaderSpinner(vcr);
         }
-        const callbackArray: {
+        const callbacks: {
           onSuccess: OpfPaymentMerchantCallback;
           onPending: OpfPaymentMerchantCallback;
           onFailure: OpfPaymentMerchantCallback;
@@ -231,7 +231,7 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
             .submitPayment({
               additionalData,
               paymentSessionId,
-              callbackArray,
+              callbacks,
               paymentMethod,
               returnPath: undefined,
             })
@@ -249,7 +249,7 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
 
   protected runSubmitComplete(
     additionalData: Array<OpfKeyValueMap>,
-    callbackArray: {
+    callbacks: {
       onSuccess: OpfPaymentMerchantCallback;
       onPending: OpfPaymentMerchantCallback;
       onFailure: OpfPaymentMerchantCallback;
@@ -269,7 +269,7 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
           .submitCompletePayment({
             additionalData,
             paymentSessionId,
-            callbackArray,
+            callbacks,
             returnPath,
           })
           .pipe(

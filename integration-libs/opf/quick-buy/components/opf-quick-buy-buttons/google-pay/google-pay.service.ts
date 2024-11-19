@@ -361,7 +361,7 @@ export class OpfGooglePayService {
               return this.opfPaymentFacade.submitPayment({
                 additionalData: [],
                 paymentSessionId: '',
-                callbackArray: {
+                callbacks: {
                   onSuccess: () => {},
                   onPending: () => {},
                   onFailure: () => {},

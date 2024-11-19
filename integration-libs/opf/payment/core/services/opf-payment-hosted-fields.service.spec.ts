@@ -80,7 +80,7 @@ describe('OpfPaymentHostedFieldsService', () => {
     additionalData: [{ key: 'key', value: 'value' }],
     paymentSessionId: 'sessionId',
     returnPath: 'checkout',
-    callbackArray: {
+    callbacks: {
       onSuccess: () => {},
       onPending: () => {},
       onFailure: () => {},
@@ -91,7 +91,7 @@ describe('OpfPaymentHostedFieldsService', () => {
     additionalData: [{ key: 'key', value: 'value' }],
     paymentSessionId: 'sessionId',
     returnPath: 'checkout',
-    callbackArray: {
+    callbacks: {
       onSuccess: () => {},
       onPending: () => {},
       onFailure: () => {},

@@ -69,7 +69,7 @@ export interface OpfPaymentSubmitRequest {
 export interface OpfPaymentSubmitInput {
   additionalData: Array<OpfKeyValueMap>;
   paymentSessionId?: string;
-  callbackArray: {
+  callbacks: {
     onSuccess: OpfPaymentMerchantCallback;
     onPending: OpfPaymentMerchantCallback;
     onFailure: OpfPaymentMerchantCallback;
@@ -112,7 +112,7 @@ export interface OpfPaymentSubmitCompleteRequest {
 export interface OpfPaymentSubmitCompleteInput {
   additionalData: Array<OpfKeyValueMap>;
   paymentSessionId: string;
-  callbackArray: {
+  callbacks: {
     onSuccess: OpfPaymentMerchantCallback;
     onPending: OpfPaymentMerchantCallback;
     onFailure: OpfPaymentMerchantCallback;
