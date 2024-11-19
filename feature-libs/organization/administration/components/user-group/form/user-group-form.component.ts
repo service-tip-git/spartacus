@@ -16,7 +16,6 @@ import { tap } from 'rxjs/operators';
 import { ItemService } from '../../shared/item.service';
 import { createCodeForEntityName } from '../../shared/utility/entity-code';
 import { UserGroupItemService } from '../services/user-group-item.service';
-import { MessageService } from '../../shared';
 
 @Component({
   selector: 'cx-org-user-group-form',
@@ -28,7 +27,6 @@ import { MessageService } from '../../shared';
       provide: ItemService,
       useExisting: UserGroupItemService,
     },
-    MessageService, //TODO: (CXSPA-8538) DISCUSS THE APPROACH: or we can provide MessageService in the parent component
   ],
 })
 export class UserGroupFormComponent implements OnInit {
