@@ -12,6 +12,7 @@ module.exports = function (config) {
       require('karma-jasmine-html-reporter'),
       require('@angular-devkit/build-angular/plugins/karma'),
       require('karma-junit-reporter'),
+      require('karma-spec-reporter'),
     ],
     client: {
       clearContext: true, // close Jasmine Spec Runner output in browser to avoid 'Some of your tests did a full page reload!' error when '--no-watch' is active
@@ -19,7 +20,7 @@ module.exports = function (config) {
         random: false,
       },
     },
-    reporters: ['progress', 'kjhtml', 'dots', 'junit'],
+    reporters: ['progress', 'kjhtml', 'dots', 'junit', 'spec'],
     junitReporter: {
       outputFile: 'unit-test-storefront.xml',
       outputDir: require('path').join(__dirname, '../../unit-tests-reports'),
@@ -36,6 +37,14 @@ module.exports = function (config) {
           functions: 80,
         },
       },
+    },
+    specReporter: {
+      maxLogLines: 5, // Limit the number of log lines per test suite
+      suppressErrorSummary: false, // Don't log summary of errors
+      suppressFailed: false, // Show failed tests
+      suppressPassed: false, // Show passed tests
+      showSpecTiming: true, // Show timing for each spec
+      failFast: false, // Stop on the first failure
     },
     captureTimeout: 210000,
     browserDisconnectTolerance: 3,
