@@ -511,7 +511,7 @@ describe('CheckoutPaymentMethodComponent', () => {
       fixture.detectChanges();
       fixture.debugElement
         .queryAll(By.css('cx-card'))[1]
-        .query(By.css('.link'))
+        .query(By.css('.btn'))
         .nativeElement.click();
 
       expect(mockCheckoutPaymentService.setPaymentDetails).toHaveBeenCalledWith(
