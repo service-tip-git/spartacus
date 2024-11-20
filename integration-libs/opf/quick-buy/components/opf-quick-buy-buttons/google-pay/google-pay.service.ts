@@ -16,10 +16,14 @@ import {
 import { OpfPaymentFacade } from '@spartacus/opf/payment/root';
 import { OpfQuickBuyTransactionService } from '@spartacus/opf/quick-buy/core';
 import {
+  OPF_GOOGLE_PAY_PROVIDER_NAME,
   OPF_QUICK_BUY_ADDRESS_FIELD_PLACEHOLDER,
   OPF_QUICK_BUY_DEFAULT_MERCHANT_NAME,
+  OpfQuickBuyConfig,
   OpfQuickBuyDeliveryType,
+  OpfQuickBuyGooglePayProvider,
   OpfQuickBuyLocation,
+  OpfQuickBuyProvider,
   OpfQuickBuyProviderType,
   QuickBuyTransactionDetails,
 } from '@spartacus/opf/quick-buy/root';
@@ -38,10 +42,8 @@ export class OpfGooglePayService {
   protected opfQuickBuyTransactionService = inject(
     OpfQuickBuyTransactionService
   );
+  protected opfQuickBuyConfig = inject(OpfQuickBuyConfig);
   protected opfQuickBuyButtonsService = inject(OpfQuickBuyButtonsService);
-
-  protected readonly GOOGLE_PAY_JS_URL =
-    'https://pay.google.com/gp/p/js/pay.js';
 
   private googlePaymentClient: google.payments.api.PaymentsClient;
 
@@ -138,8 +140,18 @@ export class OpfGooglePayService {
   }
 
   loadResources(): Promise<void> {
+    const opfGooglePayConfig: OpfQuickBuyProvider | undefined =
+      this.opfQuickBuyConfig?.providers?.find(
+        (provider) => provider[OPF_GOOGLE_PAY_PROVIDER_NAME]
+      );
+    if (!opfGooglePayConfig) {
+      return Promise.reject('Config not found');
+    }
     return this.opfResourceLoaderService.loadResources([
-      { url: this.GOOGLE_PAY_JS_URL },
+      {
+        url: (opfGooglePayConfig as OpfQuickBuyGooglePayProvider).googlePay
+          .resourceUrl,
+      },
     ]);
   }
 
