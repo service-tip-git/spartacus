@@ -20,8 +20,8 @@ import {
   ProductViewComponent,
 } from '../product-view/product-view.component';
 import { ProductListComponentService } from './product-list-component.service';
-import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { ProductScrollComponent } from './product-scroll/product-scroll.component';
 import { ProductListItemComponent } from '../product-list-item/product-list-item.component';
 import { ProductGridItemComponent } from '../product-grid-item/product-grid-item.component';

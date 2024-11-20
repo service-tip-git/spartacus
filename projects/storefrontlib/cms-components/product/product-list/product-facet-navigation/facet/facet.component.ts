@@ -24,12 +24,12 @@ import { ICON_TYPE } from '../../../../../cms-components/misc/icon/icon.model';
 import { FocusDirective } from '../../../../../layout/a11y/keyboard-focus/focus.directive';
 import { FacetCollapseState } from '../facet.model';
 import { FacetService } from '../services/facet.service';
-import { MockTranslatePipe } from '../../../../../../core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { AtMessageDirective } from '../../../../../shared/components/assistive-technology-message/assistive-technology-message.directive';
 import { RouterLink } from '@angular/router';
 import { IconComponent } from '../../../../misc/icon/icon.component';
-import { FeatureDirective } from '../../../../../../core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { NgIf, NgFor, AsyncPipe, SlicePipe } from '@angular/common';
 
 @Component({

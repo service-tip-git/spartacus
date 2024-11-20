@@ -19,9 +19,9 @@ import {
   ComponentDestroyEvent,
 } from '../../../cms-structure';
 import { CurrentProductService } from '../current-product.service';
-import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
-import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
+import { FeatureDirective } from '@spartacus/core';
 import { StarRatingComponent } from '../../../shared/components/star-rating/star-rating.component';
 import { NgIf, AsyncPipe, DecimalPipe } from '@angular/common';
 

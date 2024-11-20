@@ -10,8 +10,8 @@ import { Observable, Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { LAUNCH_CALLER } from '../../../layout/launch-dialog/config/launch-config';
 import { LaunchDialogService } from '../../../layout/launch-dialog/services/launch-dialog.service';
-import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { NgIf, NgClass, AsyncPipe } from '@angular/common';
 
 @Component({

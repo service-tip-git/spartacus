@@ -22,9 +22,9 @@ import { combineLatest, Observable, of } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { CmsComponentData } from '../../../cms-structure/page/model/cms-component-data';
 import { PageTitleComponent } from '../page-header/page-title.component';
-import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
-import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
+import { FeatureDirective } from '@spartacus/core';
 import { NgFor, AsyncPipe } from '@angular/common';
 
 @Component({

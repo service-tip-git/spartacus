@@ -5,9 +5,9 @@
  */
 
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
 import { TruncatePipe } from './truncate.pipe';
-import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { TranslatePipe } from '@spartacus/core';
 import { PopoverDirective } from '../popover/popover.directive';
 import { NgClass, NgIf } from '@angular/common';
 

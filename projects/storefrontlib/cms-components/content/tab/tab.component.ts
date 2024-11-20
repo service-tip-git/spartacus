@@ -22,8 +22,8 @@ import { map, take } from 'rxjs/operators';
 import { Tab, TabConfig, TAB_MODE } from './tab.model';
 import { wrapIntoBounds } from './tab.utils';
 import { TranslationService } from '@spartacus/core';
-import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { TabPanelComponent } from './panel/tab-panel.component';
 import { NgIf, NgFor, NgTemplateOutlet, AsyncPipe } from '@angular/common';
 

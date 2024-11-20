@@ -30,10 +30,10 @@ import {
   MessageEventBoundItem,
   MessagingConfigs,
 } from './messaging.model';
-import { MockDatePipe } from '../../../../../core/src/i18n/testing/mock-date.pipe';
-import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
-import { CxDatePipe } from '../../../../../core/src/i18n/date.pipe';
-import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
+import { MockDatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { FormErrorsComponent } from '../../form/form-errors/form-errors.component';
 import { FileUploadComponent as FileUploadComponent_1 } from '../../form/file-upload/file-upload.component';
 import { IconComponent } from '../../../../cms-components/misc/icon/icon.component';

@@ -6,8 +6,8 @@
 
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { PaginationModel } from '@spartacus/core';
-import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { NgIf } from '@angular/common';
 
 @Component({

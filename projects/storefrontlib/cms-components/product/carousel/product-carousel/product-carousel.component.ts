@@ -16,8 +16,8 @@ import {
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { CmsComponentData } from '../../../../cms-structure/page/model/cms-component-data';
-import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { ProductCarouselItemComponent } from '../product-carousel-item/product-carousel-item.component';
 import { CarouselComponent } from '../../../../shared/components/carousel/carousel.component';
 import { NgIf, AsyncPipe } from '@angular/common';

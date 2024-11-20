@@ -23,10 +23,10 @@ import {
 import { FeatureConfigService, useFeatureStyles } from '@spartacus/core';
 import { Subscription } from 'rxjs';
 import { startWith } from 'rxjs/operators';
-import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { FocusDirective } from '../../../layout/a11y/keyboard-focus/focus.directive';
-import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 
 /**
  * Provides a UI to manage the count of the quantity, typically by using

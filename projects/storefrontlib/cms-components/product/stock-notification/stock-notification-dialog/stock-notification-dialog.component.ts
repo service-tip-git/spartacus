@@ -20,13 +20,13 @@ import {
 import { Observable, Subscription } from 'rxjs';
 import { FocusConfig } from '../../../../layout/a11y/keyboard-focus/keyboard-focus.model';
 import { LaunchDialogService } from '../../../../layout/index';
-import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
-import { UrlPipe } from '../../../../../core/src/routing/configurable-routes/url-translation/url.pipe';
-import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '../../../../shared/components/spinner/spinner.component';
 import { RouterLink } from '@angular/router';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
-import { FeatureDirective } from '../../../../../core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { FocusDirective } from '../../../../layout/a11y/keyboard-focus/focus.directive';
 
 @Component({

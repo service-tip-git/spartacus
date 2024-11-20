@@ -7,8 +7,8 @@
 import { Component } from '@angular/core';
 import { AddToHomeScreenService } from '../../services/add-to-home-screen.service';
 import { AddToHomeScreenComponent } from '../add-to-home-screen.component';
-import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

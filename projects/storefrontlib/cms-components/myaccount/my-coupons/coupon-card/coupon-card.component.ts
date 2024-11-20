@@ -19,10 +19,10 @@ import { LaunchDialogService, LAUNCH_CALLER } from '../../../../layout/index';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { MyCouponsComponentService } from '../my-coupons.component.service';
-import { MockDatePipe } from '../../../../../core/src/i18n/testing/mock-date.pipe';
-import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
-import { CxDatePipe } from '../../../../../core/src/i18n/date.pipe';
-import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
+import { MockDatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { AsyncPipe, LowerCasePipe } from '@angular/common';
 
 @Component({

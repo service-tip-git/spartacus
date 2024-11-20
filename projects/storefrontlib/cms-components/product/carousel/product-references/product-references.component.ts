@@ -16,7 +16,7 @@ import { Observable, of } from 'rxjs';
 import { filter, map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { CmsComponentData } from '../../../../cms-structure/page/model/cms-component-data';
 import { CurrentProductService } from '../../current-product.service';
-import { UrlPipe } from '../../../../../core/src/routing/configurable-routes/url-translation/url.pipe';
+import { UrlPipe } from '@spartacus/core';
 import { MediaComponent } from '../../../../shared/components/media/media.component';
 import { RouterLink } from '@angular/router';
 import { CarouselComponent } from '../../../../shared/components/carousel/carousel.component';

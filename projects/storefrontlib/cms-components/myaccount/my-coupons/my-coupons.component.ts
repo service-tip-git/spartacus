@@ -14,15 +14,15 @@ import { combineLatest, Observable, Subscription } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { ICON_TYPE } from '../../misc/icon/icon.model';
 import { MyCouponsComponentService } from './my-coupons.component.service';
-import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '../../../shared/components/spinner/spinner.component';
 import { RouterLink } from '@angular/router';
 import { IconComponent } from '../../misc/icon/icon.component';
 import { CouponCardComponent } from './coupon-card/coupon-card.component';
 import { PaginationComponent } from '../../../shared/components/list-navigation/pagination/pagination.component';
 import { SortingComponent } from '../../../shared/components/list-navigation/sorting/sorting.component';
-import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({

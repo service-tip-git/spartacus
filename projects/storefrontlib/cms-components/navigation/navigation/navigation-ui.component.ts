@@ -31,10 +31,10 @@ import { BREAKPOINT, BreakpointService } from '../../../layout';
 import { ICON_TYPE } from '../../misc/icon/index';
 import { HamburgerMenuService } from './../../../layout/header/hamburger-menu/hamburger-menu.service';
 import { NavigationNode } from './navigation-node.model';
-import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { GenericLinkComponent } from '../../../shared/components/generic-link/generic-link.component';
-import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { IconComponent } from '../../misc/icon/icon.component';
 import { NgIf, NgFor, NgTemplateOutlet, AsyncPipe } from '@angular/common';
 

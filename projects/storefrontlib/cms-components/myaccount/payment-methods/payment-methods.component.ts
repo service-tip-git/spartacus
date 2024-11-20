@@ -19,10 +19,10 @@ import {
   Card,
   CardComponent,
 } from '../../../shared/components/card/card.component';
-import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '../../../shared/components/spinner/spinner.component';
-import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({

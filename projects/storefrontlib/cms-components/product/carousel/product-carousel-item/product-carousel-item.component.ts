@@ -16,7 +16,7 @@ import {
   ProductListItemContext,
   ProductListItemContextSource,
 } from '../../product-list';
-import { UrlPipe } from '../../../../../core/src/routing/configurable-routes/url-translation/url.pipe';
+import { UrlPipe } from '@spartacus/core';
 import { InnerComponentsHostDirective } from '../../../../cms-structure/page/component/inner-components-host.directive';
 import { MediaComponent } from '../../../../shared/components/media/media.component';
 import { RouterLink } from '@angular/router';

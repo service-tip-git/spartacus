@@ -20,7 +20,7 @@ import { ImageLoadingStrategy, Media, MediaContainer } from './media.model';
 import { MediaService } from './media.service';
 import { USE_LEGACY_MEDIA_COMPONENT } from './media.token';
 import { MediaSourcesPipe } from './media-sources.pipe';
-import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { NgIf, NgFor } from '@angular/common';
 
 /**

@@ -5,8 +5,8 @@
  */
 
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { NgClass, NgIf } from '@angular/common';
 @Component({
   selector: 'cx-progress-button',

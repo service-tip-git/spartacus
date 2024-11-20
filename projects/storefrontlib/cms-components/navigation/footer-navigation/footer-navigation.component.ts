@@ -11,8 +11,8 @@ import { map } from 'rxjs/operators';
 import { CmsComponentData } from '../../../cms-structure/page/model/cms-component-data';
 import { NavigationNode } from '../navigation/navigation-node.model';
 import { NavigationService } from '../navigation/navigation.service';
-import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { NavigationUIComponent } from '../navigation/navigation-ui.component';
 import { NgIf, NgClass, AsyncPipe } from '@angular/common';
 

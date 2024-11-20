@@ -23,9 +23,9 @@ import {
 } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
-import { FeatureDirective } from '../../../../../core/src/features-config/directives/feature.directive';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
+import { FeatureDirective } from '@spartacus/core';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 /**

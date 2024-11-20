@@ -12,8 +12,8 @@ import {
 } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { ICON_TYPE } from '../../../cms-components/misc/icon/icon.model';
-import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '../icon/icon.component';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 

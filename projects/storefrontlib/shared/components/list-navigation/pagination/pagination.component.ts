@@ -19,7 +19,7 @@ import { Observable, combineLatest, map, of } from 'rxjs';
 import { PaginationBuilder } from './pagination.builder';
 import { PaginationItem, PaginationItemType } from './pagination.model';
 import { NgFor, AsyncPipe } from '@angular/common';
-import { FeatureDirective } from '../../../../../core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 
 /**
  * The `PaginationComponent` is a generic component that is used for

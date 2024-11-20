@@ -17,14 +17,14 @@ import { ProductListOutlets } from '../../product-outlets.model';
 import { ProductListItemContextSource } from '../model/product-list-item-context-source.model';
 import { ProductListItemContext } from '../model/product-list-item-context.model';
 import { ProductListService } from '../product-list.service';
-import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
-import { UrlPipe } from '../../../../../core/src/routing/configurable-routes/url-translation/url.pipe';
-import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { InnerComponentsHostDirective } from '../../../../cms-structure/page/component/inner-components-host.directive';
 import { StarRatingComponent } from '../../../../shared/components/star-rating/star-rating.component';
 import { NgIf } from '@angular/common';
 import { OutletDirective } from '../../../../cms-structure/outlet/outlet.directive';
-import { FeatureDirective } from '../../../../../core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { MediaComponent } from '../../../../shared/components/media/media.component';
 import { RouterLink } from '@angular/router';
 

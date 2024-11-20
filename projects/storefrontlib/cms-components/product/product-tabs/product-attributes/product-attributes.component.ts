@@ -8,8 +8,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Product, ProductScope } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { CurrentProductService } from '../../current-product.service';
-import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({

@@ -10,7 +10,7 @@ import {
   ANONYMOUS_CONSENT_STATUS,
   ConsentTemplate,
 } from '@spartacus/core';
-import { FeatureDirective } from '../../../../../../core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { NgIf } from '@angular/common';
 
 @Component({

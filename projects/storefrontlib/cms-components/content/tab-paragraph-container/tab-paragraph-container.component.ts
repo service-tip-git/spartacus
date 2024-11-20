@@ -24,11 +24,11 @@ import { ComponentWrapperDirective } from '../../../cms-structure/page/component
 import { CmsComponentData } from '../../../cms-structure/page/model/index';
 import { BREAKPOINT } from '../../../layout/config/layout-config';
 import { Tab, TabConfig } from '../tab/tab.model';
-import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { TabComponent } from '../tab/tab.component';
 import { OutletDirective } from '../../../cms-structure/outlet/outlet.directive';
-import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 const defaultTabConfig = {

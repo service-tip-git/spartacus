@@ -10,8 +10,8 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { CmsComponentData } from '../../../cms-structure/page/model/cms-component-data';
 import { MediaService } from '../../../shared/components/media/media.service';
-import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '../../misc/icon/icon.component';
 import { NgIf, AsyncPipe } from '@angular/common';
 
