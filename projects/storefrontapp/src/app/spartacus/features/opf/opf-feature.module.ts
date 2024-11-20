@@ -5,7 +5,7 @@
  */
 
 import { NgModule, Provider } from '@angular/core';
-import { I18nConfig, provideConfig, RoutingConfig } from '@spartacus/core';
+import { I18nConfig, RoutingConfig, provideConfig } from '@spartacus/core';
 import {
   OPF_BASE_FEATURE,
   OpfBaseRootModule,
@@ -16,10 +16,10 @@ import {
   opfCheckoutTranslations,
 } from '@spartacus/opf/checkout/assets';
 import {
-  defaultOpfCheckoutB2bConfig,
-  defaultOpfCheckoutConfig,
   OPF_CHECKOUT_FEATURE,
   OpfCheckoutRootModule,
+  defaultOpfCheckoutB2bConfig,
+  defaultOpfCheckoutConfig,
 } from '@spartacus/opf/checkout/root';
 import {
   opfPaymentTranslationChunksConfig,
