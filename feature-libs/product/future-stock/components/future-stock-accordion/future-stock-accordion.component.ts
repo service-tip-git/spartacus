@@ -5,8 +5,9 @@
  */
 
 import { Component } from '@angular/core';
-import { ICON_TYPE } from '@spartacus/storefront';
+import { useFeatureStyles } from '@spartacus/core';
 import { FutureStockFacade } from '@spartacus/product/future-stock/root';
+import { ICON_TYPE } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-future-stock-accordion',
@@ -17,7 +18,9 @@ export class FutureStockAccordionComponent {
   expanded: boolean = false;
   iconType = ICON_TYPE;
 
-  constructor(protected futureStockService: FutureStockFacade) {}
+  constructor(protected futureStockService: FutureStockFacade) {
+    useFeatureStyles('a11yCroppedFocusRing');
+  }
 
   toggle(): void {
     this.expanded = !this.expanded;

@@ -393,6 +393,7 @@ if (environment.cpq) {
         a11yPostRegisterSuccessMessage: true,
         a11yDeleteButton2First: true,
         a11yUpdatingCartNoNarration: true,
+        a11yCroppedFocusRing: true,
         a11yTextSpacingAdjustments: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
         useSiteThemeService: false,

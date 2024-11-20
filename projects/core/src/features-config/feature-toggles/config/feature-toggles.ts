@@ -675,6 +675,13 @@ export interface FeatureTogglesInterface {
   a11yUpdatingCartNoNarration?: boolean;
 
   /**
+   * Fixes various instances of the focus ring being cropped in the UI.
+   * The focus ring on interactive elements should have all its sides visible and not include any extra padding.
+   * Affects styles of: 'CartItemListComponent, CartItemComponent, ListComponent, FutureStockAccordionComponent, QuoteConfirmDialogComponent, MessagingComponent
+   */
+  a11yCroppedFocusRing?: boolean;
+
+  /**
    * Fixes text formatting issues while a11y text spacing is enabled.
    * Affects: ListComponent, CSAgentLoginFormComponent
    */
@@ -880,6 +887,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yPostRegisterSuccessMessage: false,
   a11yDeleteButton2First: false,
   a11yUpdatingCartNoNarration: false,
+  a11yCroppedFocusRing: false,
   a11yTextSpacingAdjustments: false,
   a11yShowDownArrowOnFocusedSelectMenu: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
