@@ -31,8 +31,8 @@ import { MockDatePipe } from '@spartacus/core';
 import { MockTranslatePipe } from '@spartacus/core';
 import { CxDatePipe as CxDatePipe_1 } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { DatePickerComponent } from '../../../../../projects/storefrontlib/shared/components/form/date-picker/date-picker.component';
-import { CardComponent } from '../../../../../projects/storefrontlib/shared/components/card/card.component';
+import { DatePickerComponent } from '@spartacus/storefront';
+import { CardComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

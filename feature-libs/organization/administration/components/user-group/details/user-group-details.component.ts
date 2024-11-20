@@ -16,7 +16,7 @@ import { UrlPipe } from '@spartacus/core';
 import { ItemExistsDirective } from '../../shared/item-exists.directive';
 import { DeleteItemComponent } from '../../shared/detail/delete-item-action/delete-item.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { FocusDirective } from '../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FocusDirective } from '@spartacus/storefront';
 import { CardComponent } from '../../shared/card/card.component';
 import { NgIf, AsyncPipe } from '@angular/common';
 

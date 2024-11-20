@@ -27,9 +27,9 @@ import { ImportEntriesSummaryComponent } from './import-entries-summary/import-e
 import { ImportEntriesFormComponent } from './import-entries-form/import-entries-form.component';
 import { ImportToNewSavedCartFormComponent } from './import-to-new-saved-cart-form/import-to-new-saved-cart-form.component';
 import { NgIf, AsyncPipe } from '@angular/common';
-import { IconComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
-import { FocusDirective } from '../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FocusDirective } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-import-entries-dialog',

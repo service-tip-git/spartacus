@@ -19,7 +19,7 @@ import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { CompactAddToCartComponent } from './compact-add-to-cart/compact-add-to-cart.component';
 import { RouterLink } from '@angular/router';
-import { MediaComponent } from '../../../../../../projects/storefrontlib/shared/components/media/media.component';
+import { MediaComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 import { PagedListComponent } from './paged-list/paged-list.component';
 

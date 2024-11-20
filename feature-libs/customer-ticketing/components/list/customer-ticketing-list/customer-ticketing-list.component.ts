@@ -21,11 +21,11 @@ import { MockTranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
-import { PaginationComponent } from '../../../../../projects/storefrontlib/shared/components/list-navigation/pagination/pagination.component';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { PaginationComponent } from '@spartacus/storefront';
 import { RouterLink } from '@angular/router';
 import { CustomerTicketingCreateComponent } from '../customer-ticketing-create/customer-ticketing-create.component';
-import { SortingComponent } from '../../../../../projects/storefrontlib/shared/components/list-navigation/sorting/sorting.component';
+import { SortingComponent } from '@spartacus/storefront';
 import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
 
 @Component({

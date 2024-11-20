@@ -24,7 +24,7 @@ import { MockTranslatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
-import { MediaComponent } from '../../../../../../projects/storefrontlib/shared/components/media/media.component';
+import { MediaComponent } from '@spartacus/storefront';
 import { RouterLink } from '@angular/router';
 import { MyAccountV2ConsignmentEntriesComponent } from '../consignment-entries/my-account-v2-consignment-entries.component';
 import { NgIf, NgTemplateOutlet, NgFor } from '@angular/common';

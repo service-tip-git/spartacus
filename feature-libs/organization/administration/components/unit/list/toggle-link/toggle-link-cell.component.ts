@@ -29,7 +29,7 @@ import { UnitTreeService } from '../../services/unit-tree.service';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
-import { IconComponent } from '../../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 import { RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
 

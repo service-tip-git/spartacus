@@ -32,9 +32,9 @@ import { ConfiguratorAttributePriceChangeService } from '../../price-change/conf
 import { ConfiguratorAttributeBaseComponent } from '../base/configurator-attribute-base.component';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { IconComponent } from '../../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
-import { PopoverDirective } from '../../../../../../../projects/storefrontlib/shared/components/popover/popover.directive';
-import { FocusDirective } from '../../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { IconComponent } from '@spartacus/storefront';
+import { PopoverDirective } from '@spartacus/storefront';
+import { FocusDirective } from '@spartacus/storefront';
 import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
 
 @Component({

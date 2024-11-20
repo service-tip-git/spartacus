@@ -24,9 +24,9 @@ import { filter, map, switchMap, take, tap } from 'rxjs/operators';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { StoreScheduleComponent } from '../../presentational/store/store-schedule/store-schedule.component';
-import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 import { StoreAddressComponent } from '../../presentational/store/store-address/store-address.component';
-import { CardComponent } from '../../../../../projects/storefrontlib/shared/components/card/card.component';
+import { CardComponent } from '@spartacus/storefront';
 import { NgClass, NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

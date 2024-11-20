@@ -27,8 +27,8 @@ import { MockDatePipe } from '@spartacus/core';
 import { MockTranslatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
-import { CardComponent } from '../../../../../projects/storefrontlib/shared/components/card/card.component';
+import { IconComponent } from '@spartacus/storefront';
+import { CardComponent } from '@spartacus/storefront';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({

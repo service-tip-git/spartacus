@@ -25,7 +25,7 @@ import { ICON_TYPE } from '@spartacus/storefront';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { AsyncPipe } from '@angular/common';
-import { IconComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 import { AsmCustomer360PromotionListingComponent } from '../../asm-customer-360-promotion-listing/asm-customer-360-promotion-listing.component';
 
 @Component({

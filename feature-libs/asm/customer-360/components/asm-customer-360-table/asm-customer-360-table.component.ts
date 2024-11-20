@@ -43,7 +43,7 @@ import { MockTranslatePipe } from '@spartacus/core';
 import { ArgsPipe } from '../../../core/utils/args/args.pipe';
 import { CxDatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { StarRatingComponent } from '../../../../../projects/storefrontlib/shared/components/star-rating/star-rating.component';
+import { StarRatingComponent } from '@spartacus/storefront';
 import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
 
 @Component({

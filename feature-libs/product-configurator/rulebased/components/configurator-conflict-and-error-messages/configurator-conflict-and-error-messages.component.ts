@@ -13,7 +13,7 @@ import { ConfiguratorCommonsService } from '../../core/facade/configurator-commo
 import { Configurator } from '../../core/model/configurator.model';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({

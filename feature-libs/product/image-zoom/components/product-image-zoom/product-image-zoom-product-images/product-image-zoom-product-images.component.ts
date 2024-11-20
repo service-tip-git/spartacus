@@ -13,11 +13,11 @@ import {
 import { Product } from '@spartacus/core';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { FocusableCarouselItemDirective } from '../../../../../../projects/storefrontlib/shared/components/carousel/focusable-carousel-item/focusable-carousel-item.directive';
+import { FocusableCarouselItemDirective } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
-import { CarouselComponent } from '../../../../../../projects/storefrontlib/shared/components/carousel/carousel.component';
+import { CarouselComponent } from '@spartacus/storefront';
 import { ProductImageZoomTriggerComponent } from '../product-image-zoom-trigger/product-image-zoom-trigger.component';
-import { MediaComponent } from '../../../../../../projects/storefrontlib/shared/components/media/media.component';
+import { MediaComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

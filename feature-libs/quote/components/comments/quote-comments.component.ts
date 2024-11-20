@@ -23,8 +23,8 @@ import { QuoteUIConfig } from '../config/quote-ui.config';
 import { QuoteItemsComponentService } from '../items/quote-items.component.service';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { MessagingComponent as MessagingComponent_1 } from '../../../../projects/storefrontlib/shared/components/chat-messaging/messaging/messaging.component';
-import { IconComponent } from '../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { MessagingComponent as MessagingComponent_1 } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
 
 const DEFAULT_COMMENT_MAX_CHARS = 1000;
 const ALL_PRODUCTS_ID = '';

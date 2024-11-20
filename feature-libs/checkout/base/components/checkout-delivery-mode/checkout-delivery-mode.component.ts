@@ -38,9 +38,9 @@ import { CheckoutConfigService } from '../services/checkout-config.service';
 import { CheckoutStepService } from '../services/checkout-step.service';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { InnerComponentsHostDirective } from '../../../../../projects/storefrontlib/cms-structure/page/component/inner-components-host.directive';
-import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
-import { OutletDirective } from '../../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
+import { InnerComponentsHostDirective } from '@spartacus/storefront';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { OutletDirective } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
 import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
 

@@ -41,11 +41,11 @@ import {
 import { CheckoutBillingAddressFormService } from './checkout-billing-address-form.service';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { FormErrorsComponent } from '../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
-import { NgSelectA11yDirective } from '../../../../../projects/storefrontlib/shared/components/ng-select-a11y/ng-select-a11y.directive';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { NgSelectA11yDirective } from '@spartacus/storefront';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FeatureDirective } from '@spartacus/core';
-import { CardComponent } from '../../../../../projects/storefrontlib/shared/components/card/card.component';
+import { CardComponent } from '@spartacus/storefront';
 import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
 
 @Component({

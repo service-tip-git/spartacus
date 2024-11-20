@@ -36,8 +36,8 @@ import { MockTranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
-import { OutletDirective } from '../../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
-import { DatePickerComponent } from '../../../../../projects/storefrontlib/shared/components/form/date-picker/date-picker.component';
+import { OutletDirective } from '@spartacus/storefront';
+import { DatePickerComponent } from '@spartacus/storefront';
 import { NgTemplateOutlet, NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({

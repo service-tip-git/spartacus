@@ -41,9 +41,9 @@ import { MockDatePipe } from '@spartacus/core';
 import { MockTranslatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { IconComponent } from '../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
-import { PaginationComponent } from '../../../../projects/storefrontlib/shared/components/list-navigation/pagination/pagination.component';
-import { SortingComponent } from '../../../../projects/storefrontlib/shared/components/list-navigation/sorting/sorting.component';
+import { IconComponent } from '@spartacus/storefront';
+import { PaginationComponent } from '@spartacus/storefront';
+import { SortingComponent } from '@spartacus/storefront';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({

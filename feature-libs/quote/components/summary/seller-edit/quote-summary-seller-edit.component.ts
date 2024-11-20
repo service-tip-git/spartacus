@@ -41,8 +41,8 @@ import {
 } from './quote-summary-seller-edit.component.service';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { DatePickerComponent } from '../../../../../projects/storefrontlib/shared/components/form/date-picker/date-picker.component';
-import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { DatePickerComponent } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

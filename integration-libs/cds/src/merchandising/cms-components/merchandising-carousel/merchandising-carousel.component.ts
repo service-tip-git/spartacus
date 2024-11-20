@@ -22,9 +22,9 @@ import { MerchandisingProduct } from '../../model/index';
 import { MerchandisingCarouselComponentService } from './merchandising-carousel.component.service';
 import { MerchandisingCarouselModel } from './model/index';
 import { UrlPipe } from '@spartacus/core';
-import { MediaComponent } from '../../../../../../projects/storefrontlib/shared/components/media/media.component';
+import { MediaComponent } from '@spartacus/storefront';
 import { RouterLink } from '@angular/router';
-import { CarouselComponent } from '../../../../../../projects/storefrontlib/shared/components/carousel/carousel.component';
+import { CarouselComponent } from '@spartacus/storefront';
 import { AttributesDirective } from '../directives/attributes/attributes.directive';
 import { NgIf, AsyncPipe } from '@angular/common';
 

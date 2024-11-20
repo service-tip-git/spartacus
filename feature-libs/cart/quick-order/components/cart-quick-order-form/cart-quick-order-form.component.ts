@@ -35,7 +35,7 @@ import { Observable, Subscription } from 'rxjs';
 import { first, map } from 'rxjs/operators';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { FormErrorsComponent } from '../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
+import { FormErrorsComponent } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
 import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
 

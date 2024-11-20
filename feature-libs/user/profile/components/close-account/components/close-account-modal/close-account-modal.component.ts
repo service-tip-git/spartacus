@@ -28,9 +28,9 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { SpinnerComponent } from '../../../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
-import { IconComponent } from '../../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
-import { FocusDirective } from '../../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
+import { FocusDirective } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

@@ -16,7 +16,7 @@ import { FeatureConfigService, TranslationService } from '@spartacus/core';
 import { Observable, take } from 'rxjs';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { PromotionsComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/promotions/promotions.component';
+import { PromotionsComponent } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-checkout-review-overview',

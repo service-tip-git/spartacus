@@ -41,9 +41,9 @@ import { Observable, Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { FormErrorsComponent } from '../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
+import { FormErrorsComponent } from '@spartacus/storefront';
 import { DotSpinnerComponent } from '../dot-spinner/dot-spinner.component';
-import { IconComponent } from '../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { FeatureDirective } from '@spartacus/core';
 

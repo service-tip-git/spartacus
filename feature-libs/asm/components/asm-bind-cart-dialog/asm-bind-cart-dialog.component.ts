@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 import { FocusConfig, LaunchDialogService } from '@spartacus/storefront';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { FocusDirective } from '../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FocusDirective } from '@spartacus/storefront';
 
 export enum BIND_CART_DIALOG_ACTION {
   CANCEL = 'CANCEL',

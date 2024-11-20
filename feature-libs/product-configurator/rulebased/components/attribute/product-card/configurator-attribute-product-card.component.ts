@@ -34,10 +34,10 @@ import {
 import { ConfiguratorAttributeBaseComponent } from '../types/base/configurator-attribute-base.component';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { IconComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
-import { FocusDirective } from '../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { IconComponent } from '@spartacus/storefront';
+import { FocusDirective } from '@spartacus/storefront';
 import { ConfiguratorShowMoreComponent } from '../../show-more/configurator-show-more.component';
-import { MediaComponent } from '../../../../../../projects/storefrontlib/shared/components/media/media.component';
+import { MediaComponent } from '@spartacus/storefront';
 import { NgIf, NgClass, AsyncPipe } from '@angular/common';
 
 export interface ConfiguratorAttributeProductCardComponentOptions {

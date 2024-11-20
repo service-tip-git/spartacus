@@ -37,7 +37,7 @@ import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { CartItemListRowComponent } from '../cart-item-list-row/cart-item-list-row.component';
 import { FeatureDirective } from '@spartacus/core';
-import { OutletDirective } from '../../../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
+import { OutletDirective } from '@spartacus/storefront';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 interface ItemListContext {

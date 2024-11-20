@@ -36,7 +36,7 @@ import {
 } from 'rxjs/operators';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { SpinnerComponent } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 

@@ -27,8 +27,8 @@ import { MockTranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
-import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
-import { AtMessageDirective } from '../../../../../projects/storefrontlib/shared/components/assistive-technology-message/assistive-technology-message.directive';
+import { IconComponent } from '@spartacus/storefront';
+import { AtMessageDirective } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
 import { NgIf, AsyncPipe } from '@angular/common';
 

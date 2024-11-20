@@ -13,7 +13,7 @@ import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
-import { PageSlotComponent } from '../../../../../projects/storefrontlib/cms-structure/page/slot/page-slot.component';
+import { PageSlotComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

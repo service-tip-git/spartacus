@@ -19,7 +19,7 @@ import { ItemExistsDirective } from '../../shared/item-exists.directive';
 import { DisableInfoComponent } from '../../shared/detail/disable-info/disable-info.component';
 import { ToggleStatusComponent } from '../../shared/detail/toggle-status-action/toggle-status.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { FocusDirective } from '../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FocusDirective } from '@spartacus/storefront';
 import { CardComponent } from '../../shared/card/card.component';
 import { NgIf, AsyncPipe } from '@angular/common';
 

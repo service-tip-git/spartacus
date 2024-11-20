@@ -22,11 +22,11 @@ import { map } from 'rxjs/operators';
 import { CdcReconsentComponentService } from './cdc-reconsent-component.service';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
-import { ConsentManagementFormComponent } from '../../../../../projects/storefrontlib/cms-components/myaccount/consent-management/components/consent-form/consent-management-form.component';
-import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { ConsentManagementFormComponent } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
-import { FocusDirective } from '../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FocusDirective } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-anonymous-consent-dialog',

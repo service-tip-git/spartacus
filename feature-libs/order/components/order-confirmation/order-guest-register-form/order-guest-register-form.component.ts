@@ -23,8 +23,8 @@ import { UserRegisterFacade } from '@spartacus/user/profile/root';
 import { Subscription } from 'rxjs';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { FormErrorsComponent } from '../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
-import { PasswordVisibilityToggleDirective } from '../../../../../projects/storefrontlib/shared/components/form/password-visibility-toggle/password-visibility-toggle.directive';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { PasswordVisibilityToggleDirective } from '@spartacus/storefront';
 import { NgTemplateOutlet } from '@angular/common';
 import { FeatureDirective } from '@spartacus/core';
 

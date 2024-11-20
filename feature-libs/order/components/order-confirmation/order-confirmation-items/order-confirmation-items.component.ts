@@ -14,9 +14,9 @@ import { Order, OrderFacade } from '@spartacus/order/root';
 import { Observable } from 'rxjs';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { OutletDirective } from '../../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
+import { OutletDirective } from '@spartacus/storefront';
 import { AbstractOrderContextDirective } from '../../../../cart/base/components/abstract-order-context/abstract-order-context.directive';
-import { PromotionsComponent } from '../../../../../projects/storefrontlib/cms-components/misc/promotions/promotions.component';
+import { PromotionsComponent } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
 import { NgIf, AsyncPipe } from '@angular/common';
 

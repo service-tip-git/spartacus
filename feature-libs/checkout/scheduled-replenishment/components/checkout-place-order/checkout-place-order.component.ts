@@ -32,7 +32,7 @@ import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { AsyncPipe } from '@angular/common';
-import { AtMessageDirective } from '../../../../../projects/storefrontlib/shared/components/assistive-technology-message/assistive-technology-message.directive';
+import { AtMessageDirective } from '@spartacus/storefront';
 import { RouterLink } from '@angular/router';
 
 @Component({

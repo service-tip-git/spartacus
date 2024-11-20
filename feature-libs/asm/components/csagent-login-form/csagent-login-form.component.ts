@@ -16,8 +16,8 @@ import { useFeatureStyles } from '@spartacus/core';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { DotSpinnerComponent } from '../dot-spinner/dot-spinner.component';
-import { PasswordVisibilityToggleDirective } from '../../../../projects/storefrontlib/shared/components/form/password-visibility-toggle/password-visibility-toggle.directive';
-import { FormErrorsComponent } from '../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
+import { PasswordVisibilityToggleDirective } from '@spartacus/storefront';
+import { FormErrorsComponent } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
 import { NgIf } from '@angular/common';
 

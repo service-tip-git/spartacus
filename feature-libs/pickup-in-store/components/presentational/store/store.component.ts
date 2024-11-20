@@ -13,7 +13,7 @@ import { TranslatePipe } from '@spartacus/core';
 import { SetPreferredStoreComponent } from '../../container/set-preferred-store/set-preferred-store.component';
 import { StoreScheduleComponent } from './store-schedule/store-schedule.component';
 import { NgIf, NgClass } from '@angular/common';
-import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 import { StoreAddressComponent } from './store-address/store-address.component';
 
 /**

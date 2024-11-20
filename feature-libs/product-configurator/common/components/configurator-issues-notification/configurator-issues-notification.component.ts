@@ -13,7 +13,7 @@ import { CommonConfiguratorUtilsService } from '../../shared/utils/common-config
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { ConfigureCartEntryComponent } from '../configure-cart-entry/configure-cart-entry.component';
-import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

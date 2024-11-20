@@ -12,7 +12,7 @@ import {
 } from '@angular/core';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { Configurator } from '../../core/model/configurator.model';
-import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 import { NgIf } from '@angular/common';
 
 @Component({

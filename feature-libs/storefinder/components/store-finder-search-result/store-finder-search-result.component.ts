@@ -15,9 +15,9 @@ import {
 } from '@spartacus/storefinder/core';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { SpinnerComponent } from '../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { SpinnerComponent } from '@spartacus/storefront';
 import { StoreFinderListComponent } from './store-finder-list/store-finder-list.component';
-import { PaginationComponent } from '../../../../projects/storefrontlib/shared/components/list-navigation/pagination/pagination.component';
+import { PaginationComponent } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
 import { NgIf, AsyncPipe } from '@angular/common';
 

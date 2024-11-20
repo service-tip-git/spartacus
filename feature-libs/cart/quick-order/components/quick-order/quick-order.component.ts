@@ -31,9 +31,9 @@ import { first, map, tap } from 'rxjs/operators';
 import { QuickOrderFormComponent } from './form/quick-order-form.component';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { ProgressButtonComponent } from '../../../../../projects/storefrontlib/shared/components/progress-button/progress-button.component';
+import { ProgressButtonComponent } from '@spartacus/storefront';
 import { QuickOrderTableComponent } from './table/quick-order-table.component';
-import { MessageComponent } from '../../../../../projects/storefrontlib/cms-components/misc/message/message.component';
+import { MessageComponent } from '@spartacus/storefront';
 import { NgIf, NgFor, AsyncPipe, KeyValuePipe } from '@angular/common';
 
 @Component({

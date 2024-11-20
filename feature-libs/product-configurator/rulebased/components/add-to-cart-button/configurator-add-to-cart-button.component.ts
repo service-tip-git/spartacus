@@ -49,8 +49,8 @@ import { ConfiguratorQuantityService } from '../../core/services/configurator-qu
 import { ConfiguratorStorefrontUtilsService } from '../service/configurator-storefront-utils.service';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
-import { ItemCounterComponent } from '../../../../../projects/storefrontlib/shared/components/item-counter/item-counter.component';
+import { IconComponent } from '@spartacus/storefront';
+import { ItemCounterComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 const CX_SELECTOR = 'cx-configurator-add-to-cart-button';

@@ -11,7 +11,7 @@ import { AbstractStoreItemComponent } from '../abstract-store-item/abstract-stor
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FeatureDirective } from '@spartacus/core';
-import { OutletDirective } from '../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
+import { OutletDirective } from '@spartacus/storefront';
 import { RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
 

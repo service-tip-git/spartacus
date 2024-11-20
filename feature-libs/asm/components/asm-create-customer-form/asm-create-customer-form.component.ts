@@ -32,11 +32,11 @@ import { first } from 'rxjs/operators';
 import { CreatedCustomer } from './asm-create-customer-form.model';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { SpinnerComponent } from '../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
-import { FormErrorsComponent } from '../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
-import { MessageComponent } from '../../../../projects/storefrontlib/cms-components/misc/message/message.component';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { MessageComponent } from '@spartacus/storefront';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
-import { FocusDirective } from '../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FocusDirective } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-asm-create-customer-form',

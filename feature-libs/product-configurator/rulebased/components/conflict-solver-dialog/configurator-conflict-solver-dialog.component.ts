@@ -26,9 +26,9 @@ import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { ConfiguratorGroupComponent } from '../group/configurator-group.component';
 import { NgIf, AsyncPipe } from '@angular/common';
-import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
-import { FocusDirective } from '../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FocusDirective } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-configurator-conflict-solver-dialog',

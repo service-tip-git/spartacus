@@ -51,11 +51,11 @@ import { CheckoutBillingAddressFormService } from '../../checkout-billing-addres
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { CheckoutBillingAddressFormComponent } from '../../checkout-billing-address/checkout-billing-address-form.component';
-import { SpinnerComponent } from '../../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
-import { CardComponent } from '../../../../../../projects/storefrontlib/shared/components/card/card.component';
-import { IconComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
-import { FormErrorsComponent } from '../../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
-import { NgSelectA11yDirective } from '../../../../../../projects/storefrontlib/shared/components/ng-select-a11y/ng-select-a11y.directive';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { CardComponent } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { NgSelectA11yDirective } from '@spartacus/storefront';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FeatureDirective } from '@spartacus/core';
 import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';

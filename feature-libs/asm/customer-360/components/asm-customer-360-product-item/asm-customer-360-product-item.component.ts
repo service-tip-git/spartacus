@@ -16,7 +16,7 @@ import { ProductItem } from '../asm-customer-360-product-listing/product-item.mo
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgIf } from '@angular/common';
-import { MediaComponent } from '../../../../../projects/storefrontlib/shared/components/media/media.component';
+import { MediaComponent } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-asm-customer-360-product-item',

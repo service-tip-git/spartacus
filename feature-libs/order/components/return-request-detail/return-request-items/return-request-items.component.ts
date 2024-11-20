@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 import { ReturnRequestService } from '../return-request.service';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { MediaComponent } from '../../../../../projects/storefrontlib/shared/components/media/media.component';
+import { MediaComponent } from '@spartacus/storefront';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({

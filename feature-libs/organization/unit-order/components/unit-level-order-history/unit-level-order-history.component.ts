@@ -17,9 +17,9 @@ import { CxDatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { PaginationComponent } from '../../../../../projects/storefrontlib/shared/components/list-navigation/pagination/pagination.component';
-import { TotalComponent } from '../../../../../projects/storefrontlib/shared/components/list-navigation/total/total.component';
-import { SortingComponent } from '../../../../../projects/storefrontlib/shared/components/list-navigation/sorting/sorting.component';
+import { PaginationComponent } from '@spartacus/storefront';
+import { TotalComponent } from '@spartacus/storefront';
+import { SortingComponent } from '@spartacus/storefront';
 import { UnitLevelOrderHistoryFilterComponent } from './filter/unit-level-order-history-filter.component';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 

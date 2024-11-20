@@ -25,7 +25,7 @@ import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { ConfiguratorPriceComponent } from '../../../price/configurator-price.component';
 import { ConfiguratorAttributeQuantityComponent } from '../../quantity/configurator-attribute-quantity.component';
-import { FocusDirective } from '../../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FocusDirective } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
 import { NgIf, NgClass, NgFor, AsyncPipe } from '@angular/common';
 

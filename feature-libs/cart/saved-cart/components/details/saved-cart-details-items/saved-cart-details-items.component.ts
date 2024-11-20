@@ -31,8 +31,8 @@ import { SavedCartDetailsService } from '../saved-cart-details.service';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { AddToCartComponent } from '../../../../base/components/add-to-cart/add-to-cart.component';
-import { SpinnerComponent } from '../../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
-import { OutletDirective } from '../../../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { OutletDirective } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
 import { NgIf, AsyncPipe } from '@angular/common';
 

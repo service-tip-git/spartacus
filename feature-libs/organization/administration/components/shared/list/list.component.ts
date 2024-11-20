@@ -30,17 +30,17 @@ import { CreateButtonType, ListService } from './list.service';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
-import { PaginationComponent } from '../../../../../../projects/storefrontlib/shared/components/list-navigation/pagination/pagination.component';
-import { TableComponent } from '../../../../../../projects/storefrontlib/shared/components/table/table.component';
+import { PaginationComponent } from '@spartacus/storefront';
+import { TableComponent } from '@spartacus/storefront';
 import { RouterLinkActive, RouterLink, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { IconComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
-import { PopoverDirective } from '../../../../../../projects/storefrontlib/shared/components/popover/popover.directive';
+import { IconComponent } from '@spartacus/storefront';
+import { PopoverDirective } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
-import { ViewComponent } from '../../../../../../projects/storefrontlib/shared/components/split-view/view/view.component';
+import { ViewComponent } from '@spartacus/storefront';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
-import { SplitViewComponent } from '../../../../../../projects/storefrontlib/shared/components/split-view/split/split-view.component';
+import { SplitViewComponent } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-org-list',

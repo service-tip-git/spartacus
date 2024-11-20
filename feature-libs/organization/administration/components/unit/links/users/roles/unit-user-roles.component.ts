@@ -25,7 +25,7 @@ import { UnitUserRolesItemService } from './unit-user-roles-item.service';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
-import { FocusDirective } from '../../../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FocusDirective } from '@spartacus/storefront';
 import { CardComponent } from '../../../../shared/card/card.component';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 

@@ -50,11 +50,11 @@ import { ArgsPipe } from '../../../core/utils/args/args.pipe';
 import { CxDatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { AsmCustomer360SectionComponent } from '../sections/asm-customer-360-section/asm-customer-360-section.component';
-import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
-import { MediaComponent } from '../../../../../projects/storefrontlib/shared/components/media/media.component';
-import { MessageComponent } from '../../../../../projects/storefrontlib/cms-components/misc/message/message.component';
+import { IconComponent } from '@spartacus/storefront';
+import { MediaComponent } from '@spartacus/storefront';
+import { MessageComponent } from '@spartacus/storefront';
 import { NgTemplateOutlet, NgIf, NgFor, AsyncPipe } from '@angular/common';
-import { FocusDirective } from '../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FocusDirective } from '@spartacus/storefront';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

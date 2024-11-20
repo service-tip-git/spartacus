@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActiveCartFacade, Cart, CartOutlets } from '@spartacus/cart/base/root';
 import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
-import { OutletDirective } from '../../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
+import { OutletDirective } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-checkout-order-summary',

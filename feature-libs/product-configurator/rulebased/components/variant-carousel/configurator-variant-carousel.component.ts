@@ -13,8 +13,8 @@ import { ConfiguratorCommonsService } from '../../core/facade/configurator-commo
 import { Configurator } from '../../core/model/configurator.model';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { ProductCarouselItemComponent } from '../../../../../projects/storefrontlib/cms-components/product/carousel/product-carousel-item/product-carousel-item.component';
-import { CarouselComponent } from '../../../../../projects/storefrontlib/shared/components/carousel/carousel.component';
+import { ProductCarouselItemComponent } from '@spartacus/storefront';
+import { CarouselComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

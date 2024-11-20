@@ -18,8 +18,8 @@ import { ConfiguratorExpertModeService } from '../../core/services/configurator-
 import { Configurator } from '../../core/model/configurator.model';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { MediaComponent } from '../../../../../projects/storefrontlib/shared/components/media/media.component';
-import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { MediaComponent } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

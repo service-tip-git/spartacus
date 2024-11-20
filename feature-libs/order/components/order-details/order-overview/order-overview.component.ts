@@ -22,8 +22,8 @@ import { OrderOverviewComponentService } from './order-overview-component.servic
 import { MockDatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
 import { OrderDetailBillingComponent } from '../order-detail-billing/order-detail-billing.component';
-import { OutletDirective } from '../../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
-import { CardComponent } from '../../../../../projects/storefrontlib/shared/components/card/card.component';
+import { OutletDirective } from '@spartacus/storefront';
+import { CardComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

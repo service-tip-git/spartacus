@@ -23,8 +23,8 @@ import { combineLatest, Observable, Subscription } from 'rxjs';
 import { filter, map, take, tap } from 'rxjs/operators';
 import { MockDatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
-import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
-import { CardComponent } from '../../../../../projects/storefrontlib/shared/components/card/card.component';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { CardComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

@@ -26,7 +26,7 @@ import { ConfiguratorAttributeCompositionContext } from '../../composition/confi
 import { ConfiguratorAttributeBaseComponent } from '../base/configurator-attribute-base.component';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { FocusDirective } from '../../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FocusDirective } from '@spartacus/storefront';
 import { NgIf, NgClass, AsyncPipe } from '@angular/common';
 
 @Component({

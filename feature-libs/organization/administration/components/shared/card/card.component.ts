@@ -20,10 +20,10 @@ import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { MessageComponent } from '../message/message.component';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { IconComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
-import { PopoverDirective } from '../../../../../../projects/storefrontlib/shared/components/popover/popover.directive';
+import { IconComponent } from '@spartacus/storefront';
+import { PopoverDirective } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
-import { ViewComponent as ViewComponent_1 } from '../../../../../../projects/storefrontlib/shared/components/split-view/view/view.component';
+import { ViewComponent as ViewComponent_1 } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-org-card',

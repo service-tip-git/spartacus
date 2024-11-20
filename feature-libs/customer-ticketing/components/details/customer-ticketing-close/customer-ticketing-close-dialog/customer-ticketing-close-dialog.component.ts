@@ -15,12 +15,12 @@ import { Subscription } from 'rxjs';
 import { CustomerTicketingDialogComponent } from '../../../shared/customer-ticketing-dialog/customer-ticketing-dialog.component';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { SpinnerComponent } from '../../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { SpinnerComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
-import { FormErrorsComponent } from '../../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
-import { IconComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FocusDirective } from '../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FocusDirective } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-customer-ticketing-close-dialog',

@@ -17,7 +17,7 @@ import { ConfiguratorAttributePriceChangeService } from '../../price-change/conf
 import { ConfiguratorAttributeBaseComponent } from '../base/configurator-attribute-base.component';
 import { ConfiguratorPriceComponent } from '../../../price/configurator-price.component';
 import { ConfiguratorShowMoreComponent } from '../../../show-more/configurator-show-more.component';
-import { FocusDirective } from '../../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FocusDirective } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

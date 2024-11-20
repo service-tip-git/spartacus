@@ -17,9 +17,9 @@ import { AddressBookComponentService } from './address-book.component.service';
 import { Card, getAddressNumbers } from '@spartacus/storefront';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { SpinnerComponent } from '@spartacus/storefront';
 import { AddressFormComponent } from './address-form/address-form.component';
-import { CardComponent } from '../../../../../projects/storefrontlib/shared/components/card/card.component';
+import { CardComponent } from '@spartacus/storefront';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({

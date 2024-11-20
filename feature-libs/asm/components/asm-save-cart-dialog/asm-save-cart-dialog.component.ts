@@ -14,9 +14,9 @@ import { take } from 'rxjs/operators';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FeatureDirective } from '@spartacus/core';
-import { MessageComponent } from '../../../../projects/storefrontlib/cms-components/misc/message/message.component';
+import { MessageComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
-import { FocusDirective } from '../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FocusDirective } from '@spartacus/storefront';
 
 export enum SAVE_CART_DIALOG_ACTION {
   CANCEL = 'CANCEL',

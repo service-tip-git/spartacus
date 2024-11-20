@@ -22,7 +22,7 @@ import { Subscription } from 'rxjs';
 import { MockTranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { ProgressButtonComponent } from '../../../../../projects/storefrontlib/shared/components/progress-button/progress-button.component';
+import { ProgressButtonComponent } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-cart-proceed-to-checkout',

@@ -26,7 +26,7 @@ import { ConfiguratorAttributeBaseComponent } from '../types/base/configurator-a
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { ConfiguratorShowMoreComponent } from '../../show-more/configurator-show-more.component';
-import { IconComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

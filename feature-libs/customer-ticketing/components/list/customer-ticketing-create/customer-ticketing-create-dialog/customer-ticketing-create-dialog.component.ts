@@ -31,12 +31,12 @@ import {
 import { catchError, first, tap } from 'rxjs/operators';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { FileUploadComponent } from '../../../../../../projects/storefrontlib/shared/components/form/file-upload/file-upload.component';
-import { FormErrorsComponent } from '../../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
+import { FileUploadComponent } from '@spartacus/storefront';
+import { FormErrorsComponent } from '@spartacus/storefront';
 import { NgTemplateOutlet, NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { FeatureDirective } from '@spartacus/core';
-import { IconComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
-import { FocusDirective } from '../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { IconComponent } from '@spartacus/storefront';
+import { FocusDirective } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-customer-ticketing-create-dialog',

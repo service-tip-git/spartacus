@@ -26,7 +26,7 @@ import { CurrentCostCenterService } from '../services/current-cost-center.servic
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { FormErrorsComponent } from '../../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
+import { FormErrorsComponent } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
 import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
 import { FormComponent } from '../../shared/form/form.component';

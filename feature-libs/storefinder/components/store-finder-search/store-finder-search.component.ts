@@ -16,7 +16,7 @@ import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgClass } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { IconComponent } from '../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-store-finder-search',

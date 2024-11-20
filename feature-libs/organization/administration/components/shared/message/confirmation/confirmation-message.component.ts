@@ -18,9 +18,9 @@ import { MessageService } from '../services/message.service';
 import { ConfirmationMessageData } from './confirmation-message.model';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { IconComponent } from '../../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 import { NgIf } from '@angular/common';
-import { FocusDirective } from '../../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FocusDirective } from '@spartacus/storefront';
 
 /**
  * Renders a confirmation message and cancel/confirm button in the message component.

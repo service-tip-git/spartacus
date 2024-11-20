@@ -20,7 +20,7 @@ import { map, tap } from 'rxjs/operators';
 import { combineLatest, Observable } from 'rxjs';
 import { MockTranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
-import { HighlightPipe } from '../../../../projects/storefrontlib/cms-components/navigation/search-box/highlight.pipe';
+import { HighlightPipe } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';

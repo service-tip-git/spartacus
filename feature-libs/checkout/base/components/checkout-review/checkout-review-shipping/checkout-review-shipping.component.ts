@@ -29,10 +29,10 @@ import { CheckoutStepService } from '../../services/checkout-step.service';
 import { MockTranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { OutletDirective } from '../../../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
-import { IconComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { OutletDirective } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
 import { RouterLink } from '@angular/router';
-import { CardComponent } from '../../../../../../projects/storefrontlib/shared/components/card/card.component';
+import { CardComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

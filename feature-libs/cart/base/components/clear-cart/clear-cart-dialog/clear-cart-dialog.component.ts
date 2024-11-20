@@ -16,11 +16,11 @@ import { FocusConfig, ICON_TYPE } from '@spartacus/storefront';
 import { ClearCartDialogComponentService } from './clear-cart-dialog-component.service';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { SpinnerComponent } from '../../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
-import { IconComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
 import { NgIf } from '@angular/common';
-import { FocusDirective } from '../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FocusDirective } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-clear-cart-dialog',

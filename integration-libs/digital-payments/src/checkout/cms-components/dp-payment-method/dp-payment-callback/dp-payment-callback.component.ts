@@ -20,7 +20,7 @@ import { LaunchDialogService, LAUNCH_CALLER } from '@spartacus/storefront';
 import { take } from 'rxjs';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { SpinnerComponent } from '../../../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { SpinnerComponent } from '@spartacus/storefront';
 import { CheckoutBillingAddressFormComponent } from '../../../../../../../feature-libs/checkout/base/components/checkout-billing-address/checkout-billing-address-form.component';
 import { NgIf } from '@angular/common';
 

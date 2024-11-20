@@ -25,7 +25,7 @@ import { ConfiguratorAttributePriceChangeService } from '../../price-change/conf
 import { ConfiguratorAttributeQuantityService } from '../../quantity/configurator-attribute-quantity.service';
 import { ConfiguratorAttributeMultiSelectionBaseComponent } from '../base/configurator-attribute-multi-selection-base.component';
 import { ConfiguratorShowMoreComponent } from '../../../show-more/configurator-show-more.component';
-import { FocusDirective } from '../../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FocusDirective } from '@spartacus/storefront';
 import { ConfiguratorPriceComponent } from '../../../price/configurator-price.component';
 import { ConfiguratorAttributeQuantityComponent } from '../../quantity/configurator-attribute-quantity.component';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';

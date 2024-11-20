@@ -23,7 +23,7 @@ import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { StoreFinderListItemComponent } from '../../store-finder-list-item/store-finder-list-item.component';
 import { StoreFinderStoreDescriptionComponent } from '../../store-finder-store-description/store-finder-store-description.component';
-import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 import { StoreFinderPaginationDetailsComponent } from '../../store-finder-pagination-details/store-finder-pagination-details.component';
 
 @Component({

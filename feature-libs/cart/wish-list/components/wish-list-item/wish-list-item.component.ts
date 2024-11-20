@@ -22,10 +22,10 @@ import {
 import { MockTranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { AtMessageDirective } from '../../../../../projects/storefrontlib/shared/components/assistive-technology-message/assistive-technology-message.directive';
-import { InnerComponentsHostDirective } from '../../../../../projects/storefrontlib/cms-structure/page/component/inner-components-host.directive';
+import { AtMessageDirective } from '@spartacus/storefront';
+import { InnerComponentsHostDirective } from '@spartacus/storefront';
 import { NgIf, NgFor } from '@angular/common';
-import { MediaComponent } from '../../../../../projects/storefrontlib/shared/components/media/media.component';
+import { MediaComponent } from '@spartacus/storefront';
 import { RouterLink } from '@angular/router';
 
 @Component({

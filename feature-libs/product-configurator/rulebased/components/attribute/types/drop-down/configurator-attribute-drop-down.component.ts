@@ -32,7 +32,7 @@ import { ConfiguratorAttributeNumericInputFieldComponent } from '../numeric-inpu
 import { ConfiguratorAttributeQuantityComponent } from '../../quantity/configurator-attribute-quantity.component';
 import { ConfiguratorPriceComponent } from '../../../price/configurator-price.component';
 import { ConfiguratorShowMoreComponent } from '../../../show-more/configurator-show-more.component';
-import { FocusDirective } from '../../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FocusDirective } from '@spartacus/storefront';
 import { NgIf, NgClass, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({

@@ -49,12 +49,12 @@ import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { CSAgentLoginFormComponent } from '../csagent-login-form/csagent-login-form.component';
 import { CustomerSelectionComponent } from '../customer-selection/customer-selection.component';
-import { MessageComponent } from '../../../../projects/storefrontlib/cms-components/misc/message/message.component';
+import { MessageComponent } from '@spartacus/storefront';
 import { CustomerEmulationComponent } from '../customer-emulation/customer-emulation.component';
 import { AsmSessionTimerComponent } from '../asm-session-timer/asm-session-timer.component';
 import { AsmToggleUiComponent } from '../asm-toggle-ui/asm-toggle-ui.component';
 import { NgIf, AsyncPipe } from '@angular/common';
-import { IconComponent } from '../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 interface CartTypeKey {
   [key: string]: string;
 }

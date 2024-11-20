@@ -31,11 +31,11 @@ import { CurrentProductService } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { NgSelectA11yDirective } from '../../../../../projects/storefrontlib/shared/components/ng-select-a11y/ng-select-a11y.directive';
+import { NgSelectA11yDirective } from '@spartacus/storefront';
 import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { MediaComponent } from '../../../../../projects/storefrontlib/shared/components/media/media.component';
-import { FocusDirective } from '../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { MediaComponent } from '@spartacus/storefront';
+import { FocusDirective } from '@spartacus/storefront';
 import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
 
 @Component({

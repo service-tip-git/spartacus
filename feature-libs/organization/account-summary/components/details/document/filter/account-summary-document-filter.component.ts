@@ -35,10 +35,10 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { NgSelectA11yDirective } from '../../../../../../../projects/storefrontlib/shared/components/ng-select-a11y/ng-select-a11y.directive';
+import { NgSelectA11yDirective } from '@spartacus/storefront';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { FormErrorsComponent } from '../../../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
-import { DatePickerComponent } from '../../../../../../../projects/storefrontlib/shared/components/form/date-picker/date-picker.component';
+import { FormErrorsComponent } from '@spartacus/storefront';
+import { DatePickerComponent } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
 import { NgIf, NgTemplateOutlet } from '@angular/common';
 

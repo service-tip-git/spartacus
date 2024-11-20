@@ -14,10 +14,10 @@ import { OrderAmendService } from '../../amend-order.service';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { AmendOrderActionsComponent } from '../../amend-order-actions/amend-order-actions.component';
-import { FormErrorsComponent } from '../../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
+import { FormErrorsComponent } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
 import { CancelOrReturnItemsComponent } from '../../amend-order-items/amend-order-items.component';
-import { MessageComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/message/message.component';
+import { MessageComponent } from '@spartacus/storefront';
 import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
 
 @Component({

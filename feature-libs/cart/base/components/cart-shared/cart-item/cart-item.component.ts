@@ -19,15 +19,15 @@ import { CartItemContextSource } from './model/cart-item-context-source.model';
 import { MockTranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { AtMessageDirective } from '../../../../../../projects/storefrontlib/shared/components/assistive-technology-message/assistive-technology-message.directive';
-import { PromotionsComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/promotions/promotions.component';
-import { ItemCounterComponent } from '../../../../../../projects/storefrontlib/shared/components/item-counter/item-counter.component';
+import { AtMessageDirective } from '@spartacus/storefront';
+import { PromotionsComponent } from '@spartacus/storefront';
+import { ItemCounterComponent } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
-import { MediaComponent } from '../../../../../../projects/storefrontlib/shared/components/media/media.component';
+import { MediaComponent } from '@spartacus/storefront';
 import { RouterLink } from '@angular/router';
 import { NgClass, NgIf, NgFor, NgTemplateOutlet } from '@angular/common';
 import { CartItemValidationWarningComponent } from '../../validation/cart-item-warning/cart-item-validation-warning.component';
-import { OutletDirective } from '../../../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
+import { OutletDirective } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-cart-item',

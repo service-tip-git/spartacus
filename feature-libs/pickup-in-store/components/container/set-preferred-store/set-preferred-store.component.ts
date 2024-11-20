@@ -15,7 +15,7 @@ import { ICON_TYPE, OutletContextData } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 import { NgClass, AsyncPipe } from '@angular/common';
 
 @Component({

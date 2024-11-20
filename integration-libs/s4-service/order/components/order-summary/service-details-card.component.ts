@@ -14,7 +14,7 @@ import {
 } from '@spartacus/s4-service/root';
 import { Card, OutletContextData } from '@spartacus/storefront';
 import { Observable, Subscription, map } from 'rxjs';
-import { CardComponent } from '../../../../../projects/storefrontlib/shared/components/card/card.component';
+import { CardComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

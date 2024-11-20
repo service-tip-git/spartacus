@@ -18,7 +18,7 @@ import {
 import { LoggerService } from '@spartacus/core';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
-import { IconComponent } from '../../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 import { NgIf, NgTemplateOutlet, NgFor, SlicePipe } from '@angular/common';
 /**
  * Generic in-memory paged list component that can be used to render arbitrary items in

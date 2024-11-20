@@ -10,7 +10,7 @@ import { OrderDetailsService } from '@spartacus/order/components';
 import { map } from 'rxjs/operators';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { OutletDirective } from '../../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
+import { OutletDirective } from '@spartacus/storefront';
 import { NgIf, AsyncPipe, DatePipe } from '@angular/common';
 
 @Component({

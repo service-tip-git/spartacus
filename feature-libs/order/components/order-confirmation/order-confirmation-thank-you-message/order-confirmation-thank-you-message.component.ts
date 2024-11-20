@@ -21,7 +21,7 @@ import { Observable } from 'rxjs';
 import { filter, take, tap, withLatestFrom } from 'rxjs/operators';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { AddToHomeScreenBannerComponent } from '../../../../../projects/storefrontlib/cms-structure/pwa/components/add-to-home-screen-banner/add-to-home-screen-banner.component';
+import { AddToHomeScreenBannerComponent } from '@spartacus/storefront';
 import { OrderGuestRegisterFormComponent } from '../order-guest-register-form/order-guest-register-form.component';
 import { NgIf, AsyncPipe } from '@angular/common';
 

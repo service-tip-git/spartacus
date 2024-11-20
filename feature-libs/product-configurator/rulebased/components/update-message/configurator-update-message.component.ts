@@ -13,7 +13,7 @@ import { ConfiguratorMessageConfig } from '../config/configurator-message.config
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { AsyncPipe } from '@angular/common';
-import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { SpinnerComponent } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-configurator-update-message',

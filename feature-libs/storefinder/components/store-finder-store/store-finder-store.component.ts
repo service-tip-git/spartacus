@@ -12,9 +12,9 @@ import { ICON_TYPE } from '@spartacus/storefront';
 import { StoreFinderService } from '@spartacus/storefinder/core';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { SpinnerComponent } from '../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { SpinnerComponent } from '@spartacus/storefront';
 import { StoreFinderStoreDescriptionComponent } from '../store-finder-store-description/store-finder-store-description.component';
-import { IconComponent } from '../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
 import { NgIf, AsyncPipe } from '@angular/common';
 

@@ -16,7 +16,7 @@ import { MockTranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
-import { IconComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 import { NgFor, NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

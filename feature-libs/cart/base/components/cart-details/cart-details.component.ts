@@ -19,7 +19,7 @@ import { filter, map, tap } from 'rxjs/operators';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { CartItemListComponent } from '../cart-shared/cart-item-list/cart-item-list.component';
-import { PromotionsComponent } from '../../../../../projects/storefrontlib/cms-components/misc/promotions/promotions.component';
+import { PromotionsComponent } from '@spartacus/storefront';
 import { CartValidationWarningsComponent } from '../validation/cart-warnings/cart-validation-warnings.component';
 import { NgIf, AsyncPipe } from '@angular/common';
 

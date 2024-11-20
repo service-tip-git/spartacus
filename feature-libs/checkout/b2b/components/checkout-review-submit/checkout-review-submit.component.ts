@@ -31,11 +31,11 @@ import { filter, map } from 'rxjs/operators';
 import { MockTranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { PromotionsComponent } from '../../../../../projects/storefrontlib/cms-components/misc/promotions/promotions.component';
-import { OutletDirective } from '../../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
-import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { PromotionsComponent } from '@spartacus/storefront';
+import { OutletDirective } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
 import { RouterLink } from '@angular/router';
-import { CardComponent } from '../../../../../projects/storefrontlib/shared/components/card/card.component';
+import { CardComponent } from '@spartacus/storefront';
 import {
   NgIf,
   NgFor,

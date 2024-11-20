@@ -18,7 +18,7 @@ import { UnitAddressItemService } from '../services/unit-address-item.service';
 import { UnitAddressFormService } from './unit-address-form.service';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { FormErrorsComponent } from '../../../../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
+import { FormErrorsComponent } from '@spartacus/storefront';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FeatureDirective } from '@spartacus/core';
 import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';

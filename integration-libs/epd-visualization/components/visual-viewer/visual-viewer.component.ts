@@ -17,7 +17,7 @@ import { VisualizationLoadInfo } from './models/visualization-load-info';
 import { VisualViewerService } from './visual-viewer.service';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { SpinnerComponent } from '../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { SpinnerComponent } from '@spartacus/storefront';
 import { VisualViewerAnimationSliderComponent } from './toolbar/visual-viewer-animation-slider/visual-viewer-animation-slider.component';
 import { VisualViewerToolbarButtonComponent } from './toolbar/visual-viewer-toolbar-button/visual-viewer-toolbar-button.component';
 import { FeatureDirective } from '@spartacus/core';

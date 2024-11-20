@@ -28,7 +28,7 @@ import { map, tap } from 'rxjs/operators';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { AppliedCouponsComponent } from './applied-coupons/applied-coupons.component';
-import { FormErrorsComponent } from '../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
+import { FormErrorsComponent } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 

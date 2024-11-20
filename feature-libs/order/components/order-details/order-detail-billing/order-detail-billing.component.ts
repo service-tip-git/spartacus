@@ -15,7 +15,7 @@ import { Card } from '@spartacus/storefront';
 import { Observable, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { OrderDetailsService } from '../order-details.service';
-import { CardComponent } from '../../../../../projects/storefrontlib/shared/components/card/card.component';
+import { CardComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartOutlets } from '@spartacus/cart/base/root';
 import { Observable } from 'rxjs';
 import { OrderDetailsService } from '../order-details.service';
-import { OutletDirective } from '../../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
+import { OutletDirective } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

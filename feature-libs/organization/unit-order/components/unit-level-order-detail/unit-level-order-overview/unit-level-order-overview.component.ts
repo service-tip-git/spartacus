@@ -20,7 +20,7 @@ import { filter, map } from 'rxjs/operators';
 import { UnitLevelOrderDetailService } from '../unit-level-order-detail.service';
 import { MockDatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
-import { CardComponent } from '../../../../../../projects/storefrontlib/shared/components/card/card.component';
+import { CardComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

@@ -20,9 +20,9 @@ import { Subscription } from 'rxjs';
 import { MockTranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { ItemCounterComponent } from '../../../../../../../projects/storefrontlib/shared/components/item-counter/item-counter.component';
+import { ItemCounterComponent } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
-import { MediaComponent } from '../../../../../../../projects/storefrontlib/shared/components/media/media.component';
+import { MediaComponent } from '@spartacus/storefront';
 import { RouterLink } from '@angular/router';
 import { NgClass } from '@angular/common';
 

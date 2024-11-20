@@ -15,8 +15,8 @@ import { GlobalMessageType } from '@spartacus/core';
 import { PromotionListEntry } from './asm-customer-360-promotion-listing.model';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
-import { MessageComponent } from '../../../../../projects/storefrontlib/cms-components/misc/message/message.component';
+import { IconComponent } from '@spartacus/storefront';
+import { MessageComponent } from '@spartacus/storefront';
 import { NgIf, NgFor } from '@angular/common';
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

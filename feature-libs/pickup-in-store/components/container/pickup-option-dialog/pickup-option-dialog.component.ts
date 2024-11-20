@@ -32,13 +32,13 @@ import { Observable, Subscription } from 'rxjs';
 import { filter, map, take, tap } from 'rxjs/operators';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { SpinnerComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 import { StoreListComponent } from '../store-list/store-list.component';
 import { StoreSearchComponent } from '../store-search/store-search.component';
-import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
-import { FocusDirective } from '../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FocusDirective } from '@spartacus/storefront';
 
 /**
  * The dialog box to select the pickup location for a product.

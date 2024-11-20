@@ -23,7 +23,7 @@ import { ICON_TYPE } from '@spartacus/storefront';
 import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgIf } from '@angular/common';
-import { IconComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-unit-level-order-history-filter',

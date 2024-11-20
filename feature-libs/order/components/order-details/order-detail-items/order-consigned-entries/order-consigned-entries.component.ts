@@ -19,7 +19,7 @@ import { AddToCartComponent } from '../../../../../cart/base/components/add-to-c
 import { AbstractOrderContextDirective } from '../../../../../cart/base/components/abstract-order-context/abstract-order-context.directive';
 import { ConsignmentTrackingComponent } from '../consignment-tracking/consignment-tracking.component';
 import { FeatureDirective } from '@spartacus/core';
-import { OutletDirective } from '../../../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
+import { OutletDirective } from '@spartacus/storefront';
 import { NgFor, NgIf } from '@angular/common';
 
 @Component({
