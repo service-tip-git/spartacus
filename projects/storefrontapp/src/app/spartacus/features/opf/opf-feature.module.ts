@@ -37,8 +37,6 @@ import {
 } from '@spartacus/opf/payment/root';
 import {
   OPF_QUICK_BUY_FEATURE,
-  OpfQuickBuyConfig,
-  OpfQuickBuyGooglePayProvider,
   OpfQuickBuyRootModule,
 } from '@spartacus/opf/quick-buy/root';
 import { environment } from '../../../../environments/environment';
@@ -122,17 +120,6 @@ if (environment.b2b) {
         opfBaseUrl:
           'https://opf-iss-d0.opf.commerce.stage.context.cloud.sap/commerce-cloud-adapter/storefront/',
         commerceCloudPublicKey: 'ab4RhYGZ+w5B0SALMPOPlepWk/kmDQjTy2FU5hrQoFg=',
-      },
-    }),
-    provideConfig(<OpfQuickBuyConfig>{
-      opf: {
-        providers: [
-          {
-            googlePay: {
-              resourceUrl: 'https://pay.google.com/gp/p/js/pay.js',
-            },
-          } as OpfQuickBuyGooglePayProvider,
-        ],
       },
     }),
     ...extensionProviders,
