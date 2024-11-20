@@ -93,10 +93,10 @@ if (environment.b2b) {
       routing: {
         routes: {
           paymentVerificationResult: {
-            paths: ['redirect/success'],
+            paths: ['opf/payment-verification-redirect/result'],
           },
           paymentVerificationCancel: {
-            paths: ['redirect/failure'],
+            paths: ['opf/payment-verification-redirect/cancel'],
           },
         },
       },
