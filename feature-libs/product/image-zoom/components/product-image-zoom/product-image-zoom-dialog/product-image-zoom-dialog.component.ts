@@ -17,8 +17,8 @@ import {
   ICON_TYPE,
   LaunchDialogService,
 } from '@spartacus/storefront';
-import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { ProductImageZoomViewComponent } from '../product-image-zoom-view/product-image-zoom-view.component';
 import { IconComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
 import { FocusDirective } from '../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';

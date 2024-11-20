@@ -16,11 +16,11 @@ import { ItemService } from '../../../../shared/item.service';
 import { CurrentUnitService } from '../../../services/current-unit.service';
 import { UnitAddressItemService } from '../services/unit-address-item.service';
 import { UnitAddressFormService } from './unit-address-form.service';
-import { MockTranslatePipe } from '../../../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { FormErrorsComponent } from '../../../../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { FeatureDirective } from '../../../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
 import { FormComponent } from '../../../../shared/form/form.component';
 

@@ -26,12 +26,12 @@ import { VerificationToken } from '@spartacus/user/account/root';
 import { ONE_TIME_PASSWORD_LOGIN_PURPOSE } from '../user-account-constants';
 import { VerificationTokenFormComponentService } from './verification-token-form-component.service';
 import { RoutingService } from '@spartacus/core';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
-import { UrlPipe } from '../../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
 import { FormErrorsComponent } from '../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
-import { FeatureDirective } from '../../../../../projects/core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
 import { NgIf, NgTemplateOutlet, NgClass, AsyncPipe } from '@angular/common';
 

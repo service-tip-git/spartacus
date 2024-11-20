@@ -13,12 +13,12 @@ import {
   StoreFinderService,
   StoreFinderConfig,
 } from '@spartacus/storefinder/core';
-import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
 import { StoreFinderListComponent } from './store-finder-list/store-finder-list.component';
 import { PaginationComponent } from '../../../../projects/storefrontlib/shared/components/list-navigation/pagination/pagination.component';
-import { FeatureDirective } from '../../../../projects/core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

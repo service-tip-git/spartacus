@@ -12,9 +12,9 @@ import {
 } from '@angular/core';
 import { FeatureConfigService } from '@spartacus/core';
 import { CellComponent } from '../cell.component';
-import { MockDatePipe } from '../../../../../../../projects/core/src/i18n/testing/mock-date.pipe';
-import { CxDatePipe } from '../../../../../../../projects/core/src/i18n/date.pipe';
-import { UrlPipe } from '../../../../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
+import { MockDatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
 import { NgIf, NgTemplateOutlet } from '@angular/common';
 

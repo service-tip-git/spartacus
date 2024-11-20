@@ -7,7 +7,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { StoreFinderHeaderComponent } from '../store-finder-header/store-finder-header.component';
-import { FeatureDirective } from '../../../../projects/core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 
 @Component({
   selector: 'cx-store-finder',

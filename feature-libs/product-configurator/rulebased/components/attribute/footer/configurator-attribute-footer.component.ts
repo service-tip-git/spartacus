@@ -13,8 +13,8 @@ import { Configurator } from '../../../core/model/configurator.model';
 import { ConfiguratorStorefrontUtilsService } from '../../service/configurator-storefront-utils.service';
 import { ConfiguratorAttributeCompositionContext } from '../composition/configurator-attribute-composition.model';
 import { ConfiguratorAttributeBaseComponent } from '../types/base/configurator-attribute-base.component';
-import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
 import { NgIf, AsyncPipe } from '@angular/common';
 

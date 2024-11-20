@@ -16,7 +16,7 @@ import {
   TableDataOutletContext,
   TableFieldOptions,
 } from '@spartacus/storefront';
-import { UrlPipe } from '../../../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
+import { UrlPipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
 import { NgIf, NgTemplateOutlet } from '@angular/common';
 

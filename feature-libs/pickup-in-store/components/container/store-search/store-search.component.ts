@@ -7,9 +7,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { LocationSearchParams } from '@spartacus/pickup-in-store/root';
 import { CurrentLocationService } from '../../services/current-location.service';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
-import { FeatureDirective } from '../../../../../projects/core/src/features-config/directives/feature.directive';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
+import { FeatureDirective } from '@spartacus/core';
 
 /**
  * The search box and find my location button for finding points of

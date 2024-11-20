@@ -16,11 +16,11 @@ import {
 import { ICON_TYPE } from '@spartacus/storefront';
 import { combineLatest, Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { MockDatePipe } from '../../../../../projects/core/src/i18n/testing/mock-date.pipe';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { UrlPipe } from '../../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
-import { CxDatePipe } from '../../../../../projects/core/src/i18n/date.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockDatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
 import { PaginationComponent } from '../../../../../projects/storefrontlib/shared/components/list-navigation/pagination/pagination.component';
 import { RouterLink } from '@angular/router';

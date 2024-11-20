@@ -8,9 +8,9 @@ import { Component, inject, OnInit } from '@angular/core';
 import { EventService } from '@spartacus/core';
 import { DownloadOrderInvoicesEvent, Order } from '@spartacus/order/root';
 import { OrderDetailActionsComponent } from '../../order-detail-actions/order-detail-actions.component';
-import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { UrlPipe } from '../../../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
-import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
 

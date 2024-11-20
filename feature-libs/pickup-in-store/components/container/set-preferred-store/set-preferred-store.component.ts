@@ -13,8 +13,8 @@ import {
 } from '@spartacus/pickup-in-store/root';
 import { ICON_TYPE, OutletContextData } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
 import { NgClass, AsyncPipe } from '@angular/common';
 

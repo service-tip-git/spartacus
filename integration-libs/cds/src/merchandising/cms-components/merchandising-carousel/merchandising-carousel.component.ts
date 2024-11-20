@@ -21,7 +21,7 @@ import { CmsMerchandisingCarouselComponent as model } from '../../../cds-models/
 import { MerchandisingProduct } from '../../model/index';
 import { MerchandisingCarouselComponentService } from './merchandising-carousel.component.service';
 import { MerchandisingCarouselModel } from './model/index';
-import { UrlPipe } from '../../../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
+import { UrlPipe } from '@spartacus/core';
 import { MediaComponent } from '../../../../../../projects/storefrontlib/shared/components/media/media.component';
 import { RouterLink } from '@angular/router';
 import { CarouselComponent } from '../../../../../../projects/storefrontlib/shared/components/carousel/carousel.component';

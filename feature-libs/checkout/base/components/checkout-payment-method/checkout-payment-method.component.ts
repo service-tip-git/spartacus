@@ -45,12 +45,12 @@ import {
   tap,
 } from 'rxjs/operators';
 import { CheckoutStepService } from '../services/checkout-step.service';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
 import { CheckoutPaymentFormComponent } from './checkout-payment-form/checkout-payment-form.component';
 import { CardComponent } from '../../../../../projects/storefrontlib/shared/components/card/card.component';
-import { FeatureDirective } from '../../../../../projects/core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({

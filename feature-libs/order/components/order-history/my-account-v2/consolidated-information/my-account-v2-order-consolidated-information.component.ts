@@ -19,11 +19,11 @@ import {
   OrderHistoryView,
 } from '@spartacus/order/root';
 import { OrderCriticalStatus } from '../my-account-v2-order-history.model';
-import { MockDatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-date.pipe';
-import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { CxDatePipe } from '../../../../../../projects/core/src/i18n/date.pipe';
-import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
-import { UrlPipe } from '../../../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
+import { MockDatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { MediaComponent } from '../../../../../../projects/storefrontlib/shared/components/media/media.component';
 import { RouterLink } from '@angular/router';
 import { MyAccountV2ConsignmentEntriesComponent } from '../consignment-entries/my-account-v2-consignment-entries.component';

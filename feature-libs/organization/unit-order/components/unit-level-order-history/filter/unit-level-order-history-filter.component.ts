@@ -20,8 +20,8 @@ import {
 } from '@angular/forms';
 import { OrderHistoryQueryParams } from '@spartacus/organization/unit-order/core';
 import { ICON_TYPE } from '@spartacus/storefront';
-import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { NgIf } from '@angular/common';
 import { IconComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
 

@@ -38,11 +38,11 @@ import {
 } from './asm-customer-360-table.model';
 import { AsmCustomer360Config } from '../config/asm-customer-360-config';
 import { KeyBoardEventCode } from '@spartacus/asm/customer-360/root';
-import { MockDatePipe } from '../../../../../projects/core/src/i18n/testing/mock-date.pipe';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { MockDatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
 import { ArgsPipe } from '../../../core/utils/args/args.pipe';
-import { CxDatePipe } from '../../../../../projects/core/src/i18n/date.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { CxDatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { StarRatingComponent } from '../../../../../projects/storefrontlib/shared/components/star-rating/star-rating.component';
 import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
 

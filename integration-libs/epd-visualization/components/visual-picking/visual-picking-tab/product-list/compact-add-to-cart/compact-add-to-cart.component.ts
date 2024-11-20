@@ -6,8 +6,8 @@
 
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AddToCartComponent } from '@spartacus/cart/base/components/add-to-cart';
-import { MockTranslatePipe } from '../../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '../../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';

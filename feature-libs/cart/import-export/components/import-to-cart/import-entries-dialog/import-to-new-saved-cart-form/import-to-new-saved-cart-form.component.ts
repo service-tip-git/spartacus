@@ -33,13 +33,13 @@ import {
 import { of } from 'rxjs';
 import { ImportProductsFromCsvService } from '../../import-products-from-csv.service';
 import { ImportEntriesFormComponent } from '../import-entries-form/import-entries-form.component';
-import { MockTranslatePipe } from '../../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { FormErrorsComponent } from '../../../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
 import { FileUploadComponent } from '../../../../../../../projects/storefrontlib/shared/components/form/file-upload/file-upload.component';
 import { FocusDirective } from '../../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
 import { MessageComponent } from '../../../../../../../projects/storefrontlib/cms-components/misc/message/message.component';
-import { FeatureDirective } from '../../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { NgIf, NgTemplateOutlet } from '@angular/common';
 
 @Component({

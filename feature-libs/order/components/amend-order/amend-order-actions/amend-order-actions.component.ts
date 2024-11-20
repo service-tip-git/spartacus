@@ -12,9 +12,9 @@ import {
 } from '@angular/core';
 import { RoutingService } from '@spartacus/core';
 import { UntypedFormGroup } from '@angular/forms';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
-import { UrlPipe } from '../../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
 

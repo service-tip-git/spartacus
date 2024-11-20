@@ -7,8 +7,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ListService } from '../../../../shared/list/list.service';
 import { UnitAssignedApproverListService } from './unit-assigned-approver-list.service';
-import { MockTranslatePipe } from '../../../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
 import { SubListComponent } from '../../../../shared/sub-list/sub-list.component';
 

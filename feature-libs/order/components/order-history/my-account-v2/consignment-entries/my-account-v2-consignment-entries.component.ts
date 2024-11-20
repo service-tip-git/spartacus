@@ -6,10 +6,10 @@
 
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { ConsignmentView } from '@spartacus/order/root';
-import { MockDatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-date.pipe';
-import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { CxDatePipe } from '../../../../../../projects/core/src/i18n/date.pipe';
-import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockDatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { NgFor, NgIf } from '@angular/common';
 
 @Component({

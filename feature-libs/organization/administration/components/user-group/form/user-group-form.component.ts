@@ -21,11 +21,11 @@ import { tap } from 'rxjs/operators';
 import { ItemService } from '../../shared/item.service';
 import { createCodeForEntityName } from '../../shared/utility/entity-code';
 import { UserGroupItemService } from '../services/user-group-item.service';
-import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormErrorsComponent } from '../../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
-import { FeatureDirective } from '../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
 import { FormComponent } from '../../shared/form/form.component';
 

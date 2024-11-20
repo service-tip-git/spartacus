@@ -10,8 +10,8 @@ import { Consignment } from '@spartacus/order/root';
 import { OutletContextData } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 export type IOutletContextData = { item: Consignment };

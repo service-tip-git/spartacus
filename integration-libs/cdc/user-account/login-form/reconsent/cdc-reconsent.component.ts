@@ -20,8 +20,8 @@ import {
 import { Observable, of, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CdcReconsentComponentService } from './cdc-reconsent-component.service';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
 import { ConsentManagementFormComponent } from '../../../../../projects/storefrontlib/cms-components/myaccount/consent-management/components/consent-form/consent-management-form.component';
 import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';

@@ -29,8 +29,8 @@ import {
 import { Card, OutletContextData } from '@spartacus/storefront';
 import { Observable, Subscription, combineLatest, of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { OutletDirective } from '../../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
 import { AbstractOrderContextDirective } from '../../../../cart/base/components/abstract-order-context/abstract-order-context.directive';
 import { CardComponent } from '../../../../../projects/storefrontlib/shared/components/card/card.component';

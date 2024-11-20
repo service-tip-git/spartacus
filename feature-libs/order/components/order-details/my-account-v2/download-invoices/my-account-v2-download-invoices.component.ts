@@ -19,8 +19,8 @@ import {
   FocusConfig,
   LaunchDialogService,
 } from '@spartacus/storefront';
-import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '../../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
 import { NgIf } from '@angular/common';
 import { InvoicesListComponent as InvoicesListComponent_1 } from '../../../../../pdf-invoices/components/invoices-list/invoices-list.component';

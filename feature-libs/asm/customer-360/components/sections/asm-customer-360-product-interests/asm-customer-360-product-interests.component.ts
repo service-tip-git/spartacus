@@ -11,8 +11,8 @@ import { forkJoin, Observable, of } from 'rxjs';
 import { concatMap, filter, take } from 'rxjs/operators';
 
 import { AsmCustomer360SectionContext } from '../asm-customer-360-section-context.model';
-import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { AsmCustomer360ProductListingComponent } from '../../asm-customer-360-product-listing/asm-customer-360-product-listing.component';
 import { NgIf, AsyncPipe } from '@angular/common';
 

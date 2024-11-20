@@ -19,8 +19,8 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { ProductItem } from './product-item.model';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { AsmCustomer360ProductItemComponent } from '../asm-customer-360-product-item/asm-customer-360-product-item.component';
 import {
   NgIf,

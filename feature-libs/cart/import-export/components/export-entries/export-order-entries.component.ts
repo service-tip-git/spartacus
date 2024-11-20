@@ -14,8 +14,8 @@ import { ContextService } from '@spartacus/storefront';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { ExportOrderEntriesToCsvService } from './export-order-entries-to-csv.service';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

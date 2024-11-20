@@ -41,12 +41,12 @@ import {
 import { combineLatest, NEVER, Observable, Subscription } from 'rxjs';
 import { distinctUntilChanged, map, tap } from 'rxjs/operators';
 import { CustomerListAction } from './customer-list.model';
-import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { NgSelectA11yDirective } from '../../../../projects/storefrontlib/shared/components/ng-select-a11y/ng-select-a11y.directive';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { SortingComponent } from '../../../../projects/storefrontlib/shared/components/list-navigation/sorting/sorting.component';
-import { FeatureDirective } from '../../../../projects/core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { IconComponent } from '../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
 import { PaginationComponent } from '../../../../projects/storefrontlib/shared/components/list-navigation/pagination/pagination.component';
 import { SpinnerComponent } from '../../../../projects/storefrontlib/shared/components/spinner/spinner.component';

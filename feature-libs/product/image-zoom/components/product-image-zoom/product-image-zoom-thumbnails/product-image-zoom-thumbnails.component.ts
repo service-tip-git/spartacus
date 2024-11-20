@@ -19,7 +19,7 @@ import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { FocusableCarouselItemDirective } from '../../../../../../projects/storefrontlib/shared/components/carousel/focusable-carousel-item/focusable-carousel-item.directive';
 import { MediaComponent } from '../../../../../../projects/storefrontlib/shared/components/media/media.component';
-import { FeatureDirective } from '../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { CarouselComponent } from '../../../../../../projects/storefrontlib/shared/components/carousel/carousel.component';
 import { NgIf, AsyncPipe } from '@angular/common';
 

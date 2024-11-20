@@ -17,8 +17,8 @@ import {
   VariantQualifier,
 } from '@spartacus/core';
 import { filter, take } from 'rxjs/operators';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { NgIf, NgFor, NgClass } from '@angular/common';
 
 @Component({

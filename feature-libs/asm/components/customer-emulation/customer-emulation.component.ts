@@ -23,8 +23,8 @@ import { UserAccountFacade } from '@spartacus/user/account/root';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { AsmComponentService } from '../services/asm-component.service';
-import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { AsmBindCartComponent } from '../asm-bind-cart/asm-bind-cart.component';
 import { NgIf, AsyncPipe } from '@angular/common';
 

@@ -7,8 +7,8 @@
 import { Component, inject } from '@angular/core';
 import { Price } from '@spartacus/core';
 import { QuoteFacade } from '@spartacus/quote/root';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

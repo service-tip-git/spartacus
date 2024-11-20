@@ -13,7 +13,7 @@ import {
 import { Observable } from 'rxjs';
 import { ItemService } from '../../../../shared/item.service';
 import { CellComponent } from '../../../../shared/table/cell.component';
-import { UrlPipe } from '../../../../../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
+import { UrlPipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
 import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
 

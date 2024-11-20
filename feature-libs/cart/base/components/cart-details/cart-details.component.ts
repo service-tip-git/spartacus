@@ -16,8 +16,8 @@ import {
 import { AuthService, RoutingService } from '@spartacus/core';
 import { combineLatest, Observable, of } from 'rxjs';
 import { filter, map, tap } from 'rxjs/operators';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { CartItemListComponent } from '../cart-shared/cart-item-list/cart-item-list.component';
 import { PromotionsComponent } from '../../../../../projects/storefrontlib/cms-components/misc/promotions/promotions.component';
 import { CartValidationWarningsComponent } from '../validation/cart-warnings/cart-validation-warnings.component';

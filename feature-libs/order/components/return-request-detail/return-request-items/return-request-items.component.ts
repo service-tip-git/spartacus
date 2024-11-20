@@ -8,8 +8,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ReturnRequest } from '@spartacus/order/root';
 import { Observable } from 'rxjs';
 import { ReturnRequestService } from '../return-request.service';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { MediaComponent } from '../../../../../projects/storefrontlib/shared/components/media/media.component';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 

@@ -11,11 +11,11 @@ import { OrderHistoryQueryParams } from '@spartacus/organization/unit-order/core
 import { combineLatest, Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { UnitOrderFacade } from '@spartacus/organization/unit-order/root';
-import { MockDatePipe } from '../../../../../projects/core/src/i18n/testing/mock-date.pipe';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { CxDatePipe } from '../../../../../projects/core/src/i18n/date.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
-import { UrlPipe } from '../../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
+import { MockDatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { PaginationComponent } from '../../../../../projects/storefrontlib/shared/components/list-navigation/pagination/pagination.component';
 import { TotalComponent } from '../../../../../projects/storefrontlib/shared/components/list-navigation/total/total.component';

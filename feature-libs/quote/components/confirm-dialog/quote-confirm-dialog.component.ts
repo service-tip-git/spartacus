@@ -20,12 +20,12 @@ import {
 import { Observable } from 'rxjs';
 import { filter, map, take } from 'rxjs/operators';
 import { ConfirmationContext } from './quote-confirm-dialog.model';
-import { MockDatePipe } from '../../../../projects/core/src/i18n/testing/mock-date.pipe';
-import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { CxDatePipe as CxDatePipe_1 } from '../../../../projects/core/src/i18n/date.pipe';
-import { TranslatePipe } from '../../../../projects/core/src/i18n/translate.pipe';
+import { MockDatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
+import { CxDatePipe as CxDatePipe_1 } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
-import { FeatureDirective } from '../../../../projects/core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { NgIf, AsyncPipe } from '@angular/common';
 import { FocusDirective } from '../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
 

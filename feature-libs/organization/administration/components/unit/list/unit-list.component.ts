@@ -7,8 +7,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { OrgUnitService } from '@spartacus/organization/administration/core';
 import { UnitTreeService } from '../services/unit-tree.service';
-import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { ListComponent } from '../../shared/list/list.component';
 
 @Component({

@@ -13,8 +13,8 @@ import {
 } from '@angular/core';
 import { GlobalMessageType } from '@spartacus/core';
 import { PromotionListEntry } from './asm-customer-360-promotion-listing.model';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
 import { MessageComponent } from '../../../../../projects/storefrontlib/cms-components/misc/message/message.component';
 import { NgIf, NgFor } from '@angular/common';

@@ -18,9 +18,9 @@ import {
 import { Quote, QuoteAttachment, QuoteFacade } from '@spartacus/quote/root';
 import { FileDownloadService } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
-import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { UrlPipe } from '../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
-import { TranslatePipe } from '../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
 import { NgIf, AsyncPipe } from '@angular/common';
 

@@ -8,8 +8,8 @@ import { Component, Optional, OnDestroy, OnInit, Inject } from '@angular/core';
 import { CartItemContext, OrderEntry } from '@spartacus/cart/base/root';
 import { CpqDiscounts } from '@spartacus/cpq-quote/root';
 import { Observable, Subscription } from 'rxjs';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { NgIf, NgFor } from '@angular/common';
 
 // Extend the OrderEntry interface to include cpqDiscounts property

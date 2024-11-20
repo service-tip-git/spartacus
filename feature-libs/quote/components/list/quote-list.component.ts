@@ -18,11 +18,11 @@ import {
 } from '@spartacus/core';
 import { QuoteState } from '@spartacus/quote/root';
 import { ICON_TYPE } from '@spartacus/storefront';
-import { MockDatePipe } from '../../../../projects/core/src/i18n/testing/mock-date.pipe';
-import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { UrlPipe } from '../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
-import { CxDatePipe as CxDatePipe_1 } from '../../../../projects/core/src/i18n/date.pipe';
-import { TranslatePipe } from '../../../../projects/core/src/i18n/translate.pipe';
+import { MockDatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
+import { CxDatePipe as CxDatePipe_1 } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
 import { RouterLink } from '@angular/router';
 import { PaginationComponent } from '../../../../projects/storefrontlib/shared/components/list-navigation/pagination/pagination.component';

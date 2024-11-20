@@ -18,10 +18,10 @@ import {
 import { RecentSearchesService } from './recent-searches.service';
 import { map, tap } from 'rxjs/operators';
 import { combineLatest, Observable } from 'rxjs';
-import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { UrlPipe } from '../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { HighlightPipe } from '../../../../projects/storefrontlib/cms-components/navigation/search-box/highlight.pipe';
-import { TranslatePipe } from '../../../../projects/core/src/i18n/translate.pipe';
+import { TranslatePipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 

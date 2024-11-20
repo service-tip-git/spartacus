@@ -14,8 +14,8 @@ import {
 import { ActiveCartFacade, Cart } from '@spartacus/cart/base/root';
 import { FeatureConfigService, TranslationService } from '@spartacus/core';
 import { Observable, take } from 'rxjs';
-import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { PromotionsComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/promotions/promotions.component';
 
 @Component({

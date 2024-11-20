@@ -22,8 +22,8 @@ import { MessageService } from '../../../../shared/message/services/message.serv
 import { UserItemService } from '../../../../user/services/user-item.service';
 import { UnitUserRolesFormService } from './unit-user-roles-form.service';
 import { UnitUserRolesItemService } from './unit-user-roles-item.service';
-import { MockTranslatePipe } from '../../../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
 import { FocusDirective } from '../../../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
 import { CardComponent } from '../../../../shared/card/card.component';

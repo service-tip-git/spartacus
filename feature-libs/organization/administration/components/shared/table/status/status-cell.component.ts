@@ -6,9 +6,9 @@
 
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CellComponent } from '../cell.component';
-import { MockTranslatePipe } from '../../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../../../projects/core/src/i18n/translate.pipe';
-import { UrlPipe } from '../../../../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
 import { NgIf, NgTemplateOutlet } from '@angular/common';
 

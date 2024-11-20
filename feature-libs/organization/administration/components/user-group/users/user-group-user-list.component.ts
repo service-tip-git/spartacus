@@ -14,8 +14,8 @@ import { ListService } from '../../shared/list/list.service';
 import { SubListComponent } from '../../shared/sub-list/sub-list.component';
 import { CurrentUserGroupService } from '../services/current-user-group.service';
 import { UserGroupUserListService } from './user-group-user-list.service';
-import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
 
 @Component({

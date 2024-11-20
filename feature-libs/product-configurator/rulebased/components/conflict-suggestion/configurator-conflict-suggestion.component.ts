@@ -11,8 +11,8 @@ import {
   Input,
 } from '@angular/core';
 import { Configurator } from '../../core/model/configurator.model';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { NgIf } from '@angular/common';
 
 @Component({

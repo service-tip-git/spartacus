@@ -27,8 +27,8 @@ import {
   CheckoutServiceDetailsFacade,
   CheckoutServiceSchedulePickerService,
 } from '@spartacus/s4-service/root';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { DatePickerComponent } from '../../../../../projects/storefrontlib/shared/components/form/date-picker/date-picker.component';
 import { NgTemplateOutlet, NgIf, NgFor, AsyncPipe } from '@angular/common';
 

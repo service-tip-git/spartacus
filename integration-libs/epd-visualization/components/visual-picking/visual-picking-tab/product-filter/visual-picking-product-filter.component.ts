@@ -7,8 +7,8 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { VisualPickingProductFilterService } from './visual-picking-product-filter.service';
-import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
 import { FormsModule } from '@angular/forms';
 

@@ -6,8 +6,8 @@
 
 import { Component, Input, OnChanges } from '@angular/core';
 import { PointOfService } from '@spartacus/core';
-import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { NgFor, NgIf } from '@angular/common';
 
 type OpeningTime = {

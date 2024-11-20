@@ -9,9 +9,9 @@ import { Cart, OrderEntry } from '@spartacus/cart/base/root';
 import { WishListFacade } from '@spartacus/cart/wish-list/root';
 import { useFeatureStyles } from '@spartacus/core';
 import { Observable } from 'rxjs';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
-import { FeatureDirective } from '../../../../../projects/core/src/features-config/directives/feature.directive';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
+import { FeatureDirective } from '@spartacus/core';
 import { WishListItemComponent } from '../wish-list-item/wish-list-item.component';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 

@@ -13,8 +13,8 @@ import { ConfirmationMessageComponent } from '../../message/confirmation/confirm
 import { ConfirmationMessageData } from '../../message/confirmation/confirmation-message.model';
 import { MessageService } from '../../message/services/message.service';
 import { BaseItem } from '../../organization.model';
-import { MockTranslatePipe } from '../../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 /**

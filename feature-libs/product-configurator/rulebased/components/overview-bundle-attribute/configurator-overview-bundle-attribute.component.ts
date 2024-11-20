@@ -24,9 +24,9 @@ import {
   ConfiguratorPriceComponentOptions,
   ConfiguratorPriceComponent,
 } from '../price/configurator-price.component';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { CxNumericPipe } from '../../../../../projects/core/src/i18n/numeric.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { CxNumericPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { MediaComponent } from '../../../../../projects/storefrontlib/shared/components/media/media.component';
 import { NgIf, AsyncPipe } from '@angular/common';
 

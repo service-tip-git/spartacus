@@ -13,8 +13,8 @@ import {
 } from '@angular/core';
 import { Product } from '@spartacus/core';
 import { ProductItem } from '../asm-customer-360-product-listing/product-item.model';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { NgIf } from '@angular/common';
 import { MediaComponent } from '../../../../../projects/storefrontlib/shared/components/media/media.component';
 

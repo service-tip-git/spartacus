@@ -12,8 +12,8 @@ import {
 } from '@spartacus/core';
 import { DpCheckoutPaymentService } from '../../../facade';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { MockTranslatePipe } from '../../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '../../../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
 
 @Component({

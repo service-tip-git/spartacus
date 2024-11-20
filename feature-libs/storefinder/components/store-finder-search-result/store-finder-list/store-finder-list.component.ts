@@ -19,8 +19,8 @@ import { StoreFinderMapComponent } from '../../store-finder-map/store-finder-map
 import { ICON_TYPE } from '@spartacus/storefront';
 import { StoreFinderService } from '@spartacus/storefinder/core';
 import { LocationDisplayMode } from './store-finder-list.model';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { StoreFinderListItemComponent } from '../../store-finder-list-item/store-finder-list-item.component';
 import { StoreFinderStoreDescriptionComponent } from '../../store-finder-store-description/store-finder-store-description.component';
 import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';

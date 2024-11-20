@@ -17,8 +17,8 @@ import {
   PaymentCardCode,
 } from '@spartacus/asm/customer-360/root';
 import { AsmCustomer360SectionContext } from '../asm-customer-360-section-context.model';
-import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { CardComponent } from '../../../../../../projects/storefrontlib/shared/components/card/card.component';
 import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
 

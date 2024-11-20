@@ -18,11 +18,11 @@ import {
   LaunchDialogService,
 } from '@spartacus/storefront';
 import { take } from 'rxjs/operators';
-import { MockTranslatePipe } from '../../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
-import { TranslatePipe } from '../../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
-import { FeatureDirective } from '../../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { FocusDirective } from '../../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
 
