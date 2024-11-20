@@ -80,7 +80,7 @@ describe('CmsParagraphComponent in CmsLib', () => {
   });
 
   // TODO: this test occasionlly fails in CI build
-  it.skip('should sanitize unsafe html', () => {
+  xit('should sanitize unsafe html', () => {
     const unsafeData = Object.assign({}, componentData);
     unsafeData.content = `<img src="" onerror='alert(1)'>`;
     data$.next(unsafeData);
