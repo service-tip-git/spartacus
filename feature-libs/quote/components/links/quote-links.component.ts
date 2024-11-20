@@ -18,11 +18,25 @@ import {
 import { Quote, QuoteAttachment, QuoteFacade } from '@spartacus/quote/root';
 import { FileDownloadService } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
+import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { UrlPipe } from '../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
+import { TranslatePipe } from '../../../../projects/core/src/i18n/translate.pipe';
+import { RouterLink } from '@angular/router';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'cx-quote-links',
   templateUrl: './quote-links.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgIf,
+    RouterLink,
+    AsyncPipe,
+    TranslatePipe,
+    UrlPipe,
+    MockTranslatePipe,
+  ],
 })
 export class QuoteLinksComponent {
   protected quoteFacade = inject(QuoteFacade);

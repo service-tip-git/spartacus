@@ -23,6 +23,7 @@ import { ConfiguratorShowMoreModule } from '../../show-more/configurator-show-mo
     IconModule,
     NgSelectModule,
     ConfiguratorShowMoreModule,
+    ConfiguratorAttributeHeaderComponent,
   ],
   providers: [
     provideDefaultConfig(<ConfiguratorAttributeCompositionConfig>{
@@ -33,7 +34,6 @@ import { ConfiguratorShowMoreModule } from '../../show-more/configurator-show-mo
       },
     }),
   ],
-  declarations: [ConfiguratorAttributeHeaderComponent],
   exports: [ConfiguratorAttributeHeaderComponent],
 })
 export class ConfiguratorAttributeHeaderModule {}

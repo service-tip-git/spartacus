@@ -51,6 +51,8 @@ class MockLaunchDialogService implements Partial<LaunchDialogService> {
 @Component({
   selector: 'cx-import-entries-form',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule, IconTestingModule, KeyboardFocusTestingModule],
 })
 class MockImportEntriesFormComponent {
   @Input()
@@ -68,8 +70,6 @@ describe('ImportEntriesDialogComponent', () => {
         I18nTestingModule,
         IconTestingModule,
         KeyboardFocusTestingModule,
-      ],
-      declarations: [
         ImportEntriesDialogComponent,
         MockImportEntriesFormComponent,
         MockFeatureDirective,

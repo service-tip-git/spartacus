@@ -34,6 +34,7 @@ describe('UnitUserListComponent', () => {
         UrlTestingModule,
         I18nTestingModule,
         DisableInfoModule,
+        UnitUserListComponent,
       ],
       providers: [
         {
@@ -53,7 +54,6 @@ describe('UnitUserListComponent', () => {
           useClass: MockItemService,
         },
       ],
-      declarations: [UnitUserListComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(UnitUserListComponent);

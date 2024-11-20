@@ -193,8 +193,7 @@ describe('QuoteSummaryActionsComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [QuoteSummaryActionsComponent],
+      imports: [I18nTestingModule, QuoteSummaryActionsComponent],
       providers: [
         {
           provide: QuoteFacade,

@@ -199,6 +199,7 @@ class MockBreakpointService {
 
 @Directive({
   selector: '[cxFocus]',
+  standalone: true,
 })
 export class MockFocusDirective {
   @Input('cxFocus') protected config: string;
@@ -207,6 +208,8 @@ export class MockFocusDirective {
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule, ReactiveFormsModule, NgSelectModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -256,8 +259,10 @@ function initialize() {
 describe('ConfiguratorGroupMenuComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, ReactiveFormsModule, NgSelectModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        ReactiveFormsModule,
+        NgSelectModule,
         ConfiguratorGroupMenuComponent,
         MockCxIconComponent,
         MockFocusDirective,

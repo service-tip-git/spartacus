@@ -54,8 +54,7 @@ describe('CustomerTicketingReopenComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [CustomerTicketingReopenComponent],
+      imports: [I18nTestingModule, CustomerTicketingReopenComponent],
       providers: [
         CustomerTicketingReopenComponentService,
         { provide: LaunchDialogService, useClass: MockLaunchDialogService },

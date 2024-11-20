@@ -25,6 +25,7 @@ import { ConfiguratorShowMoreModule } from '../../../show-more/configurator-show
     ConfiguratorAttributeQuantityModule,
     ConfiguratorPriceModule,
     ConfiguratorShowMoreModule,
+    ConfiguratorAttributeCheckBoxListComponent,
   ],
   providers: [
     provideDefaultConfig(<ConfiguratorAttributeCompositionConfig>{
@@ -36,7 +37,6 @@ import { ConfiguratorShowMoreModule } from '../../../show-more/configurator-show
       },
     }),
   ],
-  declarations: [ConfiguratorAttributeCheckBoxListComponent],
   exports: [ConfiguratorAttributeCheckBoxListComponent],
 })
 export class ConfiguratorAttributeCheckboxListModule {}

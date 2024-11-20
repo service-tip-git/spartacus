@@ -25,6 +25,7 @@ import { By } from '@angular/platform-browser';
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
@@ -35,6 +36,7 @@ class MockProductService {}
 
 @Directive({
   selector: '[cxOutlet]',
+  standalone: true,
 })
 class MockOutletDirective implements Partial<OutletDirective> {
   @Input() cxOutlet: string;
@@ -43,6 +45,8 @@ class MockOutletDirective implements Partial<OutletDirective> {
 @Component({
   selector: 'cx-media',
   template: '<img>',
+  standalone: true,
+  imports: [RouterTestingModule, I18nTestingModule, OutletModule],
 })
 class MockMediaComponent {
   @Input() container: any;
@@ -74,8 +78,10 @@ describe('ProductCarouselItemComponent in product-carousel', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule, OutletModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
+        OutletModule,
         ProductCarouselItemComponent,
         MockUrlPipe,
         MockOutletDirective,

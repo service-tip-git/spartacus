@@ -26,8 +26,12 @@ import { NavigationModule } from '../../../navigation/navigation/navigation.modu
       },
     }),
   ],
-  declarations: [MyAccountV2NavigationComponent],
   exports: [MyAccountV2NavigationComponent],
-  imports: [CommonModule, NavigationModule, I18nModule],
+  imports: [
+    CommonModule,
+    NavigationModule,
+    I18nModule,
+    MyAccountV2NavigationComponent,
+  ],
 })
 export class MyAccountV2NavigationModule {}

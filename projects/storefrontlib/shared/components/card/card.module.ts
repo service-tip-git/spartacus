@@ -22,8 +22,8 @@ import { CardComponent } from './card.component';
     TruncateTextPopoverModule,
     KeyboardFocusModule,
     FeaturesConfigModule,
+    CardComponent,
   ],
-  declarations: [CardComponent],
   exports: [CardComponent],
 })
 export class CardModule {}

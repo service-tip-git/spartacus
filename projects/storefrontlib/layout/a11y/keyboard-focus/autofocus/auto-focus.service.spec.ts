@@ -24,6 +24,7 @@ import { AutoFocusService } from './auto-focus.service';
       <div id="e2"></div>
     </div>
   `,
+  standalone: true,
 })
 class MockComponent {}
 
@@ -39,7 +40,7 @@ describe('AutoFocusService', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [MockComponent],
+      imports: [MockComponent],
       providers: [
         AutoFocusService,
         {

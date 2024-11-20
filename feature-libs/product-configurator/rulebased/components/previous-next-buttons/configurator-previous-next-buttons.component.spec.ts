@@ -89,6 +89,7 @@ class MockConfigUtilsService {
 
 @Directive({
   selector: '[cxFocus]',
+  standalone: true,
 })
 export class MockFocusDirective {
   @Input('cxFocus') protected config: any;
@@ -106,8 +107,8 @@ describe('ConfigPreviousNextButtonsComponent', () => {
   beforeEach(waitForAsync(() => {
     routerStateObservable = of(ConfigurationTestData.mockRouterState);
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         ConfiguratorPreviousNextButtonsComponent,
         MockFocusDirective,
       ],

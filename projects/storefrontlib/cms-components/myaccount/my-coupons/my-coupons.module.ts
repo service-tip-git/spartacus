@@ -49,8 +49,6 @@ import { MyCouponsComponent } from './my-coupons.component';
     ]),
     KeyboardFocusModule,
     FeaturesConfigModule,
-  ],
-  declarations: [
     MyCouponsComponent,
     CouponCardComponent,
     CouponDialogComponent,

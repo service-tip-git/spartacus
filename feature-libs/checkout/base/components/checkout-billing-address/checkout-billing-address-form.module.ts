@@ -30,9 +30,9 @@ import { CheckoutBillingAddressFormComponent } from './checkout-billing-address-
     SpinnerModule,
     FormErrorsModule,
     FeaturesConfigModule,
+    CheckoutBillingAddressFormComponent,
   ],
   providers: [CheckoutBillingAddressFormService],
-  declarations: [CheckoutBillingAddressFormComponent],
   exports: [CheckoutBillingAddressFormComponent],
 })
 export class CheckoutBillingAddressFormModule {}

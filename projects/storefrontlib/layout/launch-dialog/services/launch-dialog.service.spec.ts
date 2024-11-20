@@ -73,6 +73,7 @@ class MockInlineRenderStrategy {
 
 @Component({
   template: '',
+  standalone: true,
 })
 class TestContainerComponent {
   constructor(public vcr: ViewContainerRef) {}
@@ -87,6 +88,7 @@ describe('LaunchDialogService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [TestContainerComponent],
       providers: [
         LaunchDialogService,
         {
@@ -101,7 +103,6 @@ describe('LaunchDialogService', () => {
         },
         { provide: LayoutConfig, useValue: mockLaunchConfig },
       ],
-      declarations: [TestContainerComponent],
     }).compileComponents();
 
     service = TestBed.inject(LaunchDialogService);

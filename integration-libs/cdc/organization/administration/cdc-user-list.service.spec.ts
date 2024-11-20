@@ -39,7 +39,6 @@ describe('CdcUserListService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [],
-      declarations: [],
       providers: [
         {
           provide: CdcJsService,

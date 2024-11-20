@@ -44,7 +44,7 @@ describe('CouponClaimComponent', () => {
   ]);
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [CouponClaimComponent],
+      imports: [CouponClaimComponent],
       providers: [
         { provide: CustomerCouponService, useValue: couponService },
         { provide: RoutingService, useValue: routingService },

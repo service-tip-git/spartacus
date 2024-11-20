@@ -21,6 +21,7 @@ import { VideoComponent } from './video.component';
     MediaModule,
     I18nModule,
     SpinnerModule,
+    VideoComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -31,7 +32,6 @@ import { VideoComponent } from './video.component';
       },
     }),
   ],
-  declarations: [VideoComponent],
   exports: [VideoComponent],
 })
 export class VideoModule {}

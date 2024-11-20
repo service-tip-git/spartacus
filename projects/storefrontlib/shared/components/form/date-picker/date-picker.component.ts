@@ -5,8 +5,18 @@
  */
 
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import {
+  UntypedFormControl,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { DatePickerService } from './date-picker.service';
+import { MockDatePipe } from '../../../../../core/src/i18n/testing/mock-date.pipe';
+import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
+import { CxDatePipe } from '../../../../../core/src/i18n/date.pipe';
+import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
+import { FormErrorsComponent } from '../form-errors/form-errors.component';
+import { FeatureDirective } from '../../../../../core/src/features-config/directives/feature.directive';
 
 /**
  * Component that adds a date control. While the native date picker works in most
@@ -21,8 +31,17 @@ import { DatePickerService } from './date-picker.service';
 @Component({
   selector: 'cx-date-picker',
   templateUrl: './date-picker.component.html',
-  // we cannot use onPush change detection as the form state isn't updated without explicit
-  // change detection, see https://github.com/angular/angular/issues/10816
+  standalone: true,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    FeatureDirective,
+    FormErrorsComponent,
+    TranslatePipe,
+    CxDatePipe,
+    MockTranslatePipe,
+    MockDatePipe,
+  ],
 })
 export class DatePickerComponent {
   constructor(protected service: DatePickerService) {}

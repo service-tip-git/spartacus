@@ -12,8 +12,12 @@ describe('DateRangeCellComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DateRangeCellComponent],
-      imports: [RouterTestingModule, UrlTestingModule, I18nTestingModule],
+      imports: [
+        RouterTestingModule,
+        UrlTestingModule,
+        I18nTestingModule,
+        DateRangeCellComponent,
+      ],
       providers: [
         {
           provide: OutletContextData,

@@ -27,8 +27,8 @@ import { MyAccountV2OrdersComponent } from './my-account-v2-orders.component';
     UrlModule,
     I18nModule,
     MediaModule,
+    MyAccountV2OrdersComponent,
   ],
-  declarations: [MyAccountV2OrdersComponent],
   exports: [MyAccountV2OrdersComponent],
   providers: [
     provideDefaultConfig(<CmsConfig>{

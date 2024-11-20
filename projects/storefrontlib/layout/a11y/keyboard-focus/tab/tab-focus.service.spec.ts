@@ -22,6 +22,7 @@ import { TabFocusService } from './tab-focus.service';
     </div>
     <div id="c"></div>
   `,
+  standalone: true,
 })
 class MockComponent {}
 
@@ -36,7 +37,7 @@ describe('TabFocusService', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [MockComponent],
+      imports: [MockComponent],
       providers: [
         TabFocusService,
         {

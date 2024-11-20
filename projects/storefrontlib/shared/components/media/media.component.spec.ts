@@ -25,6 +25,7 @@ const mediaUrl = 'mockProductImageUrl.jpg';
 
 @Directive({
   selector: '[cxFeature]',
+  standalone: true,
 })
 export class MockFeatureDirective {
   protected templateRef = inject(TemplateRef<any>);
@@ -47,6 +48,7 @@ export class MockFeatureDirective {
 
 @Pipe({
   name: 'cxMediaSources',
+  standalone: true,
 })
 export class MockMediaSourcesPipe implements PipeTransform {
   transform() {
@@ -147,7 +149,7 @@ function configureTestingModule(
   isConfigurableMediaComponent = false
 ): void {
   TestBed.configureTestingModule({
-    declarations: [MediaComponent, MockMediaSourcesPipe, MockFeatureDirective],
+    imports: [MediaComponent, MockMediaSourcesPipe, MockFeatureDirective],
     providers: [
       { provide: MediaService, useValue: mockMediaService },
       {

@@ -34,6 +34,13 @@ import {
 import { Card } from '@spartacus/storefront';
 import { combineLatest, Observable, of, Subscription } from 'rxjs';
 import { distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { AddressFormComponent } from '../../../../user/profile/components/address-book/address-form/address-form.component';
+import { CardComponent } from '../../../../../projects/storefrontlib/shared/components/card/card.component';
+import { FeatureDirective } from '../../../../../projects/core/src/features-config/directives/feature.directive';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 export interface CardWithAddress {
   card: Card;
@@ -44,6 +51,18 @@ export interface CardWithAddress {
   selector: 'cx-delivery-address',
   templateUrl: './checkout-delivery-address.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    NgFor,
+    CardComponent,
+    AddressFormComponent,
+    SpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class B2BCheckoutDeliveryAddressComponent
   extends CheckoutDeliveryAddressComponent

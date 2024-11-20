@@ -22,6 +22,7 @@ const CUSTOM_TEXT = 'customized';
       </ng-container>
     </ng-container>
   `,
+  standalone: true,
 })
 class TestContainerComponent {
   outletRefVisible = true;
@@ -57,12 +58,7 @@ describe('OutletRefDirective', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [],
-      declarations: [
-        TestContainerComponent,
-        OutletDirective,
-        OutletRefDirective,
-      ],
+      imports: [TestContainerComponent, OutletDirective, OutletRefDirective],
       providers: [
         OutletService,
         { provide: DeferLoaderService, useClass: MockDeferLoaderService },

@@ -13,14 +13,18 @@ describe('UnitAddressListComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [SubListTestingModule, UrlTestingModule, I18nTestingModule],
+      imports: [
+        SubListTestingModule,
+        UrlTestingModule,
+        I18nTestingModule,
+        UnitAddressListComponent,
+      ],
       providers: [
         {
           provide: UnitAddressListService,
           useClass: MockUnitAddressListService,
         },
       ],
-      declarations: [UnitAddressListComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(UnitAddressListComponent);

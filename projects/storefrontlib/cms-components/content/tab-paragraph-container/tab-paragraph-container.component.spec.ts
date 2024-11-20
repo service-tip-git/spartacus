@@ -18,6 +18,8 @@ import { TabParagraphContainerComponent } from './tab-paragraph-container.compon
 @Component({
   selector: 'cx-test-cmp',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class TestComponent {
   tabTitleParam$ = of('title param');
@@ -78,8 +80,8 @@ describe('TabParagraphContainerComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         TestComponent,
         TabParagraphContainerComponent,
         ComponentWrapperDirective,

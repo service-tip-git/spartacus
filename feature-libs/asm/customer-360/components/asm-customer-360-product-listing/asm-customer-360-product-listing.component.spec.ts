@@ -30,6 +30,8 @@ describe('AsmCustomer360ProductListingComponent', () => {
     template: '',
     selector:
       '[cx-asm-customer-360-product-item], cx-asm-customer-360-product-item',
+    standalone: true,
+    imports: [I18nTestingModule],
   })
   class MockAsmProductItemComponent {
     @Input() product: Product;
@@ -56,6 +58,8 @@ describe('AsmCustomer360ProductListingComponent', () => {
         <div id="product-listing-header-template"></div>
       </ng-template>
     `,
+    standalone: true,
+    imports: [I18nTestingModule],
   })
   // eslint-disable-next-line @angular-eslint/component-class-suffix
   class AsmCustomerProductListingComponentTest {
@@ -84,8 +88,8 @@ describe('AsmCustomer360ProductListingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         AsmCustomer360ProductListingComponent,
         MockAsmProductItemComponent,
         AsmCustomerProductListingComponentTest,

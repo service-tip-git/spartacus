@@ -56,8 +56,9 @@ const moduleComponents = [
     I18nModule,
     SpinnerModule,
     MediaModule,
+    OrderHistoryComponent,
+    ...moduleComponents,
   ],
-  declarations: [OrderHistoryComponent, ...moduleComponents],
   exports: [OrderHistoryComponent, ...moduleComponents],
   providers: [
     provideDefaultConfig(<CmsConfig>{

@@ -52,6 +52,11 @@ import { ProductListService } from './product-list.service';
     StarRatingModule,
     UrlModule,
     FeaturesConfigModule,
+    ProductListComponent,
+    ProductListItemComponent,
+    ProductGridItemComponent,
+    ProductViewComponent,
+    ProductScrollComponent,
   ],
   providers: [
     ProductListService,
@@ -84,13 +89,6 @@ import { ProductListService } from './product-list.service';
         },
       },
     }),
-  ],
-  declarations: [
-    ProductListComponent,
-    ProductListItemComponent,
-    ProductGridItemComponent,
-    ProductViewComponent,
-    ProductScrollComponent,
   ],
   exports: [
     ProductListComponent,

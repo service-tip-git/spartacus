@@ -16,11 +16,16 @@ import { LaunchDialogService, LAUNCH_CALLER } from '@spartacus/storefront';
 import { ActiveCartFacade, Cart } from '@spartacus/cart/base/root';
 import { Observable, Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
+import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'cx-clear-cart',
   templateUrl: './clear-cart.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgIf, AsyncPipe, TranslatePipe, MockTranslatePipe],
 })
 export class ClearCartComponent implements OnDestroy {
   cart$: Observable<Cart> = this.activeCartFacade.getActive();

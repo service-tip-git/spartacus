@@ -22,11 +22,32 @@ import {
   UserPaymentService,
 } from '@spartacus/core';
 import { DP_CARD_REGISTRATION_STATUS } from '../../../utils/dp-constants';
+import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { DpPaymentCallbackComponent } from './dp-payment-callback/dp-payment-callback.component';
+import { SpinnerComponent } from '../../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { DpPaymentFormComponent } from './dp-payment-form/dp-payment-form.component';
+import { CardComponent } from '../../../../../../projects/storefrontlib/shared/components/card/card.component';
+import { FeatureDirective } from '../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'cx-payment-method',
   templateUrl: './dp-payment-method.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    NgFor,
+    CardComponent,
+    DpPaymentFormComponent,
+    SpinnerComponent,
+    DpPaymentCallbackComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class DpPaymentMethodComponent extends CorePaymentMethodComponent {
   showCallbackScreen = false;

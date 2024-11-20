@@ -27,12 +27,16 @@ import { MockFeatureDirective } from 'projects/storefrontlib/shared/test/mock-fe
 @Component({
   selector: 'cx-spinner',
   template: ` <div>spinner</div> `,
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class MockCxSpinnerComponent {}
 
 @Component({
   selector: 'cx-consent-management-form',
   template: ` <div>form</div> `,
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class MockConsentManagementFormComponent {
   @Input()
@@ -128,8 +132,8 @@ describe('ConsentManagementComponent', () => {
     };
 
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         MockCxSpinnerComponent,
         MockConsentManagementFormComponent,
         ConsentManagementComponent,

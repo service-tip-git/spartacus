@@ -70,7 +70,6 @@ describe('MiniCartComponentService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [],
       providers: [
         { provide: ActiveCartFacade, useClass: MockActiveCartFacade },
         { provide: AuthService, useClass: MockAuthService },

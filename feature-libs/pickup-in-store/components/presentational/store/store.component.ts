@@ -8,6 +8,13 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PointOfServiceStock, useFeatureStyles } from '@spartacus/core';
 import { storeHasStock } from '@spartacus/pickup-in-store/core';
 import { ICON_TYPE } from '@spartacus/storefront';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { SetPreferredStoreComponent } from '../../container/set-preferred-store/set-preferred-store.component';
+import { StoreScheduleComponent } from './store-schedule/store-schedule.component';
+import { NgIf, NgClass } from '@angular/common';
+import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { StoreAddressComponent } from './store-address/store-address.component';
 
 /**
  * A store in the store list including address, opening times, stock level, and
@@ -16,6 +23,17 @@ import { ICON_TYPE } from '@spartacus/storefront';
 @Component({
   selector: 'cx-store',
   templateUrl: './store.component.html',
+  standalone: true,
+  imports: [
+    StoreAddressComponent,
+    IconComponent,
+    NgIf,
+    StoreScheduleComponent,
+    SetPreferredStoreComponent,
+    NgClass,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class StoreComponent implements OnInit {
   /** The details of the store to be displayed */

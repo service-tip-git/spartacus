@@ -15,6 +15,11 @@ import {
 } from '@angular/core';
 import { useFeatureStyles } from '@spartacus/core';
 import { ICON_TYPE } from '../../../cms-components/misc/index';
+import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { IconComponent } from '../../../cms-components/misc/icon/icon.component';
+import { NgIf, NgTemplateOutlet, NgFor } from '@angular/common';
+import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
 
 /**
  * Star rating component can be used to view existing ratings as well
@@ -24,6 +29,16 @@ import { ICON_TYPE } from '../../../cms-components/misc/index';
   selector: 'cx-star-rating',
   templateUrl: './star-rating.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    FeatureDirective,
+    NgIf,
+    NgTemplateOutlet,
+    NgFor,
+    IconComponent,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class StarRatingComponent {
   protected initialRate = 0;

@@ -6,6 +6,8 @@ import { StoreFinderComponent } from './store-finder.component';
 @Component({
   selector: 'cx-store-finder-header',
   template: '',
+  standalone: true,
+  imports: [RouterTestingModule],
 })
 class MockStoreFinderHeaderComponent {}
 
@@ -15,8 +17,11 @@ describe('StoreFinderComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [StoreFinderComponent, MockStoreFinderHeaderComponent],
+      imports: [
+        RouterTestingModule,
+        StoreFinderComponent,
+        MockStoreFinderHeaderComponent,
+      ],
     }).compileComponents();
   }));
 

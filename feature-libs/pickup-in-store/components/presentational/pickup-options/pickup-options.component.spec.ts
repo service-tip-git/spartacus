@@ -20,6 +20,8 @@ import { PickupOptionsTabs } from './pickup-options.model';
 @Component({
   selector: 'cx-tab',
   template: `<div></div>`,
+  standalone: true,
+  imports: [CommonModule, I18nTestingModule, ReactiveFormsModule],
 })
 class MockTabComponent {
   @Input() disabled: boolean;
@@ -31,6 +33,7 @@ class MockTabComponent {
 // if the feature flag is disabled.
 @Directive({
   selector: '[cxFeature]',
+  standalone: true,
 })
 export class MockRevertedFeatureDirective {
   constructor(
@@ -65,12 +68,14 @@ describe('PickupOptionsComponent', () => {
   describe('with feature flags disabled', () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
-        declarations: [
+        imports: [
+          CommonModule,
+          I18nTestingModule,
+          ReactiveFormsModule,
           PickupOptionsComponent,
           MockRevertedFeatureDirective,
           MockTabComponent,
         ],
-        imports: [CommonModule, I18nTestingModule, ReactiveFormsModule],
         providers: [
           {
             provide: FeatureConfigService,
@@ -205,12 +210,13 @@ describe('PickupOptionsComponent', () => {
   describe('with feature flags enabled', () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
-        declarations: [PickupOptionsComponent, MockFeatureDirective],
         imports: [
           CommonModule,
           I18nTestingModule,
           ReactiveFormsModule,
           TabModule,
+          PickupOptionsComponent,
+          MockFeatureDirective,
         ],
         providers: [
           { provide: FeatureConfigService, useClass: MockFeatureConfigService },

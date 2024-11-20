@@ -28,6 +28,8 @@ import { PopoverModule } from './popover.module';
       Popover
     </button>
   `,
+  standalone: true,
+  imports: [RouterTestingModule, PopoverModule, I18nTestingModule],
 })
 class PopoverTestComponent {
   open() {
@@ -45,8 +47,12 @@ describe('PopoverDirective', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, PopoverModule, I18nTestingModule],
-      declarations: [PopoverTestComponent],
+      imports: [
+        RouterTestingModule,
+        PopoverModule,
+        I18nTestingModule,
+        PopoverTestComponent,
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PopoverTestComponent);

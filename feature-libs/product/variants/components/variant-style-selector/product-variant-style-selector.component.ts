@@ -17,11 +17,16 @@ import {
   VariantQualifier,
 } from '@spartacus/core';
 import { filter, take } from 'rxjs/operators';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { NgIf, NgFor, NgClass } from '@angular/common';
 
 @Component({
   selector: 'cx-product-variant-style-selector',
   templateUrl: './product-variant-style-selector.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgIf, NgFor, NgClass, TranslatePipe, MockTranslatePipe],
 })
 export class ProductVariantStyleSelectorComponent {
   constructor(

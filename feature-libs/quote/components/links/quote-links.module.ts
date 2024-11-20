@@ -17,7 +17,13 @@ import {
 import { QuoteLinksComponent } from './quote-links.component';
 
 @NgModule({
-  imports: [CommonModule, I18nModule, RouterModule, UrlModule],
+  imports: [
+    CommonModule,
+    I18nModule,
+    RouterModule,
+    UrlModule,
+    QuoteLinksComponent,
+  ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
       cmsComponents: {
@@ -28,7 +34,6 @@ import { QuoteLinksComponent } from './quote-links.component';
       },
     }),
   ],
-  declarations: [QuoteLinksComponent],
   exports: [QuoteLinksComponent],
 })
 export class QuoteLinksModule {}

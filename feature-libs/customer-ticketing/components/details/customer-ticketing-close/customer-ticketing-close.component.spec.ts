@@ -49,6 +49,8 @@ class MockCustomerTicketingFacade implements Partial<CustomerTicketingFacade> {
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -61,8 +63,11 @@ describe('CustomerTicketingCloseComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [CustomerTicketingCloseComponent, MockCxIconComponent],
+      imports: [
+        I18nTestingModule,
+        CustomerTicketingCloseComponent,
+        MockCxIconComponent,
+      ],
       providers: [
         CustomerTicketingCloseComponentService,
         { provide: LaunchDialogService, useClass: MockLaunchDialogService },

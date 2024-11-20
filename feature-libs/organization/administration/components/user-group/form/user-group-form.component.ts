@@ -5,7 +5,12 @@
  */
 
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { AbstractControl, UntypedFormGroup } from '@angular/forms';
+import {
+  AbstractControl,
+  UntypedFormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import {
   B2BUnitNode,
   OrgUnitService,
@@ -16,6 +21,13 @@ import { tap } from 'rxjs/operators';
 import { ItemService } from '../../shared/item.service';
 import { createCodeForEntityName } from '../../shared/utility/entity-code';
 import { UserGroupItemService } from '../services/user-group-item.service';
+import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FormErrorsComponent } from '../../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
+import { FeatureDirective } from '../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { FormComponent } from '../../shared/form/form.component';
 
 @Component({
   selector: 'cx-org-user-group-form',
@@ -27,6 +39,20 @@ import { UserGroupItemService } from '../services/user-group-item.service';
       provide: ItemService,
       useExisting: UserGroupItemService,
     },
+  ],
+  standalone: true,
+  imports: [
+    FormComponent,
+    NgIf,
+    FormsModule,
+    ReactiveFormsModule,
+    FeatureDirective,
+    NgTemplateOutlet,
+    FormErrorsComponent,
+    NgSelectModule,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
   ],
 })
 export class UserGroupFormComponent implements OnInit {

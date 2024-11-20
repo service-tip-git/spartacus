@@ -15,6 +15,8 @@ import { By } from '@angular/platform-browser';
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule, RouterTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -22,6 +24,7 @@ class MockCxIconComponent {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
@@ -45,8 +48,9 @@ describe('CloseAccountComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, RouterTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        RouterTestingModule,
         CloseAccountComponent,
         MockUrlPipe,
         MockCxIconComponent,

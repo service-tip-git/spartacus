@@ -29,10 +29,31 @@ import { distinctUntilChanged, take, tap } from 'rxjs/operators';
 import { ICON_TYPE } from '../../../cms-components/misc/icon/index';
 import { FocusConfig } from '../../../layout/a11y/keyboard-focus/index';
 import { LaunchDialogService } from '../../../layout/launch-dialog/services/launch-dialog.service';
+import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { ConsentManagementFormComponent } from '../../../cms-components/myaccount/consent-management/components/consent-form/consent-management-form.component';
+import { IconComponent } from '../../../cms-components/misc/icon/icon.component';
+import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
+import { SpinnerComponent } from '../spinner/spinner.component';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FocusDirective } from '../../../layout/a11y/keyboard-focus/focus.directive';
 
 @Component({
   selector: 'cx-anonymous-consent-dialog',
   templateUrl: './anonymous-consent-dialog.component.html',
+  standalone: true,
+  imports: [
+    FocusDirective,
+    NgIf,
+    SpinnerComponent,
+    FeatureDirective,
+    IconComponent,
+    NgFor,
+    ConsentManagementFormComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class AnonymousConsentDialogComponent implements OnInit, OnDestroy {
   @HostBinding('attr.role') role = 'dialog';

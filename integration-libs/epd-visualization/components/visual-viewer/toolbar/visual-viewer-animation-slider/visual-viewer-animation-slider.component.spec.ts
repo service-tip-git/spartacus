@@ -7,6 +7,7 @@ import { VisualViewerAnimationSliderComponent } from './visual-viewer-animation-
 
 @Pipe({
   name: 'cxNumeric',
+  standalone: true,
 })
 class MockNumericPipe implements PipeTransform {
   transform(): any {}
@@ -24,8 +25,7 @@ describe('VisualViewerAnimationSliderComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [MockNumericPipe],
-      imports: [CommonModule, I18nTestingModule],
+      imports: [CommonModule, I18nTestingModule, MockNumericPipe],
       providers: [
         {
           provide: LanguageService,

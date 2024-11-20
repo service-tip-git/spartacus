@@ -44,7 +44,6 @@ describe('ForgotPasswordComponentService', () => {
         I18nTestingModule,
         FormErrorsModule,
       ],
-      declarations: [],
       providers: [
         ForgotPasswordComponentService,
         { provide: UserPasswordFacade, useClass: MockUserPasswordService },

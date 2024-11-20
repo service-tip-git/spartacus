@@ -16,11 +16,30 @@ import { CustomerCoupon, useFeatureStyles } from '@spartacus/core';
 import { Subscription } from 'rxjs';
 import { ICON_TYPE } from '../../../../../cms-components/misc/icon/index';
 import { FocusConfig, LaunchDialogService } from '../../../../../layout/index';
+import { MockDatePipe } from '../../../../../../core/src/i18n/testing/mock-date.pipe';
+import { MockTranslatePipe } from '../../../../../../core/src/i18n/testing/mock-translate.pipe';
+import { CxDatePipe } from '../../../../../../core/src/i18n/date.pipe';
+import { TranslatePipe } from '../../../../../../core/src/i18n/translate.pipe';
+import { LowerCasePipe } from '@angular/common';
+import { IconComponent } from '../../../../misc/icon/icon.component';
+import { FeatureDirective } from '../../../../../../core/src/features-config/directives/feature.directive';
+import { FocusDirective } from '../../../../../layout/a11y/keyboard-focus/focus.directive';
 
 @Component({
   selector: 'cx-coupon-dialog',
   templateUrl: './coupon-dialog.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    FocusDirective,
+    FeatureDirective,
+    IconComponent,
+    LowerCasePipe,
+    TranslatePipe,
+    CxDatePipe,
+    MockTranslatePipe,
+    MockDatePipe,
+  ],
 })
 export class CouponDialogComponent implements OnDestroy, OnInit {
   private subscription = new Subscription();

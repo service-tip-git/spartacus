@@ -36,8 +36,8 @@ describe('CreateComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
         BannerCarouselComponent,
         CarouselComponent,
         ComponentWrapperDirective,

@@ -34,6 +34,8 @@ import { CustomerTicketingCloseComponentService } from './customer-ticketing-clo
     FormErrorsModule,
     FileUploadModule,
     SpinnerModule,
+    CustomerTicketingCloseComponent,
+    CustomerTicketingCloseDialogComponent,
   ],
   providers: [
     CustomerTicketingCloseComponentService,
@@ -45,10 +47,6 @@ import { CustomerTicketingCloseComponentService } from './customer-ticketing-clo
         },
       },
     }),
-  ],
-  declarations: [
-    CustomerTicketingCloseComponent,
-    CustomerTicketingCloseDialogComponent,
   ],
   exports: [
     CustomerTicketingCloseComponent,

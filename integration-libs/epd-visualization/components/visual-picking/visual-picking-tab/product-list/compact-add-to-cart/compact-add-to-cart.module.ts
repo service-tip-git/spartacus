@@ -29,8 +29,8 @@ import { CompactAddToCartComponent } from './compact-add-to-cart.component';
     IconModule,
     I18nModule,
     ItemCounterModule,
+    CompactAddToCartComponent,
   ],
-  declarations: [CompactAddToCartComponent],
   exports: [CompactAddToCartComponent],
 })
 export class CompactAddToCartModule {}

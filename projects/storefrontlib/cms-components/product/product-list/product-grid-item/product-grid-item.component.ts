@@ -16,6 +16,15 @@ import { ProductListOutlets } from '../../product-outlets.model';
 import { ProductListItemContextSource } from '../model/product-list-item-context-source.model';
 import { ProductListItemContext } from '../model/product-list-item-context.model';
 import { ProductListService } from '../product-list.service';
+import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
+import { UrlPipe } from '../../../../../core/src/routing/configurable-routes/url-translation/url.pipe';
+import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
+import { InnerComponentsHostDirective } from '../../../../cms-structure/page/component/inner-components-host.directive';
+import { StarRatingComponent } from '../../../../shared/components/star-rating/star-rating.component';
+import { NgIf } from '@angular/common';
+import { OutletDirective } from '../../../../cms-structure/outlet/outlet.directive';
+import { MediaComponent } from '../../../../shared/components/media/media.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'cx-product-grid-item',
@@ -27,6 +36,18 @@ import { ProductListService } from '../product-list.service';
       provide: ProductListItemContext,
       useExisting: ProductListItemContextSource,
     },
+  ],
+  standalone: true,
+  imports: [
+    RouterLink,
+    MediaComponent,
+    OutletDirective,
+    NgIf,
+    StarRatingComponent,
+    InnerComponentsHostDirective,
+    TranslatePipe,
+    UrlPipe,
+    MockTranslatePipe,
   ],
 })
 export class ProductGridItemComponent implements OnChanges {

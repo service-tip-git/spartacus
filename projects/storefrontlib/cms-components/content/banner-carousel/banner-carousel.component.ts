@@ -13,6 +13,9 @@ import {
 import { Observable } from 'rxjs';
 import { filter, map, tap } from 'rxjs/operators';
 import { CmsComponentData } from '../../../cms-structure/index';
+import { ComponentWrapperDirective } from '../../../cms-structure/page/component/component-wrapper.directive';
+import { CarouselComponent } from '../../../shared/components/carousel/carousel.component';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 /**
  * Generic carousel that renders CMS Components.
@@ -21,6 +24,8 @@ import { CmsComponentData } from '../../../cms-structure/index';
   selector: 'cx-banner-carousel',
   templateUrl: 'banner-carousel.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgIf, CarouselComponent, ComponentWrapperDirective, AsyncPipe],
 })
 export class BannerCarouselComponent {
   private componentData$: Observable<model> = this.componentData.data$.pipe(

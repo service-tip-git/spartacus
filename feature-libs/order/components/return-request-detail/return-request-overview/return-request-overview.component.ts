@@ -14,11 +14,16 @@ import { ReturnRequest } from '@spartacus/order/root';
 import { Observable, Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { ReturnRequestService } from '../return-request.service';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'cx-return-request-overview',
   templateUrl: './return-request-overview.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgIf, AsyncPipe, TranslatePipe, MockTranslatePipe],
 })
 export class ReturnRequestOverviewComponent implements OnInit, OnDestroy {
   constructor(protected returnRequestService: ReturnRequestService) {}

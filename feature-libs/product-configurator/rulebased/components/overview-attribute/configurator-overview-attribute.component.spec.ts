@@ -12,6 +12,8 @@ import { ConfiguratorOverviewAttributeComponent } from './configurator-overview-
 @Component({
   selector: 'cx-configurator-price',
   template: '',
+  standalone: true,
+  imports: [ReactiveFormsModule, NgSelectModule, I18nTestingModule],
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;
@@ -25,8 +27,10 @@ describe('ConfigurationOverviewAttributeComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, NgSelectModule, I18nTestingModule],
-      declarations: [
+      imports: [
+        ReactiveFormsModule,
+        NgSelectModule,
+        I18nTestingModule,
         ConfiguratorOverviewAttributeComponent,
         MockConfiguratorPriceComponent,
       ],

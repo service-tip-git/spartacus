@@ -22,11 +22,14 @@ class MockGlobalMessageService {
 @Component({
   template: '<div>Spinner</div>',
   selector: 'cx-spinner',
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class MockCxSpinnerComponent {}
 
 @Directive({
   selector: '[cxAtMessage]',
+  standalone: true,
 })
 class MockAtMessageDirective {
   @Input() cxAtMessage: string | string[] | undefined;
@@ -47,6 +50,8 @@ const mockPayment: PaymentDetails = {
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -72,8 +77,8 @@ describe('PaymentMethodsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         PaymentMethodsComponent,
         MockCxSpinnerComponent,
         CardComponent,

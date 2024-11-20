@@ -6,6 +6,8 @@ import { I18nTestingModule } from '@spartacus/core';
 @Component({
   template: '',
   selector: 'cx-store-finder-search',
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class MockStoreFinderSearchComponent {}
 
@@ -15,8 +17,8 @@ describe('StoreFinderHeaderComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         StoreFinderHeaderComponent,
         MockStoreFinderSearchComponent,
       ],

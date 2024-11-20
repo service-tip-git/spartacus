@@ -35,11 +35,31 @@ import { ICON_TYPE } from '../../../../misc/icon/icon.model';
 import { FacetGroupCollapsedState, FacetList } from '../facet.model';
 import { FacetComponent } from '../facet/facet.component';
 import { FacetService } from '../services/facet.service';
+import { MockTranslatePipe } from '../../../../../../core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../../core/src/i18n/translate.pipe';
+import { TabComponent } from '../../../../content/tab/tab.component';
+import { FeatureDirective } from '../../../../../../core/src/features-config/directives/feature.directive';
+import { IconComponent } from '../../../../misc/icon/icon.component';
+import { FocusDirective } from '../../../../../layout/a11y/keyboard-focus/focus.directive';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'cx-facet-list',
   templateUrl: './facet-list.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgIf,
+    FocusDirective,
+    IconComponent,
+    FeatureDirective,
+    TabComponent,
+    NgFor,
+    FacetComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class FacetListComponent implements OnInit, OnDestroy, AfterViewInit {
   protected subscriptions = new Subscription();

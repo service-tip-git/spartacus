@@ -11,6 +11,12 @@ import {
   PickupLocationsSearchFacade,
 } from '@spartacus/pickup-in-store/root';
 import { Observable } from 'rxjs';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { StoreComponent } from '../../presentational/store/store.component';
+import { FeatureDirective } from '../../../../../projects/core/src/features-config/directives/feature.directive';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 /**
  * The list of stores with their stock level and distance from a searched location.
@@ -19,6 +25,17 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'cx-store-list',
   templateUrl: 'store-list.component.html',
+  standalone: true,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    NgFor,
+    StoreComponent,
+    SpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class StoreListComponent implements OnInit {
   /** The product code for the stock levels at each location */

@@ -109,8 +109,8 @@ describe('StoreFinderListItemComponent', () => {
         I18nTestingModule,
         RouterTestingModule,
         OutletModule,
+        StoreFinderListItemComponent,
       ],
-      declarations: [StoreFinderListItemComponent],
       providers: [
         { provide: StoreFinderService, useClass: MockStoreFinderService },
       ],

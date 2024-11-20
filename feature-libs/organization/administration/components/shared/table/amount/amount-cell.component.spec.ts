@@ -10,8 +10,7 @@ describe('AmountCellComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AmountCellComponent],
-      imports: [RouterTestingModule, UrlTestingModule],
+      imports: [RouterTestingModule, UrlTestingModule, AmountCellComponent],
       providers: [
         {
           provide: OutletContextData,

@@ -11,11 +11,25 @@ import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { ConfiguratorCommonsService } from '../../core/facade/configurator-commons.service';
 import { Configurator } from '../../core/model/configurator.model';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { ProductCarouselItemComponent } from '../../../../../projects/storefrontlib/cms-components/product/carousel/product-carousel-item/product-carousel-item.component';
+import { CarouselComponent } from '../../../../../projects/storefrontlib/shared/components/carousel/carousel.component';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'cx-configurator-variant-carousel',
   templateUrl: './configurator-variant-carousel.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgIf,
+    CarouselComponent,
+    ProductCarouselItemComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class ConfiguratorVariantCarouselComponent {
   configuration$: Observable<Configurator.Configuration> =

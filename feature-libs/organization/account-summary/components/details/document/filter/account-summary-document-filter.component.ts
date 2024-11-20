@@ -28,9 +28,19 @@ import {
   FormBuilder,
   FormGroup,
   ValidationErrors,
+  FormsModule,
+  ReactiveFormsModule,
 } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { MockTranslatePipe } from '../../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../../../projects/core/src/i18n/translate.pipe';
+import { NgSelectA11yDirective } from '../../../../../../../projects/storefrontlib/shared/components/ng-select-a11y/ng-select-a11y.directive';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FormErrorsComponent } from '../../../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
+import { DatePickerComponent } from '../../../../../../../projects/storefrontlib/shared/components/form/date-picker/date-picker.component';
+import { FeatureDirective } from '../../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { NgIf, NgTemplateOutlet } from '@angular/common';
 
 interface ItemType {
   code: string;
@@ -47,6 +57,20 @@ interface GroupValidator {
   selector: 'cx-account-summary-document-filter',
   templateUrl: './account-summary-document-filter.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    NgIf,
+    FeatureDirective,
+    DatePickerComponent,
+    FormErrorsComponent,
+    NgSelectModule,
+    NgSelectA11yDirective,
+    NgTemplateOutlet,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class AccountSummaryDocumentFilterComponent
   implements OnInit, OnDestroy

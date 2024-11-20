@@ -37,8 +37,7 @@ describe('ScrollToTopComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [IconTestingModule, I18nTestingModule],
-      declarations: [ScrollToTopComponent],
+      imports: [IconTestingModule, I18nTestingModule, ScrollToTopComponent],
       providers: [
         {
           provide: CmsComponentData,

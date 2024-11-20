@@ -64,8 +64,7 @@ describe('CheckoutServiceDetailsComponent', () => {
   let messageService: GlobalMessageService;
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [CheckoutServiceDetailsComponent],
+      imports: [I18nTestingModule, CheckoutServiceDetailsComponent],
       providers: [
         {
           provide: ActivatedRoute,

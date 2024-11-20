@@ -53,8 +53,11 @@ describe('ProductVariantSizeSelectorComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ProductVariantSizeSelectorComponent],
-      imports: [RouterTestingModule, I18nTestingModule],
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
+        ProductVariantSizeSelectorComponent,
+      ],
       providers: [
         { provide: RoutingService, useClass: MockRoutingService },
         {

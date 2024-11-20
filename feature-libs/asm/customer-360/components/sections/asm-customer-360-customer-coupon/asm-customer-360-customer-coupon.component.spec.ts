@@ -20,6 +20,8 @@ describe('AsmCustomer360CouponComponent', () => {
   @Component({
     selector: 'cx-icon',
     template: '',
+    standalone: true,
+    imports: [I18nTestingModule],
   })
   class MockCxIconComponent {
     @Input() type: ICON_TYPE;
@@ -157,8 +159,8 @@ describe('AsmCustomer360CouponComponent', () => {
   }
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         AsmCustomer360CustomerCouponComponent,
         AsmCustomer360PromotionListingComponent,
         MockCxIconComponent,

@@ -20,6 +20,7 @@ import { ProductImagesComponent } from './product-images.component';
     MediaModule,
     OutletModule,
     CarouselModule,
+    ProductImagesComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -30,7 +31,6 @@ import { ProductImagesComponent } from './product-images.component';
       },
     }),
   ],
-  declarations: [ProductImagesComponent],
   exports: [ProductImagesComponent],
 })
 export class ProductImagesModule {}

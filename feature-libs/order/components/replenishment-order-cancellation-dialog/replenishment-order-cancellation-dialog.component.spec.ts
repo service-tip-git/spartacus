@@ -27,6 +27,8 @@ const mockReplenishmentOrder: ReplenishmentOrder = {
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule, KeyboardFocusTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -74,8 +76,9 @@ describe('ReplenishmentOrderCancellationDialogComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, KeyboardFocusTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        KeyboardFocusTestingModule,
         ReplenishmentOrderCancellationDialogComponent,
         MockCxIconComponent,
         MockFeatureLevelDirective,

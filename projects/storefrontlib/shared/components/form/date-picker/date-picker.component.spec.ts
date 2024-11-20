@@ -8,6 +8,8 @@ import { DatePickerComponent } from './date-picker.component';
 
 @Component({
   selector: 'cx-form-errors',
+  standalone: true,
+  imports: [I18nTestingModule, ReactiveFormsModule],
 })
 class MockFormErrorComponent {
   @Input() control: UntypedFormControl;
@@ -28,8 +30,9 @@ describe('DatePickerComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, ReactiveFormsModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        ReactiveFormsModule,
         DatePickerComponent,
         MockFormErrorComponent,
         MockFeatureDirective,

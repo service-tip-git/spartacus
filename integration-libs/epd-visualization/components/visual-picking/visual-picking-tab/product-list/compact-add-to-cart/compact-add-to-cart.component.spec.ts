@@ -98,6 +98,14 @@ class MockEventService implements Partial<EventService> {
 @Component({
   template: '',
   selector: 'cx-item-counter',
+  standalone: true,
+  imports: [
+    RouterTestingModule,
+    SpinnerModule,
+    I18nTestingModule,
+    ReactiveFormsModule,
+    IconModule,
+  ],
 })
 class MockItemCounterComponent {
   @Input() min: number;
@@ -125,8 +133,9 @@ describe('CompactAddToCartComponent', () => {
         I18nTestingModule,
         ReactiveFormsModule,
         IconModule,
+        CompactAddToCartComponent,
+        MockItemCounterComponent,
       ],
-      declarations: [CompactAddToCartComponent, MockItemCounterComponent],
       providers: [
         {
           provide: LaunchDialogService,

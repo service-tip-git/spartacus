@@ -114,8 +114,8 @@ describe('QuoteLinksComponent', () => {
         I18nTestingModule,
         RouterTestingModule.withRoutes(mockRoutes),
         UrlTestingModule,
+        QuoteLinksComponent,
       ],
-      declarations: [QuoteLinksComponent],
       providers: [
         {
           provide: QuoteFacade,

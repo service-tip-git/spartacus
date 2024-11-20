@@ -22,6 +22,7 @@ class MockAuthService implements Partial<AuthService> {
 @Component({
   selector: 'cx-page-layout',
   template: 'mock',
+  standalone: true,
 })
 class MockPageLayoutComponent {}
 
@@ -56,8 +57,8 @@ describe('LogoutGuard', () => {
             canActivate: [LogoutGuard],
           },
         ]),
+        MockPageLayoutComponent,
       ],
-      declarations: [MockPageLayoutComponent],
       providers: [
         {
           provide: RoutingConfig,

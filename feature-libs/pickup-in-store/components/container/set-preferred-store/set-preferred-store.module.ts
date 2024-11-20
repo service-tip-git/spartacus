@@ -16,9 +16,8 @@ import {
 import { SetPreferredStoreComponent } from './set-preferred-store.component';
 
 @NgModule({
-  imports: [CommonModule, IconModule, I18nModule],
+  imports: [CommonModule, IconModule, I18nModule, SetPreferredStoreComponent],
   exports: [SetPreferredStoreComponent],
-  declarations: [SetPreferredStoreComponent],
   providers: [
     provideOutlet({
       id: StoreFinderOutlets.PREFERRED_STORE,

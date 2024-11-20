@@ -27,8 +27,13 @@ import { MyAccountV2UserComponent } from './my-account-v2-user.component';
       },
     }),
   ],
-  declarations: [MyAccountV2UserComponent],
   exports: [MyAccountV2UserComponent],
-  imports: [CommonModule, RouterModule, UrlModule, I18nModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    UrlModule,
+    I18nModule,
+    MyAccountV2UserComponent,
+  ],
 })
 export class MyAccountV2UserModule {}

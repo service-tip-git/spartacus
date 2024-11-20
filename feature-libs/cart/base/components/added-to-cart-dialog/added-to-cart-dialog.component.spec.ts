@@ -101,6 +101,16 @@ const mockOrderEntries: OrderEntry[] = [
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    RouterTestingModule,
+    SpinnerModule,
+    I18nTestingModule,
+    PromotionsModule,
+    KeyboardFocusTestingModule,
+  ],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -118,6 +128,16 @@ class MockRoutingService implements Partial<RoutingService> {
 @Component({
   selector: 'cx-cart-item',
   template: '',
+  standalone: true,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    RouterTestingModule,
+    SpinnerModule,
+    I18nTestingModule,
+    PromotionsModule,
+    KeyboardFocusTestingModule,
+  ],
 })
 class MockCartItemComponent {
   @Input() compact = false;
@@ -129,6 +149,7 @@ class MockCartItemComponent {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
@@ -152,8 +173,6 @@ describe('AddedToCartDialogComponent', () => {
         I18nTestingModule,
         PromotionsModule,
         KeyboardFocusTestingModule,
-      ],
-      declarations: [
         AddedToCartDialogComponent,
         MockCartItemComponent,
         MockUrlPipe,

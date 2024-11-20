@@ -29,6 +29,10 @@ import { ConfiguratorTextfieldInputFieldReadonlyComponent } from './input-field-
     CommonModule,
     I18nModule,
     UrlModule,
+    ConfiguratorTextfieldFormComponent,
+    ConfiguratorTextfieldInputFieldComponent,
+    ConfiguratorTextfieldInputFieldReadonlyComponent,
+    ConfiguratorTextfieldAddToCartButtonComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -38,12 +42,6 @@ import { ConfiguratorTextfieldInputFieldReadonlyComponent } from './input-field-
         },
       },
     }),
-  ],
-  declarations: [
-    ConfiguratorTextfieldFormComponent,
-    ConfiguratorTextfieldInputFieldComponent,
-    ConfiguratorTextfieldInputFieldReadonlyComponent,
-    ConfiguratorTextfieldAddToCartButtonComponent,
   ],
   exports: [
     ConfiguratorTextfieldFormComponent,

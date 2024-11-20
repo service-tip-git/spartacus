@@ -36,6 +36,7 @@ const unsubLoading$ = new BehaviorSubject<boolean>(false);
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
@@ -51,6 +52,8 @@ class MockUrlPipe implements PipeTransform {
     >
     </cx-coupon-card>
   `,
+  standalone: true,
+  imports: [I18nTestingModule, RouterTestingModule],
 })
 class MyCouponsComponent {
   eventObj: {
@@ -90,8 +93,13 @@ describe('CouponCardComponent', () => {
   );
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [CouponCardComponent, MyCouponsComponent, MockUrlPipe],
-      imports: [I18nTestingModule, RouterTestingModule],
+      imports: [
+        I18nTestingModule,
+        RouterTestingModule,
+        CouponCardComponent,
+        MyCouponsComponent,
+        MockUrlPipe,
+      ],
       providers: [
         { provide: LaunchDialogService, useClass: MockLaunchDialogService },
         {

@@ -21,8 +21,9 @@ import { ToggleLinkCellComponent } from './toggle-link/toggle-link-cell.componen
     I18nModule,
     IconModule,
     ListModule,
+    UnitListComponent,
+    ToggleLinkCellComponent,
   ],
-  declarations: [UnitListComponent, ToggleLinkCellComponent],
   exports: [ToggleLinkCellComponent],
 })
 export class UnitListModule {}

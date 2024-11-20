@@ -41,7 +41,6 @@ describe('LoginFormComponentService', () => {
         I18nTestingModule,
         FormErrorsModule,
       ],
-      declarations: [],
       providers: [
         LoginFormComponentService,
         { provide: WindowRef, useClass: MockWinRef },

@@ -11,8 +11,12 @@ import { IconModule } from '@spartacus/storefront';
 import { CmsConfig, I18nModule, provideDefaultConfig } from '@spartacus/core';
 
 @NgModule({
-  imports: [CommonModule, I18nModule, IconModule],
-  declarations: [FutureStockAccordionComponent],
+  imports: [
+    CommonModule,
+    I18nModule,
+    IconModule,
+    FutureStockAccordionComponent,
+  ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
       cmsComponents: {

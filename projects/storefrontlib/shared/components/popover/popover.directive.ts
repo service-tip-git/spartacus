@@ -33,6 +33,7 @@ import { PopoverService } from './popover.service';
  */
 @Directive({
   selector: '[cxPopover]',
+  standalone: true,
 })
 export class PopoverDirective implements OnInit {
   /**

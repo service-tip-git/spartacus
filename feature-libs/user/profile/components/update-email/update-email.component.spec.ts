@@ -26,6 +26,15 @@ import createSpy = jasmine.createSpy;
 @Component({
   selector: 'cx-spinner',
   template: '',
+  standalone: true,
+  imports: [
+    ReactiveFormsModule,
+    I18nTestingModule,
+    FormErrorsModule,
+    RouterTestingModule,
+    UrlTestingModule,
+    PasswordVisibilityToggleModule,
+  ],
 })
 class MockCxSpinnerComponent {}
 
@@ -57,8 +66,6 @@ describe('UpdateEmailComponent', () => {
         RouterTestingModule,
         UrlTestingModule,
         PasswordVisibilityToggleModule,
-      ],
-      declarations: [
         UpdateEmailComponent,
         MockCxSpinnerComponent,
         MockFeatureDirective,

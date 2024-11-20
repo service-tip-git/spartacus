@@ -45,6 +45,16 @@ import {
 import { CustomerListAction } from '../customer-list/customer-list.model';
 import { AsmComponentService } from '../services/asm-component.service';
 import { AsmDialogActionEvent } from '@spartacus/asm/customer-360/root';
+import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../projects/core/src/i18n/translate.pipe';
+import { CSAgentLoginFormComponent } from '../csagent-login-form/csagent-login-form.component';
+import { CustomerSelectionComponent } from '../customer-selection/customer-selection.component';
+import { MessageComponent } from '../../../../projects/storefrontlib/cms-components/misc/message/message.component';
+import { CustomerEmulationComponent } from '../customer-emulation/customer-emulation.component';
+import { AsmSessionTimerComponent } from '../asm-session-timer/asm-session-timer.component';
+import { AsmToggleUiComponent } from '../asm-toggle-ui/asm-toggle-ui.component';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { IconComponent } from '../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
 interface CartTypeKey {
   [key: string]: string;
 }
@@ -56,6 +66,20 @@ export const CART_TYPE_KEY: CartTypeKey = {
 @Component({
   selector: 'cx-asm-main-ui',
   templateUrl: './asm-main-ui.component.html',
+  standalone: true,
+  imports: [
+    IconComponent,
+    NgIf,
+    AsmToggleUiComponent,
+    AsmSessionTimerComponent,
+    CustomerEmulationComponent,
+    MessageComponent,
+    CustomerSelectionComponent,
+    CSAgentLoginFormComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class AsmMainUiComponent implements OnInit, OnDestroy {
   customerSupportAgentLoggedIn$: Observable<boolean>;

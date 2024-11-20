@@ -33,6 +33,7 @@ const mockConsignment: Consignment = {
 
 @Pipe({
   name: 'cxTranslateUrl',
+  standalone: true,
 })
 class MockTranslateUrlPipe implements PipeTransform {
   transform(): any {}
@@ -74,8 +75,12 @@ describe('ConsignmentTrackingComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [SpinnerModule, I18nTestingModule],
-      declarations: [ConsignmentTrackingComponent, MockTranslateUrlPipe],
+      imports: [
+        SpinnerModule,
+        I18nTestingModule,
+        ConsignmentTrackingComponent,
+        MockTranslateUrlPipe,
+      ],
       providers: [
         { provide: LaunchDialogService, useClass: MockLaunchDialogService },
         { provide: OrderHistoryFacade, useValue: userOrderService },

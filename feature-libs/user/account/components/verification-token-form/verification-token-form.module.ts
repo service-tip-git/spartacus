@@ -45,6 +45,8 @@ import { VerificationTokenFacade } from '@spartacus/user/account/root';
     FormErrorsModule,
     SpinnerModule,
     FeaturesConfigModule,
+    VerificationTokenFormComponent,
+    VerificationTokenDialogComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -68,10 +70,6 @@ import { VerificationTokenFacade } from '@spartacus/user/account/root';
       },
     }),
     provideDefaultConfig(defaultVerificationTokenLayoutConfig),
-  ],
-  declarations: [
-    VerificationTokenFormComponent,
-    VerificationTokenDialogComponent,
   ],
 })
 export class VerificationTokenFormModule {}

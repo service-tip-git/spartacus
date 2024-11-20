@@ -24,6 +24,7 @@ import { QuoteSummaryActionsModule } from './actions/quote-summary-actions.modul
     QuoteSummaryPricesModule,
     QuoteSummarySellerEditModule,
     QuoteSummaryActionsModule,
+    QuoteSummaryComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -35,7 +36,6 @@ import { QuoteSummaryActionsModule } from './actions/quote-summary-actions.modul
       },
     }),
   ],
-  declarations: [QuoteSummaryComponent],
   exports: [QuoteSummaryComponent],
 })
 export class QuoteSummaryModule {}

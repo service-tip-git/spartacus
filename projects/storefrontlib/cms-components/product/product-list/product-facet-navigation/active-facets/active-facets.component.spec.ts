@@ -18,6 +18,8 @@ import { ActiveFacetsComponent } from './active-facets.component';
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule, RouterTestingModule, KeyboardFocusModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -38,8 +40,13 @@ describe('ActiveFacetsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, RouterTestingModule, KeyboardFocusModule],
-      declarations: [ActiveFacetsComponent, MockCxIconComponent],
+      imports: [
+        I18nTestingModule,
+        RouterTestingModule,
+        KeyboardFocusModule,
+        ActiveFacetsComponent,
+        MockCxIconComponent,
+      ],
       providers: [{ provide: FacetService, useClass: MockFacetService }],
     })
       .overrideComponent(ActiveFacetsComponent, {

@@ -5,13 +5,32 @@
  */
 
 import { Component } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import {
+  UntypedFormControl,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { RoutingService } from '@spartacus/core';
 import { ICON_TYPE } from '@spartacus/storefront';
+import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../projects/core/src/i18n/translate.pipe';
+import { NgClass } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { IconComponent } from '../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
 
 @Component({
   selector: 'cx-store-finder-search',
   templateUrl: './store-finder-search.component.html',
+  standalone: true,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    IconComponent,
+    RouterLink,
+    NgClass,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class StoreFinderSearchComponent {
   searchBox: UntypedFormControl = new UntypedFormControl();

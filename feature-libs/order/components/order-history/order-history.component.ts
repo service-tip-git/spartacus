@@ -5,7 +5,7 @@
  */
 
 import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
-import { Params } from '@angular/router';
+import { Params, RouterLink, RouterLinkActive } from '@angular/router';
 import {
   isNotUndefined,
   RoutingService,
@@ -19,11 +19,35 @@ import {
 } from '@spartacus/order/root';
 import { combineLatest, Observable } from 'rxjs';
 import { filter, map, take, tap } from 'rxjs/operators';
+import { MockDatePipe } from '../../../../projects/core/src/i18n/testing/mock-date.pipe';
+import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { CxDatePipe } from '../../../../projects/core/src/i18n/date.pipe';
+import { TranslatePipe } from '../../../../projects/core/src/i18n/translate.pipe';
+import { UrlPipe } from '../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
+import { PaginationComponent } from '../../../../projects/storefrontlib/shared/components/list-navigation/pagination/pagination.component';
+import { SortingComponent } from '../../../../projects/storefrontlib/shared/components/list-navigation/sorting/sorting.component';
+import { NgIf, NgClass, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'cx-order-history',
   templateUrl: './order-history.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgIf,
+    NgClass,
+    SortingComponent,
+    PaginationComponent,
+    NgFor,
+    RouterLink,
+    RouterLinkActive,
+    AsyncPipe,
+    UrlPipe,
+    TranslatePipe,
+    CxDatePipe,
+    MockTranslatePipe,
+    MockDatePipe,
+  ],
 })
 export class OrderHistoryComponent implements OnDestroy {
   constructor(

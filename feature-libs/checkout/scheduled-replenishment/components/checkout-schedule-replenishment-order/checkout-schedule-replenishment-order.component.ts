@@ -20,11 +20,34 @@ import {
 import { ICON_TYPE } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import { CheckoutReplenishmentFormService } from '../services/checkout-replenishment-form.service';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import {
+  NgFor,
+  NgIf,
+  AsyncPipe,
+  TitleCasePipe,
+  KeyValuePipe,
+} from '@angular/common';
+import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { FeatureDirective } from '../../../../../projects/core/src/features-config/directives/feature.directive';
 
 @Component({
   selector: 'cx-schedule-replenishment-order',
   templateUrl: './checkout-schedule-replenishment-order.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    FeatureDirective,
+    IconComponent,
+    NgFor,
+    NgIf,
+    AsyncPipe,
+    TitleCasePipe,
+    KeyValuePipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class CheckoutScheduleReplenishmentOrderComponent
   implements OnInit, OnDestroy

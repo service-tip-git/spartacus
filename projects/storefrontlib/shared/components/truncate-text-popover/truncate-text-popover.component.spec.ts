@@ -23,8 +23,8 @@ describe('TruncateTextPopoverComponent', () => {
         I18nTestingModule,
         TruncateTextPopoverModule,
         RouterTestingModule,
+        TruncateTextPopoverComponent,
       ],
-      declarations: [TruncateTextPopoverComponent],
     }).compileComponents();
   }));
 

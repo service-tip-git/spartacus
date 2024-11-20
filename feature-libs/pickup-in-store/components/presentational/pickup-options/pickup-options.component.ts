@@ -19,12 +19,22 @@ import {
   TemplateRef,
   Optional,
 } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { FeatureConfigService, useFeatureStyles } from '@spartacus/core';
 import { PickupOption } from '@spartacus/pickup-in-store/root';
 import { TAB_MODE, Tab, TabComponent, TabConfig } from '@spartacus/storefront';
 import { Subscription, take } from 'rxjs';
 import { PickupOptionsTabs } from './pickup-options.model';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { TabComponent as TabComponent_1 } from '../../../../../projects/storefrontlib/cms-components/content/tab/tab.component';
+import { NgIf } from '@angular/common';
+import { FeatureDirective } from '../../../../../projects/core/src/features-config/directives/feature.directive';
 
 /**
  * The presentational component of a pair of radio buttons for pickup options for a product.
@@ -32,6 +42,16 @@ import { PickupOptionsTabs } from './pickup-options.model';
 @Component({
   selector: 'cx-pickup-options',
   templateUrl: './pickup-options.component.html',
+  standalone: true,
+  imports: [
+    FeatureDirective,
+    FormsModule,
+    ReactiveFormsModule,
+    NgIf,
+    TabComponent_1,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class PickupOptionsComponent
   implements OnChanges, AfterViewInit, OnDestroy

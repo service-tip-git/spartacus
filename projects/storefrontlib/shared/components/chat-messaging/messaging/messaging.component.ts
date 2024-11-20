@@ -17,6 +17,8 @@ import {
   UntypedFormControl,
   UntypedFormGroup,
   Validators,
+  FormsModule,
+  ReactiveFormsModule,
 } from '@angular/forms';
 import { WindowRef } from '@spartacus/core';
 import { Observable } from 'rxjs';
@@ -28,10 +30,36 @@ import {
   MessageEventBoundItem,
   MessagingConfigs,
 } from './messaging.model';
+import { MockDatePipe } from '../../../../../core/src/i18n/testing/mock-date.pipe';
+import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
+import { CxDatePipe } from '../../../../../core/src/i18n/date.pipe';
+import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
+import { FormErrorsComponent } from '../../form/form-errors/form-errors.component';
+import { FileUploadComponent as FileUploadComponent_1 } from '../../form/file-upload/file-upload.component';
+import { IconComponent } from '../../../../cms-components/misc/icon/icon.component';
+import { AvatarComponent } from '../avatar/avatar.component';
+import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'cx-messaging',
   templateUrl: './messaging.component.html',
+  standalone: true,
+  imports: [
+    NgIf,
+    NgFor,
+    NgClass,
+    AvatarComponent,
+    IconComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    FileUploadComponent_1,
+    FormErrorsComponent,
+    AsyncPipe,
+    TranslatePipe,
+    CxDatePipe,
+    MockTranslatePipe,
+    MockDatePipe,
+  ],
 })
 export class MessagingComponent implements OnInit, AfterViewChecked {
   // can be undefined if you press add message button very fast on slow network

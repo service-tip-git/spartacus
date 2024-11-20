@@ -42,6 +42,7 @@ class MockGroupService {}
 
 @Directive({
   selector: '[cxFocus]',
+  standalone: true,
 })
 export class MockFocusDirective {
   @Input('cxFocus') protected config: any;
@@ -50,6 +51,8 @@ export class MockFocusDirective {
 @Component({
   selector: 'cx-configurator-attribute-quantity',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule, ReactiveFormsModule],
 })
 class MockConfiguratorAttributeQuantityComponent {
   @Input() quantityOptions: ConfiguratorAttributeQuantityComponentOptions;
@@ -58,6 +61,8 @@ class MockConfiguratorAttributeQuantityComponent {
 @Component({
   selector: 'cx-configurator-price',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule, ReactiveFormsModule],
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;
@@ -66,6 +71,8 @@ class MockConfiguratorPriceComponent {
 @Component({
   selector: 'cx-configurator-show-more',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule, ReactiveFormsModule],
 })
 class MockConfiguratorShowMoreComponent {
   @Input() text: string;
@@ -117,7 +124,11 @@ describe('ConfigAttributeRadioButtonComponent', () => {
       },
     });
     TestBed.configureTestingModule({
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        ReactiveFormsModule,
+        StoreModule.forRoot({}),
+        StoreModule.forFeature(CONFIGURATOR_FEATURE, getConfiguratorReducers),
         ConfiguratorAttributeRadioButtonComponent,
         ConfiguratorAttributeInputFieldComponent,
         ConfiguratorAttributeNumericInputFieldComponent,
@@ -126,12 +137,6 @@ describe('ConfigAttributeRadioButtonComponent', () => {
         MockConfiguratorAttributeQuantityComponent,
         MockConfiguratorPriceComponent,
         MockConfiguratorShowMoreComponent,
-      ],
-      imports: [
-        I18nTestingModule,
-        ReactiveFormsModule,
-        StoreModule.forRoot({}),
-        StoreModule.forFeature(CONFIGURATOR_FEATURE, getConfiguratorReducers),
       ],
       providers: [
         ConfiguratorStorefrontUtilsService,

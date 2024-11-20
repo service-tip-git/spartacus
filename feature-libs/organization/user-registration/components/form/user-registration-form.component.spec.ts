@@ -116,6 +116,7 @@ class MockUserRegistrationFormService
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
@@ -137,8 +138,6 @@ describe('UserRegistrationFormComponent', () => {
         I18nTestingModule,
         FormErrorsModule,
         RouterTestingModule,
-      ],
-      declarations: [
         UserRegistrationFormComponent,
         MockUrlPipe,
         NgSelectA11yDirective,

@@ -88,6 +88,13 @@ const mockUserId = 'test-user';
 @Component({
   template: '',
   selector: '[cx-cart-item-list-row], cx-cart-item-list-row',
+  standalone: true,
+  imports: [
+    ReactiveFormsModule,
+    RouterTestingModule,
+    PromotionsModule,
+    I18nTestingModule,
+  ],
 })
 class MockCartItemComponent {
   @Input() item;
@@ -135,8 +142,9 @@ describe('CartItemListComponent', () => {
         RouterTestingModule,
         PromotionsModule,
         I18nTestingModule,
+        CartItemListComponent,
+        MockCartItemComponent,
       ],
-      declarations: [CartItemListComponent, MockCartItemComponent],
       providers: [
         { provide: ActiveCartFacade, useClass: MockActiveCartService },
         { provide: SelectiveCartFacade, useValue: mockSelectiveCartService },

@@ -21,10 +21,20 @@ const mockOrder = {
   paymentInfo: { billingAddress: { email: 'test@test.com' } },
 };
 
-@Component({ selector: 'cx-add-to-home-screen-banner', template: '' })
+@Component({
+  selector: 'cx-add-to-home-screen-banner',
+  template: '',
+  standalone: true,
+  imports: [I18nTestingModule],
+})
 class MockAddtoHomeScreenBannerComponent {}
 
-@Component({ selector: 'cx-guest-register-form', template: '' })
+@Component({
+  selector: 'cx-guest-register-form',
+  template: '',
+  standalone: true,
+  imports: [I18nTestingModule],
+})
 class MockGuestRegisterFormComponent {
   @Input() guid: string;
   @Input() email: string;
@@ -52,8 +62,8 @@ describe('OrderConfirmationThankYouMessageComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         OrderConfirmationThankYouMessageComponent,
         MockAddtoHomeScreenBannerComponent,
         MockGuestRegisterFormComponent,

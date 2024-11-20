@@ -16,11 +16,23 @@ import {
 import { Observable } from 'rxjs';
 import { take, tap } from 'rxjs/operators';
 import { CmsComponentData } from '../../../cms-structure/page/model/cms-component-data';
+import { MediaComponent } from '../../../shared/components/media/media.component';
+import { GenericLinkComponent } from '../../../shared/components/generic-link/generic-link.component';
+import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'cx-banner',
   templateUrl: './banner.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    GenericLinkComponent,
+    MediaComponent,
+    AsyncPipe,
+  ],
 })
 export class BannerComponent {
   routerLink: string | any[] | undefined;

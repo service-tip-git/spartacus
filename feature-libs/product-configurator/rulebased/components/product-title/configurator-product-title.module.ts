@@ -21,6 +21,7 @@ import { ConfiguratorProductTitleComponent } from './configurator-product-title.
     I18nModule,
     IconModule,
     MediaModule,
+    ConfiguratorProductTitleComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -31,7 +32,6 @@ import { ConfiguratorProductTitleComponent } from './configurator-product-title.
       },
     }),
   ],
-  declarations: [ConfiguratorProductTitleComponent],
   exports: [ConfiguratorProductTitleComponent],
 })
 export class ConfiguratorProductTitleModule {}

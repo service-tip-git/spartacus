@@ -12,6 +12,8 @@ const coupon2: Voucher = { code: 'coupon2', voucherCode: 'coupon2' };
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -26,6 +28,8 @@ class MockCxIconComponent {
     >
     </cx-applied-coupons>
   `,
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class MockedCartCouponComponent {
   coupons = [coupon2, coupon1];
@@ -43,8 +47,8 @@ describe('AppliedCouponsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         AppliedCouponsComponent,
         MockCxIconComponent,
         MockedCartCouponComponent,

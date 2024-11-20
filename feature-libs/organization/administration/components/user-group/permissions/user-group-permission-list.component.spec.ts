@@ -13,14 +13,18 @@ describe('UserGroupPermissionListComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [SubListTestingModule, UrlTestingModule, I18nTestingModule],
+      imports: [
+        SubListTestingModule,
+        UrlTestingModule,
+        I18nTestingModule,
+        UserGroupPermissionListComponent,
+      ],
       providers: [
         {
           provide: UserGroupPermissionListService,
           useClass: MockUserGroupPermissionListService,
         },
       ],
-      declarations: [UserGroupPermissionListComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(UserGroupPermissionListComponent);

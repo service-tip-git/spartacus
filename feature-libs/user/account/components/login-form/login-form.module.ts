@@ -39,6 +39,7 @@ import { LoginFormComponent } from './login-form.component';
     SpinnerModule,
     PasswordVisibilityToggleModule,
     FeaturesConfigModule,
+    LoginFormComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -57,6 +58,5 @@ import { LoginFormComponent } from './login-form.component';
       },
     }),
   ],
-  declarations: [LoginFormComponent],
 })
 export class LoginFormModule {}

@@ -12,6 +12,12 @@ import {
   QuoteItemsComponentService,
   QuoteItemsData,
 } from './quote-items.component.service';
+import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../projects/core/src/i18n/translate.pipe';
+import { OutletDirective } from '../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
+import { AbstractOrderContextDirective } from '../../../cart/base/components/abstract-order-context/abstract-order-context.directive';
+import { IconComponent } from '../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 /**
  * Renders quote items. These items are either taken from the actual quote,
@@ -29,6 +35,17 @@ import {
 @Component({
   selector: 'cx-quote-items',
   templateUrl: './quote-items.component.html',
+  standalone: true,
+  imports: [
+    NgIf,
+    IconComponent,
+    AbstractOrderContextDirective,
+    OutletDirective,
+    NgFor,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class QuoteItemsComponent {
   protected quoteItemsComponentService = inject(QuoteItemsComponentService);

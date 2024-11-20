@@ -41,7 +41,6 @@ describe('VerificationTokenFormComponentService', () => {
         I18nTestingModule,
         FormErrorsModule,
       ],
-      declarations: [],
       providers: [
         VerificationTokenFormComponentService,
         { provide: AuthService, useClass: MockAuthService },

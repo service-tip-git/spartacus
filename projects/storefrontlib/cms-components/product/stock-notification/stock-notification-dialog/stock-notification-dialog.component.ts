@@ -20,11 +20,32 @@ import {
 import { Observable, Subscription } from 'rxjs';
 import { FocusConfig } from '../../../../layout/a11y/keyboard-focus/keyboard-focus.model';
 import { LaunchDialogService } from '../../../../layout/index';
+import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
+import { UrlPipe } from '../../../../../core/src/routing/configurable-routes/url-translation/url.pipe';
+import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
+import { SpinnerComponent } from '../../../../shared/components/spinner/spinner.component';
+import { RouterLink } from '@angular/router';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '../../../../../core/src/features-config/directives/feature.directive';
+import { FocusDirective } from '../../../../layout/a11y/keyboard-focus/focus.directive';
 
 @Component({
   selector: 'cx-stock-notification-dialog',
   templateUrl: './stock-notification-dialog.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    FocusDirective,
+    FeatureDirective,
+    NgIf,
+    NgFor,
+    RouterLink,
+    SpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+    UrlPipe,
+    MockTranslatePipe,
+  ],
 })
 export class StockNotificationDialogComponent implements OnInit, OnDestroy {
   private subscription = new Subscription();

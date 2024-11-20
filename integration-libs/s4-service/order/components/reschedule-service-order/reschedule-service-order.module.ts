@@ -25,7 +25,6 @@ import { ServiceOrderGuard } from '../guards';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [RescheduleServiceOrderComponent],
   imports: [
     CommonModule,
     CardModule,
@@ -36,6 +35,7 @@ import { RouterModule } from '@angular/router';
     SpinnerModule,
     DatePickerModule,
     ReactiveFormsModule,
+    RescheduleServiceOrderComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{

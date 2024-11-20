@@ -23,6 +23,7 @@ import { UnitCostCenterItemService } from './unit-cost-center-item.service';
       useExisting: UnitCostCenterItemService,
     },
   ],
+  standalone: true,
 })
 export class UnitCostCenterCreateComponent {
   unitKey$: Observable<string> = this.unitService.key$;

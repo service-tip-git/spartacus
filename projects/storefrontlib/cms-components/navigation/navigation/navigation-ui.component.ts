@@ -31,6 +31,12 @@ import { BREAKPOINT, BreakpointService } from '../../../layout';
 import { ICON_TYPE } from '../../misc/icon/index';
 import { HamburgerMenuService } from './../../../layout/header/hamburger-menu/hamburger-menu.service';
 import { NavigationNode } from './navigation-node.model';
+import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { GenericLinkComponent } from '../../../shared/components/generic-link/generic-link.component';
+import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
+import { IconComponent } from '../../misc/icon/icon.component';
+import { NgIf, NgFor, NgTemplateOutlet, AsyncPipe } from '@angular/common';
 
 const ARIA_EXPANDED_ATTR = 'aria-expanded';
 
@@ -38,6 +44,18 @@ const ARIA_EXPANDED_ATTR = 'aria-expanded';
   selector: 'cx-navigation-ui',
   templateUrl: './navigation-ui.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgIf,
+    IconComponent,
+    NgFor,
+    NgTemplateOutlet,
+    FeatureDirective,
+    GenericLinkComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class NavigationUIComponent implements OnInit, OnDestroy {
   /**

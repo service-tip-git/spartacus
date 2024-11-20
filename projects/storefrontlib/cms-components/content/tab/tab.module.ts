@@ -11,8 +11,7 @@ import { TabComponent } from './tab.component';
 import { TabPanelModule } from './panel/tab-panel.module';
 
 @NgModule({
-  imports: [CommonModule, I18nModule, TabPanelModule],
-  declarations: [TabComponent],
+  imports: [CommonModule, I18nModule, TabPanelModule, TabComponent],
   exports: [TabComponent],
 })
 export class TabModule {}

@@ -17,8 +17,7 @@ describe('ThemeSwitcherComponent', () => {
     );
 
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule, IconModule],
-      declarations: [SiteThemeSwitcherComponent],
+      imports: [I18nTestingModule, IconModule, SiteThemeSwitcherComponent],
       providers: [
         {
           provide: SiteThemeSwitcherComponentService,

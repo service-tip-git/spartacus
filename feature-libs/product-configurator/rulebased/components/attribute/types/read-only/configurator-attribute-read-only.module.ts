@@ -23,6 +23,7 @@ import { ConfiguratorShowMoreModule } from '../../../show-more/configurator-show
     ConfiguratorShowMoreModule,
     CommonModule,
     I18nModule,
+    ConfiguratorAttributeReadOnlyComponent,
   ],
   providers: [
     provideDefaultConfig(<ConfiguratorAttributeCompositionConfig>{
@@ -33,7 +34,6 @@ import { ConfiguratorShowMoreModule } from '../../../show-more/configurator-show
       },
     }),
   ],
-  declarations: [ConfiguratorAttributeReadOnlyComponent],
   exports: [ConfiguratorAttributeReadOnlyComponent],
 })
 export class ConfiguratorAttributeReadOnlyModule {}

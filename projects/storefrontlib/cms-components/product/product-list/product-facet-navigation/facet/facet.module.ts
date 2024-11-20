@@ -22,8 +22,8 @@ import { FacetComponent } from './facet.component';
     RouterModule,
     UrlModule,
     FeaturesConfigModule,
+    FacetComponent,
   ],
-  declarations: [FacetComponent],
   exports: [FacetComponent],
 })
 export class FacetModule {}

@@ -33,6 +33,7 @@ class MockUserChangePasswordFormService {
 @Directive({
   // eslint-disable-next-line @angular-eslint/directive-selector
   selector: '[cxFocus]',
+  standalone: true,
 })
 export class MockKeyboadFocusDirective {
   @Input('cxFocus') config: FocusConfig = {};
@@ -51,8 +52,6 @@ describe('UserChangePasswordFormComponent', () => {
         ReactiveFormsModule,
         NgSelectModule,
         CardTestingModule,
-      ],
-      declarations: [
         UserChangePasswordFormComponent,
         FormErrorsComponent,
         MockKeyboadFocusDirective,

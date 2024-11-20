@@ -70,6 +70,8 @@ const mockOrder: Order = {
 @Component({
   selector: 'cx-consignment-tracking',
   template: '',
+  standalone: true,
+  imports: [CardModule, I18nTestingModule, RouterTestingModule, OutletModule],
 })
 class MockConsignmentTrackingComponent {
   @Input() consignment: Consignment;
@@ -88,6 +90,8 @@ describe('OrderConsignedEntriesComponent', () => {
         I18nTestingModule,
         RouterTestingModule,
         OutletModule,
+        OrderConsignedEntriesComponent,
+        MockConsignmentTrackingComponent,
       ],
       providers: [
         {
@@ -96,10 +100,6 @@ describe('OrderConsignedEntriesComponent', () => {
             features: { level: '1.4', consignmentTracking: true },
           },
         },
-      ],
-      declarations: [
-        OrderConsignedEntriesComponent,
-        MockConsignmentTrackingComponent,
       ],
     }).compileComponents();
   }));

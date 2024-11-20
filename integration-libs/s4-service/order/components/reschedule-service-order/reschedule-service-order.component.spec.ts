@@ -82,8 +82,11 @@ describe('RescheduleServiceOrderComponent', () => {
   let checkoutServiceSchedulePickerService: CheckoutServiceSchedulePickerService;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule, UrlTestingModule],
-      declarations: [RescheduleServiceOrderComponent],
+      imports: [
+        I18nTestingModule,
+        UrlTestingModule,
+        RescheduleServiceOrderComponent,
+      ],
       providers: [
         { provide: OrderDetailsService, useClass: MockOrderDetailsService },
         {

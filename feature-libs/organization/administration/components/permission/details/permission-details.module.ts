@@ -26,8 +26,8 @@ import { DisableInfoModule } from '../../shared/detail/disable-info/disable-info
     ItemExistsModule,
     DisableInfoModule,
     KeyboardFocusModule,
+    PermissionDetailsComponent,
   ],
-  declarations: [PermissionDetailsComponent],
   exports: [PermissionDetailsComponent],
 })
 export class PermissionDetailsModule {}

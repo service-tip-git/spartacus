@@ -7,6 +7,7 @@ import { TrapFocusService } from './trap-focus.service';
 
 @Directive({
   selector: '[cxTrapFocus]',
+  standalone: true,
 })
 class CustomFocusDirective extends TrapFocusDirective {
   @Input('cxTrapFocus') protected config: TrapFocusConfig;
@@ -19,6 +20,7 @@ class CustomFocusDirective extends TrapFocusDirective {
     <div [cxTrapFocus]="{ trap: true }" id="b"></div>
     <div [cxTrapFocus]="{ trap: false }" id="c"></div>
   `,
+  standalone: true,
 })
 class MockComponent {}
 
@@ -35,7 +37,7 @@ describe('TrapFocusDirective', () => {
   let service: TrapFocusService;
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [MockComponent, CustomFocusDirective],
+      imports: [MockComponent, CustomFocusDirective],
       providers: [
         {
           provide: TrapFocusService,

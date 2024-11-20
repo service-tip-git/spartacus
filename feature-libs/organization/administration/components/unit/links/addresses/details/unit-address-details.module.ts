@@ -22,7 +22,7 @@ import { DeleteItemModule } from '../../../../shared/detail/delete-item-action/d
     I18nModule,
     DeleteItemModule,
     KeyboardFocusModule,
+    UnitAddressDetailsComponent,
   ],
-  declarations: [UnitAddressDetailsComponent],
 })
 export class UnitAddressDetailsModule {}

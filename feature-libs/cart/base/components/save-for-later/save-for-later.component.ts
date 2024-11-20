@@ -15,9 +15,21 @@ import {
 import { CmsParagraphComponent, CmsService } from '@spartacus/core';
 import { combineLatest, Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { CartItemListComponent } from '../cart-shared/cart-item-list/cart-item-list.component';
+import { NgIf, AsyncPipe } from '@angular/common';
 @Component({
   selector: 'cx-save-for-later',
   templateUrl: './save-for-later.component.html',
+  standalone: true,
+  imports: [
+    NgIf,
+    CartItemListComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class SaveForLaterComponent implements OnInit {
   saveForLater$: Observable<Cart>;

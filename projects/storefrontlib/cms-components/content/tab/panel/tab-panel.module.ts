@@ -19,8 +19,8 @@ import { TabPanelComponent } from './tab-panel.component';
     OutletModule,
     I18nModule,
     KeyboardFocusModule,
+    TabPanelComponent,
   ],
-  declarations: [TabPanelComponent],
   exports: [TabPanelComponent],
 })
 export class TabPanelModule {}

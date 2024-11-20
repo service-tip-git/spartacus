@@ -11,6 +11,12 @@ import { GlobalMessageType, useFeatureStyles } from '@spartacus/core';
 import { FocusConfig, LaunchDialogService } from '@spartacus/storefront';
 import { BehaviorSubject } from 'rxjs';
 import { take } from 'rxjs/operators';
+import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../projects/core/src/i18n/translate.pipe';
+import { FeatureDirective } from '../../../../projects/core/src/features-config/directives/feature.directive';
+import { MessageComponent } from '../../../../projects/storefrontlib/cms-components/misc/message/message.component';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { FocusDirective } from '../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
 
 export enum SAVE_CART_DIALOG_ACTION {
   CANCEL = 'CANCEL',
@@ -20,6 +26,16 @@ export enum SAVE_CART_DIALOG_ACTION {
 @Component({
   selector: 'cx-asm-save-cart-dialog',
   templateUrl: './asm-save-cart-dialog.component.html',
+  standalone: true,
+  imports: [
+    FocusDirective,
+    NgIf,
+    MessageComponent,
+    FeatureDirective,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class AsmSaveCartDialogComponent implements OnInit {
   BIND_CART_ACTION = SAVE_CART_DIALOG_ACTION;

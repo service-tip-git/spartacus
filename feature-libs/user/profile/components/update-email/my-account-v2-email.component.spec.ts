@@ -26,6 +26,15 @@ import { UserProfileFacade } from '../../root/facade';
 @Component({
   selector: 'cx-spinner',
   template: '',
+  standalone: true,
+  imports: [
+    ReactiveFormsModule,
+    I18nTestingModule,
+    FormErrorsModule,
+    RouterTestingModule,
+    UrlTestingModule,
+    PasswordVisibilityToggleModule,
+  ],
 })
 class MockCxSpinnerComponent {}
 
@@ -70,8 +79,9 @@ describe('MyAccountV2EmailComponent', () => {
         RouterTestingModule,
         UrlTestingModule,
         PasswordVisibilityToggleModule,
+        MyAccountV2EmailComponent,
+        MockCxSpinnerComponent,
       ],
-      declarations: [MyAccountV2EmailComponent, MockCxSpinnerComponent],
       providers: [
         {
           provide: UpdateEmailComponentService,

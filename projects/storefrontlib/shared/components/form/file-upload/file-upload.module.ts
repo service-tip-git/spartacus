@@ -19,8 +19,8 @@ import { KeyboardFocusModule } from '../../../../layout/a11y';
     FormErrorsModule,
     I18nModule,
     KeyboardFocusModule,
+    FileUploadComponent,
   ],
-  declarations: [FileUploadComponent],
   exports: [FileUploadComponent],
 })
 export class FileUploadModule {}

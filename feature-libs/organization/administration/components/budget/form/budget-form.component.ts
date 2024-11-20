@@ -5,7 +5,12 @@
  */
 
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { AbstractControl, UntypedFormGroup } from '@angular/forms';
+import {
+  AbstractControl,
+  UntypedFormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { Currency, CurrencyService } from '@spartacus/core';
 import {
   B2BUnitNode,
@@ -19,6 +24,14 @@ import { ItemService } from '../../shared/item.service';
 import { createCodeForEntityName } from '../../shared/utility/entity-code';
 import { BudgetItemService } from '../services/budget-item.service';
 import { CurrentBudgetService } from '../services/current-budget.service';
+import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { DatePickerComponent } from '../../../../../../projects/storefrontlib/shared/components/form/date-picker/date-picker.component';
+import { FormErrorsComponent } from '../../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
+import { FeatureDirective } from '../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { FormComponent } from '../../shared/form/form.component';
 
 @Component({
   selector: 'cx-org-budget-form',
@@ -34,6 +47,21 @@ import { CurrentBudgetService } from '../services/current-budget.service';
       provide: CurrentItemService,
       useExisting: CurrentBudgetService,
     },
+  ],
+  standalone: true,
+  imports: [
+    FormComponent,
+    NgIf,
+    FormsModule,
+    ReactiveFormsModule,
+    FeatureDirective,
+    NgTemplateOutlet,
+    FormErrorsComponent,
+    DatePickerComponent,
+    NgSelectModule,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
   ],
 })
 export class BudgetFormComponent implements OnInit {

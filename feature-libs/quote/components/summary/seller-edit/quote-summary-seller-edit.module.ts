@@ -19,8 +19,8 @@ import { IconModule, DatePickerModule } from '@spartacus/storefront';
     ReactiveFormsModule,
     IconModule,
     DatePickerModule,
+    QuoteSummarySellerEditComponent,
   ],
-  declarations: [QuoteSummarySellerEditComponent],
   exports: [QuoteSummarySellerEditComponent],
 })
 export class QuoteSummarySellerEditModule {}

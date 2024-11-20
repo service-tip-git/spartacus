@@ -18,7 +18,6 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-  declarations: [MyAccountV2CustomerTicketingComponent],
   exports: [MyAccountV2CustomerTicketingComponent],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -30,6 +29,13 @@ import { CommonModule } from '@angular/common';
       },
     }),
   ],
-  imports: [CommonModule, I18nModule, UrlModule, SpinnerModule, RouterModule],
+  imports: [
+    CommonModule,
+    I18nModule,
+    UrlModule,
+    SpinnerModule,
+    RouterModule,
+    MyAccountV2CustomerTicketingComponent,
+  ],
 })
 export class MyAccountV2CustomerTicketingModule {}

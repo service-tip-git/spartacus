@@ -28,6 +28,7 @@ class MockForgotPasswordService
 }
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
@@ -52,8 +53,6 @@ describe('ForgotPasswordComponent', () => {
         I18nTestingModule,
         FormErrorsModule,
         SpinnerModule,
-      ],
-      declarations: [
         ForgotPasswordComponent,
         MockUrlPipe,
         MockFeatureDirective,

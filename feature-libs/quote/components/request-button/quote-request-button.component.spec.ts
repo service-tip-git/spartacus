@@ -13,6 +13,7 @@ import createSpy = jasmine.createSpy;
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
@@ -41,8 +42,7 @@ describe('QuoteRequestButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [QuoteRequestButtonComponent, MockUrlPipe],
-      imports: [I18nTestingModule],
+      imports: [I18nTestingModule, QuoteRequestButtonComponent, MockUrlPipe],
       providers: [
         {
           provide: QuoteFacade,

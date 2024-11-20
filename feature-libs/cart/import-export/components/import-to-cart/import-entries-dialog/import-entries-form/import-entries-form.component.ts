@@ -16,6 +16,8 @@ import {
   UntypedFormControl,
   UntypedFormGroup,
   Validators,
+  FormsModule,
+  ReactiveFormsModule,
 } from '@angular/forms';
 import { OrderEntriesSource, ProductData } from '@spartacus/cart/base/root';
 import { ImportExportConfig } from '@spartacus/cart/import-export/core';
@@ -29,11 +31,32 @@ import { of, Subject } from 'rxjs';
 import { filter, startWith, switchMap, take, tap } from 'rxjs/operators';
 import { ImportProductsFromCsvService } from '../../import-products-from-csv.service';
 import { GlobalMessageType } from '@spartacus/core';
+import { MockTranslatePipe } from '../../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../../../projects/core/src/i18n/translate.pipe';
+import { FormErrorsComponent } from '../../../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
+import { FileUploadComponent } from '../../../../../../../projects/storefrontlib/shared/components/form/file-upload/file-upload.component';
+import { FocusDirective } from '../../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { MessageComponent } from '../../../../../../../projects/storefrontlib/cms-components/misc/message/message.component';
+import { FeatureDirective } from '../../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'cx-import-entries-form',
   templateUrl: './import-entries-form.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgIf,
+    FormsModule,
+    ReactiveFormsModule,
+    FeatureDirective,
+    MessageComponent,
+    FocusDirective,
+    FileUploadComponent,
+    FormErrorsComponent,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class ImportEntriesFormComponent implements OnInit {
   form: UntypedFormGroup;

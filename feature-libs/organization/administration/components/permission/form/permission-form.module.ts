@@ -27,8 +27,8 @@ import { PermissionFormComponent } from './permission-form.component';
     FormModule,
     ItemActiveModule,
     FeaturesConfigModule,
+    PermissionFormComponent,
   ],
-  declarations: [PermissionFormComponent],
   exports: [PermissionFormComponent],
 })
 export class PermissionFormModule {}

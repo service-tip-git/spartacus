@@ -67,6 +67,8 @@ class MockGlobalMessageService implements Partial<GlobalMessageService> {
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [ReactiveFormsModule, I18nTestingModule, FormErrorsModule],
 })
 class MockCxIconComponent {
   @Input() type: any;
@@ -83,8 +85,10 @@ describe('QuickOrderFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, I18nTestingModule, FormErrorsModule],
-      declarations: [
+      imports: [
+        ReactiveFormsModule,
+        I18nTestingModule,
+        FormErrorsModule,
         QuickOrderFormComponent,
         MockCxIconComponent,
         MockFeatureDirective,

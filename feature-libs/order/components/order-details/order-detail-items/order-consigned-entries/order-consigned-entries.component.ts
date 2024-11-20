@@ -11,10 +11,34 @@ import {
   PromotionLocation,
 } from '@spartacus/cart/base/root';
 import { Consignment, Order, OrderOutlets } from '@spartacus/order/root';
+import { MockDatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-date.pipe';
+import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { CxDatePipe } from '../../../../../../projects/core/src/i18n/date.pipe';
+import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { AddToCartComponent } from '../../../../../cart/base/components/add-to-cart/add-to-cart.component';
+import { AbstractOrderContextDirective } from '../../../../../cart/base/components/abstract-order-context/abstract-order-context.directive';
+import { ConsignmentTrackingComponent } from '../consignment-tracking/consignment-tracking.component';
+import { FeatureDirective } from '../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { OutletDirective } from '../../../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'cx-order-consigned-entries',
   templateUrl: './order-consigned-entries.component.html',
+  standalone: true,
+  imports: [
+    NgFor,
+    OutletDirective,
+    NgIf,
+    FeatureDirective,
+    ConsignmentTrackingComponent,
+    AbstractOrderContextDirective,
+    AddToCartComponent,
+    TranslatePipe,
+    CxDatePipe,
+    MockTranslatePipe,
+    MockDatePipe,
+  ],
 })
 export class OrderConsignedEntriesComponent {
   @Input() consignments: Consignment[];

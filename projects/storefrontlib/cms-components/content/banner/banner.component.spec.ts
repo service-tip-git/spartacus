@@ -69,6 +69,8 @@ class MockSemanticPathService {
 @Component({
   selector: 'cx-media',
   template: '',
+  standalone: true,
+  imports: [RouterTestingModule, FeaturesConfigModule],
 })
 class MockMediaComponent {
   @Input() container: any;
@@ -82,8 +84,9 @@ describe('BannerComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, FeaturesConfigModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
+        FeaturesConfigModule,
         BannerComponent,
         MockMediaComponent,
         GenericLinkComponent,

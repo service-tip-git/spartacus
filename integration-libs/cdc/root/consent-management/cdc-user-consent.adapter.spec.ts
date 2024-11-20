@@ -30,7 +30,6 @@ describe('CdcUserConsentAdapter', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule, StoreModule.forRoot()],
-      declarations: [],
       providers: [
         {
           provide: CdcUserConsentService,

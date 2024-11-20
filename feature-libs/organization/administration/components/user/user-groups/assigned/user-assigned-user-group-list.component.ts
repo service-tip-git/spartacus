@@ -7,6 +7,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ListService } from '../../../shared/list/list.service';
 import { UserAssignedUserGroupListService } from './user-assigned-user-group-list.service';
+import { MockTranslatePipe } from '../../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../../../projects/core/src/i18n/translate.pipe';
+import { RouterLink } from '@angular/router';
+import { SubListComponent } from '../../../shared/sub-list/sub-list.component';
 
 @Component({
   selector: 'cx-org-user-assigned-user-group-list',
@@ -19,5 +23,7 @@ import { UserAssignedUserGroupListService } from './user-assigned-user-group-lis
       useExisting: UserAssignedUserGroupListService,
     },
   ],
+  standalone: true,
+  imports: [SubListComponent, RouterLink, TranslatePipe, MockTranslatePipe],
 })
 export class UserAssignedUserGroupListComponent {}

@@ -8,6 +8,7 @@ import { Directive, Input } from '@angular/core';
 describe('SortingComponent', () => {
   @Directive({
     selector: '[cxNgSelectA11y]',
+    standalone: true,
   })
   class MockNgSelectA11yDirective {
     @Input() cxNgSelectA11y: { ariaLabel?: string; ariaControls?: string };
@@ -18,8 +19,13 @@ describe('SortingComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [NgSelectModule, FormsModule, I18nTestingModule],
-      declarations: [SortingComponent, MockNgSelectA11yDirective],
+      imports: [
+        NgSelectModule,
+        FormsModule,
+        I18nTestingModule,
+        SortingComponent,
+        MockNgSelectA11yDirective,
+      ],
     }).compileComponents();
   }));
 

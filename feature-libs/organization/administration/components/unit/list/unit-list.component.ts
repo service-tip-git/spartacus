@@ -7,11 +7,16 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { OrgUnitService } from '@spartacus/organization/administration/core';
 import { UnitTreeService } from '../services/unit-tree.service';
+import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { ListComponent } from '../../shared/list/list.component';
 
 @Component({
   selector: 'cx-org-unit-list',
   templateUrl: './unit-list.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [ListComponent, TranslatePipe, MockTranslatePipe],
 })
 export class UnitListComponent {
   constructor(

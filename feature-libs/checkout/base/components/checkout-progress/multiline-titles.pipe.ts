@@ -8,6 +8,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'cxMultiLine',
+  standalone: true,
 })
 export class MultiLinePipe implements PipeTransform {
   transform(value: string): string {

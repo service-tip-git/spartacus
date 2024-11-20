@@ -13,11 +13,13 @@ import {
   Output,
   inject,
 } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, RouterLink } from '@angular/router';
 import { PaginationModel, TranslationService } from '@spartacus/core';
 import { Observable, combineLatest, map, of } from 'rxjs';
 import { PaginationBuilder } from './pagination.builder';
 import { PaginationItem, PaginationItemType } from './pagination.model';
+import { NgFor, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '../../../../../core/src/features-config/directives/feature.directive';
 
 /**
  * The `PaginationComponent` is a generic component that is used for
@@ -28,6 +30,8 @@ import { PaginationItem, PaginationItemType } from './pagination.model';
   selector: 'cx-pagination',
   templateUrl: './pagination.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [FeatureDirective, NgFor, RouterLink, AsyncPipe],
 })
 export class PaginationComponent {
   /** The (optional) pageRoute used for the anchor links created in the pagination   */

@@ -15,6 +15,8 @@ let emissionCounterKey = 0;
   template: ` <span [cxAbstractOrderContext]="abstractOrderKey"
     ><cx-test-cmp-inner />
   </span>`,
+  standalone: true,
+  imports: [AbstractOrderContextModule],
 })
 class TestComponent {
   abstractOrderKey: AbstractOrderKeyInput = {
@@ -31,6 +33,8 @@ class TestComponent {
       {{ key.type }}
     </ng-container>
   `,
+  standalone: true,
+  imports: [AbstractOrderContextModule],
 })
 class TestInnerComponent {
   abstractOrderContext = inject(AbstractOrderContext, { optional: true });
@@ -45,8 +49,7 @@ describe('AbstractOrderContextDirective', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [TestComponent, TestInnerComponent],
-      imports: [AbstractOrderContextModule],
+      imports: [AbstractOrderContextModule, TestComponent, TestInnerComponent],
       providers: [],
     }).compileComponents();
     emissionCounterKey = 0;

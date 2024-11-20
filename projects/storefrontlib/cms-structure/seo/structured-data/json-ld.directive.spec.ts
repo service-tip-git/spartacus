@@ -2,7 +2,11 @@ import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { JsonLdDirective } from './json-ld.directive';
 
-@Component({ selector: 'cx-test-cmp', template: '' })
+@Component({
+  selector: 'cx-test-cmp',
+  template: '',
+  standalone: true,
+})
 class TestComponent {}
 
 function createTestComponent(
@@ -22,8 +26,7 @@ describe('JsonLdDirective', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TestComponent, JsonLdDirective],
-      imports: [],
+      imports: [TestComponent, JsonLdDirective],
     });
   });
 

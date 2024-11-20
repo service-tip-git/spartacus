@@ -32,6 +32,7 @@ class MockAbstractOrderContext {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
@@ -59,8 +60,13 @@ describe('ConfigureCartEntryComponent', () => {
 
   function configureTestingModule(): TestBed {
     return TestBed.configureTestingModule({
-      imports: [I18nTestingModule, RouterTestingModule, RouterModule],
-      declarations: [ConfigureCartEntryComponent, MockUrlPipe],
+      imports: [
+        I18nTestingModule,
+        RouterTestingModule,
+        RouterModule,
+        ConfigureCartEntryComponent,
+        MockUrlPipe,
+      ],
       providers: [
         {
           provide: RoutingService,

@@ -9,6 +9,7 @@ import { ConfiguratorConflictDescriptionComponent } from './configurator-conflic
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -21,11 +22,7 @@ describe('ConfigurationConflictDescriptionComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        ConfiguratorConflictDescriptionComponent,
-        MockCxIconComponent,
-      ],
-      imports: [],
+      imports: [ConfiguratorConflictDescriptionComponent, MockCxIconComponent],
       providers: [],
     })
       .overrideComponent(ConfiguratorConflictDescriptionComponent, {

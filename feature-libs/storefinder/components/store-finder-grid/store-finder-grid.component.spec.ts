@@ -16,6 +16,8 @@ const regionIsoCode = 'CA-QC';
 @Component({
   selector: 'cx-store-finder-list-item',
   template: '',
+  standalone: true,
+  imports: [RouterTestingModule, SpinnerModule],
 })
 class MockStoreFinderListItemComponent {
   @Input()
@@ -54,8 +56,9 @@ describe('StoreFinderGridComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, SpinnerModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
+        SpinnerModule,
         StoreFinderGridComponent,
         MockStoreFinderListItemComponent,
         MockFeatureDirective,

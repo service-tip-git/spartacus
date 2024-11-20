@@ -50,6 +50,7 @@ const product: Product = {
 @Component({
   selector: 'cx-carousel',
   template: '',
+  standalone: true,
 })
 class MockCarouselComponent {
   @Input() items;
@@ -60,6 +61,7 @@ class MockCarouselComponent {
 
 @Pipe({
   name: 'cxTranslate',
+  standalone: true,
 })
 class MockTranslatePipe implements PipeTransform {
   transform(): any {}
@@ -133,7 +135,7 @@ const router: ConfiguratorRouter.Data = {
 describe('ConfiguratorVariantCarouselComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
+      imports: [
         ConfiguratorVariantCarouselComponent,
         MockTranslatePipe,
         MockCarouselComponent,

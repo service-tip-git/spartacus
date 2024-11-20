@@ -60,8 +60,6 @@ describe('CostCenterFormComponent', () => {
         ReactiveFormsModule,
         NgSelectModule,
         FormTestingModule,
-      ],
-      declarations: [
         CostCenterFormComponent,
         FormErrorsComponent,
         MockFeatureDirective,

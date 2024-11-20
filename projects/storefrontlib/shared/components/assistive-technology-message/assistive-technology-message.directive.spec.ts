@@ -31,6 +31,8 @@ import createSpy = jasmine.createSpy;
       Action
     </button>
   `,
+  standalone: true,
+  imports: [AtMessageModule, I18nTestingModule],
 })
 class MockComponent {}
 
@@ -46,8 +48,7 @@ describe('AtMessageDirective', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [AtMessageModule, I18nTestingModule],
-      declarations: [MockComponent],
+      imports: [AtMessageModule, I18nTestingModule, MockComponent],
       providers: [
         {
           provide: GlobalMessageService,

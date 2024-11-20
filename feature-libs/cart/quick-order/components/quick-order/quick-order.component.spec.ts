@@ -128,6 +128,8 @@ const MockCmsComponentData = <CmsComponentData<any>>{
 @Component({
   template: '',
   selector: 'cx-quick-order-form',
+  standalone: true,
+  imports: [I18nTestingModule, MessageComponentModule],
 })
 class MockQuickOrderFormComponent {
   @Input() isLoading: boolean;
@@ -137,6 +139,8 @@ class MockQuickOrderFormComponent {
 @Component({
   template: '',
   selector: 'cx-quick-order-table',
+  standalone: true,
+  imports: [I18nTestingModule, MessageComponentModule],
 })
 class MockQuickOrderTableComponent {
   @Input() entries: OrderEntry[];
@@ -146,6 +150,8 @@ class MockQuickOrderTableComponent {
 @Component({
   template: '',
   selector: 'cx-progress-button',
+  standalone: true,
+  imports: [I18nTestingModule, MessageComponentModule],
 })
 class MockProgressButtonComponent {
   @Input() loading: boolean;
@@ -161,8 +167,9 @@ describe('QuickOrderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule, MessageComponentModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        MessageComponentModule,
         QuickOrderComponent,
         MockQuickOrderFormComponent,
         MockQuickOrderTableComponent,

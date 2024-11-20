@@ -9,6 +9,7 @@ import { FeatureConfigService } from '../services/feature-config.service';
 
 @Directive({
   selector: '[cxFeatureLevel]',
+  standalone: true,
 })
 export class FeatureLevelDirective {
   constructor(

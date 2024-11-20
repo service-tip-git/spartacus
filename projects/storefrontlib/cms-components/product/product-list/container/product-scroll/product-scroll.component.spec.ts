@@ -106,6 +106,13 @@ const showMoreBtn = 'productList.showMoreBtn';
 @Component({
   selector: 'cx-star-rating',
   template: '',
+  standalone: true,
+  imports: [
+    InfiniteScrollModule,
+    I18nTestingModule,
+    SpinnerModule,
+    RouterTestingModule,
+  ],
 })
 class MockStarRatingComponent {
   @Input() rating: number;
@@ -115,6 +122,13 @@ class MockStarRatingComponent {
 @Component({
   template: '',
   selector: 'cx-product-list-item',
+  standalone: true,
+  imports: [
+    InfiniteScrollModule,
+    I18nTestingModule,
+    SpinnerModule,
+    RouterTestingModule,
+  ],
 })
 class MockProductListItemComponent {
   @Input()
@@ -123,6 +137,7 @@ class MockProductListItemComponent {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
@@ -131,6 +146,13 @@ class MockUrlPipe implements PipeTransform {
 @Component({
   selector: 'cx-add-to-cart',
   template: '<button>add to cart</button>',
+  standalone: true,
+  imports: [
+    InfiniteScrollModule,
+    I18nTestingModule,
+    SpinnerModule,
+    RouterTestingModule,
+  ],
 })
 class MockAddToCartComponent {
   @Input() product: string;
@@ -149,6 +171,13 @@ class MockProductListComponentService {
 @Component({
   selector: 'cx-variant-style-icons',
   template: 'test',
+  standalone: true,
+  imports: [
+    InfiniteScrollModule,
+    I18nTestingModule,
+    SpinnerModule,
+    RouterTestingModule,
+  ],
 })
 class MockStyleIconsComponent {
   @Input() variants: any[];
@@ -161,7 +190,11 @@ describe('ProductScrollComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
+      imports: [
+        InfiniteScrollModule,
+        I18nTestingModule,
+        SpinnerModule,
+        RouterTestingModule,
         ProductScrollComponent,
         ProductGridItemComponent,
         MockProductListItemComponent,
@@ -171,12 +204,6 @@ describe('ProductScrollComponent', () => {
         MockAddToCartComponent,
         MockStyleIconsComponent,
         MockFeatureLevelDirective,
-      ],
-      imports: [
-        InfiniteScrollModule,
-        I18nTestingModule,
-        SpinnerModule,
-        RouterTestingModule,
       ],
       providers: [
         {

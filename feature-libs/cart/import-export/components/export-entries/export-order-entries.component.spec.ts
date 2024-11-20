@@ -116,6 +116,7 @@ describe('ExportOrderEntriesComponent', () => {
         StoreModule.forRoot({}),
         I18nTestingModule,
         RouterTestingModule,
+        ExportOrderEntriesComponent,
       ],
       providers: [
         {
@@ -133,7 +134,6 @@ describe('ExportOrderEntriesComponent', () => {
           },
         },
       ],
-      declarations: [ExportOrderEntriesComponent],
     }).compileComponents();
   });
 

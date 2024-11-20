@@ -20,7 +20,6 @@ import { CancelServiceOrderComponent } from './cancel-service-order.component';
 import { CancelServiceOrderGuard } from '../guards';
 
 @NgModule({
-  declarations: [CancelServiceOrderComponent],
   imports: [
     CommonModule,
     I18nModule,
@@ -29,6 +28,7 @@ import { CancelServiceOrderGuard } from '../guards';
     ReactiveFormsModule,
     UrlModule,
     RouterModule,
+    CancelServiceOrderComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{

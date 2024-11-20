@@ -40,8 +40,7 @@ describe('AnonymousConsentManagementBannerComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [AnonymousConsentManagementBannerComponent],
+      imports: [I18nTestingModule, AnonymousConsentManagementBannerComponent],
       providers: [
         {
           provide: AnonymousConsentsService,

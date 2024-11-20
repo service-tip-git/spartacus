@@ -10,6 +10,7 @@ import { PDFComponent } from './pdf.component';
 
 @Pipe({
   name: 'cxTranslate',
+  standalone: true,
 })
 class MockTranslatePipe implements PipeTransform {
   transform(value: string): any {
@@ -31,6 +32,7 @@ class MockMediaService {
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
 })
 class MockCxIconComponent {
   @Input() type: any;
@@ -65,7 +67,7 @@ describe('PdfComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PDFComponent, MockTranslatePipe, MockCxIconComponent],
+      imports: [PDFComponent, MockTranslatePipe, MockCxIconComponent],
       providers: [
         {
           provide: CmsComponentData,

@@ -92,6 +92,14 @@ const mockPaymentTypes: PaymentType[] = [
 @Component({
   selector: 'cx-card',
   template: '',
+  standalone: true,
+  imports: [
+    I18nTestingModule,
+    PromotionsModule,
+    RouterTestingModule,
+    IconTestingModule,
+    OutletModule,
+  ],
 })
 class MockCardComponent {
   @Input()
@@ -204,6 +212,7 @@ class MockUserCostCenterService implements Partial<UserCostCenterService> {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
@@ -221,8 +230,6 @@ describe('B2BCheckoutReviewSubmitComponent', () => {
         RouterTestingModule,
         IconTestingModule,
         OutletModule,
-      ],
-      declarations: [
         B2BCheckoutReviewSubmitComponent,
         MockCardComponent,
         MockUrlPipe,

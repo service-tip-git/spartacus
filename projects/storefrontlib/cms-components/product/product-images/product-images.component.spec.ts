@@ -55,6 +55,7 @@ class MockCurrentProductService {
 @Component({
   selector: 'cx-media',
   template: '',
+  standalone: true,
 })
 class MockMediaComponent {
   @Input() container;
@@ -69,6 +70,7 @@ class MockMediaComponent {
       ></ng-container>
     </ng-container>
   `,
+  standalone: true,
 })
 class MockCarouselComponent {
   @Input() items;
@@ -84,7 +86,7 @@ describe('ProductImagesComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
+      imports: [
         ProductImagesComponent,
         MockMediaComponent,
         MockCarouselComponent,

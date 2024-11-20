@@ -73,6 +73,13 @@ const mockOrderApprovals: EntitiesModel<OrderApproval> = {
 @Component({
   template: '',
   selector: 'cx-sorting',
+  standalone: true,
+  imports: [
+    I18nTestingModule,
+    RouterTestingModule,
+    UrlTestingModule,
+    PaginationTestingModule,
+  ],
 })
 class MockSortingComponent {
   @Input() sortOptions;
@@ -111,8 +118,9 @@ describe('OrderApprovalListComponent?', () => {
         RouterTestingModule,
         UrlTestingModule,
         PaginationTestingModule,
+        OrderApprovalListComponent,
+        MockSortingComponent,
       ],
-      declarations: [OrderApprovalListComponent, MockSortingComponent],
       providers: [
         { provide: RoutingService, useClass: MockRoutingService },
         { provide: OrderApprovalService, useClass: MockOrderApprovalService },

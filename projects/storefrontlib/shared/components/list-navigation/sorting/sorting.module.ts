@@ -19,8 +19,8 @@ import { I18nModule } from '@spartacus/core';
     FormsModule,
     NgSelectA11yModule,
     I18nModule,
+    SortingComponent,
   ],
-  declarations: [SortingComponent],
   exports: [SortingComponent],
 })
 export class SortingModule {}

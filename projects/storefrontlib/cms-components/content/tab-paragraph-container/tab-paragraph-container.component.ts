@@ -24,6 +24,12 @@ import { ComponentWrapperDirective } from '../../../cms-structure/page/component
 import { CmsComponentData } from '../../../cms-structure/page/model/index';
 import { BREAKPOINT } from '../../../layout/config/layout-config';
 import { Tab, TabConfig } from '../tab/tab.model';
+import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { TabComponent } from '../tab/tab.component';
+import { OutletDirective } from '../../../cms-structure/outlet/outlet.directive';
+import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 const defaultTabConfig = {
   openTabs: [0],
@@ -34,6 +40,18 @@ const defaultTabConfig = {
   selector: 'cx-tab-paragraph-container',
   templateUrl: './tab-paragraph-container.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    NgFor,
+    OutletDirective,
+    ComponentWrapperDirective,
+    TabComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class TabParagraphContainerComponent implements AfterViewInit, OnInit {
   /**

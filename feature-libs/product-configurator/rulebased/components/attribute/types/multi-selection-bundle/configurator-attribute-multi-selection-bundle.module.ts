@@ -28,6 +28,7 @@ import { ConfiguratorAttributeCompositionConfig } from '../../composition/config
     UrlModule,
     ConfiguratorAttributeQuantityModule,
     ConfiguratorPriceModule,
+    ConfiguratorAttributeMultiSelectionBundleComponent,
   ],
   providers: [
     provideDefaultConfig(<ConfiguratorAttributeCompositionConfig>{
@@ -39,7 +40,6 @@ import { ConfiguratorAttributeCompositionConfig } from '../../composition/config
       },
     }),
   ],
-  declarations: [ConfiguratorAttributeMultiSelectionBundleComponent],
   exports: [ConfiguratorAttributeMultiSelectionBundleComponent],
 })
 export class ConfiguratorAttributeMultiSelectionBundleModule {}

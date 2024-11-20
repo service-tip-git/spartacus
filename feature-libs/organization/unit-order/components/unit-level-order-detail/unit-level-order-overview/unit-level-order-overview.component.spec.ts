@@ -14,7 +14,12 @@ import { EMPTY, Observable, of } from 'rxjs';
 import { UnitLevelOrderDetailService } from '../unit-level-order-detail.service';
 import { UnitLevelOrderOverviewComponent } from './unit-level-order-overview.component';
 
-@Component({ selector: 'cx-card', template: '' })
+@Component({
+  selector: 'cx-card',
+  template: '',
+  standalone: true,
+  imports: [I18nTestingModule],
+})
 class MockCardComponent {
   @Input()
   content: Card;
@@ -129,8 +134,11 @@ describe('UnitLevelOrderOverviewComponent', () => {
   //TODO: investigate why 'waitForAsync' is not working in the spare time
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [UnitLevelOrderOverviewComponent, MockCardComponent],
+      imports: [
+        I18nTestingModule,
+        UnitLevelOrderOverviewComponent,
+        MockCardComponent,
+      ],
       providers: [
         { provide: TranslationService, useClass: MockTranslationService },
         {

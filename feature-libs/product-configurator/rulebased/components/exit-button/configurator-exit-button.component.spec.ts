@@ -110,8 +110,12 @@ describe('ConfiguratorExitButton', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, ReactiveFormsModule, NgSelectModule],
-      declarations: [ConfiguratorExitButtonComponent],
+      imports: [
+        I18nTestingModule,
+        ReactiveFormsModule,
+        NgSelectModule,
+        ConfiguratorExitButtonComponent,
+      ],
       providers: [
         {
           provide: ConfiguratorRouterExtractorService,

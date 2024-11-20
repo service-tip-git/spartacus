@@ -51,8 +51,6 @@ describe('UserGroupFormComponent', () => {
         ReactiveFormsModule,
         NgSelectModule,
         FormTestingModule,
-      ],
-      declarations: [
         UserGroupFormComponent,
         FormErrorsComponent,
         MockFeatureDirective,

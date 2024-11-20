@@ -47,6 +47,8 @@ class MockOrderFacade implements Partial<OrderFacade> {
 @Component({
   selector: 'cx-card',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule, PromotionsModule, OutletModule],
 })
 class MockCardComponent {
   @Input()
@@ -65,8 +67,13 @@ describe('OrderConfirmationShippingComponent', () => {
 
   function configureTestingModule(): TestBed {
     return TestBed.configureTestingModule({
-      imports: [I18nTestingModule, PromotionsModule, OutletModule],
-      declarations: [OrderConfirmationShippingComponent, MockCardComponent],
+      imports: [
+        I18nTestingModule,
+        PromotionsModule,
+        OutletModule,
+        OrderConfirmationShippingComponent,
+        MockCardComponent,
+      ],
       providers: [{ provide: OrderFacade, useClass: MockOrderFacade }],
     });
   }
@@ -143,8 +150,13 @@ describe('OrderConfirmationShippingComponent', () => {
     }
     function configureTestingModule(): TestBed {
       return TestBed.configureTestingModule({
-        imports: [I18nTestingModule, PromotionsModule, OutletModule],
-        declarations: [OrderConfirmationShippingComponent, MockCardComponent],
+        imports: [
+          I18nTestingModule,
+          PromotionsModule,
+          OutletModule,
+          OrderConfirmationShippingComponent,
+          MockCardComponent,
+        ],
         providers: [{ provide: OrderFacade, useClass: MockOrderFacade }],
       });
     }

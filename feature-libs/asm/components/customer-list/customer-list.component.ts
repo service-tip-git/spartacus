@@ -11,7 +11,11 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import {
+  UntypedFormControl,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import {
   AsmConfig,
   AsmCustomerListFacade,
@@ -37,10 +41,40 @@ import {
 import { combineLatest, NEVER, Observable, Subscription } from 'rxjs';
 import { distinctUntilChanged, map, tap } from 'rxjs/operators';
 import { CustomerListAction } from './customer-list.model';
+import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../projects/core/src/i18n/translate.pipe';
+import { NgSelectA11yDirective } from '../../../../projects/storefrontlib/shared/components/ng-select-a11y/ng-select-a11y.directive';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { SortingComponent } from '../../../../projects/storefrontlib/shared/components/list-navigation/sorting/sorting.component';
+import { FeatureDirective } from '../../../../projects/core/src/features-config/directives/feature.directive';
+import { IconComponent } from '../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { PaginationComponent } from '../../../../projects/storefrontlib/shared/components/list-navigation/pagination/pagination.component';
+import { SpinnerComponent } from '../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { NgTemplateOutlet, NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FocusDirective } from '../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
 
 @Component({
   selector: 'cx-customer-list',
   templateUrl: './customer-list.component.html',
+  standalone: true,
+  imports: [
+    FocusDirective,
+    NgTemplateOutlet,
+    NgIf,
+    SpinnerComponent,
+    NgFor,
+    PaginationComponent,
+    IconComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    FeatureDirective,
+    SortingComponent,
+    NgSelectModule,
+    NgSelectA11yDirective,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class CustomerListComponent implements OnInit, OnDestroy {
   protected DEFAULT_PAGE_SIZE = 5;

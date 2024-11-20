@@ -110,6 +110,7 @@ const moduleComponents = [
     IconModule,
     MyAccountV2DownloadInvoicesModule,
     AbstractOrderContextModule,
+    ...moduleComponents,
   ],
   providers: [
     OrderOverviewComponentService,
@@ -169,7 +170,6 @@ const moduleComponents = [
       multi: true,
     },
   ],
-  declarations: [...moduleComponents],
   exports: [...moduleComponents],
 })
 export class OrderDetailsModule {}

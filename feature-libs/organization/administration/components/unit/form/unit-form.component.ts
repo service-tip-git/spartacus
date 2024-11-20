@@ -10,7 +10,12 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
-import { AbstractControl, UntypedFormGroup } from '@angular/forms';
+import {
+  AbstractControl,
+  UntypedFormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { B2BApprovalProcess, B2BUnit, isNotUndefined } from '@spartacus/core';
 import {
   B2BUnitNode,
@@ -23,6 +28,14 @@ import { ItemService } from '../../shared/item.service';
 import { createCodeForEntityName } from '../../shared/utility/entity-code';
 import { CurrentUnitService } from '../services/current-unit.service';
 import { UnitItemService } from '../services/unit-item.service';
+import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { NgSelectA11yDirective } from '../../../../../../projects/storefrontlib/shared/components/ng-select-a11y/ng-select-a11y.directive';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FormErrorsComponent } from '../../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
+import { FeatureDirective } from '../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { FormComponent } from '../../shared/form/form.component';
 
 @Component({
   selector: 'cx-org-unit-form',
@@ -38,6 +51,21 @@ import { UnitItemService } from '../services/unit-item.service';
       provide: CurrentItemService,
       useExisting: CurrentUnitService,
     },
+  ],
+  standalone: true,
+  imports: [
+    FormComponent,
+    NgIf,
+    FormsModule,
+    ReactiveFormsModule,
+    FeatureDirective,
+    NgTemplateOutlet,
+    FormErrorsComponent,
+    NgSelectModule,
+    NgSelectA11yDirective,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
   ],
 })
 export class UnitFormComponent implements OnInit {

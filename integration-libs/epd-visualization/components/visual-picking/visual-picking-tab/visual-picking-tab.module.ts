@@ -21,6 +21,7 @@ import { VisualPickingTabComponent } from './visual-picking-tab.component';
     VisualViewerModule,
     VisualPickingProductListModule,
     VisualPickingProductFilterModule,
+    VisualPickingTabComponent,
   ],
   providers: [
     provideDefaultConfig({
@@ -31,7 +32,6 @@ import { VisualPickingTabComponent } from './visual-picking-tab.component';
       },
     } as CmsConfig),
   ],
-  declarations: [VisualPickingTabComponent],
   exports: [VisualPickingTabComponent],
 })
 export class VisualPickingTabModule {}

@@ -22,8 +22,8 @@ import { FacetListComponent } from './facet-list.component';
     KeyboardFocusModule,
     FeaturesConfigModule,
     TabModule,
+    FacetListComponent,
   ],
-  declarations: [FacetListComponent],
   exports: [FacetListComponent],
 })
 export class FacetListModule {}

@@ -85,8 +85,6 @@ describe('PermissionFormComponent', () => {
         ReactiveFormsModule,
         NgSelectModule,
         FormTestingModule,
-      ],
-      declarations: [
         PermissionFormComponent,
         FormErrorsComponent,
         MockFeatureDirective,

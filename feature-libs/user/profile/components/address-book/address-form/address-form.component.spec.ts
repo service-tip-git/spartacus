@@ -116,6 +116,7 @@ class MockLaunchDialogService implements Partial<LaunchDialogService> {
 
 @Directive({
   selector: '[cxNgSelectA11y]',
+  standalone: true,
 })
 class MockNgSelectA11yDirective {
   @Input() cxNgSelectA11y: { ariaLabel?: string; ariaControls?: string };
@@ -145,8 +146,6 @@ describe('AddressFormComponent', () => {
         NgSelectModule,
         I18nTestingModule,
         FormErrorsModule,
-      ],
-      declarations: [
         AddressFormComponent,
         MockNgSelectA11yDirective,
         MockFeatureDirective,

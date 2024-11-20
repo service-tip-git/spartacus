@@ -22,9 +22,11 @@ import { CpqQuoteSharedService } from './cpq-qute-shared.service';
 import { CartItemListComponentService } from '@spartacus/cart/base/components';
 
 @NgModule({
-  imports: [CommonModule, UrlModule, I18nModule, IconModule],
-
-  declarations: [
+  imports: [
+    CommonModule,
+    UrlModule,
+    I18nModule,
+    IconModule,
     CpqQuoteHeadingComponent,
     CpqQuoteDiscountComponent,
     CpqQuoteOfferComponent,

@@ -28,6 +28,8 @@ const product: Product = { code: 'pCode' };
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -35,6 +37,7 @@ class MockCxIconComponent {
 
 @Directive({
   selector: '[cxFocus]',
+  standalone: true,
 })
 export class MockKeyboadFocusDirective {
   @Input('cxFocus') config: FocusConfig = {};
@@ -85,13 +88,13 @@ describe('ConfiguratorRestartDialogComponent', () => {
   beforeEach(waitForAsync(() => {
     initializeMocks();
     TestBed.configureTestingModule({
-      declarations: [
+      imports: [
+        I18nTestingModule,
         ConfiguratorRestartDialogComponent,
         MockCxIconComponent,
         MockKeyboadFocusDirective,
         MockFeatureDirective,
       ],
-      imports: [I18nTestingModule],
       providers: [
         { provide: LaunchDialogService, useClass: MockLaunchDialogService },
         {

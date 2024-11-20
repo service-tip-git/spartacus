@@ -7,11 +7,15 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 import { ConfiguratorTextfield } from '../../core/model/configurator-textfield.model';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
 
 @Component({
   selector: 'cx-configurator-textfield-input-field-readonly',
   templateUrl: './configurator-textfield-input-field-readonly.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [TranslatePipe, MockTranslatePipe],
 })
 export class ConfiguratorTextfieldInputFieldReadonlyComponent {
   PREFIX_TEXTFIELD = 'cx-configurator-textfield';

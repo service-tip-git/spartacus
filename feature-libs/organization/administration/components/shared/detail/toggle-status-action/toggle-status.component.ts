@@ -14,6 +14,9 @@ import { ConfirmationMessageData } from '../../message/confirmation/confirmation
 import { MessageService } from '../../message/services/message.service';
 import { BaseItem } from '../../organization.model';
 import { DisableInfoService } from '../disable-info/disable-info.service';
+import { MockTranslatePipe } from '../../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../../../projects/core/src/i18n/translate.pipe';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 /**
  * Reusable component in the my-company is to toggle the disabled state for
@@ -23,6 +26,8 @@ import { DisableInfoService } from '../disable-info/disable-info.service';
   selector: 'cx-org-toggle-status',
   templateUrl: './toggle-status.component.html',
   host: { class: 'content-wrapper' },
+  standalone: true,
+  imports: [NgIf, AsyncPipe, TranslatePipe, MockTranslatePipe],
 })
 export class ToggleStatusComponent<T extends BaseItem> implements OnDestroy {
   /**

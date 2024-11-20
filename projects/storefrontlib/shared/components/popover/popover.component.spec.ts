@@ -41,8 +41,8 @@ describe('PopoverComponent', () => {
         IconModule,
         KeyboardFocusTestingModule,
         I18nTestingModule,
+        PopoverComponent,
       ],
-      declarations: [PopoverComponent],
       providers: [
         { provide: PositioningService, useClass: MockPositionService },
       ],

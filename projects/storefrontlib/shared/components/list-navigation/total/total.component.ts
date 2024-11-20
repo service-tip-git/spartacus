@@ -6,11 +6,16 @@
 
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { PaginationModel } from '@spartacus/core';
+import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'cx-total',
   templateUrl: './total.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgIf, TranslatePipe, MockTranslatePipe],
 })
 export class TotalComponent {
   private _pagination: PaginationModel;

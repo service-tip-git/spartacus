@@ -6,6 +6,9 @@
 
 import { Component, Input, OnChanges } from '@angular/core';
 import { PointOfService } from '@spartacus/core';
+import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { NgFor, NgIf } from '@angular/common';
 
 type OpeningTime = {
   weekDay?: string;
@@ -19,6 +22,8 @@ type OpeningTime = {
 @Component({
   selector: 'cx-store-schedule',
   templateUrl: 'store-schedule.component.html',
+  standalone: true,
+  imports: [NgFor, NgIf, TranslatePipe, MockTranslatePipe],
 })
 export class StoreScheduleComponent implements OnChanges {
   /** The details of the store */

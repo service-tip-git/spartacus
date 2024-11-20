@@ -25,8 +25,8 @@ import { UserFormComponent } from './user-form.component';
     ReactiveFormsModule,
     FormErrorsModule,
     FeaturesConfigModule,
+    UserFormComponent,
   ],
-  declarations: [UserFormComponent],
   exports: [UserFormComponent],
 })
 export class UserFormModule {}

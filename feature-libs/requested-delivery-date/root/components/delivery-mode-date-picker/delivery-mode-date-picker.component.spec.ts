@@ -47,12 +47,12 @@ describe('DeliveryModeDatePickerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DeliveryModeDatePickerComponent],
       imports: [
         I18nTestingModule,
         DatePickerModule,
         CardModule,
         ReactiveFormsModule,
+        DeliveryModeDatePickerComponent,
       ],
       providers: [
         CxDatePipe,

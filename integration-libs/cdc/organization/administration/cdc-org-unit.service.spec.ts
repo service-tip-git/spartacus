@@ -7,7 +7,6 @@ describe('CdcOrgUnitService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [StoreModule.forRoot({})],
-      declarations: [],
       providers: [],
     });
     service = TestBed.inject(CdcOrgUnitService);

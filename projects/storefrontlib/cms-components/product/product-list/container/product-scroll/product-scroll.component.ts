@@ -10,10 +10,28 @@ import { Subscription } from 'rxjs';
 import { ViewConfig } from '../../../../../shared/config/view-config';
 import { ViewModes } from '../../product-view/product-view.component';
 import { ProductListComponentService } from '../product-list-component.service';
+import { MockTranslatePipe } from '../../../../../../core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../../core/src/i18n/translate.pipe';
+import { ProductListItemComponent } from '../../product-list-item/product-list-item.component';
+import { SpinnerComponent } from '../../../../../shared/components/spinner/spinner.component';
+import { ProductGridItemComponent } from '../../product-grid-item/product-grid-item.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
   selector: 'cx-product-scroll',
   templateUrl: './product-scroll.component.html',
+  standalone: true,
+  imports: [
+    NgIf,
+    InfiniteScrollModule,
+    NgFor,
+    ProductGridItemComponent,
+    SpinnerComponent,
+    ProductListItemComponent,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class ProductScrollComponent implements OnDestroy {
   private subscription = new Subscription();

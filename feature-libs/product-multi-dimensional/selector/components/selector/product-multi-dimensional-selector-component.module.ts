@@ -34,8 +34,8 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     NgSelectA11yModule,
     I18nModule,
+    ProductMultiDimensionalSelectorComponent,
   ],
-  declarations: [ProductMultiDimensionalSelectorComponent],
   exports: [ProductMultiDimensionalSelectorComponent],
   providers: [
     provideDefaultConfig(<CmsConfig>{

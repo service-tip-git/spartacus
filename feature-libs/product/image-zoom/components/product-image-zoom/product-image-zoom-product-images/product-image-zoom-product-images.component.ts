@@ -11,11 +11,31 @@ import {
   ProductImagesComponent,
 } from '@spartacus/storefront';
 import { Product } from '@spartacus/core';
+import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { FocusableCarouselItemDirective } from '../../../../../../projects/storefrontlib/shared/components/carousel/focusable-carousel-item/focusable-carousel-item.directive';
+import { FeatureDirective } from '../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { CarouselComponent } from '../../../../../../projects/storefrontlib/shared/components/carousel/carousel.component';
+import { ProductImageZoomTriggerComponent } from '../product-image-zoom-trigger/product-image-zoom-trigger.component';
+import { MediaComponent } from '../../../../../../projects/storefrontlib/shared/components/media/media.component';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'cx-product-images',
   templateUrl: './product-image-zoom-product-images.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgIf,
+    MediaComponent,
+    ProductImageZoomTriggerComponent,
+    CarouselComponent,
+    FeatureDirective,
+    FocusableCarouselItemDirective,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class ProductImageZoomProductImagesComponent extends ProductImagesComponent {
   expandImage = new BehaviorSubject(false);

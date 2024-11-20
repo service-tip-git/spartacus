@@ -167,6 +167,8 @@ class MockLaunchDialogService implements Partial<LaunchDialogService> {
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -202,6 +204,7 @@ class MockAsmCustomerListFacade implements Partial<AsmCustomerListFacade> {
 
 @Directive({
   selector: '[cxFocus]',
+  standalone: true,
 })
 export class MockKeyboadFocusDirective {
   @Input('cxFocus') config: FocusConfig = {};
@@ -217,8 +220,8 @@ describe('CustomerListComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         CustomerListComponent,
         MockCxIconComponent,
         MockKeyboadFocusDirective,

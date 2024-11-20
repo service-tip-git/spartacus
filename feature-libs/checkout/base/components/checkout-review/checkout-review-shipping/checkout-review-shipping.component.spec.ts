@@ -109,6 +109,7 @@ class MockActiveCartService implements Partial<ActiveCartFacade> {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
@@ -117,6 +118,13 @@ class MockUrlPipe implements PipeTransform {
 @Component({
   selector: 'cx-card',
   template: '',
+  standalone: true,
+  imports: [
+    I18nTestingModule,
+    RouterTestingModule,
+    IconTestingModule,
+    OutletModule,
+  ],
 })
 class MockCardComponent {
   @Input()
@@ -140,8 +148,6 @@ describe('CheckoutReviewShippingComponent', () => {
         RouterTestingModule,
         IconTestingModule,
         OutletModule,
-      ],
-      declarations: [
         CheckoutReviewShippingComponent,
         MockUrlPipe,
         MockCardComponent,

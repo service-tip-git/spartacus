@@ -20,7 +20,7 @@ describe('ServiceDetailsCardComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ServiceDetailsCardComponent],
+      imports: [ServiceDetailsCardComponent],
       providers: [
         { provide: TranslationService, useClass: MockTranslationService },
         { provide: CheckoutServiceSchedulePickerService, useValue: {} },

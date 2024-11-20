@@ -19,6 +19,7 @@ import { ConfiguratorIssuesNotificationComponent } from './configurator-issues-n
 
 @Pipe({
   name: 'cxTranslate',
+  standalone: true,
 })
 class MockTranslatePipe implements PipeTransform {
   transform(): any {}
@@ -27,6 +28,7 @@ class MockTranslatePipe implements PipeTransform {
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
 })
 class MockCxIconComponent {
   @Input() type: any;
@@ -35,6 +37,7 @@ class MockCxIconComponent {
 @Component({
   selector: 'cx-configure-cart-entry',
   template: '',
+  standalone: true,
 })
 class MockConfigureCartEntryComponent {
   @Input() cartEntry: OrderEntry;
@@ -76,7 +79,7 @@ describe('ConfigureIssuesNotificationComponent', () => {
   describe('with cart item context', () => {
     beforeEach(waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [
+        imports: [
           ConfiguratorIssuesNotificationComponent,
           MockTranslatePipe,
           MockCxIconComponent,
@@ -295,7 +298,7 @@ describe('ConfigureIssuesNotificationComponent', () => {
   describe('without cart item context', () => {
     beforeEach(waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [
+        imports: [
           ConfiguratorIssuesNotificationComponent,
           MockTranslatePipe,
           MockCxIconComponent,

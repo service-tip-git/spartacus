@@ -12,11 +12,16 @@ import {
   VariantOptionQualifier,
   VariantQualifier,
 } from '@spartacus/core';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'cx-product-variant-color-selector',
   templateUrl: './product-variant-color-selector.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgFor, TranslatePipe, MockTranslatePipe],
 })
 export class ProductVariantColorSelectorComponent {
   constructor(private routingService: RoutingService) {}

@@ -119,7 +119,6 @@ describe('VisualPickingTabComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [VisualPickingTabComponent, MockTranslatePipe],
       imports: [
         CommonModule,
         IconModule,
@@ -135,6 +134,8 @@ describe('VisualPickingTabComponent', () => {
         VisualViewerModule,
         VisualPickingProductListModule,
         VisualPickingProductFilterModule,
+        VisualPickingTabComponent,
+        MockTranslatePipe,
       ],
       providers: [
         {

@@ -51,8 +51,9 @@ const myAccountV2ProfileMapping: CmsConfig = {
     NgSelectModule,
     NgSelectA11yModule,
     FeaturesConfigModule,
+    UpdateProfileComponent,
+    MyAccountV2ProfileComponent,
   ],
-  declarations: [UpdateProfileComponent, MyAccountV2ProfileComponent],
   exports: [UpdateProfileComponent, MyAccountV2ProfileComponent],
   providers: [
     provideDefaultConfig(<CmsConfig>{

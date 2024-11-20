@@ -21,8 +21,12 @@ describe('BreadcrumbComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [BreadcrumbComponent, MockFeatureDirective],
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
+        BreadcrumbComponent,
+        MockFeatureDirective,
+      ],
       providers: [
         { provide: PageMetaService, useClass: MockPageMetaService },
         {

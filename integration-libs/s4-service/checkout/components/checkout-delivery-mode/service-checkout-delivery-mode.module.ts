@@ -29,6 +29,7 @@ import {
     OutletModule,
     PageComponentModule,
     FeaturesConfigModule,
+    ServiceCheckoutDeliveryModeComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -39,7 +40,6 @@ import {
       },
     }),
   ],
-  declarations: [ServiceCheckoutDeliveryModeComponent],
   exports: [ServiceCheckoutDeliveryModeComponent],
 })
 export class ServiceCheckoutDeliveryModeModule {}

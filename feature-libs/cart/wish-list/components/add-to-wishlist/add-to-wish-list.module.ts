@@ -26,6 +26,7 @@ import { AddToWishListComponent } from './add-to-wish-list.component';
     UrlModule,
     AtMessageModule,
     FeaturesConfigModule,
+    AddToWishListComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -36,7 +37,6 @@ import { AddToWishListComponent } from './add-to-wish-list.component';
       },
     }),
   ],
-  declarations: [AddToWishListComponent],
   exports: [AddToWishListComponent],
 })
 export class AddToWishListModule {}

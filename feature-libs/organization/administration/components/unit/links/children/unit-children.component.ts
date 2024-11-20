@@ -10,6 +10,12 @@ import { Observable, of } from 'rxjs';
 import { ListService } from '../../../shared/list/list.service';
 import { CurrentUnitService } from '../../services/current-unit.service';
 import { UnitChildrenService } from './unit-children.service';
+import { MockTranslatePipe } from '../../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { AsyncPipe } from '@angular/common';
+import { TranslatePipe } from '../../../../../../../projects/core/src/i18n/translate.pipe';
+import { DisableInfoComponent } from '../../../shared/detail/disable-info/disable-info.component';
+import { RouterLink } from '@angular/router';
+import { SubListComponent } from '../../../shared/sub-list/sub-list.component';
 
 @Component({
   selector: 'cx-org-unit-children',
@@ -21,6 +27,15 @@ import { UnitChildrenService } from './unit-children.service';
       provide: ListService,
       useExisting: UnitChildrenService,
     },
+  ],
+  standalone: true,
+  imports: [
+    SubListComponent,
+    RouterLink,
+    DisableInfoComponent,
+    TranslatePipe,
+    AsyncPipe,
+    MockTranslatePipe,
   ],
 })
 export class UnitChildrenComponent {

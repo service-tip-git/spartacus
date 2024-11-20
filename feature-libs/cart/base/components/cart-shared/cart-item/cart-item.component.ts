@@ -16,6 +16,18 @@ import {
 import { useFeatureStyles } from '@spartacus/core';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { CartItemContextSource } from './model/cart-item-context-source.model';
+import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { UrlPipe } from '../../../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
+import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { AtMessageDirective } from '../../../../../../projects/storefrontlib/shared/components/assistive-technology-message/assistive-technology-message.directive';
+import { PromotionsComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/promotions/promotions.component';
+import { ItemCounterComponent } from '../../../../../../projects/storefrontlib/shared/components/item-counter/item-counter.component';
+import { FeatureDirective } from '../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { MediaComponent } from '../../../../../../projects/storefrontlib/shared/components/media/media.component';
+import { RouterLink } from '@angular/router';
+import { NgClass, NgIf, NgFor, NgTemplateOutlet } from '@angular/common';
+import { CartItemValidationWarningComponent } from '../../validation/cart-item-warning/cart-item-validation-warning.component';
+import { OutletDirective } from '../../../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
 
 @Component({
   selector: 'cx-cart-item',
@@ -23,6 +35,24 @@ import { CartItemContextSource } from './model/cart-item-context-source.model';
   providers: [
     CartItemContextSource,
     { provide: CartItemContext, useExisting: CartItemContextSource },
+  ],
+  standalone: true,
+  imports: [
+    OutletDirective,
+    CartItemValidationWarningComponent,
+    NgClass,
+    RouterLink,
+    MediaComponent,
+    NgIf,
+    NgFor,
+    FeatureDirective,
+    ItemCounterComponent,
+    PromotionsComponent,
+    NgTemplateOutlet,
+    AtMessageDirective,
+    TranslatePipe,
+    UrlPipe,
+    MockTranslatePipe,
   ],
 })
 export class CartItemComponent implements OnChanges {

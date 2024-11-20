@@ -34,8 +34,7 @@ describe('LinkComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, GenericLinkModule],
-      declarations: [LinkComponent],
+      imports: [RouterTestingModule, GenericLinkModule, LinkComponent],
       providers: [
         {
           provide: CmsComponentData,

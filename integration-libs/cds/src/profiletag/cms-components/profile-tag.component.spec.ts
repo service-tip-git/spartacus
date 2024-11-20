@@ -18,7 +18,7 @@ describe('ProfileTagComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ProfileTagComponent],
+      imports: [ProfileTagComponent],
       providers: [
         {
           provide: ProfileTagInjectorService,

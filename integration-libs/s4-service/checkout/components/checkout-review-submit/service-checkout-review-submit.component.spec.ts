@@ -104,6 +104,14 @@ const mockScheduledAt = '2024-06-27T09:30:00-04:00';
 @Component({
   selector: 'cx-card',
   template: '',
+  standalone: true,
+  imports: [
+    I18nTestingModule,
+    PromotionsModule,
+    RouterTestingModule,
+    IconTestingModule,
+    OutletModule,
+  ],
 })
 class MockCardComponent {
   @Input()
@@ -241,6 +249,7 @@ class MockCheckoutServiceSchedulePickerService
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
@@ -258,8 +267,6 @@ describe('ServiceCheckoutReviewSubmitComponent', () => {
         RouterTestingModule,
         IconTestingModule,
         OutletModule,
-      ],
-      declarations: [
         ServiceCheckoutReviewSubmitComponent,
         MockCardComponent,
         MockUrlPipe,

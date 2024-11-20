@@ -7,10 +7,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ANONYMOUS_CONSENT_STATUS } from '@spartacus/core';
 import { ConsentManagementFormComponent } from '../../../../consent-management/components/consent-form/consent-management-form.component';
+import { MockTranslatePipe } from '../../../../../../../core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../../../core/src/i18n/translate.pipe';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'cx-my-account-v2-consent-management-form',
   templateUrl: './my-account-v2-consent-management-form.component.html',
+  standalone: true,
+  imports: [NgIf, TranslatePipe, MockTranslatePipe],
 })
 export class MyAccountV2ConsentManagementFormComponent
   extends ConsentManagementFormComponent

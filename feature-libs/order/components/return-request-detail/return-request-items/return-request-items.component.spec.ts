@@ -20,6 +20,8 @@ class MockCheckoutService {
 @Component({
   template: '',
   selector: 'cx-media',
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class MockMediaComponent {
   @Input() container;
@@ -32,8 +34,8 @@ describe('ReturnRequestItemsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         ReturnRequestItemsComponent,
         MockMediaComponent,
         MockFeatureLevelDirective,

@@ -31,6 +31,7 @@ import { defaultPlaceOrderSpinnerLayoutConfig } from './default-place-order-spin
     ReactiveFormsModule,
     FormErrorsModule,
     FeaturesConfigModule,
+    CheckoutPlaceOrderComponent,
   ],
   providers: [
     provideDefaultConfig(defaultPlaceOrderSpinnerLayoutConfig),
@@ -43,7 +44,6 @@ import { defaultPlaceOrderSpinnerLayoutConfig } from './default-place-order-spin
       },
     }),
   ],
-  declarations: [CheckoutPlaceOrderComponent],
   exports: [CheckoutPlaceOrderComponent],
 })
 export class CheckoutPlaceOrderModule {}

@@ -68,6 +68,8 @@ const mockQuoteListState$ = new BehaviorSubject(mockQuoteListState);
 @Component({
   template: '',
   selector: 'cx-pagination',
+  standalone: true,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockPaginationComponent {
   @Input() pagination: PaginationModel;
@@ -77,6 +79,8 @@ class MockPaginationComponent {
 @Component({
   template: '',
   selector: 'cx-sorting',
+  standalone: true,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockSortingComponent {
   @Input() sortOptions: SortModel[];
@@ -88,6 +92,7 @@ class MockSortingComponent {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
@@ -96,6 +101,8 @@ class MockUrlPipe implements PipeTransform {
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -138,8 +145,9 @@ describe('QuoteListComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
         QuoteListComponent,
         MockUrlPipe,
         MockPaginationComponent,

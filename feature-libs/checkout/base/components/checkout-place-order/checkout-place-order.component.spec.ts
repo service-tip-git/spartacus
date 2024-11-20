@@ -34,6 +34,7 @@ class MockLaunchDialogService implements Partial<LaunchDialogService> {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
@@ -54,8 +55,9 @@ describe('CheckoutPlaceOrderComponent', () => {
         RouterTestingModule,
         I18nTestingModule,
         AtMessageModule,
+        MockUrlPipe,
+        CheckoutPlaceOrderComponent,
       ],
-      declarations: [MockUrlPipe, CheckoutPlaceOrderComponent],
       providers: [
         { provide: OrderFacade, useClass: MockOrderFacade },
         { provide: RoutingService, useClass: MockRoutingService },

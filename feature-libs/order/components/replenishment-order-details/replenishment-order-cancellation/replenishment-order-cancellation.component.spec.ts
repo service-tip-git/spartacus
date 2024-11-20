@@ -39,6 +39,7 @@ class MockReplenishmentOrderHistoryFacade
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
@@ -63,8 +64,12 @@ describe('ReplenishmentOrderCancellationComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, RouterTestingModule],
-      declarations: [ReplenishmentOrderCancellationComponent, MockUrlPipe],
+      imports: [
+        I18nTestingModule,
+        RouterTestingModule,
+        ReplenishmentOrderCancellationComponent,
+        MockUrlPipe,
+      ],
       providers: [
         {
           provide: ReplenishmentOrderHistoryFacade,

@@ -39,6 +39,7 @@ class MockRoutingService {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {
@@ -60,8 +61,9 @@ describe('CancelServiceOrderComponent', () => {
         RouterTestingModule,
         HttpClientTestingModule,
         I18nTestingModule,
+        CancelServiceOrderComponent,
+        MockUrlPipe,
       ],
-      declarations: [CancelServiceOrderComponent, MockUrlPipe],
       providers: [
         { provide: OrderDetailsService, useClass: MockOrderDetailsService },
         {

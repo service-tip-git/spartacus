@@ -32,6 +32,9 @@ import {
 } from 'rxjs/operators';
 import { IntersectionOptions } from '../../../layout/loading/intersection.model';
 import { PageSlotService } from './page-slot.service';
+import { ComponentWrapperDirective } from '../component/component-wrapper.directive';
+import { OutletDirective } from '../../outlet/outlet.directive';
+import { NgIf, NgFor } from '@angular/common';
 
 /**
  * The `PageSlotComponent` is used to render the CMS page slot and it's components.
@@ -46,6 +49,8 @@ import { PageSlotService } from './page-slot.service';
   selector: 'cx-page-slot,[cx-page-slot]',
   templateUrl: './page-slot.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgIf, OutletDirective, NgFor, ComponentWrapperDirective],
 })
 export class PageSlotComponent implements OnInit, OnDestroy {
   /**

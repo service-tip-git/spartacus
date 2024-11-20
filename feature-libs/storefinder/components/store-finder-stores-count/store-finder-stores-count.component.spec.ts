@@ -35,8 +35,13 @@ describe('StoreFinderStoresCountComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [SpinnerModule, I18nTestingModule, RouterTestingModule],
-      declarations: [StoreFinderStoresCountComponent, MockFeatureDirective],
+      imports: [
+        SpinnerModule,
+        I18nTestingModule,
+        RouterTestingModule,
+        StoreFinderStoresCountComponent,
+        MockFeatureDirective,
+      ],
       providers: [
         {
           provide: StoreFinderService,

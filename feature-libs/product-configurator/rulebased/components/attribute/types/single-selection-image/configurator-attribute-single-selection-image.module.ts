@@ -27,6 +27,7 @@ import { ConfiguratorAttributeCompositionConfig } from '../../composition/config
     IconModule,
     ConfiguratorPriceModule,
     PopoverModule,
+    ConfiguratorAttributeSingleSelectionImageComponent,
   ],
   providers: [
     provideDefaultConfig(<ConfiguratorAttributeCompositionConfig>{
@@ -40,7 +41,6 @@ import { ConfiguratorAttributeCompositionConfig } from '../../composition/config
       },
     }),
   ],
-  declarations: [ConfiguratorAttributeSingleSelectionImageComponent],
   exports: [ConfiguratorAttributeSingleSelectionImageComponent],
 })
 export class ConfiguratorAttributeSingleSelectionImageModule {}

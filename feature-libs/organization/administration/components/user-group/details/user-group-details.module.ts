@@ -24,7 +24,7 @@ import { UserGroupDetailsComponent } from './user-group-details.component';
     DeleteItemModule,
     ItemExistsModule,
     KeyboardFocusModule,
+    UserGroupDetailsComponent,
   ],
-  declarations: [UserGroupDetailsComponent],
 })
 export class UserGroupDetailsModule {}

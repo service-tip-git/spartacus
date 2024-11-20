@@ -16,6 +16,8 @@ import { AsmCustomer360ProductItemComponent } from './asm-customer-360-product-i
 @Component({
   template: '',
   selector: 'cx-media',
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class MockMediaComponent {
   @Input() container: any;
@@ -55,6 +57,7 @@ describe('AsmCustomer360ProductItemComponent', () => {
 
   @Pipe({
     name: 'cxTranslate',
+    standalone: true,
   })
   class MockTranslatePipe implements PipeTransform {
     transform(): any {}
@@ -62,6 +65,8 @@ describe('AsmCustomer360ProductItemComponent', () => {
   @Component({
     selector: 'cx-icon',
     template: '',
+    standalone: true,
+    imports: [I18nTestingModule],
   })
   class MockCxIconComponent {
     @Input() type: ICON_TYPE;
@@ -73,8 +78,8 @@ describe('AsmCustomer360ProductItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         AsmCustomer360ProductItemComponent,
         MockTranslatePipe,
         MockCxIconComponent,

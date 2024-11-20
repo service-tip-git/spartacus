@@ -18,8 +18,14 @@ import { TrendingSearchesComponent } from './trending-searches.component';
 
 @NgModule({
   exports: [],
-  declarations: [TrendingSearchesComponent],
-  imports: [CommonModule, I18nModule, SearchBoxModule, UrlModule, RouterModule],
+  imports: [
+    CommonModule,
+    I18nModule,
+    SearchBoxModule,
+    UrlModule,
+    RouterModule,
+    TrendingSearchesComponent,
+  ],
   providers: [
     provideOutlet({
       id: SearchBoxOutlets.TRENDING_SEARCHES,

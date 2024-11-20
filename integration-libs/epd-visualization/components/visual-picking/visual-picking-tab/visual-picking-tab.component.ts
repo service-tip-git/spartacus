@@ -15,12 +15,23 @@ import { VisualViewerService } from '../../visual-viewer/visual-viewer.service';
 import { VisualPickingProductListComponent } from './product-list/visual-picking-product-list.component';
 import { VisualPickingProductListService } from './product-list/visual-picking-product-list.service';
 import { VisualPickingTabService } from './visual-picking-tab.service';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { VisualPickingProductFilterComponent } from './product-filter/visual-picking-product-filter.component';
 
 @Component({
   selector: 'cx-epd-visualization-visual-picking-tab',
   templateUrl: './visual-picking-tab.component.html',
   providers: [VisualPickingTabService],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    VisualViewerComponent,
+    VisualPickingProductFilterComponent,
+    VisualPickingProductListComponent,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class VisualPickingTabComponent implements AfterViewInit {
   constructor(protected visualPickingTabService: VisualPickingTabService) {}

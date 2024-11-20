@@ -11,7 +11,7 @@ import { IconModule } from '../../misc/icon/icon.module';
 import { ScrollToTopComponent } from './scroll-to-top.component';
 
 @NgModule({
-  imports: [CommonModule, IconModule, I18nModule],
+  imports: [CommonModule, IconModule, I18nModule, ScrollToTopComponent],
   providers: [
     provideDefaultConfig(<CmsConfig>{
       cmsComponents: {
@@ -21,7 +21,6 @@ import { ScrollToTopComponent } from './scroll-to-top.component';
       },
     }),
   ],
-  declarations: [ScrollToTopComponent],
   exports: [ScrollToTopComponent],
 })
 export class ScrollToTopModule {}

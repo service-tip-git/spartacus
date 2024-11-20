@@ -34,6 +34,14 @@ const mockFormConfig: FormConfig = {
       </form>
     </div>
   `,
+  standalone: true,
+  imports: [
+    I18nTestingModule,
+    IconTestingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    PasswordVisibilityToggleModule,
+  ],
 })
 class MockFormComponent {
   form: UntypedFormGroup = new UntypedFormGroup({
@@ -59,8 +67,8 @@ describe('PasswordVisibilityToggleDirective', () => {
         FormsModule,
         ReactiveFormsModule,
         PasswordVisibilityToggleModule,
+        MockFormComponent,
       ],
-      declarations: [MockFormComponent],
       providers: [
         {
           provide: FormConfig,

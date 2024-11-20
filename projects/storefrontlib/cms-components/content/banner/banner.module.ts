@@ -23,6 +23,7 @@ import { BannerComponent } from './banner.component';
     GenericLinkModule,
     MediaModule,
     FeaturesConfigModule,
+    BannerComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -39,7 +40,6 @@ import { BannerComponent } from './banner.component';
       },
     }),
   ],
-  declarations: [BannerComponent],
   exports: [BannerComponent],
 })
 export class BannerModule {}

@@ -23,6 +23,7 @@ import { ConfiguratorShowMoreModule } from '../../../show-more/configurator-show
     I18nModule,
     ConfiguratorPriceModule,
     ConfiguratorShowMoreModule,
+    ConfiguratorAttributeCheckBoxComponent,
   ],
   providers: [
     provideDefaultConfig(<ConfiguratorAttributeCompositionConfig>{
@@ -33,7 +34,6 @@ import { ConfiguratorShowMoreModule } from '../../../show-more/configurator-show
       },
     }),
   ],
-  declarations: [ConfiguratorAttributeCheckBoxComponent],
   exports: [ConfiguratorAttributeCheckBoxComponent],
 })
 export class ConfiguratorAttributeCheckboxModule {}

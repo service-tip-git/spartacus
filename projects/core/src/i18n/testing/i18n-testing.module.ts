@@ -11,7 +11,7 @@ import { MockTranslationService } from './mock-translation.service';
 import { MockDatePipe } from './mock-date.pipe';
 
 @NgModule({
-  declarations: [MockTranslatePipe, MockDatePipe],
+  imports: [MockTranslatePipe, MockDatePipe],
   exports: [MockTranslatePipe, MockDatePipe],
   providers: [
     { provide: TranslationService, useClass: MockTranslationService },

@@ -18,10 +18,23 @@ import { Component, OnInit, EventEmitter, Output, inject } from '@angular/core';
 import { CheckoutBillingAddressFormService } from '@spartacus/checkout/base/components';
 import { LaunchDialogService, LAUNCH_CALLER } from '@spartacus/storefront';
 import { take } from 'rxjs';
+import { MockTranslatePipe } from '../../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../../../projects/core/src/i18n/translate.pipe';
+import { SpinnerComponent } from '../../../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { CheckoutBillingAddressFormComponent } from '../../../../../../../feature-libs/checkout/base/components/checkout-billing-address/checkout-billing-address-form.component';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'cx-dp-payment-callback',
   templateUrl: './dp-payment-callback.component.html',
+  standalone: true,
+  imports: [
+    NgIf,
+    CheckoutBillingAddressFormComponent,
+    SpinnerComponent,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class DpPaymentCallbackComponent implements OnInit {
   @Output()

@@ -67,6 +67,8 @@ const mockEmptyOrderList: OrderHistoryList = {
 @Component({
   template: '',
   selector: 'cx-pagination',
+  standalone: true,
+  imports: [RouterTestingModule, I18nTestingModule, ReactiveFormsModule],
 })
 class MockPaginationComponent {
   @Input() pagination: PaginationModel;
@@ -76,6 +78,8 @@ class MockPaginationComponent {
 @Component({
   template: '',
   selector: 'cx-sorting',
+  standalone: true,
+  imports: [RouterTestingModule, I18nTestingModule, ReactiveFormsModule],
 })
 class MockSortingComponent {
   @Input() sortOptions: SortModel;
@@ -87,6 +91,7 @@ class MockSortingComponent {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
@@ -140,6 +145,8 @@ class MockTranslationService {
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [RouterTestingModule, I18nTestingModule, ReactiveFormsModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -148,6 +155,8 @@ class MockCxIconComponent {
 @Component({
   selector: 'cx-total',
   template: '',
+  standalone: true,
+  imports: [RouterTestingModule, I18nTestingModule, ReactiveFormsModule],
 })
 class MockTotalComponent {
   @Input() pagination: any;
@@ -162,8 +171,10 @@ describe('UnitLevelOrderHistoryComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule, ReactiveFormsModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
+        ReactiveFormsModule,
         UnitLevelOrderHistoryComponent,
         MockUrlPipe,
         MockPaginationComponent,

@@ -48,8 +48,7 @@ describe('ProductMultiDimensionalSelectorComponent', () => {
     );
 
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [ProductMultiDimensionalSelectorComponent],
+      imports: [I18nTestingModule, ProductMultiDimensionalSelectorComponent],
       providers: [
         { provide: ProductService, useValue: mockProductService },
         { provide: RoutingService, useValue: mockRoutingService },

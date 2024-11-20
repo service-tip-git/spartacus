@@ -8,6 +8,8 @@ import { ProductViewComponent, ViewModes } from './product-view.component';
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [NgSelectModule, FormsModule, I18nTestingModule],
 })
 class MockCxIconComponent {
   @Input() type;
@@ -19,8 +21,13 @@ describe('ProductViewComponent in product-list', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [NgSelectModule, FormsModule, I18nTestingModule],
-      declarations: [ProductViewComponent, MockCxIconComponent],
+      imports: [
+        NgSelectModule,
+        FormsModule,
+        I18nTestingModule,
+        ProductViewComponent,
+        MockCxIconComponent,
+      ],
     }).compileComponents();
   }));
 

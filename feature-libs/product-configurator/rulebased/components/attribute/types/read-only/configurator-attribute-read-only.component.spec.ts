@@ -15,6 +15,8 @@ import { ConfiguratorStorefrontUtilsService } from '../../../service/configurato
 @Component({
   selector: 'cx-configurator-price',
   template: '',
+  standalone: true,
+  imports: [ReactiveFormsModule, I18nTestingModule],
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;
@@ -23,6 +25,8 @@ class MockConfiguratorPriceComponent {
 @Component({
   selector: 'cx-configurator-show-more',
   template: '',
+  standalone: true,
+  imports: [ReactiveFormsModule, I18nTestingModule],
 })
 class MockConfiguratorShowMoreComponent {
   @Input() text: string;
@@ -84,11 +88,6 @@ describe('ConfigAttributeReadOnlyComponent', () => {
       },
     });
     TestBed.configureTestingModule({
-      declarations: [
-        ConfiguratorAttributeReadOnlyComponent,
-        MockConfiguratorPriceComponent,
-        MockConfiguratorShowMoreComponent,
-      ],
       providers: [
         {
           provide: ConfiguratorAttributeCompositionContext,
@@ -99,7 +98,13 @@ describe('ConfigAttributeReadOnlyComponent', () => {
           useValue: {},
         },
       ],
-      imports: [ReactiveFormsModule, I18nTestingModule],
+      imports: [
+        ReactiveFormsModule,
+        I18nTestingModule,
+        ConfiguratorAttributeReadOnlyComponent,
+        MockConfiguratorPriceComponent,
+        MockConfiguratorShowMoreComponent,
+      ],
     })
       .overrideComponent(ConfiguratorAttributeReadOnlyComponent, {
         set: {

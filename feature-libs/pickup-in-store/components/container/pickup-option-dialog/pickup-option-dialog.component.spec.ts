@@ -89,12 +89,7 @@ describe('PickupOptionDialogComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        PickupOptionDialogComponent,
-        StoreSearchStubComponent,
-        StoreListStubComponent,
-        MockFeatureDirective,
-      ],
+      declarations: [StoreSearchStubComponent, StoreListStubComponent],
       imports: [
         CommonModule,
         HttpClientTestingModule,
@@ -104,6 +99,8 @@ describe('PickupOptionDialogComponent', () => {
         SpinnerModule,
         StoreModule.forRoot({}),
         EffectsModule.forRoot([]),
+        PickupOptionDialogComponent,
+        MockFeatureDirective,
       ],
       providers: [
         { provide: LaunchDialogService, useClass: MockLaunchDialogService },

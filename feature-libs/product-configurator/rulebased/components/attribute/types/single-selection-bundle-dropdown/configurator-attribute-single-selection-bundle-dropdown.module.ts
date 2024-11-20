@@ -32,6 +32,7 @@ import { ConfiguratorAttributeSingleSelectionBundleDropdownComponent } from './c
     ConfiguratorAttributeQuantityModule,
     ConfiguratorPriceModule,
     FeaturesConfigModule,
+    ConfiguratorAttributeSingleSelectionBundleDropdownComponent,
   ],
   providers: [
     provideDefaultConfig(<ConfiguratorAttributeCompositionConfig>{
@@ -43,7 +44,6 @@ import { ConfiguratorAttributeSingleSelectionBundleDropdownComponent } from './c
       },
     }),
   ],
-  declarations: [ConfiguratorAttributeSingleSelectionBundleDropdownComponent],
   exports: [ConfiguratorAttributeSingleSelectionBundleDropdownComponent],
 })
 export class ConfiguratorAttributeSingleSelectionBundleDropdownModule {}

@@ -19,6 +19,7 @@ import { VideoComponent } from './video.component';
 
 @Pipe({
   name: 'cxTranslate',
+  standalone: true,
 })
 class MockTranslatePipe implements PipeTransform {
   transform(): any {}
@@ -81,8 +82,7 @@ describe('VideoComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [VideoComponent, MockTranslatePipe],
+      imports: [RouterTestingModule, VideoComponent, MockTranslatePipe],
       providers: [
         { provide: CmsComponentData, useClass: MockCmsVideoComponentData },
         { provide: CmsService, useClass: MockCmsService },

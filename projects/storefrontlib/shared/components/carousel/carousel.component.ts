@@ -21,6 +21,18 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { ICON_TYPE } from '../../../cms-components/misc/icon/icon.model';
 import { CarouselService } from './carousel.service';
+import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { IconComponent } from '../../../cms-components/misc/icon/icon.component';
+import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
+import {
+  NgIf,
+  NgClass,
+  NgFor,
+  NgTemplateOutlet,
+  AsyncPipe,
+  SlicePipe,
+} from '@angular/common';
 
 /**
  * Generic carousel component that can be used to render any carousel items,
@@ -41,6 +53,19 @@ import { CarouselService } from './carousel.service';
   selector: 'cx-carousel',
   templateUrl: './carousel.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgIf,
+    NgClass,
+    FeatureDirective,
+    IconComponent,
+    NgFor,
+    NgTemplateOutlet,
+    AsyncPipe,
+    SlicePipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class CarouselComponent implements OnInit, OnChanges {
   @Output() keybordEvent = new BehaviorSubject<KeyboardEvent | null>(null);

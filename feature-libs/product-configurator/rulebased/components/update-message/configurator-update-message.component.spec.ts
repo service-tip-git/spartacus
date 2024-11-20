@@ -49,6 +49,8 @@ class MockMessageConfig {
 @Component({
   selector: 'cx-spinner',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule, ReactiveFormsModule, NgSelectModule],
 })
 class MockCxSpinnerComponent {}
 describe('ConfigurationUpdateMessageComponent', () => {
@@ -60,8 +62,10 @@ describe('ConfigurationUpdateMessageComponent', () => {
   beforeEach(waitForAsync(() => {
     routerStateObservable = of(ConfigurationTestData.mockRouterState);
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, ReactiveFormsModule, NgSelectModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        ReactiveFormsModule,
+        NgSelectModule,
         ConfiguratorUpdateMessageComponent,
         MockCxSpinnerComponent,
       ],
@@ -70,7 +74,6 @@ describe('ConfigurationUpdateMessageComponent', () => {
           provide: RoutingService,
           useClass: MockRoutingService,
         },
-
         {
           provide: ConfiguratorMessageConfig,
           useClass: MockMessageConfig,

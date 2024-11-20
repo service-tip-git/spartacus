@@ -25,7 +25,7 @@ import { UserGroupFormComponent } from './user-group-form.component';
     FormErrorsModule,
     FormModule,
     FeaturesConfigModule,
+    UserGroupFormComponent,
   ],
-  declarations: [UserGroupFormComponent],
 })
 export class UserGroupFormModule {}

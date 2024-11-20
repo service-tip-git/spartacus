@@ -19,8 +19,7 @@ describe('ActiveLinkCellComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ActiveLinkCellComponent],
-      imports: [RouterTestingModule, UrlTestingModule],
+      imports: [RouterTestingModule, UrlTestingModule, ActiveLinkCellComponent],
       providers: [
         {
           provide: OutletContextData,

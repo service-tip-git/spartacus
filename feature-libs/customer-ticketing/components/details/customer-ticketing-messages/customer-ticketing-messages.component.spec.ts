@@ -45,6 +45,8 @@ describe('CustomerTicketMessagesComponent', () => {
   @Component({
     selector: 'cx-messaging',
     template: '',
+    standalone: true,
+    imports: [I18nTestingModule],
   })
   class MockCxMessagingComponent {
     @Input() messageEvents$: Observable<Array<MessageEvent>>;
@@ -54,8 +56,8 @@ describe('CustomerTicketMessagesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         CustomerTicketingMessagesComponent,
         MockCxMessagingComponent,
       ],

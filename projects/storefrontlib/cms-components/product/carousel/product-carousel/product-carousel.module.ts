@@ -30,6 +30,8 @@ import { ProductCarouselItemComponent } from '../product-carousel-item/product-c
     UrlModule,
     I18nModule,
     PageComponentModule,
+    ProductCarouselComponent,
+    ProductCarouselItemComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -40,7 +42,6 @@ import { ProductCarouselItemComponent } from '../product-carousel-item/product-c
       },
     }),
   ],
-  declarations: [ProductCarouselComponent, ProductCarouselItemComponent],
   exports: [ProductCarouselComponent, ProductCarouselItemComponent],
 })
 export class ProductCarouselModule {}

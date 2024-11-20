@@ -15,6 +15,8 @@ import {
   UntypedFormBuilder,
   UntypedFormGroup,
   Validators,
+  FormsModule,
+  ReactiveFormsModule,
 } from '@angular/forms';
 import {
   isNotNullable,
@@ -31,11 +33,42 @@ import {
   tap,
 } from 'rxjs/operators';
 import { CurrentProductService } from '../../current-product.service';
+import { MockDatePipe } from '../../../../../core/src/i18n/testing/mock-date.pipe';
+import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
+import { CxDatePipe } from '../../../../../core/src/i18n/date.pipe';
+import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
+import { FormErrorsComponent } from '../../../../shared/components/form/form-errors/form-errors.component';
+import { FeatureDirective } from '../../../../../core/src/features-config/directives/feature.directive';
+import { StarRatingComponent } from '../../../../shared/components/star-rating/star-rating.component';
+import {
+  NgIf,
+  NgFor,
+  NgTemplateOutlet,
+  AsyncPipe,
+  SlicePipe,
+} from '@angular/common';
 
 @Component({
   selector: 'cx-product-reviews',
   templateUrl: './product-reviews.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgIf,
+    StarRatingComponent,
+    NgFor,
+    FeatureDirective,
+    FormsModule,
+    ReactiveFormsModule,
+    NgTemplateOutlet,
+    FormErrorsComponent,
+    AsyncPipe,
+    SlicePipe,
+    TranslatePipe,
+    CxDatePipe,
+    MockTranslatePipe,
+    MockDatePipe,
+  ],
 })
 export class ProductReviewsComponent {
   @ViewChild('titleInput', { static: false }) titleInput: ElementRef;

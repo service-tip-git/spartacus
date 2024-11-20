@@ -30,8 +30,8 @@ import { VisualPickingProductListComponent } from './visual-picking-product-list
     UrlModule,
     I18nModule,
     CompactAddToCartModule,
+    VisualPickingProductListComponent,
   ],
-  declarations: [VisualPickingProductListComponent],
   exports: [VisualPickingProductListComponent],
 })
 export class VisualPickingProductListModule {}

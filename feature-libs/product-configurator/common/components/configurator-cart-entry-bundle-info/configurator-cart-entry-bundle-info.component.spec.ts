@@ -29,6 +29,7 @@ import { ConfiguratorCartEntryBundleInfoComponent } from './configurator-cart-en
 
 @Pipe({
   name: 'cxNumeric',
+  standalone: true,
 })
 class MockNumericPipe implements PipeTransform {
   transform(value: string): string {
@@ -39,6 +40,8 @@ class MockNumericPipe implements PipeTransform {
 @Component({
   selector: 'cx-configure-cart-entry',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class MockConfigureCartEntryComponent {
   @Input() cartEntry: OrderEntry;
@@ -103,8 +106,8 @@ describe('ConfiguratorCartEntryBundleInfoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         ConfiguratorCartEntryBundleInfoComponent,
         MockNumericPipe,
         MockConfigureCartEntryComponent,
@@ -929,8 +932,7 @@ describe('ConfiguratorCartEntryBundleInfoComponent without cart item context', (
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [ConfiguratorCartEntryBundleInfoComponent],
+      imports: [I18nTestingModule, ConfiguratorCartEntryBundleInfoComponent],
     }).compileComponents();
   }));
 

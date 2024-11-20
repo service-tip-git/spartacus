@@ -29,6 +29,13 @@ class MockProductReviewService {
 @Component({
   selector: 'cx-star-rating',
   template: '',
+  standalone: true,
+  imports: [
+    ReactiveFormsModule,
+    ItemCounterModule,
+    I18nTestingModule,
+    FormErrorsModule,
+  ],
 })
 class MockStarRatingComponent {
   @Input() rating;
@@ -54,6 +61,9 @@ describe('ProductReviewsComponent in product', () => {
         ItemCounterModule,
         I18nTestingModule,
         FormErrorsModule,
+        MockStarRatingComponent,
+        ProductReviewsComponent,
+        MockFeatureDirective,
       ],
       providers: [
         {
@@ -64,11 +74,6 @@ describe('ProductReviewsComponent in product', () => {
           provide: CurrentProductService,
           useClass: MockCurrentProductService,
         },
-      ],
-      declarations: [
-        MockStarRatingComponent,
-        ProductReviewsComponent,
-        MockFeatureDirective,
       ],
     }).compileComponents();
   }));

@@ -10,6 +10,7 @@ import { UrlCommands } from './url-command';
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 export class UrlPipe implements PipeTransform {
   constructor(private urlService: SemanticPathService) {}

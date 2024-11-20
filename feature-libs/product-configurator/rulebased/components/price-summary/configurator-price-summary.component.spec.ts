@@ -80,8 +80,8 @@ describe('ConfigPriceSummaryComponent', () => {
   beforeEach(waitForAsync(() => {
     routerStateObservable = of(mockRouterState);
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         ConfiguratorPriceSummaryComponent,
         MockFeatureLevelDirective,
       ],
@@ -90,7 +90,6 @@ describe('ConfigPriceSummaryComponent', () => {
           provide: ConfiguratorCommonsService,
           useClass: MockConfiguratorCommonsService,
         },
-
         {
           provide: RoutingService,
           useClass: MockRoutingService,

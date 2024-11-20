@@ -24,6 +24,7 @@ import { OrderReturnRequestListComponent } from './order-return-request-list.com
     ListNavigationModule,
     UrlModule,
     I18nModule,
+    OrderReturnRequestListComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -35,7 +36,6 @@ import { OrderReturnRequestListComponent } from './order-return-request-list.com
       },
     }),
   ],
-  declarations: [OrderReturnRequestListComponent],
   exports: [OrderReturnRequestListComponent],
 })
 export class ReturnRequestListModule {}

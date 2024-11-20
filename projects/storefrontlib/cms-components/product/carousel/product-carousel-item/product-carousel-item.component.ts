@@ -16,6 +16,10 @@ import {
   ProductListItemContext,
   ProductListItemContextSource,
 } from '../../product-list';
+import { UrlPipe } from '../../../../../core/src/routing/configurable-routes/url-translation/url.pipe';
+import { InnerComponentsHostDirective } from '../../../../cms-structure/page/component/inner-components-host.directive';
+import { MediaComponent } from '../../../../shared/components/media/media.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'cx-product-carousel-item',
@@ -28,6 +32,8 @@ import {
     },
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [RouterLink, MediaComponent, InnerComponentsHostDirective, UrlPipe],
 })
 export class ProductCarouselItemComponent implements OnChanges {
   @Input() item: Product;

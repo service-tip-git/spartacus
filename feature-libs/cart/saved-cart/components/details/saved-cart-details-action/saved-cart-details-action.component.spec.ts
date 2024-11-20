@@ -36,7 +36,7 @@ describe('SavedCartDetailsActionComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SavedCartDetailsActionComponent],
+      imports: [SavedCartDetailsActionComponent],
       providers: [
         {
           provide: SavedCartDetailsService,

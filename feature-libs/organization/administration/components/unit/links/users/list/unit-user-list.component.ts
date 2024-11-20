@@ -12,6 +12,12 @@ import { ListService } from '../../../../shared/list/list.service';
 import { CurrentUnitService } from '../../../services/current-unit.service';
 import { UnitUserListService } from '../services/unit-user-list.service';
 import { B2BUserService } from '@spartacus/organization/administration/core';
+import { MockTranslatePipe } from '../../../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../../../../projects/core/src/i18n/translate.pipe';
+import { DisableInfoComponent } from '../../../../shared/detail/disable-info/disable-info.component';
+import { RouterLink } from '@angular/router';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { SubListComponent } from '../../../../shared/sub-list/sub-list.component';
 
 @Component({
   selector: 'cx-org-unit-user-list',
@@ -23,6 +29,16 @@ import { B2BUserService } from '@spartacus/organization/administration/core';
       provide: ListService,
       useExisting: UnitUserListService,
     },
+  ],
+  standalone: true,
+  imports: [
+    SubListComponent,
+    NgIf,
+    RouterLink,
+    DisableInfoComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
   ],
 })
 export class UnitUserListComponent {

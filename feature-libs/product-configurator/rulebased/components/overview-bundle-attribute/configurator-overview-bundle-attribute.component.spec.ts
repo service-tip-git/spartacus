@@ -18,6 +18,7 @@ import { ConfiguratorOverviewBundleAttributeComponent } from './configurator-ove
 
 @Pipe({
   name: 'cxNumeric',
+  standalone: true,
 })
 class MockNumericPipe implements PipeTransform {
   transform(): any {}
@@ -56,6 +57,8 @@ class MockProductService {
   // tslint:disable-next-line: component-selector
   selector: 'cx-configurator-price',
   template: '',
+  standalone: true,
+  imports: [MediaModule, I18nTestingModule],
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;
@@ -69,8 +72,9 @@ describe('ConfiguratorOverviewBundleAttributeComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [MediaModule, I18nTestingModule],
-      declarations: [
+      imports: [
+        MediaModule,
+        I18nTestingModule,
         ConfiguratorOverviewBundleAttributeComponent,
         MockConfiguratorPriceComponent,
         MockNumericPipe,

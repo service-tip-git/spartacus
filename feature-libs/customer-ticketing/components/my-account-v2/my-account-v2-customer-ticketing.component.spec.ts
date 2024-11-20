@@ -29,12 +29,14 @@ const mockTicketList: TicketList = {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
 @Pipe({
   name: 'cxTranslate',
+  standalone: true,
 })
 class MockTranslatePipe implements PipeTransform {
   transform(): any {}
@@ -69,8 +71,9 @@ describe('MyAccountV2CustomerTicketingComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
         MyAccountV2CustomerTicketingComponent,
         MockTranslatePipe,
         MockUrlPipe,

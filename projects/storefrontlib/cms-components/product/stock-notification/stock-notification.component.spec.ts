@@ -112,6 +112,7 @@ describe('StockNotificationComponent', () => {
 
   @Pipe({
     name: 'cxUrl',
+    standalone: true,
   })
   class MockUrlPipe implements PipeTransform {
     transform(): any {}
@@ -121,8 +122,10 @@ describe('StockNotificationComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, RouterTestingModule, SpinnerModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        RouterTestingModule,
+        SpinnerModule,
         StockNotificationComponent,
         StockNotificationDialogComponent,
         MockUrlPipe,

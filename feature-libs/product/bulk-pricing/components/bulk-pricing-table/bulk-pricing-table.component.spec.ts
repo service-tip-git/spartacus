@@ -102,8 +102,7 @@ describe('BulkPricingTableComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [CommonModule, I18nTestingModule],
-      declarations: [BulkPricingTableComponent],
+      imports: [CommonModule, I18nTestingModule, BulkPricingTableComponent],
       providers: [
         { provide: RoutingService, useClass: MockRoutingService },
         { provide: BulkPricingService, useClass: MockBulkPricingService },

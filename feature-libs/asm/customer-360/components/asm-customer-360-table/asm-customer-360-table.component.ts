@@ -38,11 +38,31 @@ import {
 } from './asm-customer-360-table.model';
 import { AsmCustomer360Config } from '../config/asm-customer-360-config';
 import { KeyBoardEventCode } from '@spartacus/asm/customer-360/root';
+import { MockDatePipe } from '../../../../../projects/core/src/i18n/testing/mock-date.pipe';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { ArgsPipe } from '../../../core/utils/args/args.pipe';
+import { CxDatePipe } from '../../../../../projects/core/src/i18n/date.pipe';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { StarRatingComponent } from '../../../../../projects/storefrontlib/shared/components/star-rating/star-rating.component';
+import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'cx-asm-customer-360-table',
   templateUrl: './asm-customer-360-table.component.html',
+  standalone: true,
+  imports: [
+    NgIf,
+    NgFor,
+    NgClass,
+    StarRatingComponent,
+    AsyncPipe,
+    TranslatePipe,
+    CxDatePipe,
+    ArgsPipe,
+    MockTranslatePipe,
+    MockDatePipe,
+  ],
 })
 export class AsmCustomer360TableComponent
   implements OnChanges, AfterViewChecked

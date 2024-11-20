@@ -21,6 +21,7 @@ import { GlobalMessageType } from '@spartacus/core';
 
 @Pipe({
   name: 'cxTranslate',
+  standalone: true,
 })
 class MockTranslatePipe implements PipeTransform {
   transform(): any {}
@@ -47,6 +48,7 @@ class MockLaunchDialogService implements Partial<LaunchDialogService> {
 @Component({
   selector: 'cx-message',
   template: '',
+  standalone: true,
 })
 class MockCxMessageComponent {
   @Input() text: string;
@@ -63,7 +65,7 @@ describe('AsmBindCartDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
+      imports: [
         AsmSaveCartDialogComponent,
         MockTranslatePipe,
         FocusDirective,

@@ -18,6 +18,7 @@ import { Observable, Subscription } from 'rxjs';
 
 import { AsmCustomer360SectionContextSource } from '../asm-customer-360-section-context-source.model';
 import { AsmCustomer360SectionContext } from '../asm-customer-360-section-context.model';
+import { NgComponentOutlet } from '@angular/common';
 
 @Component({
   selector: 'cx-asm-customer-360-section',
@@ -29,6 +30,8 @@ import { AsmCustomer360SectionContext } from '../asm-customer-360-section-contex
       useExisting: AsmCustomer360SectionContextSource,
     },
   ],
+  standalone: true,
+  imports: [NgComponentOutlet],
 })
 export class AsmCustomer360SectionComponent implements OnDestroy {
   @Input()

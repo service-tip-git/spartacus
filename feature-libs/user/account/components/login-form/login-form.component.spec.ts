@@ -28,6 +28,7 @@ class MockLoginFormComponentService
 }
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
@@ -47,8 +48,10 @@ describe('LoginFormComponent', () => {
         I18nTestingModule,
         FormErrorsModule,
         SpinnerModule,
+        LoginFormComponent,
+        MockUrlPipe,
+        MockFeatureDirective,
       ],
-      declarations: [LoginFormComponent, MockUrlPipe, MockFeatureDirective],
       providers: [
         {
           provide: LoginFormComponentService,

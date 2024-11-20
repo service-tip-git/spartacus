@@ -56,9 +56,10 @@ describe('StoreFinderDisplayListComponent', () => {
         HttpClientTestingModule,
         SpinnerModule,
         I18nTestingModule,
+        StoreFinderListComponent,
+        StoreFinderMapComponent,
       ],
       schemas: [NO_ERRORS_SCHEMA],
-      declarations: [StoreFinderListComponent, StoreFinderMapComponent],
       providers: [
         {
           provide: GoogleMapRendererService,

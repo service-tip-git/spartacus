@@ -43,6 +43,7 @@ import { RegisterComponent } from './register.component';
     NgSelectModule,
     PasswordVisibilityToggleModule,
     FeaturesConfigModule,
+    RegisterComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -65,6 +66,5 @@ import { RegisterComponent } from './register.component';
       },
     }),
   ],
-  declarations: [RegisterComponent],
 })
 export class RegisterComponentModule {}

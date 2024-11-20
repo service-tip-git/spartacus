@@ -23,7 +23,7 @@ import { UnitAddressFormComponent } from './unit-address-form.component';
     ReactiveFormsModule,
     FormErrorsModule,
     FeaturesConfigModule,
+    UnitAddressFormComponent,
   ],
-  declarations: [UnitAddressFormComponent],
 })
 export class UnitAddressFormModule {}

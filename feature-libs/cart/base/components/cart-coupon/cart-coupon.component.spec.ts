@@ -22,6 +22,8 @@ import { CartCouponComponent } from './cart-coupon.component';
 @Component({
   selector: 'cx-applied-coupons',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule, ReactiveFormsModule, FormErrorsModule],
 })
 class MockAppliedCouponsComponent {
   @Input()
@@ -72,8 +74,10 @@ describe('CartCouponComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, ReactiveFormsModule, FormErrorsModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        ReactiveFormsModule,
+        FormErrorsModule,
         CartCouponComponent,
         MockAppliedCouponsComponent,
         MockFeatureDirective,

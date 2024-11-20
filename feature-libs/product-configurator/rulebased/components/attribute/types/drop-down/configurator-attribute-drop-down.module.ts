@@ -36,6 +36,7 @@ import { ConfiguratorAttributeDropDownComponent } from './configurator-attribute
     ConfiguratorAttributeInputFieldModule,
     ConfiguratorShowMoreModule,
     FeaturesConfigModule,
+    ConfiguratorAttributeDropDownComponent,
   ],
   providers: [
     provideDefaultConfig(<ConfiguratorAttributeCompositionConfig>{
@@ -47,7 +48,6 @@ import { ConfiguratorAttributeDropDownComponent } from './configurator-attribute
       },
     }),
   ],
-  declarations: [ConfiguratorAttributeDropDownComponent],
   exports: [ConfiguratorAttributeDropDownComponent],
 })
 export class ConfiguratorAttributeDropDownModule {}

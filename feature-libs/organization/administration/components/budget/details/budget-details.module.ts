@@ -26,7 +26,7 @@ import { DisableInfoModule } from '../../shared/detail/disable-info/disable-info
     ItemExistsModule,
     DisableInfoModule,
     KeyboardFocusModule,
+    BudgetDetailsComponent,
   ],
-  declarations: [BudgetDetailsComponent],
 })
 export class BudgetDetailsModule {}

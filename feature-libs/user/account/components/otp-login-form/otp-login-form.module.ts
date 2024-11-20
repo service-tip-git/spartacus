@@ -35,6 +35,7 @@ import { OneTimePasswordLoginFormComponent } from './otp-login-form.component';
     SpinnerModule,
     PasswordVisibilityToggleModule,
     FeaturesConfigModule,
+    OneTimePasswordLoginFormComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -46,6 +47,5 @@ import { OneTimePasswordLoginFormComponent } from './otp-login-form.component';
       },
     }),
   ],
-  declarations: [OneTimePasswordLoginFormComponent],
 })
 export class OneTimePasswordLoginFormModeule {}

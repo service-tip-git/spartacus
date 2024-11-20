@@ -48,6 +48,8 @@ class MockCartValidationFacade {
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [RouterTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -55,6 +57,7 @@ class MockCxIconComponent {
 
 @Pipe({
   name: 'cxTranslate',
+  standalone: true,
 })
 class MockTranslatePipe implements PipeTransform {
   transform(): any {}
@@ -62,6 +65,7 @@ class MockTranslatePipe implements PipeTransform {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
@@ -75,8 +79,8 @@ describe('CartItemValidationWarningComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
         CartItemValidationWarningComponent,
         MockCxIconComponent,
         MockTranslatePipe,

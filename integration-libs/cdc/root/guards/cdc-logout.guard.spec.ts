@@ -34,6 +34,7 @@ const mockedWindowRef = {
 @Component({
   selector: 'cx-page-layout',
   template: 'mock',
+  standalone: true,
 })
 class MockPageLayoutComponent {}
 
@@ -67,8 +68,8 @@ describe('CdcLogoutGuard', () => {
             canActivate: [CdcLogoutGuard],
           },
         ]),
+        MockPageLayoutComponent,
       ],
-      declarations: [MockPageLayoutComponent],
       providers: [
         {
           provide: RoutingConfig,

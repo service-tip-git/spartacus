@@ -22,8 +22,9 @@ import { FileUploadModule, FormErrorsModule } from '../form';
     ReactiveFormsModule,
     FileUploadModule,
     FormErrorsModule,
+    AvatarComponent,
+    MessagingComponent,
   ],
-  declarations: [AvatarComponent, MessagingComponent],
   exports: [AvatarComponent, MessagingComponent],
 })
 export class ChatMessagingModule {}

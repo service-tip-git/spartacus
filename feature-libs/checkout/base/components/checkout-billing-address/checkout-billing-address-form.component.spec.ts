@@ -46,6 +46,14 @@ const mockAddress: Address = {
 @Component({
   selector: 'cx-card',
   template: '',
+  standalone: true,
+  imports: [
+    ReactiveFormsModule,
+    NgSelectModule,
+    NgSelectA11yModule,
+    I18nTestingModule,
+    FormErrorsModule,
+  ],
 })
 class MockCardComponent {
   @Input()
@@ -104,8 +112,9 @@ describe('CheckoutBillingAddressFormComponent', () => {
         NgSelectA11yModule,
         I18nTestingModule,
         FormErrorsModule,
+        CheckoutBillingAddressFormComponent,
+        MockCardComponent,
       ],
-      declarations: [CheckoutBillingAddressFormComponent, MockCardComponent],
       providers: [
         { provide: LaunchDialogService, useClass: MockLaunchDialogService },
         {

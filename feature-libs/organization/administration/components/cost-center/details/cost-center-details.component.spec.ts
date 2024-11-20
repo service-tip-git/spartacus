@@ -46,8 +46,9 @@ describe('CostCenterDetailsComponent', () => {
         MessageTestingModule,
         ToggleStatusModule,
         DisableInfoModule,
+        CostCenterDetailsComponent,
+        FocusDirective,
       ],
-      declarations: [CostCenterDetailsComponent, FocusDirective],
       providers: [{ provide: ItemService, useClass: MockItemService }],
     })
       .overrideComponent(CostCenterDetailsComponent, {

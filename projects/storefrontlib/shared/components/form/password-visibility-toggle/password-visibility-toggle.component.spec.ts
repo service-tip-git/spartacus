@@ -31,8 +31,8 @@ describe('PasswordVisibilityToggleComponent', () => {
         FormsModule,
         ReactiveFormsModule,
         PasswordVisibilityToggleModule,
+        PasswordVisibilityToggleComponent,
       ],
-      declarations: [PasswordVisibilityToggleComponent],
       providers: [
         {
           provide: FormConfig,

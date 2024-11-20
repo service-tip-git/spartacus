@@ -31,8 +31,8 @@ import { UnitLevelOrderHistoryFilterModule } from './filter/unit-level-order-his
     UrlModule,
     I18nModule,
     UnitLevelOrderHistoryFilterModule,
+    UnitLevelOrderHistoryComponent,
   ],
-  declarations: [UnitLevelOrderHistoryComponent],
   exports: [UnitLevelOrderHistoryComponent],
   providers: [
     provideDefaultConfig({

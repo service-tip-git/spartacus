@@ -24,6 +24,7 @@ import {
 
 @Pipe({
   name: 'cxTranslate',
+  standalone: true,
 })
 class MockTranslatePipe implements PipeTransform {
   transform(): any {}
@@ -46,6 +47,7 @@ class MockAsmComponentService extends AsmComponentService {
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -81,7 +83,7 @@ describe('AsmSwitchCustomerDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
+      imports: [
         AsmSwitchCustomerDialogComponent,
         MockTranslatePipe,
         FocusDirective,

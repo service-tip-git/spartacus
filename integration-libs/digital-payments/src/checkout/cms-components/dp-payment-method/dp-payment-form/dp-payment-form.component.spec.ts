@@ -36,6 +36,7 @@ class MockDpCheckoutPaymentService
 @Component({
   selector: 'cx-spinner',
   template: '',
+  standalone: true,
 })
 class MockSpinnerComponent {}
 
@@ -48,12 +49,12 @@ describe('DpPaymentFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
+      imports: [
+        StoreModule.forRoot({}),
         DpPaymentFormComponent,
         MockTranslatePipe,
         MockSpinnerComponent,
       ],
-      imports: [StoreModule.forRoot({})],
       providers: [
         {
           provide: DpCheckoutPaymentService,

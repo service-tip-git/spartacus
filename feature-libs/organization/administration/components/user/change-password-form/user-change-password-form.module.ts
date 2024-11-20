@@ -31,7 +31,7 @@ import { UserChangePasswordFormComponent } from './user-change-password-form.com
     KeyboardFocusModule,
     PasswordVisibilityToggleModule,
     FeaturesConfigModule,
+    UserChangePasswordFormComponent,
   ],
-  declarations: [UserChangePasswordFormComponent],
 })
 export class UserChangePasswordFormModule {}

@@ -33,6 +33,8 @@ class MockRoutingService implements Partial<RoutingService> {
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule, ReactiveFormsModule, FormErrorsModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -40,6 +42,8 @@ class MockCxIconComponent {
 
 @Component({
   selector: 'cx-messaging',
+  standalone: true,
+  imports: [I18nTestingModule, ReactiveFormsModule, FormErrorsModule],
 })
 class MockCxMessagingComponent {
   @Input() messageEvents$: Observable<Array<MessageEvent>>;
@@ -49,6 +53,7 @@ class MockCxMessagingComponent {
 
 @Directive({
   selector: '[cxFocus]',
+  standalone: true,
 })
 export class MockKeyboadFocusDirective {
   @Input('cxFocus') config: FocusConfig = {};
@@ -61,8 +66,10 @@ describe('CustomerTicketingCloseDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule, ReactiveFormsModule, FormErrorsModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        ReactiveFormsModule,
+        FormErrorsModule,
         CustomerTicketingCloseDialogComponent,
         MockCxIconComponent,
         MockCxMessagingComponent,

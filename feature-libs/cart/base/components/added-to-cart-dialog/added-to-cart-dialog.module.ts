@@ -40,9 +40,9 @@ import { defaultAddedToCartLayoutConfig } from './default-added-to-cart-layout.c
     ItemCounterModule,
     KeyboardFocusModule,
     FeaturesConfigModule,
+    AddedToCartDialogComponent,
   ],
   providers: [provideDefaultConfig(defaultAddedToCartLayoutConfig)],
-  declarations: [AddedToCartDialogComponent],
   exports: [AddedToCartDialogComponent],
 })
 export class AddedToCartDialogModule {

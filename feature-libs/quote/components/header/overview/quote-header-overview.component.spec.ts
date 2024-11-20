@@ -51,12 +51,16 @@ const mockQuote: Quote = {
 @Component({
   selector: 'cx-quote-actions-link',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule, CardModule, RouterTestingModule],
 })
 export class MockQuoteActionsLinkComponent {}
 
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule, CardModule, RouterTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -65,6 +69,8 @@ class MockCxIconComponent {
 @Component({
   selector: 'cx-quote-header-buyer-edit',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule, CardModule, RouterTestingModule],
 })
 class MockQuoteHeaderBuyerEditComponent {
   @Input() content: EditCard | null;
@@ -99,8 +105,10 @@ describe('QuoteHeaderOverviewComponent', () => {
   beforeEach(waitForAsync(() => {
     initMocks();
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, CardModule, RouterTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        CardModule,
+        RouterTestingModule,
         QuoteHeaderOverviewComponent,
         MockCxIconComponent,
         MockQuoteActionsLinkComponent,

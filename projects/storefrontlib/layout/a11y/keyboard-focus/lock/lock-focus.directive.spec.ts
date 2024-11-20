@@ -13,6 +13,7 @@ import { LockFocusService } from './lock-focus.service';
 
 @Directive({
   selector: '[cxLockFocus]',
+  standalone: true,
 })
 class CustomFocusDirective extends LockFocusDirective {
   @Input('cxLockFocus') protected config: LockFocusConfig;
@@ -49,6 +50,7 @@ class CustomFocusDirective extends LockFocusDirective {
       <button id="e3"></button>
     </div>
   `,
+  standalone: true,
 })
 class MockComponent {}
 
@@ -81,7 +83,7 @@ describe('LockFocusDirective', () => {
   let service: LockFocusService;
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [MockComponent, CustomFocusDirective],
+      imports: [MockComponent, CustomFocusDirective],
       providers: [
         {
           provide: LockFocusService,

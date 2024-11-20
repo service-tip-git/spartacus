@@ -19,6 +19,14 @@ import {
   ProductListItemContext,
   ProductListItemContextSource,
 } from '@spartacus/storefront';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { UrlPipe } from '../../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { AtMessageDirective } from '../../../../../projects/storefrontlib/shared/components/assistive-technology-message/assistive-technology-message.directive';
+import { InnerComponentsHostDirective } from '../../../../../projects/storefrontlib/cms-structure/page/component/inner-components-host.directive';
+import { NgIf, NgFor } from '@angular/common';
+import { MediaComponent } from '../../../../../projects/storefrontlib/shared/components/media/media.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: '[cx-wish-list-item], cx-wish-list-item',
@@ -30,6 +38,18 @@ import {
       provide: ProductListItemContext,
       useExisting: ProductListItemContextSource,
     },
+  ],
+  standalone: true,
+  imports: [
+    RouterLink,
+    MediaComponent,
+    NgIf,
+    NgFor,
+    InnerComponentsHostDirective,
+    AtMessageDirective,
+    TranslatePipe,
+    UrlPipe,
+    MockTranslatePipe,
   ],
 })
 export class WishListItemComponent implements OnChanges {

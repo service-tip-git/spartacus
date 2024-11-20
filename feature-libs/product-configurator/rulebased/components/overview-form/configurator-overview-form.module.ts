@@ -17,6 +17,7 @@ import { ConfiguratorOverviewFormComponent } from './configurator-overview-form.
     ConfiguratorOverviewAttributeModule,
     ConfiguratorOverviewBundleAttributeModule,
     I18nModule,
+    ConfiguratorOverviewFormComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -27,7 +28,6 @@ import { ConfiguratorOverviewFormComponent } from './configurator-overview-form.
       },
     }),
   ],
-  declarations: [ConfiguratorOverviewFormComponent],
   exports: [ConfiguratorOverviewFormComponent],
 })
 export class ConfiguratorOverviewFormModule {}

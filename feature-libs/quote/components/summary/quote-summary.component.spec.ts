@@ -10,18 +10,24 @@ import { QuoteSummaryComponent } from './quote-summary.component';
 @Component({
   selector: 'cx-quote-summary-prices',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class MockQuoteSummaryPricesComponent {}
 
 @Component({
   selector: 'cx-quote-summary-actions',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class MockQuoteSummaryActionsComponent {}
 
 @Component({
   selector: 'cx-quote-summary-seller-edit',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class MockQuoteSummarySellerEditComponent {}
 
@@ -44,8 +50,8 @@ describe('QuoteSummaryComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         QuoteSummaryComponent,
         MockQuoteSummaryPricesComponent,
         MockQuoteSummaryActionsComponent,

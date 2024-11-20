@@ -27,8 +27,12 @@ describe('MessageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [CommonModule, I18nTestingModule, IconTestingModule],
-      declarations: [MessageComponent],
+      imports: [
+        CommonModule,
+        I18nTestingModule,
+        IconTestingModule,
+        MessageComponent,
+      ],
       providers: [MessageService],
     }).compileComponents();
 

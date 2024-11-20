@@ -94,6 +94,13 @@ class MockTranslationService {
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [
+    I18nTestingModule,
+    ReactiveFormsModule,
+    FormErrorsModule,
+    FileUploadModule,
+  ],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -101,6 +108,7 @@ class MockCxIconComponent {
 
 @Directive({
   selector: '[cxFocus]',
+  standalone: true,
 })
 export class MockKeyboadFocusDirective {
   @Input('cxFocus') config: FocusConfig = {};
@@ -119,8 +127,6 @@ describe('CustomerTicketingCreateDialogComponent', () => {
         ReactiveFormsModule,
         FormErrorsModule,
         FileUploadModule,
-      ],
-      declarations: [
         CustomerTicketingCreateDialogComponent,
         MockCxIconComponent,
         MockKeyboadFocusDirective,

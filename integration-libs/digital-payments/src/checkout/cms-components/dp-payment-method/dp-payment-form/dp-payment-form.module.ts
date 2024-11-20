@@ -19,9 +19,8 @@ import { I18nModule } from '@spartacus/core';
     NgSelectModule,
     I18nModule,
     SpinnerModule,
+    DpPaymentFormComponent,
   ],
-
-  declarations: [DpPaymentFormComponent],
   exports: [DpPaymentFormComponent],
 })
 export class DpPaymentFormModule {}

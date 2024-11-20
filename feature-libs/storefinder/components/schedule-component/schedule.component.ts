@@ -6,10 +6,15 @@
 
 import { Component, Input, OnInit } from '@angular/core';
 import { PointOfService, WeekdayOpeningDay } from '@spartacus/core';
+import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../projects/core/src/i18n/translate.pipe';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
   selector: 'cx-schedule',
   templateUrl: './schedule.component.html',
+  standalone: true,
+  imports: [NgIf, NgFor, TranslatePipe, MockTranslatePipe],
 })
 export class ScheduleComponent implements OnInit {
   @Input()

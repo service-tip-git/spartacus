@@ -21,11 +21,32 @@ import { QuoteUIConfig } from '../../config/quote-ui.config';
 import {
   EditCard,
   SaveEvent,
+  QuoteHeaderBuyerEditComponent,
 } from '../buyer-edit/quote-header-buyer-edit.component';
+import { MockDatePipe } from '../../../../../projects/core/src/i18n/testing/mock-date.pipe';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { CxDatePipe } from '../../../../../projects/core/src/i18n/date.pipe';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { CardComponent } from '../../../../../projects/storefrontlib/shared/components/card/card.component';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'cx-quote-header-overview',
   templateUrl: './quote-header-overview.component.html',
+  standalone: true,
+  imports: [
+    NgIf,
+    CardComponent,
+    IconComponent,
+    QuoteHeaderBuyerEditComponent,
+    NgFor,
+    AsyncPipe,
+    TranslatePipe,
+    CxDatePipe,
+    MockTranslatePipe,
+    MockDatePipe,
+  ],
 })
 export class QuoteHeaderOverviewComponent {
   protected quoteFacade = inject(QuoteFacade);

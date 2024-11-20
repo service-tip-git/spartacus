@@ -15,11 +15,30 @@ import {
 import { combineLatest, Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { ICON_TYPE } from '../../../cms-components/misc/icon';
-import { Card } from '../../../shared/components/card/card.component';
+import {
+  Card,
+  CardComponent,
+} from '../../../shared/components/card/card.component';
+import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { SpinnerComponent } from '../../../shared/components/spinner/spinner.component';
+import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'cx-payment-methods',
   templateUrl: './payment-methods.component.html',
+  standalone: true,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    SpinnerComponent,
+    NgFor,
+    CardComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class PaymentMethodsComponent implements OnInit {
   paymentMethods$: Observable<PaymentDetails[]>;

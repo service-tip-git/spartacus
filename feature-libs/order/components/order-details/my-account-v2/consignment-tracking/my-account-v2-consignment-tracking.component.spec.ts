@@ -38,13 +38,12 @@ describe('MyAccountV2ConsignmentTrackingComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [I18nModule],
+      imports: [I18nModule, MyAccountV2ConsignmentTrackingComponent],
       providers: [
         { provide: LaunchDialogService, useClass: MockLaunchDialogService },
         { provide: TranslationService, useClass: MockTranslationService },
         { provide: OutletContextData, useClass: MockOutletContextData },
       ],
-      declarations: [MyAccountV2ConsignmentTrackingComponent],
     }).compileComponents();
     fixture = TestBed.createComponent(MyAccountV2ConsignmentTrackingComponent);
     outlet = TestBed.inject(OutletContextData);

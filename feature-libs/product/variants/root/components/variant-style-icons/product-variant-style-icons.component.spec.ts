@@ -42,7 +42,7 @@ describe('ProductVariantStyleIconsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ProductVariantStyleIconsComponent],
+      imports: [ProductVariantStyleIconsComponent],
       providers: [
         {
           provide: OccConfig,

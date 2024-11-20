@@ -111,6 +111,8 @@ class MockQuoteHeaderSellerEditComponentService {
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'cx-date-picker',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule, ReactiveFormsModule],
 })
 class MockDatePickerComponent {
   @Input() control: FormControl;
@@ -122,6 +124,8 @@ class MockDatePickerComponent {
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule, ReactiveFormsModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -137,8 +141,9 @@ describe('QuoteSummarySellerEditComponent', () => {
       quote: { updateDebounceTime: { expiryDate: DEBOUNCE_TIME } },
     };
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, ReactiveFormsModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        ReactiveFormsModule,
         QuoteSummarySellerEditComponent,
         MockCxIconComponent,
         MockDatePickerComponent,

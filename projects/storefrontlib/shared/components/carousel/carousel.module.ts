@@ -22,8 +22,9 @@ import { FocusableCarouselItemDirective } from './focusable-carousel-item/focusa
     UrlModule,
     I18nModule,
     FeaturesConfigModule,
+    CarouselComponent,
+    FocusableCarouselItemDirective,
   ],
-  declarations: [CarouselComponent, FocusableCarouselItemDirective],
   exports: [CarouselComponent, FocusableCarouselItemDirective],
 })
 export class CarouselModule {}

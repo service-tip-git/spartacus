@@ -19,11 +19,32 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { ProductItem } from './product-item.model';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { AsmCustomer360ProductItemComponent } from '../asm-customer-360-product-item/asm-customer-360-product-item.component';
+import {
+  NgIf,
+  NgTemplateOutlet,
+  NgClass,
+  NgFor,
+  AsyncPipe,
+} from '@angular/common';
 
 @Component({
   selector: 'cx-asm-customer-360-product-listing',
   templateUrl: './asm-customer-360-product-listing.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgIf,
+    NgTemplateOutlet,
+    NgClass,
+    NgFor,
+    AsmCustomer360ProductItemComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class AsmCustomer360ProductListingComponent implements OnInit {
   @Input()

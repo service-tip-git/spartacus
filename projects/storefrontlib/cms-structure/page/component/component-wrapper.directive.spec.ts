@@ -40,6 +40,7 @@ const testText = 'test text';
 @Component({
   selector: 'cx-test',
   template: ` <div id="debugEl1">${testText}</div> `,
+  standalone: true,
 })
 class TestComponent {
   constructor(
@@ -49,7 +50,7 @@ class TestComponent {
 }
 
 @NgModule({
-  declarations: [TestComponent],
+  imports: [TestComponent],
   exports: [TestComponent],
 })
 class TestModule {}

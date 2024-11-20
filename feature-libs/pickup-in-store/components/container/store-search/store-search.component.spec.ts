@@ -14,8 +14,7 @@ describe('StoreSearchComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [StoreSearchComponent, MockFeatureDirective],
-      imports: [I18nTestingModule],
+      imports: [I18nTestingModule, StoreSearchComponent, MockFeatureDirective],
       providers: [
         {
           provide: CurrentLocationService,

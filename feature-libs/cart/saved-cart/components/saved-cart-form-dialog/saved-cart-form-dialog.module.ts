@@ -25,8 +25,8 @@ import { SavedCartFormDialogComponent } from './saved-cart-form-dialog.component
     IconModule,
     KeyboardFocusModule,
     FeaturesConfigModule,
+    SavedCartFormDialogComponent,
   ],
-  declarations: [SavedCartFormDialogComponent],
   exports: [SavedCartFormDialogComponent],
 })
 export class SavedCartFormDialogModule {}

@@ -28,6 +28,7 @@ import { Configurator } from '../../../core/model/configurator.model';
 
 @Directive({
   selector: '[cxConfiguratorAttributeComponent]',
+  standalone: true,
 })
 export class ConfiguratorAttributeCompositionDirective
   implements OnInit, OnChanges

@@ -8,11 +8,24 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CartOutlets } from '@spartacus/cart/base/root';
 import { OrderDetailsService } from '@spartacus/order/components';
 import { map } from 'rxjs/operators';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { OutletDirective } from '../../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
+import { NgIf, AsyncPipe, DatePipe } from '@angular/common';
 
 @Component({
   selector: 'cx-cancel-service-order-headline',
   templateUrl: './cancel-service-order-headline.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgIf,
+    OutletDirective,
+    AsyncPipe,
+    DatePipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class CancelServiceOrderHeadlineComponent {
   protected orderDetailsService = inject(OrderDetailsService);

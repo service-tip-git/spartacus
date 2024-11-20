@@ -20,8 +20,8 @@ import { DpConfirmationDialogModule } from '../dp-confirmation-dialog/dp-confirm
     CheckoutBillingAddressFormModule,
     FeaturesConfigModule,
     DpConfirmationDialogModule,
+    DpPaymentCallbackComponent,
   ],
-  declarations: [DpPaymentCallbackComponent],
   exports: [DpPaymentCallbackComponent],
 })
 export class DpPaymentCallbackModule {}

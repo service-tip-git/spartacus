@@ -41,6 +41,7 @@ type ICON_TYPE = DEFAULT_ICON_TYPE | string;
 @Component({
   selector: 'cx-icon,[cxIcon]',
   templateUrl: './icon.component.html',
+  standalone: true,
 })
 export class IconComponent {
   /**

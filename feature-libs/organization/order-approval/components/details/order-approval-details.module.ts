@@ -89,8 +89,6 @@ import { OrderDetailPermissionResultsComponent } from './order-detail-permission
       },
     }),
     FeaturesConfigModule,
-  ],
-  declarations: [
     OrderApprovalDetailFormComponent,
     OrderDetailPermissionResultsComponent,
   ],

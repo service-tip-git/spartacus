@@ -7,7 +7,6 @@ describe('CdcB2BUserService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [StoreModule.forRoot({})],
-      declarations: [],
       providers: [],
     });
     service = TestBed.inject(CdcB2BUserService);

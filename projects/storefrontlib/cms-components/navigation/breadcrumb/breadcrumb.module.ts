@@ -23,6 +23,7 @@ import { BreadcrumbComponent } from './breadcrumb.component';
     PageMetaModule,
     I18nModule,
     FeaturesConfigModule,
+    BreadcrumbComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -33,7 +34,6 @@ import { BreadcrumbComponent } from './breadcrumb.component';
       },
     }),
   ],
-  declarations: [BreadcrumbComponent],
   exports: [BreadcrumbComponent],
 })
 export class BreadcrumbModule {}

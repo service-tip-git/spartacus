@@ -41,6 +41,8 @@ const myAccountV2CmsMapping: CmsConfig = {
     I18nModule,
     IconModule,
     FeaturesConfigModule,
+    ConsentManagementComponent,
+    ConsentManagementFormComponent,
   ],
   providers: [
     ConsentManagementComponentService,
@@ -56,7 +58,6 @@ const myAccountV2CmsMapping: CmsConfig = {
       inject(USE_MY_ACCOUNT_V2_CONSENT) ? myAccountV2CmsMapping : {}
     ),
   ],
-  declarations: [ConsentManagementComponent, ConsentManagementFormComponent],
   exports: [ConsentManagementComponent, ConsentManagementFormComponent],
 })
 export class ConsentManagementModule {}

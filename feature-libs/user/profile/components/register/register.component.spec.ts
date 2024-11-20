@@ -66,6 +66,7 @@ const mockTitlesList: Title[] = [
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
@@ -74,6 +75,17 @@ class MockUrlPipe implements PipeTransform {
 @Component({
   selector: 'cx-spinner',
   template: '',
+  standalone: true,
+  imports: [
+    ReactiveFormsModule,
+    RouterTestingModule,
+    I18nTestingModule,
+    FormErrorsModule,
+    NgSelectModule,
+    PasswordVisibilityToggleModule,
+    NgSelectA11yModule,
+    CaptchaModule,
+  ],
 })
 class MockSpinnerComponent {}
 
@@ -173,8 +185,6 @@ describe('RegisterComponent', () => {
         PasswordVisibilityToggleModule,
         NgSelectA11yModule,
         CaptchaModule,
-      ],
-      declarations: [
         RegisterComponent,
         MockUrlPipe,
         MockSpinnerComponent,

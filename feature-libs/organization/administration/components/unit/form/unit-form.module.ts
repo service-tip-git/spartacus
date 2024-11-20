@@ -28,8 +28,8 @@ import { UnitFormComponent } from './unit-form.component';
     ItemActiveModule,
     FeaturesConfigModule,
     NgSelectA11yModule,
+    UnitFormComponent,
   ],
-  declarations: [UnitFormComponent],
   exports: [UnitFormComponent],
 })
 export class UnitFormModule {}

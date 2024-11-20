@@ -77,7 +77,7 @@ describe('GigyaRaasComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [GigyaRaasComponent, MockTranslatePipe],
+      imports: [GigyaRaasComponent, MockTranslatePipe],
       providers: [
         { provide: CdcConfig, useValue: sampleCdcConfig },
         { provide: CmsComponentData, useValue: MockCmsComponentData },

@@ -158,8 +158,8 @@ describe('VisualPickingProductListComponent', () => {
         UrlModule,
         I18nTestingModule,
         CompactAddToCartModule,
+        VisualPickingProductListComponent,
       ],
-      declarations: [VisualPickingProductListComponent],
       providers: [
         Actions,
         {

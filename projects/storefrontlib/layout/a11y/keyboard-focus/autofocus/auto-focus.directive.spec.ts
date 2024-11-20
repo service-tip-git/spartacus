@@ -7,6 +7,7 @@ import { AutoFocusService } from './auto-focus.service';
 
 @Directive({
   selector: '[cxAutoFocus]',
+  standalone: true,
 })
 class CustomFocusDirective extends AutoFocusDirective {
   @Input('cxAutoFocus') protected config: AutoFocusConfig;
@@ -35,6 +36,7 @@ class CustomFocusDirective extends AutoFocusDirective {
       <button id="d2"></button>
     </div>
   `,
+  standalone: true,
 })
 class MockComponent {}
 
@@ -53,7 +55,7 @@ describe('AutoFocusDirective', () => {
   let service: AutoFocusService;
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [MockComponent, CustomFocusDirective],
+      imports: [MockComponent, CustomFocusDirective],
       providers: [
         {
           provide: AutoFocusService,

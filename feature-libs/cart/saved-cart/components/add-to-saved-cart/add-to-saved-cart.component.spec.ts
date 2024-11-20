@@ -64,8 +64,9 @@ describe('AddToSavedCartComponent', () => {
         I18nTestingModule,
         UrlTestingModule,
         RouterTestingModule,
+        AddToSavedCartComponent,
+        MockFeatureDirective,
       ],
-      declarations: [AddToSavedCartComponent, MockFeatureDirective],
       providers: [
         { provide: ActiveCartFacade, useClass: MockActiveCartService },
         { provide: AuthService, useClass: MockAuthService },

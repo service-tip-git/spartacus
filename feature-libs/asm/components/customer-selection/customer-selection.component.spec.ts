@@ -120,8 +120,10 @@ describe('CustomerSelectionComponent', () => {
     customerSearchResultsLoading = new BehaviorSubject<boolean>(false);
 
     TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, I18nTestingModule, FormErrorsModule],
-      declarations: [
+      imports: [
+        ReactiveFormsModule,
+        I18nTestingModule,
+        FormErrorsModule,
         CustomerSelectionComponent,
         DotSpinnerComponent,
         MockFeatureDirective,

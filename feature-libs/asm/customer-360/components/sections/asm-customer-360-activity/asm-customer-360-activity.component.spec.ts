@@ -36,6 +36,7 @@ export class MockKeyboadFocusDirective {
 describe('AsmCustomer360ActivityComponent', () => {
   @Pipe({
     name: 'cxTranslate',
+    standalone: true,
   })
   class MockTranslatePipe implements PipeTransform {
     transform(): any {}
@@ -43,6 +44,8 @@ describe('AsmCustomer360ActivityComponent', () => {
   @Component({
     selector: 'cx-icon',
     template: '',
+    standalone: true,
+    imports: [I18nTestingModule],
   })
   class MockCxIconComponent {
     @Input() type: ICON_TYPE;
@@ -125,8 +128,8 @@ describe('AsmCustomer360ActivityComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         AsmCustomer360ActivityComponent,
         MockTranslatePipe,
         MockCxIconComponent,

@@ -99,6 +99,8 @@ export class MockIconFontLoaderService {
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule, ReactiveFormsModule, NgSelectModule],
 })
 class MockCxIconComponent {
   @Input() type: any;
@@ -112,8 +114,10 @@ describe('ConfiguratorConflictAndErrorMessagesComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, ReactiveFormsModule, NgSelectModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
+        ReactiveFormsModule,
+        NgSelectModule,
         ConfiguratorConflictAndErrorMessagesComponent,
         MockCxIconComponent,
       ],
@@ -126,7 +130,6 @@ describe('ConfiguratorConflictAndErrorMessagesComponent', () => {
           provide: ConfiguratorCommonsService,
           useClass: MockConfiguratorCommonsService,
         },
-
         { provide: IconLoaderService, useClass: MockIconFontLoaderService },
       ],
     });

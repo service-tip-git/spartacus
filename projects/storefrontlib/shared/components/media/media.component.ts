@@ -19,6 +19,9 @@ import { Config, Image, ImageGroup } from '@spartacus/core';
 import { ImageLoadingStrategy, Media, MediaContainer } from './media.model';
 import { MediaService } from './media.service';
 import { USE_LEGACY_MEDIA_COMPONENT } from './media.token';
+import { MediaSourcesPipe } from './media-sources.pipe';
+import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
+import { NgIf, NgFor } from '@angular/common';
 
 /**
  * The HTML element rendered in the template can be either `<img>` or `<picture>`,
@@ -46,6 +49,8 @@ import { USE_LEGACY_MEDIA_COMPONENT } from './media.token';
   selector: 'cx-media',
   templateUrl: './media.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgIf, FeatureDirective, NgFor, MediaSourcesPipe],
 })
 export class MediaComponent implements OnChanges {
   /**

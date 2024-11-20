@@ -18,8 +18,14 @@ import { RecentSearchesComponent } from './recent-searches.component';
 
 @NgModule({
   exports: [RecentSearchesComponent],
-  declarations: [RecentSearchesComponent],
-  imports: [CommonModule, I18nModule, SearchBoxModule, UrlModule, RouterModule],
+  imports: [
+    CommonModule,
+    I18nModule,
+    SearchBoxModule,
+    UrlModule,
+    RouterModule,
+    RecentSearchesComponent,
+  ],
   providers: [
     provideOutlet({
       id: SearchBoxOutlets.RECENT_SEARCHES,

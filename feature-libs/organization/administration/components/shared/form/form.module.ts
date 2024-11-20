@@ -26,8 +26,8 @@ import { KeyboardFocusModule } from '@spartacus/storefront';
     MessageModule,
     ItemActiveModule,
     KeyboardFocusModule,
+    FormComponent,
   ],
-  declarations: [FormComponent],
   providers: [MessageService],
   exports: [FormComponent],
 })

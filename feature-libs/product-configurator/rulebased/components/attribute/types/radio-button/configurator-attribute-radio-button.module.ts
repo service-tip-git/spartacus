@@ -29,6 +29,7 @@ import { ConfiguratorShowMoreModule } from '../../../show-more/configurator-show
     ConfiguratorAttributeNumericInputFieldModule,
     ConfiguratorAttributeInputFieldModule,
     ConfiguratorShowMoreModule,
+    ConfiguratorAttributeRadioButtonComponent,
   ],
   providers: [
     provideDefaultConfig(<ConfiguratorAttributeCompositionConfig>{
@@ -41,7 +42,6 @@ import { ConfiguratorShowMoreModule } from '../../../show-more/configurator-show
       },
     }),
   ],
-  declarations: [ConfiguratorAttributeRadioButtonComponent],
   exports: [ConfiguratorAttributeRadioButtonComponent],
 })
 export class ConfiguratorAttributeRadioButtonModule {}

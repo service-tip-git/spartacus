@@ -19,7 +19,6 @@ import { AppliedCouponsComponent } from './applied-coupons/applied-coupons.compo
 import { CartCouponComponent } from './cart-coupon.component';
 
 @NgModule({
-  declarations: [CartCouponComponent, AppliedCouponsComponent],
   exports: [CartCouponComponent, AppliedCouponsComponent],
   imports: [
     CommonModule,
@@ -30,6 +29,8 @@ import { CartCouponComponent } from './cart-coupon.component';
     IconModule,
     FormErrorsModule,
     FeaturesConfigModule,
+    CartCouponComponent,
+    AppliedCouponsComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{

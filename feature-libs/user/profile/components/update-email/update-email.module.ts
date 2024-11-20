@@ -55,8 +55,9 @@ const myAccountV2EmailMapping: CmsConfig = {
     PasswordVisibilityToggleModule,
     FeaturesConfigModule,
     MessageComponentModule,
+    UpdateEmailComponent,
+    MyAccountV2EmailComponent,
   ],
-  declarations: [UpdateEmailComponent, MyAccountV2EmailComponent],
   exports: [UpdateEmailComponent, MyAccountV2EmailComponent],
   providers: [
     provideDefaultConfig(<CmsConfig>{

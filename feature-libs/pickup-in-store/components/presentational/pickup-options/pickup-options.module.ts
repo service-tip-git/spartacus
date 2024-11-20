@@ -18,8 +18,8 @@ import { TabModule } from '@spartacus/storefront';
     ReactiveFormsModule,
     FeaturesConfigModule,
     TabModule,
+    PickupOptionsComponent,
   ],
-  declarations: [PickupOptionsComponent],
   exports: [PickupOptionsComponent],
 })
 export class PickupOptionsModule {}

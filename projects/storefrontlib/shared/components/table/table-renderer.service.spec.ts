@@ -15,11 +15,20 @@ class MockOutletService {
 class MockGlobalDataComponent {}
 @Component({ template: '' })
 class MockGlobalHeaderComponent {}
-@Component({ template: '' })
+@Component({
+  template: '',
+  standalone: true,
+})
 class MockDataComponent {}
-@Component({ template: '' })
+@Component({
+  template: '',
+  standalone: true,
+})
 class MockHeaderComponent {}
-@Component({ template: '' })
+@Component({
+  template: '',
+  standalone: true,
+})
 class MockCodeRendererComponent {}
 
 const mockOptions: TableOptions = {
@@ -66,7 +75,7 @@ describe('TableRendererService', () => {
   describe('with global configured cell components', () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
-        declarations: [
+        imports: [
           MockDataComponent,
           MockHeaderComponent,
           MockCodeRendererComponent,
@@ -112,7 +121,7 @@ describe('TableRendererService', () => {
   describe('without global configured cell components', () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
-        declarations: [
+        imports: [
           MockDataComponent,
           MockHeaderComponent,
           MockCodeRendererComponent,

@@ -50,8 +50,6 @@ describe('BudgetDetailsComponent', () => {
         MessageTestingModule,
         ToggleStatusModule,
         DisableInfoModule,
-      ],
-      declarations: [
         BudgetDetailsComponent,
         ItemExistsDirective,
         FocusDirective,

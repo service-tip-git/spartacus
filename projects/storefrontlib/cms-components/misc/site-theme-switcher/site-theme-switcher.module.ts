@@ -18,7 +18,13 @@ import { IconModule } from '../icon/index';
 import { SiteThemeSwitcherComponentService } from './site-theme-switcher.component.service';
 
 @NgModule({
-  imports: [CommonModule, I18nModule, IconModule, SiteThemeModule],
+  imports: [
+    CommonModule,
+    I18nModule,
+    IconModule,
+    SiteThemeModule,
+    SiteThemeSwitcherComponent,
+  ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
       cmsComponents: {
@@ -29,7 +35,6 @@ import { SiteThemeSwitcherComponentService } from './site-theme-switcher.compone
     }),
     SiteThemeSwitcherComponentService,
   ],
-  declarations: [SiteThemeSwitcherComponent],
   exports: [SiteThemeSwitcherComponent],
 })
 export class SiteThemeSwitcherModule {}

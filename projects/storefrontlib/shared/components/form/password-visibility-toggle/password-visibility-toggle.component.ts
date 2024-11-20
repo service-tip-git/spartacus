@@ -7,11 +7,16 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ICON_TYPE } from '../../../../cms-components/misc/icon/icon.model';
 import { PasswordInputState } from './password-input-visibility.model';
+import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
+import { IconComponent } from '../../../../cms-components/misc/icon/icon.component';
 
 @Component({
   selector: 'cx-password-visibility-toggle',
   templateUrl: './password-visibility-toggle.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [IconComponent, TranslatePipe, MockTranslatePipe],
 })
 export class PasswordVisibilityToggleComponent {
   protected showState: PasswordInputState = {

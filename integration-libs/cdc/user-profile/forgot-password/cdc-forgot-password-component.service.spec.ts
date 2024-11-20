@@ -59,7 +59,6 @@ describe('CDCForgotPasswordComponentService', () => {
         I18nTestingModule,
         FormErrorsModule,
       ],
-      declarations: [],
       providers: [
         CDCForgotPasswordComponentService,
         { provide: UserPasswordFacade, useClass: MockUserPasswordService },

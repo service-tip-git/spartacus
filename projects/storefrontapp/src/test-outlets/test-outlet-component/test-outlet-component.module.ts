@@ -26,7 +26,7 @@ import { TestOutletComponentComponent } from './test-outlet-component.component'
         canActivate: [CmsPageGuard],
       },
     ]),
+    TestOutletComponentComponent,
   ],
-  declarations: [TestOutletComponentComponent],
 })
 export class TestOutletComponentModule {}

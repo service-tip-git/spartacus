@@ -18,7 +18,13 @@ import { defaultAnonymousConsentLayoutConfig } from './default-anonymous-consent
 import { AnonymousConsentOpenDialogComponent } from './open-dialog/anonymous-consent-open-dialog.component';
 
 @NgModule({
-  imports: [CommonModule, I18nModule, KeyboardFocusModule],
+  imports: [
+    CommonModule,
+    I18nModule,
+    KeyboardFocusModule,
+    AnonymousConsentManagementBannerComponent,
+    AnonymousConsentOpenDialogComponent,
+  ],
   providers: [
     provideDefaultConfig(defaultAnonymousConsentLayoutConfig),
     provideDefaultConfig(<CmsConfig>{
@@ -32,10 +38,6 @@ import { AnonymousConsentOpenDialogComponent } from './open-dialog/anonymous-con
         },
       },
     }),
-  ],
-  declarations: [
-    AnonymousConsentManagementBannerComponent,
-    AnonymousConsentOpenDialogComponent,
   ],
   exports: [
     AnonymousConsentManagementBannerComponent,

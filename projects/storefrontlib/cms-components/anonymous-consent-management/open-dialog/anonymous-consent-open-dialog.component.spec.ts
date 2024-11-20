@@ -22,8 +22,7 @@ describe('AnonymousConsentOpenDialogComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [AnonymousConsentOpenDialogComponent],
+      imports: [I18nTestingModule, AnonymousConsentOpenDialogComponent],
       providers: [
         {
           provide: LaunchDialogService,

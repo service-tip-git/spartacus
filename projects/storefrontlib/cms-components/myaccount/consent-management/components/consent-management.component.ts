@@ -31,10 +31,27 @@ import {
   withLatestFrom,
 } from 'rxjs/operators';
 import { ConsentManagementComponentService } from '../consent-management-component.service';
+import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
+import { ConsentManagementFormComponent } from './consent-form/consent-management-form.component';
+import { SpinnerComponent } from '../../../../shared/components/spinner/spinner.component';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '../../../../../core/src/features-config/directives/feature.directive';
 
 @Component({
   selector: 'cx-consent-management',
   templateUrl: './consent-management.component.html',
+  standalone: true,
+  imports: [
+    FeatureDirective,
+    NgIf,
+    SpinnerComponent,
+    NgFor,
+    ConsentManagementFormComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class ConsentManagementComponent implements OnInit, OnDestroy {
   private subscriptions = new Subscription();

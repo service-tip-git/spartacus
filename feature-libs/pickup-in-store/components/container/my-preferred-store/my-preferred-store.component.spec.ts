@@ -58,7 +58,6 @@ describe('MyPreferredStoreComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [MyPreferredStoreComponent],
       imports: [
         CardModule,
         CommonModule,
@@ -72,6 +71,7 @@ describe('MyPreferredStoreComponent', () => {
             },
           },
         } as CmsConfig),
+        MyPreferredStoreComponent,
       ],
       providers: [
         { provide: PreferredStoreFacade, useClass: MockPreferredStoreService },

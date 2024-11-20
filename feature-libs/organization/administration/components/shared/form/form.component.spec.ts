@@ -37,8 +37,8 @@ describe('FormComponent', () => {
         I18nTestingModule,
         ReactiveFormsModule,
         CardTestingModule,
+        FormComponent,
       ],
-      declarations: [FormComponent],
       providers: [
         {
           provide: ItemService,

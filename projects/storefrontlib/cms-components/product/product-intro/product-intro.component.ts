@@ -19,11 +19,26 @@ import {
   ComponentDestroyEvent,
 } from '../../../cms-structure';
 import { CurrentProductService } from '../current-product.service';
+import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
+import { StarRatingComponent } from '../../../shared/components/star-rating/star-rating.component';
+import { NgIf, AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'cx-product-intro',
   templateUrl: './product-intro.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgIf,
+    StarRatingComponent,
+    FeatureDirective,
+    AsyncPipe,
+    DecimalPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class ProductIntroComponent {
   product$: Observable<Product | null> =

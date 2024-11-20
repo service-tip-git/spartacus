@@ -34,7 +34,7 @@ describe('Captcha Component', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [CaptchaComponent],
+      imports: [CaptchaComponent],
       providers: [
         { provide: CaptchaApiConfig, useValue: mockCaptchaApiConfig },
         MockCaptchaService,

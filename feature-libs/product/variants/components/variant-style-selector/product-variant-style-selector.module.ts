@@ -11,8 +11,13 @@ import { ProductVariantStyleSelectorComponent } from './product-variant-style-se
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, UrlModule, I18nModule],
-  declarations: [ProductVariantStyleSelectorComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    UrlModule,
+    I18nModule,
+    ProductVariantStyleSelectorComponent,
+  ],
   exports: [ProductVariantStyleSelectorComponent],
 })
 export class ProductVariantStyleSelectorModule {}

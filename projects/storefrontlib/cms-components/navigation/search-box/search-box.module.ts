@@ -32,6 +32,8 @@ import { CarouselModule } from '../../../shared';
     OutletModule,
     FeaturesConfigModule,
     CarouselModule,
+    SearchBoxComponent,
+    HighlightPipe,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -42,7 +44,6 @@ import { CarouselModule } from '../../../shared';
       },
     }),
   ],
-  declarations: [SearchBoxComponent, HighlightPipe],
   exports: [SearchBoxComponent, HighlightPipe],
 })
 export class SearchBoxModule {}

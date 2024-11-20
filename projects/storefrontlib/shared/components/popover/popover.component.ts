@@ -26,11 +26,25 @@ import { ICON_TYPE } from '../../../cms-components/misc/icon/icon.model';
 import { FocusConfig } from '../../../layout/a11y/keyboard-focus/keyboard-focus.model';
 import { PositioningService } from '../../services/positioning/positioning.service';
 import { PopoverEvent, PopoverPosition } from './popover.model';
+import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { IconComponent } from '../../../cms-components/misc/icon/icon.component';
+import { NgIf, NgTemplateOutlet } from '@angular/common';
+import { FocusDirective } from '../../../layout/a11y/keyboard-focus/focus.directive';
 
 @Component({
   selector: 'cx-popover',
   templateUrl: './popover.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    FocusDirective,
+    NgIf,
+    IconComponent,
+    NgTemplateOutlet,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class PopoverComponent implements OnInit, OnDestroy, AfterViewChecked {
   /**

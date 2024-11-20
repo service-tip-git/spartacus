@@ -8,6 +8,7 @@ import { VerificationTokenDialogComponent } from './verification-token-dialog.co
 
 @Pipe({
   name: 'cxTranslate',
+  standalone: true,
 })
 class MockTranslatePipe implements PipeTransform {
   transform(): any {}
@@ -25,7 +26,7 @@ describe('VerificationTokenDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
+      imports: [
         VerificationTokenDialogComponent,
         MockTranslatePipe,
         FocusDirective,

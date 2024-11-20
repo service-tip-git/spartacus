@@ -80,6 +80,8 @@ const duplicatedUidErrorResponse: HttpErrorModel = {
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -99,6 +101,7 @@ class MockAsmCreateCustomerFacade implements Partial<AsmCreateCustomerFacade> {
 
 @Directive({
   selector: '[cxFocus]',
+  standalone: true,
 })
 export class MockKeyboadFocusDirective {
   @Input('cxFocus') config: FocusConfig = {};
@@ -113,8 +116,8 @@ describe('AsmCreateCustomerFormComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         AsmCreateCustomerFormComponent,
         MockCxIconComponent,
         MockKeyboadFocusDirective,

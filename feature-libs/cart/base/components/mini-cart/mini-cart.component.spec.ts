@@ -9,6 +9,7 @@ import { MiniCartComponent } from './mini-cart.component';
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform(options: UrlCommandRoute): string {
@@ -19,6 +20,8 @@ class MockUrlPipe implements PipeTransform {
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockCxIconComponent {
   @Input() type;
@@ -39,8 +42,13 @@ describe('MiniCartComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [MiniCartComponent, MockUrlPipe, MockCxIconComponent],
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
+        MiniCartComponent,
+        MockUrlPipe,
+        MockCxIconComponent,
+      ],
       providers: [
         {
           provide: MiniCartComponentService,

@@ -23,6 +23,13 @@ const mockQueryParams: DocumentQueryParams = {
 @Component({
   selector: 'cx-date-picker',
   template: '',
+  standalone: true,
+  imports: [
+    ReactiveFormsModule,
+    I18nTestingModule,
+    FormErrorsModule,
+    NgSelectModule,
+  ],
 })
 class MockDatePickerComponent {
   @Input() control: any;
@@ -41,8 +48,6 @@ describe('AccountSummaryDocumentFilterComponent', () => {
         I18nTestingModule,
         FormErrorsModule,
         NgSelectModule,
-      ],
-      declarations: [
         AccountSummaryDocumentFilterComponent,
         MockDatePickerComponent,
         MockFeatureDirective,

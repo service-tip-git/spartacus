@@ -71,6 +71,8 @@ function initMocks() {
 @Component({
   selector: 'cx-configurator-overview-filter-bar',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class MockConfiguratorOverviewFilterBarComponent {
   @Input() config: Configurator.ConfigurationWithOverview;
@@ -89,8 +91,8 @@ describe('ConfigurationOverviewFilterButtonComponent', () => {
     initTestData();
     initMocks();
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         ConfiguratorOverviewFilterButtonComponent,
         MockConfiguratorOverviewFilterBarComponent,
       ],

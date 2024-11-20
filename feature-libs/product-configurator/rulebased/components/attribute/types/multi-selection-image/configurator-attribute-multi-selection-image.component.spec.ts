@@ -28,6 +28,7 @@ const VALUE_NAME_3 = 'val3';
 
 @Directive({
   selector: '[cxFocus]',
+  standalone: true,
 })
 export class MockFocusDirective {
   @Input('cxFocus') protected config: any;
@@ -36,6 +37,14 @@ export class MockFocusDirective {
 @Component({
   selector: 'cx-configurator-price',
   template: '',
+  standalone: true,
+  imports: [
+    ReactiveFormsModule,
+    NgSelectModule,
+    I18nTestingModule,
+    IconTestingModule,
+    PopoverModule,
+  ],
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;
@@ -93,17 +102,15 @@ describe('ConfiguratorAttributeMultiSelectionImageComponent', () => {
       }
     );
     TestBed.configureTestingModule({
-      declarations: [
-        ConfiguratorAttributeMultiSelectionImageComponent,
-        MockFocusDirective,
-        MockConfiguratorPriceComponent,
-      ],
       imports: [
         ReactiveFormsModule,
         NgSelectModule,
         I18nTestingModule,
         IconTestingModule,
         PopoverModule,
+        ConfiguratorAttributeMultiSelectionImageComponent,
+        MockFocusDirective,
+        MockConfiguratorPriceComponent,
       ],
       providers: [
         {

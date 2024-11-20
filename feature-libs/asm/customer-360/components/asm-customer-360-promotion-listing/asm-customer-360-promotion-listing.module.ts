@@ -16,7 +16,6 @@ import {
 import { AsmCustomer360PromotionListingComponent } from './asm-customer-360-promotion-listing.component';
 
 @NgModule({
-  declarations: [AsmCustomer360PromotionListingComponent],
   exports: [AsmCustomer360PromotionListingComponent],
   imports: [
     CommonModule,
@@ -25,6 +24,7 @@ import { AsmCustomer360PromotionListingComponent } from './asm-customer-360-prom
     StarRatingModule,
     MessageComponentModule,
     IconModule,
+    AsmCustomer360PromotionListingComponent,
   ],
 })
 export class AsmCustomer360PromotionListingModule {}

@@ -35,6 +35,8 @@ mockEntries.forEach((entry) => {
 @Component({
   template: '',
   selector: 'cx-media',
+  standalone: true,
+  imports: [ReactiveFormsModule, I18nTestingModule],
 })
 class MockMediaComponent {
   @Input() container;
@@ -44,6 +46,8 @@ class MockMediaComponent {
 @Component({
   template: '',
   selector: 'cx-item-counter',
+  standalone: true,
+  imports: [ReactiveFormsModule, I18nTestingModule],
 })
 class MockItemCounterComponent {
   @Input() min;
@@ -67,18 +71,19 @@ describe('CancelOrReturnItemsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, I18nTestingModule],
+      imports: [
+        ReactiveFormsModule,
+        I18nTestingModule,
+        CancelOrReturnItemsComponent,
+        MockMediaComponent,
+        MockItemCounterComponent,
+        MockFeatureLevelDirective,
+      ],
       providers: [
         {
           provide: OrderAmendService,
           useClass: MockOrderAmendService,
         },
-      ],
-      declarations: [
-        CancelOrReturnItemsComponent,
-        MockMediaComponent,
-        MockItemCounterComponent,
-        MockFeatureLevelDirective,
       ],
     }).compileComponents();
   }));

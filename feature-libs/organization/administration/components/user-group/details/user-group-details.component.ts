@@ -10,6 +10,15 @@ import { Observable } from 'rxjs';
 import { startWith, switchMap } from 'rxjs/operators';
 import { ItemService } from '../../shared/item.service';
 import { UserGroupItemService } from '../services/user-group-item.service';
+import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { UrlPipe } from '../../../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
+import { ItemExistsDirective } from '../../shared/item-exists.directive';
+import { DeleteItemComponent } from '../../shared/detail/delete-item-action/delete-item.component';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { FocusDirective } from '../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { CardComponent } from '../../shared/card/card.component';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'cx-org-user-group-details',
@@ -22,6 +31,20 @@ import { UserGroupItemService } from '../services/user-group-item.service';
     },
   ],
   host: { class: 'content-wrapper' },
+  standalone: true,
+  imports: [
+    NgIf,
+    CardComponent,
+    FocusDirective,
+    RouterLink,
+    DeleteItemComponent,
+    ItemExistsDirective,
+    RouterLinkActive,
+    AsyncPipe,
+    UrlPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class UserGroupDetailsComponent {
   model$: Observable<UserGroup> = this.itemService.key$.pipe(

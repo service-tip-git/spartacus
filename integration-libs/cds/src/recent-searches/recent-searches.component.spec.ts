@@ -22,6 +22,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 @Pipe({
   name: 'cxHighlight',
+  standalone: true,
 })
 class MockHighlightPipe implements PipeTransform {
   transform(): any {}
@@ -29,6 +30,7 @@ class MockHighlightPipe implements PipeTransform {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {
@@ -58,8 +60,13 @@ describe('RecentSearchesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule, RouterTestingModule],
-      declarations: [RecentSearchesComponent, MockHighlightPipe, MockUrlPipe],
+      imports: [
+        I18nTestingModule,
+        RouterTestingModule,
+        RecentSearchesComponent,
+        MockHighlightPipe,
+        MockUrlPipe,
+      ],
       providers: [
         {
           provide: RecentSearchesService,

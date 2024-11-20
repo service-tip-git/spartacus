@@ -38,15 +38,15 @@ describe('CardComponent', () => {
         RouterTestingModule,
         MessageTestingModule,
         PopoverModule,
+        CardComponent,
+        ViewComponent,
       ],
-      declarations: [CardComponent, ViewComponent],
       providers: [
         {
           provide: ItemService,
           useClass: MockItemService,
         },
         { provide: GlobalMessageService, useClass: MockGlobalMessageService },
-
         SplitViewService,
       ],
     }).compileComponents();

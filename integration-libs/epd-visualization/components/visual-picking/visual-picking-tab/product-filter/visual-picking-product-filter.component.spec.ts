@@ -41,7 +41,6 @@ describe('VisualPickingProductFilterComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [VisualPickingProductFilterComponent, MockTranslatePipe],
       imports: [
         RouterTestingModule,
         HttpClientTestingModule,
@@ -50,6 +49,8 @@ describe('VisualPickingProductFilterComponent', () => {
         FormsModule,
         UrlModule,
         IconModule,
+        VisualPickingProductFilterComponent,
+        MockTranslatePipe,
       ],
       providers: [
         {

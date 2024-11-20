@@ -83,6 +83,7 @@ describe('AsmCustomer360TableComponent', () => {
   };
   @Pipe({
     name: 'cxTranslate',
+    standalone: true,
   })
   class MockTranslatePipe implements PipeTransform {
     transform(): any {}
@@ -90,6 +91,8 @@ describe('AsmCustomer360TableComponent', () => {
   @Component({
     selector: 'cx-icon',
     template: '',
+    standalone: true,
+    imports: [I18nTestingModule],
   })
   class MockCxIconComponent {
     @Input() type: ICON_TYPE;
@@ -217,6 +220,8 @@ describe('AsmCustomer360TableComponent', () => {
         (selectItem)="itemSelected($event)"
       ></cx-asm-customer-360-table>
     `,
+    standalone: true,
+    imports: [I18nTestingModule],
   })
   class TestHostComponent {
     @Input() columns: Array<CustomerTableColumn>;
@@ -237,8 +242,8 @@ describe('AsmCustomer360TableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         TestHostComponent,
         AsmCustomer360TableComponent,
         MockTranslatePipe,

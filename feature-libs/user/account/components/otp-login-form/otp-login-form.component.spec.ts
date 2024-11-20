@@ -46,6 +46,7 @@ class MockRoutingService implements Partial<RoutingService> {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
@@ -66,8 +67,9 @@ describe('OneTimePasswordLoginFormComponent', () => {
         I18nTestingModule,
         FormErrorsModule,
         SpinnerModule,
+        OneTimePasswordLoginFormComponent,
+        MockUrlPipe,
       ],
-      declarations: [OneTimePasswordLoginFormComponent, MockUrlPipe],
       providers: [
         {
           provide: VerificationTokenFacade,

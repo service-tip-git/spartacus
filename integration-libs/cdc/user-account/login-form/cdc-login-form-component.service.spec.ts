@@ -59,7 +59,6 @@ describe('CdcLoginComponentService', () => {
         I18nTestingModule,
         FormErrorsModule,
       ],
-      declarations: [],
       providers: [
         CdcLoginFormComponentService,
         { provide: WindowRef, useClass: MockWinRef },

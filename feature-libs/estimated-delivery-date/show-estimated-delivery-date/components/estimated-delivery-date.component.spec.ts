@@ -41,6 +41,8 @@ class MockLanguageService {
 @Component({
   selector: 'cx-estimated-delivery-date',
   template: '',
+  standalone: true,
+  imports: [RouterTestingModule, ReactiveFormsModule, I18nTestingModule],
 })
 class MockConfigureEstimatedDeliveryDateComponent {
   @Input() cartEntry: Partial<OrderEntry & Array<ArrivalSlots>>;
@@ -55,8 +57,10 @@ describe('EstimatedDeliveryDateCartEntryComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, ReactiveFormsModule, I18nTestingModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
+        ReactiveFormsModule,
+        I18nTestingModule,
         EstimatedDeliveryDateComponent,
         MockConfigureEstimatedDeliveryDateComponent,
       ],

@@ -87,6 +87,8 @@ const mockActivatedRoute = {
 @Component({
   selector: 'cx-address-form',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class MockAddressFormComponent {
   @Input() cancelBtnLabel: string;
@@ -98,12 +100,16 @@ class MockAddressFormComponent {
 @Component({
   selector: 'cx-spinner',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class MockSpinnerComponent {}
 
 @Component({
   selector: 'cx-card',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class MockCardComponent {
   @Input()
@@ -141,8 +147,8 @@ describe('CheckoutDeliveryAddressComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         CheckoutDeliveryAddressComponent,
         MockAddressFormComponent,
         MockCardComponent,

@@ -23,7 +23,6 @@ import {
 } from '@spartacus/storefront';
 
 @NgModule({
-  declarations: [CancelServiceOrderHeadlineComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -33,6 +32,7 @@ import {
     PromotionsModule,
     IconModule,
     OutletModule,
+    CancelServiceOrderHeadlineComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{

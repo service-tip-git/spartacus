@@ -22,6 +22,8 @@ import { NavigationUIComponent } from './navigation-ui.component';
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockIconComponent {
   @Input() type: string;
@@ -30,6 +32,8 @@ class MockIconComponent {
 @Component({
   selector: 'cx-generic-link',
   template: '<a href={{url}}>{{title}}</a>',
+  standalone: true,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockGenericLinkComponent {
   @Input() url: string | any[];
@@ -117,8 +121,9 @@ describe('Navigation UI Component', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
         NavigationUIComponent,
         MockIconComponent,
         MockGenericLinkComponent,

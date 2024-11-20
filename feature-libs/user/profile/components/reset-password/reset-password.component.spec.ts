@@ -45,8 +45,9 @@ describe('ResetPasswordComponent', () => {
         I18nTestingModule,
         FormErrorsModule,
         SpinnerModule,
+        ResetPasswordComponent,
+        MockFeatureDirective,
       ],
-      declarations: [ResetPasswordComponent, MockFeatureDirective],
       providers: [
         {
           provide: ResetPasswordComponentService,

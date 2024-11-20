@@ -6,10 +6,23 @@
 
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CellComponent } from '../../shared';
+import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { UrlPipe } from '../../../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
+import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { PopoverDirective } from '../../../../../../projects/storefrontlib/shared/components/popover/popover.directive';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'cx-org-user-group-details-cell',
   templateUrl: './user-group-details-cell.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    RouterLink,
+    PopoverDirective,
+    TranslatePipe,
+    UrlPipe,
+    MockTranslatePipe,
+  ],
 })
 export class UserGroupDetailsCellComponent extends CellComponent {}

@@ -31,6 +31,8 @@ const createTestValue = (
 
 @Component({
   selector: 'cx-configurator-attribute-multi-selection',
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class ExampleConfiguratorAttributeMultiSelectionComponent extends ConfiguratorAttributeMultiSelectionBaseComponent {
   constructor(
@@ -55,8 +57,10 @@ describe('ConfiguratorAttributeMultiSelectionBaseComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ExampleConfiguratorAttributeMultiSelectionComponent],
-      imports: [I18nTestingModule],
+      imports: [
+        I18nTestingModule,
+        ExampleConfiguratorAttributeMultiSelectionComponent,
+      ],
       providers: [
         ConfiguratorAttributeQuantityService,
         {

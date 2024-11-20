@@ -266,8 +266,8 @@ describe('VisualViewerComponent', () => {
           VisualViewerToolbarButtonModule,
           VisualViewerAnimationSliderModule,
           SpinnerModule,
+          VisualViewerComponent,
         ],
-        declarations: [VisualViewerComponent],
         providers: [
           provideConfigFactory(getTestConfig),
           provideDefaultConfigFactory(getEpdVisualizationDefaultConfig),
@@ -301,13 +301,13 @@ describe('VisualViewerComponent', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        declarations: [VisualViewerComponent],
         imports: [
           RouterTestingModule,
           HttpClientTestingModule,
           I18nTestingModule,
           VisualViewerToolbarButtonModule,
           VisualViewerAnimationSliderModule,
+          VisualViewerComponent,
         ],
         providers: [
           provideConfigFactory(getTestConfig),

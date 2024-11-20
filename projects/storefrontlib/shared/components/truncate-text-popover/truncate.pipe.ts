@@ -10,6 +10,7 @@ const defaultLimit = 20;
 
 @Pipe({
   name: 'cxTruncate',
+  standalone: true,
 })
 export class TruncatePipe implements PipeTransform {
   /**

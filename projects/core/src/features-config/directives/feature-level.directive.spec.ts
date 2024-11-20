@@ -3,7 +3,12 @@ import { Component } from '@angular/core';
 import { FeaturesConfig, FeaturesConfigModule } from '@spartacus/core';
 import { By } from '@angular/platform-browser';
 
-@Component({ selector: 'cx-test-cmp', template: '' })
+@Component({
+  selector: 'cx-test-cmp',
+  template: '',
+  standalone: true,
+  imports: [FeaturesConfigModule],
+})
 class TestComponent {}
 
 function createTestComponent(
@@ -23,8 +28,7 @@ describe('cxFeatureLevel directive', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TestComponent],
-      imports: [FeaturesConfigModule],
+      imports: [FeaturesConfigModule, TestComponent],
       providers: [
         {
           provide: FeaturesConfig,

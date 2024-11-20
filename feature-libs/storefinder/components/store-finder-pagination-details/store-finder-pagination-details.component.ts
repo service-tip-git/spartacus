@@ -6,10 +6,14 @@
 
 import { Component, Input } from '@angular/core';
 import { PaginationModel } from '@spartacus/core';
+import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../projects/core/src/i18n/translate.pipe';
 
 @Component({
   selector: 'cx-store-finder-pagination-details',
   templateUrl: './store-finder-pagination-details.component.html',
+  standalone: true,
+  imports: [TranslatePipe, MockTranslatePipe],
 })
 export class StoreFinderPaginationDetailsComponent {
   @Input()

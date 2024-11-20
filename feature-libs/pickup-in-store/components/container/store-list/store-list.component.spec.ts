@@ -23,7 +23,6 @@ describe('StoreListComponent', () => {
   let intendedPickupLocationService: IntendedPickupLocationFacade;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [StoreListComponent, MockFeatureDirective],
       imports: [
         HttpClientTestingModule,
         I18nTestingModule,
@@ -31,6 +30,8 @@ describe('StoreListComponent', () => {
         SpinnerModule,
         StoreModule.forRoot({}),
         EffectsModule.forRoot([]),
+        StoreListComponent,
+        MockFeatureDirective,
       ],
       providers: [
         {

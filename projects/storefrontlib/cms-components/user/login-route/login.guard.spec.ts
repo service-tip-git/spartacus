@@ -38,6 +38,7 @@ class MockAuthConfigService implements Partial<AuthConfigService> {
 @Component({
   selector: 'cx-page-layout',
   template: 'mock',
+  standalone: true,
 })
 class MockPageLayoutComponent {}
 
@@ -57,8 +58,8 @@ describe('LoginGuard', () => {
             canActivate: [LoginGuard],
           },
         ]),
+        MockPageLayoutComponent,
       ],
-      declarations: [MockPageLayoutComponent],
       providers: [
         {
           provide: RoutingConfig,

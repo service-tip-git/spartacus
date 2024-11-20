@@ -13,6 +13,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'cx-navigation-ui',
   template: '',
+  standalone: true,
 })
 class MockNavigationUIComponent {
   @Input()
@@ -38,6 +39,7 @@ describe('MyAccountV2NavigationComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
+      imports: [MyAccountV2NavigationComponent, MockNavigationUIComponent],
       providers: [
         {
           provide: NavigationService,
@@ -48,7 +50,6 @@ describe('MyAccountV2NavigationComponent', () => {
           useValue: MockCmsNavigationComponent,
         },
       ],
-      declarations: [MyAccountV2NavigationComponent, MockNavigationUIComponent],
     }).compileComponents();
   }));
 

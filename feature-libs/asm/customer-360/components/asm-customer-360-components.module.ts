@@ -53,8 +53,9 @@ import { defaultAsmCustomer360LayoutConfig } from './default-asm-customer-360-la
     AsmCustomer360CouponComponentModule,
     AsmCustomer360PromotionComponentModule,
     AsmCustomer360CustomerCouponComponentModule,
+    AsmCustomer360Component,
+    AsmCustomer360SectionComponent,
   ],
-  declarations: [AsmCustomer360Component, AsmCustomer360SectionComponent],
   exports: [AsmCustomer360Component],
   providers: [provideDefaultConfig(defaultAsmCustomer360LayoutConfig)],
 })

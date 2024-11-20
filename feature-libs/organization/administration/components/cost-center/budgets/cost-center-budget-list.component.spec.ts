@@ -13,14 +13,18 @@ describe('CostCenterBudgetListComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [SubListTestingModule, UrlTestingModule, I18nTestingModule],
+      imports: [
+        SubListTestingModule,
+        UrlTestingModule,
+        I18nTestingModule,
+        CostCenterBudgetListComponent,
+      ],
       providers: [
         {
           provide: CostCenterBudgetListService,
           useClass: MockCostCenterAssignBudgetListService,
         },
       ],
-      declarations: [CostCenterBudgetListComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CostCenterBudgetListComponent);

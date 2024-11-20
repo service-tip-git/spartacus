@@ -6,6 +6,21 @@
 
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ICON_TYPE } from '../../../cms-components/misc/icon/icon.model';
+import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { TruncateTextPopoverComponent } from '../truncate-text-popover/truncate-text-popover.component';
+import { AtMessageDirective } from '../assistive-technology-message/assistive-technology-message.directive';
+import { FocusDirective } from '../../../layout/a11y/keyboard-focus/focus.directive';
+import { IconComponent } from '../../../cms-components/misc/icon/icon.component';
+import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
+import {
+  NgIf,
+  NgFor,
+  NgTemplateOutlet,
+  NgSwitch,
+  NgSwitchCase,
+  NgClass,
+} from '@angular/common';
 
 export interface CardAction {
   event: string;
@@ -35,6 +50,22 @@ export interface Card {
 @Component({
   selector: 'cx-card',
   templateUrl: './card.component.html',
+  standalone: true,
+  imports: [
+    NgIf,
+    NgFor,
+    NgTemplateOutlet,
+    FeatureDirective,
+    IconComponent,
+    FocusDirective,
+    AtMessageDirective,
+    NgSwitch,
+    NgSwitchCase,
+    NgClass,
+    TruncateTextPopoverComponent,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class CardComponent implements OnInit {
   iconTypes = ICON_TYPE;

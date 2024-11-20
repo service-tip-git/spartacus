@@ -42,6 +42,7 @@ class InnerBComponent {}
 @Component({
   selector: 'cx-host',
   template: `<div [cxInnerComponentsHost]></div>`,
+  standalone: true,
 })
 class HostComponent {}
 
@@ -105,8 +106,8 @@ describe('InnerComponentsHostDirective', () => {
 
     beforeEach(waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [PageComponentModule.forRoot()],
-        declarations: [
+        imports: [
+          PageComponentModule.forRoot(),
           HostComponent,
           InnerComponentsHostDirective,
           ComponentWrapperDirective,

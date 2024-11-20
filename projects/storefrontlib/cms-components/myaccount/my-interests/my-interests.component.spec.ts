@@ -33,6 +33,8 @@ import { MyInterestsComponent } from './my-interests.component';
 @Component({
   template: '',
   selector: 'cx-pagination',
+  standalone: true,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockPaginationComponent {
   @Input() pagination;
@@ -41,6 +43,8 @@ class MockPaginationComponent {
 @Component({
   template: '',
   selector: 'cx-sorting',
+  standalone: true,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockSortingComponent {
   @Input() sortOptions;
@@ -53,6 +57,8 @@ class MockSortingComponent {
 @Component({
   template: '',
   selector: 'cx-media',
+  standalone: true,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockMediaComponent {
   @Input() container;
@@ -74,6 +80,7 @@ const MockLayoutConfig: LayoutConfig = {};
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
@@ -87,11 +94,14 @@ class MockGlobalMessageService implements Partial<GlobalMessageService> {
 @Component({
   selector: 'cx-spinner',
   template: '',
+  standalone: true,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockSpinnerComponent {}
 
 @Directive({
   selector: '[cxAtMessage]',
+  standalone: true,
 })
 class MockAtMessageDirective {
   @Input() cxAtMessage: string | string[] | undefined;
@@ -213,15 +223,9 @@ describe('MyInterestsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      providers: [
-        { provide: OccConfig, useValue: MockOccModuleConfig },
-        { provide: LayoutConfig, useValue: MockLayoutConfig },
-        { provide: UserInterestsService, useValue: productInterestService },
-        { provide: ProductService, useValue: productService },
-        { provide: GlobalMessageService, useClass: MockGlobalMessageService },
-      ],
-      declarations: [
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
         MyInterestsComponent,
         MockUrlPipe,
         MockMediaComponent,
@@ -231,6 +235,13 @@ describe('MyInterestsComponent', () => {
         MockFeatureLevelDirective,
         MockAtMessageDirective,
         MockFeatureDirective,
+      ],
+      providers: [
+        { provide: OccConfig, useValue: MockOccModuleConfig },
+        { provide: LayoutConfig, useValue: MockLayoutConfig },
+        { provide: UserInterestsService, useValue: productInterestService },
+        { provide: ProductService, useValue: productService },
+        { provide: GlobalMessageService, useClass: MockGlobalMessageService },
       ],
     }).compileComponents();
   }));

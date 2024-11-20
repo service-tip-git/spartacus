@@ -33,7 +33,7 @@ describe('RolesCellComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [UserDetailsCellComponent, PopoverDirective],
+      imports: [UserDetailsCellComponent, PopoverDirective],
       providers: [
         {
           provide: OutletContextData,

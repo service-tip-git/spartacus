@@ -10,6 +10,18 @@ import { Observable } from 'rxjs';
 import { startWith, switchMap } from 'rxjs/operators';
 import { ItemService } from '../../shared/item.service';
 import { BudgetItemService } from '../services/budget-item.service';
+import { MockDatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-date.pipe';
+import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { CxDatePipe } from '../../../../../../projects/core/src/i18n/date.pipe';
+import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { UrlPipe } from '../../../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
+import { ItemExistsDirective } from '../../shared/item-exists.directive';
+import { DisableInfoComponent } from '../../shared/detail/disable-info/disable-info.component';
+import { ToggleStatusComponent } from '../../shared/detail/toggle-status-action/toggle-status.component';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { FocusDirective } from '../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { CardComponent } from '../../shared/card/card.component';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'cx-org-budget-details',
@@ -22,6 +34,23 @@ import { BudgetItemService } from '../services/budget-item.service';
     },
   ],
   host: { class: 'content-wrapper' },
+  standalone: true,
+  imports: [
+    NgIf,
+    CardComponent,
+    FocusDirective,
+    RouterLink,
+    ToggleStatusComponent,
+    DisableInfoComponent,
+    ItemExistsDirective,
+    RouterLinkActive,
+    AsyncPipe,
+    UrlPipe,
+    TranslatePipe,
+    CxDatePipe,
+    MockTranslatePipe,
+    MockDatePipe,
+  ],
 })
 export class BudgetDetailsComponent implements OnInit {
   model$: Observable<Budget>;

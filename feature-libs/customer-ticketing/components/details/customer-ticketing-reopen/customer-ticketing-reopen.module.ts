@@ -34,6 +34,8 @@ import { CustomerTicketingReopenComponentService } from './customer-ticketing-re
     FormErrorsModule,
     FileUploadModule,
     SpinnerModule,
+    CustomerTicketingReopenComponent,
+    CustomerTicketingReopenDialogComponent,
   ],
   providers: [
     CustomerTicketingReopenComponentService,
@@ -45,10 +47,6 @@ import { CustomerTicketingReopenComponentService } from './customer-ticketing-re
         },
       },
     }),
-  ],
-  declarations: [
-    CustomerTicketingReopenComponent,
-    CustomerTicketingReopenDialogComponent,
   ],
   exports: [
     CustomerTicketingReopenComponent,

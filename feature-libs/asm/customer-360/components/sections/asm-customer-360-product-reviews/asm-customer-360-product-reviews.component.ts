@@ -18,12 +18,23 @@ import {
 import { AsmCustomer360SectionContext } from '../asm-customer-360-section-context.model';
 import { ReviewEntry } from './asm-customer-360-product-reviews.model';
 import { AsmCustomer360Config } from '../../config/asm-customer-360-config';
+import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { AsyncPipe } from '@angular/common';
+import { AsmCustomer360TableComponent } from '../../asm-customer-360-table/asm-customer-360-table.component';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'cx-asm-customer-360-product-reviews',
   templateUrl: './asm-customer-360-product-reviews.component.html',
   providers: [CxDatePipe],
+  standalone: true,
+  imports: [
+    AsmCustomer360TableComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class AsmCustomer360ProductReviewsComponent implements OnInit {
   reviewColumns: Array<CustomerTableColumn> = [

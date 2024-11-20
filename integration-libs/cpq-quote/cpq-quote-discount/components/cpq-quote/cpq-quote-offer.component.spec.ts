@@ -23,6 +23,8 @@ class MockLanguageService {
 @Component({
   selector: 'cx-cpq-quote-offer',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class MockConfigureCpqDiscountsComponent {
   @Input() cartEntry: Partial<OrderEntry & Array<CpqDiscounts>>;
@@ -36,8 +38,8 @@ describe('CpqQuoteOfferComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         CpqQuoteOfferComponent,
         MockConfigureCpqDiscountsComponent,
       ],

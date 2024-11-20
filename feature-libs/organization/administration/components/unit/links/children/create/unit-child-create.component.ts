@@ -23,6 +23,7 @@ import { UnitChildItemService } from './unit-child-item.service';
       useExisting: UnitChildItemService,
     },
   ],
+  standalone: true,
 })
 export class UnitChildCreateComponent {
   unitKey$: Observable<string> = this.unitService.key$;

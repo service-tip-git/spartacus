@@ -34,6 +34,7 @@ import { CustomerTicketingCreateModule } from '../customer-ticketing-create/cust
     ListNavigationModule,
     RouterModule,
     SpinnerModule,
+    CustomerTicketingListComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -45,7 +46,6 @@ import { CustomerTicketingCreateModule } from '../customer-ticketing-create/cust
       },
     }),
   ],
-  declarations: [CustomerTicketingListComponent],
   exports: [CustomerTicketingListComponent],
 })
 export class CustomerTicketingListModule {}

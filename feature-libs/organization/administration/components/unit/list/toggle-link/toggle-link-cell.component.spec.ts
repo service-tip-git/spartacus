@@ -49,12 +49,12 @@ describe('ToggleLinkCellComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ToggleLinkCellComponent],
       imports: [
         RouterTestingModule,
         UrlTestingModule,
         IconModule,
         I18nTestingModule,
+        ToggleLinkCellComponent,
       ],
       providers: [
         {

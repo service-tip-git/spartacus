@@ -16,6 +16,9 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
+import { NgIf, NgTemplateOutlet, NgFor } from '@angular/common';
 
 /**
  * Component that adds a file upload control.
@@ -30,8 +33,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
       multi: true,
     },
   ],
-  // we cannot use onPush change detection as the form state isn't updated without explicit
-  // change detection, see https://github.com/angular/angular/issues/10816
+  standalone: true,
+  imports: [NgIf, NgTemplateOutlet, NgFor, TranslatePipe, MockTranslatePipe],
 })
 export class FileUploadComponent implements ControlValueAccessor {
   /**

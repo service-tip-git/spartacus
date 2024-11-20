@@ -27,6 +27,7 @@ import { CheckoutScheduleReplenishmentOrderComponent } from './checkout-schedule
     I18nModule,
     IconModule,
     FeaturesConfigModule,
+    CheckoutScheduleReplenishmentOrderComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -38,7 +39,6 @@ import { CheckoutScheduleReplenishmentOrderComponent } from './checkout-schedule
       },
     }),
   ],
-  declarations: [CheckoutScheduleReplenishmentOrderComponent],
   exports: [CheckoutScheduleReplenishmentOrderComponent],
 })
 export class CheckoutScheduleReplenishmentOrderModule {}

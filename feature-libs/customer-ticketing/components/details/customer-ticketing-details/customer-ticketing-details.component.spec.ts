@@ -52,8 +52,11 @@ describe('CustomerTicketingDetailsComponent', () => {
 
   beforeEach(async () => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, CardModule],
-      declarations: [CustomerTicketingDetailsComponent],
+      imports: [
+        I18nTestingModule,
+        CardModule,
+        CustomerTicketingDetailsComponent,
+      ],
       providers: [
         { provide: TranslationService, useClass: MockTranslationService },
         {

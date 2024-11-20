@@ -23,6 +23,7 @@ import { ConfiguratorOverviewNotificationBannerComponent } from './configurator-
 
 @Pipe({
   name: 'cxTranslate',
+  standalone: true,
 })
 class MockTranslatePipe implements PipeTransform {
   transform(): any {}
@@ -30,6 +31,7 @@ class MockTranslatePipe implements PipeTransform {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
@@ -117,6 +119,8 @@ function initialize(router: ConfiguratorRouter.Data) {
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [RouterModule, RouterTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: any;
@@ -125,8 +129,9 @@ class MockCxIconComponent {
 describe('ConfigOverviewNotificationBannerComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterModule, RouterTestingModule],
-      declarations: [
+      imports: [
+        RouterModule,
+        RouterTestingModule,
         ConfiguratorOverviewNotificationBannerComponent,
         MockTranslatePipe,
         MockUrlPipe,

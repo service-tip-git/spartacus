@@ -27,20 +27,24 @@ const OUTLET_NAME_4 = 'OUTLET.4';
     <ng-template cxOutletRef="${OUTLET_NAME_4}" cxOutletPos="before">
     </ng-template>
   `,
+  standalone: true,
+  imports: [AnyModule],
 })
 class TestContainerComponent {}
 
 @Component({
   template: ` any `,
+  standalone: true,
 })
 class AnyComponent {}
 
 @Component({
   template: ` any2 `,
+  standalone: true,
 })
 class Any2Component {}
 @NgModule({
-  declarations: [AnyComponent, Any2Component],
+  imports: [AnyComponent, Any2Component],
 })
 class AnyModule {}
 
@@ -49,8 +53,7 @@ describe('OutletService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [AnyModule],
-      declarations: [TestContainerComponent, OutletRefDirective],
+      imports: [AnyModule, TestContainerComponent, OutletRefDirective],
       providers: [OutletService],
     }).compileComponents();
 

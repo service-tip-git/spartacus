@@ -31,8 +31,8 @@ import { CheckoutBillingAddressFormModule } from '../../checkout-billing-address
     FormErrorsModule,
     FeaturesConfigModule,
     CheckoutBillingAddressFormModule,
+    CheckoutPaymentFormComponent,
   ],
-  declarations: [CheckoutPaymentFormComponent],
   exports: [CheckoutPaymentFormComponent],
 })
 export class CheckoutPaymentFormModule {}

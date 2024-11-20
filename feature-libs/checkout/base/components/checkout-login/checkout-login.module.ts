@@ -25,6 +25,7 @@ import { CheckoutLoginComponent } from './checkout-login.component';
     ReactiveFormsModule,
     FormErrorsModule,
     FeaturesConfigModule,
+    CheckoutLoginComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -36,7 +37,6 @@ import { CheckoutLoginComponent } from './checkout-login.component';
       },
     }),
   ],
-  declarations: [CheckoutLoginComponent],
   exports: [CheckoutLoginComponent],
 })
 export class CheckoutLoginModule {}

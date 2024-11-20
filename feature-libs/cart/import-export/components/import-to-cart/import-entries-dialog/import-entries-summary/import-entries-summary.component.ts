@@ -16,11 +16,32 @@ import {
   ProductImportSummary,
 } from '@spartacus/cart/base/root';
 import { ICON_TYPE } from '@spartacus/storefront';
+import { MockTranslatePipe } from '../../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../../../projects/core/src/i18n/translate.pipe';
+import { IconComponent } from '../../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import {
+  NgIf,
+  NgSwitch,
+  NgSwitchCase,
+  NgSwitchDefault,
+  NgFor,
+} from '@angular/common';
 
 @Component({
   selector: 'cx-import-entries-summary',
   templateUrl: './import-entries-summary.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgIf,
+    NgSwitch,
+    NgSwitchCase,
+    NgSwitchDefault,
+    IconComponent,
+    NgFor,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class ImportEntriesSummaryComponent {
   iconTypes = ICON_TYPE;

@@ -12,7 +12,7 @@ import { LinkComponent } from './link.component';
 import { GenericLinkModule } from '../../../shared/components/generic-link/generic-link.module';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, GenericLinkModule],
+  imports: [CommonModule, RouterModule, GenericLinkModule, LinkComponent],
   providers: [
     provideDefaultConfig(<CmsConfig>{
       cmsComponents: {
@@ -20,7 +20,6 @@ import { GenericLinkModule } from '../../../shared/components/generic-link/gener
       },
     }),
   ],
-  declarations: [LinkComponent],
   exports: [LinkComponent],
 })
 export class LinkModule {}

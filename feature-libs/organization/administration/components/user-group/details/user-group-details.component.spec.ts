@@ -32,6 +32,7 @@ class MockMessageService {
 @Directive({
   // eslint-disable-next-line @angular-eslint/directive-selector
   selector: '[cxFocus]',
+  standalone: true,
 })
 export class MockKeyboadFocusDirective {
   @Input('cxFocus') config: FocusConfig = {};
@@ -51,8 +52,9 @@ describe('UserGroupDetailsComponent', () => {
         UrlTestingModule,
         CardTestingModule,
         DeleteItemModule,
+        UserGroupDetailsComponent,
+        MockKeyboadFocusDirective,
       ],
-      declarations: [UserGroupDetailsComponent, MockKeyboadFocusDirective],
       providers: [
         {
           provide: ItemService,

@@ -18,8 +18,8 @@ import { IconModule, SearchBoxModule } from '@spartacus/storefront';
     I18nModule,
     IconModule,
     SearchBoxModule,
+    AsmCustomer360CustomerCouponComponent,
   ],
-  declarations: [AsmCustomer360CustomerCouponComponent],
   exports: [AsmCustomer360CustomerCouponComponent],
 })
 export class AsmCustomer360CustomerCouponComponentModule {}

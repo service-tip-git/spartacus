@@ -36,6 +36,8 @@ import { KeyboardFocusService } from '@spartacus/storefront';
 @Component({
   selector: 'cx-configurator-group',
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule, ReactiveFormsModule, NgSelectModule],
 })
 class MockConfiguratorGroupComponent {
   @Input() group: Configurator.Group;
@@ -265,8 +267,13 @@ let keyboardFocusService: KeyboardFocusService;
 describe('ConfigurationFormComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, ReactiveFormsModule, NgSelectModule],
-      declarations: [MockConfiguratorGroupComponent, ConfiguratorFormComponent],
+      imports: [
+        I18nTestingModule,
+        ReactiveFormsModule,
+        NgSelectModule,
+        MockConfiguratorGroupComponent,
+        ConfiguratorFormComponent,
+      ],
       providers: [
         {
           provide: RoutingService,

@@ -14,7 +14,7 @@ describe('CpqQuoteHeadingComponent', () => {
     mockOutletContextData = new BehaviorSubject<any[]>([]);
 
     TestBed.configureTestingModule({
-      declarations: [CpqQuoteHeadingComponent],
+      imports: [CpqQuoteHeadingComponent],
       providers: [
         {
           provide: TranslationService,

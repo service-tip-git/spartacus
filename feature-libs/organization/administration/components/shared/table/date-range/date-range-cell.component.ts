@@ -12,11 +12,25 @@ import {
 } from '@angular/core';
 import { FeatureConfigService } from '@spartacus/core';
 import { CellComponent } from '../cell.component';
+import { MockDatePipe } from '../../../../../../../projects/core/src/i18n/testing/mock-date.pipe';
+import { CxDatePipe } from '../../../../../../../projects/core/src/i18n/date.pipe';
+import { UrlPipe } from '../../../../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
+import { RouterLink } from '@angular/router';
+import { NgIf, NgTemplateOutlet } from '@angular/common';
 
 @Component({
   selector: 'cx-org-date-range-cell',
   templateUrl: './date-range-cell.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgIf,
+    RouterLink,
+    NgTemplateOutlet,
+    UrlPipe,
+    CxDatePipe,
+    MockDatePipe,
+  ],
 })
 export class DateRangeCellComponent extends CellComponent {
   @Optional() featuteConfigService = inject(FeatureConfigService, {

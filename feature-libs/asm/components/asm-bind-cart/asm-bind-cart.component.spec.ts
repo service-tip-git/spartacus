@@ -49,6 +49,8 @@ import createSpy = jasmine.createSpy;
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [FormsModule, ReactiveFormsModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -85,6 +87,7 @@ class MockActiveCartService implements Partial<ActiveCartFacade> {
 
 @Pipe({
   name: 'cxTranslate',
+  standalone: true,
 })
 class MockTranslatePipe implements PipeTransform {
   transform(): any {}
@@ -163,8 +166,9 @@ describe('AsmBindCartComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FormsModule, ReactiveFormsModule],
-      declarations: [
+      imports: [
+        FormsModule,
+        ReactiveFormsModule,
         AsmBindCartComponent,
         MockTranslatePipe,
         MockCxIconComponent,

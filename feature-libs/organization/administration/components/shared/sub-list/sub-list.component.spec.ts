@@ -40,6 +40,15 @@ const mockEmptyList: EntitiesModel<any> = {
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'cx-table',
   template: '',
+  standalone: true,
+  imports: [
+    CommonModule,
+    CardTestingModule,
+    MessageTestingModule,
+    I18nTestingModule,
+    RouterTestingModule,
+    PaginationTestingModule,
+  ],
 })
 class MockTableComponent {
   @Input() data;
@@ -76,6 +85,7 @@ class MockItemService {
 @Directive({
   // eslint-disable-next-line @angular-eslint/directive-selector
   selector: '[cxFocus]',
+  standalone: true,
 })
 export class MockKeyboadFocusDirective {
   @Input('cxFocus') config: FocusConfig = {};
@@ -95,13 +105,10 @@ describe('SubListComponent', () => {
         I18nTestingModule,
         RouterTestingModule,
         PaginationTestingModule,
-      ],
-      declarations: [
         SubListComponent,
         MockTableComponent,
         MockKeyboadFocusDirective,
       ],
-
       providers: [
         {
           provide: ListService,

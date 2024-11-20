@@ -29,6 +29,7 @@ import { CartValidationWarningsModule } from '../validation/cart-warnings/cart-v
     PromotionsModule,
     I18nModule,
     CartValidationWarningsModule,
+    CartDetailsComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -39,7 +40,6 @@ import { CartValidationWarningsModule } from '../validation/cart-warnings/cart-v
       },
     }),
   ],
-  declarations: [CartDetailsComponent],
   exports: [CartDetailsComponent],
 })
 export class CartDetailsModule {}

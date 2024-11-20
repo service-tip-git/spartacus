@@ -61,8 +61,8 @@ describe('SavedCartDetailsOverviewComponent', () => {
         IconTestingModule,
         CardModule,
         RouterTestingModule,
+        SavedCartDetailsOverviewComponent,
       ],
-      declarations: [SavedCartDetailsOverviewComponent],
       providers: [
         {
           provide: SavedCartDetailsService,

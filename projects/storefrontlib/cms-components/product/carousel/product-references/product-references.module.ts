@@ -13,7 +13,14 @@ import { MediaModule } from '../../../../shared/components/media/media.module';
 import { ProductReferencesComponent } from './product-references.component';
 
 @NgModule({
-  imports: [CommonModule, CarouselModule, MediaModule, RouterModule, UrlModule],
+  imports: [
+    CommonModule,
+    CarouselModule,
+    MediaModule,
+    RouterModule,
+    UrlModule,
+    ProductReferencesComponent,
+  ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
       cmsComponents: {
@@ -23,7 +30,6 @@ import { ProductReferencesComponent } from './product-references.component';
       },
     }),
   ],
-  declarations: [ProductReferencesComponent],
   exports: [ProductReferencesComponent],
 })
 export class ProductReferencesModule {}

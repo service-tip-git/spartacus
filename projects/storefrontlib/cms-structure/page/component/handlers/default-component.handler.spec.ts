@@ -11,6 +11,7 @@ const mockCmsMappingService = {
 
 @Component({
   template: '',
+  standalone: true,
 })
 class WrapperComponent {
   constructor(public vcr: ViewContainerRef) {}
@@ -18,6 +19,7 @@ class WrapperComponent {
 
 @Component({
   template: 'testComponent',
+  standalone: true,
 })
 class TestComponent {}
 
@@ -26,13 +28,13 @@ describe('DefaultComponentHandler', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [TestComponent, WrapperComponent],
       providers: [
         {
           provide: CmsComponentsService,
           useValue: mockCmsMappingService,
         },
       ],
-      declarations: [TestComponent, WrapperComponent],
     }).compileComponents();
     handler = TestBed.inject(DefaultComponentHandler);
   });

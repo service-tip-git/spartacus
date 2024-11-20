@@ -28,6 +28,7 @@ describe('UnitChildrenComponent', () => {
         UrlTestingModule,
         I18nTestingModule,
         DisableInfoModule,
+        UnitChildrenComponent,
       ],
       providers: [
         {
@@ -43,7 +44,6 @@ describe('UnitChildrenComponent', () => {
           useClass: MockItemService,
         },
       ],
-      declarations: [UnitChildrenComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(UnitChildrenComponent);

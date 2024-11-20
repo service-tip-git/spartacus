@@ -6,6 +6,8 @@ import { CustomerTicketingDialogComponent } from './customer-ticketing-dialog.co
 
 @Component({
   template: '',
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class DialogComponent extends CustomerTicketingDialogComponent {}
 
@@ -24,8 +26,7 @@ describe('CustomerTicketingDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [DialogComponent],
+      imports: [I18nTestingModule, DialogComponent],
       providers: [
         { provide: LaunchDialogService, useClass: MockLaunchDialogService },
         { provide: RoutingService, useClass: MockRoutingService },

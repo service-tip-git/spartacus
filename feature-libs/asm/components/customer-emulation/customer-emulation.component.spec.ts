@@ -32,6 +32,8 @@ describe('CustomerEmulationComponent', () => {
   @Component({
     selector: 'cx-asm-bind-cart',
     template: '',
+    standalone: true,
+    imports: [I18nTestingModule],
   })
   class MockAsmBindCartComponent {}
 
@@ -61,8 +63,8 @@ describe('CustomerEmulationComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
+      imports: [
+        I18nTestingModule,
         CustomerEmulationComponent,
         MockFeatureLevelDirective,
         MockAsmBindCartComponent,

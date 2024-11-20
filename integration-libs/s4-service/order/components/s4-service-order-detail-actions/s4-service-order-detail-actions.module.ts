@@ -16,8 +16,13 @@ import {
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [S4ServiceOrderDetailActionsComponent],
-  imports: [CommonModule, I18nModule, RouterModule, UrlModule],
+  imports: [
+    CommonModule,
+    I18nModule,
+    RouterModule,
+    UrlModule,
+    S4ServiceOrderDetailActionsComponent,
+  ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
       cmsComponents: {

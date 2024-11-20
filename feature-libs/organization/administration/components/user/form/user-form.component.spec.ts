@@ -88,8 +88,6 @@ describe('UserFormComponent', () => {
         ReactiveFormsModule,
         NgSelectModule,
         FormTestingModule,
-      ],
-      declarations: [
         UserFormComponent,
         FormErrorsComponent,
         MockFeatureDirective,

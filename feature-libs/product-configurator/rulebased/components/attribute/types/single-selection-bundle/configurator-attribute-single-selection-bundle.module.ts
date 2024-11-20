@@ -29,6 +29,7 @@ import { ConfiguratorAttributeCompositionConfig } from '../../composition/config
     RouterModule,
     UrlModule,
     ConfiguratorPriceModule,
+    ConfiguratorAttributeSingleSelectionBundleComponent,
   ],
   providers: [
     provideDefaultConfig(<ConfiguratorAttributeCompositionConfig>{
@@ -40,7 +41,6 @@ import { ConfiguratorAttributeCompositionConfig } from '../../composition/config
       },
     }),
   ],
-  declarations: [ConfiguratorAttributeSingleSelectionBundleComponent],
   exports: [ConfiguratorAttributeSingleSelectionBundleComponent],
 })
 export class ConfiguratorAttributeSingleSelectionBundleModule {}

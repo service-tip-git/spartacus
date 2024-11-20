@@ -49,8 +49,6 @@ describe('PermissionDetailsComponent', () => {
         MessageTestingModule,
         ToggleStatusModule,
         DisableInfoModule,
-      ],
-      declarations: [
         PermissionDetailsComponent,
         ItemExistsDirective,
         FocusDirective,

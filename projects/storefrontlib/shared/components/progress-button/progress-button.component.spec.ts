@@ -6,6 +6,8 @@ import { ProgressButtonComponent } from './progress-button.component';
 
 @Component({
   template: `<cx-progress-button>Test</cx-progress-button>`,
+  standalone: true,
+  imports: [I18nTestingModule],
 })
 class TestHostComponent {}
 
@@ -16,8 +18,7 @@ describe('ProgressButtonComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [ProgressButtonComponent, TestHostComponent],
+      imports: [I18nTestingModule, ProgressButtonComponent, TestHostComponent],
     }).compileComponents();
   }));
 

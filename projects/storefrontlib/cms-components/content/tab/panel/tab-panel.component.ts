@@ -6,10 +6,14 @@
 
 import { Component, Input } from '@angular/core';
 import { Tab, TAB_MODE } from '../tab.model';
+import { NgIf, NgTemplateOutlet } from '@angular/common';
+import { FocusDirective } from '../../../../layout/a11y/keyboard-focus/focus.directive';
 
 @Component({
   selector: 'cx-tab-panel',
   templateUrl: './tab-panel.component.html',
+  standalone: true,
+  imports: [FocusDirective, NgIf, NgTemplateOutlet],
 })
 export class TabPanelComponent {
   TAB_MODE = TAB_MODE;

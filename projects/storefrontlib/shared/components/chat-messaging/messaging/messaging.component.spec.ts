@@ -50,9 +50,9 @@ describe('MessagingComponent', () => {
         FileUploadModule,
         FormErrorsModule,
         ReactiveFormsModule,
+        MessagingComponent,
+        AvatarComponent,
       ],
-
-      declarations: [MessagingComponent, AvatarComponent],
     }).compileComponents();
   });
 

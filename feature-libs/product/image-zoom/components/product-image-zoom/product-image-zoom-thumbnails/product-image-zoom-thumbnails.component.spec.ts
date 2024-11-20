@@ -33,6 +33,7 @@ const secondImage = {
       ></ng-container>
     </ng-container>
   `,
+  standalone: true,
 })
 class MockCarouselComponent {
   @Input() items;
@@ -47,7 +48,7 @@ describe('ProductImageZoomThumbnailsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
+      imports: [
         ProductImageZoomThumbnailsComponent,
         MockCarouselComponent,
         MockFeatureDirective,

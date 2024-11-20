@@ -30,6 +30,8 @@ class MockCartItemContext implements Partial<CartItemContext> {
 @Component({
   selector: 'cx-configure-cart-entry',
   template: '',
+  standalone: true,
+  imports: [RouterTestingModule, ReactiveFormsModule, I18nTestingModule],
 })
 class MockConfigureCartEntryComponent {
   @Input() cartEntry: OrderEntry;
@@ -46,8 +48,10 @@ describe('ConfiguratorCartEntryInfoComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, ReactiveFormsModule, I18nTestingModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
+        ReactiveFormsModule,
+        I18nTestingModule,
         ConfiguratorCartEntryInfoComponent,
         MockConfigureCartEntryComponent,
       ],
@@ -383,7 +387,7 @@ describe('ConfiguratorCartEntryInfoComponent without cart item context', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ConfiguratorCartEntryInfoComponent],
+      imports: [ConfiguratorCartEntryInfoComponent],
     }).compileComponents();
   }));
 

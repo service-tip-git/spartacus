@@ -28,6 +28,7 @@ describe('UnitCostCenterListComponent', () => {
         UrlTestingModule,
         I18nTestingModule,
         DisableInfoModule,
+        UnitCostCenterListComponent,
       ],
       providers: [
         {
@@ -43,7 +44,6 @@ describe('UnitCostCenterListComponent', () => {
           useClass: MockItemService,
         },
       ],
-      declarations: [UnitCostCenterListComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(UnitCostCenterListComponent);

@@ -16,9 +16,14 @@ import { defaultPaginationConfig } from './config/index';
 import { PaginationComponent } from './pagination.component';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, I18nModule, FeaturesConfigModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    I18nModule,
+    FeaturesConfigModule,
+    PaginationComponent,
+  ],
   providers: [provideDefaultConfig(defaultPaginationConfig)],
-  declarations: [PaginationComponent],
   exports: [PaginationComponent],
 })
 export class PaginationModule {}

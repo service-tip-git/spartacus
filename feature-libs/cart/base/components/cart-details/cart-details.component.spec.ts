@@ -42,6 +42,8 @@ interface CartItemComponentOptions {
 @Component({
   template: '',
   selector: 'cx-cart-item-list',
+  standalone: true,
+  imports: [RouterTestingModule, PromotionsModule, I18nTestingModule],
 })
 class MockCartItemListComponent {
   @Input()
@@ -60,6 +62,8 @@ class MockCartItemListComponent {
 @Component({
   template: '',
   selector: 'cx-cart-coupon',
+  standalone: true,
+  imports: [RouterTestingModule, PromotionsModule, I18nTestingModule],
 })
 class MockCartCouponComponent {
   cartIsLoading = false;
@@ -68,6 +72,8 @@ class MockCartCouponComponent {
 @Component({
   selector: 'cx-cart-validation-warnings',
   template: '',
+  standalone: true,
+  imports: [RouterTestingModule, PromotionsModule, I18nTestingModule],
 })
 class MockCartValidationWarningsComponent {}
 
@@ -96,8 +102,10 @@ describe('CartDetailsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, PromotionsModule, I18nTestingModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
+        PromotionsModule,
+        I18nTestingModule,
         CartDetailsComponent,
         MockCartItemListComponent,
         MockCartCouponComponent,

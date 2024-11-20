@@ -19,6 +19,8 @@ import { NgSelectA11yModule } from './ng-select-a11y.module';
     </ng-select>
     <div id="size-results"></div>
   `,
+  standalone: true,
+  imports: [NgSelectA11yModule, NgSelectModule],
 })
 class MockComponent {
   isSearchable: boolean = false;
@@ -45,8 +47,12 @@ describe('NgSelectA11yDirective', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [NgSelectA11yModule, NgSelectModule],
-      declarations: [MockComponent, NgSelectA11yDirective],
+      imports: [
+        NgSelectA11yModule,
+        NgSelectModule,
+        MockComponent,
+        NgSelectA11yDirective,
+      ],
       providers: [
         { provide: FeatureConfigService, useClass: MockFeatureConfigService },
         { provide: TranslationService, useClass: MockTranslationService },

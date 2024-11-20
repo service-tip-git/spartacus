@@ -47,8 +47,7 @@ export function registerOutletsFactory(
 }
 
 @NgModule({
-  imports: [CommonModule],
-  declarations: [OutletDirective],
+  imports: [CommonModule, OutletDirective],
   exports: [OutletDirective],
 })
 export class OutletModule {

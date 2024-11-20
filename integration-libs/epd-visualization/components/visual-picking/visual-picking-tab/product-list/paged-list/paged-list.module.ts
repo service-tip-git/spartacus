@@ -12,8 +12,14 @@ import { IconModule, MediaModule } from '@spartacus/storefront';
 import { PagedListComponent } from './paged-list.component';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, IconModule, MediaModule, UrlModule],
-  declarations: [PagedListComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    IconModule,
+    MediaModule,
+    UrlModule,
+    PagedListComponent,
+  ],
   exports: [PagedListComponent],
 })
 export class PagedListModule {}

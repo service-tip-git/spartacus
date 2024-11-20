@@ -14,7 +14,7 @@ import { ServiceOrderOverviewComponentService } from './service-order-overview-c
 import { OrderOverviewComponentService } from '@spartacus/order/components';
 
 @NgModule({
-  imports: [CardModule, CommonModule, I18nModule],
+  imports: [CardModule, CommonModule, I18nModule, ServiceDetailsCardComponent],
   providers: [
     ServiceOrderOverviewComponentService,
     {
@@ -27,6 +27,5 @@ import { OrderOverviewComponentService } from '@spartacus/order/components';
     }),
   ],
   exports: [ServiceDetailsCardComponent],
-  declarations: [ServiceDetailsCardComponent],
 })
 export class ServiceDetailsCardModule {}

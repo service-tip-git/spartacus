@@ -9,6 +9,7 @@ import { SkipLinkService } from '../service/skip-link.service';
 
 @Directive({
   selector: '[cxSkipLink]',
+  standalone: true,
 })
 export class SkipLinkDirective implements OnInit, OnDestroy {
   @Input() cxSkipLink: string;

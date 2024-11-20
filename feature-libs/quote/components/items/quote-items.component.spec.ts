@@ -13,6 +13,7 @@ import { QuoteItemsComponentService } from './quote-items.component.service';
 
 @Directive({
   selector: '[cxOutlet]',
+  standalone: true,
 })
 class MockOutletDirective implements Partial<OutletDirective> {
   @Input() cxOutlet: string;
@@ -36,8 +37,9 @@ describe('QuoteItemsComponent', () => {
         I18nTestingModule,
         IconTestingModule,
         AbstractOrderContextModule,
+        QuoteItemsComponent,
+        MockOutletDirective,
       ],
-      declarations: [QuoteItemsComponent, MockOutletDirective],
       providers: [
         {
           provide: EventService,

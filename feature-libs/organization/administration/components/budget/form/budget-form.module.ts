@@ -28,7 +28,7 @@ import { BudgetFormComponent } from './budget-form.component';
     ItemActiveModule,
     DatePickerModule,
     FeaturesConfigModule,
+    BudgetFormComponent,
   ],
-  declarations: [BudgetFormComponent],
 })
 export class BudgetFormModule {}

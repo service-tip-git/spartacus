@@ -28,8 +28,8 @@ import { PopoverModule } from '@spartacus/storefront';
     UrlModule,
     MessageModule,
     PopoverModule,
+    CardComponent,
   ],
-  declarations: [CardComponent],
   exports: [CardComponent],
 })
 export class CardModule {}

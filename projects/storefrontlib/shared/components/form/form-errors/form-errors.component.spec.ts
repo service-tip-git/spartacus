@@ -27,7 +27,12 @@ describe('FormErrors', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
+        FormErrorsComponent,
+        MockFeatureDirective,
+      ],
       providers: [
         FeatureConfigService,
         {
@@ -35,7 +40,6 @@ describe('FormErrors', () => {
           useClass: MockFeatureConfigService,
         },
       ],
-      declarations: [FormErrorsComponent, MockFeatureDirective],
     }).compileComponents();
   }));
 

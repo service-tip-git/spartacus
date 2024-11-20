@@ -24,6 +24,8 @@ import { ProductGridItemComponent } from './product-grid-item.component';
 @Component({
   selector: 'cx-add-to-cart',
   template: '<button>add to cart</button>',
+  standalone: true,
+  imports: [RouterTestingModule, I18nTestingModule, OutletModule],
 })
 class MockAddToCartComponent {
   @Input() product;
@@ -33,6 +35,8 @@ class MockAddToCartComponent {
 @Component({
   selector: 'cx-star-rating',
   template: '*****',
+  standalone: true,
+  imports: [RouterTestingModule, I18nTestingModule, OutletModule],
 })
 class MockStarRatingComponent {
   @Input() rating;
@@ -43,6 +47,8 @@ class MockStarRatingComponent {
 @Component({
   selector: 'cx-media',
   template: 'mock picture component',
+  standalone: true,
+  imports: [RouterTestingModule, I18nTestingModule, OutletModule],
 })
 class MockMediaComponent {
   @Input() container;
@@ -52,6 +58,8 @@ class MockMediaComponent {
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: true,
+  imports: [RouterTestingModule, I18nTestingModule, OutletModule],
 })
 class MockCxIconComponent {
   @Input() type;
@@ -59,6 +67,7 @@ class MockCxIconComponent {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
@@ -69,6 +78,7 @@ class MockProductService {}
 
 @Directive({
   selector: '[cxOutlet]',
+  standalone: true,
 })
 class MockOutletDirective implements Partial<OutletDirective> {
   @Input() cxOutlet: string;
@@ -96,8 +106,10 @@ describe('ProductGridItemComponent in product-list', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule, OutletModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
+        OutletModule,
         ProductGridItemComponent,
         MockMediaComponent,
         MockAddToCartComponent,

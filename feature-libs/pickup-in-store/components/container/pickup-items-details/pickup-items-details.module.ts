@@ -53,8 +53,8 @@ import { PickUpItemsDetailsComponent } from './pickup-items-details.component';
         },
       },
     } as CmsConfig),
+    PickUpItemsDetailsComponent,
   ],
-  declarations: [PickUpItemsDetailsComponent],
   exports: [PickUpItemsDetailsComponent],
 })
 export class PickUpItemsDetailsModule {}

@@ -34,6 +34,7 @@ import { ForgotPasswordComponent } from './forgot-password.component';
     FormErrorsModule,
     SpinnerModule,
     FeaturesConfigModule,
+    ForgotPasswordComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -57,6 +58,5 @@ import { ForgotPasswordComponent } from './forgot-password.component';
       },
     }),
   ],
-  declarations: [ForgotPasswordComponent],
 })
 export class ForgotPasswordModule {}

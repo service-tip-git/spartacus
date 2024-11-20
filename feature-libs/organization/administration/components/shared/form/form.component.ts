@@ -11,13 +11,19 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
-import { UntypedFormGroup } from '@angular/forms';
+import { UntypedFormGroup, FormsModule } from '@angular/forms';
 import { LoadStatus } from '@spartacus/organization/administration/core';
 import { EMPTY, Observable } from 'rxjs';
 import { first, map, switchMap, take } from 'rxjs/operators';
 import { CardComponent } from '../card/card.component';
 import { ItemService } from '../item.service';
 import { MessageService } from '../message/services/message.service';
+import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { RouterLink } from '@angular/router';
+import { FocusDirective } from '../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { ItemActiveDirective } from '../item-active.directive';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 const DISABLED_STATUS = 'DISABLED';
 
@@ -30,6 +36,18 @@ const DISABLED_STATUS = 'DISABLED';
   templateUrl: './form.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'content-wrapper' },
+  standalone: true,
+  imports: [
+    NgIf,
+    FormsModule,
+    CardComponent,
+    ItemActiveDirective,
+    FocusDirective,
+    RouterLink,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class FormComponent<T> implements OnInit, OnDestroy {
   /**

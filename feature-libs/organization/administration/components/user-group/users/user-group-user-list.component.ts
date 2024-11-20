@@ -14,6 +14,9 @@ import { ListService } from '../../shared/list/list.service';
 import { SubListComponent } from '../../shared/sub-list/sub-list.component';
 import { CurrentUserGroupService } from '../services/current-user-group.service';
 import { UserGroupUserListService } from './user-group-user-list.service';
+import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'cx-org-user-group-user-list',
@@ -26,6 +29,8 @@ import { UserGroupUserListService } from './user-group-user-list.service';
       useExisting: UserGroupUserListService,
     },
   ],
+  standalone: true,
+  imports: [SubListComponent, RouterLink, TranslatePipe, MockTranslatePipe],
 })
 export class UserGroupUserListComponent {
   constructor(

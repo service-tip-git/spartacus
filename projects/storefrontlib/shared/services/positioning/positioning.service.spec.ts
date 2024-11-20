@@ -14,6 +14,7 @@ import { PositioningService } from './positioning.service';
       style="position:absolute;top:0;left:0; display: inline-block; height: 50px; width: 100px; margin-top: 10px; margin-left: 20px"
     ></div>
   `,
+  standalone: true,
 })
 class TestComponent {}
 
@@ -71,7 +72,7 @@ describe('PositioningService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TestComponent],
+      imports: [TestComponent],
       providers: [{ provide: WindowRef, useClass: MockWindowRef }],
     });
     const fixture = TestBed.createComponent(TestComponent);

@@ -51,6 +51,8 @@ const mockEmptyOrderList: OrderHistoryList = {
 @Component({
   template: '',
   selector: 'cx-pagination',
+  standalone: true,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockPaginationComponent {
   @Input() pagination: any;
@@ -59,6 +61,7 @@ class MockPaginationComponent {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
@@ -113,6 +116,8 @@ class MockReplenishmentOrderHistoryFacade
 @Component({
   selector: 'cx-my-account-v2-order-consolidated-information',
   template: '',
+  standalone: true,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 export class MockMyAccountV2OrderConsolidatedInformationComponent {
   @Input() order?: OrderHistoryView;
@@ -121,6 +126,8 @@ export class MockMyAccountV2OrderConsolidatedInformationComponent {
 @Component({
   selector: 'cx-spinner',
   template: '',
+  standalone: true,
+  imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockSpinnerComponent {}
 
@@ -131,8 +138,9 @@ describe('MyAccountV2OrderHistoryComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
         MyAccountV2OrderHistoryComponent,
         MockUrlPipe,
         MockPaginationComponent,

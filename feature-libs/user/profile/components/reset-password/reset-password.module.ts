@@ -37,6 +37,7 @@ import { ResetPasswordComponent } from './reset-password.component';
     SpinnerModule,
     PasswordVisibilityToggleModule,
     FeaturesConfigModule,
+    ResetPasswordComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -55,6 +56,5 @@ import { ResetPasswordComponent } from './reset-password.component';
       },
     }),
   ],
-  declarations: [ResetPasswordComponent],
 })
 export class ResetPasswordModule {}

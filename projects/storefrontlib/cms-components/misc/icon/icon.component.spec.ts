@@ -15,6 +15,8 @@ import { IconModule } from './icon.module';
     <div cxIcon type="CART"></div>
     <p class="original" cxIcon="CART"></p>
   `,
+  standalone: true,
+  imports: [IconModule],
 })
 class MockIconTestComponent {}
 
@@ -39,8 +41,7 @@ describe('IconComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [],
-      declarations: [IconComponent],
+      imports: [IconComponent],
       providers: [
         { provide: IconLoaderService, useClass: MockIconLoaderService },
       ],
@@ -184,8 +185,7 @@ describe('host icon components', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [IconModule],
-      declarations: [MockIconTestComponent],
+      imports: [IconModule, MockIconTestComponent],
       providers: [
         { provide: IconLoaderService, useClass: MockIconLoaderService },
       ],

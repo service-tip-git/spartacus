@@ -9,6 +9,7 @@ import {
 
 @Pipe({
   name: 'cxTranslate',
+  standalone: true,
 })
 class MockTranslatePipe implements PipeTransform {
   transform(): any {}
@@ -26,11 +27,7 @@ describe('AsmBindCartDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        AsmBindCartDialogComponent,
-        MockTranslatePipe,
-        FocusDirective,
-      ],
+      imports: [AsmBindCartDialogComponent, MockTranslatePipe, FocusDirective],
       providers: [
         { provide: LaunchDialogService, useClass: MockLaunchDialogService },
       ],

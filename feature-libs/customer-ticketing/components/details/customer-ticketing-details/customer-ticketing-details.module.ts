@@ -17,7 +17,14 @@ import {
 import { CustomerTicketingDetailsComponent } from './customer-ticketing-details.component';
 
 @NgModule({
-  imports: [CommonModule, I18nModule, UrlModule, CardModule, SpinnerModule],
+  imports: [
+    CommonModule,
+    I18nModule,
+    UrlModule,
+    CardModule,
+    SpinnerModule,
+    CustomerTicketingDetailsComponent,
+  ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
       cmsComponents: {
@@ -28,7 +35,6 @@ import { CustomerTicketingDetailsComponent } from './customer-ticketing-details.
       },
     }),
   ],
-  declarations: [CustomerTicketingDetailsComponent],
   exports: [CustomerTicketingDetailsComponent],
 })
 export class CustomerTicketingDetailsModule {}

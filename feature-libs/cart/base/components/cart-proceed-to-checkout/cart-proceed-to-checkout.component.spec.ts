@@ -10,6 +10,7 @@ import createSpy = jasmine.createSpy;
 
 @Pipe({
   name: 'cxUrl',
+  standalone: true,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
@@ -27,8 +28,13 @@ describe('CartProceedToCheckoutComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule, ProgressButtonModule],
-      declarations: [CartProceedToCheckoutComponent, MockUrlPipe],
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
+        ProgressButtonModule,
+        CartProceedToCheckoutComponent,
+        MockUrlPipe,
+      ],
       providers: [
         {
           provide: Router,

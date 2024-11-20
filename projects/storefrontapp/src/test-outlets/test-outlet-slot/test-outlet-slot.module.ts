@@ -26,7 +26,7 @@ import { RouterModule } from '@angular/router';
         canActivate: [CmsPageGuard],
       },
     ]),
+    TestOutletSlotComponent,
   ],
-  declarations: [TestOutletSlotComponent],
 })
 export class TestOutletSlotModule {}

@@ -55,6 +55,8 @@ const myAccountV2PasswordMapping: CmsConfig = {
     PasswordVisibilityToggleModule,
     FeaturesConfigModule,
     MessageComponentModule,
+    UpdatePasswordComponent,
+    MyAccountV2PasswordComponent,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -82,7 +84,6 @@ const myAccountV2PasswordMapping: CmsConfig = {
       inject(USE_MY_ACCOUNT_V2_PASSWORD) ? myAccountV2PasswordMapping : {}
     ),
   ],
-  declarations: [UpdatePasswordComponent, MyAccountV2PasswordComponent],
   exports: [UpdatePasswordComponent, MyAccountV2PasswordComponent],
 })
 export class UpdatePasswordModule {}

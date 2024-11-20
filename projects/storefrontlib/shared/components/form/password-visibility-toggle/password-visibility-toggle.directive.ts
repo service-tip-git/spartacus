@@ -21,6 +21,7 @@ import { PasswordVisibilityToggleComponent } from './password-visibility-toggle.
  */
 @Directive({
   selector: '[cxPasswordVisibilitySwitch][type="password"]',
+  standalone: true,
 })
 export class PasswordVisibilityToggleDirective implements AfterViewInit {
   protected inputWrapper: HTMLElement | null;

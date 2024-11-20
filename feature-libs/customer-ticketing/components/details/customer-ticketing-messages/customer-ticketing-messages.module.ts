@@ -26,6 +26,7 @@ import { CustomerTicketingMessagesComponentService } from './customer-ticketing-
     ChatMessagingModule,
     ReactiveFormsModule,
     FormsModule,
+    CustomerTicketingMessagesComponent,
   ],
   providers: [
     CustomerTicketingMessagesComponentService,
@@ -38,7 +39,6 @@ import { CustomerTicketingMessagesComponentService } from './customer-ticketing-
       },
     }),
   ],
-  declarations: [CustomerTicketingMessagesComponent],
   exports: [CustomerTicketingMessagesComponent],
 })
 export class CustomerTicketingMessagesModule {}

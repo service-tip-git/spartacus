@@ -32,8 +32,9 @@ import { SuggestedAddressDialogComponent } from './suggested-addresses-dialog/su
     FormErrorsModule,
     KeyboardFocusModule,
     FeaturesConfigModule,
+    AddressFormComponent,
+    SuggestedAddressDialogComponent,
   ],
-  declarations: [AddressFormComponent, SuggestedAddressDialogComponent],
   exports: [AddressFormComponent, SuggestedAddressDialogComponent],
 })
 export class AddressFormModule {}

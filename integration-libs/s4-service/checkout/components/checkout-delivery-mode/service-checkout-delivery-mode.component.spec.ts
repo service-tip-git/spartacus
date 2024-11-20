@@ -58,8 +58,12 @@ describe('ServiceCheckoutDeliveryModeComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, I18nTestingModule, OutletModule],
-      declarations: [ServiceCheckoutDeliveryModeComponent],
+      imports: [
+        ReactiveFormsModule,
+        I18nTestingModule,
+        OutletModule,
+        ServiceCheckoutDeliveryModeComponent,
+      ],
       providers: [
         {
           provide: CheckoutServiceDetailsFacade,
