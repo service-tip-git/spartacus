@@ -395,6 +395,7 @@ if (environment.cpq) {
         a11yUpdatingCartNoNarration: true,
         a11yCroppedFocusRing: true,
         a11yTextSpacingAdjustments: true,
+        a11yTableHeaderReadout: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
         useSiteThemeService: false,
         enableConsecutiveCharactersPasswordRequirement: true,
