@@ -22,11 +22,19 @@ module.exports = function (config) {
         random: false,
       },
     },
-    reporters: ['progress', 'kjhtml', 'dots', 'junit'],
+    reporters: ['progress', 'kjhtml', 'dots', 'junit', 'spec'],
     junitReporter: {
       outputFile: 'unit-test-storefront.xml',
       outputDir: require('path').join(__dirname, '../../unit-tests-reports'),
       useBrowserName: false,
+    },
+    specReporter: {
+      maxLogLines: 5, // Limit the number of log lines per test suite
+      suppressErrorSummary: true, // Don't log summary of errors
+      suppressFailed: false, // Show failed tests
+      suppressPassed: false, // Show passed tests
+      showSpecTiming: true, // Show timing for each spec
+      failFast: false, // Stop on the first failure
     },
     coverageReporter: {
       dir: require('path').join(__dirname, '../../coverage/storefront'),
