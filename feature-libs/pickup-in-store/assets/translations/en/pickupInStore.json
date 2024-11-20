@@ -56,7 +56,6 @@
     "item": "Item"
   },
   "cardActions": {
-    "changeStore": "Change Store, this link navigates to Store Finder page",
     "getDirections": "Get Directions, this link opens in a new window"
   },
   "deliveryPointOfServiceDetails": {

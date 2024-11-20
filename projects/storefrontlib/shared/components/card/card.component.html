@@ -131,56 +131,46 @@
     </div>
     <!-- Actions -->
     <div *ngIf="content.actions && !editMode" class="cx-card-actions">
-      <div *ngFor="let action of content.actions">
+      <div *ngFor="let action of content.actions" class="cx-card-action-item">
         <div>
           <ng-container *ngIf="isCardAction(action)" [ngSwitch]="action.event">
-            <ng-container *cxFeature="'a11yReplaceCartActionButtonsWithLinks'">
-              <a
+            <ng-container *cxFeature="'a11yImproveCardActionButtons'">
+              <button
                 *ngSwitchCase="'delete'"
-                class="link cx-action-link"
-                tabindex="0"
-                [attr.aria-label]="
-                  action.ariaLabel ? (action.ariaLabel | cxTranslate) : null
-                "
+                class="btn btn-tertiary"
                 (click)="delete()"
               >
                 {{ action.name }}
-              </a>
-              <a
+              </button>
+              <button
                 *ngSwitchCase="'default'"
-                class="link cx-action-link"
-                tabindex="0"
-                [attr.aria-label]="
-                  action.ariaLabel ? (action.ariaLabel | cxTranslate) : null
-                "
+                class="btn btn-tertiary"
                 (click)="setDefault()"
               >
                 {{ action.name }}
-              </a>
-              <a
+              </button>
+
+              <button
                 *ngSwitchCase="'send'"
-                class="link cx-action-link"
-                tabindex="0"
+                class="btn btn-tertiary"
                 (click)="send()"
-                [attr.aria-label]="
-                  action.ariaLabel ? (action.ariaLabel | cxTranslate) : null
+                [attr.aria-describedby]="
+                  index >= 0 && content.header && !editMode
+                    ? 'content-header-' + index
+                    : null
                 "
               >
                 {{ action.name }}
-              </a>
-              <a
+              </button>
+              <button
                 *ngSwitchCase="'edit'"
-                tabindex="0"
-                class="link cx-action-link"
-                [attr.aria-label]="
-                  action.ariaLabel ? (action.ariaLabel | cxTranslate) : null
-                "
+                class="btn btn-tertiary"
                 (click)="edit()"
               >
                 {{ action.name }}
-              </a>
+              </button>
             </ng-container>
-            <ng-container *cxFeature="'!a11yReplaceCartActionButtonsWithLinks'">
+            <ng-container *cxFeature="'!a11yImproveCardActionButtons'">
               <button
                 type="button"
                 *ngSwitchCase="'delete'"
@@ -225,7 +215,7 @@
             href="{{ action.link }}"
             class="link cx-action-link"
           >
-            {{ action.name }}
+            {{ action.name + ' link' }}
           </a>
         </div>
       </div>

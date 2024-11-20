@@ -55,6 +55,30 @@
               [storeDetails]="preferredStore$ | async"
             ></cx-store-schedule>
           </div>
+          <div class="action-buttons">
+            <ng-container *ngFor="let action of actions">
+              <ng-container [ngSwitch]="action.event">
+                <ng-container *ngSwitchCase="'send'">
+                  <a
+                    tabindex="0"
+                    class="link cx-action-link"
+                    (keydown.enter)="getDirectionsToStore()"
+                    (click)="getDirectionsToStore()"
+                    [attr.aria-label]="
+                      action.ariaLabel ? (action.ariaLabel | cxTranslate) : null
+                    "
+                  >
+                    {{ action.name }}
+                  </a>
+                </ng-container>
+                <ng-container *ngSwitchCase="'edit'">
+                  <button class="btn btn-tertiary" (click)="changeStore()">
+                    {{ action.name }}
+                  </button>
+                </ng-container>
+              </ng-container>
+            </ng-container>
+          </div>
         </div>
       </cx-card>
     </div>

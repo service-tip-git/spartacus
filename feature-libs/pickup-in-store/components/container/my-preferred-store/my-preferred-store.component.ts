@@ -37,15 +37,14 @@ export class MyPreferredStoreComponent implements OnInit {
   preferredStore$: Observable<PointOfService>;
   content = {
     header: 'My Store',
-    actions: [
-      getDirectionsAction,
-      {
-        event: 'edit',
-        name: 'Change Store',
-        ariaLabel: 'cardActions.changeStore',
-      },
-    ],
   };
+  actions = [
+    getDirectionsAction,
+    {
+      event: 'edit',
+      name: 'Change Store',
+    },
+  ];
   openHoursOpen = false;
   readonly ICON_TYPE = ICON_TYPE;
   pointOfService: PointOfService;
@@ -79,7 +78,7 @@ export class MyPreferredStoreComponent implements OnInit {
     );
 
     useFeatureStyles('a11yViewHoursButtonIconContrast');
-    useFeatureStyles('a11yReplaceCartActionButtonsWithLinks');
+    useFeatureStyles('a11yImproveCardActionButtons');
   }
 
   ngOnInit(): void {
@@ -96,8 +95,8 @@ export class MyPreferredStoreComponent implements OnInit {
         tap(() => {
           this.content = {
             header: '',
-            actions: [getDirectionsAction],
           };
+          this.actions = [getDirectionsAction];
         })
       )
       .subscribe();
