@@ -247,7 +247,7 @@ export const OPF_QUICK_BUY_SCHEMATICS_CONFIG: SchematicConfig = {
     scssFileName: OPF_SCSS_FILE_NAME,
     importStyle: SPARTACUS_OPF,
   },
-  customConfig: buildQuickBuyOpfConfig,
+  customConfig: buildOpfQuickBuyConfig,
 };
 
 function buildOpfConfig(
@@ -274,7 +274,7 @@ function buildOpfConfig(
   };
 }
 
-function buildQuickBuyOpfConfig(
+function buildOpfQuickBuyConfig(
   options: SpartacusOpfOptions
 ): AdditionalFeatureConfiguration<SpartacusOpfOptions> {
   return {
@@ -292,7 +292,7 @@ function buildQuickBuyOpfConfig(
            resourceUrl: "${options.opfGooglePayApiUrl || 'PLACEHOLDER_GOOGLE_PAY_API_URL'}"
           }
         }
-      ]         
+      ]
         }`,
     },
   };
