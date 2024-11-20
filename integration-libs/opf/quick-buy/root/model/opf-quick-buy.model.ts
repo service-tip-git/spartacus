@@ -60,6 +60,6 @@ export interface OpfQuickBuyProvider {
 export const OPF_GOOGLE_PAY_PROVIDER_NAME = 'googlePay';
 export interface OpfQuickBuyGooglePayProvider extends OpfQuickBuyProvider {
   [OPF_GOOGLE_PAY_PROVIDER_NAME]: {
-    resourceUrl: string;
+    ['resourceUrl']: string;
   };
 }
