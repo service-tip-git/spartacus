@@ -392,6 +392,7 @@ if (environment.cpq) {
         a11yApprovalProcessWithNoClearable: true,
         a11yPostRegisterSuccessMessage: true,
         a11yDeleteButton2First: true,
+        a11yShowLabelOfSelect: true,
         a11yUpdatingCartNoNarration: true,
         a11yCroppedFocusRing: true,
         a11yTextSpacingAdjustments: true,

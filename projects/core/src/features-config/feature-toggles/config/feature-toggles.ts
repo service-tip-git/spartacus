@@ -670,6 +670,11 @@ export interface FeatureTogglesInterface {
   a11yDeleteButton2First?: boolean;
 
   /**
+   * In `CustomerListComponent`, `OrderApprovalListComponent`, and `ConfiguratorAttriuteSingleSelectionBundleDropdownComponent`, show label of every `ng-select` and `select`.
+   */
+  a11yShowLabelOfSelect?: boolean;
+
+  /**
    * In `AddedToCartDialogComponent`, `Updating cart...` should no longer read by a screen reader.
    */
   a11yUpdatingCartNoNarration?: boolean;
@@ -894,6 +899,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yApprovalProcessWithNoClearable: false,
   a11yPostRegisterSuccessMessage: false,
   a11yDeleteButton2First: false,
+  a11yShowLabelOfSelect: false,
   a11yUpdatingCartNoNarration: false,
   a11yCroppedFocusRing: false,
   a11yTextSpacingAdjustments: false,
