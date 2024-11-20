@@ -21,6 +21,7 @@ import {
   EventService,
   I18nTestingModule,
   Product,
+  ProductAvailabilityAdapter,
 } from '@spartacus/core';
 import {
   CmsComponentData,
@@ -95,6 +96,8 @@ class MockEventService implements Partial<EventService> {
   dispatch<T extends object>(_event: T): void {}
 }
 
+class MockProductAvailabilityAdapter {}
+
 @Component({
   template: '',
   selector: 'cx-item-counter',
@@ -140,6 +143,10 @@ describe('CompactAddToCartComponent', () => {
         {
           provide: CmsComponentData,
           useValue: MockCmsComponentData,
+        },
+        {
+          provide: ProductAvailabilityAdapter,
+          useClass: MockProductAvailabilityAdapter,
         },
         { provide: EventService, useClass: MockEventService },
       ],

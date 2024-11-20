@@ -272,4 +272,9 @@ export interface OccEndpoints {
    * @member {string}
    */
   getActiveCostCenters?: string | OccEndpoint;
+  /** Endpoint to returns Product Availabilities
+   *
+   * @member {string}
+   */
+  productAvailabilities?: string | OccEndpoint;
 }

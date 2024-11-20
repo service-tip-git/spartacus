@@ -777,6 +777,12 @@ export interface FeatureTogglesInterface {
   useExtendedMediaComponentConfiguration?: boolean;
 
   /**
+   * Enables Real time stock display in the PDP page.
+   * when set to `true`, the user will be able to see the real time stock in PDP
+   */
+  showRealTimeStockInPDP?: boolean;
+
+  /**
    * Creates a section element with applied aria-label in "Review Order" page of the checkout.
    * Moves components to be children of this section element.
    */
@@ -902,4 +908,5 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   allPageMetaResolversEnabledInCsr: false,
   sciEnabled: false,
   useExtendedMediaComponentConfiguration: false,
+  showRealTimeStockInPDP: false,
 };
