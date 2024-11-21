@@ -5,18 +5,21 @@
  */
 
 import { TestBed } from '@angular/core/testing';
-import { CtaScriptsRequest, CtaScriptsResponse } from '@spartacus/opf/cta/root';
+import {
+  OpfCtaScriptsRequest,
+  OpfCtaScriptsResponse,
+} from '@spartacus/opf/cta/root';
 import { of } from 'rxjs';
 import { OpfCtaAdapter } from './opf-cta.adapter';
 import { OpfCtaConnector } from './opf-cta.connector';
 import createSpy = jasmine.createSpy;
 
-const mockCtaScriptsRequest: CtaScriptsRequest = {
+const mockCtaScriptsRequest: OpfCtaScriptsRequest = {
   cartId: '123',
   paymentAccountIds: [123],
 };
 
-const mockCtaScriptsResponse: CtaScriptsResponse = {
+const mockCtaScriptsResponse: OpfCtaScriptsResponse = {
   value: [],
 };
 

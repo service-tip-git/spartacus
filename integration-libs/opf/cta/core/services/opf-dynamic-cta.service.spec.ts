@@ -7,7 +7,7 @@ import {
   Product,
   WindowRef,
 } from '@spartacus/core';
-import { CtaScriptsLocation, OpfCtaFacade } from '@spartacus/opf/cta/root';
+import { OpfCtaFacade, OpfCtaScriptsLocation } from '@spartacus/opf/cta/root';
 import { OpfGlobalFunctionsFacade } from '@spartacus/opf/global-functions/root';
 import { CurrentProductService } from '@spartacus/storefront';
 import { of } from 'rxjs';
@@ -85,14 +85,14 @@ describe('OpfDynamicCtaService', () => {
   it('should call activeCart on fillCtaRequestforCartPage', (done) => {
     service
       .fillCtaRequestforCartPage(
-        CtaScriptsLocation.CART_MESSAGING,
+        OpfCtaScriptsLocation.CART_MESSAGING,
         mockAccountIds
       )
       .subscribe((ctaRequest) => {
         expect(activeCartFacadeMock.takeActive).toHaveBeenCalled();
         expect(languageServiceMock.getActive).toHaveBeenCalled();
         expect(ctaRequest.scriptLocations).toEqual([
-          CtaScriptsLocation.CART_MESSAGING,
+          OpfCtaScriptsLocation.CART_MESSAGING,
         ]);
         done();
       });
@@ -101,14 +101,14 @@ describe('OpfDynamicCtaService', () => {
   it('should call productService on fillCtaRequestforProductPage', (done) => {
     service
       .fillCtaRequestforProductPage(
-        CtaScriptsLocation.PDP_MESSAGING,
+        OpfCtaScriptsLocation.PDP_MESSAGING,
         mockAccountIds
       )
       .subscribe((ctaRequest) => {
         expect(currentProductServiceMock.getProduct).toHaveBeenCalled();
         expect(languageServiceMock.getActive).toHaveBeenCalled();
         expect(ctaRequest.scriptLocations).toEqual([
-          CtaScriptsLocation.PDP_MESSAGING,
+          OpfCtaScriptsLocation.PDP_MESSAGING,
         ]);
         expect(
           ctaRequest.additionalData?.find(
@@ -122,7 +122,7 @@ describe('OpfDynamicCtaService', () => {
   it('should start cartListener on cart page initiateEvents', (done) => {
     service
       .fillCtaRequestforCartPage(
-        CtaScriptsLocation.CART_MESSAGING,
+        OpfCtaScriptsLocation.CART_MESSAGING,
         mockAccountIds
       )
       .subscribe(() => {
@@ -135,7 +135,7 @@ describe('OpfDynamicCtaService', () => {
   it('should not start cartListener on pdp initiateEvents', (done) => {
     service
       .fillCtaRequestforProductPage(
-        CtaScriptsLocation.PDP_MESSAGING,
+        OpfCtaScriptsLocation.PDP_MESSAGING,
         mockAccountIds
       )
       .subscribe(() => {
@@ -155,7 +155,7 @@ describe('OpfDynamicCtaService', () => {
   it('should remove global functions on stopEvents', (done) => {
     service
       .fillCtaRequestforProductPage(
-        CtaScriptsLocation.CART_MESSAGING,
+        OpfCtaScriptsLocation.CART_MESSAGING,
         mockAccountIds
       )
       .subscribe(() => {

@@ -6,8 +6,8 @@
 
 import { InjectionToken } from '@angular/core';
 import { Converter } from '@spartacus/core';
-import { CtaScriptsResponse } from '@spartacus/opf/cta/root';
+import { OpfCtaScriptsResponse } from '@spartacus/opf/cta/root';
 
 export const OPF_CTA_SCRIPTS_NORMALIZER = new InjectionToken<
-  Converter<any, CtaScriptsResponse>
+  Converter<any, OpfCtaScriptsResponse>
 >('OpfCtaScriptsNormalizer');

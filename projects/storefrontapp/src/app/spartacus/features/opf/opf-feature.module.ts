@@ -5,7 +5,7 @@
  */
 
 import { NgModule, Provider } from '@angular/core';
-import { I18nConfig, RoutingConfig, provideConfig } from '@spartacus/core';
+import { I18nConfig, provideConfig } from '@spartacus/core';
 import {
   OPF_BASE_FEATURE,
   OpfBaseRootModule,
@@ -85,19 +85,6 @@ if (environment.b2b) {
         [OPF_QUICK_BUY_FEATURE]: {
           module: () =>
             import('@spartacus/opf/quick-buy').then((m) => m.OpfQuickBuyModule),
-        },
-      },
-    }),
-
-    provideConfig(<RoutingConfig>{
-      routing: {
-        routes: {
-          paymentVerificationResult: {
-            paths: ['opf/payment-verification-redirect/result'],
-          },
-          paymentVerificationCancel: {
-            paths: ['opf/payment-verification-redirect/cancel'],
-          },
         },
       },
     }),

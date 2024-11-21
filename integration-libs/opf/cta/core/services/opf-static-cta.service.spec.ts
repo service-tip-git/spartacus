@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { WindowRef } from '@spartacus/core';
-import { CtaScriptsLocation } from '@spartacus/opf/cta/root';
+import { OpfCtaScriptsLocation } from '@spartacus/opf/cta/root';
 import { Order, OrderFacade, OrderHistoryFacade } from '@spartacus/order/root';
 import { of } from 'rxjs';
 import { OpfStaticCtaService } from './opf-static-cta.service';
@@ -35,7 +35,7 @@ describe('OpfStaticCtaService', () => {
   it('should call OrderHistoryFacade for CTA on order history page', (done) => {
     service
       .fillCtaRequestforPagesWithOrder(
-        CtaScriptsLocation.ORDER_HISTORY_PAYMENT_GUIDE
+        OpfCtaScriptsLocation.ORDER_HISTORY_PAYMENT_GUIDE
       )
       .subscribe((ctaScriptRequest) => {
         expect(ctaScriptRequest.cartId).toContain('mockPaymentInfoId');
@@ -48,7 +48,7 @@ describe('OpfStaticCtaService', () => {
   it('should call orderFacade for CTA on confirmation page', (done) => {
     service
       .fillCtaRequestforPagesWithOrder(
-        CtaScriptsLocation.ORDER_CONFIRMATION_PAYMENT_GUIDE
+        OpfCtaScriptsLocation.ORDER_CONFIRMATION_PAYMENT_GUIDE
       )
       .subscribe((ctaScriptRequest) => {
         expect(ctaScriptRequest.cartId).toContain('mockPaymentInfoId');
@@ -64,7 +64,7 @@ describe('OpfStaticCtaService', () => {
     );
     service
       .fillCtaRequestforPagesWithOrder(
-        CtaScriptsLocation.ORDER_CONFIRMATION_PAYMENT_GUIDE
+        OpfCtaScriptsLocation.ORDER_CONFIRMATION_PAYMENT_GUIDE
       )
       .subscribe({
         next: () => {

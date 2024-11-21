@@ -7,9 +7,9 @@
 import { Injectable, inject } from '@angular/core';
 import { Command, CommandService } from '@spartacus/core';
 import {
-  CtaScriptsRequest,
-  CtaScriptsResponse,
   OpfCtaFacade,
+  OpfCtaScriptsRequest,
+  OpfCtaScriptsResponse,
 } from '@spartacus/opf/cta/root';
 import { Observable, Subject } from 'rxjs';
 import { OpfCtaConnector } from '../connectors';
@@ -25,15 +25,15 @@ export class OpfCtaService implements OpfCtaFacade {
 
   protected ctaScriptsCommand: Command<
     {
-      ctaScriptsRequest: CtaScriptsRequest;
+      opfCtaScriptsRequest: OpfCtaScriptsRequest;
     },
-    CtaScriptsResponse
+    OpfCtaScriptsResponse
   > = this.commandService.create((payload) => {
-    return this.opfCtaConnector.getCtaScripts(payload.ctaScriptsRequest);
+    return this.opfCtaConnector.getCtaScripts(payload.opfCtaScriptsRequest);
   });
 
-  getCtaScripts(ctaScriptsRequest: CtaScriptsRequest) {
-    return this.ctaScriptsCommand.execute({ ctaScriptsRequest });
+  getCtaScripts(opfCtaScriptsRequest: OpfCtaScriptsRequest) {
+    return this.ctaScriptsCommand.execute({ opfCtaScriptsRequest });
   }
   emitScriptReadyEvent(scriptIdentifier: string) {
     this._readyForScriptEvent.next(scriptIdentifier);

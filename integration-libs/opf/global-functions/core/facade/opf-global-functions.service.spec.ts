@@ -13,7 +13,7 @@ import {
 import { TestBed } from '@angular/core/testing';
 import { WindowRef } from '@spartacus/core';
 import { defaultOpfErrorDialogOptions } from '@spartacus/opf/base/root';
-import { GlobalFunctionsDomain } from '@spartacus/opf/global-functions/root';
+import { OpfGlobalFunctionsDomain } from '@spartacus/opf/global-functions/root';
 import { OpfPaymentFacade } from '@spartacus/opf/payment/root';
 import { OpfQuickBuyProviderType } from '@spartacus/opf/quick-buy/root';
 import { LAUNCH_CALLER, LaunchDialogService } from '@spartacus/storefront';
@@ -81,7 +81,7 @@ describe('OpfGlobalFunctionsService', () => {
       spyOn<any>(service, 'registerSubmit').and.callThrough();
       spyOn(windowRef, 'isBrowser').and.returnValue(false);
       service.registerGlobalFunctions({
-        domain: GlobalFunctionsDomain.CHECKOUT,
+        domain: OpfGlobalFunctionsDomain.CHECKOUT,
         paymentSessionId: mockPaymentSessionId,
         vcr: {} as ViewContainerRef,
       });
@@ -90,13 +90,13 @@ describe('OpfGlobalFunctionsService', () => {
 
     it('should not remove global functions for CHECKOUT in SSR', () => {
       service.registerGlobalFunctions({
-        domain: GlobalFunctionsDomain.CHECKOUT,
+        domain: OpfGlobalFunctionsDomain.CHECKOUT,
         paymentSessionId: mockPaymentSessionId,
         vcr: {} as ViewContainerRef,
       });
       windowOpf = windowRef.nativeWindow['Opf'];
       spyOn(windowRef, 'isBrowser').and.returnValue(false);
-      service.unregisterGlobalFunctions(GlobalFunctionsDomain.CHECKOUT);
+      service.unregisterGlobalFunctions(OpfGlobalFunctionsDomain.CHECKOUT);
       expect(windowOpf['payments']['checkout']['submit']).toBeDefined();
     });
   });
@@ -107,7 +107,7 @@ describe('OpfGlobalFunctionsService', () => {
 
     beforeEach(() => {
       service.registerGlobalFunctions({
-        domain: GlobalFunctionsDomain.CHECKOUT,
+        domain: OpfGlobalFunctionsDomain.CHECKOUT,
         paymentSessionId: mockPaymentSessionId,
         vcr: {} as ViewContainerRef,
       });
@@ -217,13 +217,13 @@ describe('OpfGlobalFunctionsService', () => {
 
     it('should remove global function for REDIRECT', () => {
       expect(
-        windowOpf['payments'][GlobalFunctionsDomain.CHECKOUT]
+        windowOpf['payments'][OpfGlobalFunctionsDomain.CHECKOUT]
       ).toBeDefined();
 
-      service.unregisterGlobalFunctions(GlobalFunctionsDomain.CHECKOUT);
+      service.unregisterGlobalFunctions(OpfGlobalFunctionsDomain.CHECKOUT);
 
       expect(
-        windowOpf['payments'][GlobalFunctionsDomain.CHECKOUT]
+        windowOpf['payments'][OpfGlobalFunctionsDomain.CHECKOUT]
       ).not.toBeDefined();
     });
   });
@@ -237,7 +237,7 @@ describe('OpfGlobalFunctionsService', () => {
     let windowOpf: any;
     beforeEach(() => {
       service.registerGlobalFunctions({
-        domain: GlobalFunctionsDomain.REDIRECT,
+        domain: OpfGlobalFunctionsDomain.REDIRECT,
         paymentSessionId: mockPaymentSessionId,
         vcr: {} as ViewContainerRef,
         paramsMap,
@@ -261,40 +261,42 @@ describe('OpfGlobalFunctionsService', () => {
       ];
       const cartId = 'mock-cart';
 
-      windowOpf.payments[GlobalFunctionsDomain.REDIRECT].submitCompleteRedirect(
-        {
-          cartId,
-          additionalData,
-          submitSuccess,
-          submitPending,
-          submitFailure,
-        }
-      );
+      windowOpf.payments[
+        OpfGlobalFunctionsDomain.REDIRECT
+      ].submitCompleteRedirect({
+        cartId,
+        additionalData,
+        submitSuccess,
+        submitPending,
+        submitFailure,
+      });
       expect(opfPaymentFacadeMock.submitCompletePayment).toHaveBeenCalled();
     });
 
     it('should handle getRedirectParams event', () => {
       const redirectParams =
-        windowOpf.payments[GlobalFunctionsDomain.REDIRECT].getRedirectParams();
+        windowOpf.payments[
+          OpfGlobalFunctionsDomain.REDIRECT
+        ].getRedirectParams();
       expect(redirectParams).toEqual(paramsMap);
     });
 
     it('should remove global function for REDIRECT', () => {
       expect(
-        windowOpf['payments'][GlobalFunctionsDomain.REDIRECT][
+        windowOpf['payments'][OpfGlobalFunctionsDomain.REDIRECT][
           'submitCompleteRedirect'
         ]
       ).toBeDefined();
       expect(
-        windowOpf['payments'][GlobalFunctionsDomain.REDIRECT][
+        windowOpf['payments'][OpfGlobalFunctionsDomain.REDIRECT][
           'getRedirectParams'
         ]
       ).toBeDefined();
 
-      service.unregisterGlobalFunctions(GlobalFunctionsDomain.REDIRECT);
+      service.unregisterGlobalFunctions(OpfGlobalFunctionsDomain.REDIRECT);
 
       expect(
-        windowOpf['payments'][GlobalFunctionsDomain.REDIRECT]
+        windowOpf['payments'][OpfGlobalFunctionsDomain.REDIRECT]
       ).not.toBeDefined();
     });
   });

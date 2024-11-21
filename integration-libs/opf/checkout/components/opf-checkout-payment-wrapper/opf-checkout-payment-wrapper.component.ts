@@ -19,7 +19,7 @@ import {
   SafeResourceUrl,
 } from '@angular/platform-browser';
 import {
-  GlobalFunctionsDomain,
+  OpfGlobalFunctionsDomain,
   OpfGlobalFunctionsFacade,
 } from '@spartacus/opf/global-functions/root';
 import {
@@ -62,7 +62,7 @@ export class OpfCheckoutPaymentWrapperComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.globalFunctionsService.unregisterGlobalFunctions(
-      GlobalFunctionsDomain.CHECKOUT
+      OpfGlobalFunctionsDomain.CHECKOUT
     );
     this.sub.unsubscribe();
   }
@@ -77,14 +77,14 @@ export class OpfCheckoutPaymentWrapperComponent implements OnInit, OnDestroy {
         next: (paymentSessionData) => {
           if (this.isHostedFields(paymentSessionData)) {
             this.globalFunctionsService.registerGlobalFunctions({
-              domain: GlobalFunctionsDomain.CHECKOUT,
+              domain: OpfGlobalFunctionsDomain.CHECKOUT,
               paymentSessionId: (paymentSessionData as OpfPaymentSessionData)
                 .paymentSessionId as string,
               vcr: this.vcr,
             });
           } else {
             this.globalFunctionsService.unregisterGlobalFunctions(
-              GlobalFunctionsDomain.CHECKOUT
+              OpfGlobalFunctionsDomain.CHECKOUT
             );
           }
         },

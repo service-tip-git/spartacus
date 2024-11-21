@@ -12,27 +12,27 @@ import {
   OpfStaticCtaService,
 } from '@spartacus/opf/cta/core';
 import {
-  CtaScriptsLocation,
-  CtaScriptsRequest,
-  CtaScriptsResponse,
   OpfCtaFacade,
+  OpfCtaScriptsLocation,
+  OpfCtaScriptsRequest,
+  OpfCtaScriptsResponse,
 } from '@spartacus/opf/cta/root';
 import { Order, OrderFacade, OrderHistoryFacade } from '@spartacus/order/root';
 import { CurrentProductService } from '@spartacus/storefront';
 import { of } from 'rxjs';
 import { OpfCtaScriptsService } from './opf-cta-scripts.service';
 
-const ctaScriptsRequestForOrderMock: CtaScriptsRequest = {
+const ctaScriptsRequestForOrderMock: OpfCtaScriptsRequest = {
   paymentAccountIds: [1],
-  scriptLocations: [CtaScriptsLocation.ORDER_CONFIRMATION_PAYMENT_GUIDE],
+  scriptLocations: [OpfCtaScriptsLocation.ORDER_CONFIRMATION_PAYMENT_GUIDE],
 };
-const ctaScriptsRequestForPdpMock: CtaScriptsRequest = {
+const ctaScriptsRequestForPdpMock: OpfCtaScriptsRequest = {
   paymentAccountIds: [1],
-  scriptLocations: [CtaScriptsLocation.PDP_MESSAGING],
+  scriptLocations: [OpfCtaScriptsLocation.PDP_MESSAGING],
 };
-const ctaScriptsRequestForCartPageMock: CtaScriptsRequest = {
+const ctaScriptsRequestForCartPageMock: OpfCtaScriptsRequest = {
   paymentAccountIds: [1],
-  scriptLocations: [CtaScriptsLocation.CART_MESSAGING],
+  scriptLocations: [OpfCtaScriptsLocation.CART_MESSAGING],
 };
 
 describe('OpfCtaScriptsService', () => {
@@ -294,7 +294,7 @@ describe('OpfCtaScriptsService', () => {
     ],
   };
 
-  const ctaScriptsResponseMock: CtaScriptsResponse = {
+  const ctaScriptsResponseMock: OpfCtaScriptsResponse = {
     value: [
       {
         paymentAccountId: 1,

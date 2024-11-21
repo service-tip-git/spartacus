@@ -15,12 +15,12 @@ import {
   OpfResourceLoaderService,
 } from '@spartacus/opf/base/root';
 import {
-  CmsPageLocation,
-  CtaScriptsLocation,
-  CtaScriptsRequest,
-  CtaScriptsResponse,
-  DynamicCtaLocations,
+  OpfCtaCmsPageLocation,
+  OpfCtaDynamicLocations,
   OpfCtaFacade,
+  OpfCtaScriptsLocation,
+  OpfCtaScriptsRequest,
+  OpfCtaScriptsResponse,
 } from '@spartacus/opf/cta/root';
 
 import {
@@ -66,15 +66,15 @@ export class OpfCtaScriptsService {
   getCtaHtmlList(): Observable<OpfDynamicScript[]> {
     let isDynamicCtaLocation = false;
     return this.fillCtaScriptRequest().pipe(
-      concatMap((ctaScriptsRequest) => {
+      concatMap((opfCtaScriptsRequest) => {
         isDynamicCtaLocation =
-          !!ctaScriptsRequest?.scriptLocations?.length &&
-          !!ctaScriptsRequest?.scriptLocations.find((location) =>
-            DynamicCtaLocations.includes(location)
+          !!opfCtaScriptsRequest?.scriptLocations?.length &&
+          !!opfCtaScriptsRequest?.scriptLocations.find((location) =>
+            OpfCtaDynamicLocations.includes(location)
           );
         isDynamicCtaLocation &&
           this.opfDynamicCtaService.registerScriptReadyEvent();
-        return this.fetchCtaScripts(ctaScriptsRequest);
+        return this.fetchCtaScripts(opfCtaScriptsRequest);
       }),
       tap((scriptsResponse) => {
         isDynamicCtaLocation &&
@@ -89,14 +89,14 @@ export class OpfCtaScriptsService {
   }
 
   protected fetchCtaScripts(
-    ctaScriptsRequest: CtaScriptsRequest
+    opfCtaScriptsRequest: OpfCtaScriptsRequest
   ): Observable<OpfDynamicScript[]> {
-    return this.opfCtaFacade.getCtaScripts(ctaScriptsRequest).pipe(
-      concatMap((ctaScriptsResponse: CtaScriptsResponse) => {
-        if (!ctaScriptsResponse?.value?.length) {
+    return this.opfCtaFacade.getCtaScripts(opfCtaScriptsRequest).pipe(
+      concatMap((opfCtaScriptsResponse: OpfCtaScriptsResponse) => {
+        if (!opfCtaScriptsResponse?.value?.length) {
           return throwError(() => 'Invalid CTA Scripts Response');
         }
-        const dynamicScripts = ctaScriptsResponse.value.map(
+        const dynamicScripts = opfCtaScriptsResponse.value.map(
           (ctaScript) => ctaScript.dynamicScript
         );
         return of(dynamicScripts);
@@ -105,7 +105,7 @@ export class OpfCtaScriptsService {
     );
   }
 
-  protected fillCtaScriptRequest(): Observable<CtaScriptsRequest> {
+  protected fillCtaScriptRequest(): Observable<OpfCtaScriptsRequest> {
     let paymentAccountIds: number[];
 
     return this.getPaymentAccountIds().pipe(
@@ -113,7 +113,7 @@ export class OpfCtaScriptsService {
         paymentAccountIds = accIds;
         return this.getScriptLocation();
       }),
-      concatMap((scriptsLocation: CtaScriptsLocation | undefined) => {
+      concatMap((scriptsLocation: OpfCtaScriptsLocation | undefined) => {
         return this.fillRequestForTargetPage(
           scriptsLocation,
           paymentAccountIds
@@ -123,30 +123,30 @@ export class OpfCtaScriptsService {
   }
 
   protected fillRequestForTargetPage(
-    scriptsLocation: CtaScriptsLocation | undefined,
+    scriptsLocation: OpfCtaScriptsLocation | undefined,
     paymentAccountIds: number[]
-  ): Observable<CtaScriptsRequest> {
+  ): Observable<OpfCtaScriptsRequest> {
     if (!scriptsLocation) {
       return throwError(() => 'Invalid Script Location');
     }
     const locationToFunctionMap: Record<
-      CtaScriptsLocation,
-      () => Observable<CtaScriptsRequest>
+      OpfCtaScriptsLocation,
+      () => Observable<OpfCtaScriptsRequest>
     > = {
-      [CtaScriptsLocation.ORDER_HISTORY_PAYMENT_GUIDE]: () =>
+      [OpfCtaScriptsLocation.ORDER_HISTORY_PAYMENT_GUIDE]: () =>
         this.opfStaticCtaService.fillCtaRequestforPagesWithOrder(
           scriptsLocation
         ),
-      [CtaScriptsLocation.ORDER_CONFIRMATION_PAYMENT_GUIDE]: () =>
+      [OpfCtaScriptsLocation.ORDER_CONFIRMATION_PAYMENT_GUIDE]: () =>
         this.opfStaticCtaService.fillCtaRequestforPagesWithOrder(
           scriptsLocation
         ),
-      [CtaScriptsLocation.CART_MESSAGING]: () =>
+      [OpfCtaScriptsLocation.CART_MESSAGING]: () =>
         this.opfDynamicCtaService.fillCtaRequestforCartPage(
           scriptsLocation,
           paymentAccountIds
         ),
-      [CtaScriptsLocation.PDP_MESSAGING]: () =>
+      [OpfCtaScriptsLocation.PDP_MESSAGING]: () =>
         this.opfDynamicCtaService.fillCtaRequestforProductPage(
           scriptsLocation,
           paymentAccountIds
@@ -156,20 +156,23 @@ export class OpfCtaScriptsService {
     return selectedFunction();
   }
 
-  protected getScriptLocation(): Observable<CtaScriptsLocation | undefined> {
-    const cmsToCtaLocationMap: Record<CmsPageLocation, CtaScriptsLocation> = {
-      [CmsPageLocation.ORDER_PAGE]:
-        CtaScriptsLocation.ORDER_HISTORY_PAYMENT_GUIDE,
-      [CmsPageLocation.ORDER_CONFIRMATION_PAGE]:
-        CtaScriptsLocation.ORDER_CONFIRMATION_PAYMENT_GUIDE,
-      [CmsPageLocation.PDP_PAGE]: CtaScriptsLocation.PDP_MESSAGING,
-      [CmsPageLocation.CART_PAGE]: CtaScriptsLocation.CART_MESSAGING,
+  protected getScriptLocation(): Observable<OpfCtaScriptsLocation | undefined> {
+    const cmsToCtaLocationMap: Record<
+      OpfCtaCmsPageLocation,
+      OpfCtaScriptsLocation
+    > = {
+      [OpfCtaCmsPageLocation.ORDER_PAGE]:
+        OpfCtaScriptsLocation.ORDER_HISTORY_PAYMENT_GUIDE,
+      [OpfCtaCmsPageLocation.ORDER_CONFIRMATION_PAGE]:
+        OpfCtaScriptsLocation.ORDER_CONFIRMATION_PAYMENT_GUIDE,
+      [OpfCtaCmsPageLocation.PDP_PAGE]: OpfCtaScriptsLocation.PDP_MESSAGING,
+      [OpfCtaCmsPageLocation.CART_PAGE]: OpfCtaScriptsLocation.CART_MESSAGING,
     };
     return this.cmsService.getCurrentPage().pipe(
       take(1),
       map((page) =>
         page.pageId
-          ? cmsToCtaLocationMap[page.pageId as CmsPageLocation]
+          ? cmsToCtaLocationMap[page.pageId as OpfCtaCmsPageLocation]
           : undefined
       )
     );

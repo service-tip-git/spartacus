@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 import { facadeFactory } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { OPF_CTA_FEATURE } from '../feature-name';
-import { CtaScriptsRequest, CtaScriptsResponse } from '../model';
+import { OpfCtaScriptsRequest, OpfCtaScriptsResponse } from '../model';
 
 @Injectable({
   providedIn: 'root',
@@ -28,8 +28,8 @@ export abstract class OpfCtaFacade {
    * Get call-to-action scripts
    */
   abstract getCtaScripts(
-    ctaScriptsRequest: CtaScriptsRequest
-  ): Observable<CtaScriptsResponse>;
+    opfCtaScriptsRequest: OpfCtaScriptsRequest
+  ): Observable<OpfCtaScriptsResponse>;
   abstract listenScriptReadyEvent(): Observable<string>;
   abstract emitScriptReadyEvent(scriptIdentifier: string): void;
 }

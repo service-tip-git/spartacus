@@ -20,9 +20,9 @@ import {
 } from '@spartacus/opf/base/root';
 import { OpfCtaFacade } from '@spartacus/opf/cta/root';
 import {
-  GlobalFunctionsDomain,
-  GlobalFunctionsInput,
+  OpfGlobalFunctionsDomain,
   OpfGlobalFunctionsFacade,
+  OpfRegisterGlobalFunctionsInput,
 } from '@spartacus/opf/global-functions/root';
 import {
   OpfPaymentFacade,
@@ -53,24 +53,24 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
     paymentSessionId,
     vcr,
     paramsMap,
-  }: GlobalFunctionsInput): void {
+  }: OpfRegisterGlobalFunctionsInput): void {
     // SSR not supported
     if (!this.winRef.isBrowser()) {
       return;
     }
     switch (domain) {
-      case GlobalFunctionsDomain.CHECKOUT:
+      case OpfGlobalFunctionsDomain.CHECKOUT:
         this.registerSubmit(domain, paymentSessionId, vcr);
         this.registerSubmitComplete(domain, paymentSessionId, vcr);
         this.registerThrowPaymentError(domain, vcr);
         this.registerStartLoadIndicator(domain, vcr);
         this.registerStopLoadIndicator(domain);
         break;
-      case GlobalFunctionsDomain.REDIRECT:
+      case OpfGlobalFunctionsDomain.REDIRECT:
         this.registerSubmitCompleteRedirect(domain, paymentSessionId, vcr);
         this.registerGetRedirectParams(domain, paramsMap ?? []);
         break;
-      case GlobalFunctionsDomain.GLOBAL:
+      case OpfGlobalFunctionsDomain.GLOBAL:
         this.registerCtaScriptReady(domain);
         break;
       default:
@@ -78,7 +78,7 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
     }
   }
 
-  unregisterGlobalFunctions(domain: GlobalFunctionsDomain): void {
+  unregisterGlobalFunctions(domain: OpfGlobalFunctionsDomain): void {
     // SSR not supported
     if (!this.winRef.isBrowser()) {
       return;
@@ -90,7 +90,7 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
   }
 
   protected getGlobalFunctionContainer(
-    domain: GlobalFunctionsDomain
+    domain: OpfGlobalFunctionsDomain
   ): OpfPaymentGlobalMethods {
     const window = this.winRef.nativeWindow as any;
     if (!window.Opf?.payments[domain]) {
@@ -102,7 +102,7 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
   }
 
   protected registerStartLoadIndicator(
-    domain: GlobalFunctionsDomain,
+    domain: OpfGlobalFunctionsDomain,
     vcr?: ViewContainerRef
   ): void {
     this.getGlobalFunctionContainer(domain).startLoadIndicator = (): void => {
@@ -118,7 +118,7 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
     };
   }
 
-  protected registerStopLoadIndicator(domain: GlobalFunctionsDomain): void {
+  protected registerStopLoadIndicator(domain: OpfGlobalFunctionsDomain): void {
     this.getGlobalFunctionContainer(domain).stopLoadIndicator = (): void => {
       this.ngZone.run(() => {
         this.stopLoaderSpinner(this.loaderSpinnerCpntRef);
@@ -152,7 +152,7 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
   }
 
   protected registerGetRedirectParams(
-    domain: GlobalFunctionsDomain,
+    domain: OpfGlobalFunctionsDomain,
     paramsMap: Array<OpfKeyValueMap> = []
   ): void {
     this.getGlobalFunctionContainer(domain).getRedirectParams = () =>
@@ -162,7 +162,7 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
   }
 
   protected registerThrowPaymentError(
-    domain: GlobalFunctionsDomain,
+    domain: OpfGlobalFunctionsDomain,
     vcr?: ViewContainerRef
   ): void {
     this.getGlobalFunctionContainer(domain).throwPaymentError = (
@@ -187,7 +187,7 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
   }
 
   protected registerSubmit(
-    domain: GlobalFunctionsDomain,
+    domain: OpfGlobalFunctionsDomain,
     paymentSessionId?: string,
     vcr?: ViewContainerRef
   ): void {
@@ -284,7 +284,7 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
   }
 
   protected registerSubmitComplete(
-    domain: GlobalFunctionsDomain,
+    domain: OpfGlobalFunctionsDomain,
     paymentSessionId: string,
     vcr?: ViewContainerRef
   ): void {
@@ -321,7 +321,7 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
   }
 
   protected registerSubmitCompleteRedirect(
-    domain: GlobalFunctionsDomain,
+    domain: OpfGlobalFunctionsDomain,
     paymentSessionId: string,
     vcr?: ViewContainerRef
   ): void {
@@ -356,7 +356,7 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
       );
     };
   }
-  protected registerCtaScriptReady(domain: GlobalFunctionsDomain): void {
+  protected registerCtaScriptReady(domain: OpfGlobalFunctionsDomain): void {
     this.getGlobalFunctionContainer(domain).scriptReady = (
       scriptIdentifier: string
     ): void => {

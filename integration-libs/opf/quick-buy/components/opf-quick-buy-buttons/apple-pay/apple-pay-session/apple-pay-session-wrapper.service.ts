@@ -25,12 +25,16 @@ export class ApplePaySessionWrapperService {
   private applePaySession: typeof ApplePaySession;
   protected applePayApiVersion = 3;
 
-  constructor() {
+  protected initialize(): void {
     // @ts-ignore
     this.applePaySession = this.getApplePaySession() as ApplePaySession;
     if (this.applePaySession) {
       this.isDeviceSupported = this.applePaySession.canMakePayments();
     }
+  }
+
+  constructor() {
+    this.initialize();
   }
 
   private getApplePaySession(): ApplePaySession | undefined {

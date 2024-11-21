@@ -5,7 +5,10 @@
  */
 
 import { Injectable, inject } from '@angular/core';
-import { CtaScriptsRequest, CtaScriptsResponse } from '@spartacus/opf/cta/root';
+import {
+  OpfCtaScriptsRequest,
+  OpfCtaScriptsResponse,
+} from '@spartacus/opf/cta/root';
 
 import { Observable } from 'rxjs';
 import { OpfCtaAdapter } from './opf-cta.adapter';
@@ -15,8 +18,8 @@ export class OpfCtaConnector {
   protected adapter = inject(OpfCtaAdapter);
 
   public getCtaScripts(
-    ctaScriptsRequest: CtaScriptsRequest
-  ): Observable<CtaScriptsResponse> {
-    return this.adapter.getCtaScripts(ctaScriptsRequest);
+    opfCtaScriptsRequest: OpfCtaScriptsRequest
+  ): Observable<OpfCtaScriptsResponse> {
+    return this.adapter.getCtaScripts(opfCtaScriptsRequest);
   }
 }

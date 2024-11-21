@@ -25,12 +25,16 @@ export class OpfEndpointsService {
 
   private _activeBaseSite: string;
 
-  constructor() {
+  protected initialize(): void {
     if (this.baseSiteService) {
       this.baseSiteService
         .getActive()
         .subscribe((value) => (this._activeBaseSite = value));
     }
+  }
+
+  constructor() {
+    this.initialize();
   }
 
   buildUrl(endpoint: string, attributes?: DynamicAttributes): string {

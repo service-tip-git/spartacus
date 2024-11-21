@@ -21,14 +21,14 @@ import {
 } from '@spartacus/core';
 import { OpfKeyValueMap } from '@spartacus/opf/base/root';
 import {
-  CtaEvent,
-  CtaProductItem,
-  CtaScriptsLocation,
-  CtaScriptsRequest,
+  OpfCtaEvent,
   OpfCtaFacade,
+  OpfCtaProductItem,
+  OpfCtaScriptsLocation,
+  OpfCtaScriptsRequest,
 } from '@spartacus/opf/cta/root';
 import {
-  GlobalFunctionsDomain,
+  OpfGlobalFunctionsDomain,
   OpfGlobalFunctionsFacade,
 } from '@spartacus/opf/global-functions/root';
 
@@ -60,7 +60,7 @@ export class OpfDynamicCtaService {
   protected isCartPage: boolean;
 
   fillCtaRequestforCartPage(
-    scriptLocation: CtaScriptsLocation,
+    scriptLocation: OpfCtaScriptsLocation,
     paymentAccountIds: number[]
   ) {
     this.isCartPage = true;
@@ -77,16 +77,16 @@ export class OpfDynamicCtaService {
             return {
               productId: entry.product?.code,
               quantity: entry.quantity,
-            } as CtaProductItem;
+            } as OpfCtaProductItem;
           }),
           additionalData,
-        } as CtaScriptsRequest;
+        } as OpfCtaScriptsRequest;
       })
     );
   }
 
   fillCtaRequestforProductPage(
-    scriptLocation: CtaScriptsLocation,
+    scriptLocation: OpfCtaScriptsLocation,
     paymentAccountIds: number[]
   ) {
     this.isCartPage = false;
@@ -101,7 +101,7 @@ export class OpfDynamicCtaService {
           paymentAccountIds: paymentAccountIds,
           scriptLocations: [scriptLocation],
           additionalData,
-        } as CtaScriptsRequest;
+        } as OpfCtaScriptsRequest;
       })
     );
   }
@@ -147,7 +147,7 @@ export class OpfDynamicCtaService {
       this.subList.forEach((sub) => sub.unsubscribe());
       this.subList = [];
       this.globalFunctionsFacade.unregisterGlobalFunctions(
-        GlobalFunctionsDomain.GLOBAL
+        OpfGlobalFunctionsDomain.GLOBAL
       );
       this.isOnsiteMessagingInit = false;
     }
@@ -163,7 +163,7 @@ export class OpfDynamicCtaService {
   registerScriptReadyEvent() {
     this.globalFunctionsFacade.registerGlobalFunctions({
       paymentSessionId: '',
-      domain: GlobalFunctionsDomain.GLOBAL,
+      domain: OpfGlobalFunctionsDomain.GLOBAL,
     });
   }
 
@@ -190,7 +190,7 @@ export class OpfDynamicCtaService {
           const dispatchEvent = window?.dispatchEvent;
           if (dispatchEvent) {
             dispatchEvent(
-              new CustomEvent(CtaEvent.OPF_CART_CHANGED, {
+              new CustomEvent(OpfCtaEvent.OPF_CART_CHANGED, {
                 detail: { cart: cartTotalPrice, scriptIdentifiers },
               })
             );
@@ -223,7 +223,7 @@ export class OpfDynamicCtaService {
           const dispatchEvent = window?.dispatchEvent;
           if (dispatchEvent) {
             dispatchEvent(
-              new CustomEvent(CtaEvent.OPF_PRODUCT_AMOUNT_CHANGED, {
+              new CustomEvent(OpfCtaEvent.OPF_PRODUCT_AMOUNT_CHANGED, {
                 detail: { productInfo, scriptIdentifiers },
               })
             );

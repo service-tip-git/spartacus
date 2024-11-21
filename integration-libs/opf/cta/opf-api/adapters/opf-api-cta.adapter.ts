@@ -19,7 +19,10 @@ import {
   OPF_CTA_SCRIPTS_NORMALIZER,
   OpfCtaAdapter,
 } from '@spartacus/opf/cta/core';
-import { CtaScriptsRequest, CtaScriptsResponse } from '@spartacus/opf/cta/root';
+import {
+  OpfCtaScriptsRequest,
+  OpfCtaScriptsResponse,
+} from '@spartacus/opf/cta/root';
 import { OpfPaymentSubmitResponse } from '@spartacus/opf/payment/root';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -48,8 +51,8 @@ export class OpfApiCtaAdapter implements OpfCtaAdapter {
   };
 
   getCtaScripts(
-    ctaScriptsRequest: CtaScriptsRequest
-  ): Observable<CtaScriptsResponse> {
+    opfCtaScriptsRequest: OpfCtaScriptsRequest
+  ): Observable<OpfCtaScriptsResponse> {
     const headers = new HttpHeaders(this.header).set(
       OPF_CC_PUBLIC_KEY_HEADER,
       this.config.opf?.commerceCloudPublicKey || ''
@@ -58,7 +61,7 @@ export class OpfApiCtaAdapter implements OpfCtaAdapter {
     const url = this.getCtaScriptsEndpoint();
 
     return this.http
-      .post<OpfPaymentSubmitResponse>(url, ctaScriptsRequest, { headers })
+      .post<OpfPaymentSubmitResponse>(url, opfCtaScriptsRequest, { headers })
       .pipe(
         catchError((error) => {
           throw tryNormalizeHttpError(error, this.logger);

@@ -6,7 +6,10 @@
 
 import { inject, Injectable } from '@angular/core';
 import { OrderEntry } from '@spartacus/cart/base/root';
-import { CtaScriptsLocation, CtaScriptsRequest } from '@spartacus/opf/cta/root';
+import {
+  OpfCtaScriptsLocation,
+  OpfCtaScriptsRequest,
+} from '@spartacus/opf/cta/root';
 import { Order, OrderFacade, OrderHistoryFacade } from '@spartacus/order/root';
 import { filter, map, Observable } from 'rxjs';
 
@@ -16,29 +19,29 @@ export class OpfStaticCtaService {
   protected orderHistoryService = inject(OrderHistoryFacade);
 
   fillCtaRequestforPagesWithOrder(
-    scriptLocation: CtaScriptsLocation
-  ): Observable<CtaScriptsRequest> {
+    scriptLocation: OpfCtaScriptsLocation
+  ): Observable<OpfCtaScriptsRequest> {
     return this.getOrderDetails(scriptLocation).pipe(
       map((order) => {
         if (!order?.paymentInfo?.id) {
           throw new Error('OrderPaymentInfoId missing');
         }
-        const ctaScriptsRequest: CtaScriptsRequest = {
+        const opfCtaScriptsRequest: OpfCtaScriptsRequest = {
           cartId: order?.paymentInfo?.id,
           ctaProductItems: this.getProductItems(order as Order),
           scriptLocations: [scriptLocation],
         };
 
-        return ctaScriptsRequest;
+        return opfCtaScriptsRequest;
       })
     );
   }
 
   protected getOrderDetails(
-    scriptsLocation: CtaScriptsLocation
+    scriptsLocation: OpfCtaScriptsLocation
   ): Observable<Order> {
     const order$ =
-      scriptsLocation === CtaScriptsLocation.ORDER_CONFIRMATION_PAYMENT_GUIDE
+      scriptsLocation === OpfCtaScriptsLocation.ORDER_CONFIRMATION_PAYMENT_GUIDE
         ? this.orderDetailsService.getOrderDetails()
         : this.orderHistoryService.getOrderDetails();
     return order$.pipe(

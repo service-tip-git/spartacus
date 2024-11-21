@@ -8,17 +8,17 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { OpfMetadataModel } from '../model/opf-metadata-store.model';
 
-const initialState: OpfMetadataModel = {
-  termsAndConditionsChecked: false,
-  selectedPaymentOptionId: undefined,
-  isPaymentInProgress: false,
-  paymentSessionId: undefined,
-  isTermsAndConditionsAlertClosed: false,
-};
-
 @Injectable({ providedIn: 'root' })
 export class OpfMetadataStoreService {
-  opfMetadataState = new BehaviorSubject<OpfMetadataModel>(initialState);
+  protected readonly INITIAL_STATE: OpfMetadataModel = Object.freeze({
+    termsAndConditionsChecked: false,
+    selectedPaymentOptionId: undefined,
+    isPaymentInProgress: false,
+    paymentSessionId: undefined,
+    isTermsAndConditionsAlertClosed: false,
+  });
+
+  opfMetadataState = new BehaviorSubject<OpfMetadataModel>(this.INITIAL_STATE);
 
   getOpfMetadataState(): Observable<OpfMetadataModel> {
     return this.opfMetadataState.asObservable();
@@ -32,6 +32,6 @@ export class OpfMetadataStoreService {
   }
 
   clearOpfMetadata(): void {
-    this.opfMetadataState.next(initialState);
+    this.opfMetadataState.next(this.INITIAL_STATE);
   }
 }

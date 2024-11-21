@@ -6,20 +6,23 @@
 
 import { TestBed } from '@angular/core/testing';
 import { CommandService } from '@spartacus/core';
-import { CtaScriptsRequest, CtaScriptsResponse } from '@spartacus/opf/cta/root';
+import {
+  OpfCtaScriptsRequest,
+  OpfCtaScriptsResponse,
+} from '@spartacus/opf/cta/root';
 import { Observable, of } from 'rxjs';
-import { OpfCtaService } from './opf-cta.service';
 import { OpfCtaConnector } from '../connectors/opf-cta.connector';
+import { OpfCtaService } from './opf-cta.service';
 
 class MockCommandService {
-  create(fn: (payload: any) => Observable<CtaScriptsResponse>) {
+  create(fn: (payload: any) => Observable<OpfCtaScriptsResponse>) {
     return {
       execute: (payload: any) => fn(payload),
     };
   }
 }
 
-const ctaScriptsResponseMock: CtaScriptsResponse = {
+const ctaScriptsResponseMock: OpfCtaScriptsResponse = {
   value: [
     {
       paymentAccountId: 1,
@@ -44,8 +47,8 @@ const ctaScriptsResponseMock: CtaScriptsResponse = {
 
 class MockOpfCtaConnector {
   getCtaScripts(
-    _ctaScriptsRequest: CtaScriptsRequest
-  ): Observable<CtaScriptsResponse> {
+    _ctaScriptsRequest: OpfCtaScriptsRequest
+  ): Observable<OpfCtaScriptsResponse> {
     return of(ctaScriptsResponseMock);
   }
 }
@@ -76,17 +79,19 @@ describe('OpfCtaService', () => {
   it('should execute getCtaScripts and return response', (done) => {
     spyOn(opfCtaConnector, 'getCtaScripts').and.callThrough();
     spyOn(commandService, 'create').and.callThrough();
-    const request: CtaScriptsRequest = {
+    const request: OpfCtaScriptsRequest = {
       paymentAccountIds: [1],
       cartId: 'cart123',
       ctaProductItems: [{ productId: 'prod123', quantity: 1 }],
     };
 
-    service.getCtaScripts(request).subscribe((response: CtaScriptsResponse) => {
-      expect(response).toEqual(ctaScriptsResponseMock);
-      expect(opfCtaConnector.getCtaScripts).toHaveBeenCalledWith(request);
-      done();
-    });
+    service
+      .getCtaScripts(request)
+      .subscribe((response: OpfCtaScriptsResponse) => {
+        expect(response).toEqual(ctaScriptsResponseMock);
+        expect(opfCtaConnector.getCtaScripts).toHaveBeenCalledWith(request);
+        done();
+      });
   });
 
   it('should emit script ready event', () => {

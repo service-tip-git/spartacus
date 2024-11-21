@@ -10,18 +10,21 @@ import {
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { ConverterService, LoggerService } from '@spartacus/core';
-import { OpfApiCtaAdapter } from './opf-api-cta.adapter';
 import { OpfEndpointsService } from '@spartacus/opf/base/core';
 import {
   OPF_CC_PUBLIC_KEY_HEADER,
   OpfConfig,
   OpfDynamicScriptResourceType,
 } from '@spartacus/opf/base/root';
-import { CtaScriptsRequest, CtaScriptsResponse } from '@spartacus/opf/cta/root';
+import {
+  OpfCtaScriptsRequest,
+  OpfCtaScriptsResponse,
+} from '@spartacus/opf/cta/root';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { OpfApiCtaAdapter } from './opf-api-cta.adapter';
 
-const mockCtaScriptsRequest: CtaScriptsRequest = {
+const mockCtaScriptsRequest: OpfCtaScriptsRequest = {
   paymentAccountIds: [123],
   cartId: 'mockCartId',
   additionalData: [
@@ -30,7 +33,7 @@ const mockCtaScriptsRequest: CtaScriptsRequest = {
   ],
 };
 
-const mockCtaScriptsResponse: CtaScriptsResponse = {
+const mockCtaScriptsResponse: OpfCtaScriptsResponse = {
   value: [
     {
       paymentAccountId: 123,
@@ -100,7 +103,7 @@ describe('OpfApiCtaAdapter', () => {
 
   it('should fetch CTA scripts successfully', () => {
     converterService.pipeable.and.returnValue(
-      (input$: Observable<CtaScriptsResponse>) => input$
+      (input$: Observable<OpfCtaScriptsResponse>) => input$
     );
 
     adapter.getCtaScripts(mockCtaScriptsRequest).subscribe((response) => {
@@ -125,7 +128,7 @@ describe('OpfApiCtaAdapter', () => {
     };
 
     converterService.pipeable.and.returnValue(
-      (input$: Observable<CtaScriptsResponse>) => input$
+      (input$: Observable<OpfCtaScriptsResponse>) => input$
     );
 
     adapter

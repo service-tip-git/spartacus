@@ -22,7 +22,7 @@ import {
   OpfResourceLoaderService,
 } from '@spartacus/opf/base/root';
 import {
-  GlobalFunctionsDomain,
+  OpfGlobalFunctionsDomain,
   OpfGlobalFunctionsFacade,
 } from '@spartacus/opf/global-functions/root';
 import { Order, OrderFacade } from '@spartacus/order/root';
@@ -213,7 +213,7 @@ export class OpfPaymentVerificationService {
     paramsMap: Array<OpfKeyValueMap>
   ): Observable<boolean> {
     this.globalFunctionsService.registerGlobalFunctions({
-      domain: GlobalFunctionsDomain.REDIRECT,
+      domain: OpfGlobalFunctionsDomain.REDIRECT,
       paymentSessionId,
       vcr,
       paramsMap,
@@ -255,7 +255,7 @@ export class OpfPaymentVerificationService {
 
   removeResourcesAndGlobalFunctions(): void {
     this.globalFunctionsService.unregisterGlobalFunctions(
-      GlobalFunctionsDomain.REDIRECT
+      OpfGlobalFunctionsDomain.REDIRECT
     );
     this.opfResourceLoaderService.clearAllResources();
   }

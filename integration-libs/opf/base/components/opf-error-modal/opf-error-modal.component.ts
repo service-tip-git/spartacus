@@ -46,13 +46,17 @@ export class OpfErrorModalComponent implements OnInit {
     }
   }
 
-  constructor() {
+  protected initialize(): void {
     // Mechanism needed to trigger the cpnt life cycle hooks.
     timer(1).subscribe({
       complete: () => {
         this.cd.markForCheck();
       },
     });
+  }
+
+  constructor() {
+    this.initialize();
   }
 
   ngOnInit() {
