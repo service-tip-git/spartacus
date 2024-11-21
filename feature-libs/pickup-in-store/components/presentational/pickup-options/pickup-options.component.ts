@@ -31,7 +31,6 @@ import { TAB_MODE, Tab, TabComponent, TabConfig } from '@spartacus/storefront';
 import { Subscription, take } from 'rxjs';
 import { PickupOptionsTabs } from './pickup-options.model';
 import { TranslatePipe } from '@spartacus/core';
-import { TabComponent as TabComponent_1 } from '@spartacus/storefront';
 import { NgIf } from '@angular/common';
 import { FeatureDirective } from '@spartacus/core';
 
@@ -47,7 +46,7 @@ import { FeatureDirective } from '@spartacus/core';
     FormsModule,
     ReactiveFormsModule,
     NgIf,
-    TabComponent_1,
+    TabComponent,
     TranslatePipe,
   ],
 })

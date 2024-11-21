@@ -22,7 +22,6 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { IconComponent } from '@spartacus/storefront';
 import { PopoverDirective } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
-import { ViewComponent as ViewComponent_1 } from '@spartacus/storefront';
 
 @Component({
   selector: 'cx-org-card',
@@ -32,7 +31,7 @@ import { ViewComponent as ViewComponent_1 } from '@spartacus/storefront';
   providers: [MessageService],
   standalone: true,
   imports: [
-    ViewComponent_1,
+    ViewComponent,
     NgIf,
     PopoverDirective,
     IconComponent,
