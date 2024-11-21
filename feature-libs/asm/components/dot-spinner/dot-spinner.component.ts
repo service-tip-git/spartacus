@@ -11,5 +11,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   templateUrl: './dot-spinner.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
+  imports: [],
 })
 export class DotSpinnerComponent {}

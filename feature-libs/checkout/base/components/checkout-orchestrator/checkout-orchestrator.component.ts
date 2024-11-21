@@ -11,6 +11,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
+  imports: [],
 })
 export class CheckoutOrchestratorComponent {
   constructor() {

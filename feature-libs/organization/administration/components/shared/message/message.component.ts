@@ -26,6 +26,7 @@ import { MessageService } from './services/message.service';
   templateUrl: './message.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
+  imports: [],
 })
 export class MessageComponent implements AfterViewInit, OnDestroy {
   // We use a child view container ref, as creating components will become siblings.

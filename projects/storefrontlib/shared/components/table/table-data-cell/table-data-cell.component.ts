@@ -13,6 +13,7 @@ import { TableHeaderOutletContext } from '../table.model';
   template: `{{ value }}`,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
+  imports: [],
 })
 export class TableDataCellComponent {
   constructor(protected outlet: OutletContextData<TableHeaderOutletContext>) {}

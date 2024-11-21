@@ -41,6 +41,7 @@ import { SplitViewService } from '../split-view.service';
   templateUrl: './view.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
+  imports: [],
 })
 export class ViewComponent implements OnInit, OnDestroy {
   protected _hidden: boolean | undefined;

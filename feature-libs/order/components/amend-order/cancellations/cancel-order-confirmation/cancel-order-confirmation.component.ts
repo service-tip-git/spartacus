@@ -5,17 +5,26 @@
  */
 
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { UntypedFormGroup } from '@angular/forms';
+import { NgForm, UntypedFormGroup } from '@angular/forms';
 import { OrderEntry } from '@spartacus/cart/base/root';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { OrderAmendService } from '../../amend-order.service';
+import { AsyncPipe } from '@angular/common';
+import { CancelOrReturnItemsComponent } from '../../amend-order-items/amend-order-items.component';
+import { AmendOrderActionsComponent } from '../../amend-order-actions/amend-order-actions.component';
 
 @Component({
   selector: 'cx-cancel-order-confirmation',
   templateUrl: './cancel-order-confirmation.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
+  imports: [
+    AsyncPipe,
+    CancelOrReturnItemsComponent,
+    AmendOrderActionsComponent,
+    NgForm,
+  ],
 })
 export class CancelOrderConfirmationComponent {
   orderCode: string;

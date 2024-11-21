@@ -16,6 +16,7 @@ import { QualtricsLoaderService } from './qualtrics-loader.service';
   selector: 'cx-qualtrics',
   template: '',
   standalone: true,
+  imports: [],
 })
 export class QualtricsComponent {
   protected logger = inject(LoggerService);

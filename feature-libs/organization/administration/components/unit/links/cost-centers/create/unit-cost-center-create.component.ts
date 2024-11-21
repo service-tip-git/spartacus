@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 import { CostCenterItemService } from '../../../../cost-center/services/cost-center-item.service';
 import { CurrentUnitService } from '../../../services/current-unit.service';
 import { UnitCostCenterItemService } from './unit-cost-center-item.service';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'cx-org-unit-cost-center-create',
@@ -24,6 +25,7 @@ import { UnitCostCenterItemService } from './unit-cost-center-item.service';
     },
   ],
   standalone: true,
+  imports: [AsyncPipe],
 })
 export class UnitCostCenterCreateComponent {
   unitKey$: Observable<string> = this.unitService.key$;

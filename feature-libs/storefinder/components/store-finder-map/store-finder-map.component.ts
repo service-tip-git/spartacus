@@ -21,6 +21,7 @@ import { GoogleMapRendererService } from '@spartacus/storefinder/core';
   selector: 'cx-store-finder-map',
   templateUrl: './store-finder-map.component.html',
   standalone: true,
+  imports: [],
 })
 export class StoreFinderMapComponent implements OnChanges {
   @ViewChild('mapElement', { static: true })

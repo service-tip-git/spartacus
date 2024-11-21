@@ -27,6 +27,7 @@ import { CaptchaRenderer } from './captcha.renderer';
   templateUrl: './captcha.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
+  imports: [],
 })
 export class CaptchaComponent implements AfterViewInit, OnDestroy {
   // Emits true if user confirms captcha

@@ -16,5 +16,6 @@ import { QuoteCartGuard } from './quote-cart.guard';
 @Component({
   templateUrl: './quote-cart-guard.component.html',
   standalone: true,
+  imports: [],
 })
 export class QuoteCartGuardComponent {}
