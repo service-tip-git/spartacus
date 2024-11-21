@@ -399,6 +399,7 @@ if (environment.cpq) {
         a11yShowLabelOfSelect: true,
         a11yShowDownArrowOnFocusedSelectMenu: true,
         a11yTextSpacingAdjustments: true,
+        a11yTableHeaderReadout: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
         useSiteThemeService: false,
         enableConsecutiveCharactersPasswordRequirement: true,

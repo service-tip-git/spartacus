@@ -9,6 +9,7 @@ import { NgModule } from '@angular/core';
 import {
   AuthGuard,
   CmsConfig,
+  FeaturesConfigModule,
   I18nModule,
   provideDefaultConfig,
 } from '@spartacus/core';
@@ -39,6 +40,7 @@ export const accountSummaryDocumentCmsConfig: CmsConfig = {
     SortingModule,
     PaginationModule,
     IconModule,
+    FeaturesConfigModule,
   ],
   providers: [provideDefaultConfig(accountSummaryDocumentCmsConfig)],
 })
