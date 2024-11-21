@@ -61,12 +61,15 @@ describe('Order details page', { testIsolation: false }, () => {
           orderData.body.code
         );
         cy.visit('/my-account/orders');
-        cy.get('.cx-order-history-code > .cx-order-history-value')
-          .then((el) => {
+        cy.get('.cx-order-history-code > .cx-order-history-value').then(
+          (el) => {
             const orderNumber = el.text().match(/\d+/)[0];
             waitForOrderWithConsignmentToBePlacedRequest(orderNumber);
-            return cy.wrap(el);
-          })
+          }
+        );
+
+        cy.get('.cx-order-history-code > .cx-order-history-value')
+          .should('exist')
           .first()
           .click();
       });
