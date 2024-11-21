@@ -63,7 +63,6 @@ import {
     AsyncPipe,
     SlicePipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CarouselComponent implements OnInit, OnChanges {

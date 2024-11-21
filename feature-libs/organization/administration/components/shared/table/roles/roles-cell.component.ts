@@ -16,14 +16,6 @@ import { NgIf, NgTemplateOutlet, NgFor } from '@angular/common';
   templateUrl: './roles-cell.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    RouterLink,
-    NgTemplateOutlet,
-    NgFor,
-    UrlPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [NgIf, RouterLink, NgTemplateOutlet, NgFor, UrlPipe, TranslatePipe],
 })
 export class RolesCellComponent extends CellComponent {}

@@ -17,7 +17,7 @@ type ConsignmentOutletContextData = { item: Consignment; order?: Order };
   selector: 'cx-my-account-v2-consignment-tracking',
   templateUrl: './my-account-v2-consignment-tracking.component.html',
   standalone: true,
-  imports: [NgIf, TranslatePipe, CxDatePipe, TranslatePipe, MockDatePipe],
+  imports: [NgIf, TranslatePipe, CxDatePipe, MockDatePipe],
 })
 export class MyAccountV2ConsignmentTrackingComponent
   extends ConsignmentTrackingComponent

@@ -73,7 +73,7 @@ import { FocusDirective } from '@spartacus/storefront';
     TranslatePipe,
     CxDatePipe,
     ArgsPipe,
-    TranslatePipe,
+
     MockDatePipe,
   ],
 })

@@ -38,7 +38,6 @@ import { CardComponent } from '../card/card.component';
     PaginationComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class SubListComponent extends ListComponent {

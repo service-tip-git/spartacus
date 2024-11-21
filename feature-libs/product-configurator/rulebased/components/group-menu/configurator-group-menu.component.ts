@@ -51,7 +51,6 @@ import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
     NgClass,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ConfiguratorGroupMenuComponent {

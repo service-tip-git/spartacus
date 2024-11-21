@@ -27,7 +27,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     ProductCarouselItemComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ConfiguratorVariantCarouselComponent {

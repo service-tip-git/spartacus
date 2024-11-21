@@ -18,14 +18,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
   templateUrl: './skip-link.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    FocusDirective,
-    NgFor,
-    AsyncPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [NgIf, FocusDirective, NgFor, AsyncPipe, TranslatePipe],
 })
 export class SkipLinkComponent {
   skipLinks$: Observable<SkipLink[]> = this.skipLinkService.getSkipLinks();

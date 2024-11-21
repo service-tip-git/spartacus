@@ -38,7 +38,6 @@ import { NgIf, NgFor, NgTemplateOutlet, AsyncPipe } from '@angular/common';
     TabPanelComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class TabComponent implements OnInit, AfterViewInit, OnDestroy {

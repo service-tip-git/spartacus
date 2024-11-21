@@ -32,7 +32,6 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     ConfiguratorTextfieldInputFieldReadonlyComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ConfiguratorTextfieldFormComponent {

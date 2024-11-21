@@ -34,7 +34,6 @@ import { IconComponent } from '@spartacus/storefront';
     ReactiveFormsModule,
     NgIf,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class UnitLevelOrderHistoryFilterComponent {

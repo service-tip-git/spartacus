@@ -27,7 +27,6 @@ import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class StoreFinderStoresCountComponent implements OnInit {

@@ -28,7 +28,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     AsmCustomer360ProductListingComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class AsmCustomer360ActiveCartComponent {

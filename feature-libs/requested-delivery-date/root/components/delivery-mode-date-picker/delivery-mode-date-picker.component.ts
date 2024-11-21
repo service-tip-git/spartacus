@@ -48,7 +48,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     AsyncPipe,
     TranslatePipe,
     CxDatePipe_1,
-    TranslatePipe,
+
     MockDatePipe,
   ],
 })

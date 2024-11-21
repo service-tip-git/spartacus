@@ -66,7 +66,6 @@ import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
     AsyncPipe,
     UrlPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class RegisterComponent implements OnInit, OnDestroy {

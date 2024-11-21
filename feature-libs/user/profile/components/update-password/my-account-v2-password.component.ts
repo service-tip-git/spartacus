@@ -37,7 +37,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     FormErrorsComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class MyAccountV2PasswordComponent {

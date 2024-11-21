@@ -56,7 +56,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     DatePickerComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class QuoteSummarySellerEditComponent implements OnInit, OnDestroy {

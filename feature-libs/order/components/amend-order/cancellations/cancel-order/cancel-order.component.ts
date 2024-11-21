@@ -34,7 +34,6 @@ import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
     AmendOrderActionsComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CancelOrderComponent {

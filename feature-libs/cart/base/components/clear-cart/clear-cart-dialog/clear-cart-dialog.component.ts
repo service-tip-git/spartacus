@@ -33,7 +33,6 @@ import { FocusDirective } from '@spartacus/storefront';
     IconComponent,
     SpinnerComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ClearCartDialogComponent implements OnDestroy {

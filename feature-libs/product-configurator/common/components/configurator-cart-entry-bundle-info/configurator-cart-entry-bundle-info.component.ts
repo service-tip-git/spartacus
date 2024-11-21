@@ -34,7 +34,6 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     AsyncPipe,
     TranslatePipe,
     CxNumericPipe,
-    TranslatePipe,
   ],
 })
 export class ConfiguratorCartEntryBundleInfoComponent {

@@ -38,7 +38,6 @@ import { FocusDirective } from '@spartacus/storefront';
     NgIf,
     SpinnerComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class MyAccountV2DownloadInvoicesComponent implements AfterViewChecked {

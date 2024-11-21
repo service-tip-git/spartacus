@@ -45,7 +45,6 @@ import { NgTemplateOutlet, NgIf, NgFor, AsyncPipe } from '@angular/common';
     NgFor,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CheckoutServiceDetailsComponent implements OnInit, OnDestroy {

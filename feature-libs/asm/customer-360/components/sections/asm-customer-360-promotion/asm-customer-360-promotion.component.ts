@@ -29,12 +29,7 @@ import { AsmCustomer360PromotionListingComponent } from '../../asm-customer-360-
   selector: 'cx-asm-customer-360-promotion',
   templateUrl: './asm-customer-360-promotion.component.html',
   standalone: true,
-  imports: [
-    AsmCustomer360PromotionListingComponent,
-    AsyncPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [AsmCustomer360PromotionListingComponent, AsyncPipe, TranslatePipe],
 })
 export class AsmCustomer360PromotionComponent implements OnInit, OnDestroy {
   showErrorAlert$ = new BehaviorSubject<boolean>(false);

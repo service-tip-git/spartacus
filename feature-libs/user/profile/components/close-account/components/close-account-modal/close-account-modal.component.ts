@@ -44,7 +44,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CloseAccountModalComponent implements OnInit {

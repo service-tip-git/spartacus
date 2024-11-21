@@ -42,7 +42,6 @@ import { NgClass, NgIf, NgFor, AsyncPipe } from '@angular/common';
     AsyncPipe,
     TranslatePipe,
     UrlPipe,
-    TranslatePipe,
   ],
 })
 export class PickUpItemsDetailsComponent implements OnInit {

@@ -45,7 +45,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     PasswordVisibilityToggleDirective,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class MyAccountV2EmailComponent implements OnInit {

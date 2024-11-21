@@ -29,7 +29,6 @@ import { NgIf, NgFor } from '@angular/common';
     SpinnerComponent,
     ProductListItemComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ProductScrollComponent implements OnDestroy {

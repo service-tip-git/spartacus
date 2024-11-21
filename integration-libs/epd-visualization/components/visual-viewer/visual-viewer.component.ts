@@ -35,7 +35,6 @@ import { NgIf } from '@angular/common';
     VisualViewerAnimationSliderComponent,
     SpinnerComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class VisualViewerComponent {

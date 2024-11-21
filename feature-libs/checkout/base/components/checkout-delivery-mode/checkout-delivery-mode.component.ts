@@ -60,7 +60,6 @@ import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
     InnerComponentsHostDirective,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CheckoutDeliveryModeComponent {

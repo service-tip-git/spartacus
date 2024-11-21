@@ -42,7 +42,6 @@ import { StoreFinderPaginationDetailsComponent } from '../../store-finder-pagina
     NgSwitchCase,
     KeyValuePipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class StoreFinderListComponent {

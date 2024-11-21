@@ -33,7 +33,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     FocusableCarouselItemDirective,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ProductImageZoomProductImagesComponent extends ProductImagesComponent {

@@ -26,7 +26,6 @@ import { NgIf, NgFor, JsonPipe } from '@angular/common';
     StoreFinderMapComponent,
     JsonPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class StoreFinderStoreDescriptionComponent extends AbstractStoreItemComponent {

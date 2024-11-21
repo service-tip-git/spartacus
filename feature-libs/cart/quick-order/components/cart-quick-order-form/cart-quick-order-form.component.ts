@@ -52,7 +52,6 @@ import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
     FormErrorsComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CartQuickOrderFormComponent implements OnInit, OnDestroy {

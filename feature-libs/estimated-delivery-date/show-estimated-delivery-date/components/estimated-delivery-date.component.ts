@@ -28,15 +28,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
   templateUrl: './estimated-delivery-date.component.html',
   providers: [CxDatePipe],
   standalone: true,
-  imports: [
-    NgIf,
-    NgFor,
-    AsyncPipe,
-    TranslatePipe,
-    CxDatePipe_1,
-    TranslatePipe,
-    MockDatePipe,
-  ],
+  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe, CxDatePipe_1, MockDatePipe],
 })
 export class EstimatedDeliveryDateComponent {
   @Optional() protected cartItemContext = inject(CartItemContext);

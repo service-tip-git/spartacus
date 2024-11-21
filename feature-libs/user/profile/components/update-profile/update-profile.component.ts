@@ -50,7 +50,6 @@ import { NgIf, NgFor, NgTemplateOutlet, AsyncPipe } from '@angular/common';
     AsyncPipe,
     TranslatePipe,
     UrlPipe,
-    TranslatePipe,
   ],
 })
 export class UpdateProfileComponent {

@@ -42,7 +42,6 @@ import { FocusDirective } from '../../../layout/a11y/keyboard-focus/focus.direct
     IconComponent,
     NgTemplateOutlet,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class PopoverComponent implements OnInit, OnDestroy, AfterViewChecked {

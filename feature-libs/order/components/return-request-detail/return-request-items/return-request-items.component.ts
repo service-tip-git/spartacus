@@ -17,14 +17,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
   templateUrl: './return-request-items.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    NgFor,
-    MediaComponent,
-    AsyncPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [NgIf, NgFor, MediaComponent, AsyncPipe, TranslatePipe],
 })
 export class ReturnRequestItemsComponent {
   constructor(protected returnRequestService: ReturnRequestService) {}

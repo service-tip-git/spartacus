@@ -37,7 +37,6 @@ import { AsmCustomer360PromotionListingComponent } from '../../asm-customer-360-
     IconComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class AsmCustomer360CustomerCouponComponent

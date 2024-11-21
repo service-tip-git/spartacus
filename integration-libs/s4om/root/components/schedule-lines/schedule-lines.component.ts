@@ -18,15 +18,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
   templateUrl: './schedule-lines.component.html',
   providers: [CxDatePipe],
   standalone: true,
-  imports: [
-    NgIf,
-    NgFor,
-    AsyncPipe,
-    TranslatePipe,
-    CxDatePipe_1,
-    TranslatePipe,
-    MockDatePipe,
-  ],
+  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe, CxDatePipe_1, MockDatePipe],
 })
 export class ScheduleLinesComponent {
   constructor(

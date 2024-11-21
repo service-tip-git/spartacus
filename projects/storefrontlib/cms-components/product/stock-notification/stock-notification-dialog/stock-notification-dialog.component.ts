@@ -43,7 +43,6 @@ import { FocusDirective } from '../../../../layout/a11y/keyboard-focus/focus.dir
     AsyncPipe,
     TranslatePipe,
     UrlPipe,
-    TranslatePipe,
   ],
 })
 export class StockNotificationDialogComponent implements OnInit, OnDestroy {

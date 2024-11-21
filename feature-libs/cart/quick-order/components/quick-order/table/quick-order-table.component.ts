@@ -23,7 +23,6 @@ import { NgIf, NgFor } from '@angular/common';
     NgFor,
     QuickOrderItemComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class QuickOrderTableComponent {

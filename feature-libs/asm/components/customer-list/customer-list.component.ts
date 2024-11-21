@@ -72,7 +72,6 @@ import { FocusDirective } from '@spartacus/storefront';
     NgSelectA11yDirective,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CustomerListComponent implements OnInit, OnDestroy {

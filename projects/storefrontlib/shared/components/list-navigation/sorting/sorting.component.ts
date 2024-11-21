@@ -29,7 +29,6 @@ import { NgSelectModule } from '@ng-select/ng-select';
     NgSelectA11yDirective,
     NgFor,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class SortingComponent {

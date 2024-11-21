@@ -69,7 +69,6 @@ import { NgIf, NgClass, AsyncPipe } from '@angular/common';
     IconComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class AddToCartComponent implements OnInit, OnDestroy {

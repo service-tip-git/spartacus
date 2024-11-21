@@ -18,14 +18,7 @@ import { NgIf } from '@angular/common';
   selector: 'cx-store-finder-list-item',
   templateUrl: './store-finder-list-item.component.html',
   standalone: true,
-  imports: [
-    NgIf,
-    RouterLink,
-    OutletDirective,
-    FeatureDirective,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [NgIf, RouterLink, OutletDirective, FeatureDirective, TranslatePipe],
 })
 export class StoreFinderListItemComponent extends AbstractStoreItemComponent {
   @Input()

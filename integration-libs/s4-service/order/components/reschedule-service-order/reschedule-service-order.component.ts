@@ -56,7 +56,6 @@ import { NgTemplateOutlet, NgIf, NgFor, AsyncPipe } from '@angular/common';
     AsyncPipe,
     TranslatePipe,
     UrlPipe,
-    TranslatePipe,
   ],
 })
 export class RescheduleServiceOrderComponent implements OnInit, OnDestroy {

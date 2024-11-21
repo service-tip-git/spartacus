@@ -67,7 +67,6 @@ import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CheckoutPaymentMethodComponent implements OnInit, OnDestroy {

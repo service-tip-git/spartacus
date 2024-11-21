@@ -51,7 +51,6 @@ import { FocusDirective } from '../../../layout/a11y/keyboard-focus/focus.direct
     ConsentManagementFormComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class AnonymousConsentDialogComponent implements OnInit, OnDestroy {

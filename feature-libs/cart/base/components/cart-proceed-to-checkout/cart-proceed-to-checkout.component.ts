@@ -28,13 +28,7 @@ import { ProgressButtonComponent } from '@spartacus/storefront';
   templateUrl: './cart-proceed-to-checkout.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    ProgressButtonComponent,
-    RouterLink,
-    TranslatePipe,
-    UrlPipe,
-    TranslatePipe,
-  ],
+  imports: [ProgressButtonComponent, RouterLink, TranslatePipe, UrlPipe],
 })
 export class CartProceedToCheckoutComponent implements OnInit, OnDestroy {
   cartValidationInProgress = false;

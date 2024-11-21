@@ -35,7 +35,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     AddToHomeScreenBannerComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class OrderConfirmationThankYouMessageComponent

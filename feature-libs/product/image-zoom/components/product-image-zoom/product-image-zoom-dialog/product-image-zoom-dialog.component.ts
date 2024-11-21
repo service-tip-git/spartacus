@@ -32,7 +32,6 @@ import { FocusDirective } from '@spartacus/storefront';
     IconComponent,
     ProductImageZoomViewComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ProductImageZoomDialogComponent {

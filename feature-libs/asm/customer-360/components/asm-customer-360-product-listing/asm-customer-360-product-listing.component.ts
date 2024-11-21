@@ -42,7 +42,6 @@ import {
     AsmCustomer360ProductItemComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class AsmCustomer360ProductListingComponent implements OnInit {

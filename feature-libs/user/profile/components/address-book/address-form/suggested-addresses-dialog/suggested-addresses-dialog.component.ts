@@ -39,7 +39,6 @@ import { FocusDirective } from '@spartacus/storefront';
     NgFor,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class SuggestedAddressDialogComponent implements OnInit {

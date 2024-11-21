@@ -22,13 +22,7 @@ import { FocusDirective } from '@spartacus/storefront';
   templateUrl: './dp-confirmation-dialog.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    FocusDirective,
-    FeatureDirective,
-    IconComponent,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [FocusDirective, FeatureDirective, IconComponent, TranslatePipe],
 })
 export class DpConfirmationDialogComponent {
   focusConfig: FocusConfig = {

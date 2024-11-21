@@ -22,7 +22,6 @@ import { NgIf } from '@angular/common';
     ReactiveFormsModule,
     IconComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CompactAddToCartComponent extends AddToCartComponent {}

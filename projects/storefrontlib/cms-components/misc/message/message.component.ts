@@ -31,7 +31,6 @@ import { FeatureDirective } from '@spartacus/core';
     NgIf,
     AtMessageDirective,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class MessageComponent implements AfterViewInit {

@@ -25,7 +25,6 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     FeatureDirective,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class WishListComponent {

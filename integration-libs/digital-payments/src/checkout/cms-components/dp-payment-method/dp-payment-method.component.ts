@@ -45,7 +45,6 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     DpPaymentCallbackComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class DpPaymentMethodComponent extends CorePaymentMethodComponent {

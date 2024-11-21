@@ -46,7 +46,6 @@ import { FormComponent } from '../../../../shared/form/form.component';
     FormErrorsComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class UnitAddressFormComponent implements OnInit {

@@ -17,13 +17,7 @@ import { FeatureDirective } from '@spartacus/core';
   selector: 'cx-order-summary',
   templateUrl: './order-summary.component.html',
   standalone: true,
-  imports: [
-    FeatureDirective,
-    NgIf,
-    AppliedCouponsComponent,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [FeatureDirective, NgIf, AppliedCouponsComponent, TranslatePipe],
 })
 export class OrderSummaryComponent implements OnInit, OnDestroy {
   @Input()

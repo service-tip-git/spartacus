@@ -48,7 +48,6 @@ import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
     IconComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ConfiguratorAttributeMultiSelectionImageComponent

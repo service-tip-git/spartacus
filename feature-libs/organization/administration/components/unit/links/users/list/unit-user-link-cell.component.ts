@@ -55,7 +55,6 @@ import { FeatureDirective } from '@spartacus/core';
     AsyncPipe,
     TranslatePipe,
     UrlPipe,
-    TranslatePipe,
   ],
 })
 export class UnitUserRolesCellComponent extends CellComponent {

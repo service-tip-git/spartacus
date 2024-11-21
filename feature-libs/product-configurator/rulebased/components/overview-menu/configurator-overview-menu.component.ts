@@ -31,7 +31,6 @@ import { NgIf, NgTemplateOutlet, NgFor, NgClass } from '@angular/common';
     NgClass,
     IconComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ConfiguratorOverviewMenuComponent implements AfterViewInit {

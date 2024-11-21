@@ -61,7 +61,6 @@ import {
     AsyncPipe,
     TranslatePipe,
     UrlPipe,
-    TranslatePipe,
   ],
 })
 export class CheckoutReviewSubmitComponent {

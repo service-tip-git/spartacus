@@ -48,7 +48,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     AddToCartComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class SavedCartDetailsItemsComponent implements OnInit, OnDestroy {

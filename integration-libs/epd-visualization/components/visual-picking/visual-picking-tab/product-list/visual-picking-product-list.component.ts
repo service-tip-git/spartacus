@@ -37,7 +37,6 @@ import { PagedListComponent } from './paged-list/paged-list.component';
     AsyncPipe,
     UrlPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class VisualPickingProductListComponent implements OnInit {

@@ -43,7 +43,6 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     ProductScrollComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ProductListComponent implements OnInit, OnDestroy {

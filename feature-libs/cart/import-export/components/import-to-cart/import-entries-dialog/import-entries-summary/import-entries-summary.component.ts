@@ -39,7 +39,6 @@ import {
     IconComponent,
     NgFor,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ImportEntriesSummaryComponent {

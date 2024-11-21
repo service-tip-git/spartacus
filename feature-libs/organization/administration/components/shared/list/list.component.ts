@@ -64,7 +64,6 @@ import { SplitViewComponent } from '@spartacus/storefront';
     AsyncPipe,
     UrlPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ListComponent<T = any, P = PaginationModel> {

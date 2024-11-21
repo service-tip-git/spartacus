@@ -32,7 +32,6 @@ import { IconComponent } from '../../../misc/icon/icon.component';
     FacetListComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ProductFacetNavigationComponent {

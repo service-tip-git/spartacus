@@ -33,7 +33,6 @@ import { NgIf } from '@angular/common';
     PasswordVisibilityToggleDirective,
     DotSpinnerComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CSAgentLoginFormComponent implements OnInit {

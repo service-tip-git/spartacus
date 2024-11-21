@@ -31,7 +31,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     ConfiguratorOverviewFilterBarComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ConfiguratorOverviewFilterButtonComponent {

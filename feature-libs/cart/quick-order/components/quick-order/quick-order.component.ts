@@ -50,7 +50,6 @@ import { NgIf, NgFor, AsyncPipe, KeyValuePipe } from '@angular/common';
     AsyncPipe,
     KeyValuePipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class QuickOrderComponent implements OnInit, OnDestroy {

@@ -32,7 +32,6 @@ import { FeatureDirective } from '@spartacus/core';
     NgTemplateOutlet,
     FormErrorsComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CheckoutLoginComponent implements OnDestroy {

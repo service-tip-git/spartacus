@@ -54,7 +54,6 @@ import { NgIf } from '@angular/common';
     FileUploadComponent,
     FormErrorsComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ImportEntriesFormComponent implements OnInit {

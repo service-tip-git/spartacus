@@ -46,7 +46,6 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     AsyncPipe,
     UrlPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class UserDetailsComponent {

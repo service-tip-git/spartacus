@@ -76,7 +76,6 @@ import { NgClass, NgIf, AsyncPipe } from '@angular/common';
     DotSpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class AsmBindCartComponent implements OnInit, OnDestroy {

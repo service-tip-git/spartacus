@@ -40,7 +40,6 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class MyCouponsComponent implements OnInit, OnDestroy {

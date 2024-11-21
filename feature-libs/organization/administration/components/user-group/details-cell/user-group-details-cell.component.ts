@@ -16,12 +16,6 @@ import { RouterLink } from '@angular/router';
   templateUrl: './user-group-details-cell.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    RouterLink,
-    PopoverDirective,
-    TranslatePipe,
-    UrlPipe,
-    TranslatePipe,
-  ],
+  imports: [RouterLink, PopoverDirective, TranslatePipe, UrlPipe],
 })
 export class UserGroupDetailsCellComponent extends CellComponent {}

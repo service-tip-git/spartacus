@@ -48,7 +48,6 @@ import { RouterLink } from '@angular/router';
     AtMessageDirective,
     TranslatePipe,
     UrlPipe,
-    TranslatePipe,
   ],
 })
 export class WishListItemComponent implements OnChanges {

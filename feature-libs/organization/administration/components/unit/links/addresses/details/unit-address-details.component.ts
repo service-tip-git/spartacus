@@ -46,7 +46,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     AsyncPipe,
     UrlPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class UnitAddressDetailsComponent {

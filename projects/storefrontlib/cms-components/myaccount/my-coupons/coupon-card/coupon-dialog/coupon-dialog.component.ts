@@ -36,7 +36,7 @@ import { FocusDirective } from '../../../../../layout/a11y/keyboard-focus/focus.
     LowerCasePipe,
     TranslatePipe,
     CxDatePipe,
-    TranslatePipe,
+
     MockDatePipe,
   ],
 })

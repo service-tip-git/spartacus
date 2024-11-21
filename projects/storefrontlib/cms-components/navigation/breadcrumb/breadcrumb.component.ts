@@ -31,14 +31,7 @@ import { NgFor, AsyncPipe } from '@angular/common';
   templateUrl: './breadcrumb.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgFor,
-    RouterLink,
-    FeatureDirective,
-    AsyncPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [NgFor, RouterLink, FeatureDirective, AsyncPipe, TranslatePipe],
 })
 export class BreadcrumbComponent extends PageTitleComponent implements OnInit {
   crumbs$: Observable<any[]>;

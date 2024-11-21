@@ -65,7 +65,6 @@ import { FormComponent } from '../../shared/form/form.component';
     NgFor,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class UserFormComponent implements OnInit {

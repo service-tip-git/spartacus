@@ -49,7 +49,6 @@ import { RouterLink } from '@angular/router';
     InnerComponentsHostDirective,
     TranslatePipe,
     UrlPipe,
-    TranslatePipe,
   ],
 })
 export class ProductListItemComponent implements OnChanges {

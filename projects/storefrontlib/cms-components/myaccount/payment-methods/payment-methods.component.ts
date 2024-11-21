@@ -36,7 +36,6 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     CardComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class PaymentMethodsComponent implements OnInit {

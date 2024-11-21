@@ -29,7 +29,6 @@ import { VisualPickingProductFilterComponent } from './product-filter/visual-pic
     VisualPickingProductFilterComponent,
     VisualPickingProductListComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class VisualPickingTabComponent implements AfterViewInit {

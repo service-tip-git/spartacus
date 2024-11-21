@@ -17,14 +17,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
   selector: 'cx-configurator-cart-entry-info',
   templateUrl: './configurator-cart-entry-info.component.html',
   standalone: true,
-  imports: [
-    NgIf,
-    NgFor,
-    ConfigureCartEntryComponent,
-    AsyncPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [NgIf, NgFor, ConfigureCartEntryComponent, AsyncPipe, TranslatePipe],
 })
 export class ConfiguratorCartEntryInfoComponent {
   constructor(

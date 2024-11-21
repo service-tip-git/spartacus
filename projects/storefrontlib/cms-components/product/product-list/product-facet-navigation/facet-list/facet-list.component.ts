@@ -57,7 +57,6 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     FacetComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class FacetListComponent implements OnInit, OnDestroy, AfterViewInit {

@@ -35,14 +35,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './video.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    RouterLink,
-    SpinnerComponent,
-    AsyncPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [NgIf, RouterLink, SpinnerComponent, AsyncPipe, TranslatePipe],
 })
 export class VideoComponent {
   @HostBinding('class') styleClasses: string | undefined;

@@ -44,7 +44,6 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     FormErrorsComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class MyAccountV2ProfileComponent implements OnInit {

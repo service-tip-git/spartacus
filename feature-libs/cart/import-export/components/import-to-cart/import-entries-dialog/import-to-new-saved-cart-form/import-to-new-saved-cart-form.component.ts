@@ -58,7 +58,6 @@ import { NgIf, NgTemplateOutlet } from '@angular/common';
     FileUploadComponent,
     FormErrorsComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ImportToNewSavedCartFormComponent extends ImportEntriesFormComponent {

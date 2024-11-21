@@ -56,7 +56,6 @@ import { FocusDirective } from '@spartacus/storefront';
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class PickupOptionDialogComponent implements OnInit, OnDestroy {

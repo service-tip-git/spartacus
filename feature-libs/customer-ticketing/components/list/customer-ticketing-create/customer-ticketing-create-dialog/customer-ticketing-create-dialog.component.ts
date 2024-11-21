@@ -54,7 +54,6 @@ import { FocusDirective } from '@spartacus/storefront';
     FileUploadComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CustomerTicketingCreateDialogComponent

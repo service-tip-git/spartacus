@@ -47,7 +47,6 @@ import { NgIf, NgFor, AsyncPipe, SlicePipe } from '@angular/common';
     AsyncPipe,
     SlicePipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class FacetComponent implements AfterViewInit {

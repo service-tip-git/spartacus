@@ -41,7 +41,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     AsyncPipe,
     TranslatePipe,
     CxNumericPipe,
-    TranslatePipe,
   ],
 })
 export class ConfiguratorOverviewBundleAttributeComponent implements OnInit {

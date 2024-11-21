@@ -41,7 +41,6 @@ import { ViewComponent as ViewComponent_1 } from '@spartacus/storefront';
     RouterOutlet,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CardComponent<T extends BaseItem> {

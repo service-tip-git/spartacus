@@ -47,7 +47,6 @@ import { NgIf, NgClass, NgFor, AsyncPipe } from '@angular/common';
     ConfiguratorPriceComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ConfiguratorAttributeSingleSelectionBundleDropdownComponent

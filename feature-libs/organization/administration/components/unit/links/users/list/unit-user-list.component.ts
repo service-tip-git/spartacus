@@ -37,7 +37,6 @@ import { SubListComponent } from '../../../../shared/sub-list/sub-list.component
     DisableInfoComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class UnitUserListComponent {

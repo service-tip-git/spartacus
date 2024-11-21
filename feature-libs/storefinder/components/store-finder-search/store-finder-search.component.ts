@@ -28,7 +28,6 @@ import { IconComponent } from '@spartacus/storefront';
     RouterLink,
     NgClass,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class StoreFinderSearchComponent {

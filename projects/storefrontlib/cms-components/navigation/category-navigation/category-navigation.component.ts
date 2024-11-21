@@ -19,14 +19,7 @@ import { NgIf, NgClass, AsyncPipe } from '@angular/common';
   templateUrl: './category-navigation.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    NavigationUIComponent,
-    NgClass,
-    AsyncPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [NgIf, NavigationUIComponent, NgClass, AsyncPipe, TranslatePipe],
 })
 export class CategoryNavigationComponent {
   node$: Observable<NavigationNode> = this.service.getNavigationNode(

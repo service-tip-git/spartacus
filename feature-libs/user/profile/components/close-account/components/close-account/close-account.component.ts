@@ -26,13 +26,7 @@ import { FeatureDirective } from '@spartacus/core';
   templateUrl: './close-account.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    FeatureDirective,
-    RouterLink,
-    UrlPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [FeatureDirective, RouterLink, UrlPipe, TranslatePipe],
 })
 export class CloseAccountComponent {
   @ViewChild('element') element: ElementRef;

@@ -64,7 +64,6 @@ import { FormComponent } from '../../shared/form/form.component';
     NgSelectA11yDirective,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class UnitFormComponent implements OnInit {

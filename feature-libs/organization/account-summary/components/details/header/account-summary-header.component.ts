@@ -27,14 +27,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
   templateUrl: './account-summary-header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    CardComponent,
-    NgFor,
-    AsyncPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [NgIf, CardComponent, NgFor, AsyncPipe, TranslatePipe],
 })
 export class AccountSummaryHeaderComponent implements OnInit, OnDestroy {
   notApplicable: string;

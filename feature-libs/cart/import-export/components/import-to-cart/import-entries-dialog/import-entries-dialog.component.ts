@@ -45,7 +45,6 @@ import { FocusDirective } from '@spartacus/storefront';
     ImportEntriesSummaryComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ImportEntriesDialogComponent {

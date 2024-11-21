@@ -29,7 +29,6 @@ import { FocusDirective } from '@spartacus/storefront';
     ConfiguratorOverviewFilterComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ConfiguratorOverviewFilterDialogComponent {

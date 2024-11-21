@@ -52,7 +52,6 @@ import { NgIf, NgTemplateOutlet, NgClass, AsyncPipe } from '@angular/common';
     AsyncPipe,
     UrlPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class VerificationTokenFormComponent implements OnInit {

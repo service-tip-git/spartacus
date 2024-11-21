@@ -24,7 +24,6 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     MyAccountV2ConsentManagementFormComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class MyAccountV2ConsentManagementComponent extends ConsentManagementComponent {}

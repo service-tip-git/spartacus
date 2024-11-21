@@ -42,7 +42,7 @@ import { FocusDirective } from '@spartacus/storefront';
     AsyncPipe,
     TranslatePipe,
     CxDatePipe_1,
-    TranslatePipe,
+
     MockDatePipe,
   ],
 })

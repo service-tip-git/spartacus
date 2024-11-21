@@ -31,7 +31,6 @@ import { StoreAddressComponent } from './store-address/store-address.component';
     SetPreferredStoreComponent,
     NgClass,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class StoreComponent implements OnInit {

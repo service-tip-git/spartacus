@@ -47,7 +47,6 @@ import { RouterLink } from '@angular/router';
     AsyncPipe,
     UrlPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CheckoutScheduledReplenishmentPlaceOrderComponent

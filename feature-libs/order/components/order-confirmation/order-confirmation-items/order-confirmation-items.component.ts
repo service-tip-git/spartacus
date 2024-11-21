@@ -32,7 +32,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     OutletDirective,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class OrderConfirmationItemsComponent implements OnDestroy {

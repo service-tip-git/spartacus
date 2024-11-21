@@ -22,14 +22,7 @@ import { NgIf, NgFor } from '@angular/common';
   selector: 'cx-asm-customer-360-promotion-listing',
   templateUrl: './asm-customer-360-promotion-listing.component.html',
   standalone: true,
-  imports: [
-    NgIf,
-    MessageComponent,
-    NgFor,
-    IconComponent,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [NgIf, MessageComponent, NgFor, IconComponent, TranslatePipe],
 })
 export class AsmCustomer360PromotionListingComponent {
   @Input() headerText: string;

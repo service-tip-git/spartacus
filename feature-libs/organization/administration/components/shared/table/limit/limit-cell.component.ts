@@ -17,14 +17,7 @@ import { NgIf, NgTemplateOutlet } from '@angular/common';
   templateUrl: './limit-cell.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    RouterLink,
-    NgTemplateOutlet,
-    UrlPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [NgIf, RouterLink, NgTemplateOutlet, UrlPipe, TranslatePipe],
 })
 export class LimitCellComponent extends CellComponent {
   get isTimeSpanThreshold(): boolean {

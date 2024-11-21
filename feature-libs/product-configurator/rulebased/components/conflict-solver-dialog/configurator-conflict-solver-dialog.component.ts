@@ -42,7 +42,6 @@ import { FocusDirective } from '@spartacus/storefront';
     ConfiguratorGroupComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ConfiguratorConflictSolverDialogComponent

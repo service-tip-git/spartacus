@@ -23,7 +23,6 @@ import { FeatureDirective } from '@spartacus/core';
     RouterLink,
     UrlPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class LoginRegisterComponent implements OnInit {

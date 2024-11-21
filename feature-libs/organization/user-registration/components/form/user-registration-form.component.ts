@@ -49,7 +49,6 @@ import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
     AsyncPipe,
     UrlPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class UserRegistrationFormComponent implements OnDestroy {

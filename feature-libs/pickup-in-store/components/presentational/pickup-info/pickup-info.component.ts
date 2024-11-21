@@ -14,12 +14,7 @@ import { StoreAddressComponent } from '../store/store-address/store-address.comp
   selector: 'cx-pickup-info',
   templateUrl: './pickup-info.component.html',
   standalone: true,
-  imports: [
-    StoreAddressComponent,
-    StoreScheduleComponent,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [StoreAddressComponent, StoreScheduleComponent, TranslatePipe],
 })
 export class PickupInfoComponent {
   @Input() storeDetails: PointOfService;

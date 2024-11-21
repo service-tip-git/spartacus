@@ -54,7 +54,6 @@ import { NgIf, NgClass, NgFor, AsyncPipe } from '@angular/common';
     ConfiguratorAttributeInputFieldComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ConfiguratorAttributeDropDownComponent

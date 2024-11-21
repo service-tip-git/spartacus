@@ -38,7 +38,6 @@ import { NgClass } from '@angular/common';
     ItemCounterComponent,
     TranslatePipe,
     UrlPipe,
-    TranslatePipe,
   ],
 })
 export class QuickOrderItemComponent implements OnInit, OnDestroy {

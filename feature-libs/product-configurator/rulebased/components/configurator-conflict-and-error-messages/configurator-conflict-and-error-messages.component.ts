@@ -20,14 +20,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
   templateUrl: './configurator-conflict-and-error-messages.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    IconComponent,
-    NgFor,
-    AsyncPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [NgIf, IconComponent, NgFor, AsyncPipe, TranslatePipe],
 })
 export class ConfiguratorConflictAndErrorMessagesComponent {
   iconTypes = ICON_TYPE;

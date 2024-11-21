@@ -34,7 +34,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     UrlPipe,
     TranslatePipe,
     CxDatePipe,
-    TranslatePipe,
+
     MockDatePipe,
   ],
 })

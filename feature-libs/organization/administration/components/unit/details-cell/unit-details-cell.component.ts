@@ -17,13 +17,6 @@ import { RouterLink } from '@angular/router';
   templateUrl: './unit-details-cell.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    RouterLink,
-    NgIf,
-    PopoverDirective,
-    TranslatePipe,
-    UrlPipe,
-    TranslatePipe,
-  ],
+  imports: [RouterLink, NgIf, PopoverDirective, TranslatePipe, UrlPipe],
 })
 export class UnitDetailsCellComponent extends CellComponent {}

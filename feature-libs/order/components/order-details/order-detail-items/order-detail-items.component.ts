@@ -39,7 +39,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     AddToCartComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class OrderDetailItemsComponent {

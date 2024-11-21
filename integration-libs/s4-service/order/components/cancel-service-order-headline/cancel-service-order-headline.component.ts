@@ -17,14 +17,7 @@ import { NgIf, AsyncPipe, DatePipe } from '@angular/common';
   templateUrl: './cancel-service-order-headline.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    OutletDirective,
-    AsyncPipe,
-    DatePipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [NgIf, OutletDirective, AsyncPipe, DatePipe, TranslatePipe],
 })
 export class CancelServiceOrderHeadlineComponent {
   protected orderDetailsService = inject(OrderDetailsService);

@@ -26,14 +26,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './configurator-product-title.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    IconComponent,
-    MediaComponent,
-    AsyncPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [NgIf, IconComponent, MediaComponent, AsyncPipe, TranslatePipe],
 })
 export class ConfiguratorProductTitleComponent {
   @HostBinding('class.ghost') ghostStyle = true;

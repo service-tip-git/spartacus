@@ -33,7 +33,6 @@ export enum SAVE_CART_DIALOG_ACTION {
     FeatureDirective,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class AsmSaveCartDialogComponent implements OnInit {

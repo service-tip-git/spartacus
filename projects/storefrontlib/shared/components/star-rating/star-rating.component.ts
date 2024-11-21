@@ -36,7 +36,6 @@ import { FeatureDirective } from '@spartacus/core';
     NgFor,
     IconComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class StarRatingComponent {

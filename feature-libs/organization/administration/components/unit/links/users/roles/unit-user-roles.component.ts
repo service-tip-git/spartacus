@@ -50,7 +50,6 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     NgFor,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class UnitUserRolesFormComponent {

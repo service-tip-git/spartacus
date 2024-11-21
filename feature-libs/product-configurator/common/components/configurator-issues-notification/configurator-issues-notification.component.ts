@@ -25,7 +25,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     ConfigureCartEntryComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ConfiguratorIssuesNotificationComponent {

@@ -69,7 +69,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     ProductImageZoomThumbnailsComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ProductImageZoomViewComponent implements OnInit, OnDestroy {

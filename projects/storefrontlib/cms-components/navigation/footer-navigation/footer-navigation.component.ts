@@ -20,14 +20,7 @@ import { NgIf, NgClass, AsyncPipe } from '@angular/common';
   templateUrl: './footer-navigation.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    NavigationUIComponent,
-    NgClass,
-    AsyncPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [NgIf, NavigationUIComponent, NgClass, AsyncPipe, TranslatePipe],
 })
 export class FooterNavigationComponent {
   node$: Observable<NavigationNode> = this.service.getNavigationNode(

@@ -32,7 +32,6 @@ import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
     CardComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class AsmCustomer360ProfileComponent implements OnInit {

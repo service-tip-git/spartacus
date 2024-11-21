@@ -30,15 +30,7 @@ const MAX_TRENDING_SEARCHES = 5;
   templateUrl: './trending-searches.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    NgFor,
-    RouterLink,
-    AsyncPipe,
-    TranslatePipe,
-    UrlPipe,
-    TranslatePipe,
-  ],
+  imports: [NgIf, NgFor, RouterLink, AsyncPipe, TranslatePipe, UrlPipe],
 })
 export class TrendingSearchesComponent implements OnInit {
   public searchPhrases$: Observable<SearchPhrases[]>;

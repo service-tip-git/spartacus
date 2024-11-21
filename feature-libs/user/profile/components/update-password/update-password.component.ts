@@ -46,7 +46,6 @@ import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
     AsyncPipe,
     TranslatePipe,
     UrlPipe,
-    TranslatePipe,
   ],
 })
 export class UpdatePasswordComponent {

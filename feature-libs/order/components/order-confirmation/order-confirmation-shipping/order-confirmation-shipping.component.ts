@@ -47,7 +47,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     OutletDirective,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class OrderConfirmationShippingComponent implements OnInit, OnDestroy {

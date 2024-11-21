@@ -22,13 +22,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   selector: 'cx-save-for-later',
   templateUrl: './save-for-later.component.html',
   standalone: true,
-  imports: [
-    NgIf,
-    CartItemListComponent,
-    AsyncPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [NgIf, CartItemListComponent, AsyncPipe, TranslatePipe],
 })
 export class SaveForLaterComponent implements OnInit {
   saveForLater$: Observable<Cart>;

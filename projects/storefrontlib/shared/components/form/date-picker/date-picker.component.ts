@@ -38,7 +38,7 @@ import { FeatureDirective } from '@spartacus/core';
     FormErrorsComponent,
     TranslatePipe,
     CxDatePipe,
-    TranslatePipe,
+
     MockDatePipe,
   ],
 })

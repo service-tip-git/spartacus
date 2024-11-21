@@ -21,14 +21,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
   templateUrl: './site-theme-switcher.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    NgFor,
-    IconComponent,
-    AsyncPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [NgIf, NgFor, IconComponent, AsyncPipe, TranslatePipe],
 })
 export class SiteThemeSwitcherComponent {
   iconTypes = ICON_TYPE;

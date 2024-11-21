@@ -39,7 +39,6 @@ import { FeatureDirective } from '@spartacus/core';
     PasswordVisibilityToggleDirective,
     FormErrorsComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class OrderGuestRegisterFormComponent implements OnDestroy {

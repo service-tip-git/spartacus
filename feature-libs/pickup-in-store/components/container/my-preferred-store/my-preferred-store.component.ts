@@ -42,7 +42,6 @@ import { NgClass, NgIf, AsyncPipe } from '@angular/common';
     StoreScheduleComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class MyPreferredStoreComponent implements OnInit {

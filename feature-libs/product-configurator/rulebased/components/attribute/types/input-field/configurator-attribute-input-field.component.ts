@@ -41,7 +41,6 @@ import { NgIf, NgClass, AsyncPipe } from '@angular/common';
     FocusDirective,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ConfiguratorAttributeInputFieldComponent

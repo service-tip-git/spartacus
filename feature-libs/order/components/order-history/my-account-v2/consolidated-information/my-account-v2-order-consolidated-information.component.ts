@@ -43,7 +43,7 @@ import { NgIf, NgTemplateOutlet, NgFor } from '@angular/common';
     UrlPipe,
     TranslatePipe,
     CxDatePipe,
-    TranslatePipe,
+
     MockDatePipe,
   ],
 })

@@ -38,7 +38,6 @@ const ALL_PRODUCTS_ID = '';
     MessagingComponent_1,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class QuoteCommentsComponent {

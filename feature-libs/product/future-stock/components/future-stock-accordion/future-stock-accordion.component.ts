@@ -15,14 +15,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
   selector: 'cx-future-stock-accordion',
   templateUrl: './future-stock-accordion.component.html',
   standalone: true,
-  imports: [
-    NgIf,
-    IconComponent,
-    NgFor,
-    AsyncPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [NgIf, IconComponent, NgFor, AsyncPipe, TranslatePipe],
 })
 export class FutureStockAccordionComponent {
   futureStocks$ = this.futureStockService.getFutureStock();

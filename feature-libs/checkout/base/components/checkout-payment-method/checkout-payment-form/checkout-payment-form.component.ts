@@ -79,7 +79,6 @@ import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
     CheckoutBillingAddressFormComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CheckoutPaymentFormComponent implements OnInit {

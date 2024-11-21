@@ -39,7 +39,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     ConfiguratorShowMoreComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ConfiguratorAttributeHeaderComponent

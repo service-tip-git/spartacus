@@ -49,7 +49,6 @@ import {
     NgSwitchDefault,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ConfiguratorOverviewFormComponent {

@@ -53,7 +53,6 @@ import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
     NgSelectA11yDirective,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ProductMultiDimensionalSelectorComponent {

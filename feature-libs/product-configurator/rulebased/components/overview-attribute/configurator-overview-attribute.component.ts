@@ -20,13 +20,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './configurator-overview-attribute.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    ConfiguratorPriceComponent,
-    AsyncPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [NgIf, ConfiguratorPriceComponent, AsyncPipe, TranslatePipe],
 })
 export class ConfiguratorOverviewAttributeComponent {
   @Input() attributeOverview: Configurator.AttributeOverview;

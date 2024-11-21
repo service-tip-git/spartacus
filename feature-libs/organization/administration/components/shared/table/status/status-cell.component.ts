@@ -16,14 +16,7 @@ import { NgIf, NgTemplateOutlet } from '@angular/common';
   templateUrl: './status-cell.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    RouterLink,
-    NgTemplateOutlet,
-    UrlPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [NgIf, RouterLink, NgTemplateOutlet, UrlPipe, TranslatePipe],
 })
 export class StatusCellComponent extends CellComponent {
   get label() {

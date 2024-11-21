@@ -34,7 +34,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     CartItemListComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CartDetailsComponent implements OnInit {

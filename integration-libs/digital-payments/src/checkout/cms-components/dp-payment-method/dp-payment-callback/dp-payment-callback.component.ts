@@ -32,7 +32,6 @@ import { NgIf } from '@angular/common';
     CheckoutBillingAddressFormComponent,
     SpinnerComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class DpPaymentCallbackComponent implements OnInit {

@@ -27,7 +27,6 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     ItemCounterComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CancelOrReturnItemsComponent {

@@ -62,7 +62,6 @@ import { FormComponent } from '../../shared/form/form.component';
     NgSelectModule,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class PermissionFormComponent implements OnInit {

@@ -68,7 +68,6 @@ interface GroupValidator {
     NgSelectA11yDirective,
     NgTemplateOutlet,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class AccountSummaryDocumentFilterComponent

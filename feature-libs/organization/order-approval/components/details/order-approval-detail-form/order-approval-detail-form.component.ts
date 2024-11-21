@@ -44,7 +44,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     AsyncPipe,
     TranslatePipe,
     UrlPipe,
-    TranslatePipe,
   ],
 })
 export class OrderApprovalDetailFormComponent implements OnDestroy {

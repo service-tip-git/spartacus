@@ -28,7 +28,6 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     UrlPipe,
     TranslatePipe,
     MultiLinePipe,
-    TranslatePipe,
   ],
 })
 export class CheckoutProgressComponent {

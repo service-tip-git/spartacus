@@ -51,7 +51,6 @@ import { OutletDirective } from '@spartacus/storefront';
     AtMessageDirective,
     TranslatePipe,
     UrlPipe,
-    TranslatePipe,
   ],
 })
 export class CartItemComponent implements OnChanges {

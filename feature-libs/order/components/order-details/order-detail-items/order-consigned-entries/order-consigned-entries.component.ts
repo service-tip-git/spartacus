@@ -35,7 +35,7 @@ import { NgFor, NgIf } from '@angular/common';
     AddToCartComponent,
     TranslatePipe,
     CxDatePipe,
-    TranslatePipe,
+
     MockDatePipe,
   ],
 })

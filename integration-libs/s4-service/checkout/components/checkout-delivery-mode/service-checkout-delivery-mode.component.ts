@@ -36,7 +36,6 @@ import { FeatureDirective } from '@spartacus/core';
     InnerComponentsHostDirective,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ServiceCheckoutDeliveryModeComponent extends CheckoutDeliveryModeComponent {

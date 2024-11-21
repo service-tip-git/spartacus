@@ -28,12 +28,7 @@ import { AsmCustomer360TableComponent } from '../../asm-customer-360-table/asm-c
   templateUrl: './asm-customer-360-product-reviews.component.html',
   providers: [CxDatePipe],
   standalone: true,
-  imports: [
-    AsmCustomer360TableComponent,
-    AsyncPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [AsmCustomer360TableComponent, AsyncPipe, TranslatePipe],
 })
 export class AsmCustomer360ProductReviewsComponent implements OnInit {
   reviewColumns: Array<CustomerTableColumn> = [

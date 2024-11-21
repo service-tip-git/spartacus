@@ -15,14 +15,7 @@ import { NgClass, NgIf } from '@angular/common';
   templateUrl: './truncate-text-popover.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgClass,
-    NgIf,
-    PopoverDirective,
-    TranslatePipe,
-    TruncatePipe,
-    TranslatePipe,
-  ],
+  imports: [NgClass, NgIf, PopoverDirective, TranslatePipe, TruncatePipe],
 })
 export class TruncateTextPopoverComponent {
   /**

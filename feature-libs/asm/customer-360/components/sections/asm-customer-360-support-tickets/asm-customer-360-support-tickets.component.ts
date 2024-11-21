@@ -24,12 +24,7 @@ import { AsmCustomer360TableComponent } from '../../asm-customer-360-table/asm-c
   selector: 'cx-asm-customer-360-support-tickets',
   templateUrl: './asm-customer-360-support-tickets.component.html',
   standalone: true,
-  imports: [
-    AsmCustomer360TableComponent,
-    AsyncPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [AsmCustomer360TableComponent, AsyncPipe, TranslatePipe],
 })
 export class AsmCustomer360SupportTicketsComponent implements OnInit {
   supportTicketsColumns: Array<CustomerTableColumn> = [

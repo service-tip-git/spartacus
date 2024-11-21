@@ -19,15 +19,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './mini-cart.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    RouterLink,
-    IconComponent,
-    AsyncPipe,
-    UrlPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [NgIf, RouterLink, IconComponent, AsyncPipe, UrlPipe, TranslatePipe],
 })
 export class MiniCartComponent {
   iconTypes = ICON_TYPE;

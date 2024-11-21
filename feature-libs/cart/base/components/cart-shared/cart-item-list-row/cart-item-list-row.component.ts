@@ -44,7 +44,6 @@ import { OutletDirective } from '@spartacus/storefront';
     AtMessageDirective,
     TranslatePipe,
     UrlPipe,
-    TranslatePipe,
   ],
 })
 export class CartItemListRowComponent extends CartItemComponent {

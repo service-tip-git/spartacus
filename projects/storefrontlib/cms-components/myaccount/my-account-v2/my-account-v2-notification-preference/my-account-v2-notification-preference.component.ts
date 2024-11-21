@@ -23,7 +23,6 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class MyAccountV2NotificationPreferenceComponent extends NotificationPreferenceComponent {}

@@ -65,7 +65,6 @@ const CX_SELECTOR = 'cx-configurator-add-to-cart-button';
     IconComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ConfiguratorAddToCartButtonComponent implements OnInit, OnDestroy {

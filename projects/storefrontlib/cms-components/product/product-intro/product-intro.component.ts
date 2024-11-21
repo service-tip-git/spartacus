@@ -36,7 +36,6 @@ import { NgIf, AsyncPipe, DecimalPipe } from '@angular/common';
     AsyncPipe,
     DecimalPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ProductIntroComponent {

@@ -60,7 +60,6 @@ import { FormComponent } from '../../shared/form/form.component';
     NgSelectModule,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class BudgetFormComponent implements OnInit {
