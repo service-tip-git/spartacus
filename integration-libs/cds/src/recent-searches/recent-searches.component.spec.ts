@@ -22,6 +22,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 @Pipe({
   name: 'cxHighlight',
+  standalone: false,
 })
 class MockHighlightPipe implements PipeTransform {
   transform(): any {}
@@ -29,6 +30,7 @@ class MockHighlightPipe implements PipeTransform {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: false,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {

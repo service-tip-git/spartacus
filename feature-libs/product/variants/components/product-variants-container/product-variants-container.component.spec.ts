@@ -44,6 +44,7 @@ class MockRoutingService {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: false,
 })
 class MockUrlPipe implements PipeTransform {
   transform(options: UrlCommandRoute): string {
@@ -60,6 +61,7 @@ class MockCurrentProductService {
 @Component({
   selector: 'cx-product-variant-style-selector',
   template: '',
+  standalone: false,
 })
 class MockCxProductStyleSelectorComponent {
   @Input() product: Product;
@@ -69,6 +71,7 @@ class MockCxProductStyleSelectorComponent {
 @Component({
   selector: 'cx-product-variant-size-selector',
   template: '',
+  standalone: false,
 })
 class MockCxProductSizeSelectorComponent {
   @Input() product: Product;
@@ -78,6 +81,7 @@ class MockCxProductSizeSelectorComponent {
 @Component({
   selector: 'cx-product-variant-color-selector',
   template: '',
+  standalone: false,
 })
 class MockCxProductColorSelectorComponent {
   @Input() product: Product;

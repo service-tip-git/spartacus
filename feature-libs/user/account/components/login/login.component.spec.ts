@@ -41,6 +41,7 @@ class MockUserAccountFacade {
 @Component({
   selector: 'cx-page-slot',
   template: '',
+  standalone: false,
 })
 class MockDynamicSlotComponent {
   @Input()
@@ -49,6 +50,7 @@ class MockDynamicSlotComponent {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: false,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): void {}

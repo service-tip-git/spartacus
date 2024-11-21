@@ -25,6 +25,7 @@ import { UpdatePasswordComponentService } from './update-password-component.serv
 @Component({
   selector: 'cx-spinner',
   template: '',
+  standalone: false,
 })
 class MockCxSpinnerComponent {}
 

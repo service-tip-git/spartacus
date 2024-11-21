@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
   selector: 'cx-checkout-review-overview',
   templateUrl: './checkout-review-overview.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class CheckoutReviewOverviewComponent {
   constructor(protected activeCartFacade: ActiveCartFacade) {}

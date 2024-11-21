@@ -23,6 +23,7 @@ class MockAuthService {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: false,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): void {}

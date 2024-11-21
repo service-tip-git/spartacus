@@ -26,6 +26,7 @@ import { TabModule } from 'projects/storefrontlib/cms-components/content/tab/tab
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: false,
 })
 class MockIconComponent {
   @Input() type: ICON_TYPE;
@@ -34,6 +35,7 @@ class MockIconComponent {
 @Component({
   selector: 'cx-facet',
   template: '',
+  standalone: false,
 })
 class MockFacetComponent {
   @Input() facet;
@@ -41,6 +43,7 @@ class MockFacetComponent {
 
 @Directive({
   selector: '[cxFocus]',
+  standalone: false,
 })
 class MockKeyboadFocusDirective {
   @Input() cxFocus;

@@ -12,6 +12,7 @@ import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 
 @Pipe({
   name: 'cxUrl',
+  standalone: false,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}

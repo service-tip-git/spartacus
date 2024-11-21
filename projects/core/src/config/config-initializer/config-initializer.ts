@@ -7,7 +7,9 @@
 import { InjectionToken } from '@angular/core';
 import { Config } from '../config-tokens';
 
-export const CONFIG_INITIALIZER = new InjectionToken('ConfigInitializer');
+export const CONFIG_INITIALIZER = new InjectionToken<ConfigInitializer[]>(
+  'ConfigInitializer'
+);
 
 /**
  * Used to provide asynchronous config during app initialization

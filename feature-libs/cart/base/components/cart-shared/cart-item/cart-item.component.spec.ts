@@ -26,12 +26,14 @@ import { CartItemContextSource } from './model/cart-item-context-source.model';
 
 @Pipe({
   name: 'cxUrl',
+  standalone: false,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
 @Directive({
   selector: '[cxOutlet]',
+  standalone: false,
 })
 class MockOutletDirective implements Partial<OutletDirective> {
   @Input() cxOutlet: string;
@@ -40,6 +42,7 @@ class MockOutletDirective implements Partial<OutletDirective> {
 @Component({
   template: '',
   selector: 'cx-media',
+  standalone: false,
 })
 class MockMediaComponent {
   @Input() container;
@@ -49,6 +52,7 @@ class MockMediaComponent {
 @Component({
   template: '',
   selector: 'cx-item-counter',
+  standalone: false,
 })
 class MockItemCounterComponent {
   @Input() control;
@@ -60,6 +64,7 @@ class MockItemCounterComponent {
 @Component({
   template: '',
   selector: 'cx-promotions',
+  standalone: false,
 })
 class MockPromotionsComponent {
   @Input() promotions;
@@ -90,6 +95,7 @@ const mockProduct = {
 @Component({
   selector: 'cx-cart-item-validation-warning',
   template: '',
+  standalone: false,
 })
 class MockCartItemValidationWarningComponent {
   @Input() code: string;
@@ -97,6 +103,7 @@ class MockCartItemValidationWarningComponent {
 
 @Directive({
   selector: '[cxAtMessage]',
+  standalone: false,
 })
 class MockAtMessageDirective {
   @Input() cxAtMessage: string | string[] | undefined;

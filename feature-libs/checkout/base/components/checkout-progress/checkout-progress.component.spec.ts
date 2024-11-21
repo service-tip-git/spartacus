@@ -38,6 +38,7 @@ class MockCheckoutStepService implements Partial<CheckoutStepService> {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: false,
 })
 class MockTranslateUrlPipe implements PipeTransform {
   transform(): any {}
@@ -45,6 +46,7 @@ class MockTranslateUrlPipe implements PipeTransform {
 
 @Pipe({
   name: 'cxMultiLine',
+  standalone: false,
 })
 class MockMultiLinePipe implements PipeTransform {
   transform(value: string): string {

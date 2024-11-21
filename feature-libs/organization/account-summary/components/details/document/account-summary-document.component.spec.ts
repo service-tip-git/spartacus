@@ -32,6 +32,7 @@ const blob = new Blob();
 @Component({
   template: '',
   selector: 'cx-pagination',
+  standalone: false,
 })
 class MockPaginationComponent {
   @Input() pagination: any;
@@ -40,6 +41,7 @@ class MockPaginationComponent {
 @Component({
   template: '',
   selector: 'cx-sorting',
+  standalone: false,
 })
 class MockSortingComponent {
   @Input() sortOptions: any;
@@ -52,6 +54,7 @@ class MockSortingComponent {
 @Component({
   template: '',
   selector: 'cx-account-summary-document-filter',
+  standalone: false,
 })
 class MockAccountSummaryDocumentFilterComponent {
   @Input() documentTypeOptions: any;

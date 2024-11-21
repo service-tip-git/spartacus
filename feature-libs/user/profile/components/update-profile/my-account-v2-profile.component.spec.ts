@@ -23,6 +23,7 @@ import { UpdateProfileComponentService } from './update-profile-component.servic
 @Component({
   selector: 'cx-spinner',
   template: ` <div>spinner</div> `,
+  standalone: false,
 })
 class MockCxSpinnerComponent {}
 

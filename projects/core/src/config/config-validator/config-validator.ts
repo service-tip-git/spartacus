@@ -8,7 +8,7 @@ import { InjectionToken, Provider } from '@angular/core';
 import { LoggerService } from '../../logger';
 import { Config } from '../config-tokens';
 
-export const ConfigValidatorToken = new InjectionToken(
+export const ConfigValidatorToken = new InjectionToken<ConfigValidator[]>(
   'ConfigurationValidator'
 );
 

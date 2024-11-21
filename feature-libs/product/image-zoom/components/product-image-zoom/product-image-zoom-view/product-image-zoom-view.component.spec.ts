@@ -90,6 +90,7 @@ class MockBreakpointService {
 @Component({
   selector: 'cx-media',
   template: '',
+  standalone: false,
 })
 class MockMediaComponent {
   @Input() container;
@@ -98,6 +99,7 @@ class MockMediaComponent {
 @Component({
   selector: 'cx-product-thumbnails',
   template: '',
+  standalone: false,
 })
 class MockProductThumbnailsComponent {
   @Input() thumbs$;
@@ -106,6 +108,7 @@ class MockProductThumbnailsComponent {
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: false,
 })
 class MockIconComponent {
   @Input() type;
@@ -114,6 +117,7 @@ class MockIconComponent {
 @Component({
   selector: 'cx-product-image-zoom-thumbnails',
   template: '',
+  standalone: false,
 })
 export class MockProductImageZoomThumbnailsComponent {
   @Output() productImage = new EventEmitter<{ image: any; index: number }>();

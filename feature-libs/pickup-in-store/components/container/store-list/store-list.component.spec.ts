@@ -114,6 +114,7 @@ describe('StoreListComponent', () => {
 @Component({
   selector: 'cx-store-list',
   template: '',
+  standalone: false,
 })
 export class StoreListStubComponent {
   @Input() productCode: string;

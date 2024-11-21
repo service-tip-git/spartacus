@@ -58,6 +58,7 @@ class MockCmsComponentData {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: false,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {
@@ -67,6 +68,7 @@ class MockUrlPipe implements PipeTransform {
 
 @Pipe({
   name: 'cxHighlight',
+  standalone: false,
 })
 class MockHighlightPipe implements PipeTransform {
   transform(): any {}
@@ -75,6 +77,7 @@ class MockHighlightPipe implements PipeTransform {
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: false,
 })
 class MockCxIconComponent {
   @Input() type;
@@ -83,6 +86,7 @@ class MockCxIconComponent {
 @Component({
   selector: 'cx-media',
   template: '<img>',
+  standalone: false,
 })
 class MockMediaComponent {
   @Input() container;

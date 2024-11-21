@@ -25,6 +25,7 @@ class MockStoreFinderService implements Partial<StoreFinderService> {
 @Component({
   selector: 'cx-icon',
   template: '',
+  standalone: false,
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -33,6 +34,7 @@ class MockCxIconComponent {
 @Component({
   selector: 'cx-store-finder-store-description',
   template: '',
+  standalone: false,
 })
 class MockStoreFinderStoreDescriptionComponent {
   @Input() location: PointOfService;

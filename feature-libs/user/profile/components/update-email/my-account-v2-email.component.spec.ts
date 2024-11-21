@@ -26,6 +26,7 @@ import { UserProfileFacade } from '../../root/facade';
 @Component({
   selector: 'cx-spinner',
   template: '',
+  standalone: false,
 })
 class MockCxSpinnerComponent {}
 

@@ -17,6 +17,7 @@ import { CustomerTicketingDialogComponent } from '../../../shared/customer-ticke
 @Component({
   selector: 'cx-customer-ticketing-reopen-dialog',
   templateUrl: './customer-ticketing-reopen-dialog.component.html',
+  standalone: false,
 })
 export class CustomerTicketingReopenDialogComponent
   extends CustomerTicketingDialogComponent

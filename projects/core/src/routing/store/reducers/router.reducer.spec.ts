@@ -18,6 +18,7 @@ import * as fromReducer from './router.reducer';
 @Component({
   selector: 'cx-test-cmp',
   template: 'test-cmp',
+  standalone: false,
 })
 class TestComponent {}
 

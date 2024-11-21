@@ -26,6 +26,7 @@ import { ConfirmationContext } from './quote-confirm-dialog.model';
   templateUrl: './quote-confirm-dialog.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [CxDatePipe],
+  standalone: false,
 })
 export class QuoteConfirmDialogComponent implements OnInit {
   protected launchDialogService = inject(LaunchDialogService);

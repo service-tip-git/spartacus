@@ -24,6 +24,7 @@ import { PickupOption } from '@spartacus/pickup-in-store/root';
 @Component({
   selector: 'cx-pickup-options',
   templateUrl: './pickup-options.component.html',
+  standalone: false,
 })
 export class PickupOptionsComponent implements OnChanges {
   /** The selected option, either `'pickup'` or `'delivery'`. */

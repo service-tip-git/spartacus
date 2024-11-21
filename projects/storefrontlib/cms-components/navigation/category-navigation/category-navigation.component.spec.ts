@@ -12,6 +12,7 @@ import { CategoryNavigationComponent } from './category-navigation.component';
 @Component({
   template: '',
   selector: 'cx-navigation-ui',
+  standalone: false,
 })
 class MockNavigationComponent {
   @Input() node: NavigationNode;

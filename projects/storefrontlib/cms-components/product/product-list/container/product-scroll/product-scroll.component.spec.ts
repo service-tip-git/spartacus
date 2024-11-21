@@ -106,6 +106,7 @@ const showMoreBtn = 'productList.showMoreBtn';
 @Component({
   selector: 'cx-star-rating',
   template: '',
+  standalone: false,
 })
 class MockStarRatingComponent {
   @Input() rating: number;
@@ -115,6 +116,7 @@ class MockStarRatingComponent {
 @Component({
   template: '',
   selector: 'cx-product-list-item',
+  standalone: false,
 })
 class MockProductListItemComponent {
   @Input()
@@ -123,6 +125,7 @@ class MockProductListItemComponent {
 
 @Pipe({
   name: 'cxUrl',
+  standalone: false,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
@@ -131,6 +134,7 @@ class MockUrlPipe implements PipeTransform {
 @Component({
   selector: 'cx-add-to-cart',
   template: '<button>add to cart</button>',
+  standalone: false,
 })
 class MockAddToCartComponent {
   @Input() product: string;
@@ -149,6 +153,7 @@ class MockProductListComponentService {
 @Component({
   selector: 'cx-variant-style-icons',
   template: 'test',
+  standalone: false,
 })
 class MockStyleIconsComponent {
   @Input() variants: any[];

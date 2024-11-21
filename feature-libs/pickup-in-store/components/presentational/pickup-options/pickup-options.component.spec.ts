@@ -159,6 +159,7 @@ describe('PickupOptionsComponent', () => {
 @Component({
   selector: 'cx-pickup-options',
   template: '',
+  standalone: false,
 })
 export class PickupOptionsStubComponent {
   @Input() selectedOption: PickupOption;

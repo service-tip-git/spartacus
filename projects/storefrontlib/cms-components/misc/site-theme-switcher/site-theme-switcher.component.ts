@@ -17,6 +17,7 @@ import { SiteTheme } from '@spartacus/core';
   selector: 'cx-site-theme-switcher',
   templateUrl: './site-theme-switcher.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class SiteThemeSwitcherComponent {
   iconTypes = ICON_TYPE;
