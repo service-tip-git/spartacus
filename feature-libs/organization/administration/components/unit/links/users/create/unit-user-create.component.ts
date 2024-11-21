@@ -10,6 +10,7 @@ import { UserItemService } from '../../../../user/services/user-item.service';
 import { CurrentUnitService } from '../../../services/current-unit.service';
 import { UnitUserItemService } from './unit-user-item.service';
 import { AsyncPipe } from '@angular/common';
+import { UserFormComponent } from '@spartacus/organization/administration/components';
 
 @Component({
   selector: 'cx-org-unit-user-create',
@@ -25,7 +26,7 @@ import { AsyncPipe } from '@angular/common';
     },
   ],
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, UserFormComponent],
 })
 export class UnitUserCreateComponent {
   unitKey$: Observable<string> = this.unitService.key$;

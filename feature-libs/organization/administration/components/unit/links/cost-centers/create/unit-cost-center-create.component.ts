@@ -10,6 +10,7 @@ import { CostCenterItemService } from '../../../../cost-center/services/cost-cen
 import { CurrentUnitService } from '../../../services/current-unit.service';
 import { UnitCostCenterItemService } from './unit-cost-center-item.service';
 import { AsyncPipe } from '@angular/common';
+import { CostCenterFormComponent } from '@spartacus/organization/administration/components';
 
 @Component({
   selector: 'cx-org-unit-cost-center-create',
@@ -25,7 +26,7 @@ import { AsyncPipe } from '@angular/common';
     },
   ],
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, CostCenterFormComponent],
 })
 export class UnitCostCenterCreateComponent {
   unitKey$: Observable<string> = this.unitService.key$;

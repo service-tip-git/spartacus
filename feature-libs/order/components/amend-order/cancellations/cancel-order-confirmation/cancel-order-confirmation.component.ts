@@ -5,7 +5,7 @@
  */
 
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { NgForm, UntypedFormGroup } from '@angular/forms';
+import { ReactiveFormsModule, UntypedFormGroup } from '@angular/forms';
 import { OrderEntry } from '@spartacus/cart/base/root';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
@@ -23,7 +23,7 @@ import { AmendOrderActionsComponent } from '../../amend-order-actions/amend-orde
     AsyncPipe,
     CancelOrReturnItemsComponent,
     AmendOrderActionsComponent,
-    NgForm,
+    ReactiveFormsModule, // SPIKE TODO: replace with fine grained import e.g. FormGroupDirective
   ],
 })
 export class CancelOrderConfirmationComponent {
