@@ -5,23 +5,22 @@
  */
 
 import {
-    ChangeDetectionStrategy,
-    Component,
-    inject,
-    OnInit,
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
 } from '@angular/core';
 import { CxDatePipe, TranslationService } from '@spartacus/core';
 import { QuoteCoreConfig } from '@spartacus/quote/core';
 import {
-    FocusConfig,
-    ICON_TYPE,
-    LaunchDialogService,
+  FocusConfig,
+  ICON_TYPE,
+  LaunchDialogService,
 } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { filter, map, take } from 'rxjs/operators';
 import { ConfirmationContext } from './quote-confirm-dialog.model';
 import { TranslatePipe } from '@spartacus/core';
-import { CxDatePipe as CxDatePipe_1 } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
 import { NgIf, AsyncPipe } from '@angular/common';
@@ -40,7 +39,7 @@ import { FocusDirective } from '@spartacus/storefront';
     IconComponent,
     AsyncPipe,
     TranslatePipe,
-    CxDatePipe_1,
+    CxDatePipe,
   ],
 })
 export class QuoteConfirmDialogComponent implements OnInit {

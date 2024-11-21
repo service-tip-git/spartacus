@@ -19,7 +19,6 @@ import { Consignment, Order, OrderHistoryFacade } from '@spartacus/order/root';
 import { EMPTY, Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { TranslatePipe } from '@spartacus/core';
-import { CxDatePipe as CxDatePipe_1 } from '@spartacus/core';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
@@ -27,7 +26,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
   templateUrl: './estimated-delivery-date.component.html',
   providers: [CxDatePipe],
   standalone: true,
-  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe, CxDatePipe_1, CxDatePipe],
+  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe, CxDatePipe],
 })
 export class EstimatedDeliveryDateComponent {
   @Optional() protected cartItemContext = inject(CartItemContext);

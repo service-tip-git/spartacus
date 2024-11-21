@@ -28,7 +28,6 @@ import { filter, map } from 'rxjs/operators';
 import { RequestedDeliveryDateFacade } from '../../facade/requested-delivery-date.facade';
 import { DateValidationService } from '../shared/date-validation.service';
 import { TranslatePipe } from '@spartacus/core';
-import { CxDatePipe as CxDatePipe_1 } from '@spartacus/core';
 import { DatePickerComponent } from '@spartacus/storefront';
 import { CardComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
@@ -46,7 +45,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     DatePickerComponent,
     AsyncPipe,
     TranslatePipe,
-    CxDatePipe_1,
+    CxDatePipe,
   ],
 })
 export class DeliveryModeDatePickerComponent implements OnInit, OnDestroy {
