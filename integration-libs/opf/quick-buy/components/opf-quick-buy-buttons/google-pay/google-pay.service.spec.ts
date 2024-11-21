@@ -13,8 +13,8 @@ import { OpfPaymentFacade } from '@spartacus/opf/payment/root';
 import { OpfQuickBuyTransactionService } from '@spartacus/opf/quick-buy/core';
 import {
   OPF_QUICK_BUY_ADDRESS_FIELD_PLACEHOLDER,
-  OpfProviderType,
   OpfQuickBuyLocation,
+  OpfQuickBuyProviderType,
 } from '@spartacus/opf/quick-buy/root';
 import { CurrentProductService } from '@spartacus/storefront';
 import { of } from 'rxjs';
@@ -51,7 +51,7 @@ describe('OpfGooglePayService', () => {
   beforeEach(() => {
     mockResourceLoaderService = jasmine.createSpyObj(
       'OpfResourceLoaderService',
-      ['loadProviderResources']
+      ['loadResources']
     );
     mockCurrentProductService = jasmine.createSpyObj('CurrentProductService', [
       'getProduct',
@@ -184,25 +184,23 @@ describe('OpfGooglePayService', () => {
     });
   });
 
-  describe('loadProviderResources', () => {
+  describe('loadResources', () => {
     it('should load the Google Pay JS API', async () => {
-      mockResourceLoaderService.loadProviderResources.and.returnValue(
+      mockResourceLoaderService.loadResources.and.returnValue(
         Promise.resolve()
       );
 
-      await service.loadProviderResources();
+      await service.loadResources();
 
-      expect(
-        mockResourceLoaderService.loadProviderResources
-      ).toHaveBeenCalled();
+      expect(mockResourceLoaderService.loadResources).toHaveBeenCalled();
     });
 
     it('should handle errors when loading the Google Pay JS API', async () => {
-      mockResourceLoaderService.loadProviderResources.and.returnValue(
+      mockResourceLoaderService.loadResources.and.returnValue(
         Promise.reject(new Error('Load failed'))
       );
 
-      await expectAsync(service.loadProviderResources()).toBeRejectedWithError(
+      await expectAsync(service.loadResources()).toBeRejectedWithError(
         'Load failed'
       );
     });
@@ -617,7 +615,6 @@ describe('OpfGooglePayService', () => {
     describe('onPaymentAuthorized', () => {
       it('should handle payment authorization', (done) => {
         const callbacks = service['handlePaymentCallbacks']();
-        const mockCartId = 'cartId';
         const mockToken = 'mockToken';
         const paymentDataResponse = {
           paymentMethodData: {
@@ -627,9 +624,6 @@ describe('OpfGooglePayService', () => {
           },
         } as google.payments.api.PaymentData;
 
-        mockQuickBuyTransactionService.getCurrentCartId.and.returnValue(
-          of(mockCartId)
-        );
         mockPaymentFacade.submitPayment.and.returnValue(of(true));
         mockQuickBuyTransactionService.setBillingAddress.and.returnValue(
           of(true)
@@ -647,19 +641,14 @@ describe('OpfGooglePayService', () => {
 
             expect(result).toBeDefined();
             expect(mockPaymentFacade.submitPayment).toHaveBeenCalled();
-            expect(submitPaymentArgs.callbackArray.length).toBe(3);
-            submitPaymentArgs.callbackArray.forEach((callback) => {
+            expect(Object.values(submitPaymentArgs.callbacks).length).toBe(3);
+            Object.values(submitPaymentArgs.callbacks).forEach((callback) => {
               expect(typeof callback).toBe('function');
             });
-            expect(submitPaymentArgs.cartId).toBe(mockCartId);
-            expect(submitPaymentArgs.cartId).toBe(mockCartId);
             expect(submitPaymentArgs.encryptedToken).toBe(encodedMockToken);
             expect(submitPaymentArgs.paymentMethod).toBe(
-              OpfProviderType.GOOGLE_PAY
+              OpfQuickBuyProviderType.GOOGLE_PAY
             );
-            expect(
-              mockQuickBuyTransactionService.getCurrentCartId
-            ).toHaveBeenCalled();
             expect(result).toEqual({ transactionState: 'SUCCESS' });
             done();
           });

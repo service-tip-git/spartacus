@@ -27,7 +27,7 @@ export class MyAccountV2PasswordComponent {
   isUpdating$: Observable<boolean> = this.service.isUpdating$;
 
   constructor() {
-    useFeatureStyles('a11yPasswordVisibliltyBtnValueOverflow');
+    useFeatureStyles('a11yPasswordVisibilityBtnValueOverflow');
   }
 
   onSubmit(): void {

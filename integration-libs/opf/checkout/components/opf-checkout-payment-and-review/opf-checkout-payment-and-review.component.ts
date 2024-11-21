@@ -4,24 +4,22 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import {
   UntypedFormBuilder,
   UntypedFormGroup,
   Validators,
 } from '@angular/forms';
-import { ActiveCartFacade, Cart, PaymentType } from '@spartacus/cart/base/root';
-import {
-  CheckoutReviewSubmitComponent,
-  CheckoutStepService,
-} from '@spartacus/checkout/base/components';
-import {
-  CheckoutDeliveryAddressFacade,
-  CheckoutDeliveryModesFacade,
-  CheckoutPaymentFacade,
-} from '@spartacus/checkout/base/root';
-import { TranslationService } from '@spartacus/core';
+import { Cart, PaymentType } from '@spartacus/cart/base/root';
+import { CheckoutReviewSubmitComponent } from '@spartacus/checkout/base/components';
+import { CmsService, Page } from '@spartacus/core';
 import { OpfMetadataStoreService } from '@spartacus/opf/base/root';
+import { OPF_EXPLICIT_TERMS_AND_CONDITIONS_COMPONENT } from '@spartacus/opf/checkout/root';
 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -35,7 +33,22 @@ export class OpfCheckoutPaymentAndReviewComponent
   extends CheckoutReviewSubmitComponent
   implements OnInit
 {
+  protected fb = inject(UntypedFormBuilder);
+  protected opfMetadataStoreService = inject(OpfMetadataStoreService);
+  protected cmsService = inject(CmsService);
+
   protected defaultTermsAndConditionsFieldValue = false;
+
+  explicitTermsAndConditions$: Observable<boolean | undefined> = this.cmsService
+    .getCurrentPage()
+    .pipe(
+      map((page: Page) => {
+        return this.isCmsComponentInPage(
+          OPF_EXPLICIT_TERMS_AND_CONDITIONS_COMPONENT,
+          page
+        );
+      })
+    );
 
   checkoutSubmitForm: UntypedFormGroup = this.fb.group({
     termsAndConditions: [
@@ -58,24 +71,8 @@ export class OpfCheckoutPaymentAndReviewComponent
       .pipe(map((cart: Cart) => cart.paymentType));
   }
 
-  constructor(
-    protected fb: UntypedFormBuilder,
-    protected checkoutDeliveryAddressFacade: CheckoutDeliveryAddressFacade,
-    protected checkoutPaymentFacade: CheckoutPaymentFacade,
-    protected activeCartFacade: ActiveCartFacade,
-    protected translationService: TranslationService,
-    protected checkoutStepService: CheckoutStepService,
-    protected checkoutDeliveryModesFacade: CheckoutDeliveryModesFacade,
-    protected opfMetadataStoreService: OpfMetadataStoreService
-  ) {
-    super(
-      checkoutDeliveryAddressFacade,
-      checkoutPaymentFacade,
-      activeCartFacade,
-      translationService,
-      checkoutStepService,
-      checkoutDeliveryModesFacade
-    );
+  protected isCmsComponentInPage(cmsComponentUid: string, page: Page): boolean {
+    return !!page && JSON.stringify(page).includes(cmsComponentUid);
   }
 
   protected updateTermsAndConditionsState() {

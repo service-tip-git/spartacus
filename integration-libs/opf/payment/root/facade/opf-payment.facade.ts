@@ -9,13 +9,13 @@ import { facadeFactory } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { OPF_PAYMENT_FEATURE } from '../feature-name';
 import {
-  AfterRedirectScriptResponse,
+  OpfPaymentAfterRedirectScriptResponse,
+  OpfPaymentInitiationConfig,
+  OpfPaymentSessionData,
+  OpfPaymentSubmitCompleteInput,
+  OpfPaymentSubmitInput,
   OpfPaymentVerificationPayload,
   OpfPaymentVerificationResponse,
-  PaymentInitiationConfig,
-  PaymentSessionData,
-  SubmitCompleteInput,
-  SubmitInput,
 } from '../model';
 
 @Injectable({
@@ -28,7 +28,7 @@ import {
         'verifyPayment',
         'submitPayment',
         'submitCompletePayment',
-        'afterRedirectScripts',
+        'getAfterRedirectScripts',
         'initiatePayment',
       ],
     }),
@@ -50,20 +50,22 @@ export abstract class OpfPaymentFacade {
   /**
    * Abstract method to submit payment for Hosted Fields pattern.
    *
-   * @param {SubmitInput} submitInput
+   * @param {OpfPaymentSubmitInput} submitInput
    *
    */
-  abstract submitPayment(submitInput: SubmitInput): Observable<boolean>;
+  abstract submitPayment(
+    submitInput: OpfPaymentSubmitInput
+  ): Observable<boolean>;
 
   /**
    * Abstract method to submit-complete payment
    * for Hosted Fields pattern.
    *
-   * @param {SubmitCompleteInput} submitCompleteInput
+   * @param {OpfPaymentSubmitCompleteInput} submitCompleteInput
    *
    */
   abstract submitCompletePayment(
-    submitCompleteInput: SubmitCompleteInput
+    submitCompleteInput: OpfPaymentSubmitCompleteInput
   ): Observable<boolean>;
 
   /**
@@ -73,18 +75,18 @@ export abstract class OpfPaymentFacade {
    * @param {string} paymentSessionId
    *
    */
-  abstract afterRedirectScripts(
+  abstract getAfterRedirectScripts(
     paymentSessionId: string
-  ): Observable<AfterRedirectScriptResponse>;
+  ): Observable<OpfPaymentAfterRedirectScriptResponse>;
 
   /**
    * Abstract method used to initiate payment session
    * or call the PSP to initiate.
    *
-   * @param {PaymentInitiationConfig} paymentConfig
+   * @param {OpfPaymentInitiationConfig} paymentConfig
    *
    */
   abstract initiatePayment(
-    paymentConfig: PaymentInitiationConfig
-  ): Observable<PaymentSessionData>;
+    paymentConfig: OpfPaymentInitiationConfig
+  ): Observable<OpfPaymentSessionData>;
 }

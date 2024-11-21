@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { I18nTestingModule } from '@spartacus/core';
-import { ErrorDialogOptions } from '@spartacus/opf/base/root';
+import { OpfErrorDialogOptions } from '@spartacus/opf/base/root';
 import {
   KeyboardFocusTestingModule,
   LaunchDialogService,
@@ -10,7 +10,7 @@ import { OpfErrorModalComponent } from './opf-error-modal.component';
 import { OpfErrorModalService } from './opf-error-modal.service';
 
 const dialogClose$ = new BehaviorSubject<any>('');
-let mockDialogOptions: ErrorDialogOptions = {
+let mockDialogOptions: OpfErrorDialogOptions = {
   messageString: 'Opf Test Message',
   confirmString: 'Opf Test Confirm',
 };
@@ -26,7 +26,7 @@ class MockLaunchDialogService implements Partial<LaunchDialogService> {
 }
 
 class MockOpfErrorModalService implements Partial<OpfErrorModalService> {
-  getMessageAndConfirmTranslations(dialogOptions: ErrorDialogOptions) {
+  getMessageAndConfirmTranslations(dialogOptions: OpfErrorDialogOptions) {
     return of({
       message: dialogOptions.messageString,
       confirm: dialogOptions.confirmString,

@@ -4,4 +4,5 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export * from './apple-pay-observable.factory';
+export * from './opf-occ-order-normalizer';
+export * from './opf-order.module';

@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 import { HttpErrorModel } from '@spartacus/core';
+import { OpfKeyValueMap, OpfPage } from '@spartacus/opf/base/root';
 import { of, throwError } from 'rxjs';
-import { KeyValuePair, OpfPage } from '../../model';
 import { OpfPaymentVerificationComponent } from './opf-payment-verification.component';
 import { OpfPaymentVerificationService } from './opf-payment-verification.service';
 
@@ -72,11 +72,11 @@ describe('OpfPaymentVerificationComponent', () => {
 
     it('should handle success scenario', () => {
       const mockPaymentSessionId = 'sessionId';
-      const mockResponseMap: Array<KeyValuePair> = [];
+      const mockResponseMap: Array<OpfKeyValueMap> = [];
       const mockAfterRedirectScriptFlag: string = 'false';
       const mockVerifyResult: {
         paymentSessionId: string;
-        paramsMap: Array<KeyValuePair>;
+        paramsMap: Array<OpfKeyValueMap>;
         afterRedirectScriptFlag: string;
       } = {
         paymentSessionId: mockPaymentSessionId,

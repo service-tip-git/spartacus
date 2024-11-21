@@ -12,10 +12,10 @@ import {
 } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { WindowRef } from '@spartacus/core';
-import { defaultErrorDialogOptions } from '@spartacus/opf/base/root';
+import { defaultOpfErrorDialogOptions } from '@spartacus/opf/base/root';
 import { GlobalFunctionsDomain } from '@spartacus/opf/global-functions/root';
 import { OpfPaymentFacade } from '@spartacus/opf/payment/root';
-import { OpfProviderType } from '@spartacus/opf/quick-buy/root';
+import { OpfQuickBuyProviderType } from '@spartacus/opf/quick-buy/root';
 import { LAUNCH_CALLER, LaunchDialogService } from '@spartacus/storefront';
 import { EMPTY, Observable, of } from 'rxjs';
 import { OpfGlobalFunctionsService } from './opf-global-functions.service';
@@ -96,7 +96,7 @@ describe('OpfGlobalFunctionsService', () => {
       });
       windowOpf = windowRef.nativeWindow['Opf'];
       spyOn(windowRef, 'isBrowser').and.returnValue(false);
-      service.removeGlobalFunctions(GlobalFunctionsDomain.CHECKOUT);
+      service.unregisterGlobalFunctions(GlobalFunctionsDomain.CHECKOUT);
       expect(windowOpf['payments']['checkout']['submit']).toBeDefined();
     });
   });
@@ -148,7 +148,7 @@ describe('OpfGlobalFunctionsService', () => {
         submitSuccess,
         submitPending,
         submitFailure,
-        paymentMethod: OpfProviderType.APPLE_PAY,
+        paymentMethod: OpfQuickBuyProviderType.APPLE_PAY,
       });
       expect(opfPaymentFacadeMock.submitPayment).toHaveBeenCalled();
     });
@@ -174,7 +174,7 @@ describe('OpfGlobalFunctionsService', () => {
         submitSuccess,
         submitPending,
         submitFailure,
-        paymentMethod: OpfProviderType.APPLE_PAY,
+        paymentMethod: OpfQuickBuyProviderType.APPLE_PAY,
       });
       expect(opfPaymentFacadeMock.submitCompletePayment).toHaveBeenCalled();
     });
@@ -188,7 +188,7 @@ describe('OpfGlobalFunctionsService', () => {
       spyOn(launchDialogService, 'openDialog').and.returnValue(dialog$);
 
       windowOpf.payments['checkout'].throwPaymentError(
-        defaultErrorDialogOptions
+        defaultOpfErrorDialogOptions
       );
       expect(launchDialogService.openDialog).toHaveBeenCalled();
       expect(dialogSubscribeSpy).toHaveBeenCalled();
@@ -220,7 +220,7 @@ describe('OpfGlobalFunctionsService', () => {
         windowOpf['payments'][GlobalFunctionsDomain.CHECKOUT]
       ).toBeDefined();
 
-      service.removeGlobalFunctions(GlobalFunctionsDomain.CHECKOUT);
+      service.unregisterGlobalFunctions(GlobalFunctionsDomain.CHECKOUT);
 
       expect(
         windowOpf['payments'][GlobalFunctionsDomain.CHECKOUT]
@@ -291,7 +291,7 @@ describe('OpfGlobalFunctionsService', () => {
         ]
       ).toBeDefined();
 
-      service.removeGlobalFunctions(GlobalFunctionsDomain.REDIRECT);
+      service.unregisterGlobalFunctions(GlobalFunctionsDomain.REDIRECT);
 
       expect(
         windowOpf['payments'][GlobalFunctionsDomain.REDIRECT]

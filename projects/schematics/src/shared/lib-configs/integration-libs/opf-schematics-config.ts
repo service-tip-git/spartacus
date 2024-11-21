@@ -11,6 +11,7 @@ import {
   OPF_GLOBAL_FUNCTIONS_FEATURE_NAME,
   OPF_PAYMENT_FEATURE_NAME,
   OPF_QUICK_BUY_FEATURE_NAME,
+  ORDER_FEATURE_NAME,
   SPARTACUS_OPF,
   SPARTACUS_OPF_BASE,
   SPARTACUS_OPF_BASE_ROOT,
@@ -21,6 +22,7 @@ import {
   SPARTACUS_OPF_CTA_ROOT,
   SPARTACUS_OPF_GLOBAL_FUNCTIONS,
   SPARTACUS_OPF_GLOBAL_FUNCTIONS_ROOT,
+  SPARTACUS_OPF_ORDER,
   SPARTACUS_OPF_PAYMENT,
   SPARTACUS_OPF_PAYMENT_ASSETS,
   SPARTACUS_OPF_PAYMENT_ROOT,
@@ -29,6 +31,7 @@ import {
 } from '../../libs-constants';
 import { AdditionalFeatureConfiguration } from '../../utils/feature-utils';
 import { LibraryOptions, SchematicConfig } from '../../utils/lib-utils';
+import { ORDER_MODULE } from '../order-schematics-config';
 
 export interface SpartacusOpfOptions extends LibraryOptions {
   opfBaseUrl?: string;
@@ -70,6 +73,7 @@ export const OPF_PAYMENT_ROOT_MODULE = 'OpfPaymentRootModule';
 export const OPF_PAYMENT_TRANSLATIONS = 'opfPaymentTranslations';
 export const OPF_PAYMENT_TRANSLATION_CHUNKS_CONFIG =
   'opfPaymentTranslationChunksConfig';
+export const OPF_ORDER_MODULE = 'OpfOrderModule';
 
 export const OPF_BASE_SCHEMATICS_CONFIG: SchematicConfig = {
   library: {
@@ -138,10 +142,16 @@ export const OPF_CHECKOUT_SCHEMATICS_CONFIG: SchematicConfig = {
   },
   folderName: OPF_FOLDER_NAME,
   moduleName: OPF_MODULE_NAME,
-  featureModule: {
-    name: OPF_CHECKOUT_MODULE,
-    importPath: SPARTACUS_OPF_CHECKOUT,
-  },
+  featureModule: [
+    {
+      name: OPF_CHECKOUT_MODULE,
+      importPath: SPARTACUS_OPF_CHECKOUT,
+    },
+    {
+      name: OPF_ORDER_MODULE,
+      importPath: SPARTACUS_OPF_ORDER,
+    },
+  ],
   rootModule: {
     name: OPF_CHECKOUT_ROOT_MODULE,
     importPath: SPARTACUS_OPF_CHECKOUT_ROOT,
@@ -166,6 +176,13 @@ export const OPF_CHECKOUT_SCHEMATICS_CONFIG: SchematicConfig = {
     OPF_CTA_FEATURE_NAME,
     OPF_GLOBAL_FUNCTIONS_FEATURE_NAME,
     OPF_QUICK_BUY_FEATURE_NAME,
+    ORDER_FEATURE_NAME,
+  ],
+  importAfter: [
+    {
+      markerModuleName: ORDER_MODULE,
+      featureModuleName: OPF_ORDER_MODULE,
+    },
   ],
 };
 

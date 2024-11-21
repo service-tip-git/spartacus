@@ -10,19 +10,23 @@ import {
   Input,
   OnDestroy,
   OnInit,
+  inject,
 } from '@angular/core';
 import {
   GlobalMessageService,
   GlobalMessageType,
+  PaginationModel,
   QueryState,
 } from '@spartacus/core';
 import {
-  ActiveConfiguration,
+  OpfActiveConfiguration,
+  OpfActiveConfigurationsPagination,
+  OpfActiveConfigurationsResponse,
   OpfBaseFacade,
   OpfMetadataModel,
   OpfMetadataStoreService,
 } from '@spartacus/opf/base/root';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 @Component({
@@ -31,36 +35,59 @@ import { tap } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
+  protected opfBaseService = inject(OpfBaseFacade);
+  protected opfMetadataStoreService = inject(OpfMetadataStoreService);
+  protected globalMessageService = inject(GlobalMessageService);
+
   protected subscription = new Subscription();
 
-  activeConfigurations$ = this.opfBaseService
-    .getActiveConfigurationsState()
-    .pipe(
-      tap((state: QueryState<ActiveConfiguration[] | undefined>) => {
-        if (state.error) {
-          this.displayError('loadActiveConfigurations');
-        } else if (!state.loading && !Boolean(state.data?.length)) {
-          this.displayError('noActiveConfigurations');
-        }
+  protected paginationIndex = 0;
 
-        if (state.data && !state.error && !state.loading) {
-          this.opfMetadataStoreService.updateOpfMetadata({
-            defaultSelectedPaymentOptionId: state?.data[0]?.id,
-          });
-        }
-      })
-    );
+  @Input()
+  elementsPerPage?: number;
 
   @Input()
   disabled = true;
 
+  @Input()
+  explicitTermsAndConditions: boolean | null | undefined;
+
   selectedPaymentId?: number;
 
-  constructor(
-    protected opfBaseService: OpfBaseFacade,
-    protected opfMetadataStoreService: OpfMetadataStoreService,
-    protected globalMessageService: GlobalMessageService
-  ) {}
+  activeConfigurations$: Observable<
+    QueryState<OpfActiveConfigurationsResponse | undefined>
+  >;
+
+  getActiveConfigurations(): Observable<
+    QueryState<OpfActiveConfigurationsResponse | undefined>
+  > {
+    return this.opfBaseService
+      .getActiveConfigurationsState({
+        pageSize: this.elementsPerPage,
+        pageNumber: this.paginationIndex + 1,
+      })
+      .pipe(
+        tap(
+          (state: QueryState<OpfActiveConfigurationsResponse | undefined>) => {
+            if (state.error) {
+              this.displayError('loadActiveConfigurations');
+            } else if (!state.loading && !Boolean(state.data?.value?.length)) {
+              this.displayError('noActiveConfigurations');
+            }
+
+            if (state.data?.value && !state.error && !state.loading) {
+              this.opfMetadataStoreService.updateOpfMetadata({
+                defaultSelectedPaymentOptionId: state.data?.value[0]?.id,
+              });
+            }
+          }
+        )
+      );
+  }
+
+  updateActiveConfiguration() {
+    this.activeConfigurations$ = this.getActiveConfigurations();
+  }
 
   /**
    * Method pre-selects (based on terms and conditions state)
@@ -72,7 +99,11 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
       this.opfMetadataStoreService
         .getOpfMetadataState()
         .subscribe((state: OpfMetadataModel) => {
-          if (state.termsAndConditionsChecked && !isPreselected) {
+          if (
+            !isPreselected &&
+            (state.termsAndConditionsChecked ||
+              !this.explicitTermsAndConditions)
+          ) {
             isPreselected = true;
             this.selectedPaymentId = !state.selectedPaymentOptionId
               ? state.defaultSelectedPaymentOptionId
@@ -80,7 +111,10 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
             this.opfMetadataStoreService.updateOpfMetadata({
               selectedPaymentOptionId: this.selectedPaymentId,
             });
-          } else if (!state.termsAndConditionsChecked) {
+          } else if (
+            !state.termsAndConditionsChecked &&
+            this.explicitTermsAndConditions
+          ) {
             isPreselected = false;
             this.selectedPaymentId = undefined;
           }
@@ -95,14 +129,33 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
     );
   }
 
-  changePayment(payment: ActiveConfiguration): void {
+  changePayment(payment: OpfActiveConfiguration): void {
     this.selectedPaymentId = payment.id;
     this.opfMetadataStoreService.updateOpfMetadata({
       selectedPaymentOptionId: this.selectedPaymentId,
     });
   }
 
+  getPaginationModel(
+    pagination?: OpfActiveConfigurationsPagination
+  ): PaginationModel {
+    const paginationModel: PaginationModel = {
+      currentPage: this.paginationIndex,
+      pageSize: pagination?.size,
+      totalPages: pagination?.totalPages,
+      totalResults: pagination?.totalElements,
+    };
+
+    return paginationModel;
+  }
+
+  pageChange(page: number): void {
+    this.paginationIndex = page;
+    this.updateActiveConfiguration();
+  }
+
   ngOnInit(): void {
+    this.updateActiveConfiguration();
     this.preselectPaymentOption();
   }
 

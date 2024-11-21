@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import {
   GlobalMessageService,
   GlobalMessageType,
@@ -13,41 +13,39 @@ import {
 } from '@spartacus/core';
 import {
   OpfPaymentError,
-  PaymentErrorType,
-  defaultError,
+  OpfPaymentErrorType,
+  opfDefaultPaymentError,
 } from '@spartacus/opf/payment/root';
 
 @Injectable({ providedIn: 'root' })
 export class OpfPaymentErrorHandlerService {
-  constructor(
-    protected globalMessageService: GlobalMessageService,
-    protected routingService: RoutingService
-  ) {}
+  protected globalMessageService = inject(GlobalMessageService);
+  protected routingService = inject(RoutingService);
 
   protected displayError(error: OpfPaymentError | undefined): void {
     this.globalMessageService.add(
       {
-        key: error?.message ? error.message : defaultError.message,
+        key: error?.message ? error.message : opfDefaultPaymentError.message,
       },
       GlobalMessageType.MSG_TYPE_ERROR
     );
   }
 
   protected handleBadRequestError(errorType?: string): string {
-    let message = defaultError.message;
+    let message = opfDefaultPaymentError.message;
     switch (errorType) {
-      case PaymentErrorType.EXPIRED:
+      case OpfPaymentErrorType.EXPIRED:
         message = 'opfPayment.errors.cardExpired';
         break;
-      case PaymentErrorType.INSUFFICENT_FUNDS:
-      case PaymentErrorType.CREDIT_LIMIT:
+      case OpfPaymentErrorType.INSUFFICIENT_FUNDS:
+      case OpfPaymentErrorType.CREDIT_LIMIT:
         message = 'opfPayment.errors.insufficientFunds';
         break;
-      case PaymentErrorType.INVALID_CARD:
-      case PaymentErrorType.INVALID_CVV:
+      case OpfPaymentErrorType.INVALID_CARD:
+      case OpfPaymentErrorType.INVALID_CVV:
         message = 'opfPayment.errors.invalidCreditCard';
         break;
-      case PaymentErrorType.LOST_CARD:
+      case OpfPaymentErrorType.LOST_CARD:
         message = 'opfPayment.errors.cardReportedLost';
         break;
     }
@@ -58,11 +56,11 @@ export class OpfPaymentErrorHandlerService {
     error: OpfPaymentError | undefined,
     returnPath?: string
   ): void {
-    let message = defaultError.message;
+    let message = opfDefaultPaymentError.message;
     if (error?.status === HttpResponseStatus.BAD_REQUEST) {
       message = this.handleBadRequestError(error?.type);
     } else {
-      if (error?.type === PaymentErrorType.PAYMENT_CANCELLED) {
+      if (error?.type === OpfPaymentErrorType.PAYMENT_CANCELLED) {
         message = 'opfPayment.errors.cancelPayment';
       }
     }

@@ -107,6 +107,7 @@ describe('OpfQuickBuyTransactionService', () => {
     authService = jasmine.createSpyObj('AuthService', ['isUserLoggedIn']);
     cartGuestUserFacade = jasmine.createSpyObj('CartGuestUserFacade', [
       'createCartGuestUser',
+      'updateCartGuestUser',
     ]);
 
     TestBed.configureTestingModule({
@@ -497,6 +498,47 @@ describe('OpfQuickBuyTransactionService', () => {
           );
           expect(result).toBe(true);
           expect(multiCartFacade.reloadCart).toHaveBeenCalled();
+        })
+        .unsubscribe();
+    });
+  });
+
+  describe('updateCartGuestUserEmail', () => {
+    it('should call `updateCartGuestUser` from `CartGuestUserFacade` with params', () => {
+      userIdService.takeUserId.and.returnValue(of('userId'));
+      activeCartFacade.takeActiveCartId.and.returnValue(of('cartId'));
+      multiCartFacade.reloadCart.and.returnValue();
+      cartGuestUserFacade.updateCartGuestUser.and.returnValue(of({}));
+      activeCartFacade.isGuestCart.and.returnValue(of(true));
+      const mockEmailAddr = 'mockemail@mockemail.com';
+      service
+        .updateCartGuestUserEmail(mockEmailAddr)
+        .subscribe((result) => {
+          expect(cartGuestUserFacade.updateCartGuestUser).toHaveBeenCalledWith(
+            'userId',
+            'cartId',
+            { email: mockEmailAddr }
+          );
+          expect(result).toBe(true);
+          expect(multiCartFacade.reloadCart).toHaveBeenCalled();
+        })
+        .unsubscribe();
+    });
+
+    it('should return false when no email', () => {
+      userIdService.takeUserId.and.returnValue(of('userId'));
+      activeCartFacade.takeActiveCartId.and.returnValue(of('cartId'));
+      multiCartFacade.reloadCart.and.returnValue();
+      cartGuestUserFacade.updateCartGuestUser.and.returnValue(of({}));
+      activeCartFacade.isGuestCart.and.returnValue(of(true));
+      const mockEmailAddr = '';
+      service
+        .updateCartGuestUserEmail(mockEmailAddr)
+        .subscribe((result) => {
+          expect(result).toBeFalsy();
+          expect(
+            cartGuestUserFacade.updateCartGuestUser
+          ).not.toHaveBeenCalled();
         })
         .unsubscribe();
     });

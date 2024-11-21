@@ -12,16 +12,15 @@ import {
   inject,
 } from '@angular/core';
 import { Cart } from '@spartacus/cart/base/root';
-import { ActiveConfiguration } from '@spartacus/opf/base/root';
+import { OpfActiveConfiguration } from '@spartacus/opf/base/root';
 import { OpfQuickBuyTransactionService } from '@spartacus/opf/quick-buy/core';
 import {
-  OpfProviderType,
   OpfQuickBuyDigitalWallet,
+  OpfQuickBuyProviderType,
 } from '@spartacus/opf/quick-buy/root';
 import { CurrentProductService } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { switchMap, take } from 'rxjs/operators';
-import { ApplePaySessionFactory } from './apple-pay-session';
 import { ApplePayService } from './apple-pay.service';
 
 @Component({
@@ -30,14 +29,13 @@ import { ApplePayService } from './apple-pay.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ApplePayComponent implements OnInit {
-  @Input() activeConfiguration: ActiveConfiguration;
+  @Input() activeConfiguration: OpfActiveConfiguration;
 
   protected applePayService = inject(ApplePayService);
   protected currentProductService = inject(CurrentProductService);
   protected opfQuickBuyTransactionService = inject(
     OpfQuickBuyTransactionService
   );
-  protected applePaySession = inject(ApplePaySessionFactory);
 
   isApplePaySupported$: Observable<boolean>;
   applePayDigitalWallet?: OpfQuickBuyDigitalWallet;
@@ -45,7 +43,8 @@ export class ApplePayComponent implements OnInit {
   ngOnInit(): void {
     this.applePayDigitalWallet =
       this.activeConfiguration?.digitalWalletQuickBuy?.find(
-        (digitalWallet) => digitalWallet.provider === OpfProviderType.APPLE_PAY
+        (digitalWallet) =>
+          digitalWallet.provider === OpfQuickBuyProviderType.APPLE_PAY
       );
     if (
       !this.applePayDigitalWallet?.merchantId ||
@@ -54,7 +53,7 @@ export class ApplePayComponent implements OnInit {
       return;
     }
 
-    this.isApplePaySupported$ = this.applePaySession.isApplePaySupported$(
+    this.isApplePaySupported$ = this.applePayService.isApplePaySupported(
       this.applePayDigitalWallet.merchantId
     );
   }

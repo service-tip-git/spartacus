@@ -484,6 +484,7 @@
         "../../dist/opf/global-functions/root"
       ],
       "@spartacus/opf": ["../../dist/opf"],
+      "@spartacus/opf/order": ["../../dist/opf/order"],
       "@spartacus/opf/payment/assets": ["../../dist/opf/payment/assets"],
       "@spartacus/opf/payment/core": ["../../dist/opf/payment/core"],
       "@spartacus/opf/payment": ["../../dist/opf/payment"],

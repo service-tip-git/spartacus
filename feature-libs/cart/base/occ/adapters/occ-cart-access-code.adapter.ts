@@ -23,12 +23,9 @@ import { Observable, catchError } from 'rxjs';
 @Injectable()
 export class OccCartAccessCodeAdapter implements CartAccessCodeAdapter {
   protected logger = inject(LoggerService);
-
-  constructor(
-    protected http: HttpClient,
-    protected occEndpointsService: OccEndpointsService,
-    protected converterService: ConverterService
-  ) {}
+  protected http = inject(HttpClient);
+  protected occEndpointsService = inject(OccEndpointsService);
+  protected converterService = inject(ConverterService);
 
   getCartAccessCode(
     userId: string,

@@ -1,6 +1,9 @@
 <!-- For B2B Account payment, OPF should not be displayed -->
 <ng-container *ngIf="(paymentType$ | async)?.code !== 'ACCOUNT'">
-  <div class="cx-opf-terms-and-conditions">
+  <div
+    class="cx-opf-terms-and-conditions"
+    *ngIf="explicitTermsAndConditions$ | async"
+  >
     <h3>{{ 'opfCheckout.termsAndConditions' | cxTranslate }}</h3>
 
     <form
@@ -35,9 +38,12 @@
 
   <cx-opf-checkout-terms-and-conditions-alert
     [isVisible]="termsAndConditionInvalid"
+    [isExplicit]="explicitTermsAndConditions$ | async"
   ></cx-opf-checkout-terms-and-conditions-alert>
 
   <cx-opf-checkout-payments
+    [elementsPerPage]="10"
+    [explicitTermsAndConditions]="explicitTermsAndConditions$ | async"
     [disabled]="termsAndConditionInvalid"
   ></cx-opf-checkout-payments>
 

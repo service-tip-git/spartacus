@@ -4,15 +4,19 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Component, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
+import {
+  Component,
+  OnDestroy,
+  OnInit,
+  ViewContainerRef,
+  inject,
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpErrorModel } from '@spartacus/core';
-
+import { OpfKeyValueMap, OpfPage } from '@spartacus/opf/base/root';
 import { Observable, Subscription } from 'rxjs';
 import { concatMap } from 'rxjs/operators';
 
-import { GlobalFunctionsDomain } from '@spartacus/opf/global-functions/root';
-import { KeyValuePair, OpfPage } from '../../model';
 import { OpfPaymentVerificationService } from './opf-payment-verification.service';
 
 @Component({
@@ -20,14 +24,14 @@ import { OpfPaymentVerificationService } from './opf-payment-verification.servic
   templateUrl: './opf-payment-verification.component.html',
 })
 export class OpfPaymentVerificationComponent implements OnInit, OnDestroy {
+  protected route = inject(ActivatedRoute);
+  protected opfPaymentVerificationService = inject(
+    OpfPaymentVerificationService
+  );
+  protected vcr = inject(ViewContainerRef);
+
   protected subscription?: Subscription;
   protected isHostedFieldPattern = false;
-
-  constructor(
-    protected route: ActivatedRoute,
-    protected opfPaymentVerificationService: OpfPaymentVerificationService,
-    protected vcr: ViewContainerRef
-  ) {}
 
   ngOnInit(): void {
     this.opfPaymentVerificationService.checkIfProcessingCartIdExist();
@@ -64,13 +68,12 @@ export class OpfPaymentVerificationComponent implements OnInit, OnDestroy {
     afterRedirectScriptFlag,
   }: {
     paymentSessionId: string;
-    paramsMap: KeyValuePair[];
+    paramsMap: OpfKeyValueMap[];
     afterRedirectScriptFlag?: string;
   }): Observable<boolean> {
     if (afterRedirectScriptFlag === 'true') {
       this.isHostedFieldPattern = true;
       return this.opfPaymentVerificationService.runHostedFieldsPattern(
-        GlobalFunctionsDomain.REDIRECT,
         paymentSessionId,
         this.vcr,
         paramsMap

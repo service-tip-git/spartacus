@@ -41,12 +41,7 @@ describe('OpfResourceLoaderService', () => {
     expect(opfResourceLoaderService).toBeTruthy();
   });
 
-  it('should create OpfResourceLoaderService instance', () => {
-    opfResourceLoaderService = TestBed.inject(OpfResourceLoaderService);
-    expect(opfResourceLoaderService instanceof ScriptLoader).toBe(true);
-  });
-
-  describe('loadProviderResources', () => {
+  describe('loadResources', () => {
     beforeEach(() => {
       opfResourceLoaderService = TestBed.inject(OpfResourceLoaderService);
     });
@@ -65,7 +60,7 @@ describe('OpfResourceLoaderService', () => {
       spyOn<any>(opfResourceLoaderService, 'loadScript').and.callThrough();
       spyOn<any>(opfResourceLoaderService, 'loadStyles').and.callThrough();
 
-      opfResourceLoaderService.loadProviderResources(
+      opfResourceLoaderService.loadResources(
         [mockScriptResource],
         [mockStyleResource]
       );
@@ -77,13 +72,14 @@ describe('OpfResourceLoaderService', () => {
     it('should load provider resources successfully for scripts', fakeAsync(() => {
       const mockScriptResource = {
         url: 'script-url',
+        sri: 'fake-hash-code',
         type: OpfDynamicScriptResourceType.SCRIPT,
       };
 
       spyOn<any>(opfResourceLoaderService, 'loadScript').and.callThrough();
       spyOn<any>(opfResourceLoaderService, 'loadStyles').and.callThrough();
 
-      opfResourceLoaderService.loadProviderResources([mockScriptResource]);
+      opfResourceLoaderService.loadResources([mockScriptResource]);
 
       expect(opfResourceLoaderService['loadStyles']).not.toHaveBeenCalled();
       expect(opfResourceLoaderService['loadScript']).toHaveBeenCalled();
@@ -98,7 +94,7 @@ describe('OpfResourceLoaderService', () => {
       spyOn<any>(opfResourceLoaderService, 'loadScript').and.callThrough();
       spyOn<any>(opfResourceLoaderService, 'loadStyles').and.callThrough();
 
-      opfResourceLoaderService.loadProviderResources([], [mockStyleResource]);
+      opfResourceLoaderService.loadResources([], [mockStyleResource]);
 
       expect(opfResourceLoaderService['loadScript']).not.toHaveBeenCalled();
       expect(opfResourceLoaderService['loadStyles']).toHaveBeenCalled();
@@ -111,35 +107,21 @@ describe('OpfResourceLoaderService', () => {
 
       spyOn<any>(opfResourceLoaderService, 'loadScript').and.callThrough();
       spyOn<any>(opfResourceLoaderService, 'loadStyles').and.callThrough();
-      spyOn<any>(
-        opfResourceLoaderService,
-        'markResourceAsLoaded'
-      ).and.callThrough();
 
-      opfResourceLoaderService.loadProviderResources([], [mockStyleResource]);
+      opfResourceLoaderService.loadResources([], [mockStyleResource]);
 
       expect(opfResourceLoaderService['loadScript']).not.toHaveBeenCalled();
       expect(opfResourceLoaderService['loadStyles']).not.toHaveBeenCalled();
-      expect(
-        opfResourceLoaderService['markResourceAsLoaded']
-      ).toHaveBeenCalled();
     }));
 
     it('should not load provider resources when no resources are provided', fakeAsync(() => {
       spyOn<any>(opfResourceLoaderService, 'loadScript').and.callThrough();
       spyOn<any>(opfResourceLoaderService, 'loadStyles').and.callThrough();
-      spyOn<any>(
-        opfResourceLoaderService,
-        'markResourceAsLoaded'
-      ).and.callThrough();
 
-      opfResourceLoaderService.loadProviderResources();
+      opfResourceLoaderService.loadResources();
 
       expect(opfResourceLoaderService['loadScript']).not.toHaveBeenCalled();
       expect(opfResourceLoaderService['loadStyles']).not.toHaveBeenCalled();
-      expect(
-        opfResourceLoaderService['markResourceAsLoaded']
-      ).not.toHaveBeenCalled();
     }));
 
     it('should mark resource as loaded when script is successfully loaded', fakeAsync(() => {
@@ -150,24 +132,18 @@ describe('OpfResourceLoaderService', () => {
 
       spyOn<any>(opfResourceLoaderService, 'loadScript').and.callThrough();
       spyOn<any>(opfResourceLoaderService, 'loadStyles').and.callThrough();
-      spyOn<any>(
-        opfResourceLoaderService,
-        'markResourceAsLoaded'
-      ).and.callThrough();
+
       spyOn<any>(ScriptLoader.prototype, 'embedScript').and.callFake(
         (options: any) => {
           options.callback?.();
         }
       );
 
-      opfResourceLoaderService.loadProviderResources([mockScriptResource]);
+      opfResourceLoaderService.loadResources([mockScriptResource]);
 
       expect(opfResourceLoaderService['loadStyles']).not.toHaveBeenCalled();
       expect(opfResourceLoaderService['loadScript']).toHaveBeenCalled();
       expect(ScriptLoader.prototype.embedScript).toHaveBeenCalled();
-      expect(
-        opfResourceLoaderService['markResourceAsLoaded']
-      ).toHaveBeenCalled();
     }));
 
     it('should handle resource loading error when script is not successfully loaded', fakeAsync(() => {
@@ -178,58 +154,41 @@ describe('OpfResourceLoaderService', () => {
 
       spyOn<any>(opfResourceLoaderService, 'loadScript').and.callThrough();
       spyOn<any>(opfResourceLoaderService, 'loadStyles').and.callThrough();
-      spyOn<any>(
-        opfResourceLoaderService,
-        'markResourceAsLoaded'
-      ).and.callThrough();
-      spyOn<any>(
-        opfResourceLoaderService,
-        'handleLoadingResourceError'
-      ).and.callThrough();
+
       spyOn<any>(ScriptLoader.prototype, 'embedScript').and.callFake(
         (options: any) => {
           options.errorCallback?.();
         }
       );
 
-      opfResourceLoaderService.loadProviderResources([mockScriptResource]);
+      opfResourceLoaderService.loadResources([mockScriptResource]);
 
       expect(opfResourceLoaderService['loadStyles']).not.toHaveBeenCalled();
       expect(opfResourceLoaderService['loadScript']).toHaveBeenCalled();
-      expect(
-        opfResourceLoaderService['markResourceAsLoaded']
-      ).not.toHaveBeenCalled();
+
       expect(ScriptLoader.prototype.embedScript).toHaveBeenCalled();
-      expect(
-        opfResourceLoaderService['handleLoadingResourceError']
-      ).toHaveBeenCalled();
     }));
 
     it('should mark resource as loaded when style is successfully loaded', fakeAsync(() => {
       const mockStylesResources = {
         url: 'style-url',
+        sri: 'fake-hash-code',
         type: OpfDynamicScriptResourceType.STYLES,
       };
 
       spyOn<any>(opfResourceLoaderService, 'loadScript').and.callThrough();
       spyOn<any>(opfResourceLoaderService, 'loadStyles').and.callThrough();
-      spyOn<any>(
-        opfResourceLoaderService,
-        'markResourceAsLoaded'
-      ).and.callThrough();
+
       spyOn<any>(opfResourceLoaderService, 'embedStyles').and.callFake(
         (options: any) => {
           options.callback?.(); // Simulate script loading
         }
       );
 
-      opfResourceLoaderService.loadProviderResources([], [mockStylesResources]);
+      opfResourceLoaderService.loadResources([], [mockStylesResources]);
 
       expect(opfResourceLoaderService['loadScript']).not.toHaveBeenCalled();
       expect(opfResourceLoaderService['loadStyles']).toHaveBeenCalled();
-      expect(
-        opfResourceLoaderService['markResourceAsLoaded']
-      ).toHaveBeenCalled();
       expect(opfResourceLoaderService['embedStyles']).toHaveBeenCalled();
     }));
 
@@ -241,31 +200,19 @@ describe('OpfResourceLoaderService', () => {
 
       spyOn<any>(opfResourceLoaderService, 'loadScript').and.callThrough();
       spyOn<any>(opfResourceLoaderService, 'loadStyles').and.callThrough();
-      spyOn<any>(
-        opfResourceLoaderService,
-        'markResourceAsLoaded'
-      ).and.callThrough();
-      spyOn<any>(
-        opfResourceLoaderService,
-        'handleLoadingResourceError'
-      ).and.callThrough();
+
       spyOn<any>(opfResourceLoaderService, 'embedStyles').and.callFake(
         (options: any) => {
           options.errorCallback?.(); // Simulate script loading
         }
       );
 
-      opfResourceLoaderService.loadProviderResources([], [mockStylesResources]);
+      opfResourceLoaderService.loadResources([], [mockStylesResources]);
 
       expect(opfResourceLoaderService['loadScript']).not.toHaveBeenCalled();
-      expect(
-        opfResourceLoaderService['markResourceAsLoaded']
-      ).not.toHaveBeenCalled();
+
       expect(opfResourceLoaderService['loadStyles']).toHaveBeenCalled();
       expect(opfResourceLoaderService['embedStyles']).toHaveBeenCalled();
-      expect(
-        opfResourceLoaderService['handleLoadingResourceError']
-      ).toHaveBeenCalled();
     }));
 
     it('should not embed styles if there is no style in the element', fakeAsync(() => {
@@ -275,20 +222,14 @@ describe('OpfResourceLoaderService', () => {
       };
 
       spyOn<any>(opfResourceLoaderService, 'embedStyles').and.callThrough();
-      spyOn<any>(
-        opfResourceLoaderService,
-        'markResourceAsLoaded'
-      ).and.callThrough();
+
       mockDocument.querySelector = jasmine
         .createSpy('querySelector')
         .and.returnValue({} as Element);
 
-      opfResourceLoaderService.loadProviderResources([], [mockStyleResource]);
+      opfResourceLoaderService.loadResources([], [mockStyleResource]);
 
       expect(opfResourceLoaderService['embedStyles']).not.toHaveBeenCalled();
-      expect(
-        opfResourceLoaderService['markResourceAsLoaded']
-      ).toHaveBeenCalled();
     }));
 
     it('should not embed script if there is no script in the element', fakeAsync(() => {
@@ -297,25 +238,20 @@ describe('OpfResourceLoaderService', () => {
         type: OpfDynamicScriptResourceType.SCRIPT,
       };
 
-      spyOn<any>(opfResourceLoaderService, 'embedScript').and.callThrough();
-      spyOn<any>(
-        opfResourceLoaderService,
-        'markResourceAsLoaded'
-      ).and.callThrough();
+      const scriptLoader = TestBed.inject(ScriptLoader);
+      spyOn<any>(scriptLoader, 'embedScript').and.callThrough();
+
       mockDocument.querySelector = jasmine
         .createSpy('querySelector')
         .and.returnValue({} as Element);
 
-      opfResourceLoaderService.loadProviderResources([mockScriptResource]);
+      opfResourceLoaderService.loadResources([mockScriptResource]);
 
-      expect(opfResourceLoaderService['embedScript']).not.toHaveBeenCalled();
-      expect(
-        opfResourceLoaderService['markResourceAsLoaded']
-      ).toHaveBeenCalled();
+      expect(scriptLoader.embedScript).not.toHaveBeenCalled();
     }));
   });
 
-  describe('loadProviderResources using server platform', () => {
+  describe('loadResources using server platform', () => {
     beforeEach(() => {
       TestBed.overrideProvider(PLATFORM_ID, { useValue: 'server' });
       opfResourceLoaderService = TestBed.inject(OpfResourceLoaderService);
@@ -328,7 +264,7 @@ describe('OpfResourceLoaderService', () => {
       };
 
       spyOn<any>(opfResourceLoaderService, 'loadStyles').and.callThrough();
-      opfResourceLoaderService.loadProviderResources([], [mockStyleResource]);
+      opfResourceLoaderService.loadResources([], [mockStyleResource]);
       expect(opfResourceLoaderService['loadStyles']).not.toHaveBeenCalled();
     }));
 
@@ -338,12 +274,12 @@ describe('OpfResourceLoaderService', () => {
         type: OpfDynamicScriptResourceType.SCRIPT,
       };
       spyOn<any>(opfResourceLoaderService, 'loadScript').and.callThrough();
-      opfResourceLoaderService.loadProviderResources([], [mockScriptResource]);
+      opfResourceLoaderService.loadResources([], [mockScriptResource]);
       expect(opfResourceLoaderService['loadScript']).not.toHaveBeenCalled();
     }));
   });
 
-  describe('clearAllProviderResources', () => {
+  describe('clearAllResources', () => {
     it('should clear all provider resources', () => {
       opfResourceLoaderService = TestBed.inject(OpfResourceLoaderService);
 
@@ -355,7 +291,7 @@ describe('OpfResourceLoaderService', () => {
         .createSpy('querySelectorAll')
         .and.returnValue([mockLinkElement]);
 
-      opfResourceLoaderService.clearAllProviderResources();
+      opfResourceLoaderService.clearAllResources();
 
       expect(mockLinkElement.remove).toHaveBeenCalled();
     });

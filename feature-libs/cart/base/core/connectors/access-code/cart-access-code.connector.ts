@@ -4,13 +4,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CartAccessCodeAdapter } from './cart-access-code.adapter';
 
 @Injectable()
 export class CartAccessCodeConnector {
-  constructor(protected adapter: CartAccessCodeAdapter) {}
+  protected adapter = inject(CartAccessCodeAdapter);
 
   public getCartAccessCode(
     userId: string,

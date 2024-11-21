@@ -13,8 +13,10 @@ import {
 } from '@angular/core';
 import { WindowRef } from '@spartacus/core';
 import {
-  ErrorDialogOptions,
-  defaultErrorDialogOptions,
+  OpfErrorDialogOptions,
+  OpfKeyValueMap,
+  OpfPage,
+  defaultOpfErrorDialogOptions,
 } from '@spartacus/opf/base/root';
 import { OpfCtaFacade } from '@spartacus/opf/cta/root';
 import {
@@ -23,12 +25,10 @@ import {
   OpfGlobalFunctionsFacade,
 } from '@spartacus/opf/global-functions/root';
 import {
-  GlobalOpfPaymentMethods,
-  KeyValuePair,
-  MerchantCallback,
-  OpfPage,
   OpfPaymentFacade,
-  PaymentMethod,
+  OpfPaymentGlobalMethods,
+  OpfPaymentMerchantCallback,
+  OpfPaymentMethod,
 } from '@spartacus/opf/payment/root';
 import { LAUNCH_CALLER, LaunchDialogService } from '@spartacus/storefront';
 import { Observable, Subject, lastValueFrom } from 'rxjs';
@@ -78,7 +78,7 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
     }
   }
 
-  removeGlobalFunctions(domain: GlobalFunctionsDomain): void {
+  unregisterGlobalFunctions(domain: GlobalFunctionsDomain): void {
     // SSR not supported
     if (!this.winRef.isBrowser()) {
       return;
@@ -91,7 +91,7 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
 
   protected getGlobalFunctionContainer(
     domain: GlobalFunctionsDomain
-  ): GlobalOpfPaymentMethods {
+  ): OpfPaymentGlobalMethods {
     const window = this.winRef.nativeWindow as any;
     if (!window.Opf?.payments[domain]) {
       window.Opf = window?.Opf ?? {};
@@ -153,7 +153,7 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
 
   protected registerGetRedirectParams(
     domain: GlobalFunctionsDomain,
-    paramsMap: Array<KeyValuePair> = []
+    paramsMap: Array<OpfKeyValueMap> = []
   ): void {
     this.getGlobalFunctionContainer(domain).getRedirectParams = () =>
       paramsMap.map((p) => {
@@ -166,7 +166,7 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
     vcr?: ViewContainerRef
   ): void {
     this.getGlobalFunctionContainer(domain).throwPaymentError = (
-      errorDialogOptions: ErrorDialogOptions = defaultErrorDialogOptions
+      opfErrorDialogOptions: OpfErrorDialogOptions = defaultOpfErrorDialogOptions
     ): void => {
       if (!vcr) {
         return;
@@ -176,7 +176,7 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
           LAUNCH_CALLER.OPF_ERROR,
           undefined,
           vcr,
-          errorDialogOptions
+          opfErrorDialogOptions
         );
 
         if (dialog) {
@@ -192,7 +192,6 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
     vcr?: ViewContainerRef
   ): void {
     this.getGlobalFunctionContainer(domain).submit = ({
-      cartId,
       additionalData,
       submitSuccess = (): void => {
         // this is intentional
@@ -206,30 +205,33 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
       paymentMethod,
     }: {
       cartId: string;
-      additionalData: Array<KeyValuePair>;
-      submitSuccess: MerchantCallback;
-      submitPending: MerchantCallback;
-      submitFailure: MerchantCallback;
-      paymentMethod: PaymentMethod;
+      additionalData: Array<OpfKeyValueMap>;
+      submitSuccess: OpfPaymentMerchantCallback;
+      submitPending: OpfPaymentMerchantCallback;
+      submitFailure: OpfPaymentMerchantCallback;
+      paymentMethod: OpfPaymentMethod;
     }): Promise<boolean> => {
       return this.ngZone.run(() => {
         let overlayedSpinner: void | Observable<ComponentRef<any> | undefined>;
         if (vcr) {
           overlayedSpinner = this.startLoaderSpinner(vcr);
         }
-        const callbackArray: [
-          MerchantCallback,
-          MerchantCallback,
-          MerchantCallback,
-        ] = [submitSuccess, submitPending, submitFailure];
+        const callbacks: {
+          onSuccess: OpfPaymentMerchantCallback;
+          onPending: OpfPaymentMerchantCallback;
+          onFailure: OpfPaymentMerchantCallback;
+        } = {
+          onSuccess: submitSuccess,
+          onPending: submitPending,
+          onFailure: submitFailure,
+        };
 
         return lastValueFrom(
           this.opfPaymentFacade
             .submitPayment({
               additionalData,
               paymentSessionId,
-              cartId,
-              callbackArray,
+              callbacks,
               paymentMethod,
               returnPath: undefined,
             })
@@ -246,9 +248,12 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
   }
 
   protected runSubmitComplete(
-    cartId: string,
-    additionalData: Array<KeyValuePair>,
-    callbackArray: [MerchantCallback, MerchantCallback, MerchantCallback],
+    additionalData: Array<OpfKeyValueMap>,
+    callbacks: {
+      onSuccess: OpfPaymentMerchantCallback;
+      onPending: OpfPaymentMerchantCallback;
+      onFailure: OpfPaymentMerchantCallback;
+    },
     paymentSessionId: string,
     returnPath?: string | undefined,
     vcr?: ViewContainerRef
@@ -264,8 +269,7 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
           .submitCompletePayment({
             additionalData,
             paymentSessionId,
-            cartId,
-            callbackArray,
+            callbacks,
             returnPath,
           })
           .pipe(
@@ -285,7 +289,6 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
     vcr?: ViewContainerRef
   ): void {
     this.getGlobalFunctionContainer(domain).submitComplete = ({
-      cartId,
       additionalData,
       submitSuccess = (): void => {
         // this is intentional
@@ -298,15 +301,18 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
       },
     }: {
       cartId: string;
-      additionalData: Array<KeyValuePair>;
-      submitSuccess: MerchantCallback;
-      submitPending: MerchantCallback;
-      submitFailure: MerchantCallback;
+      additionalData: Array<OpfKeyValueMap>;
+      submitSuccess: OpfPaymentMerchantCallback;
+      submitPending: OpfPaymentMerchantCallback;
+      submitFailure: OpfPaymentMerchantCallback;
     }): Promise<boolean> => {
       return this.runSubmitComplete(
-        cartId,
         additionalData,
-        [submitSuccess, submitPending, submitFailure],
+        {
+          onSuccess: submitSuccess,
+          onPending: submitPending,
+          onFailure: submitFailure,
+        },
         paymentSessionId,
         undefined,
         vcr
@@ -320,7 +326,6 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
     vcr?: ViewContainerRef
   ): void {
     this.getGlobalFunctionContainer(domain).submitCompleteRedirect = ({
-      cartId,
       additionalData,
       submitSuccess = (): void => {
         // this is intentional
@@ -333,15 +338,18 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
       },
     }: {
       cartId: string;
-      additionalData: Array<KeyValuePair>;
-      submitSuccess: MerchantCallback;
-      submitPending: MerchantCallback;
-      submitFailure: MerchantCallback;
+      additionalData: Array<OpfKeyValueMap>;
+      submitSuccess: OpfPaymentMerchantCallback;
+      submitPending: OpfPaymentMerchantCallback;
+      submitFailure: OpfPaymentMerchantCallback;
     }): Promise<boolean> => {
       return this.runSubmitComplete(
-        cartId,
         additionalData,
-        [submitSuccess, submitPending, submitFailure],
+        {
+          onSuccess: submitSuccess,
+          onPending: submitPending,
+          onFailure: submitFailure,
+        },
         paymentSessionId,
         OpfPage.CHECKOUT_REVIEW_PAGE,
         vcr

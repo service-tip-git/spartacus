@@ -6,17 +6,17 @@
 
 import { TestBed } from '@angular/core/testing';
 import {
-  AfterRedirectScriptResponse,
+  OpfPaymentAfterRedirectScriptResponse,
+  OpfPaymentInitiationConfig,
+  OpfPaymentMethod,
+  OpfPaymentSessionData,
+  OpfPaymentSubmitCompleteRequest,
+  OpfPaymentSubmitCompleteResponse,
+  OpfPaymentSubmitRequest,
+  OpfPaymentSubmitResponse,
+  OpfPaymentSubmitStatus,
   OpfPaymentVerificationPayload,
   OpfPaymentVerificationResponse,
-  PaymentInitiationConfig,
-  PaymentMethod,
-  PaymentSessionData,
-  SubmitCompleteRequest,
-  SubmitCompleteResponse,
-  SubmitRequest,
-  SubmitResponse,
-  SubmitStatus,
 } from '@spartacus/opf/payment/root';
 import { of } from 'rxjs';
 import { OpfPaymentAdapter } from './opf-payment.adapter';
@@ -31,43 +31,43 @@ const mockOpfPaymentVerificationResponse: OpfPaymentVerificationResponse = {
   result: 'test',
 };
 
-const mockSubmitPaymentRequest: SubmitRequest = {
+const mockSubmitPaymentRequest: OpfPaymentSubmitRequest = {
   paymentMethod: 'card',
   encryptedToken: 'token',
-  cartId: '123',
 };
 
-const mockSubmitPaymentResponse: SubmitResponse = {
+const mockSubmitPaymentResponse: OpfPaymentSubmitResponse = {
   cartId: 'test',
-  status: SubmitStatus.ACCEPTED,
+  status: OpfPaymentSubmitStatus.ACCEPTED,
   reasonCode: 'ok',
-  paymentMethod: PaymentMethod.CREDIT_CARD,
+  paymentMethod: OpfPaymentMethod.CREDIT_CARD,
   authorizedAmount: 123,
   customFields: [],
 };
 
-const mockSubmitCompleteRequest: SubmitCompleteRequest = {
+const mockSubmitCompleteRequest: OpfPaymentSubmitCompleteRequest = {
   paymentSessionId: 'test',
 };
 
-const mockSubmitCompleteResponse: SubmitCompleteResponse = {
+const mockSubmitCompleteResponse: OpfPaymentSubmitCompleteResponse = {
   cartId: 'test',
-  status: SubmitStatus.ACCEPTED,
+  status: OpfPaymentSubmitStatus.ACCEPTED,
   reasonCode: 1,
   customFields: [],
 };
 
-const mockPaymentInitiationConfig: PaymentInitiationConfig = {
+const mockPaymentInitiationConfig: OpfPaymentInitiationConfig = {
   config: {},
 };
 
-const mockInitiatePayment: PaymentSessionData = {
+const mockInitiatePayment: OpfPaymentSessionData = {
   paymentSessionId: 'test',
 };
 
-const mockAfterRedirectScriptsResponse: AfterRedirectScriptResponse = {
-  afterRedirectScript: {},
-};
+const mockAfterRedirectScriptsResponse: OpfPaymentAfterRedirectScriptResponse =
+  {
+    afterRedirectScript: {},
+  };
 
 class MockOpfPaymentAdapter implements OpfPaymentAdapter {
   verifyPayment = createSpy('verifyPayment').and.callFake(() =>
@@ -82,8 +82,8 @@ class MockOpfPaymentAdapter implements OpfPaymentAdapter {
   initiatePayment = createSpy('initiatePayment').and.callFake(() =>
     of(mockInitiatePayment)
   );
-  afterRedirectScripts = createSpy('afterRedirectScripts').and.callFake(() =>
-    of(mockAfterRedirectScriptsResponse)
+  getAfterRedirectScripts = createSpy('getAfterRedirectScripts').and.callFake(
+    () => of(mockAfterRedirectScriptsResponse)
   );
 }
 
@@ -160,13 +160,13 @@ describe('OpfPaymentConnector', () => {
     );
   });
 
-  it('afterRedirectScripts should call adapter', () => {
+  it('getAfterRedirectScripts should call adapter', () => {
     let result;
     service
-      .afterRedirectScripts('paymentSessionId')
+      .getAfterRedirectScripts('paymentSessionId')
       .subscribe((res) => (result = res));
     expect(result).toEqual(mockAfterRedirectScriptsResponse);
-    expect(adapter.afterRedirectScripts).toHaveBeenCalledWith(
+    expect(adapter.getAfterRedirectScripts).toHaveBeenCalledWith(
       'paymentSessionId'
     );
   });

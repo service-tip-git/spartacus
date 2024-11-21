@@ -20,12 +20,17 @@ import {
   OpfCtaAdapter,
 } from '@spartacus/opf/cta/core';
 import { CtaScriptsRequest, CtaScriptsResponse } from '@spartacus/opf/cta/root';
-import { SubmitResponse } from '@spartacus/opf/payment/root';
+import { OpfPaymentSubmitResponse } from '@spartacus/opf/payment/root';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class OpfApiCtaAdapter implements OpfCtaAdapter {
+  protected http = inject(HttpClient);
+  protected converter = inject(ConverterService);
+  protected opfEndpointsService = inject(OpfEndpointsService);
+  protected config = inject(OpfConfig);
+
   protected logger = inject(LoggerService);
 
   protected headerWithNoLanguage: { [name: string]: string } = {
@@ -42,13 +47,6 @@ export class OpfApiCtaAdapter implements OpfCtaAdapter {
     'Content-Language': 'en-us',
   };
 
-  constructor(
-    protected http: HttpClient,
-    protected converter: ConverterService,
-    protected opfEndpointsService: OpfEndpointsService,
-    protected config: OpfConfig
-  ) {}
-
   getCtaScripts(
     ctaScriptsRequest: CtaScriptsRequest
   ): Observable<CtaScriptsResponse> {
@@ -60,7 +58,7 @@ export class OpfApiCtaAdapter implements OpfCtaAdapter {
     const url = this.getCtaScriptsEndpoint();
 
     return this.http
-      .post<SubmitResponse>(url, ctaScriptsRequest, { headers })
+      .post<OpfPaymentSubmitResponse>(url, ctaScriptsRequest, { headers })
       .pipe(
         catchError((error) => {
           throw tryNormalizeHttpError(error, this.logger);

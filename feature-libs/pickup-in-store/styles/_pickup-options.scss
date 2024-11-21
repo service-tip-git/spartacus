@@ -91,4 +91,31 @@
       -webkit-box-shadow: none;
     }
   }
+
+  @include cx-highContrastTheme {
+    cx-tab {
+      button {
+        background-color: var(--cx-color-background);
+        border: 2px solid var(--cx-color-text);
+        color: var(--cx-color-text);
+      }
+
+      cx-tab-panel {
+        div[role='tabpanel'] {
+          background-color: var(--cx-color-background);
+          border: 2px solid var(--cx-color-text);
+          color: var(--cx-color-text);
+        }
+      }
+
+      // native high contrast themes fix
+      @media (forced-colors: active) {
+        button.tab-btn.active {
+          &:after {
+            background-color: LinkText;
+          }
+        }
+      }
+    }
+  }
 }

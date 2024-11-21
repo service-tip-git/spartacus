@@ -25,9 +25,13 @@
 
     <div class="cx-customer-ticket-form-body">
       <div class="cx-customer-ticket-form-row">
+        <p *cxFeature="'a11yRequiredAsterisks'" class="form-legend">
+          {{ 'formLegend.required' | cxTranslate }}
+        </p>
         <label>
           <span class="cx-customer-ticket-label label-content">
             {{ 'createCustomerTicket.subject' | cxTranslate }}
+            <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
           </span>
           <textarea
             [maxLength]="inputCharactersForSubject"
@@ -48,6 +52,7 @@
         <label *ngIf="ticketCategories$ | async as ticketCategories">
           <span class="cx-customer-ticket-label label-content">
             {{ 'createCustomerTicket.category' | cxTranslate }}
+            <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
           </span>
           <select class="form-control" formControlName="ticketCategory">
             <option value="" disabled selected>
@@ -98,6 +103,7 @@
         <label>
           <span class="cx-customer-ticket-label label-content">
             {{ 'customerTicketing.message' | cxTranslate }}
+            <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
           </span>
           <textarea
             [maxLength]="inputCharactersLimit"
@@ -165,3 +171,13 @@
     </div>
   </form>
 </div>
+
+<ng-template #requiredAsterisk>
+  <abbr
+    *cxFeature="'a11yRequiredAsterisks'"
+    class="text-decoration-none"
+    aria-hidden="true"
+    title="{{ 'common.required' | cxTranslate }}"
+    >*</abbr
+  >
+</ng-template>

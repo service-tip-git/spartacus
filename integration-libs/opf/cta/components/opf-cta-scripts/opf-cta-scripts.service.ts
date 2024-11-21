@@ -47,7 +47,7 @@ export class OpfCtaScriptsService {
     return new Promise(
       (resolve: (value: OpfDynamicScript | undefined) => void) => {
         this.opfResourceLoaderService
-          .loadProviderResources(script.jsUrls, script.cssUrls)
+          .loadResources(script.jsUrls, script.cssUrls)
           .then(() => {
             if (html) {
               this.opfResourceLoaderService.executeScriptFromHtml(html);
@@ -63,7 +63,7 @@ export class OpfCtaScriptsService {
     );
   }
 
-  getCtaHtmlslList(): Observable<OpfDynamicScript[]> {
+  getCtaHtmlList(): Observable<OpfDynamicScript[]> {
     let isDynamicCtaLocation = false;
     return this.fillCtaScriptRequest().pipe(
       concatMap((ctaScriptsRequest) => {
@@ -82,7 +82,7 @@ export class OpfCtaScriptsService {
           this.opfDynamicCtaService.initiateEvents();
       }),
       finalize(() => {
-        this.opfResourceLoaderService.clearAllProviderResources();
+        this.opfResourceLoaderService.clearAllResources();
         isDynamicCtaLocation && this.opfDynamicCtaService.stopEvents();
       })
     );
@@ -178,9 +178,10 @@ export class OpfCtaScriptsService {
   protected getPaymentAccountIds() {
     return this.opfBaseFacade.getActiveConfigurationsState().pipe(
       filter(
-        (state) => !state.loading && !state.error && Boolean(state.data?.length)
+        (state) =>
+          !state.loading && !state.error && Boolean(state.data?.value?.length)
       ),
-      map((state) => state.data?.map((val) => val.id) as number[])
+      map((state) => state.data?.value?.map((val) => val.id) as number[])
     );
   }
 }

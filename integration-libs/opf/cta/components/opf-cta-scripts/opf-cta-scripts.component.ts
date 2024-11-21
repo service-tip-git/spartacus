@@ -17,7 +17,7 @@ import { OpfCtaScriptsService } from './opf-cta-scripts.service';
 export class OpfCtaScriptsComponent {
   protected opfCtaScriptService = inject(OpfCtaScriptsService);
 
-  ctaHtmls$ = this.opfCtaScriptService.getCtaHtmlslList().pipe(
+  ctaHtmls$ = this.opfCtaScriptService.getCtaHtmlList().pipe(
     catchError(() => {
       return of([]);
     })

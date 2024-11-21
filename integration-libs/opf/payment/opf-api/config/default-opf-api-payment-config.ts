@@ -13,7 +13,7 @@ export const defaultOpfApiPaymentConfig: OpfApiConfig = {
         verifyPayment: 'payments/${paymentSessionId}/verify',
         submitPayment: 'payments/${paymentSessionId}/submit',
         submitCompletePayment: 'payments/${paymentSessionId}/submit-complete',
-        afterRedirectScripts:
+        getAfterRedirectScripts:
           'payments/${paymentSessionId}/after-redirect-scripts',
         initiatePayment: 'payments',
       },

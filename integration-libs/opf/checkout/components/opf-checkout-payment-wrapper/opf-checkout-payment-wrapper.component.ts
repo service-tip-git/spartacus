@@ -11,6 +11,7 @@ import {
   OnDestroy,
   OnInit,
   ViewContainerRef,
+  inject,
 } from '@angular/core';
 import {
   DomSanitizer,
@@ -22,8 +23,8 @@ import {
   OpfGlobalFunctionsFacade,
 } from '@spartacus/opf/global-functions/root';
 import {
-  PaymentPattern,
-  PaymentSessionData,
+  OpfPaymentRenderPattern,
+  OpfPaymentSessionData,
 } from '@spartacus/opf/payment/root';
 import { Subscription } from 'rxjs';
 import { OpfCheckoutPaymentWrapperService } from './opf-checkout-payment-wrapper.service';
@@ -34,26 +35,24 @@ import { OpfCheckoutPaymentWrapperService } from './opf-checkout-payment-wrapper
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OpfCheckoutPaymentWrapperComponent implements OnInit, OnDestroy {
+  protected service = inject(OpfCheckoutPaymentWrapperService);
+  protected sanitizer = inject(DomSanitizer);
+  protected globalFunctionsService = inject(OpfGlobalFunctionsFacade);
+  protected vcr = inject(ViewContainerRef);
+
   @Input() selectedPaymentId: number;
 
   renderPaymentMethodEvent$ = this.service.getRenderPaymentMethodEvent();
 
-  RENDER_PATTERN = PaymentPattern;
+  RENDER_PATTERN = OpfPaymentRenderPattern;
 
   sub: Subscription = new Subscription();
 
-  constructor(
-    protected service: OpfCheckoutPaymentWrapperService,
-    protected sanitizer: DomSanitizer,
-    protected globalFunctionsService: OpfGlobalFunctionsFacade,
-    protected vcr: ViewContainerRef
-  ) {}
-
-  renderHtml(html: string): SafeHtml {
+  bypassSecurityTrustHtml(html: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(html);
   }
 
-  renderUrl(url: string): SafeResourceUrl {
+  bypassSecurityTrustResourceUrl(url: string): SafeResourceUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
@@ -62,7 +61,7 @@ export class OpfCheckoutPaymentWrapperComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.globalFunctionsService.removeGlobalFunctions(
+    this.globalFunctionsService.unregisterGlobalFunctions(
       GlobalFunctionsDomain.CHECKOUT
     );
     this.sub.unsubscribe();
@@ -79,12 +78,12 @@ export class OpfCheckoutPaymentWrapperComponent implements OnInit, OnDestroy {
           if (this.isHostedFields(paymentSessionData)) {
             this.globalFunctionsService.registerGlobalFunctions({
               domain: GlobalFunctionsDomain.CHECKOUT,
-              paymentSessionId: (paymentSessionData as PaymentSessionData)
+              paymentSessionId: (paymentSessionData as OpfPaymentSessionData)
                 .paymentSessionId as string,
               vcr: this.vcr,
             });
           } else {
-            this.globalFunctionsService.removeGlobalFunctions(
+            this.globalFunctionsService.unregisterGlobalFunctions(
               GlobalFunctionsDomain.CHECKOUT
             );
           }
@@ -94,12 +93,12 @@ export class OpfCheckoutPaymentWrapperComponent implements OnInit, OnDestroy {
   }
 
   protected isHostedFields(
-    paymentSessionData: PaymentSessionData | Error
+    paymentSessionData: OpfPaymentSessionData | Error
   ): boolean {
     return !!(
       !(paymentSessionData instanceof Error) &&
       paymentSessionData?.paymentSessionId &&
-      paymentSessionData?.pattern === PaymentPattern.HOSTED_FIELDS
+      paymentSessionData?.pattern === OpfPaymentRenderPattern.HOSTED_FIELDS
     );
   }
 }

@@ -676,6 +676,7 @@
         "../../integration-libs/opf/global-functions/root/public_api"
       ],
       "@spartacus/opf": ["../../integration-libs/opf/public_api"],
+      "@spartacus/opf/order": ["../../integration-libs/opf/order/public_api"],
       "@spartacus/opf/payment/assets": [
         "../../integration-libs/opf/payment/assets/public_api"
       ],

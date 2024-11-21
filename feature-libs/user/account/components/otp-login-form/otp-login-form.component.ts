@@ -59,7 +59,7 @@ export class OneTimePasswordLoginFormComponent {
   @HostBinding('class.user-form') style = true;
 
   constructor() {
-    useFeatureStyles('a11yPasswordVisibliltyBtnValueOverflow');
+    useFeatureStyles('a11yPasswordVisibilityBtnValueOverflow');
   }
 
   onSubmit(): void {

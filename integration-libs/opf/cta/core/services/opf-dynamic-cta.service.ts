@@ -19,6 +19,7 @@ import {
   Product,
   WindowRef,
 } from '@spartacus/core';
+import { OpfKeyValueMap } from '@spartacus/opf/base/root';
 import {
   CtaEvent,
   CtaProductItem,
@@ -26,11 +27,11 @@ import {
   CtaScriptsRequest,
   OpfCtaFacade,
 } from '@spartacus/opf/cta/root';
-import { OpfGlobalFunctionsFacade } from '@spartacus/opf/global-functions/root';
 import {
   GlobalFunctionsDomain,
-  KeyValuePair,
-} from '@spartacus/opf/payment/root';
+  OpfGlobalFunctionsFacade,
+} from '@spartacus/opf/global-functions/root';
+
 import { CurrentProductService } from '@spartacus/storefront';
 import {
   combineLatest,
@@ -105,7 +106,7 @@ export class OpfDynamicCtaService {
     );
   }
 
-  protected fillAdditionalData(): Observable<Array<KeyValuePair>> {
+  protected fillAdditionalData(): Observable<Array<OpfKeyValueMap>> {
     return combineLatest({
       language: this.languageService.getActive(),
       currency: this.currencyService.getActive(),
@@ -145,7 +146,7 @@ export class OpfDynamicCtaService {
     if (this.isOnsiteMessagingInit) {
       this.subList.forEach((sub) => sub.unsubscribe());
       this.subList = [];
-      this.globalFunctionsFacade.removeGlobalFunctions(
+      this.globalFunctionsFacade.unregisterGlobalFunctions(
         GlobalFunctionsDomain.GLOBAL
       );
       this.isOnsiteMessagingInit = false;

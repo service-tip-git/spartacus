@@ -397,7 +397,10 @@
 
 <ng-template #sort>
   <label>
-    <span class="cx-visually-hidden">{{
+    <span *cxFeature="'a11yShowLabelOfSelect'" class="label-content">{{
+      'asm.customerList.tableSort.sortBy' | cxTranslate
+    }}</span>
+    <span *cxFeature="'!a11yShowLabelOfSelect'" class="cx-visually-hidden">{{
       'asm.customerList.tableSort.sortBy' | cxTranslate
     }}</span>
     <cx-sorting
@@ -407,10 +410,8 @@
       (sortListEvent)="changeSortCode($event)"
       [selectedOption]="sortCode"
       placeholder="{{ 'asm.customerList.tableSort.sortBy' | cxTranslate }}"
-      [cxNgSelectA11y]="{
-        ariaLabel: sortCode,
-        ariaControls: 'asm-cusomer-list-table',
-      }"
+      [ariaLabel]="sortCode"
+      ariaControls="asm-cusomer-list-table"
     ></cx-sorting>
   </label>
 </ng-template>
@@ -445,7 +446,10 @@
 
 <ng-template #groupSelector let-customerListsPage="customerListsPage">
   <label>
-    <span class="cx-visually-hidden">{{
+    <span *cxFeature="'a11yShowLabelOfSelect'" class="label-content">{{
+      'asm.customerList.title' | cxTranslate
+    }}</span>
+    <span *cxFeature="'!a11yShowLabelOfSelect'" class="cx-visually-hidden">{{
       'asm.customerList.title' | cxTranslate
     }}</span>
     <ng-select

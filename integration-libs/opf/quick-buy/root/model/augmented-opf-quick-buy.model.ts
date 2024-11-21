@@ -9,7 +9,7 @@ import '@spartacus/opf/payment/root';
 import { OpfQuickBuyDigitalWallet } from './opf-quick-buy.model';
 
 declare module '@spartacus/opf/base/root' {
-  interface ActiveConfiguration {
+  interface OpfActiveConfiguration {
     digitalWalletQuickBuy?: OpfQuickBuyDigitalWallet[];
   }
 }

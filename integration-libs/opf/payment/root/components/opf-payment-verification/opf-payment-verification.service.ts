@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable, ViewContainerRef } from '@angular/core';
+import { Injectable, ViewContainerRef, inject } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import {
   GlobalMessageService,
@@ -15,8 +15,10 @@ import {
 
 import {
   OpfDynamicScript,
+  OpfKeyValueMap,
   OpfMetadataModel,
   OpfMetadataStoreService,
+  OpfPage,
   OpfResourceLoaderService,
 } from '@spartacus/opf/base/root';
 import {
@@ -28,34 +30,30 @@ import { Observable, from, of, throwError } from 'rxjs';
 import { concatMap, filter, map, take, tap } from 'rxjs/operators';
 import { OpfPaymentFacade } from '../../facade';
 import {
-  KeyValuePair,
-  OpfPage,
-  OpfPaymenVerificationUrlInput,
   OpfPaymentVerificationResponse,
   OpfPaymentVerificationResult,
+  OpfPaymentVerificationUrlInput,
 } from '../../model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class OpfPaymentVerificationService {
-  constructor(
-    protected orderFacade: OrderFacade,
-    protected routingService: RoutingService,
-    protected globalMessageService: GlobalMessageService,
-    protected opfPaymentFacade: OpfPaymentFacade,
-    protected opfMetadataStoreService: OpfMetadataStoreService,
-    protected opfResourceLoaderService: OpfResourceLoaderService,
-    protected globalFunctionsService: OpfGlobalFunctionsFacade
-  ) {}
+  protected orderFacade = inject(OrderFacade);
+  protected routingService = inject(RoutingService);
+  protected globalMessageService = inject(GlobalMessageService);
+  protected opfPaymentFacade = inject(OpfPaymentFacade);
+  protected opfMetadataStoreService = inject(OpfMetadataStoreService);
+  protected opfResourceLoaderService = inject(OpfResourceLoaderService);
+  protected globalFunctionsService = inject(OpfGlobalFunctionsFacade);
 
-  defaultError: HttpErrorModel = {
+  opfDefaultPaymentError: HttpErrorModel = {
     statusText: 'Payment Verification Error',
     message: 'opfPayment.errors.proceedPayment',
     status: -1,
   };
 
-  protected getParamsMap(params: Params): Array<KeyValuePair> {
+  protected getParamsMap(params: Params): Array<OpfKeyValueMap> {
     return params
       ? Object.entries(params).map((pair) => {
           return { key: pair[0], value: pair[1] as string };
@@ -65,7 +63,7 @@ export class OpfPaymentVerificationService {
 
   protected findInParamsMap(
     key: string,
-    list: Array<KeyValuePair>
+    list: Array<OpfKeyValueMap>
   ): string | undefined {
     return list.find((pair) => pair.key === key)?.value ?? undefined;
   }
@@ -75,10 +73,10 @@ export class OpfPaymentVerificationService {
 
   verifyResultUrl(route: ActivatedRoute): Observable<{
     paymentSessionId: string;
-    paramsMap: Array<KeyValuePair>;
+    paramsMap: Array<OpfKeyValueMap>;
     afterRedirectScriptFlag: string | undefined;
   }> {
-    let paramsMap: Array<KeyValuePair>;
+    let paramsMap: Array<OpfKeyValueMap>;
     return route?.routeConfig?.data?.cxRoute === OpfPage.RESULT_PAGE
       ? route.queryParams.pipe(
           concatMap((params: Params) => {
@@ -87,7 +85,7 @@ export class OpfPaymentVerificationService {
           }),
           concatMap((paymentSessionId: string | undefined) => {
             if (!paymentSessionId) {
-              return throwError(this.defaultError);
+              return throwError(this.opfDefaultPaymentError);
             }
             return of({
               paymentSessionId,
@@ -100,17 +98,17 @@ export class OpfPaymentVerificationService {
           })
         )
       : throwError({
-          ...this.defaultError,
+          ...this.opfDefaultPaymentError,
           message: 'opfPayment.errors.cancelPayment',
         });
   }
 
   protected getPaymentSessionId(
-    paramMap: Array<KeyValuePair>
+    paramMap: Array<OpfKeyValueMap>
   ): Observable<string | undefined> {
     if (paramMap?.length) {
       const paymentSessionId = this.findInParamsMap(
-        OpfPaymenVerificationUrlInput.PAYMENT_SESSION_ID,
+        OpfPaymentVerificationUrlInput.PAYMENT_SESSION_ID,
         paramMap
       );
       return paymentSessionId
@@ -133,7 +131,7 @@ export class OpfPaymentVerificationService {
 
   protected verifyPayment(
     paymentSessionId: string,
-    responseMap: Array<KeyValuePair>
+    responseMap: Array<OpfKeyValueMap>
   ): Observable<boolean> {
     return this.opfPaymentFacade
       .verifyPayment(paymentSessionId, {
@@ -156,11 +154,11 @@ export class OpfPaymentVerificationService {
       return of(true);
     } else if (response.result === OpfPaymentVerificationResult.CANCELLED) {
       return throwError({
-        ...this.defaultError,
+        ...this.opfDefaultPaymentError,
         message: 'opfPayment.errors.cancelPayment',
       });
     } else {
-      return throwError(this.defaultError);
+      return throwError(this.opfDefaultPaymentError);
     }
   }
 
@@ -195,7 +193,7 @@ export class OpfPaymentVerificationService {
       });
   }
 
-  runHostedPagePattern(paymentSessionId: string, paramsMap: KeyValuePair[]) {
+  runHostedPagePattern(paymentSessionId: string, paramsMap: OpfKeyValueMap[]) {
     return this.verifyPayment(paymentSessionId, paramsMap).pipe(
       concatMap(() => {
         return this.placeOrder();
@@ -210,22 +208,21 @@ export class OpfPaymentVerificationService {
   }
 
   runHostedFieldsPattern(
-    domain: GlobalFunctionsDomain,
     paymentSessionId: string,
     vcr: ViewContainerRef,
-    paramsMap: Array<KeyValuePair>
+    paramsMap: Array<OpfKeyValueMap>
   ): Observable<boolean> {
     this.globalFunctionsService.registerGlobalFunctions({
-      domain,
+      domain: GlobalFunctionsDomain.REDIRECT,
       paymentSessionId,
       vcr,
       paramsMap,
     });
 
-    return this.opfPaymentFacade.afterRedirectScripts(paymentSessionId).pipe(
+    return this.opfPaymentFacade.getAfterRedirectScripts(paymentSessionId).pipe(
       concatMap((response) => {
         if (!response?.afterRedirectScript) {
-          return throwError(this.defaultError);
+          return throwError(this.opfDefaultPaymentError);
         }
         return from(
           this.renderAfterRedirectScripts(response.afterRedirectScript)
@@ -241,7 +238,7 @@ export class OpfPaymentVerificationService {
 
     return new Promise((resolve: (value: boolean) => void) => {
       this.opfResourceLoaderService
-        .loadProviderResources(script.jsUrls, script.cssUrls)
+        .loadResources(script.jsUrls, script.cssUrls)
         .then(() => {
           if (html) {
             this.opfResourceLoaderService.executeScriptFromHtml(html);
@@ -257,9 +254,9 @@ export class OpfPaymentVerificationService {
   }
 
   removeResourcesAndGlobalFunctions(): void {
-    this.globalFunctionsService.removeGlobalFunctions(
+    this.globalFunctionsService.unregisterGlobalFunctions(
       GlobalFunctionsDomain.REDIRECT
     );
-    this.opfResourceLoaderService.clearAllProviderResources();
+    this.opfResourceLoaderService.clearAllResources();
   }
 }

@@ -11,8 +11,9 @@ import {
   ElementRef,
   HostListener,
   OnInit,
+  inject,
 } from '@angular/core';
-import { ErrorDialogOptions } from '@spartacus/opf/base/root';
+import { OpfErrorDialogOptions } from '@spartacus/opf/base/root';
 import { FocusConfig, LaunchDialogService } from '@spartacus/storefront';
 import { Observable, timer } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
@@ -24,6 +25,11 @@ import { OpfErrorModalService } from './opf-error-modal.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OpfErrorModalComponent implements OnInit {
+  protected launchDialogService = inject(LaunchDialogService);
+  protected el = inject(ElementRef);
+  protected cd = inject(ChangeDetectorRef);
+  protected opfErrorModalService = inject(OpfErrorModalService);
+
   focusConfig: FocusConfig = {
     trap: true,
     block: true,
@@ -31,7 +37,7 @@ export class OpfErrorModalComponent implements OnInit {
     focusOnEscape: true,
   };
 
-  errorDialogOptions$: Observable<{ message: string; confirm: string }>;
+  opfErrorDialogOptions$: Observable<{ message: string; confirm: string }>;
 
   @HostListener('click', ['$event'])
   handleClick(event: UIEvent): void {
@@ -40,12 +46,7 @@ export class OpfErrorModalComponent implements OnInit {
     }
   }
 
-  constructor(
-    protected launchDialogService: LaunchDialogService,
-    protected el: ElementRef,
-    protected cd: ChangeDetectorRef,
-    protected opfErrorModalService: OpfErrorModalService
-  ) {
+  constructor() {
     // Mechanism needed to trigger the cpnt life cycle hooks.
     timer(1).subscribe({
       complete: () => {
@@ -55,8 +56,8 @@ export class OpfErrorModalComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.errorDialogOptions$ = this.launchDialogService.data$.pipe(
-      switchMap((data: ErrorDialogOptions) => {
+    this.opfErrorDialogOptions$ = this.launchDialogService.data$.pipe(
+      switchMap((data: OpfErrorDialogOptions) => {
         return this.opfErrorModalService.getMessageAndConfirmTranslations(data);
       })
     );

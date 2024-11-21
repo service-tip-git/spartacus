@@ -5,12 +5,12 @@
  */
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import {
-  backOff,
   ConverterService,
-  isServerError,
   LoggerService,
+  backOff,
+  isServerError,
   tryNormalizeHttpError,
 } from '@spartacus/core';
 import { OpfEndpointsService } from '@spartacus/opf/base/core';
@@ -32,14 +32,11 @@ import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class OpfApiQuickBuyAdapter implements OpfQuickBuyAdapter {
+  protected http = inject(HttpClient);
+  protected converter = inject(ConverterService);
+  protected opfEndpointsService = inject(OpfEndpointsService);
+  protected config = inject(OpfConfig);
   protected logger = inject(LoggerService);
-
-  constructor(
-    protected http: HttpClient,
-    protected converter: ConverterService,
-    protected opfEndpointsService: OpfEndpointsService,
-    protected config: OpfConfig
-  ) {}
 
   protected headerWithNoLanguage: { [name: string]: string } = {
     accept: 'application/json',

@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { CmsService, Page, Product, QueryState } from '@spartacus/core';
 import {
-  ActiveConfiguration,
+  OpfActiveConfigurationsResponse,
   OpfBaseFacade,
   OpfDynamicScript,
   OpfPaymentProviderType,
@@ -53,11 +53,7 @@ describe('OpfCtaScriptsService', () => {
     ]);
     opfResourceLoaderServiceMock = jasmine.createSpyObj(
       'OpfResourceLoaderService',
-      [
-        'executeScriptFromHtml',
-        'loadProviderResources',
-        'clearAllProviderResources',
-      ]
+      ['executeScriptFromHtml', 'loadResources', 'clearAllResources']
     );
     cmsServiceMock = jasmine.createSpyObj('CmsService', ['getCurrentPage']);
     currentProductMock = jasmine.createSpyObj('CurrentProductService', [
@@ -112,7 +108,7 @@ describe('OpfCtaScriptsService', () => {
     orderHistoryFacadeMock.getOrderDetails.and.returnValue(of(mockOrder));
 
     opfResourceLoaderServiceMock.executeScriptFromHtml.and.returnValue();
-    opfResourceLoaderServiceMock.loadProviderResources.and.returnValue(
+    opfResourceLoaderServiceMock.loadResources.and.returnValue(
       Promise.resolve()
     );
     currentProductMock.getProduct.and.returnValue(of(mockProduct));
@@ -128,7 +124,7 @@ describe('OpfCtaScriptsService', () => {
   });
 
   it('should call opfStaticCtaService for CTA on ConfirmationPage', (done) => {
-    service.getCtaHtmlslList().subscribe((htmlsList) => {
+    service.getCtaHtmlList().subscribe((htmlsList) => {
       expect(htmlsList[0].html).toContain(
         'Thanks for purchasing our great products'
       );
@@ -147,7 +143,7 @@ describe('OpfCtaScriptsService', () => {
       of({ ...mockPage, pageId: 'order' })
     );
 
-    service.getCtaHtmlslList().subscribe((htmlsList) => {
+    service.getCtaHtmlList().subscribe((htmlsList) => {
       expect(htmlsList[0].html).toContain(
         'Thanks for purchasing our great products'
       );
@@ -166,7 +162,7 @@ describe('OpfCtaScriptsService', () => {
       of({ ...mockPage, pageId: 'productDetails' })
     );
 
-    service.getCtaHtmlslList().subscribe((htmlsList) => {
+    service.getCtaHtmlList().subscribe((htmlsList) => {
       expect(htmlsList[0].html).toContain(
         'Thanks for purchasing our great products'
       );
@@ -185,7 +181,7 @@ describe('OpfCtaScriptsService', () => {
       of({ ...mockPage, pageId: 'cartPage' })
     );
 
-    service.getCtaHtmlslList().subscribe((htmlsList) => {
+    service.getCtaHtmlList().subscribe((htmlsList) => {
       expect(htmlsList[0].html).toContain(
         'Thanks for purchasing our great products'
       );
@@ -202,7 +198,7 @@ describe('OpfCtaScriptsService', () => {
   it('should throw an error when empty CTA scripts response from OPF server', (done) => {
     opfCtaFacadeMock.getCtaScripts.and.returnValue(of({ value: [] }));
 
-    service.getCtaHtmlslList().subscribe({
+    service.getCtaHtmlList().subscribe({
       error: (error) => {
         expect(error).toEqual('Invalid CTA Scripts Response');
 
@@ -216,7 +212,7 @@ describe('OpfCtaScriptsService', () => {
       of({ ...mockPage, pageId: 'testPage' })
     );
 
-    service.getCtaHtmlslList().subscribe({
+    service.getCtaHtmlList().subscribe({
       next: () => {
         fail('Invalid script should fail');
         done();
@@ -233,7 +229,7 @@ describe('OpfCtaScriptsService', () => {
       of({ ...mockPage, pageId: undefined })
     );
 
-    service.getCtaHtmlslList().subscribe({
+    service.getCtaHtmlList().subscribe({
       next: () => {
         fail('Empty script should fail');
         done();
@@ -268,7 +264,7 @@ describe('OpfCtaScriptsService', () => {
   });
 
   it('should not execute script when resource loading failed', (done) => {
-    opfResourceLoaderServiceMock.loadProviderResources.and.returnValue(
+    opfResourceLoaderServiceMock.loadResources.and.returnValue(
       Promise.reject()
     );
     service
@@ -322,18 +318,20 @@ describe('OpfCtaScriptsService', () => {
   };
 
   const activeConfigurationsMock: QueryState<
-    ActiveConfiguration[] | undefined
+    OpfActiveConfigurationsResponse | undefined
   > = {
     loading: false,
     error: false,
-    data: [
-      {
-        id: 14,
-        providerType: OpfPaymentProviderType.PAYMENT_METHOD,
-        merchantId: 'SAP OPF',
-        displayName: 'Crypto with BitPay',
-      },
-    ],
+    data: {
+      value: [
+        {
+          id: 14,
+          providerType: OpfPaymentProviderType.PAYMENT_METHOD,
+          merchantId: 'SAP OPF',
+          displayName: 'Crypto with BitPay',
+        },
+      ],
+    },
   };
 
   const mockPage: Page = {

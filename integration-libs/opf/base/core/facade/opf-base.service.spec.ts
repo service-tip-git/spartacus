@@ -5,14 +5,14 @@
  */
 
 import { TestBed } from '@angular/core/testing';
-import { of } from 'rxjs';
 import { QueryService, QueryState } from '@spartacus/core';
-import { OpfBaseConnector } from '../connectors/opf-base.connector';
-import { OpfBaseService } from './opf-base.service';
 import {
-  ActiveConfiguration,
+  OpfActiveConfigurationsResponse,
   OpfPaymentProviderType,
 } from '@spartacus/opf/base/root';
+import { of } from 'rxjs';
+import { OpfBaseConnector } from '../connectors/opf-base.connector';
+import { OpfBaseService } from './opf-base.service';
 
 describe('OpfBaseService', () => {
   let service: OpfBaseService;
@@ -39,24 +39,32 @@ describe('OpfBaseService', () => {
       OpfBaseConnector
     ) as jasmine.SpyObj<OpfBaseConnector>;
 
-    const mockActiveConfigurations: ActiveConfiguration[] = [
-      {
-        id: 1,
-        description: 'Payment gateway for merchant 123',
-        merchantId: '123',
-        providerType: OpfPaymentProviderType.PAYMENT_GATEWAY,
-        displayName: 'Gateway 123',
-        acquirerCountryCode: 'US',
+    const mockActiveConfigurations: OpfActiveConfigurationsResponse = {
+      page: {
+        number: 1,
+        totalElements: 2,
+        totalPages: 1,
+        size: 2,
       },
-      {
-        id: 2,
-        description: 'Payment method for merchant 456',
-        merchantId: '456',
-        providerType: OpfPaymentProviderType.PAYMENT_METHOD,
-        displayName: 'Method 456',
-        acquirerCountryCode: 'GB',
-      },
-    ];
+      value: [
+        {
+          id: 1,
+          description: 'Payment gateway for merchant 123',
+          merchantId: '123',
+          providerType: OpfPaymentProviderType.PAYMENT_GATEWAY,
+          displayName: 'Gateway 123',
+          acquirerCountryCode: 'US',
+        },
+        {
+          id: 2,
+          description: 'Payment method for merchant 456',
+          merchantId: '456',
+          providerType: OpfPaymentProviderType.PAYMENT_METHOD,
+          displayName: 'Method 456',
+          acquirerCountryCode: 'GB',
+        },
+      ],
+    };
 
     opfBaseConnector.getActiveConfigurations.and.returnValue(
       of(mockActiveConfigurations)
@@ -76,7 +84,6 @@ describe('OpfBaseService', () => {
     };
 
     queryService.create.and.returnValue(mockQuery);
-    service['activeConfigurationsQuery'] = mockQuery;
   });
 
   it('should be created', () => {
@@ -86,29 +93,31 @@ describe('OpfBaseService', () => {
   it('getActiveConfigurationsState should return an observable with the correct state and call the connector', (done: DoneFn) => {
     service
       .getActiveConfigurationsState()
-      .subscribe((state: QueryState<ActiveConfiguration[] | undefined>) => {
-        expect(state.loading).toBeFalsy();
-        expect(state.error).toBeUndefined();
-        expect(state.data).toEqual([
-          {
-            id: 1,
-            description: 'Payment gateway for merchant 123',
-            merchantId: '123',
-            providerType: OpfPaymentProviderType.PAYMENT_GATEWAY,
-            displayName: 'Gateway 123',
-            acquirerCountryCode: 'US',
-          },
-          {
-            id: 2,
-            description: 'Payment method for merchant 456',
-            merchantId: '456',
-            providerType: OpfPaymentProviderType.PAYMENT_METHOD,
-            displayName: 'Method 456',
-            acquirerCountryCode: 'GB',
-          },
-        ]);
-        done();
-      });
+      .subscribe(
+        (state: QueryState<OpfActiveConfigurationsResponse | undefined>) => {
+          expect(state.loading).toBeFalsy();
+          expect(state.error).toBeUndefined();
+          expect(state.data?.value).toEqual([
+            {
+              id: 1,
+              description: 'Payment gateway for merchant 123',
+              merchantId: '123',
+              providerType: OpfPaymentProviderType.PAYMENT_GATEWAY,
+              displayName: 'Gateway 123',
+              acquirerCountryCode: 'US',
+            },
+            {
+              id: 2,
+              description: 'Payment method for merchant 456',
+              merchantId: '456',
+              providerType: OpfPaymentProviderType.PAYMENT_METHOD,
+              displayName: 'Method 456',
+              acquirerCountryCode: 'GB',
+            },
+          ]);
+          done();
+        }
+      );
 
     expect(queryService.create).toHaveBeenCalled();
   });

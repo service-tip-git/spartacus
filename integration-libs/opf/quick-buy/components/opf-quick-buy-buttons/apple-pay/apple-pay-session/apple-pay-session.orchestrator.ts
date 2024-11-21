@@ -6,27 +6,43 @@
 
 /// <reference types="@types/applepayjs" />
 import { Injectable, inject } from '@angular/core';
-import { PaymentErrorType } from '@spartacus/opf/payment/root';
+import { OpfPaymentErrorType } from '@spartacus/opf/payment/root';
 import {
   ApplePayEvent,
-  ApplePayObservableConfig,
+  ApplePaySessionConfig,
   ApplePayShippingType,
 } from '@spartacus/opf/quick-buy/root';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { ApplePaySessionFactory } from '../apple-pay-session/apple-pay-session.factory';
+import { ApplePaySessionWrapperService } from './apple-pay-session-wrapper.service';
 
+/**
+ * Orchestrates a payment process using the native `ApplePaySession` API.
+ */
 @Injectable({
   providedIn: 'root',
 })
-export class ApplePayObservableFactory {
-  protected applePaySessionFactory = inject(ApplePaySessionFactory);
+export class ApplePaySessionOrchestrator {
+  protected applePaySessionWrapperService = inject(
+    ApplePaySessionWrapperService
+  );
 
-  initApplePayEventsHandler(config: ApplePayObservableConfig): Observable<any> {
+  /**
+   * Starts a new payment process using the native `ApplePaySession` API
+   *
+   * It creates a new `ApplePaySession` instance and binds the provided
+   * handlers (callbacks) for the `ApplePaySession` instance events.
+   *
+   * It returns an Observable that:
+   * a) emits the payment result. Then the observable is immediately completed.
+   * b) OR emits an RxJS error if any error occurs during the process
+   *    (e.g. a merchant validation fails, the user cancels the payment, etc.)
+   */
+  start(config: ApplePaySessionConfig): Observable<any> {
     return new Observable<any>((observer) => {
       let session: ApplePaySession;
       try {
-        session = this.applePaySessionFactory.startApplePaySession(
+        session = this.applePaySessionWrapperService.createSession(
           config.request
         ) as ApplePaySession;
       } catch (err) {
@@ -43,7 +59,7 @@ export class ApplePayObservableFactory {
         ApplePayEvent.VALIDATE_MERCHANT,
         (event: Event) => {
           config
-            .validateMerchant(<any>event)
+            .onValidateMerchant(<any>event)
             .pipe(take(1))
             .subscribe({
               next: (merchantSession) => {
@@ -55,15 +71,15 @@ export class ApplePayObservableFactory {
       );
 
       session.addEventListener(ApplePayEvent.CANCEL, () => {
-        observer.error({ type: PaymentErrorType.PAYMENT_CANCELLED });
+        observer.error({ type: OpfPaymentErrorType.PAYMENT_CANCELLED });
       });
 
-      if (config.paymentMethodSelected) {
+      if (config.onPaymentMethodSelected) {
         session.addEventListener(
           ApplePayEvent.PAYMENT_METHOD_SELECTED,
           (event: Event) => {
             config
-              .paymentMethodSelected(<any>event)
+              .onPaymentMethodSelected(<any>event)
               .pipe(take(1))
               .subscribe({
                 next: (paymentMethodUpdate) => {
@@ -76,14 +92,14 @@ export class ApplePayObservableFactory {
       }
 
       if (
-        config.shippingContactSelected &&
-        this.isShippingTypeNotPickup(config)
+        config.onShippingContactSelected &&
+        !this.isShippingTypePickup(config)
       ) {
         session.addEventListener(
           ApplePayEvent.SHIPPING_CONTACT_SELECTED,
           (event: Event) => {
             config
-              .shippingContactSelected(<any>event)
+              .onShippingContactSelected(<any>event)
               .pipe(take(1))
               .subscribe({
                 next: (shippingContactUpdate) => {
@@ -98,14 +114,14 @@ export class ApplePayObservableFactory {
       }
 
       if (
-        config.shippingMethodSelected &&
-        this.isShippingTypeNotPickup(config)
+        config.onShippingMethodSelected &&
+        !this.isShippingTypePickup(config)
       ) {
         session.addEventListener(
           ApplePayEvent.SHIPPING_METHOD_SELECTED,
           (event: Event) => {
             config
-              .shippingMethodSelected(<any>event)
+              .onShippingMethodSelected(<any>event)
               .pipe(take(1))
               .subscribe({
                 next: (shippingMethodUpdate) => {
@@ -121,7 +137,7 @@ export class ApplePayObservableFactory {
         ApplePayEvent.PAYMENT_AUTHORIZED,
         (event: Event) => {
           config
-            .paymentAuthorized(<any>event)
+            .onPaymentAuthorized(<any>event)
             .pipe(take(1))
             .subscribe({
               next: (authResult) => {
@@ -143,7 +159,7 @@ export class ApplePayObservableFactory {
     });
   }
 
-  protected isShippingTypeNotPickup(config: any) {
-    return config.request.shippingType !== ApplePayShippingType.STORE_PICKUP;
+  protected isShippingTypePickup(config: any) {
+    return config.request.shippingType === ApplePayShippingType.STORE_PICKUP;
   }
 }

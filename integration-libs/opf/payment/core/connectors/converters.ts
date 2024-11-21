@@ -6,8 +6,8 @@
 
 import { InjectionToken } from '@angular/core';
 import { Converter } from '@spartacus/core';
-import { PaymentInitiationConfig } from '@spartacus/opf/payment/root';
+import { OpfPaymentInitiationConfig } from '@spartacus/opf/payment/root';
 
 export const OPF_PAYMENT_CONFIG_SERIALIZER = new InjectionToken<
-  Converter<PaymentInitiationConfig, any>
+  Converter<OpfPaymentInitiationConfig, any>
 >('OpfPaymentConfigSerializer');

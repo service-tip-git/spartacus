@@ -247,6 +247,8 @@ export const SPARTACUS_OPF_GLOBAL_FUNCTIONS_ROOT = `@spartacus/opf/global-functi
 export const SPARTACUS_OPF_CTA = `@spartacus/opf/cta`;
 export const SPARTACUS_OPF_CTA_ROOT = `@spartacus/opf/cta/root`;
 
+export const SPARTACUS_OPF_ORDER = `@spartacus/opf/order`;
+
 export const SPARTACUS_OPF_QUICK_BUY = `@spartacus/opf/quick-buy`;
 export const SPARTACUS_OPF_QUICK_BUY_ROOT = `@spartacus/opf/quick-buy/root`;
 

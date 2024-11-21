@@ -6,16 +6,16 @@
   >
     <div
       class="cx-opf-error-modal-container"
-      *ngIf="errorDialogOptions$ | async as errorDialogOptions"
+      *ngIf="opfErrorDialogOptions$ | async as opfErrorDialogOptions"
     >
       <div class="cx-opf-error-modal-body modal-body">
         <p class="cx-confirmation">
-          {{ errorDialogOptions?.message }}
+          {{ opfErrorDialogOptions?.message }}
         </p>
       </div>
       <div class="cx-opf-error-modal-footer cx-modal-footer">
         <button class="btn btn-primary" (click)="dismissModal('Cancel')">
-          {{ errorDialogOptions?.confirm }}
+          {{ opfErrorDialogOptions?.confirm }}
         </button>
       </div>
     </div>

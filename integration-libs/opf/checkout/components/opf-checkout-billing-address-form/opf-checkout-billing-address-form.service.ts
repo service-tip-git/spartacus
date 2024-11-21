@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { ActiveCartFacade, Cart } from '@spartacus/cart/base/root';
 import {
   CheckoutBillingAddressFacade,
@@ -40,26 +40,28 @@ import { OpfCheckoutPaymentWrapperService } from '../opf-checkout-payment-wrappe
 
 @Injectable()
 export class OpfCheckoutBillingAddressFormService {
-  protected readonly billingAddressSub = new BehaviorSubject<
+  protected checkoutDeliveryAddressFacade = inject(
+    CheckoutDeliveryAddressFacade
+  );
+  protected checkoutBillingAddressFacade = inject(CheckoutBillingAddressFacade);
+  protected userPaymentService = inject(UserPaymentService);
+  protected checkoutPaymentService = inject(CheckoutPaymentFacade);
+  protected activeCartService = inject(ActiveCartFacade);
+  protected globalMessageService = inject(GlobalMessageService);
+  protected opfCheckoutPaymentWrapperService = inject(
+    OpfCheckoutPaymentWrapperService
+  );
+
+  protected readonly _$billingAddressSub = new BehaviorSubject<
     Address | undefined
   >(undefined);
-  protected readonly isLoadingAddressSub = new BehaviorSubject(false);
-  protected readonly isSameAsDeliverySub = new BehaviorSubject(true);
+  protected readonly _$isLoadingAddress = new BehaviorSubject(false);
+  protected readonly _$isSameAsDelivery = new BehaviorSubject(true);
   protected billingAddressId: string | undefined;
 
-  billingAddress$ = this.billingAddressSub.asObservable();
-  isLoadingAddress$ = this.isLoadingAddressSub.asObservable();
-  isSameAsDelivery$ = this.isSameAsDeliverySub.asObservable();
-
-  constructor(
-    protected checkoutDeliveryAddressFacade: CheckoutDeliveryAddressFacade,
-    protected checkoutBillingAddressFacade: CheckoutBillingAddressFacade,
-    protected userPaymentService: UserPaymentService,
-    protected checkoutPaymentService: CheckoutPaymentFacade,
-    protected activeCartService: ActiveCartFacade,
-    protected globalMessageService: GlobalMessageService,
-    protected opfCheckoutPaymentWrapperService: OpfCheckoutPaymentWrapperService
-  ) {}
+  billingAddress$ = this._$billingAddressSub.asObservable();
+  isLoadingAddress$ = this._$isLoadingAddress.asObservable();
+  isSameAsDelivery$ = this._$isSameAsDelivery.asObservable();
 
   getCountries(): Observable<Country[]> {
     return this.userPaymentService.getAllBillingCountries().pipe(
@@ -74,7 +76,7 @@ export class OpfCheckoutBillingAddressFormService {
   }
 
   getAddresses(): void {
-    this.isLoadingAddressSub.next(true);
+    this._$isLoadingAddress.next(true);
 
     combineLatest([this.getDeliveryAddress(), this.getPaymentAddress()])
       .pipe(take(1))
@@ -85,21 +87,21 @@ export class OpfCheckoutBillingAddressFormService {
         ]) => {
           if (!paymentAddress && !!deliveryAddress) {
             this.setBillingAddress(deliveryAddress);
-            this.billingAddressSub.next(deliveryAddress);
+            this._$billingAddressSub.next(deliveryAddress);
           }
 
           if (!!paymentAddress && !!deliveryAddress) {
             this.billingAddressId = paymentAddress.id;
-            this.billingAddressSub.next(paymentAddress);
-            this.isSameAsDeliverySub.next(false);
+            this._$billingAddressSub.next(paymentAddress);
+            this._$isSameAsDelivery.next(false);
           }
 
-          this.isLoadingAddressSub.next(false);
+          this._$isLoadingAddress.next(false);
         }
       );
   }
 
-  putDeliveryAddressAsPaymentAddress(): void {
+  setDeliveryAddressAsPaymentAddress(): void {
     this.getDeliveryAddress()
       .pipe(
         switchMap((address: Address | undefined) =>
@@ -117,7 +119,7 @@ export class OpfCheckoutBillingAddressFormService {
   }
 
   setBillingAddress(address: Address): Observable<Address | undefined> {
-    this.isLoadingAddressSub.next(true);
+    this._$isLoadingAddress.next(true);
 
     return this.checkoutBillingAddressFacade
       .setBillingAddress(this.getAddressWithId(address))
@@ -134,7 +136,7 @@ export class OpfCheckoutBillingAddressFormService {
           if (!!billingAddress && !!billingAddress.id) {
             this.billingAddressId = billingAddress.id;
 
-            this.billingAddressSub.next(billingAddress);
+            this._$billingAddressSub.next(billingAddress);
             this.opfCheckoutPaymentWrapperService.reloadPaymentMode();
           }
         }),
@@ -146,22 +148,18 @@ export class OpfCheckoutBillingAddressFormService {
           return throwError(error);
         }),
         finalize(() => {
-          this.isLoadingAddressSub.next(false);
+          this._$isLoadingAddress.next(false);
         }),
         take(1)
       );
   }
 
-  get billingAddressValue(): Address | undefined {
-    return this.billingAddressSub.value;
-  }
-
   get isSameAsDeliveryValue(): boolean {
-    return this.isSameAsDeliverySub.value;
+    return this._$isSameAsDelivery.value;
   }
 
   setIsSameAsDeliveryValue(value: boolean): void {
-    this.isSameAsDeliverySub.next(value);
+    this._$isSameAsDelivery.next(value);
   }
 
   protected getDeliveryAddress(): Observable<Address | undefined> {

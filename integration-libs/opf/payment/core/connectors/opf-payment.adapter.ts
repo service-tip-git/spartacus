@@ -5,15 +5,14 @@
  */
 
 import {
-  AfterRedirectScriptResponse,
+  OpfPaymentAfterRedirectScriptResponse,
+  OpfPaymentInitiationConfig,
+  OpfPaymentSessionData,
+  OpfPaymentSubmitCompleteResponse,
+  OpfPaymentSubmitRequest,
+  OpfPaymentSubmitResponse,
   OpfPaymentVerificationPayload,
   OpfPaymentVerificationResponse,
-  PaymentInitiationConfig,
-  PaymentSessionData,
-  SubmitCompleteRequest,
-  SubmitCompleteResponse,
-  SubmitRequest,
-  SubmitResponse,
 } from '@spartacus/opf/payment/root';
 import { Observable } from 'rxjs';
 
@@ -33,10 +32,10 @@ export abstract class OpfPaymentAdapter {
    *
    */
   abstract submitPayment(
-    submitRequest: SubmitRequest,
+    submitRequest: OpfPaymentSubmitRequest,
     otpKey: string,
     paymentSessionId: string
-  ): Observable<SubmitResponse>;
+  ): Observable<OpfPaymentSubmitResponse>;
 
   /**
    * Abstract method to submit-complete payment
@@ -44,19 +43,19 @@ export abstract class OpfPaymentAdapter {
    *
    */
   abstract submitCompletePayment(
-    submitRequest: SubmitCompleteRequest,
+    submitRequest: OpfPaymentSubmitRequest,
     otpKey: string,
     paymentSessionId: string
-  ): Observable<SubmitCompleteResponse>;
+  ): Observable<OpfPaymentSubmitCompleteResponse>;
 
   /**
    * Abstract method to retrieve the dynamic scripts after redirect
    * used in hosted-fields pattern.
    *
    */
-  abstract afterRedirectScripts(
+  abstract getAfterRedirectScripts(
     paymentSessionId: string
-  ): Observable<AfterRedirectScriptResponse>;
+  ): Observable<OpfPaymentAfterRedirectScriptResponse>;
 
   /**
    * Abstract method used to initiate payment session
@@ -64,6 +63,6 @@ export abstract class OpfPaymentAdapter {
    *
    */
   abstract initiatePayment(
-    paymentConfig: PaymentInitiationConfig
-  ): Observable<PaymentSessionData>;
+    paymentConfig: OpfPaymentInitiationConfig
+  ): Observable<OpfPaymentSessionData>;
 }
