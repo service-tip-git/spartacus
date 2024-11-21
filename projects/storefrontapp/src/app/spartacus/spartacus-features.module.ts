@@ -406,6 +406,7 @@ if (environment.cpq) {
         allPageMetaResolversEnabledInCsr: true,
         sciEnabled: true,
         useExtendedMediaComponentConfiguration: true,
+        showRealTimeStockInPDP: false,
         a11yWrapReviewOrderInSection: true,
       };
       return appFeatureToggles;
