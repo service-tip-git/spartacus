@@ -17,14 +17,6 @@ import { RouterLink } from '@angular/router';
   templateUrl: './budget-details-cell.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    RouterLink,
-    PopoverDirective,
-    TranslatePipe,
-    CxDatePipe,
-    UrlPipe,
-
-    CxDatePipe,
-  ],
+  imports: [RouterLink, PopoverDirective, TranslatePipe, CxDatePipe, UrlPipe],
 })
 export class BudgetDetailsCellComponent extends CellComponent {}

@@ -34,8 +34,6 @@ import { NgFor, NgIf } from '@angular/common';
     AddToCartComponent,
     TranslatePipe,
     CxDatePipe,
-
-    CxDatePipe,
   ],
 })
 export class OrderConsignedEntriesComponent {

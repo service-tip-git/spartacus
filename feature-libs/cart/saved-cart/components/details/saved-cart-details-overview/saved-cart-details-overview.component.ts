@@ -39,8 +39,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     AsyncPipe,
     TranslatePipe,
     CxDatePipe,
-
-    CxDatePipe,
   ],
 })
 export class SavedCartDetailsOverviewComponent implements OnDestroy {

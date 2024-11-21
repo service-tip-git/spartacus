@@ -37,7 +37,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     OrderDetailBillingComponent,
     AsyncPipe,
     CxDatePipe,
-    CxDatePipe,
   ],
 })
 export class OrderOverviewComponent {

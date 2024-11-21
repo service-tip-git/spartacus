@@ -35,8 +35,6 @@ import { FocusDirective } from '../../../../../layout/a11y/keyboard-focus/focus.
     LowerCasePipe,
     TranslatePipe,
     CxDatePipe,
-
-    CxDatePipe,
   ],
 })
 export class CouponDialogComponent implements OnDestroy, OnInit {

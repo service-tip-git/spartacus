@@ -41,8 +41,6 @@ import { FocusDirective } from '@spartacus/storefront';
     AsyncPipe,
     TranslatePipe,
     CxDatePipe_1,
-
-    CxDatePipe,
   ],
 })
 export class QuoteConfirmDialogComponent implements OnInit {

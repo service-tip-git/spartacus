@@ -41,8 +41,6 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     UrlPipe,
     TranslatePipe,
     CxDatePipe,
-
-    CxDatePipe,
   ],
 })
 export class OrderApprovalListComponent implements OnInit {

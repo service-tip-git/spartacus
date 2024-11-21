@@ -30,8 +30,6 @@ import { RouterLink } from '@angular/router';
     TranslatePipe,
     CxDatePipe,
     UrlPipe,
-
-    CxDatePipe,
   ],
 })
 export class MyAccountV2CustomerTicketingComponent {

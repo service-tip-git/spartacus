@@ -42,8 +42,6 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     AsyncPipe,
     TranslatePipe,
     CxDatePipe,
-
-    CxDatePipe,
   ],
 })
 export class QuoteHeaderOverviewComponent {

@@ -43,8 +43,6 @@ import { NgIf, NgClass, NgFor, AsyncPipe } from '@angular/common';
     UrlPipe,
     TranslatePipe,
     CxDatePipe,
-
-    CxDatePipe,
   ],
 })
 export class OrderHistoryComponent implements OnDestroy {

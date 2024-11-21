@@ -31,14 +31,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './customer-ticketing-details.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    CardComponent,
-    SpinnerComponent,
-    AsyncPipe,
-    CxDatePipe,
-    CxDatePipe,
-  ],
+  imports: [NgIf, CardComponent, SpinnerComponent, AsyncPipe, CxDatePipe],
 })
 export class CustomerTicketingDetailsComponent implements OnDestroy {
   dateFormat = DATE_FORMAT;

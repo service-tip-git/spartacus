@@ -22,14 +22,7 @@ import { NgIf, NgTemplateOutlet } from '@angular/common';
   templateUrl: './date-range-cell.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    RouterLink,
-    NgTemplateOutlet,
-    UrlPipe,
-    CxDatePipe,
-    CxDatePipe,
-  ],
+  imports: [NgIf, RouterLink, NgTemplateOutlet, UrlPipe, CxDatePipe],
 })
 export class DateRangeCellComponent extends CellComponent {
   @Optional() featuteConfigService = inject(FeatureConfigService, {

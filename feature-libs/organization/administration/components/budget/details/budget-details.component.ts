@@ -46,8 +46,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     UrlPipe,
     TranslatePipe,
     CxDatePipe,
-
-    CxDatePipe,
   ],
 })
 export class BudgetDetailsComponent implements OnInit {

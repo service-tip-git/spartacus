@@ -34,8 +34,6 @@ import { FocusDirective } from '@spartacus/storefront';
     AsyncPipe,
     TranslatePipe,
     CxDatePipe,
-
-    CxDatePipe,
   ],
 })
 export class TrackingEventsComponent implements OnDestroy, OnInit {

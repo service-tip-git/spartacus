@@ -33,8 +33,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     UrlPipe,
     TranslatePipe,
     CxDatePipe,
-
-    CxDatePipe,
   ],
 })
 export class MyAccountV2OrdersComponent implements OnDestroy {

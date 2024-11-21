@@ -64,7 +64,6 @@ import {
     SlicePipe,
     TranslatePipe,
     CxDatePipe,
-    CxDatePipe,
   ],
 })
 export class ProductReviewsComponent {

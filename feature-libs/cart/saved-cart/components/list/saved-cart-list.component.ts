@@ -51,8 +51,6 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     UrlPipe,
     TranslatePipe,
     CxDatePipe,
-
-    CxDatePipe,
   ],
 })
 export class SavedCartListComponent implements OnInit, OnDestroy {

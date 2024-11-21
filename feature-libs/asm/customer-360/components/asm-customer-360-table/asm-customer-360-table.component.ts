@@ -58,8 +58,6 @@ import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
     TranslatePipe,
     CxDatePipe,
     ArgsPipe,
-
-    CxDatePipe,
   ],
 })
 export class AsmCustomer360TableComponent

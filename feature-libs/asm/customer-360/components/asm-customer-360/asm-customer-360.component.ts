@@ -72,8 +72,6 @@ import { FocusDirective } from '@spartacus/storefront';
     TranslatePipe,
     CxDatePipe,
     ArgsPipe,
-
-    CxDatePipe,
   ],
 })
 export class AsmCustomer360Component implements OnDestroy, OnInit {
