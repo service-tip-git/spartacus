@@ -15,7 +15,7 @@ import { NgFor, NgIf } from '@angular/common';
   templateUrl: './my-account-v2-consignment-entries.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgFor, NgIf, TranslatePipe, CxDatePipe, CxDatePipe],
+  imports: [NgFor, NgIf, TranslatePipe, CxDatePipe],
 })
 export class MyAccountV2ConsignmentEntriesComponent {
   @Input()

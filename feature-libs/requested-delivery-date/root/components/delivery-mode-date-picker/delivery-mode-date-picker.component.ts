@@ -48,7 +48,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     TranslatePipe,
     CxDatePipe_1,
 
-    CxDatePipe,
+    ,
   ],
 })
 export class DeliveryModeDatePickerComponent implements OnInit, OnDestroy {

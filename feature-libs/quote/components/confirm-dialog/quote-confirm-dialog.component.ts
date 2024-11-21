@@ -5,17 +5,17 @@
  */
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  OnInit,
+    ChangeDetectionStrategy,
+    Component,
+    inject,
+    OnInit,
 } from '@angular/core';
 import { CxDatePipe, TranslationService } from '@spartacus/core';
 import { QuoteCoreConfig } from '@spartacus/quote/core';
 import {
-  FocusConfig,
-  ICON_TYPE,
-  LaunchDialogService,
+    FocusConfig,
+    ICON_TYPE,
+    LaunchDialogService,
 } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { filter, map, take } from 'rxjs/operators';
@@ -105,7 +105,7 @@ export class QuoteConfirmDialogComponent implements OnInit {
         .subscribe((text) => (translatedText += text));
 
       const date = new Date(context.quote.expirationTime);
-      translatedText += this.cxDatePipe.transform(date);
+      translatedText += this..transform(date);
     }
 
     this.translationService

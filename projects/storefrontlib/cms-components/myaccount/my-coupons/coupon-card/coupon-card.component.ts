@@ -28,7 +28,7 @@ import { AsyncPipe, LowerCasePipe } from '@angular/common';
   templateUrl: './coupon-card.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [AsyncPipe, LowerCasePipe, TranslatePipe, CxDatePipe, CxDatePipe],
+  imports: [AsyncPipe, LowerCasePipe, TranslatePipe, CxDatePipe],
 })
 export class CouponCardComponent {
   @Input() coupon: CustomerCoupon;

@@ -19,7 +19,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   selector: 'cx-order-overview-delivery-date',
   templateUrl: './order-overview-delivery-date.component.html',
   standalone: true,
-  imports: [NgIf, CardComponent, AsyncPipe, CxDatePipe, CxDatePipe],
+  imports: [NgIf, CardComponent, AsyncPipe, CxDatePipe],
 })
 export class OrderOverviewDeliveryDateComponent implements OnInit, OnDestroy {
   constructor(

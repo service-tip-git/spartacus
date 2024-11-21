@@ -27,7 +27,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './unit-level-order-overview.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, CardComponent, AsyncPipe, CxDatePipe, CxDatePipe],
+  imports: [NgIf, CardComponent, AsyncPipe, CxDatePipe],
 })
 export class UnitLevelOrderOverviewComponent implements OnInit {
   constructor(
