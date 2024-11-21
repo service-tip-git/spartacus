@@ -24,8 +24,6 @@ export class OpfResourceLoaderService {
   protected readonly OPF_RESOURCE_ATTRIBUTE_KEY = 'data-opf-resource';
   protected readonly OPF_RESOURCE_LOAD_ONCE_ATTR_KEY = 'opf-load-once';
 
-  protected loadedResources: OpfDynamicScriptResource[] = [];
-
   protected embedStyles(embedOptions: {
     src: string;
     sri?: string;
