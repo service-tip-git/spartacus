@@ -21,7 +21,6 @@ import { tap } from 'rxjs/operators';
 import { ItemService } from '../../shared/item.service';
 import { createCodeForEntityName } from '../../shared/utility/entity-code';
 import { UserGroupItemService } from '../services/user-group-item.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormErrorsComponent } from '@spartacus/storefront';
@@ -52,7 +51,7 @@ import { FormComponent } from '../../shared/form/form.component';
     NgSelectModule,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class UserGroupFormComponent implements OnInit {

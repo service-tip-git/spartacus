@@ -12,7 +12,6 @@ import {
   Output,
 } from '@angular/core';
 import { SortModel } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgFor } from '@angular/common';
 import { NgSelectA11yDirective } from '../../ng-select-a11y/ng-select-a11y.directive';
@@ -30,7 +29,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
     NgSelectA11yDirective,
     NgFor,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class SortingComponent {

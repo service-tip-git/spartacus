@@ -7,7 +7,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 import { ConfiguratorTextfield } from '../../core/model/configurator-textfield.model';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 
 @Component({
@@ -15,7 +14,7 @@ import { TranslatePipe } from '@spartacus/core';
   templateUrl: './configurator-textfield-input-field-readonly.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [TranslatePipe, MockTranslatePipe],
+  imports: [TranslatePipe, TranslatePipe],
 })
 export class ConfiguratorTextfieldInputFieldReadonlyComponent {
   PREFIX_TEXTFIELD = 'cx-configurator-textfield';

@@ -6,7 +6,6 @@
 
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { PaginationModel } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgIf } from '@angular/common';
 
@@ -15,7 +14,7 @@ import { NgIf } from '@angular/common';
   templateUrl: './total.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, TranslatePipe, MockTranslatePipe],
+  imports: [NgIf, TranslatePipe, TranslatePipe],
 })
 export class TotalComponent {
   private _pagination: PaginationModel;

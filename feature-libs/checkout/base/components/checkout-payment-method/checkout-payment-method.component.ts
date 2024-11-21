@@ -45,7 +45,6 @@ import {
   tap,
 } from 'rxjs/operators';
 import { CheckoutStepService } from '../services/checkout-step.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { CheckoutPaymentFormComponent } from './checkout-payment-form/checkout-payment-form.component';
@@ -68,7 +67,7 @@ import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CheckoutPaymentMethodComponent implements OnInit, OnDestroy {

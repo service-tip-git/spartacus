@@ -14,9 +14,8 @@ import { map, take } from 'rxjs/operators';
 import { CommonConfiguratorUtilsService } from '../../shared/utils/common-configurator-utils.service';
 import { LineItem } from './configurator-cart-entry-bundle-info.model';
 import { ConfiguratorCartEntryBundleInfoService } from './configurator-cart-entry-bundle-info.service';
-import { MockTranslatePipe } from '@spartacus/core';
-import { CxNumericPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { CxNumericPipe } from '@spartacus/core';
 import { ConfigureCartEntryComponent } from '../configure-cart-entry/configure-cart-entry.component';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
@@ -35,7 +34,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     AsyncPipe,
     TranslatePipe,
     CxNumericPipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ConfiguratorCartEntryBundleInfoComponent {

@@ -13,7 +13,6 @@ import {
 } from '@spartacus/pickup-in-store/root';
 import { ICON_TYPE, OutletContextData } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { NgClass, AsyncPipe } from '@angular/common';
@@ -22,13 +21,7 @@ import { NgClass, AsyncPipe } from '@angular/common';
   selector: 'cx-set-preferred-store',
   templateUrl: './set-preferred-store.component.html',
   standalone: true,
-  imports: [
-    NgClass,
-    IconComponent,
-    AsyncPipe,
-    TranslatePipe,
-    MockTranslatePipe,
-  ],
+  imports: [NgClass, IconComponent, AsyncPipe, TranslatePipe, TranslatePipe],
 })
 export class SetPreferredStoreComponent implements OnInit, OnDestroy {
   readonly ICON_TYPE = ICON_TYPE;

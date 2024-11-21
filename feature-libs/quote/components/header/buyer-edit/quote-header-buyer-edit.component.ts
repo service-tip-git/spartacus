@@ -12,7 +12,6 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { ICON_TYPE } from '@spartacus/storefront';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgIf, NgTemplateOutlet } from '@angular/common';
 
@@ -37,7 +36,7 @@ export interface EditCard {
     ReactiveFormsModule,
     NgTemplateOutlet,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class QuoteHeaderBuyerEditComponent implements OnInit {

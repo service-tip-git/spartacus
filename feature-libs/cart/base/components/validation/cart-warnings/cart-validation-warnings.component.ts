@@ -12,9 +12,8 @@ import {
 } from '@spartacus/cart/base/root';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { map } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
-import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
 import { IconComponent } from '@spartacus/storefront';
 import { NgFor, NgIf, AsyncPipe } from '@angular/common';
@@ -32,7 +31,7 @@ import { NgFor, NgIf, AsyncPipe } from '@angular/common';
     AsyncPipe,
     TranslatePipe,
     UrlPipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CartValidationWarningsComponent {

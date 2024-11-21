@@ -30,7 +30,6 @@ import {
 
 import { Observable, Subscription } from 'rxjs';
 import { filter, map, take, tap } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
@@ -57,7 +56,7 @@ import { FocusDirective } from '@spartacus/storefront';
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class PickupOptionDialogComponent implements OnInit, OnDestroy {

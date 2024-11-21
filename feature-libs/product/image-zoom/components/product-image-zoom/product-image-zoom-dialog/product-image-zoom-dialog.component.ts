@@ -17,7 +17,6 @@ import {
   ICON_TYPE,
   LaunchDialogService,
 } from '@spartacus/storefront';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { ProductImageZoomViewComponent } from '../product-image-zoom-view/product-image-zoom-view.component';
 import { IconComponent } from '@spartacus/storefront';
@@ -33,7 +32,7 @@ import { FocusDirective } from '@spartacus/storefront';
     IconComponent,
     ProductImageZoomViewComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ProductImageZoomDialogComponent {

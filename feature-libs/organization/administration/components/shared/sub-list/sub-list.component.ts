@@ -17,7 +17,6 @@ import { Observable } from 'rxjs';
 import { switchMap, tap } from 'rxjs/operators';
 import { ListComponent } from '../list/list.component';
 import { MessageService } from '../message/services/message.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { PaginationComponent } from '@spartacus/storefront';
 import { TableComponent } from '@spartacus/storefront';
@@ -39,7 +38,7 @@ import { CardComponent } from '../card/card.component';
     PaginationComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class SubListComponent extends ListComponent {

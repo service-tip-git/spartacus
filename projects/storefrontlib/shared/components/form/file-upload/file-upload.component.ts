@@ -16,7 +16,6 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgIf, NgTemplateOutlet, NgFor } from '@angular/common';
 
@@ -34,7 +33,7 @@ import { NgIf, NgTemplateOutlet, NgFor } from '@angular/common';
     },
   ],
   standalone: true,
-  imports: [NgIf, NgTemplateOutlet, NgFor, TranslatePipe, MockTranslatePipe],
+  imports: [NgIf, NgTemplateOutlet, NgFor, TranslatePipe, TranslatePipe],
 })
 export class FileUploadComponent implements ControlValueAccessor {
   /**

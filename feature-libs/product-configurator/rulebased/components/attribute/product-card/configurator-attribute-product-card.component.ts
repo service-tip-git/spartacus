@@ -32,7 +32,6 @@ import {
   ConfiguratorAttributeQuantityComponent,
 } from '../quantity/configurator-attribute-quantity.component';
 import { ConfiguratorAttributeBaseComponent } from '../types/base/configurator-attribute-base.component';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { FocusDirective } from '@spartacus/storefront';
@@ -80,7 +79,7 @@ export interface ConfiguratorAttributeProductCardComponentOptions {
     IconComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ConfiguratorAttributeProductCardComponent

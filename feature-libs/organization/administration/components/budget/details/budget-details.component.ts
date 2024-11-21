@@ -11,9 +11,8 @@ import { startWith, switchMap } from 'rxjs/operators';
 import { ItemService } from '../../shared/item.service';
 import { BudgetItemService } from '../services/budget-item.service';
 import { MockDatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
-import { CxDatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { ItemExistsDirective } from '../../shared/item-exists.directive';
 import { DisableInfoComponent } from '../../shared/detail/disable-info/disable-info.component';
@@ -48,7 +47,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     UrlPipe,
     TranslatePipe,
     CxDatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
     MockDatePipe,
   ],
 })

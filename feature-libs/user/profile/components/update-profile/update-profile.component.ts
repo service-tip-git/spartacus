@@ -19,9 +19,8 @@ import { Title } from '@spartacus/user/profile/root';
 import { Observable } from 'rxjs';
 import { UpdateProfileComponentService } from './update-profile-component.service';
 import { RoutingService } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
-import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
 import { FormErrorsComponent } from '@spartacus/storefront';
 import { NgSelectA11yDirective } from '@spartacus/storefront';
@@ -51,7 +50,7 @@ import { NgIf, NgFor, NgTemplateOutlet, AsyncPipe } from '@angular/common';
     AsyncPipe,
     TranslatePipe,
     UrlPipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class UpdateProfileComponent {

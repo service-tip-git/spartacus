@@ -30,7 +30,6 @@ import {
 import { BehaviorSubject } from 'rxjs';
 import { first } from 'rxjs/operators';
 import { CreatedCustomer } from './asm-create-customer-form.model';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { FormErrorsComponent } from '@spartacus/storefront';
@@ -53,7 +52,7 @@ import { FocusDirective } from '@spartacus/storefront';
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class AsmCreateCustomerFormComponent {

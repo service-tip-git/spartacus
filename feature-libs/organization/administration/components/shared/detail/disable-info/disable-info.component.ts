@@ -10,7 +10,6 @@ import { Observable } from 'rxjs';
 import { ItemService } from '../../item.service';
 import { BaseItem } from '../../organization.model';
 import { DisableInfoService } from './disable-info.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
@@ -20,7 +19,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './disable-info.component.html',
   host: { class: 'content-wrapper' },
   standalone: true,
-  imports: [NgIf, IconComponent, AsyncPipe, TranslatePipe, MockTranslatePipe],
+  imports: [NgIf, IconComponent, AsyncPipe, TranslatePipe, TranslatePipe],
 })
 export class DisableInfoComponent<T extends BaseItem> implements OnInit {
   /**

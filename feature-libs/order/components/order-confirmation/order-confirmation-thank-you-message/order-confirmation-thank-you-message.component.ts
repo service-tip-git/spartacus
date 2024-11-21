@@ -19,7 +19,6 @@ import {
 import { Order, OrderFacade, ReplenishmentOrder } from '@spartacus/order/root';
 import { Observable } from 'rxjs';
 import { filter, take, tap, withLatestFrom } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { AddToHomeScreenBannerComponent } from '@spartacus/storefront';
 import { OrderGuestRegisterFormComponent } from '../order-guest-register-form/order-guest-register-form.component';
@@ -36,7 +35,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     AddToHomeScreenBannerComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class OrderConfirmationThankYouMessageComponent

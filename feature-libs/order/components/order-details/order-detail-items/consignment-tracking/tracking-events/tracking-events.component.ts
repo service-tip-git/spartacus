@@ -16,9 +16,8 @@ import { ConsignmentTracking, OrderHistoryFacade } from '@spartacus/order/root';
 import { FocusConfig, LaunchDialogService } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import { MockDatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
-import { CxDatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { FocusDirective } from '@spartacus/storefront';
@@ -36,7 +35,7 @@ import { FocusDirective } from '@spartacus/storefront';
     AsyncPipe,
     TranslatePipe,
     CxDatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
     MockDatePipe,
   ],
 })

@@ -14,7 +14,6 @@ import { ConfirmationMessageData } from '../../message/confirmation/confirmation
 import { MessageService } from '../../message/services/message.service';
 import { BaseItem } from '../../organization.model';
 import { DisableInfoService } from '../disable-info/disable-info.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgIf, AsyncPipe } from '@angular/common';
 
@@ -27,7 +26,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './toggle-status.component.html',
   host: { class: 'content-wrapper' },
   standalone: true,
-  imports: [NgIf, AsyncPipe, TranslatePipe, MockTranslatePipe],
+  imports: [NgIf, AsyncPipe, TranslatePipe, TranslatePipe],
 })
 export class ToggleStatusComponent<T extends BaseItem> implements OnDestroy {
   /**

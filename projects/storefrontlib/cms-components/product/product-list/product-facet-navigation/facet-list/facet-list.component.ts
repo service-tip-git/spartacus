@@ -35,7 +35,6 @@ import { ICON_TYPE } from '../../../../misc/icon/icon.model';
 import { FacetGroupCollapsedState, FacetList } from '../facet.model';
 import { FacetComponent } from '../facet/facet.component';
 import { FacetService } from '../services/facet.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { TabComponent } from '../../../../content/tab/tab.component';
 import { FeatureDirective } from '@spartacus/core';
@@ -58,7 +57,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     FacetComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class FacetListComponent implements OnInit, OnDestroy, AfterViewInit {

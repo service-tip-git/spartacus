@@ -48,7 +48,6 @@ import {
 import { BehaviorSubject, EMPTY, Observable, combineLatest } from 'rxjs';
 import { filter, map, switchMap, tap } from 'rxjs/operators';
 import { CheckoutBillingAddressFormService } from '../../checkout-billing-address';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { CheckoutBillingAddressFormComponent } from '../../checkout-billing-address/checkout-billing-address-form.component';
 import { SpinnerComponent } from '@spartacus/storefront';
@@ -80,7 +79,7 @@ import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
     CheckoutBillingAddressFormComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CheckoutPaymentFormComponent implements OnInit {

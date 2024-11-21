@@ -7,9 +7,8 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { ConsignmentView } from '@spartacus/order/root';
 import { MockDatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
-import { CxDatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 import { NgFor, NgIf } from '@angular/common';
 
 @Component({
@@ -22,7 +21,7 @@ import { NgFor, NgIf } from '@angular/common';
     NgIf,
     TranslatePipe,
     CxDatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
     MockDatePipe,
   ],
 })

@@ -23,9 +23,8 @@ import {
 import { CurrentProductService, ICON_TYPE } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { filter, map, take, tap } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
-import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
 import { IconComponent } from '@spartacus/storefront';
 import { AtMessageDirective } from '@spartacus/storefront';
@@ -46,7 +45,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     AsyncPipe,
     TranslatePipe,
     UrlPipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class AddToWishListComponent {

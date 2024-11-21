@@ -34,7 +34,6 @@ import {
 import { Card } from '@spartacus/storefront';
 import { combineLatest, Observable, of, Subscription } from 'rxjs';
 import { distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { AddressFormComponent } from '../../../../user/profile/components/address-book/address-form/address-form.component';
@@ -61,7 +60,7 @@ export interface CardWithAddress {
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class B2BCheckoutDeliveryAddressComponent

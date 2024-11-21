@@ -8,7 +8,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PointOfServiceStock, useFeatureStyles } from '@spartacus/core';
 import { storeHasStock } from '@spartacus/pickup-in-store/core';
 import { ICON_TYPE } from '@spartacus/storefront';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { SetPreferredStoreComponent } from '../../container/set-preferred-store/set-preferred-store.component';
 import { StoreScheduleComponent } from './store-schedule/store-schedule.component';
@@ -32,7 +31,7 @@ import { StoreAddressComponent } from './store-address/store-address.component';
     SetPreferredStoreComponent,
     NgClass,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class StoreComponent implements OnInit {

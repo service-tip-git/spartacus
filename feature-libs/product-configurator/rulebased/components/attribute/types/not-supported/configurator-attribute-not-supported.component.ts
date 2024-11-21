@@ -5,7 +5,6 @@
  */
 
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 
 @Component({
@@ -13,6 +12,6 @@ import { TranslatePipe } from '@spartacus/core';
   templateUrl: './configurator-attribute-not-supported.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [TranslatePipe, MockTranslatePipe],
+  imports: [TranslatePipe, TranslatePipe],
 })
 export class ConfiguratorAttributeNotSupportedComponent {}

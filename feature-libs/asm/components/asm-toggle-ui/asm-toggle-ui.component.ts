@@ -8,7 +8,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AsmService } from '@spartacus/asm/core';
 import { AsmUi } from '@spartacus/asm/root';
 import { Subscription } from 'rxjs';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgClass, NgIf } from '@angular/common';
 
@@ -16,7 +15,7 @@ import { NgClass, NgIf } from '@angular/common';
   selector: 'cx-asm-toggle-ui',
   templateUrl: './asm-toggle-ui.component.html',
   standalone: true,
-  imports: [NgClass, NgIf, TranslatePipe, MockTranslatePipe],
+  imports: [NgClass, NgIf, TranslatePipe, TranslatePipe],
 })
 export class AsmToggleUiComponent implements OnInit, OnDestroy {
   protected subscription = new Subscription();

@@ -7,7 +7,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { BaseMessageComponent } from '../base-message.component';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { NgIf } from '@angular/common';
@@ -18,13 +17,7 @@ import { FocusDirective } from '@spartacus/storefront';
   templateUrl: './notification-message.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    FocusDirective,
-    NgIf,
-    IconComponent,
-    TranslatePipe,
-    MockTranslatePipe,
-  ],
+  imports: [FocusDirective, NgIf, IconComponent, TranslatePipe, TranslatePipe],
 })
 export class NotificationMessageComponent extends BaseMessageComponent {
   closeIcon = ICON_TYPE.CLOSE;

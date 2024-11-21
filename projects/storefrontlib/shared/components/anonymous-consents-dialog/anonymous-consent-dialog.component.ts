@@ -29,7 +29,6 @@ import { distinctUntilChanged, take, tap } from 'rxjs/operators';
 import { ICON_TYPE } from '../../../cms-components/misc/icon/index';
 import { FocusConfig } from '../../../layout/a11y/keyboard-focus/index';
 import { LaunchDialogService } from '../../../layout/launch-dialog/services/launch-dialog.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { ConsentManagementFormComponent } from '../../../cms-components/myaccount/consent-management/components/consent-form/consent-management-form.component';
 import { IconComponent } from '../../../cms-components/misc/icon/icon.component';
@@ -52,7 +51,7 @@ import { FocusDirective } from '../../../layout/a11y/keyboard-focus/focus.direct
     ConsentManagementFormComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class AnonymousConsentDialogComponent implements OnInit, OnDestroy {

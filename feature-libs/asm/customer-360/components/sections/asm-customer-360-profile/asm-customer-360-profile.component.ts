@@ -17,7 +17,6 @@ import {
   PaymentCardCode,
 } from '@spartacus/asm/customer-360/root';
 import { AsmCustomer360SectionContext } from '../asm-customer-360-section-context.model';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { CardComponent } from '@spartacus/storefront';
 import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
@@ -33,7 +32,7 @@ import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
     CardComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class AsmCustomer360ProfileComponent implements OnInit {

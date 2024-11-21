@@ -14,7 +14,6 @@ import {
 import { ActiveCartFacade, Cart } from '@spartacus/cart/base/root';
 import { FeatureConfigService, TranslationService } from '@spartacus/core';
 import { Observable, take } from 'rxjs';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { PromotionsComponent } from '@spartacus/storefront';
 
@@ -23,13 +22,7 @@ import { PromotionsComponent } from '@spartacus/storefront';
   templateUrl: './checkout-review-overview.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    PromotionsComponent,
-    AsyncPipe,
-    TranslatePipe,
-    MockTranslatePipe,
-  ],
+  imports: [NgIf, PromotionsComponent, AsyncPipe, TranslatePipe, TranslatePipe],
 })
 export class CheckoutReviewOverviewComponent implements AfterViewInit {
   protected document = inject(DOCUMENT, { optional: true });

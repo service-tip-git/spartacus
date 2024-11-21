@@ -11,7 +11,6 @@ import { startWith, switchMap } from 'rxjs/operators';
 import { ItemService } from '../../shared/item.service';
 import { UserItemService } from '../services/user-item.service';
 import { B2BUserService } from '@spartacus/organization/administration/core';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { ItemExistsDirective } from '../../shared/item-exists.directive';
@@ -47,7 +46,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     AsyncPipe,
     UrlPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class UserDetailsComponent {

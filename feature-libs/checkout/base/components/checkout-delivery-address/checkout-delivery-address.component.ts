@@ -37,7 +37,6 @@ import {
 } from 'rxjs/operators';
 import { CheckoutConfigService } from '../services';
 import { CheckoutStepService } from '../services/checkout-step.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { AddressFormComponent } from '../../../../user/profile/components/address-book/address-form/address-form.component';
@@ -65,7 +64,7 @@ export interface CardWithAddress {
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CheckoutDeliveryAddressComponent implements OnInit {

@@ -5,14 +5,13 @@
  */
 
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgClass, NgIf } from '@angular/common';
 @Component({
   selector: 'cx-progress-button',
   templateUrl: './progress-button.component.html',
   standalone: true,
-  imports: [NgClass, NgIf, TranslatePipe, MockTranslatePipe],
+  imports: [NgClass, NgIf, TranslatePipe, TranslatePipe],
 })
 export class ProgressButtonComponent {
   @Input()

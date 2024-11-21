@@ -17,7 +17,6 @@ import {
   VariantQualifier,
 } from '@spartacus/core';
 import { filter, take } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgIf, NgFor, NgClass } from '@angular/common';
 
@@ -26,7 +25,7 @@ import { NgIf, NgFor, NgClass } from '@angular/common';
   templateUrl: './product-variant-style-selector.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, NgFor, NgClass, TranslatePipe, MockTranslatePipe],
+  imports: [NgIf, NgFor, NgClass, TranslatePipe, TranslatePipe],
 })
 export class ProductVariantStyleSelectorComponent {
   constructor(

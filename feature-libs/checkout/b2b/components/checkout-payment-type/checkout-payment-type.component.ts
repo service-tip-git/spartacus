@@ -34,7 +34,6 @@ import {
   map,
   tap,
 } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
@@ -52,7 +51,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CheckoutPaymentTypeComponent {

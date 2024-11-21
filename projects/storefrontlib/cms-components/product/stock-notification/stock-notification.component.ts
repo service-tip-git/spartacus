@@ -31,9 +31,8 @@ import { filter, first, map, tap } from 'rxjs/operators';
 import { CurrentProductService } from '../current-product.service';
 import { LaunchDialogService, LAUNCH_CALLER } from '../../../layout/index';
 import { take } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
-import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { SpinnerComponent } from '../../../shared/components/spinner/spinner.component';
 import { FeatureDirective } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
@@ -52,7 +51,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     AsyncPipe,
     TranslatePipe,
     UrlPipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class StockNotificationComponent implements OnInit, OnDestroy {

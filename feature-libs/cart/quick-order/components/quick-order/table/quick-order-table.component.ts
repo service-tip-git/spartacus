@@ -7,7 +7,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { OrderEntry } from '@spartacus/cart/base/root';
 import { useFeatureStyles } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { QuickOrderItemComponent } from './item/quick-order-item.component';
 import { FeatureDirective } from '@spartacus/core';
@@ -24,7 +23,7 @@ import { NgIf, NgFor } from '@angular/common';
     NgFor,
     QuickOrderItemComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class QuickOrderTableComponent {

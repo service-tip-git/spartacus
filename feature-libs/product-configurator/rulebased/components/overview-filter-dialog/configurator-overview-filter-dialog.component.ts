@@ -10,7 +10,6 @@ import {
   ICON_TYPE,
   LaunchDialogService,
 } from '@spartacus/storefront';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { ConfiguratorOverviewFilterComponent } from '../overview-filter/configurator-overview-filter.component';
 import { NgIf, AsyncPipe } from '@angular/common';
@@ -30,7 +29,7 @@ import { FocusDirective } from '@spartacus/storefront';
     ConfiguratorOverviewFilterComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ConfiguratorOverviewFilterDialogComponent {

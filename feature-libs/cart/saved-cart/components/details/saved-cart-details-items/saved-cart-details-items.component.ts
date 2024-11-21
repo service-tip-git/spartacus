@@ -28,7 +28,6 @@ import {
 import { Observable, Subscription } from 'rxjs';
 import { map, switchMap, take, tap } from 'rxjs/operators';
 import { SavedCartDetailsService } from '../saved-cart-details.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { AddToCartComponent } from '../../../../base/components/add-to-cart/add-to-cart.component';
 import { SpinnerComponent } from '@spartacus/storefront';
@@ -49,7 +48,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     AddToCartComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class SavedCartDetailsItemsComponent implements OnInit, OnDestroy {

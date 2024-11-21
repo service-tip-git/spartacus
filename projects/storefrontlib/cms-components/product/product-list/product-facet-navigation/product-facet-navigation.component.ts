@@ -14,7 +14,6 @@ import { asapScheduler, BehaviorSubject, interval, Observable, of } from 'rxjs';
 import { delayWhen, observeOn, switchMap } from 'rxjs/operators';
 import { ICON_TYPE } from '../../../../cms-components/misc/icon/icon.model';
 import { BreakpointService } from '../../../../layout/breakpoint/breakpoint.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FacetListComponent } from './facet-list/facet-list.component';
 import { NgIf, AsyncPipe } from '@angular/common';
@@ -33,7 +32,7 @@ import { IconComponent } from '../../../misc/icon/icon.component';
     FacetListComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ProductFacetNavigationComponent {

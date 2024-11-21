@@ -9,16 +9,15 @@ import { Consignment, Order } from '@spartacus/order/root';
 import { OutletContextData } from '@spartacus/storefront';
 import { ConsignmentTrackingComponent } from '../../order-detail-items';
 import { MockDatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
-import { CxDatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 import { NgIf } from '@angular/common';
 type ConsignmentOutletContextData = { item: Consignment; order?: Order };
 @Component({
   selector: 'cx-my-account-v2-consignment-tracking',
   templateUrl: './my-account-v2-consignment-tracking.component.html',
   standalone: true,
-  imports: [NgIf, TranslatePipe, CxDatePipe, MockTranslatePipe, MockDatePipe],
+  imports: [NgIf, TranslatePipe, CxDatePipe, TranslatePipe, MockDatePipe],
 })
 export class MyAccountV2ConsignmentTrackingComponent
   extends ConsignmentTrackingComponent

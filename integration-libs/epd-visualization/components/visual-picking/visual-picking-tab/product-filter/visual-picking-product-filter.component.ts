@@ -7,7 +7,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { VisualPickingProductFilterService } from './visual-picking-product-filter.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { FormsModule } from '@angular/forms';
@@ -17,7 +16,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './visual-picking-product-filter.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FormsModule, IconComponent, TranslatePipe, MockTranslatePipe],
+  imports: [FormsModule, IconComponent, TranslatePipe, TranslatePipe],
 })
 export class VisualPickingProductFilterComponent {
   constructor(

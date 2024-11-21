@@ -15,7 +15,6 @@ import {
 } from '@angular/core';
 import { useFeatureStyles } from '@spartacus/core';
 import { ICON_TYPE } from '../../../cms-components/misc/index';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '../../../cms-components/misc/icon/icon.component';
 import { NgIf, NgTemplateOutlet, NgFor } from '@angular/common';
@@ -37,7 +36,7 @@ import { FeatureDirective } from '@spartacus/core';
     NgFor,
     IconComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class StarRatingComponent {

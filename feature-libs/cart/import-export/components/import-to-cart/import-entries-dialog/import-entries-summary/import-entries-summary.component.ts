@@ -16,7 +16,6 @@ import {
   ProductImportSummary,
 } from '@spartacus/cart/base/root';
 import { ICON_TYPE } from '@spartacus/storefront';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import {
@@ -40,7 +39,7 @@ import {
     IconComponent,
     NgFor,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ImportEntriesSummaryComponent {

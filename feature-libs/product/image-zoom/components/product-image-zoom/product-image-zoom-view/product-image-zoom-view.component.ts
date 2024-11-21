@@ -49,7 +49,6 @@ import {
   take,
   tap,
 } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { ProductImageZoomThumbnailsComponent } from '../product-image-zoom-thumbnails/product-image-zoom-thumbnails.component';
 import { MediaComponent } from '@spartacus/storefront';
@@ -70,7 +69,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     ProductImageZoomThumbnailsComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ProductImageZoomViewComponent implements OnInit, OnDestroy {

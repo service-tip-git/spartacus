@@ -13,7 +13,6 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { useFeatureStyles } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { DotSpinnerComponent } from '../dot-spinner/dot-spinner.component';
 import { PasswordVisibilityToggleDirective } from '@spartacus/storefront';
@@ -34,7 +33,7 @@ import { NgIf } from '@angular/common';
     PasswordVisibilityToggleDirective,
     DotSpinnerComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CSAgentLoginFormComponent implements OnInit {

@@ -22,7 +22,6 @@ import {
   UserPaymentService,
 } from '@spartacus/core';
 import { DP_CARD_REGISTRATION_STATUS } from '../../../utils/dp-constants';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { DpPaymentCallbackComponent } from './dp-payment-callback/dp-payment-callback.component';
 import { SpinnerComponent } from '@spartacus/storefront';
@@ -46,7 +45,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     DpPaymentCallbackComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class DpPaymentMethodComponent extends CorePaymentMethodComponent {

@@ -38,9 +38,8 @@ import {
 } from 'rxjs';
 import { catchError, skip, switchMap, take, tap } from 'rxjs/operators';
 import { MockDatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
-import { CxDatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { PaginationComponent } from '@spartacus/storefront';
 import { SortingComponent } from '@spartacus/storefront';
@@ -60,7 +59,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     AsyncPipe,
     TranslatePipe,
     CxDatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
     MockDatePipe,
   ],
 })

@@ -57,7 +57,6 @@ import {
 import { BIND_CART_DIALOG_ACTION } from '../asm-bind-cart-dialog/asm-bind-cart-dialog.component';
 import { SAVE_CART_DIALOG_ACTION } from '../asm-save-cart-dialog/asm-save-cart-dialog.component';
 import { AsmComponentService } from '../services/asm-component.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { DotSpinnerComponent } from '../dot-spinner/dot-spinner.component';
 import { IconComponent } from '@spartacus/storefront';
@@ -77,7 +76,7 @@ import { NgClass, NgIf, AsyncPipe } from '@angular/common';
     DotSpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class AsmBindCartComponent implements OnInit, OnDestroy {

@@ -7,7 +7,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { OrgUnitService } from '@spartacus/organization/administration/core';
 import { UnitTreeService } from '../services/unit-tree.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { ListComponent } from '../../shared/list/list.component';
 
@@ -16,7 +15,7 @@ import { ListComponent } from '../../shared/list/list.component';
   templateUrl: './unit-list.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [ListComponent, TranslatePipe, MockTranslatePipe],
+  imports: [ListComponent, TranslatePipe, TranslatePipe],
 })
 export class UnitListComponent {
   constructor(

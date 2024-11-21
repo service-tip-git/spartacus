@@ -7,7 +7,6 @@
 import { Component } from '@angular/core';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { FutureStockFacade } from '@spartacus/product/future-stock/root';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
@@ -22,7 +21,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     NgFor,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class FutureStockAccordionComponent {

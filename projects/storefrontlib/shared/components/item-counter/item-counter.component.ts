@@ -23,7 +23,6 @@ import {
 import { FeatureConfigService, useFeatureStyles } from '@spartacus/core';
 import { Subscription } from 'rxjs';
 import { startWith } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FocusDirective } from '../../../layout/a11y/keyboard-focus/focus.directive';
 import { FeatureDirective } from '@spartacus/core';
@@ -43,7 +42,7 @@ import { FeatureDirective } from '@spartacus/core';
     FormsModule,
     ReactiveFormsModule,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ItemCounterComponent implements OnInit, OnDestroy {

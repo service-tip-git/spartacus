@@ -42,7 +42,6 @@ import {
 import { UserProfileFacade } from '@spartacus/user/profile/root';
 import { BehaviorSubject, Observable, Subscription, combineLatest } from 'rxjs';
 import { filter, map, switchMap, take, tap } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FormErrorsComponent } from '@spartacus/storefront';
 import { NgSelectA11yDirective } from '@spartacus/storefront';
@@ -66,7 +65,7 @@ import { FeatureDirective } from '@spartacus/core';
     FormErrorsComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class AddressFormComponent implements OnInit, OnDestroy {

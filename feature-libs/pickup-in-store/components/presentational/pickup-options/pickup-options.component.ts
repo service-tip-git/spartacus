@@ -30,7 +30,6 @@ import { PickupOption } from '@spartacus/pickup-in-store/root';
 import { TAB_MODE, Tab, TabComponent, TabConfig } from '@spartacus/storefront';
 import { Subscription, take } from 'rxjs';
 import { PickupOptionsTabs } from './pickup-options.model';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { TabComponent as TabComponent_1 } from '@spartacus/storefront';
 import { NgIf } from '@angular/common';
@@ -50,7 +49,7 @@ import { FeatureDirective } from '@spartacus/core';
     NgIf,
     TabComponent_1,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class PickupOptionsComponent

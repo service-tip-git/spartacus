@@ -11,7 +11,6 @@ import {
   ProductImagesComponent,
 } from '@spartacus/storefront';
 import { Product } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FocusableCarouselItemDirective } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
@@ -34,7 +33,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     FocusableCarouselItemDirective,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ProductImageZoomProductImagesComponent extends ProductImagesComponent {

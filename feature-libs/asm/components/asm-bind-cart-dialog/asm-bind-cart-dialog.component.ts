@@ -6,7 +6,6 @@
 
 import { Component } from '@angular/core';
 import { FocusConfig, LaunchDialogService } from '@spartacus/storefront';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FocusDirective } from '@spartacus/storefront';
 
@@ -19,7 +18,7 @@ export enum BIND_CART_DIALOG_ACTION {
   selector: 'cx-asm-bind-cart-dialog',
   templateUrl: './asm-bind-cart-dialog.component.html',
   standalone: true,
-  imports: [FocusDirective, TranslatePipe, MockTranslatePipe],
+  imports: [FocusDirective, TranslatePipe, TranslatePipe],
 })
 export class AsmBindCartDialogComponent {
   BIND_CART_ACTION = BIND_CART_DIALOG_ACTION;

@@ -46,7 +46,6 @@ import {
 } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import { filter, map, take } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { OutletDirective } from '@spartacus/storefront';
@@ -70,7 +69,7 @@ import { NgIf, NgClass, AsyncPipe } from '@angular/common';
     IconComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class AddToCartComponent implements OnInit, OnDestroy {

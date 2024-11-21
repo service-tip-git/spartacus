@@ -12,7 +12,6 @@ import {
   Output,
 } from '@angular/core';
 import { ICON_TYPE } from '../../../misc/icon/icon.model';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '../../../misc/icon/icon.component';
 import { NgClass, NgIf } from '@angular/common';
@@ -27,7 +26,7 @@ export enum ViewModes {
   templateUrl: './product-view.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgClass, NgIf, IconComponent, TranslatePipe, MockTranslatePipe],
+  imports: [NgClass, NgIf, IconComponent, TranslatePipe, TranslatePipe],
 })
 export class ProductViewComponent {
   iconTypes = ICON_TYPE;

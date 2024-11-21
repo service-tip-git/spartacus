@@ -21,7 +21,6 @@ import { combineLatest, Observable } from 'rxjs';
 import { delay, finalize, map, take } from 'rxjs/operators';
 import { QuoteUIConfig } from '../config/quote-ui.config';
 import { QuoteItemsComponentService } from '../items/quote-items.component.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { MessagingComponent as MessagingComponent_1 } from '@spartacus/storefront';
 import { IconComponent } from '@spartacus/storefront';
@@ -39,7 +38,7 @@ const ALL_PRODUCTS_ID = '';
     MessagingComponent_1,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class QuoteCommentsComponent {

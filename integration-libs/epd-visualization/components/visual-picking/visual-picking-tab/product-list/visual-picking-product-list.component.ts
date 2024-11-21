@@ -14,7 +14,6 @@ import {
 import { Observable } from 'rxjs';
 import { VisualPickingProductListItem } from './model/visual-picking-product-list-item.model';
 import { VisualPickingProductListService } from './visual-picking-product-list.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { CompactAddToCartComponent } from './compact-add-to-cart/compact-add-to-cart.component';
@@ -38,7 +37,7 @@ import { PagedListComponent } from './paged-list/paged-list.component';
     AsyncPipe,
     UrlPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class VisualPickingProductListComponent implements OnInit {

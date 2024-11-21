@@ -36,7 +36,6 @@ import {
   switchMap,
   tap,
 } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { SpinnerComponent } from '@spartacus/storefront';
@@ -78,7 +77,7 @@ export interface AddedToCartDialogComponentData {
     AsyncPipe,
     UrlPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class AddedToCartDialogComponent implements OnInit, OnDestroy {

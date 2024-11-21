@@ -16,7 +16,6 @@ import {
 import { AuthService, RoutingService } from '@spartacus/core';
 import { combineLatest, Observable, of } from 'rxjs';
 import { filter, map, tap } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { CartItemListComponent } from '../cart-shared/cart-item-list/cart-item-list.component';
 import { PromotionsComponent } from '@spartacus/storefront';
@@ -35,7 +34,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     CartItemListComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CartDetailsComponent implements OnInit {

@@ -7,7 +7,6 @@
 import { Component, inject } from '@angular/core';
 import { Price } from '@spartacus/core';
 import { QuoteFacade } from '@spartacus/quote/root';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgIf, AsyncPipe } from '@angular/common';
 
@@ -15,7 +14,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   selector: 'cx-quote-summary-prices',
   templateUrl: 'quote-summary-prices.component.html',
   standalone: true,
-  imports: [NgIf, AsyncPipe, TranslatePipe, MockTranslatePipe],
+  imports: [NgIf, AsyncPipe, TranslatePipe, TranslatePipe],
 })
 export class QuoteSummaryPricesComponent {
   protected quoteFacade = inject(QuoteFacade);

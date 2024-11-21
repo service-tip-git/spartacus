@@ -21,7 +21,6 @@ import {
 import { CustomFormValidators } from '@spartacus/storefront';
 import { UserRegisterFacade } from '@spartacus/user/profile/root';
 import { Subscription } from 'rxjs';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FormErrorsComponent } from '@spartacus/storefront';
 import { PasswordVisibilityToggleDirective } from '@spartacus/storefront';
@@ -40,7 +39,7 @@ import { FeatureDirective } from '@spartacus/core';
     PasswordVisibilityToggleDirective,
     FormErrorsComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class OrderGuestRegisterFormComponent implements OnDestroy {

@@ -21,7 +21,6 @@ import {
 } from '@spartacus/storefront';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { finalize, map } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { ImportEntriesSummaryComponent } from './import-entries-summary/import-entries-summary.component';
 import { ImportEntriesFormComponent } from './import-entries-form/import-entries-form.component';
@@ -46,7 +45,7 @@ import { FocusDirective } from '@spartacus/storefront';
     ImportEntriesSummaryComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ImportEntriesDialogComponent {

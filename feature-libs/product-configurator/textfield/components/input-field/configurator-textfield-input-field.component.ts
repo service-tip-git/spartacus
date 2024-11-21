@@ -18,7 +18,6 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { ConfiguratorTextfield } from '../../core/model/configurator-textfield.model';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 
 @Component({
@@ -26,7 +25,7 @@ import { TranslatePipe } from '@spartacus/core';
   templateUrl: './configurator-textfield-input-field.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, TranslatePipe, MockTranslatePipe],
+  imports: [FormsModule, ReactiveFormsModule, TranslatePipe, TranslatePipe],
 })
 export class ConfiguratorTextfieldInputFieldComponent implements OnInit {
   PREFIX_TEXTFIELD = 'cx-configurator-textfield';

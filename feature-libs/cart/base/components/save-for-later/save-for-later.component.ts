@@ -15,7 +15,6 @@ import {
 import { CmsParagraphComponent, CmsService } from '@spartacus/core';
 import { combineLatest, Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { CartItemListComponent } from '../cart-shared/cart-item-list/cart-item-list.component';
 import { NgIf, AsyncPipe } from '@angular/common';
@@ -28,7 +27,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     CartItemListComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class SaveForLaterComponent implements OnInit {

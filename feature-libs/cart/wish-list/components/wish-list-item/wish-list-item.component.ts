@@ -19,9 +19,8 @@ import {
   ProductListItemContext,
   ProductListItemContextSource,
 } from '@spartacus/storefront';
-import { MockTranslatePipe } from '@spartacus/core';
-import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { AtMessageDirective } from '@spartacus/storefront';
 import { InnerComponentsHostDirective } from '@spartacus/storefront';
 import { NgIf, NgFor } from '@angular/common';
@@ -49,7 +48,7 @@ import { RouterLink } from '@angular/router';
     AtMessageDirective,
     TranslatePipe,
     UrlPipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class WishListItemComponent implements OnChanges {

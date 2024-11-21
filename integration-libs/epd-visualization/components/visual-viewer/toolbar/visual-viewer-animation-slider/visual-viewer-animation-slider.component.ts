@@ -15,9 +15,8 @@ import {
   ViewChild,
 } from '@angular/core';
 import { VisualViewerAnimationSliderService } from './visual-viewer-animation-slider.service';
-import { MockTranslatePipe } from '@spartacus/core';
-import { CxNumericPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { CxNumericPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-epd-visualization-animation-slider',
@@ -25,7 +24,7 @@ import { TranslatePipe } from '@spartacus/core';
   providers: [VisualViewerAnimationSliderService],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [TranslatePipe, CxNumericPipe, MockTranslatePipe],
+  imports: [TranslatePipe, CxNumericPipe, TranslatePipe],
 })
 export class VisualViewerAnimationSliderComponent implements AfterViewInit {
   constructor(

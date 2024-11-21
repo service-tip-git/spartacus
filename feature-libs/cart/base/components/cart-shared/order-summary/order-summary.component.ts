@@ -8,7 +8,6 @@ import { Component, Input, OnDestroy, OnInit, Optional } from '@angular/core';
 import { Cart } from '@spartacus/cart/base/root';
 import { OutletContextData } from '@spartacus/storefront';
 import { Subscription } from 'rxjs';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { AppliedCouponsComponent } from '../../cart-coupon/applied-coupons/applied-coupons.component';
 import { NgIf } from '@angular/common';
@@ -23,7 +22,7 @@ import { FeatureDirective } from '@spartacus/core';
     NgIf,
     AppliedCouponsComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class OrderSummaryComponent implements OnInit, OnDestroy {

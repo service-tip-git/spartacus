@@ -18,7 +18,6 @@ import {
 import { Card } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { CardComponent } from '@spartacus/storefront';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
@@ -34,7 +33,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     NgFor,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class AccountSummaryHeaderComponent implements OnInit, OnDestroy {

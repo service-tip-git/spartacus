@@ -40,9 +40,8 @@ import {
   SearchBoxSuggestionSelectedEvent,
 } from './search-box.events';
 import { SearchBoxConfig, SearchResults } from './search-box.model';
-import { MockTranslatePipe } from '@spartacus/core';
-import { HighlightPipe } from './highlight.pipe';
 import { TranslatePipe } from '@spartacus/core';
+import { HighlightPipe } from './highlight.pipe';
 import { UrlPipe } from '@spartacus/core';
 import { CarouselComponent } from '../../../shared/components/carousel/carousel.component';
 import { MediaComponent } from '../../../shared/components/media/media.component';
@@ -84,7 +83,7 @@ const SEARCHBOX_IS_ACTIVE = 'searchbox-is-active';
     UrlPipe,
     TranslatePipe,
     HighlightPipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class SearchBoxComponent implements OnInit, OnDestroy {

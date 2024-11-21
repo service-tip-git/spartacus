@@ -9,7 +9,6 @@ import { useFeatureStyles } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { SkipLink } from '../config/skip-link.config';
 import { SkipLinkService } from '../service/skip-link.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FocusDirective } from '../../keyboard-focus/focus.directive';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
@@ -25,7 +24,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     NgFor,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class SkipLinkComponent {

@@ -7,7 +7,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CartVoucherFacade, Voucher } from '@spartacus/cart/base/root';
 import { ICON_TYPE } from '@spartacus/storefront';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { NgIf, NgFor } from '@angular/common';
@@ -17,7 +16,7 @@ import { NgIf, NgFor } from '@angular/common';
   templateUrl: './applied-coupons.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, NgFor, IconComponent, TranslatePipe, MockTranslatePipe],
+  imports: [NgIf, NgFor, IconComponent, TranslatePipe, TranslatePipe],
 })
 export class AppliedCouponsComponent {
   @Input()

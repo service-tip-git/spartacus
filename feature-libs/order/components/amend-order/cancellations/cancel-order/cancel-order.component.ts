@@ -11,7 +11,6 @@ import { GlobalMessageType } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { OrderAmendService } from '../../amend-order.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { AmendOrderActionsComponent } from '../../amend-order-actions/amend-order-actions.component';
 import { FormErrorsComponent } from '@spartacus/storefront';
@@ -35,7 +34,7 @@ import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
     AmendOrderActionsComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CancelOrderComponent {

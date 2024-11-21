@@ -23,7 +23,6 @@ import { ItemService } from '../../shared/item.service';
 import { createCodeForEntityName } from '../../shared/utility/entity-code';
 import { CostCenterItemService } from '../services/cost-center-item.service';
 import { CurrentCostCenterService } from '../services/current-cost-center.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormErrorsComponent } from '@spartacus/storefront';
@@ -58,7 +57,7 @@ import { FormComponent } from '../../shared/form/form.component';
     NgSelectModule,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CostCenterFormComponent {

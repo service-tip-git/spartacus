@@ -20,7 +20,6 @@ import {
   ProductViewComponent,
 } from '../product-view/product-view.component';
 import { ProductListComponentService } from './product-list-component.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { ProductScrollComponent } from './product-scroll/product-scroll.component';
 import { ProductListItemComponent } from '../product-list-item/product-list-item.component';
@@ -44,7 +43,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     ProductScrollComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ProductListComponent implements OnInit, OnDestroy {

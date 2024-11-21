@@ -8,7 +8,6 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { EMPTY, Observable } from 'rxjs';
 import { Product } from '@spartacus/core';
 import { ProductListItemContext } from '@spartacus/storefront';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { StarRatingComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
@@ -18,13 +17,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './product-multi-dimensional-list-item-details.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    NgIf,
-    StarRatingComponent,
-    TranslatePipe,
-    AsyncPipe,
-    MockTranslatePipe,
-  ],
+  imports: [NgIf, StarRatingComponent, TranslatePipe, AsyncPipe, TranslatePipe],
 })
 export class ProductMultiDimensionalListItemDetailsComponent {
   productListItemContext?: ProductListItemContext = inject(

@@ -6,7 +6,6 @@
 
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ICON_TYPE } from '../../../cms-components/misc/icon/icon.model';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { TruncateTextPopoverComponent } from '../truncate-text-popover/truncate-text-popover.component';
 import { AtMessageDirective } from '../assistive-technology-message/assistive-technology-message.directive';
@@ -64,7 +63,7 @@ export interface Card {
     NgClass,
     TruncateTextPopoverComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CardComponent implements OnInit {

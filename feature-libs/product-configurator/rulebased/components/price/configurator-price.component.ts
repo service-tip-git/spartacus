@@ -8,9 +8,8 @@ import { useFeatureStyles } from '@spartacus/core';
 import { DirectionMode, DirectionService } from '@spartacus/storefront';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Configurator } from '../../core/model/configurator.model';
-import { MockTranslatePipe } from '@spartacus/core';
-import { CxNumericPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { CxNumericPipe } from '@spartacus/core';
 import { NgIf, NgClass } from '@angular/common';
 
 export interface ConfiguratorPriceComponentOptions {
@@ -25,7 +24,7 @@ export interface ConfiguratorPriceComponentOptions {
   templateUrl: './configurator-price.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, NgClass, TranslatePipe, CxNumericPipe, MockTranslatePipe],
+  imports: [NgIf, NgClass, TranslatePipe, CxNumericPipe, TranslatePipe],
 })
 export class ConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;

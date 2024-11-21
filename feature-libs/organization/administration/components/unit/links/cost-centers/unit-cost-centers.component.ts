@@ -10,9 +10,8 @@ import { Observable, of } from 'rxjs';
 import { ListService } from '../../../shared/list/list.service';
 import { CurrentUnitService } from '../../services/current-unit.service';
 import { UnitCostCenterListService } from './unit-cost-centers.service';
-import { MockTranslatePipe } from '@spartacus/core';
-import { AsyncPipe } from '@angular/common';
 import { TranslatePipe } from '@spartacus/core';
+import { AsyncPipe } from '@angular/common';
 import { DisableInfoComponent } from '../../../shared/detail/disable-info/disable-info.component';
 import { RouterLink } from '@angular/router';
 import { SubListComponent } from '../../../shared/sub-list/sub-list.component';
@@ -35,7 +34,7 @@ import { SubListComponent } from '../../../shared/sub-list/sub-list.component';
     DisableInfoComponent,
     TranslatePipe,
     AsyncPipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class UnitCostCenterListComponent {

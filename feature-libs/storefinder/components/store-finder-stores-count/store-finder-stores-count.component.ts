@@ -8,7 +8,6 @@ import { Component, OnInit, Optional, inject } from '@angular/core';
 import { RoutingService, useFeatureStyles } from '@spartacus/core';
 import { StoreFinderService } from '@spartacus/storefinder/core';
 import { Observable } from 'rxjs';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { RouterLink } from '@angular/router';
@@ -28,7 +27,7 @@ import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class StoreFinderStoresCountComponent implements OnInit {

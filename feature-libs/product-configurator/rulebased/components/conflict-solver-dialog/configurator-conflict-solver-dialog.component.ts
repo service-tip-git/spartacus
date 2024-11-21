@@ -22,7 +22,6 @@ import { Configurator } from '../../core/model/configurator.model';
 import { ConfiguratorCommonsService } from '../../core/facade/configurator-commons.service';
 import { take } from 'rxjs/operators';
 import { ConfiguratorStorefrontUtilsService } from '../service/configurator-storefront-utils.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { ConfiguratorGroupComponent } from '../group/configurator-group.component';
 import { NgIf, AsyncPipe } from '@angular/common';
@@ -43,7 +42,7 @@ import { FocusDirective } from '@spartacus/storefront';
     ConfiguratorGroupComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ConfiguratorConflictSolverDialogComponent

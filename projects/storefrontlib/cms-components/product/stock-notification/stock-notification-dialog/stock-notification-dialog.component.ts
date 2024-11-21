@@ -20,9 +20,8 @@ import {
 import { Observable, Subscription } from 'rxjs';
 import { FocusConfig } from '../../../../layout/a11y/keyboard-focus/keyboard-focus.model';
 import { LaunchDialogService } from '../../../../layout/index';
-import { MockTranslatePipe } from '@spartacus/core';
-import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { SpinnerComponent } from '../../../../shared/components/spinner/spinner.component';
 import { RouterLink } from '@angular/router';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
@@ -44,7 +43,7 @@ import { FocusDirective } from '../../../../layout/a11y/keyboard-focus/focus.dir
     AsyncPipe,
     TranslatePipe,
     UrlPipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class StockNotificationDialogComponent implements OnInit, OnDestroy {

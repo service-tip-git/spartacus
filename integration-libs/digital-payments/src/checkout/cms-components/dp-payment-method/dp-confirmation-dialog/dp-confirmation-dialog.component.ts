@@ -12,7 +12,6 @@ import {
 } from '@spartacus/storefront';
 import { DP_CARD_REGISTRATION_STATUS } from '../../../../utils/dp-constants';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
@@ -28,7 +27,7 @@ import { FocusDirective } from '@spartacus/storefront';
     FeatureDirective,
     IconComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class DpConfirmationDialogComponent {

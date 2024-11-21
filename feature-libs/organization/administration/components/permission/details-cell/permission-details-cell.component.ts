@@ -6,9 +6,8 @@
 
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CellComponent } from '../../shared';
-import { MockTranslatePipe } from '@spartacus/core';
-import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { PopoverDirective } from '@spartacus/storefront';
 import { NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
@@ -24,7 +23,7 @@ import { RouterLink } from '@angular/router';
     PopoverDirective,
     TranslatePipe,
     UrlPipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class PermissionDetailsCellComponent extends CellComponent {}

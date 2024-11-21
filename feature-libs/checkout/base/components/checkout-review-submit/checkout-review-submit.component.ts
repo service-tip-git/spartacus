@@ -26,9 +26,8 @@ import { Card, ICON_TYPE } from '@spartacus/storefront';
 import { combineLatest, Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { CheckoutStepService } from '../services/checkout-step.service';
-import { MockTranslatePipe } from '@spartacus/core';
-import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { PromotionsComponent } from '@spartacus/storefront';
 import { OutletDirective } from '@spartacus/storefront';
 import { IconComponent } from '@spartacus/storefront';
@@ -62,7 +61,7 @@ import {
     AsyncPipe,
     TranslatePipe,
     UrlPipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CheckoutReviewSubmitComponent {

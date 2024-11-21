@@ -19,7 +19,6 @@ import {
   Card,
   CardComponent,
 } from '../../../shared/components/card/card.component';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '../../../shared/components/spinner/spinner.component';
 import { FeatureDirective } from '@spartacus/core';
@@ -37,7 +36,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     CardComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class PaymentMethodsComponent implements OnInit {

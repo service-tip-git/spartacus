@@ -20,7 +20,6 @@ import {
 import { ICON_TYPE } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import { CheckoutReplenishmentFormService } from '../services/checkout-replenishment-form.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import {
   NgFor,
@@ -46,7 +45,7 @@ import { FeatureDirective } from '@spartacus/core';
     TitleCasePipe,
     KeyValuePipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CheckoutScheduleReplenishmentOrderComponent

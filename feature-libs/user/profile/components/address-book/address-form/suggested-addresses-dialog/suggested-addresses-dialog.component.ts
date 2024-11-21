@@ -18,7 +18,6 @@ import {
   LaunchDialogService,
 } from '@spartacus/storefront';
 import { take } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '@spartacus/storefront';
@@ -40,7 +39,7 @@ import { FocusDirective } from '@spartacus/storefront';
     NgFor,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class SuggestedAddressDialogComponent implements OnInit {

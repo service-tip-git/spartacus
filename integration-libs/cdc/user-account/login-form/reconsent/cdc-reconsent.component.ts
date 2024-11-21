@@ -20,7 +20,6 @@ import {
 import { Observable, of, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CdcReconsentComponentService } from './cdc-reconsent-component.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { ConsentManagementFormComponent } from '@spartacus/storefront';
@@ -42,7 +41,7 @@ import { FocusDirective } from '@spartacus/storefront';
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CdcReconsentComponent implements OnInit, OnDestroy {

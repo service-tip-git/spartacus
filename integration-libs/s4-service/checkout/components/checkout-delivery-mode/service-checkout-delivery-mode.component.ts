@@ -11,7 +11,6 @@ import {
   S4ServiceDeliveryModeConfig,
 } from '@spartacus/s4-service/root';
 import { Observable } from 'rxjs';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { InnerComponentsHostDirective } from '@spartacus/storefront';
 import { SpinnerComponent } from '@spartacus/storefront';
@@ -37,7 +36,7 @@ import { FeatureDirective } from '@spartacus/core';
     InnerComponentsHostDirective,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ServiceCheckoutDeliveryModeComponent extends CheckoutDeliveryModeComponent {

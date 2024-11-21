@@ -29,7 +29,6 @@ import {
 } from 'rxjs/operators';
 import { CurrentProductService } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgSelectA11yDirective } from '@spartacus/storefront';
 import { FormsModule } from '@angular/forms';
@@ -54,7 +53,7 @@ import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
     NgSelectA11yDirective,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ProductMultiDimensionalSelectorComponent {

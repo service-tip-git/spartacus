@@ -14,7 +14,6 @@ import {
 import { useFeatureStyles } from '@spartacus/core';
 import { FocusConfig, ICON_TYPE } from '@spartacus/storefront';
 import { ClearCartDialogComponentService } from './clear-cart-dialog-component.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { IconComponent } from '@spartacus/storefront';
@@ -34,7 +33,7 @@ import { FocusDirective } from '@spartacus/storefront';
     IconComponent,
     SpinnerComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ClearCartDialogComponent implements OnDestroy {

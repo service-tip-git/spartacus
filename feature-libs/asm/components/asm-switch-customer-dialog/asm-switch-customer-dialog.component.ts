@@ -9,7 +9,6 @@ import { User } from '@spartacus/core';
 import { FocusConfig, LaunchDialogService } from '@spartacus/storefront';
 import { take } from 'rxjs/operators';
 import { AsmComponentService } from '../services';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { FocusDirective } from '@spartacus/storefront';
@@ -28,7 +27,7 @@ export interface SwitchCustomerData {
   selector: 'cx-asm-switch-customer-dialog',
   templateUrl: './asm-switch-customer-dialog.component.html',
   standalone: true,
-  imports: [FocusDirective, IconComponent, TranslatePipe, MockTranslatePipe],
+  imports: [FocusDirective, IconComponent, TranslatePipe, TranslatePipe],
 })
 export class AsmSwitchCustomerDialogComponent implements OnInit {
   SWITCH_CUSTOMER_DIALOG_ACTION = SWITCH_CUSTOMER_DIALOG_ACTION;

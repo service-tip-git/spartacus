@@ -24,9 +24,8 @@ import {
   ConfiguratorPriceComponentOptions,
   ConfiguratorPriceComponent,
 } from '../price/configurator-price.component';
-import { MockTranslatePipe } from '@spartacus/core';
-import { CxNumericPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { CxNumericPipe } from '@spartacus/core';
 import { MediaComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 
@@ -42,7 +41,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     AsyncPipe,
     TranslatePipe,
     CxNumericPipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ConfiguratorOverviewBundleAttributeComponent implements OnInit {

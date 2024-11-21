@@ -22,7 +22,6 @@ import { catchError, map } from 'rxjs/operators';
 import { AsmCustomer360SectionContext } from '../asm-customer-360-section-context.model';
 import { CustomerCouponEntry } from './asm-customer-360-customer-coupon.model';
 import { ICON_TYPE } from '@spartacus/storefront';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { AsyncPipe } from '@angular/common';
 import { IconComponent } from '@spartacus/storefront';
@@ -38,7 +37,7 @@ import { AsmCustomer360PromotionListingComponent } from '../../asm-customer-360-
     IconComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class AsmCustomer360CustomerCouponComponent

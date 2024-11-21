@@ -13,7 +13,6 @@ import {
   Input,
 } from '@angular/core';
 import { Config, useFeatureStyles } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgIf } from '@angular/common';
 
@@ -22,7 +21,7 @@ import { NgIf } from '@angular/common';
   templateUrl: './configurator-show-more.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, TranslatePipe, MockTranslatePipe],
+  imports: [NgIf, TranslatePipe, TranslatePipe],
 })
 export class ConfiguratorShowMoreComponent implements AfterViewInit {
   showMore = false;

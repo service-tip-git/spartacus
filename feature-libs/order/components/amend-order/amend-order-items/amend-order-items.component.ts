@@ -10,7 +10,6 @@ import { OrderEntry } from '@spartacus/cart/base/root';
 import { Price } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { OrderAmendService } from '../amend-order.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { ItemCounterComponent } from '@spartacus/storefront';
 import { MediaComponent } from '@spartacus/storefront';
@@ -28,7 +27,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     ItemCounterComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CancelOrReturnItemsComponent {

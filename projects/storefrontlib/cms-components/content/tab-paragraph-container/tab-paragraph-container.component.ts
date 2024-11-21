@@ -24,7 +24,6 @@ import { ComponentWrapperDirective } from '../../../cms-structure/page/component
 import { CmsComponentData } from '../../../cms-structure/page/model/index';
 import { BREAKPOINT } from '../../../layout/config/layout-config';
 import { Tab, TabConfig } from '../tab/tab.model';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { TabComponent } from '../tab/tab.component';
 import { OutletDirective } from '../../../cms-structure/outlet/outlet.directive';
@@ -50,7 +49,7 @@ const defaultTabConfig = {
     TabComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class TabParagraphContainerComponent implements AfterViewInit, OnInit {

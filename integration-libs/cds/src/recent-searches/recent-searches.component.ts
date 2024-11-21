@@ -18,10 +18,9 @@ import {
 import { RecentSearchesService } from './recent-searches.service';
 import { map, tap } from 'rxjs/operators';
 import { combineLatest, Observable } from 'rxjs';
-import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { HighlightPipe } from '@spartacus/storefront';
-import { TranslatePipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
@@ -46,7 +45,7 @@ const MAX_RECENT_SEARCHES = 5;
     TranslatePipe,
     HighlightPipe,
     UrlPipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class RecentSearchesComponent implements OnInit {

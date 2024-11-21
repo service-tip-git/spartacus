@@ -10,7 +10,6 @@ import { RoutingService } from '@spartacus/core';
 import { BulkPrice } from '@spartacus/product/bulk-pricing/core';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
@@ -18,7 +17,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
   selector: 'cx-bulk-pricing-table',
   templateUrl: './bulk-pricing-table.component.html',
   standalone: true,
-  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe, MockTranslatePipe],
+  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe, TranslatePipe],
 })
 export class BulkPricingTableComponent implements OnInit {
   protected readonly PRODUCT_KEY = 'productCode';

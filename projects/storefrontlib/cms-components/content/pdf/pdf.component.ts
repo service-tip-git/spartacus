@@ -10,7 +10,6 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { CmsComponentData } from '../../../cms-structure/page/model/cms-component-data';
 import { MediaService } from '../../../shared/components/media/media.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '../../misc/icon/icon.component';
 import { NgIf, AsyncPipe } from '@angular/common';
@@ -20,7 +19,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './pdf.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, IconComponent, AsyncPipe, TranslatePipe, MockTranslatePipe],
+  imports: [NgIf, IconComponent, AsyncPipe, TranslatePipe, TranslatePipe],
 })
 export class PDFComponent {
   url?: string;

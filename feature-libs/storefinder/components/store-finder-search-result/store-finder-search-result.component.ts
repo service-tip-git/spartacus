@@ -13,7 +13,6 @@ import {
   StoreFinderService,
   StoreFinderConfig,
 } from '@spartacus/storefinder/core';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { StoreFinderListComponent } from './store-finder-list/store-finder-list.component';
@@ -33,7 +32,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class StoreFinderSearchResultComponent implements OnInit, OnDestroy {

@@ -19,7 +19,6 @@ import {
   ComponentDestroyEvent,
 } from '../../../cms-structure';
 import { CurrentProductService } from '../current-product.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FeatureDirective } from '@spartacus/core';
 import { StarRatingComponent } from '../../../shared/components/star-rating/star-rating.component';
@@ -37,7 +36,7 @@ import { NgIf, AsyncPipe, DecimalPipe } from '@angular/common';
     AsyncPipe,
     DecimalPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ProductIntroComponent {

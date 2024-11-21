@@ -28,9 +28,8 @@ import {
   ServiceDateTime,
   S4ServiceDeliveryModeConfig,
 } from '@spartacus/s4-service/root';
-import { MockTranslatePipe } from '@spartacus/core';
-import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { PromotionsComponent } from '@spartacus/storefront';
 import { OutletDirective } from '@spartacus/storefront';
 import { IconComponent } from '@spartacus/storefront';
@@ -66,7 +65,7 @@ import {
     AsyncPipe,
     TranslatePipe,
     UrlPipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ServiceCheckoutReviewSubmitComponent extends B2BCheckoutReviewSubmitComponent {

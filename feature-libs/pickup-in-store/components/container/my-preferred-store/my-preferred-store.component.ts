@@ -21,7 +21,6 @@ import { StoreFinderFacade } from '@spartacus/storefinder/root';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { filter, map, switchMap, take, tap } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { StoreScheduleComponent } from '../../presentational/store/store-schedule/store-schedule.component';
 import { IconComponent } from '@spartacus/storefront';
@@ -43,7 +42,7 @@ import { NgClass, NgIf, AsyncPipe } from '@angular/common';
     StoreScheduleComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class MyPreferredStoreComponent implements OnInit {

@@ -21,7 +21,6 @@ import { Observable } from 'rxjs';
 import { UserProfileFacade } from '@spartacus/user/profile/root';
 import { filter } from 'rxjs/operators';
 import { UpdateEmailComponentService } from './update-email-component.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { PasswordVisibilityToggleDirective } from '@spartacus/storefront';
 import { FormErrorsComponent } from '@spartacus/storefront';
@@ -46,7 +45,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     PasswordVisibilityToggleDirective,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class MyAccountV2EmailComponent implements OnInit {

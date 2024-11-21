@@ -13,7 +13,6 @@ import {
 } from '@angular/core';
 import { Product } from '@spartacus/core';
 import { ProductItem } from '../asm-customer-360-product-listing/product-item.model';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgIf } from '@angular/common';
 import { MediaComponent } from '@spartacus/storefront';
@@ -23,7 +22,7 @@ import { MediaComponent } from '@spartacus/storefront';
   templateUrl: './asm-customer-360-product-item.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [MediaComponent, NgIf, TranslatePipe, MockTranslatePipe],
+  imports: [MediaComponent, NgIf, TranslatePipe, TranslatePipe],
 })
 export class AsmCustomer360ProductItemComponent {
   @Input() product: ProductItem;

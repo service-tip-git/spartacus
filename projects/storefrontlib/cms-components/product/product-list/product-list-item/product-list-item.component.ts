@@ -17,9 +17,8 @@ import { ProductListOutlets } from '../../product-outlets.model';
 import { ProductListItemContextSource } from '../model/product-list-item-context-source.model';
 import { ProductListItemContext } from '../model/product-list-item-context.model';
 import { ProductListService } from '../product-list.service';
-import { MockTranslatePipe } from '@spartacus/core';
-import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { InnerComponentsHostDirective } from '../../../../cms-structure/page/component/inner-components-host.directive';
 import { StarRatingComponent } from '../../../../shared/components/star-rating/star-rating.component';
 import { NgIf } from '@angular/common';
@@ -50,7 +49,7 @@ import { RouterLink } from '@angular/router';
     InnerComponentsHostDirective,
     TranslatePipe,
     UrlPipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ProductListItemComponent implements OnChanges {

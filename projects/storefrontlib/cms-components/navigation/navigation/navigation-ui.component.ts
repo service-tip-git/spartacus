@@ -31,7 +31,6 @@ import { BREAKPOINT, BreakpointService } from '../../../layout';
 import { ICON_TYPE } from '../../misc/icon/index';
 import { HamburgerMenuService } from './../../../layout/header/hamburger-menu/hamburger-menu.service';
 import { NavigationNode } from './navigation-node.model';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { GenericLinkComponent } from '../../../shared/components/generic-link/generic-link.component';
 import { FeatureDirective } from '@spartacus/core';
@@ -54,7 +53,7 @@ const ARIA_EXPANDED_ATTR = 'aria-expanded';
     GenericLinkComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class NavigationUIComponent implements OnInit, OnDestroy {

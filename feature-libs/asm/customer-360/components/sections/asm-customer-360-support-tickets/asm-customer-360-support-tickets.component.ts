@@ -15,7 +15,6 @@ import {
 } from '../../asm-customer-360-table/asm-customer-360-table.model';
 import { AsmCustomer360SectionContext } from '../asm-customer-360-section-context.model';
 import { SupportTicketEntry } from './asm-customer-360-support-tickets.model';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { AsyncPipe } from '@angular/common';
 import { AsmCustomer360TableComponent } from '../../asm-customer-360-table/asm-customer-360-table.component';
@@ -29,7 +28,7 @@ import { AsmCustomer360TableComponent } from '../../asm-customer-360-table/asm-c
     AsmCustomer360TableComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class AsmCustomer360SupportTicketsComponent implements OnInit {

@@ -17,9 +17,8 @@ import { OrderEntry } from '@spartacus/cart/base/root';
 import { QuickOrderFacade } from '@spartacus/cart/quick-order/root';
 import { useFeatureStyles } from '@spartacus/core';
 import { Subscription } from 'rxjs';
-import { MockTranslatePipe } from '@spartacus/core';
-import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { ItemCounterComponent } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
 import { MediaComponent } from '@spartacus/storefront';
@@ -39,7 +38,7 @@ import { NgClass } from '@angular/common';
     ItemCounterComponent,
     TranslatePipe,
     UrlPipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class QuickOrderItemComponent implements OnInit, OnDestroy {

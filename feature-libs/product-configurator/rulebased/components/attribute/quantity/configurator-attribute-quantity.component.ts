@@ -17,7 +17,6 @@ import { UntypedFormControl } from '@angular/forms';
 import { Observable, Subscription, timer } from 'rxjs';
 import { debounce, distinct, take } from 'rxjs/operators';
 import { ConfiguratorUISettingsConfig } from '../../config/configurator-ui-settings.config';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { ItemCounterComponent } from '@spartacus/storefront';
 
@@ -32,7 +31,7 @@ export interface ConfiguratorAttributeQuantityComponentOptions {
   templateUrl: './configurator-attribute-quantity.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [ItemCounterComponent, TranslatePipe, MockTranslatePipe],
+  imports: [ItemCounterComponent, TranslatePipe, TranslatePipe],
 })
 export class ConfiguratorAttributeQuantityComponent
   implements OnDestroy, OnInit

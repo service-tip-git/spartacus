@@ -8,7 +8,6 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CartOutlets } from '@spartacus/cart/base/root';
 import { OrderDetailsService } from '@spartacus/order/components';
 import { map } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { OutletDirective } from '@spartacus/storefront';
 import { NgIf, AsyncPipe, DatePipe } from '@angular/common';
@@ -24,7 +23,7 @@ import { NgIf, AsyncPipe, DatePipe } from '@angular/common';
     AsyncPipe,
     DatePipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CancelServiceOrderHeadlineComponent {

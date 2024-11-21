@@ -9,7 +9,6 @@ import { SiteTheme, useFeatureStyles } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { ICON_TYPE } from '../icon/icon.model';
 import { SiteThemeSwitcherComponentService } from './site-theme-switcher.component.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '../icon/icon.component';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
@@ -28,7 +27,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     IconComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class SiteThemeSwitcherComponent {

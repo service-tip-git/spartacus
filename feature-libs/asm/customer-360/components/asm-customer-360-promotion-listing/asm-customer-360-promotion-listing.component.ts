@@ -13,7 +13,6 @@ import {
 } from '@angular/core';
 import { GlobalMessageType } from '@spartacus/core';
 import { PromotionListEntry } from './asm-customer-360-promotion-listing.model';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { MessageComponent } from '@spartacus/storefront';
@@ -29,7 +28,7 @@ import { NgIf, NgFor } from '@angular/common';
     NgFor,
     IconComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class AsmCustomer360PromotionListingComponent {

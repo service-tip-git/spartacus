@@ -8,7 +8,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { StoreFinderService } from '@spartacus/storefinder/core';
 import { StoreFinderOutlets } from '@spartacus/storefinder/root';
 import { AbstractStoreItemComponent } from '../abstract-store-item/abstract-store-item.component';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FeatureDirective } from '@spartacus/core';
 import { OutletDirective } from '@spartacus/storefront';
@@ -25,7 +24,7 @@ import { NgIf } from '@angular/common';
     OutletDirective,
     FeatureDirective,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class StoreFinderListItemComponent extends AbstractStoreItemComponent {

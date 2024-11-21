@@ -12,7 +12,6 @@ import {
   QuoteItemsComponentService,
   QuoteItemsData,
 } from './quote-items.component.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { OutletDirective } from '@spartacus/storefront';
 import { AbstractOrderContextDirective } from '../../../cart/base/components/abstract-order-context/abstract-order-context.directive';
@@ -44,7 +43,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     NgFor,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class QuoteItemsComponent {

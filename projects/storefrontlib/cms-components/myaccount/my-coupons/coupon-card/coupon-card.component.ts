@@ -20,9 +20,8 @@ import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { MyCouponsComponentService } from '../my-coupons.component.service';
 import { MockDatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
-import { CxDatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 import { AsyncPipe, LowerCasePipe } from '@angular/common';
 
 @Component({
@@ -35,7 +34,7 @@ import { AsyncPipe, LowerCasePipe } from '@angular/common';
     LowerCasePipe,
     TranslatePipe,
     CxDatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
     MockDatePipe,
   ],
 })

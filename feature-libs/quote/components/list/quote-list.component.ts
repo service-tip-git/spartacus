@@ -19,10 +19,9 @@ import {
 import { QuoteState } from '@spartacus/quote/root';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { MockDatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { CxDatePipe as CxDatePipe_1 } from '@spartacus/core';
-import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { RouterLink } from '@angular/router';
 import { PaginationComponent } from '@spartacus/storefront';
@@ -47,7 +46,7 @@ import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
     TranslatePipe,
     CxDatePipe_1,
     UrlPipe,
-    MockTranslatePipe,
+    TranslatePipe,
     MockDatePipe,
   ],
 })

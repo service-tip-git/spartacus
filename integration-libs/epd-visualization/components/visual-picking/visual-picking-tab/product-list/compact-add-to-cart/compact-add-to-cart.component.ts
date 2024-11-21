@@ -6,7 +6,6 @@
 
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AddToCartComponent } from '@spartacus/cart/base/components/add-to-cart';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -23,7 +22,7 @@ import { NgIf } from '@angular/common';
     ReactiveFormsModule,
     IconComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CompactAddToCartComponent extends AddToCartComponent {}

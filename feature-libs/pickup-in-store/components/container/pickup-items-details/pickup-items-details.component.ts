@@ -16,9 +16,8 @@ import { CmsComponentData, ICON_TYPE } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { take, tap } from 'rxjs/operators';
 import { DeliveryPointsService } from '../../services/delivery-points.service';
-import { MockTranslatePipe } from '@spartacus/core';
-import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { MediaComponent } from '@spartacus/storefront';
 import { IconComponent } from '@spartacus/storefront';
 import { RouterLink } from '@angular/router';
@@ -43,7 +42,7 @@ import { NgClass, NgIf, NgFor, AsyncPipe } from '@angular/common';
     AsyncPipe,
     TranslatePipe,
     UrlPipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class PickUpItemsDetailsComponent implements OnInit {

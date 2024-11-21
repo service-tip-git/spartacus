@@ -9,7 +9,6 @@ import { FeatureConfigService, Product, ProductScope } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { CurrentProductService } from '../current-product.service';
 import { ProductDetailOutlets } from '../product-outlets.model';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { OutletDirective } from '../../../cms-structure/outlet/outlet.directive';
 import { PromotionsComponent } from '../../misc/promotions/promotions.component';
@@ -28,7 +27,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     OutletDirective,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ProductSummaryComponent {

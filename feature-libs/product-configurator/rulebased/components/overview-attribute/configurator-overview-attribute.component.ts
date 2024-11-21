@@ -12,7 +12,6 @@ import {
   ConfiguratorPriceComponent,
 } from '../price/configurator-price.component';
 import { Observable } from 'rxjs';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgIf, AsyncPipe } from '@angular/common';
 
@@ -26,7 +25,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     ConfiguratorPriceComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ConfiguratorOverviewAttributeComponent {

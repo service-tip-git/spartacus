@@ -7,7 +7,6 @@
 import { Component } from '@angular/core';
 import { FocusConfig, LaunchDialogService } from '@spartacus/storefront';
 import { VERIFICATION_TOKEN_DIALOG_ACTION } from '@spartacus/user/account/root';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FeatureDirective } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
@@ -22,7 +21,7 @@ import { FocusDirective } from '@spartacus/storefront';
     IconComponent,
     FeatureDirective,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class VerificationTokenDialogComponent {

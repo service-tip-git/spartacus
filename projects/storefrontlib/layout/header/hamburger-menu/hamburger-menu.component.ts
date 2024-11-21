@@ -7,7 +7,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HamburgerMenuService } from './hamburger-menu.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { AsyncPipe } from '@angular/common';
 
@@ -16,7 +15,7 @@ import { AsyncPipe } from '@angular/common';
   templateUrl: './hamburger-menu.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [AsyncPipe, TranslatePipe, MockTranslatePipe],
+  imports: [AsyncPipe, TranslatePipe, TranslatePipe],
 })
 export class HamburgerMenuComponent {
   constructor(private hamburgerMenuService: HamburgerMenuService) {}

@@ -30,7 +30,6 @@ import { CurrentItemService } from '../../shared/current-item.service';
 import { ItemService } from '../../shared/item.service';
 import { CurrentUserService } from '../services/current-user.service';
 import { UserItemService } from '../services/user-item.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FormErrorsComponent } from '@spartacus/storefront';
 import { NgSelectModule } from '@ng-select/ng-select';
@@ -66,7 +65,7 @@ import { FormComponent } from '../../shared/form/form.component';
     NgFor,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class UserFormComponent implements OnInit {

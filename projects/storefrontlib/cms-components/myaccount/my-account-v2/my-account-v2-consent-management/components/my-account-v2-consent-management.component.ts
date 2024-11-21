@@ -6,7 +6,6 @@
 
 import { Component } from '@angular/core';
 import { ConsentManagementComponent } from '../../../consent-management/components/consent-management.component';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { MyAccountV2ConsentManagementFormComponent } from './consent-form/my-account-v2-consent-management-form.component';
 import { FeatureDirective } from '@spartacus/core';
@@ -25,7 +24,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     MyAccountV2ConsentManagementFormComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class MyAccountV2ConsentManagementComponent extends ConsentManagementComponent {}

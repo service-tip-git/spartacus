@@ -9,7 +9,6 @@ import { ActivatedRoute } from '@angular/router';
 import { GeoPoint, useFeatureStyles } from '@spartacus/core';
 import { StoreFinderService } from '@spartacus/storefinder/core';
 import { Observable } from 'rxjs';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { StoreFinderListItemComponent } from '../store-finder-list-item/store-finder-list-item.component';
@@ -29,7 +28,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class StoreFinderGridComponent implements OnInit {

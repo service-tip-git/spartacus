@@ -16,9 +16,8 @@ import {
 import { useFeatureStyles } from '@spartacus/core';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { CartItemContextSource } from './model/cart-item-context-source.model';
-import { MockTranslatePipe } from '@spartacus/core';
-import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { AtMessageDirective } from '@spartacus/storefront';
 import { PromotionsComponent } from '@spartacus/storefront';
 import { ItemCounterComponent } from '@spartacus/storefront';
@@ -52,7 +51,7 @@ import { OutletDirective } from '@spartacus/storefront';
     AtMessageDirective,
     TranslatePipe,
     UrlPipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CartItemComponent implements OnChanges {

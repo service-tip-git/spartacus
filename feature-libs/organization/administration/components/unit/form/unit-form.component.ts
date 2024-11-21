@@ -28,7 +28,6 @@ import { ItemService } from '../../shared/item.service';
 import { createCodeForEntityName } from '../../shared/utility/entity-code';
 import { CurrentUnitService } from '../services/current-unit.service';
 import { UnitItemService } from '../services/unit-item.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgSelectA11yDirective } from '@spartacus/storefront';
 import { NgSelectModule } from '@ng-select/ng-select';
@@ -65,7 +64,7 @@ import { FormComponent } from '../../shared/form/form.component';
     NgSelectA11yDirective,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class UnitFormComponent implements OnInit {

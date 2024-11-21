@@ -24,7 +24,6 @@ import { ICON_TYPE } from '../../../../../cms-components/misc/icon/icon.model';
 import { FocusDirective } from '../../../../../layout/a11y/keyboard-focus/focus.directive';
 import { FacetCollapseState } from '../facet.model';
 import { FacetService } from '../services/facet.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { AtMessageDirective } from '../../../../../shared/components/assistive-technology-message/assistive-technology-message.directive';
 import { RouterLink } from '@angular/router';
@@ -48,7 +47,7 @@ import { NgIf, NgFor, AsyncPipe, SlicePipe } from '@angular/common';
     AsyncPipe,
     SlicePipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class FacetComponent implements AfterViewInit {

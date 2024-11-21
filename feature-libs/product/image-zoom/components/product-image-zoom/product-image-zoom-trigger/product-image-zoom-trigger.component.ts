@@ -25,7 +25,6 @@ import {
 import { Subscription, combineLatest } from 'rxjs';
 import { filter, tap } from 'rxjs/operators';
 import { ProductImageZoomDialogComponent } from '../product-image-zoom-dialog/product-image-zoom-dialog.component';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
@@ -35,7 +34,7 @@ import { FeatureDirective } from '@spartacus/core';
   templateUrl: 'product-image-zoom-trigger.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FeatureDirective, IconComponent, TranslatePipe, MockTranslatePipe],
+  imports: [FeatureDirective, IconComponent, TranslatePipe, TranslatePipe],
 })
 export class ProductImageZoomTriggerComponent implements OnDestroy {
   iconType = ICON_TYPE;

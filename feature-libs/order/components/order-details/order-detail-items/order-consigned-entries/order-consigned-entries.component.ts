@@ -12,9 +12,8 @@ import {
 } from '@spartacus/cart/base/root';
 import { Consignment, Order, OrderOutlets } from '@spartacus/order/root';
 import { MockDatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
-import { CxDatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 import { AddToCartComponent } from '../../../../../cart/base/components/add-to-cart/add-to-cart.component';
 import { AbstractOrderContextDirective } from '../../../../../cart/base/components/abstract-order-context/abstract-order-context.directive';
 import { ConsignmentTrackingComponent } from '../consignment-tracking/consignment-tracking.component';
@@ -36,7 +35,7 @@ import { NgFor, NgIf } from '@angular/common';
     AddToCartComponent,
     TranslatePipe,
     CxDatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
     MockDatePipe,
   ],
 })

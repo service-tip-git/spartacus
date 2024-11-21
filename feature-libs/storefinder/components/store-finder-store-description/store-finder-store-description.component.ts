@@ -8,7 +8,6 @@ import { Component, Input } from '@angular/core';
 import { PointOfService, useFeatureStyles } from '@spartacus/core';
 import { StoreFinderService } from '@spartacus/storefinder/core';
 import { AbstractStoreItemComponent } from '../abstract-store-item/abstract-store-item.component';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { StoreFinderMapComponent } from '../store-finder-map/store-finder-map.component';
 import { ScheduleComponent } from '../schedule-component/schedule.component';
@@ -27,7 +26,7 @@ import { NgIf, NgFor, JsonPipe } from '@angular/common';
     StoreFinderMapComponent,
     JsonPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class StoreFinderStoreDescriptionComponent extends AbstractStoreItemComponent {

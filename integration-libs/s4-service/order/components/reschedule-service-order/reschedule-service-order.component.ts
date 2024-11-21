@@ -32,9 +32,8 @@ import {
   ServiceDateTime,
 } from '@spartacus/s4-service/root';
 import { combineLatest, map, Observable, Subject, takeUntil } from 'rxjs';
-import { MockTranslatePipe } from '@spartacus/core';
-import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
 import { OutletDirective } from '@spartacus/storefront';
 import { DatePickerComponent } from '@spartacus/storefront';
@@ -57,7 +56,7 @@ import { NgTemplateOutlet, NgIf, NgFor, AsyncPipe } from '@angular/common';
     AsyncPipe,
     TranslatePipe,
     UrlPipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class RescheduleServiceOrderComponent implements OnInit, OnDestroy {

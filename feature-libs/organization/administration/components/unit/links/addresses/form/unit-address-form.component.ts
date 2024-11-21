@@ -16,7 +16,6 @@ import { ItemService } from '../../../../shared/item.service';
 import { CurrentUnitService } from '../../../services/current-unit.service';
 import { UnitAddressItemService } from '../services/unit-address-item.service';
 import { UnitAddressFormService } from './unit-address-form.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FormErrorsComponent } from '@spartacus/storefront';
 import { NgSelectModule } from '@ng-select/ng-select';
@@ -47,7 +46,7 @@ import { FormComponent } from '../../../../shared/form/form.component';
     FormErrorsComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class UnitAddressFormComponent implements OnInit {

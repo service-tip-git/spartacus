@@ -8,7 +8,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ReturnRequest } from '@spartacus/order/root';
 import { Observable } from 'rxjs';
 import { ReturnRequestService } from '../return-request.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { MediaComponent } from '@spartacus/storefront';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
@@ -24,7 +23,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     MediaComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ReturnRequestItemsComponent {

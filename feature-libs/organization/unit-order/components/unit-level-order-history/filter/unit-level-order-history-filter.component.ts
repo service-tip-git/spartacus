@@ -20,7 +20,6 @@ import {
 } from '@angular/forms';
 import { OrderHistoryQueryParams } from '@spartacus/organization/unit-order/core';
 import { ICON_TYPE } from '@spartacus/storefront';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgIf } from '@angular/common';
 import { IconComponent } from '@spartacus/storefront';
@@ -35,7 +34,7 @@ import { IconComponent } from '@spartacus/storefront';
     ReactiveFormsModule,
     NgIf,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class UnitLevelOrderHistoryFilterComponent {

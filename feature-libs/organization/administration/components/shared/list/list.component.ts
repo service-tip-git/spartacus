@@ -27,7 +27,6 @@ import { tap } from 'rxjs/operators';
 import { ItemService } from '../item.service';
 import { OrganizationTableType } from '../organization.model';
 import { CreateButtonType, ListService } from './list.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { PaginationComponent } from '@spartacus/storefront';
@@ -65,7 +64,7 @@ import { SplitViewComponent } from '@spartacus/storefront';
     AsyncPipe,
     UrlPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ListComponent<T = any, P = PaginationModel> {

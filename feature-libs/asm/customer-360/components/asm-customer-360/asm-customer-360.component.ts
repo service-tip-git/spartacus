@@ -45,10 +45,9 @@ import { BehaviorSubject, Observable, Subscription, of } from 'rxjs';
 import { catchError, distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { AsmCustomer360Config } from '../config/asm-customer-360-config';
 import { MockDatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { ArgsPipe } from '../../../core/utils/args/args.pipe';
 import { CxDatePipe } from '@spartacus/core';
-import { TranslatePipe } from '@spartacus/core';
 import { AsmCustomer360SectionComponent } from '../sections/asm-customer-360-section/asm-customer-360-section.component';
 import { IconComponent } from '@spartacus/storefront';
 import { MediaComponent } from '@spartacus/storefront';
@@ -74,7 +73,7 @@ import { FocusDirective } from '@spartacus/storefront';
     TranslatePipe,
     CxDatePipe,
     ArgsPipe,
-    MockTranslatePipe,
+    TranslatePipe,
     MockDatePipe,
   ],
 })

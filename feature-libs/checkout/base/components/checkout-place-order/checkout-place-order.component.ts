@@ -22,7 +22,6 @@ import { RoutingService } from '@spartacus/core';
 import { OrderFacade } from '@spartacus/order/root';
 import { LaunchDialogService, LAUNCH_CALLER } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { AtMessageDirective } from '@spartacus/storefront';
@@ -44,7 +43,7 @@ import { FeatureDirective } from '@spartacus/core';
     AtMessageDirective,
     UrlPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CheckoutPlaceOrderComponent implements OnDestroy {

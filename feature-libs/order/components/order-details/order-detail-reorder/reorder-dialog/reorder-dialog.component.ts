@@ -30,7 +30,6 @@ import {
   SelectFocusUtility,
 } from '@spartacus/storefront';
 import { BehaviorSubject } from 'rxjs';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
@@ -50,7 +49,7 @@ import { FocusDirective } from '@spartacus/storefront';
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ReorderDialogComponent {

@@ -26,7 +26,6 @@ import {
 import { take } from 'rxjs';
 import { CellComponent } from '../../../shared/table/cell.component';
 import { UnitTreeService } from '../../services/unit-tree.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
@@ -44,7 +43,7 @@ import { NgIf } from '@angular/common';
     IconComponent,
     UrlPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ToggleLinkCellComponent extends CellComponent {

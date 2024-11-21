@@ -24,7 +24,6 @@ import { ItemService } from '../../shared/item.service';
 import { createCodeForEntityName } from '../../shared/utility/entity-code';
 import { BudgetItemService } from '../services/budget-item.service';
 import { CurrentBudgetService } from '../services/current-budget.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { DatePickerComponent } from '@spartacus/storefront';
@@ -61,7 +60,7 @@ import { FormComponent } from '../../shared/form/form.component';
     NgSelectModule,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class BudgetFormComponent implements OnInit {

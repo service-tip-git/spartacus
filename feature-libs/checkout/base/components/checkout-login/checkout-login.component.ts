@@ -16,7 +16,6 @@ import { ActiveCartFacade } from '@spartacus/cart/base/root';
 import { AuthRedirectService } from '@spartacus/core';
 import { CustomFormValidators } from '@spartacus/storefront';
 import { Subscription } from 'rxjs';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FormErrorsComponent } from '@spartacus/storefront';
 import { NgTemplateOutlet } from '@angular/common';
@@ -33,7 +32,7 @@ import { FeatureDirective } from '@spartacus/core';
     NgTemplateOutlet,
     FormErrorsComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CheckoutLoginComponent implements OnDestroy {

@@ -14,7 +14,6 @@ import { AuthService, RoutingService } from '@spartacus/core';
 import { QuoteFacade } from '@spartacus/quote/root';
 import { Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgIf, AsyncPipe } from '@angular/common';
 
@@ -23,7 +22,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './quote-request-button.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, AsyncPipe, TranslatePipe, MockTranslatePipe],
+  imports: [NgIf, AsyncPipe, TranslatePipe, TranslatePipe],
 })
 export class QuoteRequestButtonComponent implements OnDestroy {
   protected quoteFacade = inject(QuoteFacade);

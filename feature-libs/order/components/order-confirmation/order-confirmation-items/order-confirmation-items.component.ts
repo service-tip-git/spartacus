@@ -12,7 +12,6 @@ import {
 } from '@spartacus/cart/base/root';
 import { Order, OrderFacade } from '@spartacus/order/root';
 import { Observable } from 'rxjs';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { OutletDirective } from '@spartacus/storefront';
 import { AbstractOrderContextDirective } from '../../../../cart/base/components/abstract-order-context/abstract-order-context.directive';
@@ -33,7 +32,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     OutletDirective,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class OrderConfirmationItemsComponent implements OnDestroy {

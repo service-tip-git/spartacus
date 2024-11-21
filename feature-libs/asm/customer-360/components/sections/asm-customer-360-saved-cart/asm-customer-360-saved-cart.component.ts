@@ -15,7 +15,6 @@ import {
   CustomerCart,
 } from '@spartacus/asm/customer-360/root';
 import { Product, ProductScope, ProductService } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { AsmCustomer360ProductListingComponent } from '../../asm-customer-360-product-listing/asm-customer-360-product-listing.component';
 import { NgIf, AsyncPipe } from '@angular/common';
@@ -30,7 +29,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     AsmCustomer360ProductListingComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class AsmCustomer360SavedCartComponent {

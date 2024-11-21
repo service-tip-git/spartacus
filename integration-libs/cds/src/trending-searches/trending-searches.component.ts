@@ -18,9 +18,8 @@ import { TrendingSearchesService } from './trending-searches.service';
 import { map, switchMap, tap } from 'rxjs/operators';
 import { EMPTY, Observable } from 'rxjs';
 import { SearchBoxOutletTrendingSearches, SearchPhrases } from './model';
-import { MockTranslatePipe } from '@spartacus/core';
-import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
@@ -38,7 +37,7 @@ const MAX_TRENDING_SEARCHES = 5;
     AsyncPipe,
     TranslatePipe,
     UrlPipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class TrendingSearchesComponent implements OnInit {

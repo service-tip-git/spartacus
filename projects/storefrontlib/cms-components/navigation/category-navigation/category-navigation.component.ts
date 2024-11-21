@@ -10,7 +10,6 @@ import { Observable } from 'rxjs';
 import { CmsComponentData } from '../../../cms-structure/page/model/cms-component-data';
 import { NavigationNode } from '../navigation/navigation-node.model';
 import { NavigationService } from '../navigation/navigation.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NavigationUIComponent } from '../navigation/navigation-ui.component';
 import { NgIf, NgClass, AsyncPipe } from '@angular/common';
@@ -26,7 +25,7 @@ import { NgIf, NgClass, AsyncPipe } from '@angular/common';
     NgClass,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CategoryNavigationComponent {

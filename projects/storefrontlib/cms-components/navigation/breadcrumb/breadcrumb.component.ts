@@ -22,7 +22,6 @@ import { combineLatest, Observable, of } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { CmsComponentData } from '../../../cms-structure/page/model/cms-component-data';
 import { PageTitleComponent } from '../page-header/page-title.component';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FeatureDirective } from '@spartacus/core';
 import { NgFor, AsyncPipe } from '@angular/common';
@@ -38,7 +37,7 @@ import { NgFor, AsyncPipe } from '@angular/common';
     FeatureDirective,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class BreadcrumbComponent extends PageTitleComponent implements OnInit {

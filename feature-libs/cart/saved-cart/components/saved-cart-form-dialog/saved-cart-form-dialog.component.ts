@@ -44,7 +44,6 @@ import {
 } from '@spartacus/storefront';
 import { Observable, Subscription, combineLatest, merge } from 'rxjs';
 import { map, take } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FormErrorsComponent } from '@spartacus/storefront';
 import { IconComponent } from '@spartacus/storefront';
@@ -74,7 +73,7 @@ export interface SavedCartFormDialogOptions {
     FormErrorsComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class SavedCartFormDialogComponent implements OnInit, OnDestroy {

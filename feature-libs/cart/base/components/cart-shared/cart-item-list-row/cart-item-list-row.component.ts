@@ -10,9 +10,8 @@ import { useFeatureStyles } from '@spartacus/core';
 import { CartItemComponent } from '../cart-item/cart-item.component';
 import { CartItemContextSource } from '../cart-item/model/cart-item-context-source.model';
 import { CartItemListComponentService } from './cart-item-list-row.component.service';
-import { MockTranslatePipe } from '@spartacus/core';
-import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { AtMessageDirective } from '@spartacus/storefront';
 import { ItemCounterComponent } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
@@ -45,7 +44,7 @@ import { OutletDirective } from '@spartacus/storefront';
     AtMessageDirective,
     TranslatePipe,
     UrlPipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CartItemListRowComponent extends CartItemComponent {

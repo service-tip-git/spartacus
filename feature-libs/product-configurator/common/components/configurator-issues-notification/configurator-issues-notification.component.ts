@@ -10,7 +10,6 @@ import { CartItemContext, OrderEntry } from '@spartacus/cart/base/root';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { EMPTY, Observable } from 'rxjs';
 import { CommonConfiguratorUtilsService } from '../../shared/utils/common-configurator-utils.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { ConfigureCartEntryComponent } from '../configure-cart-entry/configure-cart-entry.component';
 import { IconComponent } from '@spartacus/storefront';
@@ -26,7 +25,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     ConfigureCartEntryComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ConfiguratorIssuesNotificationComponent {

@@ -15,7 +15,6 @@ import { Observable } from 'rxjs';
 import { ICON_TYPE } from '../../../../../cms-components/misc/icon/icon.model';
 import { FacetList } from '../facet.model';
 import { FacetService } from '../services/facet.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '../../../../misc/icon/icon.component';
 import { FocusDirective } from '../../../../../layout/a11y/keyboard-focus/focus.directive';
@@ -39,7 +38,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     IconComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ActiveFacetsComponent {

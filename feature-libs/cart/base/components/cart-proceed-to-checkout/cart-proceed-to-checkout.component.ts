@@ -19,9 +19,8 @@ import {
   RouterLink,
 } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { MockTranslatePipe } from '@spartacus/core';
-import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { ProgressButtonComponent } from '@spartacus/storefront';
 
 @Component({
@@ -34,7 +33,7 @@ import { ProgressButtonComponent } from '@spartacus/storefront';
     RouterLink,
     TranslatePipe,
     UrlPipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CartProceedToCheckoutComponent implements OnInit, OnDestroy {

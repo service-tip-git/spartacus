@@ -19,7 +19,6 @@ import {
   FocusConfig,
   LaunchDialogService,
 } from '@spartacus/storefront';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { NgIf } from '@angular/common';
@@ -39,7 +38,7 @@ import { FocusDirective } from '@spartacus/storefront';
     NgIf,
     SpinnerComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class MyAccountV2DownloadInvoicesComponent implements AfterViewChecked {

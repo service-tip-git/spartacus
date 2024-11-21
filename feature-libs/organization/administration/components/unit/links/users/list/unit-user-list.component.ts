@@ -12,7 +12,6 @@ import { ListService } from '../../../../shared/list/list.service';
 import { CurrentUnitService } from '../../../services/current-unit.service';
 import { UnitUserListService } from '../services/unit-user-list.service';
 import { B2BUserService } from '@spartacus/organization/administration/core';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { DisableInfoComponent } from '../../../../shared/detail/disable-info/disable-info.component';
 import { RouterLink } from '@angular/router';
@@ -38,7 +37,7 @@ import { SubListComponent } from '../../../../shared/sub-list/sub-list.component
     DisableInfoComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class UnitUserListComponent {

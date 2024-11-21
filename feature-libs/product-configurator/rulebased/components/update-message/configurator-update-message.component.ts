@@ -10,7 +10,6 @@ import { Observable, of } from 'rxjs';
 import { delay, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { ConfiguratorCommonsService } from '../../core/facade/configurator-commons.service';
 import { ConfiguratorMessageConfig } from '../config/configurator-message.config';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { AsyncPipe } from '@angular/common';
 import { SpinnerComponent } from '@spartacus/storefront';
@@ -20,7 +19,7 @@ import { SpinnerComponent } from '@spartacus/storefront';
   templateUrl: './configurator-update-message.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [SpinnerComponent, AsyncPipe, TranslatePipe, MockTranslatePipe],
+  imports: [SpinnerComponent, AsyncPipe, TranslatePipe, TranslatePipe],
 })
 export class ConfiguratorUpdateMessageComponent {
   hasPendingChanges$: Observable<boolean> = this.configRouterExtractorService

@@ -10,7 +10,6 @@ import { Subscription } from 'rxjs';
 import { ViewConfig } from '../../../../../shared/config/view-config';
 import { ViewModes } from '../../product-view/product-view.component';
 import { ProductListComponentService } from '../product-list-component.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { ProductListItemComponent } from '../../product-list-item/product-list-item.component';
 import { SpinnerComponent } from '../../../../../shared/components/spinner/spinner.component';
@@ -30,7 +29,7 @@ import { NgIf, NgFor } from '@angular/common';
     SpinnerComponent,
     ProductListItemComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ProductScrollComponent implements OnDestroy {

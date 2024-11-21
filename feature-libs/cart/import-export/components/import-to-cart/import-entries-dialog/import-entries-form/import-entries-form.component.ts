@@ -31,7 +31,6 @@ import { of, Subject } from 'rxjs';
 import { filter, startWith, switchMap, take, tap } from 'rxjs/operators';
 import { ImportProductsFromCsvService } from '../../import-products-from-csv.service';
 import { GlobalMessageType } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FormErrorsComponent } from '@spartacus/storefront';
 import { FileUploadComponent } from '@spartacus/storefront';
@@ -55,7 +54,7 @@ import { NgIf } from '@angular/common';
     FileUploadComponent,
     FormErrorsComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ImportEntriesFormComponent implements OnInit {

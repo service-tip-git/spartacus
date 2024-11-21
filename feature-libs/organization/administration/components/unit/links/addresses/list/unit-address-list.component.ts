@@ -8,7 +8,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ROUTE_PARAMS } from '@spartacus/organization/administration/root';
 import { ListService } from '../../../../shared/list/list.service';
 import { UnitAddressListService } from './unit-address-list.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
 import { SubListComponent } from '../../../../shared/sub-list/sub-list.component';
@@ -25,7 +24,7 @@ import { SubListComponent } from '../../../../shared/sub-list/sub-list.component
     },
   ],
   standalone: true,
-  imports: [SubListComponent, RouterLink, TranslatePipe, MockTranslatePipe],
+  imports: [SubListComponent, RouterLink, TranslatePipe, TranslatePipe],
 })
 export class UnitAddressListComponent {
   routerKey = ROUTE_PARAMS.addressCode;

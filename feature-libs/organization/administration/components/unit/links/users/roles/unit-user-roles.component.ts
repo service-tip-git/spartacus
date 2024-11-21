@@ -22,7 +22,6 @@ import { MessageService } from '../../../../shared/message/services/message.serv
 import { UserItemService } from '../../../../user/services/user-item.service';
 import { UnitUserRolesFormService } from './unit-user-roles-form.service';
 import { UnitUserRolesItemService } from './unit-user-roles-item.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
 import { FocusDirective } from '@spartacus/storefront';
@@ -51,7 +50,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     NgFor,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class UnitUserRolesFormComponent {

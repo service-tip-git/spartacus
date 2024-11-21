@@ -29,7 +29,6 @@ import { combineLatest, Observable, of, Subscription } from 'rxjs';
 import { concatMap } from 'rxjs/operators';
 
 import { AsmCustomer360SectionContext } from '../asm-customer-360-section-context.model';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
@@ -38,7 +37,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
   selector: 'cx-asm-customer-360-map',
   templateUrl: './asm-customer-360-map.component.html',
   standalone: true,
-  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe, MockTranslatePipe],
+  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe, TranslatePipe],
 })
 export class AsmCustomer360MapComponent implements OnDestroy, OnInit {
   storeData: StoreFinderSearchPage;

@@ -45,7 +45,6 @@ import {
 import { CustomerListAction } from '../customer-list/customer-list.model';
 import { AsmComponentService } from '../services/asm-component.service';
 import { AsmDialogActionEvent } from '@spartacus/asm/customer-360/root';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { CSAgentLoginFormComponent } from '../csagent-login-form/csagent-login-form.component';
 import { CustomerSelectionComponent } from '../customer-selection/customer-selection.component';
@@ -78,7 +77,7 @@ export const CART_TYPE_KEY: CartTypeKey = {
     CSAgentLoginFormComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class AsmMainUiComponent implements OnInit, OnDestroy {

@@ -12,7 +12,6 @@ import {
 } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { ICON_TYPE } from '../../../cms-components/misc/icon/icon.model';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '../icon/icon.component';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
@@ -27,7 +26,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     IconComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class GlobalMessageComponent implements OnInit {

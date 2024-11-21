@@ -7,7 +7,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { LocationSearchParams } from '@spartacus/pickup-in-store/root';
 import { CurrentLocationService } from '../../services/current-location.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FeatureDirective } from '@spartacus/core';
 
@@ -20,7 +19,7 @@ import { FeatureDirective } from '@spartacus/core';
   selector: 'cx-store-search',
   templateUrl: './store-search.component.html',
   standalone: true,
-  imports: [FeatureDirective, TranslatePipe, MockTranslatePipe],
+  imports: [FeatureDirective, TranslatePipe, TranslatePipe],
 })
 export class StoreSearchComponent {
   /** Whether the hide out of stock checkbox appears checked */

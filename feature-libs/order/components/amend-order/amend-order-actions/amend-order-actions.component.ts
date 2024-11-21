@@ -12,7 +12,6 @@ import {
 } from '@angular/core';
 import { RoutingService } from '@spartacus/core';
 import { UntypedFormGroup } from '@angular/forms';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { NgIf } from '@angular/common';
@@ -23,7 +22,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './amend-order-actions.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [RouterLink, NgIf, UrlPipe, TranslatePipe, MockTranslatePipe],
+  imports: [RouterLink, NgIf, UrlPipe, TranslatePipe, TranslatePipe],
 })
 export class AmendOrderActionsComponent {
   @Input() orderCode: string;

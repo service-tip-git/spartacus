@@ -18,7 +18,6 @@ import {
 import { AsmCustomer360SectionContext } from '../asm-customer-360-section-context.model';
 import { ReviewEntry } from './asm-customer-360-product-reviews.model';
 import { AsmCustomer360Config } from '../../config/asm-customer-360-config';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { AsyncPipe } from '@angular/common';
 import { AsmCustomer360TableComponent } from '../../asm-customer-360-table/asm-customer-360-table.component';
@@ -33,7 +32,7 @@ import { AsmCustomer360TableComponent } from '../../asm-customer-360-table/asm-c
     AsmCustomer360TableComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class AsmCustomer360ProductReviewsComponent implements OnInit {

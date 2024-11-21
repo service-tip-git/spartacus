@@ -15,7 +15,6 @@ import {
 } from '@angular/core';
 import { GlobalMessageType } from '@spartacus/core';
 import { ICON_TYPE } from '../../../cms-components/misc/icon/icon.model';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { AtMessageDirective } from '../../../shared/components/assistive-technology-message/assistive-technology-message.directive';
 import { IconComponent } from '../icon/icon.component';
@@ -32,7 +31,7 @@ import { FeatureDirective } from '@spartacus/core';
     NgIf,
     AtMessageDirective,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class MessageComponent implements AfterViewInit {

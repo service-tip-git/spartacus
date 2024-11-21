@@ -5,9 +5,8 @@
  */
 
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { MockTranslatePipe } from '@spartacus/core';
-import { TruncatePipe } from './truncate.pipe';
 import { TranslatePipe } from '@spartacus/core';
+import { TruncatePipe } from './truncate.pipe';
 import { PopoverDirective } from '../popover/popover.directive';
 import { NgClass, NgIf } from '@angular/common';
 
@@ -22,7 +21,7 @@ import { NgClass, NgIf } from '@angular/common';
     PopoverDirective,
     TranslatePipe,
     TruncatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class TruncateTextPopoverComponent {

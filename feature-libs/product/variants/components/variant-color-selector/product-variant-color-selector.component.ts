@@ -12,7 +12,6 @@ import {
   VariantOptionQualifier,
   VariantQualifier,
 } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgFor } from '@angular/common';
 
@@ -21,7 +20,7 @@ import { NgFor } from '@angular/common';
   templateUrl: './product-variant-color-selector.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgFor, TranslatePipe, MockTranslatePipe],
+  imports: [NgFor, TranslatePipe, TranslatePipe],
 })
 export class ProductVariantColorSelectorComponent {
   constructor(private routingService: RoutingService) {}

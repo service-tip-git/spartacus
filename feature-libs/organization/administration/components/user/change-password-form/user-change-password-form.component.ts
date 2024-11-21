@@ -17,7 +17,6 @@ import { filter, first, map, switchMap, take } from 'rxjs/operators';
 import { MessageService } from '../../shared/message/services/message.service';
 import { UserItemService } from '../services/user-item.service';
 import { UserChangePasswordFormService } from './user-change-password-form.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FormErrorsComponent } from '@spartacus/storefront';
 import { PasswordVisibilityToggleDirective } from '@spartacus/storefront';
@@ -46,7 +45,7 @@ import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
     FormErrorsComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class UserChangePasswordFormComponent {

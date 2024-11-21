@@ -6,7 +6,6 @@
 
 import { Component, Input } from '@angular/core';
 import { PointOfService } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { StoreScheduleComponent } from '../store/store-schedule/store-schedule.component';
 import { StoreAddressComponent } from '../store/store-address/store-address.component';
@@ -19,7 +18,7 @@ import { StoreAddressComponent } from '../store/store-address/store-address.comp
     StoreAddressComponent,
     StoreScheduleComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class PickupInfoComponent {

@@ -25,7 +25,6 @@ import {
 } from '@spartacus/core';
 import { Observable, Subscription, combineLatest } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { AppliedCouponsComponent } from './applied-coupons/applied-coupons.component';
 import { FormErrorsComponent } from '@spartacus/storefront';
@@ -46,7 +45,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     NgFor,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CartCouponComponent implements OnInit, OnDestroy {

@@ -11,7 +11,6 @@ import { GlobalMessageType, useFeatureStyles } from '@spartacus/core';
 import { FocusConfig, LaunchDialogService } from '@spartacus/storefront';
 import { BehaviorSubject } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FeatureDirective } from '@spartacus/core';
 import { MessageComponent } from '@spartacus/storefront';
@@ -34,7 +33,7 @@ export enum SAVE_CART_DIALOG_ACTION {
     FeatureDirective,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class AsmSaveCartDialogComponent implements OnInit {

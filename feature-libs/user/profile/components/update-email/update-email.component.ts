@@ -13,7 +13,6 @@ import {
 import { useFeatureStyles } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { UpdateEmailComponentService } from './update-email-component.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
@@ -42,7 +41,7 @@ import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
     AsyncPipe,
     UrlPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class UpdateEmailComponent {

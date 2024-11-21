@@ -20,7 +20,6 @@ import { BehaviorSubject, Subscription, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { AsmCustomer360SectionContext } from '../asm-customer-360-section-context.model';
 import { ActiveCartFacade } from '@spartacus/cart/base/root';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { AsyncPipe } from '@angular/common';
 import { AsmCustomer360PromotionListingComponent } from '../../asm-customer-360-promotion-listing/asm-customer-360-promotion-listing.component';
@@ -34,7 +33,7 @@ import { AsmCustomer360PromotionListingComponent } from '../../asm-customer-360-
     AsmCustomer360PromotionListingComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class AsmCustomer360PromotionComponent implements OnInit, OnDestroy {

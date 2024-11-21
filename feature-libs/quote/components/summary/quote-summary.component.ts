@@ -6,7 +6,6 @@
 
 import { Component, inject } from '@angular/core';
 import { QuoteFacade } from '@spartacus/quote/root';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { QuoteSummaryActionsComponent } from './actions/quote-summary-actions.component';
 import { QuoteSummarySellerEditComponent } from './seller-edit/quote-summary-seller-edit.component';
@@ -25,7 +24,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     NgFor,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class QuoteSummaryComponent {

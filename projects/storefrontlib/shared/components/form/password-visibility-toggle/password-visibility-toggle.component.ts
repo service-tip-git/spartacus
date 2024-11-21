@@ -7,7 +7,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ICON_TYPE } from '../../../../cms-components/misc/icon/icon.model';
 import { PasswordInputState } from './password-input-visibility.model';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '../../../../cms-components/misc/icon/icon.component';
 
@@ -16,7 +15,7 @@ import { IconComponent } from '../../../../cms-components/misc/icon/icon.compone
   templateUrl: './password-visibility-toggle.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [IconComponent, TranslatePipe, MockTranslatePipe],
+  imports: [IconComponent, TranslatePipe, TranslatePipe],
 })
 export class PasswordVisibilityToggleComponent {
   protected showState: PasswordInputState = {

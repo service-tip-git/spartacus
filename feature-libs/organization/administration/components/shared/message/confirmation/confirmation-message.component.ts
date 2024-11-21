@@ -16,7 +16,6 @@ import { BaseMessageComponent } from '../base-message.component';
 import { MessageData } from '../message.model';
 import { MessageService } from '../services/message.service';
 import { ConfirmationMessageData } from './confirmation-message.model';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { NgIf } from '@angular/common';
@@ -30,13 +29,7 @@ import { FocusDirective } from '@spartacus/storefront';
   templateUrl: './confirmation-message.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    FocusDirective,
-    NgIf,
-    IconComponent,
-    TranslatePipe,
-    MockTranslatePipe,
-  ],
+  imports: [FocusDirective, NgIf, IconComponent, TranslatePipe, TranslatePipe],
 })
 export class ConfirmationMessageComponent
   extends BaseMessageComponent

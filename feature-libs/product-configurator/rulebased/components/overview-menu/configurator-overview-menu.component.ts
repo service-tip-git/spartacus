@@ -15,7 +15,6 @@ import {
 import { ICON_TYPE } from '@spartacus/storefront';
 import { Configurator } from '../../core/model/configurator.model';
 import { ConfiguratorStorefrontUtilsService } from '../service/configurator-storefront-utils.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { NgIf, NgTemplateOutlet, NgFor, NgClass } from '@angular/common';
@@ -32,7 +31,7 @@ import { NgIf, NgTemplateOutlet, NgFor, NgClass } from '@angular/common';
     NgClass,
     IconComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ConfiguratorOverviewMenuComponent implements AfterViewInit {

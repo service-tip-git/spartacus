@@ -7,7 +7,6 @@
 import { Component, OnInit, Optional, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { RoutingService } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { NgClass, NgIf } from '@angular/common';
@@ -24,7 +23,7 @@ import { FeatureDirective } from '@spartacus/core';
     RouterLink,
     UrlPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class LoginRegisterComponent implements OnInit {

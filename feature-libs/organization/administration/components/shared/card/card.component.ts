@@ -16,7 +16,6 @@ import { tap } from 'rxjs/operators';
 import { ItemService } from '../item.service';
 import { MessageService } from '../message/services/message.service';
 import { BaseItem } from '../organization.model';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { MessageComponent } from '../message/message.component';
 import { RouterLink, RouterOutlet } from '@angular/router';
@@ -42,7 +41,7 @@ import { ViewComponent as ViewComponent_1 } from '@spartacus/storefront';
     RouterOutlet,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CardComponent<T extends BaseItem> {

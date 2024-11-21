@@ -27,7 +27,6 @@ import {
   CheckoutServiceDetailsFacade,
   CheckoutServiceSchedulePickerService,
 } from '@spartacus/s4-service/root';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { DatePickerComponent } from '@spartacus/storefront';
 import { NgTemplateOutlet, NgIf, NgFor, AsyncPipe } from '@angular/common';
@@ -46,7 +45,7 @@ import { NgTemplateOutlet, NgIf, NgFor, AsyncPipe } from '@angular/common';
     NgFor,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CheckoutServiceDetailsComponent implements OnInit, OnDestroy {

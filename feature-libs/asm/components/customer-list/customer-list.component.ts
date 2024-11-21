@@ -41,7 +41,6 @@ import {
 import { combineLatest, NEVER, Observable, Subscription } from 'rxjs';
 import { distinctUntilChanged, map, tap } from 'rxjs/operators';
 import { CustomerListAction } from './customer-list.model';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgSelectA11yDirective } from '@spartacus/storefront';
 import { NgSelectModule } from '@ng-select/ng-select';
@@ -73,7 +72,7 @@ import { FocusDirective } from '@spartacus/storefront';
     NgSelectA11yDirective,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CustomerListComponent implements OnInit, OnDestroy {

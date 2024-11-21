@@ -18,7 +18,6 @@ import { first, map, switchMap, take } from 'rxjs/operators';
 import { CardComponent } from '../card/card.component';
 import { ItemService } from '../item.service';
 import { MessageService } from '../message/services/message.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
 import { FocusDirective } from '@spartacus/storefront';
@@ -46,7 +45,7 @@ const DISABLED_STATUS = 'DISABLED';
     RouterLink,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class FormComponent<T> implements OnInit, OnDestroy {

@@ -7,10 +7,9 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CellComponent } from '../../shared';
 import { MockDatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
-import { TranslatePipe } from '@spartacus/core';
 import { PopoverDirective } from '@spartacus/storefront';
 import { RouterLink } from '@angular/router';
 
@@ -25,7 +24,7 @@ import { RouterLink } from '@angular/router';
     TranslatePipe,
     CxDatePipe,
     UrlPipe,
-    MockTranslatePipe,
+    TranslatePipe,
     MockDatePipe,
   ],
 })

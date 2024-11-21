@@ -11,7 +11,6 @@ import {
   Input,
 } from '@angular/core';
 import { Configurator } from '../../core/model/configurator.model';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { NgIf } from '@angular/common';
 
@@ -20,7 +19,7 @@ import { NgIf } from '@angular/common';
   templateUrl: './configurator-conflict-suggestion.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, TranslatePipe, MockTranslatePipe],
+  imports: [NgIf, TranslatePipe, TranslatePipe],
 })
 export class ConfiguratorConflictSuggestionComponent {
   @Input() currentGroup: Configurator.Group;

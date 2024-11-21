@@ -18,7 +18,6 @@ import { Component, OnInit, EventEmitter, Output, inject } from '@angular/core';
 import { CheckoutBillingAddressFormService } from '@spartacus/checkout/base/components';
 import { LaunchDialogService, LAUNCH_CALLER } from '@spartacus/storefront';
 import { take } from 'rxjs';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { CheckoutBillingAddressFormComponent } from '../../../../../../../feature-libs/checkout/base/components/checkout-billing-address/checkout-billing-address-form.component';
@@ -33,7 +32,7 @@ import { NgIf } from '@angular/common';
     CheckoutBillingAddressFormComponent,
     SpinnerComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class DpPaymentCallbackComponent implements OnInit {

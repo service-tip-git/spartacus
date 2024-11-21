@@ -11,7 +11,6 @@ import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { ConfiguratorCommonsService } from '../../core/facade/configurator-commons.service';
 import { Configurator } from '../../core/model/configurator.model';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { ProductCarouselItemComponent } from '@spartacus/storefront';
 import { CarouselComponent } from '@spartacus/storefront';
@@ -28,7 +27,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     ProductCarouselItemComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ConfiguratorVariantCarouselComponent {

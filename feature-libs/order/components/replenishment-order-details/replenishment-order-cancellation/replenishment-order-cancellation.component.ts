@@ -18,9 +18,8 @@ import {
 import { LaunchDialogService, LAUNCH_CALLER } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
-import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
 import { NgIf, AsyncPipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -28,14 +27,7 @@ import { RouterLink } from '@angular/router';
   selector: 'cx-replenishment-order-cancellation',
   templateUrl: './replenishment-order-cancellation.component.html',
   standalone: true,
-  imports: [
-    RouterLink,
-    NgIf,
-    AsyncPipe,
-    TranslatePipe,
-    UrlPipe,
-    MockTranslatePipe,
-  ],
+  imports: [RouterLink, NgIf, AsyncPipe, TranslatePipe, UrlPipe, TranslatePipe],
 })
 export class ReplenishmentOrderCancellationComponent implements OnDestroy {
   @ViewChild('element') element: ElementRef;

@@ -29,7 +29,6 @@ import { CmsComponentData } from '@spartacus/storefront';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { first, map, tap } from 'rxjs/operators';
 import { QuickOrderFormComponent } from './form/quick-order-form.component';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { ProgressButtonComponent } from '@spartacus/storefront';
 import { QuickOrderTableComponent } from './table/quick-order-table.component';
@@ -51,7 +50,7 @@ import { NgIf, NgFor, AsyncPipe, KeyValuePipe } from '@angular/common';
     AsyncPipe,
     KeyValuePipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class QuickOrderComponent implements OnInit, OnDestroy {

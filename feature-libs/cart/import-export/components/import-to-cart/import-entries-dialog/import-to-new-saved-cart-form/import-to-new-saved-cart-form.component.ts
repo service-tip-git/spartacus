@@ -33,7 +33,6 @@ import {
 import { of } from 'rxjs';
 import { ImportProductsFromCsvService } from '../../import-products-from-csv.service';
 import { ImportEntriesFormComponent } from '../import-entries-form/import-entries-form.component';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FormErrorsComponent } from '@spartacus/storefront';
 import { FileUploadComponent } from '@spartacus/storefront';
@@ -59,7 +58,7 @@ import { NgIf, NgTemplateOutlet } from '@angular/common';
     FileUploadComponent,
     FormErrorsComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ImportToNewSavedCartFormComponent extends ImportEntriesFormComponent {

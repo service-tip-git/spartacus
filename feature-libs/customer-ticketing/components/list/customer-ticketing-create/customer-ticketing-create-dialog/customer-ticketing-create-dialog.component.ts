@@ -29,7 +29,6 @@ import {
   TranslationService,
 } from '@spartacus/core';
 import { catchError, first, tap } from 'rxjs/operators';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FileUploadComponent } from '@spartacus/storefront';
 import { FormErrorsComponent } from '@spartacus/storefront';
@@ -55,7 +54,7 @@ import { FocusDirective } from '@spartacus/storefront';
     FileUploadComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CustomerTicketingCreateDialogComponent

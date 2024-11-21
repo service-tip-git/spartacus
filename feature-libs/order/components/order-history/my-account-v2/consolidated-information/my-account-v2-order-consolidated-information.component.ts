@@ -20,9 +20,8 @@ import {
 } from '@spartacus/order/root';
 import { OrderCriticalStatus } from '../my-account-v2-order-history.model';
 import { MockDatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
-import { CxDatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { MediaComponent } from '@spartacus/storefront';
 import { RouterLink } from '@angular/router';
@@ -44,7 +43,7 @@ import { NgIf, NgTemplateOutlet, NgFor } from '@angular/common';
     UrlPipe,
     TranslatePipe,
     CxDatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
     MockDatePipe,
   ],
 })

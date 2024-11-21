@@ -31,7 +31,6 @@ import {
   withLatestFrom,
 } from 'rxjs/operators';
 import { ConsentManagementComponentService } from '../consent-management-component.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { ConsentManagementFormComponent } from './consent-form/consent-management-form.component';
 import { SpinnerComponent } from '../../../../shared/components/spinner/spinner.component';
@@ -50,7 +49,7 @@ import { FeatureDirective } from '@spartacus/core';
     ConsentManagementFormComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ConsentManagementComponent implements OnInit, OnDestroy {

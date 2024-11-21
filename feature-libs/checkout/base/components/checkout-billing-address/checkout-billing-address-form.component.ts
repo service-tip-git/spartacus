@@ -39,7 +39,6 @@ import {
   tap,
 } from 'rxjs';
 import { CheckoutBillingAddressFormService } from './checkout-billing-address-form.service';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FormErrorsComponent } from '@spartacus/storefront';
 import { NgSelectA11yDirective } from '@spartacus/storefront';
@@ -64,7 +63,7 @@ import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
     FormErrorsComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CheckoutBillingAddressFormComponent implements OnInit {

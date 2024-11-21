@@ -6,13 +6,12 @@
 
 import { Component } from '@angular/core';
 import { UnitListComponent } from '@spartacus/organization/administration/components';
-import { MockTranslatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { ListComponent } from '../../../administration/components/shared/list/list.component';
 @Component({
   selector: 'cx-account-summary-list',
   templateUrl: './account-summary-list.component.html',
   standalone: true,
-  imports: [ListComponent, TranslatePipe, MockTranslatePipe],
+  imports: [ListComponent, TranslatePipe, TranslatePipe],
 })
 export class AccountSummaryListComponent extends UnitListComponent {}
