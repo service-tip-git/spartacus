@@ -10,9 +10,8 @@ import { MyAccountV2OrderHistoryService } from '@spartacus/order/core';
 import { Order, OrderHistoryListView } from '@spartacus/order/root';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { MockDatePipe } from '@spartacus/core';
-import { TranslatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { MediaComponent } from '@spartacus/storefront';
@@ -35,7 +34,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     TranslatePipe,
     CxDatePipe,
 
-    MockDatePipe,
+    CxDatePipe,
   ],
 })
 export class MyAccountV2OrdersComponent implements OnDestroy {

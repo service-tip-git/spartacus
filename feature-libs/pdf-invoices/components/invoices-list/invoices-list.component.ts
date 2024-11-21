@@ -37,9 +37,8 @@ import {
   Subscription,
 } from 'rxjs';
 import { catchError, skip, switchMap, take, tap } from 'rxjs/operators';
-import { MockDatePipe } from '@spartacus/core';
-import { TranslatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { PaginationComponent } from '@spartacus/storefront';
 import { SortingComponent } from '@spartacus/storefront';
@@ -60,7 +59,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     TranslatePipe,
     CxDatePipe,
 
-    MockDatePipe,
+    CxDatePipe,
   ],
 })
 export class InvoicesListComponent implements OnInit, OnDestroy {

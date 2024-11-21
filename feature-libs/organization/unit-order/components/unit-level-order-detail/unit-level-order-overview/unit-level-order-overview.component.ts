@@ -18,7 +18,6 @@ import { Card } from '@spartacus/storefront';
 import { combineLatest, Observable, of } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { UnitLevelOrderDetailService } from '../unit-level-order-detail.service';
-import { MockDatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
 import { CardComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
@@ -28,7 +27,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './unit-level-order-overview.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, CardComponent, AsyncPipe, CxDatePipe, MockDatePipe],
+  imports: [NgIf, CardComponent, AsyncPipe, CxDatePipe, CxDatePipe],
 })
 export class UnitLevelOrderOverviewComponent implements OnInit {
   constructor(

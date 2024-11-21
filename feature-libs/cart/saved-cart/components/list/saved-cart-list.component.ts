@@ -28,9 +28,8 @@ import {
 } from '@spartacus/storefront';
 import { from, mergeMap, Observable, Subscription } from 'rxjs';
 import { map, skip, take } from 'rxjs/operators';
-import { MockDatePipe } from '@spartacus/core';
-import { TranslatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { RouterLink } from '@angular/router';
@@ -53,7 +52,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     TranslatePipe,
     CxDatePipe,
 
-    MockDatePipe,
+    CxDatePipe,
   ],
 })
 export class SavedCartListComponent implements OnInit, OnDestroy {

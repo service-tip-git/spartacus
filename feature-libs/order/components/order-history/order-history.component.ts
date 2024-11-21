@@ -19,9 +19,8 @@ import {
 } from '@spartacus/order/root';
 import { combineLatest, Observable } from 'rxjs';
 import { filter, map, take, tap } from 'rxjs/operators';
-import { MockDatePipe } from '@spartacus/core';
-import { TranslatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { PaginationComponent } from '@spartacus/storefront';
 import { SortingComponent } from '@spartacus/storefront';
@@ -45,7 +44,7 @@ import { NgIf, NgClass, NgFor, AsyncPipe } from '@angular/common';
     TranslatePipe,
     CxDatePipe,
 
-    MockDatePipe,
+    CxDatePipe,
   ],
 })
 export class OrderHistoryComponent implements OnDestroy {

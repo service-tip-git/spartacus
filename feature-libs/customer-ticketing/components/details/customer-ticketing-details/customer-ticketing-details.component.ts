@@ -21,7 +21,6 @@ import {
 import { Card } from '@spartacus/storefront';
 import { combineLatest, Observable, Subscription } from 'rxjs';
 import { filter, map, take, tap } from 'rxjs/operators';
-import { MockDatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { CardComponent } from '@spartacus/storefront';
@@ -38,7 +37,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     SpinnerComponent,
     AsyncPipe,
     CxDatePipe,
-    MockDatePipe,
+    CxDatePipe,
   ],
 })
 export class CustomerTicketingDetailsComponent implements OnDestroy {

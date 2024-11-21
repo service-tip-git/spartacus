@@ -22,9 +22,8 @@ import {
 import { Observable, Subscription } from 'rxjs';
 import { filter, map, take } from 'rxjs/operators';
 import { SavedCartDetailsService } from '../saved-cart-details.service';
-import { MockDatePipe } from '@spartacus/core';
-import { TranslatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { CardComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
@@ -41,7 +40,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     TranslatePipe,
     CxDatePipe,
 
-    MockDatePipe,
+    CxDatePipe,
   ],
 })
 export class SavedCartDetailsOverviewComponent implements OnDestroy {

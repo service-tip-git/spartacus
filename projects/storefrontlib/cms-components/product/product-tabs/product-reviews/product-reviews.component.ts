@@ -33,7 +33,6 @@ import {
   tap,
 } from 'rxjs/operators';
 import { CurrentProductService } from '../../current-product.service';
-import { MockDatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { FormErrorsComponent } from '../../../../shared/components/form/form-errors/form-errors.component';
@@ -65,7 +64,7 @@ import {
     SlicePipe,
     TranslatePipe,
     CxDatePipe,
-    MockDatePipe,
+    CxDatePipe,
   ],
 })
 export class ProductReviewsComponent {

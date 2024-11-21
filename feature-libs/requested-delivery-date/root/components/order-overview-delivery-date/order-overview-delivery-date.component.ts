@@ -11,7 +11,6 @@ import { Card, OutletContextData } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { DateValidationService } from '../shared/date-validation.service';
-import { MockDatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
 import { CardComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
@@ -20,7 +19,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   selector: 'cx-order-overview-delivery-date',
   templateUrl: './order-overview-delivery-date.component.html',
   standalone: true,
-  imports: [NgIf, CardComponent, AsyncPipe, CxDatePipe, MockDatePipe],
+  imports: [NgIf, CardComponent, AsyncPipe, CxDatePipe, CxDatePipe],
 })
 export class OrderOverviewDeliveryDateComponent implements OnInit, OnDestroy {
   constructor(

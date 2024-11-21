@@ -11,9 +11,8 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { DatePickerService } from './date-picker.service';
-import { MockDatePipe } from '@spartacus/core';
-import { TranslatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { FormErrorsComponent } from '../form-errors/form-errors.component';
 import { FeatureDirective } from '@spartacus/core';
 
@@ -39,7 +38,7 @@ import { FeatureDirective } from '@spartacus/core';
     TranslatePipe,
     CxDatePipe,
 
-    MockDatePipe,
+    CxDatePipe,
   ],
 })
 export class DatePickerComponent {

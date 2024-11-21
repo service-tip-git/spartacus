@@ -10,9 +10,8 @@ import { OrderHistoryListView } from '@spartacus/order/root';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { OrderHistoryComponent } from '../order-history.component';
-import { MockDatePipe } from '@spartacus/core';
-import { TranslatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { PaginationComponent } from '@spartacus/storefront';
@@ -37,7 +36,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     TranslatePipe,
     CxDatePipe,
 
-    MockDatePipe,
+    CxDatePipe,
   ],
 })
 export class MyAccountV2OrderHistoryComponent extends OrderHistoryComponent {

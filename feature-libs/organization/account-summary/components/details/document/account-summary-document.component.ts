@@ -27,9 +27,8 @@ import {
 import { FileDownloadService, ICON_TYPE } from '@spartacus/storefront';
 import { BehaviorSubject, combineLatest, Observable, Subscription } from 'rxjs';
 import { skip, switchMap, take, tap } from 'rxjs/operators';
-import { MockDatePipe } from '@spartacus/core';
-import { TranslatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { PaginationComponent } from '@spartacus/storefront';
 import { SortingComponent } from '@spartacus/storefront';
@@ -53,7 +52,7 @@ import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
     TranslatePipe,
     CxDatePipe,
 
-    MockDatePipe,
+    CxDatePipe,
   ],
 })
 export class AccountSummaryDocumentComponent implements OnInit, OnDestroy {

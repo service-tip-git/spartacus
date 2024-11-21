@@ -18,7 +18,6 @@ import {
 } from '@spartacus/core';
 import { QuoteState } from '@spartacus/quote/root';
 import { ICON_TYPE } from '@spartacus/storefront';
-import { MockDatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 import { CxDatePipe as CxDatePipe_1 } from '@spartacus/core';
@@ -47,7 +46,7 @@ import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
     CxDatePipe_1,
     UrlPipe,
 
-    MockDatePipe,
+    CxDatePipe,
   ],
 })
 export class QuoteListComponent implements OnInit {

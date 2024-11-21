@@ -10,10 +10,9 @@ import {
   TicketList,
 } from '@spartacus/customer-ticketing/root';
 import { Observable } from 'rxjs';
-import { MockDatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
-import { CxDatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
@@ -32,7 +31,7 @@ import { RouterLink } from '@angular/router';
     CxDatePipe,
     UrlPipe,
 
-    MockDatePipe,
+    CxDatePipe,
   ],
 })
 export class MyAccountV2CustomerTicketingComponent {

@@ -19,7 +19,6 @@ import { filter, map } from 'rxjs/operators';
 import { OrderDetailsService } from '../order-details.service';
 import { OrderOutlets, paymentMethodCard } from '@spartacus/order/root';
 import { OrderOverviewComponentService } from './order-overview-component.service';
-import { MockDatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
 import { OrderDetailBillingComponent } from '../order-detail-billing/order-detail-billing.component';
 import { OutletDirective } from '@spartacus/storefront';
@@ -38,7 +37,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     OrderDetailBillingComponent,
     AsyncPipe,
     CxDatePipe,
-    MockDatePipe,
+    CxDatePipe,
   ],
 })
 export class OrderOverviewComponent {

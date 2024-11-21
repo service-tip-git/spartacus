@@ -38,10 +38,9 @@ import {
 } from './asm-customer-360-table.model';
 import { AsmCustomer360Config } from '../config/asm-customer-360-config';
 import { KeyBoardEventCode } from '@spartacus/asm/customer-360/root';
-import { MockDatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { ArgsPipe } from '../../../core/utils/args/args.pipe';
-import { CxDatePipe } from '@spartacus/core';
 import { StarRatingComponent } from '@spartacus/storefront';
 import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
 
@@ -60,7 +59,7 @@ import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
     CxDatePipe,
     ArgsPipe,
 
-    MockDatePipe,
+    CxDatePipe,
   ],
 })
 export class AsmCustomer360TableComponent

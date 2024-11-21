@@ -23,9 +23,8 @@ import {
   SaveEvent,
   QuoteHeaderBuyerEditComponent,
 } from '../buyer-edit/quote-header-buyer-edit.component';
-import { MockDatePipe } from '@spartacus/core';
-import { TranslatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { CardComponent } from '@spartacus/storefront';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
@@ -44,7 +43,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     TranslatePipe,
     CxDatePipe,
 
-    MockDatePipe,
+    CxDatePipe,
   ],
 })
 export class QuoteHeaderOverviewComponent {

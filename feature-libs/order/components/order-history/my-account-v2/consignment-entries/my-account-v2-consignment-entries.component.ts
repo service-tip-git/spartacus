@@ -6,9 +6,8 @@
 
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { ConsignmentView } from '@spartacus/order/root';
-import { MockDatePipe } from '@spartacus/core';
-import { TranslatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
 import { NgFor, NgIf } from '@angular/common';
 
 @Component({
@@ -16,7 +15,7 @@ import { NgFor, NgIf } from '@angular/common';
   templateUrl: './my-account-v2-consignment-entries.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgFor, NgIf, TranslatePipe, CxDatePipe, MockDatePipe],
+  imports: [NgFor, NgIf, TranslatePipe, CxDatePipe, CxDatePipe],
 })
 export class MyAccountV2ConsignmentEntriesComponent {
   @Input()

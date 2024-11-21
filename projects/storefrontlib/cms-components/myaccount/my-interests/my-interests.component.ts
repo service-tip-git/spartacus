@@ -25,10 +25,9 @@ import {
 } from '@spartacus/core';
 import { combineLatest, Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { MockDatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
-import { CxDatePipe } from '@spartacus/core';
 import { SpinnerComponent } from '../../../shared/components/spinner/spinner.component';
 import { AtMessageDirective } from '../../../shared/components/assistive-technology-message/assistive-technology-message.directive';
 import { MediaComponent } from '../../../shared/components/media/media.component';
@@ -64,7 +63,7 @@ interface ProductInterestSearchResultUI extends ProductInterestSearchResult {
     CxDatePipe,
     UrlPipe,
 
-    MockDatePipe,
+    CxDatePipe,
   ],
 })
 export class MyInterestsComponent implements OnInit, OnDestroy {
