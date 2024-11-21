@@ -10,14 +10,18 @@ import {
   Input,
   OnDestroy,
   OnInit,
+  inject,
 } from '@angular/core';
 import {
   GlobalMessageService,
   GlobalMessageType,
+  PaginationModel,
   QueryState,
 } from '@spartacus/core';
 import {
   OpfActiveConfiguration,
+  OpfActiveConfigurationsPagination,
+  OpfActiveConfigurationsResponse,
   OpfBaseFacade,
   OpfMetadataModel,
   OpfMetadataStoreService,
@@ -31,25 +35,16 @@ import { tap } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
+  protected opfBaseService = inject(OpfBaseFacade);
+  protected opfMetadataStoreService = inject(OpfMetadataStoreService);
+  protected globalMessageService = inject(GlobalMessageService);
+
   protected subscription = new Subscription();
 
-  activeConfigurations$: Observable<
-    QueryState<OpfActiveConfiguration[] | undefined>
-  > = this.opfBaseService.getActiveConfigurationsState().pipe(
-    tap((state: QueryState<OpfActiveConfiguration[] | undefined>) => {
-      if (state.error) {
-        this.displayError('loadActiveConfigurations');
-      } else if (!state.loading && !Boolean(state.data?.length)) {
-        this.displayError('noActiveConfigurations');
-      }
+  protected paginationIndex = 0;
 
-      if (state.data && !state.error && !state.loading) {
-        this.opfMetadataStoreService.updateOpfMetadata({
-          defaultSelectedPaymentOptionId: state?.data[0]?.id,
-        });
-      }
-    })
-  );
+  @Input()
+  elementsPerPage?: number;
 
   @Input()
   disabled = true;
@@ -59,11 +54,40 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
 
   selectedPaymentId?: number;
 
-  constructor(
-    protected opfBaseService: OpfBaseFacade,
-    protected opfMetadataStoreService: OpfMetadataStoreService,
-    protected globalMessageService: GlobalMessageService
-  ) {}
+  activeConfigurations$: Observable<
+    QueryState<OpfActiveConfigurationsResponse | undefined>
+  >;
+
+  getActiveConfigurations(): Observable<
+    QueryState<OpfActiveConfigurationsResponse | undefined>
+  > {
+    return this.opfBaseService
+      .getActiveConfigurationsState({
+        pageSize: this.elementsPerPage,
+        pageNumber: this.paginationIndex + 1,
+      })
+      .pipe(
+        tap(
+          (state: QueryState<OpfActiveConfigurationsResponse | undefined>) => {
+            if (state.error) {
+              this.displayError('loadActiveConfigurations');
+            } else if (!state.loading && !Boolean(state.data?.value?.length)) {
+              this.displayError('noActiveConfigurations');
+            }
+
+            if (state.data?.value && !state.error && !state.loading) {
+              this.opfMetadataStoreService.updateOpfMetadata({
+                defaultSelectedPaymentOptionId: state.data?.value[0]?.id,
+              });
+            }
+          }
+        )
+      );
+  }
+
+  updateActiveConfiguration() {
+    this.activeConfigurations$ = this.getActiveConfigurations();
+  }
 
   /**
    * Method pre-selects (based on terms and conditions state)
@@ -112,7 +136,26 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
     });
   }
 
+  getPaginationModel(
+    pagination?: OpfActiveConfigurationsPagination
+  ): PaginationModel {
+    const paginationModel: PaginationModel = {
+      currentPage: this.paginationIndex,
+      pageSize: pagination?.size,
+      totalPages: pagination?.totalPages,
+      totalResults: pagination?.totalElements,
+    };
+
+    return paginationModel;
+  }
+
+  pageChange(page: number): void {
+    this.paginationIndex = page;
+    this.updateActiveConfiguration();
+  }
+
   ngOnInit(): void {
+    this.updateActiveConfiguration();
     this.preselectPaymentOption();
   }
 

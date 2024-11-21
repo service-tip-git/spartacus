@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Command, CommandService } from '@spartacus/core';
 import {
   CtaScriptsRequest,
@@ -16,6 +16,9 @@ import { OpfCtaConnector } from '../connectors';
 
 @Injectable()
 export class OpfCtaService implements OpfCtaFacade {
+  protected commandService = inject(CommandService);
+  protected opfCtaConnector = inject(OpfCtaConnector);
+
   protected _readyForScriptEvent: Subject<string> = new Subject();
   readyForScriptEvent$: Observable<string> =
     this._readyForScriptEvent.asObservable();
@@ -28,11 +31,6 @@ export class OpfCtaService implements OpfCtaFacade {
   > = this.commandService.create((payload) => {
     return this.opfCtaConnector.getCtaScripts(payload.ctaScriptsRequest);
   });
-
-  constructor(
-    protected commandService: CommandService,
-    protected opfCtaConnector: OpfCtaConnector
-  ) {}
 
   getCtaScripts(ctaScriptsRequest: CtaScriptsRequest) {
     return this.ctaScriptsCommand.execute({ ctaScriptsRequest });

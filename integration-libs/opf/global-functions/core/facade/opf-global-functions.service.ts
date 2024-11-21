@@ -78,7 +78,7 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
     }
   }
 
-  removeGlobalFunctions(domain: GlobalFunctionsDomain): void {
+  unregisterGlobalFunctions(domain: GlobalFunctionsDomain): void {
     // SSR not supported
     if (!this.winRef.isBrowser()) {
       return;
@@ -216,11 +216,15 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
         if (vcr) {
           overlayedSpinner = this.startLoaderSpinner(vcr);
         }
-        const callbackArray: [
-          OpfPaymentMerchantCallback,
-          OpfPaymentMerchantCallback,
-          OpfPaymentMerchantCallback,
-        ] = [submitSuccess, submitPending, submitFailure];
+        const callbackArray: {
+          onSuccess: OpfPaymentMerchantCallback;
+          onPending: OpfPaymentMerchantCallback;
+          onFailure: OpfPaymentMerchantCallback;
+        } = {
+          onSuccess: submitSuccess,
+          onPending: submitPending,
+          onFailure: submitFailure,
+        };
 
         return lastValueFrom(
           this.opfPaymentFacade
@@ -245,11 +249,11 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
 
   protected runSubmitComplete(
     additionalData: Array<OpfKeyValueMap>,
-    callbackArray: [
-      OpfPaymentMerchantCallback,
-      OpfPaymentMerchantCallback,
-      OpfPaymentMerchantCallback,
-    ],
+    callbackArray: {
+      onSuccess: OpfPaymentMerchantCallback;
+      onPending: OpfPaymentMerchantCallback;
+      onFailure: OpfPaymentMerchantCallback;
+    },
     paymentSessionId: string,
     returnPath?: string | undefined,
     vcr?: ViewContainerRef
@@ -304,7 +308,11 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
     }): Promise<boolean> => {
       return this.runSubmitComplete(
         additionalData,
-        [submitSuccess, submitPending, submitFailure],
+        {
+          onSuccess: submitSuccess,
+          onPending: submitPending,
+          onFailure: submitFailure,
+        },
         paymentSessionId,
         undefined,
         vcr
@@ -337,7 +345,11 @@ export class OpfGlobalFunctionsService implements OpfGlobalFunctionsFacade {
     }): Promise<boolean> => {
       return this.runSubmitComplete(
         additionalData,
-        [submitSuccess, submitPending, submitFailure],
+        {
+          onSuccess: submitSuccess,
+          onPending: submitPending,
+          onFailure: submitFailure,
+        },
         paymentSessionId,
         OpfPage.CHECKOUT_REVIEW_PAGE,
         vcr

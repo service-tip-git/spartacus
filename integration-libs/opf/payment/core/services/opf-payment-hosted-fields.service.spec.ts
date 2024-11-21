@@ -80,14 +80,22 @@ describe('OpfPaymentHostedFieldsService', () => {
     additionalData: [{ key: 'key', value: 'value' }],
     paymentSessionId: 'sessionId',
     returnPath: 'checkout',
-    callbackArray: [() => {}, () => {}, () => {}],
+    callbackArray: {
+      onSuccess: () => {},
+      onPending: () => {},
+      onFailure: () => {},
+    },
   };
 
   const mockSubmitCompleteInput: OpfPaymentSubmitCompleteInput = {
     additionalData: [{ key: 'key', value: 'value' }],
     paymentSessionId: 'sessionId',
     returnPath: 'checkout',
-    callbackArray: [() => {}, () => {}, () => {}],
+    callbackArray: {
+      onSuccess: () => {},
+      onPending: () => {},
+      onFailure: () => {},
+    },
   };
 
   const mockSubmitResponse = {
@@ -236,11 +244,11 @@ describe('OpfPaymentHostedFieldsService', () => {
 
       spyOn(service as any, 'paymentResponseHandler').and.callThrough();
 
-      service['paymentResponseHandler'](response, [
-        mockSubmitSuccess,
-        mockSubmitPending,
-        mockSubmitFailure,
-      ]).subscribe((result) => {
+      service['paymentResponseHandler'](response, {
+        onSuccess: mockSubmitSuccess,
+        onPending: mockSubmitPending,
+        onFailure: mockSubmitFailure,
+      }).subscribe((result) => {
         expect(result).toBeTruthy();
         expect(mockSubmitSuccess).toHaveBeenCalled();
         expect(orderFacade.placePaymentAuthorizedOrder).toHaveBeenCalled();
@@ -255,11 +263,11 @@ describe('OpfPaymentHostedFieldsService', () => {
       };
       spyOn(service as any, 'paymentResponseHandler').and.callThrough();
 
-      service['paymentResponseHandler'](response, [
-        mockSubmitSuccess,
-        mockSubmitPending,
-        mockSubmitFailure,
-      ]).subscribe((result) => {
+      service['paymentResponseHandler'](response, {
+        onSuccess: mockSubmitSuccess,
+        onPending: mockSubmitPending,
+        onFailure: mockSubmitFailure,
+      }).subscribe((result) => {
         expect(result).toBeTruthy();
         expect(mockSubmitSuccess).toHaveBeenCalled();
         expect(orderFacade.placePaymentAuthorizedOrder).toHaveBeenCalled();
@@ -276,11 +284,11 @@ describe('OpfPaymentHostedFieldsService', () => {
 
       let result;
 
-      service['paymentResponseHandler'](response, [
-        mockSubmitSuccess,
-        mockSubmitPending,
-        mockSubmitFailure,
-      ]).subscribe((res) => {
+      service['paymentResponseHandler'](response, {
+        onSuccess: mockSubmitSuccess,
+        onPending: mockSubmitPending,
+        onFailure: mockSubmitFailure,
+      }).subscribe((res) => {
         result = res;
       });
 
@@ -296,11 +304,11 @@ describe('OpfPaymentHostedFieldsService', () => {
       };
       spyOn(service as any, 'paymentResponseHandler').and.callThrough();
 
-      service['paymentResponseHandler'](response, [
-        mockSubmitSuccess,
-        mockSubmitPending,
-        mockSubmitFailure,
-      ]).subscribe({
+      service['paymentResponseHandler'](response, {
+        onSuccess: mockSubmitSuccess,
+        onPending: mockSubmitPending,
+        onFailure: mockSubmitFailure,
+      }).subscribe({
         error: (error) => {
           expect(error.type).toBe(OpfPaymentErrorType.PAYMENT_REJECTED);
           expect(mockSubmitFailure).toHaveBeenCalled();
@@ -316,11 +324,11 @@ describe('OpfPaymentHostedFieldsService', () => {
       };
       spyOn(service as any, 'paymentResponseHandler').and.callThrough();
 
-      service['paymentResponseHandler'](response, [
-        mockSubmitSuccess,
-        mockSubmitPending,
-        mockSubmitFailure,
-      ]).subscribe({
+      service['paymentResponseHandler'](response, {
+        onSuccess: mockSubmitSuccess,
+        onPending: mockSubmitPending,
+        onFailure: mockSubmitFailure,
+      }).subscribe({
         error: (error) => {
           expect(error.type).toBe(OpfPaymentErrorType.STATUS_NOT_RECOGNIZED);
           expect(mockSubmitFailure).toHaveBeenCalled();

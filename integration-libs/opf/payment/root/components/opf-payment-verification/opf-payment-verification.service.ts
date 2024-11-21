@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable, ViewContainerRef } from '@angular/core';
+import { Injectable, ViewContainerRef, inject } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import {
   GlobalMessageService,
@@ -39,15 +39,13 @@ import {
   providedIn: 'root',
 })
 export class OpfPaymentVerificationService {
-  constructor(
-    protected orderFacade: OrderFacade,
-    protected routingService: RoutingService,
-    protected globalMessageService: GlobalMessageService,
-    protected opfPaymentFacade: OpfPaymentFacade,
-    protected opfMetadataStoreService: OpfMetadataStoreService,
-    protected opfResourceLoaderService: OpfResourceLoaderService,
-    protected globalFunctionsService: OpfGlobalFunctionsFacade
-  ) {}
+  protected orderFacade = inject(OrderFacade);
+  protected routingService = inject(RoutingService);
+  protected globalMessageService = inject(GlobalMessageService);
+  protected opfPaymentFacade = inject(OpfPaymentFacade);
+  protected opfMetadataStoreService = inject(OpfMetadataStoreService);
+  protected opfResourceLoaderService = inject(OpfResourceLoaderService);
+  protected globalFunctionsService = inject(OpfGlobalFunctionsFacade);
 
   opfDefaultPaymentError: HttpErrorModel = {
     statusText: 'Payment Verification Error',
@@ -210,19 +208,18 @@ export class OpfPaymentVerificationService {
   }
 
   runHostedFieldsPattern(
-    domain: GlobalFunctionsDomain,
     paymentSessionId: string,
     vcr: ViewContainerRef,
     paramsMap: Array<OpfKeyValueMap>
   ): Observable<boolean> {
     this.globalFunctionsService.registerGlobalFunctions({
-      domain,
+      domain: GlobalFunctionsDomain.REDIRECT,
       paymentSessionId,
       vcr,
       paramsMap,
     });
 
-    return this.opfPaymentFacade.afterRedirectScripts(paymentSessionId).pipe(
+    return this.opfPaymentFacade.getAfterRedirectScripts(paymentSessionId).pipe(
       concatMap((response) => {
         if (!response?.afterRedirectScript) {
           return throwError(this.opfDefaultPaymentError);
@@ -241,7 +238,7 @@ export class OpfPaymentVerificationService {
 
     return new Promise((resolve: (value: boolean) => void) => {
       this.opfResourceLoaderService
-        .loadProviderResources(script.jsUrls, script.cssUrls)
+        .loadResources(script.jsUrls, script.cssUrls)
         .then(() => {
           if (html) {
             this.opfResourceLoaderService.executeScriptFromHtml(html);
@@ -257,9 +254,9 @@ export class OpfPaymentVerificationService {
   }
 
   removeResourcesAndGlobalFunctions(): void {
-    this.globalFunctionsService.removeGlobalFunctions(
+    this.globalFunctionsService.unregisterGlobalFunctions(
       GlobalFunctionsDomain.REDIRECT
     );
-    this.opfResourceLoaderService.clearAllProviderResources();
+    this.opfResourceLoaderService.clearAllResources();
   }
 }

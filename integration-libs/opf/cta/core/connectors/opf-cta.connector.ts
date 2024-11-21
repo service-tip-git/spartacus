@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { CtaScriptsRequest, CtaScriptsResponse } from '@spartacus/opf/cta/root';
 
 import { Observable } from 'rxjs';
@@ -12,7 +12,7 @@ import { OpfCtaAdapter } from './opf-cta.adapter';
 
 @Injectable()
 export class OpfCtaConnector {
-  constructor(protected adapter: OpfCtaAdapter) {}
+  protected adapter = inject(OpfCtaAdapter);
 
   public getCtaScripts(
     ctaScriptsRequest: CtaScriptsRequest

@@ -82,8 +82,8 @@ class MockOpfPaymentAdapter implements OpfPaymentAdapter {
   initiatePayment = createSpy('initiatePayment').and.callFake(() =>
     of(mockInitiatePayment)
   );
-  afterRedirectScripts = createSpy('afterRedirectScripts').and.callFake(() =>
-    of(mockAfterRedirectScriptsResponse)
+  getAfterRedirectScripts = createSpy('getAfterRedirectScripts').and.callFake(
+    () => of(mockAfterRedirectScriptsResponse)
   );
 }
 
@@ -160,13 +160,13 @@ describe('OpfPaymentConnector', () => {
     );
   });
 
-  it('afterRedirectScripts should call adapter', () => {
+  it('getAfterRedirectScripts should call adapter', () => {
     let result;
     service
-      .afterRedirectScripts('paymentSessionId')
+      .getAfterRedirectScripts('paymentSessionId')
       .subscribe((res) => (result = res));
     expect(result).toEqual(mockAfterRedirectScriptsResponse);
-    expect(adapter.afterRedirectScripts).toHaveBeenCalledWith(
+    expect(adapter.getAfterRedirectScripts).toHaveBeenCalledWith(
       'paymentSessionId'
     );
   });

@@ -125,15 +125,13 @@ if (environment.b2b) {
       },
     }),
     provideConfig(<OpfQuickBuyConfig>{
-      opf: {
-        providers: [
-          {
-            googlePay: {
-              resourceUrl: 'https://pay.google.com/gp/p/js/pay.js',
-            },
-          } as OpfQuickBuyGooglePayProvider,
-        ],
-      },
+      providers: [
+        {
+          googlePay: {
+            resourceUrl: 'https://pay.google.com/gp/p/js/pay.js',
+          },
+        } as OpfQuickBuyGooglePayProvider,
+      ],
     }),
     ...extensionProviders,
   ],

@@ -69,11 +69,11 @@ export interface OpfPaymentSubmitRequest {
 export interface OpfPaymentSubmitInput {
   additionalData: Array<OpfKeyValueMap>;
   paymentSessionId?: string;
-  callbackArray: [
-    OpfPaymentMerchantCallback,
-    OpfPaymentMerchantCallback,
-    OpfPaymentMerchantCallback,
-  ];
+  callbackArray: {
+    onSuccess: OpfPaymentMerchantCallback;
+    onPending: OpfPaymentMerchantCallback;
+    onFailure: OpfPaymentMerchantCallback;
+  };
   returnPath?: string;
   paymentMethod: OpfPaymentMethod;
   encryptedToken?: string;
@@ -112,11 +112,11 @@ export interface OpfPaymentSubmitCompleteRequest {
 export interface OpfPaymentSubmitCompleteInput {
   additionalData: Array<OpfKeyValueMap>;
   paymentSessionId: string;
-  callbackArray: [
-    OpfPaymentMerchantCallback,
-    OpfPaymentMerchantCallback,
-    OpfPaymentMerchantCallback,
-  ];
+  callbackArray: {
+    onSuccess: OpfPaymentMerchantCallback;
+    onPending: OpfPaymentMerchantCallback;
+    onFailure: OpfPaymentMerchantCallback;
+  };
   returnPath?: string;
 }
 

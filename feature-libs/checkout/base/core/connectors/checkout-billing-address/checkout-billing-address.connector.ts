@@ -4,14 +4,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Address } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { CheckoutBillingAddressAdapter } from './checkout-billing-address.adapter';
 
 @Injectable()
 export class CheckoutBillingAddressConnector {
-  constructor(protected adapter: CheckoutBillingAddressAdapter) {}
+  protected adapter = inject(CheckoutBillingAddressAdapter);
 
   public setBillingAddress(
     userId: string,

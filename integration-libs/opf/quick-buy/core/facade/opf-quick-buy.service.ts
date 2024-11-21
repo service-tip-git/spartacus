@@ -4,20 +4,20 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import {
   ActiveCartFacade,
   CartAccessCodeFacade,
 } from '@spartacus/cart/base/root';
 import {
-  backOff,
   Command,
   CommandService,
   DEFAULT_AUTHORIZATION_ERROR_RETRIES_COUNT,
-  isAuthorizationError,
   LoggerService,
-  tryNormalizeHttpError,
   UserIdService,
+  backOff,
+  isAuthorizationError,
+  tryNormalizeHttpError,
 } from '@spartacus/core';
 import {
   ApplePaySessionVerificationRequest,
@@ -36,6 +36,13 @@ import { OpfQuickBuyConnector } from '../connectors';
 
 @Injectable()
 export class OpfQuickBuyService implements OpfQuickBuyFacade {
+  protected commandService = inject(CommandService);
+  protected opfQuickBuyConnector = inject(OpfQuickBuyConnector);
+  protected cartAccessCodeFacade = inject(CartAccessCodeFacade);
+  protected activeCartFacade = inject(ActiveCartFacade);
+  protected userIdService = inject(UserIdService);
+  protected logger = inject(LoggerService);
+
   protected applePaySessionCommand: Command<
     {
       applePayWebSessionRequest: ApplePaySessionVerificationRequest;
@@ -72,15 +79,6 @@ export class OpfQuickBuyService implements OpfQuickBuyFacade {
       })
     );
   });
-
-  constructor(
-    protected commandService: CommandService,
-    protected opfQuickBuyConnector: OpfQuickBuyConnector,
-    protected cartAccessCodeFacade: CartAccessCodeFacade,
-    protected activeCartFacade: ActiveCartFacade,
-    protected userIdService: UserIdService,
-    protected logger: LoggerService
-  ) {}
 
   getApplePayWebSession(
     applePayWebSessionRequest: ApplePaySessionVerificationRequest

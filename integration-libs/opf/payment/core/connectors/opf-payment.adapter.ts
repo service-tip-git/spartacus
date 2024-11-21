@@ -53,7 +53,7 @@ export abstract class OpfPaymentAdapter {
    * used in hosted-fields pattern.
    *
    */
-  abstract afterRedirectScripts(
+  abstract getAfterRedirectScripts(
     paymentSessionId: string
   ): Observable<OpfPaymentAfterRedirectScriptResponse>;
 

@@ -46,11 +46,14 @@ export const mockPaymentAddress = {
 export function verifyDeliveryMethod() {
   cy.log('🛒 Selecting delivery method');
 
-  cy.get('.cx-checkout-title').should('contain', 'Delivery Method');
+  cy.get('.cx-checkout-title').should('contain', 'Delivery Options');
 
   cy.get('cx-delivery-mode input').first().should('be.checked');
 
-  const reviewPage = waitForPage('/checkout/review-order', 'getReviewPage');
+  const reviewPage = waitForPage(
+    '/checkout/opf-payment-and-review',
+    'getReviewPage'
+  );
   cy.get('.cx-checkout-btns button.btn-primary')
     .should('be.enabled')
     .click({ force: true });

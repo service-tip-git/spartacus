@@ -39,7 +39,15 @@ describe('OPF billing address', () => {
           .its('response.statusCode')
           .should('eq', 200);
 
+        cy.intercept('GET', '**/active-configurations').as(
+          'activeConfigurationsRequest'
+        );
+
         verifyDeliveryMethod();
+
+        cy.wait('@activeConfigurationsRequest').then((interception) => {
+          expect(interception.response.statusCode).to.eq(200);
+        });
       });
 
       it('should show and hide payment form when click checkbox', () => {
@@ -104,6 +112,17 @@ describe('OPF billing address', () => {
       });
 
       it('should show new payment address after save', () => {
+        cy.intercept('POST', '**/accessCode?lang=en&curr=USD').as(
+          'accessCodeRequest'
+        );
+        cy.get('input[formcontrolname="termsAndConditions"]')
+          .check()
+          .should('be.checked');
+
+        cy.wait('@accessCodeRequest').then((interception) => {
+          expect(interception.response.statusCode).to.eq(200);
+        });
+
         const checkbox = cy
           .get('cx-opf-checkout-billing-address-form')
           .find('input.form-check-input');
@@ -114,7 +133,6 @@ describe('OPF billing address', () => {
             'BASE_SITE'
           )}/users/current/carts/*/addresses/billing?lang=en&curr=USD`
         ).as('billing');
-
         checkbox.uncheck();
 
         fillPaymentAddress(mockPaymentAddress, true);
@@ -125,9 +143,8 @@ describe('OPF billing address', () => {
       });
 
       it('should uncheck the checkbox when new payment address was provided', () => {
-        const checkbox = cy
-          .get('cx-opf-checkout-billing-address-form')
-          .find('input.form-check-input');
+        const checkboxSelector =
+          'cx-opf-checkout-billing-address-form input.form-check-input';
 
         cy.intercept(
           'PUT',
@@ -136,11 +153,13 @@ describe('OPF billing address', () => {
           )}/users/current/carts/*/addresses/billing?lang=en&curr=USD`
         ).as('billing');
 
-        checkbox.uncheck();
+        cy.get(checkboxSelector).uncheck();
 
         fillPaymentAddress(mockPaymentAddress, true);
 
-        cy.get('@billing').then(() => checkbox.should('not.be.checked'));
+        cy.wait('@billing');
+
+        cy.get(checkboxSelector).should('not.be.checked');
       });
 
       it('should open edit form when click edit button and show new value after save', () => {

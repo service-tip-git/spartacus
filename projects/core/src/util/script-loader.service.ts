@@ -90,7 +90,7 @@ export class ScriptLoader {
   /**
    * Indicates if the script is already added to the DOM.
    */
-  protected hasScript(src?: string): boolean {
+  public hasScript(src?: string): boolean {
     return !!this.document.querySelector(`script[src="${src}"]`);
   }
 

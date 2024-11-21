@@ -11,6 +11,7 @@ import {
   OnDestroy,
   OnInit,
   ViewContainerRef,
+  inject,
 } from '@angular/core';
 import {
   DomSanitizer,
@@ -34,6 +35,11 @@ import { OpfCheckoutPaymentWrapperService } from './opf-checkout-payment-wrapper
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OpfCheckoutPaymentWrapperComponent implements OnInit, OnDestroy {
+  protected service = inject(OpfCheckoutPaymentWrapperService);
+  protected sanitizer = inject(DomSanitizer);
+  protected globalFunctionsService = inject(OpfGlobalFunctionsFacade);
+  protected vcr = inject(ViewContainerRef);
+
   @Input() selectedPaymentId: number;
 
   renderPaymentMethodEvent$ = this.service.getRenderPaymentMethodEvent();
@@ -42,18 +48,11 @@ export class OpfCheckoutPaymentWrapperComponent implements OnInit, OnDestroy {
 
   sub: Subscription = new Subscription();
 
-  constructor(
-    protected service: OpfCheckoutPaymentWrapperService,
-    protected sanitizer: DomSanitizer,
-    protected globalFunctionsService: OpfGlobalFunctionsFacade,
-    protected vcr: ViewContainerRef
-  ) {}
-
-  renderHtml(html: string): SafeHtml {
+  bypassSecurityTrustHtml(html: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(html);
   }
 
-  renderUrl(url: string): SafeResourceUrl {
+  bypassSecurityTrustResourceUrl(url: string): SafeResourceUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
@@ -62,7 +61,7 @@ export class OpfCheckoutPaymentWrapperComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.globalFunctionsService.removeGlobalFunctions(
+    this.globalFunctionsService.unregisterGlobalFunctions(
       GlobalFunctionsDomain.CHECKOUT
     );
     this.sub.unsubscribe();
@@ -84,7 +83,7 @@ export class OpfCheckoutPaymentWrapperComponent implements OnInit, OnDestroy {
               vcr: this.vcr,
             });
           } else {
-            this.globalFunctionsService.removeGlobalFunctions(
+            this.globalFunctionsService.unregisterGlobalFunctions(
               GlobalFunctionsDomain.CHECKOUT
             );
           }

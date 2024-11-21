@@ -18,6 +18,7 @@ const mockOpfMetadata: OpfMetadataModel = {
   selectedPaymentOptionId: 111,
   termsAndConditionsChecked: true,
   paymentSessionId: '111111',
+  isTermsAndConditionsAlertClosed: false,
 };
 
 describe('OpfMetadataStatePersistanceService', () => {

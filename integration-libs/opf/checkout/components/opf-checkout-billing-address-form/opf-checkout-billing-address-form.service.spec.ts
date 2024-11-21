@@ -109,7 +109,7 @@ describe('OpfCheckoutBillingAddressFormService', () => {
     service.getAddresses();
 
     expect(service['_$isLoadingAddress'].value).toBeFalsy();
-    expect(service.billingAddressValue).toEqual(mockPaymentAddress);
+    expect(service['_$billingAddressSub'].value).toEqual(mockPaymentAddress);
     expect(service.isSameAsDeliveryValue).toBeFalsy();
   });
 
@@ -240,7 +240,7 @@ describe('OpfCheckoutBillingAddressFormService', () => {
 
     expect(service.setBillingAddress).toHaveBeenCalledWith(mockDeliveryAddress);
 
-    expect(service['billingAddressSub'].value).toEqual(mockDeliveryAddress);
+    expect(service['_$billingAddressSub'].value).toEqual(mockDeliveryAddress);
   });
 
   it('should return EMPTY when address is undefined', () => {

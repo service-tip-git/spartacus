@@ -13,6 +13,7 @@ const initialState: OpfMetadataModel = {
   selectedPaymentOptionId: undefined,
   isPaymentInProgress: false,
   paymentSessionId: undefined,
+  isTermsAndConditionsAlertClosed: false,
 };
 
 @Injectable({ providedIn: 'root' })

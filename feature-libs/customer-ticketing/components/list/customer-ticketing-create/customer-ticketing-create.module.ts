@@ -7,7 +7,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { I18nModule } from '@spartacus/core';
+import { I18nModule, FeaturesConfigModule } from '@spartacus/core';
 import {
   FileUploadModule,
   FormErrorsModule,
@@ -26,6 +26,7 @@ import { CustomerTicketingCreateComponent } from './customer-ticketing-create.co
     ReactiveFormsModule,
     FormErrorsModule,
     FileUploadModule,
+    FeaturesConfigModule,
   ],
   declarations: [
     CustomerTicketingCreateComponent,
