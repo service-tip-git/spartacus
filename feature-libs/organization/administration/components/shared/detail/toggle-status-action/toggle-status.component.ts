@@ -26,7 +26,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './toggle-status.component.html',
   host: { class: 'content-wrapper' },
   standalone: true,
-  imports: [NgIf, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class ToggleStatusComponent<T extends BaseItem> implements OnDestroy {
   /**

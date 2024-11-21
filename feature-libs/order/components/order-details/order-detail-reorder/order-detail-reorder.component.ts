@@ -25,7 +25,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './order-detail-reorder.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class OrderDetailReorderComponent implements OnInit, OnDestroy {
   constructor(

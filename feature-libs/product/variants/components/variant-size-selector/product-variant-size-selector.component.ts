@@ -24,7 +24,7 @@ import { NgFor } from '@angular/common';
   templateUrl: './product-variant-size-selector.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgFor, TranslatePipe, TranslatePipe],
+  imports: [NgFor, TranslatePipe],
 })
 export class ProductVariantSizeSelectorComponent {
   constructor(

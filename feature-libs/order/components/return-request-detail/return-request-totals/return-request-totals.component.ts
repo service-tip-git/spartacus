@@ -16,7 +16,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './return-request-totals.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class ReturnRequestTotalsComponent implements OnDestroy {
   constructor(protected returnRequestService: ReturnRequestService) {}

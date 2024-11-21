@@ -16,7 +16,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   selector: 'cx-order-details-actions',
   templateUrl: './order-detail-actions.component.html',
   standalone: true,
-  imports: [NgIf, RouterLink, AsyncPipe, TranslatePipe, UrlPipe, TranslatePipe],
+  imports: [NgIf, RouterLink, AsyncPipe, TranslatePipe, UrlPipe],
 })
 export class OrderDetailActionsComponent {
   constructor(protected orderDetailsService: OrderDetailsService) {}

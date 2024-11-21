@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './visual-picking-product-filter.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FormsModule, IconComponent, TranslatePipe, TranslatePipe],
+  imports: [FormsModule, IconComponent, TranslatePipe],
 })
 export class VisualPickingProductFilterComponent {
   constructor(

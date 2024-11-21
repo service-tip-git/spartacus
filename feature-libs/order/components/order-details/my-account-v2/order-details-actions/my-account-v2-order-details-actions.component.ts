@@ -17,7 +17,7 @@ import { NgIf } from '@angular/common';
   selector: 'cx-my-account-v2-order-details-actions',
   templateUrl: './my-account-v2-order-details-actions.component.html',
   standalone: true,
-  imports: [NgIf, RouterLink, TranslatePipe, UrlPipe, TranslatePipe],
+  imports: [NgIf, RouterLink, TranslatePipe, UrlPipe],
 })
 export class MyAccountV2OrderDetailsActionsComponent
   extends OrderDetailActionsComponent

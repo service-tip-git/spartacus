@@ -16,7 +16,7 @@ import { NgIf, NgFor } from '@angular/common';
   templateUrl: './applied-coupons.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, NgFor, IconComponent, TranslatePipe, TranslatePipe],
+  imports: [NgIf, NgFor, IconComponent, TranslatePipe],
 })
 export class AppliedCouponsComponent {
   @Input()

@@ -22,7 +22,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './amend-order-actions.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [RouterLink, NgIf, UrlPipe, TranslatePipe, TranslatePipe],
+  imports: [RouterLink, NgIf, UrlPipe, TranslatePipe],
 })
 export class AmendOrderActionsComponent {
   @Input() orderCode: string;

@@ -15,7 +15,7 @@ import { IconComponent } from '../../../../cms-components/misc/icon/icon.compone
   templateUrl: './password-visibility-toggle.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [IconComponent, TranslatePipe, TranslatePipe],
+  imports: [IconComponent, TranslatePipe],
 })
 export class PasswordVisibilityToggleComponent {
   protected showState: PasswordInputState = {

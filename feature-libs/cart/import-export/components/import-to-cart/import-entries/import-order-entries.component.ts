@@ -28,7 +28,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './import-order-entries.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class ImportOrderEntriesComponent {
   protected subscription = new Subscription();

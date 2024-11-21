@@ -17,7 +17,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
   templateUrl: './checkout-progress-mobile-bottom.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe],
 })
 export class CheckoutProgressMobileBottomComponent {
   private _steps$: BehaviorSubject<CheckoutStep[]> =

@@ -14,7 +14,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   selector: 'cx-quote-summary-prices',
   templateUrl: 'quote-summary-prices.component.html',
   standalone: true,
-  imports: [NgIf, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class QuoteSummaryPricesComponent {
   protected quoteFacade = inject(QuoteFacade);

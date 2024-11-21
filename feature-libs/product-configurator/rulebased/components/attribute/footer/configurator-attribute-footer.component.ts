@@ -22,7 +22,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './configurator-attribute-footer.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, IconComponent, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, IconComponent, AsyncPipe, TranslatePipe],
 })
 export class ConfiguratorAttributeFooterComponent
   extends ConfiguratorAttributeBaseComponent

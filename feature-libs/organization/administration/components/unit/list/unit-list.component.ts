@@ -15,7 +15,7 @@ import { ListComponent } from '../../shared/list/list.component';
   templateUrl: './unit-list.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [ListComponent, TranslatePipe, TranslatePipe],
+  imports: [ListComponent, TranslatePipe],
 })
 export class UnitListComponent {
   constructor(

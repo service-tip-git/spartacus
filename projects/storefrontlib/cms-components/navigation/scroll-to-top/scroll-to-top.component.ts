@@ -33,7 +33,7 @@ import { IconComponent } from '../../misc/icon/icon.component';
   templateUrl: './scroll-to-top.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [IconComponent, TranslatePipe, TranslatePipe],
+  imports: [IconComponent, TranslatePipe],
 })
 export class ScrollToTopComponent implements OnInit {
   iconTypes = ICON_TYPE;

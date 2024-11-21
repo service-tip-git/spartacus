@@ -30,7 +30,7 @@ import { FocusDirective } from '@spartacus/storefront';
   templateUrl: './replenishment-order-cancellation-dialog.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FocusDirective, IconComponent, TranslatePipe, TranslatePipe],
+  imports: [FocusDirective, IconComponent, TranslatePipe],
 })
 export class ReplenishmentOrderCancellationDialogComponent
   implements OnInit, OnDestroy

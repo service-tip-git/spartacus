@@ -11,7 +11,7 @@ import { NgClass, NgIf } from '@angular/common';
   selector: 'cx-progress-button',
   templateUrl: './progress-button.component.html',
   standalone: true,
-  imports: [NgClass, NgIf, TranslatePipe, TranslatePipe],
+  imports: [NgClass, NgIf, TranslatePipe],
 })
 export class ProgressButtonComponent {
   @Input()

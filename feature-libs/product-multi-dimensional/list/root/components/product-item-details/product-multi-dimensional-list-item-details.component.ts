@@ -17,7 +17,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './product-multi-dimensional-list-item-details.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, StarRatingComponent, TranslatePipe, AsyncPipe, TranslatePipe],
+  imports: [NgIf, StarRatingComponent, TranslatePipe, AsyncPipe],
 })
 export class ProductMultiDimensionalListItemDetailsComponent {
   productListItemContext?: ProductListItemContext = inject(

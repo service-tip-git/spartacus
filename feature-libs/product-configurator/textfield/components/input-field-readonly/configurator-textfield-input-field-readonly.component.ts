@@ -14,7 +14,7 @@ import { TranslatePipe } from '@spartacus/core';
   templateUrl: './configurator-textfield-input-field-readonly.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [TranslatePipe, TranslatePipe],
+  imports: [TranslatePipe],
 })
 export class ConfiguratorTextfieldInputFieldReadonlyComponent {
   PREFIX_TEXTFIELD = 'cx-configurator-textfield';

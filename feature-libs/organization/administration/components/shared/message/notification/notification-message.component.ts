@@ -17,7 +17,7 @@ import { FocusDirective } from '@spartacus/storefront';
   templateUrl: './notification-message.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FocusDirective, NgIf, IconComponent, TranslatePipe, TranslatePipe],
+  imports: [FocusDirective, NgIf, IconComponent, TranslatePipe],
 })
 export class NotificationMessageComponent extends BaseMessageComponent {
   closeIcon = ICON_TYPE.CLOSE;

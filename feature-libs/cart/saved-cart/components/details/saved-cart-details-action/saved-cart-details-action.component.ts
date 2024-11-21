@@ -24,7 +24,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   selector: 'cx-saved-cart-details-action',
   templateUrl: './saved-cart-details-action.component.html',
   standalone: true,
-  imports: [NgIf, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class SavedCartDetailsActionComponent implements OnDestroy {
   private subscription = new Subscription();

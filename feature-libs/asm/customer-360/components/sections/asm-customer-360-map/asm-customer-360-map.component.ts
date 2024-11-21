@@ -37,7 +37,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
   selector: 'cx-asm-customer-360-map',
   templateUrl: './asm-customer-360-map.component.html',
   standalone: true,
-  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe],
 })
 export class AsmCustomer360MapComponent implements OnDestroy, OnInit {
   storeData: StoreFinderSearchPage;

@@ -31,7 +31,7 @@ export interface ConfiguratorAttributeQuantityComponentOptions {
   templateUrl: './configurator-attribute-quantity.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [ItemCounterComponent, TranslatePipe, TranslatePipe],
+  imports: [ItemCounterComponent, TranslatePipe],
 })
 export class ConfiguratorAttributeQuantityComponent
   implements OnDestroy, OnInit

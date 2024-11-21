@@ -12,7 +12,7 @@ import { TranslatePipe } from '@spartacus/core';
   selector: 'cx-store-finder-pagination-details',
   templateUrl: './store-finder-pagination-details.component.html',
   standalone: true,
-  imports: [TranslatePipe, TranslatePipe],
+  imports: [TranslatePipe],
 })
 export class StoreFinderPaginationDetailsComponent {
   @Input()

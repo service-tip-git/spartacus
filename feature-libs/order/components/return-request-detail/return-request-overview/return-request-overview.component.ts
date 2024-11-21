@@ -22,7 +22,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './return-request-overview.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class ReturnRequestOverviewComponent implements OnInit, OnDestroy {
   constructor(protected returnRequestService: ReturnRequestService) {}

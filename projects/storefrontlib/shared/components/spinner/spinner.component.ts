@@ -13,7 +13,7 @@ import { TranslatePipe } from '@spartacus/core';
   selector: 'cx-spinner',
   templateUrl: './spinner.component.html',
   standalone: true,
-  imports: [TranslatePipe, TranslatePipe],
+  imports: [TranslatePipe],
 })
 export class SpinnerComponent {
   constructor() {

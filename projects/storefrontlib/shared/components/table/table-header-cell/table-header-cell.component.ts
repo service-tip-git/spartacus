@@ -18,7 +18,7 @@ import { TranslatePipe } from '@spartacus/core';
   template: `{{ header || (localizedHeader | cxTranslate) }}`,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [TranslatePipe, TranslatePipe],
+  imports: [TranslatePipe],
 })
 export class TableHeaderCellComponent {
   constructor(protected outlet: OutletContextData<TableHeaderOutletContext>) {}

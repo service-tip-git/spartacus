@@ -17,7 +17,7 @@ import { NgFor, NgIf } from '@angular/common';
   selector: 'cx-configurator-overview-filter-bar',
   templateUrl: './configurator-overview-filter-bar.component.html',
   standalone: true,
-  imports: [NgFor, IconComponent, NgIf, TranslatePipe, TranslatePipe],
+  imports: [NgFor, IconComponent, NgIf, TranslatePipe],
 })
 export class ConfiguratorOverviewFilterBarComponent {
   readonly PREFIX_ID = 'cx-overview-filter-applied-';

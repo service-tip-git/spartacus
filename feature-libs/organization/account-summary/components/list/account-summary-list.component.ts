@@ -12,6 +12,6 @@ import { ListComponent } from '../../../administration/components/shared/list/li
   selector: 'cx-account-summary-list',
   templateUrl: './account-summary-list.component.html',
   standalone: true,
-  imports: [ListComponent, TranslatePipe, TranslatePipe],
+  imports: [ListComponent, TranslatePipe],
 })
 export class AccountSummaryListComponent extends UnitListComponent {}

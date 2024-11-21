@@ -22,7 +22,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './quote-request-button.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class QuoteRequestButtonComponent implements OnDestroy {
   protected quoteFacade = inject(QuoteFacade);

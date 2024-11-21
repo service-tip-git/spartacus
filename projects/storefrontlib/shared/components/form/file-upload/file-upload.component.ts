@@ -33,7 +33,7 @@ import { NgIf, NgTemplateOutlet, NgFor } from '@angular/common';
     },
   ],
   standalone: true,
-  imports: [NgIf, NgTemplateOutlet, NgFor, TranslatePipe, TranslatePipe],
+  imports: [NgIf, NgTemplateOutlet, NgFor, TranslatePipe],
 })
 export class FileUploadComponent implements ControlValueAccessor {
   /**

@@ -22,7 +22,7 @@ type OpeningTime = {
   selector: 'cx-store-schedule',
   templateUrl: 'store-schedule.component.html',
   standalone: true,
-  imports: [NgFor, NgIf, TranslatePipe, TranslatePipe],
+  imports: [NgFor, NgIf, TranslatePipe],
 })
 export class StoreScheduleComponent implements OnChanges {
   /** The details of the store */

@@ -26,7 +26,7 @@ export enum ViewModes {
   templateUrl: './product-view.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgClass, NgIf, IconComponent, TranslatePipe, TranslatePipe],
+  imports: [NgClass, NgIf, IconComponent, TranslatePipe],
 })
 export class ProductViewComponent {
   iconTypes = ICON_TYPE;

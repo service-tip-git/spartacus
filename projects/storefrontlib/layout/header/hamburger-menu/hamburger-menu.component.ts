@@ -15,7 +15,7 @@ import { AsyncPipe } from '@angular/common';
   templateUrl: './hamburger-menu.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [AsyncPipe, TranslatePipe],
 })
 export class HamburgerMenuComponent {
   constructor(private hamburgerMenuService: HamburgerMenuService) {}

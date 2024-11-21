@@ -46,7 +46,7 @@ import { NgIf, NgClass, NgFor, AsyncPipe } from '@angular/common';
   selector: 'cx-quote-summary-actions',
   templateUrl: './quote-summary-actions.component.html',
   standalone: true,
-  imports: [NgIf, NgClass, NgFor, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, NgClass, NgFor, AsyncPipe, TranslatePipe],
 })
 export class QuoteSummaryActionsComponent
   implements AfterViewInit, OnInit, OnDestroy

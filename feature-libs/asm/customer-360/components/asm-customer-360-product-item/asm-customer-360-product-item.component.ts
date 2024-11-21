@@ -22,7 +22,7 @@ import { MediaComponent } from '@spartacus/storefront';
   templateUrl: './asm-customer-360-product-item.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [MediaComponent, NgIf, TranslatePipe, TranslatePipe],
+  imports: [MediaComponent, NgIf, TranslatePipe],
 })
 export class AsmCustomer360ProductItemComponent {
   @Input() product: ProductItem;

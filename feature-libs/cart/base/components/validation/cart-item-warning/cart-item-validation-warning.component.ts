@@ -17,7 +17,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './cart-item-validation-warning.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, IconComponent, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, IconComponent, AsyncPipe, TranslatePipe],
 })
 export class CartItemValidationWarningComponent {
   @Input()

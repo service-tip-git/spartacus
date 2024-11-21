@@ -27,7 +27,7 @@ import { RouterLink } from '@angular/router';
   selector: 'cx-replenishment-order-cancellation',
   templateUrl: './replenishment-order-cancellation.component.html',
   standalone: true,
-  imports: [RouterLink, NgIf, AsyncPipe, TranslatePipe, UrlPipe, TranslatePipe],
+  imports: [RouterLink, NgIf, AsyncPipe, TranslatePipe, UrlPipe],
 })
 export class ReplenishmentOrderCancellationComponent implements OnDestroy {
   @ViewChild('element') element: ElementRef;

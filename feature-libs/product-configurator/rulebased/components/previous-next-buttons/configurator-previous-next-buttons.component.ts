@@ -23,7 +23,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './configurator-previous-next-buttons.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class ConfiguratorPreviousNextButtonsComponent {
   configuration$: Observable<Configurator.Configuration> =

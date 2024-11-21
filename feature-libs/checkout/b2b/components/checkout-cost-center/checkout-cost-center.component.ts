@@ -26,7 +26,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
   templateUrl: './checkout-cost-center.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe],
 })
 export class CheckoutCostCenterComponent implements OnInit, OnDestroy {
   protected subscription = new Subscription();

@@ -19,7 +19,7 @@ import { FeatureDirective } from '@spartacus/core';
   selector: 'cx-store-search',
   templateUrl: './store-search.component.html',
   standalone: true,
-  imports: [FeatureDirective, TranslatePipe, TranslatePipe],
+  imports: [FeatureDirective, TranslatePipe],
 })
 export class StoreSearchComponent {
   /** Whether the hide out of stock checkbox appears checked */

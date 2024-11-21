@@ -14,7 +14,7 @@ import { NgIf } from '@angular/common';
   templateUrl: './total.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, TranslatePipe, TranslatePipe],
+  imports: [NgIf, TranslatePipe],
 })
 export class TotalComponent {
   private _pagination: PaginationModel;

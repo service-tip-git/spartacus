@@ -25,7 +25,7 @@ import { TranslatePipe } from '@spartacus/core';
   templateUrl: './configurator-textfield-input-field.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, TranslatePipe, TranslatePipe],
+  imports: [FormsModule, ReactiveFormsModule, TranslatePipe],
 })
 export class ConfiguratorTextfieldInputFieldComponent implements OnInit {
   PREFIX_TEXTFIELD = 'cx-configurator-textfield';

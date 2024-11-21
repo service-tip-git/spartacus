@@ -21,7 +21,7 @@ import { NgIf } from '@angular/common';
   templateUrl: './configurator-show-more.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, TranslatePipe, TranslatePipe],
+  imports: [NgIf, TranslatePipe],
 })
 export class ConfiguratorShowMoreComponent implements AfterViewInit {
   showMore = false;

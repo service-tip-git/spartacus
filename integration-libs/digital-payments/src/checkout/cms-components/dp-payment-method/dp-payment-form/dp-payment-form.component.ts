@@ -19,7 +19,7 @@ import { SpinnerComponent } from '@spartacus/storefront';
   selector: 'cx-dp-payment-form',
   templateUrl: './dp-payment-form.component.html',
   standalone: true,
-  imports: [SpinnerComponent, TranslatePipe, TranslatePipe],
+  imports: [SpinnerComponent, TranslatePipe],
 })
 export class DpPaymentFormComponent implements OnInit {
   @Output()

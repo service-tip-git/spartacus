@@ -24,7 +24,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './clear-cart.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class ClearCartComponent implements OnDestroy {
   cart$: Observable<Cart> = this.activeCartFacade.getActive();

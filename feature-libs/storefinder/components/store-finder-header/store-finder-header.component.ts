@@ -12,6 +12,6 @@ import { StoreFinderSearchComponent } from '../store-finder-search/store-finder-
   selector: 'cx-store-finder-header',
   templateUrl: './store-finder-header.component.html',
   standalone: true,
-  imports: [StoreFinderSearchComponent, TranslatePipe, TranslatePipe],
+  imports: [StoreFinderSearchComponent, TranslatePipe],
 })
 export class StoreFinderHeaderComponent {}

@@ -20,7 +20,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './s4-service-order-detail-actions.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, RouterLink, AsyncPipe, TranslatePipe, UrlPipe, TranslatePipe],
+  imports: [NgIf, RouterLink, AsyncPipe, TranslatePipe, UrlPipe],
 })
 export class S4ServiceOrderDetailActionsComponent extends OrderDetailActionsComponent {
   protected checkoutServiceSchedulePickerService = inject(

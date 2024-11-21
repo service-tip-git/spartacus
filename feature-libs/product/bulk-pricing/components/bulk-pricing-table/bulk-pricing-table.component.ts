@@ -17,7 +17,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
   selector: 'cx-bulk-pricing-table',
   templateUrl: './bulk-pricing-table.component.html',
   standalone: true,
-  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe],
 })
 export class BulkPricingTableComponent implements OnInit {
   protected readonly PRODUCT_KEY = 'productCode';

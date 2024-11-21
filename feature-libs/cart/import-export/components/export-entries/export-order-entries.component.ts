@@ -22,7 +22,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './export-order-entries.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class ExportOrderEntriesComponent {
   @HostBinding('class') styles = 'container';

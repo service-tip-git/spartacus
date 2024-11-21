@@ -30,7 +30,7 @@ import { NgIf } from '@angular/common';
   templateUrl: './consignment-tracking.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, TranslatePipe, TranslatePipe],
+  imports: [NgIf, TranslatePipe],
 })
 export class ConsignmentTrackingComponent implements OnInit, OnDestroy {
   consignmentStatus: string[] = [

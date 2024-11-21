@@ -16,7 +16,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
   templateUrl: './order-detail-permission-results.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe],
 })
 export class OrderDetailPermissionResultsComponent {
   order$: Observable<Order> = this.orderDetailsService.getOrderDetails();

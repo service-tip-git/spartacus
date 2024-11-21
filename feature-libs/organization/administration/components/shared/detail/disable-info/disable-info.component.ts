@@ -19,7 +19,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './disable-info.component.html',
   host: { class: 'content-wrapper' },
   standalone: true,
-  imports: [NgIf, IconComponent, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, IconComponent, AsyncPipe, TranslatePipe],
 })
 export class DisableInfoComponent<T extends BaseItem> implements OnInit {
   /**

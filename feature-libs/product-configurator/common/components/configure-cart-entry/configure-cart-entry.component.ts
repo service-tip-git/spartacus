@@ -35,7 +35,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './configure-cart-entry.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, RouterLink, AsyncPipe, UrlPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, RouterLink, AsyncPipe, UrlPipe, TranslatePipe],
 })
 export class ConfigureCartEntryComponent {
   protected routingService = inject(RoutingService);

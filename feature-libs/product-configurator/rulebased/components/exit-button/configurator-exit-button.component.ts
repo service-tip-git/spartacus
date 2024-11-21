@@ -28,7 +28,7 @@ import { TranslatePipe } from '@spartacus/core';
   selector: 'cx-configurator-exit-button',
   templateUrl: './configurator-exit-button.component.html',
   standalone: true,
-  imports: [NgIf, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class ConfiguratorExitButtonComponent {
   container$: Observable<{

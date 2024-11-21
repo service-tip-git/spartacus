@@ -29,7 +29,7 @@ import { FocusDirective } from '@spartacus/storefront';
   templateUrl: './confirmation-message.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FocusDirective, NgIf, IconComponent, TranslatePipe, TranslatePipe],
+  imports: [FocusDirective, NgIf, IconComponent, TranslatePipe],
 })
 export class ConfirmationMessageComponent
   extends BaseMessageComponent

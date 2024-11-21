@@ -22,7 +22,7 @@ import { PromotionsComponent } from '@spartacus/storefront';
   templateUrl: './checkout-review-overview.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, PromotionsComponent, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, PromotionsComponent, AsyncPipe, TranslatePipe],
 })
 export class CheckoutReviewOverviewComponent implements AfterViewInit {
   protected document = inject(DOCUMENT, { optional: true });

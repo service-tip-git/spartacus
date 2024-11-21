@@ -18,7 +18,7 @@ export enum BIND_CART_DIALOG_ACTION {
   selector: 'cx-asm-bind-cart-dialog',
   templateUrl: './asm-bind-cart-dialog.component.html',
   standalone: true,
-  imports: [FocusDirective, TranslatePipe, TranslatePipe],
+  imports: [FocusDirective, TranslatePipe],
 })
 export class AsmBindCartDialogComponent {
   BIND_CART_ACTION = BIND_CART_DIALOG_ACTION;

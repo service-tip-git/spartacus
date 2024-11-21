@@ -24,7 +24,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './delete-item.component.html',
   host: { class: 'content-wrapper' },
   standalone: true,
-  imports: [NgIf, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class DeleteItemComponent<T extends BaseItem> implements OnDestroy {
   /**

@@ -17,7 +17,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './configurator-textfield-add-to-cart-button.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [RouterLink, TranslatePipe, UrlPipe, TranslatePipe],
+  imports: [RouterLink, TranslatePipe, UrlPipe],
 })
 export class ConfiguratorTextfieldAddToCartButtonComponent {
   @Input() configuration: ConfiguratorTextfield.Configuration;

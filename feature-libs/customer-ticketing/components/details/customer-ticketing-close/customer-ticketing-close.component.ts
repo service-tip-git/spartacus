@@ -24,7 +24,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   selector: 'cx-customer-ticketing-close',
   templateUrl: './customer-ticketing-close.component.html',
   standalone: true,
-  imports: [NgIf, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class CustomerTicketingCloseComponent implements OnDestroy {
   protected subscription = new Subscription();

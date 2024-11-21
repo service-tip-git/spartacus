@@ -28,7 +28,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './quote-links.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, RouterLink, AsyncPipe, TranslatePipe, UrlPipe, TranslatePipe],
+  imports: [NgIf, RouterLink, AsyncPipe, TranslatePipe, UrlPipe],
 })
 export class QuoteLinksComponent {
   protected quoteFacade = inject(QuoteFacade);

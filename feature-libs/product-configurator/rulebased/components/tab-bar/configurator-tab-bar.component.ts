@@ -32,7 +32,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   //here we cannot go with OnPush, as we otherwise do not take the change to host binding into account
   changeDetection: ChangeDetectionStrategy.Default,
   standalone: true,
-  imports: [NgIf, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class ConfiguratorTabBarComponent {
   @HostBinding('class.ghost') ghostStyle = true;

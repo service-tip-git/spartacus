@@ -24,7 +24,7 @@ import { SubListComponent } from '../../../../shared/sub-list/sub-list.component
     },
   ],
   standalone: true,
-  imports: [SubListComponent, RouterLink, TranslatePipe, TranslatePipe],
+  imports: [SubListComponent, RouterLink, TranslatePipe],
 })
 export class UnitAddressListComponent {
   routerKey = ROUTE_PARAMS.addressCode;

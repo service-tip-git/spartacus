@@ -21,7 +21,7 @@ import { NgClass, AsyncPipe } from '@angular/common';
   selector: 'cx-set-preferred-store',
   templateUrl: './set-preferred-store.component.html',
   standalone: true,
-  imports: [NgClass, IconComponent, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgClass, IconComponent, AsyncPipe, TranslatePipe],
 })
 export class SetPreferredStoreComponent implements OnInit, OnDestroy {
   readonly ICON_TYPE = ICON_TYPE;

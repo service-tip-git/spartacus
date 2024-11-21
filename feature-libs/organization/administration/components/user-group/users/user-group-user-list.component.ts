@@ -29,7 +29,7 @@ import { RouterLink } from '@angular/router';
     },
   ],
   standalone: true,
-  imports: [SubListComponent, RouterLink, TranslatePipe, TranslatePipe],
+  imports: [SubListComponent, RouterLink, TranslatePipe],
 })
 export class UserGroupUserListComponent {
   constructor(

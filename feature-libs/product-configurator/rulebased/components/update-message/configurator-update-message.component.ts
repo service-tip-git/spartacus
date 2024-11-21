@@ -19,7 +19,7 @@ import { SpinnerComponent } from '@spartacus/storefront';
   templateUrl: './configurator-update-message.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [SpinnerComponent, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [SpinnerComponent, AsyncPipe, TranslatePipe],
 })
 export class ConfiguratorUpdateMessageComponent {
   hasPendingChanges$: Observable<boolean> = this.configRouterExtractorService

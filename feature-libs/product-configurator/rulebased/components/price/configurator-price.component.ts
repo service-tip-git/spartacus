@@ -24,7 +24,7 @@ export interface ConfiguratorPriceComponentOptions {
   templateUrl: './configurator-price.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, NgClass, TranslatePipe, CxNumericPipe, TranslatePipe],
+  imports: [NgIf, NgClass, TranslatePipe, CxNumericPipe],
 })
 export class ConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;

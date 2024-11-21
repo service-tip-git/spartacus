@@ -25,7 +25,7 @@ import { NgIf, NgFor, NgClass } from '@angular/common';
   templateUrl: './product-variant-style-selector.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, NgFor, NgClass, TranslatePipe, TranslatePipe],
+  imports: [NgIf, NgFor, NgClass, TranslatePipe],
 })
 export class ProductVariantStyleSelectorComponent {
   constructor(

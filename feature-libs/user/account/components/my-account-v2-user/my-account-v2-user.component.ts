@@ -15,6 +15,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
   selector: 'cx-my-account-v2-user',
   templateUrl: './my-account-v2-user.component.html',
   standalone: true,
-  imports: [NgIf, RouterLink, AsyncPipe, UrlPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, RouterLink, AsyncPipe, UrlPipe, TranslatePipe],
 })
 export class MyAccountV2UserComponent extends LoginComponent {}

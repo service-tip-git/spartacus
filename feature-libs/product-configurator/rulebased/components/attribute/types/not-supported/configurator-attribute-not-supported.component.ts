@@ -12,6 +12,6 @@ import { TranslatePipe } from '@spartacus/core';
   templateUrl: './configurator-attribute-not-supported.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [TranslatePipe, TranslatePipe],
+  imports: [TranslatePipe],
 })
 export class ConfiguratorAttributeNotSupportedComponent {}

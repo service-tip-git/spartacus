@@ -27,7 +27,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class GigyaRaasComponent implements OnInit {
   protected renderScreenSet = true;

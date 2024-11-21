@@ -24,7 +24,7 @@ import { CxNumericPipe } from '@spartacus/core';
   providers: [VisualViewerAnimationSliderService],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [TranslatePipe, CxNumericPipe, TranslatePipe],
+  imports: [TranslatePipe, CxNumericPipe],
 })
 export class VisualViewerAnimationSliderComponent implements AfterViewInit {
   constructor(

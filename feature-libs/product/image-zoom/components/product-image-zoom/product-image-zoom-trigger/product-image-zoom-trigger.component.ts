@@ -34,7 +34,7 @@ import { FeatureDirective } from '@spartacus/core';
   templateUrl: 'product-image-zoom-trigger.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FeatureDirective, IconComponent, TranslatePipe, TranslatePipe],
+  imports: [FeatureDirective, IconComponent, TranslatePipe],
 })
 export class ProductImageZoomTriggerComponent implements OnDestroy {
   iconType = ICON_TYPE;

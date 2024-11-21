@@ -24,7 +24,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   selector: 'cx-customer-ticketing-reopen',
   templateUrl: './customer-ticketing-reopen.component.html',
   standalone: true,
-  imports: [NgIf, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, AsyncPipe, TranslatePipe],
 })
 export class CustomerTicketingReopenComponent implements OnDestroy {
   protected subscription = new Subscription();

@@ -19,7 +19,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   templateUrl: './pdf.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, IconComponent, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, IconComponent, AsyncPipe, TranslatePipe],
 })
 export class PDFComponent {
   url?: string;
