@@ -236,6 +236,22 @@ export const orderHistoryTest = {
       });
     });
   },
+  checkTabsAreDisplayedAfterNavigation() {
+    it('should display order history tabs after navigation', () => {
+      doPlaceOrder().then((orderData: any) => {
+        cy.waitForOrderToBePlacedRequest(
+          undefined,
+          undefined,
+          orderData.body.code
+        );
+        cy.visit('/my-account/orders');
+        cy.get('cx-order-history h2').should('contain', 'Order history');
+        goToOrderDetails();
+        cy.go('back');
+        cy.get('cx-order-history h2').should('contain', 'Order history');
+      });
+    });
+  },
 };
 
 export function goToOrderDetails() {
