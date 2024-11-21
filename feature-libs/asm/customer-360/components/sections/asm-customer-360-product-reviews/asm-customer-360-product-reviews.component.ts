@@ -6,14 +6,14 @@
 
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { AsmCustomer360ReviewList } from '@spartacus/asm/customer-360/root';
-import { Product, TranslationService } from '@spartacus/core';
+import { CxDatePipe, Product, TranslationService } from '@spartacus/core';
 import { combineLatest, Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import {
-    CustomerTableColumn,
-    CustomerTableTextAlign,
-    TableEntry,
+  CustomerTableColumn,
+  CustomerTableTextAlign,
+  TableEntry,
 } from '../../asm-customer-360-table/asm-customer-360-table.model';
 import { AsmCustomer360SectionContext } from '../asm-customer-360-section-context.model';
 import { ReviewEntry } from './asm-customer-360-product-reviews.model';
@@ -63,7 +63,7 @@ export class AsmCustomer360ProductReviewsComponent implements OnInit {
   constructor(
     protected asmCustomer360Config: AsmCustomer360Config,
     protected context: AsmCustomer360SectionContext<AsmCustomer360ReviewList>,
-    protected datePipe: 
+    protected datePipe: CxDatePipe,
     protected translation: TranslationService
   ) {}
 
