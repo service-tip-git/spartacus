@@ -8,7 +8,6 @@ BASE_SITE="electronics-spa-standalone"
 # The base URL and public key values are required for connection to Cloud Commerce Adapter (OPF)
 OPF_BASE_URL="https://cp96avkh5f-integrati2-d2.opf.commerce.stage.context.cloud.sap/commerce-cloud-adapter-stage/storefront"
 OPF_CLIENT_PUBLIC_KEY="k2N3m3TJPLragwia5ZUvS/qkIPVQoy5qjUkOAB6Db+U="
-OPF_QUICK_BUY_GOOGLE_PAY_RESOURCE_URL="https://pay.google.com/gp/p/js/pay.js"
 
 # TODO: Comment out the line below after OPF branch is merged into develop.
 BRANCH="epic/opf"
