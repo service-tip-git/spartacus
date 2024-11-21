@@ -36,14 +36,12 @@ import { ORDER_MODULE } from '../order-schematics-config';
 export interface SpartacusOpfOptions extends LibraryOptions {
   opfBaseUrl?: string;
   commerceCloudPublicKey?: string;
-  opfGooglePayApiUrl?: string;
 }
 
 export const OPF_FOLDER_NAME = 'opf';
 export const OPF_MODULE_NAME = 'Opf';
 export const OPF_SCSS_FILE_NAME = 'opf.scss';
 export const OPF_CONFIG = 'OpfConfig';
-export const OPF_QUICKBUY_CONFIG = 'OpfQuickBuyConfig';
 
 export const OPF_CHECKOUT_FEATURE_NAME_CONSTANT = 'OPF_CHECKOUT_FEATURE';
 export const OPF_CHECKOUT_MODULE = 'OpfCheckoutModule';
@@ -264,7 +262,6 @@ export const OPF_QUICK_BUY_SCHEMATICS_CONFIG: SchematicConfig = {
     scssFileName: OPF_SCSS_FILE_NAME,
     importStyle: SPARTACUS_OPF,
   },
-  customConfig: buildOpfQuickBuyConfig,
 };
 
 function buildOpfConfig(
@@ -286,30 +283,6 @@ function buildOpfConfig(
               'PLACEHOLDER_COMMERCE_CLOUD_PUBLIC_KEY'
             }",
           },
-        }`,
-    },
-  };
-}
-
-function buildOpfQuickBuyConfig(
-  options: SpartacusOpfOptions
-): AdditionalFeatureConfiguration<SpartacusOpfOptions> {
-  return {
-    providers: {
-      import: [
-        {
-          moduleSpecifier: SPARTACUS_OPF_QUICK_BUY_ROOT,
-          namedImports: [OPF_QUICKBUY_CONFIG],
-        },
-      ],
-      content: `<${OPF_QUICKBUY_CONFIG}>{
-      providers: [
-        {
-          googlePay: {
-           resourceUrl: "${options.opfGooglePayApiUrl || 'PLACEHOLDER_GOOGLE_PAY_API_URL'}"
-          }
-        }
-      ]
         }`,
     },
   };
