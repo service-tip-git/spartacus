@@ -271,7 +271,10 @@ export class AddToCartComponent implements OnInit, OnDestroy {
   }
 
   onPickupOptionsCompLoaded() {
-    if (this.featureConfigService.isEnabled('a11yPickupOptionsTabs')) {
+    if (
+      this.featureConfigService.isEnabled('a11yPickupOptionsTabs') &&
+      this.pickupOptionCompRef instanceof ComponentRef
+    ) {
       this.subscription.add(
         this.pickupOptionCompRef.instance.intendedPickupChange.subscribe(
           (
