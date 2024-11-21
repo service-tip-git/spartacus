@@ -7,20 +7,20 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit, Optional } from '@angular/core';
 import {
-    FormControl,
-    FormGroup,
-    FormsModule,
-    ReactiveFormsModule,
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
 } from '@angular/forms';
 import { Cart } from '@spartacus/cart/base/root';
 import { CheckoutSupportedDeliveryModesQueryReloadEvent } from '@spartacus/checkout/base/root';
 import {
-    CxDatePipe,
-    ErrorModel,
-    EventService,
-    GlobalMessageService,
-    GlobalMessageType,
-    TranslationService,
+  CxDatePipe,
+  ErrorModel,
+  EventService,
+  GlobalMessageService,
+  GlobalMessageType,
+  TranslationService,
 } from '@spartacus/core';
 import { Card, OutletContextData } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
@@ -47,8 +47,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
     AsyncPipe,
     TranslatePipe,
     CxDatePipe_1,
-
-    ,
   ],
 })
 export class DeliveryModeDatePickerComponent implements OnInit, OnDestroy {
