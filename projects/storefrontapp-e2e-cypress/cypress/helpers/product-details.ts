@@ -242,11 +242,6 @@ export function configureDefaultProduct() {
       baseSite: ['electronics-spa'],
       currency: ['USD'],
     },
-    // TODO: No longer needed to toggle a11yTabComponent feature when set to true
-    // by default.
-    features: {
-      a11yTabComponent: true,
-    },
   });
 
   cy.intercept({
@@ -267,11 +262,6 @@ export function configureApparelProduct() {
     context: {
       baseSite: ['apparel-uk-spa'],
       currency: ['GBP'],
-    },
-    // TODO: No longer needed to toggle a11yTabComponent feature when set to true
-    // by default.
-    features: {
-      a11yTabComponent: true,
     },
   });
   cy.visit('/product/100191');

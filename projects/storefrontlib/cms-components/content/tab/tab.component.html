@@ -22,7 +22,11 @@
         [disabled]="disabled"
         #tabHeader
       >
-        {{ tab.headerKey ? (tab.headerKey | cxTranslate) : tab.header }}
+        {{
+          tab.headerKey
+            ? (tab.headerKey | cxTranslate: tab.headerParams || {})
+            : tab.header
+        }}
         <span
           *ngIf="mode === TAB_MODE.ACCORDIAN"
           class="tab-icon"
