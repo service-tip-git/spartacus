@@ -40,6 +40,7 @@ describe('Order History with orders', () => {
     orderHistoryTest.checkIfOrderIsDisplayed();
     orderHistoryTest.checkSortingByCode();
     orderHistoryTest.checkCorrectDateFormat();
+    orderHistoryTest.checkTabsAreDisplayedAfterNavigation();
   });
 });
 

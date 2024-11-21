@@ -59,7 +59,7 @@
             "label": "Account Summary (b2b feature, requires Organization - Administration)"
           },
           {
-            "value": "User-Registration",
+            "value": "Organization-User-Registration",
             "label": "User Registration (b2b feature)"
           },
           {

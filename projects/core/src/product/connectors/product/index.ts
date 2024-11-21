@@ -8,3 +8,5 @@ export * from './product.connector';
 export * from './product.adapter';
 export * from './converters';
 export * from './scoped-product-data';
+export * from './prduct-availability.adapter';
+export * from './product-availability.connector';

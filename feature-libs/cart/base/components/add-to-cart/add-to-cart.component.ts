@@ -29,7 +29,10 @@ import {
   CmsAddToCartComponent,
   EventService,
   FeatureConfigService,
+  FeatureToggles,
   Product,
+  ProductAvailabilityService,
+  ProductScope,
   isNotNullable,
   useFeatureStyles,
 } from '@spartacus/core';
@@ -64,7 +67,9 @@ export class AddToCartComponent implements OnInit, OnDestroy {
   @ViewChild('addToCartDialogTriggerEl') addToCartDialogTriggerEl: ElementRef;
 
   maxQuantity: number;
+
   disabled: boolean = false;
+
   hasStock: boolean = false;
   inventoryThreshold: boolean = false;
 
@@ -86,6 +91,8 @@ export class AddToCartComponent implements OnInit, OnDestroy {
   iconTypes = ICON_TYPE;
 
   private featureConfigService = inject(FeatureConfigService);
+  private featureToggles = inject(FeatureToggles);
+  private productAvailabilityService = inject(ProductAvailabilityService);
 
   /**
    * We disable the dialog launch on quantity input,
@@ -121,24 +128,28 @@ export class AddToCartComponent implements OnInit, OnDestroy {
     if (this.product) {
       this.productCode = this.product.code ?? '';
       this.setStockInfo(this.product);
-      this.cd.markForCheck();
     } else if (this.productCode) {
       // force hasStock and quantity for the time being, as we do not have more info:
       this.quantity = 1;
       this.hasStock = true;
       this.cd.markForCheck();
     } else {
+      let product$: Observable<Product | null>;
+      if (this.productListItemContext) {
+        product$ = this.productListItemContext.product$;
+      } else if (this.featureToggles.showRealTimeStockInPDP) {
+        product$ = this.currentProductService.getProduct([
+          ProductScope.UNIT,
+          ProductScope.DETAILS,
+        ]);
+      } else {
+        product$ = this.currentProductService.getProduct();
+      }
       this.subscription.add(
-        (this.productListItemContext
-          ? this.productListItemContext.product$
-          : this.currentProductService.getProduct()
-        )
-          .pipe(filter(isNotNullable))
-          .subscribe((product) => {
-            this.productCode = product.code ?? '';
-            this.setStockInfo(product);
-            this.cd.markForCheck();
-          })
+        product$.pipe(filter(isNotNullable)).subscribe((product) => {
+          this.productCode = product.code ?? '';
+          this.setStockInfo(product);
+        })
       );
     }
   }
@@ -147,17 +158,33 @@ export class AddToCartComponent implements OnInit, OnDestroy {
     this.quantity = 1;
 
     this.addToCartForm.controls['quantity'].setValue(1);
-
-    this.hasStock = Boolean(product.stock?.stockLevelStatus !== 'outOfStock');
-
     this.inventoryThreshold = product.stock?.isValueRounded ?? false;
-
-    if (this.hasStock && product.stock?.stockLevel) {
-      this.maxQuantity = product.stock.stockLevel;
-    }
-
     if (this.productListItemContext) {
       this.showQuantity = false;
+    }
+
+    /**
+     * When removing the feature toggle in the future, let's leave the if-else block.
+     * In case of absent sapUnit we want to fallback to the stock info from the product object.
+     */
+    if (
+      this.featureToggles.showRealTimeStockInPDP &&
+      product.sapUnit?.sapCode
+    ) {
+      this.productAvailabilityService
+        .getRealTimeStock(this.productCode, product.sapUnit?.sapCode)
+        .pipe(take(1))
+        .subscribe(({ quantity, status }) => {
+          this.maxQuantity = Number(quantity);
+          this.hasStock = Boolean(status && status !== 'OUT_OF_STOCK');
+          this.cd.markForCheck();
+        });
+    } else {
+      this.hasStock = Boolean(product.stock?.stockLevelStatus !== 'outOfStock');
+      if (this.hasStock && product.stock?.stockLevel) {
+        this.maxQuantity = product.stock.stockLevel;
+      }
+      this.cd.markForCheck();
     }
   }
 
@@ -244,7 +271,10 @@ export class AddToCartComponent implements OnInit, OnDestroy {
   }
 
   onPickupOptionsCompLoaded() {
-    if (this.featureConfigService.isEnabled('a11yPickupOptionsTabs')) {
+    if (
+      this.featureConfigService.isEnabled('a11yPickupOptionsTabs') &&
+      this.pickupOptionCompRef instanceof ComponentRef
+    ) {
       this.subscription.add(
         this.pickupOptionCompRef.instance.intendedPickupChange.subscribe(
           (

@@ -61,7 +61,10 @@
           'orderApprovalList.orderApprovalList' | cxTranslate
         }}
       </caption>
-      <thead class="cx-order-approval-thead-mobile">
+      <thead
+        *cxFeature="'!a11yTableHeaderReadout'"
+        class="cx-order-approval-thead-mobile"
+      >
         <th scope="col">
           {{ 'orderApprovalList.orderCode' | cxTranslate }}
         </th>
@@ -72,6 +75,23 @@
           {{ 'orderApprovalList.status' | cxTranslate }}
         </th>
         <th scope="col">{{ 'orderApprovalList.total' | cxTranslate }}</th>
+      </thead>
+      <thead
+        *cxFeature="'a11yTableHeaderReadout'"
+        class="cx-order-approval-thead-mobile"
+      >
+        <tr>
+          <th scope="col">
+            {{ 'orderApprovalList.orderCode' | cxTranslate }}
+          </th>
+          <th scope="col">{{ 'orderApprovalList.POCode' | cxTranslate }}</th>
+          <th scope="col">{{ 'orderApprovalList.placedBy' | cxTranslate }}</th>
+          <th scope="col">{{ 'orderApprovalList.date' | cxTranslate }}</th>
+          <th scope="col">
+            {{ 'orderApprovalList.status' | cxTranslate }}
+          </th>
+          <th scope="col">{{ 'orderApprovalList.total' | cxTranslate }}</th>
+        </tr>
       </thead>
       <tbody>
         <tr
