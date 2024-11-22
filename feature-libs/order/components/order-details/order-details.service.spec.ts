@@ -73,7 +73,7 @@ const mockEntryGroups: OrderEntryGroup[] = [
             },
           },
         ],
-        entryGroups: [], // 子组没有更深的嵌套
+        entryGroups: [],
       },
     ],
   },
@@ -84,7 +84,7 @@ const mockEntryGroups: OrderEntryGroup[] = [
         entryNumber: 3,
         product: { code: 'P003' },
         quantity: 1,
-        deliveryPointOfService: undefined, // 送货到家
+        deliveryPointOfService: undefined,
       },
     ],
     entryGroups: [],
