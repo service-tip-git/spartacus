@@ -72,7 +72,9 @@ describe('Order Cancellations and Returns', () => {
         'contain',
         sampleData.REQUEST_STATUS_PENDING
       );
-
+      cy.get('cx-tab-paragraph-container button')
+        .eq(1)
+        .should('contain', 'RETURNS (1)');
       // test the sort dropdown
       cy.get('.top cx-sorting .ng-select').ngSelect('Return Number');
       cy.wait('@return_request_list')
