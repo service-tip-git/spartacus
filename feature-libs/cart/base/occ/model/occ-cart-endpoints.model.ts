@@ -72,6 +72,14 @@ export interface CartOccEndpoints {
    * Get cart validation results
    */
   validate?: string | OccEndpoint;
+  /**
+   * Generates an access code for a cart
+   */
+  cartAccessCode?: string | OccEndpoint;
+  /**
+   * Creates a guest user, and assigns the user to the cart
+   */
+  cartGuestUser?: string | OccEndpoint;
 }
 
 declare module '@spartacus/core' {
