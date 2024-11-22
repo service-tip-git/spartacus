@@ -78,6 +78,8 @@ import { CpqQuoteFeatureModule } from './features/cpq-quote/cpq-quote-feature.mo
 import { CustomerTicketingFeatureModule } from './features/customer-ticketing/customer-ticketing-feature.module';
 import { DigitalPaymentsFeatureModule } from './features/digital-payments/digital-payments-feature.module';
 import { EpdVisualizationFeatureModule } from './features/epd-visualization/epd-visualization-feature.module';
+import { QuoteFeatureModule } from './features/quote-feature.module';
+import { OpfFeatureModule } from './features/opf/opf-feature.module';
 import { EstimatedDeliveryDateFeatureModule } from './features/estimated-delivery-date/estimated-delivery-date-feature.module';
 import { OmfFeatureModule } from './features/omf/omf-feature.module';
 import { OppsFeatureModule } from './features/opps/opps-feature.module';
@@ -97,7 +99,6 @@ import { FutureStockFeatureModule } from './features/product/product-future-stoc
 import { ImageZoomFeatureModule } from './features/product/product-image-zoom-feature.module';
 import { VariantsFeatureModule } from './features/product/product-variants-feature.module';
 import { QualtricsFeatureModule } from './features/qualtrics/qualtrics-feature.module';
-import { QuoteFeatureModule } from './features/quote-feature.module';
 import { OrganizationUserRegistrationFeatureModule } from './features/registration-feature.module';
 import { RequestedDeliveryDateFeatureModule } from './features/requested-delivery-date/requested-delivery-date-feature.module';
 import { S4ServiceFeatureModule } from './features/s4-service/s4-service-feature.module';
@@ -147,6 +148,9 @@ if (environment.opps) {
 }
 if (environment.s4om) {
   featureModules.push(S4OMFeatureModule);
+}
+if (environment.opf) {
+  featureModules.push(OpfFeatureModule);
 }
 if (environment.segmentRefs) {
   featureModules.push(SegmentRefsFeatureModule);
@@ -354,7 +358,7 @@ if (environment.cpq) {
         a11yEmptyWishlistHeading: true,
         a11yScreenReaderBloatFix: true,
         a11yUseButtonsForBtnLinks: true,
-        a11yTabComponent: false,
+        a11yTabComponent: true,
         a11yCarouselArrowKeysNavigation: true,
         a11yPickupOptionsTabs: true,
         a11yNotificationsOnConsentChange: true,
@@ -392,7 +396,11 @@ if (environment.cpq) {
         a11yApprovalProcessWithNoClearable: true,
         a11yPostRegisterSuccessMessage: true,
         a11yDeleteButton2First: true,
+        a11yShowLabelOfSelect: true,
+        a11yShowDownArrowOnFocusedSelectMenu: true,
+        a11yCroppedFocusRing: true,
         a11yTextSpacingAdjustments: true,
+        a11yTableHeaderReadout: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
         useSiteThemeService: false,
         enableConsecutiveCharactersPasswordRequirement: true,
@@ -400,6 +408,7 @@ if (environment.cpq) {
         allPageMetaResolversEnabledInCsr: true,
         sciEnabled: true,
         useExtendedMediaComponentConfiguration: true,
+        showRealTimeStockInPDP: false,
         a11yWrapReviewOrderInSection: true,
       };
       return appFeatureToggles;

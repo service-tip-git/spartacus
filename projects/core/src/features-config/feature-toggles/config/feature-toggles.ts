@@ -675,10 +675,35 @@ export interface FeatureTogglesInterface {
   a11yDeleteButton2First?: boolean;
 
   /**
+   * In `CustomerListComponent`, `OrderApprovalListComponent`, and `ConfiguratorAttriuteSingleSelectionBundleDropdownComponent`, show label of every `ng-select` and `select`.
+   */
+  a11yShowLabelOfSelect?: boolean;
+
+  /**
+   * In `SiteContextSelectComponent` and `SiteThemeSwitcherComponent`, update style of caret.
+   */
+  a11yShowDownArrowOnFocusedSelectMenu?: boolean;
+
+  /**
+   * Fixes various instances of the focus ring being cropped in the UI.
+   * The focus ring on interactive elements should have all its sides visible and not include any extra padding.
+   * Affects styles of: 'CartItemListComponent, CartItemComponent, ListComponent, FutureStockAccordionComponent, QuoteConfirmDialogComponent, MessagingComponent
+   */
+  a11yCroppedFocusRing?: boolean;
+
+  /**
    * Fixes text formatting issues while a11y text spacing is enabled.
    * Affects: ListComponent, CSAgentLoginFormComponent
    */
   a11yTextSpacingAdjustments?: boolean;
+
+  /**
+   * Ensures the table column header gets properly narrated by the screen readers.
+   * Affects tables in the following components: SavedCartListComponent, ReplenishmentOrderHistoryComponent, OrderReturnRequestListComponent,
+   * AccountSummaryDocumentComponent, OrderDetailPermissionResultsComponent, OrderApprovalListComponent, UnitLevelOrderHistoryComponent,
+   * InvoicesListComponent, MyInterestsComponent
+   */
+  a11yTableHeaderReadout?: boolean;
 
   /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
@@ -767,6 +792,12 @@ export interface FeatureTogglesInterface {
   useExtendedMediaComponentConfiguration?: boolean;
 
   /**
+   * Enables Real time stock display in the PDP page.
+   * when set to `true`, the user will be able to see the real time stock in PDP
+   */
+  showRealTimeStockInPDP?: boolean;
+
+  /**
    * Creates a section element with applied aria-label in "Review Order" page of the checkout.
    * Moves components to be children of this section element.
    */
@@ -781,7 +812,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   shouldHideAddToCartForUnpurchasableProducts: false,
   useExtractedBillingAddressComponent: false,
   showBillingAddressInDigitalPayments: false,
-  showDownloadProposalButton: false,
+  showDownloadProposalButton: true,
   showPromotionsInPDP: true,
   searchBoxV2: false,
   recentSearches: true,
@@ -881,7 +912,11 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yApprovalProcessWithNoClearable: false,
   a11yPostRegisterSuccessMessage: false,
   a11yDeleteButton2First: false,
+  a11yShowLabelOfSelect: false,
+  a11yShowDownArrowOnFocusedSelectMenu: false,
+  a11yCroppedFocusRing: false,
   a11yTextSpacingAdjustments: false,
+  a11yTableHeaderReadout: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
@@ -890,4 +925,5 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   allPageMetaResolversEnabledInCsr: false,
   sciEnabled: false,
   useExtendedMediaComponentConfiguration: false,
+  showRealTimeStockInPDP: false,
 };

@@ -46,6 +46,7 @@ export class CartItemComponent implements OnChanges {
   constructor(protected cartItemContextSource: CartItemContextSource) {
     useFeatureStyles('a11yCartItemsLinksStyles');
     useFeatureStyles('a11yQTY2Quantity');
+    useFeatureStyles('a11yCroppedFocusRing');
   }
 
   ngOnChanges(changes?: SimpleChanges) {
