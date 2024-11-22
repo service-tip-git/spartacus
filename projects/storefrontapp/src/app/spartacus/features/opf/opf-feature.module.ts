@@ -36,6 +36,7 @@ import {
   OpfPaymentRootModule,
 } from '@spartacus/opf/payment/root';
 import {
+  OPF_GOOGLE_PAY_PROVIDER_NAME,
   OPF_QUICK_BUY_FEATURE,
   OpfQuickBuyConfig,
   OpfQuickBuyGooglePayProvider,
@@ -125,13 +126,11 @@ if (environment.b2b) {
       },
     }),
     provideConfig(<OpfQuickBuyConfig>{
-      providers: [
-        {
-          googlePay: {
-            resourceUrl: 'https://pay.google.com/gp/p/js/pay.js',
-          },
+      providers: {
+        [OPF_GOOGLE_PAY_PROVIDER_NAME]: {
+          resourceUrl: 'https://pay.google.com/gp/p/js/pay.js',
         } as OpfQuickBuyGooglePayProvider,
-      ],
+      },
     }),
     ...extensionProviders,
   ],

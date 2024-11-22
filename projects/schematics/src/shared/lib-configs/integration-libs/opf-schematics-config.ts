@@ -286,13 +286,12 @@ function buildOpfQuickBuyConfig(
         },
       ],
       content: `<${OPF_QUICKBUY_CONFIG}>{
-      providers: [
+      providers: 
         {
           googlePay: {
            resourceUrl: "${options.opfGooglePayApiUrl || 'PLACEHOLDER_GOOGLE_PAY_API_URL'}"
           }
-        }
-      ]
+        }      
         }`,
     },
   };

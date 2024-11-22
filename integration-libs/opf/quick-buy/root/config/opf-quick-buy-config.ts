@@ -6,14 +6,13 @@
 
 import { Injectable } from '@angular/core';
 import { Config } from '@spartacus/core';
-import { OpfQuickBuyProvider } from '../model';
 
 @Injectable({
   providedIn: 'root',
   useExisting: Config,
 })
 export abstract class OpfQuickBuyConfig {
-  providers?: OpfQuickBuyProvider[];
+  providers?: any;
 }
 
 declare module '@spartacus/core' {

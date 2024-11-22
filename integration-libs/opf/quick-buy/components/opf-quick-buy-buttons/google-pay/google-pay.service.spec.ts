@@ -12,6 +12,7 @@ import { OpfResourceLoaderService } from '@spartacus/opf/base/root';
 import { OpfPaymentFacade } from '@spartacus/opf/payment/root';
 import { OpfQuickBuyTransactionService } from '@spartacus/opf/quick-buy/core';
 import {
+  OPF_GOOGLE_PAY_PROVIDER_NAME,
   OPF_QUICK_BUY_ADDRESS_FIELD_PLACEHOLDER,
   OpfQuickBuyConfig,
   OpfQuickBuyGooglePayProvider,
@@ -88,13 +89,11 @@ describe('OpfGooglePayService', () => {
     );
 
     mockOpfQuickBuyConfig = {
-      providers: [
-        {
-          googlePay: {
-            resourceUrl: 'fakeUrl',
-          },
+      providers: {
+        [OPF_GOOGLE_PAY_PROVIDER_NAME]: {
+          resourceUrl: 'fakeUrl',
         } as OpfQuickBuyGooglePayProvider,
-      ],
+      },
     };
 
     const googlePayApiMock = {
