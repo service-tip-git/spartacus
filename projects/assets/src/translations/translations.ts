@@ -5,6 +5,9 @@
  */
 
 import { en } from './en/index';
+import { ja } from './ja/index';
+import { de } from './de/index';
+import { zh } from './zh/index';
 
 interface TranslationResources {
   [lang: string]: {
@@ -16,4 +19,7 @@ interface TranslationResources {
 
 export const translations: TranslationResources = {
   en,
+  ja,
+  de,
+  zh,
 };

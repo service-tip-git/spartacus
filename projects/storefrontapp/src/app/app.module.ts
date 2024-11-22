@@ -78,7 +78,12 @@ if (!environment.production) {
     provideConfig(<I18nConfig>{
       // we bring in static translations to be up and running soon right away
       i18n: {
-        resources: translations,
+        resources: {
+          en: translations['en'],
+          ja: translations['ja'],
+          de: translations['de'],
+          zh: translations['zh'],
+        },
         chunks: translationChunksConfig,
         fallbackLang: 'en',
       },

@@ -6,9 +6,15 @@
 
 import { TranslationChunksConfig, TranslationResources } from '@spartacus/core';
 import { en } from './en';
+import { ja } from './ja';
+import { de } from './de';
+import { zh } from './zh';
 
 export const cdsTranslations: TranslationResources = {
   en,
+  ja,
+  de,
+  zh,
 };
 
 export const cdsTranslationChunksConfig: TranslationChunksConfig = {
