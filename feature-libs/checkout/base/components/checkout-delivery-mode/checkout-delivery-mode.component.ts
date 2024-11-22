@@ -208,4 +208,8 @@ export class CheckoutDeliveryModeComponent implements OnInit {
         }, 0);
       });
   }
+
+  removeBundle(entryGroupNumber: any): void {
+    this.activeCartFacade.removeEntryGroup(entryGroupNumber);
+  }
 }

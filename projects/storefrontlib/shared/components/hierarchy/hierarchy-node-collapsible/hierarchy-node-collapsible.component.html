@@ -1,9 +1,9 @@
 <div class="cx-hierarchy-node-collapsible" (click)="toggle()">
-  <span class="leaf-node-title">{{ tree.name }}</span>
-  <ng-container *ngIf="!readonly">
+  <span class="leaf-node-title">{{ options.tree.name }}</span>
+  <ng-container *ngIf="!options.collasibleReadonly">
     <button
-      *ngIf="tree.children.length === 0; else noneLeafNode"
-      (click)="editBundle(tree.value?.entryGroupNumber)"
+      *ngIf="collapsibleChildren.length === 0; else noneLeafNode"
+      (click)="onItemEdit(options.tree.value?.key)"
       class="btn btn-tertiary"
       type="button"
     >
@@ -13,16 +13,24 @@
 </div>
 <cx-hierarchy-node-collapsible
   *ngFor="let child of collapsibleChildren; let i = index"
-  [tree]="child"
-  [template]="template"
-  [readonly]="readonly"
+  [options]="{
+    tree: child,
+    template: options.template,
+    collasibleReadonly: options.collasibleReadonly
+  }"
 >
 </cx-hierarchy-node-collapsible>
-<ng-container *ngIf="tree.children.length === 0 && tree.value?.entries?.length">
+<ng-container
+  *ngIf="
+    collapsibleChildren.length === 0 &&
+    options.tree.value?.data?.length &&
+    options.template
+  "
+>
   <ng-container
     *ngTemplateOutlet="
-      template;
-      context: { $implicit: this.tree.value?.entries }
+      options.template;
+      context: { $implicit: options.tree.value?.data }
     "
   ></ng-container>
 </ng-container>

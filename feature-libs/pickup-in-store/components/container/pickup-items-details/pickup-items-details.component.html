@@ -61,10 +61,12 @@
             *ngFor="let bundle of deliveryPointOfService.hierachyTrees"
           >
             <cx-hierarchy
-              [tree]="bundle"
-              [template]="bundlesTemplate"
-              [titleReadonly]="true"
-              [collasibleReadonly]="true"
+              [options]="{
+                tree: bundle,
+                template: bundlesTemplate,
+                titleReadonly: true,
+                collasibleReadonly: true,
+              }"
             >
             </cx-hierarchy>
           </ng-container>

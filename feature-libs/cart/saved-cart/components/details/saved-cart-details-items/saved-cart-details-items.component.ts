@@ -126,6 +126,10 @@ export class SavedCartDetailsItemsComponent implements OnInit, OnDestroy {
     }
   }
 
+  removeBundle(entryGroupNumber: any): void {
+    this.activeCartService.removeEntryGroup(entryGroupNumber);
+  }
+
   ngOnDestroy(): void {
     this.subscription?.unsubscribe();
   }

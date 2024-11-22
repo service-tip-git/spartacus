@@ -1,8 +1,8 @@
 <div class="cx-hierarchy-node-title">
-  <span class="node-title">{{ tree.name }}</span>
+  <span class="node-title">{{ options.tree.name }}</span>
   <button
-    *ngIf="!readonly"
-    (click)="removeBundle(tree.value?.entryGroupNumber)"
+    *ngIf="!options.titleReadonly"
+    (click)="onItemRemove(options.tree.value?.key)"
     class="btn btn-tertiary"
     type="button"
   >
