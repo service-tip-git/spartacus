@@ -46,6 +46,7 @@ export class ListComponent<T = any, P = PaginationModel> {
     useFeatureStyles('a11yListOversizedFocus');
     useFeatureStyles('a11yOrganizationLinkableCells');
     useFeatureStyles('a11yTextSpacingAdjustments');
+    useFeatureStyles('a11yCroppedFocusRing');
   }
 
   @HostBinding('class')

@@ -398,6 +398,7 @@ if (environment.cpq) {
         a11yDeleteButton2First: true,
         a11yShowLabelOfSelect: true,
         a11yShowDownArrowOnFocusedSelectMenu: true,
+        a11yCroppedFocusRing: true,
         a11yTextSpacingAdjustments: true,
         a11yTableHeaderReadout: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
