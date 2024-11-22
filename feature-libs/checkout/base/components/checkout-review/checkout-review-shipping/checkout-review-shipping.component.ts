@@ -125,4 +125,8 @@ export class CheckoutReviewShippingComponent implements OnInit {
       this.translationService.translate('checkoutMode.deliveryMethod'),
     ]).pipe(map(([textTitle]) => deliveryModeCard(textTitle, deliveryMode)));
   }
+
+  removeBundle(entryGroupNumber: any): void {
+    this.activeCartFacade.removeEntryGroup(entryGroupNumber);
+  }
 }

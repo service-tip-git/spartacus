@@ -11,27 +11,17 @@ import {
   OnChanges,
   OnInit,
   SimpleChanges,
-  TemplateRef,
 } from '@angular/core';
-import { HierarchyNode } from './hierarchy-node.model';
 import { TitleNode } from '../hierarchy-node-title/title-node.model';
 import { CollapsibleNode } from '../hierarchy-node-collapsible/collapsible-node.model';
-import { ActiveCartFacade } from '@spartacus/cart/base/root';
+import { HierarchyOptions } from '../hierarchy/hierarchy.model';
 
 @Component({
   selector: 'cx-hierarchy-node',
   templateUrl: './hierarchy-node.component.html',
 })
 export class HierarchyNodeComponent<T> implements OnInit, OnChanges {
-  @Input() tree: HierarchyNode<T>;
-
-  @Input() template: TemplateRef<any>;
-
-  @Input() activeCartService: ActiveCartFacade;
-
-  @Input() titleReadonly = false;
-
-  @Input() collasibleReadonly = false;
+  @Input() options!: HierarchyOptions<T>;
 
   /** Node variant type.  Used to select the correct variant node */
   type: string;
@@ -39,7 +29,7 @@ export class HierarchyNodeComponent<T> implements OnInit, OnChanges {
   collasibleTree: CollapsibleNode<T>;
 
   @HostBinding('class.disabled') get disabled(): boolean {
-    return this.tree.disabled;
+    return this.options.tree.disabled;
   }
 
   ngOnInit(): void {
@@ -47,17 +37,17 @@ export class HierarchyNodeComponent<T> implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.tree) {
+    if (changes.options) {
       this.setType();
     }
   }
 
   private setType(): void {
-    if (this.tree instanceof TitleNode) {
+    if (this.options.tree instanceof TitleNode) {
       this.type = 'TITLE';
-    } else if (this.tree instanceof CollapsibleNode) {
+    } else if (this.options.tree instanceof CollapsibleNode) {
       this.type = 'COLLAPSIBLE';
-      this.collasibleTree = this.tree;
+      this.collasibleTree = this.options.tree;
     }
   }
 }

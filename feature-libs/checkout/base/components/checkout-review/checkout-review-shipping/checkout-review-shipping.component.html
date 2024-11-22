@@ -141,11 +141,13 @@
           <ng-container *cxFeature="'enableBundles'">
             <ng-container *ngFor="let bundle of bundles$ | async">
               <cx-hierarchy
-                [tree]="bundle"
-                [template]="bundlesTemplate"
-                [activeCartService]="activeCartFacade"
-                [titleReadonly]="true"
-                [collasibleReadonly]="true"
+                [options]="{
+                  tree: bundle,
+                  template: bundlesTemplate,
+                  onItemRemove: removeBundle.bind(this),
+                  titleReadonly: true,
+                  collasibleReadonly: true,
+                }"
               >
               </cx-hierarchy>
             </ng-container>
