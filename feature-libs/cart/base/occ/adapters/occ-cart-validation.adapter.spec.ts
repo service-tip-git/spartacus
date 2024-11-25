@@ -1,7 +1,4 @@
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { CART_VALIDATION_NORMALIZER } from '@spartacus/cart/base/core';
 import { CartModificationList } from '@spartacus/cart/base/root';
@@ -12,6 +9,7 @@ import {
   OccEndpointsService,
 } from '@spartacus/core';
 import { OccCartValidationAdapter } from './occ-cart-validation.adapter';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 const mockUserId = 'userId';
 const mockCartId = 'cartId';
@@ -49,15 +47,17 @@ describe('OccCartValidationAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         OccCartValidationAdapter,
         {
-          provide: OccEndpointsService,
-          useClass: MockOccEndpointsService,
+            provide: OccEndpointsService,
+            useClass: MockOccEndpointsService,
         },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     occCartValidationAdapter = TestBed.inject(OccCartValidationAdapter);
     httpMock = TestBed.inject(HttpTestingController);

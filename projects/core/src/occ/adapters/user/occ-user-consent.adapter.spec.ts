@@ -1,7 +1,4 @@
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import {
   CONSENT_TEMPLATE_NORMALIZER,
@@ -16,6 +13,7 @@ import {
   MockOccEndpointsService,
   mockOccModuleConfig,
 } from './unit-test.helper';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 describe('OccUserConsentAdapter', () => {
   let occUserConsentAdapter: OccUserConsentAdapter;
@@ -25,16 +23,18 @@ describe('OccUserConsentAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         OccUserConsentAdapter,
         { provide: OccConfig, useValue: mockOccModuleConfig },
         {
-          provide: OccEndpointsService,
-          useClass: MockOccEndpointsService,
+            provide: OccEndpointsService,
+            useClass: MockOccEndpointsService,
         },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     occUserConsentAdapter = TestBed.inject(OccUserConsentAdapter);
     httpMock = TestBed.inject(HttpTestingController);

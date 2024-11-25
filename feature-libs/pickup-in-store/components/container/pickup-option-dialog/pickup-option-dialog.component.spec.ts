@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { ElementRef, ViewContainerRef } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { EffectsModule } from '@ngrx/effects';
@@ -28,6 +28,7 @@ import { MockPreferredStoreService } from '../../../core/services/preferred-stor
 import { StoreListStubComponent } from '../store-list/store-list.component.spec';
 import { StoreSearchStubComponent } from '../store-search/store-search.component.spec';
 import { PickupOptionDialogComponent } from './pickup-option-dialog.component';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 export class MockLaunchDialogService implements Partial<LaunchDialogService> {
   get data$(): Observable<any> {
@@ -89,43 +90,42 @@ describe('PickupOptionDialogComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
+    declarations: [
         PickupOptionDialogComponent,
         StoreSearchStubComponent,
         StoreListStubComponent,
         MockFeatureDirective,
-      ],
-      imports: [
-        CommonModule,
-        HttpClientTestingModule,
+    ],
+    imports: [CommonModule,
         I18nTestingModule,
         IconTestingModule,
         KeyboardFocusModule,
         SpinnerModule,
         StoreModule.forRoot({}),
-        EffectsModule.forRoot([]),
-      ],
-      providers: [
+        EffectsModule.forRoot([])],
+    providers: [
         { provide: LaunchDialogService, useClass: MockLaunchDialogService },
         {
-          provide: PickupLocationsSearchFacade,
-          useClass: MockPickupLocationsSearchService,
+            provide: PickupLocationsSearchFacade,
+            useClass: MockPickupLocationsSearchService,
         },
         { provide: PreferredStoreService, useClass: MockPreferredStoreService },
         {
-          provide: IntendedPickupLocationFacade,
-          useClass: MockIntendedPickupLocationService,
+            provide: IntendedPickupLocationFacade,
+            useClass: MockIntendedPickupLocationService,
         },
         {
-          provide: ActiveCartFacade,
-          useClass: MockActiveCartService,
+            provide: ActiveCartFacade,
+            useClass: MockActiveCartService,
         },
         {
-          provide: PickupOptionFacade,
-          useClass: MockPickupOptionFacade,
+            provide: PickupOptionFacade,
+            useClass: MockPickupOptionFacade,
         },
-      ],
-    }).compileComponents();
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+}).compileComponents();
 
     fixture = TestBed.createComponent(PickupOptionDialogComponent);
     component = fixture.componentInstance;

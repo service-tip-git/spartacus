@@ -1,5 +1,5 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpErrorResponse, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { StoreModule } from '@ngrx/store';
@@ -36,19 +36,19 @@ describe('StockEffect', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, StoreModule.forRoot({})],
-
-      providers: [
+    imports: [StoreModule.forRoot({})],
+    providers: [
         {
-          provide: StockConnector,
-          useClass: MockStockConnector,
+            provide: StockConnector,
+            useClass: MockStockConnector,
         },
         { provide: LoggerService, useClass: MockLoggerService },
         StockEffect,
-
         provideMockActions(() => actions$),
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     stockEffects = TestBed.inject(StockEffect);
     stockConnector = TestBed.inject(StockConnector);

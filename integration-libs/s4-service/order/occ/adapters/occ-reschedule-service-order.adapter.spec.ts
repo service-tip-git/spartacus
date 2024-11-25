@@ -1,11 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 import { OccRescheduleServiceOrderAdapter } from './occ-reschedule-service-order.adapter';
 import { LoggerService, OccEndpointsService } from '@spartacus/core';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { ServiceDetails } from '@spartacus/s4-service/root';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import createSpy = jasmine.createSpy;
 
 const mockUrl =
@@ -28,13 +26,15 @@ describe('OccRescheduleServiceOrderAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         OccRescheduleServiceOrderAdapter,
         { provide: OccEndpointsService, useClass: MockOccEndpointsService },
         { provide: LoggerService, useValue: loggerService },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
     adapter = TestBed.inject(OccRescheduleServiceOrderAdapter);
     httpMock = TestBed.inject(HttpTestingController);
     loggerService = jasmine.createSpyObj('LoggerService', ['error']);

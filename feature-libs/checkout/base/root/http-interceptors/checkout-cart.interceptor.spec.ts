@@ -1,9 +1,5 @@
-import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-  TestRequest,
-} from '@angular/common/http/testing';
+import { HTTP_INTERCEPTORS, HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpTestingController, TestRequest, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { MultiCartFacade } from '@spartacus/cart/base/root';
 import { RoutingService } from '@spartacus/core';
@@ -42,17 +38,19 @@ describe('CheckoutCartInterceptor', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         {
-          provide: HTTP_INTERCEPTORS,
-          useClass: CheckoutCartInterceptor,
-          multi: true,
+            provide: HTTP_INTERCEPTORS,
+            useClass: CheckoutCartInterceptor,
+            multi: true,
         },
         { provide: RoutingService, useClass: MockRoutingService },
         { provide: MultiCartFacade, useClass: MultiCartServiceStub },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     httpMock = TestBed.inject(HttpTestingController);
     http = TestBed.inject(HttpClient);

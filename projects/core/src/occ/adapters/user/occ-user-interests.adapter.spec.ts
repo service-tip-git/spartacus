@@ -1,8 +1,5 @@
-import { HttpClientModule } from '@angular/common/http';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { OccConfig } from '../../config/occ-config';
 
@@ -38,16 +35,29 @@ describe('OccUserInterestsAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule, HttpClientTestingModule],
-      providers: [
+    imports: [HttpClientModule],
+    providers: [
         OccUserInterestsAdapter,
         { provide: OccConfig, useValue: MockOccModuleConfig },
         {
-          provide: OccEndpointsService,
-          useClass: MockOccEndpointsService,
+            provide: OccEndpointsService,
+            useClass: MockOccEndpointsService,
         },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+}{
+    imports: [HttpClientTestingModule],
+    providers: [
+        OccUserInterestsAdapter,
+        { provide: OccConfig, useValue: MockOccModuleConfig },
+        {
+            provide: OccEndpointsService,
+            useClass: MockOccEndpointsService,
+        },
+        provideHttpClient(withInterceptorsFromDi()),
+    ]
+});
 
     occUserInterestsAdapter = TestBed.inject(OccUserInterestsAdapter);
     httpMock = TestBed.inject(HttpTestingController);

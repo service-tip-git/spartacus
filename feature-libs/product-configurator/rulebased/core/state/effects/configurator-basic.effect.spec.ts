@@ -1,5 +1,5 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpErrorResponse, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { Type } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
@@ -205,26 +205,24 @@ describe('ConfiguratorEffect', () => {
     }
 
     TestBed.configureTestingModule({
-      imports: [
-        HttpClientTestingModule,
-        StoreModule.forRoot({}),
-        StoreModule.forFeature(CONFIGURATOR_FEATURE, getConfiguratorReducers()),
-      ],
-
-      providers: [
+    imports: [StoreModule.forRoot({}),
+        StoreModule.forFeature(CONFIGURATOR_FEATURE, getConfiguratorReducers())],
+    providers: [
         fromEffects.ConfiguratorBasicEffects,
         provideMockActions(() => actions$),
         {
-          provide: RulebasedConfiguratorConnector,
-          useClass: MockConnector,
+            provide: RulebasedConfiguratorConnector,
+            useClass: MockConnector,
         },
         {
-          provide: ConfiguratorUtilsService,
-          useClass: ConfiguratorUtilsService,
+            provide: ConfiguratorUtilsService,
+            useClass: ConfiguratorUtilsService,
         },
         { provide: LoggerService, useClass: MockLoggerService },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     configEffects = TestBed.inject(
       fromEffects.ConfiguratorBasicEffects as Type<fromEffects.ConfiguratorBasicEffects>

@@ -1,9 +1,5 @@
-import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-  TestRequest,
-} from '@angular/common/http/testing';
+import { HttpClient, HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpTestingController, TestRequest, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { of, Subscription } from 'rxjs';
 import { AuthToken } from '../models/auth-token.model';
@@ -33,23 +29,25 @@ describe('TokenRevocationInterceptor', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         {
-          provide: HTTP_INTERCEPTORS,
-          useClass: TokenRevocationInterceptor,
-          multi: true,
+            provide: HTTP_INTERCEPTORS,
+            useClass: TokenRevocationInterceptor,
+            multi: true,
         },
         {
-          provide: AuthConfigService,
-          useClass: MockAuthConfigService,
+            provide: AuthConfigService,
+            useClass: MockAuthConfigService,
         },
         {
-          provide: AuthStorageService,
-          useClass: MockAuthStorageService,
+            provide: AuthStorageService,
+            useClass: MockAuthStorageService,
         },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     httpMock = TestBed.inject(HttpTestingController);
     tokenRevocationInterceptor = TestBed.inject(TokenRevocationInterceptor);

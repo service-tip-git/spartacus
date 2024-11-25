@@ -1,5 +1,5 @@
-import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpErrorResponse, HttpHeaders, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { StoreModule } from '@ngrx/store';
@@ -89,21 +89,20 @@ describe('OrderApproval Effects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        HttpClientTestingModule,
-        StoreModule.forRoot({ orderApproval: () => mockOrderApprovalState }),
-      ],
-      providers: [
+    imports: [StoreModule.forRoot({ orderApproval: () => mockOrderApprovalState })],
+    providers: [
         {
-          provide: OrderApprovalConnector,
-          useClass: MockOrderApprovalConnector,
+            provide: OrderApprovalConnector,
+            useClass: MockOrderApprovalConnector,
         },
         { provide: OccConfig, useValue: mockOccModuleConfig },
         { provide: LoggerService, useClass: MockLoggerService },
         fromEffects.OrderApprovalEffects,
         provideMockActions(() => actions$),
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     effects = TestBed.inject(fromEffects.OrderApprovalEffects);
     orderApprovalConnector = TestBed.inject(OrderApprovalConnector);

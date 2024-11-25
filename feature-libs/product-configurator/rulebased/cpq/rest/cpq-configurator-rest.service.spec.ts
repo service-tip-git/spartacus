@@ -1,7 +1,4 @@
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { ConverterService, OccEndpointsService } from '@spartacus/core';
 import { ConfiguratorModelUtils } from '@spartacus/product-configurator/common';
@@ -19,6 +16,7 @@ import { CpqConfiguratorRestAdapter } from './cpq-configurator-rest.adapter';
 import { CpqConfiguratorRestService } from './cpq-configurator-rest.service';
 import { Cpq } from '../common/cpq.models';
 import { defaultCpqConfiguratorEndpointConfig } from './default-cpq-configurator-endpoint.config';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 const productCode = 'CONF_LAPTOP';
 const tabId = '2';
@@ -122,16 +120,18 @@ describe('CpqConfiguratorRestService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         CpqConfiguratorRestAdapter,
         { provide: OccEndpointsService, useClass: MockOccEndpointsService },
         {
-          provide: CpqConfiguratorEndpointConfig,
-          useValue: defaultCpqConfiguratorEndpointConfig,
+            provide: CpqConfiguratorEndpointConfig,
+            useValue: defaultCpqConfiguratorEndpointConfig,
         },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     httpMock = TestBed.inject(HttpTestingController);
     converterService = TestBed.inject(ConverterService);

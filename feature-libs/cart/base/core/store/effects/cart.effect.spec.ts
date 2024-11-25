@@ -1,5 +1,5 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpErrorResponse, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { StoreModule } from '@ngrx/store';
@@ -76,31 +76,23 @@ describe('Cart effect', () => {
     }
 
     TestBed.configureTestingModule({
-      imports: [
-        HttpClientTestingModule,
-        StoreModule.forRoot({}),
+    imports: [StoreModule.forRoot({}),
         StoreModule.forFeature(USER_FEATURE, fromUserReducers.getReducers()),
-        StoreModule.forFeature(
-          CLIENT_AUTH_FEATURE,
-          fromClientAuthReducers.getReducers()
-        ),
-        StoreModule.forFeature(
-          MULTI_CART_FEATURE,
-          fromCartReducers.getMultiCartReducers()
-        ),
-      ],
-
-      providers: [
+        StoreModule.forFeature(CLIENT_AUTH_FEATURE, fromClientAuthReducers.getReducers()),
+        StoreModule.forFeature(MULTI_CART_FEATURE, fromCartReducers.getMultiCartReducers())],
+    providers: [
         {
-          provide: CartConnector,
-          useClass: MockCartConnector,
+            provide: CartConnector,
+            useClass: MockCartConnector,
         },
         fromEffects.CartEffects,
         { provide: LoggerService, useClass: MockLoggerService },
         { provide: OccConfig, useValue: MockOccModuleConfig },
         provideMockActions(() => actions$),
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     cartEffects = TestBed.inject(fromEffects.CartEffects);
   });

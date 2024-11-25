@@ -1,13 +1,5 @@
-import {
-  HttpClient,
-  HttpHeaders,
-  HTTP_INTERCEPTORS,
-} from '@angular/common/http';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-  TestRequest,
-} from '@angular/common/http/testing';
+import { HttpClient, HttpHeaders, HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpTestingController, TestRequest, provideHttpClientTesting } from '@angular/common/http/testing';
 import { inject, TestBed } from '@angular/core/testing';
 import { OccConfig } from '@spartacus/core';
 import { of } from 'rxjs';
@@ -63,21 +55,23 @@ describe('ClientTokenInterceptor', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         { provide: OccConfig, useValue: MockAuthModuleConfig },
         { provide: ClientTokenService, useClass: MockClientTokenService },
         {
-          provide: ClientErrorHandlingService,
-          useClass: MockClientErrorHandlingService,
+            provide: ClientErrorHandlingService,
+            useClass: MockClientErrorHandlingService,
         },
         {
-          provide: HTTP_INTERCEPTORS,
-          useClass: ClientTokenInterceptor,
-          multi: true,
+            provide: HTTP_INTERCEPTORS,
+            useClass: ClientTokenInterceptor,
+            multi: true,
         },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
     httpMock = TestBed.inject(HttpTestingController);
     clientTokenService = TestBed.inject(ClientTokenService);
     clientErrorHandlingService = TestBed.inject(ClientErrorHandlingService);

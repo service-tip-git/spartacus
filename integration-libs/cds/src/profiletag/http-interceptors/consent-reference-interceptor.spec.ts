@@ -1,8 +1,5 @@
-import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HTTP_INTERCEPTORS, HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { inject, TestBed } from '@angular/core/testing';
 import { OccEndpointsService } from '@spartacus/core';
 import { BehaviorSubject } from 'rxjs';
@@ -20,23 +17,25 @@ describe('consent reference interceptor', () => {
     };
 
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         {
-          provide: ProfileTagEventService,
-          useValue: ProfileTagEventTrackerMock,
+            provide: ProfileTagEventService,
+            useValue: ProfileTagEventTrackerMock,
         },
         {
-          provide: HTTP_INTERCEPTORS,
-          useClass: ConsentReferenceInterceptor,
-          multi: true,
+            provide: HTTP_INTERCEPTORS,
+            useClass: ConsentReferenceInterceptor,
+            multi: true,
         },
         {
-          provide: OccEndpointsService,
-          useValue: occEndPointsMock,
+            provide: OccEndpointsService,
+            useValue: occEndPointsMock,
         },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
   });
 
   it('Should modify the x-consent-reference header if there is a consent-reference', inject(

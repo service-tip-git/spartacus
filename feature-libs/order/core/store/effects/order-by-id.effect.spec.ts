@@ -1,4 +1,4 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { Actions } from '@ngrx/effects';
 import { provideMockActions } from '@ngrx/effects/testing';
@@ -13,6 +13,7 @@ import { Observable, of, throwError } from 'rxjs';
 import { OrderHistoryAdapter, OrderHistoryConnector } from '../../connectors';
 import { OrderActions } from '../actions';
 import { OrderByIdEffect } from './order-by-id.effect';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 const mockOrder: Order = { code: 'order1', status: 'shipped' };
 
 const mockOrderParams = {
@@ -43,16 +44,18 @@ describe('Order By Id effect', () => {
   let actions$: Observable<any>;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         OrderHistoryConnector,
         OrderByIdEffect,
         { provide: OccConfig, useValue: MockOccModuleConfig },
         { provide: OrderHistoryAdapter, useValue: {} },
         provideMockActions(() => actions$),
         { provide: LoggerService, useClass: MockLoggerService },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
     actions$ = TestBed.inject(Actions);
     effect = TestBed.inject(OrderByIdEffect);
     orderHistoryConnector = TestBed.inject(OrderHistoryConnector);

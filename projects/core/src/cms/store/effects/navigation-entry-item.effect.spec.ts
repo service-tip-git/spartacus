@@ -1,4 +1,4 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { StoreModule } from '@ngrx/store';
@@ -11,6 +11,7 @@ import { RoutingService } from '../../../routing/index';
 import { CmsComponentConnector } from '../../connectors/component/cms-component.connector';
 import { CmsActions } from '../actions/index';
 import * as fromEffects from './navigation-entry-item.effect';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 const router = {
   state: {
@@ -56,19 +57,18 @@ describe('Navigation Entry Items Effects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        HttpClientTestingModule,
-        StoreModule.forRoot({}),
-        StoreModule.forFeature('cms', fromCmsReducer.getReducers()),
-      ],
-      providers: [
+    imports: [StoreModule.forRoot({}),
+        StoreModule.forFeature('cms', fromCmsReducer.getReducers())],
+    providers: [
         { provide: CmsComponentConnector, useClass: MockCmsComponentConnector },
         { provide: OccConfig, useValue: {} },
         fromEffects.NavigationEntryItemEffects,
         provideMockActions(() => actions$),
         { provide: RoutingService, useClass: MockRoutingService },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     service = TestBed.inject(CmsComponentConnector);
     effects = TestBed.inject(fromEffects.NavigationEntryItemEffects);

@@ -1,7 +1,4 @@
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { Type } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import {
@@ -40,6 +37,7 @@ import {
   VARIANT_CONFIGURATOR_SERIALIZER,
 } from './variant-configurator-occ.converters';
 import { OccConfigurator } from './variant-configurator-occ.models';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 class MockOccEndpointsService {
   buildUrl(
@@ -133,28 +131,30 @@ describe('OccConfigurationVariantAdapter', () => {
     forceReset = false;
     expMode = true;
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         VariantConfiguratorOccAdapter,
         { provide: OccEndpointsService, useClass: MockOccEndpointsService },
         { provide: TranslationService, useClass: MockTranslationService },
         {
-          provide: VARIANT_CONFIGURATOR_NORMALIZER,
-          useExisting: OccConfiguratorVariantNormalizer,
-          multi: true,
+            provide: VARIANT_CONFIGURATOR_NORMALIZER,
+            useExisting: OccConfiguratorVariantNormalizer,
+            multi: true,
         },
         {
-          provide: VARIANT_CONFIGURATOR_OVERVIEW_NORMALIZER,
-          useExisting: OccConfiguratorVariantOverviewNormalizer,
-          multi: true,
+            provide: VARIANT_CONFIGURATOR_OVERVIEW_NORMALIZER,
+            useExisting: OccConfiguratorVariantOverviewNormalizer,
+            multi: true,
         },
         {
-          provide: VARIANT_CONFIGURATOR_PRICE_NORMALIZER,
-          useExisting: OccConfiguratorVariantPriceNormalizer,
-          multi: true,
+            provide: VARIANT_CONFIGURATOR_PRICE_NORMALIZER,
+            useExisting: OccConfiguratorVariantPriceNormalizer,
+            multi: true,
         },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     httpMock = TestBed.inject(
       HttpTestingController as Type<HttpTestingController>

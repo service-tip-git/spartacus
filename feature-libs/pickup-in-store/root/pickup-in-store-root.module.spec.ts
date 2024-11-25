@@ -1,4 +1,4 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
@@ -12,6 +12,7 @@ import {
   defaultPickupInStoreComponentsConfig,
   PickupInStoreRootModule,
 } from './pickup-in-store-root.module';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 const MockCmsConfig: CmsConfig = {
   featureModules: {
@@ -30,13 +31,11 @@ const MockCmsConfig: CmsConfig = {
 describe('PickupInStoreRootModule', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        StoreModule.forRoot({}),
+    imports: [StoreModule.forRoot({}),
         EffectsModule.forRoot([]),
-        HttpClientTestingModule,
-        PickupInStoreRootModule,
-      ],
-    });
+        PickupInStoreRootModule],
+    providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+});
   });
 
   it('initializes', () => {

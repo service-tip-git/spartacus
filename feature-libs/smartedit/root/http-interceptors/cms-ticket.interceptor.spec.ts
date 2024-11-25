@@ -1,8 +1,5 @@
-import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HTTP_INTERCEPTORS, HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed, inject } from '@angular/core/testing';
 import {
   PageContext,
@@ -39,23 +36,25 @@ describe('CmsTicketInterceptor', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         {
-          provide: SmartEditLauncherService,
-          useClass: MockSmartEditLauncherService,
+            provide: SmartEditLauncherService,
+            useClass: MockSmartEditLauncherService,
         },
         {
-          provide: RoutingService,
-          useClass: MockRoutingService,
+            provide: RoutingService,
+            useClass: MockRoutingService,
         },
         {
-          provide: HTTP_INTERCEPTORS,
-          useClass: CmsTicketInterceptor,
-          multi: true,
+            provide: HTTP_INTERCEPTORS,
+            useClass: CmsTicketInterceptor,
+            multi: true,
         },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     httpMock = TestBed.inject(HttpTestingController);
     service = TestBed.inject(SmartEditLauncherService);

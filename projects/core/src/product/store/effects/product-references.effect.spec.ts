@@ -1,4 +1,4 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Action } from '@ngrx/store';
@@ -10,6 +10,7 @@ import { OccConfig } from '../../../occ/config/occ-config';
 import { ProductReferencesConnector } from '../../connectors/references/product-references.connector';
 import { ProductActions } from '../actions/index';
 import * as fromEffects from '../effects/product-references.effect';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import createSpy = jasmine.createSpy;
 
 const productCode = 'productCode';
@@ -42,18 +43,20 @@ describe('Product references effect', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         {
-          provide: ProductReferencesConnector,
-          useClass: MockProductReferencesConnector,
+            provide: ProductReferencesConnector,
+            useClass: MockProductReferencesConnector,
         },
         { provide: OccConfig, useValue: MockOccModuleConfig },
         { provide: OccConfig, useValue: defaultOccProductConfig },
         fromEffects.ProductReferencesEffects,
         provideMockActions(() => actions$),
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
     effects = TestBed.inject(fromEffects.ProductReferencesEffects);
   });
 

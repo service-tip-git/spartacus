@@ -1,11 +1,9 @@
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { ProductAvailabilities } from '../../../model/product.model';
 import { OccEndpointsService } from '../../services/occ-endpoints.service';
 import { OccProductAvailabilityAdapter } from './occ-product-availability-adapter';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 describe('OccProductAvailabilityAdapter', () => {
   let adapter: OccProductAvailabilityAdapter;
@@ -30,19 +28,21 @@ describe('OccProductAvailabilityAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         OccProductAvailabilityAdapter,
         {
-          provide: OccEndpointsService,
-          useValue: {
-            buildUrl: jasmine
-              .createSpy('buildUrl')
-              .and.returnValue(mockAvailabilityUrl),
-          },
+            provide: OccEndpointsService,
+            useValue: {
+                buildUrl: jasmine
+                    .createSpy('buildUrl')
+                    .and.returnValue(mockAvailabilityUrl),
+            },
         },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     adapter = TestBed.inject(OccProductAvailabilityAdapter);
     httpMock = TestBed.inject(HttpTestingController);

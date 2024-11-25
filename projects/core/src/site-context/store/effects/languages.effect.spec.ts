@@ -1,4 +1,4 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Store } from '@ngrx/store';
@@ -10,6 +10,7 @@ import { SiteAdapter } from '../../connectors/site.adapter';
 import { SiteConnector } from '../../connectors/site.connector';
 import { SiteContextActions } from '../actions/index';
 import * as fromEffects from './languages.effect';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 describe('Languages Effects', () => {
   let actions$: Subject<SiteContextActions.LanguagesAction>;
@@ -28,14 +29,16 @@ describe('Languages Effects', () => {
     };
 
     TestBed.configureTestingModule({
-      imports: [ConfigModule.forRoot(), HttpClientTestingModule, BaseOccModule],
-      providers: [
+    imports: [ConfigModule.forRoot(), BaseOccModule],
+    providers: [
         fromEffects.LanguagesEffects,
         { provide: SiteAdapter, useValue: {} },
         provideMockActions(() => actions$),
         { provide: Store, useValue: mockStore },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     connector = TestBed.inject(SiteConnector);
     effects = TestBed.inject(fromEffects.LanguagesEffects);

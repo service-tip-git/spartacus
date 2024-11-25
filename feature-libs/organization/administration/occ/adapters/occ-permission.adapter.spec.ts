@@ -1,7 +1,4 @@
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { ConverterService, OccEndpointsService } from '@spartacus/core';
 import {
@@ -10,6 +7,7 @@ import {
   PERMISSION_SERIALIZER,
 } from '@spartacus/organization/administration/core';
 import { OccPermissionAdapter } from './occ-permission.adapter';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import createSpy = jasmine.createSpy;
 
@@ -35,15 +33,17 @@ describe('OccPermissionAdapter', () => {
   let converterService: ConverterService;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         OccPermissionAdapter,
         {
-          provide: OccEndpointsService,
-          useClass: MockOccEndpointsService,
+            provide: OccEndpointsService,
+            useClass: MockOccEndpointsService,
         },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
     converterService = TestBed.inject(ConverterService);
     service = TestBed.inject(OccPermissionAdapter);
     httpMock = TestBed.inject(HttpTestingController);

@@ -1,5 +1,5 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpErrorResponse, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { Type } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
@@ -86,25 +86,20 @@ describe('ConfiguratorTextfieldEffect', () => {
     }
 
     TestBed.configureTestingModule({
-      imports: [
-        HttpClientTestingModule,
-        StoreModule.forRoot({}),
-        StoreModule.forFeature(
-          CONFIGURATION_TEXTFIELD_FEATURE,
-          reducers.getConfiguratorTextfieldReducers()
-        ),
-      ],
-
-      providers: [
+    imports: [StoreModule.forRoot({}),
+        StoreModule.forFeature(CONFIGURATION_TEXTFIELD_FEATURE, reducers.getConfiguratorTextfieldReducers())],
+    providers: [
         fromEffects.ConfiguratorTextfieldEffects,
         provideMockActions(() => actions$),
         {
-          provide: ConfiguratorTextfieldConnector,
-          useClass: MockConnector,
+            provide: ConfiguratorTextfieldConnector,
+            useClass: MockConnector,
         },
         { provide: LoggerService, useClass: MockLoggerService },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     configEffects = TestBed.inject(
       fromEffects.ConfiguratorTextfieldEffects as Type<fromEffects.ConfiguratorTextfieldEffects>

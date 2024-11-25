@@ -1,9 +1,5 @@
-import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-  TestRequest,
-} from '@angular/common/http/testing';
+import { HttpClient, HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpTestingController, TestRequest, provideHttpClientTesting } from '@angular/common/http/testing';
 import { inject, TestBed } from '@angular/core/testing';
 import { defaultOccConfig } from '../config/default-occ-config';
 import { OccConfig } from '../config/occ-config';
@@ -28,16 +24,18 @@ describe('WithCredentialsInterceptor', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        providers: [
-          { provide: OccConfig, useValue: MockAuthModuleConfig },
-          {
+    imports: [],
+    providers: [
+        { provide: OccConfig, useValue: MockAuthModuleConfig },
+        {
             provide: HTTP_INTERCEPTORS,
             useClass: WithCredentialsInterceptor,
             multi: true,
-          },
-        ],
-      });
+        },
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
       httpMock = TestBed.inject(HttpTestingController);
     });
 
@@ -78,16 +76,18 @@ describe('WithCredentialsInterceptor', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        providers: [
-          { provide: OccConfig, useValue: MockAuthModuleConfig },
-          {
+    imports: [],
+    providers: [
+        { provide: OccConfig, useValue: MockAuthModuleConfig },
+        {
             provide: HTTP_INTERCEPTORS,
             useClass: WithCredentialsInterceptor,
             multi: true,
-          },
-        ],
-      });
+        },
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
       httpMock = TestBed.inject(HttpTestingController);
     });
 
@@ -118,16 +118,18 @@ describe('WithCredentialsInterceptor', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        providers: [
-          { provide: OccConfig, useValue: MockAuthModuleConfig },
-          {
+    imports: [],
+    providers: [
+        { provide: OccConfig, useValue: MockAuthModuleConfig },
+        {
             provide: HTTP_INTERCEPTORS,
             useClass: WithCredentialsInterceptor,
             multi: true,
-          },
-        ],
-      });
+        },
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
       httpMock = TestBed.inject(HttpTestingController);
     });
 

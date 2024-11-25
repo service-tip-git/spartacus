@@ -1,8 +1,5 @@
-import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HttpClient, HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { inject, TestBed } from '@angular/core/testing';
 import { WindowRef } from '@spartacus/core';
 import { OppsConfig } from '../../config';
@@ -33,21 +30,23 @@ describe('OccCouponCodesInterceptor', () => {
   let couponService: OppsCouponCodesService;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         { provide: OppsConfig, useValue: mockOppsConfig },
         { provide: WindowRef, useValue: MockWindowRef },
         {
-          provide: HTTP_INTERCEPTORS,
-          useClass: OccOppsCouponCodesInterceptor,
-          multi: true,
+            provide: HTTP_INTERCEPTORS,
+            useClass: OccOppsCouponCodesInterceptor,
+            multi: true,
         },
         {
-          provide: OppsCouponCodesService,
-          useClass: MockOppsCouponCodesService,
+            provide: OppsCouponCodesService,
+            useClass: MockOppsCouponCodesService,
         },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
     httpMock = TestBed.inject(HttpTestingController);
     couponService = TestBed.inject(OppsCouponCodesService);
   });

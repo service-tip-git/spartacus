@@ -1,8 +1,5 @@
-import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HttpClient, HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { inject, TestBed } from '@angular/core/testing';
 import { WindowRef } from '@spartacus/core';
 import { SegmentRefsConfig } from '../config/segment-refs-config';
@@ -57,17 +54,19 @@ describe('OccSegmentRefsInterceptor', () => {
     let httpMock: HttpTestingController;
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        providers: [
-          { provide: SegmentRefsConfig, useValue: mockSegmentRefsConfig },
-          { provide: WindowRef, useValue: MockWindowRef1 },
-          {
+    imports: [],
+    providers: [
+        { provide: SegmentRefsConfig, useValue: mockSegmentRefsConfig },
+        { provide: WindowRef, useValue: MockWindowRef1 },
+        {
             provide: HTTP_INTERCEPTORS,
             useClass: OccSegmentRefsInterceptor,
             multi: true,
-          },
-        ],
-      });
+        },
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
       httpMock = TestBed.inject(HttpTestingController);
     });
     afterEach(() => {
@@ -94,17 +93,19 @@ describe('OccSegmentRefsInterceptor', () => {
     let httpMock: HttpTestingController;
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        providers: [
-          { provide: SegmentRefsConfig, useValue: mockSegmentRefsConfig },
-          { provide: WindowRef, useValue: MockWindowRef2 },
-          {
+    imports: [],
+    providers: [
+        { provide: SegmentRefsConfig, useValue: mockSegmentRefsConfig },
+        { provide: WindowRef, useValue: MockWindowRef2 },
+        {
             provide: HTTP_INTERCEPTORS,
             useClass: OccSegmentRefsInterceptor,
             multi: true,
-          },
-        ],
-      });
+        },
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
       httpMock = TestBed.inject(HttpTestingController);
     });
     afterEach(() => {
@@ -131,17 +132,19 @@ describe('OccSegmentRefsInterceptor', () => {
     let httpMock: HttpTestingController;
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        providers: [
-          { provide: SegmentRefsConfig, useValue: mockSegmentRefsConfig },
-          { provide: WindowRef, useValue: MockWindowRef3 },
-          {
+    imports: [],
+    providers: [
+        { provide: SegmentRefsConfig, useValue: mockSegmentRefsConfig },
+        { provide: WindowRef, useValue: MockWindowRef3 },
+        {
             provide: HTTP_INTERCEPTORS,
             useClass: OccSegmentRefsInterceptor,
             multi: true,
-          },
-        ],
-      });
+        },
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
       httpMock = TestBed.inject(HttpTestingController);
     });
     afterEach(() => {

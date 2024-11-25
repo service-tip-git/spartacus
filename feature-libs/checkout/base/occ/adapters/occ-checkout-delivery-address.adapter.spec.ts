@@ -1,8 +1,5 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HttpClient, HttpErrorResponse, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { Cart } from '@spartacus/cart/base/root';
 import { CheckoutState } from '@spartacus/checkout/base/root';
@@ -86,13 +83,15 @@ describe(`OccCheckoutDeliveryAddressAdapter`, () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         OccCheckoutDeliveryAddressAdapter,
         { provide: OccConfig, useValue: MockOccModuleConfig },
         { provide: LoggerService, useClass: MockLoggerService },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
     service = TestBed.inject(OccCheckoutDeliveryAddressAdapter);
     httpClient = TestBed.inject(HttpClient);
     httpMock = TestBed.inject(HttpTestingController);

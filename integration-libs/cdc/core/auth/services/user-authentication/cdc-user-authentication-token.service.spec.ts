@@ -1,8 +1,5 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HttpErrorResponse, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { AuthConfigService, AuthToken } from '@spartacus/core';
 import { CdcUserAuthenticationTokenService } from './cdc-user-authentication-token.service';
@@ -43,15 +40,17 @@ describe('CdcUserAuthenticationTokenService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         CdcUserAuthenticationTokenService,
         {
-          provide: AuthConfigService,
-          useClass: MockAuthConfigService,
+            provide: AuthConfigService,
+            useClass: MockAuthConfigService,
         },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     authTokenService = TestBed.inject(CdcUserAuthenticationTokenService);
     httpMock = TestBed.inject(HttpTestingController);

@@ -1,8 +1,5 @@
-import { HttpClientModule, HttpRequest } from '@angular/common/http';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HttpRequest, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import {
   ConverterService,
@@ -47,16 +44,29 @@ describe('OccOrderHistoryAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule, HttpClientTestingModule],
-      providers: [
+    imports: [HttpClientModule],
+    providers: [
         OccOrderHistoryAdapter,
         { provide: OccConfig, useValue: mockOccModuleConfig },
         {
-          provide: OccEndpointsService,
-          useClass: MockOccEndpointsService,
+            provide: OccEndpointsService,
+            useClass: MockOccEndpointsService,
         },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+}{
+    imports: [HttpClientTestingModule],
+    providers: [
+        OccOrderHistoryAdapter,
+        { provide: OccConfig, useValue: mockOccModuleConfig },
+        {
+            provide: OccEndpointsService,
+            useClass: MockOccEndpointsService,
+        },
+        provideHttpClient(withInterceptorsFromDi()),
+    ]
+});
 
     occOrderHistoryAdapter = TestBed.inject(OccOrderHistoryAdapter);
     httpMock = TestBed.inject(HttpTestingController);

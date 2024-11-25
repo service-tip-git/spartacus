@@ -1,8 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { Component, EventEmitter } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
@@ -34,6 +31,7 @@ import { VisualPickingProductListComponent } from './product-list/visual-picking
 import { VisualPickingProductListService } from './product-list/visual-picking-product-list.service';
 import { VisualPickingTabComponent } from './visual-picking-tab.component';
 import { VisualPickingTabService } from './visual-picking-tab.service';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 const currentProduct: Product = {
   code: 'currentProduct',
@@ -119,30 +117,29 @@ describe('VisualPickingTabComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [VisualPickingTabComponent, MockTranslatePipe],
-      imports: [
-        CommonModule,
+    declarations: [VisualPickingTabComponent, MockTranslatePipe],
+    imports: [CommonModule,
         IconModule,
         FormsModule,
         UrlModule,
         RouterTestingModule.withRoutes([
-          {
-            path: 'product',
-            component: MockPageLayoutComponent,
-          },
+            {
+                path: 'product',
+                component: MockPageLayoutComponent,
+            },
         ]),
-        HttpClientTestingModule,
         VisualViewerModule,
         VisualPickingProductListModule,
-        VisualPickingProductFilterModule,
-      ],
-      providers: [
+        VisualPickingProductFilterModule],
+    providers: [
         {
-          provide: TranslationService,
-          useClass: MockTranslationService,
+            provide: TranslationService,
+            useClass: MockTranslationService,
         },
-      ],
-    })
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+})
       .overrideComponent(VisualViewerComponent, {
         set: {
           providers: [

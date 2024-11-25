@@ -1,7 +1,4 @@
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import {
   provideConfigFactory,
@@ -17,6 +14,7 @@ import {
 } from '@spartacus/epd-visualization/root';
 import { getTestConfig } from '../../../root/testing/epd-visualization-test-config';
 import { VisualizationV1Adapter } from './visualization-v1.adapter';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 let visualizationAdapter: VisualizationAdapter;
 let httpMock: HttpTestingController;
@@ -26,16 +24,18 @@ const fakeResponse: LookupVisualizationsResponse = { visualizations: [] };
 describe('VisualizationApiService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         provideConfigFactory(getTestConfig),
         provideDefaultConfigFactory(getEpdVisualizationDefaultConfig),
         {
-          provide: VisualizationAdapter,
-          useClass: VisualizationV1Adapter,
+            provide: VisualizationAdapter,
+            useClass: VisualizationV1Adapter,
         },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     httpMock = TestBed.inject(HttpTestingController);
     visualizationAdapter = TestBed.inject(VisualizationAdapter);

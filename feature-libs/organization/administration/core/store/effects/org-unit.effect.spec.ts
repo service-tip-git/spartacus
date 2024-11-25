@@ -1,5 +1,5 @@
-import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpErrorResponse, HttpHeaders, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { StoreModule } from '@ngrx/store';
@@ -125,22 +125,21 @@ describe('OrgUnit Effects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        HttpClientTestingModule,
-        StoreModule.forRoot({ orgUnit: () => mockOrgUnitState }),
-      ],
-      providers: [
+    imports: [StoreModule.forRoot({ orgUnit: () => mockOrgUnitState })],
+    providers: [
         { provide: OrgUnitConnector, useClass: MockOrgUnitConnector },
         { provide: OccConfig, useValue: mockOccModuleConfig },
         { provide: LoggerService, useClass: MockLoggerService },
         {
-          provide: FeatureConfigService,
-          useClass: MockFeatureConfigService,
+            provide: FeatureConfigService,
+            useClass: MockFeatureConfigService,
         },
         fromEffects.OrgUnitEffects,
         provideMockActions(() => actions$),
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     effects = TestBed.inject(fromEffects.OrgUnitEffects);
     orgUnitConnector = TestBed.inject(OrgUnitConnector);

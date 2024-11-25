@@ -1,5 +1,5 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpErrorResponse, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { StoreModule } from '@ngrx/store';
@@ -34,18 +34,18 @@ describe('PickupLocationEffect', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, StoreModule.forRoot({})],
-
-      providers: [
+    imports: [StoreModule.forRoot({})],
+    providers: [
         {
-          provide: PickupLocationConnector,
-          useClass: MockPickupLocationConnector,
+            provide: PickupLocationConnector,
+            useClass: MockPickupLocationConnector,
         },
         PickupLocationEffect,
-
         provideMockActions(() => actions$),
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     pickupLocationEffects = TestBed.inject(PickupLocationEffect);
     pickupLocationConnector = TestBed.inject(PickupLocationConnector);
@@ -68,18 +68,18 @@ describe('PickupLocationEffect with Error', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, StoreModule.forRoot({})],
-
-      providers: [
+    imports: [StoreModule.forRoot({})],
+    providers: [
         {
-          provide: PickupLocationConnector,
-          useClass: MockPickupLocationConnectorWithError,
+            provide: PickupLocationConnector,
+            useClass: MockPickupLocationConnectorWithError,
         },
         PickupLocationEffect,
-
         provideMockActions(() => actions$),
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     pickupLocationEffects = TestBed.inject(PickupLocationEffect);
     pickupLocationConnector = TestBed.inject(PickupLocationConnector);

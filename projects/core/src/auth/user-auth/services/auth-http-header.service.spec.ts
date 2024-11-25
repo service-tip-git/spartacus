@@ -1,5 +1,5 @@
-import { HttpHandler, HttpHeaders, HttpRequest } from '@angular/common/http';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpHandler, HttpHeaders, HttpRequest, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { BehaviorSubject, EMPTY, merge, of, queueScheduler } from 'rxjs';
 import { observeOn, take } from 'rxjs/operators';
@@ -83,21 +83,23 @@ describe('AuthHttpHeaderService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         AuthHttpHeaderService,
         { provide: AuthService, useClass: MockAuthService },
         {
-          provide: OAuthLibWrapperService,
-          useClass: MockOAuthLibWrapperService,
+            provide: OAuthLibWrapperService,
+            useClass: MockOAuthLibWrapperService,
         },
         { provide: RoutingService, useClass: MockRoutingService },
         { provide: OccEndpointsService, useClass: MockOccEndpointsService },
         { provide: GlobalMessageService, useClass: MockGlobalMessageService },
         { provide: AuthStorageService, useClass: MockAuthStorageService },
         { provide: AuthRedirectService, useClass: MockAuthRedirectService },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     authService = TestBed.inject(AuthService);
     service = TestBed.inject(AuthHttpHeaderService);

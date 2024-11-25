@@ -1,4 +1,4 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { Type } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { CartModification } from '@spartacus/cart/base/root';
@@ -13,6 +13,7 @@ import { ConfiguratorTestUtils } from '../../testing/configurator-test-utils';
 import { CpqConfiguratorOccService } from './../occ/cpq-configurator-occ.service';
 import { CpqConfiguratorRestAdapter } from './cpq-configurator-rest.adapter';
 import { CpqConfiguratorRestService } from './cpq-configurator-rest.service';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 const productCode = 'CONF_LAPTOP';
 const configId = '1234-56-7890';
@@ -136,19 +137,21 @@ describe('CpqConfiguratorRestAdapter', () => {
     });
 
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         CpqConfiguratorRestAdapter,
         {
-          provide: CpqConfiguratorRestService,
-          useValue: mockedRestService,
+            provide: CpqConfiguratorRestService,
+            useValue: mockedRestService,
         },
         {
-          provide: CpqConfiguratorOccService,
-          useValue: mockedOccService,
+            provide: CpqConfiguratorOccService,
+            useValue: mockedOccService,
         },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     adapterUnderTest = TestBed.inject(
       CpqConfiguratorRestAdapter as Type<CpqConfiguratorRestAdapter>

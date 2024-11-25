@@ -1,7 +1,4 @@
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { Type } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { CART_MODIFICATION_NORMALIZER } from '@spartacus/cart/base/root';
@@ -18,6 +15,7 @@ import {
 import { OccConfiguratorTextfieldAdapter } from '.';
 import { CONFIGURATION_TEXTFIELD_NORMALIZER } from '../core/connectors/converters';
 import { ConfiguratorTextfield } from '../core/model/configurator-textfield.model';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 class MockOccEndpointsService {
   buildUrl(
@@ -91,12 +89,14 @@ describe('OccConfigurationTextfieldAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         OccConfiguratorTextfieldAdapter,
         { provide: OccEndpointsService, useClass: MockOccEndpointsService },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     httpMock = TestBed.inject(
       HttpTestingController as Type<HttpTestingController>

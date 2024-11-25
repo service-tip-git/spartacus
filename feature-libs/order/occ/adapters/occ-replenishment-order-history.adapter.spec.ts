@@ -1,8 +1,5 @@
-import { HttpRequest } from '@angular/common/http';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HttpRequest, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import {
   ConverterService,
@@ -60,13 +57,15 @@ describe('OccReplenishmentOrderHistoryAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         OccReplenishmentOrderHistoryAdapter,
         { provide: OccConfig, useValue: mockOccModuleConfig },
         { provide: OccEndpointsService, useClass: MockOccEndpointsService },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     occAdapter = TestBed.inject(OccReplenishmentOrderHistoryAdapter);
     httpMock = TestBed.inject(HttpTestingController);

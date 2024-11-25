@@ -1,15 +1,5 @@
-import {
-  HttpClient,
-  HttpParams,
-  HttpRequest,
-  HttpUserEvent,
-  HTTP_INTERCEPTORS,
-} from '@angular/common/http';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-  TestRequest,
-} from '@angular/common/http/testing';
+import { HttpClient, HttpParams, HttpRequest, HttpUserEvent, HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpTestingController, TestRequest, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { EMPTY, Observable, of, Subscription } from 'rxjs';
 import { AuthToken } from '../models/auth-token.model';
@@ -49,17 +39,19 @@ describe('AuthInterceptor', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         { provide: AuthHttpHeaderService, useClass: MockAuthHeaderService },
         { provide: AuthConfigService, useClass: MockAuthConfigService },
         {
-          provide: HTTP_INTERCEPTORS,
-          useClass: AuthInterceptor,
-          multi: true,
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthInterceptor,
+            multi: true,
         },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     httpMock = TestBed.inject(HttpTestingController);
     authHeaderService = TestBed.inject(AuthHttpHeaderService);

@@ -1,4 +1,4 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { inject, TestBed } from '@angular/core/testing';
 import { UntypedFormBuilder } from '@angular/forms';
 import { Store } from '@ngrx/store';
@@ -27,6 +27,7 @@ import {
 } from '@spartacus/user/profile/root';
 import { config, Observable, of, throwError } from 'rxjs';
 import { CDCRegisterComponentService } from './cdc-register-component.service';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import createSpy = jasmine.createSpy;
 
 const userRegisterFormData: UserSignUp = {
@@ -124,13 +125,13 @@ describe('CdcRegisterComponentService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         { provide: AuthService, useClass: MockAuthService },
-        { provide: Store, useValue: { dispatch: () => {} } },
+        { provide: Store, useValue: { dispatch: () => { } } },
         {
-          provide: UserProfileConnector,
-          useClass: MockUserProfileConnector,
+            provide: UserProfileConnector,
+            useClass: MockUserProfileConnector,
         },
         { provide: UserProfileFacade, useClass: MockUserProfileFacade },
         { provide: CdcJsService, useClass: MockCDCJsService },
@@ -138,24 +139,26 @@ describe('CdcRegisterComponentService', () => {
         { provide: EventService, useClass: MockEventService },
         { provide: GlobalMessageService, useValue: mockedGlobalMessageService },
         {
-          provide: ConverterService,
-          useClass: MockConverterService,
+            provide: ConverterService,
+            useClass: MockConverterService,
         },
         {
-          provide: CdcConsentManagementComponentService,
-          useClass: MockCdcConsentManagementService,
+            provide: CdcConsentManagementComponentService,
+            useClass: MockCdcConsentManagementService,
         },
         {
-          provide: UntypedFormBuilder,
-          useClass: MockUntypedFormBuilder,
+            provide: UntypedFormBuilder,
+            useClass: MockUntypedFormBuilder,
         },
         {
-          provide: AnonymousConsentsService,
-          useClass: MockAnonymousConsentsService,
+            provide: AnonymousConsentsService,
+            useClass: MockAnonymousConsentsService,
         },
         CDCRegisterComponentService,
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     globalMessageService = TestBed.inject(GlobalMessageService);
     cdcUserRegisterService = TestBed.inject(CDCRegisterComponentService);

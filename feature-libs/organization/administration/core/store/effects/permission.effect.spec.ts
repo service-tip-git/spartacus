@@ -1,5 +1,5 @@
-import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpErrorResponse, HttpHeaders, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { StoreModule } from '@ngrx/store';
@@ -94,18 +94,17 @@ describe('Permission Effects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        HttpClientTestingModule,
-        StoreModule.forRoot({ permission: () => mockPermissionState }),
-      ],
-      providers: [
+    imports: [StoreModule.forRoot({ permission: () => mockPermissionState })],
+    providers: [
         { provide: PermissionConnector, useClass: MockPermissionConnector },
         { provide: OccConfig, useValue: mockOccModuleConfig },
         { provide: LoggerService, useClass: MockLoggerService },
         fromEffects.PermissionEffects,
         provideMockActions(() => actions$),
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     effects = TestBed.inject(fromEffects.PermissionEffects);
     permissionConnector = TestBed.inject(PermissionConnector);

@@ -1,12 +1,5 @@
-import {
-  HttpErrorResponse,
-  HttpHandler,
-  HttpHeaders,
-  HttpRequest,
-  HttpResponse,
-  HttpResponseBase,
-} from '@angular/common/http';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpErrorResponse, HttpHandler, HttpHeaders, HttpRequest, HttpResponse, HttpResponseBase, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { Type } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { of, throwError } from 'rxjs';
@@ -53,15 +46,17 @@ describe('CpqConfiguratorRestInterceptor', () => {
     mockedNextHandler = jasmine.createSpyObj('mockedNextHandler', ['handle']);
 
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         CpqConfiguratorRestInterceptor,
         {
-          provide: CpqAccessStorageService,
-          useValue: cpqAccessStorageServiceMock,
+            provide: CpqAccessStorageService,
+            useValue: cpqAccessStorageServiceMock,
         },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     interceptorUnderTest = TestBed.inject(
       CpqConfiguratorRestInterceptor as Type<CpqConfiguratorRestInterceptor>

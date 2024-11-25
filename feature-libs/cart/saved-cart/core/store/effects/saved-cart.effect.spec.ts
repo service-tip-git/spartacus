@@ -1,4 +1,4 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Action } from '@ngrx/store';
@@ -10,6 +10,7 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 import { SavedCartConnector } from '../../connectors/saved-cart.connector';
 import { SavedCartActions } from '../actions/index';
 import * as fromEffects from './saved-cart.effect';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import createSpy = jasmine.createSpy;
 
 const mockCartId = 'test-cart';
@@ -66,25 +67,27 @@ describe('SavedCart Effects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         fromEffects.SavedCartEffects,
         {
-          provide: SavedCartConnector,
-          useClass: MockSavedCartConnector,
+            provide: SavedCartConnector,
+            useClass: MockSavedCartConnector,
         },
         {
-          provide: ActiveCartFacade,
-          useClass: MockActiveCartService,
+            provide: ActiveCartFacade,
+            useClass: MockActiveCartService,
         },
         {
-          provide: GlobalMessageService,
-          useClass: MockGlobalMessageService,
+            provide: GlobalMessageService,
+            useClass: MockGlobalMessageService,
         },
         { provide: CartConnector, useClass: MockCartConnector },
         provideMockActions(() => actions$),
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     activeCart$.next(mockActiveCart);
     effects = TestBed.inject(fromEffects.SavedCartEffects);

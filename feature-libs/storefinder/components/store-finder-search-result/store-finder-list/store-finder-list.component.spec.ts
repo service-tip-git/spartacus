@@ -1,4 +1,4 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -13,6 +13,7 @@ import { EMPTY } from 'rxjs';
 import { StoreFinderMapComponent } from '../../store-finder-map/store-finder-map.component';
 import { StoreFinderListComponent } from './store-finder-list.component';
 import { LocationDisplayMode } from './store-finder-list.model';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import createSpy = jasmine.createSpy;
 
 const location: PointOfService = {
@@ -51,22 +52,21 @@ describe('StoreFinderDisplayListComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        HttpClientTestingModule,
+    schemas: [NO_ERRORS_SCHEMA],
+    declarations: [StoreFinderListComponent, StoreFinderMapComponent],
+    imports: [RouterTestingModule,
         SpinnerModule,
-        I18nTestingModule,
-      ],
-      schemas: [NO_ERRORS_SCHEMA],
-      declarations: [StoreFinderListComponent, StoreFinderMapComponent],
-      providers: [
+        I18nTestingModule],
+    providers: [
         {
-          provide: GoogleMapRendererService,
-          useClass: GoogleMapRendererServiceMock,
+            provide: GoogleMapRendererService,
+            useClass: GoogleMapRendererServiceMock,
         },
         { provide: StoreFinderService, useClass: StoreFinderServiceMock },
-      ],
-    }).compileComponents();
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+}).compileComponents();
   }));
 
   beforeEach(() => {

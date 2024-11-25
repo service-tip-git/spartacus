@@ -1,7 +1,4 @@
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import {
   BaseOccUrlProperties,
@@ -23,6 +20,7 @@ import { UserSignUp } from '@spartacus/user/profile/root';
 import { OccUserProfileAdapter } from './occ-user-profile.adapter';
 import { Observable, of } from 'rxjs';
 import { CaptchaApiConfig, CaptchaRenderer } from '@spartacus/storefront';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 export const mockOccModuleConfig: OccConfig = {
   backend: {
@@ -99,18 +97,20 @@ describe('OccUserProfileAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         OccUserProfileAdapter,
         { provide: OccConfig, useValue: mockOccModuleConfig },
         {
-          provide: OccEndpointsService,
-          useClass: MockOccEndpointsService,
+            provide: OccEndpointsService,
+            useClass: MockOccEndpointsService,
         },
         { provide: CaptchaApiConfig, useValue: mockCaptchaApiConfig },
         MockCaptchaService,
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     occUserAdapter = TestBed.inject(OccUserProfileAdapter);
     httpMock = TestBed.inject(HttpTestingController);

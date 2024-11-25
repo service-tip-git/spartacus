@@ -1,7 +1,4 @@
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import {
   provideConfigFactory,
@@ -11,6 +8,7 @@ import { NodesResponse, SceneAdapter } from '@spartacus/epd-visualization/core';
 import { getEpdVisualizationDefaultConfig } from '@spartacus/epd-visualization/root';
 import { getTestConfig } from '../../../root/testing/epd-visualization-test-config';
 import { StorageV1Adapter } from './storage-v1.adapter';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 let sceneAdapter: SceneAdapter;
 let httpMock: HttpTestingController;
@@ -21,16 +19,18 @@ describe('StorageV1Adapter', () => {
   describe('getNodes', () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        providers: [
-          provideConfigFactory(getTestConfig),
-          provideDefaultConfigFactory(getEpdVisualizationDefaultConfig),
-          {
+    imports: [],
+    providers: [
+        provideConfigFactory(getTestConfig),
+        provideDefaultConfigFactory(getEpdVisualizationDefaultConfig),
+        {
             provide: SceneAdapter,
             useClass: StorageV1Adapter,
-          },
-        ],
-      });
+        },
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
       httpMock = TestBed.inject(HttpTestingController);
       sceneAdapter = TestBed.inject(SceneAdapter);

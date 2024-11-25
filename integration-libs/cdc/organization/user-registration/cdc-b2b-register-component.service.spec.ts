@@ -1,4 +1,4 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
@@ -20,6 +20,7 @@ import {
 import { UserRegisterFacade } from '@spartacus/user/profile/root';
 import { of, throwError } from 'rxjs';
 import { CDCB2BRegisterComponentService } from './cdc-b2b-register-component.service';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import createSpy = jasmine.createSpy;
 
 const mockedGlobalMessageService = {
@@ -91,40 +92,42 @@ describe('CdcRegisterComponentService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         { provide: AuthService, useClass: MockAuthService },
         {
-          provide: RoutingService,
-          useClass: MockRoutingService,
+            provide: RoutingService,
+            useClass: MockRoutingService,
         },
         {
-          provide: UserAddressService,
-          useClass: MockUserAddressService,
+            provide: UserAddressService,
+            useClass: MockUserAddressService,
         },
         {
-          provide: UserRegisterFacade,
-          useClass: MockUserRegisterFacade,
+            provide: UserRegisterFacade,
+            useClass: MockUserRegisterFacade,
         },
         {
-          provide: TranslationService,
-          useClass: MockTranslationService,
+            provide: TranslationService,
+            useClass: MockTranslationService,
         },
         {
-          provide: UserRegistrationFacade,
-          useClass: MockUserRegistrationFacade,
+            provide: UserRegistrationFacade,
+            useClass: MockUserRegistrationFacade,
         },
-        { provide: Store, useValue: { dispatch: () => {} } },
+        { provide: Store, useValue: { dispatch: () => { } } },
         {
-          provide: UserRegistrationConnector,
-          useClass: MockUserRegistrationConnector,
+            provide: UserRegistrationConnector,
+            useClass: MockUserRegistrationConnector,
         },
         { provide: CdcJsService, useClass: MockCDCJsService },
         { provide: EventService, useClass: MockEventService },
         { provide: GlobalMessageService, useValue: mockedGlobalMessageService },
         CDCB2BRegisterComponentService,
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     globalMessageService = TestBed.inject(GlobalMessageService);
     cdcOrgRegisterService = TestBed.inject(CDCB2BRegisterComponentService);

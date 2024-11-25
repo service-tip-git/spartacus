@@ -1,12 +1,5 @@
-import {
-  HttpClientModule,
-  HttpHeaders,
-  HttpRequest,
-} from '@angular/common/http';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HttpHeaders, HttpRequest, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import {
   ConverterService,
@@ -64,23 +57,37 @@ describe('OccOmfOrderHistoryAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        HttpClientModule,
-        HttpClientTestingModule,
-        StoreModule.forRoot({}),
-      ],
-      providers: [
+    imports: [HttpClientModule,
+        StoreModule.forRoot({})],
+    providers: [
         LoggerService,
         OccOmfOrderHistoryAdapter,
         { provide: OmfConfig, useValue: mockConfig },
         { provide: OccConfig, useValue: mockOccModuleConfig },
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
         {
-          provide: OccEndpointsService,
-          useClass: MockOccEndpointsService,
+            provide: OccEndpointsService,
+            useClass: MockOccEndpointsService,
         },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+}{
+    imports: [HttpClientTestingModule,
+        StoreModule.forRoot({})],
+    providers: [
+        LoggerService,
+        OccOmfOrderHistoryAdapter,
+        { provide: OmfConfig, useValue: mockConfig },
+        { provide: OccConfig, useValue: mockOccModuleConfig },
+        { provide: ActivatedRoute, useValue: mockActivatedRoute },
+        {
+            provide: OccEndpointsService,
+            useClass: MockOccEndpointsService,
+        },
+        provideHttpClient(withInterceptorsFromDi()),
+    ]
+});
 
     adapter = TestBed.inject(OccOmfOrderHistoryAdapter);
     httpMock = TestBed.inject(HttpTestingController);

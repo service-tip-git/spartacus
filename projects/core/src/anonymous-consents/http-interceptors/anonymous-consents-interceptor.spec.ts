@@ -1,13 +1,5 @@
-import {
-  HttpClient,
-  HttpInterceptor,
-  HttpRequest,
-  HTTP_INTERCEPTORS,
-} from '@angular/common/http';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HttpClient, HttpInterceptor, HttpRequest, HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { EMPTY, Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
@@ -75,25 +67,27 @@ describe('AnonymousConsentsInterceptor', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         {
-          provide: AnonymousConsentsService,
-          useClass: MockAnonymousConsentsService,
+            provide: AnonymousConsentsService,
+            useClass: MockAnonymousConsentsService,
         },
         { provide: AuthService, useClass: MockAuthService },
         { provide: OccEndpointsService, useClass: MockOccEndpointsService },
         {
-          provide: HTTP_INTERCEPTORS,
-          useClass: AnonymousConsentsInterceptor,
-          multi: true,
+            provide: HTTP_INTERCEPTORS,
+            useClass: AnonymousConsentsInterceptor,
+            multi: true,
         },
         {
-          provide: AnonymousConsentsConfig,
-          useValue: mockAnonymousConsentsConfig,
+            provide: AnonymousConsentsConfig,
+            useValue: mockAnonymousConsentsConfig,
         },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
     httpMock = TestBed.inject(HttpTestingController);
     anonymousConsentsService = TestBed.inject(AnonymousConsentsService);
     authService = TestBed.inject(AuthService);

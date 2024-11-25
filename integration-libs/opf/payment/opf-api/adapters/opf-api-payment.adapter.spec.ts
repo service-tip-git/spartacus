@@ -4,15 +4,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {
-  HttpClient,
-  HttpErrorResponse,
-  HttpHeaders,
-} from '@angular/common/http';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HttpClient, HttpErrorResponse, HttpHeaders, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import {
   BaseOccUrlProperties,
@@ -109,19 +102,21 @@ describe(`OpfApiPaymentAdapter`, () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         OpfApiPaymentAdapter,
         {
-          provide: OpfEndpointsService,
-          useClass: MockOpfEndpointsService,
+            provide: OpfEndpointsService,
+            useClass: MockOpfEndpointsService,
         },
         {
-          provide: OpfConfig,
-          useValue: mockOpfConfig,
+            provide: OpfConfig,
+            useValue: mockOpfConfig,
         },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     service = TestBed.inject(OpfApiPaymentAdapter);
     httpMock = TestBed.inject(HttpTestingController);

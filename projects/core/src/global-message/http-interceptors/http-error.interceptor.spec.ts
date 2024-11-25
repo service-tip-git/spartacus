@@ -1,8 +1,5 @@
-import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HttpClient, HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { ErrorHandler } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import {
@@ -44,57 +41,59 @@ describe('HttpErrorInterceptor', () => {
     };
 
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         {
-          provide: HTTP_INTERCEPTORS,
-          useClass: HttpErrorInterceptor,
-          multi: true,
+            provide: HTTP_INTERCEPTORS,
+            useClass: HttpErrorInterceptor,
+            multi: true,
         },
         {
-          provide: HttpErrorHandler,
-          useClass: HttpErrorHandler,
-          multi: true,
+            provide: HttpErrorHandler,
+            useClass: HttpErrorHandler,
+            multi: true,
         },
         {
-          provide: HttpErrorHandler,
-          useExisting: UnknownErrorHandler,
-          multi: true,
+            provide: HttpErrorHandler,
+            useExisting: UnknownErrorHandler,
+            multi: true,
         },
         {
-          provide: HttpErrorHandler,
-          useExisting: BadGatewayHandler,
-          multi: true,
+            provide: HttpErrorHandler,
+            useExisting: BadGatewayHandler,
+            multi: true,
         },
         {
-          provide: HttpErrorHandler,
-          useExisting: BadRequestHandler,
-          multi: true,
+            provide: HttpErrorHandler,
+            useExisting: BadRequestHandler,
+            multi: true,
         },
         {
-          provide: HttpErrorHandler,
-          useExisting: ConflictHandler,
-          multi: true,
+            provide: HttpErrorHandler,
+            useExisting: ConflictHandler,
+            multi: true,
         },
         {
-          provide: HttpErrorHandler,
-          useExisting: ForbiddenHandler,
-          multi: true,
+            provide: HttpErrorHandler,
+            useExisting: ForbiddenHandler,
+            multi: true,
         },
         {
-          provide: HttpErrorHandler,
-          useExisting: GatewayTimeoutHandler,
-          multi: true,
+            provide: HttpErrorHandler,
+            useExisting: GatewayTimeoutHandler,
+            multi: true,
         },
         {
-          provide: HttpErrorHandler,
-          useExisting: NotFoundHandler,
-          multi: true,
+            provide: HttpErrorHandler,
+            useExisting: NotFoundHandler,
+            multi: true,
         },
         { provide: GlobalMessageService, useValue: mockMessageService },
         { provide: AuthService, useValue: mockAuthService },
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     httpMock = TestBed.inject(HttpTestingController);
     http = TestBed.inject(HttpClient);

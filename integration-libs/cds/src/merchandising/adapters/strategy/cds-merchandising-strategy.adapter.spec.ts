@@ -1,7 +1,4 @@
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { CdsEndpointsService } from '../../../services/cds-endpoints.service';
 import { StrategyProducts } from '../../model/strategy-products.model';
@@ -9,6 +6,7 @@ import { CdsMerchandisingStrategyAdapter } from './cds-merchandising-strategy.ad
 import createSpy = jasmine.createSpy;
 import { BaseSiteService } from '@spartacus/core';
 import { of } from 'rxjs';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 const STRATEGY_ID = 'test-strategy-id';
 const STRATEGY_PRODUCTS_ENDPOINT_KEY = 'strategyProducts';
@@ -70,19 +68,21 @@ describe('MerchandisingStrategyAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [
+    imports: [],
+    providers: [
         {
-          provide: CdsEndpointsService,
-          useClass: MockCdsEndpointsService,
+            provide: CdsEndpointsService,
+            useClass: MockCdsEndpointsService,
         },
         {
-          provide: BaseSiteService,
-          useClass: MockBaseSiteService,
+            provide: BaseSiteService,
+            useClass: MockBaseSiteService,
         },
         CdsMerchandisingStrategyAdapter,
-      ],
-    });
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
     httpMock = TestBed.inject(HttpTestingController);
     strategyAdapter = TestBed.inject(CdsMerchandisingStrategyAdapter);
