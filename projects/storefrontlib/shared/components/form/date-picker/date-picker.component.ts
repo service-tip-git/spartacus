@@ -15,7 +15,6 @@ import { FeatureDirective } from '@spartacus/core';
 import { FormErrorsComponent } from '../form-errors/form-errors.component';
 import { TranslatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
-import { MockDatePipe } from '@spartacus/core';
 
 /**
  * Component that adds a date control. While the native date picker works in most
@@ -38,7 +37,7 @@ import { MockDatePipe } from '@spartacus/core';
     TranslatePipe,
     CxDatePipe,
 
-    MockDatePipe,
+    CxDatePipe,
   ],
 })
 export class DatePickerComponent {

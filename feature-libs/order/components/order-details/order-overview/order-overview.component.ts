@@ -24,7 +24,6 @@ import { CardComponent } from '@spartacus/storefront';
 import { OutletDirective } from '@spartacus/storefront';
 import { OrderDetailBillingComponent } from '../order-detail-billing/order-detail-billing.component';
 import { CxDatePipe } from '@spartacus/core';
-import { MockDatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-order-overview',
@@ -37,7 +36,7 @@ import { MockDatePipe } from '@spartacus/core';
     OrderDetailBillingComponent,
     AsyncPipe,
     CxDatePipe,
-    MockDatePipe,
+    CxDatePipe,
   ],
 })
 export class OrderOverviewComponent {

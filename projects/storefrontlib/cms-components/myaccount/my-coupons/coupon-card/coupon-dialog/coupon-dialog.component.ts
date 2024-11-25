@@ -22,7 +22,6 @@ import { IconComponent } from '../../../../misc/icon/icon.component';
 import { LowerCasePipe } from '@angular/common';
 import { TranslatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
-import { MockDatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-coupon-dialog',
@@ -36,7 +35,7 @@ import { MockDatePipe } from '@spartacus/core';
     TranslatePipe,
     CxDatePipe,
 
-    MockDatePipe,
+    CxDatePipe,
   ],
 })
 export class CouponDialogComponent implements OnDestroy, OnInit {

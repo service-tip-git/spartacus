@@ -28,7 +28,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
-import { MockDatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-replenishment-order-history',
@@ -47,7 +46,7 @@ import { MockDatePipe } from '@spartacus/core';
     TranslatePipe,
     CxDatePipe,
 
-    MockDatePipe,
+    CxDatePipe,
   ],
 })
 export class ReplenishmentOrderHistoryComponent implements OnDestroy {

@@ -36,7 +36,6 @@ import { SpinnerComponent } from '../../../shared/components/spinner/spinner.com
 import { TranslatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
-import { MockDatePipe } from '@spartacus/core';
 
 interface ProductInterestSearchResultUI extends ProductInterestSearchResult {
   results?: (ProductInterestEntryRelation & {
@@ -63,7 +62,7 @@ interface ProductInterestSearchResultUI extends ProductInterestSearchResult {
     CxDatePipe,
     UrlPipe,
 
-    MockDatePipe,
+    CxDatePipe,
   ],
 })
 export class MyInterestsComponent implements OnInit, OnDestroy {
