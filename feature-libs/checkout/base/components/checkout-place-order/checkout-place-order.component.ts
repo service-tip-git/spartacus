@@ -11,7 +11,13 @@ import {
   OnDestroy,
   ViewContainerRef,
 } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  UntypedFormBuilder,
+  UntypedFormGroup,
+  Validators,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { RoutingService } from '@spartacus/core';
 import { OrderFacade } from '@spartacus/order/root';
 import { LaunchDialogService, LAUNCH_CALLER } from '@spartacus/storefront';
@@ -25,20 +31,20 @@ import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.p
 import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-place-order',
-    templateUrl: './checkout-place-order.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        FormsModule,
-        ReactiveFormsModule,
-        RouterLink,
-        FeatureDirective,
-        FormErrorsComponent,
-        AtMessageDirective,
-        UrlPipe,
-        TranslatePipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-place-order',
+  templateUrl: './checkout-place-order.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    RouterLink,
+    FeatureDirective,
+    FormErrorsComponent,
+    AtMessageDirective,
+    UrlPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class CheckoutPlaceOrderComponent implements OnDestroy {
   placedOrder: void | Observable<ComponentRef<any> | undefined>;

@@ -87,32 +87,36 @@ class MockLaunchDialogService implements Partial<LaunchDialogService> {
 }
 
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    imports: [FormsModule,
-        ReactiveFormsModule,
-        RouterTestingModule,
-        SpinnerModule,
-        I18nTestingModule,
-        PromotionsModule,],
+  selector: 'cx-icon',
+  template: '',
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    RouterTestingModule,
+    SpinnerModule,
+    I18nTestingModule,
+    PromotionsModule,
+  ],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
 }
 
 @Component({
-    selector: 'cx-spinner',
-    template: '',
-    imports: [FormsModule,
-        ReactiveFormsModule,
-        RouterTestingModule,
-        SpinnerModule,
-        I18nTestingModule,
-        PromotionsModule,],
+  selector: 'cx-spinner',
+  template: '',
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    RouterTestingModule,
+    SpinnerModule,
+    I18nTestingModule,
+    PromotionsModule,
+  ],
 })
 class MockSpinnerComponent {}
 
-@Directive({ selector: '[cxFocus]', })
+@Directive({ selector: '[cxFocus]' })
 export class MockFocusDirective {
   @Input('cxFocus') protected config: any;
 }
@@ -131,7 +135,7 @@ describe('ReorderDialogComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [
+      imports: [
         FormsModule,
         ReactiveFormsModule,
         RouterTestingModule,
@@ -142,23 +146,23 @@ describe('ReorderDialogComponent', () => {
         MockCxIconComponent,
         MockSpinnerComponent,
         MockFocusDirective,
-    ],
-    providers: [
+      ],
+      providers: [
         { provide: LaunchDialogService, useClass: MockLaunchDialogService },
         {
-            provide: ReorderOrderFacade,
-            useClass: MockReorderOrderFacade,
+          provide: ReorderOrderFacade,
+          useClass: MockReorderOrderFacade,
         },
         {
-            provide: MultiCartFacade,
-            useClass: MockMultiCartService,
+          provide: MultiCartFacade,
+          useClass: MockMultiCartService,
         },
         {
-            provide: FeatureConfigService,
-            useClass: MockFeatureConfigService,
+          provide: FeatureConfigService,
+          useClass: MockFeatureConfigService,
         },
-    ],
-}).compileComponents();
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

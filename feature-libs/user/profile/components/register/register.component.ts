@@ -5,7 +5,15 @@
  */
 
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
-import { UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  UntypedFormArray,
+  UntypedFormBuilder,
+  UntypedFormControl,
+  UntypedFormGroup,
+  Validators,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import {
   AnonymousConsent,
   AnonymousConsentsConfig,
@@ -39,27 +47,27 @@ import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.p
 import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-register',
-    templateUrl: './register.component.html',
-    imports: [
-        NgIf,
-        FeatureDirective,
-        FormsModule,
-        ReactiveFormsModule,
-        NgSelectComponent,
-        NgSelectA11yDirective,
-        NgTemplateOutlet,
-        FormErrorsComponent,
-        PasswordVisibilityToggleDirective,
-        NgFor,
-        RouterLink,
-        CaptchaComponent,
-        SpinnerComponent,
-        AsyncPipe,
-        UrlPipe,
-        TranslatePipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-register',
+  templateUrl: './register.component.html',
+  imports: [
+    NgIf,
+    FeatureDirective,
+    FormsModule,
+    ReactiveFormsModule,
+    NgSelectComponent,
+    NgSelectA11yDirective,
+    NgTemplateOutlet,
+    FormErrorsComponent,
+    PasswordVisibilityToggleDirective,
+    NgFor,
+    RouterLink,
+    CaptchaComponent,
+    SpinnerComponent,
+    AsyncPipe,
+    UrlPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class RegisterComponent implements OnInit, OnDestroy {
   // TODO: (CXSPA-7315) Remove feature toggle in the next major

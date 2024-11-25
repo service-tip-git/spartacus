@@ -29,28 +29,28 @@ import { UrlPipe } from '../../../../../core/src/routing/configurable-routes/url
 import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-product-list-item',
-    templateUrl: './product-list-item.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    providers: [
-        ProductListItemContextSource,
-        {
-            provide: ProductListItemContext,
-            useExisting: ProductListItemContextSource,
-        },
-    ],
-    imports: [
-        RouterLink,
-        MediaComponent,
-        FeatureDirective,
-        OutletDirective,
-        NgIf,
-        StarRatingComponent,
-        InnerComponentsHostDirective,
-        TranslatePipe,
-        UrlPipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-product-list-item',
+  templateUrl: './product-list-item.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [
+    ProductListItemContextSource,
+    {
+      provide: ProductListItemContext,
+      useExisting: ProductListItemContextSource,
+    },
+  ],
+  imports: [
+    RouterLink,
+    MediaComponent,
+    FeatureDirective,
+    OutletDirective,
+    NgIf,
+    StarRatingComponent,
+    InnerComponentsHostDirective,
+    TranslatePipe,
+    UrlPipe,
+    MockTranslatePipe,
+  ],
 })
 export class ProductListItemComponent implements OnChanges {
   protected productListService = inject(ProductListService);

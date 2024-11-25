@@ -27,18 +27,18 @@ import { CxDatePipe } from '../../../../../projects/core/src/i18n/date.pipe';
 import { MockDatePipe } from '../../../../../projects/core/src/i18n/testing/mock-date.pipe';
 
 @Component({
-    selector: 'cx-order-overview',
-    templateUrl: './order-overview.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        NgIf,
-        CardComponent,
-        OutletDirective,
-        OrderDetailBillingComponent,
-        AsyncPipe,
-        CxDatePipe,
-        MockDatePipe,
-    ],
+  selector: 'cx-order-overview',
+  templateUrl: './order-overview.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    NgIf,
+    CardComponent,
+    OutletDirective,
+    OrderDetailBillingComponent,
+    AsyncPipe,
+    CxDatePipe,
+    MockDatePipe,
+  ],
 })
 export class OrderOverviewComponent {
   protected orderOverviewComponentService = inject(

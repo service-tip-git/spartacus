@@ -27,7 +27,7 @@ describe('NotificationMessageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [
+      imports: [
         CommonModule,
         RouterTestingModule,
         PaginationTestingModule,
@@ -35,18 +35,18 @@ describe('NotificationMessageComponent', () => {
         I18nTestingModule,
         IconTestingModule,
         NotificationMessageComponent,
-    ],
-    providers: [
+      ],
+      providers: [
         {
-            provide: MessageData,
-            useValue: MockMessageData,
+          provide: MessageData,
+          useValue: MockMessageData,
         },
         {
-            provide: MessageService,
-            useClass: MockMessageService,
+          provide: MessageService,
+          useClass: MockMessageService,
         },
-    ],
-}).compileComponents();
+      ],
+    }).compileComponents();
 
     messageData = TestBed.inject(MessageData);
 

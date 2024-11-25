@@ -38,19 +38,19 @@ import { RouterOutlet } from '@angular/router';
 import { AsyncPipe } from '@angular/common';
 
 @Component({
-    selector: 'cx-storefront',
-    templateUrl: './storefront.component.html',
-    imports: [
-        PageTemplateDirective,
-        OutletDirective,
-        SkipLinkDirective,
-        FocusDirective,
-        PageLayoutComponent,
-        PageSlotComponent,
-        GlobalMessageComponent,
-        RouterOutlet,
-        AsyncPipe,
-    ],
+  selector: 'cx-storefront',
+  templateUrl: './storefront.component.html',
+  imports: [
+    PageTemplateDirective,
+    OutletDirective,
+    SkipLinkDirective,
+    FocusDirective,
+    PageLayoutComponent,
+    PageSlotComponent,
+    GlobalMessageComponent,
+    RouterOutlet,
+    AsyncPipe,
+  ],
 })
 export class StorefrontComponent implements OnInit, OnDestroy {
   navigateSubscription: Subscription;

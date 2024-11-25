@@ -99,15 +99,17 @@ const mockOrderEntries: OrderEntry[] = [
 ];
 
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    imports: [FormsModule,
-        ReactiveFormsModule,
-        RouterTestingModule,
-        SpinnerModule,
-        I18nTestingModule,
-        PromotionsModule,
-        KeyboardFocusTestingModule,],
+  selector: 'cx-icon',
+  template: '',
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    RouterTestingModule,
+    SpinnerModule,
+    I18nTestingModule,
+    PromotionsModule,
+    KeyboardFocusTestingModule,
+  ],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -123,15 +125,17 @@ class MockRoutingService implements Partial<RoutingService> {
 }
 
 @Component({
-    selector: 'cx-cart-item',
-    template: '',
-    imports: [FormsModule,
-        ReactiveFormsModule,
-        RouterTestingModule,
-        SpinnerModule,
-        I18nTestingModule,
-        PromotionsModule,
-        KeyboardFocusTestingModule,],
+  selector: 'cx-cart-item',
+  template: '',
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    RouterTestingModule,
+    SpinnerModule,
+    I18nTestingModule,
+    PromotionsModule,
+    KeyboardFocusTestingModule,
+  ],
 })
 class MockCartItemComponent {
   @Input() compact = false;
@@ -141,7 +145,7 @@ class MockCartItemComponent {
   @Input() promotionLocation: PromotionLocation = PromotionLocation.ActiveCart;
 }
 
-@Pipe({ name: 'cxUrl', })
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
 }
@@ -156,7 +160,7 @@ describe('AddedToCartDialogComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [
+      imports: [
         FormsModule,
         ReactiveFormsModule,
         RouterTestingModule,
@@ -169,19 +173,19 @@ describe('AddedToCartDialogComponent', () => {
         MockUrlPipe,
         MockCxIconComponent,
         MockFeatureDirective,
-    ],
-    providers: [
+      ],
+      providers: [
         {
-            provide: ActiveCartFacade,
-            useClass: MockActiveCartService,
+          provide: ActiveCartFacade,
+          useClass: MockActiveCartService,
         },
         {
-            provide: RoutingService,
-            useClass: MockRoutingService,
+          provide: RoutingService,
+          useClass: MockRoutingService,
         },
         { provide: LaunchDialogService, useClass: MockLaunchDialogService },
-    ],
-}).compileComponents();
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {

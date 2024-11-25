@@ -24,22 +24,24 @@ import { MockFeatureLevelDirective } from 'projects/storefrontlib/shared/test/mo
 import { CartItemComponent } from './cart-item.component';
 import { CartItemContextSource } from './model/cart-item-context-source.model';
 
-@Pipe({ name: 'cxUrl', })
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
-@Directive({ selector: '[cxOutlet]', })
+@Directive({ selector: '[cxOutlet]' })
 class MockOutletDirective implements Partial<OutletDirective> {
   @Input() cxOutlet: string;
 }
 
 @Component({
-    template: '',
-    selector: 'cx-media',
-    imports: [RouterTestingModule,
-        ReactiveFormsModule,
-        I18nTestingModule,
-        OutletModule,],
+  template: '',
+  selector: 'cx-media',
+  imports: [
+    RouterTestingModule,
+    ReactiveFormsModule,
+    I18nTestingModule,
+    OutletModule,
+  ],
 })
 class MockMediaComponent {
   @Input() container;
@@ -47,12 +49,14 @@ class MockMediaComponent {
 }
 
 @Component({
-    template: '',
-    selector: 'cx-item-counter',
-    imports: [RouterTestingModule,
-        ReactiveFormsModule,
-        I18nTestingModule,
-        OutletModule,],
+  template: '',
+  selector: 'cx-item-counter',
+  imports: [
+    RouterTestingModule,
+    ReactiveFormsModule,
+    I18nTestingModule,
+    OutletModule,
+  ],
 })
 class MockItemCounterComponent {
   @Input() control;
@@ -62,12 +66,14 @@ class MockItemCounterComponent {
 }
 
 @Component({
-    template: '',
-    selector: 'cx-promotions',
-    imports: [RouterTestingModule,
-        ReactiveFormsModule,
-        I18nTestingModule,
-        OutletModule,],
+  template: '',
+  selector: 'cx-promotions',
+  imports: [
+    RouterTestingModule,
+    ReactiveFormsModule,
+    I18nTestingModule,
+    OutletModule,
+  ],
 })
 class MockPromotionsComponent {
   @Input() promotions;
@@ -96,18 +102,20 @@ const mockProduct = {
 };
 
 @Component({
-    selector: 'cx-cart-item-validation-warning',
-    template: '',
-    imports: [RouterTestingModule,
-        ReactiveFormsModule,
-        I18nTestingModule,
-        OutletModule,],
+  selector: 'cx-cart-item-validation-warning',
+  template: '',
+  imports: [
+    RouterTestingModule,
+    ReactiveFormsModule,
+    I18nTestingModule,
+    OutletModule,
+  ],
 })
 class MockCartItemValidationWarningComponent {
   @Input() code: string;
 }
 
-@Directive({ selector: '[cxAtMessage]', })
+@Directive({ selector: '[cxAtMessage]' })
 class MockAtMessageDirective {
   @Input() cxAtMessage: string | string[] | undefined;
 }
@@ -125,7 +133,7 @@ describe('CartItemComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [
+      imports: [
         RouterTestingModule,
         ReactiveFormsModule,
         I18nTestingModule,
@@ -139,13 +147,13 @@ describe('CartItemComponent', () => {
         MockOutletDirective,
         MockCartItemValidationWarningComponent,
         MockAtMessageDirective,
-    ],
-    providers: [
+      ],
+      providers: [
         {
-            provide: ControlContainer,
+          provide: ControlContainer,
         },
-    ],
-}).compileComponents();
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

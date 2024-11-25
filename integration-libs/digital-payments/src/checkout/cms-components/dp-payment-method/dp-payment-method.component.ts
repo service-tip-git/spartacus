@@ -32,21 +32,21 @@ import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translat
 import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-payment-method',
-    templateUrl: './dp-payment-method.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        NgIf,
-        FeatureDirective,
-        NgFor,
-        CardComponent,
-        DpPaymentFormComponent,
-        SpinnerComponent,
-        DpPaymentCallbackComponent,
-        AsyncPipe,
-        TranslatePipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-payment-method',
+  templateUrl: './dp-payment-method.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    NgFor,
+    CardComponent,
+    DpPaymentFormComponent,
+    SpinnerComponent,
+    DpPaymentCallbackComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class DpPaymentMethodComponent extends CorePaymentMethodComponent {
   showCallbackScreen = false;

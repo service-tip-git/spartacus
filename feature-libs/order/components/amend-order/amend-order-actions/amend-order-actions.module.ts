@@ -11,7 +11,13 @@ import { I18nModule, UrlModule } from '@spartacus/core';
 import { AmendOrderActionsComponent } from './amend-order-actions.component';
 
 @NgModule({
-    imports: [CommonModule, RouterModule, UrlModule, I18nModule, AmendOrderActionsComponent],
-    exports: [AmendOrderActionsComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    UrlModule,
+    I18nModule,
+    AmendOrderActionsComponent,
+  ],
+  exports: [AmendOrderActionsComponent],
 })
 export class AmendOrderActionsModule {}

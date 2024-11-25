@@ -62,23 +62,23 @@ export interface AddedToCartDialogComponentData {
   >;
 }
 @Component({
-    selector: 'cx-added-to-cart-dialog',
-    templateUrl: './added-to-cart-dialog.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        FeatureDirective,
-        FocusDirective,
-        IconComponent,
-        NgIf,
-        CartItemComponent,
-        PromotionsComponent,
-        RouterLink,
-        SpinnerComponent,
-        AsyncPipe,
-        UrlPipe,
-        TranslatePipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-added-to-cart-dialog',
+  templateUrl: './added-to-cart-dialog.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    FeatureDirective,
+    FocusDirective,
+    IconComponent,
+    NgIf,
+    CartItemComponent,
+    PromotionsComponent,
+    RouterLink,
+    SpinnerComponent,
+    AsyncPipe,
+    UrlPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class AddedToCartDialogComponent implements OnInit, OnDestroy {
   iconTypes = ICON_TYPE;

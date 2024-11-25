@@ -22,27 +22,28 @@ import { SearchBoxComponent } from './search-box.component';
 import { CarouselModule } from '../../../shared';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        RouterModule,
-        MediaModule,
-        IconModule,
-        UrlModule,
-        I18nModule,
-        OutletModule,
-        FeaturesConfigModule,
-        CarouselModule,
-        SearchBoxComponent, HighlightPipe,
-    ],
-    providers: [
-        provideDefaultConfig(<CmsConfig>{
-            cmsComponents: {
-                SearchBoxComponent: {
-                    component: SearchBoxComponent,
-                },
-            },
-        }),
-    ],
-    exports: [SearchBoxComponent, HighlightPipe],
+  imports: [
+    CommonModule,
+    RouterModule,
+    MediaModule,
+    IconModule,
+    UrlModule,
+    I18nModule,
+    OutletModule,
+    FeaturesConfigModule,
+    CarouselModule,
+    SearchBoxComponent,
+    HighlightPipe,
+  ],
+  providers: [
+    provideDefaultConfig(<CmsConfig>{
+      cmsComponents: {
+        SearchBoxComponent: {
+          component: SearchBoxComponent,
+        },
+      },
+    }),
+  ],
+  exports: [SearchBoxComponent, HighlightPipe],
 })
 export class SearchBoxModule {}

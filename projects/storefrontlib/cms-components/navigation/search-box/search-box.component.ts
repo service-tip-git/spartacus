@@ -66,24 +66,24 @@ const DEFAULT_SEARCH_BOX_CONFIG: SearchBoxConfig = {
 const SEARCHBOX_IS_ACTIVE = 'searchbox-is-active';
 
 @Component({
-    selector: 'cx-searchbox',
-    templateUrl: './search-box.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        IconComponent,
-        NgIf,
-        NgFor,
-        RouterLink,
-        FeatureDirective,
-        OutletDirective,
-        MediaComponent,
-        CarouselComponent,
-        AsyncPipe,
-        UrlPipe,
-        TranslatePipe,
-        HighlightPipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-searchbox',
+  templateUrl: './search-box.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    IconComponent,
+    NgIf,
+    NgFor,
+    RouterLink,
+    FeatureDirective,
+    OutletDirective,
+    MediaComponent,
+    CarouselComponent,
+    AsyncPipe,
+    UrlPipe,
+    TranslatePipe,
+    HighlightPipe,
+    MockTranslatePipe,
+  ],
 })
 export class SearchBoxComponent implements OnInit, OnDestroy {
   private elementRef = inject(ElementRef);

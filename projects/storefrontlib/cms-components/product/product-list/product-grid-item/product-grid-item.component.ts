@@ -27,27 +27,27 @@ import { UrlPipe } from '../../../../../core/src/routing/configurable-routes/url
 import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-product-grid-item',
-    templateUrl: './product-grid-item.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    providers: [
-        ProductListItemContextSource,
-        {
-            provide: ProductListItemContext,
-            useExisting: ProductListItemContextSource,
-        },
-    ],
-    imports: [
-        RouterLink,
-        MediaComponent,
-        OutletDirective,
-        NgIf,
-        StarRatingComponent,
-        InnerComponentsHostDirective,
-        TranslatePipe,
-        UrlPipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-product-grid-item',
+  templateUrl: './product-grid-item.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [
+    ProductListItemContextSource,
+    {
+      provide: ProductListItemContext,
+      useExisting: ProductListItemContextSource,
+    },
+  ],
+  imports: [
+    RouterLink,
+    MediaComponent,
+    OutletDirective,
+    NgIf,
+    StarRatingComponent,
+    InnerComponentsHostDirective,
+    TranslatePipe,
+    UrlPipe,
+    MockTranslatePipe,
+  ],
 })
 export class ProductGridItemComponent implements OnChanges {
   protected productListService = inject(ProductListService);

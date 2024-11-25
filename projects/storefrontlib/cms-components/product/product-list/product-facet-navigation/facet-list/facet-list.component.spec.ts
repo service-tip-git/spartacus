@@ -24,24 +24,24 @@ import { MockFeatureDirective } from 'projects/storefrontlib/shared/test/mock-fe
 import { TabModule } from 'projects/storefrontlib/cms-components/content/tab/tab.module';
 
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    imports: [I18nTestingModule, RouterTestingModule, TabModule,],
+  selector: 'cx-icon',
+  template: '',
+  imports: [I18nTestingModule, RouterTestingModule, TabModule],
 })
 class MockIconComponent {
   @Input() type: ICON_TYPE;
 }
 
 @Component({
-    selector: 'cx-facet',
-    template: '',
-    imports: [I18nTestingModule, RouterTestingModule, TabModule,],
+  selector: 'cx-facet',
+  template: '',
+  imports: [I18nTestingModule, RouterTestingModule, TabModule],
 })
 class MockFacetComponent {
   @Input() facet;
 }
 
-@Directive({ selector: '[cxFocus]', })
+@Directive({ selector: '[cxFocus]' })
 class MockKeyboadFocusDirective {
   @Input() cxFocus;
 }
@@ -71,13 +71,18 @@ describe('FacetListComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [I18nTestingModule, RouterTestingModule, TabModule, FacetListComponent,
+      imports: [
+        I18nTestingModule,
+        RouterTestingModule,
+        TabModule,
+        FacetListComponent,
         MockIconComponent,
         MockFacetComponent,
         MockKeyboadFocusDirective,
-        MockFeatureDirective],
-    providers: [{ provide: FacetService, useClass: MockFacetService }],
-})
+        MockFeatureDirective,
+      ],
+      providers: [{ provide: FacetService, useClass: MockFacetService }],
+    })
       .overrideComponent(FacetListComponent, {
         set: { changeDetection: ChangeDetectionStrategy.Default },
       })

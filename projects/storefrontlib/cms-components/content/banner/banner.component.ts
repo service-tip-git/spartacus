@@ -22,16 +22,16 @@ import { GenericLinkComponent } from '../../../shared/components/generic-link/ge
 import { MediaComponent } from '../../../shared/components/media/media.component';
 
 @Component({
-    selector: 'cx-banner',
-    templateUrl: './banner.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        NgIf,
-        FeatureDirective,
-        GenericLinkComponent,
-        MediaComponent,
-        AsyncPipe,
-    ],
+  selector: 'cx-banner',
+  templateUrl: './banner.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    GenericLinkComponent,
+    MediaComponent,
+    AsyncPipe,
+  ],
 })
 export class BannerComponent {
   routerLink: string | any[] | undefined;

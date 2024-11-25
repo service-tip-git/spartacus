@@ -9,30 +9,30 @@ import { HamburgerMenuService } from '../header/hamburger-menu/hamburger-menu.se
 import { StorefrontComponent } from './storefront.component';
 
 @Component({
-    selector: 'cx-header',
-    template: '',
-    imports: [RouterTestingModule],
+  selector: 'cx-header',
+  template: '',
+  imports: [RouterTestingModule],
 })
 class MockHeaderComponent {}
 
 @Component({
-    selector: 'cx-global-message',
-    template: '',
-    imports: [RouterTestingModule],
+  selector: 'cx-global-message',
+  template: '',
+  imports: [RouterTestingModule],
 })
 class MockGlobalMessageComponent {}
 
 @Component({
-    selector: 'cx-page-slot',
-    template: '',
-    imports: [RouterTestingModule],
+  selector: 'cx-page-slot',
+  template: '',
+  imports: [RouterTestingModule],
 })
 class DynamicSlotComponent {}
 
 @Component({
-    selector: 'cx-footer',
-    template: '',
-    imports: [RouterTestingModule],
+  selector: 'cx-footer',
+  template: '',
+  imports: [RouterTestingModule],
 })
 class MockFooterComponent {}
 
@@ -43,16 +43,16 @@ class MockRoutingService {
 }
 
 @Component({
-    selector: 'cx-schema',
-    template: '',
-    imports: [RouterTestingModule],
+  selector: 'cx-schema',
+  template: '',
+  imports: [RouterTestingModule],
 })
 class MockSchemaComponent {}
 
 @Component({
-    selector: 'cx-page-layout',
-    template: '',
-    imports: [RouterTestingModule],
+  selector: 'cx-page-layout',
+  template: '',
+  imports: [RouterTestingModule],
 })
 class MockPageLayoutComponent {}
 
@@ -60,7 +60,7 @@ class MockHamburgerMenuService {
   toggle(_forceCollapse?: boolean): void {}
 }
 
-@Directive({ selector: '[cxOutlet]', })
+@Directive({ selector: '[cxOutlet]' })
 class MockOutletDirective implements Partial<OutletDirective> {
   @Input() cxOutlet: string;
 }
@@ -73,7 +73,9 @@ describe('StorefrontComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [RouterTestingModule, StorefrontComponent,
+      imports: [
+        RouterTestingModule,
+        StorefrontComponent,
         MockHeaderComponent,
         MockGlobalMessageComponent,
         MockFooterComponent,
@@ -81,18 +83,19 @@ describe('StorefrontComponent', () => {
         MockPageLayoutComponent,
         MockFeatureDirective,
         MockSchemaComponent,
-        MockOutletDirective],
-    providers: [
+        MockOutletDirective,
+      ],
+      providers: [
         {
-            provide: RoutingService,
-            useClass: MockRoutingService,
+          provide: RoutingService,
+          useClass: MockRoutingService,
         },
         {
-            provide: HamburgerMenuService,
-            useClass: MockHamburgerMenuService,
+          provide: HamburgerMenuService,
+          useClass: MockHamburgerMenuService,
         },
-    ],
-}).compileComponents();
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

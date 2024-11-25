@@ -5,7 +5,11 @@
  */
 
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { UntypedFormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  UntypedFormControl,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { DatePickerService } from './date-picker.service';
 import { FeatureDirective } from '../../../../../core/src/features-config/directives/feature.directive';
 import { FormErrorsComponent } from '../form-errors/form-errors.component';
@@ -25,18 +29,18 @@ import { MockDatePipe } from '../../../../../core/src/i18n/testing/mock-date.pip
  * Most of the implementation is done in the `DatePickerFallbackDirective`.
  */
 @Component({
-    selector: 'cx-date-picker',
-    templateUrl: './date-picker.component.html',
-    imports: [
-        FormsModule,
-        ReactiveFormsModule,
-        FeatureDirective,
-        FormErrorsComponent,
-        TranslatePipe,
-        CxDatePipe,
-        MockTranslatePipe,
-        MockDatePipe,
-    ],
+  selector: 'cx-date-picker',
+  templateUrl: './date-picker.component.html',
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    FeatureDirective,
+    FormErrorsComponent,
+    TranslatePipe,
+    CxDatePipe,
+    MockTranslatePipe,
+    MockDatePipe,
+  ],
 })
 export class DatePickerComponent {
   constructor(protected service: DatePickerService) {}

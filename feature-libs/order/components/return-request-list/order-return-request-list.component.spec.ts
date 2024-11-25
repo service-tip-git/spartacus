@@ -28,7 +28,7 @@ const mockReturns: ReturnRequestList = {
 
 const mockReturnRequestList$ = new BehaviorSubject(mockReturns);
 
-@Pipe({ name: 'cxUrl', })
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
@@ -61,18 +61,24 @@ describe('OrderReturnRequestListComponent', () => {
   let el: DebugElement;
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [RouterTestingModule, ListNavigationModule, I18nTestingModule, OrderReturnRequestListComponent, MockUrlPipe],
-    providers: [
+      imports: [
+        RouterTestingModule,
+        ListNavigationModule,
+        I18nTestingModule,
+        OrderReturnRequestListComponent,
+        MockUrlPipe,
+      ],
+      providers: [
         {
-            provide: OrderReturnRequestFacade,
-            useClass: MockOrderReturnRequestService,
+          provide: OrderReturnRequestFacade,
+          useClass: MockOrderReturnRequestService,
         },
         {
-            provide: TranslationService,
-            useClass: MockTranslationService,
+          provide: TranslationService,
+          useClass: MockTranslationService,
         },
-    ],
-}).compileComponents();
+      ],
+    }).compileComponents();
 
     returnService = TestBed.inject(OrderReturnRequestFacade);
   }));

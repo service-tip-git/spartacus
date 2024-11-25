@@ -44,7 +44,7 @@ class MockRoutingService {
   go = createSpy();
 }
 
-@Pipe({ name: 'cxUrl', })
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
@@ -63,30 +63,31 @@ describe('VerificationTokenFormComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [
+      imports: [
         ReactiveFormsModule,
         RouterTestingModule,
         I18nTestingModule,
         FormErrorsModule,
         SpinnerModule,
-        VerificationTokenFormComponent, MockUrlPipe,
-    ],
-    providers: [
+        VerificationTokenFormComponent,
+        MockUrlPipe,
+      ],
+      providers: [
         {
-            provide: VerificationTokenFormComponentService,
-            useClass: MockFormComponentService,
+          provide: VerificationTokenFormComponentService,
+          useClass: MockFormComponentService,
         },
         {
-            provide: LaunchDialogService,
-            useClass: MockLaunchDialogService,
+          provide: LaunchDialogService,
+          useClass: MockLaunchDialogService,
         },
         {
-            provide: RoutingService,
-            useClass: MockRoutingService,
+          provide: RoutingService,
+          useClass: MockRoutingService,
         },
         ChangeDetectorRef,
-    ],
-}).compileComponents();
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

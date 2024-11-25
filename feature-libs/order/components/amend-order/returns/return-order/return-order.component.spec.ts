@@ -22,18 +22,18 @@ class MockOrderAmendService {
 }
 
 @Component({
-    template: '',
-    selector: 'cx-amend-order-items',
-    imports: [RouterTestingModule, FormErrorsModule],
+  template: '',
+  selector: 'cx-amend-order-items',
+  imports: [RouterTestingModule, FormErrorsModule],
 })
 class MockCancelOrReturnItemsComponent {
   @Input() entries: OrderEntry[];
 }
 
 @Component({
-    template: '',
-    selector: 'cx-amend-order-actions',
-    imports: [RouterTestingModule, FormErrorsModule],
+  template: '',
+  selector: 'cx-amend-order-actions',
+  imports: [RouterTestingModule, FormErrorsModule],
 })
 class MockAmendOrderActionComponent {
   @Input() orderCode: string;
@@ -48,13 +48,17 @@ describe('ReturnOrderComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [RouterTestingModule, FormErrorsModule, ReturnOrderComponent,
+      imports: [
+        RouterTestingModule,
+        FormErrorsModule,
+        ReturnOrderComponent,
         MockAmendOrderActionComponent,
-        MockCancelOrReturnItemsComponent],
-    providers: [
+        MockCancelOrReturnItemsComponent,
+      ],
+      providers: [
         { provide: OrderAmendService, useClass: MockOrderAmendService },
-    ],
-}).compileComponents();
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

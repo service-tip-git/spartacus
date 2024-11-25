@@ -22,8 +22,8 @@ import { UrlPipe } from '../../../../../../../../projects/core/src/routing/confi
 import { MockTranslatePipe } from '../../../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-org-unit-user-link-cell',
-    template: `
+  selector: 'cx-org-unit-user-link-cell',
+  template: `
     <!--  TODO: (CXSPA-6457) - Remove feature flag next major release -->
     <ng-container *cxFeature="'a11yListOversizedFocus'">
       <a
@@ -47,16 +47,16 @@ import { MockTranslatePipe } from '../../../../../../../../projects/core/src/i18
       </a>
     </ng-container>
   `,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        FeatureDirective,
-        NgIf,
-        RouterLink,
-        AsyncPipe,
-        TranslatePipe,
-        UrlPipe,
-        MockTranslatePipe,
-    ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    FeatureDirective,
+    NgIf,
+    RouterLink,
+    AsyncPipe,
+    TranslatePipe,
+    UrlPipe,
+    MockTranslatePipe,
+  ],
 })
 export class UnitUserRolesCellComponent extends CellComponent {
   unitKey$: Observable<string> = this.itemService.key$;

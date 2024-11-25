@@ -56,31 +56,31 @@ class MockCmsComponentData {
   }
 }
 
-@Pipe({ name: 'cxUrl', })
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform(): any {
     return ['test', 'url'];
   }
 }
 
-@Pipe({ name: 'cxHighlight', })
+@Pipe({ name: 'cxHighlight' })
 class MockHighlightPipe implements PipeTransform {
   transform(): any {}
 }
 
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    imports: [I18nTestingModule],
+  selector: 'cx-icon',
+  template: '',
+  imports: [I18nTestingModule],
 })
 class MockCxIconComponent {
   @Input() type;
 }
 
 @Component({
-    selector: 'cx-media',
-    template: '<img>',
-    imports: [I18nTestingModule],
+  selector: 'cx-media',
+  template: '<img>',
+  imports: [I18nTestingModule],
 })
 class MockMediaComponent {
   @Input() container;
@@ -159,7 +159,7 @@ describe('SearchBoxComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [
+      imports: [
         BrowserAnimationsModule,
         RouterModule.forRoot([]),
         I18nTestingModule,
@@ -168,30 +168,30 @@ describe('SearchBoxComponent', () => {
         MockHighlightPipe,
         MockCxIconComponent,
         MockMediaComponent,
-    ],
-    providers: [
+      ],
+      providers: [
         {
-            provide: ProductSearchService,
-            useValue: {},
+          provide: ProductSearchService,
+          useValue: {},
         },
         {
-            provide: CmsComponentData,
-            useClass: MockCmsComponentData,
+          provide: CmsComponentData,
+          useClass: MockCmsComponentData,
         },
         {
-            provide: SearchBoxComponentService,
-            useClass: SearchBoxComponentServiceSpy,
+          provide: SearchBoxComponentService,
+          useClass: SearchBoxComponentServiceSpy,
         },
         {
-            provide: RoutingService,
-            useClass: MockRoutingService,
+          provide: RoutingService,
+          useClass: MockRoutingService,
         },
         {
-            provide: FeatureConfigService,
-            useClass: MockFeatureConfigService,
+          provide: FeatureConfigService,
+          useClass: MockFeatureConfigService,
         },
-    ],
-}).compileComponents();
+      ],
+    }).compileComponents();
   }));
 
   describe('Default config', () => {

@@ -5,7 +5,11 @@
  */
 
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  UntypedFormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { GlobalMessageType, useFeatureStyles } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { UpdatePasswordComponentService } from './update-password-component.service';
@@ -19,22 +23,22 @@ import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.p
 import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-my-account-v2-password',
-    templateUrl: './my-account-v2-password.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        NgIf,
-        SpinnerComponent,
-        FormsModule,
-        ReactiveFormsModule,
-        MessageComponent,
-        PasswordVisibilityToggleDirective,
-        FeatureDirective,
-        FormErrorsComponent,
-        AsyncPipe,
-        TranslatePipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-my-account-v2-password',
+  templateUrl: './my-account-v2-password.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    NgIf,
+    SpinnerComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    MessageComponent,
+    PasswordVisibilityToggleDirective,
+    FeatureDirective,
+    FormErrorsComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class MyAccountV2PasswordComponent {
   protected service = inject(UpdatePasswordComponentService);

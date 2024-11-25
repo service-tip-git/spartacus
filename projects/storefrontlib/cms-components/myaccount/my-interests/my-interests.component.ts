@@ -46,26 +46,26 @@ interface ProductInterestSearchResultUI extends ProductInterestSearchResult {
 }
 
 @Component({
-    selector: 'cx-my-interests',
-    templateUrl: './my-interests.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        NgIf,
-        FeatureDirective,
-        SortingComponent,
-        PaginationComponent,
-        NgFor,
-        RouterLink,
-        MediaComponent,
-        AtMessageDirective,
-        SpinnerComponent,
-        AsyncPipe,
-        TranslatePipe,
-        CxDatePipe,
-        UrlPipe,
-        MockTranslatePipe,
-        MockDatePipe,
-    ],
+  selector: 'cx-my-interests',
+  templateUrl: './my-interests.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    SortingComponent,
+    PaginationComponent,
+    NgFor,
+    RouterLink,
+    MediaComponent,
+    AtMessageDirective,
+    SpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+    CxDatePipe,
+    UrlPipe,
+    MockTranslatePipe,
+    MockDatePipe,
+  ],
 })
 export class MyInterestsComponent implements OnInit, OnDestroy {
   private DEFAULT_PAGE_SIZE = 10;

@@ -33,43 +33,43 @@ import { VerificationTokenFormComponent } from './verification-token-form.compon
 import { VerificationTokenFacade } from '@spartacus/user/account/root';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        KeyboardFocusModule,
-        ReactiveFormsModule,
-        RouterModule,
-        UrlModule,
-        IconModule,
-        I18nModule,
-        FormErrorsModule,
-        SpinnerModule,
-        FeaturesConfigModule,
-        VerificationTokenFormComponent,
-        VerificationTokenDialogComponent,
-    ],
-    providers: [
-        provideDefaultConfig(<CmsConfig>{
-            cmsComponents: {
-                VerifyOTPTokenComponent: {
-                    component: VerificationTokenFormComponent,
-                    guards: [NotAuthGuard],
-                    providers: [
-                        {
-                            provide: VerificationTokenFormComponentService,
-                            useClass: VerificationTokenFormComponentService,
-                            deps: [
-                                AuthService,
-                                GlobalMessageService,
-                                VerificationTokenFacade,
-                                WindowRef,
-                            ],
-                        },
-                    ],
-                },
+  imports: [
+    CommonModule,
+    FormsModule,
+    KeyboardFocusModule,
+    ReactiveFormsModule,
+    RouterModule,
+    UrlModule,
+    IconModule,
+    I18nModule,
+    FormErrorsModule,
+    SpinnerModule,
+    FeaturesConfigModule,
+    VerificationTokenFormComponent,
+    VerificationTokenDialogComponent,
+  ],
+  providers: [
+    provideDefaultConfig(<CmsConfig>{
+      cmsComponents: {
+        VerifyOTPTokenComponent: {
+          component: VerificationTokenFormComponent,
+          guards: [NotAuthGuard],
+          providers: [
+            {
+              provide: VerificationTokenFormComponentService,
+              useClass: VerificationTokenFormComponentService,
+              deps: [
+                AuthService,
+                GlobalMessageService,
+                VerificationTokenFacade,
+                WindowRef,
+              ],
             },
-        }),
-        provideDefaultConfig(defaultVerificationTokenLayoutConfig),
-    ],
+          ],
+        },
+      },
+    }),
+    provideDefaultConfig(defaultVerificationTokenLayoutConfig),
+  ],
 })
 export class VerificationTokenFormModule {}

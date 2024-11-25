@@ -10,7 +10,11 @@ import {
   OnInit,
   inject,
 } from '@angular/core';
-import { UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  UntypedFormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { GlobalMessageType, User } from '@spartacus/core';
 import { Observable } from 'rxjs';
 
@@ -27,22 +31,22 @@ import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.p
 import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-my-account-v2-email',
-    templateUrl: './my-account-v2-email.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        NgIf,
-        SpinnerComponent,
-        MessageComponent,
-        FormsModule,
-        ReactiveFormsModule,
-        FeatureDirective,
-        FormErrorsComponent,
-        PasswordVisibilityToggleDirective,
-        AsyncPipe,
-        TranslatePipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-my-account-v2-email',
+  templateUrl: './my-account-v2-email.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    NgIf,
+    SpinnerComponent,
+    MessageComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    FeatureDirective,
+    FormErrorsComponent,
+    PasswordVisibilityToggleDirective,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class MyAccountV2EmailComponent implements OnInit {
   protected emailComponentService = inject(UpdateEmailComponentService);

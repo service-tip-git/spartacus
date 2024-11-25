@@ -6,7 +6,14 @@
 
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ICON_TYPE } from '../../../cms-components/misc/icon/icon.model';
-import { NgIf, NgFor, NgTemplateOutlet, NgSwitch, NgSwitchCase, NgClass } from '@angular/common';
+import {
+  NgIf,
+  NgFor,
+  NgTemplateOutlet,
+  NgSwitch,
+  NgSwitchCase,
+  NgClass,
+} from '@angular/common';
 import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
 import { IconComponent } from '../../../cms-components/misc/icon/icon.component';
 import { AtMessageDirective } from '../assistive-technology-message/assistive-technology-message.directive';
@@ -40,23 +47,23 @@ export interface Card {
 }
 
 @Component({
-    selector: 'cx-card',
-    templateUrl: './card.component.html',
-    imports: [
-        NgIf,
-        NgFor,
-        NgTemplateOutlet,
-        FeatureDirective,
-        IconComponent,
-        AtMessageDirective,
-        FocusDirective,
-        NgSwitch,
-        NgSwitchCase,
-        NgClass,
-        TruncateTextPopoverComponent,
-        TranslatePipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-card',
+  templateUrl: './card.component.html',
+  imports: [
+    NgIf,
+    NgFor,
+    NgTemplateOutlet,
+    FeatureDirective,
+    IconComponent,
+    AtMessageDirective,
+    FocusDirective,
+    NgSwitch,
+    NgSwitchCase,
+    NgClass,
+    TruncateTextPopoverComponent,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class CardComponent implements OnInit {
   iconTypes = ICON_TYPE;

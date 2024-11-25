@@ -23,7 +23,7 @@ import {
 import { ProductCarouselItemComponent } from './product-carousel-item.component';
 import { By } from '@angular/platform-browser';
 
-@Pipe({ name: 'cxUrl', })
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
@@ -31,15 +31,15 @@ class MockUrlPipe implements PipeTransform {
 class MockRoutingService {}
 class MockProductService {}
 
-@Directive({ selector: '[cxOutlet]', })
+@Directive({ selector: '[cxOutlet]' })
 class MockOutletDirective implements Partial<OutletDirective> {
   @Input() cxOutlet: string;
 }
 
 @Component({
-    selector: 'cx-media',
-    template: '<img>',
-    imports: [RouterTestingModule, I18nTestingModule, OutletModule,],
+  selector: 'cx-media',
+  template: '<img>',
+  imports: [RouterTestingModule, I18nTestingModule, OutletModule],
 })
 class MockMediaComponent {
   @Input() container: any;
@@ -71,21 +71,26 @@ describe('ProductCarouselItemComponent in product-carousel', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [RouterTestingModule, I18nTestingModule, OutletModule, ProductCarouselItemComponent,
+      imports: [
+        RouterTestingModule,
+        I18nTestingModule,
+        OutletModule,
+        ProductCarouselItemComponent,
         MockUrlPipe,
         MockOutletDirective,
-        MockMediaComponent],
-    providers: [
+        MockMediaComponent,
+      ],
+      providers: [
         {
-            provide: RoutingService,
-            useClass: MockRoutingService,
+          provide: RoutingService,
+          useClass: MockRoutingService,
         },
         {
-            provide: ProductService,
-            useClass: MockProductService,
+          provide: ProductService,
+          useClass: MockProductService,
         },
-    ],
-}).compileComponents();
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

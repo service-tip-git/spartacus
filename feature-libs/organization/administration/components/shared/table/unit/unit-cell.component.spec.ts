@@ -11,20 +11,25 @@ describe('UnitCellComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [RouterTestingModule, UrlTestingModule, I18nTestingModule, UnitCellComponent],
-    providers: [
+      imports: [
+        RouterTestingModule,
+        UrlTestingModule,
+        I18nTestingModule,
+        UnitCellComponent,
+      ],
+      providers: [
         {
-            provide: OutletContextData,
-            useValue: {
-                context: {
-                    unit: {
-                        name: 'unit name',
-                    },
-                },
+          provide: OutletContextData,
+          useValue: {
+            context: {
+              unit: {
+                name: 'unit name',
+              },
             },
+          },
         },
-    ],
-}).compileComponents();
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {

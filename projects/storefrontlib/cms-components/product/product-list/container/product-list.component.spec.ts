@@ -25,14 +25,16 @@ import { ProductScrollComponent } from './product-scroll/product-scroll.componen
 import createSpy = jasmine.createSpy;
 
 @Component({
-    selector: 'cx-star-rating',
-    template: '',
-    imports: [ListNavigationModule,
-        FormsModule,
-        RouterTestingModule,
-        I18nTestingModule,
-        InfiniteScrollModule,
-        SpinnerModule,],
+  selector: 'cx-star-rating',
+  template: '',
+  imports: [
+    ListNavigationModule,
+    FormsModule,
+    RouterTestingModule,
+    I18nTestingModule,
+    InfiniteScrollModule,
+    SpinnerModule,
+  ],
 })
 class MockStarRatingComponent {
   @Input() rating;
@@ -49,48 +51,54 @@ class MockPageLayoutService {
 }
 
 @Component({
-    template: '',
-    selector: 'cx-product-list-item',
-    imports: [ListNavigationModule,
-        FormsModule,
-        RouterTestingModule,
-        I18nTestingModule,
-        InfiniteScrollModule,
-        SpinnerModule,],
+  template: '',
+  selector: 'cx-product-list-item',
+  imports: [
+    ListNavigationModule,
+    FormsModule,
+    RouterTestingModule,
+    I18nTestingModule,
+    InfiniteScrollModule,
+    SpinnerModule,
+  ],
 })
 class MockProductListItemComponent {
   @Input()
   product;
 }
 
-@Pipe({ name: 'cxUrl', })
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
 
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    imports: [ListNavigationModule,
-        FormsModule,
-        RouterTestingModule,
-        I18nTestingModule,
-        InfiniteScrollModule,
-        SpinnerModule,],
+  selector: 'cx-icon',
+  template: '',
+  imports: [
+    ListNavigationModule,
+    FormsModule,
+    RouterTestingModule,
+    I18nTestingModule,
+    InfiniteScrollModule,
+    SpinnerModule,
+  ],
 })
 class MockCxIconComponent {
   @Input() type;
 }
 
 @Component({
-    selector: 'cx-add-to-cart',
-    template: '<button>add to cart</button>',
-    imports: [ListNavigationModule,
-        FormsModule,
-        RouterTestingModule,
-        I18nTestingModule,
-        InfiniteScrollModule,
-        SpinnerModule,],
+  selector: 'cx-add-to-cart',
+  template: '<button>add to cart</button>',
+  imports: [
+    ListNavigationModule,
+    FormsModule,
+    RouterTestingModule,
+    I18nTestingModule,
+    InfiniteScrollModule,
+    SpinnerModule,
+  ],
 })
 class MockAddToCartComponent {
   @Input() product;
@@ -125,7 +133,7 @@ describe('ProductListComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [
+      imports: [
         ListNavigationModule,
         FormsModule,
         RouterTestingModule,
@@ -144,26 +152,26 @@ describe('ProductListComponent', () => {
         MockCxIconComponent,
         ProductScrollComponent,
         MockFeatureLevelDirective,
-    ],
-    providers: [
+      ],
+      providers: [
         {
-            provide: PageLayoutService,
-            useClass: MockPageLayoutService,
+          provide: PageLayoutService,
+          useClass: MockPageLayoutService,
         },
         {
-            provide: ProductListComponentService,
-            useClass: MockProductListComponentService,
+          provide: ProductListComponentService,
+          useClass: MockProductListComponentService,
         },
         {
-            provide: ViewConfig,
-            useClass: MockViewConfig,
+          provide: ViewConfig,
+          useClass: MockViewConfig,
         },
         {
-            provide: GlobalMessageService,
-            useClass: MockGlobalMessageService,
+          provide: GlobalMessageService,
+          useClass: MockGlobalMessageService,
         },
-    ],
-}).compileComponents();
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

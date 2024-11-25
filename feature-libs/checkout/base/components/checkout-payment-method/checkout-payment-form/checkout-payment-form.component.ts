@@ -13,7 +13,13 @@ import {
   Output,
   inject,
 } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  UntypedFormBuilder,
+  UntypedFormGroup,
+  Validators,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import {
   CheckoutDeliveryAddressFacade,
   CheckoutPaymentFacade,
@@ -55,26 +61,26 @@ import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translat
 import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-payment-form',
-    templateUrl: './checkout-payment-form.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        NgIf,
-        FeatureDirective,
-        FormsModule,
-        ReactiveFormsModule,
-        NgTemplateOutlet,
-        NgSelectComponent,
-        NgSelectA11yDirective,
-        FormErrorsComponent,
-        IconComponent,
-        CardComponent,
-        SpinnerComponent,
-        CheckoutBillingAddressFormComponent,
-        AsyncPipe,
-        TranslatePipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-payment-form',
+  templateUrl: './checkout-payment-form.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    NgIf,
+    FeatureDirective,
+    FormsModule,
+    ReactiveFormsModule,
+    NgTemplateOutlet,
+    NgSelectComponent,
+    NgSelectA11yDirective,
+    FormErrorsComponent,
+    IconComponent,
+    CardComponent,
+    SpinnerComponent,
+    CheckoutBillingAddressFormComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class CheckoutPaymentFormComponent implements OnInit {
   iconTypes = ICON_TYPE;

@@ -19,18 +19,18 @@ import { TranslatePipe } from '../../../../projects/core/src/i18n/translate.pipe
 import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-store-finder-store',
-    templateUrl: './store-finder-store.component.html',
-    imports: [
-        NgIf,
-        FeatureDirective,
-        IconComponent,
-        StoreFinderStoreDescriptionComponent,
-        SpinnerComponent,
-        AsyncPipe,
-        TranslatePipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-store-finder-store',
+  templateUrl: './store-finder-store.component.html',
+  imports: [
+    NgIf,
+    FeatureDirective,
+    IconComponent,
+    StoreFinderStoreDescriptionComponent,
+    SpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class StoreFinderStoreComponent implements OnInit {
   location$: Observable<any>;

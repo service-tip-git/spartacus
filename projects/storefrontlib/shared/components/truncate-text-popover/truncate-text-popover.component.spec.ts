@@ -19,13 +19,13 @@ describe('TruncateTextPopoverComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [
+      imports: [
         I18nTestingModule,
         TruncateTextPopoverModule,
         RouterTestingModule,
         TruncateTextPopoverComponent,
-    ],
-}).compileComponents();
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

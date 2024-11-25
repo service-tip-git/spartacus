@@ -29,24 +29,24 @@ import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mo
 import { MockDatePipe } from '../../../../projects/core/src/i18n/testing/mock-date.pipe';
 
 @Component({
-    selector: 'cx-order-history',
-    templateUrl: './order-history.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        NgIf,
-        NgClass,
-        SortingComponent,
-        PaginationComponent,
-        NgFor,
-        RouterLink,
-        RouterLinkActive,
-        AsyncPipe,
-        UrlPipe,
-        TranslatePipe,
-        CxDatePipe,
-        MockTranslatePipe,
-        MockDatePipe,
-    ],
+  selector: 'cx-order-history',
+  templateUrl: './order-history.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    NgIf,
+    NgClass,
+    SortingComponent,
+    PaginationComponent,
+    NgFor,
+    RouterLink,
+    RouterLinkActive,
+    AsyncPipe,
+    UrlPipe,
+    TranslatePipe,
+    CxDatePipe,
+    MockTranslatePipe,
+    MockDatePipe,
+  ],
 })
 export class OrderHistoryComponent implements OnDestroy {
   constructor(

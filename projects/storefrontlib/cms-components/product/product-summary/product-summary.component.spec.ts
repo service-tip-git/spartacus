@@ -25,14 +25,20 @@ describe('ProductSummaryComponent in product', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [ItemCounterModule, I18nTestingModule, RouterTestingModule, ProductSummaryComponent, OutletDirective],
-    providers: [
+      imports: [
+        ItemCounterModule,
+        I18nTestingModule,
+        RouterTestingModule,
+        ProductSummaryComponent,
+        OutletDirective,
+      ],
+      providers: [
         {
-            provide: CurrentProductService,
-            useClass: MockCurrentProductService,
+          provide: CurrentProductService,
+          useClass: MockCurrentProductService,
         },
-    ],
-}).compileComponents();
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

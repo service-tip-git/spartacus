@@ -22,10 +22,15 @@ describe('ItemCounterComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [RouterTestingModule, ReactiveFormsModule, I18nTestingModule, ItemCounterComponent,
+      imports: [
+        RouterTestingModule,
+        ReactiveFormsModule,
+        I18nTestingModule,
+        ItemCounterComponent,
         MockFeatureDirective,
-        MockKeyboardFocusDirective],
-}).compileComponents();
+        MockKeyboardFocusDirective,
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

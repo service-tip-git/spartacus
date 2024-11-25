@@ -31,15 +31,15 @@ export const accountSummaryDocumentCmsConfig: CmsConfig = {
 };
 
 @NgModule({
-    imports: [
-        AccountSummaryDocumentFilterModule,
-        CommonModule,
-        I18nModule,
-        SortingModule,
-        PaginationModule,
-        IconModule,
-        AccountSummaryDocumentComponent,
-    ],
-    providers: [provideDefaultConfig(accountSummaryDocumentCmsConfig)],
+  imports: [
+    AccountSummaryDocumentFilterModule,
+    CommonModule,
+    I18nModule,
+    SortingModule,
+    PaginationModule,
+    IconModule,
+    AccountSummaryDocumentComponent,
+  ],
+  providers: [provideDefaultConfig(accountSummaryDocumentCmsConfig)],
 })
 export class AccountSummaryDocumentModule {}

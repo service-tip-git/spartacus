@@ -17,17 +17,23 @@ import {
 import { QuoteLinksComponent } from './quote-links.component';
 
 @NgModule({
-    imports: [CommonModule, I18nModule, RouterModule, UrlModule, QuoteLinksComponent],
-    providers: [
-        provideDefaultConfig(<CmsConfig>{
-            cmsComponents: {
-                QuoteLinksComponent: {
-                    component: QuoteLinksComponent,
-                    guards: [AuthGuard],
-                },
-            },
-        }),
-    ],
-    exports: [QuoteLinksComponent],
+  imports: [
+    CommonModule,
+    I18nModule,
+    RouterModule,
+    UrlModule,
+    QuoteLinksComponent,
+  ],
+  providers: [
+    provideDefaultConfig(<CmsConfig>{
+      cmsComponents: {
+        QuoteLinksComponent: {
+          component: QuoteLinksComponent,
+          guards: [AuthGuard],
+        },
+      },
+    }),
+  ],
+  exports: [QuoteLinksComponent],
 })
 export class QuoteLinksModule {}

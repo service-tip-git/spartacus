@@ -65,9 +65,9 @@ class MockGlobalMessageService implements Partial<GlobalMessageService> {
 }
 
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    imports: [ReactiveFormsModule, I18nTestingModule, FormErrorsModule,],
+  selector: 'cx-icon',
+  template: '',
+  imports: [ReactiveFormsModule, I18nTestingModule, FormErrorsModule],
 })
 class MockCxIconComponent {
   @Input() type: any;
@@ -84,23 +84,28 @@ describe('QuickOrderFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [ReactiveFormsModule, I18nTestingModule, FormErrorsModule, QuickOrderFormComponent,
+      imports: [
+        ReactiveFormsModule,
+        I18nTestingModule,
+        FormErrorsModule,
+        QuickOrderFormComponent,
         MockCxIconComponent,
-        MockFeatureDirective],
-    providers: [
+        MockFeatureDirective,
+      ],
+      providers: [
         ChangeDetectorRef,
         WindowRef,
         QuickOrderConfig,
         { provide: QuickOrderFacade, useClass: MockQuickOrderFacade },
         { provide: GlobalMessageService, useClass: MockGlobalMessageService },
         {
-            provide: FeaturesConfig,
-            useValue: {
-                features: { level: '5.1' },
-            },
+          provide: FeaturesConfig,
+          useValue: {
+            features: { level: '5.1' },
+          },
         },
-    ],
-}).compileComponents();
+      ],
+    }).compileComponents();
 
     quickOrderService = TestBed.inject(QuickOrderFacade);
   });

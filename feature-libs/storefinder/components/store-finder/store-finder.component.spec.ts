@@ -4,9 +4,9 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { StoreFinderComponent } from './store-finder.component';
 
 @Component({
-    selector: 'cx-store-finder-header',
-    template: '',
-    imports: [RouterTestingModule],
+  selector: 'cx-store-finder-header',
+  template: '',
+  imports: [RouterTestingModule],
 })
 class MockStoreFinderHeaderComponent {}
 
@@ -16,8 +16,12 @@ describe('StoreFinderComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [RouterTestingModule, StoreFinderComponent, MockStoreFinderHeaderComponent],
-}).compileComponents();
+      imports: [
+        RouterTestingModule,
+        StoreFinderComponent,
+        MockStoreFinderHeaderComponent,
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

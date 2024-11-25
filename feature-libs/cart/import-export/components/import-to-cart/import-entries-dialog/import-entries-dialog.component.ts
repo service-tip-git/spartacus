@@ -32,21 +32,21 @@ import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translat
 import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-import-entries-dialog',
-    templateUrl: './import-entries-dialog.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        FocusDirective,
-        FeatureDirective,
-        IconComponent,
-        NgIf,
-        ImportToNewSavedCartFormComponent,
-        ImportEntriesFormComponent,
-        ImportEntriesSummaryComponent,
-        AsyncPipe,
-        TranslatePipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-import-entries-dialog',
+  templateUrl: './import-entries-dialog.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    FocusDirective,
+    FeatureDirective,
+    IconComponent,
+    NgIf,
+    ImportToNewSavedCartFormComponent,
+    ImportEntriesFormComponent,
+    ImportEntriesSummaryComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class ImportEntriesDialogComponent {
   iconTypes = ICON_TYPE;

@@ -40,7 +40,7 @@ describe('PermissionDetailsComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [
+      imports: [
         CommonModule,
         RouterTestingModule,
         I18nTestingModule,
@@ -52,14 +52,14 @@ describe('PermissionDetailsComponent', () => {
         PermissionDetailsComponent,
         ItemExistsDirective,
         FocusDirective,
-    ],
-    providers: [
+      ],
+      providers: [
         {
-            provide: ItemService,
-            useClass: MockPermissionItemService,
+          provide: ItemService,
+          useClass: MockPermissionItemService,
         },
-    ],
-})
+      ],
+    })
       .overrideComponent(PermissionDetailsComponent, {
         set: {
           providers: [

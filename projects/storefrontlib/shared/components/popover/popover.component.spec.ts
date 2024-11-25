@@ -36,17 +36,17 @@ describe('PopoverComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [
+      imports: [
         RouterTestingModule,
         IconModule,
         KeyboardFocusTestingModule,
         I18nTestingModule,
         PopoverComponent,
-    ],
-    providers: [
+      ],
+      providers: [
         { provide: PositioningService, useClass: MockPositionService },
-    ],
-}).compileComponents();
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PopoverComponent);
 

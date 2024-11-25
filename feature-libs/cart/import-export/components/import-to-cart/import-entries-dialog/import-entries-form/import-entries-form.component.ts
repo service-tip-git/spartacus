@@ -12,7 +12,13 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  UntypedFormControl,
+  UntypedFormGroup,
+  Validators,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { OrderEntriesSource, ProductData } from '@spartacus/cart/base/root';
 import { ImportExportConfig } from '@spartacus/cart/import-export/core';
 import {
@@ -35,21 +41,21 @@ import { TranslatePipe } from '../../../../../../../projects/core/src/i18n/trans
 import { MockTranslatePipe } from '../../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-import-entries-form',
-    templateUrl: './import-entries-form.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        NgIf,
-        FormsModule,
-        ReactiveFormsModule,
-        FeatureDirective,
-        MessageComponent,
-        FocusDirective,
-        FileUploadComponent,
-        FormErrorsComponent,
-        TranslatePipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-import-entries-form',
+  templateUrl: './import-entries-form.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    NgIf,
+    FormsModule,
+    ReactiveFormsModule,
+    FeatureDirective,
+    MessageComponent,
+    FocusDirective,
+    FileUploadComponent,
+    FormErrorsComponent,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class ImportEntriesFormComponent implements OnInit {
   form: UntypedFormGroup;

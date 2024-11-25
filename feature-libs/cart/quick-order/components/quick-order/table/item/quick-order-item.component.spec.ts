@@ -26,15 +26,15 @@ class MockQuickOrderFacade implements Partial<QuickOrderFacade> {
   }
 }
 
-@Pipe({ name: 'cxUrl', })
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
 
 @Component({
-    template: '',
-    selector: 'cx-item-counter',
-    imports: [ReactiveFormsModule, I18nTestingModule, RouterTestingModule,],
+  template: '',
+  selector: 'cx-item-counter',
+  imports: [ReactiveFormsModule, I18nTestingModule, RouterTestingModule],
 })
 class MockItemCounterComponent {
   @Input() max: number;
@@ -43,9 +43,9 @@ class MockItemCounterComponent {
 }
 
 @Component({
-    template: '',
-    selector: 'cx-media',
-    imports: [ReactiveFormsModule, I18nTestingModule, RouterTestingModule,],
+  template: '',
+  selector: 'cx-media',
+  imports: [ReactiveFormsModule, I18nTestingModule, RouterTestingModule],
 })
 class MockMediaComponent {
   @Input() container;
@@ -59,14 +59,19 @@ describe('QuickOrderItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [ReactiveFormsModule, I18nTestingModule, RouterTestingModule, QuickOrderItemComponent,
+      imports: [
+        ReactiveFormsModule,
+        I18nTestingModule,
+        RouterTestingModule,
+        QuickOrderItemComponent,
         MockUrlPipe,
         MockItemCounterComponent,
-        MockMediaComponent],
-    providers: [
+        MockMediaComponent,
+      ],
+      providers: [
         { provide: QuickOrderFacade, useClass: MockQuickOrderFacade },
-    ],
-}).compileComponents();
+      ],
+    }).compileComponents();
 
     quickOrderService = TestBed.inject(QuickOrderFacade);
   });

@@ -22,18 +22,18 @@ import { TranslatePipe } from '../../../../projects/core/src/i18n/translate.pipe
 import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-store-finder-search-result',
-    templateUrl: './store-finder-search-result.component.html',
-    imports: [
-        NgIf,
-        FeatureDirective,
-        PaginationComponent,
-        StoreFinderListComponent,
-        SpinnerComponent,
-        AsyncPipe,
-        TranslatePipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-store-finder-search-result',
+  templateUrl: './store-finder-search-result.component.html',
+  imports: [
+    NgIf,
+    FeatureDirective,
+    PaginationComponent,
+    StoreFinderListComponent,
+    SpinnerComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class StoreFinderSearchResultComponent implements OnInit, OnDestroy {
   locations: any;

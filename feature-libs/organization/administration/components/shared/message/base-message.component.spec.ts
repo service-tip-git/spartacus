@@ -20,13 +20,15 @@ const MockMessageData: Partial<MessageData> = {
 };
 
 @Component({
-    template: '',
-    imports: [CommonModule,
-        RouterTestingModule,
-        PaginationTestingModule,
-        KeyboardFocusTestingModule,
-        I18nTestingModule,
-        IconTestingModule,],
+  template: '',
+  imports: [
+    CommonModule,
+    RouterTestingModule,
+    PaginationTestingModule,
+    KeyboardFocusTestingModule,
+    I18nTestingModule,
+    IconTestingModule,
+  ],
 })
 class MessageComponent extends BaseMessageComponent {}
 
@@ -37,7 +39,7 @@ describe('BaseMessageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [
+      imports: [
         CommonModule,
         RouterTestingModule,
         PaginationTestingModule,
@@ -45,14 +47,14 @@ describe('BaseMessageComponent', () => {
         I18nTestingModule,
         IconTestingModule,
         MessageComponent,
-    ],
-    providers: [
+      ],
+      providers: [
         {
-            provide: MessageData,
-            useValue: MockMessageData,
+          provide: MessageData,
+          useValue: MockMessageData,
         },
-    ],
-}).compileComponents();
+      ],
+    }).compileComponents();
 
     messageData = TestBed.inject(MessageData);
 

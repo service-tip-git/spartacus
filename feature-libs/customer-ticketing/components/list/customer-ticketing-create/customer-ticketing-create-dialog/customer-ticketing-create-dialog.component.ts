@@ -5,7 +5,13 @@
  */
 
 import { Component, inject, Input, OnDestroy, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  Validators,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import {
   AssociatedObject,
   Category,
@@ -32,21 +38,21 @@ import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translat
 import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-customer-ticketing-create-dialog',
-    templateUrl: './customer-ticketing-create-dialog.component.html',
-    imports: [
-        FocusDirective,
-        FormsModule,
-        ReactiveFormsModule,
-        IconComponent,
-        FormErrorsComponent,
-        NgIf,
-        NgFor,
-        FileUploadComponent,
-        AsyncPipe,
-        TranslatePipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-customer-ticketing-create-dialog',
+  templateUrl: './customer-ticketing-create-dialog.component.html',
+  imports: [
+    FocusDirective,
+    FormsModule,
+    ReactiveFormsModule,
+    IconComponent,
+    FormErrorsComponent,
+    NgIf,
+    NgFor,
+    FileUploadComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class CustomerTicketingCreateDialogComponent
   extends CustomerTicketingDialogComponent

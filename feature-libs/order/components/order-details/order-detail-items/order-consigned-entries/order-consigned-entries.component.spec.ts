@@ -68,12 +68,9 @@ const mockOrder: Order = {
 };
 
 @Component({
-    selector: 'cx-consignment-tracking',
-    template: '',
-    imports: [CardModule,
-        I18nTestingModule,
-        RouterTestingModule,
-        OutletModule,],
+  selector: 'cx-consignment-tracking',
+  template: '',
+  imports: [CardModule, I18nTestingModule, RouterTestingModule, OutletModule],
 })
 class MockConsignmentTrackingComponent {
   @Input() consignment: Consignment;
@@ -87,23 +84,23 @@ describe('OrderConsignedEntriesComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [
+      imports: [
         CardModule,
         I18nTestingModule,
         RouterTestingModule,
         OutletModule,
         OrderConsignedEntriesComponent,
         MockConsignmentTrackingComponent,
-    ],
-    providers: [
+      ],
+      providers: [
         {
-            provide: FeaturesConfig,
-            useValue: {
-                features: { level: '1.4', consignmentTracking: true },
-            },
+          provide: FeaturesConfig,
+          useValue: {
+            features: { level: '1.4', consignmentTracking: true },
+          },
         },
-    ],
-}).compileComponents();
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

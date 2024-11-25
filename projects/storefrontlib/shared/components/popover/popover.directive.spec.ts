@@ -6,7 +6,7 @@ import { I18nTestingModule } from '@spartacus/core';
 import { PopoverModule } from './popover.module';
 
 @Component({
-    template: `
+  template: `
     <ng-template #content>
       <div class="content-wrapper">
         <h1>Test</h1>
@@ -28,7 +28,7 @@ import { PopoverModule } from './popover.module';
       Popover
     </button>
   `,
-    imports: [RouterTestingModule, PopoverModule, I18nTestingModule,],
+  imports: [RouterTestingModule, PopoverModule, I18nTestingModule],
 })
 class PopoverTestComponent {
   open() {
@@ -46,8 +46,13 @@ describe('PopoverDirective', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [RouterTestingModule, PopoverModule, I18nTestingModule, PopoverTestComponent],
-}).compileComponents();
+      imports: [
+        RouterTestingModule,
+        PopoverModule,
+        I18nTestingModule,
+        PopoverTestComponent,
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PopoverTestComponent);
     component = fixture.componentInstance;

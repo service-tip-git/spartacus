@@ -30,20 +30,20 @@ import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.p
 import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-my-preferred-store',
-    templateUrl: 'my-preferred-store.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        NgClass,
-        CardComponent,
-        StoreAddressComponent,
-        NgIf,
-        IconComponent,
-        StoreScheduleComponent,
-        AsyncPipe,
-        TranslatePipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-my-preferred-store',
+  templateUrl: 'my-preferred-store.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    NgClass,
+    CardComponent,
+    StoreAddressComponent,
+    NgIf,
+    IconComponent,
+    StoreScheduleComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class MyPreferredStoreComponent implements OnInit {
   preferredStore$: Observable<PointOfService>;

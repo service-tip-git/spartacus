@@ -50,9 +50,9 @@ class MockContextService implements Partial<ContextService> {
 }
 
 @Component({
-    selector: 'cx-import-order-entries',
-    template: '',
-    imports: [RouterTestingModule, PageComponentModule],
+  selector: 'cx-import-order-entries',
+  template: '',
+  imports: [RouterTestingModule, PageComponentModule],
 })
 export class MockImportOrderEntriesComponent {
   @ViewChild('open') element: ElementRef;
@@ -62,9 +62,9 @@ export class MockImportOrderEntriesComponent {
 }
 
 @Component({
-    selector: 'cx-export-order-entries',
-    template: '',
-    imports: [RouterTestingModule, PageComponentModule],
+  selector: 'cx-export-order-entries',
+  template: '',
+  imports: [RouterTestingModule, PageComponentModule],
 })
 export class MockExportOrderEntriesComponent {
   @Input()
@@ -77,11 +77,15 @@ describe('ImportExportComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [RouterTestingModule, PageComponentModule, ImportExportOrderEntriesComponent,
+      imports: [
+        RouterTestingModule,
+        PageComponentModule,
+        ImportExportOrderEntriesComponent,
         MockExportOrderEntriesComponent,
-        MockImportOrderEntriesComponent],
-    providers: [{ provide: ContextService, useClass: MockContextService }],
-}).compileComponents();
+        MockImportOrderEntriesComponent,
+      ],
+      providers: [{ provide: ContextService, useClass: MockContextService }],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -24,9 +24,9 @@ import { ConfiguratorAttributeCompositionContext } from '../composition/configur
 import { ConfiguratorAttributeHeaderComponent } from './configurator-attribute-header.component';
 
 @Component({
-    selector: 'cx-configurator-show-more',
-    template: '',
-    imports: [I18nTestingModule, IconModule],
+  selector: 'cx-configurator-show-more',
+  template: '',
+  imports: [I18nTestingModule, IconModule],
 })
 class MockConfiguratorShowMoreComponent {
   @Input() text: string;
@@ -128,38 +128,42 @@ describe('ConfigAttributeHeaderComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [I18nTestingModule, IconModule, ConfiguratorAttributeHeaderComponent,
-        MockConfiguratorShowMoreComponent],
-    providers: [
+      imports: [
+        I18nTestingModule,
+        IconModule,
+        ConfiguratorAttributeHeaderComponent,
+        MockConfiguratorShowMoreComponent,
+      ],
+      providers: [
         { provide: IconLoaderService, useClass: MockIconFontLoaderService },
         {
-            provide: ConfiguratorStorefrontUtilsService,
-            useClass: MockConfigUtilsService,
+          provide: ConfiguratorStorefrontUtilsService,
+          useClass: MockConfigUtilsService,
         },
         {
-            provide: ConfiguratorCommonsService,
-            useClass: MockConfiguratorCommonsService,
+          provide: ConfiguratorCommonsService,
+          useClass: MockConfiguratorCommonsService,
         },
         {
-            provide: ConfiguratorGroupsService,
-            useClass: MockConfiguratorGroupsService,
+          provide: ConfiguratorGroupsService,
+          useClass: MockConfiguratorGroupsService,
         },
         {
-            provide: ConfiguratorUISettingsConfig,
-            useValue: TestConfiguratorUISettings,
+          provide: ConfiguratorUISettingsConfig,
+          useValue: TestConfiguratorUISettings,
         },
         {
-            provide: ConfiguratorAttributeCompositionContext,
-            useValue: ConfiguratorTestUtils.getAttributeContext(),
+          provide: ConfiguratorAttributeCompositionContext,
+          useValue: ConfiguratorTestUtils.getAttributeContext(),
         },
         {
-            provide: FeaturesConfig,
-            useValue: {
-                features: { level: '*' },
-            },
+          provide: FeaturesConfig,
+          useValue: {
+            features: { level: '*' },
+          },
         },
-    ],
-})
+      ],
+    })
       .overrideComponent(ConfiguratorAttributeHeaderComponent, {
         set: {
           changeDetection: ChangeDetectionStrategy.Default,

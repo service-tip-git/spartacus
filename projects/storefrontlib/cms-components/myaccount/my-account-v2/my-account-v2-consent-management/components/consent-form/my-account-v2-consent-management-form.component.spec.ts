@@ -15,8 +15,8 @@ describe('MyAccountV2ConsentManagementFormComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [I18nTestingModule, MyAccountV2ConsentManagementFormComponent],
-}).compileComponents();
+      imports: [I18nTestingModule, MyAccountV2ConsentManagementFormComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

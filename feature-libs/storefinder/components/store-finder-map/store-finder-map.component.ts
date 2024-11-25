@@ -18,8 +18,8 @@ import { useFeatureStyles } from '@spartacus/core';
 import { GoogleMapRendererService } from '@spartacus/storefinder/core';
 
 @Component({
-    selector: 'cx-store-finder-map',
-    templateUrl: './store-finder-map.component.html',
+  selector: 'cx-store-finder-map',
+  templateUrl: './store-finder-map.component.html',
 })
 export class StoreFinderMapComponent implements OnChanges {
   @ViewChild('mapElement', { static: true })

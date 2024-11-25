@@ -10,7 +10,12 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
-import { AbstractControl, UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  AbstractControl,
+  UntypedFormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { B2BApprovalProcess, B2BUnit, isNotUndefined } from '@spartacus/core';
 import {
   B2BUnitNode,
@@ -32,32 +37,32 @@ import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translat
 import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-org-unit-form',
-    templateUrl: './unit-form.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    host: { class: 'content-wrapper' },
-    providers: [
-        {
-            provide: ItemService,
-            useExisting: UnitItemService,
-        },
-        {
-            provide: CurrentItemService,
-            useExisting: CurrentUnitService,
-        },
-    ],
-    imports: [
-        FormComponent,
-        NgIf,
-        FormsModule,
-        ReactiveFormsModule,
-        FeatureDirective,
-        FormErrorsComponent,
-        NgSelectComponent,
-        AsyncPipe,
-        TranslatePipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-org-unit-form',
+  templateUrl: './unit-form.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: { class: 'content-wrapper' },
+  providers: [
+    {
+      provide: ItemService,
+      useExisting: UnitItemService,
+    },
+    {
+      provide: CurrentItemService,
+      useExisting: CurrentUnitService,
+    },
+  ],
+  imports: [
+    FormComponent,
+    NgIf,
+    FormsModule,
+    ReactiveFormsModule,
+    FeatureDirective,
+    FormErrorsComponent,
+    NgSelectComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class UnitFormComponent implements OnInit {
   @Input() i18nRoot = 'orgUnit';

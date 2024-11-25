@@ -17,9 +17,9 @@ import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
 import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-anonymous-consent-open-dialog',
-    templateUrl: './anonymous-consent-open-dialog.component.html',
-    imports: [TranslatePipe, MockTranslatePipe],
+  selector: 'cx-anonymous-consent-open-dialog',
+  templateUrl: './anonymous-consent-open-dialog.component.html',
+  imports: [TranslatePipe, MockTranslatePipe],
 })
 export class AnonymousConsentOpenDialogComponent {
   @ViewChild('open') openElement: ElementRef;

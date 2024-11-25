@@ -20,12 +20,12 @@ import { I18nTestingModule } from '@spartacus/core';
 import { CUSTOM_ELEMENTS_SCHEMA, Pipe, PipeTransform } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 
-@Pipe({ name: 'cxHighlight', })
+@Pipe({ name: 'cxHighlight' })
 class MockHighlightPipe implements PipeTransform {
   transform(): any {}
 }
 
-@Pipe({ name: 'cxUrl', })
+@Pipe({ name: 'cxUrl' })
 class MockUrlPipe implements PipeTransform {
   transform(): any {
     return ['test', 'url'];
@@ -54,20 +54,26 @@ describe('RecentSearchesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [I18nTestingModule, RouterTestingModule, RecentSearchesComponent, MockHighlightPipe, MockUrlPipe],
-    providers: [
+      imports: [
+        I18nTestingModule,
+        RouterTestingModule,
+        RecentSearchesComponent,
+        MockHighlightPipe,
+        MockUrlPipe,
+      ],
+      providers: [
         {
-            provide: RecentSearchesService,
-            useValue: recentSearchesServiceMock,
+          provide: RecentSearchesService,
+          useValue: recentSearchesServiceMock,
         },
         {
-            provide: SearchBoxComponentService,
-            useValue: searchBoxComponentServiceMock,
+          provide: SearchBoxComponentService,
+          useValue: searchBoxComponentServiceMock,
         },
         { provide: OutletContextData, useValue: { context$ } },
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
-}).compileComponents();
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -11,14 +11,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IconComponent } from '../../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
 
 @Component({
-    selector: 'cx-epd-visualization-compact-add-to-cart',
-    templateUrl: './compact-add-to-cart.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        NgIf,
-        FormsModule,
-        ReactiveFormsModule,
-        IconComponent,
-    ],
+  selector: 'cx-epd-visualization-compact-add-to-cart',
+  templateUrl: './compact-add-to-cart.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [NgIf, FormsModule, ReactiveFormsModule, IconComponent],
 })
 export class CompactAddToCartComponent extends AddToCartComponent {}

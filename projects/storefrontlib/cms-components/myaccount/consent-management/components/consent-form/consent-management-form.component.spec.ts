@@ -16,8 +16,12 @@ describe('ConsentManagementFormComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [I18nTestingModule, ConsentManagementFormComponent, MockFeatureDirective],
-}).compileComponents();
+      imports: [
+        I18nTestingModule,
+        ConsentManagementFormComponent,
+        MockFeatureDirective,
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

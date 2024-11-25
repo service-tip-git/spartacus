@@ -5,7 +5,13 @@
  */
 
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  UntypedFormBuilder,
+  UntypedFormGroup,
+  Validators,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { useFeatureStyles } from '@spartacus/core';
 import { NgIf } from '@angular/common';
 import { FeatureDirective } from '../../../../projects/core/src/features-config/directives/feature.directive';
@@ -16,19 +22,19 @@ import { TranslatePipe } from '../../../../projects/core/src/i18n/translate.pipe
 import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-csagent-login-form',
-    templateUrl: './csagent-login-form.component.html',
-    imports: [
-        NgIf,
-        FormsModule,
-        ReactiveFormsModule,
-        FeatureDirective,
-        FormErrorsComponent,
-        PasswordVisibilityToggleDirective,
-        DotSpinnerComponent,
-        TranslatePipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-csagent-login-form',
+  templateUrl: './csagent-login-form.component.html',
+  imports: [
+    NgIf,
+    FormsModule,
+    ReactiveFormsModule,
+    FeatureDirective,
+    FormErrorsComponent,
+    PasswordVisibilityToggleDirective,
+    DotSpinnerComponent,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class CSAgentLoginFormComponent implements OnInit {
   csAgentLoginForm: UntypedFormGroup;

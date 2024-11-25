@@ -16,17 +16,23 @@ import { DatePickerModule } from '@spartacus/storefront';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-    imports: [CommonModule, I18nModule, DatePickerModule, ReactiveFormsModule, CheckoutServiceDetailsComponent],
-    providers: [
-        provideDefaultConfig(<CmsConfig>{
-            cmsComponents: {
-                CheckoutServiceDetails: {
-                    component: CheckoutServiceDetailsComponent,
-                    guards: [CheckoutAuthGuard, CartNotEmptyGuard],
-                },
-            },
-        }),
-    ],
-    exports: [CheckoutServiceDetailsComponent],
+  imports: [
+    CommonModule,
+    I18nModule,
+    DatePickerModule,
+    ReactiveFormsModule,
+    CheckoutServiceDetailsComponent,
+  ],
+  providers: [
+    provideDefaultConfig(<CmsConfig>{
+      cmsComponents: {
+        CheckoutServiceDetails: {
+          component: CheckoutServiceDetailsComponent,
+          guards: [CheckoutAuthGuard, CartNotEmptyGuard],
+        },
+      },
+    }),
+  ],
+  exports: [CheckoutServiceDetailsComponent],
 })
 export class CheckoutServiceDetailsModule {}

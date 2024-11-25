@@ -34,20 +34,20 @@ describe('CdcReconsentComponent', () => {
   let anonymousConsentsService: AnonymousConsentsService;
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [CdcReconsentComponent],
-    providers: [
+      imports: [CdcReconsentComponent],
+      providers: [
         { provide: Subscription, useValue: MockSubscription },
         {
-            provide: AnonymousConsentsService,
-            useClass: MockAnonymousConsentsService,
+          provide: AnonymousConsentsService,
+          useClass: MockAnonymousConsentsService,
         },
         {
-            provide: CdcReconsentComponentService,
-            useValue: MockCdcReconsentService,
+          provide: CdcReconsentComponentService,
+          useValue: MockCdcReconsentService,
         },
         { provide: LaunchDialogService, useClass: MockLaunchDialogService },
-    ],
-});
+      ],
+    });
     cdcReconsentService = TestBed.inject(CdcReconsentComponentService);
     anonymousConsentsService = TestBed.inject(AnonymousConsentsService);
     fixture = TestBed.createComponent(CdcReconsentComponent);

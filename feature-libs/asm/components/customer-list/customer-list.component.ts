@@ -11,7 +11,11 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { UntypedFormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  UntypedFormControl,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import {
   AsmConfig,
   AsmCustomerListFacade,
@@ -49,25 +53,25 @@ import { TranslatePipe } from '../../../../projects/core/src/i18n/translate.pipe
 import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-customer-list',
-    templateUrl: './customer-list.component.html',
-    imports: [
-        FocusDirective,
-        NgTemplateOutlet,
-        NgIf,
-        SpinnerComponent,
-        NgFor,
-        PaginationComponent,
-        IconComponent,
-        FormsModule,
-        ReactiveFormsModule,
-        SortingComponent,
-        NgSelectA11yDirective,
-        NgSelectComponent,
-        AsyncPipe,
-        TranslatePipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-customer-list',
+  templateUrl: './customer-list.component.html',
+  imports: [
+    FocusDirective,
+    NgTemplateOutlet,
+    NgIf,
+    SpinnerComponent,
+    NgFor,
+    PaginationComponent,
+    IconComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    SortingComponent,
+    NgSelectA11yDirective,
+    NgSelectComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class CustomerListComponent implements OnInit, OnDestroy {
   protected DEFAULT_PAGE_SIZE = 5;

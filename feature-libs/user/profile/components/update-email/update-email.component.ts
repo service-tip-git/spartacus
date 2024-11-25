@@ -5,7 +5,11 @@
  */
 
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  UntypedFormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { useFeatureStyles } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { UpdateEmailComponentService } from './update-email-component.service';
@@ -20,25 +24,25 @@ import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.p
 import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-update-email',
-    templateUrl: './update-email.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    host: { class: 'user-form' },
-    imports: [
-        NgIf,
-        SpinnerComponent,
-        FeatureDirective,
-        FormsModule,
-        ReactiveFormsModule,
-        NgTemplateOutlet,
-        FormErrorsComponent,
-        PasswordVisibilityToggleDirective,
-        RouterLink,
-        AsyncPipe,
-        UrlPipe,
-        TranslatePipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-update-email',
+  templateUrl: './update-email.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: { class: 'user-form' },
+  imports: [
+    NgIf,
+    SpinnerComponent,
+    FeatureDirective,
+    FormsModule,
+    ReactiveFormsModule,
+    NgTemplateOutlet,
+    FormErrorsComponent,
+    PasswordVisibilityToggleDirective,
+    RouterLink,
+    AsyncPipe,
+    UrlPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class UpdateEmailComponent {
   constructor(protected service: UpdateEmailComponentService) {

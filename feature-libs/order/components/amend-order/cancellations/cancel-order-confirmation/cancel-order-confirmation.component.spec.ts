@@ -17,12 +17,14 @@ import { CancelOrderConfirmationComponent } from './cancel-order-confirmation.co
 import createSpy = jasmine.createSpy;
 
 @Component({
-    template: '',
-    selector: 'cx-amend-order-actions',
-    imports: [CommonModule,
-        RouterTestingModule,
-        I18nTestingModule,
-        ReactiveFormsModule,],
+  template: '',
+  selector: 'cx-amend-order-actions',
+  imports: [
+    CommonModule,
+    RouterTestingModule,
+    I18nTestingModule,
+    ReactiveFormsModule,
+  ],
 })
 class MockAmendOrderActionComponent {
   @Input() orderCode: string;
@@ -32,12 +34,14 @@ class MockAmendOrderActionComponent {
 }
 
 @Component({
-    template: '',
-    selector: 'cx-amend-order-items',
-    imports: [CommonModule,
-        RouterTestingModule,
-        I18nTestingModule,
-        ReactiveFormsModule,],
+  template: '',
+  selector: 'cx-amend-order-items',
+  imports: [
+    CommonModule,
+    RouterTestingModule,
+    I18nTestingModule,
+    ReactiveFormsModule,
+  ],
 })
 class MockCancelOrReturnItemsComponent {
   @Input() entries: OrderEntry[];
@@ -76,7 +80,7 @@ describe('CancelOrderConfirmationComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [
+      imports: [
         CommonModule,
         RouterTestingModule,
         I18nTestingModule,
@@ -84,11 +88,11 @@ describe('CancelOrderConfirmationComponent', () => {
         CancelOrderConfirmationComponent,
         MockAmendOrderActionComponent,
         MockCancelOrReturnItemsComponent,
-    ],
-    providers: [
+      ],
+      providers: [
         { provide: OrderAmendService, useClass: MockOrderAmendService },
-    ],
-}).compileComponents();
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -28,17 +28,17 @@ import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
 import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-breadcrumb',
-    templateUrl: './breadcrumb.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        NgFor,
-        RouterLink,
-        FeatureDirective,
-        AsyncPipe,
-        TranslatePipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-breadcrumb',
+  templateUrl: './breadcrumb.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    NgFor,
+    RouterLink,
+    FeatureDirective,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class BreadcrumbComponent extends PageTitleComponent implements OnInit {
   crumbs$: Observable<any[]>;

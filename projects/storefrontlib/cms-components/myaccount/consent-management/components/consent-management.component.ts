@@ -39,18 +39,18 @@ import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
 import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-consent-management',
-    templateUrl: './consent-management.component.html',
-    imports: [
-        FeatureDirective,
-        NgIf,
-        SpinnerComponent,
-        NgFor,
-        ConsentManagementFormComponent,
-        AsyncPipe,
-        TranslatePipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-consent-management',
+  templateUrl: './consent-management.component.html',
+  imports: [
+    FeatureDirective,
+    NgIf,
+    SpinnerComponent,
+    NgFor,
+    ConsentManagementFormComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class ConsentManagementComponent implements OnInit, OnDestroy {
   private subscriptions = new Subscription();

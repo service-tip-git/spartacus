@@ -5,7 +5,11 @@
  */
 
 import { Component, OnInit, inject } from '@angular/core';
-import { UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  UntypedFormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { CheckoutDeliveryAddressFacade } from '@spartacus/checkout/base/root';
 import {
   Address,
@@ -44,20 +48,20 @@ import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.p
 import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-checkout-billing-address-form',
-    templateUrl: './checkout-billing-address-form.component.html',
-    imports: [
-        NgIf,
-        CardComponent,
-        FormsModule,
-        ReactiveFormsModule,
-        NgSelectComponent,
-        NgSelectA11yDirective,
-        FormErrorsComponent,
-        AsyncPipe,
-        TranslatePipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-checkout-billing-address-form',
+  templateUrl: './checkout-billing-address-form.component.html',
+  imports: [
+    NgIf,
+    CardComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    NgSelectComponent,
+    NgSelectA11yDirective,
+    FormErrorsComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class CheckoutBillingAddressFormComponent implements OnInit {
   showSameAsDeliveryAddressCheckbox$: Observable<boolean>;

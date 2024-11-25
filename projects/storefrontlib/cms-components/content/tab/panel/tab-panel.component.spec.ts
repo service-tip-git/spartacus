@@ -7,9 +7,11 @@ const mockTab: Tab | any = {
   id: 1,
 };
 
-@Component({ template: `<ng-template #templateRef
+@Component({
+  template: `<ng-template #templateRef
     ><span id="tempRef">hello</span></ng-template
-  >`, })
+  >`,
+})
 class MockComponent {
   @ViewChild('templateRef') templateRef: TemplateRef<any>;
 }
@@ -20,8 +22,8 @@ describe('TabPanelComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [TabPanelComponent, MockComponent],
-}).compileComponents();
+      imports: [TabPanelComponent, MockComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -14,9 +14,9 @@ import { NgIf } from '@angular/common';
 import { FeatureDirective } from '../../../../../../core/src/features-config/directives/feature.directive';
 
 @Component({
-    selector: 'cx-consent-management-form',
-    templateUrl: './consent-management-form.component.html',
-    imports: [NgIf, FeatureDirective],
+  selector: 'cx-consent-management-form',
+  templateUrl: './consent-management-form.component.html',
+  imports: [NgIf, FeatureDirective],
 })
 export class ConsentManagementFormComponent implements OnInit {
   consentGiven = false;

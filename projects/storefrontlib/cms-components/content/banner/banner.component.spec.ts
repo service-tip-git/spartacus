@@ -67,9 +67,9 @@ class MockSemanticPathService {
 }
 
 @Component({
-    selector: 'cx-media',
-    template: '',
-    imports: [RouterTestingModule, FeaturesConfigModule],
+  selector: 'cx-media',
+  template: '',
+  imports: [RouterTestingModule, FeaturesConfigModule],
 })
 class MockMediaComponent {
   @Input() container: any;
@@ -83,25 +83,29 @@ describe('BannerComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [RouterTestingModule, FeaturesConfigModule, BannerComponent,
+      imports: [
+        RouterTestingModule,
+        FeaturesConfigModule,
+        BannerComponent,
         MockMediaComponent,
         GenericLinkComponent,
-        MockFeatureDirective],
-    providers: [
+        MockFeatureDirective,
+      ],
+      providers: [
         {
-            provide: CmsComponentData,
-            useClass: MockCmsComponentData,
+          provide: CmsComponentData,
+          useClass: MockCmsComponentData,
         },
         { provide: CmsService, useClass: MockCmsService },
         { provide: SemanticPathService, useClass: MockSemanticPathService },
         {
-            provide: FeaturesConfig,
-            useValue: {
-                features: { level: '6.3', a11yOrganizationsBanner: true },
-            },
+          provide: FeaturesConfig,
+          useValue: {
+            features: { level: '6.3', a11yOrganizationsBanner: true },
+          },
         },
-    ],
-}).compileComponents();
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BannerComponent);
     bannerComponent = fixture.componentInstance;

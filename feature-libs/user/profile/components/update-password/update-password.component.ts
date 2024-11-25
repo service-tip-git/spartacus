@@ -10,7 +10,11 @@ import {
   Optional,
   inject,
 } from '@angular/core';
-import { UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  UntypedFormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { RoutingService, useFeatureStyles } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { UpdatePasswordComponentService } from './update-password-component.service';
@@ -25,25 +29,25 @@ import { UrlPipe } from '../../../../../projects/core/src/routing/configurable-r
 import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-update-password',
-    templateUrl: './update-password.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    host: { class: 'user-form' },
-    imports: [
-        NgIf,
-        SpinnerComponent,
-        FeatureDirective,
-        FormsModule,
-        ReactiveFormsModule,
-        NgTemplateOutlet,
-        PasswordVisibilityToggleDirective,
-        FormErrorsComponent,
-        RouterLink,
-        AsyncPipe,
-        TranslatePipe,
-        UrlPipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-update-password',
+  templateUrl: './update-password.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: { class: 'user-form' },
+  imports: [
+    NgIf,
+    SpinnerComponent,
+    FeatureDirective,
+    FormsModule,
+    ReactiveFormsModule,
+    NgTemplateOutlet,
+    PasswordVisibilityToggleDirective,
+    FormErrorsComponent,
+    RouterLink,
+    AsyncPipe,
+    TranslatePipe,
+    UrlPipe,
+    MockTranslatePipe,
+  ],
 })
 export class UpdatePasswordComponent {
   @Optional() protected routingService = inject(RoutingService, {

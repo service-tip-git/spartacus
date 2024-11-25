@@ -16,17 +16,23 @@ import {
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-    imports: [CommonModule, I18nModule, RouterModule, UrlModule, S4ServiceOrderDetailActionsComponent],
-    providers: [
-        provideDefaultConfig(<CmsConfig>{
-            cmsComponents: {
-                AccountOrderDetailsActionsComponent: {
-                    component: S4ServiceOrderDetailActionsComponent,
-                    //guards: inherited from standard config,
-                },
-            },
-        }),
-    ],
-    exports: [S4ServiceOrderDetailActionsComponent],
+  imports: [
+    CommonModule,
+    I18nModule,
+    RouterModule,
+    UrlModule,
+    S4ServiceOrderDetailActionsComponent,
+  ],
+  providers: [
+    provideDefaultConfig(<CmsConfig>{
+      cmsComponents: {
+        AccountOrderDetailsActionsComponent: {
+          component: S4ServiceOrderDetailActionsComponent,
+          //guards: inherited from standard config,
+        },
+      },
+    }),
+  ],
+  exports: [S4ServiceOrderDetailActionsComponent],
 })
 export class S4ServiceOrderDetailActionsModule {}

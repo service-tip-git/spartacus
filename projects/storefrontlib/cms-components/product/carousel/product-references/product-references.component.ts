@@ -23,17 +23,17 @@ import { MediaComponent } from '../../../../shared/components/media/media.compon
 import { UrlPipe } from '../../../../../core/src/routing/configurable-routes/url-translation/url.pipe';
 
 @Component({
-    selector: 'cx-product-references',
-    templateUrl: './product-references.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        NgIf,
-        CarouselComponent,
-        RouterLink,
-        MediaComponent,
-        AsyncPipe,
-        UrlPipe,
-    ],
+  selector: 'cx-product-references',
+  templateUrl: './product-references.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    NgIf,
+    CarouselComponent,
+    RouterLink,
+    MediaComponent,
+    AsyncPipe,
+    UrlPipe,
+  ],
 })
 export class ProductReferencesComponent {
   constructor(

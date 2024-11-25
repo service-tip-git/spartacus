@@ -41,20 +41,20 @@ import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-transl
 const ARIA_EXPANDED_ATTR = 'aria-expanded';
 
 @Component({
-    selector: 'cx-navigation-ui',
-    templateUrl: './navigation-ui.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        NgIf,
-        IconComponent,
-        NgFor,
-        NgTemplateOutlet,
-        FeatureDirective,
-        GenericLinkComponent,
-        AsyncPipe,
-        TranslatePipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-navigation-ui',
+  templateUrl: './navigation-ui.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    NgIf,
+    IconComponent,
+    NgFor,
+    NgTemplateOutlet,
+    FeatureDirective,
+    GenericLinkComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class NavigationUIComponent implements OnInit, OnDestroy {
   /**

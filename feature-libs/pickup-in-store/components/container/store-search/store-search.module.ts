@@ -10,8 +10,13 @@ import { FeaturesConfigModule, I18nModule } from '@spartacus/core';
 import { StoreSearchComponent } from './store-search.component';
 
 @NgModule({
-    imports: [CommonModule, I18nModule, FeaturesConfigModule, StoreSearchComponent],
-    exports: [StoreSearchComponent],
-    providers: [],
+  imports: [
+    CommonModule,
+    I18nModule,
+    FeaturesConfigModule,
+    StoreSearchComponent,
+  ],
+  exports: [StoreSearchComponent],
+  providers: [],
 })
 export class StoreSearchModule {}

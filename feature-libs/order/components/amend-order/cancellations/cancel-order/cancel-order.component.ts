@@ -21,21 +21,21 @@ import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translat
 import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-    selector: 'cx-cancel-order',
-    templateUrl: './cancel-order.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        NgIf,
-        MessageComponent,
-        NgTemplateOutlet,
-        CancelOrReturnItemsComponent,
-        FeatureDirective,
-        FormErrorsComponent,
-        AmendOrderActionsComponent,
-        AsyncPipe,
-        TranslatePipe,
-        MockTranslatePipe,
-    ],
+  selector: 'cx-cancel-order',
+  templateUrl: './cancel-order.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    NgIf,
+    MessageComponent,
+    NgTemplateOutlet,
+    CancelOrReturnItemsComponent,
+    FeatureDirective,
+    FormErrorsComponent,
+    AmendOrderActionsComponent,
+    AsyncPipe,
+    TranslatePipe,
+    MockTranslatePipe,
+  ],
 })
 export class CancelOrderComponent {
   orderCode: string;
