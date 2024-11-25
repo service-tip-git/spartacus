@@ -6,7 +6,7 @@
 
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { AsmCustomer360ReviewList } from '@spartacus/asm/customer-360/root';
-import { CxDatePipe, Product, TranslationService } from '@spartacus/core';
+import { Product, TranslationService } from '@spartacus/core';
 import { combineLatest, Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -26,7 +26,7 @@ import { TranslatePipe } from '@spartacus/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'cx-asm-customer-360-product-reviews',
   templateUrl: './asm-customer-360-product-reviews.component.html',
-  providers: [CxDatePipe],
+  providers: [],
   imports: [AsmCustomer360TableComponent, AsyncPipe, TranslatePipe],
 })
 export class AsmCustomer360ProductReviewsComponent implements OnInit {

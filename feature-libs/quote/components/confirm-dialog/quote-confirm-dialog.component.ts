@@ -103,7 +103,7 @@ export class QuoteConfirmDialogComponent implements OnInit {
         .subscribe((text) => (translatedText += text));
 
       const date = new Date(context.quote.expirationTime);
-      translatedText += this.cxDatePipe.transform(date);
+      translatedText += this..transform(date);
     }
 
     this.translationService
