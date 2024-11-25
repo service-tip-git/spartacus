@@ -19,7 +19,7 @@ import {
 import { RouterLink } from '@angular/router';
 import { MediaComponent } from '../../../../shared/components/media/media.component';
 import { InnerComponentsHostDirective } from '../../../../cms-structure/page/component/inner-components-host.directive';
-import { UrlPipe } from '../../../../../core/src/routing/configurable-routes/url-translation/url.pipe';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-product-carousel-item',

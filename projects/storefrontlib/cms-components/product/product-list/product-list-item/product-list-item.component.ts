@@ -19,14 +19,14 @@ import { ProductListItemContext } from '../model/product-list-item-context.model
 import { ProductListService } from '../product-list.service';
 import { RouterLink } from '@angular/router';
 import { MediaComponent } from '../../../../shared/components/media/media.component';
-import { FeatureDirective } from '../../../../../core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { OutletDirective } from '../../../../cms-structure/outlet/outlet.directive';
 import { NgIf } from '@angular/common';
 import { StarRatingComponent } from '../../../../shared/components/star-rating/star-rating.component';
 import { InnerComponentsHostDirective } from '../../../../cms-structure/page/component/inner-components-host.directive';
-import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
-import { UrlPipe } from '../../../../../core/src/routing/configurable-routes/url-translation/url.pipe';
-import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '@spartacus/core';
+import { UrlPipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-product-list-item',

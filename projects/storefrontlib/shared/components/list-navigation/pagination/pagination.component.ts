@@ -18,7 +18,7 @@ import { PaginationModel, TranslationService } from '@spartacus/core';
 import { Observable, combineLatest, map, of } from 'rxjs';
 import { PaginationBuilder } from './pagination.builder';
 import { PaginationItem, PaginationItemType } from './pagination.model';
-import { FeatureDirective } from '../../../../../core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { NgFor, AsyncPipe } from '@angular/common';
 
 /**

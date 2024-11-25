@@ -7,10 +7,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NotificationPreferenceComponent } from '../../notification-preference/notification-preference.component';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
-import { FeatureDirective } from '../../../../../core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { SpinnerComponent } from '../../../../shared/components/spinner/spinner.component';
-import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
-import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-my-account-v2-notification-preference',

@@ -20,7 +20,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
 import { CarouselComponent } from '../../../../shared/components/carousel/carousel.component';
 import { RouterLink } from '@angular/router';
 import { MediaComponent } from '../../../../shared/components/media/media.component';
-import { UrlPipe } from '../../../../../core/src/routing/configurable-routes/url-translation/url.pipe';
+import { UrlPipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-product-references',

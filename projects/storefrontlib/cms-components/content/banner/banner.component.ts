@@ -17,7 +17,7 @@ import { Observable } from 'rxjs';
 import { take, tap } from 'rxjs/operators';
 import { CmsComponentData } from '../../../cms-structure/page/model/cms-component-data';
 import { NgIf, AsyncPipe } from '@angular/common';
-import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { GenericLinkComponent } from '../../../shared/components/generic-link/generic-link.component';
 import { MediaComponent } from '../../../shared/components/media/media.component';
 

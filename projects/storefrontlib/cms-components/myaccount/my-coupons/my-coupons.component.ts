@@ -15,15 +15,15 @@ import { map, tap } from 'rxjs/operators';
 import { ICON_TYPE } from '../../misc/icon/icon.model';
 import { MyCouponsComponentService } from './my-coupons.component.service';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
-import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { SortingComponent } from '../../../shared/components/list-navigation/sorting/sorting.component';
 import { PaginationComponent } from '../../../shared/components/list-navigation/pagination/pagination.component';
 import { CouponCardComponent } from './coupon-card/coupon-card.component';
 import { IconComponent } from '../../misc/icon/icon.component';
 import { RouterLink } from '@angular/router';
 import { SpinnerComponent } from '../../../shared/components/spinner/spinner.component';
-import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
-import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-my-coupons',

@@ -11,8 +11,8 @@ import { tap } from 'rxjs/operators';
 import { LAUNCH_CALLER } from '../../../layout/launch-dialog/config/launch-config';
 import { LaunchDialogService } from '../../../layout/launch-dialog/services/launch-dialog.service';
 import { NgIf, NgClass, AsyncPipe } from '@angular/common';
-import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
-import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-anonymous-consent-management-banner',

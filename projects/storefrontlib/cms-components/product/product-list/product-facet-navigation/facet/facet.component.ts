@@ -25,12 +25,12 @@ import { FocusDirective } from '../../../../../layout/a11y/keyboard-focus/focus.
 import { FacetCollapseState } from '../facet.model';
 import { FacetService } from '../services/facet.service';
 import { NgIf, NgFor, AsyncPipe, SlicePipe } from '@angular/common';
-import { FeatureDirective } from '../../../../../../core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { IconComponent } from '../../../../misc/icon/icon.component';
 import { RouterLink } from '@angular/router';
 import { AtMessageDirective } from '../../../../../shared/components/assistive-technology-message/assistive-technology-message.directive';
-import { TranslatePipe } from '../../../../../../core/src/i18n/translate.pipe';
-import { MockTranslatePipe } from '../../../../../../core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-facet',

@@ -41,12 +41,12 @@ import {
   SlicePipe,
 } from '@angular/common';
 import { StarRatingComponent } from '../../../../shared/components/star-rating/star-rating.component';
-import { FeatureDirective } from '../../../../../core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { FormErrorsComponent } from '../../../../shared/components/form/form-errors/form-errors.component';
-import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
-import { CxDatePipe } from '../../../../../core/src/i18n/date.pipe';
-import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
-import { MockDatePipe } from '../../../../../core/src/i18n/testing/mock-date.pipe';
+import { TranslatePipe } from '@spartacus/core';
+import { CxDatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
+import { MockDatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-product-reviews',

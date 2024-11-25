@@ -15,12 +15,12 @@ import {
 } from '@angular/core';
 import { GlobalMessageType } from '@spartacus/core';
 import { ICON_TYPE } from '../../../cms-components/misc/icon/icon.model';
-import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { NgClass, NgIf } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
 import { AtMessageDirective } from '../../../shared/components/assistive-technology-message/assistive-technology-message.directive';
-import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
-import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
 @Component({
   selector: 'cx-message',
   templateUrl: './message.component.html',
