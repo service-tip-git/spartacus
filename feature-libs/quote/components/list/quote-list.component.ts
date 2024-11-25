@@ -24,7 +24,6 @@ import { PaginationComponent } from '@spartacus/storefront';
 import { RouterLink } from '@angular/router';
 import { IconComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
-import { CxDatePipe as CxDatePipe_1 } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
 
 @Component({
@@ -42,7 +41,7 @@ import { UrlPipe } from '@spartacus/core';
     IconComponent,
     AsyncPipe,
     TranslatePipe,
-    CxDatePipe_1,
+    CxDatePipe,
     UrlPipe,
 
     CxDatePipe,
