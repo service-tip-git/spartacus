@@ -8,7 +8,6 @@ import { MessageComponent } from './message.component';
 
 @Component({
   template: `<cx-message>Test</cx-message>`,
-  standalone: false,
 })
 class TestHostComponent {}
 

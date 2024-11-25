@@ -83,7 +83,6 @@ class MockDynamicAttributeService {
   >
     +
   </ng-container>`,
-  standalone: false,
 })
 class TestWrapperComponent {
   component: ContentSlotComponentData = {

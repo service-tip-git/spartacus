@@ -30,14 +30,12 @@ import { CxApiService } from './services/cx-api.service';
 @Component({
   selector: 'cx-inner-a',
   template: `_A_`,
-  standalone: false,
 })
 class InnerAComponent {}
 
 @Component({
   selector: 'cx-inner-b',
   template: `_B_`,
-  standalone: false,
 })
 class InnerBComponent {}
 

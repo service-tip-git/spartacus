@@ -21,7 +21,6 @@ const mockOnNavigateConfig: OnNavigateConfig = {
 
 @Component({
   template: ` <cx-storefront tabindex="0"></cx-storefront> `,
-  standalone: false,
 })
 class MockComponent {}
 

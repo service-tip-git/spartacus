@@ -30,7 +30,6 @@ import { ProductCarouselComponent } from './product-carousel.component';
       ></ng-container>
     </ng-container>
   `,
-  standalone: false,
 })
 class MockCarouselComponent {
   @Input() title: string;
@@ -41,7 +40,6 @@ class MockCarouselComponent {
 @Component({
   selector: 'cx-product-carousel-item',
   template: '',
-  standalone: false,
 })
 class MockProductCarouselItemComponent {
   @Input() item: any;
@@ -49,7 +47,6 @@ class MockProductCarouselItemComponent {
 
 @Pipe({
   name: 'cxUrl',
-  standalone: false,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
@@ -58,7 +55,6 @@ class MockUrlPipe implements PipeTransform {
 @Component({
   selector: 'cx-media',
   template: '',
-  standalone: false,
 })
 class MockMediaComponent {
   @Input() container: any;

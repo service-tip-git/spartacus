@@ -28,7 +28,6 @@ import { AsmCustomer360ActivityComponent } from './asm-customer-360-activity.com
 
 @Directive({
   selector: '[cxFocus]',
-  standalone: false,
 })
 export class MockKeyboadFocusDirective {
   @Input('cxFocus') config: FocusConfig = {};
