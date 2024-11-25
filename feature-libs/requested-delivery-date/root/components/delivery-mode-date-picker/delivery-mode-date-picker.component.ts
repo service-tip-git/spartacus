@@ -45,8 +45,6 @@ import { TranslatePipe } from '@spartacus/core';
     AsyncPipe,
     TranslatePipe,
     CxDatePipe,
-
-    ,
   ],
 })
 export class DeliveryModeDatePickerComponent implements OnInit, OnDestroy {
