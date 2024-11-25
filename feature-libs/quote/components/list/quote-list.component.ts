@@ -48,7 +48,7 @@ import { UrlPipe } from '@spartacus/core';
 export class QuoteListComponent implements OnInit {
   protected quoteListComponentService = inject(QuoteListComponentService);
   protected translationService = inject(TranslationService);
-  protected cxDatePipe = inject();
+  protected cxDatePipe = inject(CxDatePipe);
 
   sorts = this.quoteListComponentService.sortOptions;
   sortLabels$ = this.quoteListComponentService.sortLabels$;

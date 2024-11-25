@@ -31,7 +31,7 @@ export class EstimatedDeliveryDateComponent {
   @Optional() protected cartItemContext = inject(CartItemContext);
   protected orderHistoryFacade = inject(OrderHistoryFacade);
   protected translationService = inject(TranslationService);
-  protected datePipe = inject();
+  protected datePipe = inject(CxDatePipe);
 
   constructor() {
     useFeatureStyles('a11yQTY2Quantity');

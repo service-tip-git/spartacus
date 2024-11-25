@@ -49,7 +49,7 @@ import { TranslatePipe } from '@spartacus/core';
 })
 export class DeliveryModeDatePickerComponent implements OnInit, OnDestroy {
   constructor(
-    protected datePipe: 
+    protected datePipe: CxDatePipe,
     protected requestedDelDateFacade: RequestedDeliveryDateFacade,
     protected dateValidationService: DateValidationService,
     protected eventService: EventService,
