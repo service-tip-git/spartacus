@@ -29,8 +29,6 @@ import { UrlPipe } from '@spartacus/core';
     TranslatePipe,
     CxDatePipe,
     UrlPipe,
-
-    CxDatePipe,
   ],
 })
 export class MyAccountV2CustomerTicketingComponent {

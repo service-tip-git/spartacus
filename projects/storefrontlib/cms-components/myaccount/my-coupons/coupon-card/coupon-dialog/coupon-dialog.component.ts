@@ -34,8 +34,6 @@ import { CxDatePipe } from '@spartacus/core';
     LowerCasePipe,
     TranslatePipe,
     CxDatePipe,
-
-    CxDatePipe,
   ],
 })
 export class CouponDialogComponent implements OnDestroy, OnInit {

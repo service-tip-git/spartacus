@@ -57,8 +57,6 @@ import { ArgsPipe } from '../../../core/utils/args/args.pipe';
     TranslatePipe,
     CxDatePipe,
     ArgsPipe,
-
-    CxDatePipe,
   ],
 })
 export class AsmCustomer360TableComponent

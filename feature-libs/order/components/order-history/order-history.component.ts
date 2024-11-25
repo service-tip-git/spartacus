@@ -42,8 +42,6 @@ import { CxDatePipe } from '@spartacus/core';
     UrlPipe,
     TranslatePipe,
     CxDatePipe,
-
-    CxDatePipe,
   ],
 })
 export class OrderHistoryComponent implements OnDestroy {

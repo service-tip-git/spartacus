@@ -37,8 +37,6 @@ import { CxDatePipe } from '@spartacus/core';
     UrlPipe,
     TranslatePipe,
     CxDatePipe,
-
-    CxDatePipe,
   ],
 })
 export class OrderApprovalListComponent implements OnInit {

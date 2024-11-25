@@ -54,8 +54,6 @@ import { CxDatePipe } from '@spartacus/core';
     AsyncPipe,
     TranslatePipe,
     CxDatePipe,
-
-    CxDatePipe,
   ],
 })
 export class MessagingComponent implements OnInit, AfterViewChecked {

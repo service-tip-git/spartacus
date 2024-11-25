@@ -39,8 +39,6 @@ import { TranslatePipe } from '@spartacus/core';
     AsyncPipe,
     TranslatePipe,
     CxDatePipe,
-
-    CxDatePipe,
   ],
 })
 export class QuoteConfirmDialogComponent implements OnInit {

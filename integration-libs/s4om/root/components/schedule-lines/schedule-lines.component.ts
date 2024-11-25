@@ -15,7 +15,7 @@ import { TranslatePipe } from '@spartacus/core';
   selector: 'cx-schedule-lines',
   templateUrl: './schedule-lines.component.html',
   providers: [CxDatePipe],
-  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe, CxDatePipe, CxDatePipe],
+  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe, CxDatePipe],
 })
 export class ScheduleLinesComponent {
   constructor(

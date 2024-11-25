@@ -36,8 +36,6 @@ import { CxDatePipe } from '@spartacus/core';
     FormErrorsComponent,
     TranslatePipe,
     CxDatePipe,
-
-    CxDatePipe,
   ],
 })
 export class DatePickerComponent {

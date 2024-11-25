@@ -43,8 +43,6 @@ import { UrlPipe } from '@spartacus/core';
     TranslatePipe,
     CxDatePipe,
     UrlPipe,
-
-    CxDatePipe,
   ],
 })
 export class QuoteListComponent implements OnInit {

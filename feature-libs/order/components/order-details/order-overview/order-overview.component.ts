@@ -36,7 +36,6 @@ import { CxDatePipe } from '@spartacus/core';
     OrderDetailBillingComponent,
     AsyncPipe,
     CxDatePipe,
-    CxDatePipe,
   ],
 })
 export class OrderOverviewComponent {

@@ -38,8 +38,6 @@ import { CxDatePipe } from '@spartacus/core';
     UrlPipe,
     TranslatePipe,
     CxDatePipe,
-
-    CxDatePipe,
   ],
 })
 export class UnitLevelOrderHistoryComponent implements OnDestroy {

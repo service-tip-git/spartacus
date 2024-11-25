@@ -63,8 +63,6 @@ import { CxDatePipe } from '@spartacus/core';
     SlicePipe,
     TranslatePipe,
     CxDatePipe,
-
-    CxDatePipe,
   ],
 })
 export class ProductReviewsComponent {

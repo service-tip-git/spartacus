@@ -25,7 +25,7 @@ import { TranslatePipe } from '@spartacus/core';
   selector: 'cx-estimated-delivery-date',
   templateUrl: './estimated-delivery-date.component.html',
   providers: [CxDatePipe],
-  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe, CxDatePipe, CxDatePipe],
+  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe, CxDatePipe],
 })
 export class EstimatedDeliveryDateComponent {
   @Optional() protected cartItemContext = inject(CartItemContext);

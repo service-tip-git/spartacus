@@ -33,8 +33,6 @@ import { CxDatePipe } from '@spartacus/core';
     AddToCartComponent,
     TranslatePipe,
     CxDatePipe,
-
-    CxDatePipe,
   ],
 })
 export class OrderConsignedEntriesComponent {
