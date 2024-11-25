@@ -16,6 +16,7 @@ import {
 } from '@spartacus/core';
 import { StoreFinderCoreModule } from '@spartacus/storefinder/core';
 import {
+  BtnLikeLinkModule,
   IconModule,
   ListNavigationModule,
   OutletModule,
@@ -47,6 +48,7 @@ import { StoreFinderComponent } from './store-finder/store-finder.component';
     IconModule,
     OutletModule,
     FeaturesConfigModule,
+    BtnLikeLinkModule,
   ],
   providers: [
     provideDefaultConfig({

@@ -14,7 +14,11 @@ import {
   provideDefaultConfig,
   UrlModule,
 } from '@spartacus/core';
-import { AtMessageModule, IconModule } from '@spartacus/storefront';
+import {
+  AtMessageModule,
+  BtnLikeLinkModule,
+  IconModule,
+} from '@spartacus/storefront';
 import { AddToWishListComponent } from './add-to-wish-list.component';
 
 @NgModule({
@@ -26,6 +30,7 @@ import { AddToWishListComponent } from './add-to-wish-list.component';
     UrlModule,
     AtMessageModule,
     FeaturesConfigModule,
+    BtnLikeLinkModule,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
