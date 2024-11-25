@@ -11,6 +11,7 @@ import { ScriptLoader } from '@spartacus/core';
 import {
   OpfDynamicScriptResource,
   OpfDynamicScriptResourceType,
+  OpfKeyValueMap,
 } from '../model';
 
 @Injectable({
@@ -24,12 +25,13 @@ export class OpfResourceLoaderService {
   protected readonly OPF_RESOURCE_ATTRIBUTE_KEY = 'data-opf-resource';
 
   protected embedStyles(embedOptions: {
+    attributes?: OpfKeyValueMap[];
     src: string;
     sri?: string;
     callback?: EventListener;
     errorCallback: EventListener;
   }): void {
-    const { src, sri, callback, errorCallback } = embedOptions;
+    const { attributes, src, sri, callback, errorCallback } = embedOptions;
 
     const link: HTMLLinkElement = this.document.createElement('link');
     link.href = src;
@@ -38,6 +40,10 @@ export class OpfResourceLoaderService {
     link.setAttribute(this.OPF_RESOURCE_ATTRIBUTE_KEY, 'true');
     if (sri) {
       link.integrity = sri;
+      const corsKeyvalue = attributes?.find(
+        (attr) => attr.key === 'crossorigin' && !!attr.value?.length
+      );
+      link.crossOrigin = corsKeyvalue?.value ?? 'anonymous';
     }
 
     if (callback) {
@@ -73,6 +79,12 @@ export class OpfResourceLoaderService {
       };
 
       if (resource?.sri) {
+        const corsKeyvalue: OpfKeyValueMap | undefined =
+          resource?.attributes?.find(
+            (attr) => attr.key === 'crossorigin' && !!attr.value?.length
+          );
+        attributes['crossOrigin'] = corsKeyvalue?.value ?? 'anonymous';
+
         attributes['integrity'] = resource.sri;
       }
 
@@ -105,6 +117,7 @@ export class OpfResourceLoaderService {
     return new Promise((resolve, reject) => {
       if (resource.url && !this.hasStyles(resource.url)) {
         this.embedStyles({
+          attributes: resource?.attributes,
           src: resource.url,
           sri: resource?.sri,
           callback: () => resolve(),
