@@ -38,9 +38,9 @@ import {
 } from 'rxjs';
 import { catchError, skip, switchMap, take, tap } from 'rxjs/operators';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
-import { SortingComponent } from '../../../../projects/storefrontlib/shared/components/list-navigation/sorting/sorting.component';
-import { PaginationComponent } from '../../../../projects/storefrontlib/shared/components/list-navigation/pagination/pagination.component';
-import { IconComponent } from '../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { SortingComponent } from '@spartacus/storefront';
+import { PaginationComponent } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
 import { MockTranslatePipe } from '@spartacus/core';

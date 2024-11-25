@@ -37,13 +37,13 @@ import {
   tap,
 } from 'rxjs/operators';
 import { FeatureDirective } from '@spartacus/core';
-import { FocusDirective } from '../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
-import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { FocusDirective } from '@spartacus/storefront';
+import { IconComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 import { CartItemComponent } from '../cart-shared/cart-item/cart-item.component';
-import { PromotionsComponent } from '../../../../../projects/storefrontlib/cms-components/misc/promotions/promotions.component';
+import { PromotionsComponent } from '@spartacus/storefront';
 import { RouterLink } from '@angular/router';
-import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { SpinnerComponent } from '@spartacus/storefront';
 import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { MockTranslatePipe } from '@spartacus/core';

@@ -45,8 +45,8 @@ import { filter, map, switchMap, take, tap } from 'rxjs/operators';
 import { FeatureDirective } from '@spartacus/core';
 import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
 import { NgSelectComponent } from '@ng-select/ng-select';
-import { NgSelectA11yDirective } from '../../../../../../projects/storefrontlib/shared/components/ng-select-a11y/ng-select-a11y.directive';
-import { FormErrorsComponent } from '../../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
+import { NgSelectA11yDirective } from '@spartacus/storefront';
+import { FormErrorsComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
 import { MockTranslatePipe } from '@spartacus/core';
 

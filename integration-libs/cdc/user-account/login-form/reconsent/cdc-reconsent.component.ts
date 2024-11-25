@@ -20,11 +20,11 @@ import {
 import { Observable, of, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CdcReconsentComponentService } from './cdc-reconsent-component.service';
-import { FocusDirective } from '../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FocusDirective } from '@spartacus/storefront';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
-import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
-import { ConsentManagementFormComponent } from '../../../../../projects/storefrontlib/cms-components/myaccount/consent-management/components/consent-form/consent-management-form.component';
-import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { IconComponent } from '@spartacus/storefront';
+import { ConsentManagementFormComponent } from '@spartacus/storefront';
+import { SpinnerComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
 import { MockTranslatePipe } from '@spartacus/core';
 

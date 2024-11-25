@@ -19,7 +19,7 @@ import { NgIf } from '@angular/common';
 import { FeatureDirective } from '@spartacus/core';
 import { VisualViewerToolbarButtonComponent } from './toolbar/visual-viewer-toolbar-button/visual-viewer-toolbar-button.component';
 import { VisualViewerAnimationSliderComponent } from './toolbar/visual-viewer-animation-slider/visual-viewer-animation-slider.component';
-import { SpinnerComponent } from '../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { SpinnerComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
 import { MockTranslatePipe } from '@spartacus/core';
 

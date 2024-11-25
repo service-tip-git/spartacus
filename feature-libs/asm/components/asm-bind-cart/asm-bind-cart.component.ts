@@ -58,7 +58,7 @@ import { BIND_CART_DIALOG_ACTION } from '../asm-bind-cart-dialog/asm-bind-cart-d
 import { SAVE_CART_DIALOG_ACTION } from '../asm-save-cart-dialog/asm-save-cart-dialog.component';
 import { AsmComponentService } from '../services/asm-component.service';
 import { NgClass, NgIf, AsyncPipe } from '@angular/common';
-import { IconComponent } from '../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 import { DotSpinnerComponent } from '../dot-spinner/dot-spinner.component';
 import { TranslatePipe } from '@spartacus/core';
 import { MockTranslatePipe } from '@spartacus/core';

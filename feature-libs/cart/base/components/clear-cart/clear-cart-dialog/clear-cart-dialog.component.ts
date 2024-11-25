@@ -14,11 +14,11 @@ import {
 import { useFeatureStyles } from '@spartacus/core';
 import { FocusConfig, ICON_TYPE } from '@spartacus/storefront';
 import { ClearCartDialogComponentService } from './clear-cart-dialog-component.service';
-import { FocusDirective } from '../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FocusDirective } from '@spartacus/storefront';
 import { NgIf } from '@angular/common';
 import { FeatureDirective } from '@spartacus/core';
-import { IconComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
-import { SpinnerComponent } from '../../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { IconComponent } from '@spartacus/storefront';
+import { SpinnerComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
 import { MockTranslatePipe } from '@spartacus/core';
 

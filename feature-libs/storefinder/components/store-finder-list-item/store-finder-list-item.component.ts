@@ -10,7 +10,7 @@ import { StoreFinderOutlets } from '@spartacus/storefinder/root';
 import { AbstractStoreItemComponent } from '../abstract-store-item/abstract-store-item.component';
 import { NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { OutletDirective } from '../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
+import { OutletDirective } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
 import { MockTranslatePipe } from '@spartacus/core';
 

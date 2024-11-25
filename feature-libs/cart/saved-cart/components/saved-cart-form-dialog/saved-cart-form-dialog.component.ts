@@ -45,10 +45,10 @@ import {
 import { Observable, Subscription, combineLatest, merge } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 import { NgIf, NgSwitch, NgSwitchCase, AsyncPipe } from '@angular/common';
-import { FocusDirective } from '../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FocusDirective } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
-import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
-import { FormErrorsComponent } from '../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
+import { IconComponent } from '@spartacus/storefront';
+import { FormErrorsComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
 import { MockTranslatePipe } from '@spartacus/core';
 

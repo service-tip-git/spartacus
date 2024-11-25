@@ -27,7 +27,7 @@ import {
   CheckoutServiceDetailsFacade,
   CheckoutServiceSchedulePickerService,
 } from '@spartacus/s4-service/root';
-import { DatePickerComponent } from '../../../../../projects/storefrontlib/shared/components/form/date-picker/date-picker.component';
+import { DatePickerComponent } from '@spartacus/storefront';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { TranslatePipe } from '@spartacus/core';
 import { MockTranslatePipe } from '@spartacus/core';

@@ -24,9 +24,9 @@ import {
 import { DP_CARD_REGISTRATION_STATUS } from '../../../utils/dp-constants';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { FeatureDirective } from '@spartacus/core';
-import { CardComponent } from '../../../../../../projects/storefrontlib/shared/components/card/card.component';
+import { CardComponent } from '@spartacus/storefront';
 import { DpPaymentFormComponent } from './dp-payment-form/dp-payment-form.component';
-import { SpinnerComponent } from '../../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { SpinnerComponent } from '@spartacus/storefront';
 import { DpPaymentCallbackComponent } from './dp-payment-callback/dp-payment-callback.component';
 import { TranslatePipe } from '@spartacus/core';
 import { MockTranslatePipe } from '@spartacus/core';

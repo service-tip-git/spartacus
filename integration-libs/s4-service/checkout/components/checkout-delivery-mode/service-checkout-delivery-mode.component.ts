@@ -14,9 +14,9 @@ import { Observable } from 'rxjs';
 import { FeatureDirective } from '@spartacus/core';
 import { NgTemplateOutlet, NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { OutletDirective } from '../../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
-import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
-import { InnerComponentsHostDirective } from '../../../../../projects/storefrontlib/cms-structure/page/component/inner-components-host.directive';
+import { OutletDirective } from '@spartacus/storefront';
+import { SpinnerComponent } from '@spartacus/storefront';
+import { InnerComponentsHostDirective } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
 import { MockTranslatePipe } from '@spartacus/core';
 

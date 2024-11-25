@@ -45,12 +45,12 @@ import {
 import { CustomerListAction } from '../customer-list/customer-list.model';
 import { AsmComponentService } from '../services/asm-component.service';
 import { AsmDialogActionEvent } from '@spartacus/asm/customer-360/root';
-import { IconComponent } from '../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 import { AsmToggleUiComponent } from '../asm-toggle-ui/asm-toggle-ui.component';
 import { AsmSessionTimerComponent } from '../asm-session-timer/asm-session-timer.component';
 import { CustomerEmulationComponent } from '../customer-emulation/customer-emulation.component';
-import { MessageComponent } from '../../../../projects/storefrontlib/cms-components/misc/message/message.component';
+import { MessageComponent } from '@spartacus/storefront';
 import { CustomerSelectionComponent } from '../customer-selection/customer-selection.component';
 import { CSAgentLoginFormComponent } from '../csagent-login-form/csagent-login-form.component';
 import { TranslatePipe } from '@spartacus/core';

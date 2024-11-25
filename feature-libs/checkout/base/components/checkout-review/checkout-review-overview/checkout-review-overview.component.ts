@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActiveCartFacade, Cart } from '@spartacus/cart/base/root';
 import { Observable } from 'rxjs';
 import { NgIf, AsyncPipe } from '@angular/common';
-import { PromotionsComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/promotions/promotions.component';
+import { PromotionsComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
 import { MockTranslatePipe } from '@spartacus/core';
 

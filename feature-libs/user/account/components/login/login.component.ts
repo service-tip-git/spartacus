@@ -10,7 +10,7 @@ import { User, UserAccountFacade } from '@spartacus/user/account/root';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { NgIf, AsyncPipe } from '@angular/common';
-import { PageSlotComponent } from '../../../../../projects/storefrontlib/cms-structure/page/slot/page-slot.component';
+import { PageSlotComponent } from '@spartacus/storefront';
 import { RouterLink } from '@angular/router';
 import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';

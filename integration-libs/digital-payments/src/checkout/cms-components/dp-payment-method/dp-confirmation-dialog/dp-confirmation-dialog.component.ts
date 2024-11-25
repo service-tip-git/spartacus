@@ -12,9 +12,9 @@ import {
 } from '@spartacus/storefront';
 import { DP_CARD_REGISTRATION_STATUS } from '../../../../utils/dp-constants';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FocusDirective } from '../../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FocusDirective } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
-import { IconComponent } from '../../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { IconComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
 import { MockTranslatePipe } from '@spartacus/core';
 

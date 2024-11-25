@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
 import { FeatureDirective } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
-import { SpinnerComponent } from '../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { SpinnerComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
 import { MockTranslatePipe } from '@spartacus/core';
 

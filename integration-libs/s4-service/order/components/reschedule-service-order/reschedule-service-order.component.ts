@@ -32,9 +32,9 @@ import {
   ServiceDateTime,
 } from '@spartacus/s4-service/root';
 import { combineLatest, map, Observable, Subject, takeUntil } from 'rxjs';
-import { DatePickerComponent } from '../../../../../projects/storefrontlib/shared/components/form/date-picker/date-picker.component';
+import { DatePickerComponent } from '@spartacus/storefront';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
-import { OutletDirective } from '../../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
+import { OutletDirective } from '@spartacus/storefront';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
