@@ -16,7 +16,6 @@ import { tap } from 'rxjs/operators';
 import { ItemService } from '../item.service';
 import { MessageService } from '../message/services/message.service';
 import { BaseItem } from '../organization.model';
-import { ViewComponent as ViewComponent_1 } from '@spartacus/storefront';
 import { NgIf, AsyncPipe } from '@angular/common';
 import { PopoverDirective } from '@spartacus/storefront';
 import { IconComponent } from '@spartacus/storefront';
@@ -31,7 +30,7 @@ import { TranslatePipe } from '@spartacus/core';
   host: { class: 'content-wrapper' },
   providers: [MessageService],
   imports: [
-    ViewComponent_1,
+    ViewComponent,
     NgIf,
     PopoverDirective,
     IconComponent,

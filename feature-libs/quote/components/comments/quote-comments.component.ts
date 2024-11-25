@@ -22,7 +22,6 @@ import { delay, finalize, map, take } from 'rxjs/operators';
 import { QuoteUIConfig } from '../config/quote-ui.config';
 import { QuoteItemsComponentService } from '../items/quote-items.component.service';
 import { IconComponent } from '@spartacus/storefront';
-import { MessagingComponent as MessagingComponent_1 } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
 
 const DEFAULT_COMMENT_MAX_CHARS = 1000;
@@ -31,13 +30,7 @@ const ALL_PRODUCTS_ID = '';
 @Component({
   selector: 'cx-quote-comments',
   templateUrl: './quote-comments.component.html',
-  imports: [
-    NgIf,
-    IconComponent,
-    MessagingComponent_1,
-    AsyncPipe,
-    TranslatePipe,
-  ],
+  imports: [NgIf, IconComponent, MessagingComponent, AsyncPipe, TranslatePipe],
 })
 export class QuoteCommentsComponent {
   protected quoteFacade = inject(QuoteFacade);
