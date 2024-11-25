@@ -25,6 +25,8 @@ export function defaultOccCartConfigFactory(): OccConfig {
             'users/${userId}/carts/${cartId}/entries/${entryNumber}',
           removeEntries:
             'users/${userId}/carts/${cartId}/entries/${entryNumber}',
+          removeEntryGroup: 'users/${userId}/carts/${cartId}/entrygroups/${entryGroupNumber}',
+          addToEntryGroup: 'users/${userId}/carts/${cartId}/entrygroups/${entryGroupNumber}',
           addEmail: 'users/${userId}/carts/${cartId}/email',
           deleteCart: 'users/${userId}/carts/${cartId}',
           cartVoucher: 'users/${userId}/carts/${cartId}/vouchers',

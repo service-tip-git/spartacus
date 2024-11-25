@@ -29,9 +29,12 @@
     <ng-container *cxFeature="'enableBundles'">
       <ng-container *ngFor="let bundle of bundles$ | async">
         <cx-hierarchy
-          [tree]="bundle"
-          [template]="bundlesTemplate"
-          [activeCartService]="activeCartService"
+          [options]="{
+            tree: bundle,
+            template: bundlesTemplate,
+            onItemRemove: removeBundle.bind(this),
+            onItemEdit: editBundle.bind(this),
+          }"
         >
         </cx-hierarchy>
       </ng-container>

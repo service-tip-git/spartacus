@@ -47,8 +47,10 @@ export const defaultHierarchyNodeArgs: Partial<HierarchyNode> = {
   hidden: false,
 };
 
-// Define a specific type for value to ensure it has entryGroupNumber and entries properties
+// Reserve objects for users to save data
 export interface Value {
-  entryGroupNumber?: number;
-  entries?: any[];
+  // entryGroupNumber?: number;
+  // entries?: any[];
+  key?: number;
+  data?: any[];
 }

@@ -4,9 +4,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Component, Input, OnInit, TemplateRef } from '@angular/core';
-import { HierarchyNode } from '../hierarchy-node/hierarchy-node.model';
-import { ActiveCartFacade } from '@spartacus/cart/base/root';
+import { Component, Input, OnInit } from '@angular/core';
+import { HierarchyOptions } from './hierarchy.model';
 
 /**
  * Selector component that displays a tree-based model.
@@ -17,23 +16,15 @@ import { ActiveCartFacade } from '@spartacus/cart/base/root';
 })
 export class HierarchyComponent implements OnInit {
   /**
-   * Defines the maximum height of visible part of the tree.
+   * Default options for the hierarchy component.
    */
-  @Input() maxHeight: string;
-  /**
-   * Root node of the tree model.  The children of this node are used to populate the selector view
-   */
-  @Input() tree: HierarchyNode;
+  private defaultOptions: Partial<HierarchyOptions> = {
+    titleReadonly: false,
+    collasibleReadonly: false,
+  };
 
-  @Input() disabled: boolean;
+  @Input() options!: HierarchyOptions;
 
-  @Input() template: TemplateRef<any>;
-
-  @Input() activeCartService: ActiveCartFacade;
-
-  @Input() titleReadonly = false;
-
-  @Input() collasibleReadonly = false;
   /**
    * Defines the styling object applied to the hierarchy tree.
    * Note:
@@ -45,9 +36,11 @@ export class HierarchyComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    if (this.maxHeight !== undefined) {
+    // Merge provided options with defaults
+    this.options = { ...this.defaultOptions, ...this.options };
+    if (this.options.maxHeight !== undefined) {
       this.hierarchyStyle = {
-        maxHeight: this.maxHeight,
+        maxHeight: this.options.maxHeight,
         overflow: 'auto',
       };
     }

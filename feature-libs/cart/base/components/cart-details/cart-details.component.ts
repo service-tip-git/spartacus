@@ -109,4 +109,13 @@ export class CartDetailsComponent implements OnInit {
       this.routingService.go({ cxRoute: 'login' });
     }
   }
+
+  removeBundle(entryGroupNumber: any): void {
+    this.activeCartService.removeEntryGroup(entryGroupNumber);
+  }
+
+  editBundle(entryGroupNumber: any): void {
+    // TODO: Implement edit Bundle in future Integration
+    console.log('Edit Bundle:' + entryGroupNumber);
+  }
 }

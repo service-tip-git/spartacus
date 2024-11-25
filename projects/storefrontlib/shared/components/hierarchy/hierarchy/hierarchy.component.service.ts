@@ -5,7 +5,7 @@
  */
 
 import { OrderEntry, OrderEntryGroup } from '@spartacus/cart/base/root';
-import { HierarchyNode } from '../hierarchy-node';
+import { HierarchyNode, Value } from '../hierarchy-node';
 import { TitleNode } from '../hierarchy-node-title';
 import { CollapsibleNode } from '../hierarchy-node-collapsible';
 import { Injectable } from '@angular/core';
@@ -79,10 +79,15 @@ export class HierarchyComponentService {
   ): void {
     let treeNode: HierarchyNode;
     nodes.forEach((node) => {
+      const value: Value = {
+        key: node.entryGroupNumber,
+        data: node.entries,
+      };
+
       if (count === 0) {
         treeNode = new TitleNode(node.label, {
           children: [],
-          value: node,
+          value: value,
         });
 
         parent.children.push(treeNode);
@@ -90,7 +95,7 @@ export class HierarchyComponentService {
       } else {
         treeNode = new CollapsibleNode(node.label, {
           children: [],
-          value: node,
+          value: value,
           open: true,
         });
         parent.children.push(treeNode);

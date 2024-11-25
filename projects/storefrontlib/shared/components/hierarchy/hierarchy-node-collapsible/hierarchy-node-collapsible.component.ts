@@ -4,8 +4,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Component, HostBinding, Input, TemplateRef } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 import { CollapsibleNode } from './collapsible-node.model';
+import { HierarchyOptions } from '../hierarchy/hierarchy.model';
 
 /**
  * Hierarchy Selection node variant that is collapsible
@@ -15,28 +16,26 @@ import { CollapsibleNode } from './collapsible-node.model';
   templateUrl: './hierarchy-node-collapsible.component.html',
 })
 export class HierarchyNodeCollapsibleComponent<T> {
-  @Input() template: TemplateRef<any>;
-
-  @Input() tree: CollapsibleNode<T>;
+  @Input() options!: HierarchyOptions<T>;
 
   @HostBinding('class.open') get open(): boolean {
-    return this.tree.open;
+    return (this.options.tree as CollapsibleNode<T>).open;
   }
 
-  @Input() readonly = false;
-
   toggle(): void {
-    if (!this.tree.disabled) {
-      this.tree.open = !this.tree.open;
+    if (this.options.tree instanceof CollapsibleNode && !this.options.tree.disabled) {
+      this.options.tree.open = !this.options.tree.open;
     }
   }
 
   get collapsibleChildren(): CollapsibleNode<T>[] {
-    return this.tree.children as CollapsibleNode<T>[];
+    return this.options.tree.children as CollapsibleNode<T>[];
   }
 
-  editBundle(entryGroupNumber: any) {
-    // TODO: Implement editBundle
-    return entryGroupNumber;
+  onItemEdit(itemNumber: any): void {
+     // TODO: Implement edit Bundle in future Integration
+    if (this.options.onItemEdit) {
+      this.options.onItemEdit(itemNumber);
+    }
   }
 }
