@@ -26,8 +26,8 @@ import { CardComponent } from '../../../../../projects/storefrontlib/shared/comp
 import { StoreAddressComponent } from '../../presentational/store/store-address/store-address.component';
 import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
 import { StoreScheduleComponent } from '../../presentational/store/store-schedule/store-schedule.component';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-my-preferred-store',

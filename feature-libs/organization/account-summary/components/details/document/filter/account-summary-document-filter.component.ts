@@ -34,13 +34,13 @@ import {
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { NgIf, NgTemplateOutlet } from '@angular/common';
-import { FeatureDirective } from '../../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { DatePickerComponent } from '../../../../../../../projects/storefrontlib/shared/components/form/date-picker/date-picker.component';
 import { FormErrorsComponent } from '../../../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
 import { NgSelectComponent } from '@ng-select/ng-select';
 import { NgSelectA11yDirective } from '../../../../../../../projects/storefrontlib/shared/components/ng-select-a11y/ng-select-a11y.directive';
-import { TranslatePipe } from '../../../../../../../projects/core/src/i18n/translate.pipe';
-import { MockTranslatePipe } from '../../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
 
 interface ItemType {
   code: string;

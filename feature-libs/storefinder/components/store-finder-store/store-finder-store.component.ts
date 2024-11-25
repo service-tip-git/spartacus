@@ -11,12 +11,12 @@ import { ActivatedRoute } from '@angular/router';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { StoreFinderService } from '@spartacus/storefinder/core';
 import { NgIf, AsyncPipe } from '@angular/common';
-import { FeatureDirective } from '../../../../projects/core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { IconComponent } from '../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
 import { StoreFinderStoreDescriptionComponent } from '../store-finder-store-description/store-finder-store-description.component';
 import { SpinnerComponent } from '../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
-import { TranslatePipe } from '../../../../projects/core/src/i18n/translate.pipe';
-import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-store-finder-store',

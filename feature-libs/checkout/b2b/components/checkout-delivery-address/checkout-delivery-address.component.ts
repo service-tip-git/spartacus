@@ -35,12 +35,12 @@ import { Card } from '@spartacus/storefront';
 import { combineLatest, Observable, of, Subscription } from 'rxjs';
 import { distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
-import { FeatureDirective } from '../../../../../projects/core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { CardComponent } from '../../../../../projects/storefrontlib/shared/components/card/card.component';
 import { AddressFormComponent } from '../../../../user/profile/components/address-book/address-form/address-form.component';
 import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
 
 export interface CardWithAddress {
   card: Card;

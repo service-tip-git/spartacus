@@ -46,11 +46,11 @@ import { Observable, Subscription, combineLatest, merge } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 import { NgIf, NgSwitch, NgSwitchCase, AsyncPipe } from '@angular/common';
 import { FocusDirective } from '../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
-import { FeatureDirective } from '../../../../../projects/core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
 import { FormErrorsComponent } from '../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
 
 export interface SavedCartFormDialogOptions {
   cart: Cart;

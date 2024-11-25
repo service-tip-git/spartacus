@@ -22,14 +22,14 @@ import {
 import { BehaviorSubject, Observable } from 'rxjs';
 import { finalize, map } from 'rxjs/operators';
 import { FocusDirective } from '../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
-import { FeatureDirective } from '../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { IconComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
 import { NgIf, AsyncPipe } from '@angular/common';
 import { ImportToNewSavedCartFormComponent } from './import-to-new-saved-cart-form/import-to-new-saved-cart-form.component';
 import { ImportEntriesFormComponent } from './import-entries-form/import-entries-form.component';
 import { ImportEntriesSummaryComponent } from './import-entries-summary/import-entries-summary.component';
-import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
-import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-import-entries-dialog',

@@ -11,9 +11,9 @@ import { useFeatureStyles } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { WishListItemComponent } from '../wish-list-item/wish-list-item.component';
-import { FeatureDirective } from '../../../../../projects/core/src/features-config/directives/feature.directive';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { FeatureDirective } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-wish-list',

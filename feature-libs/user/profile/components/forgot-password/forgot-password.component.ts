@@ -20,12 +20,12 @@ import { ForgotPasswordComponentService } from './forgot-password-component.serv
 import { RoutingService } from '@spartacus/core';
 import { NgIf, AsyncPipe } from '@angular/common';
 import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
-import { FeatureDirective } from '../../../../../projects/core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { FormErrorsComponent } from '../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
 import { RouterLink } from '@angular/router';
-import { UrlPipe } from '../../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-forgot-password',

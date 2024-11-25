@@ -15,10 +15,10 @@ import { NgIf, AsyncPipe } from '@angular/common';
 import { MediaComponent } from '../../../../../../projects/storefrontlib/shared/components/media/media.component';
 import { ProductImageZoomTriggerComponent } from '../product-image-zoom-trigger/product-image-zoom-trigger.component';
 import { CarouselComponent } from '../../../../../../projects/storefrontlib/shared/components/carousel/carousel.component';
-import { FeatureDirective } from '../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { FocusableCarouselItemDirective } from '../../../../../../projects/storefrontlib/shared/components/carousel/focusable-carousel-item/focusable-carousel-item.directive';
-import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
-import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-product-images',

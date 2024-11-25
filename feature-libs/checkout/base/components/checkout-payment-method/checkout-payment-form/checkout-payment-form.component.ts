@@ -49,7 +49,7 @@ import { BehaviorSubject, EMPTY, Observable, combineLatest } from 'rxjs';
 import { filter, map, switchMap, tap } from 'rxjs/operators';
 import { CheckoutBillingAddressFormService } from '../../checkout-billing-address';
 import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
-import { FeatureDirective } from '../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { NgSelectComponent } from '@ng-select/ng-select';
 import { NgSelectA11yDirective } from '../../../../../../projects/storefrontlib/shared/components/ng-select-a11y/ng-select-a11y.directive';
 import { FormErrorsComponent } from '../../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
@@ -57,8 +57,8 @@ import { IconComponent } from '../../../../../../projects/storefrontlib/cms-comp
 import { CardComponent } from '../../../../../../projects/storefrontlib/shared/components/card/card.component';
 import { SpinnerComponent } from '../../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
 import { CheckoutBillingAddressFormComponent } from '../../checkout-billing-address/checkout-billing-address-form.component';
-import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
-import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-payment-form',

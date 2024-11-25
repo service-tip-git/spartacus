@@ -36,7 +36,7 @@ import {
   switchMap,
   tap,
 } from 'rxjs/operators';
-import { FeatureDirective } from '../../../../../projects/core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { FocusDirective } from '../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
 import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
 import { NgIf, AsyncPipe } from '@angular/common';
@@ -44,9 +44,9 @@ import { CartItemComponent } from '../cart-shared/cart-item/cart-item.component'
 import { PromotionsComponent } from '../../../../../projects/storefrontlib/cms-components/misc/promotions/promotions.component';
 import { RouterLink } from '@angular/router';
 import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
-import { UrlPipe } from '../../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
-import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
-import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { UrlPipe } from '@spartacus/core';
+import { TranslatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
 
 export interface AddedToCartDialogComponentData {
   productCode: string;

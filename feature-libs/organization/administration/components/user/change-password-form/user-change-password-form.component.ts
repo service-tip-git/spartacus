@@ -22,10 +22,10 @@ import { CardComponent } from '../../shared/card/card.component';
 import { FocusDirective } from '../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
 import { RouterLink } from '@angular/router';
 import { PasswordVisibilityToggleDirective } from '../../../../../../projects/storefrontlib/shared/components/form/password-visibility-toggle/password-visibility-toggle.directive';
-import { FeatureDirective } from '../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { FormErrorsComponent } from '../../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
-import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
-import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-user-change-password-form',

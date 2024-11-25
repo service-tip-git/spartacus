@@ -53,8 +53,8 @@ import { CustomerEmulationComponent } from '../customer-emulation/customer-emula
 import { MessageComponent } from '../../../../projects/storefrontlib/cms-components/misc/message/message.component';
 import { CustomerSelectionComponent } from '../customer-selection/customer-selection.component';
 import { CSAgentLoginFormComponent } from '../csagent-login-form/csagent-login-form.component';
-import { TranslatePipe } from '../../../../projects/core/src/i18n/translate.pipe';
-import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
 interface CartTypeKey {
   [key: string]: string;
 }

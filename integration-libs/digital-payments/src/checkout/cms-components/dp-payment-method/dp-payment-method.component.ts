@@ -23,13 +23,13 @@ import {
 } from '@spartacus/core';
 import { DP_CARD_REGISTRATION_STATUS } from '../../../utils/dp-constants';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
-import { FeatureDirective } from '../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { CardComponent } from '../../../../../../projects/storefrontlib/shared/components/card/card.component';
 import { DpPaymentFormComponent } from './dp-payment-form/dp-payment-form.component';
 import { SpinnerComponent } from '../../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
 import { DpPaymentCallbackComponent } from './dp-payment-callback/dp-payment-callback.component';
-import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
-import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { TranslatePipe } from '@spartacus/core';
+import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-payment-method',

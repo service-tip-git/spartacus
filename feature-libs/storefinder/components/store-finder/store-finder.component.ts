@@ -5,7 +5,7 @@
  */
 
 import { Component } from '@angular/core';
-import { FeatureDirective } from '../../../../projects/core/src/features-config/directives/feature.directive';
+import { FeatureDirective } from '@spartacus/core';
 import { StoreFinderHeaderComponent } from '../store-finder-header/store-finder-header.component';
 import { RouterOutlet } from '@angular/router';
 
