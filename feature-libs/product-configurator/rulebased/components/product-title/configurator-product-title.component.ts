@@ -25,14 +25,7 @@ import { TranslatePipe } from '@spartacus/core';
   selector: 'cx-configurator-product-title',
   templateUrl: './configurator-product-title.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    NgIf,
-    IconComponent,
-    MediaComponent,
-    AsyncPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [NgIf, IconComponent, MediaComponent, AsyncPipe, TranslatePipe],
 })
 export class ConfiguratorProductTitleComponent {
   @HostBinding('class.ghost') ghostStyle = true;

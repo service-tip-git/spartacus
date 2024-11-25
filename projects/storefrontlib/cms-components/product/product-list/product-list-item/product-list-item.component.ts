@@ -48,7 +48,6 @@ import { UrlPipe } from '@spartacus/core';
     InnerComponentsHostDirective,
     TranslatePipe,
     UrlPipe,
-    TranslatePipe,
   ],
 })
 export class ProductListItemComponent implements OnChanges {

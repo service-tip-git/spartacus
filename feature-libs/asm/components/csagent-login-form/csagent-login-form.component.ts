@@ -32,7 +32,6 @@ import { TranslatePipe } from '@spartacus/core';
     PasswordVisibilityToggleDirective,
     DotSpinnerComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CSAgentLoginFormComponent implements OnInit {

@@ -56,7 +56,6 @@ import { TranslatePipe } from '@spartacus/core';
     FileUploadComponent,
     FormErrorsComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ImportToNewSavedCartFormComponent extends ImportEntriesFormComponent {

@@ -40,7 +40,6 @@ import { TranslatePipe } from '@spartacus/core';
     RouterOutlet,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CardComponent<T extends BaseItem> {

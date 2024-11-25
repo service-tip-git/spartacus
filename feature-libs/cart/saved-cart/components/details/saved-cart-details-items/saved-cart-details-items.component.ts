@@ -47,7 +47,6 @@ import { TranslatePipe } from '@spartacus/core';
     AddToCartComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class SavedCartDetailsItemsComponent implements OnInit, OnDestroy {

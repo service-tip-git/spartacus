@@ -56,7 +56,6 @@ import { TranslatePipe } from '@spartacus/core';
     FacetComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class FacetListComponent implements OnInit, OnDestroy, AfterViewInit {

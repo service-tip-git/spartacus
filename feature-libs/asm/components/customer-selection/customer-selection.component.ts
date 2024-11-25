@@ -63,7 +63,6 @@ import { TranslatePipe } from '@spartacus/core';
     FormErrorsComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CustomerSelectionComponent implements OnInit, OnDestroy {

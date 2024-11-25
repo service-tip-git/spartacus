@@ -48,7 +48,6 @@ const defaultTabConfig = {
     TabComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class TabParagraphContainerComponent implements AfterViewInit, OnInit {

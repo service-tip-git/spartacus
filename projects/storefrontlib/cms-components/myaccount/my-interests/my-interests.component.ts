@@ -62,7 +62,7 @@ interface ProductInterestSearchResultUI extends ProductInterestSearchResult {
     TranslatePipe,
     CxDatePipe,
     UrlPipe,
-    TranslatePipe,
+
     MockDatePipe,
   ],
 })

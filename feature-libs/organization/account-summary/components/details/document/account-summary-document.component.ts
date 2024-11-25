@@ -51,7 +51,7 @@ import { MockDatePipe } from '@spartacus/core';
     AsyncPipe,
     TranslatePipe,
     CxDatePipe,
-    TranslatePipe,
+
     MockDatePipe,
   ],
 })

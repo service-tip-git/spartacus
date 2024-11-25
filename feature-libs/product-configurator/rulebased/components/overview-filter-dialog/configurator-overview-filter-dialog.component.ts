@@ -28,7 +28,6 @@ import { TranslatePipe } from '@spartacus/core';
     ConfiguratorOverviewFilterComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ConfiguratorOverviewFilterDialogComponent {

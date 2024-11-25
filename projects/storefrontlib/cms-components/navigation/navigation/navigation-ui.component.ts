@@ -52,7 +52,6 @@ const ARIA_EXPANDED_ATTR = 'aria-expanded';
     GenericLinkComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class NavigationUIComponent implements OnInit, OnDestroy {

@@ -48,7 +48,6 @@ import { TranslatePipe } from '@spartacus/core';
     ConsentManagementFormComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ConsentManagementComponent implements OnInit, OnDestroy {

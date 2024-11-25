@@ -41,7 +41,6 @@ import { TranslatePipe } from '@spartacus/core';
     StoreScheduleComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class MyPreferredStoreComponent implements OnInit {

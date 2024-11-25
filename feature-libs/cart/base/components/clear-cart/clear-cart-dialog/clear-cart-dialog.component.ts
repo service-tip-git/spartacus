@@ -32,7 +32,6 @@ import { TranslatePipe } from '@spartacus/core';
     IconComponent,
     SpinnerComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ClearCartDialogComponent implements OnDestroy {

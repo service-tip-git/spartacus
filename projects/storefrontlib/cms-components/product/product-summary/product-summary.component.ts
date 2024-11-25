@@ -26,7 +26,6 @@ import { TranslatePipe } from '@spartacus/core';
     OutletDirective,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ProductSummaryComponent {

@@ -29,7 +29,6 @@ import { TranslatePipe } from '@spartacus/core';
     FeatureDirective,
     FormErrorsComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CheckoutLoginComponent implements OnDestroy {

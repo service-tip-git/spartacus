@@ -34,7 +34,6 @@ import { TranslatePipe } from '@spartacus/core';
     VisualViewerAnimationSliderComponent,
     SpinnerComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class VisualViewerComponent {

@@ -34,7 +34,6 @@ import { TranslatePipe } from '@spartacus/core';
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CustomerTicketingCloseDialogComponent

@@ -38,7 +38,6 @@ import { TranslatePipe } from '@spartacus/core';
     FeatureDirective,
     NgIf,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class PickupOptionsComponent implements OnChanges {

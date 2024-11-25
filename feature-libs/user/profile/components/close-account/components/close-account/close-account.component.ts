@@ -25,13 +25,7 @@ import { TranslatePipe } from '@spartacus/core';
   selector: 'cx-close-account',
   templateUrl: './close-account.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    FeatureDirective,
-    RouterLink,
-    UrlPipe,
-    TranslatePipe,
-    TranslatePipe,
-  ],
+  imports: [FeatureDirective, RouterLink, UrlPipe, TranslatePipe],
 })
 export class CloseAccountComponent {
   @ViewChild('element') element: ElementRef;

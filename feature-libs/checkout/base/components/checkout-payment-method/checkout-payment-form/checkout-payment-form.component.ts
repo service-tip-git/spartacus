@@ -78,7 +78,6 @@ import { TranslatePipe } from '@spartacus/core';
     CheckoutBillingAddressFormComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CheckoutPaymentFormComponent implements OnInit {

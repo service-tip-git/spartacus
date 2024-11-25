@@ -31,7 +31,6 @@ import { TranslatePipe } from '@spartacus/core';
     CheckoutBillingAddressFormComponent,
     SpinnerComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class DpPaymentCallbackComponent implements OnInit {

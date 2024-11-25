@@ -36,7 +36,6 @@ import { TranslatePipe } from '@spartacus/core';
     FeatureDirective,
     FormErrorsComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class OrderGuestRegisterFormComponent implements OnDestroy {

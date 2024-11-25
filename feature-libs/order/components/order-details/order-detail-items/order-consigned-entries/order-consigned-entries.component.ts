@@ -34,7 +34,7 @@ import { MockDatePipe } from '@spartacus/core';
     AddToCartComponent,
     TranslatePipe,
     CxDatePipe,
-    TranslatePipe,
+
     MockDatePipe,
   ],
 })

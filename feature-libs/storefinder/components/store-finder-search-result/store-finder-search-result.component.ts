@@ -31,7 +31,6 @@ import { TranslatePipe } from '@spartacus/core';
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class StoreFinderSearchResultComponent implements OnInit, OnDestroy {

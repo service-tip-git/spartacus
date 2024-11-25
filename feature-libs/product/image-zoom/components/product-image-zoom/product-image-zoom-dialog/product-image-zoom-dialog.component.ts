@@ -31,7 +31,6 @@ import { TranslatePipe } from '@spartacus/core';
     IconComponent,
     ProductImageZoomViewComponent,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ProductImageZoomDialogComponent {

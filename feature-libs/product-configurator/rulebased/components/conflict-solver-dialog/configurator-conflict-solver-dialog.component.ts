@@ -41,7 +41,6 @@ import { TranslatePipe } from '@spartacus/core';
     ConfiguratorGroupComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ConfiguratorConflictSolverDialogComponent

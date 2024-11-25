@@ -63,7 +63,6 @@ export interface CardWithAddress {
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CheckoutDeliveryAddressComponent implements OnInit {

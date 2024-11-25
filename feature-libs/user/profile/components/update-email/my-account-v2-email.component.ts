@@ -44,7 +44,6 @@ import { TranslatePipe } from '@spartacus/core';
     PasswordVisibilityToggleDirective,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class MyAccountV2EmailComponent implements OnInit {

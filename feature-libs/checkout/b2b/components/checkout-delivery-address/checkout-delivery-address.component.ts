@@ -59,7 +59,6 @@ export interface CardWithAddress {
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class B2BCheckoutDeliveryAddressComponent

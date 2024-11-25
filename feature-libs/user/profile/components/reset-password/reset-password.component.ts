@@ -35,7 +35,6 @@ import { TranslatePipe } from '@spartacus/core';
     FormErrorsComponent,
     AsyncPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class ResetPasswordComponent {

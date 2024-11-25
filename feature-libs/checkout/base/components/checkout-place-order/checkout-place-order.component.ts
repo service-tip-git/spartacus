@@ -42,7 +42,6 @@ import { TranslatePipe } from '@spartacus/core';
     AtMessageDirective,
     UrlPipe,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class CheckoutPlaceOrderComponent implements OnDestroy {

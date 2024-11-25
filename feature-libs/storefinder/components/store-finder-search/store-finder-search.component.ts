@@ -27,7 +27,6 @@ import { TranslatePipe } from '@spartacus/core';
     RouterLink,
     NgClass,
     TranslatePipe,
-    TranslatePipe,
   ],
 })
 export class StoreFinderSearchComponent {
