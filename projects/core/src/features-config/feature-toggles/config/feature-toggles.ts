@@ -925,5 +925,5 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   allPageMetaResolversEnabledInCsr: false,
   sciEnabled: false,
   useExtendedMediaComponentConfiguration: false,
-  showRealTimeStockInPDP: false,
+  showRealTimeStockInPDP: true,
 };
