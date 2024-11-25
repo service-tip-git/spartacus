@@ -16,7 +16,7 @@ import { TranslatePipe } from '@spartacus/core';
 @Component({
   selector: 'cx-store-finder-list-item',
   templateUrl: './store-finder-list-item.component.html',
-  imports: [NgIf, RouterLink, OutletDirective, TranslatePipe, TranslatePipe],
+  imports: [NgIf, RouterLink, OutletDirective, TranslatePipe],
 })
 export class StoreFinderListItemComponent extends AbstractStoreItemComponent {
   @Input()

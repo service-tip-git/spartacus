@@ -23,7 +23,7 @@ import { CxNumericPipe } from '@spartacus/core';
   templateUrl: './visual-viewer-animation-slider.component.html',
   providers: [VisualViewerAnimationSliderService],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [TranslatePipe, CxNumericPipe, TranslatePipe],
+  imports: [TranslatePipe, CxNumericPipe],
 })
 export class VisualViewerAnimationSliderComponent implements AfterViewInit {
   constructor(

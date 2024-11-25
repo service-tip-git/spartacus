@@ -16,7 +16,7 @@ import { UrlPipe } from '@spartacus/core';
 @Component({
   selector: 'cx-my-account-v2-order-details-actions',
   templateUrl: './my-account-v2-order-details-actions.component.html',
-  imports: [NgIf, RouterLink, TranslatePipe, UrlPipe, TranslatePipe],
+  imports: [NgIf, RouterLink, TranslatePipe, UrlPipe],
 })
 export class MyAccountV2OrderDetailsActionsComponent
   extends OrderDetailActionsComponent

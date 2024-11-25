@@ -11,6 +11,6 @@ import { TranslatePipe } from '@spartacus/core';
 @Component({
   selector: 'cx-account-summary-list',
   templateUrl: './account-summary-list.component.html',
-  imports: [ListComponent, TranslatePipe, TranslatePipe],
+  imports: [ListComponent, TranslatePipe],
 })
 export class AccountSummaryListComponent extends UnitListComponent {}

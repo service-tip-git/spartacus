@@ -18,7 +18,7 @@ import { TranslatePipe } from '@spartacus/core';
 @Component({
   selector: 'cx-anonymous-consent-open-dialog',
   templateUrl: './anonymous-consent-open-dialog.component.html',
-  imports: [TranslatePipe, TranslatePipe],
+  imports: [TranslatePipe],
 })
 export class AnonymousConsentOpenDialogComponent {
   @ViewChild('open') openElement: ElementRef;

@@ -16,7 +16,7 @@ import { TranslatePipe } from '@spartacus/core';
 @Component({
   selector: 'cx-anonymous-consent-management-banner',
   templateUrl: './anonymous-consent-management-banner.component.html',
-  imports: [NgIf, NgClass, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, NgClass, AsyncPipe, TranslatePipe],
 })
 export class AnonymousConsentManagementBannerComponent implements OnDestroy {
   private subscriptions = new Subscription();

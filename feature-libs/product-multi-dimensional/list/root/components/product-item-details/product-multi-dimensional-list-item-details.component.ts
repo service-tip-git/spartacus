@@ -16,7 +16,7 @@ import { TranslatePipe } from '@spartacus/core';
   selector: 'cx-product-multi-dimensional-list-item-details',
   templateUrl: './product-multi-dimensional-list-item-details.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgIf, StarRatingComponent, TranslatePipe, AsyncPipe, TranslatePipe],
+  imports: [NgIf, StarRatingComponent, TranslatePipe, AsyncPipe],
 })
 export class ProductMultiDimensionalListItemDetailsComponent {
   productListItemContext?: ProductListItemContext = inject(

@@ -23,7 +23,7 @@ import { TranslatePipe } from '@spartacus/core';
   selector: 'cx-product-variant-size-selector',
   templateUrl: './product-variant-size-selector.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgFor, TranslatePipe, TranslatePipe],
+  imports: [NgFor, TranslatePipe],
 })
 export class ProductVariantSizeSelectorComponent {
   constructor(

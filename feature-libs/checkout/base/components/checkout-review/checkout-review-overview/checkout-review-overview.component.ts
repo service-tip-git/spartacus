@@ -15,7 +15,7 @@ import { TranslatePipe } from '@spartacus/core';
   selector: 'cx-checkout-review-overview',
   templateUrl: './checkout-review-overview.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgIf, PromotionsComponent, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgIf, PromotionsComponent, AsyncPipe, TranslatePipe],
 })
 export class CheckoutReviewOverviewComponent {
   constructor(protected activeCartFacade: ActiveCartFacade) {}

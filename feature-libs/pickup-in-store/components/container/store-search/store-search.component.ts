@@ -18,7 +18,7 @@ import { TranslatePipe } from '@spartacus/core';
 @Component({
   selector: 'cx-store-search',
   templateUrl: './store-search.component.html',
-  imports: [FeatureDirective, TranslatePipe, TranslatePipe],
+  imports: [FeatureDirective, TranslatePipe],
 })
 export class StoreSearchComponent {
   /** Whether the hide out of stock checkbox appears checked */

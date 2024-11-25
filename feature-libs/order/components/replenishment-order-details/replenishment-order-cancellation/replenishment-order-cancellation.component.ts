@@ -26,7 +26,7 @@ import { UrlPipe } from '@spartacus/core';
 @Component({
   selector: 'cx-replenishment-order-cancellation',
   templateUrl: './replenishment-order-cancellation.component.html',
-  imports: [RouterLink, NgIf, AsyncPipe, TranslatePipe, UrlPipe, TranslatePipe],
+  imports: [RouterLink, NgIf, AsyncPipe, TranslatePipe, UrlPipe],
 })
 export class ReplenishmentOrderCancellationComponent implements OnDestroy {
   @ViewChild('element') element: ElementRef;

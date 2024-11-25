@@ -20,7 +20,7 @@ import { TranslatePipe } from '@spartacus/core';
 @Component({
   selector: 'cx-set-preferred-store',
   templateUrl: './set-preferred-store.component.html',
-  imports: [NgClass, IconComponent, AsyncPipe, TranslatePipe, TranslatePipe],
+  imports: [NgClass, IconComponent, AsyncPipe, TranslatePipe],
 })
 export class SetPreferredStoreComponent implements OnInit, OnDestroy {
   readonly ICON_TYPE = ICON_TYPE;

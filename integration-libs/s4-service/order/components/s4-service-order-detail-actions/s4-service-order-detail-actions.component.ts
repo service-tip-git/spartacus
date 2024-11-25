@@ -19,7 +19,7 @@ import { UrlPipe } from '@spartacus/core';
   selector: 'cx-s4-service-order-detail-actions',
   templateUrl: './s4-service-order-detail-actions.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgIf, RouterLink, AsyncPipe, TranslatePipe, UrlPipe, TranslatePipe],
+  imports: [NgIf, RouterLink, AsyncPipe, TranslatePipe, UrlPipe],
 })
 export class S4ServiceOrderDetailActionsComponent extends OrderDetailActionsComponent {
   protected checkoutServiceSchedulePickerService = inject(
