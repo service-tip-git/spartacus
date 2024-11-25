@@ -11,9 +11,8 @@ import { MediaSourcesPipe } from './media-sources.pipe';
 import { MediaComponent } from './media.component';
 
 @NgModule({
-  imports: [CommonModule, FeaturesConfigModule],
-  declarations: [MediaComponent, MediaSourcesPipe],
-  exports: [MediaComponent],
+    imports: [CommonModule, FeaturesConfigModule, MediaComponent, MediaSourcesPipe],
+    exports: [MediaComponent],
 })
 export class MediaModule {
   static forRoot(): ModuleWithProviders<MediaModule> {

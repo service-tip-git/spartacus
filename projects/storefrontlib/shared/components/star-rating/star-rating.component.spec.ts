@@ -6,9 +6,9 @@ import { MockFeatureDirective } from '../../test/mock-feature-directive';
 import { StarRatingComponent } from './star-rating.component';
 
 @Component({
-  selector: 'cx-icon',
-  template: '',
-  standalone: false,
+    selector: 'cx-icon',
+    template: '',
+    imports: [I18nTestingModule],
 })
 class MockIconComponent {
   @Input() type;
@@ -20,15 +20,11 @@ describe('StarRatingComponent in product', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      // TODO: (CXSPA-5707) Remove MockFeatureLevelDirective next major
-      declarations: [
-        MockIconComponent,
+    imports: [I18nTestingModule, MockIconComponent,
         StarRatingComponent,
-        MockFeatureDirective,
-      ],
-      providers: [],
-    }).compileComponents();
+        MockFeatureDirective],
+    providers: [],
+}).compileComponents();
   });
 
   beforeEach(() => {

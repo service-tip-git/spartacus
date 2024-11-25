@@ -15,11 +15,25 @@ import {
 import { Observable } from 'rxjs';
 import { filter, switchMap } from 'rxjs/operators';
 import { ConfiguratorCommonsService } from '../../core/facade/configurator-commons.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { FocusDirective } from '../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FeatureDirective } from '../../../../../projects/core/src/features-config/directives/feature.directive';
+import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-  selector: 'cx-configurator-restart-dialog',
-  templateUrl: './configurator-restart-dialog.component.html',
-  standalone: false,
+    selector: 'cx-configurator-restart-dialog',
+    templateUrl: './configurator-restart-dialog.component.html',
+    imports: [
+        NgIf,
+        FocusDirective,
+        FeatureDirective,
+        IconComponent,
+        AsyncPipe,
+        TranslatePipe,
+        MockTranslatePipe,
+    ],
 })
 export class ConfiguratorRestartDialogComponent {
   constructor(

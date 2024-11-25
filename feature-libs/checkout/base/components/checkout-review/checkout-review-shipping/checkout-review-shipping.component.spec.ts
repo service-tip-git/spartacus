@@ -107,18 +107,18 @@ class MockActiveCartService implements Partial<ActiveCartFacade> {
   getDeliveryEntries = createSpy().and.returnValue(of(mockEntries));
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl', })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
 }
 
 @Component({
-  selector: 'cx-card',
-  template: '',
-  standalone: false,
+    selector: 'cx-card',
+    template: '',
+    imports: [I18nTestingModule,
+        RouterTestingModule,
+        IconTestingModule,
+        OutletModule,],
 })
 class MockCardComponent {
   @Input()
@@ -137,37 +137,35 @@ describe('CheckoutReviewShippingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
+    imports: [
         I18nTestingModule,
         RouterTestingModule,
         IconTestingModule,
         OutletModule,
-      ],
-      declarations: [
         CheckoutReviewShippingComponent,
         MockUrlPipe,
         MockCardComponent,
-      ],
-      providers: [
+    ],
+    providers: [
         {
-          provide: CheckoutDeliveryAddressFacade,
-          useClass: MockCheckoutDeliveryAddressService,
+            provide: CheckoutDeliveryAddressFacade,
+            useClass: MockCheckoutDeliveryAddressService,
         },
         {
-          provide: CheckoutDeliveryModesFacade,
-          useClass: MockCheckoutDeliveryModesService,
+            provide: CheckoutDeliveryModesFacade,
+            useClass: MockCheckoutDeliveryModesService,
         },
         {
-          provide: CheckoutStepService,
-          useClass: MockCheckoutStepService,
+            provide: CheckoutStepService,
+            useClass: MockCheckoutStepService,
         },
         { provide: ActiveCartFacade, useClass: MockActiveCartService },
         {
-          provide: ChangeDetectorRef,
-          useValue: { markForCheck: createSpy('markForCheck') },
+            provide: ChangeDetectorRef,
+            useValue: { markForCheck: createSpy('markForCheck') },
         },
-      ],
-    }).compileComponents();
+    ],
+}).compileComponents();
 
     fixture = TestBed.createComponent(CheckoutReviewShippingComponent);
     component = fixture.componentInstance;

@@ -10,11 +10,13 @@ import {
   ANONYMOUS_CONSENT_STATUS,
   ConsentTemplate,
 } from '@spartacus/core';
+import { NgIf } from '@angular/common';
+import { FeatureDirective } from '../../../../../../core/src/features-config/directives/feature.directive';
 
 @Component({
-  selector: 'cx-consent-management-form',
-  templateUrl: './consent-management-form.component.html',
-  standalone: false,
+    selector: 'cx-consent-management-form',
+    templateUrl: './consent-management-form.component.html',
+    imports: [NgIf, FeatureDirective],
 })
 export class ConsentManagementFormComponent implements OnInit {
   consentGiven = false;

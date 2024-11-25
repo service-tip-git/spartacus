@@ -14,12 +14,27 @@ import {
 import { useFeatureStyles } from '@spartacus/core';
 import { FocusConfig, ICON_TYPE } from '@spartacus/storefront';
 import { ClearCartDialogComponentService } from './clear-cart-dialog-component.service';
+import { FocusDirective } from '../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { NgIf } from '@angular/common';
+import { FeatureDirective } from '../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { IconComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { SpinnerComponent } from '../../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-  selector: 'cx-clear-cart-dialog',
-  templateUrl: './clear-cart-dialog.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+    selector: 'cx-clear-cart-dialog',
+    templateUrl: './clear-cart-dialog.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        FocusDirective,
+        NgIf,
+        FeatureDirective,
+        IconComponent,
+        SpinnerComponent,
+        TranslatePipe,
+        MockTranslatePipe,
+    ],
 })
 export class ClearCartDialogComponent implements OnDestroy {
   focusConfig: FocusConfig = {

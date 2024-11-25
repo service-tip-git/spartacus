@@ -6,11 +6,19 @@
 
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AddToCartComponent } from '@spartacus/cart/base/components/add-to-cart';
+import { NgIf } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { IconComponent } from '../../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
 
 @Component({
-  selector: 'cx-epd-visualization-compact-add-to-cart',
-  templateUrl: './compact-add-to-cart.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+    selector: 'cx-epd-visualization-compact-add-to-cart',
+    templateUrl: './compact-add-to-cart.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        NgIf,
+        FormsModule,
+        ReactiveFormsModule,
+        IconComponent,
+    ],
 })
 export class CompactAddToCartComponent extends AddToCartComponent {}

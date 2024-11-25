@@ -72,10 +72,7 @@ class MockLaunchDialogService implements Partial<LaunchDialogService> {
   clear = createSpy();
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl', })
 class MockUrlPipe implements PipeTransform {
   transform = createSpy();
 }
@@ -93,34 +90,32 @@ describe('CheckoutScheduledReplenishmentPlaceOrderComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [
+    imports: [
         ReactiveFormsModule,
         RouterTestingModule,
         I18nTestingModule,
         AtMessageModule,
-      ],
-      declarations: [
         MockUrlPipe,
         CheckoutScheduledReplenishmentPlaceOrderComponent,
-      ],
-      providers: [
+    ],
+    providers: [
         { provide: OrderFacade, useClass: MockOrderFacade },
         {
-          provide: CheckoutReplenishmentFormService,
-          useClass: MockCheckoutReplenishmentFormService,
+            provide: CheckoutReplenishmentFormService,
+            useClass: MockCheckoutReplenishmentFormService,
         },
         { provide: RoutingService, useClass: MockRoutingService },
         { provide: LaunchDialogService, useClass: MockLaunchDialogService },
         {
-          provide: ScheduledReplenishmentOrderFacade,
-          useClass: MockScheduledReplenishmentOrderFacade,
+            provide: ScheduledReplenishmentOrderFacade,
+            useClass: MockScheduledReplenishmentOrderFacade,
         },
         {
-          provide: GlobalMessageService,
-          useValue: {},
+            provide: GlobalMessageService,
+            useValue: {},
         },
-      ],
-    }).compileComponents();
+    ],
+}).compileComponents();
   }));
 
   beforeEach(() => {

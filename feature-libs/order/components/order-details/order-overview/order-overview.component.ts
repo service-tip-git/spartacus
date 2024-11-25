@@ -19,12 +19,26 @@ import { filter, map } from 'rxjs/operators';
 import { OrderDetailsService } from '../order-details.service';
 import { OrderOutlets, paymentMethodCard } from '@spartacus/order/root';
 import { OrderOverviewComponentService } from './order-overview-component.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { CardComponent } from '../../../../../projects/storefrontlib/shared/components/card/card.component';
+import { OutletDirective } from '../../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
+import { OrderDetailBillingComponent } from '../order-detail-billing/order-detail-billing.component';
+import { CxDatePipe } from '../../../../../projects/core/src/i18n/date.pipe';
+import { MockDatePipe } from '../../../../../projects/core/src/i18n/testing/mock-date.pipe';
 
 @Component({
-  selector: 'cx-order-overview',
-  templateUrl: './order-overview.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+    selector: 'cx-order-overview',
+    templateUrl: './order-overview.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        NgIf,
+        CardComponent,
+        OutletDirective,
+        OrderDetailBillingComponent,
+        AsyncPipe,
+        CxDatePipe,
+        MockDatePipe,
+    ],
 })
 export class OrderOverviewComponent {
   protected orderOverviewComponentService = inject(

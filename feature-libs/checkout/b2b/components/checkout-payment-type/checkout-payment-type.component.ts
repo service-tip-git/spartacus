@@ -34,12 +34,25 @@ import {
   map,
   tap,
 } from 'rxjs/operators';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '../../../../../projects/core/src/features-config/directives/feature.directive';
+import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-  selector: 'cx-payment-type',
-  templateUrl: './checkout-payment-type.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+    selector: 'cx-payment-type',
+    templateUrl: './checkout-payment-type.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        NgIf,
+        FeatureDirective,
+        NgFor,
+        SpinnerComponent,
+        AsyncPipe,
+        TranslatePipe,
+        MockTranslatePipe,
+    ],
 })
 export class CheckoutPaymentTypeComponent {
   @ViewChild('poNumber', { static: false })

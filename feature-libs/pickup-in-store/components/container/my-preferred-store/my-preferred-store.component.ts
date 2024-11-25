@@ -21,12 +21,29 @@ import { StoreFinderFacade } from '@spartacus/storefinder/root';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 import { filter, map, switchMap, take, tap } from 'rxjs/operators';
+import { NgClass, NgIf, AsyncPipe } from '@angular/common';
+import { CardComponent } from '../../../../../projects/storefrontlib/shared/components/card/card.component';
+import { StoreAddressComponent } from '../../presentational/store/store-address/store-address.component';
+import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { StoreScheduleComponent } from '../../presentational/store/store-schedule/store-schedule.component';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-  selector: 'cx-my-preferred-store',
-  templateUrl: 'my-preferred-store.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+    selector: 'cx-my-preferred-store',
+    templateUrl: 'my-preferred-store.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        NgClass,
+        CardComponent,
+        StoreAddressComponent,
+        NgIf,
+        IconComponent,
+        StoreScheduleComponent,
+        AsyncPipe,
+        TranslatePipe,
+        MockTranslatePipe,
+    ],
 })
 export class MyPreferredStoreComponent implements OnInit {
   preferredStore$: Observable<PointOfService>;

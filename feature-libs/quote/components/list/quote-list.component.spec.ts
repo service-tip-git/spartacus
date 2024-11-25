@@ -66,9 +66,9 @@ const mockSorts = [
 const mockQuoteListState$ = new BehaviorSubject(mockQuoteListState);
 
 @Component({
-  template: '',
-  selector: 'cx-pagination',
-  standalone: false,
+    template: '',
+    selector: 'cx-pagination',
+    imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockPaginationComponent {
   @Input() pagination: PaginationModel;
@@ -76,9 +76,9 @@ class MockPaginationComponent {
 }
 
 @Component({
-  template: '',
-  selector: 'cx-sorting',
-  standalone: false,
+    template: '',
+    selector: 'cx-sorting',
+    imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockSortingComponent {
   @Input() sortOptions: SortModel[];
@@ -88,18 +88,15 @@ class MockSortingComponent {
   @Output() sortListEvent = new EventEmitter();
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl', })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
 
 @Component({
-  selector: 'cx-icon',
-  template: '',
-  standalone: false,
+    selector: 'cx-icon',
+    template: '',
+    imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -142,27 +139,24 @@ describe('QuoteListComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [
-        QuoteListComponent,
+    imports: [RouterTestingModule, I18nTestingModule, QuoteListComponent,
         MockUrlPipe,
         MockPaginationComponent,
         MockSortingComponent,
         MockCxIconComponent,
-        MockFeatureDirective,
-      ],
-      providers: [
+        MockFeatureDirective],
+    providers: [
         {
-          provide: QuoteListComponentService,
-          useClass: MockCommerceQuotesListComponentService,
+            provide: QuoteListComponentService,
+            useClass: MockCommerceQuotesListComponentService,
         },
         { provide: LanguageService, useClass: MockLanguageService },
         {
-          provide: BreakpointService,
-          useClass: MockBreakpointService,
+            provide: BreakpointService,
+            useClass: MockBreakpointService,
         },
-      ],
-    }).compileComponents();
+    ],
+}).compileComponents();
   });
 
   beforeEach(() => {

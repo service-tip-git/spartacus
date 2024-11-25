@@ -36,6 +36,17 @@ import {
   switchMap,
   tap,
 } from 'rxjs/operators';
+import { FeatureDirective } from '../../../../../projects/core/src/features-config/directives/feature.directive';
+import { FocusDirective } from '../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { CartItemComponent } from '../cart-shared/cart-item/cart-item.component';
+import { PromotionsComponent } from '../../../../../projects/storefrontlib/cms-components/misc/promotions/promotions.component';
+import { RouterLink } from '@angular/router';
+import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { UrlPipe } from '../../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 export interface AddedToCartDialogComponentData {
   productCode: string;
@@ -51,10 +62,23 @@ export interface AddedToCartDialogComponentData {
   >;
 }
 @Component({
-  selector: 'cx-added-to-cart-dialog',
-  templateUrl: './added-to-cart-dialog.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+    selector: 'cx-added-to-cart-dialog',
+    templateUrl: './added-to-cart-dialog.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        FeatureDirective,
+        FocusDirective,
+        IconComponent,
+        NgIf,
+        CartItemComponent,
+        PromotionsComponent,
+        RouterLink,
+        SpinnerComponent,
+        AsyncPipe,
+        UrlPipe,
+        TranslatePipe,
+        MockTranslatePipe,
+    ],
 })
 export class AddedToCartDialogComponent implements OnInit, OnDestroy {
   iconTypes = ICON_TYPE;

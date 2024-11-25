@@ -36,18 +36,12 @@ class MockCheckoutStepService implements Partial<CheckoutStepService> {
   activeStepIndex$: Observable<number> = of(0);
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl', })
 class MockTranslateUrlPipe implements PipeTransform {
   transform(): any {}
 }
 
-@Pipe({
-  name: 'cxMultiLine',
-  standalone: false,
-})
+@Pipe({ name: 'cxMultiLine', })
 class MockMultiLinePipe implements PipeTransform {
   transform(value: string): string {
     return value;
@@ -60,16 +54,13 @@ describe('CheckoutProgressComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [
-        CheckoutProgressComponent,
+    imports: [RouterTestingModule, I18nTestingModule, CheckoutProgressComponent,
         MockTranslateUrlPipe,
-        MockMultiLinePipe,
-      ],
-      providers: [
+        MockMultiLinePipe],
+    providers: [
         { provide: CheckoutStepService, useClass: MockCheckoutStepService },
-      ],
-    }).compileComponents();
+    ],
+}).compileComponents();
   }));
 
   beforeEach(() => {

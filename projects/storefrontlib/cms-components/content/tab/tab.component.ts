@@ -22,12 +22,24 @@ import { map, take } from 'rxjs/operators';
 import { Tab, TabConfig, TAB_MODE } from './tab.model';
 import { wrapIntoBounds } from './tab.utils';
 import { TranslationService } from '@spartacus/core';
+import { NgIf, NgFor, NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { TabPanelComponent } from './panel/tab-panel.component';
+import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-  selector: 'cx-tab',
-  templateUrl: './tab.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+    selector: 'cx-tab',
+    templateUrl: './tab.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        NgIf,
+        NgFor,
+        NgTemplateOutlet,
+        TabPanelComponent,
+        AsyncPipe,
+        TranslatePipe,
+        MockTranslatePipe,
+    ],
 })
 export class TabComponent implements OnInit, AfterViewInit, OnDestroy {
   /**

@@ -34,17 +34,14 @@ const mockCoupon: CustomerCoupon = {
 const subLoading$ = new BehaviorSubject<boolean>(false);
 const unsubLoading$ = new BehaviorSubject<boolean>(false);
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl', })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
 
 @Component({
-  selector: 'cx-my-coupons',
-  template: `
+    selector: 'cx-my-coupons',
+    template: `
     <cx-coupon-card
       [coupon]="coupon"
       [couponSubscriptionLoading$]="couponSubscriptionLoading$"
@@ -52,7 +49,7 @@ class MockUrlPipe implements PipeTransform {
     >
     </cx-coupon-card>
   `,
-  standalone: false,
+    imports: [I18nTestingModule, RouterTestingModule],
 })
 class MyCouponsComponent {
   eventObj: {
@@ -92,22 +89,21 @@ describe('CouponCardComponent', () => {
   );
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [CouponCardComponent, MyCouponsComponent, MockUrlPipe],
-      imports: [I18nTestingModule, RouterTestingModule],
-      providers: [
+    imports: [I18nTestingModule, RouterTestingModule, CouponCardComponent, MyCouponsComponent, MockUrlPipe],
+    providers: [
         { provide: LaunchDialogService, useClass: MockLaunchDialogService },
         {
-          provide: MyCouponsComponentService,
-          useValue: couponComponentService,
+            provide: MyCouponsComponentService,
+            useValue: couponComponentService,
         },
         {
-          provide: FeaturesConfig,
-          useValue: {
-            features: { level: '5.1' },
-          },
+            provide: FeaturesConfig,
+            useValue: {
+                features: { level: '5.1' },
+            },
         },
-      ],
-    }).compileComponents();
+    ],
+}).compileComponents();
   }));
 
   beforeEach(() => {

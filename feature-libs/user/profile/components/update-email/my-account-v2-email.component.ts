@@ -10,19 +10,39 @@ import {
   OnInit,
   inject,
 } from '@angular/core';
-import { UntypedFormGroup } from '@angular/forms';
+import { UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GlobalMessageType, User } from '@spartacus/core';
 import { Observable } from 'rxjs';
 
 import { UserProfileFacade } from '@spartacus/user/profile/root';
 import { filter } from 'rxjs/operators';
 import { UpdateEmailComponentService } from './update-email-component.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { MessageComponent } from '../../../../../projects/storefrontlib/cms-components/misc/message/message.component';
+import { FeatureDirective } from '../../../../../projects/core/src/features-config/directives/feature.directive';
+import { FormErrorsComponent } from '../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
+import { PasswordVisibilityToggleDirective } from '../../../../../projects/storefrontlib/shared/components/form/password-visibility-toggle/password-visibility-toggle.directive';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-  selector: 'cx-my-account-v2-email',
-  templateUrl: './my-account-v2-email.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+    selector: 'cx-my-account-v2-email',
+    templateUrl: './my-account-v2-email.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        NgIf,
+        SpinnerComponent,
+        MessageComponent,
+        FormsModule,
+        ReactiveFormsModule,
+        FeatureDirective,
+        FormErrorsComponent,
+        PasswordVisibilityToggleDirective,
+        AsyncPipe,
+        TranslatePipe,
+        MockTranslatePipe,
+    ],
 })
 export class MyAccountV2EmailComponent implements OnInit {
   protected emailComponentService = inject(UpdateEmailComponentService);

@@ -11,11 +11,7 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
-import {
-  UntypedFormBuilder,
-  UntypedFormGroup,
-  Validators,
-} from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   ActiveCartFacade,
   Cart,
@@ -31,12 +27,26 @@ import {
 } from '@spartacus/core';
 import { Observable, Subscription } from 'rxjs';
 import { first, map } from 'rxjs/operators';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '../../../../../projects/core/src/features-config/directives/feature.directive';
+import { FormErrorsComponent } from '../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-  selector: 'cx-cart-quick-order-form',
-  templateUrl: './cart-quick-order-form.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+    selector: 'cx-cart-quick-order-form',
+    templateUrl: './cart-quick-order-form.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        NgIf,
+        FormsModule,
+        ReactiveFormsModule,
+        FeatureDirective,
+        FormErrorsComponent,
+        AsyncPipe,
+        TranslatePipe,
+        MockTranslatePipe,
+    ],
 })
 export class CartQuickOrderFormComponent implements OnInit, OnDestroy {
   private featureConfig = inject(FeatureConfigService);

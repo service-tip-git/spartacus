@@ -21,18 +21,12 @@ import {
 } from '../../testing/configurator-test-data';
 import { ConfiguratorOverviewNotificationBannerComponent } from './configurator-overview-notification-banner.component';
 
-@Pipe({
-  name: 'cxTranslate',
-  standalone: false,
-})
+@Pipe({ name: 'cxTranslate', })
 class MockTranslatePipe implements PipeTransform {
   transform(): any {}
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl', })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
 }
@@ -117,9 +111,9 @@ function initialize(router: ConfiguratorRouter.Data) {
   fixture.detectChanges();
 }
 @Component({
-  selector: 'cx-icon',
-  template: '',
-  standalone: false,
+    selector: 'cx-icon',
+    template: '',
+    imports: [RouterModule, RouterTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: any;
@@ -128,24 +122,21 @@ class MockCxIconComponent {
 describe('ConfigOverviewNotificationBannerComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterModule, RouterTestingModule],
-      declarations: [
-        ConfiguratorOverviewNotificationBannerComponent,
+    imports: [RouterModule, RouterTestingModule, ConfiguratorOverviewNotificationBannerComponent,
         MockTranslatePipe,
         MockUrlPipe,
-        MockCxIconComponent,
-      ],
-      providers: [
+        MockCxIconComponent],
+    providers: [
         {
-          provide: ConfiguratorRouterExtractorService,
-          useClass: MockConfigRouterExtractorService,
+            provide: ConfiguratorRouterExtractorService,
+            useClass: MockConfigRouterExtractorService,
         },
         {
-          provide: ConfiguratorCommonsService,
-          useClass: MockConfiguratorCommonsService,
+            provide: ConfiguratorCommonsService,
+            useClass: MockConfiguratorCommonsService,
         },
-      ],
-    }).compileComponents();
+    ],
+}).compileComponents();
   }));
 
   it('should create', () => {

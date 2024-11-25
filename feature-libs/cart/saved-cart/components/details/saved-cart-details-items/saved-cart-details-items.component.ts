@@ -28,12 +28,28 @@ import {
 import { Observable, Subscription } from 'rxjs';
 import { map, switchMap, take, tap } from 'rxjs/operators';
 import { SavedCartDetailsService } from '../saved-cart-details.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { OutletDirective } from '../../../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
+import { SpinnerComponent } from '../../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { AddToCartComponent } from '../../../../base/components/add-to-cart/add-to-cart.component';
+import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-  selector: 'cx-saved-cart-details-items',
-  templateUrl: './saved-cart-details-items.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+    selector: 'cx-saved-cart-details-items',
+    templateUrl: './saved-cart-details-items.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        NgIf,
+        FeatureDirective,
+        OutletDirective,
+        SpinnerComponent,
+        AddToCartComponent,
+        AsyncPipe,
+        TranslatePipe,
+        MockTranslatePipe,
+    ],
 })
 export class SavedCartDetailsItemsComponent implements OnInit, OnDestroy {
   private subscription = new Subscription();

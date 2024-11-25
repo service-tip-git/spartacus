@@ -88,18 +88,18 @@ const mockReplenishmentOrder$ = new BehaviorSubject<ReplenishmentOrder>(
 );
 
 @Component({
-  template: '',
-  selector: 'cx-pagination',
-  standalone: false,
+    template: '',
+    selector: 'cx-pagination',
+    imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockPaginationComponent {
   @Input() pagination;
   @Output() viewPageEvent = new EventEmitter<string>();
 }
 @Component({
-  template: '',
-  selector: 'cx-sorting',
-  standalone: false,
+    template: '',
+    selector: 'cx-sorting',
+    imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockSortingComponent {
   @Input() sortOptions;
@@ -109,10 +109,7 @@ class MockSortingComponent {
   @Output() sortListEvent = new EventEmitter<string>();
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl', })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
@@ -161,23 +158,20 @@ describe('OrderHistoryComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [
-        OrderHistoryComponent,
+    imports: [RouterTestingModule, I18nTestingModule, OrderHistoryComponent,
         MockUrlPipe,
         MockPaginationComponent,
-        MockSortingComponent,
-      ],
-      providers: [
+        MockSortingComponent],
+    providers: [
         { provide: RoutingService, useClass: MockRoutingService },
         { provide: OrderHistoryFacade, useClass: MockOrderHistoryFacade },
         { provide: TranslationService, useClass: MockTranslationService },
         {
-          provide: ReplenishmentOrderHistoryFacade,
-          useClass: MockReplenishmentOrderHistoryFacade,
+            provide: ReplenishmentOrderHistoryFacade,
+            useClass: MockReplenishmentOrderHistoryFacade,
         },
-      ],
-    }).compileComponents();
+    ],
+}).compileComponents();
 
     orderHistoryFacade = TestBed.inject(OrderHistoryFacade);
     routingService = TestBed.inject(RoutingService);

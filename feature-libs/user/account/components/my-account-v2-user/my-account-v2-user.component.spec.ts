@@ -21,10 +21,7 @@ class MockAuthService {
   }
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl', })
 class MockUrlPipe implements PipeTransform {
   transform(): void {}
 }
@@ -53,26 +50,25 @@ describe('MyAccountV2UserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [MyAccountV2UserComponent, MockUrlPipe],
-      providers: [
+    imports: [RouterTestingModule, I18nTestingModule, MyAccountV2UserComponent, MockUrlPipe],
+    providers: [
         {
-          provide: ActivatedRoute,
-          useValue: {
-            snapshot: {
-              firstChild: {
-                routeConfig: {
-                  canActivate: [{ GUARD_NAME: 'AuthGuard' }],
+            provide: ActivatedRoute,
+            useValue: {
+                snapshot: {
+                    firstChild: {
+                        routeConfig: {
+                            canActivate: [{ GUARD_NAME: 'AuthGuard' }],
+                        },
+                    },
                 },
-              },
             },
-          },
         },
         { provide: RoutingService, useClass: MockRoutingService },
         { provide: UserAccountFacade, useClass: MockUserAccountFacade },
         { provide: AuthService, useClass: MockAuthService },
-      ],
-    }).compileComponents();
+    ],
+}).compileComponents();
   });
 
   beforeEach(() => {

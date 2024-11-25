@@ -21,9 +21,9 @@ import { ProductListItemContextSource } from '../model/product-list-item-context
 import { ProductListItemContext } from '../model/product-list-item-context.model';
 import { ProductListItemComponent } from './product-list-item.component';
 @Component({
-  selector: 'cx-add-to-cart',
-  template: '<button>add to cart</button>',
-  standalone: false,
+    selector: 'cx-add-to-cart',
+    template: '<button>add to cart</button>',
+    imports: [RouterTestingModule, I18nTestingModule, OutletModule,],
 })
 class MockAddToCartComponent {
   @Input() product;
@@ -31,9 +31,9 @@ class MockAddToCartComponent {
 }
 
 @Component({
-  selector: 'cx-star-rating',
-  template: '*****',
-  standalone: false,
+    selector: 'cx-star-rating',
+    template: '*****',
+    imports: [RouterTestingModule, I18nTestingModule, OutletModule,],
 })
 class MockStarRatingComponent {
   @Input() rating;
@@ -41,9 +41,9 @@ class MockStarRatingComponent {
 }
 
 @Component({
-  selector: 'cx-media',
-  template: 'mock picture component',
-  standalone: false,
+    selector: 'cx-media',
+    template: 'mock picture component',
+    imports: [RouterTestingModule, I18nTestingModule, OutletModule,],
 })
 class MockPictureComponent {
   @Input() container;
@@ -51,18 +51,15 @@ class MockPictureComponent {
 }
 
 @Component({
-  selector: 'cx-icon',
-  template: '',
-  standalone: false,
+    selector: 'cx-icon',
+    template: '',
+    imports: [RouterTestingModule, I18nTestingModule, OutletModule,],
 })
 class MockCxIconComponent {
   @Input() type;
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl', })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
@@ -70,10 +67,7 @@ class MockUrlPipe implements PipeTransform {
 class MockRoutingService {}
 class MockProductService {}
 
-@Directive({
-  selector: '[cxOutlet]',
-  standalone: false,
-})
+@Directive({ selector: '[cxOutlet]', })
 class MockOutletDirective implements Partial<OutletDirective> {
   @Input() cxOutlet: string;
 }
@@ -102,28 +96,25 @@ describe('ProductListItemComponent in product-list', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule, OutletModule],
-      declarations: [
-        ProductListItemComponent,
+    imports: [RouterTestingModule, I18nTestingModule, OutletModule, ProductListItemComponent,
         MockPictureComponent,
         MockAddToCartComponent,
         MockStarRatingComponent,
         MockUrlPipe,
         MockCxIconComponent,
         MockFeatureDirective,
-        MockOutletDirective,
-      ],
-      providers: [
+        MockOutletDirective],
+    providers: [
         {
-          provide: RoutingService,
-          useClass: MockRoutingService,
+            provide: RoutingService,
+            useClass: MockRoutingService,
         },
         {
-          provide: ProductService,
-          useClass: MockProductService,
+            provide: ProductService,
+            useClass: MockProductService,
         },
-      ],
-    })
+    ],
+})
       .overrideComponent(ProductListItemComponent, {
         set: { changeDetection: ChangeDetectionStrategy.Default },
       })

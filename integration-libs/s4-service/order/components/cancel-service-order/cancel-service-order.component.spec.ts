@@ -41,10 +41,7 @@ class MockRoutingService {
   go = jasmine.createSpy();
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl', })
 class MockUrlPipe implements PipeTransform {
   transform() {
     return '';
@@ -60,20 +57,19 @@ describe('CancelServiceOrderComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [CancelServiceOrderComponent, MockUrlPipe],
-      imports: [ReactiveFormsModule, RouterTestingModule, I18nTestingModule],
-      providers: [
+    imports: [ReactiveFormsModule, RouterTestingModule, I18nTestingModule, CancelServiceOrderComponent, MockUrlPipe],
+    providers: [
         { provide: OrderDetailsService, useClass: MockOrderDetailsService },
         {
-          provide: CancelServiceOrderFacade,
-          useClass: MockCancelServiceOrderFacade,
+            provide: CancelServiceOrderFacade,
+            useClass: MockCancelServiceOrderFacade,
         },
         { provide: GlobalMessageService, useClass: MockGlobalMessageService },
         { provide: RoutingService, useClass: MockRoutingService },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-      ],
-    }).compileComponents();
+    ],
+}).compileComponents();
   }));
 
   beforeEach(() => {

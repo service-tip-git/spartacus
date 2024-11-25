@@ -118,9 +118,9 @@ const mockActivatedRoute = {
 };
 
 @Component({
-  selector: 'cx-address-form',
-  template: '',
-  standalone: false,
+    selector: 'cx-address-form',
+    template: '',
+    imports: [I18nTestingModule],
 })
 class MockAddressFormComponent {
   @Input() cancelBtnLabel: string;
@@ -129,16 +129,16 @@ class MockAddressFormComponent {
 }
 
 @Component({
-  selector: 'cx-spinner',
-  template: '',
-  standalone: false,
+    selector: 'cx-spinner',
+    template: '',
+    imports: [I18nTestingModule],
 })
 class MockSpinnerComponent {}
 
 @Component({
-  selector: 'cx-card',
-  template: '',
-  standalone: false,
+    selector: 'cx-card',
+    template: '',
+    imports: [I18nTestingModule],
 })
 class MockCardComponent {
   @Input()
@@ -164,42 +164,39 @@ describe('B2BCheckoutDeliveryAddressComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
-        B2BCheckoutDeliveryAddressComponent,
+    imports: [I18nTestingModule, B2BCheckoutDeliveryAddressComponent,
         MockAddressFormComponent,
         MockCardComponent,
         MockSpinnerComponent,
-        MockFeatureDirective,
-      ],
-      providers: [
+        MockFeatureDirective],
+    providers: [
         { provide: UserAddressService, useClass: MockUserAddressService },
         { provide: ActiveCartFacade, useClass: MockActiveCartService },
         {
-          provide: CheckoutDeliveryAddressFacade,
-          useClass: MockCheckoutDeliveryAddressFacade,
+            provide: CheckoutDeliveryAddressFacade,
+            useClass: MockCheckoutDeliveryAddressFacade,
         },
         { provide: CheckoutStepService, useClass: MockCheckoutStepService },
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
         { provide: GlobalMessageService, useClass: MockGlobalMessageService },
         {
-          provide: CheckoutPaymentTypeFacade,
-          useClass: MockPaymentTypeService,
+            provide: CheckoutPaymentTypeFacade,
+            useClass: MockPaymentTypeService,
         },
         {
-          provide: UserCostCenterService,
-          useClass: MockUserCostCenterService,
+            provide: UserCostCenterService,
+            useClass: MockUserCostCenterService,
         },
         {
-          provide: CheckoutCostCenterFacade,
-          useClass: MockCheckoutCostCenterService,
+            provide: CheckoutCostCenterFacade,
+            useClass: MockCheckoutCostCenterService,
         },
         {
-          provide: CheckoutDeliveryModesFacade,
-          useClass: MockCheckoutDeliveryModesFacade,
+            provide: CheckoutDeliveryModesFacade,
+            useClass: MockCheckoutDeliveryModesFacade,
         },
-      ],
-    })
+    ],
+})
       .overrideComponent(B2BCheckoutDeliveryAddressComponent, {
         set: { changeDetection: ChangeDetectionStrategy.Default },
       })

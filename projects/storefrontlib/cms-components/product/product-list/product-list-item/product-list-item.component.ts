@@ -17,19 +17,40 @@ import { ProductListOutlets } from '../../product-outlets.model';
 import { ProductListItemContextSource } from '../model/product-list-item-context-source.model';
 import { ProductListItemContext } from '../model/product-list-item-context.model';
 import { ProductListService } from '../product-list.service';
+import { RouterLink } from '@angular/router';
+import { MediaComponent } from '../../../../shared/components/media/media.component';
+import { FeatureDirective } from '../../../../../core/src/features-config/directives/feature.directive';
+import { OutletDirective } from '../../../../cms-structure/outlet/outlet.directive';
+import { NgIf } from '@angular/common';
+import { StarRatingComponent } from '../../../../shared/components/star-rating/star-rating.component';
+import { InnerComponentsHostDirective } from '../../../../cms-structure/page/component/inner-components-host.directive';
+import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
+import { UrlPipe } from '../../../../../core/src/routing/configurable-routes/url-translation/url.pipe';
+import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-  selector: 'cx-product-list-item',
-  templateUrl: './product-list-item.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    ProductListItemContextSource,
-    {
-      provide: ProductListItemContext,
-      useExisting: ProductListItemContextSource,
-    },
-  ],
-  standalone: false,
+    selector: 'cx-product-list-item',
+    templateUrl: './product-list-item.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [
+        ProductListItemContextSource,
+        {
+            provide: ProductListItemContext,
+            useExisting: ProductListItemContextSource,
+        },
+    ],
+    imports: [
+        RouterLink,
+        MediaComponent,
+        FeatureDirective,
+        OutletDirective,
+        NgIf,
+        StarRatingComponent,
+        InnerComponentsHostDirective,
+        TranslatePipe,
+        UrlPipe,
+        MockTranslatePipe,
+    ],
 })
 export class ProductListItemComponent implements OnChanges {
   protected productListService = inject(ProductListService);

@@ -5,7 +5,7 @@
  */
 
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { UntypedFormGroup } from '@angular/forms';
+import { UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   Currency,
   CurrencyService,
@@ -24,23 +24,41 @@ import { CurrentItemService } from '../../shared/current-item.service';
 import { ItemService } from '../../shared/item.service';
 import { CurrentPermissionService } from '../services/current-permission.service';
 import { PermissionItemService } from '../services/permission-item.service';
+import { FormComponent } from '../../shared/form/form.component';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { FormErrorsComponent } from '../../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
+import { NgSelectComponent } from '@ng-select/ng-select';
+import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-  selector: 'cx-org-permission-form',
-  templateUrl: './permission-form.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'content-wrapper' },
-  providers: [
-    {
-      provide: ItemService,
-      useExisting: PermissionItemService,
-    },
-    {
-      provide: CurrentItemService,
-      useExisting: CurrentPermissionService,
-    },
-  ],
-  standalone: false,
+    selector: 'cx-org-permission-form',
+    templateUrl: './permission-form.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'content-wrapper' },
+    providers: [
+        {
+            provide: ItemService,
+            useExisting: PermissionItemService,
+        },
+        {
+            provide: CurrentItemService,
+            useExisting: CurrentPermissionService,
+        },
+    ],
+    imports: [
+        FormComponent,
+        NgIf,
+        FormsModule,
+        ReactiveFormsModule,
+        FeatureDirective,
+        FormErrorsComponent,
+        NgSelectComponent,
+        AsyncPipe,
+        TranslatePipe,
+        MockTranslatePipe,
+    ],
 })
 export class PermissionFormComponent implements OnInit {
   form: UntypedFormGroup | null = this.itemService.getForm();

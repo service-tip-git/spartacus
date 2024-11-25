@@ -9,12 +9,20 @@ import { ImageGroup, Product, isNotNullable } from '@spartacus/core';
 import { BehaviorSubject, Observable, combineLatest, of } from 'rxjs';
 import { distinctUntilChanged, filter, map, tap } from 'rxjs/operators';
 import { CurrentProductService } from '../current-product.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { MediaComponent } from '../../../shared/components/media/media.component';
+import { CarouselComponent } from '../../../shared/components/carousel/carousel.component';
 
 @Component({
-  selector: 'cx-product-images',
-  templateUrl: './product-images.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+    selector: 'cx-product-images',
+    templateUrl: './product-images.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        NgIf,
+        MediaComponent,
+        CarouselComponent,
+        AsyncPipe,
+    ],
 })
 export class ProductImagesComponent {
   protected mainMediaContainer = new BehaviorSubject<any>(null);

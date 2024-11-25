@@ -114,10 +114,7 @@ class MockUserRegistrationFormService
   }
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl', })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
@@ -132,31 +129,29 @@ describe('UserRegistrationFormComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [
+    imports: [
         ReactiveFormsModule,
         NgSelectModule,
         I18nTestingModule,
         FormErrorsModule,
         RouterTestingModule,
-      ],
-      declarations: [
         UserRegistrationFormComponent,
         MockUrlPipe,
         NgSelectA11yDirective,
         SpinnerComponent,
         MockFeatureDirective,
-      ],
-      providers: [
+    ],
+    providers: [
         {
-          provide: UserRegistrationFormService,
-          useClass: MockUserRegistrationFormService,
+            provide: UserRegistrationFormService,
+            useClass: MockUserRegistrationFormService,
         },
         {
-          provide: GlobalMessageService,
-          useClass: MockGlobalMessageService,
+            provide: GlobalMessageService,
+            useClass: MockGlobalMessageService,
         },
-      ],
-    });
+    ],
+});
 
     userRegistrationFormService = TestBed.inject(UserRegistrationFormService);
     msgServcie = TestBed.inject(GlobalMessageService);

@@ -37,10 +37,7 @@ class MockReplenishmentOrderHistoryFacade
   clearReplenishmentOrderDetails() {}
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl', })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
@@ -64,19 +61,18 @@ describe('ReplenishmentOrderCancellationComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, RouterTestingModule],
-      declarations: [ReplenishmentOrderCancellationComponent, MockUrlPipe],
-      providers: [
+    imports: [I18nTestingModule, RouterTestingModule, ReplenishmentOrderCancellationComponent, MockUrlPipe],
+    providers: [
         {
-          provide: ReplenishmentOrderHistoryFacade,
-          useClass: MockReplenishmentOrderHistoryFacade,
+            provide: ReplenishmentOrderHistoryFacade,
+            useClass: MockReplenishmentOrderHistoryFacade,
         },
         {
-          provide: LaunchDialogService,
-          useClass: MockLaunchDialogService,
+            provide: LaunchDialogService,
+            useClass: MockLaunchDialogService,
         },
-      ],
-    }).compileComponents();
+    ],
+}).compileComponents();
   }));
 
   beforeEach(() => {

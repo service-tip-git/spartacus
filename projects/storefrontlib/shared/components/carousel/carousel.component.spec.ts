@@ -19,17 +19,17 @@ class MockCarouselService {
 }
 
 @Component({
-  selector: 'cx-icon',
-  template: '',
-  standalone: false,
+    selector: 'cx-icon',
+    template: '',
+    imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
 }
 
 @Component({
-  template: ` <div id="templateEl"></div> `,
-  standalone: false,
+    template: ` <div id="templateEl"></div> `,
+    imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockTemplateComponent {}
 
@@ -53,15 +53,12 @@ describe('Carousel Component', () => {
   let template: TemplateRef<any>;
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [
-        CarouselComponent,
+    imports: [RouterTestingModule, I18nTestingModule, CarouselComponent,
         MockCxIconComponent,
         MockTemplateComponent,
-        MockFeatureDirective,
-      ],
-      providers: [{ provide: CarouselService, useClass: MockCarouselService }],
-    }).compileComponents();
+        MockFeatureDirective],
+    providers: [{ provide: CarouselService, useClass: MockCarouselService }],
+}).compileComponents();
   }));
 
   beforeEach(() => {

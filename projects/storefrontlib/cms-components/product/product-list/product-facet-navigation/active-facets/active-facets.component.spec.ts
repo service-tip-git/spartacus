@@ -16,9 +16,9 @@ import { FacetService } from '../services/facet.service';
 import { ActiveFacetsComponent } from './active-facets.component';
 
 @Component({
-  selector: 'cx-icon',
-  template: '',
-  standalone: false,
+    selector: 'cx-icon',
+    template: '',
+    imports: [I18nTestingModule, RouterTestingModule, KeyboardFocusModule,],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -39,10 +39,9 @@ describe('ActiveFacetsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, RouterTestingModule, KeyboardFocusModule],
-      declarations: [ActiveFacetsComponent, MockCxIconComponent],
-      providers: [{ provide: FacetService, useClass: MockFacetService }],
-    })
+    imports: [I18nTestingModule, RouterTestingModule, KeyboardFocusModule, ActiveFacetsComponent, MockCxIconComponent],
+    providers: [{ provide: FacetService, useClass: MockFacetService }],
+})
       .overrideComponent(ActiveFacetsComponent, {
         set: { changeDetection: ChangeDetectionStrategy.Default },
       })

@@ -21,9 +21,9 @@ import {
 import { WishListItemComponent } from './wish-list-item.component';
 
 @Component({
-  selector: 'cx-add-to-cart',
-  template: '<button>add to cart</button>',
-  standalone: false,
+    selector: 'cx-add-to-cart',
+    template: '<button>add to cart</button>',
+    imports: [I18nTestingModule, RouterTestingModule],
 })
 class MockAddToCartComponent {
   @Input() product;
@@ -31,19 +31,16 @@ class MockAddToCartComponent {
 }
 
 @Component({
-  selector: 'cx-media',
-  template: 'mock picture component',
-  standalone: false,
+    selector: 'cx-media',
+    template: 'mock picture component',
+    imports: [I18nTestingModule, RouterTestingModule],
 })
 class MockPictureComponent {
   @Input() container;
   @Input() alt;
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl', })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
@@ -75,10 +72,7 @@ const mockCartEntry: OrderEntry = {
   },
 };
 
-@Directive({
-  selector: '[cxAtMessage]',
-  standalone: false,
-})
+@Directive({ selector: '[cxAtMessage]', })
 class MockAtMessageDirective {
   @Input() cxAtMessage: string | string[] | undefined;
 }
@@ -91,15 +85,12 @@ describe('WishListItemComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, RouterTestingModule],
-      declarations: [
-        WishListItemComponent,
+    imports: [I18nTestingModule, RouterTestingModule, WishListItemComponent,
         MockPictureComponent,
         MockAddToCartComponent,
         MockUrlPipe,
-        MockAtMessageDirective,
-      ],
-    })
+        MockAtMessageDirective],
+})
       .overrideComponent(WishListItemComponent, {
         set: { changeDetection: ChangeDetectionStrategy.Default },
       })

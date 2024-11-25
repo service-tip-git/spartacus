@@ -5,11 +5,7 @@
  */
 
 import { Component, Input, OnDestroy, inject } from '@angular/core';
-import {
-  UntypedFormBuilder,
-  UntypedFormGroup,
-  Validators,
-} from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   AuthService,
   FeatureConfigService,
@@ -19,11 +15,24 @@ import {
 import { CustomFormValidators } from '@spartacus/storefront';
 import { UserRegisterFacade } from '@spartacus/user/profile/root';
 import { Subscription } from 'rxjs';
+import { PasswordVisibilityToggleDirective } from '../../../../../projects/storefrontlib/shared/components/form/password-visibility-toggle/password-visibility-toggle.directive';
+import { FeatureDirective } from '../../../../../projects/core/src/features-config/directives/feature.directive';
+import { FormErrorsComponent } from '../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-  selector: 'cx-guest-register-form',
-  templateUrl: './order-guest-register-form.component.html',
-  standalone: false,
+    selector: 'cx-guest-register-form',
+    templateUrl: './order-guest-register-form.component.html',
+    imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        PasswordVisibilityToggleDirective,
+        FeatureDirective,
+        FormErrorsComponent,
+        TranslatePipe,
+        MockTranslatePipe,
+    ],
 })
 export class OrderGuestRegisterFormComponent implements OnDestroy {
   // TODO: (CXSPA-7315) Remove feature toggle in the next major

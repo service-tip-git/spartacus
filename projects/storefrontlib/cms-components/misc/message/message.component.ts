@@ -15,10 +15,24 @@ import {
 } from '@angular/core';
 import { GlobalMessageType } from '@spartacus/core';
 import { ICON_TYPE } from '../../../cms-components/misc/icon/icon.model';
+import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
+import { NgClass, NgIf } from '@angular/common';
+import { IconComponent } from '../icon/icon.component';
+import { AtMessageDirective } from '../../../shared/components/assistive-technology-message/assistive-technology-message.directive';
+import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
 @Component({
-  selector: 'cx-message',
-  templateUrl: './message.component.html',
-  standalone: false,
+    selector: 'cx-message',
+    templateUrl: './message.component.html',
+    imports: [
+        FeatureDirective,
+        NgClass,
+        IconComponent,
+        NgIf,
+        AtMessageDirective,
+        TranslatePipe,
+        MockTranslatePipe,
+    ],
 })
 export class MessageComponent implements AfterViewInit {
   @Input()

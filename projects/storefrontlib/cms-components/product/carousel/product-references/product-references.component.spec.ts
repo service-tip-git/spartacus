@@ -20,15 +20,15 @@ import { CurrentProductService } from '../../current-product.service';
 import { ProductReferencesComponent } from './product-references.component';
 
 @Component({
-  selector: 'cx-carousel',
-  template: `
+    selector: 'cx-carousel',
+    template: `
     <ng-container *ngFor="let item$ of items">
       <ng-container
         *ngTemplateOutlet="template; context: { item: item$ | async }"
       ></ng-container>
     </ng-container>
   `,
-  standalone: false,
+    imports: [RouterTestingModule],
 })
 class MockCarouselComponent {
   @Input() title: string;
@@ -36,18 +36,15 @@ class MockCarouselComponent {
   @Input() items: any[];
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl', })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
 }
 
 @Component({
-  selector: 'cx-media',
-  template: '',
-  standalone: false,
+    selector: 'cx-media',
+    template: '',
+    imports: [RouterTestingModule],
 })
 class MockMediaComponent {
   @Input() container: any;
@@ -126,28 +123,25 @@ describe('ProductReferencesComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [
-        ProductReferencesComponent,
+    imports: [RouterTestingModule, ProductReferencesComponent,
         MockCarouselComponent,
         MockMediaComponent,
-        MockUrlPipe,
-      ],
-      providers: [
+        MockUrlPipe],
+    providers: [
         {
-          provide: CmsComponentData,
-          useValue: MockCmsProductCarouselComponent,
+            provide: CmsComponentData,
+            useValue: MockCmsProductCarouselComponent,
         },
         {
-          provide: CurrentProductService,
-          useClass: MockCurrentProductService,
+            provide: CurrentProductService,
+            useClass: MockCurrentProductService,
         },
         {
-          provide: ProductReferenceService,
-          useClass: MockProductReferenceService,
+            provide: ProductReferenceService,
+            useClass: MockProductReferenceService,
         },
-      ],
-    }).compileComponents();
+    ],
+}).compileComponents();
   });
 
   beforeEach(() => {

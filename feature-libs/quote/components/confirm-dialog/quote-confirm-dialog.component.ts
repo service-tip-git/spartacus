@@ -20,13 +20,31 @@ import {
 import { Observable } from 'rxjs';
 import { filter, map, take } from 'rxjs/operators';
 import { ConfirmationContext } from './quote-confirm-dialog.model';
+import { FocusDirective } from '../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '../../../../projects/core/src/features-config/directives/feature.directive';
+import { IconComponent } from '../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { TranslatePipe } from '../../../../projects/core/src/i18n/translate.pipe';
+import { CxDatePipe as CxDatePipe_1 } from '../../../../projects/core/src/i18n/date.pipe';
+import { MockTranslatePipe } from '../../../../projects/core/src/i18n/testing/mock-translate.pipe';
+import { MockDatePipe } from '../../../../projects/core/src/i18n/testing/mock-date.pipe';
 
 @Component({
-  selector: 'cx-quote-confirm-dialog',
-  templateUrl: './quote-confirm-dialog.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [CxDatePipe],
-  standalone: false,
+    selector: 'cx-quote-confirm-dialog',
+    templateUrl: './quote-confirm-dialog.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [CxDatePipe],
+    imports: [
+        FocusDirective,
+        NgIf,
+        FeatureDirective,
+        IconComponent,
+        AsyncPipe,
+        TranslatePipe,
+        CxDatePipe_1,
+        MockTranslatePipe,
+        MockDatePipe,
+    ],
 })
 export class QuoteConfirmDialogComponent implements OnInit {
   protected launchDialogService = inject(LaunchDialogService);

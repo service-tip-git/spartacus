@@ -32,9 +32,13 @@ import { CheckoutPaymentFormComponent } from './checkout-payment-form.component'
 import createSpy = jasmine.createSpy;
 
 @Component({
-  selector: 'cx-spinner',
-  template: '',
-  standalone: false,
+    selector: 'cx-spinner',
+    template: '',
+    imports: [ReactiveFormsModule,
+        NgSelectModule,
+        NgSelectA11yModule,
+        I18nTestingModule,
+        FormErrorsModule,],
 })
 class MockSpinnerComponent {}
 
@@ -94,9 +98,13 @@ const mockPayment: any = {
 };
 
 @Component({
-  selector: 'cx-billing-address-form',
-  template: '',
-  standalone: false,
+    selector: 'cx-billing-address-form',
+    template: '',
+    imports: [ReactiveFormsModule,
+        NgSelectModule,
+        NgSelectA11yModule,
+        I18nTestingModule,
+        FormErrorsModule,],
 })
 class MockBillingAddressFormComponent {
   @Input()
@@ -106,9 +114,13 @@ class MockBillingAddressFormComponent {
 }
 
 @Component({
-  selector: 'cx-card',
-  template: '',
-  standalone: false,
+    selector: 'cx-card',
+    template: '',
+    imports: [ReactiveFormsModule,
+        NgSelectModule,
+        NgSelectA11yModule,
+        I18nTestingModule,
+        FormErrorsModule,],
 })
 class MockCardComponent {
   @Input()
@@ -116,9 +128,13 @@ class MockCardComponent {
 }
 
 @Component({
-  selector: 'cx-icon',
-  template: '',
-  standalone: false,
+    selector: 'cx-icon',
+    template: '',
+    imports: [ReactiveFormsModule,
+        NgSelectModule,
+        NgSelectA11yModule,
+        I18nTestingModule,
+        FormErrorsModule,],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -203,41 +219,39 @@ describe('CheckoutPaymentFormComponent', () => {
     mockGlobalMessageService = new MockGlobalMessageService();
 
     TestBed.configureTestingModule({
-      imports: [
+    imports: [
         ReactiveFormsModule,
         NgSelectModule,
         NgSelectA11yModule,
         I18nTestingModule,
         FormErrorsModule,
-      ],
-      declarations: [
         CheckoutPaymentFormComponent,
         MockCardComponent,
         MockBillingAddressFormComponent,
         MockCxIconComponent,
         MockSpinnerComponent,
         MockFeatureDirective,
-      ],
-      providers: [
+    ],
+    providers: [
         { provide: LaunchDialogService, useClass: MockLaunchDialogService },
         {
-          provide: CheckoutPaymentFacade,
-          useValue: mockCheckoutPaymentService,
+            provide: CheckoutPaymentFacade,
+            useValue: mockCheckoutPaymentService,
         },
         {
-          provide: CheckoutDeliveryAddressFacade,
-          useValue: mockCheckoutDeliveryService,
+            provide: CheckoutDeliveryAddressFacade,
+            useValue: mockCheckoutDeliveryService,
         },
         { provide: UserPaymentService, useValue: mockUserPaymentService },
         { provide: GlobalMessageService, useValue: mockGlobalMessageService },
         { provide: UserAddressService, useClass: MockUserAddressService },
         {
-          provide: CheckoutBillingAddressFormService,
-          useClass: MockCheckoutBillingAddressFormService,
+            provide: CheckoutBillingAddressFormService,
+            useClass: MockCheckoutBillingAddressFormService,
         },
         { provide: FeatureConfigService, useClass: MockFeatureConfigService },
-      ],
-    })
+    ],
+})
       .overrideComponent(CheckoutPaymentFormComponent, {
         set: { changeDetection: ChangeDetectionStrategy.Default },
       })

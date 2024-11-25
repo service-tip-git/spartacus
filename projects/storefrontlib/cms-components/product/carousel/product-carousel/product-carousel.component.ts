@@ -16,12 +16,24 @@ import {
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { CmsComponentData } from '../../../../cms-structure/page/model/cms-component-data';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { CarouselComponent } from '../../../../shared/components/carousel/carousel.component';
+import { ProductCarouselItemComponent } from '../product-carousel-item/product-carousel-item.component';
+import { TranslatePipe } from '../../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '../../../../../core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-  selector: 'cx-product-carousel',
-  templateUrl: './product-carousel.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+    selector: 'cx-product-carousel',
+    templateUrl: './product-carousel.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        NgIf,
+        CarouselComponent,
+        ProductCarouselItemComponent,
+        AsyncPipe,
+        TranslatePipe,
+        MockTranslatePipe,
+    ],
 })
 export class ProductCarouselComponent {
   private featureConfigService: FeatureConfigService =

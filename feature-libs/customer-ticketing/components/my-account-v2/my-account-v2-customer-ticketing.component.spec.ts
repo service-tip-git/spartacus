@@ -27,17 +27,11 @@ const mockTicketList: TicketList = {
   ],
 };
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl', })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
-@Pipe({
-  name: 'cxTranslate',
-  standalone: false,
-})
+@Pipe({ name: 'cxTranslate', })
 class MockTranslatePipe implements PipeTransform {
   transform(): any {}
 }
@@ -71,21 +65,18 @@ describe('MyAccountV2CustomerTicketingComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [
-        MyAccountV2CustomerTicketingComponent,
+    imports: [RouterTestingModule, I18nTestingModule, MyAccountV2CustomerTicketingComponent,
         MockTranslatePipe,
-        MockUrlPipe,
-      ],
-      providers: [
+        MockUrlPipe],
+    providers: [
         {
-          provide: 'CustomerTicketingFacade',
-          useClass: MockcustomerTicketingFacade,
+            provide: 'CustomerTicketingFacade',
+            useClass: MockcustomerTicketingFacade,
         },
         { provide: RoutingService, useClass: MockRoutingService },
         { provide: TranslationService, useClass: MockTranslationService },
-      ],
-    }).compileComponents();
+    ],
+}).compileComponents();
 
     fixture = TestBed.createComponent(MyAccountV2CustomerTicketingComponent);
     component = fixture.componentInstance;

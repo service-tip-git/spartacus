@@ -23,8 +23,8 @@ import { MyCouponsComponent } from './my-coupons.component';
 import { MyCouponsComponentService } from './my-coupons.component.service';
 
 @Component({
-  selector: 'cx-coupon-card',
-  template: `
+    selector: 'cx-coupon-card',
+    template: `
     <input
       type="checkbox"
       class="form-check-input"
@@ -34,7 +34,7 @@ import { MyCouponsComponentService } from './my-coupons.component.service';
       (click)="notificationChange()"
     />
   `,
-  standalone: false,
+    imports: [I18nTestingModule, RouterTestingModule, SpinnerModule,],
 })
 class MockedCouponCardComponent {
   @Input()
@@ -58,9 +58,9 @@ class MockedCouponCardComponent {
 }
 
 @Component({
-  selector: 'cx-icon',
-  template: '',
-  standalone: false,
+    selector: 'cx-icon',
+    template: '',
+    imports: [I18nTestingModule, RouterTestingModule, SpinnerModule,],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -125,9 +125,9 @@ const sortLabels = {
 };
 
 @Component({
-  template: '',
-  selector: 'cx-pagination',
-  standalone: false,
+    template: '',
+    selector: 'cx-pagination',
+    imports: [I18nTestingModule, RouterTestingModule, SpinnerModule,],
 })
 class MockPaginationComponent {
   @Input() pagination;
@@ -135,9 +135,9 @@ class MockPaginationComponent {
 }
 
 @Component({
-  template: '',
-  selector: 'cx-sorting',
-  standalone: false,
+    template: '',
+    selector: 'cx-sorting',
+    imports: [I18nTestingModule, RouterTestingModule, SpinnerModule,],
 })
 class MockSortingComponent {
   @Input() sortOptions;
@@ -172,29 +172,26 @@ describe('MyCouponsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule, RouterTestingModule, SpinnerModule],
-      declarations: [
-        MyCouponsComponent,
+    imports: [I18nTestingModule, RouterTestingModule, SpinnerModule, MyCouponsComponent,
         MockedCouponCardComponent,
         MockCxIconComponent,
         MockPaginationComponent,
         MockSortingComponent,
-        MockFeatureDirective,
-      ],
-      providers: [
+        MockFeatureDirective],
+    providers: [
         { provide: CustomerCouponService, useValue: customerCouponService },
         {
-          provide: MyCouponsComponentService,
-          useValue: myCouponsComponentService,
+            provide: MyCouponsComponentService,
+            useValue: myCouponsComponentService,
         },
         {
-          provide: FeaturesConfig,
-          useValue: {
-            features: { level: '5.1' },
-          },
+            provide: FeaturesConfig,
+            useValue: {
+                features: { level: '5.1' },
+            },
         },
-      ],
-    }).compileComponents();
+    ],
+}).compileComponents();
   }));
 
   beforeEach(() => {

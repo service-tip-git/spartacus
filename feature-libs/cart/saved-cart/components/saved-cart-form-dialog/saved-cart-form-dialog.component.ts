@@ -12,11 +12,7 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
-import {
-  UntypedFormControl,
-  UntypedFormGroup,
-  Validators,
-} from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   Cart,
   DeleteCartEvent as DeleteSavedCartEvent,
@@ -42,6 +38,13 @@ import {
 } from '@spartacus/storefront';
 import { Observable, Subscription, combineLatest, merge } from 'rxjs';
 import { map, take } from 'rxjs/operators';
+import { NgIf, NgSwitch, NgSwitchCase, AsyncPipe } from '@angular/common';
+import { FocusDirective } from '../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { FeatureDirective } from '../../../../../projects/core/src/features-config/directives/feature.directive';
+import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { FormErrorsComponent } from '../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 export interface SavedCartFormDialogOptions {
   cart: Cart;
@@ -49,10 +52,23 @@ export interface SavedCartFormDialogOptions {
 }
 
 @Component({
-  selector: 'cx-saved-cart-form-dialog',
-  templateUrl: './saved-cart-form-dialog.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+    selector: 'cx-saved-cart-form-dialog',
+    templateUrl: './saved-cart-form-dialog.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        NgIf,
+        FocusDirective,
+        FormsModule,
+        ReactiveFormsModule,
+        NgSwitch,
+        FeatureDirective,
+        NgSwitchCase,
+        IconComponent,
+        FormErrorsComponent,
+        AsyncPipe,
+        TranslatePipe,
+        MockTranslatePipe,
+    ],
 })
 export class SavedCartFormDialogComponent implements OnInit, OnDestroy {
   private subscription = new Subscription();

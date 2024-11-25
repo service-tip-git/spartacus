@@ -21,10 +21,7 @@ const mockOrder2 = {
   cancellable: false,
 };
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl', })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
@@ -41,9 +38,9 @@ class MockOrderDetailsService {
 }
 
 @Component({
-  template: '',
-  selector: 'cx-order-details-actions',
-  standalone: false,
+    template: '',
+    selector: 'cx-order-details-actions',
+    imports: [I18nModule, RouterTestingModule],
 })
 class MockOrderDetailActionsComponent {}
 
@@ -55,18 +52,15 @@ describe('MyAccountV2OrderDetailsActionsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nModule, RouterTestingModule],
-      providers: [
+    imports: [I18nModule, RouterTestingModule, MyAccountV2OrderDetailsActionsComponent,
+        MockUrlPipe,
+        MockOrderDetailActionsComponent],
+    providers: [
         { provide: TranslationService, useClass: MockTranslationService },
         { provide: OrderDetailsService, useClass: MockOrderDetailsService },
         { provide: RoutingService, useClass: MockRoutingService },
-      ],
-      declarations: [
-        MyAccountV2OrderDetailsActionsComponent,
-        MockUrlPipe,
-        MockOrderDetailActionsComponent,
-      ],
-    }).compileComponents();
+    ],
+}).compileComponents();
     event = TestBed.inject(EventService);
   }));
 

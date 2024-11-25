@@ -5,9 +5,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { RoutingParamsService } from './routing-params.service';
 
 @Component({
-  selector: 'cx-mock',
-  template: '',
-  standalone: false,
+    selector: 'cx-mock',
+    template: '',
 })
 export class MockComponent {}
 
@@ -19,33 +18,33 @@ describe('RoutingParamsService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
+    imports: [
         RouterTestingModule.withRoutes([
-          {
-            path: '',
-            component: MockComponent,
-          },
-          {
-            path: 'budgets',
-            component: MockComponent,
-            children: [
-              {
-                path: ':budgetCode',
+            {
+                path: '',
+                component: MockComponent,
+            },
+            {
+                path: 'budgets',
                 component: MockComponent,
                 children: [
-                  {
-                    path: 'children/:childCode',
-                    component: MockComponent,
-                  },
+                    {
+                        path: ':budgetCode',
+                        component: MockComponent,
+                        children: [
+                            {
+                                path: 'children/:childCode',
+                                component: MockComponent,
+                            },
+                        ],
+                    },
                 ],
-              },
-            ],
-          },
+            },
         ]),
-      ],
-      declarations: [MockComponent],
-      providers: [RoutingParamsService],
-    });
+        MockComponent,
+    ],
+    providers: [RoutingParamsService],
+});
     service = TestBed.inject(RoutingParamsService);
     router = TestBed.inject(Router);
 

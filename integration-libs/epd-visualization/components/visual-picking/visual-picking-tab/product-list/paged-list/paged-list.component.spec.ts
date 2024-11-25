@@ -8,33 +8,33 @@ import { EMPTY } from 'rxjs';
 import { PagedListComponent } from './paged-list.component';
 
 @Component({
-  selector: 'cx-icon',
-  template: '',
-  standalone: false,
+    selector: 'cx-icon',
+    template: '',
+    imports: [RouterTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
 }
 
 @Component({
-  template: `
+    template: `
     <ng-template #itemTemplate>
       <div id="templateEl"></div>
     </ng-template>
   `,
-  standalone: false,
+    imports: [RouterTestingModule],
 })
 class MockTemplateComponent {
   @ViewChild('itemTemplate') template: TemplateRef<any>;
 }
 
 @Component({
-  template: `
+    template: `
     <ng-template #headerTemplate>
       <div id="headerTemplateEl"></div>
     </ng-template>
   `,
-  standalone: false,
+    imports: [RouterTestingModule],
 })
 class MockHeaderTemplateComponent {
   @ViewChild('headerTemplate') template: TemplateRef<any>;
@@ -50,14 +50,11 @@ describe('PagedList Component', () => {
   let headerTemplate: any;
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [
-        PagedListComponent,
+    imports: [RouterTestingModule, PagedListComponent,
         MockCxIconComponent,
         MockHeaderTemplateComponent,
-        MockTemplateComponent,
-      ],
-    }).compileComponents();
+        MockTemplateComponent],
+}).compileComponents();
   }));
 
   beforeEach(() => {

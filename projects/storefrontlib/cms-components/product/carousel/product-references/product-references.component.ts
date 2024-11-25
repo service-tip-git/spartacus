@@ -16,12 +16,24 @@ import { Observable, of } from 'rxjs';
 import { filter, map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { CmsComponentData } from '../../../../cms-structure/page/model/cms-component-data';
 import { CurrentProductService } from '../../current-product.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { CarouselComponent } from '../../../../shared/components/carousel/carousel.component';
+import { RouterLink } from '@angular/router';
+import { MediaComponent } from '../../../../shared/components/media/media.component';
+import { UrlPipe } from '../../../../../core/src/routing/configurable-routes/url-translation/url.pipe';
 
 @Component({
-  selector: 'cx-product-references',
-  templateUrl: './product-references.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+    selector: 'cx-product-references',
+    templateUrl: './product-references.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        NgIf,
+        CarouselComponent,
+        RouterLink,
+        MediaComponent,
+        AsyncPipe,
+        UrlPipe,
+    ],
 })
 export class ProductReferencesComponent {
   constructor(

@@ -88,36 +88,36 @@ class MockBreakpointService {
 }
 
 @Component({
-  selector: 'cx-media',
-  template: '',
-  standalone: false,
+    selector: 'cx-media',
+    template: '',
+    imports: [FeaturesConfigModule],
 })
 class MockMediaComponent {
   @Input() container;
 }
 
 @Component({
-  selector: 'cx-product-thumbnails',
-  template: '',
-  standalone: false,
+    selector: 'cx-product-thumbnails',
+    template: '',
+    imports: [FeaturesConfigModule],
 })
 class MockProductThumbnailsComponent {
   @Input() thumbs$;
 }
 
 @Component({
-  selector: 'cx-icon',
-  template: '',
-  standalone: false,
+    selector: 'cx-icon',
+    template: '',
+    imports: [FeaturesConfigModule],
 })
 class MockIconComponent {
   @Input() type;
 }
 
 @Component({
-  selector: 'cx-product-image-zoom-thumbnails',
-  template: '',
-  standalone: false,
+    selector: 'cx-product-image-zoom-thumbnails',
+    template: '',
+    imports: [FeaturesConfigModule],
 })
 export class MockProductImageZoomThumbnailsComponent {
   @Output() productImage = new EventEmitter<{ image: any; index: number }>();
@@ -138,20 +138,17 @@ describe('ProductImageZoomViewComponent', () => {
 
   beforeEach(async () => {
     TestBed.configureTestingModule({
-      imports: [FeaturesConfigModule],
-      declarations: [
-        ProductImageZoomViewComponent,
+    imports: [FeaturesConfigModule, ProductImageZoomViewComponent,
         MockIconComponent,
         MockMediaComponent,
         MockProductThumbnailsComponent,
-        MockProductImageZoomThumbnailsComponent,
-      ],
-      providers: [
+        MockProductImageZoomThumbnailsComponent],
+    providers: [
         { provide: CurrentProductService, useClass: MockCurrentProductService },
         { provide: BreakpointService, useClass: MockBreakpointService },
         { provide: FeatureConfigService, useClass: MockFeatureConfigService },
-      ],
-    }).compileComponents();
+    ],
+}).compileComponents();
 
     currentProductService = TestBed.inject(CurrentProductService);
   });

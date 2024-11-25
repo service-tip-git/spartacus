@@ -67,9 +67,13 @@ const mockPaymentDetails: PaymentDetails = {
 const mockEntries: OrderEntry[] = [{ entryNumber: 123 }, { entryNumber: 456 }];
 
 @Component({
-  selector: 'cx-card',
-  template: '',
-  standalone: false,
+    selector: 'cx-card',
+    template: '',
+    imports: [I18nTestingModule,
+        PromotionsModule,
+        RouterTestingModule,
+        IconTestingModule,
+        OutletModule,],
 })
 class MockCardComponent {
   @Input()
@@ -135,10 +139,7 @@ class MockCheckoutStepService {
   getCheckoutStep = createSpy().and.returnValue(mockCheckoutStep);
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl', })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
 }
@@ -149,38 +150,36 @@ describe('CheckoutReviewSubmitComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [
+    imports: [
         I18nTestingModule,
         PromotionsModule,
         RouterTestingModule,
         IconTestingModule,
         OutletModule,
-      ],
-      declarations: [
         CheckoutReviewSubmitComponent,
         MockCardComponent,
         MockUrlPipe,
-      ],
-      providers: [
+    ],
+    providers: [
         {
-          provide: CheckoutDeliveryAddressFacade,
-          useClass: MockCheckoutDeliveryAddressService,
+            provide: CheckoutDeliveryAddressFacade,
+            useClass: MockCheckoutDeliveryAddressService,
         },
         {
-          provide: CheckoutDeliveryModesFacade,
-          useClass: MockCheckoutDeliveryModesService,
+            provide: CheckoutDeliveryModesFacade,
+            useClass: MockCheckoutDeliveryModesService,
         },
         {
-          provide: CheckoutPaymentFacade,
-          useClass: MockCheckoutPaymentService,
+            provide: CheckoutPaymentFacade,
+            useClass: MockCheckoutPaymentService,
         },
         { provide: ActiveCartFacade, useClass: MockActiveCartService },
         {
-          provide: CheckoutStepService,
-          useClass: MockCheckoutStepService,
+            provide: CheckoutStepService,
+            useClass: MockCheckoutStepService,
         },
-      ],
-    }).compileComponents();
+    ],
+}).compileComponents();
   }));
 
   beforeEach(() => {

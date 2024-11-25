@@ -10,11 +10,7 @@ import {
   HostBinding,
   inject,
 } from '@angular/core';
-import {
-  UntypedFormControl,
-  UntypedFormGroup,
-  Validators,
-} from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RoutingService, useFeatureStyles, WindowRef } from '@spartacus/core';
 import { CustomFormValidators } from '@spartacus/storefront';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
@@ -25,12 +21,35 @@ import {
   VerificationTokenFacade,
 } from '@spartacus/user/account/root';
 import { ONE_TIME_PASSWORD_LOGIN_PURPOSE } from '../user-account-constants';
+import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { FeatureDirective } from '../../../../../projects/core/src/features-config/directives/feature.directive';
+import { FormErrorsComponent } from '../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
+import { PasswordVisibilityToggleDirective } from '../../../../../projects/storefrontlib/shared/components/form/password-visibility-toggle/password-visibility-toggle.directive';
+import { RouterLink } from '@angular/router';
+import { UrlPipe } from '../../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-  selector: 'cx-otp-login-form',
-  templateUrl: './otp-login-form.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+    selector: 'cx-otp-login-form',
+    templateUrl: './otp-login-form.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        NgIf,
+        SpinnerComponent,
+        FormsModule,
+        ReactiveFormsModule,
+        FeatureDirective,
+        NgTemplateOutlet,
+        FormErrorsComponent,
+        PasswordVisibilityToggleDirective,
+        RouterLink,
+        AsyncPipe,
+        UrlPipe,
+        TranslatePipe,
+        MockTranslatePipe,
+    ],
 })
 export class OneTimePasswordLoginFormComponent {
   protected routingService = inject(RoutingService);

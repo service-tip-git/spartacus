@@ -20,12 +20,29 @@ import {
 import { Observable, of, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CdcReconsentComponentService } from './cdc-reconsent-component.service';
+import { FocusDirective } from '../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { IconComponent } from '../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { ConsentManagementFormComponent } from '../../../../../projects/storefrontlib/cms-components/myaccount/consent-management/components/consent-form/consent-management-form.component';
+import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-  selector: 'cx-anonymous-consent-dialog', //reusing existing selector
-  templateUrl: './cdc-reconsent.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+    selector: 'cx-anonymous-consent-dialog', //reusing existing selector
+    templateUrl: './cdc-reconsent.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        FocusDirective,
+        NgIf,
+        IconComponent,
+        NgFor,
+        ConsentManagementFormComponent,
+        SpinnerComponent,
+        AsyncPipe,
+        TranslatePipe,
+        MockTranslatePipe,
+    ],
 })
 export class CdcReconsentComponent implements OnInit, OnDestroy {
   protected subscription = new Subscription();

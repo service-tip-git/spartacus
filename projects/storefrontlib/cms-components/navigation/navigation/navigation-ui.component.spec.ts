@@ -20,18 +20,18 @@ import { NavigationNode } from './navigation-node.model';
 import { NavigationUIComponent } from './navigation-ui.component';
 
 @Component({
-  selector: 'cx-icon',
-  template: '',
-  standalone: false,
+    selector: 'cx-icon',
+    template: '',
+    imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockIconComponent {
   @Input() type: string;
 }
 
 @Component({
-  selector: 'cx-generic-link',
-  template: '<a href={{url}}>{{title}}</a>',
-  standalone: false,
+    selector: 'cx-generic-link',
+    template: '<a href={{url}}>{{title}}</a>',
+    imports: [RouterTestingModule, I18nTestingModule],
 })
 class MockGenericLinkComponent {
   @Input() url: string | any[];
@@ -119,33 +119,30 @@ describe('Navigation UI Component', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [
-        NavigationUIComponent,
+    imports: [RouterTestingModule, I18nTestingModule, NavigationUIComponent,
         MockIconComponent,
         MockGenericLinkComponent,
         // TODO: (CXSPA-5919) Remove feature directive next major
-        MockFeatureDirective,
-      ],
-      providers: [
+        MockFeatureDirective],
+    providers: [
         {
-          provide: HamburgerMenuService,
-          useClass: MockHamburgerMenuService,
+            provide: HamburgerMenuService,
+            useClass: MockHamburgerMenuService,
         },
         {
-          provide: WindowRef,
-          useValue: mockWinRef,
+            provide: WindowRef,
+            useValue: mockWinRef,
         },
         {
-          provide: FeatureConfigService,
-          useClass: MockFeatureConfigService,
+            provide: FeatureConfigService,
+            useClass: MockFeatureConfigService,
         },
         {
-          provide: BreakpointService,
-          useClass: MockBreakpointService,
+            provide: BreakpointService,
+            useClass: MockBreakpointService,
         },
-      ],
-    }).compileComponents();
+    ],
+}).compileComponents();
   });
 
   beforeEach(() => {

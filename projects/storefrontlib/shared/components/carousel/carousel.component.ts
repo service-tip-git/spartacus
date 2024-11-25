@@ -21,6 +21,11 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { ICON_TYPE } from '../../../cms-components/misc/icon/icon.model';
 import { CarouselService } from './carousel.service';
+import { NgIf, NgClass, NgFor, NgTemplateOutlet, AsyncPipe, SlicePipe } from '@angular/common';
+import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
+import { IconComponent } from '../../../cms-components/misc/icon/icon.component';
+import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
 
 /**
  * Generic carousel component that can be used to render any carousel items,
@@ -38,10 +43,21 @@ import { CarouselService } from './carousel.service';
  * given `template`. This allows for maximum flexibility.
  */
 @Component({
-  selector: 'cx-carousel',
-  templateUrl: './carousel.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+    selector: 'cx-carousel',
+    templateUrl: './carousel.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        NgIf,
+        NgClass,
+        FeatureDirective,
+        IconComponent,
+        NgFor,
+        NgTemplateOutlet,
+        AsyncPipe,
+        SlicePipe,
+        TranslatePipe,
+        MockTranslatePipe,
+    ],
 })
 export class CarouselComponent implements OnInit, OnChanges {
   @Output() keybordEvent = new BehaviorSubject<KeyboardEvent | null>(null);

@@ -16,12 +16,23 @@ import {
 import { take } from 'rxjs/operators';
 import { LaunchDialogService, LAUNCH_CALLER } from '@spartacus/storefront';
 import { RoutingService } from '@spartacus/core';
+import { FeatureDirective } from '../../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { RouterLink } from '@angular/router';
+import { UrlPipe } from '../../../../../../../projects/core/src/routing/configurable-routes/url-translation/url.pipe';
+import { TranslatePipe } from '../../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '../../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-  selector: 'cx-close-account',
-  templateUrl: './close-account.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+    selector: 'cx-close-account',
+    templateUrl: './close-account.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        FeatureDirective,
+        RouterLink,
+        UrlPipe,
+        TranslatePipe,
+        MockTranslatePipe,
+    ],
 })
 export class CloseAccountComponent {
   @ViewChild('element') element: ElementRef;

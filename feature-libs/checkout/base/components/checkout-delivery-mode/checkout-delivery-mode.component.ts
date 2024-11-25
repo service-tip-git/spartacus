@@ -10,11 +10,7 @@ import {
   Optional,
   inject,
 } from '@angular/core';
-import {
-  UntypedFormBuilder,
-  UntypedFormGroup,
-  Validators,
-} from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ActiveCartFacade, CartOutlets } from '@spartacus/cart/base/root';
 import { CheckoutDeliveryModesFacade } from '@spartacus/checkout/base/root';
@@ -34,12 +30,32 @@ import {
 } from 'rxjs/operators';
 import { CheckoutConfigService } from '../services/checkout-config.service';
 import { CheckoutStepService } from '../services/checkout-step.service';
+import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '../../../../../projects/core/src/features-config/directives/feature.directive';
+import { OutletDirective } from '../../../../../projects/storefrontlib/cms-structure/outlet/outlet.directive';
+import { SpinnerComponent } from '../../../../../projects/storefrontlib/shared/components/spinner/spinner.component';
+import { InnerComponentsHostDirective } from '../../../../../projects/storefrontlib/cms-structure/page/component/inner-components-host.directive';
+import { TranslatePipe } from '../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-  selector: 'cx-delivery-mode',
-  templateUrl: './checkout-delivery-mode.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+    selector: 'cx-delivery-mode',
+    templateUrl: './checkout-delivery-mode.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        NgIf,
+        NgTemplateOutlet,
+        FeatureDirective,
+        FormsModule,
+        ReactiveFormsModule,
+        NgFor,
+        OutletDirective,
+        SpinnerComponent,
+        InnerComponentsHostDirective,
+        AsyncPipe,
+        TranslatePipe,
+        MockTranslatePipe,
+    ],
 })
 export class CheckoutDeliveryModeComponent {
   protected globalMessageService = inject(GlobalMessageService);

@@ -15,10 +15,14 @@ import {
   ViewChild,
   inject,
 } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import { UntypedFormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FeatureConfigService, useFeatureStyles } from '@spartacus/core';
 import { Subscription } from 'rxjs';
 import { startWith } from 'rxjs/operators';
+import { FeatureDirective } from '../../../../core/src/features-config/directives/feature.directive';
+import { FocusDirective } from '../../../layout/a11y/keyboard-focus/focus.directive';
+import { TranslatePipe } from '../../../../core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '../../../../core/src/i18n/testing/mock-translate.pipe';
 
 /**
  * Provides a UI to manage the count of the quantity, typically by using
@@ -26,9 +30,16 @@ import { startWith } from 'rxjs/operators';
  * so that the state of the control can be managed outside of this component.
  */
 @Component({
-  selector: 'cx-item-counter',
-  templateUrl: './item-counter.component.html',
-  standalone: false,
+    selector: 'cx-item-counter',
+    templateUrl: './item-counter.component.html',
+    imports: [
+        FeatureDirective,
+        FocusDirective,
+        FormsModule,
+        ReactiveFormsModule,
+        TranslatePipe,
+        MockTranslatePipe,
+    ],
 })
 export class ItemCounterComponent implements OnInit, OnDestroy {
   /**

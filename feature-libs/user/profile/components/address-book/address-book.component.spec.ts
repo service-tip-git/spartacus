@@ -62,9 +62,12 @@ class MockComponentService {
 }
 
 @Component({
-  selector: 'cx-address-form',
-  template: '',
-  standalone: false,
+    selector: 'cx-address-form',
+    template: '',
+    imports: [SpinnerModule,
+        I18nTestingModule,
+        CardModule,
+        RouterTestingModule,],
 })
 class MockAddressFormComponent {
   @Input()
@@ -100,25 +103,23 @@ describe('AddressBookComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [
+    imports: [
         SpinnerModule,
         I18nTestingModule,
         CardModule,
         RouterTestingModule,
-      ],
-      providers: [
-        {
-          provide: AddressBookComponentService,
-          useClass: MockComponentService,
-        },
-        { provide: GlobalMessageService, useClass: MockGlobalMessageService },
-      ],
-      declarations: [
         AddressBookComponent,
         MockAddressFormComponent,
         MockFeatureDirective,
-      ],
-    }).compileComponents();
+    ],
+    providers: [
+        {
+            provide: AddressBookComponentService,
+            useClass: MockComponentService,
+        },
+        { provide: GlobalMessageService, useClass: MockGlobalMessageService },
+    ],
+}).compileComponents();
   }));
 
   beforeEach(() => {

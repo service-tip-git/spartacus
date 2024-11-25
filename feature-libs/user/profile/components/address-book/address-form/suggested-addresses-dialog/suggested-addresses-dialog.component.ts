@@ -18,12 +18,29 @@ import {
   LaunchDialogService,
 } from '@spartacus/storefront';
 import { take } from 'rxjs/operators';
+import { FocusDirective } from '../../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FeatureDirective } from '../../../../../../../projects/core/src/features-config/directives/feature.directive';
+import { IconComponent } from '../../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { FormsModule } from '@angular/forms';
+import { TranslatePipe } from '../../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '../../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-  selector: 'cx-suggested-addresses-dialog',
-  templateUrl: './suggested-addresses-dialog.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+    selector: 'cx-suggested-addresses-dialog',
+    templateUrl: './suggested-addresses-dialog.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        FocusDirective,
+        NgIf,
+        FeatureDirective,
+        IconComponent,
+        FormsModule,
+        NgFor,
+        AsyncPipe,
+        TranslatePipe,
+        MockTranslatePipe,
+    ],
 })
 export class SuggestedAddressDialogComponent implements OnInit {
   iconTypes = ICON_TYPE;

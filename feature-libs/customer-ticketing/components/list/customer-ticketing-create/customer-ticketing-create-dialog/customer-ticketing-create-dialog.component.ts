@@ -5,7 +5,7 @@
  */
 
 import { Component, inject, Input, OnDestroy, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   AssociatedObject,
   Category,
@@ -23,11 +23,30 @@ import {
   TranslationService,
 } from '@spartacus/core';
 import { catchError, first, tap } from 'rxjs/operators';
+import { FocusDirective } from '../../../../../../projects/storefrontlib/layout/a11y/keyboard-focus/focus.directive';
+import { IconComponent } from '../../../../../../projects/storefrontlib/cms-components/misc/icon/icon.component';
+import { FormErrorsComponent } from '../../../../../../projects/storefrontlib/shared/components/form/form-errors/form-errors.component';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FileUploadComponent } from '../../../../../../projects/storefrontlib/shared/components/form/file-upload/file-upload.component';
+import { TranslatePipe } from '../../../../../../projects/core/src/i18n/translate.pipe';
+import { MockTranslatePipe } from '../../../../../../projects/core/src/i18n/testing/mock-translate.pipe';
 
 @Component({
-  selector: 'cx-customer-ticketing-create-dialog',
-  templateUrl: './customer-ticketing-create-dialog.component.html',
-  standalone: false,
+    selector: 'cx-customer-ticketing-create-dialog',
+    templateUrl: './customer-ticketing-create-dialog.component.html',
+    imports: [
+        FocusDirective,
+        FormsModule,
+        ReactiveFormsModule,
+        IconComponent,
+        FormErrorsComponent,
+        NgIf,
+        NgFor,
+        FileUploadComponent,
+        AsyncPipe,
+        TranslatePipe,
+        MockTranslatePipe,
+    ],
 })
 export class CustomerTicketingCreateDialogComponent
   extends CustomerTicketingDialogComponent

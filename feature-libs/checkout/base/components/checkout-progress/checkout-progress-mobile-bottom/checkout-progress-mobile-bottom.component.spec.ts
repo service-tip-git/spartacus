@@ -36,10 +36,7 @@ class MockCheckoutStepService implements Partial<CheckoutStepService> {
   activeStepIndex$: Observable<number> = of(0);
 }
 
-@Pipe({
-  name: 'cxUrl',
-  standalone: false,
-})
+@Pipe({ name: 'cxUrl', })
 class MockTranslateUrlPipe implements PipeTransform {
   transform(): any {}
 }
@@ -50,15 +47,12 @@ describe('CheckoutProgressMobileBottomComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, I18nTestingModule],
-      declarations: [
-        CheckoutProgressMobileBottomComponent,
-        MockTranslateUrlPipe,
-      ],
-      providers: [
+    imports: [RouterTestingModule, I18nTestingModule, CheckoutProgressMobileBottomComponent,
+        MockTranslateUrlPipe],
+    providers: [
         { provide: CheckoutStepService, useClass: MockCheckoutStepService },
-      ],
-    }).compileComponents();
+    ],
+}).compileComponents();
   }));
 
   beforeEach(() => {

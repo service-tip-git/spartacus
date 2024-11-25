@@ -13,27 +13,24 @@ import { FocusDirective } from '@spartacus/storefront';
 import { ICON_TYPE } from '../../../cms-components/misc/index';
 import { Card, CardComponent, CardLinkAction } from './card.component';
 
-@Directive({
-  selector: '[cxAtMessage]',
-  standalone: false,
-})
+@Directive({ selector: '[cxAtMessage]', })
 export class MockAtMessageDirective {
   @Input() cxAtMessage: string | string[] | undefined;
 }
 
 @Component({
-  selector: 'cx-icon',
-  template: '',
-  standalone: false,
+    selector: 'cx-icon',
+    template: '',
+    imports: [I18nTestingModule],
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
 }
 
 @Component({
-  selector: 'cx-truncate-text-popover',
-  template: '',
-  standalone: false,
+    selector: 'cx-truncate-text-popover',
+    template: '',
+    imports: [I18nTestingModule],
 })
 class MockCxTruncateTextPopoverComponent {
   @Input() content: string;
@@ -45,10 +42,7 @@ function getTruncatedPopover(elem: DebugElement) {
   return elem.queryAll(By.css('cx-truncate-text-popover'));
 }
 let isActiveStoreFrontLibCardParagraphTruncated: boolean;
-@Directive({
-  selector: '[cxFeature]',
-  standalone: false,
-})
+@Directive({ selector: '[cxFeature]', })
 class MockFeatureDirective {
   constructor(
     protected templateRef: TemplateRef<any>,
@@ -75,16 +69,13 @@ describe('CardComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
-      declarations: [
-        CardComponent,
+    imports: [I18nTestingModule, CardComponent,
         MockCxIconComponent,
         MockAtMessageDirective,
         FocusDirective,
         MockCxTruncateTextPopoverComponent,
-        MockFeatureDirective,
-      ],
-    }).compileComponents();
+        MockFeatureDirective],
+}).compileComponents();
   }));
 
   beforeEach(() => {
