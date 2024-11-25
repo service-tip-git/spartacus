@@ -20,10 +20,10 @@
     "tslib": "^2.6.2"
   },
   "peerDependencies": {
-    "@angular-devkit/schematics": "^18.2.7",
-    "@angular/common": "^18.2.7",
-    "@angular/core": "^18.2.7",
-    "@angular/router": "^18.2.7",
+    "@angular-devkit/schematics": "19.0.0",
+    "@angular/common": "19.0.0",
+    "@angular/core": "19.0.0",
+    "@angular/router": "19.0.0",
     "@ngrx/store": "^18.1.0",
     "@spartacus/core": "2211.30.0",
     "@spartacus/order": "2211.30.0",
