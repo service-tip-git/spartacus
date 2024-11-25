@@ -26,7 +26,6 @@ import { IconComponent } from '@spartacus/storefront';
 import { ConsentManagementFormComponent } from '@spartacus/storefront';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-anonymous-consent-dialog', //reusing existing selector
@@ -41,7 +40,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CdcReconsentComponent implements OnInit, OnDestroy {

@@ -40,7 +40,6 @@ import { FocusDirective } from '@spartacus/storefront';
 import { FileUploadComponent } from '@spartacus/storefront';
 import { FormErrorsComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-import-to-new-saved-cart-form',
@@ -57,7 +56,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     FileUploadComponent,
     FormErrorsComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ImportToNewSavedCartFormComponent extends ImportEntriesFormComponent {

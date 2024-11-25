@@ -20,7 +20,6 @@ import { FeatureDirective } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-clear-cart-dialog',
@@ -33,7 +32,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     IconComponent,
     SpinnerComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ClearCartDialogComponent implements OnDestroy {

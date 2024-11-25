@@ -12,18 +12,11 @@ import { NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { OutletDirective } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-store-finder-list-item',
   templateUrl: './store-finder-list-item.component.html',
-  imports: [
-    NgIf,
-    RouterLink,
-    OutletDirective,
-    TranslatePipe,
-    MockTranslatePipe,
-  ],
+  imports: [NgIf, RouterLink, OutletDirective, TranslatePipe, TranslatePipe],
 })
 export class StoreFinderListItemComponent extends AbstractStoreItemComponent {
   @Input()

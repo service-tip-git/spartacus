@@ -45,7 +45,6 @@ import { IconComponent } from '@spartacus/storefront';
 import { DotSpinnerComponent } from '../dot-spinner/dot-spinner.component';
 import { FormErrorsComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-customer-selection',
@@ -64,7 +63,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     FormErrorsComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CustomerSelectionComponent implements OnInit, OnDestroy {

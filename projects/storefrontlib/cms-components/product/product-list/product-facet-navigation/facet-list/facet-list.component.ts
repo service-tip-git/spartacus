@@ -41,7 +41,6 @@ import { IconComponent } from '../../../../misc/icon/icon.component';
 import { FeatureDirective } from '@spartacus/core';
 import { TabComponent } from '../../../../content/tab/tab.component';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-facet-list',
@@ -57,7 +56,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     FacetComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class FacetListComponent implements OnInit, OnDestroy, AfterViewInit {

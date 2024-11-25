@@ -30,7 +30,6 @@ import { IconComponent } from '../../../../misc/icon/icon.component';
 import { RouterLink } from '@angular/router';
 import { AtMessageDirective } from '../../../../../shared/components/assistive-technology-message/assistive-technology-message.directive';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-facet',
@@ -47,7 +46,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     AsyncPipe,
     SlicePipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class FacetComponent implements AfterViewInit {

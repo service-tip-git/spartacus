@@ -28,7 +28,6 @@ import { FormErrorsComponent } from '@spartacus/storefront';
 import { AtMessageDirective } from '@spartacus/storefront';
 import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-place-order',
@@ -43,7 +42,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     AtMessageDirective,
     UrlPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CheckoutPlaceOrderComponent implements OnDestroy {

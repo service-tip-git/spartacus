@@ -14,7 +14,6 @@ import { FeatureDirective } from '@spartacus/core';
 import { StoreFinderListItemComponent } from '../store-finder-list-item/store-finder-list-item.component';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-store-finder-grid',
@@ -28,7 +27,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class StoreFinderGridComponent implements OnInit {

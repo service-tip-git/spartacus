@@ -29,7 +29,6 @@ import { DpPaymentFormComponent } from './dp-payment-form/dp-payment-form.compon
 import { SpinnerComponent } from '@spartacus/storefront';
 import { DpPaymentCallbackComponent } from './dp-payment-callback/dp-payment-callback.component';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-payment-method',
@@ -45,7 +44,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     DpPaymentCallbackComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class DpPaymentMethodComponent extends CorePaymentMethodComponent {

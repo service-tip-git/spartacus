@@ -11,7 +11,6 @@ import { FeatureDirective } from '@spartacus/core';
 import { NgClass, NgIf } from '@angular/common';
 import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-login-register',
@@ -23,7 +22,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     RouterLink,
     UrlPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class LoginRegisterComponent implements OnInit {

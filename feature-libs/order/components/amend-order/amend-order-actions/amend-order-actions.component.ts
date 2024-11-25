@@ -16,13 +16,12 @@ import { RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
 import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-amend-order-actions',
   templateUrl: './amend-order-actions.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, NgIf, UrlPipe, TranslatePipe, MockTranslatePipe],
+  imports: [RouterLink, NgIf, UrlPipe, TranslatePipe, TranslatePipe],
 })
 export class AmendOrderActionsComponent {
   @Input() orderCode: string;

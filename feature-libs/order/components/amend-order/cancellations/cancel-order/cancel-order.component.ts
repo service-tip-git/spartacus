@@ -18,7 +18,6 @@ import { FeatureDirective } from '@spartacus/core';
 import { FormErrorsComponent } from '@spartacus/storefront';
 import { AmendOrderActionsComponent } from '../../amend-order-actions/amend-order-actions.component';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-cancel-order',
@@ -34,7 +33,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     AmendOrderActionsComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CancelOrderComponent {

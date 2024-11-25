@@ -13,7 +13,6 @@ import { FeatureDirective } from '@spartacus/core';
 import { ScheduleComponent } from '../schedule-component/schedule.component';
 import { StoreFinderMapComponent } from '../store-finder-map/store-finder-map.component';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-store-finder-store-description',
@@ -26,7 +25,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     StoreFinderMapComponent,
     JsonPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class StoreFinderStoreDescriptionComponent extends AbstractStoreItemComponent {

@@ -16,7 +16,6 @@ import { FeatureDirective } from '@spartacus/core';
 import { StoreComponent } from '../../presentational/store/store.component';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 /**
  * The list of stores with their stock level and distance from a searched location.
@@ -33,7 +32,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     SpinnerComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class StoreListComponent implements OnInit {

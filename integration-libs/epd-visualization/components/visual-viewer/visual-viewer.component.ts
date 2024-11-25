@@ -21,7 +21,6 @@ import { VisualViewerToolbarButtonComponent } from './toolbar/visual-viewer-tool
 import { VisualViewerAnimationSliderComponent } from './toolbar/visual-viewer-animation-slider/visual-viewer-animation-slider.component';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-epd-visualization-viewer',
@@ -35,7 +34,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     VisualViewerAnimationSliderComponent,
     SpinnerComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class VisualViewerComponent {

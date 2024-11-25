@@ -35,7 +35,6 @@ import { FormErrorsComponent } from '@spartacus/storefront';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { FileUploadComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-customer-ticketing-create-dialog',
@@ -51,7 +50,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     FileUploadComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CustomerTicketingCreateDialogComponent

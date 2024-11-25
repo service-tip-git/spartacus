@@ -29,7 +29,6 @@ import { FeatureDirective } from '@spartacus/core';
 import { OutletDirective } from '../../../cms-structure/outlet/outlet.directive';
 import { TabComponent } from '../tab/tab.component';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 const defaultTabConfig = {
   openTabs: [0],
@@ -49,7 +48,7 @@ const defaultTabConfig = {
     TabComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class TabParagraphContainerComponent implements AfterViewInit, OnInit {

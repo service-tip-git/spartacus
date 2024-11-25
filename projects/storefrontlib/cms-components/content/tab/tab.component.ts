@@ -25,7 +25,6 @@ import { TranslationService } from '@spartacus/core';
 import { NgIf, NgFor, NgTemplateOutlet, AsyncPipe } from '@angular/common';
 import { TabPanelComponent } from './panel/tab-panel.component';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-tab',
@@ -38,7 +37,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     TabPanelComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class TabComponent implements OnInit, AfterViewInit, OnDestroy {

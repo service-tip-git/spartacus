@@ -14,7 +14,6 @@ import { FeatureDirective } from '@spartacus/core';
 import { PromotionsComponent } from '../../misc/promotions/promotions.component';
 import { OutletDirective } from '../../../cms-structure/outlet/outlet.directive';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-product-summary',
@@ -27,7 +26,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     OutletDirective,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ProductSummaryComponent {

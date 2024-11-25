@@ -13,7 +13,6 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { WishListItemComponent } from '../wish-list-item/wish-list-item.component';
 import { FeatureDirective } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-wish-list',
@@ -25,7 +24,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     FeatureDirective,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class WishListComponent {

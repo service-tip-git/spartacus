@@ -25,7 +25,6 @@ import { PageTitleComponent } from '../page-header/page-title.component';
 import { NgFor, AsyncPipe } from '@angular/common';
 import { FeatureDirective } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-breadcrumb',
@@ -37,7 +36,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     FeatureDirective,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class BreadcrumbComponent extends PageTitleComponent implements OnInit {

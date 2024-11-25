@@ -44,7 +44,6 @@ import { CaptchaComponent } from '@spartacus/storefront';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-register',
@@ -66,7 +65,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     AsyncPipe,
     UrlPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class RegisterComponent implements OnInit, OnDestroy {

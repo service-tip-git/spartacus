@@ -27,7 +27,6 @@ import { FeatureDirective } from '@spartacus/core';
 import { FormErrorsComponent } from '@spartacus/storefront';
 import { NgSelectComponent } from '@ng-select/ng-select';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-user-group-form',
@@ -50,7 +49,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     NgSelectComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class UserGroupFormComponent implements OnInit {

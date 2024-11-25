@@ -20,7 +20,6 @@ import { FeatureDirective } from '@spartacus/core';
 import { RouterLink } from '@angular/router';
 import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-close-account',
@@ -31,7 +30,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     RouterLink,
     UrlPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CloseAccountComponent {

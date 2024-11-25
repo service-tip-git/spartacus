@@ -34,7 +34,6 @@ import { PaginationComponent } from '@spartacus/storefront';
 import { IconComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 import { MockDatePipe } from '@spartacus/core';
 
 @Component({
@@ -52,7 +51,7 @@ import { MockDatePipe } from '@spartacus/core';
     AsyncPipe,
     TranslatePipe,
     CxDatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
     MockDatePipe,
   ],
 })

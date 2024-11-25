@@ -49,7 +49,6 @@ import { CarouselComponent } from '../../../shared/components/carousel/carousel.
 import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
 import { HighlightPipe } from './highlight.pipe';
-import { MockTranslatePipe } from '@spartacus/core';
 
 const DEFAULT_SEARCH_BOX_CONFIG: SearchBoxConfig = {
   minCharactersBeforeRequest: 1,
@@ -82,7 +81,7 @@ const SEARCHBOX_IS_ACTIVE = 'searchbox-is-active';
     UrlPipe,
     TranslatePipe,
     HighlightPipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class SearchBoxComponent implements OnInit, OnDestroy {

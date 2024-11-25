@@ -30,7 +30,6 @@ import { FeatureDirective } from '@spartacus/core';
 import { FormErrorsComponent } from '@spartacus/storefront';
 import { AppliedCouponsComponent } from './applied-coupons/applied-coupons.component';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-cart-coupon',
@@ -45,7 +44,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     NgFor,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CartCouponComponent implements OnInit, OnDestroy {

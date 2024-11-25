@@ -34,7 +34,6 @@ import { OutletDirective } from '@spartacus/storefront';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { AddToCartComponent } from '../../../../base/components/add-to-cart/add-to-cart.component';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-saved-cart-details-items',
@@ -48,7 +47,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     AddToCartComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class SavedCartDetailsItemsComponent implements OnInit, OnDestroy {

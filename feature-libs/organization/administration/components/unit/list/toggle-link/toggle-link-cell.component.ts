@@ -31,7 +31,6 @@ import { RouterLink } from '@angular/router';
 import { IconComponent } from '@spartacus/storefront';
 import { UrlPipe } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-toggle-link-cell',
@@ -43,7 +42,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     IconComponent,
     UrlPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ToggleLinkCellComponent extends CellComponent {

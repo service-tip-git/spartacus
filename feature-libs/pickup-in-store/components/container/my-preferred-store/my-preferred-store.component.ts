@@ -27,7 +27,6 @@ import { StoreAddressComponent } from '../../presentational/store/store-address/
 import { IconComponent } from '@spartacus/storefront';
 import { StoreScheduleComponent } from '../../presentational/store/store-schedule/store-schedule.component';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-my-preferred-store',
@@ -42,7 +41,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     StoreScheduleComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class MyPreferredStoreComponent implements OnInit {

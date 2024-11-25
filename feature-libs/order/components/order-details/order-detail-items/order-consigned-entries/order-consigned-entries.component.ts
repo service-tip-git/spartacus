@@ -19,7 +19,6 @@ import { AbstractOrderContextDirective } from '../../../../../cart/base/componen
 import { AddToCartComponent } from '../../../../../cart/base/components/add-to-cart/add-to-cart.component';
 import { TranslatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 import { MockDatePipe } from '@spartacus/core';
 
 @Component({
@@ -35,7 +34,7 @@ import { MockDatePipe } from '@spartacus/core';
     AddToCartComponent,
     TranslatePipe,
     CxDatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
     MockDatePipe,
   ],
 })

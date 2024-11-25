@@ -45,7 +45,6 @@ import { FeatureDirective } from '@spartacus/core';
 import { FormErrorsComponent } from '../../../../shared/components/form/form-errors/form-errors.component';
 import { TranslatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 import { MockDatePipe } from '@spartacus/core';
 
 @Component({
@@ -65,7 +64,7 @@ import { MockDatePipe } from '@spartacus/core';
     SlicePipe,
     TranslatePipe,
     CxDatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
     MockDatePipe,
   ],
 })

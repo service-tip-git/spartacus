@@ -20,7 +20,6 @@ import { FocusDirective } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-configurator-restart-dialog',
@@ -32,7 +31,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     IconComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ConfiguratorRestartDialogComponent {

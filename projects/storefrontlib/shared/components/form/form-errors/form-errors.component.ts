@@ -25,7 +25,6 @@ import { map, startWith } from 'rxjs/operators';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { FeatureDirective } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 /**
  * Renders translated form errors for a given form control, based on its `errors` property.
@@ -46,7 +45,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     FeatureDirective,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class FormErrorsComponent implements DoCheck {

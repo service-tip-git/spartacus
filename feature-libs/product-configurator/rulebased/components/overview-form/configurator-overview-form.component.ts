@@ -30,7 +30,6 @@ import {
 import { ConfiguratorOverviewAttributeComponent } from '../overview-attribute/configurator-overview-attribute.component';
 import { ConfiguratorOverviewBundleAttributeComponent } from '../overview-bundle-attribute/configurator-overview-bundle-attribute.component';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-configurator-overview-form',
@@ -49,7 +48,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     NgSwitchDefault,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class ConfiguratorOverviewFormComponent {

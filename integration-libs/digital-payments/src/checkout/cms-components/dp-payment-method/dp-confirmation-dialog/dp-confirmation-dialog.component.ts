@@ -16,7 +16,6 @@ import { FocusDirective } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
 import { IconComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-dp-confirmation-dialog',
@@ -27,7 +26,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     FeatureDirective,
     IconComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class DpConfirmationDialogComponent {

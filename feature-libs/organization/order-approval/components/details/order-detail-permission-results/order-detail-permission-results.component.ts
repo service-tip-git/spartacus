@@ -10,13 +10,12 @@ import { Order } from '@spartacus/order/root';
 import { Observable } from 'rxjs';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-order-detail-permission-results',
   templateUrl: './order-detail-permission-results.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe, MockTranslatePipe],
+  imports: [NgIf, NgFor, AsyncPipe, TranslatePipe, TranslatePipe],
 })
 export class OrderDetailPermissionResultsComponent {
   order$: Observable<Order> = this.orderDetailsService.getOrderDetails();

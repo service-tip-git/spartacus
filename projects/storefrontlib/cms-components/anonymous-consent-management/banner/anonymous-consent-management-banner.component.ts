@@ -12,12 +12,11 @@ import { LAUNCH_CALLER } from '../../../layout/launch-dialog/config/launch-confi
 import { LaunchDialogService } from '../../../layout/launch-dialog/services/launch-dialog.service';
 import { NgIf, NgClass, AsyncPipe } from '@angular/common';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-anonymous-consent-management-banner',
   templateUrl: './anonymous-consent-management-banner.component.html',
-  imports: [NgIf, NgClass, AsyncPipe, TranslatePipe, MockTranslatePipe],
+  imports: [NgIf, NgClass, AsyncPipe, TranslatePipe, TranslatePipe],
 })
 export class AnonymousConsentManagementBannerComponent implements OnDestroy {
   private subscriptions = new Subscription();

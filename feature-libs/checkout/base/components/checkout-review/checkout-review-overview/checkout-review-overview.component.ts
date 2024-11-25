@@ -10,19 +10,12 @@ import { Observable } from 'rxjs';
 import { NgIf, AsyncPipe } from '@angular/common';
 import { PromotionsComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-checkout-review-overview',
   templateUrl: './checkout-review-overview.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    NgIf,
-    PromotionsComponent,
-    AsyncPipe,
-    TranslatePipe,
-    MockTranslatePipe,
-  ],
+  imports: [NgIf, PromotionsComponent, AsyncPipe, TranslatePipe, TranslatePipe],
 })
 export class CheckoutReviewOverviewComponent {
   constructor(protected activeCartFacade: ActiveCartFacade) {}

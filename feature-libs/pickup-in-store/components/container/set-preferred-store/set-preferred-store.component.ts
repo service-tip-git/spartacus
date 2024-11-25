@@ -16,18 +16,11 @@ import { Observable, Subscription } from 'rxjs';
 import { NgClass, AsyncPipe } from '@angular/common';
 import { IconComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-set-preferred-store',
   templateUrl: './set-preferred-store.component.html',
-  imports: [
-    NgClass,
-    IconComponent,
-    AsyncPipe,
-    TranslatePipe,
-    MockTranslatePipe,
-  ],
+  imports: [NgClass, IconComponent, AsyncPipe, TranslatePipe, TranslatePipe],
 })
 export class SetPreferredStoreComponent implements OnInit, OnDestroy {
   readonly ICON_TYPE = ICON_TYPE;

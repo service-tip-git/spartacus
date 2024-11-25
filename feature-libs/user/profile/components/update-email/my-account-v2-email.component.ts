@@ -28,7 +28,6 @@ import { FeatureDirective } from '@spartacus/core';
 import { FormErrorsComponent } from '@spartacus/storefront';
 import { PasswordVisibilityToggleDirective } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-my-account-v2-email',
@@ -45,7 +44,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     PasswordVisibilityToggleDirective,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class MyAccountV2EmailComponent implements OnInit {

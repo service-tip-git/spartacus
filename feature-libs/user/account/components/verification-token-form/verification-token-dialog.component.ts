@@ -11,7 +11,6 @@ import { FocusDirective } from '@spartacus/storefront';
 import { IconComponent } from '@spartacus/storefront';
 import { FeatureDirective } from '@spartacus/core';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-verification-token-dialog',
@@ -21,7 +20,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     IconComponent,
     FeatureDirective,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class VerificationTokenDialogComponent {

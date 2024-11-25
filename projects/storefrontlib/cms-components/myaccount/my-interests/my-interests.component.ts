@@ -36,7 +36,6 @@ import { SpinnerComponent } from '../../../shared/components/spinner/spinner.com
 import { TranslatePipe } from '@spartacus/core';
 import { CxDatePipe } from '@spartacus/core';
 import { UrlPipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 import { MockDatePipe } from '@spartacus/core';
 
 interface ProductInterestSearchResultUI extends ProductInterestSearchResult {
@@ -63,7 +62,7 @@ interface ProductInterestSearchResultUI extends ProductInterestSearchResult {
     TranslatePipe,
     CxDatePipe,
     UrlPipe,
-    MockTranslatePipe,
+    TranslatePipe,
     MockDatePipe,
   ],
 })

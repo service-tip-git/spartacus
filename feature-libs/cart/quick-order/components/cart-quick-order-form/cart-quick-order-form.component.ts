@@ -37,7 +37,6 @@ import { NgIf, AsyncPipe } from '@angular/common';
 import { FeatureDirective } from '@spartacus/core';
 import { FormErrorsComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-cart-quick-order-form',
@@ -51,7 +50,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     FormErrorsComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CartQuickOrderFormComponent implements OnInit, OnDestroy {

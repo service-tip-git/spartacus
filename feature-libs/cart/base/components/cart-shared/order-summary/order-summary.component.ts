@@ -12,7 +12,6 @@ import { FeatureDirective } from '@spartacus/core';
 import { NgIf } from '@angular/common';
 import { AppliedCouponsComponent } from '../../cart-coupon/applied-coupons/applied-coupons.component';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-order-summary',
@@ -22,7 +21,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     NgIf,
     AppliedCouponsComponent,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class OrderSummaryComponent implements OnInit, OnDestroy {

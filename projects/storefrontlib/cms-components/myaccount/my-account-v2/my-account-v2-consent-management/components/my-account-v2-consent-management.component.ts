@@ -11,7 +11,6 @@ import { SpinnerComponent } from '../../../../../shared/components/spinner/spinn
 import { FeatureDirective } from '@spartacus/core';
 import { MyAccountV2ConsentManagementFormComponent } from './consent-form/my-account-v2-consent-management-form.component';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-my-account-v2-consent-management',
@@ -24,7 +23,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     MyAccountV2ConsentManagementFormComponent,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class MyAccountV2ConsentManagementComponent extends ConsentManagementComponent {}

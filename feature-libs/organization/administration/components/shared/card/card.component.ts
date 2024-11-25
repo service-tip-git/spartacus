@@ -23,7 +23,6 @@ import { IconComponent } from '@spartacus/storefront';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { MessageComponent } from '../message/message.component';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-org-card',
@@ -41,7 +40,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     RouterOutlet,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class CardComponent<T extends BaseItem> {

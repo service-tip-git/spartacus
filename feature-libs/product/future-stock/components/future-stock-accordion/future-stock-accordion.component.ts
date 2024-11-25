@@ -10,7 +10,6 @@ import { FutureStockFacade } from '@spartacus/product/future-stock/root';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { IconComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
-import { MockTranslatePipe } from '@spartacus/core';
 
 @Component({
   selector: 'cx-future-stock-accordion',
@@ -21,7 +20,7 @@ import { MockTranslatePipe } from '@spartacus/core';
     NgFor,
     AsyncPipe,
     TranslatePipe,
-    MockTranslatePipe,
+    TranslatePipe,
   ],
 })
 export class FutureStockAccordionComponent {
