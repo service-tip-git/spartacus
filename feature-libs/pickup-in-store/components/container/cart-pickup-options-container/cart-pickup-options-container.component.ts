@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { NgIf, AsyncPipe } from '@angular/common';
 import {
   Component,
   ElementRef,
@@ -46,6 +47,7 @@ import {
   tap,
   withLatestFrom,
 } from 'rxjs/operators';
+import { PickupOptionsComponent } from '../../presentational/pickup-options/pickup-options.component';
 
 type OrderEntryRequiredFields =
   | 'entryNumber'
@@ -78,7 +80,7 @@ export function orderEntryWithRequiredFields(
 @Component({
   selector: 'cx-cart-pickup-options-container',
   templateUrl: 'cart-pickup-options-container.component.html',
-  standalone: false,
+  imports: [PickupOptionsComponent, NgIf, AsyncPipe],
 })
 export class CartPickupOptionsContainerComponent implements OnInit, OnDestroy {
   // TODO: Remove element reference once 'a11yDialogTriggerRefocus' feature flag is removed.
