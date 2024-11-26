@@ -1,4 +1,7 @@
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { ConverterService, OccConfig } from '@spartacus/core';
 import {
@@ -9,7 +12,10 @@ import {
 } from '@spartacus/product/future-stock/core';
 import { take } from 'rxjs/operators';
 import { OccFutureStockAdapter } from './occ-future-stock.adapter';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 const userId = '111111';
 const productCode = 'code';
@@ -74,17 +80,17 @@ describe('OccFutureStockAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         OccFutureStockAdapter,
         {
-            provide: OccConfig,
-            useValue: MockOccModuleConfig,
+          provide: OccConfig,
+          useValue: MockOccModuleConfig,
         },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     service = TestBed.inject(OccFutureStockAdapter);
     httpMock = TestBed.inject(HttpTestingController);

@@ -4,7 +4,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
 import { ConverterService, LoggerService } from '@spartacus/core';
@@ -17,7 +20,10 @@ import {
 import { OpfApiQuickBuyAdapter } from './opf-api-quick-buy.adapter';
 import { ApplePaySessionVerificationRequest } from '@spartacus/opf/quick-buy/root';
 import { catchError, Observable, throwError } from 'rxjs';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 describe('OpfApiQuickBuyAdapter', () => {
   let service: OpfApiQuickBuyAdapter;
@@ -55,8 +61,8 @@ describe('OpfApiQuickBuyAdapter', () => {
     mockOpfConfig = { opf: { commerceCloudPublicKey: 'public-key' } };
 
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         OpfApiQuickBuyAdapter,
         { provide: ConverterService, useValue: mockConverter },
         { provide: OpfEndpointsService, useValue: mockOpfEndpointsService },
@@ -64,8 +70,8 @@ describe('OpfApiQuickBuyAdapter', () => {
         { provide: LoggerService, useValue: mockLogger },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     service = TestBed.inject(OpfApiQuickBuyAdapter);
     httpMock = TestBed.inject(HttpTestingController);

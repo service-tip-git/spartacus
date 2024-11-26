@@ -1,5 +1,13 @@
-import { HttpClient, HttpErrorResponse, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import {
   ConverterService,
@@ -81,15 +89,15 @@ describe(`OccScheduledReplenishmentOrderAdapter`, () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         OccScheduledReplenishmentOrderAdapter,
         { provide: OccConfig, useValue: MockOccModuleConfig },
         { provide: LoggerService, useClass: MockLoggerService },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
   }));
 
   beforeEach(() => {

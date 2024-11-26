@@ -4,8 +4,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { HttpErrorResponse, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpErrorResponse,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { ConverterService, LoggerService } from '@spartacus/core';
 import { OpfEndpointsService } from '@spartacus/opf/base/core';
@@ -86,8 +93,8 @@ describe('OpfApiBaseAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         OpfApiBaseAdapter,
         ConverterService,
         { provide: LoggerService, useClass: MockLoggerService },
@@ -95,8 +102,8 @@ describe('OpfApiBaseAdapter', () => {
         { provide: OpfConfig, useValue: mockOpfConfig },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     service = TestBed.inject(OpfApiBaseAdapter);
     httpMock = TestBed.inject(HttpTestingController);

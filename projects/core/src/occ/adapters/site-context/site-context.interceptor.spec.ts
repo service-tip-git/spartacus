@@ -1,5 +1,14 @@
-import { HttpClient, HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { HttpTestingController, TestRequest, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpClient,
+  HTTP_INTERCEPTORS,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
+import {
+  HttpTestingController,
+  TestRequest,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { inject, TestBed } from '@angular/core/testing';
 import { OccConfig, SiteContextConfig } from '@spartacus/core';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -56,33 +65,33 @@ describe('SiteContextInterceptor', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         {
-            provide: LanguageService,
-            useClass: MockLanguageService,
+          provide: LanguageService,
+          useClass: MockLanguageService,
         },
         {
-            provide: CurrencyService,
-            useClass: MockCurrencyService,
+          provide: CurrencyService,
+          useClass: MockCurrencyService,
         },
         {
-            provide: SiteContextConfig,
-            useClass: MockSiteContextModuleConfig,
+          provide: SiteContextConfig,
+          useClass: MockSiteContextModuleConfig,
         },
         {
-            provide: OccConfig,
-            useClass: MockSiteContextModuleConfig,
+          provide: OccConfig,
+          useClass: MockSiteContextModuleConfig,
         },
         {
-            provide: HTTP_INTERCEPTORS,
-            useClass: SiteContextInterceptor,
-            multi: true,
+          provide: HTTP_INTERCEPTORS,
+          useClass: SiteContextInterceptor,
+          multi: true,
         },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
     httpMock = TestBed.inject(HttpTestingController);
     currencyService = TestBed.inject(CurrencyService);
     languageService = TestBed.inject(LanguageService);

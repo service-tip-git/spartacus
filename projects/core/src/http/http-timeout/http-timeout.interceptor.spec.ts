@@ -1,5 +1,21 @@
-import { HTTP_INTERCEPTORS, HttpClient, HttpContext, HttpErrorResponse, HttpEvent, HttpEventType, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HTTP_INTERCEPTORS,
+  HttpClient,
+  HttpContext,
+  HttpErrorResponse,
+  HttpEvent,
+  HttpEventType,
+  HttpHandler,
+  HttpInterceptor,
+  HttpRequest,
+  HttpResponse,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { Injectable } from '@angular/core';
 import { TestBed, fakeAsync, flush, tick } from '@angular/core/testing';
 import { Observable } from 'rxjs';
@@ -28,29 +44,29 @@ describe('HttpTimeoutInterceptor', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         {
-            provide: HTTP_INTERCEPTORS,
-            useExisting: HttpTimeoutInterceptor,
-            multi: true,
+          provide: HTTP_INTERCEPTORS,
+          useExisting: HttpTimeoutInterceptor,
+          multi: true,
         },
         {
-            provide: OccConfig,
-            useValue: {
-                backend: {
-                    timeout: {
-                        browser: BROWSER_TIMEOUT,
-                        server: SERVER_TIMEOUT,
-                    },
-                },
+          provide: OccConfig,
+          useValue: {
+            backend: {
+              timeout: {
+                browser: BROWSER_TIMEOUT,
+                server: SERVER_TIMEOUT,
+              },
             },
+          },
         },
-        { provide: WindowRef, useValue: { isBrowser: () => { } } },
+        { provide: WindowRef, useValue: { isBrowser: () => {} } },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     httpMock = TestBed.inject(HttpTestingController);
     httpClient = TestBed.inject(HttpClient);
@@ -291,34 +307,34 @@ describe('HttpTimeoutInterceptor used alongside other slow interceptors', () => 
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         {
-            provide: HTTP_INTERCEPTORS,
-            useExisting: HttpTimeoutInterceptor,
-            multi: true,
+          provide: HTTP_INTERCEPTORS,
+          useExisting: HttpTimeoutInterceptor,
+          multi: true,
         },
         {
-            provide: HTTP_INTERCEPTORS,
-            useExisting: DelayInterceptor,
-            multi: true,
+          provide: HTTP_INTERCEPTORS,
+          useExisting: DelayInterceptor,
+          multi: true,
         },
         {
-            provide: OccConfig,
-            useValue: {
-                backend: {
-                    timeout: {
-                        browser: BROWSER_TIMEOUT,
-                        server: SERVER_TIMEOUT,
-                    },
-                },
+          provide: OccConfig,
+          useValue: {
+            backend: {
+              timeout: {
+                browser: BROWSER_TIMEOUT,
+                server: SERVER_TIMEOUT,
+              },
             },
+          },
         },
-        { provide: WindowRef, useValue: { isBrowser: () => { } } },
+        { provide: WindowRef, useValue: { isBrowser: () => {} } },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     httpMock = TestBed.inject(HttpTestingController);
     httpClient = TestBed.inject(HttpClient);

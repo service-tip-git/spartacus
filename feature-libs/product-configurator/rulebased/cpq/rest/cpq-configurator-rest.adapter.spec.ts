@@ -13,7 +13,10 @@ import { ConfiguratorTestUtils } from '../../testing/configurator-test-utils';
 import { CpqConfiguratorOccService } from './../occ/cpq-configurator-occ.service';
 import { CpqConfiguratorRestAdapter } from './cpq-configurator-rest.adapter';
 import { CpqConfiguratorRestService } from './cpq-configurator-rest.service';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 const productCode = 'CONF_LAPTOP';
 const configId = '1234-56-7890';
@@ -137,21 +140,21 @@ describe('CpqConfiguratorRestAdapter', () => {
     });
 
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         CpqConfiguratorRestAdapter,
         {
-            provide: CpqConfiguratorRestService,
-            useValue: mockedRestService,
+          provide: CpqConfiguratorRestService,
+          useValue: mockedRestService,
         },
         {
-            provide: CpqConfiguratorOccService,
-            useValue: mockedOccService,
+          provide: CpqConfiguratorOccService,
+          useValue: mockedOccService,
         },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     adapterUnderTest = TestBed.inject(
       CpqConfiguratorRestAdapter as Type<CpqConfiguratorRestAdapter>

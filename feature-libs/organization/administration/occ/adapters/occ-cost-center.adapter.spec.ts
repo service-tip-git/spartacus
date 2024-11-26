@@ -1,4 +1,7 @@
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import {
   ConverterService,
@@ -8,7 +11,10 @@ import {
 } from '@spartacus/core';
 import { BUDGETS_NORMALIZER } from '@spartacus/organization/administration/core';
 import { OccCostCenterAdapter } from './occ-cost-center.adapter';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 import createSpy = jasmine.createSpy;
 
@@ -38,17 +44,17 @@ describe('OccCostCenterAdapter', () => {
   let converterService: ConverterService;
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         OccCostCenterAdapter,
         {
-            provide: OccEndpointsService,
-            useClass: MockOccEndpointsService,
+          provide: OccEndpointsService,
+          useClass: MockOccEndpointsService,
         },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
     converterService = TestBed.inject(ConverterService);
     service = TestBed.inject(OccCostCenterAdapter);
     httpMock = TestBed.inject(HttpTestingController);

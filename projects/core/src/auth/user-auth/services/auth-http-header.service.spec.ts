@@ -1,4 +1,10 @@
-import { HttpHandler, HttpHeaders, HttpRequest, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  HttpHandler,
+  HttpHeaders,
+  HttpRequest,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { BehaviorSubject, EMPTY, merge, of, queueScheduler } from 'rxjs';
@@ -83,13 +89,13 @@ describe('AuthHttpHeaderService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         AuthHttpHeaderService,
         { provide: AuthService, useClass: MockAuthService },
         {
-            provide: OAuthLibWrapperService,
-            useClass: MockOAuthLibWrapperService,
+          provide: OAuthLibWrapperService,
+          useClass: MockOAuthLibWrapperService,
         },
         { provide: RoutingService, useClass: MockRoutingService },
         { provide: OccEndpointsService, useClass: MockOccEndpointsService },
@@ -98,8 +104,8 @@ describe('AuthHttpHeaderService', () => {
         { provide: AuthRedirectService, useClass: MockAuthRedirectService },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     authService = TestBed.inject(AuthService);
     service = TestBed.inject(AuthHttpHeaderService);

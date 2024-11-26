@@ -10,7 +10,10 @@ import { OrderHistoryAdapter } from '../../connectors/order-history.adapter';
 import { OrderHistoryConnector } from '../../connectors/order-history.connector';
 import { OrderActions } from '../actions/index';
 import { ConsignmentTrackingEffects } from './consignment-tracking.effect';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 const mockTracking: ConsignmentTracking = {};
 
@@ -44,8 +47,8 @@ describe('Consignment Tracking effect', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         OrderHistoryConnector,
         ConsignmentTrackingEffects,
         { provide: OccConfig, useValue: MockOccModuleConfig },
@@ -54,8 +57,8 @@ describe('Consignment Tracking effect', () => {
         { provide: LoggerService, useClass: MockLoggerService },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     actions$ = TestBed.inject(Actions);
     trackingEffect = TestBed.inject(ConsignmentTrackingEffects);

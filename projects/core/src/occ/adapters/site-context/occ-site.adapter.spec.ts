@@ -1,4 +1,8 @@
-import { HttpTestingController, TestRequest, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpTestingController,
+  TestRequest,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { ConverterService, CountryType } from '@spartacus/core';
 import {
@@ -17,7 +21,10 @@ import {
   OccEndpointsService,
 } from '../../services';
 import { OccSiteAdapter } from './occ-site.adapter';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 const MockOccModuleConfig: OccConfig = {
   backend: {
@@ -57,17 +64,17 @@ describe('OccSiteAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         OccSiteAdapter,
         {
-            provide: OccEndpointsService,
-            useClass: MockOccEndpointsService,
+          provide: OccEndpointsService,
+          useClass: MockOccEndpointsService,
         },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
     occSiteAdapter = TestBed.inject(OccSiteAdapter);
     httpMock = TestBed.inject(HttpTestingController);
     converterService = TestBed.inject(ConverterService);

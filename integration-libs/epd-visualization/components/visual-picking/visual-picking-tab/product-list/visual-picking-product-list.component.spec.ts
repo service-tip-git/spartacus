@@ -1,5 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { Component, EventEmitter } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -26,7 +29,10 @@ import { VisualPickingProductListItem } from './model/visual-picking-product-lis
 import { PagedListModule } from './paged-list/paged-list.module';
 import { VisualPickingProductListComponent } from './visual-picking-product-list.component';
 import { VisualPickingProductListService } from './visual-picking-product-list.service';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 const MockCmsComponentData = <CmsComponentData<CmsComponent>>{
   data$: of({}),
@@ -139,14 +145,15 @@ describe('VisualPickingProductListComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    declarations: [VisualPickingProductListComponent],
-    imports: [CommonModule,
+      declarations: [VisualPickingProductListComponent],
+      imports: [
+        CommonModule,
         StoreModule.forRoot({}),
         RouterTestingModule.withRoutes([
-            {
-                path: 'product',
-                component: MockPageLayoutComponent,
-            },
+          {
+            path: 'product',
+            component: MockPageLayoutComponent,
+          },
         ]),
         CommonModule,
         MediaModule,
@@ -156,21 +163,22 @@ describe('VisualPickingProductListComponent', () => {
         AddToCartModule,
         UrlModule,
         I18nTestingModule,
-        CompactAddToCartModule],
-    providers: [
+        CompactAddToCartModule,
+      ],
+      providers: [
         Actions,
         {
-            provide: CmsComponentData,
-            useValue: MockCmsComponentData,
+          provide: CmsComponentData,
+          useValue: MockCmsComponentData,
         },
         {
-            provide: ProductAvailabilityAdapter,
-            useClass: MockProductAvailabilityAdapter,
+          provide: ProductAvailabilityAdapter,
+          useClass: MockProductAvailabilityAdapter,
         },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-})
+      ],
+    })
       .overrideComponent(VisualPickingProductListComponent, {
         set: {
           providers: [

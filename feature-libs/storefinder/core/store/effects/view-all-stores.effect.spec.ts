@@ -9,7 +9,10 @@ import * as fromEffects from './view-all-stores.effect';
 import createSpy = jasmine.createSpy;
 import { OccConfig, SiteContextActions } from '@spartacus/core';
 import { StoreCount } from '../../model/store-finder.model';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 const mockOccModuleConfig: OccConfig = {
   backend: {
@@ -37,16 +40,16 @@ describe('ViewAllStores Effects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         { provide: StoreFinderConnector, useValue: mockStoreFinderConnector },
         { provide: OccConfig, useValue: mockOccModuleConfig },
         fromEffects.ViewAllStoresEffect,
         provideMockActions(() => actions$),
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     effects = TestBed.inject(fromEffects.ViewAllStoresEffect);
   });

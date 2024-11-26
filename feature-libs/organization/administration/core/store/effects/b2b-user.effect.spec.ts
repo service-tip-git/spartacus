@@ -1,4 +1,9 @@
-import { HttpErrorResponse, HttpHeaders, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  HttpErrorResponse,
+  HttpHeaders,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
@@ -179,8 +184,8 @@ describe('B2B User Effects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [StoreModule.forRoot({ orgCustomer: () => mockB2bUserState })],
-    providers: [
+      imports: [StoreModule.forRoot({ orgCustomer: () => mockB2bUserState })],
+      providers: [
         { provide: B2BUserConnector, useClass: MockB2BUserConnector },
         { provide: RoutingService, useClass: MockRoutingService },
         { provide: OccConfig, useValue: mockOccModuleConfig },
@@ -190,13 +195,13 @@ describe('B2B User Effects', () => {
         { provide: UserIdService, useClass: MockUserIdService },
         { provide: LoggerService, useClass: MockLoggerService },
         {
-            provide: FeatureConfigService,
-            useClass: MockFeatureConfigService,
+          provide: FeatureConfigService,
+          useClass: MockFeatureConfigService,
         },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     effects = TestBed.inject(fromEffects.B2BUserEffects);
     b2bUserConnector = TestBed.inject(B2BUserConnector);

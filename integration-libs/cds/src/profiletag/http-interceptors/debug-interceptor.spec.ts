@@ -1,5 +1,13 @@
-import { HTTP_INTERCEPTORS, HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HTTP_INTERCEPTORS,
+  HttpClient,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { inject, TestBed } from '@angular/core/testing';
 import { OccEndpointsService } from '@spartacus/core';
 import { ProfileTagEventService } from '../services/profiletag-event.service';
@@ -15,25 +23,25 @@ describe('Debug interceptor', () => {
       profileTagDebug: false,
     };
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         {
-            provide: ProfileTagEventService,
-            useValue: ProfileTagEventTrackerMock,
+          provide: ProfileTagEventService,
+          useValue: ProfileTagEventTrackerMock,
         },
         {
-            provide: HTTP_INTERCEPTORS,
-            useClass: DebugInterceptor,
-            multi: true,
+          provide: HTTP_INTERCEPTORS,
+          useClass: DebugInterceptor,
+          multi: true,
         },
         {
-            provide: OccEndpointsService,
-            useValue: occEndPointsMock,
+          provide: OccEndpointsService,
+          useValue: occEndPointsMock,
         },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
   });
 
   it('Should modify the x-profile-tag-debug header if the value is false', inject(

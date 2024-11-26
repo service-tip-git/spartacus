@@ -11,7 +11,10 @@ import { CancelServiceOrderFacade } from '@spartacus/s4-service/root';
 import { GlobalMessageService, GlobalMessageType } from '@spartacus/core';
 import { RoutingService } from '@spartacus/core';
 import { Pipe, PipeTransform } from '@angular/core';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 // Mock classes
 class MockOrderDetailsService {
@@ -56,22 +59,20 @@ describe('CancelServiceOrderComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    declarations: [CancelServiceOrderComponent, MockUrlPipe],
-    imports: [ReactiveFormsModule,
-        RouterTestingModule,
-        I18nTestingModule],
-    providers: [
+      declarations: [CancelServiceOrderComponent, MockUrlPipe],
+      imports: [ReactiveFormsModule, RouterTestingModule, I18nTestingModule],
+      providers: [
         { provide: OrderDetailsService, useClass: MockOrderDetailsService },
         {
-            provide: CancelServiceOrderFacade,
-            useClass: MockCancelServiceOrderFacade,
+          provide: CancelServiceOrderFacade,
+          useClass: MockCancelServiceOrderFacade,
         },
         { provide: GlobalMessageService, useClass: MockGlobalMessageService },
         { provide: RoutingService, useClass: MockRoutingService },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-}).compileComponents();
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

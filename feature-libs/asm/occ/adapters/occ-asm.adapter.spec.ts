@@ -1,4 +1,8 @@
-import { HttpTestingController, TestRequest, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpTestingController,
+  TestRequest,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import {
   CUSTOMER_LISTS_NORMALIZER,
@@ -21,7 +25,10 @@ import {
 } from '@spartacus/core';
 import { Observable, of } from 'rxjs';
 import { OccAsmAdapter } from './occ-asm.adapter';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 const MockAsmConfig: AsmConfig = {};
 
@@ -81,16 +88,16 @@ describe('OccAsmAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         OccAsmAdapter,
         { provide: BaseSiteService, useClass: MockBaseSiteService },
         { provide: AsmConfig, useValue: MockAsmConfig },
         { provide: OccEndpointsService, useClass: MockOccEndpointsService },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     occAsmAdapter = TestBed.inject(OccAsmAdapter);
     httpMock = TestBed.inject(HttpTestingController);

@@ -1,4 +1,7 @@
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { Type } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import {
@@ -30,7 +33,10 @@ import {
   CPQ_CONFIGURATOR_UPDATE_CART_ENTRY_SERIALIZER,
 } from './converters/cpq-configurator-occ.converters';
 import { CpqConfiguratorOccService } from './cpq-configurator-occ.service';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 describe('CpqConfigurationOccService', () => {
   const configId = '1234-56-7890';
@@ -168,14 +174,14 @@ describe('CpqConfigurationOccService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         CpqConfiguratorOccService,
         { provide: OccEndpointsService, useClass: MockOccEndpointsService },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     httpMock = TestBed.inject(
       HttpTestingController as Type<HttpTestingController>

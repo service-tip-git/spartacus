@@ -15,7 +15,10 @@ import { MockFeatureDirective } from 'projects/storefrontlib/shared/test/mock-fe
 import { MockIntendedPickupLocationService } from '../../../core/facade/intended-pickup-location.service.spec';
 import { MockPickupLocationsSearchService } from '../../../core/facade/pickup-locations-search.service.spec';
 import { StoreListComponent } from './store-list.component';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 describe('StoreListComponent', () => {
   let component: StoreListComponent;
@@ -24,25 +27,27 @@ describe('StoreListComponent', () => {
   let intendedPickupLocationService: IntendedPickupLocationFacade;
   beforeEach(() => {
     TestBed.configureTestingModule({
-    declarations: [StoreListComponent, MockFeatureDirective],
-    imports: [I18nTestingModule,
+      declarations: [StoreListComponent, MockFeatureDirective],
+      imports: [
+        I18nTestingModule,
         RouterTestingModule,
         SpinnerModule,
         StoreModule.forRoot({}),
-        EffectsModule.forRoot([])],
-    providers: [
+        EffectsModule.forRoot([]),
+      ],
+      providers: [
         {
-            provide: PickupLocationsSearchFacade,
-            useClass: MockPickupLocationsSearchService,
+          provide: PickupLocationsSearchFacade,
+          useClass: MockPickupLocationsSearchService,
         },
         {
-            provide: IntendedPickupLocationFacade,
-            useClass: MockIntendedPickupLocationService,
+          provide: IntendedPickupLocationFacade,
+          useClass: MockIntendedPickupLocationService,
         },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-}).compileComponents();
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(StoreListComponent);
     component = fixture.componentInstance;

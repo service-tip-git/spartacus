@@ -1,4 +1,8 @@
-import { HttpErrorResponse, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  HttpErrorResponse,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
@@ -54,19 +58,19 @@ describe('DefaultPointOfServiceEffect', () => {
   let winRef: WindowRef;
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [StoreModule.forRoot({})],
-    providers: [
+      imports: [StoreModule.forRoot({})],
+      providers: [
         {
-            provide: UserProfileFacade,
-            useClass: MockUserProfileFacade,
+          provide: UserProfileFacade,
+          useClass: MockUserProfileFacade,
         },
         { provide: WindowRef, useValue: localStorage ? MockWindowRef() : {} },
         DefaultPointOfServiceEffect,
         provideMockActions(() => actions$),
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
     winRef = TestBed.inject(WindowRef);
     defaultPointOfServiceEffect = TestBed.inject(DefaultPointOfServiceEffect);
     userProfileService = TestBed.inject(UserProfileFacade);

@@ -1,4 +1,9 @@
-import { HttpErrorResponse, HttpHeaders, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  HttpErrorResponse,
+  HttpHeaders,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
@@ -106,8 +111,8 @@ describe('CostCenter Effects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [StoreModule.forRoot({ costCenter: () => mockCostCenterState })],
-    providers: [
+      imports: [StoreModule.forRoot({ costCenter: () => mockCostCenterState })],
+      providers: [
         { provide: CostCenterConnector, useClass: MockCostCenterConnector },
         { provide: OccConfig, useValue: mockOccModuleConfig },
         { provide: LoggerService, useClass: MockLoggerService },
@@ -115,8 +120,8 @@ describe('CostCenter Effects', () => {
         provideMockActions(() => actions$),
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     effects = TestBed.inject(fromEffects.CostCenterEffects);
     costCenterConnector = TestBed.inject(CostCenterConnector);

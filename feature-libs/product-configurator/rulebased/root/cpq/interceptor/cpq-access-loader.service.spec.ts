@@ -1,4 +1,7 @@
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { Type } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { OccEndpointsService, UserIdService } from '@spartacus/core';
@@ -6,7 +9,10 @@ import { MockOccEndpointsService } from 'projects/core/src/occ/adapters/user/uni
 import { of } from 'rxjs';
 import { CpqAccessData } from './cpq-access-data.models';
 import { CpqAccessLoaderService } from './cpq-access-loader.service';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 const accessData: CpqAccessData = {
   accessToken: '8273635',
@@ -28,15 +34,15 @@ describe('CpqAccessLoaderService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         CpqAccessLoaderService,
         { provide: UserIdService, useClass: MockUserIdService },
         { provide: OccEndpointsService, useClass: MockOccEndpointsService },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     httpMock = TestBed.inject(
       HttpTestingController as Type<HttpTestingController>

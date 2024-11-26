@@ -1,5 +1,14 @@
-import { HttpClient, HttpErrorResponse, HttpHeaders, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { CART_ACCESS_CODE_NORMALIZER } from '@spartacus/cart/base/core';
 import {
@@ -66,21 +75,21 @@ describe(`OccCartAccessCodeAdapter`, () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         OccCartAccessCodeAdapter,
         {
-            provide: OccEndpointsService,
-            useClass: MockOccEndpointsService,
+          provide: OccEndpointsService,
+          useClass: MockOccEndpointsService,
         },
         {
-            provide: LoggerService,
-            useClass: MockLoggerService,
+          provide: LoggerService,
+          useClass: MockLoggerService,
         },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     service = TestBed.inject(OccCartAccessCodeAdapter);
     httpMock = TestBed.inject(HttpTestingController);

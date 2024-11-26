@@ -13,7 +13,10 @@ import { Observable, of, throwError } from 'rxjs';
 import { OrderHistoryAdapter, OrderHistoryConnector } from '../../connectors';
 import { OrderActions } from '../actions';
 import { ConsignmentTrackingByIdEffects } from './consignment-tracking-by-id.effect';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 const mockTracking: ConsignmentTracking = { trackingID: 'track1' };
 
 const mockTrackingParams = {
@@ -43,8 +46,8 @@ describe('Consignment Tracking By Id effect', () => {
   let actions$: Observable<any>;
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         OrderHistoryConnector,
         ConsignmentTrackingByIdEffects,
         { provide: OccConfig, useValue: MockOccModuleConfig },
@@ -53,8 +56,8 @@ describe('Consignment Tracking By Id effect', () => {
         { provide: LoggerService, useClass: MockLoggerService },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
     actions$ = TestBed.inject(Actions);
     effect = TestBed.inject(ConsignmentTrackingByIdEffects);
     orderHistoryConnector = TestBed.inject(OrderHistoryConnector);

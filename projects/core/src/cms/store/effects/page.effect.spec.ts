@@ -1,4 +1,8 @@
-import { HttpErrorResponse, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  HttpErrorResponse,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
@@ -101,9 +105,11 @@ describe('Page Effects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [StoreModule.forRoot({}),
-        StoreModule.forFeature(CMS_FEATURE, fromCmsReducer.getReducers())],
-    providers: [
+      imports: [
+        StoreModule.forRoot({}),
+        StoreModule.forFeature(CMS_FEATURE, fromCmsReducer.getReducers()),
+      ],
+      providers: [
         { provide: RoutingService, useClass: RoutingServiceMock },
         { provide: CmsPageConnector, useClass: MockCmsPageConnector },
         { provide: LoggerService, useClass: MockLoggerService },
@@ -111,8 +117,8 @@ describe('Page Effects', () => {
         provideMockActions(() => actions$),
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     cmsPageConnector = TestBed.inject(CmsPageConnector);
     effects = TestBed.inject(fromEffects.PageEffects);

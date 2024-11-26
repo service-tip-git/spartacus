@@ -1,4 +1,7 @@
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import {
   BaseOccUrlProperties,
@@ -10,7 +13,10 @@ import {
 import { ORGANIZATION_USER_REGISTRATION_SERIALIZER } from '@spartacus/organization/user-registration/core';
 import { OrganizationUserRegistration } from '@spartacus/organization/user-registration/root';
 import { OccUserRegistrationAdapter } from './occ-user-registration.adapter';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 export const mockOccModuleConfig: OccConfig = {
   backend: {
@@ -63,18 +69,18 @@ describe('OccUserRegistrationAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         OccUserRegistrationAdapter,
         { provide: OccConfig, useValue: mockOccModuleConfig },
         {
-            provide: OccEndpointsService,
-            useClass: MockOccEndpointsService,
+          provide: OccEndpointsService,
+          useClass: MockOccEndpointsService,
         },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     occUserRegistrationAdapter = TestBed.inject(OccUserRegistrationAdapter);
     httpMock = TestBed.inject(HttpTestingController);

@@ -1,4 +1,7 @@
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { Component, ElementRef, EventEmitter } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -30,7 +33,10 @@ import { VisualViewerAnimationSliderModule } from './toolbar/visual-viewer-anima
 import { VisualViewerToolbarButtonModule } from './toolbar/visual-viewer-toolbar-button/visual-viewer-toolbar-button.module';
 import { VisualViewerComponent } from './visual-viewer.component';
 import { VisualViewerService } from './visual-viewer.service';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 class MockVisualViewerService {
   set backgroundTopColor(backgroundTopColor: string) {
@@ -257,31 +263,33 @@ describe('VisualViewerComponent', () => {
       };
 
       TestBed.configureTestingModule({
-    declarations: [VisualViewerComponent],
-    imports: [RouterTestingModule,
-        I18nTestingModule,
-        VisualViewerToolbarButtonModule,
-        VisualViewerAnimationSliderModule,
-        SpinnerModule],
-    providers: [
-        provideConfigFactory(getTestConfig),
-        provideDefaultConfigFactory(getEpdVisualizationDefaultConfig),
-        {
+        declarations: [VisualViewerComponent],
+        imports: [
+          RouterTestingModule,
+          I18nTestingModule,
+          VisualViewerToolbarButtonModule,
+          VisualViewerAnimationSliderModule,
+          SpinnerModule,
+        ],
+        providers: [
+          provideConfigFactory(getTestConfig),
+          provideDefaultConfigFactory(getEpdVisualizationDefaultConfig),
+          {
             provide: LanguageService,
             useValue: mockLanguageService,
-        },
-        {
+          },
+          {
             provide: VisualizationAdapter,
             useClass: VisualizationV1Adapter,
-        },
-        {
+          },
+          {
             provide: SceneAdapter,
             useClass: StorageV1Adapter,
-        },
-        provideHttpClient(withInterceptorsFromDi()),
-        provideHttpClientTesting(),
-    ]
-}).compileComponents();
+          },
+          provideHttpClient(withInterceptorsFromDi()),
+          provideHttpClientTesting(),
+        ],
+      }).compileComponents();
 
       TestBed.inject(HttpTestingController);
 
@@ -298,26 +306,28 @@ describe('VisualViewerComponent', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-    declarations: [VisualViewerComponent],
-    imports: [RouterTestingModule,
-        I18nTestingModule,
-        VisualViewerToolbarButtonModule,
-        VisualViewerAnimationSliderModule],
-    providers: [
-        provideConfigFactory(getTestConfig),
-        provideDefaultConfigFactory(getEpdVisualizationDefaultConfig),
-        {
+        declarations: [VisualViewerComponent],
+        imports: [
+          RouterTestingModule,
+          I18nTestingModule,
+          VisualViewerToolbarButtonModule,
+          VisualViewerAnimationSliderModule,
+        ],
+        providers: [
+          provideConfigFactory(getTestConfig),
+          provideDefaultConfigFactory(getEpdVisualizationDefaultConfig),
+          {
             provide: LanguageService,
             useValue: mockLanguageService,
-        },
-        {
+          },
+          {
             provide: VisualViewerAnimationSliderComponent,
             useClass: MockVisualViewerAnimationSliderComponent,
-        },
-        provideHttpClient(withInterceptorsFromDi()),
-        provideHttpClientTesting(),
-    ]
-}).overrideComponent(VisualViewerComponent, {
+          },
+          provideHttpClient(withInterceptorsFromDi()),
+          provideHttpClientTesting(),
+        ],
+      }).overrideComponent(VisualViewerComponent, {
         set: {
           providers: [
             {

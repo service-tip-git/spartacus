@@ -1,4 +1,7 @@
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { CMS_PAGE_NORMALIZER } from '../../../cms/connectors';
 import { CmsStructureConfigService } from '../../../cms/services';
@@ -9,7 +12,10 @@ import { OccEndpointsService } from '../../services/occ-endpoints.service';
 import { OccCmsPageAdapter } from './occ-cms-page.adapter';
 import { FeatureConfigService, UserIdService } from '@spartacus/core';
 import { of } from 'rxjs';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import createSpy = jasmine.createSpy;
 
 const components: CmsComponent[] = [
@@ -78,20 +84,20 @@ describe('OccCmsPageAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         OccCmsPageAdapter,
         UserIdService,
         { provide: OccEndpointsService, useClass: OccEndpointsServiceMock },
         {
-            provide: CmsStructureConfigService,
-            useClass: CmsStructureConfigServiceMock,
+          provide: CmsStructureConfigService,
+          useClass: CmsStructureConfigServiceMock,
         },
         { provide: ConverterService, useClass: MockConverterService },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
     service = TestBed.inject(OccCmsPageAdapter);
     httpMock = TestBed.inject(HttpTestingController);
     endpointsService = TestBed.inject(OccEndpointsService);

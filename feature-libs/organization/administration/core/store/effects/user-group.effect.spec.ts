@@ -1,4 +1,9 @@
-import { HttpErrorResponse, HttpHeaders, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  HttpErrorResponse,
+  HttpHeaders,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { Type } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
@@ -119,13 +124,15 @@ describe('UserGroup Effects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [StoreModule.forRoot({
-            userGroup: () => mockUserGroupState,
-        })],
-    providers: [
+      imports: [
+        StoreModule.forRoot({
+          userGroup: () => mockUserGroupState,
+        }),
+      ],
+      providers: [
         {
-            provide: UserGroupConnector,
-            useClass: MockUserGroupConnector,
+          provide: UserGroupConnector,
+          useClass: MockUserGroupConnector,
         },
         { provide: OccConfig, useValue: mockOccModuleConfig },
         { provide: LoggerService, useClass: MockLoggerService },
@@ -133,8 +140,8 @@ describe('UserGroup Effects', () => {
         provideMockActions(() => actions$),
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     effects = TestBed.inject(
       fromEffects.UserGroupEffects as Type<fromEffects.UserGroupEffects>

@@ -12,7 +12,10 @@ import {
   defaultPickupInStoreComponentsConfig,
   PickupInStoreRootModule,
 } from './pickup-in-store-root.module';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 const MockCmsConfig: CmsConfig = {
   featureModules: {
@@ -31,11 +34,16 @@ const MockCmsConfig: CmsConfig = {
 describe('PickupInStoreRootModule', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [StoreModule.forRoot({}),
+      imports: [
+        StoreModule.forRoot({}),
         EffectsModule.forRoot([]),
-        PickupInStoreRootModule],
-    providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
-});
+        PickupInStoreRootModule,
+      ],
+      providers: [
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+      ],
+    });
   });
 
   it('initializes', () => {

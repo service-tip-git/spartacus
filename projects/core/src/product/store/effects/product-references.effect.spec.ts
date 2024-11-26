@@ -10,7 +10,10 @@ import { OccConfig } from '../../../occ/config/occ-config';
 import { ProductReferencesConnector } from '../../connectors/references/product-references.connector';
 import { ProductActions } from '../actions/index';
 import * as fromEffects from '../effects/product-references.effect';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import createSpy = jasmine.createSpy;
 
 const productCode = 'productCode';
@@ -43,11 +46,11 @@ describe('Product references effect', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         {
-            provide: ProductReferencesConnector,
-            useClass: MockProductReferencesConnector,
+          provide: ProductReferencesConnector,
+          useClass: MockProductReferencesConnector,
         },
         { provide: OccConfig, useValue: MockOccModuleConfig },
         { provide: OccConfig, useValue: defaultOccProductConfig },
@@ -55,8 +58,8 @@ describe('Product references effect', () => {
         provideMockActions(() => actions$),
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
     effects = TestBed.inject(fromEffects.ProductReferencesEffects);
   });
 

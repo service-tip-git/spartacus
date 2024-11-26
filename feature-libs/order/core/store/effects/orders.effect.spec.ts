@@ -19,7 +19,10 @@ import {
 } from '../../connectors/index';
 import { OrderActions } from '../actions/index';
 import * as fromOrdersEffect from './orders.effect';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 const mockUserOrders: OrderHistoryList = {
   orders: [],
@@ -45,8 +48,8 @@ describe('Orders effect', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         OrderHistoryConnector,
         ReplenishmentOrderHistoryConnector,
         fromOrdersEffect.OrdersEffect,
@@ -56,8 +59,8 @@ describe('Orders effect', () => {
         provideMockActions(() => actions$),
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     actions$ = TestBed.inject(Actions);
     ordersEffect = TestBed.inject(fromOrdersEffect.OrdersEffect);

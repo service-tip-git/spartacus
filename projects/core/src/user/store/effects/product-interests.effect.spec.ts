@@ -12,7 +12,10 @@ import { UserInterestsAdapter } from '../../connectors/interests/user-interests.
 import { UserInterestsConnector } from '../../connectors/interests/user-interests.connector';
 import { UserActions } from '../actions/index';
 import * as fromInterestsEffect from './product-interests.effect';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 const loadParams = {
   userId: 'qingyu@sap.com',
@@ -29,15 +32,15 @@ describe('Product Interests Effect', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         fromInterestsEffect.ProductInterestsEffect,
         { provide: UserInterestsAdapter, useValue: {} },
         provideMockActions(() => actions$),
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     // actions$ = TestBed.inject(Actions);
     productInterestsEffect = TestBed.inject(

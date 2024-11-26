@@ -11,7 +11,10 @@ import { RoutingService } from '../../../routing/index';
 import { CmsComponentConnector } from '../../connectors/component/cms-component.connector';
 import { CmsActions } from '../actions/index';
 import * as fromEffects from './navigation-entry-item.effect';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 const router = {
   state: {
@@ -57,9 +60,11 @@ describe('Navigation Entry Items Effects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [StoreModule.forRoot({}),
-        StoreModule.forFeature('cms', fromCmsReducer.getReducers())],
-    providers: [
+      imports: [
+        StoreModule.forRoot({}),
+        StoreModule.forFeature('cms', fromCmsReducer.getReducers()),
+      ],
+      providers: [
         { provide: CmsComponentConnector, useClass: MockCmsComponentConnector },
         { provide: OccConfig, useValue: {} },
         fromEffects.NavigationEntryItemEffects,
@@ -67,8 +72,8 @@ describe('Navigation Entry Items Effects', () => {
         { provide: RoutingService, useClass: MockRoutingService },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     service = TestBed.inject(CmsComponentConnector);
     effects = TestBed.inject(fromEffects.NavigationEntryItemEffects);

@@ -1,4 +1,8 @@
-import { HttpErrorResponse, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  HttpErrorResponse,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
@@ -48,8 +52,8 @@ describe('Cart Voucher effect', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         { provide: CartVoucherAdapter, useValue: {} },
         fromEffects.CartVoucherEffects,
         { provide: OccConfig, useValue: MockOccModuleConfig },
@@ -58,8 +62,8 @@ describe('Cart Voucher effect', () => {
         provideMockActions(() => actions$),
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     voucherEffects = TestBed.inject(fromEffects.CartVoucherEffects);
     cartVoucherConnector = TestBed.inject(CartVoucherConnector);

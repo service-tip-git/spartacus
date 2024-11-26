@@ -13,7 +13,10 @@ import { EMPTY } from 'rxjs';
 import { StoreFinderMapComponent } from '../../store-finder-map/store-finder-map.component';
 import { StoreFinderListComponent } from './store-finder-list.component';
 import { LocationDisplayMode } from './store-finder-list.model';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import createSpy = jasmine.createSpy;
 
 const location: PointOfService = {
@@ -52,21 +55,19 @@ describe('StoreFinderDisplayListComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    schemas: [NO_ERRORS_SCHEMA],
-    declarations: [StoreFinderListComponent, StoreFinderMapComponent],
-    imports: [RouterTestingModule,
-        SpinnerModule,
-        I18nTestingModule],
-    providers: [
+      schemas: [NO_ERRORS_SCHEMA],
+      declarations: [StoreFinderListComponent, StoreFinderMapComponent],
+      imports: [RouterTestingModule, SpinnerModule, I18nTestingModule],
+      providers: [
         {
-            provide: GoogleMapRendererService,
-            useClass: GoogleMapRendererServiceMock,
+          provide: GoogleMapRendererService,
+          useClass: GoogleMapRendererServiceMock,
         },
         { provide: StoreFinderService, useClass: StoreFinderServiceMock },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-}).compileComponents();
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

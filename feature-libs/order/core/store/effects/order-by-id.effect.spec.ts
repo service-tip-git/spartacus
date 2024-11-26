@@ -13,7 +13,10 @@ import { Observable, of, throwError } from 'rxjs';
 import { OrderHistoryAdapter, OrderHistoryConnector } from '../../connectors';
 import { OrderActions } from '../actions';
 import { OrderByIdEffect } from './order-by-id.effect';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 const mockOrder: Order = { code: 'order1', status: 'shipped' };
 
 const mockOrderParams = {
@@ -44,8 +47,8 @@ describe('Order By Id effect', () => {
   let actions$: Observable<any>;
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         OrderHistoryConnector,
         OrderByIdEffect,
         { provide: OccConfig, useValue: MockOccModuleConfig },
@@ -54,8 +57,8 @@ describe('Order By Id effect', () => {
         { provide: LoggerService, useClass: MockLoggerService },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
     actions$ = TestBed.inject(Actions);
     effect = TestBed.inject(OrderByIdEffect);
     orderHistoryConnector = TestBed.inject(OrderHistoryConnector);

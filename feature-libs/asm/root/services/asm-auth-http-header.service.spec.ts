@@ -1,4 +1,9 @@
-import { HttpHeaders, HttpRequest, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  HttpHeaders,
+  HttpRequest,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import {
@@ -71,14 +76,14 @@ describe('AsmAuthHttpHeaderService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         AsmAuthHttpHeaderService,
         { provide: CsAgentAuthService, useClass: MockCsAgentAuthService },
         { provide: AuthService, useClass: MockAuthService },
         {
-            provide: OAuthLibWrapperService,
-            useClass: MockOAuthLibWrapperService,
+          provide: OAuthLibWrapperService,
+          useClass: MockOAuthLibWrapperService,
         },
         { provide: RoutingService, useClass: MockRoutingService },
         { provide: GlobalMessageService, useClass: MockGlobalMessageService },
@@ -87,8 +92,8 @@ describe('AsmAuthHttpHeaderService', () => {
         { provide: AuthRedirectService, useClass: MockAuthRedirectService },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     service = TestBed.inject(AsmAuthHttpHeaderService);
     authService = TestBed.inject(AuthService);

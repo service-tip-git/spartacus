@@ -4,7 +4,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { ConverterService, LoggerService } from '@spartacus/core';
 import { OpfEndpointsService } from '@spartacus/opf/base/core';
@@ -20,7 +23,10 @@ import {
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { OpfApiCtaAdapter } from './opf-api-cta.adapter';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 const mockCtaScriptsRequest: OpfCtaScriptsRequest = {
   paymentAccountIds: [123],
@@ -73,8 +79,8 @@ describe('OpfApiCtaAdapter', () => {
     ]);
 
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         OpfApiCtaAdapter,
         { provide: OpfConfig, useValue: mockOpfConfig },
         { provide: ConverterService, useValue: converterSpy },
@@ -82,8 +88,8 @@ describe('OpfApiCtaAdapter', () => {
         LoggerService,
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     adapter = TestBed.inject(OpfApiCtaAdapter);
     httpMock = TestBed.inject(HttpTestingController);

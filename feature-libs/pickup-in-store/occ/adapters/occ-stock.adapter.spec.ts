@@ -1,5 +1,13 @@
-import { HttpClient, HttpErrorResponse, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import {
   BaseOccUrlProperties,
@@ -58,15 +66,15 @@ describe(`OccStockAdapter`, () => {
   let httpClient: HttpClient;
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         OccStockAdapter,
         { provide: OccEndpointsService, useClass: MockOccEndpointsService },
         { provide: LoggerService, useClass: MockLoggerService },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
   }));
   beforeEach(() => {
     occAdapter = TestBed.inject(OccStockAdapter);

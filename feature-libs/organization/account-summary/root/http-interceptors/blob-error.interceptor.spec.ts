@@ -4,8 +4,18 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { HTTP_INTERCEPTORS, HttpClient, HttpErrorResponse, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { HttpTestingController, TestRequest, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HTTP_INTERCEPTORS,
+  HttpClient,
+  HttpErrorResponse,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
+import {
+  HttpTestingController,
+  TestRequest,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { FileReaderService } from '@spartacus/storefront';
 import { take } from 'rxjs/operators';
@@ -27,18 +37,18 @@ describe('BlobErrorInterceptor', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         FileReaderService,
         {
-            provide: HTTP_INTERCEPTORS,
-            useClass: BlobErrorInterceptor,
-            multi: true,
+          provide: HTTP_INTERCEPTORS,
+          useClass: BlobErrorInterceptor,
+          multi: true,
         },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     httpMock = TestBed.inject(HttpTestingController);
     http = TestBed.inject(HttpClient);

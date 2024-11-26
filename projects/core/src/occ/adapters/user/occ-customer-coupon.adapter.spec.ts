@@ -1,4 +1,7 @@
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import {
   CustomerCoupon,
@@ -13,7 +16,10 @@ import { OccEndpointsService } from '../../services/occ-endpoints.service';
 import { OCC_USER_ID_ANONYMOUS } from '../../utils/occ-constants';
 import { OccCustomerCouponAdapter } from './occ-customer-coupon.adapter';
 import { MockOccEndpointsService } from './unit-test.helper';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 const userId = 'mockUseId';
 
@@ -36,18 +42,18 @@ describe('OccCustomerCouponAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         OccCustomerCouponAdapter,
         { provide: OccConfig, useValue: MockOccModuleConfig },
         {
-            provide: OccEndpointsService,
-            useClass: MockOccEndpointsService,
+          provide: OccEndpointsService,
+          useClass: MockOccEndpointsService,
         },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     occCustomerCouponAdapter = TestBed.inject(OccCustomerCouponAdapter);
     httpMock = TestBed.inject(HttpTestingController);

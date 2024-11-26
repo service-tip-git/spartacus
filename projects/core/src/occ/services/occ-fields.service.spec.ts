@@ -5,7 +5,10 @@ import {
   OccFieldsService,
   ScopedDataWithUrl,
 } from './occ-fields.service';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 describe('OccFieldsService', () => {
   let service: OccFieldsService;
@@ -22,9 +25,12 @@ describe('OccFieldsService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
-});
+      imports: [],
+      providers: [
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+      ],
+    });
     service = TestBed.inject(OccFieldsService);
   });
 

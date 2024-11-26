@@ -14,7 +14,10 @@ import { OrderHistoryAdapter } from '../../connectors/order-history.adapter';
 import { OrderHistoryConnector } from '../../connectors/order-history.connector';
 import { OrderActions } from '../actions/index';
 import * as fromOrderReturnRequestEffect from './order-return-request.effect';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 const mockReturnRequest: ReturnRequest = { rma: '000000' };
 
@@ -53,8 +56,8 @@ describe('Order Return Request effect', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         OrderHistoryConnector,
         fromOrderReturnRequestEffect.OrderReturnRequestEffect,
         { provide: OrderHistoryAdapter, useValue: {} },
@@ -62,8 +65,8 @@ describe('Order Return Request effect', () => {
         { provide: LoggerService, useClass: MockLoggerService },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     actions$ = TestBed.inject(Actions);
     orderReturnRequestEffect = TestBed.inject(

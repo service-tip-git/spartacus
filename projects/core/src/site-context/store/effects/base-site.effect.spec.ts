@@ -10,7 +10,10 @@ import { SiteAdapter } from '../../connectors/site.adapter';
 import { SiteConnector } from '../../connectors/site.connector';
 import { SiteContextActions } from '../actions/index';
 import * as fromEffects from './base-site.effect';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 describe('BaseSite Effects', () => {
   let actions$: Observable<SiteContextActions.BaseSiteAction>;
@@ -22,15 +25,15 @@ describe('BaseSite Effects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [ConfigModule.forRoot(), BaseOccModule],
-    providers: [
+      imports: [ConfigModule.forRoot(), BaseOccModule],
+      providers: [
         fromEffects.BaseSiteEffects,
         { provide: SiteAdapter, useValue: {} },
         provideMockActions(() => actions$),
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     connector = TestBed.inject(SiteConnector);
     effects = TestBed.inject(fromEffects.BaseSiteEffects);

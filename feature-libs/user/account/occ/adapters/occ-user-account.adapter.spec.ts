@@ -1,4 +1,7 @@
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import {
   BaseOccUrlProperties,
@@ -17,7 +20,10 @@ import {
   VerificationTokenCreation,
 } from '@spartacus/user/account/root';
 import { OccUserAccountAdapter } from './occ-user-account.adapter';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 export const mockOccModuleConfig: OccConfig = {
   backend: {
@@ -78,18 +84,18 @@ describe('OccUserAccountAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         OccUserAccountAdapter,
         { provide: OccConfig, useValue: mockOccModuleConfig },
         {
-            provide: OccEndpointsService,
-            useClass: MockOccEndpointsService,
+          provide: OccEndpointsService,
+          useClass: MockOccEndpointsService,
         },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     occUserAccountAdapter = TestBed.inject(OccUserAccountAdapter);
     httpMock = TestBed.inject(HttpTestingController);

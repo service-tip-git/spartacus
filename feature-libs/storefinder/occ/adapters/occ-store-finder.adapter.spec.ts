@@ -1,4 +1,7 @@
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { OccStoreFinderAdapter } from './occ-store-finder.adapter';
 import {
@@ -15,7 +18,10 @@ import {
   STORE_COUNT_NORMALIZER,
   STORE_FINDER_SEARCH_PAGE_NORMALIZER,
 } from '@spartacus/storefinder/core';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 const queryText = 'test';
 const searchResults = { stores: [{ name: 'test' }] };
@@ -57,14 +63,14 @@ describe('OccStoreFinderAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         OccStoreFinderAdapter,
         { provide: OccEndpointsService, useClass: MockOccEndpointsService },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     occStoreFinderAdapter = TestBed.inject(OccStoreFinderAdapter);
     httpMock = TestBed.inject(HttpTestingController);

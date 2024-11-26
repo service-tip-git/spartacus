@@ -12,7 +12,10 @@ import { of } from 'rxjs';
 import { ConfiguratorTestUtils } from '../../testing/configurator-test-utils';
 import { CpqConfiguratorOccAdapter } from './cpq-configurator-occ.adapter';
 import { CpqConfiguratorOccService } from './cpq-configurator-occ.service';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 const productCode = 'CONF_LAPTOP';
 const configId = '1234-56-7890';
@@ -142,17 +145,17 @@ describe('CpqConfiguratorOccAdapter', () => {
     });
 
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         CpqConfiguratorOccAdapter,
         {
-            provide: CpqConfiguratorOccService,
-            useValue: mockedOccService,
+          provide: CpqConfiguratorOccService,
+          useValue: mockedOccService,
         },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     adapterUnderTest = TestBed.inject(
       CpqConfiguratorOccAdapter as Type<CpqConfiguratorOccAdapter>

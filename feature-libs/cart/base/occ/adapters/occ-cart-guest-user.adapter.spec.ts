@@ -4,7 +4,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import {
   BaseOccUrlProperties,
@@ -13,7 +16,10 @@ import {
   OccEndpointsService,
 } from '@spartacus/core';
 import { OccCartGuestUserAdapter } from './occ-cart-guest-user.adapter';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 const userId = 'userId';
 const cartId = 'cartId';
@@ -41,14 +47,14 @@ describe('OccCartGuestUserAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         OccCartGuestUserAdapter,
         { provide: OccEndpointsService, useClass: MockOccEndpointsService },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     occCartGuestUserAdapter = TestBed.inject(OccCartGuestUserAdapter);
     httpMock = TestBed.inject(HttpTestingController);

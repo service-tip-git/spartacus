@@ -1,5 +1,13 @@
-import { HttpClient, HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpClient,
+  HTTP_INTERCEPTORS,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { inject, TestBed } from '@angular/core/testing';
 import { OccEndpointsService, WindowRef } from '@spartacus/core';
 import { PersonalizationConfig } from '../config/personalization-config';
@@ -45,20 +53,20 @@ describe('OccPersonalizationTimeInterceptor with personalization enabled', () =>
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         { provide: PersonalizationConfig, useValue: mockPersonalizationConfig },
         { provide: WindowRef, useValue: MockWindowRef },
         { provide: OccEndpointsService, useClass: OccEndpointsServiceMock },
         {
-            provide: HTTP_INTERCEPTORS,
-            useClass: OccPersonalizationTimeInterceptor,
-            multi: true,
+          provide: HTTP_INTERCEPTORS,
+          useClass: OccPersonalizationTimeInterceptor,
+          multi: true,
         },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     httpMock = TestBed.inject(HttpTestingController);
     winRef = TestBed.inject(WindowRef);
@@ -119,27 +127,27 @@ describe('OccPersonalizationTimeInterceptor with personalization disabled', () =
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         {
-            provide: PersonalizationConfig,
-            useValue: {
-                personalization: {
-                    enabled: false,
-                },
+          provide: PersonalizationConfig,
+          useValue: {
+            personalization: {
+              enabled: false,
             },
+          },
         },
         { provide: WindowRef, useValue: MockWindowRef },
         { provide: OccEndpointsService, useClass: OccEndpointsServiceMock },
         {
-            provide: HTTP_INTERCEPTORS,
-            useClass: OccPersonalizationTimeInterceptor,
-            multi: true,
+          provide: HTTP_INTERCEPTORS,
+          useClass: OccPersonalizationTimeInterceptor,
+          multi: true,
         },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     httpMock = TestBed.inject(HttpTestingController);
     winRef = TestBed.inject(WindowRef);

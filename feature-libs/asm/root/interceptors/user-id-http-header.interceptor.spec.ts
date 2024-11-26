@@ -1,5 +1,14 @@
-import { HttpClient, HttpContext, HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpClient,
+  HttpContext,
+  HTTP_INTERCEPTORS,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import {
   OCC_HTTP_TOKEN,
@@ -26,26 +35,26 @@ describe('UserIdHttpHeaderInterceptor', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         { provide: OCC_USER_ID_CONSTANTS, useValue: [] },
         { provide: UserIdService, useClass: MockUserIdService },
         {
-            provide: HTTP_INTERCEPTORS,
-            useClass: UserIdHttpHeaderInterceptor,
-            multi: true,
+          provide: HTTP_INTERCEPTORS,
+          useClass: UserIdHttpHeaderInterceptor,
+          multi: true,
         },
         provideConfig({
-            asm: {
-                userIdHttpHeader: {
-                    enable: true,
-                },
+          asm: {
+            userIdHttpHeader: {
+              enable: true,
             },
+          },
         }),
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
   });
 
   function initializeMocks(): void {
@@ -180,26 +189,26 @@ describe('UserIdHttpHeaderInterceptor', () => {
 
   it('should pass the original request if the interceptor is not feature-enabled', (done) => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [
+      imports: [],
+      providers: [
         { provide: OCC_USER_ID_CONSTANTS, useValue: [] },
         { provide: UserIdService, useClass: MockUserIdService },
         {
-            provide: HTTP_INTERCEPTORS,
-            useClass: UserIdHttpHeaderInterceptor,
-            multi: true,
+          provide: HTTP_INTERCEPTORS,
+          useClass: UserIdHttpHeaderInterceptor,
+          multi: true,
         },
         provideConfig({
-            asm: {
-                userIdHttpHeader: {
-                    enable: false,
-                },
+          asm: {
+            userIdHttpHeader: {
+              enable: false,
             },
+          },
         }),
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     initializeMocks();
 

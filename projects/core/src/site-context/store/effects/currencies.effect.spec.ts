@@ -10,7 +10,10 @@ import { SiteAdapter } from '../../connectors/site.adapter';
 import { SiteConnector } from '../../connectors/site.connector';
 import { SiteContextActions } from '../actions/index';
 import * as fromEffects from './currencies.effect';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 describe('Currencies Effects', () => {
   let actions$: Subject<SiteContextActions.CurrenciesAction>;
@@ -29,16 +32,16 @@ describe('Currencies Effects', () => {
     };
 
     TestBed.configureTestingModule({
-    imports: [ConfigModule.forRoot(), BaseOccModule],
-    providers: [
+      imports: [ConfigModule.forRoot(), BaseOccModule],
+      providers: [
         fromEffects.CurrenciesEffects,
         { provide: SiteAdapter, useValue: {} },
         provideMockActions(() => actions$),
         { provide: Store, useValue: mockStore },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
-    ]
-});
+      ],
+    });
 
     connector = TestBed.inject(SiteConnector);
     effects = TestBed.inject(fromEffects.CurrenciesEffects);
