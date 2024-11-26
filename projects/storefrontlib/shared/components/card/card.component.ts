@@ -15,6 +15,8 @@ export interface CardAction {
 export interface CardLinkAction {
   link: string;
   name: string;
+  ariaLabel?: string;
+  target?: string;
 }
 
 export interface Card {
