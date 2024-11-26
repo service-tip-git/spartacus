@@ -391,6 +391,7 @@ if (environment.cpq) {
         a11yItemCounterFocus: true,
         a11yScrollToReviewByShowReview: true,
         a11yViewHoursButtonIconContrast: true,
+        a11yStoreInStockIconContrast: true,
         a11yCheckoutStepsLandmarks: true,
         a11yQTY2Quantity: true,
         a11yImproveButtonsInCardComponent: true,
