@@ -389,6 +389,7 @@ if (environment.cpq) {
         a11yCheckoutStepsLandmarks: true,
         a11yQTY2Quantity: true,
         a11yShowDownArrowOnFocusedSelectMenu: true,
+        a11yImproveButtonsInCardComponent: true,
         a11yApprovalProcessWithNoClearable: true,
         a11yPostRegisterSuccessMessage: true,
         a11yDeleteButton2First: true,
