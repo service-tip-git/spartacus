@@ -12,8 +12,6 @@ import * as configurationCart from './product-configurator-cart';
 import * as configurationCartVc from './product-configurator-cart-vc';
 import * as productSearch from './product-search';
 import { verifyGlobalMessageAfterRegistration } from './register';
-import { waitForPage } from './checkout-flow';
-import { checkUserIsSignedIn } from './login';
 
 const nextBtnSelector =
   'cx-configurator-previous-next-buttons button:contains("Next")';
