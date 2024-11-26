@@ -1,4 +1,4 @@
 {
-  "cpqQuoteHeading" : "Preço do item",
-  "discountCaption" : "This item is {{ discount }}% off"
+  "cpqQuoteHeading": "Preço do item",
+  "discountCaption": "This item is {{ discount }}% off"
 }

@@ -1,88 +1,88 @@
 {
-  "orgAccountSummary" : {
-    "groupName" : "Account Summaries",
-    "header" : "All Account Summaries ({{count}})",
-    "name" : "단위",
-    "details" : {
-      "header" : "계정 요약 세부 사항",
-      "uid" : "단위 ID",
-      "name" : "단위 이름",
-      "address" : "주소",
-      "creditRep" : "신용 담당자:",
-      "creditLine" : "신용 한도",
-      "currentBalance" : "현재 잔고",
-      "openBalance" : "미수금",
-      "pastDueBalance" : "기한 경과 잔고",
-      "dayRange" : "{{minBoundary}}-{{maxBoundary}} Days",
-      "dayPlus" : "{{minBoundary}}+ Days",
-      "notApplicable" : "해당 없음"
+  "orgAccountSummary": {
+    "groupName": "Account Summaries",
+    "header": "All Account Summaries ({{count}})",
+    "name": "단위",
+    "details": {
+      "header": "계정 요약 세부 사항",
+      "uid": "단위 ID",
+      "name": "단위 이름",
+      "address": "주소",
+      "creditRep": "신용 담당자:",
+      "creditLine": "신용 한도",
+      "currentBalance": "현재 잔고",
+      "openBalance": "미수금",
+      "pastDueBalance": "기한 경과 잔고",
+      "dayRange": "{{minBoundary}}-{{maxBoundary}} Days",
+      "dayPlus": "{{minBoundary}}+ Days",
+      "notApplicable": "해당 없음"
     },
-    "document" : {
-      "header" : "문서",
-      "id" : "문서 번호",
-      "type" : "문서 유형",
-      "date" : "생성일",
-      "dueDate" : "Due On",
-      "originalAmount" : "원래 금액",
-      "openAmount" : "미결 금액",
-      "status" : "상태",
-      "attachment" : "첨부 파일",
-      "download" : "다운로드",
-      "attachmentDescription" : "Download attachment for {{type}} {{id}}.",
-      "noneFound" : "No Documents Found"
+    "document": {
+      "header": "문서",
+      "id": "문서 번호",
+      "type": "문서 유형",
+      "date": "생성일",
+      "dueDate": "Due On",
+      "originalAmount": "원래 금액",
+      "openAmount": "미결 금액",
+      "status": "상태",
+      "attachment": "첨부 파일",
+      "download": "다운로드",
+      "attachmentDescription": "Download attachment for {{type}} {{id}}.",
+      "noneFound": "No Documents Found"
     },
-    "sorts" : {
-      "byCreatedAtDateAsc" : "Created On Ascending",
-      "byCreatedAtDateDesc" : "Created On Descending",
-      "byDueAtDateAsc" : "Due On Ascending",
-      "byDueAtDateDesc" : "Due On Descending",
-      "byOriginalAmountAsc" : "Original Amount Ascending",
-      "byOriginalAmountDesc" : "Original Amount Descending",
-      "byOpenAmountAsc" : "Open Amount Ascending",
-      "byOpenAmountDesc" : "Open Amount Descending",
-      "byOrgDocumentTypeAsc" : "Document Type Ascending",
-      "byOrgDocumentTypeDesc" : "Document Type Descending",
-      "byStatusAsc" : "Status Ascending",
-      "byStatusDesc" : "Status Descending",
-      "byOrgDocumentIdAsc" : "Document Number Ascending",
-      "byOrgDocumentIdDesc" : "Document Number Descending"
+    "sorts": {
+      "byCreatedAtDateAsc": "Created On Ascending",
+      "byCreatedAtDateDesc": "Created On Descending",
+      "byDueAtDateAsc": "Due On Ascending",
+      "byDueAtDateDesc": "Due On Descending",
+      "byOriginalAmountAsc": "Original Amount Ascending",
+      "byOriginalAmountDesc": "Original Amount Descending",
+      "byOpenAmountAsc": "Open Amount Ascending",
+      "byOpenAmountDesc": "Open Amount Descending",
+      "byOrgDocumentTypeAsc": "Document Type Ascending",
+      "byOrgDocumentTypeDesc": "Document Type Descending",
+      "byStatusAsc": "Status Ascending",
+      "byStatusDesc": "Status Descending",
+      "byOrgDocumentIdAsc": "Document Number Ascending",
+      "byOrgDocumentIdDesc": "Document Number Descending"
     },
-    "statuses" : {
-      "open" : "미결",
-      "closed" : "닫힘",
-      "all" : "모두"
+    "statuses": {
+      "open": "미결",
+      "closed": "닫힘",
+      "all": "모두"
     },
-    "filterByOptions" : {
-      "orgDocumentId" : "문서 번호",
-      "orgDocumentIdRange" : "Document Number Range",
-      "orgDocumentType" : "문서 유형",
-      "createdAtDateRange" : "Created On Range",
-      "dueAtDateRange" : "Due On Range",
-      "amountRange" : "원래 금액 범위",
-      "openAmountRange" : "미결 금액 내림차순"
+    "filterByOptions": {
+      "orgDocumentId": "문서 번호",
+      "orgDocumentIdRange": "Document Number Range",
+      "orgDocumentType": "문서 유형",
+      "createdAtDateRange": "Created On Range",
+      "dueAtDateRange": "Due On Range",
+      "amountRange": "원래 금액 범위",
+      "openAmountRange": "미결 금액 내림차순"
     },
-    "sortBy" : "Sort By",
-    "sortDocuments" : "Sort documents",
-    "filter" : {
-      "status" : "상태",
-      "filterBy" : "필터 기준",
-      "documentNumber" : "문서 번호",
-      "documentType" : "문서 유형",
-      "startRange" : "보낸 사람",
-      "endRange" : "받는 사람",
-      "clear" : "모두 지우기",
-      "search" : "검색",
-      "errors" : {
-        "toDateMustComeAfterFrom" : "Choose an end date that's later than the start date.",
-        "toAmountMustBeLargeThanFrom" : "Choose an end range value that's smaller than the start value."
+    "sortBy": "Sort By",
+    "sortDocuments": "Sort documents",
+    "filter": {
+      "status": "상태",
+      "filterBy": "필터 기준",
+      "documentNumber": "문서 번호",
+      "documentType": "문서 유형",
+      "startRange": "보낸 사람",
+      "endRange": "받는 사람",
+      "clear": "모두 지우기",
+      "search": "검색",
+      "errors": {
+        "toDateMustComeAfterFrom": "Choose an end date that's later than the start date.",
+        "toAmountMustBeLargeThanFrom": "Choose an end range value that's smaller than the start value."
       }
     },
-    "hint" : "Account summaries allow you to review general information about a unit, including balances and aging summary of invoices. Here, you can also browse through a list of transaction documents for a unit."
+    "hint": "Account summaries allow you to review general information about a unit, including balances and aging summary of invoices. Here, you can also browse through a list of transaction documents for a unit."
   },
-  "orgAccountSummaryList" : {
-    "breadcrumbs" : {
-      "list" : "Account Summaries",
-      "details" : "{{name}}"
+  "orgAccountSummaryList": {
+    "breadcrumbs": {
+      "list": "Account Summaries",
+      "details": "{{name}}"
     }
   }
 }

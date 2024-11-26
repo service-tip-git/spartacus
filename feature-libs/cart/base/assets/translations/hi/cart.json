@@ -1,74 +1,74 @@
 {
-  "cartDetails" : {
-    "id" : "ID",
-    "proceedToCheckout" : "चेक आउट करने के लिए आगे बढ़ें",
-    "cartName" : "Cart #{{code}}"
+  "cartDetails": {
+    "id": "ID",
+    "proceedToCheckout": "चेक आउट करने के लिए आगे बढ़ें",
+    "cartName": "Cart #{{code}}"
   },
-  "cartItems" : {
-    "id" : "ID",
-    "description" : "वर्णन",
-    "item" : "आइटम",
-    "itemPrice" : "आइटम मूल्य",
-    "quantity" : "मात्रा",
-    "quantityTitle" : "The quantity represents the total number of this item in your cart.",
-    "total" : "कुल",
-    "actions" : "क्रियाएं",
-    "cartTotal" : "Cart total ({{count}} item)",
-    "cartTotal_other" : "Cart total ({{count}} items)",
-    "itemRemoved" : "Selected item has been removed. Cart total has been updated.",
-    "caption" : "Shopping cart contents."
+  "cartItems": {
+    "id": "ID",
+    "description": "वर्णन",
+    "item": "आइटम",
+    "itemPrice": "आइटम मूल्य",
+    "quantity": "मात्रा",
+    "quantityTitle": "The quantity represents the total number of this item in your cart.",
+    "total": "कुल",
+    "actions": "क्रियाएं",
+    "cartTotal": "Cart total ({{count}} item)",
+    "cartTotal_other": "Cart total ({{count}} items)",
+    "itemRemoved": "Selected item has been removed. Cart total has been updated.",
+    "caption": "Shopping cart contents."
   },
-  "orderCost" : {
-    "orderSummary" : "ऑर्डर सारांश",
-    "subtotal" : "Subtotal after discounts:",
-    "shipping" : "भेजा जा रहा है. ",
-    "estimatedShipping" : "Estimated shipping:",
-    "discount" : "You saved:",
-    "salesTax" : "Sales Tax:",
-    "grossTax" : "The order total does not include tax of",
-    "grossIncludeTax" : "The order total includes tax of",
-    "total" : "कुल:",
-    "toBeDetermined" : "TBD"
+  "orderCost": {
+    "orderSummary": "ऑर्डर सारांश",
+    "subtotal": "Subtotal after discounts:",
+    "shipping": "भेजा जा रहा है. ",
+    "estimatedShipping": "Estimated shipping:",
+    "discount": "You saved:",
+    "salesTax": "Sales Tax:",
+    "grossTax": "The order total does not include tax of",
+    "grossIncludeTax": "The order total includes tax of",
+    "total": "कुल:",
+    "toBeDetermined": "TBD"
   },
-  "voucher" : {
-    "coupon" : "Have a coupon?",
-    "coupon_other" : "Coupon codes",
-    "couponLabel" : "Enter a promo code here",
-    "addCoupon" : "Add a coupon",
-    "apply" : "लागू करें",
-    "placeholder" : "Promo code",
-    "applyVoucherSuccess" : "{{voucherCode}} has been applied.",
-    "removeVoucherSuccess" : "{{voucherCode}} has been removed.",
-    "anchorLabel" : "Enter or remove your coupon code",
-    "vouchersApplied" : "लागू कूपन",
-    "availableCoupons" : "Available coupons",
-    "availableCouponsLabel" : "You can add these coupons to this order."
+  "voucher": {
+    "coupon": "Have a coupon?",
+    "coupon_other": "Coupon codes",
+    "couponLabel": "Enter a promo code here",
+    "addCoupon": "Add a coupon",
+    "apply": "लागू करें",
+    "placeholder": "Promo code",
+    "applyVoucherSuccess": "{{voucherCode}} has been applied.",
+    "removeVoucherSuccess": "{{voucherCode}} has been removed.",
+    "anchorLabel": "Enter or remove your coupon code",
+    "vouchersApplied": "लागू कूपन",
+    "availableCoupons": "Available coupons",
+    "availableCouponsLabel": "You can add these coupons to this order."
   },
-  "saveForLaterItems" : {
-    "itemTotal" : "Saved for later ({{count}} item)",
-    "itemTotal_other" : "बाद के लिए सहेजा गया ({{count}} आइटम)",
-    "cartTitle" : "कार्ट",
-    "saveForLater" : "Save For Later",
-    "moveToCart" : "Move To Cart",
-    "stock" : "स्टॉक",
-    "forceInStock" : "स्टॉक में है"
+  "saveForLaterItems": {
+    "itemTotal": "Saved for later ({{count}} item)",
+    "itemTotal_other": "बाद के लिए सहेजा गया ({{count}} आइटम)",
+    "cartTitle": "कार्ट",
+    "saveForLater": "Save For Later",
+    "moveToCart": "Move To Cart",
+    "stock": "स्टॉक",
+    "forceInStock": "स्टॉक में है"
   },
-  "clearCart" : {
-    "clearCart" : "Clear Cart",
-    "clearingCart" : "Clearing Cart...",
-    "cartClearedSuccessfully" : "Active cart cleared successfully.",
-    "areYouSureToClearCart" : "Are you sure you want to clear this cart?",
-    "allItemsWillBeRemoved" : "All items in your active cart will be removed."
+  "clearCart": {
+    "clearCart": "Clear Cart",
+    "clearingCart": "Clearing Cart...",
+    "cartClearedSuccessfully": "Active cart cleared successfully.",
+    "areYouSureToClearCart": "Are you sure you want to clear this cart?",
+    "allItemsWillBeRemoved": "All items in your active cart will be removed."
   },
-  "validation" : {
-    "cartEntriesChangeDuringCheckout" : "During checkout we found problems with your entries. Please review your cart.",
-    "cartEntryRemoved" : "{{name}} was removed from the cart due to being out of stock.",
-    "productOutOfStock" : "अपर्याप्त स्टॉक के कारण {{name}} को कार्ट से हटा दिया गया है. ",
-    "lowStock" : "Quantity has reduced to {{quantity}} due to insufficient stock.",
-    "reviewConfiguration" : "Resolve the issues in the configuration for cart entry first.",
-    "configurationError" : "Resolve the issues in the configuration for cart entries first.",
-    "pricingError" : "Configurator pricing is currently not available. Checkout/quote submission is not possible. Please try again later.",
-    "unresolvableIssues" : "The product configuration requires additional entries in the back end. As a result, you cannot proceed. Please contact support.",
-    "inProgress" : "प्रक्रिया हो रही है"
+  "validation": {
+    "cartEntriesChangeDuringCheckout": "During checkout we found problems with your entries. Please review your cart.",
+    "cartEntryRemoved": "{{name}} was removed from the cart due to being out of stock.",
+    "productOutOfStock": "अपर्याप्त स्टॉक के कारण {{name}} को कार्ट से हटा दिया गया है. ",
+    "lowStock": "Quantity has reduced to {{quantity}} due to insufficient stock.",
+    "reviewConfiguration": "Resolve the issues in the configuration for cart entry first.",
+    "configurationError": "Resolve the issues in the configuration for cart entries first.",
+    "pricingError": "Configurator pricing is currently not available. Checkout/quote submission is not possible. Please try again later.",
+    "unresolvableIssues": "The product configuration requires additional entries in the back end. As a result, you cannot proceed. Please contact support.",
+    "inProgress": "प्रक्रिया हो रही है"
   }
 }

@@ -1,86 +1,86 @@
 {
-  "pickupInfo" : {
-    "inStorePickup" : "In Store Pickup",
-    "pickupBy" : "Pick up by",
-    "pickupFrom" : "Pick up from"
+  "pickupInfo": {
+    "inStorePickup": "In Store Pickup",
+    "pickupBy": "Pick up by",
+    "pickupFrom": "Pick up from"
   },
-  "pickupOptionDialog" : {
-    "close" : "Bezárás",
-    "modalHeader" : "Átvétel boltban"
+  "pickupOptionDialog": {
+    "close": "Bezárás",
+    "modalHeader": "Átvétel boltban"
   },
-  "pickupOptions" : {
-    "legend" : "Szállítási mód",
-    "changeStore" : "Üzlet módosítása",
-    "delivery" : "Ship It (Free Return)",
-    "pickup" : "Free Pickup In Store",
-    "selectStore" : "Select Store"
+  "pickupOptions": {
+    "legend": "Szállítási mód",
+    "changeStore": "Üzlet módosítása",
+    "delivery": "Ship It (Free Return)",
+    "pickup": "Free Pickup In Store",
+    "selectStore": "Select Store"
   },
-  "setPreferredStore" : {
-    "makeThisMyStore" : "Make This My Store",
-    "myStore" : "My Store"
+  "setPreferredStore": {
+    "makeThisMyStore": "Make This My Store",
+    "myStore": "My Store"
   },
-  "store" : {
-    "pickupFromHere" : "Pick Up from here",
-    "stockLevel_inStock" : "{{ count }} in Stock",
-    "stockLevel_outOfStock" : "Nincs készleten",
-    "viewHours" : "View Hours"
+  "store": {
+    "pickupFromHere": "Pick Up from here",
+    "stockLevel_inStock": "{{ count }} in Stock",
+    "stockLevel_outOfStock": "Nincs készleten",
+    "viewHours": "View Hours"
   },
-  "storeList" : {
-    "noStoresMessage" : "No stores found in database..."
+  "storeList": {
+    "noStoresMessage": "No stores found in database..."
   },
-  "storeSchedule" : {
-    "closed" : "Zárva",
-    "storeHours" : "Store hours"
+  "storeSchedule": {
+    "closed": "Zárva",
+    "storeHours": "Store hours"
   },
-  "storeSearch" : {
-    "findAStore" : "Üzlet keresése",
-    "findStores" : "Üzletek keresése",
-    "hideOutOfStockOptions" : "Hide out of stock options",
-    "searchPlaceholder" : "Enter Zip Code or Town or Address",
-    "useMyLocation" : "Use my location"
+  "storeSearch": {
+    "findAStore": "Üzlet keresése",
+    "findStores": "Üzletek keresése",
+    "hideOutOfStockOptions": "Hide out of stock options",
+    "searchPlaceholder": "Enter Zip Code or Town or Address",
+    "useMyLocation": "Use my location"
   },
-  "addressBookPickupInStore" : {
-    "heading" : "Pick-Up Store"
+  "addressBookPickupInStore": {
+    "heading": "Pick-Up Store"
   },
-  "storeFinderPickupInStore" : {
-    "heading" : "My Store"
+  "storeFinderPickupInStore": {
+    "heading": "My Store"
   },
-  "checkoutPickupInStore" : {
-    "heading" : "Items to be Picked Up",
-    "storeItemHeading" : "Pick Up Store Address"
+  "checkoutPickupInStore": {
+    "heading": "Items to be Picked Up",
+    "storeItemHeading": "Pick Up Store Address"
   },
-  "cartItems" : {
-    "item" : "Tétel"
+  "cartItems": {
+    "item": "Tétel"
   },
-  "deliveryPointOfServiceDetails" : {
-    "itemsToBePickUp" : "Items To Be Pick-Up",
-    "pickUpInStoreAddress" : "Pick Up Store Address",
-    "itemsToBeShipped" : "Items To Be Shipped",
-    "shippingAddress" : "Szállítási cím",
-    "deliveryMethod" : "Szállítási mód",
-    "deliveryOptions" : "Szállítási opciók",
-    "statusDisplay_cancelled" : "Törölve",
-    "statusDisplay_cancelling" : "Stornózás függőben",
-    "statusDisplay_completed" : "Befejezve",
-    "statusDisplay_created" : "Létrehozva",
-    "statusDisplay_error" : "Függőben",
-    "statusDisplay_Error" : "Függőben",
-    "statusDisplay_processing" : "Függőben",
-    "statusDisplay_open" : "Nyitott",
-    "statusDisplay_pending" : {
-      "approval" : "Jóváhagyásra vár",
-      "merchant" : {
-        "approval" : "Kereskedő jóváhagyására vár"
+  "deliveryPointOfServiceDetails": {
+    "itemsToBePickUp": "Items To Be Pick-Up",
+    "pickUpInStoreAddress": "Pick Up Store Address",
+    "itemsToBeShipped": "Items To Be Shipped",
+    "shippingAddress": "Szállítási cím",
+    "deliveryMethod": "Szállítási mód",
+    "deliveryOptions": "Szállítási opciók",
+    "statusDisplay_cancelled": "Törölve",
+    "statusDisplay_cancelling": "Stornózás függőben",
+    "statusDisplay_completed": "Befejezve",
+    "statusDisplay_created": "Létrehozva",
+    "statusDisplay_error": "Függőben",
+    "statusDisplay_Error": "Függőben",
+    "statusDisplay_processing": "Függőben",
+    "statusDisplay_open": "Nyitott",
+    "statusDisplay_pending": {
+      "approval": "Jóváhagyásra vár",
+      "merchant": {
+        "approval": "Kereskedő jóváhagyására vár"
       }
     },
-    "statusDisplay_approved" : "Jóváhagyva",
-    "statusDisplay_rejected" : "Elutasítva",
-    "statusDisplay_merchant" : {
-      "approved" : "Kereskedő által jóváhagyva",
-      "rejected" : "Kereskedő által elutasítva"
+    "statusDisplay_approved": "Jóváhagyva",
+    "statusDisplay_rejected": "Elutasítva",
+    "statusDisplay_merchant": {
+      "approved": "Kereskedő által jóváhagyva",
+      "rejected": "Kereskedő által elutasítva"
     },
-    "statusDisplay_assigned" : {
-      "admin" : "Adminisztrátorhoz rendelve"
+    "statusDisplay_assigned": {
+      "admin": "Adminisztrátorhoz rendelve"
     }
   }
 }

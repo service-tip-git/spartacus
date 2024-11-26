@@ -1,65 +1,65 @@
 {
-  "savedCartDetails" : {
-    "cartName" : "名稱",
-    "cartDescription" : "說明",
-    "cartId" : "ID",
-    "dateSaved" : "儲存日期",
-    "items" : "項目",
-    "quantity" : "數量",
-    "total" : "總計",
-    "editSavedCart" : "編輯儲存的購物車",
-    "deleteSavedCart" : "刪除儲存的購物車",
-    "addSelectedItems" : "Add selected items",
-    "emptyCartItems" : "Empty Cart Items"
+  "savedCartDetails": {
+    "cartName": "名稱",
+    "cartDescription": "說明",
+    "cartId": "ID",
+    "dateSaved": "儲存日期",
+    "items": "項目",
+    "quantity": "數量",
+    "total": "總計",
+    "editSavedCart": "編輯儲存的購物車",
+    "deleteSavedCart": "刪除儲存的購物車",
+    "addSelectedItems": "Add selected items",
+    "emptyCartItems": "Empty Cart Items"
   },
-  "savedCartList" : {
-    "savedCarts" : "儲存的購物車 ({{count}})",
-    "cartName" : "名稱",
-    "cartId" : "ID",
-    "dateSaved" : "儲存日期",
-    "cartDescription" : "說明",
-    "quantity" : "數量",
-    "total" : "總計",
-    "actions" : "動作",
-    "makeCartActive" : "Make cart active",
-    "notFound" : "找不到儲存的購物車",
-    "swapCartNoActiveCart" : "Existing cart is activated by {{cartName}} successfully.",
-    "swapCartWithActiveCart" : "Existing cart is activated by {{cartName}} successfully. Your previous items were saved in a cart {{previousCartName}}."
+  "savedCartList": {
+    "savedCarts": "儲存的購物車 ({{count}})",
+    "cartName": "名稱",
+    "cartId": "ID",
+    "dateSaved": "儲存日期",
+    "cartDescription": "說明",
+    "quantity": "數量",
+    "total": "總計",
+    "actions": "動作",
+    "makeCartActive": "Make cart active",
+    "notFound": "找不到儲存的購物車",
+    "swapCartNoActiveCart": "Existing cart is activated by {{cartName}} successfully.",
+    "swapCartWithActiveCart": "Existing cart is activated by {{cartName}} successfully. Your previous items were saved in a cart {{previousCartName}}."
   },
-  "savedCartCartPage" : {
-    "messages" : {
-      "cartSaved" : "Your cart items have been successfully saved for later in the \"{{cartName}}\" cart"
+  "savedCartCartPage": {
+    "messages": {
+      "cartSaved": "Your cart items have been successfully saved for later in the \"{{cartName}}\" cart"
     }
   },
-  "savedCartDialog" : {
-    "saveForLater" : "Save For Later",
-    "itemsSavedForLater" : "All of the items in your cart will be saved for later",
-    "savedCartName" : "Saved Cart Name",
-    "savedCartDescription" : "Saved Cart Description",
-    "optional" : "optional",
-    "charactersLeft" : "characters left: {{count}}",
-    "cancel" : "取消",
-    "save" : "儲存",
-    "restore" : "還原",
-    "followingCartDelete" : "The following saved cart will be deleted",
-    "followingCartRestore" : "The following saved cart will be restored as the active cart",
-    "delete" : "刪除",
-    "deleteCartSuccess" : "Cart Deleted Successfully",
-    "editCartSuccess" : "Cart Edited Successfully",
-    "editSavedCart" : "編輯儲存的購物車",
-    "deleteSavedCart" : "刪除儲存的購物車",
-    "restoreSavedCart" : "還原儲存的購物車",
-    "name" : "名稱",
-    "id" : "ID",
-    "description" : "說明",
-    "quantity" : "數量",
-    "total" : "總計",
-    "keepCopySavedCart" : "Keep a copy of this cart in the saved carts list",
-    "defaultCloneCartName" : "{{name}} 副本",
-    "nameOfCloneCart" : "Name of copied cart"
+  "savedCartDialog": {
+    "saveForLater": "Save For Later",
+    "itemsSavedForLater": "All of the items in your cart will be saved for later",
+    "savedCartName": "Saved Cart Name",
+    "savedCartDescription": "Saved Cart Description",
+    "optional": "optional",
+    "charactersLeft": "characters left: {{count}}",
+    "cancel": "取消",
+    "save": "儲存",
+    "restore": "還原",
+    "followingCartDelete": "The following saved cart will be deleted",
+    "followingCartRestore": "The following saved cart will be restored as the active cart",
+    "delete": "刪除",
+    "deleteCartSuccess": "Cart Deleted Successfully",
+    "editCartSuccess": "Cart Edited Successfully",
+    "editSavedCart": "編輯儲存的購物車",
+    "deleteSavedCart": "刪除儲存的購物車",
+    "restoreSavedCart": "還原儲存的購物車",
+    "name": "名稱",
+    "id": "ID",
+    "description": "說明",
+    "quantity": "數量",
+    "total": "總計",
+    "keepCopySavedCart": "Keep a copy of this cart in the saved carts list",
+    "defaultCloneCartName": "{{name}} 副本",
+    "nameOfCloneCart": "Name of copied cart"
   },
-  "addToSavedCart" : {
-    "savedCarts" : "Saved carts",
-    "saveCartForLater" : "Save cart for later"
+  "addToSavedCart": {
+    "savedCarts": "Saved carts",
+    "saveCartForLater": "Save cart for later"
   }
 }

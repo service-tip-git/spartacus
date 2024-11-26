@@ -1,10 +1,10 @@
 {
-  "myAccountV2CustomerTicketing" : {
-    "heading" : "客户服务",
-    "showMore" : "显示更多",
-    "changedOn" : "Changed On: {{value}}",
-    "ticketId" : "ID: {{value}}",
-    "subjectLabel" : "主题",
-    "idLabel" : "Customer Service Id"
+  "myAccountV2CustomerTicketing": {
+    "heading": "客户服务",
+    "showMore": "显示更多",
+    "changedOn": "Changed On: {{value}}",
+    "ticketId": "ID: {{value}}",
+    "subjectLabel": "主题",
+    "idLabel": "Customer Service Id"
   }
 }

@@ -1,32 +1,32 @@
 {
-  "anonymousConsents" : {
-    "dialog" : {
-      "title" : "同意管理",
-      "legalDescription" : "We use cookies/browser's storage to personalize the content and improve user experience. We also might share the data about your site usage with our social media. For more, please review our privacy policy.",
-      "selectAll" : "すべて選択",
-      "clearAll" : "Clear all"
+  "anonymousConsents": {
+    "dialog": {
+      "title": "同意管理",
+      "legalDescription": "We use cookies/browser's storage to personalize the content and improve user experience. We also might share the data about your site usage with our social media. For more, please review our privacy policy.",
+      "selectAll": "すべて選択",
+      "clearAll": "Clear all"
     },
-    "banner" : {
-      "title" : "This website uses cookies",
-      "description" : "We use cookies/browser's storage to personalize the content and improve user experience.",
-      "allowAll" : "Allow All",
-      "viewDetails" : "詳細を表示"
+    "banner": {
+      "title": "This website uses cookies",
+      "description": "We use cookies/browser's storage to personalize the content and improve user experience.",
+      "allowAll": "Allow All",
+      "viewDetails": "詳細を表示"
     }
   },
-  "checkoutLogin" : {
-    "emailAddress" : {
-      "label" : "メール アドレス",
-      "placeholder" : "Enter email"
+  "checkoutLogin": {
+    "emailAddress": {
+      "label": "メール アドレス",
+      "placeholder": "Enter email"
     },
-    "confirmEmail" : {
-      "label" : "Confirm email",
-      "placeholder" : "Confirm email"
+    "confirmEmail": {
+      "label": "Confirm email",
+      "placeholder": "Confirm email"
     },
-    "continue" : "続行",
-    "emailIsRequired" : "Invalid email format",
-    "emailsMustMatch" : "Email does not match"
+    "continue": "続行",
+    "emailIsRequired": "Invalid email format",
+    "emailsMustMatch": "Email does not match"
   },
-  "authMessages" : {
-    "signedOutSuccessfully" : "You have successfully signed out."
+  "authMessages": {
+    "signedOutSuccessfully": "You have successfully signed out."
   }
 }

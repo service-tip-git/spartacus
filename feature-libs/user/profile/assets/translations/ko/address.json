@@ -1,78 +1,78 @@
 {
-  "addressForm" : {
-    "title" : "칭호",
-    "titleOptional" : "Title (optional)",
-    "defaultTitle" : "칭호",
-    "firstName" : {
-      "label" : "이름",
-      "placeholder" : "이름"
+  "addressForm": {
+    "title": "칭호",
+    "titleOptional": "Title (optional)",
+    "defaultTitle": "칭호",
+    "firstName": {
+      "label": "이름",
+      "placeholder": "이름"
     },
-    "lastName" : {
-      "label" : "성",
-      "placeholder" : "성"
+    "lastName": {
+      "label": "성",
+      "placeholder": "성"
     },
-    "address1" : "Address 1",
-    "address2" : "Address 2 (optional)",
-    "country" : "국가/지역",
-    "city" : {
-      "label" : "도시",
-      "placeholder" : "도시"
+    "address1": "Address 1",
+    "address2": "Address 2 (optional)",
+    "country": "국가/지역",
+    "city": {
+      "label": "도시",
+      "placeholder": "도시"
     },
-    "state" : "상태",
-    "zipCode" : {
-      "label" : "Zip code",
-      "placeholder" : "Postal Code/Zip"
+    "state": "상태",
+    "zipCode": {
+      "label": "Zip code",
+      "placeholder": "Postal Code/Zip"
     },
-    "phoneNumber" : {
-      "label" : "Phone number (optional)",
-      "placeholder" : "e.g. (###) - ### - ####"
+    "phoneNumber": {
+      "label": "Phone number (optional)",
+      "placeholder": "e.g. (###) - ### - ####"
     },
-    "cellphone" : {
-      "label" : "Mobile number (optional)",
-      "placeholder" : "e.g. (###) - ### - ####"
+    "cellphone": {
+      "label": "Mobile number (optional)",
+      "placeholder": "e.g. (###) - ### - ####"
     },
-    "saveAsDefault" : "Save as default",
-    "chooseAddress" : "Choose address",
-    "streetAddress" : "Street Address",
-    "aptSuite" : "Apartment Number",
-    "selectOne" : "Select One...",
-    "setAsDefault" : "Set as default delivery address",
-    "titleRequired" : "Title is required.",
-    "userAddressAddSuccess" : "New address was added successfully!",
-    "userAddressUpdateSuccess" : "Address updated successfully!",
-    "userAddressDeleteSuccess" : "Address deleted successfully!",
-    "invalidAddress" : "Invalid Address"
+    "saveAsDefault": "Save as default",
+    "chooseAddress": "Choose address",
+    "streetAddress": "Street Address",
+    "aptSuite": "Apartment Number",
+    "selectOne": "Select One...",
+    "setAsDefault": "Set as default delivery address",
+    "titleRequired": "Title is required.",
+    "userAddressAddSuccess": "New address was added successfully!",
+    "userAddressUpdateSuccess": "Address updated successfully!",
+    "userAddressDeleteSuccess": "Address deleted successfully!",
+    "invalidAddress": "Invalid Address"
   },
-  "addressBook" : {
-    "addNewDeliveryAddress" : "Add a new delivery address",
-    "editDeliveryAddress" : "Edit delivery address",
-    "areYouSureToDeleteAddress" : "이 주소를 삭제하시겠습니까?",
-    "addNewAddress" : "새 주소 추가",
-    "addAddress" : "Add address",
-    "updateAddress" : "Update address",
-    "backToAddressList" : "Back to address list",
-    "defaultDeliveryAddress" : "Default Delivery Address",
-    "additionalDeliveryAddress" : "Additional Delivery Address {{number}}"
+  "addressBook": {
+    "addNewDeliveryAddress": "Add a new delivery address",
+    "editDeliveryAddress": "Edit delivery address",
+    "areYouSureToDeleteAddress": "이 주소를 삭제하시겠습니까?",
+    "addNewAddress": "새 주소 추가",
+    "addAddress": "Add address",
+    "updateAddress": "Update address",
+    "backToAddressList": "Back to address list",
+    "defaultDeliveryAddress": "Default Delivery Address",
+    "additionalDeliveryAddress": "Additional Delivery Address {{number}}"
   },
-  "addressCard" : {
-    "default" : "DEFAULT",
-    "selected" : "선택됨",
-    "setAsDefault" : "기본값으로 설정",
-    "shipTo" : "납품처",
-    "billTo" : "Bill To",
-    "phoneNumber" : "P",
-    "mobileNumber" : "M"
+  "addressCard": {
+    "default": "DEFAULT",
+    "selected": "선택됨",
+    "setAsDefault": "기본값으로 설정",
+    "shipTo": "납품처",
+    "billTo": "Bill To",
+    "phoneNumber": "P",
+    "mobileNumber": "M"
   },
-  "addressSuggestion" : {
-    "verifyYourAddress" : "Verify your address",
-    "ensureAccuracySuggestChange" : "To ensure delivery accuracy, we suggest the change selected below.",
-    "chooseAddressToUse" : "Please choose which address you would like to use:",
-    "suggestedAddress" : "Suggested address",
-    "enteredAddress" : "Entered address",
-    "editAddress" : "주소 편집",
-    "saveAddress" : "주소 저장"
+  "addressSuggestion": {
+    "verifyYourAddress": "Verify your address",
+    "ensureAccuracySuggestChange": "To ensure delivery accuracy, we suggest the change selected below.",
+    "chooseAddressToUse": "Please choose which address you would like to use:",
+    "suggestedAddress": "Suggested address",
+    "enteredAddress": "Entered address",
+    "editAddress": "주소 편집",
+    "saveAddress": "주소 저장"
   },
-  "addressMessages" : {
-    "setAsDefaultSuccessfully" : "Address {{ streetAddress }} was successfully set as default"
+  "addressMessages": {
+    "setAsDefaultSuccessfully": "Address {{ streetAddress }} was successfully set as default"
   }
 }

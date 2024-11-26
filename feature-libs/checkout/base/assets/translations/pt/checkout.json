@@ -1,54 +1,54 @@
 {
-  "checkout" : {
-    "backToCart" : "Back to cart"
+  "checkout": {
+    "backToCart": "Back to cart"
   },
-  "checkoutProgress" : {
-    "label" : "Checkout Progress",
-    "deliveryAddress" : "Endereço de entrega",
-    "deliveryMode" : "Modo de entrega",
-    "paymentDetails" : "Pagamento",
-    "reviewOrder" : "Revisão",
-    "state" : {
-      "completed" : "{{step}}, Completed",
-      "selected" : "{{step}}, Selected",
-      "disabled" : "{{step}}, Disabled"
+  "checkoutProgress": {
+    "label": "Checkout Progress",
+    "deliveryAddress": "Endereço de entrega",
+    "deliveryMode": "Modo de entrega",
+    "paymentDetails": "Pagamento",
+    "reviewOrder": "Revisão",
+    "state": {
+      "completed": "{{step}}, Completed",
+      "selected": "{{step}}, Selected",
+      "disabled": "{{step}}, Disabled"
     }
   },
-  "checkoutAddress" : {
-    "shippingAddress" : "Endereço de entrega",
-    "selectYourDeliveryAddress" : "Select your Delivery Address",
-    "defaultDeliveryAddress" : "Default Delivery Address",
-    "addNewAddress" : "Add New Address",
-    "shipToThisAddress" : "Ship to this address",
-    "deliveryAddressSelected" : "Delivery address selected"
+  "checkoutAddress": {
+    "shippingAddress": "Endereço de entrega",
+    "selectYourDeliveryAddress": "Select your Delivery Address",
+    "defaultDeliveryAddress": "Default Delivery Address",
+    "addNewAddress": "Add New Address",
+    "shipToThisAddress": "Ship to this address",
+    "deliveryAddressSelected": "Delivery address selected"
   },
-  "checkoutMode" : {
-    "deliveryMethod" : "Método de entrega",
-    "deliveryOptions" : "Opções de entrega",
-    "standardDelivery" : "Entrega padrão",
-    "premiumDelivery" : "Entrega premium",
-    "deliveryEntries" : "Items to be Shipped"
+  "checkoutMode": {
+    "deliveryMethod": "Método de entrega",
+    "deliveryOptions": "Opções de entrega",
+    "standardDelivery": "Entrega padrão",
+    "premiumDelivery": "Entrega premium",
+    "deliveryEntries": "Items to be Shipped"
   },
-  "checkoutReview" : {
-    "review" : "Revisão",
-    "orderItems" : "Itens do pedido",
-    "confirmThatRead" : "I am confirming that I have read and agreed with the",
-    "placeOrder" : "Fazer pedido",
-    "termsAndConditions" : "Termos e Condições",
-    "editDeliveryAddressDetails" : "Edit delivery address details, opens Delivery Address page",
-    "editBillingDetails" : "Edit billing address, opens Payment Details page",
-    "editPaymentDetails" : "Edit payment details, opens Payment Details page",
-    "editPaymentType" : "Edit payment method, opens Method of Payment page",
-    "editDeliveryMode" : "Edit delivery mode, opens Delivery Mode page",
-    "orderInProcess" : "Order is in process. Please wait."
+  "checkoutReview": {
+    "review": "Revisão",
+    "orderItems": "Itens do pedido",
+    "confirmThatRead": "I am confirming that I have read and agreed with the",
+    "placeOrder": "Fazer pedido",
+    "termsAndConditions": "Termos e Condições",
+    "editDeliveryAddressDetails": "Edit delivery address details, opens Delivery Address page",
+    "editBillingDetails": "Edit billing address, opens Payment Details page",
+    "editPaymentDetails": "Edit payment details, opens Payment Details page",
+    "editPaymentType": "Edit payment method, opens Method of Payment page",
+    "editDeliveryMode": "Edit delivery mode, opens Delivery Mode page",
+    "orderInProcess": "Order is in process. Please wait."
   },
-  "checkoutOrderConfirmation" : {
-    "confirmationOfOrder" : "Confirmation of Order:",
-    "thankYou" : "Thank you for your order!",
-    "invoiceHasBeenSentByEmail" : "An invoice has been sent by email. You should receive it soon.",
-    "orderItems" : "Itens do pedido",
-    "orderPlacedSuccessfully" : "Order placed successfully",
-    "createAccount" : "Create an account?",
-    "createAccountForNext" : "Create an account for <{{email}}> for a faster checkout on your next visit."
+  "checkoutOrderConfirmation": {
+    "confirmationOfOrder": "Confirmation of Order:",
+    "thankYou": "Thank you for your order!",
+    "invoiceHasBeenSentByEmail": "An invoice has been sent by email. You should receive it soon.",
+    "orderItems": "Itens do pedido",
+    "orderPlacedSuccessfully": "Order placed successfully",
+    "createAccount": "Create an account?",
+    "createAccountForNext": "Create an account for <{{email}}> for a faster checkout on your next visit."
   }
 }

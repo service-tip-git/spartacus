@@ -1,70 +1,70 @@
 {
-  "epdVisualization" : {
-    "visualViewer" : {
-      "contentType" : {
-        "drawing2D" : "2D",
-        "model3D" : "3D"
+  "epdVisualization": {
+    "visualViewer": {
+      "contentType": {
+        "drawing2D": "2D",
+        "model3D": "3D"
       },
-      "toolbar" : {
-        "homeButton" : {
-          "label" : "Домашняя страница"
+      "toolbar": {
+        "homeButton": {
+          "label": "Домашняя страница"
         },
-        "zoomButton" : {
-          "label" : "Масштаб"
+        "zoomButton": {
+          "label": "Масштаб"
         },
-        "panButton" : {
-          "label" : "Pan"
+        "panButton": {
+          "label": "Pan"
         },
-        "rotateButton" : {
-          "label" : "Rotate"
+        "rotateButton": {
+          "label": "Rotate"
         },
-        "isolateButton" : {
-          "label" : "Isolate"
+        "isolateButton": {
+          "label": "Isolate"
         },
-        "playButton" : {
-          "label" : "Воспроизвести"
+        "playButton": {
+          "label": "Воспроизвести"
         },
-        "pauseButton" : {
-          "label" : "Пауза"
+        "pauseButton": {
+          "label": "Пауза"
         },
-        "hotspotsButton" : {
-          "label" : "Hotspots",
-          "show" : "Показать",
-          "hide" : "Скрыть"
+        "hotspotsButton": {
+          "label": "Hotspots",
+          "show": "Показать",
+          "hide": "Скрыть"
         },
-        "visualViewerAnimationSlider" : {
-          "label" : "Animation Slider",
-          "role" : "Slider"
+        "visualViewerAnimationSlider": {
+          "label": "Animation Slider",
+          "role": "Slider"
         }
       }
     },
-    "visualPicking" : {
-      "visualPickingTab" : {
-        "noProductReferences" : "No spare parts are available for this product."
+    "visualPicking": {
+      "visualPickingTab": {
+        "noProductReferences": "No spare parts are available for this product."
       },
-      "visualPickingProductList" : {
-        "description" : "Описание",
-        "itemPrice" : "Цена",
-        "outOfStock" : "Out of stock",
-        "id" : "Ид."
+      "visualPickingProductList": {
+        "description": "Описание",
+        "itemPrice": "Цена",
+        "outOfStock": "Out of stock",
+        "id": "Ид."
       },
-      "visualPickingProductFilter" : {
-        "input" : {
-          "placeholder" : "Filter by name or id"
+      "visualPickingProductFilter": {
+        "input": {
+          "placeholder": "Filter by name or id"
         },
-        "searchButton" : {
-          "label" : "search"
+        "searchButton": {
+          "label": "search"
         },
-        "resetButton" : {
-          "label" : "Сбросить"
+        "resetButton": {
+          "label": "Сбросить"
         }
       }
     },
-    "errors" : {
-      "visualLoad" : {
-        "noMatchingVisualFound" : "No matching visualization found",
-        "multipleMatchingVisualsFound" : "Multiple matching visualizations found",
-        "unexpectedLoadError" : "Error occurred while loading visualization"
+    "errors": {
+      "visualLoad": {
+        "noMatchingVisualFound": "No matching visualization found",
+        "multipleMatchingVisualsFound": "Multiple matching visualizations found",
+        "unexpectedLoadError": "Error occurred while loading visualization"
       }
     }
   }

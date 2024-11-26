@@ -1,6 +1,6 @@
 {
-  "multiDimensionalSelector" : {
-    "variantThumbnailTitle" : "Select {{value}} {{category}}",
-    "selectedVariant" : "Kiválasztva"
+  "multiDimensionalSelector": {
+    "variantThumbnailTitle": "Select {{value}} {{category}}",
+    "selectedVariant": "Kiválasztva"
   }
 }

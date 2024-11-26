@@ -1,13 +1,13 @@
 {
-  "myAccountV2Consent" : {
-    "header" : "Gerenciamento de consentimentos",
-    "dateDescription" : "Approved on ",
-    "clearAll" : "Disable All",
-    "selectAll" : "Enable All",
-    "message" : {
-      "success" : {
-        "given" : "Consent successfully given.",
-        "withdrawn" : "Consent successfully withdrawn."
+  "myAccountV2Consent": {
+    "header": "Gerenciamento de consentimentos",
+    "dateDescription": "Approved on ",
+    "clearAll": "Disable All",
+    "selectAll": "Enable All",
+    "message": {
+      "success": {
+        "given": "Consent successfully given.",
+        "withdrawn": "Consent successfully withdrawn."
       }
     }
   }

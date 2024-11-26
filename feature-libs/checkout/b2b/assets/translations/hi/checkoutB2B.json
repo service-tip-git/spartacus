@@ -1,22 +1,22 @@
 {
-  "checkoutB2B" : {
-    "noPoNumber" : "कोई नहीं",
-    "poNumber" : "Purchase order number (optional)",
-    "costCenter" : "लागत केंद्र",
-    "placeholder" : "Enter P.O",
-    "availableLabel" : "Delivery addresses available to you depend on the cost center's unit",
-    "invalid" : {
-      "accountType" : "आपका खाता आपको यहां चेकआउट करने की अनुमति नहीं देता है."
+  "checkoutB2B": {
+    "noPoNumber": "कोई नहीं",
+    "poNumber": "Purchase order number (optional)",
+    "costCenter": "लागत केंद्र",
+    "placeholder": "Enter P.O",
+    "availableLabel": "Delivery addresses available to you depend on the cost center's unit",
+    "invalid": {
+      "accountType": "आपका खाता आपको यहां चेकआउट करने की अनुमति नहीं देता है."
     },
-    "methodOfPayment" : {
-      "paymentType" : "भुगतान प्रकार"
+    "methodOfPayment": {
+      "paymentType": "भुगतान प्रकार"
     },
-    "review" : {
-      "poNumber" : "क्रय ऑर्डर संख्या"
+    "review": {
+      "poNumber": "क्रय ऑर्डर संख्या"
     },
-    "progress" : {
-      "methodOfPayment" : "Method of Payment"
+    "progress": {
+      "methodOfPayment": "Method of Payment"
     },
-    "invalidCostCenter" : "Invalid cost center."
+    "invalidCostCenter": "Invalid cost center."
   }
 }

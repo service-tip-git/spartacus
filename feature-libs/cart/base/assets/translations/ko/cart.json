@@ -1,74 +1,74 @@
 {
-  "cartDetails" : {
-    "id" : "ID",
-    "proceedToCheckout" : "체크아웃 계속하기",
-    "cartName" : "Cart #{{code}}"
+  "cartDetails": {
+    "id": "ID",
+    "proceedToCheckout": "체크아웃 계속하기",
+    "cartName": "Cart #{{code}}"
   },
-  "cartItems" : {
-    "id" : "ID",
-    "description" : "설명",
-    "item" : "품목",
-    "itemPrice" : "품목 가격",
-    "quantity" : "수량",
-    "quantityTitle" : "The quantity represents the total number of this item in your cart.",
-    "total" : "합계",
-    "actions" : "액션",
-    "cartTotal" : "Cart total ({{count}} item)",
-    "cartTotal_other" : "Cart total ({{count}} items)",
-    "itemRemoved" : "Selected item has been removed. Cart total has been updated.",
-    "caption" : "Shopping cart contents."
+  "cartItems": {
+    "id": "ID",
+    "description": "설명",
+    "item": "품목",
+    "itemPrice": "품목 가격",
+    "quantity": "수량",
+    "quantityTitle": "The quantity represents the total number of this item in your cart.",
+    "total": "합계",
+    "actions": "액션",
+    "cartTotal": "Cart total ({{count}} item)",
+    "cartTotal_other": "Cart total ({{count}} items)",
+    "itemRemoved": "Selected item has been removed. Cart total has been updated.",
+    "caption": "Shopping cart contents."
   },
-  "orderCost" : {
-    "orderSummary" : "오더 요약",
-    "subtotal" : "Subtotal after discounts:",
-    "shipping" : "운송:",
-    "estimatedShipping" : "Estimated shipping:",
-    "discount" : "You saved:",
-    "salesTax" : "Sales Tax:",
-    "grossTax" : "The order total does not include tax of",
-    "grossIncludeTax" : "The order total includes tax of",
-    "total" : "합계:",
-    "toBeDetermined" : "TBD"
+  "orderCost": {
+    "orderSummary": "오더 요약",
+    "subtotal": "Subtotal after discounts:",
+    "shipping": "운송:",
+    "estimatedShipping": "Estimated shipping:",
+    "discount": "You saved:",
+    "salesTax": "Sales Tax:",
+    "grossTax": "The order total does not include tax of",
+    "grossIncludeTax": "The order total includes tax of",
+    "total": "합계:",
+    "toBeDetermined": "TBD"
   },
-  "voucher" : {
-    "coupon" : "Have a coupon?",
-    "coupon_other" : "Coupon codes",
-    "couponLabel" : "Enter a promo code here",
-    "addCoupon" : "Add a coupon",
-    "apply" : "적용",
-    "placeholder" : "Promo code",
-    "applyVoucherSuccess" : "{{voucherCode}} has been applied.",
-    "removeVoucherSuccess" : "{{voucherCode}} has been removed.",
-    "anchorLabel" : "Enter or remove your coupon code",
-    "vouchersApplied" : "적용된 쿠폰",
-    "availableCoupons" : "Available coupons",
-    "availableCouponsLabel" : "You can add these coupons to this order."
+  "voucher": {
+    "coupon": "Have a coupon?",
+    "coupon_other": "Coupon codes",
+    "couponLabel": "Enter a promo code here",
+    "addCoupon": "Add a coupon",
+    "apply": "적용",
+    "placeholder": "Promo code",
+    "applyVoucherSuccess": "{{voucherCode}} has been applied.",
+    "removeVoucherSuccess": "{{voucherCode}} has been removed.",
+    "anchorLabel": "Enter or remove your coupon code",
+    "vouchersApplied": "적용된 쿠폰",
+    "availableCoupons": "Available coupons",
+    "availableCouponsLabel": "You can add these coupons to this order."
   },
-  "saveForLaterItems" : {
-    "itemTotal" : "Saved for later ({{count}} item)",
-    "itemTotal_other" : "저장 후 나중에 사용({{count}}개 품목)",
-    "cartTitle" : "장바구니",
-    "saveForLater" : "Save For Later",
-    "moveToCart" : "Move To Cart",
-    "stock" : "재고",
-    "forceInStock" : "재고 있음"
+  "saveForLaterItems": {
+    "itemTotal": "Saved for later ({{count}} item)",
+    "itemTotal_other": "저장 후 나중에 사용({{count}}개 품목)",
+    "cartTitle": "장바구니",
+    "saveForLater": "Save For Later",
+    "moveToCart": "Move To Cart",
+    "stock": "재고",
+    "forceInStock": "재고 있음"
   },
-  "clearCart" : {
-    "clearCart" : "Clear Cart",
-    "clearingCart" : "Clearing Cart...",
-    "cartClearedSuccessfully" : "Active cart cleared successfully.",
-    "areYouSureToClearCart" : "Are you sure you want to clear this cart?",
-    "allItemsWillBeRemoved" : "All items in your active cart will be removed."
+  "clearCart": {
+    "clearCart": "Clear Cart",
+    "clearingCart": "Clearing Cart...",
+    "cartClearedSuccessfully": "Active cart cleared successfully.",
+    "areYouSureToClearCart": "Are you sure you want to clear this cart?",
+    "allItemsWillBeRemoved": "All items in your active cart will be removed."
   },
-  "validation" : {
-    "cartEntriesChangeDuringCheckout" : "During checkout we found problems with your entries. Please review your cart.",
-    "cartEntryRemoved" : "{{name}} was removed from the cart due to being out of stock.",
-    "productOutOfStock" : "재고 부족으로 인해 {{name}}이(가) 장바구니에서 제거되었습니다.",
-    "lowStock" : "Quantity has reduced to {{quantity}} due to insufficient stock.",
-    "reviewConfiguration" : "Resolve the issues in the configuration for cart entry first.",
-    "configurationError" : "Resolve the issues in the configuration for cart entries first.",
-    "pricingError" : "Configurator pricing is currently not available. Checkout/quote submission is not possible. Please try again later.",
-    "unresolvableIssues" : "The product configuration requires additional entries in the back end. As a result, you cannot proceed. Please contact support.",
-    "inProgress" : "처리 중"
+  "validation": {
+    "cartEntriesChangeDuringCheckout": "During checkout we found problems with your entries. Please review your cart.",
+    "cartEntryRemoved": "{{name}} was removed from the cart due to being out of stock.",
+    "productOutOfStock": "재고 부족으로 인해 {{name}}이(가) 장바구니에서 제거되었습니다.",
+    "lowStock": "Quantity has reduced to {{quantity}} due to insufficient stock.",
+    "reviewConfiguration": "Resolve the issues in the configuration for cart entry first.",
+    "configurationError": "Resolve the issues in the configuration for cart entries first.",
+    "pricingError": "Configurator pricing is currently not available. Checkout/quote submission is not possible. Please try again later.",
+    "unresolvableIssues": "The product configuration requires additional entries in the back end. As a result, you cannot proceed. Please contact support.",
+    "inProgress": "처리 중"
   }
 }

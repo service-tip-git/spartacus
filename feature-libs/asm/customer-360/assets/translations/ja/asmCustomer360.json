@@ -1,129 +1,129 @@
 {
-  "asmCustomer360" : {
-    "alertErrorMessage" : "The information cannot be be loaded. Please try again later or contact your system administrator.",
-    "errorMessageHeader" : "Oops! Something went wrong",
-    "applyActionAlter" : "The action couldn't be completed. Please try again later.",
-    "header" : {
-      "title" : "Customer Profile",
-      "newTitle" : "Customer 360°",
-      "subTitle" : "{{name}} Customer 360° View",
-      "newSubTitle" : "{{name}} 360 View",
-      "activeCartLabel" : "{{cartSize}} item added to cart",
-      "recentOrderLabel" : "Last order {{price}}",
-      "recentTicketLabel" : "最後のチケット",
-      "signedUpAt" : "Account created on {{date}}"
+  "asmCustomer360": {
+    "alertErrorMessage": "The information cannot be be loaded. Please try again later or contact your system administrator.",
+    "errorMessageHeader": "Oops! Something went wrong",
+    "applyActionAlter": "The action couldn't be completed. Please try again later.",
+    "header": {
+      "title": "Customer Profile",
+      "newTitle": "Customer 360°",
+      "subTitle": "{{name}} Customer 360° View",
+      "newSubTitle": "{{name}} 360 View",
+      "activeCartLabel": "{{cartSize}} item added to cart",
+      "recentOrderLabel": "Last order {{price}}",
+      "recentTicketLabel": "最後のチケット",
+      "signedUpAt": "Account created on {{date}}"
     },
-    "productListing" : {
-      "totalNoItems" : "Total No. Items {{count}}",
-      "totalPrice" : "Total Price {{price}}",
-      "showMore" : "さらに表示",
-      "showLess" : "表示数を減らす"
+    "productListing": {
+      "totalNoItems": "Total No. Items {{count}}",
+      "totalPrice": "Total Price {{price}}",
+      "showMore": "さらに表示",
+      "showLess": "表示数を減らす"
     },
-    "productItem" : {
-      "outOfStock" : "在庫なし",
-      "quantity" : "Qty: {{count}}",
-      "itemPrice" : "Item Price: {{price}}"
+    "productItem": {
+      "outOfStock": "在庫なし",
+      "quantity": "Qty: {{count}}",
+      "itemPrice": "Item Price: {{price}}"
     },
-    "activeCart" : {
-      "header" : "有効なカート",
-      "emptyDescription" : "There are currently no active cart Items",
-      "aria" : {
-        "linkLabel" : "Active Cart {{code}}"
+    "activeCart": {
+      "header": "有効なカート",
+      "emptyDescription": "There are currently no active cart Items",
+      "aria": {
+        "linkLabel": "Active Cart {{code}}"
       }
     },
-    "savedCart" : {
-      "header" : "Last Saved Cart",
-      "emptyDescription" : "There are currently no saved cart items",
-      "aria" : {
-        "linkLabel" : "Last Saved Cart {{code}}"
+    "savedCart": {
+      "header": "Last Saved Cart",
+      "emptyDescription": "There are currently no saved cart items",
+      "aria": {
+        "linkLabel": "Last Saved Cart {{code}}"
       }
     },
-    "productInterests" : {
-      "header" : "関心事",
-      "emptyDescription" : "There are currently no interest items"
+    "productInterests": {
+      "header": "関心事",
+      "emptyDescription": "There are currently no interest items"
     },
-    "profile" : {
-      "address" : "住所",
-      "billingAddress" : "請求先住所",
-      "deliveryAddress" : "配送先",
-      "phone1" : "電話 1",
-      "phone2" : "電話 2",
-      "paymentMethodHeader" : "保存された支払方法"
+    "profile": {
+      "address": "住所",
+      "billingAddress": "請求先住所",
+      "deliveryAddress": "配送先",
+      "phone1": "電話 1",
+      "phone2": "電話 2",
+      "paymentMethodHeader": "保存された支払方法"
     },
-    "activity" : {
-      "type" : "タイプ",
-      "id" : "ID",
-      "description" : "説明",
-      "status" : "ステータス",
-      "created" : "作成済み",
-      "updated" : "更新済",
-      "numberOfCartItems" : "Cart with {{count}} items",
-      "cart" : "カート",
-      "order" : "注文",
-      "savedCart" : "保存されたカート",
-      "emptyStateText" : "There is currently no recorded customer activity",
-      "headerText" : "一般"
+    "activity": {
+      "type": "タイプ",
+      "id": "ID",
+      "description": "説明",
+      "status": "ステータス",
+      "created": "作成済み",
+      "updated": "更新済",
+      "numberOfCartItems": "Cart with {{count}} items",
+      "cart": "カート",
+      "order": "注文",
+      "savedCart": "保存されたカート",
+      "emptyStateText": "There is currently no recorded customer activity",
+      "headerText": "一般"
     },
-    "productReviews" : {
-      "columnHeaders" : {
-        "item" : "アイテム",
-        "dateAndStatus" : "日付/ステータス",
-        "rating" : "レーティング",
-        "review" : "レビュー"
+    "productReviews": {
+      "columnHeaders": {
+        "item": "アイテム",
+        "dateAndStatus": "日付/ステータス",
+        "rating": "レーティング",
+        "review": "レビュー"
       },
-      "header" : "製品レビュー",
-      "emptyDescription" : "There are currently no product review items",
-      "sku" : "SKU"
+      "header": "製品レビュー",
+      "emptyDescription": "There are currently no product review items",
+      "sku": "SKU"
     },
-    "supportTickets" : {
-      "columnHeaders" : {
-        "id" : "ID",
-        "headline" : "見出し",
-        "category" : "カテゴリ"
+    "supportTickets": {
+      "columnHeaders": {
+        "id": "ID",
+        "headline": "見出し",
+        "category": "カテゴリ"
       },
-      "header" : "サポートチケット",
-      "emptyDescription" : "There are currently no support tickets"
+      "header": "サポートチケット",
+      "emptyDescription": "There are currently no support tickets"
     },
-    "coupons" : {
-      "headerText" : "クーポン",
-      "emptyDescription" : "There are currently no coupons",
-      "applyButtonText" : "Apply to Cart",
-      "applied" : "適用されたクーポン",
-      "removeButtonText" : "削除"
+    "coupons": {
+      "headerText": "クーポン",
+      "emptyDescription": "There are currently no coupons",
+      "applyButtonText": "Apply to Cart",
+      "applied": "適用されたクーポン",
+      "removeButtonText": "削除"
     },
-    "promotions" : {
-      "headerText" : "プロモーション",
-      "emptyDescription" : "There are currently no promotions",
-      "applied" : "適用されたプロモーション",
-      "headerName" : "名前",
-      "headerAction" : "アクション"
+    "promotions": {
+      "headerText": "プロモーション",
+      "emptyDescription": "There are currently no promotions",
+      "applied": "適用されたプロモーション",
+      "headerName": "名前",
+      "headerAction": "アクション"
     },
-    "customerCoupons" : {
-      "headerText" : "得意先クーポン",
-      "emptyDescription" : "There are currently no customer coupons",
-      "applyButtonText" : "Assign to Customer",
-      "removeButtonText" : "削除",
-      "availableTab" : "利用可能",
-      "sentTab" : "送信済",
-      "searchBox" : "クーポン"
+    "customerCoupons": {
+      "headerText": "得意先クーポン",
+      "emptyDescription": "There are currently no customer coupons",
+      "applyButtonText": "Assign to Customer",
+      "removeButtonText": "削除",
+      "availableTab": "利用可能",
+      "sentTab": "送信済",
+      "searchBox": "クーポン"
     },
-    "maps" : {
-      "storeClosed" : "閉じる",
-      "storesFound" : "{{ initial }} - {{ end }} from {{ total }} stores found"
+    "maps": {
+      "storeClosed": "閉じる",
+      "storesFound": "{{ initial }} - {{ end }} from {{ total }} stores found"
     },
-    "overviewTab" : "概要",
-    "profileTab" : "プロフィール",
-    "activityTab" : "活動",
-    "feedbackTab" : "フィードバック",
-    "promotionsTab" : "プロモーション",
-    "mapsTab" : "Maps",
-    "storeLocationsTab" : "店舗所在地",
-    "aria" : {
-      "activeCartCode" : "Active Cart {{code}}",
-      "recentOrderCode" : "Last Order {{code}}"
+    "overviewTab": "概要",
+    "profileTab": "プロフィール",
+    "activityTab": "活動",
+    "feedbackTab": "フィードバック",
+    "promotionsTab": "プロモーション",
+    "mapsTab": "Maps",
+    "storeLocationsTab": "店舗所在地",
+    "aria": {
+      "activeCartCode": "Active Cart {{code}}",
+      "recentOrderCode": "Last Order {{code}}"
     },
-    "pagination" : "ページネーション",
-    "page" : "Page {{number}}",
-    "emptyCellValue" : "---"
+    "pagination": "ページネーション",
+    "page": "Page {{number}}",
+    "emptyCellValue": "---"
   }
 }

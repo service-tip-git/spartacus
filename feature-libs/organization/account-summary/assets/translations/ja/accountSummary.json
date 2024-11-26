@@ -1,88 +1,88 @@
 {
-  "orgAccountSummary" : {
-    "groupName" : "Account Summaries",
-    "header" : "All Account Summaries ({{count}})",
-    "name" : "単位",
-    "details" : {
-      "header" : "アカウント概要の詳細",
-      "uid" : "単位 ID",
-      "name" : "単位名",
-      "address" : "住所",
-      "creditRep" : "信用報告書",
-      "creditLine" : "与信限度額",
-      "currentBalance" : "現在の残高",
-      "openBalance" : "開始残高",
-      "pastDueBalance" : "未払い残高",
-      "dayRange" : "{{minBoundary}}-{{maxBoundary}} Days",
-      "dayPlus" : "{{minBoundary}}+ Days",
-      "notApplicable" : "n/a"
+  "orgAccountSummary": {
+    "groupName": "Account Summaries",
+    "header": "All Account Summaries ({{count}})",
+    "name": "単位",
+    "details": {
+      "header": "アカウント概要の詳細",
+      "uid": "単位 ID",
+      "name": "単位名",
+      "address": "住所",
+      "creditRep": "信用報告書",
+      "creditLine": "与信限度額",
+      "currentBalance": "現在の残高",
+      "openBalance": "開始残高",
+      "pastDueBalance": "未払い残高",
+      "dayRange": "{{minBoundary}}-{{maxBoundary}} Days",
+      "dayPlus": "{{minBoundary}}+ Days",
+      "notApplicable": "n/a"
     },
-    "document" : {
-      "header" : "文書",
-      "id" : "文書番号",
-      "type" : "文書タイプ",
-      "date" : "作成日付",
-      "dueDate" : "Due On",
-      "originalAmount" : "元金額",
-      "openAmount" : "未処理金額",
-      "status" : "ステータス",
-      "attachment" : "添付ファイル",
-      "download" : "ダウンロード",
-      "attachmentDescription" : "Download attachment for {{type}} {{id}}.",
-      "noneFound" : "No Documents Found"
+    "document": {
+      "header": "文書",
+      "id": "文書番号",
+      "type": "文書タイプ",
+      "date": "作成日付",
+      "dueDate": "Due On",
+      "originalAmount": "元金額",
+      "openAmount": "未処理金額",
+      "status": "ステータス",
+      "attachment": "添付ファイル",
+      "download": "ダウンロード",
+      "attachmentDescription": "Download attachment for {{type}} {{id}}.",
+      "noneFound": "No Documents Found"
     },
-    "sorts" : {
-      "byCreatedAtDateAsc" : "Created On Ascending",
-      "byCreatedAtDateDesc" : "Created On Descending",
-      "byDueAtDateAsc" : "Due On Ascending",
-      "byDueAtDateDesc" : "Due On Descending",
-      "byOriginalAmountAsc" : "Original Amount Ascending",
-      "byOriginalAmountDesc" : "Original Amount Descending",
-      "byOpenAmountAsc" : "Open Amount Ascending",
-      "byOpenAmountDesc" : "Open Amount Descending",
-      "byOrgDocumentTypeAsc" : "Document Type Ascending",
-      "byOrgDocumentTypeDesc" : "Document Type Descending",
-      "byStatusAsc" : "Status Ascending",
-      "byStatusDesc" : "Status Descending",
-      "byOrgDocumentIdAsc" : "Document Number Ascending",
-      "byOrgDocumentIdDesc" : "Document Number Descending"
+    "sorts": {
+      "byCreatedAtDateAsc": "Created On Ascending",
+      "byCreatedAtDateDesc": "Created On Descending",
+      "byDueAtDateAsc": "Due On Ascending",
+      "byDueAtDateDesc": "Due On Descending",
+      "byOriginalAmountAsc": "Original Amount Ascending",
+      "byOriginalAmountDesc": "Original Amount Descending",
+      "byOpenAmountAsc": "Open Amount Ascending",
+      "byOpenAmountDesc": "Open Amount Descending",
+      "byOrgDocumentTypeAsc": "Document Type Ascending",
+      "byOrgDocumentTypeDesc": "Document Type Descending",
+      "byStatusAsc": "Status Ascending",
+      "byStatusDesc": "Status Descending",
+      "byOrgDocumentIdAsc": "Document Number Ascending",
+      "byOrgDocumentIdDesc": "Document Number Descending"
     },
-    "statuses" : {
-      "open" : "開く",
-      "closed" : "定休日",
-      "all" : "すべて"
+    "statuses": {
+      "open": "開く",
+      "closed": "定休日",
+      "all": "すべて"
     },
-    "filterByOptions" : {
-      "orgDocumentId" : "文書番号",
-      "orgDocumentIdRange" : "Document Number Range",
-      "orgDocumentType" : "文書タイプ",
-      "createdAtDateRange" : "Created On Range",
-      "dueAtDateRange" : "Due On Range",
-      "amountRange" : "元金額範囲",
-      "openAmountRange" : "未処理金額範囲"
+    "filterByOptions": {
+      "orgDocumentId": "文書番号",
+      "orgDocumentIdRange": "Document Number Range",
+      "orgDocumentType": "文書タイプ",
+      "createdAtDateRange": "Created On Range",
+      "dueAtDateRange": "Due On Range",
+      "amountRange": "元金額範囲",
+      "openAmountRange": "未処理金額範囲"
     },
-    "sortBy" : "Sort By",
-    "sortDocuments" : "Sort documents",
-    "filter" : {
-      "status" : "ステータス",
-      "filterBy" : "フィルター",
-      "documentNumber" : "文書番号",
-      "documentType" : "文書タイプ",
-      "startRange" : "開始",
-      "endRange" : "終了",
-      "clear" : "すべてクリア",
-      "search" : "検索",
-      "errors" : {
-        "toDateMustComeAfterFrom" : "Choose an end date that's later than the start date.",
-        "toAmountMustBeLargeThanFrom" : "Choose an end range value that's smaller than the start value."
+    "sortBy": "Sort By",
+    "sortDocuments": "Sort documents",
+    "filter": {
+      "status": "ステータス",
+      "filterBy": "フィルター",
+      "documentNumber": "文書番号",
+      "documentType": "文書タイプ",
+      "startRange": "開始",
+      "endRange": "終了",
+      "clear": "すべてクリア",
+      "search": "検索",
+      "errors": {
+        "toDateMustComeAfterFrom": "Choose an end date that's later than the start date.",
+        "toAmountMustBeLargeThanFrom": "Choose an end range value that's smaller than the start value."
       }
     },
-    "hint" : "Account summaries allow you to review general information about a unit, including balances and aging summary of invoices. Here, you can also browse through a list of transaction documents for a unit."
+    "hint": "Account summaries allow you to review general information about a unit, including balances and aging summary of invoices. Here, you can also browse through a list of transaction documents for a unit."
   },
-  "orgAccountSummaryList" : {
-    "breadcrumbs" : {
-      "list" : "Account Summaries",
-      "details" : "{{name}}"
+  "orgAccountSummaryList": {
+    "breadcrumbs": {
+      "list": "Account Summaries",
+      "details": "{{name}}"
     }
   }
 }

@@ -1,32 +1,32 @@
 {
-  "anonymousConsents" : {
-    "dialog" : {
-      "title" : "동의 관리",
-      "legalDescription" : "We use cookies/browser's storage to personalize the content and improve user experience. We also might share the data about your site usage with our social media. For more, please review our privacy policy.",
-      "selectAll" : "모두 선택",
-      "clearAll" : "Clear all"
+  "anonymousConsents": {
+    "dialog": {
+      "title": "동의 관리",
+      "legalDescription": "We use cookies/browser's storage to personalize the content and improve user experience. We also might share the data about your site usage with our social media. For more, please review our privacy policy.",
+      "selectAll": "모두 선택",
+      "clearAll": "Clear all"
     },
-    "banner" : {
-      "title" : "This website uses cookies",
-      "description" : "We use cookies/browser's storage to personalize the content and improve user experience.",
-      "allowAll" : "Allow All",
-      "viewDetails" : "세부 사항 보기"
+    "banner": {
+      "title": "This website uses cookies",
+      "description": "We use cookies/browser's storage to personalize the content and improve user experience.",
+      "allowAll": "Allow All",
+      "viewDetails": "세부 사항 보기"
     }
   },
-  "checkoutLogin" : {
-    "emailAddress" : {
-      "label" : "이메일 주소",
-      "placeholder" : "Enter email"
+  "checkoutLogin": {
+    "emailAddress": {
+      "label": "이메일 주소",
+      "placeholder": "Enter email"
     },
-    "confirmEmail" : {
-      "label" : "Confirm email",
-      "placeholder" : "Confirm email"
+    "confirmEmail": {
+      "label": "Confirm email",
+      "placeholder": "Confirm email"
     },
-    "continue" : "계속",
-    "emailIsRequired" : "Invalid email format",
-    "emailsMustMatch" : "Email does not match"
+    "continue": "계속",
+    "emailIsRequired": "Invalid email format",
+    "emailsMustMatch": "Email does not match"
   },
-  "authMessages" : {
-    "signedOutSuccessfully" : "You have successfully signed out."
+  "authMessages": {
+    "signedOutSuccessfully": "You have successfully signed out."
   }
 }

@@ -1,70 +1,70 @@
 {
-  "epdVisualization" : {
-    "visualViewer" : {
-      "contentType" : {
-        "drawing2D" : "2D",
-        "model3D" : "3D"
+  "epdVisualization": {
+    "visualViewer": {
+      "contentType": {
+        "drawing2D": "2D",
+        "model3D": "3D"
       },
-      "toolbar" : {
-        "homeButton" : {
-          "label" : "Kezdőlap"
+      "toolbar": {
+        "homeButton": {
+          "label": "Kezdőlap"
         },
-        "zoomButton" : {
-          "label" : "Nagyítás"
+        "zoomButton": {
+          "label": "Nagyítás"
         },
-        "panButton" : {
-          "label" : "Pan"
+        "panButton": {
+          "label": "Pan"
         },
-        "rotateButton" : {
-          "label" : "Rotate"
+        "rotateButton": {
+          "label": "Rotate"
         },
-        "isolateButton" : {
-          "label" : "Isolate"
+        "isolateButton": {
+          "label": "Isolate"
         },
-        "playButton" : {
-          "label" : "Lejátszás"
+        "playButton": {
+          "label": "Lejátszás"
         },
-        "pauseButton" : {
-          "label" : "Szünet"
+        "pauseButton": {
+          "label": "Szünet"
         },
-        "hotspotsButton" : {
-          "label" : "Hotspots",
-          "show" : "Megjelenítés",
-          "hide" : "Elrejtés"
+        "hotspotsButton": {
+          "label": "Hotspots",
+          "show": "Megjelenítés",
+          "hide": "Elrejtés"
         },
-        "visualViewerAnimationSlider" : {
-          "label" : "Animation Slider",
-          "role" : "Slider"
+        "visualViewerAnimationSlider": {
+          "label": "Animation Slider",
+          "role": "Slider"
         }
       }
     },
-    "visualPicking" : {
-      "visualPickingTab" : {
-        "noProductReferences" : "No spare parts are available for this product."
+    "visualPicking": {
+      "visualPickingTab": {
+        "noProductReferences": "No spare parts are available for this product."
       },
-      "visualPickingProductList" : {
-        "description" : "Leírás",
-        "itemPrice" : "Ár",
-        "outOfStock" : "Out of stock",
-        "id" : "Azonosító"
+      "visualPickingProductList": {
+        "description": "Leírás",
+        "itemPrice": "Ár",
+        "outOfStock": "Out of stock",
+        "id": "Azonosító"
       },
-      "visualPickingProductFilter" : {
-        "input" : {
-          "placeholder" : "Filter by name or id"
+      "visualPickingProductFilter": {
+        "input": {
+          "placeholder": "Filter by name or id"
         },
-        "searchButton" : {
-          "label" : "search"
+        "searchButton": {
+          "label": "search"
         },
-        "resetButton" : {
-          "label" : "alaphelyzet"
+        "resetButton": {
+          "label": "alaphelyzet"
         }
       }
     },
-    "errors" : {
-      "visualLoad" : {
-        "noMatchingVisualFound" : "No matching visualization found",
-        "multipleMatchingVisualsFound" : "Multiple matching visualizations found",
-        "unexpectedLoadError" : "Error occurred while loading visualization"
+    "errors": {
+      "visualLoad": {
+        "noMatchingVisualFound": "No matching visualization found",
+        "multipleMatchingVisualsFound": "Multiple matching visualizations found",
+        "unexpectedLoadError": "Error occurred while loading visualization"
       }
     }
   }

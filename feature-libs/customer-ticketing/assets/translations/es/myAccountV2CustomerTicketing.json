@@ -1,10 +1,10 @@
 {
-  "myAccountV2CustomerTicketing" : {
-    "heading" : "Servicio de atención al cliente",
-    "showMore" : "Mostrar más",
-    "changedOn" : "Changed On: {{value}}",
-    "ticketId" : "ID: {{value}}",
-    "subjectLabel" : "Asunto",
-    "idLabel" : "Customer Service Id"
+  "myAccountV2CustomerTicketing": {
+    "heading": "Servicio de atención al cliente",
+    "showMore": "Mostrar más",
+    "changedOn": "Changed On: {{value}}",
+    "ticketId": "ID: {{value}}",
+    "subjectLabel": "Asunto",
+    "idLabel": "Customer Service Id"
   }
 }

@@ -1,65 +1,65 @@
 {
-  "savedCartDetails" : {
-    "cartName" : "Nome",
-    "cartDescription" : "Descrizione",
-    "cartId" : "ID",
-    "dateSaved" : "Data salvata",
-    "items" : "Articoli",
-    "quantity" : "Quantità",
-    "total" : "Totale",
-    "editSavedCart" : "Modifica carrello acquisti salvato",
-    "deleteSavedCart" : "Elimina carrello acquisti salvato",
-    "addSelectedItems" : "Add selected items",
-    "emptyCartItems" : "Empty Cart Items"
+  "savedCartDetails": {
+    "cartName": "Nome",
+    "cartDescription": "Descrizione",
+    "cartId": "ID",
+    "dateSaved": "Data salvata",
+    "items": "Articoli",
+    "quantity": "Quantità",
+    "total": "Totale",
+    "editSavedCart": "Modifica carrello acquisti salvato",
+    "deleteSavedCart": "Elimina carrello acquisti salvato",
+    "addSelectedItems": "Add selected items",
+    "emptyCartItems": "Empty Cart Items"
   },
-  "savedCartList" : {
-    "savedCarts" : "Carrelli acquisti salvati ({{count}})",
-    "cartName" : "Nome",
-    "cartId" : "ID",
-    "dateSaved" : "Data salvata",
-    "cartDescription" : "Descrizione",
-    "quantity" : "Qtà",
-    "total" : "Totale",
-    "actions" : "Azioni",
-    "makeCartActive" : "Make cart active",
-    "notFound" : "Nessun carrello acquisti salvato trovato",
-    "swapCartNoActiveCart" : "Existing cart is activated by {{cartName}} successfully.",
-    "swapCartWithActiveCart" : "Existing cart is activated by {{cartName}} successfully. Your previous items were saved in a cart {{previousCartName}}."
+  "savedCartList": {
+    "savedCarts": "Carrelli acquisti salvati ({{count}})",
+    "cartName": "Nome",
+    "cartId": "ID",
+    "dateSaved": "Data salvata",
+    "cartDescription": "Descrizione",
+    "quantity": "Qtà",
+    "total": "Totale",
+    "actions": "Azioni",
+    "makeCartActive": "Make cart active",
+    "notFound": "Nessun carrello acquisti salvato trovato",
+    "swapCartNoActiveCart": "Existing cart is activated by {{cartName}} successfully.",
+    "swapCartWithActiveCart": "Existing cart is activated by {{cartName}} successfully. Your previous items were saved in a cart {{previousCartName}}."
   },
-  "savedCartCartPage" : {
-    "messages" : {
-      "cartSaved" : "Your cart items have been successfully saved for later in the \"{{cartName}}\" cart"
+  "savedCartCartPage": {
+    "messages": {
+      "cartSaved": "Your cart items have been successfully saved for later in the \"{{cartName}}\" cart"
     }
   },
-  "savedCartDialog" : {
-    "saveForLater" : "Save For Later",
-    "itemsSavedForLater" : "All of the items in your cart will be saved for later",
-    "savedCartName" : "Saved Cart Name",
-    "savedCartDescription" : "Saved Cart Description",
-    "optional" : "optional",
-    "charactersLeft" : "characters left: {{count}}",
-    "cancel" : "Annulla",
-    "save" : "Salva",
-    "restore" : "Ripristina",
-    "followingCartDelete" : "The following saved cart will be deleted",
-    "followingCartRestore" : "The following saved cart will be restored as the active cart",
-    "delete" : "Elimina",
-    "deleteCartSuccess" : "Cart Deleted Successfully",
-    "editCartSuccess" : "Cart Edited Successfully",
-    "editSavedCart" : "Modifica carrello acquisti salvato",
-    "deleteSavedCart" : "Elimina carrello acquisti salvato",
-    "restoreSavedCart" : "Ripristina carrello acquisti salvato",
-    "name" : "Nome",
-    "id" : "ID",
-    "description" : "Descrizione",
-    "quantity" : "QTÀ",
-    "total" : "Totale",
-    "keepCopySavedCart" : "Keep a copy of this cart in the saved carts list",
-    "defaultCloneCartName" : "Copia di {{name}}",
-    "nameOfCloneCart" : "Name of copied cart"
+  "savedCartDialog": {
+    "saveForLater": "Save For Later",
+    "itemsSavedForLater": "All of the items in your cart will be saved for later",
+    "savedCartName": "Saved Cart Name",
+    "savedCartDescription": "Saved Cart Description",
+    "optional": "optional",
+    "charactersLeft": "characters left: {{count}}",
+    "cancel": "Annulla",
+    "save": "Salva",
+    "restore": "Ripristina",
+    "followingCartDelete": "The following saved cart will be deleted",
+    "followingCartRestore": "The following saved cart will be restored as the active cart",
+    "delete": "Elimina",
+    "deleteCartSuccess": "Cart Deleted Successfully",
+    "editCartSuccess": "Cart Edited Successfully",
+    "editSavedCart": "Modifica carrello acquisti salvato",
+    "deleteSavedCart": "Elimina carrello acquisti salvato",
+    "restoreSavedCart": "Ripristina carrello acquisti salvato",
+    "name": "Nome",
+    "id": "ID",
+    "description": "Descrizione",
+    "quantity": "QTÀ",
+    "total": "Totale",
+    "keepCopySavedCart": "Keep a copy of this cart in the saved carts list",
+    "defaultCloneCartName": "Copia di {{name}}",
+    "nameOfCloneCart": "Name of copied cart"
   },
-  "addToSavedCart" : {
-    "savedCarts" : "Saved carts",
-    "saveCartForLater" : "Save cart for later"
+  "addToSavedCart": {
+    "savedCarts": "Saved carts",
+    "saveCartForLater": "Save cart for later"
   }
 }

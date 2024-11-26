@@ -1,86 +1,86 @@
 {
-  "pickupInfo" : {
-    "inStorePickup" : "In Store Pickup",
-    "pickupBy" : "Pick up by",
-    "pickupFrom" : "Pick up from"
+  "pickupInfo": {
+    "inStorePickup": "In Store Pickup",
+    "pickupBy": "Pick up by",
+    "pickupFrom": "Pick up from"
   },
-  "pickupOptionDialog" : {
-    "close" : "关闭",
-    "modalHeader" : "店铺提货"
+  "pickupOptionDialog": {
+    "close": "关闭",
+    "modalHeader": "店铺提货"
   },
-  "pickupOptions" : {
-    "legend" : "送货方式",
-    "changeStore" : "更改店铺",
-    "delivery" : "Ship It (Free Return)",
-    "pickup" : "Free Pickup In Store",
-    "selectStore" : "Select Store"
+  "pickupOptions": {
+    "legend": "送货方式",
+    "changeStore": "更改店铺",
+    "delivery": "Ship It (Free Return)",
+    "pickup": "Free Pickup In Store",
+    "selectStore": "Select Store"
   },
-  "setPreferredStore" : {
-    "makeThisMyStore" : "Make This My Store",
-    "myStore" : "My Store"
+  "setPreferredStore": {
+    "makeThisMyStore": "Make This My Store",
+    "myStore": "My Store"
   },
-  "store" : {
-    "pickupFromHere" : "Pick Up from here",
-    "stockLevel_inStock" : "{{ count }} in Stock",
-    "stockLevel_outOfStock" : "缺货",
-    "viewHours" : "View Hours"
+  "store": {
+    "pickupFromHere": "Pick Up from here",
+    "stockLevel_inStock": "{{ count }} in Stock",
+    "stockLevel_outOfStock": "缺货",
+    "viewHours": "View Hours"
   },
-  "storeList" : {
-    "noStoresMessage" : "No stores found in database..."
+  "storeList": {
+    "noStoresMessage": "No stores found in database..."
   },
-  "storeSchedule" : {
-    "closed" : "已关闭",
-    "storeHours" : "Store hours"
+  "storeSchedule": {
+    "closed": "已关闭",
+    "storeHours": "Store hours"
   },
-  "storeSearch" : {
-    "findAStore" : "查找店铺",
-    "findStores" : "查找店铺",
-    "hideOutOfStockOptions" : "Hide out of stock options",
-    "searchPlaceholder" : "Enter Zip Code or Town or Address",
-    "useMyLocation" : "Use my location"
+  "storeSearch": {
+    "findAStore": "查找店铺",
+    "findStores": "查找店铺",
+    "hideOutOfStockOptions": "Hide out of stock options",
+    "searchPlaceholder": "Enter Zip Code or Town or Address",
+    "useMyLocation": "Use my location"
   },
-  "addressBookPickupInStore" : {
-    "heading" : "Pick-Up Store"
+  "addressBookPickupInStore": {
+    "heading": "Pick-Up Store"
   },
-  "storeFinderPickupInStore" : {
-    "heading" : "My Store"
+  "storeFinderPickupInStore": {
+    "heading": "My Store"
   },
-  "checkoutPickupInStore" : {
-    "heading" : "Items to be Picked Up",
-    "storeItemHeading" : "Pick Up Store Address"
+  "checkoutPickupInStore": {
+    "heading": "Items to be Picked Up",
+    "storeItemHeading": "Pick Up Store Address"
   },
-  "cartItems" : {
-    "item" : "商品"
+  "cartItems": {
+    "item": "商品"
   },
-  "deliveryPointOfServiceDetails" : {
-    "itemsToBePickUp" : "Items To Be Pick-Up",
-    "pickUpInStoreAddress" : "Pick Up Store Address",
-    "itemsToBeShipped" : "Items To Be Shipped",
-    "shippingAddress" : "发货地址",
-    "deliveryMethod" : "送货方式",
-    "deliveryOptions" : "送货选项",
-    "statusDisplay_cancelled" : "已取消",
-    "statusDisplay_cancelling" : "取消待处理状态",
-    "statusDisplay_completed" : "已完成",
-    "statusDisplay_created" : "已创建",
-    "statusDisplay_error" : "待处理",
-    "statusDisplay_Error" : "待处理",
-    "statusDisplay_processing" : "待处理",
-    "statusDisplay_open" : "未完成",
-    "statusDisplay_pending" : {
-      "approval" : "等待批准",
-      "merchant" : {
-        "approval" : "等待商家批准"
+  "deliveryPointOfServiceDetails": {
+    "itemsToBePickUp": "Items To Be Pick-Up",
+    "pickUpInStoreAddress": "Pick Up Store Address",
+    "itemsToBeShipped": "Items To Be Shipped",
+    "shippingAddress": "发货地址",
+    "deliveryMethod": "送货方式",
+    "deliveryOptions": "送货选项",
+    "statusDisplay_cancelled": "已取消",
+    "statusDisplay_cancelling": "取消待处理状态",
+    "statusDisplay_completed": "已完成",
+    "statusDisplay_created": "已创建",
+    "statusDisplay_error": "待处理",
+    "statusDisplay_Error": "待处理",
+    "statusDisplay_processing": "待处理",
+    "statusDisplay_open": "未完成",
+    "statusDisplay_pending": {
+      "approval": "等待批准",
+      "merchant": {
+        "approval": "等待商家批准"
       }
     },
-    "statusDisplay_approved" : "已批准",
-    "statusDisplay_rejected" : "已拒绝",
-    "statusDisplay_merchant" : {
-      "approved" : "商家已批准",
-      "rejected" : "商家已拒绝"
+    "statusDisplay_approved": "已批准",
+    "statusDisplay_rejected": "已拒绝",
+    "statusDisplay_merchant": {
+      "approved": "商家已批准",
+      "rejected": "商家已拒绝"
     },
-    "statusDisplay_assigned" : {
-      "admin" : "已分配至管理员"
+    "statusDisplay_assigned": {
+      "admin": "已分配至管理员"
     }
   }
 }

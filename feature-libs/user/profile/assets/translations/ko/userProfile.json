@@ -1,72 +1,72 @@
 {
-  "updateEmailForm" : {
-    "newEmailAddress" : {
-      "label" : "New email address",
-      "placeholder" : "Enter email"
+  "updateEmailForm": {
+    "newEmailAddress": {
+      "label": "New email address",
+      "placeholder": "Enter email"
     },
-    "confirmNewEmailAddress" : {
-      "label" : "Confirm new email address",
-      "placeholder" : "Enter email"
+    "confirmNewEmailAddress": {
+      "label": "Confirm new email address",
+      "placeholder": "Enter email"
     },
-    "enterValidEmail" : "유효한 이메일을 입력하십시오.",
-    "bothEmailMustMatch" : "Both emails must match",
-    "password" : {
-      "label" : "암호",
-      "placeholder" : "암호 입력"
+    "enterValidEmail": "유효한 이메일을 입력하십시오.",
+    "bothEmailMustMatch": "Both emails must match",
+    "password": {
+      "label": "암호",
+      "placeholder": "암호 입력"
     },
-    "pleaseInputPassword" : "Please input password",
-    "emailUpdateSuccess" : "Success. Please sign in with {{ newUid }}"
+    "pleaseInputPassword": "Please input password",
+    "emailUpdateSuccess": "Success. Please sign in with {{ newUid }}"
   },
-  "register" : {
-    "confirmPassword" : {
-      "action" : "Confirm password",
-      "label" : "Confirm password",
-      "placeholder" : "암호 확인"
+  "register": {
+    "confirmPassword": {
+      "action": "Confirm password",
+      "label": "Confirm password",
+      "placeholder": "암호 확인"
     },
-    "managementInMyAccount" : "Management in My Account.",
-    "termsAndConditions" : "사용 약관",
-    "signIn" : "I already have an account. Sign In",
-    "register" : "등록",
-    "confirmNewPassword" : "새 암호 확인",
-    "resetPassword" : "암호 재설정",
-    "createAccount" : "Create an account",
-    "title" : "칭호",
-    "titleOptional" : "Title (optional)",
-    "firstName" : {
-      "label" : "이름",
-      "placeholder" : "이름"
+    "managementInMyAccount": "Management in My Account.",
+    "termsAndConditions": "사용 약관",
+    "signIn": "I already have an account. Sign In",
+    "register": "등록",
+    "confirmNewPassword": "새 암호 확인",
+    "resetPassword": "암호 재설정",
+    "createAccount": "Create an account",
+    "title": "칭호",
+    "titleOptional": "Title (optional)",
+    "firstName": {
+      "label": "이름",
+      "placeholder": "이름"
     },
-    "lastName" : {
-      "label" : "성",
-      "placeholder" : "성"
+    "lastName": {
+      "label": "성",
+      "placeholder": "성"
     },
-    "emailAddress" : {
-      "label" : "이메일 주소",
-      "placeholder" : "이메일 주소"
+    "emailAddress": {
+      "label": "이메일 주소",
+      "placeholder": "이메일 주소"
     },
-    "password" : {
-      "label" : "암호",
-      "placeholder" : "암호"
+    "password": {
+      "label": "암호",
+      "placeholder": "암호"
     },
-    "newPassword" : "새 암호",
-    "emailMarketing" : "Use my personal data to receive e-mail newsletters for marketing campaigns. To change your settings, go to Consent Management in My Account.",
-    "confirmThatRead" : "I am confirming that I have read and agreed with the",
-    "selectTitle" : "Select Title",
-    "passwordMinRequirements" : "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
-    "passwordStrengthRequirements" : "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
-    "bothPasswordMustMatch" : "Both password must match",
-    "titleRequired" : "Title is required.",
-    "postRegisterMessage" : "Please log in with provided credentials."
+    "newPassword": "새 암호",
+    "emailMarketing": "Use my personal data to receive e-mail newsletters for marketing campaigns. To change your settings, go to Consent Management in My Account.",
+    "confirmThatRead": "I am confirming that I have read and agreed with the",
+    "selectTitle": "Select Title",
+    "passwordMinRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
+    "passwordStrengthRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
+    "bothPasswordMustMatch": "Both password must match",
+    "titleRequired": "Title is required.",
+    "postRegisterMessage": "Please log in with provided credentials."
   },
-  "forgottenPassword" : {
-    "resetPassword" : "Reset password",
-    "enterEmailAddressAssociatedWithYourAccount" : "Enter the email address associated with your account",
-    "emailAddress" : {
-      "label" : "이메일 주소",
-      "placeholder" : "Enter email"
+  "forgottenPassword": {
+    "resetPassword": "Reset password",
+    "enterEmailAddressAssociatedWithYourAccount": "Enter the email address associated with your account",
+    "emailAddress": {
+      "label": "이메일 주소",
+      "placeholder": "Enter email"
     },
-    "enterValidEmail" : "유효한 이메일을 입력하십시오.",
-    "passwordResetEmailSent" : "An email has been sent to you with information on how to reset your password.",
-    "passwordResetSuccess" : "성공했습니다! 이제 새 암호를 사용하여 로그인할 수 있습니다."
+    "enterValidEmail": "유효한 이메일을 입력하십시오.",
+    "passwordResetEmailSent": "An email has been sent to you with information on how to reset your password.",
+    "passwordResetSuccess": "성공했습니다! 이제 새 암호를 사용하여 로그인할 수 있습니다."
   }
 }

@@ -1,65 +1,65 @@
 {
-  "savedCartDetails" : {
-    "cartName" : "Nombre",
-    "cartDescription" : "Descripción",
-    "cartId" : "ID",
-    "dateSaved" : "Datos grabados",
-    "items" : "Artículos",
-    "quantity" : "Cantidad",
-    "total" : "Total",
-    "editSavedCart" : "Editar cesta grabada",
-    "deleteSavedCart" : "Borrar cesta grabada",
-    "addSelectedItems" : "Add selected items",
-    "emptyCartItems" : "Empty Cart Items"
+  "savedCartDetails": {
+    "cartName": "Nombre",
+    "cartDescription": "Descripción",
+    "cartId": "ID",
+    "dateSaved": "Datos grabados",
+    "items": "Artículos",
+    "quantity": "Cantidad",
+    "total": "Total",
+    "editSavedCart": "Editar cesta grabada",
+    "deleteSavedCart": "Borrar cesta grabada",
+    "addSelectedItems": "Add selected items",
+    "emptyCartItems": "Empty Cart Items"
   },
-  "savedCartList" : {
-    "savedCarts" : "Cestas grabadas ({{count}})",
-    "cartName" : "Nombre",
-    "cartId" : "ID",
-    "dateSaved" : "Datos grabados",
-    "cartDescription" : "Descripción",
-    "quantity" : "Cantidad",
-    "total" : "Total",
-    "actions" : "Acciones",
-    "makeCartActive" : "Make cart active",
-    "notFound" : "Ninguna cesta grabada",
-    "swapCartNoActiveCart" : "Existing cart is activated by {{cartName}} successfully.",
-    "swapCartWithActiveCart" : "Existing cart is activated by {{cartName}} successfully. Your previous items were saved in a cart {{previousCartName}}."
+  "savedCartList": {
+    "savedCarts": "Cestas grabadas ({{count}})",
+    "cartName": "Nombre",
+    "cartId": "ID",
+    "dateSaved": "Datos grabados",
+    "cartDescription": "Descripción",
+    "quantity": "Cantidad",
+    "total": "Total",
+    "actions": "Acciones",
+    "makeCartActive": "Make cart active",
+    "notFound": "Ninguna cesta grabada",
+    "swapCartNoActiveCart": "Existing cart is activated by {{cartName}} successfully.",
+    "swapCartWithActiveCart": "Existing cart is activated by {{cartName}} successfully. Your previous items were saved in a cart {{previousCartName}}."
   },
-  "savedCartCartPage" : {
-    "messages" : {
-      "cartSaved" : "Your cart items have been successfully saved for later in the \"{{cartName}}\" cart"
+  "savedCartCartPage": {
+    "messages": {
+      "cartSaved": "Your cart items have been successfully saved for later in the \"{{cartName}}\" cart"
     }
   },
-  "savedCartDialog" : {
-    "saveForLater" : "Save For Later",
-    "itemsSavedForLater" : "All of the items in your cart will be saved for later",
-    "savedCartName" : "Saved Cart Name",
-    "savedCartDescription" : "Saved Cart Description",
-    "optional" : "optional",
-    "charactersLeft" : "characters left: {{count}}",
-    "cancel" : "Cancelar",
-    "save" : "Grabar",
-    "restore" : "Restablecer",
-    "followingCartDelete" : "The following saved cart will be deleted",
-    "followingCartRestore" : "The following saved cart will be restored as the active cart",
-    "delete" : "Borrar",
-    "deleteCartSuccess" : "Cart Deleted Successfully",
-    "editCartSuccess" : "Cart Edited Successfully",
-    "editSavedCart" : "Editar cesta grabada",
-    "deleteSavedCart" : "Borrar cesta grabada",
-    "restoreSavedCart" : "Restablecer cesta grabada",
-    "name" : "Nombre",
-    "id" : "ID",
-    "description" : "Descripción",
-    "quantity" : "Cantidad",
-    "total" : "Total",
-    "keepCopySavedCart" : "Keep a copy of this cart in the saved carts list",
-    "defaultCloneCartName" : "Copia de {{name}}",
-    "nameOfCloneCart" : "Name of copied cart"
+  "savedCartDialog": {
+    "saveForLater": "Save For Later",
+    "itemsSavedForLater": "All of the items in your cart will be saved for later",
+    "savedCartName": "Saved Cart Name",
+    "savedCartDescription": "Saved Cart Description",
+    "optional": "optional",
+    "charactersLeft": "characters left: {{count}}",
+    "cancel": "Cancelar",
+    "save": "Grabar",
+    "restore": "Restablecer",
+    "followingCartDelete": "The following saved cart will be deleted",
+    "followingCartRestore": "The following saved cart will be restored as the active cart",
+    "delete": "Borrar",
+    "deleteCartSuccess": "Cart Deleted Successfully",
+    "editCartSuccess": "Cart Edited Successfully",
+    "editSavedCart": "Editar cesta grabada",
+    "deleteSavedCart": "Borrar cesta grabada",
+    "restoreSavedCart": "Restablecer cesta grabada",
+    "name": "Nombre",
+    "id": "ID",
+    "description": "Descripción",
+    "quantity": "Cantidad",
+    "total": "Total",
+    "keepCopySavedCart": "Keep a copy of this cart in the saved carts list",
+    "defaultCloneCartName": "Copia de {{name}}",
+    "nameOfCloneCart": "Name of copied cart"
   },
-  "addToSavedCart" : {
-    "savedCarts" : "Saved carts",
-    "saveCartForLater" : "Save cart for later"
+  "addToSavedCart": {
+    "savedCarts": "Saved carts",
+    "saveCartForLater": "Save cart for later"
   }
 }

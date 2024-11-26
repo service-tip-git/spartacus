@@ -1,72 +1,72 @@
 {
-  "updateEmailForm" : {
-    "newEmailAddress" : {
-      "label" : "New email address",
-      "placeholder" : "Enter email"
+  "updateEmailForm": {
+    "newEmailAddress": {
+      "label": "New email address",
+      "placeholder": "Enter email"
     },
-    "confirmNewEmailAddress" : {
-      "label" : "Confirm new email address",
-      "placeholder" : "Enter email"
+    "confirmNewEmailAddress": {
+      "label": "Confirm new email address",
+      "placeholder": "Enter email"
     },
-    "enterValidEmail" : "Ingrese un correo electrónico válido.",
-    "bothEmailMustMatch" : "Both emails must match",
-    "password" : {
-      "label" : "Contraseña",
-      "placeholder" : "Ingrese contraseña"
+    "enterValidEmail": "Ingrese un correo electrónico válido.",
+    "bothEmailMustMatch": "Both emails must match",
+    "password": {
+      "label": "Contraseña",
+      "placeholder": "Ingrese contraseña"
     },
-    "pleaseInputPassword" : "Please input password",
-    "emailUpdateSuccess" : "Success. Please sign in with {{ newUid }}"
+    "pleaseInputPassword": "Please input password",
+    "emailUpdateSuccess": "Success. Please sign in with {{ newUid }}"
   },
-  "register" : {
-    "confirmPassword" : {
-      "action" : "Confirm password",
-      "label" : "Confirm password",
-      "placeholder" : "Confirmar contraseña"
+  "register": {
+    "confirmPassword": {
+      "action": "Confirm password",
+      "label": "Confirm password",
+      "placeholder": "Confirmar contraseña"
     },
-    "managementInMyAccount" : "Management in My Account.",
-    "termsAndConditions" : "Términos y condiciones",
-    "signIn" : "I already have an account. Sign In",
-    "register" : "Registrar",
-    "confirmNewPassword" : "Confirmar contraseña nueva",
-    "resetPassword" : "Restablecer contraseña",
-    "createAccount" : "Create an account",
-    "title" : "Título",
-    "titleOptional" : "Title (optional)",
-    "firstName" : {
-      "label" : "Nombre",
-      "placeholder" : "Nombre"
+    "managementInMyAccount": "Management in My Account.",
+    "termsAndConditions": "Términos y condiciones",
+    "signIn": "I already have an account. Sign In",
+    "register": "Registrar",
+    "confirmNewPassword": "Confirmar contraseña nueva",
+    "resetPassword": "Restablecer contraseña",
+    "createAccount": "Create an account",
+    "title": "Título",
+    "titleOptional": "Title (optional)",
+    "firstName": {
+      "label": "Nombre",
+      "placeholder": "Nombre"
     },
-    "lastName" : {
-      "label" : "Apellido",
-      "placeholder" : "Apellido"
+    "lastName": {
+      "label": "Apellido",
+      "placeholder": "Apellido"
     },
-    "emailAddress" : {
-      "label" : "Dirección de correo electrónico",
-      "placeholder" : "Dirección de correo electrónico"
+    "emailAddress": {
+      "label": "Dirección de correo electrónico",
+      "placeholder": "Dirección de correo electrónico"
     },
-    "password" : {
-      "label" : "Contraseña",
-      "placeholder" : "Contraseña"
+    "password": {
+      "label": "Contraseña",
+      "placeholder": "Contraseña"
     },
-    "newPassword" : "Nueva contraseña",
-    "emailMarketing" : "Use my personal data to receive e-mail newsletters for marketing campaigns. To change your settings, go to Consent Management in My Account.",
-    "confirmThatRead" : "I am confirming that I have read and agreed with the",
-    "selectTitle" : "Select Title",
-    "passwordMinRequirements" : "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
-    "passwordStrengthRequirements" : "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
-    "bothPasswordMustMatch" : "Both password must match",
-    "titleRequired" : "Title is required.",
-    "postRegisterMessage" : "Please log in with provided credentials."
+    "newPassword": "Nueva contraseña",
+    "emailMarketing": "Use my personal data to receive e-mail newsletters for marketing campaigns. To change your settings, go to Consent Management in My Account.",
+    "confirmThatRead": "I am confirming that I have read and agreed with the",
+    "selectTitle": "Select Title",
+    "passwordMinRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
+    "passwordStrengthRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
+    "bothPasswordMustMatch": "Both password must match",
+    "titleRequired": "Title is required.",
+    "postRegisterMessage": "Please log in with provided credentials."
   },
-  "forgottenPassword" : {
-    "resetPassword" : "Reset password",
-    "enterEmailAddressAssociatedWithYourAccount" : "Enter the email address associated with your account",
-    "emailAddress" : {
-      "label" : "Dirección de correo electrónico",
-      "placeholder" : "Enter email"
+  "forgottenPassword": {
+    "resetPassword": "Reset password",
+    "enterEmailAddressAssociatedWithYourAccount": "Enter the email address associated with your account",
+    "emailAddress": {
+      "label": "Dirección de correo electrónico",
+      "placeholder": "Enter email"
     },
-    "enterValidEmail" : "Ingrese un correo electrónico válido.",
-    "passwordResetEmailSent" : "An email has been sent to you with information on how to reset your password.",
-    "passwordResetSuccess" : "¡Listo! Ahora puede iniciar sesión con su contraseña nueva."
+    "enterValidEmail": "Ingrese un correo electrónico válido.",
+    "passwordResetEmailSent": "An email has been sent to you with information on how to reset your password.",
+    "passwordResetSuccess": "¡Listo! Ahora puede iniciar sesión con su contraseña nueva."
   }
 }

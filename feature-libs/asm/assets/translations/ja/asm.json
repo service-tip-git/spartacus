@@ -1,175 +1,175 @@
 {
-  "asm" : {
-    "mainLogoLabel" : "SAP",
-    "mainTitle" : "Assisted Service Mode",
-    "logout" : "サインアウト",
-    "hideUi" : "Close ASM",
-    "helpPortalUrl" : "ヘルプ",
-    "customers" : "顧客",
-    "asmCustomer360Button" : "Customer 360 View",
-    "asmCustomer360ViewButton" : "Customer 360°",
-    "createCustomerSuccessfullyAlert" : "The customer account has been created and the customer session has started.",
-    "saveInactiveCartAlertInfo" : "The identified cart is an inactive cart. To take further actions on this cart, save it first.",
-    "activeCartAlertInfo" : "The identified cart is an active cart.",
-    "startCustomerEmulationAlertInfo" : "Customer emulation has started. Any actions you do will reflect the effects on the customer account.",
-    "toggleUi" : {
-      "collapse" : "Hide ASM",
-      "expand" : "Show ASM"
+  "asm": {
+    "mainLogoLabel": "SAP",
+    "mainTitle": "Assisted Service Mode",
+    "logout": "サインアウト",
+    "hideUi": "Close ASM",
+    "helpPortalUrl": "ヘルプ",
+    "customers": "顧客",
+    "asmCustomer360Button": "Customer 360 View",
+    "asmCustomer360ViewButton": "Customer 360°",
+    "createCustomerSuccessfullyAlert": "The customer account has been created and the customer session has started.",
+    "saveInactiveCartAlertInfo": "The identified cart is an inactive cart. To take further actions on this cart, save it first.",
+    "activeCartAlertInfo": "The identified cart is an active cart.",
+    "startCustomerEmulationAlertInfo": "Customer emulation has started. Any actions you do will reflect the effects on the customer account.",
+    "toggleUi": {
+      "collapse": "Hide ASM",
+      "expand": "Show ASM"
     },
-    "loginForm" : {
-      "submit" : "サインイン",
-      "userId" : {
-        "label" : "Agent ID or Email"
+    "loginForm": {
+      "submit": "サインイン",
+      "userId": {
+        "label": "Agent ID or Email"
       },
-      "password" : {
-        "label" : "パスワード"
+      "password": {
+        "label": "パスワード"
       }
     },
-    "customerSearch" : {
-      "searchTerm" : {
-        "label" : "顧客氏名/電子メール アドレス"
+    "customerSearch": {
+      "searchTerm": {
+        "label": "顧客氏名/電子メール アドレス"
       },
-      "searchCustomer" : {
-        "label" : "Search by name or email address"
+      "searchCustomer": {
+        "label": "Search by name or email address"
       },
-      "searchOrder" : {
-        "label" : "Search by full order ID"
+      "searchOrder": {
+        "label": "Search by full order ID"
       },
-      "submit" : "Start Session",
-      "startEmulation" : "Start Emulation",
-      "noMatch" : "No customer found.",
-      "noMatchResult" : "This account cannot be found.",
-      "noCustomerMatchResult" : "No matching customer found.",
-      "noOrderMatchResult" : "Search by full order ID.",
-      "createCustomer" : "Create New Customer",
-      "customer" : "顧客",
-      "orderID" : "注文 ID"
+      "submit": "Start Session",
+      "startEmulation": "Start Emulation",
+      "noMatch": "No customer found.",
+      "noMatchResult": "This account cannot be found.",
+      "noCustomerMatchResult": "No matching customer found.",
+      "noOrderMatchResult": "Search by full order ID.",
+      "createCustomer": "Create New Customer",
+      "customer": "顧客",
+      "orderID": "注文 ID"
     },
-    "createCustomerForm" : {
-      "title" : "Create New Customer",
-      "createAccount" : "作成",
-      "cancel" : "キャンセル",
-      "firstName" : {
-        "label" : "名",
-        "placeholder" : "名"
+    "createCustomerForm": {
+      "title": "Create New Customer",
+      "createAccount": "作成",
+      "cancel": "キャンセル",
+      "firstName": {
+        "label": "名",
+        "placeholder": "名"
       },
-      "lastName" : {
-        "label" : "姓",
-        "placeholder" : "姓"
+      "lastName": {
+        "label": "姓",
+        "placeholder": "姓"
       },
-      "emailAddress" : {
-        "label" : "電子メール アドレスを更新",
-        "placeholder" : "メール アドレス"
+      "emailAddress": {
+        "label": "電子メール アドレスを更新",
+        "placeholder": "メール アドレス"
       },
-      "createAccountAlert" : "The customer session starts once you create the customer account.",
-      "validationErrors" : {
-        "firstName" : "Enter a valid first name.",
-        "lastName" : "Enter a valid last name.",
-        "emailAddress" : "Enter a valid email address."
+      "createAccountAlert": "The customer session starts once you create the customer account.",
+      "validationErrors": {
+        "firstName": "Enter a valid first name.",
+        "lastName": "Enter a valid last name.",
+        "emailAddress": "Enter a valid email address."
       },
-      "badRequestDuplicatedEmail" : "Enter a different email address as {{ emailAddress }} already exists."
+      "badRequestDuplicatedEmail": "Enter a different email address as {{ emailAddress }} already exists."
     },
-    "customerList" : {
-      "title" : "顧客リスト",
-      "description" : "Select a customer from one of several provided lists.",
-      "createCustomer" : "Create New Customer",
-      "cancel" : "キャンセル",
-      "tableHeader" : {
-        "customer" : "顧客",
-        "customerName" : "顧客名",
-        "name" : "名前",
-        "email" : "電子メール",
-        "emailId" : "Email/ID",
-        "phone" : "電話番号",
-        "account" : "アカウント",
-        "cart" : "カート",
-        "order" : "注文",
-        "view" : "360 ビュー",
-        "activeCart" : "有効なカート",
-        "viewActiveCart" : "View Active Cart",
-        "orders" : "注文",
-        "viewOrders" : "注文を表示",
-        "customer360" : "Customer 360°",
-        "viewCustomer360" : "View Customer 360°"
+    "customerList": {
+      "title": "顧客リスト",
+      "description": "Select a customer from one of several provided lists.",
+      "createCustomer": "Create New Customer",
+      "cancel": "キャンセル",
+      "tableHeader": {
+        "customer": "顧客",
+        "customerName": "顧客名",
+        "name": "名前",
+        "email": "電子メール",
+        "emailId": "Email/ID",
+        "phone": "電話番号",
+        "account": "アカウント",
+        "cart": "カート",
+        "order": "注文",
+        "view": "360 ビュー",
+        "activeCart": "有効なカート",
+        "viewActiveCart": "View Active Cart",
+        "orders": "注文",
+        "viewOrders": "注文を表示",
+        "customer360": "Customer 360°",
+        "viewCustomer360": "View Customer 360°"
       },
-      "tableSort" : {
-        "sortBy" : "ソート基準",
-        "byName" : "名前 (昇順)",
-        "byNameAsc" : "名前 (昇順)",
-        "byNameDesc" : "名前(降順)",
-        "byDateAsc" : "日付 (昇順)",
-        "byDateDesc" : "日付 (降順)",
-        "byOrderDateAsc" : "Order date (Asc)",
-        "byOrderDateDesc" : "Order date (Desc)",
-        "byUnit" : "アカウント (昇順)",
-        "byUnitDesc" : "アカウント (降順)"
+      "tableSort": {
+        "sortBy": "ソート基準",
+        "byName": "名前 (昇順)",
+        "byNameAsc": "名前 (昇順)",
+        "byNameDesc": "名前(降順)",
+        "byDateAsc": "日付 (昇順)",
+        "byDateDesc": "日付 (降順)",
+        "byOrderDateAsc": "Order date (Asc)",
+        "byOrderDateDesc": "Order date (Desc)",
+        "byUnit": "アカウント (昇順)",
+        "byUnitDesc": "アカウント (降順)"
       },
-      "page" : {
-        "page" : "Page {{count}}",
-        "previous" : "前",
-        "next" : "次"
+      "page": {
+        "page": "Page {{count}}",
+        "previous": "前",
+        "next": "次"
       },
-      "noOfCustomers" : "{{count}} 人の顧客",
-      "oneCustomer" : "1 人の顧客",
-      "noCustomers" : "現在、この顧客リストには顧客がいません。",
-      "noLists" : "There are currently no customer lists available. Contact your system administrator.",
-      "listsError" : "The customer lists could not be retrieved. Please try again later.",
-      "searchBox" : "検索",
-      "enterSearchBox" : "Enter customer name or email"
+      "noOfCustomers": "{{count}} 人の顧客",
+      "oneCustomer": "1 人の顧客",
+      "noCustomers": "現在、この顧客リストには顧客がいません。",
+      "noLists": "There are currently no customer lists available. Contact your system administrator.",
+      "listsError": "The customer lists could not be retrieved. Please try again later.",
+      "searchBox": "検索",
+      "enterSearchBox": "Enter customer name or email"
     },
-    "switchCustomer" : {
-      "dialog" : {
-        "title" : "警告",
-        "body" : "Clicking \"Switch Customer\" will end the emulation for \"{{ customerA }}\" and start for \"{{ customerB }}\". Any unsaved changes for \"{{ customerA }}\" will be lost.",
-        "actions" : {
-          "switch" : "Switch Customer"
+    "switchCustomer": {
+      "dialog": {
+        "title": "警告",
+        "body": "Clicking \"Switch Customer\" will end the emulation for \"{{ customerA }}\" and start for \"{{ customerB }}\". Any unsaved changes for \"{{ customerA }}\" will be lost.",
+        "actions": {
+          "switch": "Switch Customer"
         }
       }
     },
-    "saveCart" : {
-      "saveCartBtn" : "保存して後で使用",
-      "dialog" : {
-        "saveInfo" : "Save the cart before you can take further actions.",
-        "disableInfo" : "Cannot save the cart as it is empty.",
-        "title" : "カートを保存",
-        "row" : {
-          "id" : "ID",
-          "qty" : "数量",
-          "total" : "合計"
+    "saveCart": {
+      "saveCartBtn": "保存して後で使用",
+      "dialog": {
+        "saveInfo": "Save the cart before you can take further actions.",
+        "disableInfo": "Cannot save the cart as it is empty.",
+        "title": "カートを保存",
+        "row": {
+          "id": "ID",
+          "qty": "数量",
+          "total": "合計"
         },
-        "actions" : {
-          "save" : "保存して後で使用"
+        "actions": {
+          "save": "保存して後で使用"
         }
       }
     },
-    "bindCart" : {
-      "cartNumber" : "Cart Number",
-      "bindCartToCustomer" : "Assign Cart to Customer",
-      "success" : "Cart has been successfully assigned",
-      "assignCartId" : "Assign a cart id to customer",
-      "enterCartId" : "Enter cart id",
-      "resetCartId" : "リセット",
-      "dialog" : {
-        "title" : "Assign Anonymous Cart",
-        "body" : "Do you want to replace the current active cart with the anonymous cart? If you replace the current active cart, it is saved as a saved cart.",
-        "actions" : {
-          "replace" : "Replace Cart"
+    "bindCart": {
+      "cartNumber": "Cart Number",
+      "bindCartToCustomer": "Assign Cart to Customer",
+      "success": "Cart has been successfully assigned",
+      "assignCartId": "Assign a cart id to customer",
+      "enterCartId": "Enter cart id",
+      "resetCartId": "リセット",
+      "dialog": {
+        "title": "Assign Anonymous Cart",
+        "body": "Do you want to replace the current active cart with the anonymous cart? If you replace the current active cart, it is saved as a saved cart.",
+        "actions": {
+          "replace": "Replace Cart"
         }
       }
     },
-    "csagentTokenExpired" : "Your customer support agent session is expired.",
-    "endSession" : "セッション終了",
-    "endEmulation" : "End Emulation",
-    "agentSessionTimer" : {
-      "label" : "Session Timeout",
-      "minutes" : "分",
-      "reset" : "リセット"
+    "csagentTokenExpired": "Your customer support agent session is expired.",
+    "endSession": "セッション終了",
+    "endEmulation": "End Emulation",
+    "agentSessionTimer": {
+      "label": "Session Timeout",
+      "minutes": "分",
+      "reset": "リセット"
     },
-    "auth" : {
-      "agentLoggedInError" : "Cannot login as user when there is an active CS agent session. Please either emulate user or logout CS agent."
+    "auth": {
+      "agentLoggedInError": "Cannot login as user when there is an active CS agent session. Please either emulate user or logout CS agent."
     },
-    "error" : {
-      "noCustomerId" : "No customerId found for selected user. Session cannot be started."
+    "error": {
+      "noCustomerId": "No customerId found for selected user. Session cannot be started."
     }
   }
 }

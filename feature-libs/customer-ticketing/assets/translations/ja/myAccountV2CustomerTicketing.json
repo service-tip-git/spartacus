@@ -1,10 +1,10 @@
 {
-  "myAccountV2CustomerTicketing" : {
-    "heading" : "カスタマーサービス",
-    "showMore" : "さらに表示",
-    "changedOn" : "Changed On: {{value}}",
-    "ticketId" : "ID: {{value}}",
-    "subjectLabel" : "件名",
-    "idLabel" : "Customer Service Id"
+  "myAccountV2CustomerTicketing": {
+    "heading": "カスタマーサービス",
+    "showMore": "さらに表示",
+    "changedOn": "Changed On: {{value}}",
+    "ticketId": "ID: {{value}}",
+    "subjectLabel": "件名",
+    "idLabel": "Customer Service Id"
   }
 }

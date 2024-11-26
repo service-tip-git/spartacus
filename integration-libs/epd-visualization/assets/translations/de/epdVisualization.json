@@ -1,70 +1,70 @@
 {
-  "epdVisualization" : {
-    "visualViewer" : {
-      "contentType" : {
-        "drawing2D" : "2D",
-        "model3D" : "3D"
+  "epdVisualization": {
+    "visualViewer": {
+      "contentType": {
+        "drawing2D": "2D",
+        "model3D": "3D"
       },
-      "toolbar" : {
-        "homeButton" : {
-          "label" : "Startseite"
+      "toolbar": {
+        "homeButton": {
+          "label": "Startseite"
         },
-        "zoomButton" : {
-          "label" : "Zoom"
+        "zoomButton": {
+          "label": "Zoom"
         },
-        "panButton" : {
-          "label" : "Pan"
+        "panButton": {
+          "label": "Pan"
         },
-        "rotateButton" : {
-          "label" : "Rotate"
+        "rotateButton": {
+          "label": "Rotate"
         },
-        "isolateButton" : {
-          "label" : "Isolate"
+        "isolateButton": {
+          "label": "Isolate"
         },
-        "playButton" : {
-          "label" : "Starten"
+        "playButton": {
+          "label": "Starten"
         },
-        "pauseButton" : {
-          "label" : "Pause"
+        "pauseButton": {
+          "label": "Pause"
         },
-        "hotspotsButton" : {
-          "label" : "Hotspots",
-          "show" : "Anzeigen",
-          "hide" : "Ausblenden"
+        "hotspotsButton": {
+          "label": "Hotspots",
+          "show": "Anzeigen",
+          "hide": "Ausblenden"
         },
-        "visualViewerAnimationSlider" : {
-          "label" : "Animation Slider",
-          "role" : "Slider"
+        "visualViewerAnimationSlider": {
+          "label": "Animation Slider",
+          "role": "Slider"
         }
       }
     },
-    "visualPicking" : {
-      "visualPickingTab" : {
-        "noProductReferences" : "No spare parts are available for this product."
+    "visualPicking": {
+      "visualPickingTab": {
+        "noProductReferences": "No spare parts are available for this product."
       },
-      "visualPickingProductList" : {
-        "description" : "Beschreibung",
-        "itemPrice" : "Preis",
-        "outOfStock" : "Out of stock",
-        "id" : "ID"
+      "visualPickingProductList": {
+        "description": "Beschreibung",
+        "itemPrice": "Preis",
+        "outOfStock": "Out of stock",
+        "id": "ID"
       },
-      "visualPickingProductFilter" : {
-        "input" : {
-          "placeholder" : "Filter by name or id"
+      "visualPickingProductFilter": {
+        "input": {
+          "placeholder": "Filter by name or id"
         },
-        "searchButton" : {
-          "label" : "search"
+        "searchButton": {
+          "label": "search"
         },
-        "resetButton" : {
-          "label" : "Zurücksetzen"
+        "resetButton": {
+          "label": "Zurücksetzen"
         }
       }
     },
-    "errors" : {
-      "visualLoad" : {
-        "noMatchingVisualFound" : "No matching visualization found",
-        "multipleMatchingVisualsFound" : "Multiple matching visualizations found",
-        "unexpectedLoadError" : "Error occurred while loading visualization"
+    "errors": {
+      "visualLoad": {
+        "noMatchingVisualFound": "No matching visualization found",
+        "multipleMatchingVisualsFound": "Multiple matching visualizations found",
+        "unexpectedLoadError": "Error occurred while loading visualization"
       }
     }
   }

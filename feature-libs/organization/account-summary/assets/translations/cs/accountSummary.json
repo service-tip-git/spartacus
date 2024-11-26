@@ -1,88 +1,88 @@
 {
-  "orgAccountSummary" : {
-    "groupName" : "Account Summaries",
-    "header" : "All Account Summaries ({{count}})",
-    "name" : "Jednotka",
-    "details" : {
-      "header" : "Detaily souhrnu zákazníka",
-      "uid" : "ID jednotky",
-      "name" : "Název jednotky",
-      "address" : "Adresa",
-      "creditRep" : "Výkaz úvěru",
-      "creditLine" : "Úvěrový rámec",
-      "currentBalance" : "Aktuální zůstatek",
-      "openBalance" : "Počáteční zůstatek",
-      "pastDueBalance" : "Zůstatek po splatnosti",
-      "dayRange" : "{{minBoundary}}-{{maxBoundary}} Days",
-      "dayPlus" : "{{minBoundary}}+ Days",
-      "notApplicable" : "irelevantní"
+  "orgAccountSummary": {
+    "groupName": "Account Summaries",
+    "header": "All Account Summaries ({{count}})",
+    "name": "Jednotka",
+    "details": {
+      "header": "Detaily souhrnu zákazníka",
+      "uid": "ID jednotky",
+      "name": "Název jednotky",
+      "address": "Adresa",
+      "creditRep": "Výkaz úvěru",
+      "creditLine": "Úvěrový rámec",
+      "currentBalance": "Aktuální zůstatek",
+      "openBalance": "Počáteční zůstatek",
+      "pastDueBalance": "Zůstatek po splatnosti",
+      "dayRange": "{{minBoundary}}-{{maxBoundary}} Days",
+      "dayPlus": "{{minBoundary}}+ Days",
+      "notApplicable": "irelevantní"
     },
-    "document" : {
-      "header" : "Dokumenty",
-      "id" : "Číslo dokumentu",
-      "type" : "Typ dokumentu",
-      "date" : "Vytvořeno",
-      "dueDate" : "Due On",
-      "originalAmount" : "Původní částka",
-      "openAmount" : "Otevřená částka",
-      "status" : "Status",
-      "attachment" : "Příloha",
-      "download" : "Stáhnout",
-      "attachmentDescription" : "Download attachment for {{type}} {{id}}.",
-      "noneFound" : "No Documents Found"
+    "document": {
+      "header": "Dokumenty",
+      "id": "Číslo dokumentu",
+      "type": "Typ dokumentu",
+      "date": "Vytvořeno",
+      "dueDate": "Due On",
+      "originalAmount": "Původní částka",
+      "openAmount": "Otevřená částka",
+      "status": "Status",
+      "attachment": "Příloha",
+      "download": "Stáhnout",
+      "attachmentDescription": "Download attachment for {{type}} {{id}}.",
+      "noneFound": "No Documents Found"
     },
-    "sorts" : {
-      "byCreatedAtDateAsc" : "Created On Ascending",
-      "byCreatedAtDateDesc" : "Created On Descending",
-      "byDueAtDateAsc" : "Due On Ascending",
-      "byDueAtDateDesc" : "Due On Descending",
-      "byOriginalAmountAsc" : "Original Amount Ascending",
-      "byOriginalAmountDesc" : "Original Amount Descending",
-      "byOpenAmountAsc" : "Open Amount Ascending",
-      "byOpenAmountDesc" : "Open Amount Descending",
-      "byOrgDocumentTypeAsc" : "Document Type Ascending",
-      "byOrgDocumentTypeDesc" : "Document Type Descending",
-      "byStatusAsc" : "Status Ascending",
-      "byStatusDesc" : "Status Descending",
-      "byOrgDocumentIdAsc" : "Document Number Ascending",
-      "byOrgDocumentIdDesc" : "Document Number Descending"
+    "sorts": {
+      "byCreatedAtDateAsc": "Created On Ascending",
+      "byCreatedAtDateDesc": "Created On Descending",
+      "byDueAtDateAsc": "Due On Ascending",
+      "byDueAtDateDesc": "Due On Descending",
+      "byOriginalAmountAsc": "Original Amount Ascending",
+      "byOriginalAmountDesc": "Original Amount Descending",
+      "byOpenAmountAsc": "Open Amount Ascending",
+      "byOpenAmountDesc": "Open Amount Descending",
+      "byOrgDocumentTypeAsc": "Document Type Ascending",
+      "byOrgDocumentTypeDesc": "Document Type Descending",
+      "byStatusAsc": "Status Ascending",
+      "byStatusDesc": "Status Descending",
+      "byOrgDocumentIdAsc": "Document Number Ascending",
+      "byOrgDocumentIdDesc": "Document Number Descending"
     },
-    "statuses" : {
-      "open" : "Otevřeno",
-      "closed" : "Zavřeno",
-      "all" : "Vše"
+    "statuses": {
+      "open": "Otevřeno",
+      "closed": "Zavřeno",
+      "all": "Vše"
     },
-    "filterByOptions" : {
-      "orgDocumentId" : "Číslo dokumentu",
-      "orgDocumentIdRange" : "Document Number Range",
-      "orgDocumentType" : "Typ dokumentu",
-      "createdAtDateRange" : "Created On Range",
-      "dueAtDateRange" : "Due On Range",
-      "amountRange" : "Interval původní částky",
-      "openAmountRange" : "Interval otevřené částky"
+    "filterByOptions": {
+      "orgDocumentId": "Číslo dokumentu",
+      "orgDocumentIdRange": "Document Number Range",
+      "orgDocumentType": "Typ dokumentu",
+      "createdAtDateRange": "Created On Range",
+      "dueAtDateRange": "Due On Range",
+      "amountRange": "Interval původní částky",
+      "openAmountRange": "Interval otevřené částky"
     },
-    "sortBy" : "Sort By",
-    "sortDocuments" : "Sort documents",
-    "filter" : {
-      "status" : "Status",
-      "filterBy" : "Filtrovat podle",
-      "documentNumber" : "Číslo dokumentu",
-      "documentType" : "Typ dokumentu",
-      "startRange" : "Od",
-      "endRange" : "Do",
-      "clear" : "Vymazat vše",
-      "search" : "Hledat",
-      "errors" : {
-        "toDateMustComeAfterFrom" : "Choose an end date that's later than the start date.",
-        "toAmountMustBeLargeThanFrom" : "Choose an end range value that's smaller than the start value."
+    "sortBy": "Sort By",
+    "sortDocuments": "Sort documents",
+    "filter": {
+      "status": "Status",
+      "filterBy": "Filtrovat podle",
+      "documentNumber": "Číslo dokumentu",
+      "documentType": "Typ dokumentu",
+      "startRange": "Od",
+      "endRange": "Do",
+      "clear": "Vymazat vše",
+      "search": "Hledat",
+      "errors": {
+        "toDateMustComeAfterFrom": "Choose an end date that's later than the start date.",
+        "toAmountMustBeLargeThanFrom": "Choose an end range value that's smaller than the start value."
       }
     },
-    "hint" : "Account summaries allow you to review general information about a unit, including balances and aging summary of invoices. Here, you can also browse through a list of transaction documents for a unit."
+    "hint": "Account summaries allow you to review general information about a unit, including balances and aging summary of invoices. Here, you can also browse through a list of transaction documents for a unit."
   },
-  "orgAccountSummaryList" : {
-    "breadcrumbs" : {
-      "list" : "Account Summaries",
-      "details" : "{{name}}"
+  "orgAccountSummaryList": {
+    "breadcrumbs": {
+      "list": "Account Summaries",
+      "details": "{{name}}"
     }
   }
 }

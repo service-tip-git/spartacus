@@ -1,78 +1,78 @@
 {
-  "addressForm" : {
-    "title" : "タイトル",
-    "titleOptional" : "Title (optional)",
-    "defaultTitle" : "タイトル",
-    "firstName" : {
-      "label" : "名",
-      "placeholder" : "名"
+  "addressForm": {
+    "title": "タイトル",
+    "titleOptional": "Title (optional)",
+    "defaultTitle": "タイトル",
+    "firstName": {
+      "label": "名",
+      "placeholder": "名"
     },
-    "lastName" : {
-      "label" : "姓",
-      "placeholder" : "姓"
+    "lastName": {
+      "label": "姓",
+      "placeholder": "姓"
     },
-    "address1" : "Address 1",
-    "address2" : "Address 2 (optional)",
-    "country" : "国/地域",
-    "city" : {
-      "label" : "都市",
-      "placeholder" : "都市"
+    "address1": "Address 1",
+    "address2": "Address 2 (optional)",
+    "country": "国/地域",
+    "city": {
+      "label": "都市",
+      "placeholder": "都市"
     },
-    "state" : "ステータス",
-    "zipCode" : {
-      "label" : "Zip code",
-      "placeholder" : "Postal Code/Zip"
+    "state": "ステータス",
+    "zipCode": {
+      "label": "Zip code",
+      "placeholder": "Postal Code/Zip"
     },
-    "phoneNumber" : {
-      "label" : "Phone number (optional)",
-      "placeholder" : "e.g. (###) - ### - ####"
+    "phoneNumber": {
+      "label": "Phone number (optional)",
+      "placeholder": "e.g. (###) - ### - ####"
     },
-    "cellphone" : {
-      "label" : "Mobile number (optional)",
-      "placeholder" : "e.g. (###) - ### - ####"
+    "cellphone": {
+      "label": "Mobile number (optional)",
+      "placeholder": "e.g. (###) - ### - ####"
     },
-    "saveAsDefault" : "Save as default",
-    "chooseAddress" : "Choose address",
-    "streetAddress" : "Street Address",
-    "aptSuite" : "Apartment Number",
-    "selectOne" : "Select One...",
-    "setAsDefault" : "Set as default delivery address",
-    "titleRequired" : "Title is required.",
-    "userAddressAddSuccess" : "New address was added successfully!",
-    "userAddressUpdateSuccess" : "Address updated successfully!",
-    "userAddressDeleteSuccess" : "Address deleted successfully!",
-    "invalidAddress" : "Invalid Address"
+    "saveAsDefault": "Save as default",
+    "chooseAddress": "Choose address",
+    "streetAddress": "Street Address",
+    "aptSuite": "Apartment Number",
+    "selectOne": "Select One...",
+    "setAsDefault": "Set as default delivery address",
+    "titleRequired": "Title is required.",
+    "userAddressAddSuccess": "New address was added successfully!",
+    "userAddressUpdateSuccess": "Address updated successfully!",
+    "userAddressDeleteSuccess": "Address deleted successfully!",
+    "invalidAddress": "Invalid Address"
   },
-  "addressBook" : {
-    "addNewDeliveryAddress" : "Add a new delivery address",
-    "editDeliveryAddress" : "Edit delivery address",
-    "areYouSureToDeleteAddress" : "この住所を削除しますか?",
-    "addNewAddress" : "新しい住所を追加",
-    "addAddress" : "Add address",
-    "updateAddress" : "Update address",
-    "backToAddressList" : "Back to address list",
-    "defaultDeliveryAddress" : "Default Delivery Address",
-    "additionalDeliveryAddress" : "Additional Delivery Address {{number}}"
+  "addressBook": {
+    "addNewDeliveryAddress": "Add a new delivery address",
+    "editDeliveryAddress": "Edit delivery address",
+    "areYouSureToDeleteAddress": "この住所を削除しますか?",
+    "addNewAddress": "新しい住所を追加",
+    "addAddress": "Add address",
+    "updateAddress": "Update address",
+    "backToAddressList": "Back to address list",
+    "defaultDeliveryAddress": "Default Delivery Address",
+    "additionalDeliveryAddress": "Additional Delivery Address {{number}}"
   },
-  "addressCard" : {
-    "default" : "DEFAULT",
-    "selected" : "選択済み",
-    "setAsDefault" : "既定に設定",
-    "shipTo" : "配送先",
-    "billTo" : "Bill To",
-    "phoneNumber" : "P",
-    "mobileNumber" : "M"
+  "addressCard": {
+    "default": "DEFAULT",
+    "selected": "選択済み",
+    "setAsDefault": "既定に設定",
+    "shipTo": "配送先",
+    "billTo": "Bill To",
+    "phoneNumber": "P",
+    "mobileNumber": "M"
   },
-  "addressSuggestion" : {
-    "verifyYourAddress" : "Verify your address",
-    "ensureAccuracySuggestChange" : "To ensure delivery accuracy, we suggest the change selected below.",
-    "chooseAddressToUse" : "Please choose which address you would like to use:",
-    "suggestedAddress" : "Suggested address",
-    "enteredAddress" : "Entered address",
-    "editAddress" : "住所を編集",
-    "saveAddress" : "住所を保存"
+  "addressSuggestion": {
+    "verifyYourAddress": "Verify your address",
+    "ensureAccuracySuggestChange": "To ensure delivery accuracy, we suggest the change selected below.",
+    "chooseAddressToUse": "Please choose which address you would like to use:",
+    "suggestedAddress": "Suggested address",
+    "enteredAddress": "Entered address",
+    "editAddress": "住所を編集",
+    "saveAddress": "住所を保存"
   },
-  "addressMessages" : {
-    "setAsDefaultSuccessfully" : "Address {{ streetAddress }} was successfully set as default"
+  "addressMessages": {
+    "setAsDefaultSuccessfully": "Address {{ streetAddress }} was successfully set as default"
   }
 }

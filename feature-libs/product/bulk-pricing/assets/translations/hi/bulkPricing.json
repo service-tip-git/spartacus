@@ -1,7 +1,7 @@
 {
-  "bulkPricingTable" : {
-    "quantity" : "मात्रा",
-    "price" : "मूल्य",
-    "discount" : "छूट"
+  "bulkPricingTable": {
+    "quantity": "मात्रा",
+    "price": "मूल्य",
+    "discount": "छूट"
   }
 }

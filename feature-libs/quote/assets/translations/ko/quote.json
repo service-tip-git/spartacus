@@ -1,249 +1,249 @@
 {
-  "quote" : {
-    "confirmDialog" : {
-      "name" : "Name:",
-      "description" : "Description:",
-      "validity" : "이 견적은 {{ expirationTime }}까지 유효합니다.",
-      "option" : {
-        "yes" : "예",
-        "no" : "아니요"
+  "quote": {
+    "confirmDialog": {
+      "name": "Name:",
+      "description": "Description:",
+      "validity": "이 견적은 {{ expirationTime }}까지 유효합니다.",
+      "option": {
+        "yes": "예",
+        "no": "아니요"
       },
-      "buyer" : {
-        "submit" : {
-          "a11y" : {
-            "close" : "Close submit quote modal"
+      "buyer": {
+        "submit": {
+          "a11y": {
+            "close": "Close submit quote modal"
           },
-          "title" : "Submit Quote Request {{ code }}?",
-          "confirmNote" : "Are you sure you want to submit this quote request?",
-          "successMessage" : "Quote request submitted successfully"
+          "title": "Submit Quote Request {{ code }}?",
+          "confirmNote": "Are you sure you want to submit this quote request?",
+          "successMessage": "Quote request submitted successfully"
         },
-        "cancel" : {
-          "a11y" : {
-            "close" : "Close cancel quote modal"
+        "cancel": {
+          "a11y": {
+            "close": "Close cancel quote modal"
           },
-          "title" : "Cancel Quote Request {{ code }}?",
-          "confirmNote" : "Are you sure you want to cancel this quote request?",
-          "successMessage" : "Quote request cancelled"
+          "title": "Cancel Quote Request {{ code }}?",
+          "confirmNote": "Are you sure you want to cancel this quote request?",
+          "successMessage": "Quote request cancelled"
         }
       },
-      "buyer_offer" : {
-        "edit" : {
-          "a11y" : {
-            "close" : "Close edit quote modal"
+      "buyer_offer": {
+        "edit": {
+          "a11y": {
+            "close": "Close edit quote modal"
           },
-          "title" : "Confirm Edit Quote {{ code }}?",
-          "confirmNote" : "이 승인된 견적을 편집하시겠습니까?",
-          "warningNote" : "This Quote has been Approved. Editing this Quote will prevent Checkout until new edits are approved."
+          "title": "Confirm Edit Quote {{ code }}?",
+          "confirmNote": "이 승인된 견적을 편집하시겠습니까?",
+          "warningNote": "This Quote has been Approved. Editing this Quote will prevent Checkout until new edits are approved."
         },
-        "cancel" : {
-          "a11y" : {
-            "close" : "Close cancel quote modal"
+        "cancel": {
+          "a11y": {
+            "close": "Close cancel quote modal"
           },
-          "title" : "Cancel Quote {{ code }}?",
-          "confirmNote" : "이 견적을 취소하시겠습니까?",
-          "successMessage" : "Quote cancelled"
+          "title": "Cancel Quote {{ code }}?",
+          "confirmNote": "이 견적을 취소하시겠습니까?",
+          "successMessage": "Quote cancelled"
         },
-        "checkout" : {
-          "a11y" : {
-            "close" : "Close checkout quote modal"
+        "checkout": {
+          "a11y": {
+            "close": "Close checkout quote modal"
           },
-          "title" : "Checkout Quote {{ code }}?",
-          "confirmNote" : "Are you sure you want to accept and checkout this quote?"
+          "title": "Checkout Quote {{ code }}?",
+          "confirmNote": "Are you sure you want to accept and checkout this quote?"
         }
       },
-      "expired" : {
-        "edit" : {
-          "a11y" : {
-            "close" : "Close edit quote modal"
+      "expired": {
+        "edit": {
+          "a11y": {
+            "close": "Close edit quote modal"
           },
-          "title" : "Confirm Edit Quote {{ code }}?",
-          "confirmNote" : "Are you sure you want to edit this expired quote?",
-          "warningNote" : "This Quote is expired. Editing this quote will prevent checkout until new edits are approved."
+          "title": "Confirm Edit Quote {{ code }}?",
+          "confirmNote": "Are you sure you want to edit this expired quote?",
+          "warningNote": "This Quote is expired. Editing this quote will prevent checkout until new edits are approved."
         },
-        "requote" : {
-          "a11y" : {
-            "close" : "Close requote modal"
+        "requote": {
+          "a11y": {
+            "close": "Close requote modal"
           },
-          "title" : "Recreate Quote Request {{ code }}?",
-          "confirmNote" : "Are you sure you want to recreate this quote request?",
-          "warningNote" : "This Quote is expired. Re-quoting it will create a new quote request with same contents, which can be edited and submitted for approval afterwards."
+          "title": "Recreate Quote Request {{ code }}?",
+          "confirmNote": "Are you sure you want to recreate this quote request?",
+          "warningNote": "This Quote is expired. Re-quoting it will create a new quote request with same contents, which can be edited and submitted for approval afterwards."
         }
       },
-      "seller" : {
-        "submit" : {
-          "a11y" : {
-            "close" : "Close submit quote modal"
+      "seller": {
+        "submit": {
+          "a11y": {
+            "close": "Close submit quote modal"
           },
-          "title" : "Submit Quote {{ code }}?",
-          "confirmNote" : "이 견적을 제출하시겠습니까?",
-          "warningNote" : "Depending on the total value of the quote, an additional approval might be required before the buyer can check out this quote.",
-          "successMessage" : "Quote submitted successfully"
+          "title": "Submit Quote {{ code }}?",
+          "confirmNote": "이 견적을 제출하시겠습니까?",
+          "warningNote": "Depending on the total value of the quote, an additional approval might be required before the buyer can check out this quote.",
+          "successMessage": "Quote submitted successfully"
         }
       },
-      "sellerapprover" : {
-        "approve" : {
-          "a11y" : {
-            "close" : "Close approve quote modal"
+      "sellerapprover": {
+        "approve": {
+          "a11y": {
+            "close": "Close approve quote modal"
           },
-          "title" : "Approve Quote {{ code }}?",
-          "confirmNote" : "Are you sure you want to approve this quote?",
-          "successMessage" : "Quote approved successfully"
+          "title": "Approve Quote {{ code }}?",
+          "confirmNote": "Are you sure you want to approve this quote?",
+          "successMessage": "Quote approved successfully"
         },
-        "reject" : {
-          "a11y" : {
-            "close" : "Close reject quote modal"
+        "reject": {
+          "a11y": {
+            "close": "Close reject quote modal"
           },
-          "title" : "Reject Quote {{ code }}?",
-          "confirmNote" : "Are you sure you want to reject this quote?",
-          "successMessage" : "Quote rejected"
+          "title": "Reject Quote {{ code }}?",
+          "confirmNote": "Are you sure you want to reject this quote?",
+          "successMessage": "Quote rejected"
         }
       },
-      "cancelled" : {
-        "requote" : {
-          "a11y" : {
-            "close" : "Close requote modal"
+      "cancelled": {
+        "requote": {
+          "a11y": {
+            "close": "Close requote modal"
           },
-          "title" : "Recreate Quote Request {{ code }}?",
-          "confirmNote" : "Are you sure you want to recreate this quote request?",
-          "warningNote" : "Your current cart will be converted to a saved cart."
+          "title": "Recreate Quote Request {{ code }}?",
+          "confirmNote": "Are you sure you want to recreate this quote request?",
+          "warningNote": "Your current cart will be converted to a saved cart."
         }
       },
-      "all" : {
-        "edit" : {
-          "a11y" : {
-            "close" : "Close edit quote modal"
+      "all": {
+        "edit": {
+          "a11y": {
+            "close": "Close edit quote modal"
           },
-          "title" : "Edit Quote {{ code }}?",
-          "confirmNote" : "Are you sure you want to edit this quote?",
-          "warningNote" : "Your current cart will be converted to a saved cart."
+          "title": "Edit Quote {{ code }}?",
+          "confirmNote": "Are you sure you want to edit this quote?",
+          "warningNote": "Your current cart will be converted to a saved cart."
         }
       }
     },
-    "comments" : {
-      "regionTitle" : "Contact/Comment Box",
-      "title" : "연락처",
-      "invalidComment" : "Invalid Input - Please type again...",
-      "allProducts" : "모든 제품"
+    "comments": {
+      "regionTitle": "Contact/Comment Box",
+      "title": "연락처",
+      "invalidComment": "Invalid Input - Please type again...",
+      "allProducts": "모든 제품"
     },
-    "commons" : {
-      "requestQuote" : "Request Quote",
-      "cart" : "장바구니",
-      "minRequestInitiationNote" : "Minimum ${{minValue}} subtotal is required to submit a quote ",
-      "savedActiveCart" : "Your active cart was converted to saved cart {{ code }}"
+    "commons": {
+      "requestQuote": "Request Quote",
+      "cart": "장바구니",
+      "minRequestInitiationNote": "Minimum ${{minValue}} subtotal is required to submit a quote ",
+      "savedActiveCart": "Your active cart was converted to saved cart {{ code }}"
     },
-    "header" : {
-      "buyerEdit" : {
-        "a11y" : {
-          "cancel" : "Cancel editing quote header information",
-          "save" : "Save quote header information"
+    "header": {
+      "buyerEdit": {
+        "a11y": {
+          "cancel": "Cancel editing quote header information",
+          "save": "Save quote header information"
         }
       },
-      "overview" : {
-        "regionTitle" : "Quote details summary",
-        "id" : "견적 ID",
-        "status" : "상태",
-        "information" : "Quote Information",
-        "name" : "이름",
-        "description" : "설명",
-        "charactersLeft" : "characters left: {{count}}",
-        "priceAndExpiry" : "Price & Expiry",
-        "estimatedTotal" : "Estimated Total",
-        "total" : "합계",
-        "expirationTime" : "만료 날짜",
-        "a11y" : {
-          "edit" : "Edit quote header information"
+      "overview": {
+        "regionTitle": "Quote details summary",
+        "id": "견적 ID",
+        "status": "상태",
+        "information": "Quote Information",
+        "name": "이름",
+        "description": "설명",
+        "charactersLeft": "characters left: {{count}}",
+        "priceAndExpiry": "Price & Expiry",
+        "estimatedTotal": "Estimated Total",
+        "total": "합계",
+        "expirationTime": "만료 날짜",
+        "a11y": {
+          "edit": "Edit quote header information"
         },
-        "createdAndUpdated" : "Created & Updated",
-        "createdDate" : "생성됨",
-        "lastUpdatedDate" : "최종 업데이트"
+        "createdAndUpdated": "Created & Updated",
+        "createdDate": "생성됨",
+        "lastUpdatedDate": "최종 업데이트"
       }
     },
-    "httpHandlers" : {
-      "cartValidationIssue" : "There are problems with your entries. Please review your cart.",
-      "quoteCartIssue" : "Not possible to do changes to cart entries. Proceed to checkout",
-      "absoluteDiscountIssue" : "Choose a discount that does not exceed the total value",
-      "expirationDateIssue" : "Choose an expiration date in the future",
-      "threshold" : {
-        "underThresholdError" : "Total price of requested quote does not meet the minimum threshold"
+    "httpHandlers": {
+      "cartValidationIssue": "There are problems with your entries. Please review your cart.",
+      "quoteCartIssue": "Not possible to do changes to cart entries. Proceed to checkout",
+      "absoluteDiscountIssue": "Choose a discount that does not exceed the total value",
+      "expirationDateIssue": "Choose an expiration date in the future",
+      "threshold": {
+        "underThresholdError": "Total price of requested quote does not meet the minimum threshold"
       },
-      "expired" : "This quote has expired. You must resubmit your quote request to receive another vendor quote.",
-      "downloadPDFError" : "Something went wrong. Unable to obtain the proposal document PDF."
+      "expired": "This quote has expired. You must resubmit your quote request to receive another vendor quote.",
+      "downloadPDFError": "Something went wrong. Unable to obtain the proposal document PDF."
     },
-    "items" : {
-      "regionTitle" : "Cart items"
+    "items": {
+      "regionTitle": "Cart items"
     },
-    "links" : {
-      "newCart" : "새 장바구니",
-      "quotes" : "견적",
-      "download" : "Download Proposal",
-      "a11y" : {
-        "newCart" : "Create new empty cart and navigate to it.",
-        "quotes" : "Navigate to quote search result list.",
-        "download" : "Start downloading a quote proposal"
+    "links": {
+      "newCart": "새 장바구니",
+      "quotes": "견적",
+      "download": "Download Proposal",
+      "a11y": {
+        "newCart": "Create new empty cart and navigate to it.",
+        "quotes": "Navigate to quote search result list.",
+        "download": "Start downloading a quote proposal"
       }
     },
-    "list" : {
-      "regionTitle" : "Quote list summary",
-      "title" : "Quote List",
-      "name" : "이름",
-      "updated" : "업데이트됨",
-      "sortBy" : "정렬 기준",
-      "sortQuotes" : "Sort Quotes",
-      "empty" : "We have no quote records for this account.",
-      "quoteId" : "견적 ID",
-      "status" : "상태",
-      "clickableRow" : "Click on the row for more quote details"
+    "list": {
+      "regionTitle": "Quote list summary",
+      "title": "Quote List",
+      "name": "이름",
+      "updated": "업데이트됨",
+      "sortBy": "정렬 기준",
+      "sortQuotes": "Sort Quotes",
+      "empty": "We have no quote records for this account.",
+      "quoteId": "견적 ID",
+      "status": "상태",
+      "clickableRow": "Click on the row for more quote details"
     },
-    "states" : {
-      "BUYER_DRAFT" : "드래프트",
-      "BUYER_SUBMITTED" : "제출됨",
-      "BUYER_ACCEPTED" : "승인됨",
-      "BUYER_APPROVED" : "승인됨",
-      "BUYER_REJECTED" : "거부됨",
-      "BUYER_OFFER" : "공급업체 견적",
-      "BUYER_ORDERED" : "주문됨",
-      "SELLER_DRAFT" : "드래프트",
-      "SELLER_REQUEST" : "요청됨",
-      "SELLER_SUBMITTED" : "제출됨",
-      "SELLERAPPROVER_DRAFT" : "드래프트",
-      "SELLERAPPROVER_PENDING" : "승인 보류 중",
-      "SELLERAPPROVER_APPROVED" : "승인됨",
-      "SELLERAPPROVER_REJECTED" : "거부됨",
-      "CREATED" : "생성됨",
-      "CANCELLED" : "취소됨",
-      "EXPIRED" : "만료됨"
+    "states": {
+      "BUYER_DRAFT": "드래프트",
+      "BUYER_SUBMITTED": "제출됨",
+      "BUYER_ACCEPTED": "승인됨",
+      "BUYER_APPROVED": "승인됨",
+      "BUYER_REJECTED": "거부됨",
+      "BUYER_OFFER": "공급업체 견적",
+      "BUYER_ORDERED": "주문됨",
+      "SELLER_DRAFT": "드래프트",
+      "SELLER_REQUEST": "요청됨",
+      "SELLER_SUBMITTED": "제출됨",
+      "SELLERAPPROVER_DRAFT": "드래프트",
+      "SELLERAPPROVER_PENDING": "승인 보류 중",
+      "SELLERAPPROVER_APPROVED": "승인됨",
+      "SELLERAPPROVER_REJECTED": "거부됨",
+      "CREATED": "생성됨",
+      "CANCELLED": "취소됨",
+      "EXPIRED": "만료됨"
     },
-    "summary" : {
-      "regionTitle" : "오더 요약",
-      "actions" : {
-        "APPROVE" : "견적 승인",
-        "CANCEL" : "견적 취소",
-        "CHECKOUT" : "승인 및 체크아웃",
-        "EDIT" : "견적 편집",
-        "REJECT" : "견적 거부",
-        "REQUOTE" : "Request new Quote",
-        "SAVE" : "견적 저장",
-        "SUBMIT" : "견적 제출",
-        "VIEW" : "견적 보기"
+    "summary": {
+      "regionTitle": "오더 요약",
+      "actions": {
+        "APPROVE": "견적 승인",
+        "CANCEL": "견적 취소",
+        "CHECKOUT": "승인 및 체크아웃",
+        "EDIT": "견적 편집",
+        "REJECT": "견적 거부",
+        "REQUOTE": "Request new Quote",
+        "SAVE": "견적 저장",
+        "SUBMIT": "견적 제출",
+        "VIEW": "견적 보기"
       },
-      "prices" : {
-        "title" : "오더 요약",
-        "subtotal" : "소계",
-        "productDiscount" : "Item Discount",
-        "orderDiscount" : "주문 할인",
-        "quoteDiscount" : "견적 할인",
-        "total" : "합계",
-        "hint" : "No taxes are included in the total"
+      "prices": {
+        "title": "오더 요약",
+        "subtotal": "소계",
+        "productDiscount": "Item Discount",
+        "orderDiscount": "주문 할인",
+        "quoteDiscount": "견적 할인",
+        "total": "합계",
+        "hint": "No taxes are included in the total"
       },
-      "sellerEdit" : {
-        "discount" : "할인",
-        "apply" : "적용",
-        "expiryDate" : "만료 날짜",
-        "discountValidationText" : "Enter a valid percentage discount",
-        "a11y" : {
-          "apply" : "Click to apply the entered discount value to this quote",
-          "discount" : "Enter a percentage discount value to be applied to this quote",
-          "expiryDate" : "Enter an expiry date for this quote"
+      "sellerEdit": {
+        "discount": "할인",
+        "apply": "적용",
+        "expiryDate": "만료 날짜",
+        "discountValidationText": "Enter a valid percentage discount",
+        "a11y": {
+          "apply": "Click to apply the entered discount value to this quote",
+          "discount": "Enter a percentage discount value to be applied to this quote",
+          "expiryDate": "Enter an expiry date for this quote"
         }
       }
     }

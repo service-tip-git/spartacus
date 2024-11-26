@@ -1,9 +1,9 @@
 {
-  "productVariants" : {
-    "style" : "Styl",
-    "selectedStyle" : "Selected style",
-    "size" : "Rozmiar",
-    "color" : "Kolor",
-    "sizeGuideLabel" : "Style guide"
+  "productVariants": {
+    "style": "Styl",
+    "selectedStyle": "Selected style",
+    "size": "Rozmiar",
+    "color": "Kolor",
+    "sizeGuideLabel": "Style guide"
   }
 }

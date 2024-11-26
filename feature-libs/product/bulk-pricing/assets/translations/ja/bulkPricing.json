@@ -1,7 +1,7 @@
 {
-  "bulkPricingTable" : {
-    "quantity" : "数量",
-    "price" : "価格",
-    "discount" : "値引"
+  "bulkPricingTable": {
+    "quantity": "数量",
+    "price": "価格",
+    "discount": "値引"
   }
 }

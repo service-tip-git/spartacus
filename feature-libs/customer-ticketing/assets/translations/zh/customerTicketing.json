@@ -1,48 +1,48 @@
 {
-  "customerTicketing" : {
-    "mainLogoLabel" : "SAP",
-    "mainTitle" : "Customer Ticketing",
-    "ticketId" : "标识",
-    "createdOn" : "创建日期",
-    "changedOn" : "Changed On",
-    "status" : "状态",
-    "message" : "消息",
-    "cancel" : "取消",
-    "submit" : "提交",
-    "uploadFile" : "上传文件",
-    "fileSizeLimit" : "File size limit: {{count}} MB",
-    "maximumAttachment" : "Maximum of one attachment per message",
-    "errorMessage" : "Something went wrong.",
-    "charactersLeft" : "characters left: {{count}}",
-    "customerService" : "客户服务"
+  "customerTicketing": {
+    "mainLogoLabel": "SAP",
+    "mainTitle": "Customer Ticketing",
+    "ticketId": "标识",
+    "createdOn": "创建日期",
+    "changedOn": "Changed On",
+    "status": "状态",
+    "message": "消息",
+    "cancel": "取消",
+    "submit": "提交",
+    "uploadFile": "上传文件",
+    "fileSizeLimit": "File size limit: {{count}} MB",
+    "maximumAttachment": "Maximum of one attachment per message",
+    "errorMessage": "Something went wrong.",
+    "charactersLeft": "characters left: {{count}}",
+    "customerService": "客户服务"
   },
-  "customerTicketingList" : {
-    "subject" : "主题",
-    "ticketCategory" : "类别",
-    "sortSubtitle" : "排序依据",
-    "sortOrders" : "Sort orders",
-    "noTickets" : "You don't have any request",
-    "requestTitle" : "All Requests",
-    "mobile" : {
-      "ticketIdFull" : "票证 ID"
+  "customerTicketingList": {
+    "subject": "主题",
+    "ticketCategory": "类别",
+    "sortSubtitle": "排序依据",
+    "sortOrders": "Sort orders",
+    "noTickets": "You don't have any request",
+    "requestTitle": "All Requests",
+    "mobile": {
+      "ticketIdFull": "票证 ID"
     }
   },
-  "createCustomerTicket" : {
-    "createNewTicket" : "添加",
-    "addNewRequest" : "Add New Request",
-    "addRequest" : "Add Request",
-    "subject" : "主题",
-    "category" : "类别",
-    "associateTo" : "Associate To",
-    "ticketCreated" : "Request created.",
-    "optionallySelectAssociatedObject" : "Select Option",
-    "selectCategory" : "Select Category"
+  "createCustomerTicket": {
+    "createNewTicket": "添加",
+    "addNewRequest": "Add New Request",
+    "addRequest": "Add Request",
+    "subject": "主题",
+    "category": "类别",
+    "associateTo": "Associate To",
+    "ticketCreated": "Request created.",
+    "optionallySelectAssociatedObject": "Select Option",
+    "selectCategory": "Select Category"
   },
-  "customerTicketingDetails" : {
-    "requestReopened" : "Request Reopened.",
-    "requestClosed" : "Request closed, you may reopen if needed.",
-    "reopenRequest" : "Reopen Request",
-    "closeRequest" : "Close Request",
-    "ticketNotFound" : "Ticket not found."
+  "customerTicketingDetails": {
+    "requestReopened": "Request Reopened.",
+    "requestClosed": "Request closed, you may reopen if needed.",
+    "reopenRequest": "Reopen Request",
+    "closeRequest": "Close Request",
+    "ticketNotFound": "Ticket not found."
   }
 }

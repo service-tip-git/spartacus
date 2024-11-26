@@ -1,10 +1,10 @@
 {
-  "myAccountV2CustomerTicketing" : {
-    "heading" : "Layanan Pelanggan",
-    "showMore" : "Tampilkan Selengkapnya",
-    "changedOn" : "Changed On: {{value}}",
-    "ticketId" : "ID: {{value}}",
-    "subjectLabel" : "Subjek",
-    "idLabel" : "Customer Service Id"
+  "myAccountV2CustomerTicketing": {
+    "heading": "Layanan Pelanggan",
+    "showMore": "Tampilkan Selengkapnya",
+    "changedOn": "Changed On: {{value}}",
+    "ticketId": "ID: {{value}}",
+    "subjectLabel": "Subjek",
+    "idLabel": "Customer Service Id"
   }
 }

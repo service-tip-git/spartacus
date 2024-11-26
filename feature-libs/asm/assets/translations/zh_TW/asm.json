@@ -1,175 +1,175 @@
 {
-  "asm" : {
-    "mainLogoLabel" : "SAP",
-    "mainTitle" : "Assisted Service Mode",
-    "logout" : "登出",
-    "hideUi" : "Close ASM",
-    "helpPortalUrl" : "輔助說明",
-    "customers" : "客戶",
-    "asmCustomer360Button" : "Customer 360 View",
-    "asmCustomer360ViewButton" : "Customer 360°",
-    "createCustomerSuccessfullyAlert" : "The customer account has been created and the customer session has started.",
-    "saveInactiveCartAlertInfo" : "The identified cart is an inactive cart. To take further actions on this cart, save it first.",
-    "activeCartAlertInfo" : "The identified cart is an active cart.",
-    "startCustomerEmulationAlertInfo" : "Customer emulation has started. Any actions you do will reflect the effects on the customer account.",
-    "toggleUi" : {
-      "collapse" : "Hide ASM",
-      "expand" : "Show ASM"
+  "asm": {
+    "mainLogoLabel": "SAP",
+    "mainTitle": "Assisted Service Mode",
+    "logout": "登出",
+    "hideUi": "Close ASM",
+    "helpPortalUrl": "輔助說明",
+    "customers": "客戶",
+    "asmCustomer360Button": "Customer 360 View",
+    "asmCustomer360ViewButton": "Customer 360°",
+    "createCustomerSuccessfullyAlert": "The customer account has been created and the customer session has started.",
+    "saveInactiveCartAlertInfo": "The identified cart is an inactive cart. To take further actions on this cart, save it first.",
+    "activeCartAlertInfo": "The identified cart is an active cart.",
+    "startCustomerEmulationAlertInfo": "Customer emulation has started. Any actions you do will reflect the effects on the customer account.",
+    "toggleUi": {
+      "collapse": "Hide ASM",
+      "expand": "Show ASM"
     },
-    "loginForm" : {
-      "submit" : "登入",
-      "userId" : {
-        "label" : "Agent ID or Email"
+    "loginForm": {
+      "submit": "登入",
+      "userId": {
+        "label": "Agent ID or Email"
       },
-      "password" : {
-        "label" : "密碼"
+      "password": {
+        "label": "密碼"
       }
     },
-    "customerSearch" : {
-      "searchTerm" : {
-        "label" : "客戶名稱/電子郵件地址"
+    "customerSearch": {
+      "searchTerm": {
+        "label": "客戶名稱/電子郵件地址"
       },
-      "searchCustomer" : {
-        "label" : "Search by name or email address"
+      "searchCustomer": {
+        "label": "Search by name or email address"
       },
-      "searchOrder" : {
-        "label" : "Search by full order ID"
+      "searchOrder": {
+        "label": "Search by full order ID"
       },
-      "submit" : "Start Session",
-      "startEmulation" : "Start Emulation",
-      "noMatch" : "No customer found.",
-      "noMatchResult" : "This account cannot be found.",
-      "noCustomerMatchResult" : "No matching customer found.",
-      "noOrderMatchResult" : "Search by full order ID.",
-      "createCustomer" : "Create New Customer",
-      "customer" : "客戶",
-      "orderID" : "訂單 ID"
+      "submit": "Start Session",
+      "startEmulation": "Start Emulation",
+      "noMatch": "No customer found.",
+      "noMatchResult": "This account cannot be found.",
+      "noCustomerMatchResult": "No matching customer found.",
+      "noOrderMatchResult": "Search by full order ID.",
+      "createCustomer": "Create New Customer",
+      "customer": "客戶",
+      "orderID": "訂單 ID"
     },
-    "createCustomerForm" : {
-      "title" : "Create New Customer",
-      "createAccount" : "建立",
-      "cancel" : "取消",
-      "firstName" : {
-        "label" : "名字",
-        "placeholder" : "名字"
+    "createCustomerForm": {
+      "title": "Create New Customer",
+      "createAccount": "建立",
+      "cancel": "取消",
+      "firstName": {
+        "label": "名字",
+        "placeholder": "名字"
       },
-      "lastName" : {
-        "label" : "姓氏",
-        "placeholder" : "姓氏"
+      "lastName": {
+        "label": "姓氏",
+        "placeholder": "姓氏"
       },
-      "emailAddress" : {
-        "label" : "電子郵件地址",
-        "placeholder" : "電子郵件地址"
+      "emailAddress": {
+        "label": "電子郵件地址",
+        "placeholder": "電子郵件地址"
       },
-      "createAccountAlert" : "The customer session starts once you create the customer account.",
-      "validationErrors" : {
-        "firstName" : "Enter a valid first name.",
-        "lastName" : "Enter a valid last name.",
-        "emailAddress" : "Enter a valid email address."
+      "createAccountAlert": "The customer session starts once you create the customer account.",
+      "validationErrors": {
+        "firstName": "Enter a valid first name.",
+        "lastName": "Enter a valid last name.",
+        "emailAddress": "Enter a valid email address."
       },
-      "badRequestDuplicatedEmail" : "Enter a different email address as {{ emailAddress }} already exists."
+      "badRequestDuplicatedEmail": "Enter a different email address as {{ emailAddress }} already exists."
     },
-    "customerList" : {
-      "title" : "客戶清單",
-      "description" : "Select a customer from one of several provided lists.",
-      "createCustomer" : "Create New Customer",
-      "cancel" : "取消",
-      "tableHeader" : {
-        "customer" : "客戶",
-        "customerName" : "客戶名稱",
-        "name" : "名稱",
-        "email" : "電子郵件",
-        "emailId" : "Email/ID",
-        "phone" : "電話",
-        "account" : "帳戶",
-        "cart" : "購物車",
-        "order" : "訂單",
-        "view" : "360 檢視",
-        "activeCart" : "啟用中購物車",
-        "viewActiveCart" : "View Active Cart",
-        "orders" : "訂單",
-        "viewOrders" : "檢視訂單",
-        "customer360" : "Customer 360°",
-        "viewCustomer360" : "View Customer 360°"
+    "customerList": {
+      "title": "客戶清單",
+      "description": "Select a customer from one of several provided lists.",
+      "createCustomer": "Create New Customer",
+      "cancel": "取消",
+      "tableHeader": {
+        "customer": "客戶",
+        "customerName": "客戶名稱",
+        "name": "名稱",
+        "email": "電子郵件",
+        "emailId": "Email/ID",
+        "phone": "電話",
+        "account": "帳戶",
+        "cart": "購物車",
+        "order": "訂單",
+        "view": "360 檢視",
+        "activeCart": "啟用中購物車",
+        "viewActiveCart": "View Active Cart",
+        "orders": "訂單",
+        "viewOrders": "檢視訂單",
+        "customer360": "Customer 360°",
+        "viewCustomer360": "View Customer 360°"
       },
-      "tableSort" : {
-        "sortBy" : "排序依據",
-        "byName" : "名稱 (升冪)",
-        "byNameAsc" : "名稱 (升冪)",
-        "byNameDesc" : "名稱 (降冪)",
-        "byDateAsc" : "日期 (升冪)",
-        "byDateDesc" : "日期 (降冪)",
-        "byOrderDateAsc" : "Order date (Asc)",
-        "byOrderDateDesc" : "Order date (Desc)",
-        "byUnit" : "帳戶 (升冪)",
-        "byUnitDesc" : "帳戶 (降冪)"
+      "tableSort": {
+        "sortBy": "排序依據",
+        "byName": "名稱 (升冪)",
+        "byNameAsc": "名稱 (升冪)",
+        "byNameDesc": "名稱 (降冪)",
+        "byDateAsc": "日期 (升冪)",
+        "byDateDesc": "日期 (降冪)",
+        "byOrderDateAsc": "Order date (Asc)",
+        "byOrderDateDesc": "Order date (Desc)",
+        "byUnit": "帳戶 (升冪)",
+        "byUnitDesc": "帳戶 (降冪)"
       },
-      "page" : {
-        "page" : "Page {{count}}",
-        "previous" : "上一頁",
-        "next" : "下一頁"
+      "page": {
+        "page": "Page {{count}}",
+        "previous": "上一頁",
+        "next": "下一頁"
       },
-      "noOfCustomers" : "{{count}} 個客戶",
-      "oneCustomer" : "1 個客戶",
-      "noCustomers" : "客戶清單中目前沒有客戶。",
-      "noLists" : "There are currently no customer lists available. Contact your system administrator.",
-      "listsError" : "The customer lists could not be retrieved. Please try again later.",
-      "searchBox" : "搜尋",
-      "enterSearchBox" : "Enter customer name or email"
+      "noOfCustomers": "{{count}} 個客戶",
+      "oneCustomer": "1 個客戶",
+      "noCustomers": "客戶清單中目前沒有客戶。",
+      "noLists": "There are currently no customer lists available. Contact your system administrator.",
+      "listsError": "The customer lists could not be retrieved. Please try again later.",
+      "searchBox": "搜尋",
+      "enterSearchBox": "Enter customer name or email"
     },
-    "switchCustomer" : {
-      "dialog" : {
-        "title" : "警告",
-        "body" : "Clicking \"Switch Customer\" will end the emulation for \"{{ customerA }}\" and start for \"{{ customerB }}\". Any unsaved changes for \"{{ customerA }}\" will be lost.",
-        "actions" : {
-          "switch" : "Switch Customer"
+    "switchCustomer": {
+      "dialog": {
+        "title": "警告",
+        "body": "Clicking \"Switch Customer\" will end the emulation for \"{{ customerA }}\" and start for \"{{ customerB }}\". Any unsaved changes for \"{{ customerA }}\" will be lost.",
+        "actions": {
+          "switch": "Switch Customer"
         }
       }
     },
-    "saveCart" : {
-      "saveCartBtn" : "儲存以供稍後使用",
-      "dialog" : {
-        "saveInfo" : "Save the cart before you can take further actions.",
-        "disableInfo" : "Cannot save the cart as it is empty.",
-        "title" : "儲存購物車",
-        "row" : {
-          "id" : "ID",
-          "qty" : "數量",
-          "total" : "總計"
+    "saveCart": {
+      "saveCartBtn": "儲存以供稍後使用",
+      "dialog": {
+        "saveInfo": "Save the cart before you can take further actions.",
+        "disableInfo": "Cannot save the cart as it is empty.",
+        "title": "儲存購物車",
+        "row": {
+          "id": "ID",
+          "qty": "數量",
+          "total": "總計"
         },
-        "actions" : {
-          "save" : "儲存以供稍後使用"
+        "actions": {
+          "save": "儲存以供稍後使用"
         }
       }
     },
-    "bindCart" : {
-      "cartNumber" : "Cart Number",
-      "bindCartToCustomer" : "Assign Cart to Customer",
-      "success" : "Cart has been successfully assigned",
-      "assignCartId" : "Assign a cart id to customer",
-      "enterCartId" : "Enter cart id",
-      "resetCartId" : "重設",
-      "dialog" : {
-        "title" : "Assign Anonymous Cart",
-        "body" : "Do you want to replace the current active cart with the anonymous cart? If you replace the current active cart, it is saved as a saved cart.",
-        "actions" : {
-          "replace" : "Replace Cart"
+    "bindCart": {
+      "cartNumber": "Cart Number",
+      "bindCartToCustomer": "Assign Cart to Customer",
+      "success": "Cart has been successfully assigned",
+      "assignCartId": "Assign a cart id to customer",
+      "enterCartId": "Enter cart id",
+      "resetCartId": "重設",
+      "dialog": {
+        "title": "Assign Anonymous Cart",
+        "body": "Do you want to replace the current active cart with the anonymous cart? If you replace the current active cart, it is saved as a saved cart.",
+        "actions": {
+          "replace": "Replace Cart"
         }
       }
     },
-    "csagentTokenExpired" : "Your customer support agent session is expired.",
-    "endSession" : "結束工作階段",
-    "endEmulation" : "End Emulation",
-    "agentSessionTimer" : {
-      "label" : "Session Timeout",
-      "minutes" : "分",
-      "reset" : "重設"
+    "csagentTokenExpired": "Your customer support agent session is expired.",
+    "endSession": "結束工作階段",
+    "endEmulation": "End Emulation",
+    "agentSessionTimer": {
+      "label": "Session Timeout",
+      "minutes": "分",
+      "reset": "重設"
     },
-    "auth" : {
-      "agentLoggedInError" : "Cannot login as user when there is an active CS agent session. Please either emulate user or logout CS agent."
+    "auth": {
+      "agentLoggedInError": "Cannot login as user when there is an active CS agent session. Please either emulate user or logout CS agent."
     },
-    "error" : {
-      "noCustomerId" : "No customerId found for selected user. Session cannot be started."
+    "error": {
+      "noCustomerId": "No customerId found for selected user. Session cannot be started."
     }
   }
 }

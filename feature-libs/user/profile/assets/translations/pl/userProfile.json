@@ -1,72 +1,72 @@
 {
-  "updateEmailForm" : {
-    "newEmailAddress" : {
-      "label" : "New email address",
-      "placeholder" : "Enter email"
+  "updateEmailForm": {
+    "newEmailAddress": {
+      "label": "New email address",
+      "placeholder": "Enter email"
     },
-    "confirmNewEmailAddress" : {
-      "label" : "Confirm new email address",
-      "placeholder" : "Enter email"
+    "confirmNewEmailAddress": {
+      "label": "Confirm new email address",
+      "placeholder": "Enter email"
     },
-    "enterValidEmail" : "Wprowadź prawidłowy adres e-mail",
-    "bothEmailMustMatch" : "Both emails must match",
-    "password" : {
-      "label" : "Hasło",
-      "placeholder" : "Wprowadź hasło"
+    "enterValidEmail": "Wprowadź prawidłowy adres e-mail",
+    "bothEmailMustMatch": "Both emails must match",
+    "password": {
+      "label": "Hasło",
+      "placeholder": "Wprowadź hasło"
     },
-    "pleaseInputPassword" : "Please input password",
-    "emailUpdateSuccess" : "Success. Please sign in with {{ newUid }}"
+    "pleaseInputPassword": "Please input password",
+    "emailUpdateSuccess": "Success. Please sign in with {{ newUid }}"
   },
-  "register" : {
-    "confirmPassword" : {
-      "action" : "Confirm password",
-      "label" : "Confirm password",
-      "placeholder" : "Potwierdź hasło"
+  "register": {
+    "confirmPassword": {
+      "action": "Confirm password",
+      "label": "Confirm password",
+      "placeholder": "Potwierdź hasło"
     },
-    "managementInMyAccount" : "Management in My Account.",
-    "termsAndConditions" : "Warunki",
-    "signIn" : "I already have an account. Sign In",
-    "register" : "Rejestracja",
-    "confirmNewPassword" : "Potwierdź nowe hasło",
-    "resetPassword" : "Zresetuj hasło",
-    "createAccount" : "Create an account",
-    "title" : "Tytuł",
-    "titleOptional" : "Title (optional)",
-    "firstName" : {
-      "label" : "Imię",
-      "placeholder" : "Imię"
+    "managementInMyAccount": "Management in My Account.",
+    "termsAndConditions": "Warunki",
+    "signIn": "I already have an account. Sign In",
+    "register": "Rejestracja",
+    "confirmNewPassword": "Potwierdź nowe hasło",
+    "resetPassword": "Zresetuj hasło",
+    "createAccount": "Create an account",
+    "title": "Tytuł",
+    "titleOptional": "Title (optional)",
+    "firstName": {
+      "label": "Imię",
+      "placeholder": "Imię"
     },
-    "lastName" : {
-      "label" : "Nazwisko",
-      "placeholder" : "Nazwisko"
+    "lastName": {
+      "label": "Nazwisko",
+      "placeholder": "Nazwisko"
     },
-    "emailAddress" : {
-      "label" : "Adres e-mail",
-      "placeholder" : "Adres e-mail"
+    "emailAddress": {
+      "label": "Adres e-mail",
+      "placeholder": "Adres e-mail"
     },
-    "password" : {
-      "label" : "Hasło",
-      "placeholder" : "Hasło"
+    "password": {
+      "label": "Hasło",
+      "placeholder": "Hasło"
     },
-    "newPassword" : "Nowe hasło",
-    "emailMarketing" : "Use my personal data to receive e-mail newsletters for marketing campaigns. To change your settings, go to Consent Management in My Account.",
-    "confirmThatRead" : "I am confirming that I have read and agreed with the",
-    "selectTitle" : "Select Title",
-    "passwordMinRequirements" : "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
-    "passwordStrengthRequirements" : "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
-    "bothPasswordMustMatch" : "Both password must match",
-    "titleRequired" : "Title is required.",
-    "postRegisterMessage" : "Please log in with provided credentials."
+    "newPassword": "Nowe hasło",
+    "emailMarketing": "Use my personal data to receive e-mail newsletters for marketing campaigns. To change your settings, go to Consent Management in My Account.",
+    "confirmThatRead": "I am confirming that I have read and agreed with the",
+    "selectTitle": "Select Title",
+    "passwordMinRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
+    "passwordStrengthRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
+    "bothPasswordMustMatch": "Both password must match",
+    "titleRequired": "Title is required.",
+    "postRegisterMessage": "Please log in with provided credentials."
   },
-  "forgottenPassword" : {
-    "resetPassword" : "Reset password",
-    "enterEmailAddressAssociatedWithYourAccount" : "Enter the email address associated with your account",
-    "emailAddress" : {
-      "label" : "Adres e-mail",
-      "placeholder" : "Enter email"
+  "forgottenPassword": {
+    "resetPassword": "Reset password",
+    "enterEmailAddressAssociatedWithYourAccount": "Enter the email address associated with your account",
+    "emailAddress": {
+      "label": "Adres e-mail",
+      "placeholder": "Enter email"
     },
-    "enterValidEmail" : "Wprowadź prawidłowy adres e-mail",
-    "passwordResetEmailSent" : "An email has been sent to you with information on how to reset your password.",
-    "passwordResetSuccess" : "Sukces! Możesz teraz zalogować się przy użyciu nowego hasła."
+    "enterValidEmail": "Wprowadź prawidłowy adres e-mail",
+    "passwordResetEmailSent": "An email has been sent to you with information on how to reset your password.",
+    "passwordResetSuccess": "Sukces! Możesz teraz zalogować się przy użyciu nowego hasła."
   }
 }

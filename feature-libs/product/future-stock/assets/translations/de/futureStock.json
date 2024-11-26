@@ -1,7 +1,7 @@
 {
-  "futureStockDropdown" : {
-    "header" : "Zukünftige Verfügbarkeit",
-    "quantity" : "Menge",
-    "noFutureStocks" : "Für dieses Produkt gibt es Informationen zur zukünftigen Verfügbarkeit."
+  "futureStockDropdown": {
+    "header": "Zukünftige Verfügbarkeit",
+    "quantity": "Menge",
+    "noFutureStocks": "Für dieses Produkt gibt es Informationen zur zukünftigen Verfügbarkeit."
   }
 }

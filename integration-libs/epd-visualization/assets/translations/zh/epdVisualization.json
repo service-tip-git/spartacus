@@ -1,70 +1,70 @@
 {
-  "epdVisualization" : {
-    "visualViewer" : {
-      "contentType" : {
-        "drawing2D" : "2D",
-        "model3D" : "3D"
+  "epdVisualization": {
+    "visualViewer": {
+      "contentType": {
+        "drawing2D": "2D",
+        "model3D": "3D"
       },
-      "toolbar" : {
-        "homeButton" : {
-          "label" : "主页"
+      "toolbar": {
+        "homeButton": {
+          "label": "主页"
         },
-        "zoomButton" : {
-          "label" : "缩放"
+        "zoomButton": {
+          "label": "缩放"
         },
-        "panButton" : {
-          "label" : "Pan"
+        "panButton": {
+          "label": "Pan"
         },
-        "rotateButton" : {
-          "label" : "Rotate"
+        "rotateButton": {
+          "label": "Rotate"
         },
-        "isolateButton" : {
-          "label" : "Isolate"
+        "isolateButton": {
+          "label": "Isolate"
         },
-        "playButton" : {
-          "label" : "播放"
+        "playButton": {
+          "label": "播放"
         },
-        "pauseButton" : {
-          "label" : "暂停"
+        "pauseButton": {
+          "label": "暂停"
         },
-        "hotspotsButton" : {
-          "label" : "Hotspots",
-          "show" : "显示",
-          "hide" : "隐藏"
+        "hotspotsButton": {
+          "label": "Hotspots",
+          "show": "显示",
+          "hide": "隐藏"
         },
-        "visualViewerAnimationSlider" : {
-          "label" : "Animation Slider",
-          "role" : "Slider"
+        "visualViewerAnimationSlider": {
+          "label": "Animation Slider",
+          "role": "Slider"
         }
       }
     },
-    "visualPicking" : {
-      "visualPickingTab" : {
-        "noProductReferences" : "No spare parts are available for this product."
+    "visualPicking": {
+      "visualPickingTab": {
+        "noProductReferences": "No spare parts are available for this product."
       },
-      "visualPickingProductList" : {
-        "description" : "描述",
-        "itemPrice" : "价格",
-        "outOfStock" : "Out of stock",
-        "id" : "标识"
+      "visualPickingProductList": {
+        "description": "描述",
+        "itemPrice": "价格",
+        "outOfStock": "Out of stock",
+        "id": "标识"
       },
-      "visualPickingProductFilter" : {
-        "input" : {
-          "placeholder" : "Filter by name or id"
+      "visualPickingProductFilter": {
+        "input": {
+          "placeholder": "Filter by name or id"
         },
-        "searchButton" : {
-          "label" : "search"
+        "searchButton": {
+          "label": "search"
         },
-        "resetButton" : {
-          "label" : "重置"
+        "resetButton": {
+          "label": "重置"
         }
       }
     },
-    "errors" : {
-      "visualLoad" : {
-        "noMatchingVisualFound" : "No matching visualization found",
-        "multipleMatchingVisualsFound" : "Multiple matching visualizations found",
-        "unexpectedLoadError" : "Error occurred while loading visualization"
+    "errors": {
+      "visualLoad": {
+        "noMatchingVisualFound": "No matching visualization found",
+        "multipleMatchingVisualsFound": "Multiple matching visualizations found",
+        "unexpectedLoadError": "Error occurred while loading visualization"
       }
     }
   }

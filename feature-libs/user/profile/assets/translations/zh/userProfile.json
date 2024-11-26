@@ -1,72 +1,72 @@
 {
-  "updateEmailForm" : {
-    "newEmailAddress" : {
-      "label" : "New email address",
-      "placeholder" : "Enter email"
+  "updateEmailForm": {
+    "newEmailAddress": {
+      "label": "New email address",
+      "placeholder": "Enter email"
     },
-    "confirmNewEmailAddress" : {
-      "label" : "Confirm new email address",
-      "placeholder" : "Enter email"
+    "confirmNewEmailAddress": {
+      "label": "Confirm new email address",
+      "placeholder": "Enter email"
     },
-    "enterValidEmail" : "请输入有效的电子邮件.",
-    "bothEmailMustMatch" : "Both emails must match",
-    "password" : {
-      "label" : "密码",
-      "placeholder" : "输入密码"
+    "enterValidEmail": "请输入有效的电子邮件.",
+    "bothEmailMustMatch": "Both emails must match",
+    "password": {
+      "label": "密码",
+      "placeholder": "输入密码"
     },
-    "pleaseInputPassword" : "Please input password",
-    "emailUpdateSuccess" : "Success. Please sign in with {{ newUid }}"
+    "pleaseInputPassword": "Please input password",
+    "emailUpdateSuccess": "Success. Please sign in with {{ newUid }}"
   },
-  "register" : {
-    "confirmPassword" : {
-      "action" : "Confirm password",
-      "label" : "Confirm password",
-      "placeholder" : "确认密码"
+  "register": {
+    "confirmPassword": {
+      "action": "Confirm password",
+      "label": "Confirm password",
+      "placeholder": "确认密码"
     },
-    "managementInMyAccount" : "Management in My Account.",
-    "termsAndConditions" : "条款和条件",
-    "signIn" : "I already have an account. Sign In",
-    "register" : "注册",
-    "confirmNewPassword" : "确认新密码",
-    "resetPassword" : "重设密码",
-    "createAccount" : "Create an account",
-    "title" : "标题",
-    "titleOptional" : "Title (optional)",
-    "firstName" : {
-      "label" : "名字",
-      "placeholder" : "名字"
+    "managementInMyAccount": "Management in My Account.",
+    "termsAndConditions": "条款和条件",
+    "signIn": "I already have an account. Sign In",
+    "register": "注册",
+    "confirmNewPassword": "确认新密码",
+    "resetPassword": "重设密码",
+    "createAccount": "Create an account",
+    "title": "标题",
+    "titleOptional": "Title (optional)",
+    "firstName": {
+      "label": "名字",
+      "placeholder": "名字"
     },
-    "lastName" : {
-      "label" : "姓氏",
-      "placeholder" : "姓氏"
+    "lastName": {
+      "label": "姓氏",
+      "placeholder": "姓氏"
     },
-    "emailAddress" : {
-      "label" : "电子邮件地址",
-      "placeholder" : "电子邮件地址"
+    "emailAddress": {
+      "label": "电子邮件地址",
+      "placeholder": "电子邮件地址"
     },
-    "password" : {
-      "label" : "密码",
-      "placeholder" : "密码"
+    "password": {
+      "label": "密码",
+      "placeholder": "密码"
     },
-    "newPassword" : "新密码",
-    "emailMarketing" : "Use my personal data to receive e-mail newsletters for marketing campaigns. To change your settings, go to Consent Management in My Account.",
-    "confirmThatRead" : "I am confirming that I have read and agreed with the",
-    "selectTitle" : "Select Title",
-    "passwordMinRequirements" : "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
-    "passwordStrengthRequirements" : "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
-    "bothPasswordMustMatch" : "Both password must match",
-    "titleRequired" : "Title is required.",
-    "postRegisterMessage" : "Please log in with provided credentials."
+    "newPassword": "新密码",
+    "emailMarketing": "Use my personal data to receive e-mail newsletters for marketing campaigns. To change your settings, go to Consent Management in My Account.",
+    "confirmThatRead": "I am confirming that I have read and agreed with the",
+    "selectTitle": "Select Title",
+    "passwordMinRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
+    "passwordStrengthRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
+    "bothPasswordMustMatch": "Both password must match",
+    "titleRequired": "Title is required.",
+    "postRegisterMessage": "Please log in with provided credentials."
   },
-  "forgottenPassword" : {
-    "resetPassword" : "Reset password",
-    "enterEmailAddressAssociatedWithYourAccount" : "Enter the email address associated with your account",
-    "emailAddress" : {
-      "label" : "电子邮件地址",
-      "placeholder" : "Enter email"
+  "forgottenPassword": {
+    "resetPassword": "Reset password",
+    "enterEmailAddressAssociatedWithYourAccount": "Enter the email address associated with your account",
+    "emailAddress": {
+      "label": "电子邮件地址",
+      "placeholder": "Enter email"
     },
-    "enterValidEmail" : "请输入有效的电子邮件.",
-    "passwordResetEmailSent" : "An email has been sent to you with information on how to reset your password.",
-    "passwordResetSuccess" : "成功! 现在，您可以使用新密码登录了."
+    "enterValidEmail": "请输入有效的电子邮件.",
+    "passwordResetEmailSent": "An email has been sent to you with information on how to reset your password.",
+    "passwordResetSuccess": "成功! 现在，您可以使用新密码登录了."
   }
 }

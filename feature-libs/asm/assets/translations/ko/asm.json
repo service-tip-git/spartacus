@@ -1,175 +1,175 @@
 {
-  "asm" : {
-    "mainLogoLabel" : "SAP",
-    "mainTitle" : "Assisted Service Mode",
-    "logout" : "로그아웃",
-    "hideUi" : "Close ASM",
-    "helpPortalUrl" : "도움말",
-    "customers" : "고객",
-    "asmCustomer360Button" : "Customer 360 View",
-    "asmCustomer360ViewButton" : "Customer 360°",
-    "createCustomerSuccessfullyAlert" : "The customer account has been created and the customer session has started.",
-    "saveInactiveCartAlertInfo" : "The identified cart is an inactive cart. To take further actions on this cart, save it first.",
-    "activeCartAlertInfo" : "The identified cart is an active cart.",
-    "startCustomerEmulationAlertInfo" : "Customer emulation has started. Any actions you do will reflect the effects on the customer account.",
-    "toggleUi" : {
-      "collapse" : "Hide ASM",
-      "expand" : "Show ASM"
+  "asm": {
+    "mainLogoLabel": "SAP",
+    "mainTitle": "Assisted Service Mode",
+    "logout": "로그아웃",
+    "hideUi": "Close ASM",
+    "helpPortalUrl": "도움말",
+    "customers": "고객",
+    "asmCustomer360Button": "Customer 360 View",
+    "asmCustomer360ViewButton": "Customer 360°",
+    "createCustomerSuccessfullyAlert": "The customer account has been created and the customer session has started.",
+    "saveInactiveCartAlertInfo": "The identified cart is an inactive cart. To take further actions on this cart, save it first.",
+    "activeCartAlertInfo": "The identified cart is an active cart.",
+    "startCustomerEmulationAlertInfo": "Customer emulation has started. Any actions you do will reflect the effects on the customer account.",
+    "toggleUi": {
+      "collapse": "Hide ASM",
+      "expand": "Show ASM"
     },
-    "loginForm" : {
-      "submit" : "로그인",
-      "userId" : {
-        "label" : "Agent ID or Email"
+    "loginForm": {
+      "submit": "로그인",
+      "userId": {
+        "label": "Agent ID or Email"
       },
-      "password" : {
-        "label" : "암호"
+      "password": {
+        "label": "암호"
       }
     },
-    "customerSearch" : {
-      "searchTerm" : {
-        "label" : "고객 이름/이메일 주소"
+    "customerSearch": {
+      "searchTerm": {
+        "label": "고객 이름/이메일 주소"
       },
-      "searchCustomer" : {
-        "label" : "Search by name or email address"
+      "searchCustomer": {
+        "label": "Search by name or email address"
       },
-      "searchOrder" : {
-        "label" : "Search by full order ID"
+      "searchOrder": {
+        "label": "Search by full order ID"
       },
-      "submit" : "Start Session",
-      "startEmulation" : "Start Emulation",
-      "noMatch" : "No customer found.",
-      "noMatchResult" : "This account cannot be found.",
-      "noCustomerMatchResult" : "No matching customer found.",
-      "noOrderMatchResult" : "Search by full order ID.",
-      "createCustomer" : "Create New Customer",
-      "customer" : "고객",
-      "orderID" : "주문 ID"
+      "submit": "Start Session",
+      "startEmulation": "Start Emulation",
+      "noMatch": "No customer found.",
+      "noMatchResult": "This account cannot be found.",
+      "noCustomerMatchResult": "No matching customer found.",
+      "noOrderMatchResult": "Search by full order ID.",
+      "createCustomer": "Create New Customer",
+      "customer": "고객",
+      "orderID": "주문 ID"
     },
-    "createCustomerForm" : {
-      "title" : "Create New Customer",
-      "createAccount" : "생성",
-      "cancel" : "취소",
-      "firstName" : {
-        "label" : "이름",
-        "placeholder" : "이름"
+    "createCustomerForm": {
+      "title": "Create New Customer",
+      "createAccount": "생성",
+      "cancel": "취소",
+      "firstName": {
+        "label": "이름",
+        "placeholder": "이름"
       },
-      "lastName" : {
-        "label" : "성",
-        "placeholder" : "성"
+      "lastName": {
+        "label": "성",
+        "placeholder": "성"
       },
-      "emailAddress" : {
-        "label" : "이메일 주소",
-        "placeholder" : "이메일 주소"
+      "emailAddress": {
+        "label": "이메일 주소",
+        "placeholder": "이메일 주소"
       },
-      "createAccountAlert" : "The customer session starts once you create the customer account.",
-      "validationErrors" : {
-        "firstName" : "Enter a valid first name.",
-        "lastName" : "Enter a valid last name.",
-        "emailAddress" : "Enter a valid email address."
+      "createAccountAlert": "The customer session starts once you create the customer account.",
+      "validationErrors": {
+        "firstName": "Enter a valid first name.",
+        "lastName": "Enter a valid last name.",
+        "emailAddress": "Enter a valid email address."
       },
-      "badRequestDuplicatedEmail" : "Enter a different email address as {{ emailAddress }} already exists."
+      "badRequestDuplicatedEmail": "Enter a different email address as {{ emailAddress }} already exists."
     },
-    "customerList" : {
-      "title" : "고객 목록",
-      "description" : "Select a customer from one of several provided lists.",
-      "createCustomer" : "Create New Customer",
-      "cancel" : "취소",
-      "tableHeader" : {
-        "customer" : "고객",
-        "customerName" : "고객 이름",
-        "name" : "이름",
-        "email" : "전자메일",
-        "emailId" : "Email/ID",
-        "phone" : "전화",
-        "account" : "계정",
-        "cart" : "장바구니",
-        "order" : "주문",
-        "view" : "360도 뷰",
-        "activeCart" : "활성 장바구니",
-        "viewActiveCart" : "View Active Cart",
-        "orders" : "오더",
-        "viewOrders" : "주문 보기",
-        "customer360" : "Customer 360°",
-        "viewCustomer360" : "View Customer 360°"
+    "customerList": {
+      "title": "고객 목록",
+      "description": "Select a customer from one of several provided lists.",
+      "createCustomer": "Create New Customer",
+      "cancel": "취소",
+      "tableHeader": {
+        "customer": "고객",
+        "customerName": "고객 이름",
+        "name": "이름",
+        "email": "전자메일",
+        "emailId": "Email/ID",
+        "phone": "전화",
+        "account": "계정",
+        "cart": "장바구니",
+        "order": "주문",
+        "view": "360도 뷰",
+        "activeCart": "활성 장바구니",
+        "viewActiveCart": "View Active Cart",
+        "orders": "오더",
+        "viewOrders": "주문 보기",
+        "customer360": "Customer 360°",
+        "viewCustomer360": "View Customer 360°"
       },
-      "tableSort" : {
-        "sortBy" : "정렬 기준",
-        "byName" : "이름(오름차순)",
-        "byNameAsc" : "이름(오름차순)",
-        "byNameDesc" : "이름(내림차순)",
-        "byDateAsc" : "날짜(오름차순)",
-        "byDateDesc" : "날짜(내림차순)",
-        "byOrderDateAsc" : "Order date (Asc)",
-        "byOrderDateDesc" : "Order date (Desc)",
-        "byUnit" : "계정(오름차순)",
-        "byUnitDesc" : "계정(내림차순)"
+      "tableSort": {
+        "sortBy": "정렬 기준",
+        "byName": "이름(오름차순)",
+        "byNameAsc": "이름(오름차순)",
+        "byNameDesc": "이름(내림차순)",
+        "byDateAsc": "날짜(오름차순)",
+        "byDateDesc": "날짜(내림차순)",
+        "byOrderDateAsc": "Order date (Asc)",
+        "byOrderDateDesc": "Order date (Desc)",
+        "byUnit": "계정(오름차순)",
+        "byUnitDesc": "계정(내림차순)"
       },
-      "page" : {
-        "page" : "Page {{count}}",
-        "previous" : "이전",
-        "next" : "다음"
+      "page": {
+        "page": "Page {{count}}",
+        "previous": "이전",
+        "next": "다음"
       },
-      "noOfCustomers" : "{{count}} 고객",
-      "oneCustomer" : "1 고객",
-      "noCustomers" : "이 고객 목록에는 고객이 현재 없습니다.",
-      "noLists" : "There are currently no customer lists available. Contact your system administrator.",
-      "listsError" : "The customer lists could not be retrieved. Please try again later.",
-      "searchBox" : "검색",
-      "enterSearchBox" : "Enter customer name or email"
+      "noOfCustomers": "{{count}} 고객",
+      "oneCustomer": "1 고객",
+      "noCustomers": "이 고객 목록에는 고객이 현재 없습니다.",
+      "noLists": "There are currently no customer lists available. Contact your system administrator.",
+      "listsError": "The customer lists could not be retrieved. Please try again later.",
+      "searchBox": "검색",
+      "enterSearchBox": "Enter customer name or email"
     },
-    "switchCustomer" : {
-      "dialog" : {
-        "title" : "경고",
-        "body" : "Clicking \"Switch Customer\" will end the emulation for \"{{ customerA }}\" and start for \"{{ customerB }}\". Any unsaved changes for \"{{ customerA }}\" will be lost.",
-        "actions" : {
-          "switch" : "Switch Customer"
+    "switchCustomer": {
+      "dialog": {
+        "title": "경고",
+        "body": "Clicking \"Switch Customer\" will end the emulation for \"{{ customerA }}\" and start for \"{{ customerB }}\". Any unsaved changes for \"{{ customerA }}\" will be lost.",
+        "actions": {
+          "switch": "Switch Customer"
         }
       }
     },
-    "saveCart" : {
-      "saveCartBtn" : "저장 후 나중에 사용",
-      "dialog" : {
-        "saveInfo" : "Save the cart before you can take further actions.",
-        "disableInfo" : "Cannot save the cart as it is empty.",
-        "title" : "장바구니 저장",
-        "row" : {
-          "id" : "ID",
-          "qty" : "수량",
-          "total" : "합계"
+    "saveCart": {
+      "saveCartBtn": "저장 후 나중에 사용",
+      "dialog": {
+        "saveInfo": "Save the cart before you can take further actions.",
+        "disableInfo": "Cannot save the cart as it is empty.",
+        "title": "장바구니 저장",
+        "row": {
+          "id": "ID",
+          "qty": "수량",
+          "total": "합계"
         },
-        "actions" : {
-          "save" : "저장 후 나중에 사용"
+        "actions": {
+          "save": "저장 후 나중에 사용"
         }
       }
     },
-    "bindCart" : {
-      "cartNumber" : "Cart Number",
-      "bindCartToCustomer" : "Assign Cart to Customer",
-      "success" : "Cart has been successfully assigned",
-      "assignCartId" : "Assign a cart id to customer",
-      "enterCartId" : "Enter cart id",
-      "resetCartId" : "재설정",
-      "dialog" : {
-        "title" : "Assign Anonymous Cart",
-        "body" : "Do you want to replace the current active cart with the anonymous cart? If you replace the current active cart, it is saved as a saved cart.",
-        "actions" : {
-          "replace" : "Replace Cart"
+    "bindCart": {
+      "cartNumber": "Cart Number",
+      "bindCartToCustomer": "Assign Cart to Customer",
+      "success": "Cart has been successfully assigned",
+      "assignCartId": "Assign a cart id to customer",
+      "enterCartId": "Enter cart id",
+      "resetCartId": "재설정",
+      "dialog": {
+        "title": "Assign Anonymous Cart",
+        "body": "Do you want to replace the current active cart with the anonymous cart? If you replace the current active cart, it is saved as a saved cart.",
+        "actions": {
+          "replace": "Replace Cart"
         }
       }
     },
-    "csagentTokenExpired" : "Your customer support agent session is expired.",
-    "endSession" : "세션 종료",
-    "endEmulation" : "End Emulation",
-    "agentSessionTimer" : {
-      "label" : "Session Timeout",
-      "minutes" : "분",
-      "reset" : "재설정"
+    "csagentTokenExpired": "Your customer support agent session is expired.",
+    "endSession": "세션 종료",
+    "endEmulation": "End Emulation",
+    "agentSessionTimer": {
+      "label": "Session Timeout",
+      "minutes": "분",
+      "reset": "재설정"
     },
-    "auth" : {
-      "agentLoggedInError" : "Cannot login as user when there is an active CS agent session. Please either emulate user or logout CS agent."
+    "auth": {
+      "agentLoggedInError": "Cannot login as user when there is an active CS agent session. Please either emulate user or logout CS agent."
     },
-    "error" : {
-      "noCustomerId" : "No customerId found for selected user. Session cannot be started."
+    "error": {
+      "noCustomerId": "No customerId found for selected user. Session cannot be started."
     }
   }
 }

@@ -1,88 +1,88 @@
 {
-  "orgAccountSummary" : {
-    "groupName" : "Account Summaries",
-    "header" : "All Account Summaries ({{count}})",
-    "name" : "Egység",
-    "details" : {
-      "header" : "Számlaösszegzés részletei",
-      "uid" : "Egység azonosítója",
-      "name" : "Egység neve",
-      "address" : "Cím",
-      "creditRep" : "Információ",
-      "creditLine" : "Hitelkeret",
-      "currentBalance" : "Aktuális egyenleg",
-      "openBalance" : "Nyitott egyenleg",
-      "pastDueBalance" : "Lejárt esedékességű egyenleg",
-      "dayRange" : "{{minBoundary}}-{{maxBoundary}} Days",
-      "dayPlus" : "{{minBoundary}}+ Days",
-      "notApplicable" : "N/A"
+  "orgAccountSummary": {
+    "groupName": "Account Summaries",
+    "header": "All Account Summaries ({{count}})",
+    "name": "Egység",
+    "details": {
+      "header": "Számlaösszegzés részletei",
+      "uid": "Egység azonosítója",
+      "name": "Egység neve",
+      "address": "Cím",
+      "creditRep": "Információ",
+      "creditLine": "Hitelkeret",
+      "currentBalance": "Aktuális egyenleg",
+      "openBalance": "Nyitott egyenleg",
+      "pastDueBalance": "Lejárt esedékességű egyenleg",
+      "dayRange": "{{minBoundary}}-{{maxBoundary}} Days",
+      "dayPlus": "{{minBoundary}}+ Days",
+      "notApplicable": "N/A"
     },
-    "document" : {
-      "header" : "Dokumentumok",
-      "id" : "Bizonylatszám",
-      "type" : "Dokumentumfajta",
-      "date" : "Létrehozás dátuma",
-      "dueDate" : "Due On",
-      "originalAmount" : "Eredeti összeg",
-      "openAmount" : "Nyitott összeg",
-      "status" : "Státus",
-      "attachment" : "Melléklet",
-      "download" : "Letöltés",
-      "attachmentDescription" : "Download attachment for {{type}} {{id}}.",
-      "noneFound" : "No Documents Found"
+    "document": {
+      "header": "Dokumentumok",
+      "id": "Bizonylatszám",
+      "type": "Dokumentumfajta",
+      "date": "Létrehozás dátuma",
+      "dueDate": "Due On",
+      "originalAmount": "Eredeti összeg",
+      "openAmount": "Nyitott összeg",
+      "status": "Státus",
+      "attachment": "Melléklet",
+      "download": "Letöltés",
+      "attachmentDescription": "Download attachment for {{type}} {{id}}.",
+      "noneFound": "No Documents Found"
     },
-    "sorts" : {
-      "byCreatedAtDateAsc" : "Created On Ascending",
-      "byCreatedAtDateDesc" : "Created On Descending",
-      "byDueAtDateAsc" : "Due On Ascending",
-      "byDueAtDateDesc" : "Due On Descending",
-      "byOriginalAmountAsc" : "Original Amount Ascending",
-      "byOriginalAmountDesc" : "Original Amount Descending",
-      "byOpenAmountAsc" : "Open Amount Ascending",
-      "byOpenAmountDesc" : "Open Amount Descending",
-      "byOrgDocumentTypeAsc" : "Document Type Ascending",
-      "byOrgDocumentTypeDesc" : "Document Type Descending",
-      "byStatusAsc" : "Status Ascending",
-      "byStatusDesc" : "Status Descending",
-      "byOrgDocumentIdAsc" : "Document Number Ascending",
-      "byOrgDocumentIdDesc" : "Document Number Descending"
+    "sorts": {
+      "byCreatedAtDateAsc": "Created On Ascending",
+      "byCreatedAtDateDesc": "Created On Descending",
+      "byDueAtDateAsc": "Due On Ascending",
+      "byDueAtDateDesc": "Due On Descending",
+      "byOriginalAmountAsc": "Original Amount Ascending",
+      "byOriginalAmountDesc": "Original Amount Descending",
+      "byOpenAmountAsc": "Open Amount Ascending",
+      "byOpenAmountDesc": "Open Amount Descending",
+      "byOrgDocumentTypeAsc": "Document Type Ascending",
+      "byOrgDocumentTypeDesc": "Document Type Descending",
+      "byStatusAsc": "Status Ascending",
+      "byStatusDesc": "Status Descending",
+      "byOrgDocumentIdAsc": "Document Number Ascending",
+      "byOrgDocumentIdDesc": "Document Number Descending"
     },
-    "statuses" : {
-      "open" : "Nyitott",
-      "closed" : "Zárva",
-      "all" : "Minden"
+    "statuses": {
+      "open": "Nyitott",
+      "closed": "Zárva",
+      "all": "Minden"
     },
-    "filterByOptions" : {
-      "orgDocumentId" : "Bizonylatszám",
-      "orgDocumentIdRange" : "Document Number Range",
-      "orgDocumentType" : "Dokumentumfajta",
-      "createdAtDateRange" : "Created On Range",
-      "dueAtDateRange" : "Due On Range",
-      "amountRange" : "Eredetiösszeg-tartomány",
-      "openAmountRange" : "Nyitottösszeg-tartomány"
+    "filterByOptions": {
+      "orgDocumentId": "Bizonylatszám",
+      "orgDocumentIdRange": "Document Number Range",
+      "orgDocumentType": "Dokumentumfajta",
+      "createdAtDateRange": "Created On Range",
+      "dueAtDateRange": "Due On Range",
+      "amountRange": "Eredetiösszeg-tartomány",
+      "openAmountRange": "Nyitottösszeg-tartomány"
     },
-    "sortBy" : "Sort By",
-    "sortDocuments" : "Sort documents",
-    "filter" : {
-      "status" : "Státus",
-      "filterBy" : "Szűrés szempontja",
-      "documentNumber" : "Bizonylatszám",
-      "documentType" : "Dokumentumfajta",
-      "startRange" : "Ettől:",
-      "endRange" : "Eddig:",
-      "clear" : "Összes törlése",
-      "search" : "Keresés",
-      "errors" : {
-        "toDateMustComeAfterFrom" : "Choose an end date that's later than the start date.",
-        "toAmountMustBeLargeThanFrom" : "Choose an end range value that's smaller than the start value."
+    "sortBy": "Sort By",
+    "sortDocuments": "Sort documents",
+    "filter": {
+      "status": "Státus",
+      "filterBy": "Szűrés szempontja",
+      "documentNumber": "Bizonylatszám",
+      "documentType": "Dokumentumfajta",
+      "startRange": "Ettől:",
+      "endRange": "Eddig:",
+      "clear": "Összes törlése",
+      "search": "Keresés",
+      "errors": {
+        "toDateMustComeAfterFrom": "Choose an end date that's later than the start date.",
+        "toAmountMustBeLargeThanFrom": "Choose an end range value that's smaller than the start value."
       }
     },
-    "hint" : "Account summaries allow you to review general information about a unit, including balances and aging summary of invoices. Here, you can also browse through a list of transaction documents for a unit."
+    "hint": "Account summaries allow you to review general information about a unit, including balances and aging summary of invoices. Here, you can also browse through a list of transaction documents for a unit."
   },
-  "orgAccountSummaryList" : {
-    "breadcrumbs" : {
-      "list" : "Account Summaries",
-      "details" : "{{name}}"
+  "orgAccountSummaryList": {
+    "breadcrumbs": {
+      "list": "Account Summaries",
+      "details": "{{name}}"
     }
   }
 }

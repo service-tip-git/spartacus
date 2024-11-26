@@ -1,109 +1,109 @@
 {
-  "closeAccount" : {
-    "confirmAccountClosure" : "確認帳戶關閉",
-    "confirmAccountClosureMessage" : "您確定要關閉帳戶嗎？",
-    "closeMyAccount" : "CLOSE MY ACCOUNT",
-    "accountClosedSuccessfully" : "Account closed with success",
-    "accountClosedFailure" : "Failed to close account"
+  "closeAccount": {
+    "confirmAccountClosure": "確認帳戶關閉",
+    "confirmAccountClosureMessage": "您確定要關閉帳戶嗎？",
+    "closeMyAccount": "CLOSE MY ACCOUNT",
+    "accountClosedSuccessfully": "Account closed with success",
+    "accountClosedFailure": "Failed to close account"
   },
-  "updatePasswordForm" : {
-    "oldPassword" : {
-      "label" : "舊密碼",
-      "placeholder" : "舊密碼"
+  "updatePasswordForm": {
+    "oldPassword": {
+      "label": "舊密碼",
+      "placeholder": "舊密碼"
     },
-    "oldPasswordIsRequired" : "Old password is required.",
-    "newPassword" : {
-      "label" : "新密碼",
-      "placeholder" : "新密碼"
+    "oldPasswordIsRequired": "Old password is required.",
+    "newPassword": {
+      "label": "新密碼",
+      "placeholder": "新密碼"
     },
-    "passwordMinRequirements" : "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
-    "passwordStrengthRequirements" : "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
-    "confirmPassword" : {
-      "label" : "確認新密碼",
-      "placeholder" : "確認密碼"
+    "passwordMinRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
+    "passwordStrengthRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
+    "confirmPassword": {
+      "label": "確認新密碼",
+      "placeholder": "確認密碼"
     },
-    "bothPasswordMustMatch" : "Both password must match",
-    "passwordUpdateSuccess" : "Password updated with success",
-    "accessDeniedError" : "Access is denied"
+    "bothPasswordMustMatch": "Both password must match",
+    "passwordUpdateSuccess": "Password updated with success",
+    "accessDeniedError": "Access is denied"
   },
-  "updateProfileForm" : {
-    "title" : "稱謂",
-    "none" : "",
-    "firstName" : {
-      "label" : "名字",
-      "placeholder" : "名字"
+  "updateProfileForm": {
+    "title": "稱謂",
+    "none": "",
+    "firstName": {
+      "label": "名字",
+      "placeholder": "名字"
     },
-    "firstNameIsRequired" : "First name is required.",
-    "lastName" : {
-      "label" : "姓氏",
-      "placeholder" : "姓氏"
+    "firstNameIsRequired": "First name is required.",
+    "lastName": {
+      "label": "姓氏",
+      "placeholder": "姓氏"
     },
-    "lastNameIsRequired" : "Last name is required.",
-    "profileUpdateSuccess" : "Personal details successfully updated",
-    "customerId" : "Customer #"
+    "lastNameIsRequired": "Last name is required.",
+    "profileUpdateSuccess": "Personal details successfully updated",
+    "customerId": "Customer #"
   },
-  "consentManagementForm" : {
-    "clearAll" : "Clear all",
-    "selectAll" : "全部選擇",
-    "message" : {
-      "success" : {
-        "given" : "Consent successfully given.",
-        "withdrawn" : "Consent successfully withdrawn."
+  "consentManagementForm": {
+    "clearAll": "Clear all",
+    "selectAll": "全部選擇",
+    "message": {
+      "success": {
+        "given": "Consent successfully given.",
+        "withdrawn": "Consent successfully withdrawn."
       }
     }
   },
-  "myCoupons" : {
-    "noCouponsMessage" : "You have no coupons available.",
-    "effectiveTitle" : "有效：",
-    "Effective" : "EFFECTIVE",
-    "PreSession" : "EFFECTIVE SOON",
-    "ExpireSoon" : "EXPIRING SOON",
-    "readMore" : "Read more",
-    "notification" : "通知",
-    "findProducts" : "尋找產品",
-    "status" : "狀態：",
-    "dialogTitle" : "優惠券",
-    "claimCustomerCoupon" : "您已成功索取此優惠券。",
-    "myCoupons" : "My coupons",
-    "startDateAsc" : "Start Date (ascending)",
-    "startDateDesc" : "Start Date (descending)",
-    "endDateAsc" : "End Date (ascending)",
-    "endDateDesc" : "End Date (descending)",
-    "sortBy" : "排序依據",
-    "sortCoupons" : "Sort coupons",
-    "notesPreffix" : "You can set your preferred channels for receiving coupon notifications on the ",
-    "notesLink" : "通知管道",
-    "notesSuffix" : " page."
+  "myCoupons": {
+    "noCouponsMessage": "You have no coupons available.",
+    "effectiveTitle": "有效：",
+    "Effective": "EFFECTIVE",
+    "PreSession": "EFFECTIVE SOON",
+    "ExpireSoon": "EXPIRING SOON",
+    "readMore": "Read more",
+    "notification": "通知",
+    "findProducts": "尋找產品",
+    "status": "狀態：",
+    "dialogTitle": "優惠券",
+    "claimCustomerCoupon": "您已成功索取此優惠券。",
+    "myCoupons": "My coupons",
+    "startDateAsc": "Start Date (ascending)",
+    "startDateDesc": "Start Date (descending)",
+    "endDateAsc": "End Date (ascending)",
+    "endDateDesc": "End Date (descending)",
+    "sortBy": "排序依據",
+    "sortCoupons": "Sort coupons",
+    "notesPreffix": "You can set your preferred channels for receiving coupon notifications on the ",
+    "notesLink": "通知管道",
+    "notesSuffix": " page."
   },
-  "notificationPreference" : {
-    "message" : "Select your preferred notification channels",
-    "note" : "Note: ",
-    "noteMessage" : "If you deactivate all channels you will not be able to receive any further notifications.",
-    "EMAIL" : "Email:",
-    "SMS" : "SMS:",
-    "SITE_MESSAGE" : "SiteMessage"
+  "notificationPreference": {
+    "message": "Select your preferred notification channels",
+    "note": "Note: ",
+    "noteMessage": "If you deactivate all channels you will not be able to receive any further notifications.",
+    "EMAIL": "Email:",
+    "SMS": "SMS:",
+    "SITE_MESSAGE": "SiteMessage"
   },
-  "myInterests" : {
-    "header" : "我的興趣",
-    "item" : "項目",
-    "price" : "PRICE",
-    "notifications" : "NOTIFICATIONS",
-    "noInterests" : "You have no registered interests yet.",
-    "inStock" : "庫存",
-    "lowStock" : "少量庫存",
-    "outOfStock" : "缺貨",
-    "BACK_IN_STOCK" : "返回庫存",
-    "sortBy" : "排序依據",
-    "sortInterests" : "Sort interests",
-    "expirationDate" : " - Till {{ expirationDate }}",
-    "productId" : "ID {{ code }}",
-    "remove" : "移除",
-    "sorting" : {
-      "byNameAsc" : "名稱 (升冪)",
-      "byNameDesc" : "名稱 (降冪)"
+  "myInterests": {
+    "header": "我的興趣",
+    "item": "項目",
+    "price": "PRICE",
+    "notifications": "NOTIFICATIONS",
+    "noInterests": "You have no registered interests yet.",
+    "inStock": "庫存",
+    "lowStock": "少量庫存",
+    "outOfStock": "缺貨",
+    "BACK_IN_STOCK": "返回庫存",
+    "sortBy": "排序依據",
+    "sortInterests": "Sort interests",
+    "expirationDate": " - Till {{ expirationDate }}",
+    "productId": "ID {{ code }}",
+    "remove": "移除",
+    "sorting": {
+      "byNameAsc": "名稱 (升冪)",
+      "byNameDesc": "名稱 (降冪)"
     },
-    "actions" : "ACTIONS",
-    "caption" : "My Interests contents.",
-    "itemRemoved" : "Selected item has been removed."
+    "actions": "ACTIONS",
+    "caption": "My Interests contents.",
+    "itemRemoved": "Selected item has been removed."
   }
 }

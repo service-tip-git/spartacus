@@ -1,88 +1,88 @@
 {
-  "orgAccountSummary" : {
-    "groupName" : "Account Summaries",
-    "header" : "All Account Summaries ({{count}})",
-    "name" : "Unidad",
-    "details" : {
-      "header" : "Detalles de estado de cuentas",
-      "uid" : "ID de unidad",
-      "name" : "Nombre de unidad",
-      "address" : "Dirección",
-      "creditRep" : "Informe de crédito",
-      "creditLine" : "Línea de crédito",
-      "currentBalance" : "Balance actual",
-      "openBalance" : "Balance pendiente",
-      "pastDueBalance" : "Saldo adeudado",
-      "dayRange" : "{{minBoundary}}-{{maxBoundary}} Days",
-      "dayPlus" : "{{minBoundary}}+ Days",
-      "notApplicable" : "n/d"
+  "orgAccountSummary": {
+    "groupName": "Account Summaries",
+    "header": "All Account Summaries ({{count}})",
+    "name": "Unidad",
+    "details": {
+      "header": "Detalles de estado de cuentas",
+      "uid": "ID de unidad",
+      "name": "Nombre de unidad",
+      "address": "Dirección",
+      "creditRep": "Informe de crédito",
+      "creditLine": "Línea de crédito",
+      "currentBalance": "Balance actual",
+      "openBalance": "Balance pendiente",
+      "pastDueBalance": "Saldo adeudado",
+      "dayRange": "{{minBoundary}}-{{maxBoundary}} Days",
+      "dayPlus": "{{minBoundary}}+ Days",
+      "notApplicable": "n/d"
     },
-    "document" : {
-      "header" : "Documentos",
-      "id" : "Número de documento",
-      "type" : "Tipo de documento",
-      "date" : "Fecha de creación",
-      "dueDate" : "Due On",
-      "originalAmount" : "Importe original",
-      "openAmount" : "Importe pendiente",
-      "status" : "Estado",
-      "attachment" : "Adjunto",
-      "download" : "Descargar",
-      "attachmentDescription" : "Download attachment for {{type}} {{id}}.",
-      "noneFound" : "No Documents Found"
+    "document": {
+      "header": "Documentos",
+      "id": "Número de documento",
+      "type": "Tipo de documento",
+      "date": "Fecha de creación",
+      "dueDate": "Due On",
+      "originalAmount": "Importe original",
+      "openAmount": "Importe pendiente",
+      "status": "Estado",
+      "attachment": "Adjunto",
+      "download": "Descargar",
+      "attachmentDescription": "Download attachment for {{type}} {{id}}.",
+      "noneFound": "No Documents Found"
     },
-    "sorts" : {
-      "byCreatedAtDateAsc" : "Created On Ascending",
-      "byCreatedAtDateDesc" : "Created On Descending",
-      "byDueAtDateAsc" : "Due On Ascending",
-      "byDueAtDateDesc" : "Due On Descending",
-      "byOriginalAmountAsc" : "Original Amount Ascending",
-      "byOriginalAmountDesc" : "Original Amount Descending",
-      "byOpenAmountAsc" : "Open Amount Ascending",
-      "byOpenAmountDesc" : "Open Amount Descending",
-      "byOrgDocumentTypeAsc" : "Document Type Ascending",
-      "byOrgDocumentTypeDesc" : "Document Type Descending",
-      "byStatusAsc" : "Status Ascending",
-      "byStatusDesc" : "Status Descending",
-      "byOrgDocumentIdAsc" : "Document Number Ascending",
-      "byOrgDocumentIdDesc" : "Document Number Descending"
+    "sorts": {
+      "byCreatedAtDateAsc": "Created On Ascending",
+      "byCreatedAtDateDesc": "Created On Descending",
+      "byDueAtDateAsc": "Due On Ascending",
+      "byDueAtDateDesc": "Due On Descending",
+      "byOriginalAmountAsc": "Original Amount Ascending",
+      "byOriginalAmountDesc": "Original Amount Descending",
+      "byOpenAmountAsc": "Open Amount Ascending",
+      "byOpenAmountDesc": "Open Amount Descending",
+      "byOrgDocumentTypeAsc": "Document Type Ascending",
+      "byOrgDocumentTypeDesc": "Document Type Descending",
+      "byStatusAsc": "Status Ascending",
+      "byStatusDesc": "Status Descending",
+      "byOrgDocumentIdAsc": "Document Number Ascending",
+      "byOrgDocumentIdDesc": "Document Number Descending"
     },
-    "statuses" : {
-      "open" : "Abierto",
-      "closed" : "Cerrado",
-      "all" : "Todo"
+    "statuses": {
+      "open": "Abierto",
+      "closed": "Cerrado",
+      "all": "Todo"
     },
-    "filterByOptions" : {
-      "orgDocumentId" : "Número de documento",
-      "orgDocumentIdRange" : "Document Number Range",
-      "orgDocumentType" : "Tipo de documento",
-      "createdAtDateRange" : "Created On Range",
-      "dueAtDateRange" : "Due On Range",
-      "amountRange" : "Rango de importe original",
-      "openAmountRange" : "Rango de importe pendiente"
+    "filterByOptions": {
+      "orgDocumentId": "Número de documento",
+      "orgDocumentIdRange": "Document Number Range",
+      "orgDocumentType": "Tipo de documento",
+      "createdAtDateRange": "Created On Range",
+      "dueAtDateRange": "Due On Range",
+      "amountRange": "Rango de importe original",
+      "openAmountRange": "Rango de importe pendiente"
     },
-    "sortBy" : "Sort By",
-    "sortDocuments" : "Sort documents",
-    "filter" : {
-      "status" : "Estado",
-      "filterBy" : "Filtrar por",
-      "documentNumber" : "Número de documento",
-      "documentType" : "Tipo de documento",
-      "startRange" : "De",
-      "endRange" : "A",
-      "clear" : "Borrar todo",
-      "search" : "Buscar",
-      "errors" : {
-        "toDateMustComeAfterFrom" : "Choose an end date that's later than the start date.",
-        "toAmountMustBeLargeThanFrom" : "Choose an end range value that's smaller than the start value."
+    "sortBy": "Sort By",
+    "sortDocuments": "Sort documents",
+    "filter": {
+      "status": "Estado",
+      "filterBy": "Filtrar por",
+      "documentNumber": "Número de documento",
+      "documentType": "Tipo de documento",
+      "startRange": "De",
+      "endRange": "A",
+      "clear": "Borrar todo",
+      "search": "Buscar",
+      "errors": {
+        "toDateMustComeAfterFrom": "Choose an end date that's later than the start date.",
+        "toAmountMustBeLargeThanFrom": "Choose an end range value that's smaller than the start value."
       }
     },
-    "hint" : "Account summaries allow you to review general information about a unit, including balances and aging summary of invoices. Here, you can also browse through a list of transaction documents for a unit."
+    "hint": "Account summaries allow you to review general information about a unit, including balances and aging summary of invoices. Here, you can also browse through a list of transaction documents for a unit."
   },
-  "orgAccountSummaryList" : {
-    "breadcrumbs" : {
-      "list" : "Account Summaries",
-      "details" : "{{name}}"
+  "orgAccountSummaryList": {
+    "breadcrumbs": {
+      "list": "Account Summaries",
+      "details": "{{name}}"
     }
   }
 }

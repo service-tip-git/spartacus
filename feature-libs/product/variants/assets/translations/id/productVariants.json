@@ -1,9 +1,9 @@
 {
-  "productVariants" : {
-    "style" : "Gaya",
-    "selectedStyle" : "Selected style",
-    "size" : "Ukuran",
-    "color" : "Warna",
-    "sizeGuideLabel" : "Style guide"
+  "productVariants": {
+    "style": "Gaya",
+    "selectedStyle": "Selected style",
+    "size": "Ukuran",
+    "color": "Warna",
+    "sizeGuideLabel": "Style guide"
   }
 }

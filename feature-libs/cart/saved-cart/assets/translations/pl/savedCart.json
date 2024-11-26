@@ -1,65 +1,65 @@
 {
-  "savedCartDetails" : {
-    "cartName" : "Nazwa",
-    "cartDescription" : "Opis",
-    "cartId" : "ID",
-    "dateSaved" : "Data zapisana",
-    "items" : "Pozycje",
-    "quantity" : "Ilość",
-    "total" : "Suma",
-    "editSavedCart" : "Edytuj zapisany koszyk",
-    "deleteSavedCart" : "Usuń zapisany koszyk",
-    "addSelectedItems" : "Add selected items",
-    "emptyCartItems" : "Empty Cart Items"
+  "savedCartDetails": {
+    "cartName": "Nazwa",
+    "cartDescription": "Opis",
+    "cartId": "ID",
+    "dateSaved": "Data zapisana",
+    "items": "Pozycje",
+    "quantity": "Ilość",
+    "total": "Suma",
+    "editSavedCart": "Edytuj zapisany koszyk",
+    "deleteSavedCart": "Usuń zapisany koszyk",
+    "addSelectedItems": "Add selected items",
+    "emptyCartItems": "Empty Cart Items"
   },
-  "savedCartList" : {
-    "savedCarts" : "Zapisane koszyki ({{count}})",
-    "cartName" : "Nazwa",
-    "cartId" : "ID",
-    "dateSaved" : "Data zapisana",
-    "cartDescription" : "Opis",
-    "quantity" : "Ilość",
-    "total" : "Suma",
-    "actions" : "Czynności",
-    "makeCartActive" : "Make cart active",
-    "notFound" : "Nie znaleziono zapisanych koszyków",
-    "swapCartNoActiveCart" : "Existing cart is activated by {{cartName}} successfully.",
-    "swapCartWithActiveCart" : "Existing cart is activated by {{cartName}} successfully. Your previous items were saved in a cart {{previousCartName}}."
+  "savedCartList": {
+    "savedCarts": "Zapisane koszyki ({{count}})",
+    "cartName": "Nazwa",
+    "cartId": "ID",
+    "dateSaved": "Data zapisana",
+    "cartDescription": "Opis",
+    "quantity": "Ilość",
+    "total": "Suma",
+    "actions": "Czynności",
+    "makeCartActive": "Make cart active",
+    "notFound": "Nie znaleziono zapisanych koszyków",
+    "swapCartNoActiveCart": "Existing cart is activated by {{cartName}} successfully.",
+    "swapCartWithActiveCart": "Existing cart is activated by {{cartName}} successfully. Your previous items were saved in a cart {{previousCartName}}."
   },
-  "savedCartCartPage" : {
-    "messages" : {
-      "cartSaved" : "Your cart items have been successfully saved for later in the \"{{cartName}}\" cart"
+  "savedCartCartPage": {
+    "messages": {
+      "cartSaved": "Your cart items have been successfully saved for later in the \"{{cartName}}\" cart"
     }
   },
-  "savedCartDialog" : {
-    "saveForLater" : "Save For Later",
-    "itemsSavedForLater" : "All of the items in your cart will be saved for later",
-    "savedCartName" : "Saved Cart Name",
-    "savedCartDescription" : "Saved Cart Description",
-    "optional" : "optional",
-    "charactersLeft" : "characters left: {{count}}",
-    "cancel" : "Anuluj",
-    "save" : "Zapisz",
-    "restore" : "Przywróć",
-    "followingCartDelete" : "The following saved cart will be deleted",
-    "followingCartRestore" : "The following saved cart will be restored as the active cart",
-    "delete" : "Usuń",
-    "deleteCartSuccess" : "Cart Deleted Successfully",
-    "editCartSuccess" : "Cart Edited Successfully",
-    "editSavedCart" : "Edytuj zapisany koszyk",
-    "deleteSavedCart" : "Usuń zapisany koszyk",
-    "restoreSavedCart" : "Przywróć zapisany koszyk",
-    "name" : "Nazwa",
-    "id" : "ID",
-    "description" : "Opis",
-    "quantity" : "ILOŚĆ",
-    "total" : "Suma",
-    "keepCopySavedCart" : "Keep a copy of this cart in the saved carts list",
-    "defaultCloneCartName" : "Kopia {{name}}",
-    "nameOfCloneCart" : "Name of copied cart"
+  "savedCartDialog": {
+    "saveForLater": "Save For Later",
+    "itemsSavedForLater": "All of the items in your cart will be saved for later",
+    "savedCartName": "Saved Cart Name",
+    "savedCartDescription": "Saved Cart Description",
+    "optional": "optional",
+    "charactersLeft": "characters left: {{count}}",
+    "cancel": "Anuluj",
+    "save": "Zapisz",
+    "restore": "Przywróć",
+    "followingCartDelete": "The following saved cart will be deleted",
+    "followingCartRestore": "The following saved cart will be restored as the active cart",
+    "delete": "Usuń",
+    "deleteCartSuccess": "Cart Deleted Successfully",
+    "editCartSuccess": "Cart Edited Successfully",
+    "editSavedCart": "Edytuj zapisany koszyk",
+    "deleteSavedCart": "Usuń zapisany koszyk",
+    "restoreSavedCart": "Przywróć zapisany koszyk",
+    "name": "Nazwa",
+    "id": "ID",
+    "description": "Opis",
+    "quantity": "ILOŚĆ",
+    "total": "Suma",
+    "keepCopySavedCart": "Keep a copy of this cart in the saved carts list",
+    "defaultCloneCartName": "Kopia {{name}}",
+    "nameOfCloneCart": "Name of copied cart"
   },
-  "addToSavedCart" : {
-    "savedCarts" : "Saved carts",
-    "saveCartForLater" : "Save cart for later"
+  "addToSavedCart": {
+    "savedCarts": "Saved carts",
+    "saveCartForLater": "Save cart for later"
   }
 }

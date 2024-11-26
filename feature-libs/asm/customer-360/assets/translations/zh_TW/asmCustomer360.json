@@ -1,129 +1,129 @@
 {
-  "asmCustomer360" : {
-    "alertErrorMessage" : "The information cannot be be loaded. Please try again later or contact your system administrator.",
-    "errorMessageHeader" : "Oops! Something went wrong",
-    "applyActionAlter" : "The action couldn't be completed. Please try again later.",
-    "header" : {
-      "title" : "Customer Profile",
-      "newTitle" : "Customer 360°",
-      "subTitle" : "{{name}} Customer 360° View",
-      "newSubTitle" : "{{name}} 360 View",
-      "activeCartLabel" : "{{cartSize}} item added to cart",
-      "recentOrderLabel" : "Last order {{price}}",
-      "recentTicketLabel" : "最後一個記錄單",
-      "signedUpAt" : "Account created on {{date}}"
+  "asmCustomer360": {
+    "alertErrorMessage": "The information cannot be be loaded. Please try again later or contact your system administrator.",
+    "errorMessageHeader": "Oops! Something went wrong",
+    "applyActionAlter": "The action couldn't be completed. Please try again later.",
+    "header": {
+      "title": "Customer Profile",
+      "newTitle": "Customer 360°",
+      "subTitle": "{{name}} Customer 360° View",
+      "newSubTitle": "{{name}} 360 View",
+      "activeCartLabel": "{{cartSize}} item added to cart",
+      "recentOrderLabel": "Last order {{price}}",
+      "recentTicketLabel": "最後一個記錄單",
+      "signedUpAt": "Account created on {{date}}"
     },
-    "productListing" : {
-      "totalNoItems" : "Total No. Items {{count}}",
-      "totalPrice" : "Total Price {{price}}",
-      "showMore" : "顯示更多",
-      "showLess" : "顯示較少"
+    "productListing": {
+      "totalNoItems": "Total No. Items {{count}}",
+      "totalPrice": "Total Price {{price}}",
+      "showMore": "顯示更多",
+      "showLess": "顯示較少"
     },
-    "productItem" : {
-      "outOfStock" : "缺貨",
-      "quantity" : "Qty: {{count}}",
-      "itemPrice" : "Item Price: {{price}}"
+    "productItem": {
+      "outOfStock": "缺貨",
+      "quantity": "Qty: {{count}}",
+      "itemPrice": "Item Price: {{price}}"
     },
-    "activeCart" : {
-      "header" : "啟用中購物車",
-      "emptyDescription" : "There are currently no active cart Items",
-      "aria" : {
-        "linkLabel" : "Active Cart {{code}}"
+    "activeCart": {
+      "header": "啟用中購物車",
+      "emptyDescription": "There are currently no active cart Items",
+      "aria": {
+        "linkLabel": "Active Cart {{code}}"
       }
     },
-    "savedCart" : {
-      "header" : "Last Saved Cart",
-      "emptyDescription" : "There are currently no saved cart items",
-      "aria" : {
-        "linkLabel" : "Last Saved Cart {{code}}"
+    "savedCart": {
+      "header": "Last Saved Cart",
+      "emptyDescription": "There are currently no saved cart items",
+      "aria": {
+        "linkLabel": "Last Saved Cart {{code}}"
       }
     },
-    "productInterests" : {
-      "header" : "興趣",
-      "emptyDescription" : "There are currently no interest items"
+    "productInterests": {
+      "header": "興趣",
+      "emptyDescription": "There are currently no interest items"
     },
-    "profile" : {
-      "address" : "地址",
-      "billingAddress" : "帳單寄送地址",
-      "deliveryAddress" : "交貨地址",
-      "phone1" : "電話 1",
-      "phone2" : "電話 2",
-      "paymentMethodHeader" : "儲存的付款方法"
+    "profile": {
+      "address": "地址",
+      "billingAddress": "帳單寄送地址",
+      "deliveryAddress": "交貨地址",
+      "phone1": "電話 1",
+      "phone2": "電話 2",
+      "paymentMethodHeader": "儲存的付款方法"
     },
-    "activity" : {
-      "type" : "類型",
-      "id" : "ID",
-      "description" : "說明",
-      "status" : "狀態",
-      "created" : "已建立",
-      "updated" : "已更新",
-      "numberOfCartItems" : "Cart with {{count}} items",
-      "cart" : "購物車",
-      "order" : "訂單",
-      "savedCart" : "儲存的購物車",
-      "emptyStateText" : "There is currently no recorded customer activity",
-      "headerText" : "一般"
+    "activity": {
+      "type": "類型",
+      "id": "ID",
+      "description": "說明",
+      "status": "狀態",
+      "created": "已建立",
+      "updated": "已更新",
+      "numberOfCartItems": "Cart with {{count}} items",
+      "cart": "購物車",
+      "order": "訂單",
+      "savedCart": "儲存的購物車",
+      "emptyStateText": "There is currently no recorded customer activity",
+      "headerText": "一般"
     },
-    "productReviews" : {
-      "columnHeaders" : {
-        "item" : "項目",
-        "dateAndStatus" : "日期/狀態",
-        "rating" : "評比",
-        "review" : "評論"
+    "productReviews": {
+      "columnHeaders": {
+        "item": "項目",
+        "dateAndStatus": "日期/狀態",
+        "rating": "評比",
+        "review": "評論"
       },
-      "header" : "產品評論",
-      "emptyDescription" : "There are currently no product review items",
-      "sku" : "SKU"
+      "header": "產品評論",
+      "emptyDescription": "There are currently no product review items",
+      "sku": "SKU"
     },
-    "supportTickets" : {
-      "columnHeaders" : {
-        "id" : "ID",
-        "headline" : "標題",
-        "category" : "種類"
+    "supportTickets": {
+      "columnHeaders": {
+        "id": "ID",
+        "headline": "標題",
+        "category": "種類"
       },
-      "header" : "支援記錄單",
-      "emptyDescription" : "There are currently no support tickets"
+      "header": "支援記錄單",
+      "emptyDescription": "There are currently no support tickets"
     },
-    "coupons" : {
-      "headerText" : "優惠券",
-      "emptyDescription" : "There are currently no coupons",
-      "applyButtonText" : "Apply to Cart",
-      "applied" : "折價券適用",
-      "removeButtonText" : "移除"
+    "coupons": {
+      "headerText": "優惠券",
+      "emptyDescription": "There are currently no coupons",
+      "applyButtonText": "Apply to Cart",
+      "applied": "折價券適用",
+      "removeButtonText": "移除"
     },
-    "promotions" : {
-      "headerText" : "促銷",
-      "emptyDescription" : "There are currently no promotions",
-      "applied" : "促銷適用",
-      "headerName" : "名稱",
-      "headerAction" : "動作"
+    "promotions": {
+      "headerText": "促銷",
+      "emptyDescription": "There are currently no promotions",
+      "applied": "促銷適用",
+      "headerName": "名稱",
+      "headerAction": "動作"
     },
-    "customerCoupons" : {
-      "headerText" : "客戶優惠券",
-      "emptyDescription" : "There are currently no customer coupons",
-      "applyButtonText" : "Assign to Customer",
-      "removeButtonText" : "移除",
-      "availableTab" : "可用",
-      "sentTab" : "已傳送",
-      "searchBox" : "優惠券"
+    "customerCoupons": {
+      "headerText": "客戶優惠券",
+      "emptyDescription": "There are currently no customer coupons",
+      "applyButtonText": "Assign to Customer",
+      "removeButtonText": "移除",
+      "availableTab": "可用",
+      "sentTab": "已傳送",
+      "searchBox": "優惠券"
     },
-    "maps" : {
-      "storeClosed" : "關閉",
-      "storesFound" : "{{ initial }} - {{ end }} from {{ total }} stores found"
+    "maps": {
+      "storeClosed": "關閉",
+      "storesFound": "{{ initial }} - {{ end }} from {{ total }} stores found"
     },
-    "overviewTab" : "概觀",
-    "profileTab" : "設定檔",
-    "activityTab" : "活動",
-    "feedbackTab" : "反饋",
-    "promotionsTab" : "促銷",
-    "mapsTab" : "Maps",
-    "storeLocationsTab" : "儲存地點",
-    "aria" : {
-      "activeCartCode" : "Active Cart {{code}}",
-      "recentOrderCode" : "Last Order {{code}}"
+    "overviewTab": "概觀",
+    "profileTab": "設定檔",
+    "activityTab": "活動",
+    "feedbackTab": "反饋",
+    "promotionsTab": "促銷",
+    "mapsTab": "Maps",
+    "storeLocationsTab": "儲存地點",
+    "aria": {
+      "activeCartCode": "Active Cart {{code}}",
+      "recentOrderCode": "Last Order {{code}}"
     },
-    "pagination" : "分頁",
-    "page" : "Page {{number}}",
-    "emptyCellValue" : "---"
+    "pagination": "分頁",
+    "page": "Page {{number}}",
+    "emptyCellValue": "---"
   }
 }

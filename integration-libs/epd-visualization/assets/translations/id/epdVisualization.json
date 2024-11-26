@@ -1,70 +1,70 @@
 {
-  "epdVisualization" : {
-    "visualViewer" : {
-      "contentType" : {
-        "drawing2D" : "2D",
-        "model3D" : "3D"
+  "epdVisualization": {
+    "visualViewer": {
+      "contentType": {
+        "drawing2D": "2D",
+        "model3D": "3D"
       },
-      "toolbar" : {
-        "homeButton" : {
-          "label" : "Beranda"
+      "toolbar": {
+        "homeButton": {
+          "label": "Beranda"
         },
-        "zoomButton" : {
-          "label" : "Zum"
+        "zoomButton": {
+          "label": "Zum"
         },
-        "panButton" : {
-          "label" : "Pan"
+        "panButton": {
+          "label": "Pan"
         },
-        "rotateButton" : {
-          "label" : "Rotate"
+        "rotateButton": {
+          "label": "Rotate"
         },
-        "isolateButton" : {
-          "label" : "Isolate"
+        "isolateButton": {
+          "label": "Isolate"
         },
-        "playButton" : {
-          "label" : "Putar"
+        "playButton": {
+          "label": "Putar"
         },
-        "pauseButton" : {
-          "label" : "Tunda"
+        "pauseButton": {
+          "label": "Tunda"
         },
-        "hotspotsButton" : {
-          "label" : "Hotspots",
-          "show" : "Tampilkan",
-          "hide" : "Sembunyikan"
+        "hotspotsButton": {
+          "label": "Hotspots",
+          "show": "Tampilkan",
+          "hide": "Sembunyikan"
         },
-        "visualViewerAnimationSlider" : {
-          "label" : "Animation Slider",
-          "role" : "Slider"
+        "visualViewerAnimationSlider": {
+          "label": "Animation Slider",
+          "role": "Slider"
         }
       }
     },
-    "visualPicking" : {
-      "visualPickingTab" : {
-        "noProductReferences" : "No spare parts are available for this product."
+    "visualPicking": {
+      "visualPickingTab": {
+        "noProductReferences": "No spare parts are available for this product."
       },
-      "visualPickingProductList" : {
-        "description" : "Deskripsi",
-        "itemPrice" : "Harga",
-        "outOfStock" : "Out of stock",
-        "id" : "ID"
+      "visualPickingProductList": {
+        "description": "Deskripsi",
+        "itemPrice": "Harga",
+        "outOfStock": "Out of stock",
+        "id": "ID"
       },
-      "visualPickingProductFilter" : {
-        "input" : {
-          "placeholder" : "Filter by name or id"
+      "visualPickingProductFilter": {
+        "input": {
+          "placeholder": "Filter by name or id"
         },
-        "searchButton" : {
-          "label" : "search"
+        "searchButton": {
+          "label": "search"
         },
-        "resetButton" : {
-          "label" : "atur ulang"
+        "resetButton": {
+          "label": "atur ulang"
         }
       }
     },
-    "errors" : {
-      "visualLoad" : {
-        "noMatchingVisualFound" : "No matching visualization found",
-        "multipleMatchingVisualsFound" : "Multiple matching visualizations found",
-        "unexpectedLoadError" : "Error occurred while loading visualization"
+    "errors": {
+      "visualLoad": {
+        "noMatchingVisualFound": "No matching visualization found",
+        "multipleMatchingVisualsFound": "Multiple matching visualizations found",
+        "unexpectedLoadError": "Error occurred while loading visualization"
       }
     }
   }

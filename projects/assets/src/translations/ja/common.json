@@ -1,252 +1,252 @@
 {
-  "common" : {
-    "cancel" : "キャンセル",
-    "delete" : "削除",
-    "remove" : "削除",
-    "edit" : "編集",
-    "restore" : "復元",
-    "back" : "戻る",
-    "submit" : "送信",
-    "continue" : "続行",
-    "save" : "保存",
-    "done" : "完了",
-    "home" : "ホーム",
-    "noData" : "No data.",
-    "confirm" : "確認",
-    "more" : "さらに表示",
-    "close" : "閉じる",
-    "loading" : "ロードしています",
-    "menu" : "メニュー",
-    "reset" : "リセット",
-    "search" : "検索",
-    "add" : "追加",
-    "breadcrumbs" : "breadcrumbs",
-    "selectFile" : "Select file",
-    "clear" : "クリア",
-    "loaded" : "Loaded",
-    "results" : "結果",
-    "of" : "/",
-    "required" : "required",
-    "zoomIn" : "Zoom in",
-    "zoomOut" : "Zoom out",
-    "selected" : "選択済み",
-    "expand" : "展開",
-    "collapse" : "折りたたみ"
+  "common": {
+    "cancel": "キャンセル",
+    "delete": "削除",
+    "remove": "削除",
+    "edit": "編集",
+    "restore": "復元",
+    "back": "戻る",
+    "submit": "送信",
+    "continue": "続行",
+    "save": "保存",
+    "done": "完了",
+    "home": "ホーム",
+    "noData": "No data.",
+    "confirm": "確認",
+    "more": "さらに表示",
+    "close": "閉じる",
+    "loading": "ロードしています",
+    "menu": "メニュー",
+    "reset": "リセット",
+    "search": "検索",
+    "add": "追加",
+    "breadcrumbs": "breadcrumbs",
+    "selectFile": "Select file",
+    "clear": "クリア",
+    "loaded": "Loaded",
+    "results": "結果",
+    "of": "/",
+    "required": "required",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "selected": "選択済み",
+    "expand": "展開",
+    "collapse": "折りたたみ"
   },
-  "pageMetaResolver" : {
-    "category" : {
-      "title" : "{{count}} result for {{query}}",
-      "title_other" : "{{count}} results for {{query}}"
+  "pageMetaResolver": {
+    "category": {
+      "title": "{{count}} result for {{query}}",
+      "title_other": "{{count}} results for {{query}}"
     },
-    "checkout" : {
-      "title" : "チェックアウト"
+    "checkout": {
+      "title": "チェックアウト"
     },
-    "search" : {
-      "title" : "{{count}} result for \"{{query}}\"",
-      "title_other" : "{{count}} results for \"{{query}}\"",
-      "findProductTitle" : "{{count}} result for coupon \"{{coupon}}\"",
-      "findProductTitle_other" : "{{count}} results for coupon \"{{coupon}}\"",
-      "default_title" : "すべての商品"
+    "search": {
+      "title": "{{count}} result for \"{{query}}\"",
+      "title_other": "{{count}} results for \"{{query}}\"",
+      "findProductTitle": "{{count}} result for coupon \"{{coupon}}\"",
+      "findProductTitle_other": "{{count}} results for coupon \"{{coupon}}\"",
+      "default_title": "すべての商品"
     },
-    "product" : {
-      "description" : "{{description}}",
-      "heading" : "{{heading}}",
-      "title" : "{{title}}"
+    "product": {
+      "description": "{{description}}",
+      "heading": "{{heading}}",
+      "title": "{{title}}"
     }
   },
-  "spinner" : {
-    "loading" : "読み込んでいます..."
+  "spinner": {
+    "loading": "読み込んでいます..."
   },
-  "navigation" : {
-    "categoryNavLabel" : "Category menu",
-    "footerNavLabel" : "Footer links",
-    "goTo" : "{{location}} に移動",
-    "navigateTo" : "Navigate to {{nav}}",
-    "scrollToTop" : "Scroll back to the top of the page",
-    "linkItemInList" : "{{title}}. {{position}} of {{listLength}}"
+  "navigation": {
+    "categoryNavLabel": "Category menu",
+    "footerNavLabel": "Footer links",
+    "goTo": "{{location}} に移動",
+    "navigateTo": "Navigate to {{nav}}",
+    "scrollToTop": "Scroll back to the top of the page",
+    "linkItemInList": "{{title}}. {{position}} of {{listLength}}"
   },
-  "searchBox" : {
-    "placeholder" : "Enter product name or SKU",
-    "productSearch" : "Find a product",
-    "ariaLabelInput" : "検索...",
-    "ariaLabelSuggestions" : "typing suggestions",
-    "ariaLabelProducts" : "product results",
-    "initialDescription" : "When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.",
-    "suggestions" : "Suggested Keywords",
-    "suggestionsResult" : "{{ count }} suggestion and ",
-    "suggestionsResult_other" : "{{ count }} suggestions and ",
-    "products" : "Recommended Products",
-    "productsResult" : "{{ count }} product is available.",
-    "productsResult_other" : "{{ count }} products are available.",
-    "resetLabel" : "Reset Search",
-    "help" : {
-      "insufficientChars" : "Please type more characters",
-      "noMatch" : "We could not find any results",
-      "exactMatch" : "{{ term }}",
-      "empty" : "Ask us anything"
+  "searchBox": {
+    "placeholder": "Enter product name or SKU",
+    "productSearch": "Find a product",
+    "ariaLabelInput": "検索...",
+    "ariaLabelSuggestions": "typing suggestions",
+    "ariaLabelProducts": "product results",
+    "initialDescription": "When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.",
+    "suggestions": "Suggested Keywords",
+    "suggestionsResult": "{{ count }} suggestion and ",
+    "suggestionsResult_other": "{{ count }} suggestions and ",
+    "products": "Recommended Products",
+    "productsResult": "{{ count }} product is available.",
+    "productsResult_other": "{{ count }} products are available.",
+    "resetLabel": "Reset Search",
+    "help": {
+      "insufficientChars": "Please type more characters",
+      "noMatch": "We could not find any results",
+      "exactMatch": "{{ term }}",
+      "empty": "Ask us anything"
     },
-    "closeSearchPanel" : "閉じる"
+    "closeSearchPanel": "閉じる"
   },
-  "sorting" : {
-    "date" : "日付",
-    "orderNumber" : "注文番号",
-    "rma" : "Return Number",
-    "replenishmentNumber" : "補充番号",
-    "nextOrderDate" : "次回注文日",
-    "pageViewUpdated" : "Page view updated with your selected options."
+  "sorting": {
+    "date": "日付",
+    "orderNumber": "注文番号",
+    "rma": "Return Number",
+    "replenishmentNumber": "補充番号",
+    "nextOrderDate": "次回注文日",
+    "pageViewUpdated": "Page view updated with your selected options."
   },
-  "httpHandlers" : {
-    "badRequest" : {
-      "bad_credentials" : "{{ errorMessage }}. Please login again.",
-      "user_is_disabled" : "{{ errorMessage }}. Please contact administration."
+  "httpHandlers": {
+    "badRequest": {
+      "bad_credentials": "{{ errorMessage }}. Please login again.",
+      "user_is_disabled": "{{ errorMessage }}. Please contact administration."
     },
-    "badGateway" : "A server error occurred. Please try again later.",
-    "badRequestPleaseLoginAgain" : "{{ errorMessage }}. Please login again.",
-    "badRequestOldPasswordIncorrect" : "Old password incorrect.",
-    "badRequestGuestDuplicateEmail" : "{{ errorMessage }} email already exist. Please checkout with a different email to register using a guest account.",
-    "conflict" : "Already exists.",
-    "forbidden" : "You are not authorized to perform this action. Please contact your administrator if you think this is a mistake.",
-    "gatewayTimeout" : "The server did not respond, please try again later.",
-    "internalServerError" : "An Internal Server Error occurred. Please try again later.",
-    "sessionExpired" : "Your session has expired. Please login again.",
-    "unknownError" : "An unknown error occurred",
-    "unauthorized" : {
-      "common" : "An unknown authorization error occured",
-      "invalid_client" : "Bad client credentials"
+    "badGateway": "A server error occurred. Please try again later.",
+    "badRequestPleaseLoginAgain": "{{ errorMessage }}. Please login again.",
+    "badRequestOldPasswordIncorrect": "Old password incorrect.",
+    "badRequestGuestDuplicateEmail": "{{ errorMessage }} email already exist. Please checkout with a different email to register using a guest account.",
+    "conflict": "Already exists.",
+    "forbidden": "You are not authorized to perform this action. Please contact your administrator if you think this is a mistake.",
+    "gatewayTimeout": "The server did not respond, please try again later.",
+    "internalServerError": "An Internal Server Error occurred. Please try again later.",
+    "sessionExpired": "Your session has expired. Please login again.",
+    "unknownError": "An unknown error occurred",
+    "unauthorized": {
+      "common": "An unknown authorization error occured",
+      "invalid_client": "Bad client credentials"
     },
-    "validationErrors" : {
-      "missing" : {
-        "card_cardType" : "The selected credit card is not supported. Please select another.",
-        "card_accountNumber" : "The credit card number entered is not valid.",
-        "card_cvNumber" : "The security code entered is not valid.",
-        "card_expirationMonth" : "The credit card expiration date entered is not valid.",
-        "card_expirationYear" : "The credit card expiration date entered is not valid.",
-        "billTo_firstName" : "The first name entered is not valid.",
-        "billTo_lastName" : "The last name entered is not valid.",
-        "billTo_street1" : "The address entered is not valid.",
-        "billTo_street2" : "The address entered is not valid.",
-        "billTo_city" : "The city entered is not valid for this credit card.",
-        "billTo_state" : "The state/province entered is not valid for this credit card.",
-        "billTo_country" : "The country/region entered is not valid for this credit card.",
-        "billTo_postalCode" : "The zip/postal code is not valid for this credit card.",
-        "country" : {
-          "isocode" : "Missing country/region"
+    "validationErrors": {
+      "missing": {
+        "card_cardType": "The selected credit card is not supported. Please select another.",
+        "card_accountNumber": "The credit card number entered is not valid.",
+        "card_cvNumber": "The security code entered is not valid.",
+        "card_expirationMonth": "The credit card expiration date entered is not valid.",
+        "card_expirationYear": "The credit card expiration date entered is not valid.",
+        "billTo_firstName": "The first name entered is not valid.",
+        "billTo_lastName": "The last name entered is not valid.",
+        "billTo_street1": "The address entered is not valid.",
+        "billTo_street2": "The address entered is not valid.",
+        "billTo_city": "The city entered is not valid for this credit card.",
+        "billTo_state": "The state/province entered is not valid for this credit card.",
+        "billTo_country": "The country/region entered is not valid for this credit card.",
+        "billTo_postalCode": "The zip/postal code is not valid for this credit card.",
+        "country": {
+          "isocode": "Missing country/region"
         }
       },
-      "invalid" : {
-        "card_expirationMonth" : "The credit card expiration date entered is not valid.",
-        "firstName" : "First Name entered is not valid.",
-        "lastName" : "Last Name entered is not valid.",
-        "password" : "Password entered is not valid.",
-        "uid" : "UID is not valid.",
-        "code" : "Code is not valid.",
-        "email" : "Email is not valid.",
-        "loginId" : "Email is not valid."
+      "invalid": {
+        "card_expirationMonth": "The credit card expiration date entered is not valid.",
+        "firstName": "First Name entered is not valid.",
+        "lastName": "Last Name entered is not valid.",
+        "password": "Password entered is not valid.",
+        "uid": "UID is not valid.",
+        "code": "Code is not valid.",
+        "email": "Email is not valid.",
+        "loginId": "Email is not valid."
       }
     },
-    "cartNotFound" : "Cart not found.",
-    "invalidCodeProvided" : "Invalid code provided.",
-    "voucherExceeded" : "This coupon has exceeded the number of times it can be used",
-    "unknownIdentifier" : "Item not found.",
-    "otherCartErrors" : "Cart errors occurred."
+    "cartNotFound": "Cart not found.",
+    "invalidCodeProvided": "Invalid code provided.",
+    "voucherExceeded": "This coupon has exceeded the number of times it can be used",
+    "unknownIdentifier": "Item not found.",
+    "otherCartErrors": "Cart errors occurred."
   },
-  "miniCart" : {
-    "item" : "{{count}} item currently in your cart",
-    "item_other" : "{{count}} items currently in your cart",
-    "total" : "{{total}}",
-    "count" : "{{count}}"
+  "miniCart": {
+    "item": "{{count}} item currently in your cart",
+    "item_other": "{{count}} items currently in your cart",
+    "total": "{{total}}",
+    "count": "{{count}}"
   },
-  "skipLink" : {
-    "skipTo" : "Skip to",
-    "labels" : {
-      "header" : "Header",
-      "main" : "Main Content",
-      "footer" : "Footer",
-      "productFacets" : "Product Facets",
-      "productList" : "商品リスト"
+  "skipLink": {
+    "skipTo": "Skip to",
+    "labels": {
+      "header": "Header",
+      "main": "Main Content",
+      "footer": "Footer",
+      "productFacets": "Product Facets",
+      "productList": "商品リスト"
     }
   },
-  "carousel" : {
-    "previousSlide" : "Previous slide",
-    "nextSlide" : "Next slide",
-    "slideNumber" : "Slide {{currentSlideNumber}} contains {{numberOfSlides}} items",
-    "carouselForProduct" : "Carousel, Images for {{product}}"
+  "carousel": {
+    "previousSlide": "Previous slide",
+    "nextSlide": "Next slide",
+    "slideNumber": "Slide {{currentSlideNumber}} contains {{numberOfSlides}} items",
+    "carouselForProduct": "Carousel, Images for {{product}}"
   },
-  "formErrors" : {
-    "labeled" : {
-      "required" : "Field {{label}} is required",
-      "cxInvalidEmail" : "Field {{label}} has not a valid email format. Match pattern: example@yourdomain.com",
-      "cxInvalidPassword" : "Field {{label}} has not a valid password format",
-      "cxMinOneUpperCaseCharacter" : "Password must contain at least one uppercase character",
-      "cxMinOneDigit" : "Password must contain at least one digit",
-      "cxMinOneSpecialCharacter" : "Password must contain at least one special character",
-      "cxMinSixCharactersLength" : "Password must contain at least 6 characters",
-      "cxContainsSpecialCharacters" : "Password cannot contain special characters",
-      "cxNoConsecutiveCharacters" : "Password cannot contain consecutive identical characters",
-      "date" : {
-        "required" : "Field {{label}} is required",
-        "min" : "Field {{label}} cannot be before {{min}}",
-        "max" : "Field {{label}} cannot be after {{max}}",
-        "pattern" : "Use dateformat yyyy-mm-dd in field {{label}}",
-        "invalid" : "Use a valid date in field {{label}}"
+  "formErrors": {
+    "labeled": {
+      "required": "Field {{label}} is required",
+      "cxInvalidEmail": "Field {{label}} has not a valid email format. Match pattern: example@yourdomain.com",
+      "cxInvalidPassword": "Field {{label}} has not a valid password format",
+      "cxMinOneUpperCaseCharacter": "Password must contain at least one uppercase character",
+      "cxMinOneDigit": "Password must contain at least one digit",
+      "cxMinOneSpecialCharacter": "Password must contain at least one special character",
+      "cxMinSixCharactersLength": "Password must contain at least 6 characters",
+      "cxContainsSpecialCharacters": "Password cannot contain special characters",
+      "cxNoConsecutiveCharacters": "Password cannot contain consecutive identical characters",
+      "date": {
+        "required": "Field {{label}} is required",
+        "min": "Field {{label}} cannot be before {{min}}",
+        "max": "Field {{label}} cannot be after {{max}}",
+        "pattern": "Use dateformat yyyy-mm-dd in field {{label}}",
+        "invalid": "Use a valid date in field {{label}}"
       }
     },
-    "globalMessage" : "The form you are trying to submit contains errors.",
-    "required" : "この項目は必須です",
-    "cxInvalidEmail" : "This is not a valid email format",
-    "cxInvalidPassword" : "This is not a valid password format",
-    "cxPasswordsMustMatch" : "Password fields must match",
-    "cxPasswordsCannotMatch" : "Password fields cannot match",
-    "cxEmailsMustMatch" : "Email fields must match",
-    "cxStarRatingEmpty" : "Rating field is required",
-    "cxNoSelectedItemToCancel" : "Select at least one item",
-    "cxNegativeAmount" : "Amount must be equal or greater than zero",
-    "cxContainsSpecialCharacters" : "Field cannot contain special characters",
-    "date" : {
-      "required" : "この項目は必須です",
-      "min" : "Date cannot be before {{min}}",
-      "max" : "Date cannot be after {{max}}",
-      "pattern" : "Use dateformat yyyy-mm-dd",
-      "invalid" : "Use a valid date"
+    "globalMessage": "The form you are trying to submit contains errors.",
+    "required": "この項目は必須です",
+    "cxInvalidEmail": "This is not a valid email format",
+    "cxInvalidPassword": "This is not a valid password format",
+    "cxPasswordsMustMatch": "Password fields must match",
+    "cxPasswordsCannotMatch": "Password fields cannot match",
+    "cxEmailsMustMatch": "Email fields must match",
+    "cxStarRatingEmpty": "Rating field is required",
+    "cxNoSelectedItemToCancel": "Select at least one item",
+    "cxNegativeAmount": "Amount must be equal or greater than zero",
+    "cxContainsSpecialCharacters": "Field cannot contain special characters",
+    "date": {
+      "required": "この項目は必須です",
+      "min": "Date cannot be before {{min}}",
+      "max": "Date cannot be after {{max}}",
+      "pattern": "Use dateformat yyyy-mm-dd",
+      "invalid": "Use a valid date"
     },
-    "file" : {
-      "required" : "File is required",
-      "empty" : "File should not be empty",
-      "invalidExtension" : "File extension is not valid",
-      "tooLarge" : "File size should not exceed {{ maxSize }} MB",
-      "tooManyEntries" : "The number of items is greater than {{ maxEntries }}",
-      "notParsable" : "File is not parsable",
-      "fileNotAllowed" : "This file type is not allowed"
+    "file": {
+      "required": "File is required",
+      "empty": "File should not be empty",
+      "invalidExtension": "File extension is not valid",
+      "tooLarge": "File size should not exceed {{ maxSize }} MB",
+      "tooManyEntries": "The number of items is greater than {{ maxEntries }}",
+      "notParsable": "File is not parsable",
+      "fileNotAllowed": "This file type is not allowed"
     }
   },
-  "errorHandlers" : {
-    "scriptFailedToLoad" : "Failed to load the script.",
-    "refreshThePage" : "Please refresh the page."
+  "errorHandlers": {
+    "scriptFailedToLoad": "Failed to load the script.",
+    "refreshThePage": "Please refresh the page."
   },
-  "assistiveMessage" : {
-    "actionCancelled" : "Action cancelled, nothing changed"
+  "assistiveMessage": {
+    "actionCancelled": "Action cancelled, nothing changed"
   },
-  "passwordVisibility" : {
-    "showPassword" : "Show password",
-    "hidePassword" : "Hide password"
+  "passwordVisibility": {
+    "showPassword": "Show password",
+    "hidePassword": "Hide password"
   },
-  "generalErrors" : {
-    "pageFailure" : "The page could not be loaded. Please try again later."
+  "generalErrors": {
+    "pageFailure": "The page could not be loaded. Please try again later."
   },
-  "formLegend" : {
-    "required" : "The following fields marked with \"*\" are required."
+  "formLegend": {
+    "required": "The following fields marked with \"*\" are required."
   },
-  "chatMessaging" : {
-    "charactersLeft" : "characters left: {{count}}",
-    "addNewMessage" : "Add New Message",
-    "send" : "送信",
-    "uploadFile" : "ファイルのアップロード",
-    "informationLabel" : "{{author}}. {{text}} at {{date}}",
-    "messages" : "メッセージ",
-    "addMessagePlaceHolder" : "Start Typing...",
-    "characterLimitAlert" : "Characters limit reached.",
-    "a11y" : {
-      "itemListBoxLabel" : "Select the item to which the message should apply."
+  "chatMessaging": {
+    "charactersLeft": "characters left: {{count}}",
+    "addNewMessage": "Add New Message",
+    "send": "送信",
+    "uploadFile": "ファイルのアップロード",
+    "informationLabel": "{{author}}. {{text}} at {{date}}",
+    "messages": "メッセージ",
+    "addMessagePlaceHolder": "Start Typing...",
+    "characterLimitAlert": "Characters limit reached.",
+    "a11y": {
+      "itemListBoxLabel": "Select the item to which the message should apply."
     }
   }
 }

@@ -1,9 +1,9 @@
 {
-  "productVariants" : {
-    "style" : "Stílus",
-    "selectedStyle" : "Selected style",
-    "size" : "Méret",
-    "color" : "Szín",
-    "sizeGuideLabel" : "Style guide"
+  "productVariants": {
+    "style": "Stílus",
+    "selectedStyle": "Selected style",
+    "size": "Méret",
+    "color": "Szín",
+    "sizeGuideLabel": "Style guide"
   }
 }

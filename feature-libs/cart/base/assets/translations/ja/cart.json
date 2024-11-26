@@ -1,74 +1,74 @@
 {
-  "cartDetails" : {
-    "id" : "ID",
-    "proceedToCheckout" : "チェックアウトに進む",
-    "cartName" : "Cart #{{code}}"
+  "cartDetails": {
+    "id": "ID",
+    "proceedToCheckout": "チェックアウトに進む",
+    "cartName": "Cart #{{code}}"
   },
-  "cartItems" : {
-    "id" : "ID",
-    "description" : "説明",
-    "item" : "アイテム",
-    "itemPrice" : "商品価格",
-    "quantity" : "数量",
-    "quantityTitle" : "The quantity represents the total number of this item in your cart.",
-    "total" : "合計",
-    "actions" : "アクション",
-    "cartTotal" : "Cart total ({{count}} item)",
-    "cartTotal_other" : "Cart total ({{count}} items)",
-    "itemRemoved" : "Selected item has been removed. Cart total has been updated.",
-    "caption" : "Shopping cart contents."
+  "cartItems": {
+    "id": "ID",
+    "description": "説明",
+    "item": "アイテム",
+    "itemPrice": "商品価格",
+    "quantity": "数量",
+    "quantityTitle": "The quantity represents the total number of this item in your cart.",
+    "total": "合計",
+    "actions": "アクション",
+    "cartTotal": "Cart total ({{count}} item)",
+    "cartTotal_other": "Cart total ({{count}} items)",
+    "itemRemoved": "Selected item has been removed. Cart total has been updated.",
+    "caption": "Shopping cart contents."
   },
-  "orderCost" : {
-    "orderSummary" : "注文内容",
-    "subtotal" : "Subtotal after discounts:",
-    "shipping" : "出荷:",
-    "estimatedShipping" : "Estimated shipping:",
-    "discount" : "You saved:",
-    "salesTax" : "Sales Tax:",
-    "grossTax" : "The order total does not include tax of",
-    "grossIncludeTax" : "The order total includes tax of",
-    "total" : "合計: ",
-    "toBeDetermined" : "TBD"
+  "orderCost": {
+    "orderSummary": "注文内容",
+    "subtotal": "Subtotal after discounts:",
+    "shipping": "出荷:",
+    "estimatedShipping": "Estimated shipping:",
+    "discount": "You saved:",
+    "salesTax": "Sales Tax:",
+    "grossTax": "The order total does not include tax of",
+    "grossIncludeTax": "The order total includes tax of",
+    "total": "合計: ",
+    "toBeDetermined": "TBD"
   },
-  "voucher" : {
-    "coupon" : "Have a coupon?",
-    "coupon_other" : "Coupon codes",
-    "couponLabel" : "Enter a promo code here",
-    "addCoupon" : "Add a coupon",
-    "apply" : "適用",
-    "placeholder" : "Promo code",
-    "applyVoucherSuccess" : "{{voucherCode}} has been applied.",
-    "removeVoucherSuccess" : "{{voucherCode}} has been removed.",
-    "anchorLabel" : "Enter or remove your coupon code",
-    "vouchersApplied" : "適用されたクーポン",
-    "availableCoupons" : "Available coupons",
-    "availableCouponsLabel" : "You can add these coupons to this order."
+  "voucher": {
+    "coupon": "Have a coupon?",
+    "coupon_other": "Coupon codes",
+    "couponLabel": "Enter a promo code here",
+    "addCoupon": "Add a coupon",
+    "apply": "適用",
+    "placeholder": "Promo code",
+    "applyVoucherSuccess": "{{voucherCode}} has been applied.",
+    "removeVoucherSuccess": "{{voucherCode}} has been removed.",
+    "anchorLabel": "Enter or remove your coupon code",
+    "vouchersApplied": "適用されたクーポン",
+    "availableCoupons": "Available coupons",
+    "availableCouponsLabel": "You can add these coupons to this order."
   },
-  "saveForLaterItems" : {
-    "itemTotal" : "Saved for later ({{count}} item)",
-    "itemTotal_other" : "保存して後で使用 ({{count}} アイテム)",
-    "cartTitle" : "カート",
-    "saveForLater" : "Save For Later",
-    "moveToCart" : "Move To Cart",
-    "stock" : "在庫",
-    "forceInStock" : "在庫有り"
+  "saveForLaterItems": {
+    "itemTotal": "Saved for later ({{count}} item)",
+    "itemTotal_other": "保存して後で使用 ({{count}} アイテム)",
+    "cartTitle": "カート",
+    "saveForLater": "Save For Later",
+    "moveToCart": "Move To Cart",
+    "stock": "在庫",
+    "forceInStock": "在庫有り"
   },
-  "clearCart" : {
-    "clearCart" : "Clear Cart",
-    "clearingCart" : "Clearing Cart...",
-    "cartClearedSuccessfully" : "Active cart cleared successfully.",
-    "areYouSureToClearCart" : "Are you sure you want to clear this cart?",
-    "allItemsWillBeRemoved" : "All items in your active cart will be removed."
+  "clearCart": {
+    "clearCart": "Clear Cart",
+    "clearingCart": "Clearing Cart...",
+    "cartClearedSuccessfully": "Active cart cleared successfully.",
+    "areYouSureToClearCart": "Are you sure you want to clear this cart?",
+    "allItemsWillBeRemoved": "All items in your active cart will be removed."
   },
-  "validation" : {
-    "cartEntriesChangeDuringCheckout" : "During checkout we found problems with your entries. Please review your cart.",
-    "cartEntryRemoved" : "{{name}} was removed from the cart due to being out of stock.",
-    "productOutOfStock" : "在庫がないため、{{name}} をカートから削除しました.",
-    "lowStock" : "Quantity has reduced to {{quantity}} due to insufficient stock.",
-    "reviewConfiguration" : "Resolve the issues in the configuration for cart entry first.",
-    "configurationError" : "Resolve the issues in the configuration for cart entries first.",
-    "pricingError" : "Configurator pricing is currently not available. Checkout/quote submission is not possible. Please try again later.",
-    "unresolvableIssues" : "The product configuration requires additional entries in the back end. As a result, you cannot proceed. Please contact support.",
-    "inProgress" : "処理しています"
+  "validation": {
+    "cartEntriesChangeDuringCheckout": "During checkout we found problems with your entries. Please review your cart.",
+    "cartEntryRemoved": "{{name}} was removed from the cart due to being out of stock.",
+    "productOutOfStock": "在庫がないため、{{name}} をカートから削除しました.",
+    "lowStock": "Quantity has reduced to {{quantity}} due to insufficient stock.",
+    "reviewConfiguration": "Resolve the issues in the configuration for cart entry first.",
+    "configurationError": "Resolve the issues in the configuration for cart entries first.",
+    "pricingError": "Configurator pricing is currently not available. Checkout/quote submission is not possible. Please try again later.",
+    "unresolvableIssues": "The product configuration requires additional entries in the back end. As a result, you cannot proceed. Please contact support.",
+    "inProgress": "処理しています"
   }
 }
