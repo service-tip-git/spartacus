@@ -645,6 +645,11 @@ export interface FeatureTogglesInterface {
   a11yViewHoursButtonIconContrast?: boolean;
 
   /**
+   * `StoreComponent` `In Stock` icon has an acceptable contrast ratio in a default theme
+   */
+  a11yStoreInStockIconContrast?: boolean;
+
+  /**
    * `Checkout` add a landmarks to content representing steps
    */
   a11yCheckoutStepsLandmarks?: boolean;
@@ -914,6 +919,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yItemCounterFocus: false,
   a11yScrollToReviewByShowReview: false,
   a11yViewHoursButtonIconContrast: false,
+  a11yStoreInStockIconContrast: false,
   a11yCheckoutStepsLandmarks: false,
   a11yQTY2Quantity: false,
   a11yImproveButtonsInCardComponent: false,
