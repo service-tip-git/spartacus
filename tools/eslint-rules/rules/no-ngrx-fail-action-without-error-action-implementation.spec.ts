@@ -13,7 +13,7 @@ const ruleTester = new TSESLint.RuleTester({
 ruleTester.run(RULE_NAME, rule, {
   valid: [
     // actions with `Fail` in name, that implement `ErrorAction`
-    `        kt
+    `
     import { ErrorAction } from '@spartacus/core';
     export class LoadProductFail implements ErrorAction {}
     `,
