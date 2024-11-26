@@ -399,6 +399,8 @@
       'searchBox.productsResult'
         | cxTranslate: { count: result.products?.length }
     }}
-    {{ 'searchBox.initialDescription' | cxTranslate }}
+    <ng-container *cxFeature="'!a11ySearchboxAssistiveMessage'">
+      {{ 'searchBox.initialDescription' | cxTranslate }}
+    </ng-container>
   </div>
 </div>

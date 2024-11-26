@@ -719,6 +719,11 @@ export interface FeatureTogglesInterface {
   a11yTableHeaderReadout?: boolean;
 
   /**
+   * Removes the repetition of assistive message after the results are provided to the `SearchBoxComponent`.
+   */
+  a11ySearchboxAssistiveMessage?: boolean;
+
+  /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
    * into a request body, instead of query params.
    * This toggle is used in the following classes: `OccCartAdapter`, `OccSavedCartAdapter`, `SavedCartOccModule`, `CartBaseOccModule`.
@@ -933,6 +938,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yTextSpacingAdjustments: false,
   a11yShowDownArrowOnFocusedSelectMenu: false,
   a11yTableHeaderReadout: false,
+  a11ySearchboxAssistiveMessage: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
