@@ -59,7 +59,7 @@ if (!environment.production) {
     provideConfig(<OccConfig>{
       backend: {
         occ: {
-          baseUrl: environment.occBaseUrl,
+          baseUrl: 'https://20.83.184.244:9002', // SPIKE TODO REVERT
           prefix: environment.occApiPrefix,
         },
       },
