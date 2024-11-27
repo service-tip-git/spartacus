@@ -724,6 +724,12 @@ export interface FeatureTogglesInterface {
   a11ySearchboxAssistiveMessage?: boolean;
 
   /**
+   * Adds additional styling to help differentiate between focused and selected items in the list.
+   * Affects: ConfiguratorAttributeSingleSelectionImageComponent, ProductImagesComponent
+   */
+  a11yDifferentiateFocusedAndSelected?: boolean;
+
+  /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
    * into a request body, instead of query params.
    * This toggle is used in the following classes: `OccCartAdapter`, `OccSavedCartAdapter`, `SavedCartOccModule`, `CartBaseOccModule`.
@@ -939,6 +945,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yShowDownArrowOnFocusedSelectMenu: false,
   a11yTableHeaderReadout: false,
   a11ySearchboxAssistiveMessage: false,
+  a11yDifferentiateFocusedAndSelected: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
