@@ -13,7 +13,7 @@ import {
 import localeDe from '@angular/common/locales/de';
 import localeJa from '@angular/common/locales/ja';
 import localeZh from '@angular/common/locales/zh';
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
@@ -28,7 +28,7 @@ import {
 } from '@spartacus/core';
 import { StoreFinderConfig } from '@spartacus/storefinder/core';
 import { GOOGLE_MAPS_DEVELOPMENT_KEY_CONFIG } from '@spartacus/storefinder/root';
-import { AppRoutingModule, StorefrontComponent } from '@spartacus/storefront';
+import { AppRoutingModule } from '@spartacus/storefront';
 import { environment } from '../environments/environment';
 import { TestOutletModule } from '../test-outlets/test-outlet.module';
 import { SpartacusModule } from './spartacus/spartacus.module';
@@ -41,6 +41,13 @@ const devImports = [];
 if (!environment.production) {
   devImports.push(StoreDevtoolsModule.instrument());
 }
+
+@Component({
+  selector: 'app-component',
+  template: '<cx-storefront/>',
+  standalone: false,
+})
+export class AppComponent {}
 
 @NgModule({
   imports: [
@@ -91,6 +98,7 @@ if (!environment.production) {
       googleMaps: { apiKey: GOOGLE_MAPS_DEVELOPMENT_KEY_CONFIG },
     }),
   ],
-  bootstrap: [StorefrontComponent],
+  bootstrap: [AppComponent],
+  declarations: [AppComponent],
 })
 export class AppModule {}

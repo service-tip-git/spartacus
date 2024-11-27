@@ -7,8 +7,7 @@
 import { NgModule } from '@angular/core';
 import { ServerModule } from '@angular/platform-server';
 import { TestConfigServerModule, provideServer } from '@spartacus/setup/ssr';
-import { StorefrontComponent } from '@spartacus/storefront';
-import { AppModule } from './app.module';
+import { AppComponent, AppModule } from './app.module';
 
 @NgModule({
   imports: [
@@ -20,7 +19,7 @@ import { AppModule } from './app.module';
   ],
   // Since the bootstrapped component is not inherited from your
   // imported AppModule, it needs to be repeated here.
-  bootstrap: [StorefrontComponent],
+  bootstrap: [AppComponent],
   providers: [
     ...provideServer({
       serverRequestOrigin: process.env['SERVER_REQUEST_ORIGIN'],
