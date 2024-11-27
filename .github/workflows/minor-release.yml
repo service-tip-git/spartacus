@@ -105,14 +105,14 @@ jobs:
         with:
           script: |
             const branchName = "${{ env.RELEASE_BRANCH }}";
-            github.actions.createWorkflowDispatch({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              workflow_id: "repo-sync.yml",
-              ref: "main",
-              inputs: {
-                branch_to_sync: branchName
-              }
-            });
+ await github.rest.actions.createWorkflowDispatch({
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+        workflow_id: "repo-sync.yml", // The workflow filename to trigger
+        ref: "main", // The branch or tag the workflow will run from
+        inputs: {
+          branch_to_sync: branchName // Pass the branch name as input
+        }
+      });
         
   
