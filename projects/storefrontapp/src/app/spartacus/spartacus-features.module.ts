@@ -80,7 +80,6 @@ import { DigitalPaymentsFeatureModule } from './features/digital-payments/digita
 import { EpdVisualizationFeatureModule } from './features/epd-visualization/epd-visualization-feature.module';
 import { EstimatedDeliveryDateFeatureModule } from './features/estimated-delivery-date/estimated-delivery-date-feature.module';
 import { OmfFeatureModule } from './features/omf/omf-feature.module';
-import { OpfFeatureModule } from './features/opf/opf-feature.module';
 import { OppsFeatureModule } from './features/opps/opps-feature.module';
 import { OrderFeatureModule } from './features/order/order-feature.module';
 import { AccountSummaryFeatureModule } from './features/organization/organization-account-summary-feature.module';

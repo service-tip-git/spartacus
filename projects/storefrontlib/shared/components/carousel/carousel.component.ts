@@ -111,14 +111,49 @@ export class CarouselComponent implements OnInit, OnChanges {
   }
 
   onItemKeydown(event: KeyboardEvent, size: number): void {
-    if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
-      event.preventDefault();
-      this.focusNextPrevItem(
-        event.target,
-        event.key === 'ArrowRight' ? 1 : -1,
-        size
-      );
+    switch (event.key) {
+      case 'ArrowRight':
+      case 'ArrowLeft':
+        event.preventDefault();
+        this.focusNextPrevItem(
+          event.target,
+          event.key === 'ArrowRight' ? 1 : -1,
+          size
+        );
+        break;
+      case 'Tab':
+        this.skipTabForCarouselItems();
+        break;
     }
+  }
+
+  /**
+   * Handles "Tab" navigation within the carousel.
+   *
+   * Temporarily removes all `cxFocusableCarouselItem` elements from the tab flow
+   * and restores them after a short delay. While using `setTimeout` may seem like
+   * a bad code smell, it is justified here as it ensures natural tabbing flow in
+   * cases where determining the next focusable element is complex(e.g. if `TrapFocusDirective` is used).
+   *
+   * The `cxFocusableCarouselItem` selector is used because it identifies carousel
+   * items that have `ArrowRight`/`ArrowLeft` navigation enabled. These items should not
+   * use tab navigation according to a11y requirements.
+   */
+  protected skipTabForCarouselItems(): void {
+    const carouselElements: HTMLElement[] = Array.from(
+      this.el.nativeElement.querySelectorAll('[cxFocusableCarouselItem]')
+    );
+    if (!carouselElements.length) {
+      return;
+    }
+    carouselElements.forEach((element) => {
+      element.tabIndex = -1;
+    });
+    setTimeout(() => {
+      carouselElements.forEach((element) => {
+        element.tabIndex = 0;
+      });
+    });
   }
 
   /**
