@@ -96,4 +96,23 @@ jobs:
           git add .
           git commit -m "Release ${{ env.version }}"
           git push origin "${{ env.RELEASE_BRANCH }}"
+  trigger-repo-sync:
+    needs: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger repo-sync
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const branchName = "${{ env.RELEASE_BRANCH }}";
+            github.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: "repo-sync.yml",
+              ref: "main",
+              inputs: {
+                branch_to_sync: branchName
+              }
+            });
+        
   
