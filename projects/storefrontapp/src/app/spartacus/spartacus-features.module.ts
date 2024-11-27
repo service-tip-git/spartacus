@@ -404,6 +404,7 @@ if (environment.cpq) {
         a11yTextSpacingAdjustments: true,
         a11yTableHeaderReadout: true,
         a11ySearchboxAssistiveMessage: true,
+        a11yDifferentiateFocusedAndSelected: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
         useSiteThemeService: false,
         enableConsecutiveCharactersPasswordRequirement: true,

@@ -35,6 +35,9 @@
         .cx-img,
         .cx-img-dummy {
           border: var(--cx-color-primary) 3px solid;
+          @include forFeature('a11yDifferentiateFocusedAndSelected') {
+            border-style: dotted;
+          }
         }
       }
       // TODO: end of the block
@@ -96,6 +99,9 @@
 
             .cx-img-selected {
               border: var(--cx-color-primary) 3px solid;
+              @include forFeature('a11yDifferentiateFocusedAndSelected') {
+                border-style: dotted;
+              }
             }
           }
         }
