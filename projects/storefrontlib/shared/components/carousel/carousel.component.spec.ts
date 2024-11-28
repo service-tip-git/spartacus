@@ -596,5 +596,38 @@ describe('Carousel Component', () => {
         expect(component.activeSlide).toBe(0);
       });
     });
+
+    describe('skipTabForCarouselItems', () => {
+      let carouselItems: HTMLElement[] = [];
+      beforeEach(() => {
+        component.template = template;
+        nativeElement = fixture.nativeElement;
+
+        for (let i = 0; i < 10; i++) {
+          const element = document.createElement('div');
+          element.setAttribute('cxFocusableCarouselItem', '');
+          nativeElement.appendChild(element);
+          carouselItems.push(element);
+        }
+        fixture.detectChanges();
+      });
+
+      it('should set tabIndex to -1 for all carousel items', () => {
+        component['skipTabForCarouselItems']();
+        carouselItems.forEach((item) => {
+          expect(item.tabIndex).toBe(-1);
+        });
+      });
+
+      it('should restore tabIndex to 0 after a short delay', (done) => {
+        component['skipTabForCarouselItems']();
+        setTimeout(() => {
+          carouselItems.forEach((item) => {
+            expect(item.tabIndex).toBe(0);
+          });
+          done();
+        }, 100);
+      });
+    });
   });
 });
