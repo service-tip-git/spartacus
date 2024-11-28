@@ -131,7 +131,7 @@ export class CarouselComponent implements OnInit, OnChanges {
    * Handles "Tab" navigation within the carousel.
    *
    * Temporarily removes all `cxFocusableCarouselItem` elements from the tab flow
-   * and restores them after a short delay. While using `setTimeout` may seem like
+   * and restores them after a short delay. While using `requestAnimationFrame` may seem like
    * a bad code smell, it is justified here as it ensures natural tabbing flow in
    * cases where determining the next focusable element is complex(e.g. if `TrapFocusDirective` is used).
    *
@@ -149,7 +149,7 @@ export class CarouselComponent implements OnInit, OnChanges {
     carouselElements.forEach((element) => {
       element.tabIndex = -1;
     });
-    setTimeout(() => {
+    requestAnimationFrame(() => {
       carouselElements.forEach((element) => {
         element.tabIndex = 0;
       });
