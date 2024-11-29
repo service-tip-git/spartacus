@@ -5,20 +5,19 @@
  */
 
 import {
+  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
   ElementRef,
   EventEmitter,
   HostBinding,
   HostListener,
-  Inject,
   inject,
   Input,
   OnDestroy,
   OnInit,
   Optional,
   Renderer2,
-  SkipSelf,
 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { FeatureConfigService, WindowRef } from '@spartacus/core';
@@ -33,7 +32,6 @@ import { BREAKPOINT, BreakpointService } from '../../../layout';
 import { ICON_TYPE } from '../../misc/icon/index';
 import { HamburgerMenuService } from './../../../layout/header/hamburger-menu/hamburger-menu.service';
 import { NavigationNode } from './navigation-node.model';
-import { PageSlotComponent } from '@spartacus/storefront';
 
 const ARIA_EXPANDED_ATTR = 'aria-expanded';
 
@@ -42,7 +40,7 @@ const ARIA_EXPANDED_ATTR = 'aria-expanded';
   templateUrl: './navigation-ui.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NavigationUIComponent implements OnInit, OnDestroy {
+export class NavigationUIComponent implements OnInit, OnDestroy, AfterViewInit {
   /**
    * The navigation node to render.
    */
@@ -77,6 +75,8 @@ export class NavigationUIComponent implements OnInit, OnDestroy {
   private openNodes: HTMLElement[] = [];
   private subscriptions = new Subscription();
   private resize = new EventEmitter();
+  private isHeadersLinksSlotNavigation = false;
+  // private pageSlot;
   protected arrowControls: Subject<KeyboardEvent> = new Subject();
 
   @HostListener('window:resize')
@@ -99,10 +99,6 @@ export class NavigationUIComponent implements OnInit, OnDestroy {
     private elemRef: ElementRef,
     protected hamburgerMenuService: HamburgerMenuService,
     protected winRef: WindowRef,
-    @Optional()
-    @SkipSelf()
-    @Inject(PageSlotComponent)
-    private parentPageSlot: PageSlotComponent,
     @Optional() protected featureConfigService?: FeatureConfigService
   ) {
     this.subscriptions.add(
@@ -115,6 +111,13 @@ export class NavigationUIComponent implements OnInit, OnDestroy {
         this.alignWrappersToRightIfStickOut();
       })
     );
+  }
+
+  ngAfterViewInit(): void {
+    this.isHeadersLinksSlotNavigation =
+      this.elemRef.nativeElement
+        .closest('cx-page-slot')
+        ?.getAttribute('position') === 'HeaderLinks';
   }
 
   /**
@@ -406,10 +409,6 @@ export class NavigationUIComponent implements OnInit, OnDestroy {
 
   ariaLabel(node: NavigationNode) {
     return !this.isHeadersLinksSlotNavigation ? node.title : undefined;
-  }
-
-  get isHeadersLinksSlotNavigation() {
-    return this.parentPageSlot?.position === 'HeaderLinks';
   }
 
   get ariaDescribedby() {
