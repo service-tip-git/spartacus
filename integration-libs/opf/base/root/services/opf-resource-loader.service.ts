@@ -185,8 +185,6 @@ export class OpfResourceLoaderService {
       }
     );
 
-    return Promise.all(resourcesPromises)
-      .then(() => {})
-      .catch(() => {});
+    return Promise.all(resourcesPromises).then(() => {});
   }
 }
