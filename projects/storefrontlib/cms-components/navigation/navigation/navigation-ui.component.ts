@@ -11,12 +11,14 @@ import {
   EventEmitter,
   HostBinding,
   HostListener,
+  Inject,
   inject,
   Input,
   OnDestroy,
   OnInit,
   Optional,
   Renderer2,
+  SkipSelf,
 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { FeatureConfigService, WindowRef } from '@spartacus/core';
@@ -31,6 +33,7 @@ import { BREAKPOINT, BreakpointService } from '../../../layout';
 import { ICON_TYPE } from '../../misc/icon/index';
 import { HamburgerMenuService } from './../../../layout/header/hamburger-menu/hamburger-menu.service';
 import { NavigationNode } from './navigation-node.model';
+import { PageSlotComponent } from '@spartacus/storefront';
 
 const ARIA_EXPANDED_ATTR = 'aria-expanded';
 
@@ -96,6 +99,10 @@ export class NavigationUIComponent implements OnInit, OnDestroy {
     private elemRef: ElementRef,
     protected hamburgerMenuService: HamburgerMenuService,
     protected winRef: WindowRef,
+    @Optional()
+    @SkipSelf()
+    @Inject(PageSlotComponent)
+    private parentPageSlot: PageSlotComponent,
     @Optional() protected featureConfigService?: FeatureConfigService
   ) {
     this.subscriptions.add(
@@ -395,5 +402,17 @@ export class NavigationUIComponent implements OnInit, OnDestroy {
       return 0;
     }
     return depth > 0 && !node?.children ? -1 : 0;
+  }
+
+  get isHeadersLinksSlotNavigation() {
+    return this.parentPageSlot.position === 'HeaderLinks';
+  }
+
+  get ariaDescribedby() {
+    return this.isHeadersLinksSlotNavigation ? 'greeting' : undefined;
+  }
+
+  get ariaLabel() {
+    return !this.isHeadersLinksSlotNavigation ? this.node?.title : undefined;
   }
 }
