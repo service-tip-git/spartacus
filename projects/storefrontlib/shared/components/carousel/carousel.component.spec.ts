@@ -1,5 +1,11 @@
 import { Component, Input, TemplateRef } from '@angular/core';
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  fakeAsync,
+  TestBed,
+  tick,
+  waitForAsync,
+} from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { I18nTestingModule, LoggerService, Product } from '@spartacus/core';
@@ -612,6 +618,11 @@ describe('Carousel Component', () => {
         fixture.detectChanges();
       });
 
+      afterEach(() => {
+        carouselItems.forEach((item) => nativeElement.removeChild(item));
+        carouselItems = [];
+      });
+
       it('should set tabIndex to -1 for all carousel items', () => {
         component['skipTabForCarouselItems']();
         carouselItems.forEach((item) => {
@@ -619,15 +630,15 @@ describe('Carousel Component', () => {
         });
       });
 
-      it('should restore tabIndex to 0 after a short delay', (done) => {
+      it('should restore tabIndex to 0 after a short delay', fakeAsync(() => {
         component['skipTabForCarouselItems']();
-        setTimeout(() => {
-          carouselItems.forEach((item) => {
-            expect(item.tabIndex).toBe(0);
-          });
-          done();
-        }, 100);
-      });
+
+        tick(100);
+
+        carouselItems.forEach((item) => {
+          expect(item.tabIndex).toBe(0);
+        });
+      }));
     });
   });
 });
