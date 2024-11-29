@@ -130,7 +130,29 @@ export class CardComponent implements OnInit {
     // Intentional empty method
   }
 
+  /**
+   * ariaDescribedBy: Computes the value for the 'aria-describedby' attribute.
+   * If `content` has a `title`, it returns a string including the title and container IDs, with index if available.
+   * If no title, it returns only the container ID with the index if available.
+   *
+   * @returns {string} The 'aria-describedby' value.
+   */
   protected get ariaDescribedBy() {
-    return `cx-card-container-${this.index}`;
+    if (this.content && this.content.title) {
+      return `${this.getLabel('content-title')} ${this.getLabel('cx-card-container')}`;
+    }
+
+    return `${this.getLabel('cx-card-container')}`;
+  }
+
+  /**
+   * getLabel: Computes a label string by concatenating the provided prefix with the index.
+   * If the index is greater than or equal to 0, it appends the index to the prefix; otherwise, it just returns the prefix.
+   *
+   * @param {string} prefix - The string to prefix to the label.
+   * @returns {string} The computed label, including the index if it's available.
+   */
+  protected getLabel(prefix: string): string {
+    return prefix + (this.index >= 0 ? '-' + this.index : '');
   }
 }

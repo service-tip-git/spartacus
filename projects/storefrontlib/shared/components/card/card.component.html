@@ -2,10 +2,7 @@
   *ngIf="content"
   class="cx-card"
   [tabindex]="border ? 0 : -1"
-  [attr.role]="content.role ?? null"
-  [attr.aria-label]="
-    content.label ? (content.label | cxTranslate: { number: this.index }) : null
-  "
+  [attr.aria-labelledby]="getLabel('content-header')"
   [attr.aria-describedby]="ariaDescribedBy"
   [class.cx-card-border]="border"
   [class.cx-card-fit-to-container]="fitToContainer"
@@ -14,7 +11,7 @@
   <div
     *ngIf="content.header && !editMode"
     class="card-header"
-    [id]="'content-header' + (index >= 0 ? '-' + index : '')"
+    [id]="getLabel('content-header')"
   >
     {{ content.header }}
   </div>
@@ -25,11 +22,15 @@
       {{ content.deleteMsg }}
     </div>
     <!-- Card title -->
-    <span *ngIf="content.title" class="cx-card-title">
+    <span
+      *ngIf="content.title"
+      class="cx-card-title"
+      [id]="getLabel('content-title')"
+    >
       {{ content.title }}
     </span>
     <!-- Card Content -->
-    <div class="cx-card-container" [id]="ariaDescribedBy">
+    <div class="cx-card-container" [id]="getLabel('cx-card-container')">
       <!-- Card Label -->
       <div class="cx-card-label-container">
         <div *ngIf="content.textBold" class="cx-card-label-bold">
