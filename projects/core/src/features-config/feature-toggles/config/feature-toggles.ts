@@ -396,6 +396,7 @@ export interface FeatureTogglesInterface {
    * 2. `QuickOrderFormComponent` - search combobox options are not truncated
    * 3. `BreadcrumbComponent` - breadcrumb heading is not truncated
    * 4. `CheckoutProgressMobileTopComponent` - checkout step names do not have huge vertical white space
+   * 5. 'UnitLevelOrderHistoryComponent' - sorting dropdown options will not be truncated
    */
   a11yTruncatedTextForResponsiveView?: boolean;
 
