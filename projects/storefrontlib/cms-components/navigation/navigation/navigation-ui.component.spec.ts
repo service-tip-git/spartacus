@@ -464,11 +464,10 @@ describe('Navigation UI Component', () => {
     }));
   });
 
-  describe('trigger buttions ariaLabel/ariaDescribedby', () => { 
-
+  describe('trigger buttions ariaLabel/ariaDescribedby', () => {
     it('should have the ariaLabel set and ommit the ariaDescribedby attribute per default', () => {
       fixture.detectChanges();
-      const nestedTriggerButton= fixture.debugElement.query(
+      const nestedTriggerButton = fixture.debugElement.query(
         By.css('button[aria-label="Child 1"]')
       ).nativeElement;
       const rootTriggerButton = fixture.debugElement.query(
@@ -477,15 +476,17 @@ describe('Navigation UI Component', () => {
 
       expect(nestedTriggerButton).toBeDefined();
       expect(rootTriggerButton).toBeDefined();
-      expect(nestedTriggerButton.getAttribute('aria-describedby')).toEqual(null);
+      expect(nestedTriggerButton.getAttribute('aria-describedby')).toEqual(
+        null
+      );
       expect(rootTriggerButton.getAttribute('aria-describedby')).toEqual(null);
     });
 
     it('should have the ariaDescribedby set and ommit the ariaLabel attribute when inside of "HeaderLinks" navigation', () => {
       navigationComponent['isHeadersLinksSlotNavigation'] = true;
       fixture.detectChanges();
-      
-      const nestedTriggerButton= fixture.debugElement.query(
+
+      const nestedTriggerButton = fixture.debugElement.query(
         By.css('button[aria-describedby="greeting"]')
       ).nativeElement;
       const rootTriggerButton = fixture.debugElement.query(
@@ -497,6 +498,5 @@ describe('Navigation UI Component', () => {
       expect(nestedTriggerButton.getAttribute('aria-label')).toEqual(null);
       expect(rootTriggerButton.getAttribute('aria-label')).toEqual(null);
     });
-
-   })
+  });
 });
