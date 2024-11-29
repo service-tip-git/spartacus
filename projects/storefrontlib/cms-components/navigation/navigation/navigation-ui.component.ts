@@ -409,7 +409,7 @@ export class NavigationUIComponent implements OnInit, OnDestroy {
   }
 
   get isHeadersLinksSlotNavigation() {
-    return this.parentPageSlot.position === 'HeaderLinks';
+    return this.parentPageSlot?.position === 'HeaderLinks';
   }
 
   get ariaDescribedby() {
