@@ -76,7 +76,6 @@ export class NavigationUIComponent implements OnInit, OnDestroy, AfterViewInit {
   private subscriptions = new Subscription();
   private resize = new EventEmitter();
   private isHeadersLinksSlotNavigation = false;
-  // private pageSlot;
   protected arrowControls: Subject<KeyboardEvent> = new Subject();
 
   @HostListener('window:resize')
