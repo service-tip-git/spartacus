@@ -309,7 +309,7 @@ if (environment.cpq) {
         productConfiguratorDeltaRendering: true,
         a11yRequiredAsterisks: true,
         a11yQuantityOrderTabbing: true,
-        a11yNavigationUiKeyboardControls: false,
+        a11yNavigationUiKeyboardControls: true,
         a11yNavMenuExpandStateReadout: true,
         a11yOrderConfirmationHeadingOrder: true,
         a11yStarRating: true,
