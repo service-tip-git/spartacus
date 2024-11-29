@@ -181,6 +181,8 @@
       "cxMinOneDigit": "Password must contain at least one digit",
       "cxMinOneSpecialCharacter": "Password must contain at least one special character",
       "cxMinSixCharactersLength": "Password must contain at least 6 characters",
+      "cxMinEightCharactersLength": "Password must contain at least 8 characters",
+      "cxMaxCharactersLength": "Password cannot have more than 128 characters",
       "cxContainsSpecialCharacters": "Password cannot contain special characters",
       "cxNoConsecutiveCharacters": "Password cannot contain consecutive identical characters",
       "date": {

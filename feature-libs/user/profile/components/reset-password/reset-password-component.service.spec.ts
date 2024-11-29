@@ -141,8 +141,8 @@ describe('ResetPasswordComponentService', () => {
   describe('reset', () => {
     describe('success', () => {
       beforeEach(() => {
-        password.setValue('Qwe123!');
-        passwordConfirm.setValue('Qwe123!');
+        password.setValue('QwePas123!');
+        passwordConfirm.setValue('QwePas123!');
       });
 
       it('should reset password', () => {
@@ -150,7 +150,7 @@ describe('ResetPasswordComponentService', () => {
         service.resetPassword(resetToken);
         expect(userPasswordService.reset).toHaveBeenCalledWith(
           resetToken,
-          'Qwe123!'
+          'QwePas123!'
         );
       });
 
@@ -177,8 +177,8 @@ describe('ResetPasswordComponentService', () => {
     describe('error', () => {
       describe('valid form', () => {
         beforeEach(() => {
-          password.setValue('Qwe123!');
-          passwordConfirm.setValue('Qwe123!');
+          password.setValue('QwePas123!');
+          passwordConfirm.setValue('QwePas123!');
         });
 
         it('should show error message', () => {
@@ -239,7 +239,8 @@ describe('ResetPasswordComponentService', () => {
         cxMinOneDigit: true,
         cxMinOneUpperCaseCharacter: true,
         cxMinOneSpecialCharacter: true,
-        cxMinSixCharactersLength: true,
+        cxMinEightCharactersLength: true,
+        cxMaxCharactersLength: true,
       });
     });
   });
