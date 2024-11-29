@@ -63,7 +63,7 @@ export class OrderDetailsService {
   }
 
 /**
- * Return cart's pickup entry groups
+ * Return order's pickup entry groups
  */
   getPickupEntryGroups(): Observable<OrderEntryGroup[]> {
     return this.getFilteredEntryGroups(
@@ -71,7 +71,7 @@ export class OrderDetailsService {
     );
   }
   /**
-   * Return cart's delivery entry groups
+   * Return order's delivery entry groups
    */
   getDeliveryEntryGroups(): Observable<OrderEntryGroup[]> {
     return this.getFilteredEntryGroups(

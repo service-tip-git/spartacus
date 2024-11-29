@@ -18,6 +18,7 @@ import {
   CartOutlets,
   DeliveryMode,
   OrderEntry,
+  OrderEntryGroup,
 } from '@spartacus/cart/base/root';
 import { Address, TranslationService } from '@spartacus/core';
 import {
@@ -26,9 +27,10 @@ import {
   deliveryAddressCard,
   deliveryModeCard,
 } from '@spartacus/order/root';
-import { Card, OutletContextData } from '@spartacus/storefront';
+import { Card, HierarchyComponentService, HierarchyNode, OutletContextData } from '@spartacus/storefront';
 import { Observable, Subscription, combineLatest, of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
+import { OrderDetailsService } from '../../order-details/order-details.service';
 
 @Component({
   selector: 'cx-order-confirmation-shipping',
@@ -36,6 +38,8 @@ import { map, tap } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OrderConfirmationShippingComponent implements OnInit, OnDestroy {
+  // private featureConfig = inject(FeatureConfigService);
+
   @Input() showItemList: boolean = true;
 
   readonly cartOutlets = CartOutlets;
@@ -55,10 +59,15 @@ export class OrderConfirmationShippingComponent implements OnInit, OnDestroy {
 
   protected subscription = new Subscription();
 
+  entryGroups$: Observable<OrderEntryGroup[]> = of([]);
+  bundles$: Observable<HierarchyNode[]>;
+
   constructor(
     protected orderFacade: OrderFacade,
     protected translationService: TranslationService,
     protected cd: ChangeDetectorRef,
+    protected orderDetailsService: OrderDetailsService,
+    protected hierachyService: HierarchyComponentService,
     @Optional()
     protected outlet?: OutletContextData<{
       showItemList?: boolean;
@@ -78,6 +87,20 @@ export class OrderConfirmationShippingComponent implements OnInit, OnDestroy {
         this.cd.markForCheck();
       })
     );
+
+    // if (this.featureConfig.isEnabled('enableBundles')) {
+    //   // All entryGroups from order
+    //   this.entryGroups$ = this.orderDetailsService.getDeliveryEntryGroups();
+    //   this.hierachyService.getEntriesFromGroups(this.entryGroups$)
+    //   .pipe(
+    //     tap((result) => {
+    //       this.entries = result.length > 0 ? result : undefined;;
+    //     })
+    //   ).subscribe();
+    //   this.bundles$ = this.hierachyService.getBundlesFromGroups(
+    //     this.entryGroups$
+    //   );
+    // }
   }
 
   getDeliveryAddressCard(

@@ -38,6 +38,30 @@
         }"
       >
       </ng-template>
+      <ng-container *cxFeature="'enableBundles'">
+        <ng-container *ngFor="let bundle of bundles$ | async">
+          <cx-hierarchy
+            [options]="{
+              tree: bundle,
+              template: bundlesTemplate,
+              titleReadonly: true,
+              collasibleReadonly: true,
+            }"
+          >
+          </cx-hierarchy>
+        </ng-container>
+      </ng-container>
     </div>
   </ng-container>
 </div>
+
+<ng-template #bundlesTemplate let-items>
+  <ng-template
+    [cxOutlet]="cartOutlets.CART_ITEM_LIST"
+    [cxOutletContext]="{
+      items: items,
+      hasHeader: false,
+      readonly: true,
+    }"
+  />
+</ng-template>
