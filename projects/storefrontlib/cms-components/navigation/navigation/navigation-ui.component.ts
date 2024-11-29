@@ -404,15 +404,15 @@ export class NavigationUIComponent implements OnInit, OnDestroy {
     return depth > 0 && !node?.children ? -1 : 0;
   }
 
+  ariaLabel(node: NavigationNode) {
+    return !this.isHeadersLinksSlotNavigation ? node.title : undefined;
+  }
+
   get isHeadersLinksSlotNavigation() {
     return this.parentPageSlot.position === 'HeaderLinks';
   }
 
   get ariaDescribedby() {
     return this.isHeadersLinksSlotNavigation ? 'greeting' : undefined;
-  }
-
-  get ariaLabel() {
-    return !this.isHeadersLinksSlotNavigation ? this.node?.title : undefined;
   }
 }
