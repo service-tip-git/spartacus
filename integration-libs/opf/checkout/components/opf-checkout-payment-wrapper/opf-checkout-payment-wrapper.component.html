@@ -13,7 +13,7 @@
 
 <ng-template #paymentData let-paymentLink="paymentLink">
   <div>
-    <ng-container *ngIf="paymentLink?.destination?.url && !paymentLink?.html">
+    <ng-container *ngIf="paymentLink?.destination?.url">
       <div
         *ngIf="
           paymentLink.renderType === RENDER_PATTERN.FULL_PAGE &&
