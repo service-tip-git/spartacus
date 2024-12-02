@@ -150,17 +150,6 @@ export class OpfCheckoutPaymentWrapperService {
   }
 
   renderPaymentGateway(config: OpfPaymentSessionData) {
-    if (config?.destination) {
-      this.renderPaymentMethodEvent$.next({
-        isLoading: false,
-        isError: false,
-        renderType: config?.pattern,
-        data: config?.destination.url,
-        destination: config?.destination,
-      });
-      return;
-    }
-
     if (config?.dynamicScript) {
       const html = config?.dynamicScript?.html;
 
@@ -174,7 +163,7 @@ export class OpfCheckoutPaymentWrapperService {
             isLoading: false,
             isError: false,
             renderType: config?.pattern,
-            data: html,
+            html,
           });
 
           if (html) {
@@ -186,11 +175,16 @@ export class OpfCheckoutPaymentWrapperService {
         });
       return;
     }
-    this.handlePaymentInitiationError({
-      message: 'Payment Configuration problem',
-    })
-      .pipe(take(1))
-      .subscribe();
+    if (config?.destination) {
+      this.renderPaymentMethodEvent$.next({
+        isLoading: false,
+        isError: false,
+        renderType: config?.pattern,
+        destination: config?.destination,
+      });
+      return;
+    }
+    this.handleGeneralPaymentError().pipe(take(1)).subscribe();
   }
 
   protected handlePaymentInitiationError(

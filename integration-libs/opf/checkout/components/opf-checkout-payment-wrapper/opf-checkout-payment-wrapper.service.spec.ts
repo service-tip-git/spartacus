@@ -300,7 +300,6 @@ describe('OpfCheckoutPaymentWrapperService', () => {
       isLoading: false,
       isError: false,
       renderType: OpfPaymentRenderPattern.FULL_PAGE,
-      data: mockUrl,
       destination: { url: mockUrl, form: [] },
     });
   });
@@ -349,7 +348,6 @@ describe('OpfCheckoutPaymentWrapperService', () => {
       isLoading: false,
       isError: false,
       renderType: OpfPaymentRenderPattern.IFRAME,
-      data: mockUrl,
       destination: { url: mockUrl, form: mockFormData },
     });
   });
@@ -400,7 +398,7 @@ describe('OpfCheckoutPaymentWrapperService', () => {
         isLoading: false,
         isError: false,
         renderType: OpfPaymentRenderPattern.HOSTED_FIELDS,
-        data: '<html></html>',
+        html: '<html></html>',
       });
       done();
     });
