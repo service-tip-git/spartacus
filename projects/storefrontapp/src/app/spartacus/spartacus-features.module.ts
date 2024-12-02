@@ -78,10 +78,9 @@ import { CpqQuoteFeatureModule } from './features/cpq-quote/cpq-quote-feature.mo
 import { CustomerTicketingFeatureModule } from './features/customer-ticketing/customer-ticketing-feature.module';
 import { DigitalPaymentsFeatureModule } from './features/digital-payments/digital-payments-feature.module';
 import { EpdVisualizationFeatureModule } from './features/epd-visualization/epd-visualization-feature.module';
-import { QuoteFeatureModule } from './features/quote-feature.module';
-import { OpfFeatureModule } from './features/opf/opf-feature.module';
 import { EstimatedDeliveryDateFeatureModule } from './features/estimated-delivery-date/estimated-delivery-date-feature.module';
 import { OmfFeatureModule } from './features/omf/omf-feature.module';
+import { OpfFeatureModule } from './features/opf/opf-feature.module';
 import { OppsFeatureModule } from './features/opps/opps-feature.module';
 import { OrderFeatureModule } from './features/order/order-feature.module';
 import { AccountSummaryFeatureModule } from './features/organization/organization-account-summary-feature.module';
@@ -99,6 +98,7 @@ import { FutureStockFeatureModule } from './features/product/product-future-stoc
 import { ImageZoomFeatureModule } from './features/product/product-image-zoom-feature.module';
 import { VariantsFeatureModule } from './features/product/product-variants-feature.module';
 import { QualtricsFeatureModule } from './features/qualtrics/qualtrics-feature.module';
+import { QuoteFeatureModule } from './features/quote-feature.module';
 import { OrganizationUserRegistrationFeatureModule } from './features/registration-feature.module';
 import { RequestedDeliveryDateFeatureModule } from './features/requested-delivery-date/requested-delivery-date-feature.module';
 import { S4ServiceFeatureModule } from './features/s4-service/s4-service-feature.module';
@@ -391,8 +391,10 @@ if (environment.cpq) {
         a11yItemCounterFocus: true,
         a11yScrollToReviewByShowReview: true,
         a11yViewHoursButtonIconContrast: true,
+        a11yStoreInStockIconContrast: true,
         a11yCheckoutStepsLandmarks: true,
         a11yQTY2Quantity: true,
+        a11yImproveButtonsInCardComponent: true,
         a11yApprovalProcessWithNoClearable: true,
         a11yPostRegisterSuccessMessage: true,
         a11yDeleteButton2First: true,
@@ -401,16 +403,18 @@ if (environment.cpq) {
         a11yCroppedFocusRing: true,
         a11yTextSpacingAdjustments: true,
         a11yTableHeaderReadout: true,
+        a11ySearchboxAssistiveMessage: true,
+        a11yDifferentiateFocusedAndSelected: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
         useSiteThemeService: false,
         enableConsecutiveCharactersPasswordRequirement: true,
         enablePasswordsCannotMatchInPasswordUpdateForm: true,
         allPageMetaResolversEnabledInCsr: true,
         a11yPdpGridArrangement: true,
-        sciEnabled: true,
         useExtendedMediaComponentConfiguration: true,
         showRealTimeStockInPDP: false,
         a11yWrapReviewOrderInSection: true,
+        enableSecurePasswordValidation: true,
       };
       return appFeatureToggles;
     }),

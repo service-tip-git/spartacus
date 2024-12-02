@@ -45,6 +45,14 @@ export class OpfResourceLoaderService {
       );
       link.crossOrigin = corsKeyvalue?.value ?? 'anonymous';
     }
+    if (attributes?.length) {
+      attributes.forEach((attribute) => {
+        const { key, value } = attribute;
+        if (!(key in link)) {
+          link.setAttribute(key, value);
+        }
+      });
+    }
 
     if (callback) {
       link.addEventListener('load', callback);
@@ -100,6 +108,7 @@ export class OpfResourceLoaderService {
           attributes: attributes,
           callback: () => resolve(),
           errorCallback: () => reject(),
+          disableKeyRestriction: true,
         });
       } else {
         resolve();
@@ -198,8 +207,6 @@ export class OpfResourceLoaderService {
       }
     );
 
-    return Promise.all(resourcesPromises)
-      .then(() => {})
-      .catch(() => {});
+    return Promise.all(resourcesPromises).then(() => {});
   }
 }

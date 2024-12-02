@@ -207,7 +207,7 @@ describe('PaymentMethodsComponent', () => {
         .textContent;
     }
     function getDeleteButton(elem: DebugElement): any {
-      return elem.query(By.css('cx-card .link')).nativeElement;
+      return elem.query(By.css('cx-card .btn')).nativeElement;
     }
     function getCancelButton(elem: DebugElement): DebugElement {
       return elem.query(By.css('cx-card .btn-secondary'));
@@ -227,7 +227,7 @@ describe('PaymentMethodsComponent', () => {
     spyOn(userService, 'deletePaymentMethod').and.stub();
 
     function getDeleteButton(elem: DebugElement): any {
-      return elem.query(By.css('cx-card .link')).nativeElement;
+      return elem.query(By.css('cx-card .btn')).nativeElement;
     }
     function getConfirmButton(elem: DebugElement): DebugElement {
       return elem.query(By.css('cx-card .btn-primary'));
@@ -251,7 +251,7 @@ describe('PaymentMethodsComponent', () => {
     spyOn(userService, 'setPaymentMethodAsDefault').and.stub();
 
     function getSetDefaultButton(elem: DebugElement): any {
-      return elem.queryAll(By.css('cx-card .link'))[1].nativeElement;
+      return elem.queryAll(By.css('cx-card .btn'))[1].nativeElement;
     }
     component.ngOnInit();
     fixture.detectChanges();

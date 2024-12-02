@@ -21,6 +21,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { ICON_TYPE } from '../../../cms-components/misc/icon/icon.model';
 import { CarouselService } from './carousel.service';
+import { disableTabbingForTick } from '../../../layout/a11y';
 
 /**
  * Generic carousel component that can be used to render any carousel items,
@@ -111,14 +112,37 @@ export class CarouselComponent implements OnInit, OnChanges {
   }
 
   onItemKeydown(event: KeyboardEvent, size: number): void {
-    if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
-      event.preventDefault();
-      this.focusNextPrevItem(
-        event.target,
-        event.key === 'ArrowRight' ? 1 : -1,
-        size
-      );
+    switch (event.key) {
+      case 'ArrowRight':
+      case 'ArrowLeft':
+        event.preventDefault();
+        this.focusNextPrevItem(
+          event.target,
+          event.key === 'ArrowRight' ? 1 : -1,
+          size
+        );
+        break;
+      case 'Tab':
+        this.skipTabForCarouselItems();
+        break;
     }
+  }
+
+  /**
+   * Handles Tab key on carousel items. If the carousel items have `ArrowRight`/`ArrowLeft`
+   * navigation enabled, it temporarily disables tab navigation for these items.
+   * The `cxFocusableCarouselItem` selector is used because it identifies carousel
+   * items that have `ArrowRight`/`ArrowLeft` navigation enabled. These items should not
+   * use tab navigation according to a11y requirements.
+   */
+  protected skipTabForCarouselItems(): void {
+    const carouselElements: HTMLElement[] = Array.from(
+      this.el.nativeElement.querySelectorAll('[cxFocusableCarouselItem]')
+    );
+    if (!carouselElements.length) {
+      return;
+    }
+    disableTabbingForTick(carouselElements);
   }
 
   /**
