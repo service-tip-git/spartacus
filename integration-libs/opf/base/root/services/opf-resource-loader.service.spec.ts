@@ -175,10 +175,12 @@ describe('OpfResourceLoaderService', () => {
 
     it('should mark resource as loaded when style is successfully loaded', fakeAsync(() => {
       const mockStylesResources = {
-        attributes: [{ key: 'crossorigin', value: 'use-credentials' }],
         url: 'style-url',
         sri: 'fake-hash-code',
-        attributes: [{ key: 'mock-key', value: 'mock-value' }],
+        attributes: [
+          { key: 'mock-key', value: 'mock-value' },
+          { key: 'crossorigin', value: 'use-credentials' },
+        ],
         type: OpfDynamicScriptResourceType.STYLES,
       };
 
