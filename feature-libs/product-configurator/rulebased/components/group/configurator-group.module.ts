@@ -28,6 +28,7 @@ import { ConfiguratorAttributeSingleSelectionImageModule } from '../attribute/ty
 import { ConfiguratorConflictDescriptionModule } from '../conflict-description/configurator-conflict-description.module';
 import { ConfiguratorConflictSuggestionModule } from '../conflict-suggestion/configurator-conflict-suggestion.module';
 import { ConfiguratorGroupComponent } from './configurator-group.component';
+import { ConfiguratorAttributeDropDownLazyLoadModule } from '../attribute/types/drop-down-lazy-load/configurator-attribute-drop-down-lazy-load.module';
 
 @NgModule({
   imports: [
@@ -50,6 +51,7 @@ import { ConfiguratorGroupComponent } from './configurator-group.component';
     ConfiguratorAttributeCheckboxModule,
     ConfiguratorAttributeCheckboxListModule,
     ConfiguratorAttributeDropDownModule,
+    ConfiguratorAttributeDropDownLazyLoadModule,
     ConfiguratorAttributeMultiSelectionImageModule,
     ConfiguratorConflictDescriptionModule,
     ConfiguratorConflictSuggestionModule,

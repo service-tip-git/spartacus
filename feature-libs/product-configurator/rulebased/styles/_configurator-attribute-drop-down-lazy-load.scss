@@ -1,0 +1,24 @@
+%cx-configurator-attribute-drop-down-lazy-load {
+  @include cx-configurator-attribute-type();
+
+  button {
+    background-color: transparent;
+    border: none;
+    display: inline-block;
+    outline-offset: 0px;
+    text-decoration: underline;
+    color: var(--cx-color-text);
+
+    @include forFeature('productConfiguratorAttributeTypesV2') {
+      padding-inline-start: 0;
+    }
+
+    &:hover {
+      color: var(--cx-color-primary);
+    }
+  }
+  cx-configurator-attribute-read-only {
+    white-space: nowrap;
+    margin-left: 0px;
+  }
+}

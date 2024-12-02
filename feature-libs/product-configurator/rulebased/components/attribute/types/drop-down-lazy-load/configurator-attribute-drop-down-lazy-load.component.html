@@ -1,0 +1,9 @@
+<cx-configurator-attribute-read-only
+  *ngIf="!isLoaded"
+></cx-configurator-attribute-read-only>
+
+<button *ngIf="!isLoaded" (click)="loadDomain()">Load All Options</button>
+
+<cx-configurator-attribute-drop-down
+  *ngIf="isLoaded"
+></cx-configurator-attribute-drop-down>

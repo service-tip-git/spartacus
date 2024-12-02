@@ -14,6 +14,7 @@ export * from './types/base/index';
 export * from './types/checkbox-list/index';
 export * from './types/checkbox/index';
 export * from './types/drop-down/index';
+export * from './types/drop-down-lazy-load/index';
 export * from './types/input-field/index';
 export * from './types/multi-selection-bundle/index';
 export * from './types/multi-selection-image/index';

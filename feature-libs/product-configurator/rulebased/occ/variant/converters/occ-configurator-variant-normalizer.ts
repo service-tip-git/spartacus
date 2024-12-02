@@ -342,7 +342,7 @@ export class OccConfiguratorVariantNormalizer
         break;
       }
       case OccConfigurator.UiType.DROPDOWN: {
-        uiType = Configurator.UiType.DROPDOWN;
+        uiType = Configurator.UiType.DROPDOWN_LAZYLOAD;
         break;
       }
       case OccConfigurator.UiType.DROPDOWN_ADDITIONAL_INPUT: {

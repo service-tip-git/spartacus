@@ -223,6 +223,7 @@ export namespace Configurator {
     CHECKBOX = 'checkBox',
     CHECKBOXLIST = 'checkBoxList',
     DROPDOWN = 'dropdown',
+    DROPDOWN_LAZYLOAD = 'dropdown_lazy',
     DROPDOWN_ADDITIONAL_INPUT = 'dropdown_add',
     LISTBOX = 'listbox',
     LISTBOX_MULTI = 'listboxmulti',
