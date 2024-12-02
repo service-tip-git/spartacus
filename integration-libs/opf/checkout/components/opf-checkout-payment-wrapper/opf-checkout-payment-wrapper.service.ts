@@ -149,6 +149,15 @@ export class OpfCheckoutPaymentWrapperService {
     }
   }
 
+  /**
+   * Render payment option covering the three patterns: IFRAME, FULL_PAGE, HOSTED_FIELDS.
+   * Context to explain this method logic:
+   * All three patterns can contains `dynamicScript` value.
+   * IFRAME and FULL_PAGE patterns can also have `destination` value.
+   * if `dynamicScript` and `destination` are present in same config, dynamicScript takes precendence.
+   * @param config
+   * @returns : none, OpfPaymentRenderMethodEvent gets emitted
+   */
   renderPaymentGateway(config: OpfPaymentSessionData) {
     if (config?.dynamicScript) {
       const html = config?.dynamicScript?.html;
