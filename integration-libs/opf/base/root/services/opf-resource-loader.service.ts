@@ -94,7 +94,6 @@ export class OpfResourceLoaderService {
           );
         attributes['crossOrigin'] =
           corsKeyvalue?.value ?? this.CORS_DEFAULT_VALUE;
-
         attributes['integrity'] = resource.sri;
       }
 
