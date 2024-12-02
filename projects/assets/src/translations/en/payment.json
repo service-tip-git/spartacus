@@ -14,6 +14,7 @@
     "saveAsDefault": "Save as default",
     "setAsDefault": "Set as default payment method",
     "billingAddress": "Billing address",
+    "editBillingAddress": "Edit billing Address",
     "sameAsDeliveryAddress": "Same as delivery address",
     "billingAddressSameAsShipping": "Billing address is the same as delivery address",
     "selectOne": "Select One...",

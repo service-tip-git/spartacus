@@ -17,15 +17,18 @@ import {
   GlobalMessageType,
   PaginationModel,
   QueryState,
+  TranslationService,
 } from '@spartacus/core';
 import {
   OpfActiveConfiguration,
   OpfActiveConfigurationsPagination,
   OpfActiveConfigurationsResponse,
   OpfBaseFacade,
+  OpfConfig,
   OpfMetadataModel,
   OpfMetadataStoreService,
 } from '@spartacus/opf/base/root';
+import { ICON_TYPE } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
@@ -36,6 +39,8 @@ import { tap } from 'rxjs/operators';
 })
 export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
   protected opfBaseService = inject(OpfBaseFacade);
+  protected opfConfig = inject(OpfConfig);
+  protected translation = inject(TranslationService);
   protected opfMetadataStoreService = inject(OpfMetadataStoreService);
   protected globalMessageService = inject(GlobalMessageService);
 
@@ -57,6 +62,8 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
   activeConfigurations$: Observable<
     QueryState<OpfActiveConfigurationsResponse | undefined>
   >;
+
+  iconTypes = ICON_TYPE;
 
   getActiveConfigurations(): Observable<
     QueryState<OpfActiveConfigurationsResponse | undefined>
@@ -87,6 +94,21 @@ export class OpfCheckoutPaymentsComponent implements OnInit, OnDestroy {
 
   updateActiveConfiguration() {
     this.activeConfigurations$ = this.getActiveConfigurations();
+  }
+
+  getPaymentInfoMessage(paymentId: number | undefined): Observable<string> {
+    const defaultMessage = 'opfCheckout.defaultPaymentInfoMessage';
+    const translationKey =
+      paymentId && this.opfConfig?.opf?.paymentOption?.paymentInfoMessagesMap
+        ? (this.opfConfig.opf.paymentOption.paymentInfoMessagesMap[paymentId] ??
+          defaultMessage)
+        : defaultMessage;
+
+    return this.translation.translate(translationKey);
+  }
+
+  get isPaymentInfoMessageVisible(): boolean {
+    return Boolean(this.opfConfig?.opf?.paymentOption?.enableInfoMessage);
   }
 
   /**

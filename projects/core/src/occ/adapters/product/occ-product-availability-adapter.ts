@@ -6,7 +6,7 @@
 
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { map, Observable, take } from 'rxjs';
+import { catchError, map, Observable, of, take } from 'rxjs';
 import { ProductAvailabilities } from '../../../model/product.model';
 import { ProductAvailabilityAdapter } from '../../../product/connectors/product/prduct-availability.adapter';
 import { OccEndpointsService } from '../../services/occ-endpoints.service';
@@ -37,7 +37,10 @@ export class OccProductAvailabilityAdapter
       map(
         (availabilities: any) =>
           availabilities?.availabilityItems?.[0]?.unitAvailabilities?.[0] || {}
-      )
+      ),
+      catchError(() => {
+        return of({});
+      })
     );
   }
 }
