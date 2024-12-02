@@ -24,58 +24,59 @@
     </div>
   </ng-template>
 
-  <ng-container *cxFeature="'enableBundles'">
-    <div class="cx-list-item col-12">
-      <div [ngClass]="standaloneEntries.length === 0 ? 'emptyList' : 'noneEmptyList'">
+  <div class="cx-list-item col-12">
+    <ng-container *cxFeature="'enableBundles'">
+      <div [ngClass]="consignment?.entries?.length === 0 ? 'emptyList' : 'noneEmptyList'">
         <ng-template
-        [cxAbstractOrderContext]="{
-          id: order.code,
-          type: abstractOrderType.ORDER,
-        }"
-        [cxOutlet]="CartOutlets.CART_ITEM_LIST"
-        [cxOutletContext]="{
-          items: standaloneEntries,
-          readonly: true,
-          promotionLocation: promotionLocation,
-        }"
-      >
+          [cxAbstractOrderContext]="{
+            id: order.code,
+            type: abstractOrderType.ORDER,
+          }"
+          [cxOutlet]="CartOutlets.CART_ITEM_LIST"
+          [cxOutletContext]="{
+            items: consignment.entries,
+            readonly: true,
+            promotionLocation: promotionLocation,
+          }"
+        >
         </ng-template>
       </div>
-      <ng-container *ngFor="let bundle of bundles$ | async">
+      <ng-container *ngFor="let bundle of consignment.hierachyTrees">
         <cx-hierarchy
-        [options]="{
+          [options]="{
           tree: bundle,
           template: bundlesTemplate,
           titleReadonly: true,
           collasibleReadonly: true,
         }"
-         >
+          >
         </cx-hierarchy>
       </ng-container>
-    </div> 
-  </ng-container>
-  <ng-container *cxFeature="'!enableBundles'">
-    <div class="cx-list-item col-12">
-      <ng-template
-        [cxAbstractOrderContext]="{
-          id: order.code,
-          type: abstractOrderType.ORDER,
-        }"
-        [cxOutlet]="CartOutlets.CART_ITEM_LIST"
-        [cxOutletContext]="{
-          items: consignment.entries,
-          readonly: true,
-          promotionLocation: promotionLocation,
-          options: {
-            displayAddToCart: enableAddToCart,
-            addToCartString: buyItAgainTranslation,
-            optionalBtn: addToCartBtn,
-          },
-        }"
-      >
-      </ng-template>
-    </div>
-  </ng-container>
+    </ng-container>
+
+    <ng-container *cxFeature="'!enableBundles'">
+      <div class="cx-list-item col-12">
+        <ng-template
+          [cxAbstractOrderContext]="{
+            id: order.code,
+            type: abstractOrderType.ORDER,
+          }"
+          [cxOutlet]="CartOutlets.CART_ITEM_LIST"
+          [cxOutletContext]="{
+            items: consignment.entries,
+            readonly: true,
+            promotionLocation: promotionLocation,
+            options: {
+              displayAddToCart: enableAddToCart,
+              addToCartString: buyItAgainTranslation,
+              optionalBtn: addToCartBtn,
+            },
+          }"
+        >
+        </ng-template>
+      </div>
+    </ng-container>
+  </div>
 </div>
 
 <ng-template let-ctx #addToCartBtn>

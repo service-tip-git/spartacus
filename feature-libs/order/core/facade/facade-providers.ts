@@ -6,6 +6,7 @@
 
 import { Provider } from '@angular/core';
 import {
+  OrderConsignmentFacade,
   OrderFacade,
   OrderHistoryFacade,
   OrderReturnRequestFacade,
@@ -20,6 +21,7 @@ import { OrderService } from './order.service';
 import { ReorderOrderService } from './reorder-order.service';
 import { ReplenishmentOrderHistoryService } from './replenishment-order-history.service';
 import { ScheduledReplenishmentOrderService } from './scheduled-replenishment-order.service';
+import { OrderConsignmentService } from './order-consignment.service';
 
 export const facadeProviders: Provider[] = [
   OrderReturnRequestService,
@@ -52,5 +54,10 @@ export const facadeProviders: Provider[] = [
   {
     provide: ReorderOrderFacade,
     useExisting: ReorderOrderService,
+  },
+  OrderConsignmentService,
+  {
+    provide: OrderConsignmentFacade,
+    useExisting: OrderConsignmentService,
   },
 ];
