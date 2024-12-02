@@ -176,6 +176,7 @@ describe('OpfResourceLoaderService', () => {
       const mockStylesResources = {
         url: 'style-url',
         sri: 'fake-hash-code',
+        attributes: [{ key: 'mock-key', value: 'mock-value' }],
         type: OpfDynamicScriptResourceType.STYLES,
       };
 

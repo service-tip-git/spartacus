@@ -789,12 +789,6 @@ export interface FeatureTogglesInterface {
   a11yPdpGridArrangement?: boolean;
 
   /**
-   * CDS/ISS is integrated into the SAP Cloud Identity Service (SCI). The downstream services use different domains and URL formats.
-   * This feature toggle can be used to make the CDS module use these new URLs.
-   */
-  sciEnabled?: boolean;
-
-  /**
    * When enabled, allows to provide extended formats and media queries for <picture> element if used in MediaComponent.
    *
    * Important: After activation default HTML element in MediaComponent will be `<img>`
@@ -962,7 +956,6 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   enablePasswordsCannotMatchInPasswordUpdateForm: false,
   allPageMetaResolversEnabledInCsr: false,
   a11yPdpGridArrangement: false,
-  sciEnabled: false,
   useExtendedMediaComponentConfiguration: false,
   showRealTimeStockInPDP: false,
   enableSecurePasswordValidation: false,
