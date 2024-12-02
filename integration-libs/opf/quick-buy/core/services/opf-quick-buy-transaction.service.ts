@@ -176,12 +176,19 @@ export class OpfQuickBuyTransactionService {
   }
 
   deleteUserAddresses(addrIds: string[]): void {
-    this.opfGlobalMessageService.disableGlobalMessage([
-      'addressForm.userAddressDeleteSuccess',
-    ]);
-    addrIds.forEach((addrId) => {
-      this.userAddressService.deleteUserAddress(addrId);
-    });
+    this.authService
+      .isUserLoggedIn()
+      .pipe(take(1))
+      .subscribe((isUserLoggedIn) => {
+        if (isUserLoggedIn) {
+          this.opfGlobalMessageService.disableGlobalMessage([
+            'addressForm.userAddressDeleteSuccess',
+          ]);
+          addrIds.forEach((addrId) => {
+            this.userAddressService.deleteUserAddress(addrId);
+          });
+        }
+      });
   }
 
   createCartGuestUser(): Observable<boolean> {
