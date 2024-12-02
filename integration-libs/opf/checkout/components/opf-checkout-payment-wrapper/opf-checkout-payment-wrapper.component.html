@@ -21,9 +21,15 @@
         "
         class="cx-payment-link"
       >
-        <a class="btn btn-primary" [href]="paymentLink.destination.url">{{
-          'opfCheckout.proceedPayment' | cxTranslate
-        }}</a>
+        <a
+          class="btn btn-primary"
+          [href]="paymentLink.destination.url"
+          [attr.title]="'opfCheckout.proceedPayment' | cxTranslate"
+          [attr.aria-label]="
+            'opfCheckout.proceedPaymentButtonLabel' | cxTranslate
+          "
+          >{{ 'opfCheckout.proceedPayment' | cxTranslate }}</a
+        >
       </div>
       <ng-container
         *ngIf="
@@ -71,7 +77,13 @@
   <ng-container *ngIf="paymentLink?.isError; else loading">
     <div class="cx-payment-option-container">
       <div class="cx-payment-link">
-        <button [ngClass]="'btn btn-primary'" (click)="retryInitiatePayment()">
+        <button
+          [ngClass]="'btn btn-primary'"
+          type="button"
+          (click)="retryInitiatePayment()"
+          [attr.title]="'opfCheckout.retryPayment' | cxTranslate"
+          [attr.aria-label]="'opfCheckout.retryPayment' | cxTranslate"
+        >
           {{ 'opfCheckout.retryPayment' | cxTranslate }}
         </button>
       </div>
