@@ -212,7 +212,7 @@ export interface FeatureTogglesInterface {
   a11yPopoverFocus?: boolean;
 
   /**
-   * Adds Datepicker label and corrects heading order for 'CheckoutScheduleReplenishmentOrderComponent'.
+   * Adds Datepicker and Combobox label and corrects heading order for 'CheckoutScheduleReplenishmentOrderComponent'.
    */
   a11yScheduleReplenishment?: boolean;
 
@@ -516,7 +516,8 @@ export interface FeatureTogglesInterface {
   a11yFacetsDialogFocusHandling?: boolean;
 
   /**
-   * `StorefrontComponent`: Prevents header links from wrapping on smaller screen sizes
+   * `StorefrontComponent`: Prevents header links from wrapping on smaller screen sizes.
+   * Enables support for increased letter-spacing up to 0.12em for header layout
    */
   headerLayoutForSmallerViewports?: boolean;
 
