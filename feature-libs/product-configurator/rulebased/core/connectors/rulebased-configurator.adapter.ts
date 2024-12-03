@@ -34,7 +34,8 @@ export abstract class RulebasedConfiguratorAdapter {
   abstract readConfiguration(
     configId: string,
     groupId: string,
-    configurationOwner: CommonConfigurator.Owner
+    configurationOwner: CommonConfigurator.Owner,
+    attributeKey?: string
   ): Observable<Configurator.Configuration>;
 
   /**

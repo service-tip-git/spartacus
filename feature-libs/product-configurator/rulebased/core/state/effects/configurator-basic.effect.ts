@@ -135,7 +135,8 @@ export class ConfiguratorBasicEffects {
           .readConfiguration(
             action.payload.configuration.configId,
             action.payload.groupId,
-            action.payload.configuration.owner
+            action.payload.configuration.owner,
+            action.payload.attributeKey
           )
           .pipe(
             map(
