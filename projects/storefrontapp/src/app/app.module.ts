@@ -20,11 +20,10 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { translationChunksConfig, translations } from '@spartacus/assets';
 import {
-  I18nConfig,
   OccConfig,
   RoutingConfig,
   TestConfigModule,
-  provideConfig,
+  provideConfig
 } from '@spartacus/core';
 import { StoreFinderConfig } from '@spartacus/storefinder/core';
 import { GOOGLE_MAPS_DEVELOPMENT_KEY_CONFIG } from '@spartacus/storefinder/root';
@@ -75,7 +74,7 @@ if (!environment.production) {
         },
       },
     }),
-    provideConfig(<I18nConfig>{
+    provideConfig({
       // we bring in static translations to be up and running soon right away
       i18n: {
         resources: {

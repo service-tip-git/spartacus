@@ -5,16 +5,20 @@
  */
 
 import { TranslationChunksConfig, TranslationResources } from '@spartacus/core';
-import { en } from './en/index';
-import { ja } from './ja/index';
-import { de } from './de/index';
-import { zh } from './zh/index';
 
 export const asmTranslations: TranslationResources = {
-  en,
-  ja,
-  de,
-  zh,
+  en: {
+    asm: () => import('./en/asm.json'),
+  },
+  de: {
+    asm: () => import('./de/asm.json'),
+  },
+  ja: {
+    asm: () => import('./ja/asm.json'),
+  },
+  zh: {
+    asm: () => import('./zh/asm.json')
+  },
 };
 
 export const asmTranslationChunksConfig: TranslationChunksConfig = {

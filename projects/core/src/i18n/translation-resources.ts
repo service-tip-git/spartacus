@@ -10,7 +10,7 @@ export interface TranslationResourceKey {
 
 export interface TranslationResources {
   [lang: string]: {
-    [chunkName: string]: TranslationResourceKey;
+    [chunkName: string]: (() => Promise<TranslationResourceKey>) | TranslationResourceKey;
   };
 }
 export interface TranslationChunksConfig {

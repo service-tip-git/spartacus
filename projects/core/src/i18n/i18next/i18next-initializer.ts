@@ -35,10 +35,8 @@ export class I18nextInitializer implements OnDestroy {
    */
   initialize(): Promise<any> {
     const i18nextConfig = this.getI18nextConfig();
-    return this.i18next.use(this.loggerPlugin).init(i18nextConfig, () => {
-      // Don't use i18next's 'resources' config key for adding static translations,
-      // because it will disable loading chunks from backend. We add resources here, in the init's callback.
-      this.addTranslationResources();
+    return this.i18next.use(this.loggerPlugin).init(i18nextConfig, async () => {
+      await this.addTranslationResources();
       this.synchronizeLanguage();
     });
   }
@@ -73,19 +71,24 @@ export class I18nextInitializer implements OnDestroy {
    * @param i18next i18next instance
    * @param resources translation resources
    */
-  protected addTranslationResources(): void {
+  protected async addTranslationResources(): Promise<void> {
     const resources: TranslationResources = this.config.i18n?.resources ?? {};
-    Object.keys(resources).forEach((lang) => {
-      Object.keys(resources[lang]).forEach((chunkName) => {
+    for (const lang of Object.keys(resources)) {
+      for (const chunkName of Object.keys(resources[lang])) {
+        const resourceValue = resources[lang][chunkName];
+        const translations = typeof resourceValue === 'function' 
+          ? await resourceValue()
+          : resourceValue;
+        
         this.i18next.addResourceBundle(
           lang,
           chunkName,
-          resources[lang][chunkName],
+          translations,
           true,
           true
         );
-      });
-    });
+      }
+    }
   }
 
   protected subscription: Subscription;
