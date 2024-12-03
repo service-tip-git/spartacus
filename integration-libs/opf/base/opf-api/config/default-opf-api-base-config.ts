@@ -10,7 +10,7 @@ export const defaultOpfApiBaseConfig: OpfApiConfig = {
   backend: {
     opfApi: {
       endpoints: {
-        getActiveConfigurations: 'active-configurations',
+        getActiveConfigurations: 'v2/active-configurations',
       },
     },
   },
