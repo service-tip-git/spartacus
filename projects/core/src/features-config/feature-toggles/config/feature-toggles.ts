@@ -212,7 +212,7 @@ export interface FeatureTogglesInterface {
   a11yPopoverFocus?: boolean;
 
   /**
-   * Adds Datepicker label and corrects heading order for 'CheckoutScheduleReplenishmentOrderComponent'.
+   * Adds Datepicker and Combobox label and corrects heading order for 'CheckoutScheduleReplenishmentOrderComponent'.
    */
   a11yScheduleReplenishment?: boolean;
 
