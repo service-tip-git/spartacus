@@ -307,14 +307,6 @@ export class ConfiguratorCommonsService {
     group: Configurator.Group,
     attribute: Configurator.Attribute
   ) {
-    console.info(
-      'TRIGGER READ DOMAIN: ' +
-        (attribute.key ?? attribute.name) +
-        '(' +
-        owner.key +
-        ')'
-    );
-
     this.store
       .pipe(
         select(ConfiguratorSelectors.getConfigurationFactory(owner.key)),
