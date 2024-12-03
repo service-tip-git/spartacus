@@ -4,7 +4,7 @@
  */
 
 import { TestBed } from '@angular/core/testing';
-import { StatePersistenceService } from '@spartacus/core';
+import { LANGUAGE_CONTEXT_ID, StatePersistenceService } from '@spartacus/core';
 import { BehaviorSubject, of, Subscription } from 'rxjs';
 import { OpfMetadataModel } from '../model';
 import {
@@ -29,7 +29,7 @@ describe('OpfMetadataStatePersistanceService', () => {
   beforeEach(() => {
     statePersistenceServiceMock = jasmine.createSpyObj(
       'StatePersistenceService',
-      ['syncWithStorage']
+      ['syncWithStorage', 'readStateFromStorage']
     );
     opfMetadataStoreServiceMock = jasmine.createSpyObj(
       'OpMetadataStoreService',
@@ -105,5 +105,15 @@ describe('OpfMetadataStatePersistanceService', () => {
     spyOn(Subscription.prototype, 'unsubscribe');
     service.ngOnDestroy();
     expect(Subscription.prototype.unsubscribe).toHaveBeenCalled();
+  });
+
+  it('should `getActiveLanguage` method call `readStateFromStorage`', () => {
+    service.getActiveLanguage();
+
+    expect(
+      statePersistenceServiceMock.readStateFromStorage
+    ).toHaveBeenCalledWith({
+      key: LANGUAGE_CONTEXT_ID,
+    });
   });
 });
