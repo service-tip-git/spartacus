@@ -6,11 +6,11 @@
 # Url of the hybris backend
 # Will replace default host (https://localhost:9002) as a backend endpoint
 # Make sure you specify the full url for the backend (https://[host]:[port]
-BACKEND_URL="https://40.76.109.9:9002"
+BACKEND_URL="https://api.cp96avkh5f-integrati2-s1-public.model-t.cc.commerce.ondemand.com"
 
 # A comma separated list of base sites.
 # When empty, the base sites will not be explicitly specified in spartacus-configuration.module.ts
-BASE_SITE=
+BASE_SITE="electronics-spa"
 
 OCC_PREFIX="/occ/v2/"
 
@@ -51,7 +51,7 @@ SPARTACUS_PROJECTS=(
         )
 
 SPARTACUS_REPO_URL="https://github.com/SAP/spartacus.git"
-BRANCH='develop-next-major'
+BRANCH='feature/asx1_develop'
 
 # custom location for the installation output
 # BASE_DIR='/tmp/'
@@ -82,19 +82,17 @@ ADD_OPPS=false
 ADD_EPD_VISUALIZATION=false
 ADD_S4OM=false
 # config.opf.sh contains default values to use in your config.sh when ADD_OPF is true.
-ADD_OPF=false
+ADD_OPF=true
+OPF_BASE_URL="https://opf-iss-d0.opf.commerce.stage.context.cloud.sap/commerce-cloud-adapter/storefront"
+OPF_CLIENT_PUBLIC_KEY="ab4RhYGZ+w5B0SALMPOPlepWk/kmDQjTy2FU5hrQoFg="
+OPF_QUICK_BUY_GOOGLE_PAY_RESOURCE_URL="https://pay.google.com/gp/p/js/pay.js"
+
 ADD_CPQ_QUOTE=false
 ADD_S4_SERVICE=false
 ADD_PRODUCT_MULTI_DIMENSIONAL=false
 
 # The base URL (origin) of the SAP EPD Visualization Fiori launchpad
 EPD_VISUALIZATION_BASE_URL=
-
-# The base URL and public key values are required for connection to Cloud Commerce Adapter (OPF)
-OPF_BASE_URL=
-OPF_CLIENT_PUBLIC_KEY=
-# Google Pay Api url required for Quick Buy Google Pay integration.
-OPF_QUICK_BUY_GOOGLE_PAY_RESOURCE_URL=
 
 #NPM connection info
 #NPM_URL must start by 'https://' and end with '/' char
