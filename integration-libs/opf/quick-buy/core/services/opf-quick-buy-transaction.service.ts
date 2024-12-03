@@ -22,6 +22,7 @@ import {
   Address,
   AuthService,
   BaseSiteService,
+  OCC_USER_ID_ANONYMOUS,
   QueryState,
   RoutingService,
   UserAddressService,
@@ -206,6 +207,49 @@ export class OpfQuickBuyTransactionService {
           );
       })
     );
+  }
+
+  changeGuestCartToAnonymous(): void {
+    combineLatest([
+      this.activeCartFacade.getActive(),
+      this.activeCartFacade.getEntries(),
+    ])
+      .pipe(
+        take(1),
+        switchMap(([cart, entries]) => {
+          this.multiCartFacade.deleteCart(
+            cart.guid as string,
+            OCC_USER_ID_ANONYMOUS
+          );
+
+          const entriesToAdd = entries.map((entry) => ({
+            productCode: entry.product?.code ?? '',
+            quantity: entry.quantity ?? 0,
+          }));
+
+          return this.multiCartFacade
+            .createCart({
+              userId: OCC_USER_ID_ANONYMOUS,
+              extraData: {
+                active: true,
+              },
+            })
+            .pipe(
+              map((createdCart) => ({
+                createdCart,
+                entriesToAdd,
+              }))
+            );
+        }),
+        take(1)
+      )
+      .subscribe(({ createdCart, entriesToAdd }) => {
+        this.multiCartFacade.addEntries(
+          OCC_USER_ID_ANONYMOUS,
+          createdCart.guid as string,
+          entriesToAdd
+        );
+      });
   }
 
   protected updateCartGuestUser(

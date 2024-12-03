@@ -6,7 +6,12 @@
 
 /// <reference types="@types/googlepay" />
 import { ElementRef, Injectable, inject } from '@angular/core';
-import { Cart, DeliveryMode } from '@spartacus/cart/base/root';
+import {
+  ActiveCartFacade,
+  Cart,
+  DeliveryMode,
+  MultiCartFacade,
+} from '@spartacus/cart/base/root';
 import { Address } from '@spartacus/core';
 
 import {
@@ -49,6 +54,9 @@ export class OpfGooglePayService {
   private googlePaymentClientOptions: google.payments.api.PaymentOptions = {
     environment: 'TEST',
   };
+
+  multiCartFacade = inject(MultiCartFacade);
+  activeCartFacade = inject(ActiveCartFacade);
 
   private initialGooglePaymentRequest: google.payments.api.PaymentDataRequest =
     {
@@ -337,6 +345,7 @@ export class OpfGooglePayService {
           .catch((err: any) => {
             // If err.statusCode === 'CANCELED' it means that customer closed popup
             if (err.statusCode === 'CANCELED') {
+              this.opfQuickBuyTransactionService.changeGuestCartToAnonymous();
               this.deleteAssociatedAddresses();
             }
           });
