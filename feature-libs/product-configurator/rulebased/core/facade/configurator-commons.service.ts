@@ -302,6 +302,35 @@ export class ConfiguratorCommonsService {
     );
   }
 
+  readAttributeDomain(
+    owner: CommonConfigurator.Owner,
+    group: Configurator.Group,
+    attribute: Configurator.Attribute
+  ) {
+    console.info(
+      'TRIGGER READ DOMAIN: ' +
+        (attribute.key ?? attribute.name) +
+        '(' +
+        owner.key +
+        ')'
+    );
+
+    this.store
+      .pipe(
+        select(ConfiguratorSelectors.getConfigurationFactory(owner.key)),
+        take(1)
+      )
+      .subscribe((configuration) =>
+        this.store.dispatch(
+          new ConfiguratorActions.ReadAttributeDomain({
+            configuration: configuration,
+            groupId: group.id,
+            attributeKey: attribute.key ?? attribute.name,
+          })
+        )
+      );
+  }
+
   protected getOrCreateConfigurationForProduct(
     owner: CommonConfigurator.Owner,
     configIdTemplate?: string

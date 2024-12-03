@@ -123,6 +123,43 @@ export class ConfiguratorBasicEffects {
     )
   );
 
+  readAttributeDomain$: Observable<
+    | ConfiguratorActions.UpdateConfigurationSuccess
+    | ConfiguratorActions.UpdateConfigurationFail
+  > = createEffect(() =>
+    this.actions$.pipe(
+      ofType(ConfiguratorActions.READ_ATTRIBUTE_DOMAIN),
+
+      mergeMap((action: ConfiguratorActions.ReadAttributeDomain) => {
+        return this.configuratorCommonsConnector
+          .readConfiguration(
+            action.payload.configuration.configId,
+            action.payload.groupId,
+            action.payload.configuration.owner
+          )
+          .pipe(
+            map(
+              (configuration: Configurator.Configuration) =>
+                new ConfiguratorActions.UpdateConfigurationSuccess({
+                  ...configuration,
+                  interactionState: {
+                    isConflictResolutionMode:
+                      action.payload.configuration.interactionState
+                        .isConflictResolutionMode,
+                  },
+                })
+            ),
+            catchError((error) => [
+              new ConfiguratorActions.UpdateConfigurationFail({
+                configuration: <any>{},
+                error: tryNormalizeHttpError(error, this.logger),
+              }),
+            ])
+          );
+      })
+    )
+  );
+
   updateConfiguration$: Observable<
     | ConfiguratorActions.UpdateConfigurationSuccess
     | ConfiguratorActions.UpdateConfigurationFail

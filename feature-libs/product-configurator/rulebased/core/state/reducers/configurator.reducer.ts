@@ -442,6 +442,7 @@ function takeOverChanges(
     | ConfiguratorActions.ReadOrderEntryConfigurationSuccess,
   state: Configurator.Configuration
 ): Configurator.Configuration {
+  console.info('### takeover changes ###');
   const content = { ...action.payload };
   const groups = content.groups.length > 0 ? content.groups : state.groups;
 
