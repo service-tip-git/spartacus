@@ -89,6 +89,10 @@ $space: 0.5rem;
     cx-link {
       display: block;
       padding-inline-end: 10px;
+
+      @include forFeature('headerLayoutForSmallerViewports') {
+        padding-inline-end: 0;
+      }
     }
   }
 
