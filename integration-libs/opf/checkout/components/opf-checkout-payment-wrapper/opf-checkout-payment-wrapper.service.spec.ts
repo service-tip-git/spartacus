@@ -300,7 +300,6 @@ describe('OpfCheckoutPaymentWrapperService', () => {
       isLoading: false,
       isError: false,
       renderType: OpfPaymentRenderPattern.FULL_PAGE,
-      data: mockUrl,
       destination: { url: mockUrl, form: [] },
     });
   });
@@ -313,13 +312,13 @@ describe('OpfCheckoutPaymentWrapperService', () => {
     };
     (service as any).storePaymentSessionId(mockPaymentSessionData);
     expect(opfMetadataStoreServiceMock.updateOpfMetadata).toHaveBeenCalledWith({
-      paymentSessionId: mockPaymentSessionId,
+      opfPaymentSessionId: mockPaymentSessionId,
     });
 
     mockPaymentSessionData.pattern = OpfPaymentRenderPattern.HOSTED_FIELDS;
     (service as any).storePaymentSessionId(mockPaymentSessionData);
     expect(opfMetadataStoreServiceMock.updateOpfMetadata).toHaveBeenCalledWith({
-      paymentSessionId: undefined,
+      opfPaymentSessionId: undefined,
     });
   });
 
@@ -349,7 +348,6 @@ describe('OpfCheckoutPaymentWrapperService', () => {
       isLoading: false,
       isError: false,
       renderType: OpfPaymentRenderPattern.IFRAME,
-      data: mockUrl,
       destination: { url: mockUrl, form: mockFormData },
     });
   });
@@ -400,7 +398,7 @@ describe('OpfCheckoutPaymentWrapperService', () => {
         isLoading: false,
         isError: false,
         renderType: OpfPaymentRenderPattern.HOSTED_FIELDS,
-        data: '<html></html>',
+        html: '<html></html>',
       });
       done();
     });

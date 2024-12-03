@@ -112,14 +112,20 @@ describe('OpfPaymentVerificationService', () => {
           cxRoute: 'paymentVerificationResult',
         },
       },
-      queryParams: of({ paymentSessionId: mockPaymentSessionId }),
+      queryParams: of({
+        opfPaymentSessionId: mockPaymentSessionId,
+        keyMock: 'valueMock',
+      }),
     } as unknown as ActivatedRoute;
 
-    it('should verify the result URL and return the response map if the route cxRoute is "paymentVerificationResult"', (done) => {
+    it('should verify the result URL and return the response map without opfPaymentSessionId if the route cxRoute is "paymentVerificationResult"', (done) => {
       service.verifyResultUrl(mockRouteSnapshot).subscribe((result) => {
         expect(result.paymentSessionId).toEqual(mockPaymentSessionId);
         expect(result.paramsMap).toEqual([
-          { key: 'paymentSessionId', value: mockPaymentSessionId },
+          {
+            key: 'keyMock',
+            value: 'valueMock',
+          },
         ]);
         done();
       });
@@ -133,14 +139,14 @@ describe('OpfPaymentVerificationService', () => {
             cxRoute: 'paymentVerificationResult',
           },
         },
-        queryParams: of({ afterRedirectScriptFlag: 'true' }),
+        queryParams: of({ opfAfterRedirectFlag: 'true' }),
       } as unknown as ActivatedRoute;
 
       const mockOpfMetadata: OpfMetadataModel = {
         isPaymentInProgress: true,
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
-        paymentSessionId: mockPaymentSessionId,
+        opfPaymentSessionId: mockPaymentSessionId,
         isTermsAndConditionsAlertClosed: false,
       };
 
@@ -151,7 +157,7 @@ describe('OpfPaymentVerificationService', () => {
       service.verifyResultUrl(mockRouteSnapshot).subscribe((result) => {
         expect(result.paymentSessionId).toEqual(mockPaymentSessionId);
         expect(result.paramsMap).toEqual([
-          { key: 'afterRedirectScriptFlag', value: 'true' },
+          { key: 'opfAfterRedirectFlag', value: 'true' },
         ]);
         expect(result.afterRedirectScriptFlag).toEqual('true');
         done();
@@ -180,7 +186,7 @@ describe('OpfPaymentVerificationService', () => {
         isPaymentInProgress: true,
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
-        paymentSessionId: undefined,
+        opfPaymentSessionId: undefined,
         isTermsAndConditionsAlertClosed: false,
       };
 
@@ -212,7 +218,7 @@ describe('OpfPaymentVerificationService', () => {
         isPaymentInProgress: true,
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
-        paymentSessionId: undefined,
+        opfPaymentSessionId: undefined,
         isTermsAndConditionsAlertClosed: false,
       };
 
@@ -500,7 +506,7 @@ describe('OpfPaymentVerificationService', () => {
         isPaymentInProgress: true,
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
-        paymentSessionId: '111111',
+        opfPaymentSessionId: '111111',
         isTermsAndConditionsAlertClosed: false,
       };
 
@@ -522,7 +528,7 @@ describe('OpfPaymentVerificationService', () => {
         isPaymentInProgress: false,
         selectedPaymentOptionId: 111,
         termsAndConditionsChecked: true,
-        paymentSessionId: '111111',
+        opfPaymentSessionId: '111111',
         isTermsAndConditionsAlertClosed: false,
       };
 

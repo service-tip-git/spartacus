@@ -22,6 +22,6 @@ export enum OpfPaymentVerificationResult {
 }
 
 export enum OpfPaymentVerificationUrlInput {
-  PAYMENT_SESSION_ID = 'paymentSessionId',
-  ORDER_ID = 'orderId',
+  OPF_AFTER_REDIRECT_FLAG = 'opfAfterRedirectFlag',
+  OPF_PAYMENT_SESSION_ID = 'opfPaymentSessionId',
 }
