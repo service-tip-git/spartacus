@@ -342,7 +342,7 @@ export class OccConfiguratorVariantNormalizer
         break;
       }
       case OccConfigurator.UiType.DROPDOWN: {
-        uiType = Configurator.UiType.DROPDOWN_LAZYLOAD;
+        uiType = Configurator.UiType.DROPDOWN;
         break;
       }
       case OccConfigurator.UiType.DROPDOWN_ADDITIONAL_INPUT: {
@@ -355,6 +355,10 @@ export class OccConfiguratorVariantNormalizer
       }
       case OccConfigurator.UiType.SINGLE_SELECTION_IMAGE: {
         uiType = Configurator.UiType.SINGLE_SELECTION_IMAGE;
+        break;
+      }
+      case OccConfigurator.UiType.SAP_DOMAIN_ON_DEMAND_SINGLE_VALUE: {
+        uiType = Configurator.UiType.SAP_DOMAIN_ON_DEMAND_SINGLE_VALUE;
         break;
       }
     }
