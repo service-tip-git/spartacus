@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { CheckoutAuthGuard } from '@spartacus/checkout/base/components';
 import {
   CmsConfig,
@@ -15,6 +15,7 @@ import { defaultOpfCheckoutConfig } from './config/default-opf-checkout-config';
 import { defaultOpfCheckoutRoutingConfig } from './config/default-opf-checkout-routing-config';
 import { OPF_CHECKOUT_FEATURE } from './feature-name';
 import { OpfCheckoutAuthGuard } from './сheckout-guard/opf-checkout-auth.guard';
+import { CheckoutGuardService } from './сheckout-guard/сheckout-guard.service';
 
 export const CHECKOUT_OPF_CMS_COMPONENTS: string[] = [
   'OpfCheckoutPaymentAndReview',
@@ -31,8 +32,20 @@ export function defaultOpfCheckoutComponentsConfig() {
   return config;
 }
 
+export function initializeCheckoutListener(
+  service: CheckoutGuardService
+): () => void {
+  return () => service.listenToCheckoutRoute();
+}
+
 @NgModule({
   providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeCheckoutListener,
+      deps: [CheckoutGuardService],
+      multi: true,
+    },
     {
       provide: CheckoutAuthGuard,
       useClass: OpfCheckoutAuthGuard,
