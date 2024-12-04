@@ -32,6 +32,9 @@ import { CheckoutLoginComponent } from './checkout-login.component';
         GuestCheckoutLoginComponent: {
           component: CheckoutLoginComponent,
           guards: [NotCheckoutAuthGuard],
+          // THIS guard blocks from opening /checkout-login
+          // Event if user is there and provide email component will do the call to /electronics-spa/users/anonymous/carts/
+          // But current cart is not anonymous
         },
       },
     }),

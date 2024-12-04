@@ -39,6 +39,7 @@ export class CheckoutGuard {
   ) {}
 
   canActivate(): Observable<boolean | UrlTree> {
+    console.log('Base checkout guard');
     const expressCheckout$ = this.expressCheckoutService
       .trySetDefaultCheckoutDetails()
       .pipe(

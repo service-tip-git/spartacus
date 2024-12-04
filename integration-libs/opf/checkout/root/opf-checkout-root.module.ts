@@ -5,6 +5,7 @@
  */
 
 import { NgModule } from '@angular/core';
+import { CheckoutAuthGuard } from '@spartacus/checkout/base/components';
 import {
   CmsConfig,
   provideDefaultConfig,
@@ -13,6 +14,7 @@ import {
 import { defaultOpfCheckoutConfig } from './config/default-opf-checkout-config';
 import { defaultOpfCheckoutRoutingConfig } from './config/default-opf-checkout-routing-config';
 import { OPF_CHECKOUT_FEATURE } from './feature-name';
+import { OpfCheckoutAuthGuard } from './сheckout-guard/opf-checkout-auth.guard';
 
 export const CHECKOUT_OPF_CMS_COMPONENTS: string[] = [
   'OpfCheckoutPaymentAndReview',
@@ -31,6 +33,10 @@ export function defaultOpfCheckoutComponentsConfig() {
 
 @NgModule({
   providers: [
+    {
+      provide: CheckoutAuthGuard,
+      useClass: OpfCheckoutAuthGuard,
+    },
     provideDefaultConfig(defaultOpfCheckoutRoutingConfig),
     provideDefaultConfig(defaultOpfCheckoutConfig),
     provideDefaultConfigFactory(defaultOpfCheckoutComponentsConfig),
