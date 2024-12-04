@@ -411,6 +411,7 @@ if (environment.cpq) {
         a11yPdpGridArrangement: true,
         sciEnabled: true,
         useExtendedMediaComponentConfiguration: true,
+        a11yScrollToTopPositioning: true,
         a11yWrapReviewOrderInSection: true,
       };
       return appFeatureToggles;
