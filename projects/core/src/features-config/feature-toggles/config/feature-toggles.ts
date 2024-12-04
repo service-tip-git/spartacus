@@ -401,6 +401,11 @@ export interface FeatureTogglesInterface {
   a11yTruncatedTextForResponsiveView?: boolean;
 
   /**
+   * `StoreFinderListItemComponent` street name is not truncated
+   */
+  a11yTruncatedTextStoreFinder?: boolean;
+
+  /**
    * When enabled focus outline on the close button inside `ProductImageZoomDialogComponent`
    * will be fully visible
    */
@@ -890,8 +895,9 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   cartQuickOrderRemoveListeningToFailEvent: true,
   a11yKeyboardAccessibleZoom: false,
   a11yOrganizationLinkableCells: false,
-  a11yVisibleFocusOverflows: false,
-  a11yTruncatedTextForResponsiveView: false,
+  a11yVisibleFocusOverflows: true,
+  a11yTruncatedTextForResponsiveView: true,
+  a11yTruncatedTextStoreFinder: false,
   a11ySemanticPaginationLabel: false,
   a11yPreventCartItemsFormRedundantRecreation: false,
   a11yPreventSRFocusOnHiddenElements: false,
