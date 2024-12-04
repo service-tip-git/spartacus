@@ -11,6 +11,7 @@ import {
   HostListener,
   OnDestroy,
   OnInit,
+  Optional,
   ViewChild,
   inject,
 } from '@angular/core';
@@ -19,14 +20,15 @@ import {
   RoutingService,
   useFeatureStyles,
 } from '@spartacus/core';
-import { Observable, Subscription, tap } from 'rxjs';
+import { Observable, Subscription, take, tap } from 'rxjs';
 import {
   FocusConfig,
   KeyboardFocusService,
 } from '../a11y/keyboard-focus/index';
-import { SkipLinkComponent } from '../a11y/skip-link/index';
+import { SkipLinkComponent, SkipLinkService } from '../a11y/skip-link/index';
 import { HamburgerMenuService } from '../header/hamburger-menu/hamburger-menu.service';
 import { StorefrontOutlets } from './storefront-outlets.model';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'cx-storefront',
@@ -39,6 +41,12 @@ export class StorefrontComponent implements OnInit, OnDestroy {
   readonly StorefrontOutlets = StorefrontOutlets;
 
   private featureConfigService = inject(FeatureConfigService);
+  @Optional() protected document = inject(DOCUMENT, {
+    optional: true,
+  });
+  @Optional() protected skipLinkService = inject(SkipLinkService, {
+    optional: true,
+  });
 
   @HostBinding('class.start-navigating') startNavigating: boolean;
   @HostBinding('class.stop-navigating') stopNavigating: boolean;
@@ -88,10 +96,7 @@ export class StorefrontComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.navigateSubscription = this.routingService
       .isNavigating()
-      .subscribe((val) => {
-        this.startNavigating = val === true;
-        this.stopNavigating = val === false;
-      });
+      .subscribe((val) => this.onNavigation(val));
     if (
       this.featureConfigService.isEnabled(
         'a11yMobileFocusOnFirstNavigationItem'
@@ -137,5 +142,30 @@ export class StorefrontComponent implements OnInit, OnDestroy {
     if (this.navigateSubscription) {
       this.navigateSubscription.unsubscribe();
     }
+  }
+
+  protected onNavigation(isNavigating: boolean): void {
+    this.startNavigating = isNavigating === true;
+    this.stopNavigating = isNavigating === false;
+    if (
+      this.featureConfigService.isEnabled('a11yResetFocusAfterNavigating') &&
+      this.stopNavigating &&
+      // we only need to reset focus after clicking a link
+      this.document?.activeElement !== this.document?.body
+    ) {
+      this.skipFocusTo('cx-main');
+    }
+  }
+
+  protected skipFocusTo(skipLinkKey: string): void {
+    this.skipLinkService
+      ?.getSkipLinks()
+      .pipe(take(1))
+      .subscribe((skipLinks) => {
+        const skipLink = skipLinks.find((link) => link.key === skipLinkKey);
+        if (skipLink) {
+          this.skipLinkService?.scrollToTarget(skipLink);
+        }
+      });
   }
 }
