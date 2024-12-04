@@ -9,7 +9,8 @@ import { ConfiguratorAttributeCompositionContext } from '../../composition/confi
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ConfiguratorAttributeDropDownLazyLoadComponent extends ConfiguratorAttributeBaseComponent {
-  isLoaded: boolean = false;
+  isLoaded: boolean =
+    (this.attributeComponentContext.attribute.values ?? []).length > 1;
 
   constructor(
     protected configuratorCommonsService: ConfiguratorCommonsService,
@@ -19,8 +20,6 @@ export class ConfiguratorAttributeDropDownLazyLoadComponent extends Configurator
   }
 
   loadDomain(): void {
-    this.isLoaded = true;
-
     this.configuratorCommonsService.readAttributeDomain(
       this.attributeComponentContext.owner,
       this.attributeComponentContext.group,
