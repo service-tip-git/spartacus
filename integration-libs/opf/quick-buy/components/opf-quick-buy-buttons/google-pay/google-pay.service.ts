@@ -76,6 +76,22 @@ export class OpfGooglePayService {
       },
     };
 
+  protected readonly defaultGooglePayCardParameters: any = {
+    allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+    allowedCardNetworks: [
+      'AMEX',
+      'DISCOVER',
+      'INTERAC',
+      'JCB',
+      'MASTERCARD',
+      'VISA',
+    ],
+    billingAddressRequired: true,
+    billingAddressParameters: {
+      format: 'FULL',
+    },
+  };
+
   private initialTransactionInfo: google.payments.api.TransactionInfo = {
     totalPrice: '0.00',
     totalPriceStatus: 'ESTIMATED',
@@ -480,19 +496,7 @@ export class OpfGooglePayService {
     this.googlePaymentRequest.allowedPaymentMethods = [
       {
         parameters: {
-          allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
-          allowedCardNetworks: [
-            'AMEX',
-            'DISCOVER',
-            'INTERAC',
-            'JCB',
-            'MASTERCARD',
-            'VISA',
-          ],
-          billingAddressRequired: true,
-          billingAddressParameters: {
-            format: 'FULL',
-          },
+          ...this.defaultGooglePayCardParameters,
         },
         tokenizationSpecification: {
           parameters: {

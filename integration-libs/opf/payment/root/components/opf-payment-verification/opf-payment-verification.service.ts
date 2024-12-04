@@ -85,22 +85,26 @@ export class OpfPaymentVerificationService {
           }),
           concatMap((paymentSessionId: string | undefined) => {
             if (!paymentSessionId) {
-              return throwError(this.opfDefaultPaymentError);
+              return throwError(() => this.opfDefaultPaymentError);
             }
             return of({
               paymentSessionId,
-              paramsMap,
+              paramsMap: paramsMap.filter(
+                (param) =>
+                  param.key !==
+                  OpfPaymentVerificationUrlInput.OPF_PAYMENT_SESSION_ID
+              ),
               afterRedirectScriptFlag: this.findInParamsMap(
-                'afterRedirectScriptFlag',
+                OpfPaymentVerificationUrlInput.OPF_AFTER_REDIRECT_FLAG,
                 paramsMap
               ),
             });
           })
         )
-      : throwError({
+      : throwError(() => ({
           ...this.opfDefaultPaymentError,
           message: 'opfPayment.errors.cancelPayment',
-        });
+        }));
   }
 
   protected getPaymentSessionId(
@@ -108,7 +112,7 @@ export class OpfPaymentVerificationService {
   ): Observable<string | undefined> {
     if (paramMap?.length) {
       const paymentSessionId = this.findInParamsMap(
-        OpfPaymentVerificationUrlInput.PAYMENT_SESSION_ID,
+        OpfPaymentVerificationUrlInput.OPF_PAYMENT_SESSION_ID,
         paramMap
       );
       return paymentSessionId
@@ -121,7 +125,7 @@ export class OpfPaymentVerificationService {
   protected getPaymentSessionIdFromStorage(): Observable<string | undefined> {
     return this.opfMetadataStoreService.getOpfMetadataState().pipe(
       take(1),
-      map((opfMetaData) => opfMetaData?.paymentSessionId)
+      map((opfMetaData) => opfMetaData?.opfPaymentSessionId)
     );
   }
 
@@ -153,12 +157,12 @@ export class OpfPaymentVerificationService {
     ) {
       return of(true);
     } else if (response.result === OpfPaymentVerificationResult.CANCELLED) {
-      return throwError({
+      return throwError(() => ({
         ...this.opfDefaultPaymentError,
         message: 'opfPayment.errors.cancelPayment',
-      });
+      }));
     } else {
-      return throwError(this.opfDefaultPaymentError);
+      return throwError(() => this.opfDefaultPaymentError);
     }
   }
 

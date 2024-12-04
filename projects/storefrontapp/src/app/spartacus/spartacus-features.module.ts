@@ -349,6 +349,7 @@ if (environment.cpq) {
         a11yPreventSRFocusOnHiddenElements: true,
         a11yVisibleFocusOverflows: true,
         a11yTruncatedTextForResponsiveView: true,
+        a11yTruncatedTextStoreFinder: true,
         a11ySemanticPaginationLabel: true,
         a11yPreventCartItemsFormRedundantRecreation: true,
         a11yMyAccountLinkOutline: true,

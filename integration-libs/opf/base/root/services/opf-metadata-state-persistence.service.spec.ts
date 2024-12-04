@@ -17,7 +17,7 @@ const mockOpfMetadata: OpfMetadataModel = {
   isPaymentInProgress: true,
   selectedPaymentOptionId: 111,
   termsAndConditionsChecked: true,
-  paymentSessionId: '111111',
+  opfPaymentSessionId: '111111',
   isTermsAndConditionsAlertClosed: false,
 };
 

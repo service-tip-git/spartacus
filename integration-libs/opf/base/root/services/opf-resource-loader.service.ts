@@ -95,6 +95,12 @@ export class OpfResourceLoaderService {
         attributes['crossOrigin'] =
           corsKeyvalue?.value ?? this.CORS_DEFAULT_VALUE;
         attributes['integrity'] = resource.sri;
+        const corsKeyvalue: OpfKeyValueMap | undefined =
+          resource?.attributes?.find(
+            (attr) => attr.key === 'crossorigin' && !!attr.value?.length
+          );
+        attributes['crossOrigin'] =
+          corsKeyvalue?.value ?? this.CORS_DEFAULT_VALUE;
       }
 
       if (resource.attributes) {
