@@ -124,12 +124,12 @@ export class ConfiguratorBasicEffects {
   );
 
   readAttributeDomain$: Observable<
-    | ConfiguratorActions.UpdateConfigurationSuccess
-    | ConfiguratorActions.UpdateConfigurationFail
+    | ConfiguratorActions.ReadConfigurationFail
+    | ConfiguratorActions.ReadConfigurationSuccess
+    | ConfiguratorActions.UpdatePriceSummary
   > = createEffect(() =>
     this.actions$.pipe(
       ofType(ConfiguratorActions.READ_ATTRIBUTE_DOMAIN),
-
       mergeMap((action: ConfiguratorActions.ReadAttributeDomain) => {
         return this.configuratorCommonsConnector
           .readConfiguration(
@@ -139,20 +139,20 @@ export class ConfiguratorBasicEffects {
             action.payload.attributeKey
           )
           .pipe(
-            map(
-              (configuration: Configurator.Configuration) =>
-                new ConfiguratorActions.UpdateConfigurationSuccess({
+            switchMap((configuration: Configurator.Configuration) => {
+              return [
+                new ConfiguratorActions.ReadConfigurationSuccess(configuration),
+                new ConfiguratorActions.UpdatePriceSummary({
                   ...configuration,
                   interactionState: {
-                    isConflictResolutionMode:
-                      action.payload.configuration.interactionState
-                        .isConflictResolutionMode,
+                    currentGroup: action.payload.groupId,
                   },
-                })
-            ),
+                }),
+              ];
+            }),
             catchError((error) => [
-              new ConfiguratorActions.UpdateConfigurationFail({
-                configuration: <any>{},
+              new ConfiguratorActions.ReadConfigurationFail({
+                ownerKey: action.payload.configuration.owner.key,
                 error: tryNormalizeHttpError(error, this.logger),
               }),
             ])

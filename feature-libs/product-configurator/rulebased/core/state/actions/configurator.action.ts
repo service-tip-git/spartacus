@@ -405,7 +405,7 @@ export class CheckConflictDialoge extends StateUtils.EntitySuccessAction {
   }
 }
 
-export class ReadAttributeDomain extends StateUtils.EntityProcessesIncrementAction {
+export class ReadAttributeDomain extends StateUtils.EntityLoadAction {
   readonly type = READ_ATTRIBUTE_DOMAIN;
 
   constructor(
