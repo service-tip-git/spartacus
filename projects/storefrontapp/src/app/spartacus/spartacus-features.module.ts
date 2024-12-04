@@ -365,6 +365,7 @@ if (environment.cpq) {
         a11yResetFocusAfterNavigating: true,
         headerLayoutForSmallerViewports: true,
         a11yStoreFinderAlerts: true,
+        a11yStoreFinderLabel: true,
         a11yFormErrorMuteIcon: true,
         a11yCxMessageFocus: true,
         occCartNameAndDescriptionInHttpRequestBody: true,

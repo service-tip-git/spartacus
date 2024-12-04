@@ -543,6 +543,11 @@ export interface FeatureTogglesInterface {
   a11yStoreFinderAlerts?: boolean;
 
   /**
+   * Adds label to 'StoreFinderSearchComponent' store search input field.
+   */
+  a11yStoreFinderLabel?: boolean;
+
+  /**
    * Stops the icon inside 'FormErrorsComponent' from being read out by screen readers.
    */
   a11yFormErrorMuteIcon?: boolean;
@@ -928,6 +933,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yResetFocusAfterNavigating: false,
   headerLayoutForSmallerViewports: false,
   a11yStoreFinderAlerts: false,
+  a11yStoreFinderLabel: false,
   a11yFormErrorMuteIcon: false,
   a11yCxMessageFocus: false,
   a11yLinkBtnsToTertiaryBtns: false,
