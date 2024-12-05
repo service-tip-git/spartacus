@@ -464,39 +464,24 @@ describe('Navigation UI Component', () => {
     }));
   });
 
-  describe('trigger buttions ariaLabel/ariaDescribedby', () => {
-    it('should have the ariaLabel set and ommit the ariaDescribedby attribute per default', () => {
+  describe('trigger buttions ariaLabel/title', () => {
+    it('should have the ariaLabel and title set', () => {
+      const rootNode = mockNode?.children![0];
+      const childNode = rootNode?.children![0];
+      const rootTitle = rootNode?.title;
+      const childTitle = childNode?.title;
       fixture.detectChanges();
       const nestedTriggerButton = fixture.debugElement.query(
-        By.css('button[aria-label="Child 1"]')
+        By.css(`button[aria-label="${childTitle}"]`)
       ).nativeElement;
       const rootTriggerButton = fixture.debugElement.query(
-        By.css('button[aria-label="Root 1"]')
+        By.css(`button[aria-label="${rootTitle}"]`)
       ).nativeElement;
 
       expect(nestedTriggerButton).toBeDefined();
       expect(rootTriggerButton).toBeDefined();
-      expect(nestedTriggerButton.getAttribute('aria-describedby')).toEqual(
-        null
-      );
-      expect(rootTriggerButton.getAttribute('aria-describedby')).toEqual(null);
-    });
-
-    it('should have the ariaDescribedby set and ommit the ariaLabel attribute when inside of "HeaderLinks" navigation', () => {
-      navigationComponent['isHeadersLinksSlotNavigation'] = true;
-      fixture.detectChanges();
-
-      const nestedTriggerButton = fixture.debugElement.query(
-        By.css('button[aria-describedby="greeting"]')
-      ).nativeElement;
-      const rootTriggerButton = fixture.debugElement.query(
-        By.css('button[aria-describedby="greeting"]')
-      ).nativeElement;
-
-      expect(nestedTriggerButton).toBeDefined();
-      expect(rootTriggerButton).toBeDefined();
-      expect(nestedTriggerButton.getAttribute('aria-label')).toEqual(null);
-      expect(rootTriggerButton.getAttribute('aria-label')).toEqual(null);
+      expect(rootTriggerButton.getAttribute('title')).toEqual(`navigation.menuButonTitle title:${rootTitle}`);
+      expect(nestedTriggerButton.getAttribute('title')).toEqual(`navigation.menuButonTitle title:${childTitle}`);
     });
   });
 });
