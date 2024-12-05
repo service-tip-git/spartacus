@@ -36,7 +36,7 @@ export class OpfCheckoutAuthGuard extends CheckoutAuthGuard {
         if (!data.isLoggedIn && data.isGuestCart && !isEmailExistsInCart) {
           console.log('here');
           return this.handleGuestUserWithoutEmail();
-        }
+        } // This check should be add before original checks and after this call super.canActivate()
 
         if (!data.isLoggedIn) {
           return data.isGuestCart && isEmailExistsInCart
@@ -51,13 +51,6 @@ export class OpfCheckoutAuthGuard extends CheckoutAuthGuard {
   protected handleGuestUserWithoutEmail(): boolean | UrlTree {
     // this.authRedirectService.saveCurrentNavigationUrl();
     if (this.checkoutConfigService.isGuestCheckout()) {
-      console.log(
-        'here 2',
-        this.semanticPathService.get('checkoutLogin'),
-        this.router.createUrlTree([
-          this.semanticPathService.get('checkoutLogin'),
-        ])
-      );
       return this.router.createUrlTree([
         this.semanticPathService.get('checkoutLogin'),
       ]);

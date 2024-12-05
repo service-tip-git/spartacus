@@ -40,6 +40,7 @@ export function initializeCheckoutListener(
 
 @NgModule({
   providers: [
+    // Only 1 of them should be applied CheckoutGuardService OR OpfCheckoutAuthGuard
     {
       provide: APP_INITIALIZER,
       useFactory: initializeCheckoutListener,
