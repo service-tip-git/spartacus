@@ -5,7 +5,12 @@
  */
 
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ImageGroup, Product, isNotNullable } from '@spartacus/core';
+import {
+  ImageGroup,
+  Product,
+  isNotNullable,
+  useFeatureStyles,
+} from '@spartacus/core';
 import { BehaviorSubject, Observable, combineLatest, of } from 'rxjs';
 import { distinctUntilChanged, filter, map, tap } from 'rxjs/operators';
 import { CurrentProductService } from '../current-product.service';
@@ -37,7 +42,9 @@ export class ProductImagesComponent {
     this.mainMediaContainer,
   ]).pipe(map(([, container]) => container));
 
-  constructor(protected currentProductService: CurrentProductService) {}
+  constructor(protected currentProductService: CurrentProductService) {
+    useFeatureStyles('a11yDifferentiateFocusedAndSelected');
+  }
 
   openImage(item: any): void {
     this.mainMediaContainer.next(item);

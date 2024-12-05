@@ -11,6 +11,10 @@ cx-future-stock-accordion {
       padding-inline-start: unset;
       margin-inline-start: 1.25rem;
       padding: 0;
+
+      @include media-breakpoint-down(md) {
+        margin-inline-start: 0;
+      }
     }
     margin: 0.5rem auto;
     cursor: pointer;

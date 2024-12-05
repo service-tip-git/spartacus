@@ -196,7 +196,7 @@ function assertPermissionResults(order) {
   });
 
   order.permissionResults.forEach((permission, index) => {
-    cy.get('cx-order-detail-permission-results tr')
+    cy.get('cx-order-detail-permission-results tbody tr')
       .eq(index)
       .within(() => {
         cy.get('.cx-approval-approverName').should(

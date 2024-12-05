@@ -175,3 +175,8 @@ export interface OpfPaymentRenderMethodEvent {
   data?: string | null;
   destination?: OpfPaymentDestination;
 }
+
+export interface OpfPaymentMethodDetails {
+  code?: string;
+  name?: string;
+}

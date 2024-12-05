@@ -180,6 +180,9 @@ export class OpfCheckoutPaymentWrapperService {
           if (html) {
             this.executeScriptFromHtml(html);
           }
+        })
+        .catch(() => {
+          this.handleGeneralPaymentError().pipe(take(1)).subscribe();
         });
       return;
     }

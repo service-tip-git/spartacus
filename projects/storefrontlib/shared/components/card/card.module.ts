@@ -12,6 +12,7 @@ import { KeyboardFocusModule } from '../../../layout/a11y/keyboard-focus/keyboar
 import { AtMessageModule } from '../assistive-technology-message/assistive-technology-message.module';
 import { TruncateTextPopoverModule } from '../truncate-text-popover/truncate-text-popover.module';
 import { CardComponent } from './card.component';
+import { GenericLinkModule } from '../generic-link';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { CardComponent } from './card.component';
     TruncateTextPopoverModule,
     KeyboardFocusModule,
     FeaturesConfigModule,
+    GenericLinkModule,
   ],
   declarations: [CardComponent],
   exports: [CardComponent],

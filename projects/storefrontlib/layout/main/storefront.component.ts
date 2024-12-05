@@ -82,6 +82,7 @@ export class StorefrontComponent implements OnInit, OnDestroy {
     useFeatureStyles('a11yImproveContrast');
     useFeatureStyles('cmsBottomHeaderSlotUsingFlexStyles');
     useFeatureStyles('headerLayoutForSmallerViewports');
+    useFeatureStyles('a11yPdpGridArrangement');
   }
 
   ngOnInit(): void {

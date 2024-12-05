@@ -10,6 +10,7 @@ import {
   AuthGuard,
   CmsConfig,
   I18nModule,
+  FeaturesConfigModule,
   provideDefaultConfig,
 } from '@spartacus/core';
 import { CustomerTicketingCloseComponent } from './customer-ticketing-close.component';
@@ -34,6 +35,7 @@ import { CustomerTicketingCloseComponentService } from './customer-ticketing-clo
     FormErrorsModule,
     FileUploadModule,
     SpinnerModule,
+    FeaturesConfigModule,
   ],
   providers: [
     CustomerTicketingCloseComponentService,

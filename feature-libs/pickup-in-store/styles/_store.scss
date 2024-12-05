@@ -55,6 +55,9 @@
   .cx-store-stock-icon {
     color: var(--cx-color-secondary);
     opacity: var(--cx-opacity, 0.5);
+    @include forFeature('a11yStoreInStockIconContrast') {
+      opacity: var(--cx-opacity, 1);
+    }
   }
 
   .cx-store-out-of-stock {
