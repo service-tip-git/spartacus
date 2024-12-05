@@ -370,7 +370,7 @@ describe('ConfiguratorAttributeSingleSelectionImageComponent', () => {
         '',
         0,
         'aria-label',
-        'configurator.a11y.description'
+        'configurator.a11y.description value:val2'
       );
     });
 
