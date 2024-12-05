@@ -5,7 +5,6 @@
  */
 
 import {
-  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
   ElementRef,
@@ -40,7 +39,7 @@ const ARIA_EXPANDED_ATTR = 'aria-expanded';
   templateUrl: './navigation-ui.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NavigationUIComponent implements OnInit, OnDestroy, AfterViewInit {
+export class NavigationUIComponent implements OnInit, OnDestroy {
   /**
    * The navigation node to render.
    */
@@ -75,7 +74,6 @@ export class NavigationUIComponent implements OnInit, OnDestroy, AfterViewInit {
   private openNodes: HTMLElement[] = [];
   private subscriptions = new Subscription();
   private resize = new EventEmitter();
-  private isHeadersLinksSlotNavigation = false;
   protected arrowControls: Subject<KeyboardEvent> = new Subject();
 
   @HostListener('window:resize')
@@ -110,13 +108,6 @@ export class NavigationUIComponent implements OnInit, OnDestroy, AfterViewInit {
         this.alignWrappersToRightIfStickOut();
       })
     );
-  }
-
-  ngAfterViewInit(): void {
-    this.isHeadersLinksSlotNavigation =
-      this.elemRef.nativeElement
-        .closest('cx-page-slot')
-        ?.getAttribute('position') === 'HeaderLinks';
   }
 
   /**
@@ -404,13 +395,5 @@ export class NavigationUIComponent implements OnInit, OnDestroy, AfterViewInit {
       return 0;
     }
     return depth > 0 && !node?.children ? -1 : 0;
-  }
-
-  ariaLabel(node: NavigationNode) {
-    return !this.isHeadersLinksSlotNavigation ? node.title : undefined;
-  }
-
-  get ariaDescribedby() {
-    return this.isHeadersLinksSlotNavigation ? 'greeting' : undefined;
   }
 }

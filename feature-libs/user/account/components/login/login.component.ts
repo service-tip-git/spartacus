@@ -4,11 +4,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Component, OnInit } from '@angular/core';
-import { AuthService, useFeatureStyles } from '@spartacus/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
+import {
+  AuthService,
+  TranslationService,
+  useFeatureStyles,
+} from '@spartacus/core';
 import { User, UserAccountFacade } from '@spartacus/user/account/root';
 import { Observable, of } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'cx-login',
@@ -19,7 +23,9 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private auth: AuthService,
-    private userAccount: UserAccountFacade
+    private userAccount: UserAccountFacade,
+    private elemRef: ElementRef,
+    private translation: TranslationService
   ) {
     useFeatureStyles('a11yMyAccountLinkOutline');
   }
@@ -31,6 +37,24 @@ export class LoginComponent implements OnInit {
           return this.userAccount.get();
         } else {
           return of(undefined);
+        }
+      })
+    );
+  }
+
+  get greeting$() {
+    return this.user$.pipe(
+      switchMap((user) =>
+        this.translation.translate(`miniLogin.userGreeting`, {
+          name: user?.name,
+        })
+      ),
+      tap((greeting) => {
+        const rootNavButton = this.elemRef.nativeElement.querySelector(
+          'cx-navigation-ui nav ul li:first-child button'
+        );
+        if (rootNavButton) {
+          rootNavButton.setAttribute('aria-label', greeting);
         }
       })
     );
