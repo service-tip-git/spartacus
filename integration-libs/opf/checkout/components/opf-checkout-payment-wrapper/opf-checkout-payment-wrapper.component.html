@@ -67,8 +67,8 @@
         </form>
       </div>
     </ng-container>
-    <ng-container *ngIf="paymentLink.data && !paymentLink?.destination?.url">
-      <div [innerHTML]="bypassSecurityTrustHtml(paymentLink.data)"></div>
+    <ng-container *ngIf="paymentLink?.html">
+      <div [innerHTML]="bypassSecurityTrustHtml(paymentLink.html)"></div>
     </ng-container>
   </div>
 </ng-template>

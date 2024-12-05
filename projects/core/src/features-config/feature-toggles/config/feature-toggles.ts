@@ -401,6 +401,11 @@ export interface FeatureTogglesInterface {
   a11yTruncatedTextForResponsiveView?: boolean;
 
   /**
+   * `StoreFinderListItemComponent` street name is not truncated
+   */
+  a11yTruncatedTextStoreFinder?: boolean;
+
+  /**
    * When enabled focus outline on the close button inside `ProductImageZoomDialogComponent`
    * will be fully visible
    */
@@ -825,6 +830,12 @@ export interface FeatureTogglesInterface {
   showRealTimeStockInPDP?: boolean;
 
   /**
+   * When enabled, the scroll-to-top button adjusts its position when other UI elements
+   * (like cookie consent banner) appear at the bottom of the page to prevent overlapping
+   */
+  a11yScrollToTopPositioning?: boolean;
+
+  /**
    * Creates a section element with applied aria-label in "Review Order" page of the checkout.
    * Moves components to be children of this section element.
    */
@@ -894,6 +905,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yOrganizationLinkableCells: false,
   a11yVisibleFocusOverflows: true,
   a11yTruncatedTextForResponsiveView: true,
+  a11yTruncatedTextStoreFinder: false,
   a11ySemanticPaginationLabel: false,
   a11yPreventCartItemsFormRedundantRecreation: false,
   a11yPreventSRFocusOnHiddenElements: false,
@@ -958,6 +970,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   allPageMetaResolversEnabledInCsr: false,
   a11yPdpGridArrangement: false,
   useExtendedMediaComponentConfiguration: false,
+  a11yScrollToTopPositioning: false,
   showRealTimeStockInPDP: false,
   enableSecurePasswordValidation: false,
 };

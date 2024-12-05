@@ -21,6 +21,7 @@ import {
   OpfActiveConfigurationsQuery,
   OpfActiveConfigurationsResponse,
   OpfConfig,
+  OpfMetadataStatePersistanceService,
 } from '@spartacus/opf/base/root';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -31,6 +32,9 @@ export class OpfApiBaseAdapter implements OpfBaseAdapter {
   protected converter = inject(ConverterService);
   protected opfEndpointsService = inject(OpfEndpointsService);
   protected config = inject(OpfConfig);
+  protected opfMetadataStatePersistanceService = inject(
+    OpfMetadataStatePersistanceService
+  );
   protected logger = inject(LoggerService);
 
   protected headerWithNoLanguage: { [name: string]: string } = {
@@ -39,12 +43,14 @@ export class OpfApiBaseAdapter implements OpfBaseAdapter {
   };
   protected header: { [name: string]: string } = {
     ...this.headerWithNoLanguage,
-    'Accept-Language': 'en-us',
+    'Accept-Language':
+      this.opfMetadataStatePersistanceService.getActiveLanguage(),
   };
 
   protected headerWithContentLanguage: { [name: string]: string } = {
     ...this.headerWithNoLanguage,
-    'Content-Language': 'en-us',
+    'Content-Language':
+      this.opfMetadataStatePersistanceService.getActiveLanguage(),
   };
 
   getActiveConfigurations(

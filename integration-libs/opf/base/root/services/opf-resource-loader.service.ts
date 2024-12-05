@@ -23,6 +23,7 @@ export class OpfResourceLoaderService {
   protected platformId = inject(PLATFORM_ID);
 
   protected readonly OPF_RESOURCE_ATTRIBUTE_KEY = 'data-opf-resource';
+  protected readonly CORS_DEFAULT_VALUE = 'anonymous';
 
   protected embedStyles(embedOptions: {
     attributes?: OpfKeyValueMap[];
@@ -40,6 +41,10 @@ export class OpfResourceLoaderService {
     link.setAttribute(this.OPF_RESOURCE_ATTRIBUTE_KEY, 'true');
     if (sri) {
       link.integrity = sri;
+      const corsKeyvalue = attributes?.find(
+        (attr) => attr.key === 'crossorigin' && !!attr.value?.length
+      );
+      link.crossOrigin = corsKeyvalue?.value ?? this.CORS_DEFAULT_VALUE;
     }
     if (attributes?.length) {
       attributes.forEach((attribute) => {
@@ -84,6 +89,12 @@ export class OpfResourceLoaderService {
 
       if (resource?.sri) {
         attributes['integrity'] = resource.sri;
+        const corsKeyvalue: OpfKeyValueMap | undefined =
+          resource?.attributes?.find(
+            (attr) => attr.key === 'crossorigin' && !!attr.value?.length
+          );
+        attributes['crossOrigin'] =
+          corsKeyvalue?.value ?? this.CORS_DEFAULT_VALUE;
       }
 
       if (resource.attributes) {
