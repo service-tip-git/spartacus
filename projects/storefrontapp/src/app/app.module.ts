@@ -66,7 +66,7 @@ export class AppComponent {}
     provideConfig(<OccConfig>{
       backend: {
         occ: {
-          baseUrl: 'https://20.83.184.244:9002', // SPIKE TODO REVERT
+          baseUrl: environment.occBaseUrl,
           prefix: environment.occApiPrefix,
         },
       },
