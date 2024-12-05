@@ -123,8 +123,8 @@ exports[`Spartacus Asm schematics: ng-add Asm feature general setup styling shou
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
                 }
               ],
               "outputHashing": "all"

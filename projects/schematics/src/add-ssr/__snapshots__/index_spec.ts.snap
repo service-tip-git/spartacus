@@ -27,8 +27,8 @@ exports[`add-ssr angular.json should be configured properly 1`] = `
                   "type": "initial",
                 },
                 {
-                  "maximumError": "4kB",
-                  "maximumWarning": "2kB",
+                  "maximumError": "8kB",
+                  "maximumWarning": "4kB",
                   "type": "anyComponentStyle",
                 },
               ],
@@ -54,7 +54,7 @@ exports[`add-ssr angular.json should be configured properly 1`] = `
             "scripts": [],
             "server": "src/main.server.ts",
             "ssr": {
-              "entry": "server.ts",
+              "entry": "src/server.ts",
             },
             "stylePreprocessorOptions": {
               "includePaths": [
@@ -134,16 +134,12 @@ exports[`add-ssr angular.json should be configured properly 1`] = `
 exports[`add-ssr app.module.server.ts should be updated 1`] = `
 "import { NgModule } from '@angular/core';
 import { ServerModule } from '@angular/platform-server';
-
-import { AppModule } from './app.module';
 import { AppComponent } from './app.component';
+import { AppModule } from './app.module';
 import { provideServer } from '@spartacus/setup/ssr';
 
 @NgModule({
-  imports: [
-    AppModule,
-    ServerModule,
-  ],
+  imports: [AppModule, ServerModule],
   bootstrap: [AppComponent],
   providers: [
     ...provideServer({
@@ -157,7 +153,7 @@ export class AppServerModule {}
 
 exports[`add-ssr app.module.ts should be updated 1`] = `
 "import { NgModule } from '@angular/core';
-import { BrowserModule,  } from '@angular/platform-browser';
+import { BrowserModule,   } from '@angular/platform-browser';
 
 import { provideHttpClient, withFetch, withInterceptorsFromDi } from "@angular/common/http";
 import { EffectsModule } from "@ngrx/effects";

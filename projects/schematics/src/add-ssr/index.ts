@@ -388,8 +388,13 @@ function removeClientHydration(spartacusOptions: SpartacusOptions): Rule {
     const sourceFile = getTsSourceFile(tree, appModulePath);
 
     // Remove import
-    const importChange = removeImport(sourceFile, {
+    const removeProvideClientHydrationImport = removeImport(sourceFile, {
       className: `provideClientHydration`,
+      importPath: ANGULAR_PLATFORM_BROWSER,
+    });
+
+    const removeWithEventReplayImport = removeImport(sourceFile, {
+      className: `withEventReplay`,
       importPath: ANGULAR_PLATFORM_BROWSER,
     });
 
@@ -397,10 +402,14 @@ function removeClientHydration(spartacusOptions: SpartacusOptions): Rule {
     const providerChanges = removeFromModuleProviders(
       sourceFile,
       ts.SyntaxKind.CallExpression,
-      `provideClientHydration()`
+      `provideClientHydration(withEventReplay())`
     );
 
-    const changes = [importChange, ...providerChanges];
+    const changes = [
+      removeProvideClientHydrationImport,
+      removeWithEventReplayImport,
+      ...providerChanges,
+    ];
     commitChanges(tree, appModulePath, changes);
 
     if (spartacusOptions.debug) {
