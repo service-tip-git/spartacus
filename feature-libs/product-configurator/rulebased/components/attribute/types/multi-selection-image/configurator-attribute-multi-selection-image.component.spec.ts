@@ -387,7 +387,7 @@ describe('ConfiguratorAttributeMultiSelectionImageComponent', () => {
         '',
         1,
         'aria-label',
-        'configurator.a11y.description'
+        'configurator.a11y.description value:val4'
       );
     });
 
