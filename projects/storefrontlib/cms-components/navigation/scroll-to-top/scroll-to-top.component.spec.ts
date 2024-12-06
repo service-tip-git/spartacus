@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import {
   AnonymousConsentsService,
+  AuthService,
   CmsScrollToTopComponent,
   FeatureConfigService,
   I18nTestingModule,
@@ -35,6 +36,12 @@ class MockAnonymousConsentsService {
   }
 }
 
+class MockAuthService {
+  isUserLoggedIn() {
+    return of(false);
+  }
+}
+
 describe('ScrollToTopComponent', () => {
   let component: ScrollToTopComponent;
   let fixture: ComponentFixture<ScrollToTopComponent>;
@@ -58,6 +65,10 @@ describe('ScrollToTopComponent', () => {
         {
           provide: AnonymousConsentsService,
           useClass: MockAnonymousConsentsService,
+        },
+        {
+          provide: AuthService,
+          useClass: MockAuthService,
         },
       ],
     }).compileComponents();

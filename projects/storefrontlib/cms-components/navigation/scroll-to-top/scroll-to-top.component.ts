@@ -22,8 +22,9 @@ import {
   WindowRef,
   AnonymousConsentsService,
   useFeatureStyles,
+  AuthService,
 } from '@spartacus/core';
-import { take, Observable } from 'rxjs';
+import { take, Observable, of, switchMap } from 'rxjs';
 import { CmsComponentData } from '../../../cms-structure/page/model/cms-component-data';
 import { SelectFocusUtility } from '../../../layout/a11y/index';
 import { ICON_TYPE } from '../../misc/icon/icon.model';
@@ -58,6 +59,7 @@ export class ScrollToTopComponent implements OnInit {
       optional: true,
     }
   );
+  protected authService = inject(AuthService, { optional: true });
 
   constructor(
     protected winRef: WindowRef,
@@ -70,7 +72,15 @@ export class ScrollToTopComponent implements OnInit {
   ngOnInit(): void {
     this.setConfig();
     if (this.featureConfigService?.isEnabled('a11yScrollToTopPositioning')) {
-      this.elevatedPosition$ = this.anonymousConsentsService?.isBannerVisible();
+      this.elevatedPosition$ = this.authService
+        ?.isUserLoggedIn()
+        .pipe(
+          switchMap((isLoggedIn) =>
+            !isLoggedIn && this.anonymousConsentsService
+              ? this.anonymousConsentsService.isBannerVisible()
+              : of(false)
+          )
+        );
     }
   }
 
