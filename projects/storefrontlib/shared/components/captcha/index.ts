@@ -10,3 +10,4 @@ export * from './captcha.module';
 export * from './captcha.model';
 export * from './captcha-api-config';
 export * from './captcha.renderer';
+export * from './captcha.service';
