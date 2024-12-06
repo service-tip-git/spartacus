@@ -407,6 +407,7 @@ if (environment.cpq) {
         a11yTableHeaderReadout: true,
         a11ySearchboxAssistiveMessage: true,
         a11yDifferentiateFocusedAndSelected: true,
+        a11yAddPaddingToCarouselPanel: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
         useSiteThemeService: false,
         enableConsecutiveCharactersPasswordRequirement: true,
