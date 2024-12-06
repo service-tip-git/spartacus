@@ -742,6 +742,12 @@ export interface FeatureTogglesInterface {
   a11yDifferentiateFocusedAndSelected?: boolean;
 
   /**
+   * Adds horizontal padding to the 'carousel-panel' to fix the issue where the focus only covers three sides of the 'Previous slide' and 'Next slide' buttons within the carousel section.
+   * Affects: CarouselComponent
+   */
+  a11yAddPaddingToCarouselPanel?: boolean;
+
+  /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
    * into a request body, instead of query params.
    * This toggle is used in the following classes: `OccCartAdapter`, `OccSavedCartAdapter`, `SavedCartOccModule`, `CartBaseOccModule`.
@@ -968,6 +974,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yTableHeaderReadout: false,
   a11ySearchboxAssistiveMessage: false,
   a11yDifferentiateFocusedAndSelected: false,
+  a11yAddPaddingToCarouselPanel: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
