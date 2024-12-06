@@ -32,7 +32,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
 import { FeatureDirective } from '@spartacus/core';
 import { OutletDirective } from '@spartacus/storefront';
 import { SpinnerComponent } from '@spartacus/storefront';
-import { AddToCartComponent } from '../../../../base/components/add-to-cart/add-to-cart.component';
+import { AddToCartComponent } from '@spartacus/cart/base/components/add-to-cart';
 import { TranslatePipe } from '@spartacus/core';
 
 @Component({

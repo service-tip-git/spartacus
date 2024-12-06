@@ -14,7 +14,7 @@ import {
 } from './quote-items.component.service';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { IconComponent } from '@spartacus/storefront';
-import { AbstractOrderContextDirective } from '../../../cart/base/components/abstract-order-context/abstract-order-context.directive';
+import { AbstractOrderContextDirective } from '@spartacus/cart/base/components';
 import { OutletDirective } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
 

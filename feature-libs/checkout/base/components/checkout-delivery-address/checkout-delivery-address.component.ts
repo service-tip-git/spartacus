@@ -40,7 +40,7 @@ import { CheckoutStepService } from '../services/checkout-step.service';
 import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
 import { FeatureDirective } from '@spartacus/core';
 import { CardComponent } from '@spartacus/storefront';
-import { AddressFormComponent } from '../../../../user/profile/components/address-book/address-form/address-form.component';
+import { AddressFormComponent } from '@spartacus/user/profile/components';
 import { SpinnerComponent } from '@spartacus/storefront';
 import { TranslatePipe } from '@spartacus/core';
 

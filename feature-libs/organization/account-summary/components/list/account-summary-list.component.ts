@@ -6,7 +6,7 @@
 
 import { Component } from '@angular/core';
 import { UnitListComponent } from '@spartacus/organization/administration/components';
-import { ListComponent } from '../../../administration/components/shared/list/list.component';
+import { ListComponent } from '@spartacus/organization/administration/components';
 import { TranslatePipe } from '@spartacus/core';
 @Component({
   selector: 'cx-account-summary-list',
