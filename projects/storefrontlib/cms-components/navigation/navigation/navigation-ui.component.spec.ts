@@ -480,8 +480,12 @@ describe('Navigation UI Component', () => {
 
       expect(nestedTriggerButton).toBeDefined();
       expect(rootTriggerButton).toBeDefined();
-      expect(rootTriggerButton.getAttribute('title')).toEqual(`navigation.menuButonTitle title:${rootTitle}`);
-      expect(nestedTriggerButton.getAttribute('title')).toEqual(`navigation.menuButonTitle title:${childTitle}`);
+      expect(rootTriggerButton.getAttribute('title')).toEqual(
+        `navigation.menuButonTitle title:${rootTitle}`
+      );
+      expect(nestedTriggerButton.getAttribute('title')).toEqual(
+        `navigation.menuButonTitle title:${childTitle}`
+      );
     });
   });
 });
