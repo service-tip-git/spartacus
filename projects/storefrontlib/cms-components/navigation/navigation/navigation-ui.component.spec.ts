@@ -466,8 +466,8 @@ describe('Navigation UI Component', () => {
 
   describe('trigger buttions ariaLabel/title', () => {
     it('should have the ariaLabel and title set', () => {
-      const rootNode = mockNode?.children![0];
-      const childNode = rootNode?.children![0];
+      const rootNode = mockNode.children?.[0];
+      const childNode = rootNode?.children?.[0];
       const rootTitle = rootNode?.title;
       const childTitle = childNode?.title;
       fixture.detectChanges();
