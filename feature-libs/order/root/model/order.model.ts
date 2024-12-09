@@ -9,6 +9,7 @@ import {
   DeliveryMode,
   DeliveryOrderEntryGroup,
   OrderEntry,
+  OrderEntryGroup,
   PickupOrderEntryGroup,
   PromotionResult,
   Voucher,
@@ -117,6 +118,7 @@ export interface Order {
   deliveryStatus?: string;
   deliveryStatusDisplay?: string;
   entries?: OrderEntry[];
+  entryGroups?: OrderEntryGroup[];
   guestCustomer?: boolean;
   guid?: string;
   net?: boolean;
