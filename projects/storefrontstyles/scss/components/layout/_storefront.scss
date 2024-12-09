@@ -36,10 +36,8 @@
       }
     }
 
-    @include forFeature('a11yKeyboardFocusInSearchBox') {
-      :focus-within {
-        --cx-visual-focus-width: 0;
-      }
+    :focus-within {
+      --cx-visual-focus-width: 0;
     }
   }
 
