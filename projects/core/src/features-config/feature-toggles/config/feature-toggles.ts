@@ -759,6 +759,12 @@ export interface FeatureTogglesInterface {
   a11yQuickOrderSearchBoxRefocusOnClose?: boolean;
 
   /**
+   * Adds a visible focus indicator for keyboard navigation in the `SearchBoxComponent` without affecting the visual state for mouse interactions.
+   * Affects: SearchBoxComponent
+   */
+  a11yKeyboardFocusInSearchBox?: boolean;
+
+  /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
    * into a request body, instead of query params.
    * This toggle is used in the following classes: `OccCartAdapter`, `OccSavedCartAdapter`, `SavedCartOccModule`, `CartBaseOccModule`.
@@ -986,6 +992,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yDifferentiateFocusedAndSelected: false,
   a11yAddPaddingToCarouselPanel: false,
   a11yQuickOrderSearchBoxRefocusOnClose: false,
+  a11yKeyboardFocusInSearchBox: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,

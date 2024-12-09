@@ -406,6 +406,7 @@ if (environment.cpq) {
         a11yDifferentiateFocusedAndSelected: true,
         a11yAddPaddingToCarouselPanel: true,
         a11yQuickOrderSearchBoxRefocusOnClose: true,
+        a11yKeyboardFocusInSearchBox: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
         useSiteThemeService: false,
         enableConsecutiveCharactersPasswordRequirement: true,
