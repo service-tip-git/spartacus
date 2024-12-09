@@ -9,6 +9,8 @@ import { facadeFactory } from '@spartacus/core';
 import { ORDER_CORE_FEATURE } from '../feature-name';
 import { Order } from '../model/order.model';
 import { Consignment } from '@spartacus/order/root';
+import { OrderEntry } from '@spartacus/cart/base/root';
+import { HierarchyNode } from '@spartacus/storefront';
 
 @Injectable({
   providedIn: 'root',
@@ -16,9 +18,7 @@ import { Consignment } from '@spartacus/order/root';
     facadeFactory({
       facade: OrderConsignmentFacade,
       feature: ORDER_CORE_FEATURE,
-      methods: [
-        'assignEntryGroupsToConsignments',
-      ],
+      methods: ['assignEntryGroupsToConsignments', 'processUnconsignedEntries'],
     }),
 })
 export abstract class OrderConsignmentFacade {
@@ -29,5 +29,29 @@ export abstract class OrderConsignmentFacade {
    * @param consignments The list of consignments to be enriched with entry groups.
    * @returns An updated list of consignments, each containing its related entry groups.
    */
-  abstract assignEntryGroupsToConsignments(order: Order, consignments: Consignment[]): Consignment[];
+  abstract assignEntryGroupsToConsignments(
+    order: Order,
+    consignments: Consignment[]
+  ): Consignment[];
+
+  /**
+   * Processes unconsigned entries for a given order, generating filtered entries and hierarchy trees.
+   *
+   * @param order The order containing entryGroups.
+   * @param unconsignedEntries The unconsigned entries to process.
+   * @returns An object containing filtered entries and generated hierarchy trees for pickup and delivery.
+   */
+  abstract processUnconsignedEntries(
+    order: Order,
+    unconsignedEntries: { pickup: OrderEntry[]; delivery: OrderEntry[] }
+  ): {
+    pickup: {
+      filteredEntries: OrderEntry[];
+      hierarchyTrees: HierarchyNode[];
+    };
+    delivery: {
+      filteredEntries: OrderEntry[];
+      hierarchyTrees: HierarchyNode[];
+    };
+  };
 }

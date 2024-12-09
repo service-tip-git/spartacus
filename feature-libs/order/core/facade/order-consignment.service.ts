@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { OrderEntryGroup } from '@spartacus/cart/base/root';
+import { OrderEntry, OrderEntryGroup } from '@spartacus/cart/base/root';
 import {
   Consignment,
   Order,
@@ -27,11 +27,16 @@ export class OrderConsignmentService implements OrderConsignmentFacade {
     consignments: Consignment[]
   ): Consignment[] {
     return consignments.map((consignment) => {
-      const filteredEntries = this.filterConsignmentEntries(
+      const filteredEntries = this.filterEntries(
         consignment.entries,
-        order
+        order,
+        (entry) => entry.orderEntry?.entryNumber
       );
-      const entryNumbers = this.getEntryNumbersFromConsignment(consignment);
+
+      const entryNumbers = this.getEntryNumbers(
+        consignment.entries,
+        (entry) => entry.orderEntry?.entryNumber
+      );
 
       const matchedEntryGroups = order.entryGroups
         ?.map((group) => this.findMatchingEntryGroups(group, entryNumbers))
@@ -49,38 +54,120 @@ export class OrderConsignmentService implements OrderConsignmentFacade {
   }
 
   /**
-   * Filters the entries based on the given consignment and order.
-   * @param entries The list of entries to filter.
-   * @param order The order used for filtering.
-   * @returns A filtered list of entries.
+   * Processes unconsigned entries for a given order, generating filtered entries and hierarchy trees.
+   *
+   * @param order The order containing entryGroups.
+   * @param unconsignedEntries The unconsigned entries to process.
+   * @returns An object containing filtered entries and generated hierarchy trees for pickup and delivery.
    */
-  private filterConsignmentEntries(
-    entries: any[] | undefined,
-    order: Order
-  ): any[] {
+  processUnconsignedEntries(
+    order: Order,
+    unconsignedEntries: { pickup: OrderEntry[]; delivery: OrderEntry[] }
+  ): {
+    pickup: {
+      filteredEntries: OrderEntry[];
+      hierarchyTrees: HierarchyNode[];
+    };
+    delivery: {
+      filteredEntries: OrderEntry[];
+      hierarchyTrees: HierarchyNode[];
+    };
+  } {
+    // Filter pickup entries
+    const filteredPickupEntries = this.filterEntries<OrderEntry>(
+      unconsignedEntries.pickup,
+      order,
+      (entry) => entry.entryNumber
+    );
+    const pickupEntryNumbers = this.getEntryNumbers<OrderEntry>(
+      unconsignedEntries.pickup,
+      (entry) => entry.entryNumber
+    );
+
+    const matchedPickupEntryGroups = order.entryGroups
+      ?.map((group) => this.findMatchingEntryGroups(group, pickupEntryNumbers))
+      .filter(Boolean) as OrderEntryGroup[];
+    const pickupHierarchyTrees = this.generateHierarchyTrees(
+      matchedPickupEntryGroups
+    );
+
+    // Filter delivery entries
+    const filteredDeliveryEntries = this.filterEntries<OrderEntry>(
+      unconsignedEntries.delivery,
+      order,
+      (entry) => entry.entryNumber
+    );
+    const deliveryEntryNumbers = this.getEntryNumbers<OrderEntry>(
+      unconsignedEntries.delivery,
+      (entry) => entry.entryNumber
+    );
+
+    const matchedDeliveryEntryGroups = order.entryGroups
+      ?.map((group) =>
+        this.findMatchingEntryGroups(group, deliveryEntryNumbers)
+      )
+      .filter(Boolean) as OrderEntryGroup[];
+    const deliveryHierarchyTrees = this.generateHierarchyTrees(
+      matchedDeliveryEntryGroups
+    );
+
+    // Return results
+    return {
+      pickup: {
+        filteredEntries: filteredPickupEntries,
+        hierarchyTrees: pickupHierarchyTrees,
+      },
+      delivery: {
+        filteredEntries: filteredDeliveryEntries,
+        hierarchyTrees: deliveryHierarchyTrees,
+      },
+    };
+  }
+
+  /**
+   * A generic filtering method, applicable for both consignment entries and unconsigned entries.
+   * @param entries The array of entries to filter.
+   * @param order The order containing entryGroups.
+   * @param extractEntryNumber Optional function to extract the entryNumber from an entry.
+   * @returns An array of entries that meet the filtering criteria.
+   */
+  private filterEntries<T>(
+    entries: T[] | undefined,
+    order: Order,
+    extractEntryNumber?: (entry: T) => number | undefined
+  ): T[] {
     if (!entries) return [];
     return entries.filter((entry) => {
+      const entryNumber = extractEntryNumber
+        ? extractEntryNumber(entry)
+        : (entry as any).orderEntry?.entryNumber;
+
       return order.entryGroups?.some((group) =>
         group.entries?.some(
-          (orderEntry) => orderEntry.entryNumber === entry.orderEntry.entryNumber
+          (orderEntry) => orderEntry.entryNumber === entryNumber
         )
       );
     });
   }
 
   /**
-   * Extracts entry numbers from a consignment.
-   * @param consignment The consignment containing entries.
-   * @returns A list of entry numbers from the consignment.
+   * Extracts entry numbers from a given entries array using a specified extraction function.
+   * @param entries The array of entries to process.
+   * @param extractEntryNumber Optional function to extract the entryNumber from an entry.
+   * @returns An array of entry numbers.
    */
-  private getEntryNumbersFromConsignment(consignment: Consignment): number[] {
-    return (
-      consignment.entries
-        ?.map((entry) => entry.orderEntry?.entryNumber)
-        .filter((num): num is number => num !== undefined) ?? []
-    );
+  private getEntryNumbers<T>(
+    entries: T[] | undefined,
+    extractEntryNumber?: (entry: T) => number | undefined
+  ): number[] {
+    if (!entries) return [];
+    return entries
+      .map(
+        (entry) =>
+          extractEntryNumber?.(entry) || (entry as any)?.orderEntry?.entryNumber
+      )
+      .filter((num): num is number => num !== undefined);
   }
-
   /**
    * Recursively finds matching entry groups based on entry numbers.
    * @param group The current entry group to check.
