@@ -101,6 +101,7 @@
   <a
     class="btn btn-block btn-secondary"
     [routerLink]="{ cxRoute: 'home' } | cxUrl"
+    cxBtnLikeLink
   >
     {{ 'common.cancel' | cxTranslate }}
   </a>
@@ -113,7 +114,8 @@
 <ng-template #requiredAsterisk>
   <abbr
     *cxFeature="'a11yRequiredAsterisks'"
-    class="text-decoration-none"
+    aria-hidden="true"
+    class="text-decoration-none required-asterisk"
     title="{{ 'common.required' | cxTranslate }}"
     >*</abbr
   >

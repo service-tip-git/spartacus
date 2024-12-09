@@ -222,6 +222,7 @@ describe('ConfiguratorAttributeSingleSelectionImageComponent', () => {
     expect(description.nativeElement.innerText).toBe(
       (component.attribute.values ?? [{}])[1].description
     );
+    infoButton.click(); // hide popover after test again
   });
 
   it('should init with val3', () => {
@@ -359,18 +360,6 @@ describe('ConfiguratorAttributeSingleSelectionImageComponent', () => {
       );
     });
 
-    it("should contain label element with class name 'form-check-label' and 'aria-hidden' attribute that removes an element from the accessibility tree", () => {
-      CommonConfiguratorTestUtilsService.expectElementContainsA11y(
-        expect,
-        htmlElem,
-        'label',
-        'form-check-label',
-        1,
-        'aria-hidden',
-        'true'
-      );
-    });
-
     it("should contain button elements with 'aria-label' attribute that point out that there is a description for the current value", () => {
       (config.features ?? {}).productConfiguratorAttributeTypesV2 = true;
       fixture.detectChanges();
@@ -381,7 +370,7 @@ describe('ConfiguratorAttributeSingleSelectionImageComponent', () => {
         '',
         0,
         'aria-label',
-        'configurator.a11y.description'
+        'configurator.a11y.description value:val2'
       );
     });
 

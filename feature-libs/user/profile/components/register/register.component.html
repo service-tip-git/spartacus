@@ -29,9 +29,7 @@
                 bindValue="code"
                 formControlName="titleCode"
                 id="title-select"
-                [cxNgSelectA11y]="{
-                  ariaLabel: 'register.title' | cxTranslate,
-                }"
+                [cxNgSelectA11y]="{}"
               >
               </ng-select>
             </label>
@@ -318,7 +316,8 @@
 <ng-template #requiredAsterisk>
   <abbr
     *cxFeature="'a11yRequiredAsterisks'"
-    class="text-decoration-none"
+    aria-hidden="true"
+    class="text-decoration-none required-asterisk"
     title="{{ 'common.required' | cxTranslate }}"
     >*</abbr
   >

@@ -7,6 +7,7 @@
   >
     <ng-container *ngFor="let tab of tabs; let i = index">
       <button
+        type="button"
         class="tab-btn"
         [attr.role]="mode === TAB_MODE.ACCORDIAN ? 'button' : 'tab'"
         (click)="select(i, mode)"
@@ -18,9 +19,14 @@
         [attr.id]="tab.id"
         [attr.title]="getTitle(mode, i)"
         [class.active]="isOpen(i)"
+        [disabled]="disabled"
         #tabHeader
       >
-        {{ tab.headerKey ? (tab.headerKey | cxTranslate) : tab.header }}
+        {{
+          tab.headerKey
+            ? (tab.headerKey | cxTranslate: tab.headerParams || {})
+            : tab.header
+        }}
         <span
           *ngIf="mode === TAB_MODE.ACCORDIAN"
           class="tab-icon"

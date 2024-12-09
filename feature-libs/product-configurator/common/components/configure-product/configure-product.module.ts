@@ -15,6 +15,7 @@ import {
   UrlModule,
 } from '@spartacus/core';
 import {
+  BtnLikeLinkModule,
   IconModule,
   OutletPosition,
   ProductListOutlets,
@@ -37,6 +38,7 @@ import { ConfigureProductComponent } from './configure-product.component';
     I18nModule,
     IconModule,
     FeaturesConfigModule,
+    BtnLikeLinkModule,
   ],
   providers: [
     provideOutlet({

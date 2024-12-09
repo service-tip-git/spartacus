@@ -2,6 +2,7 @@ import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import {
+  AnonymousConsentsService,
   CmsScrollToTopComponent,
   FeatureConfigService,
   I18nTestingModule,
@@ -28,6 +29,12 @@ class MockFeatureConfigService {
   }
 }
 
+class MockAnonymousConsentsService {
+  isBannerVisible() {
+    return of(false);
+  }
+}
+
 describe('ScrollToTopComponent', () => {
   let component: ScrollToTopComponent;
   let fixture: ComponentFixture<ScrollToTopComponent>;
@@ -47,6 +54,10 @@ describe('ScrollToTopComponent', () => {
         {
           provide: FeatureConfigService,
           useClass: MockFeatureConfigService,
+        },
+        {
+          provide: AnonymousConsentsService,
+          useClass: MockAnonymousConsentsService,
         },
       ],
     }).compileComponents();

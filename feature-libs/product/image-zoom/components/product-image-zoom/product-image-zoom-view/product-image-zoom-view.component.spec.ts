@@ -16,6 +16,7 @@ import { By } from '@angular/platform-browser';
 import {
   FeatureConfigService,
   FeaturesConfigModule,
+  I18nTestingModule,
   ImageGroup,
   Product,
 } from '@spartacus/core';
@@ -26,6 +27,7 @@ import {
   CurrentProductService,
 } from '@spartacus/storefront';
 import { EMPTY, Observable, of } from 'rxjs';
+
 import { ProductImageZoomViewComponent } from './product-image-zoom-view.component';
 
 const firstImage = {
@@ -134,7 +136,7 @@ describe('ProductImageZoomViewComponent', () => {
 
   beforeEach(async () => {
     TestBed.configureTestingModule({
-      imports: [FeaturesConfigModule],
+      imports: [I18nTestingModule, FeaturesConfigModule],
       declarations: [
         ProductImageZoomViewComponent,
         MockIconComponent,

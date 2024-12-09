@@ -1,5 +1,11 @@
 import { Component, Input, TemplateRef } from '@angular/core';
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  fakeAsync,
+  TestBed,
+  tick,
+  waitForAsync,
+} from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { I18nTestingModule, LoggerService, Product } from '@spartacus/core';
@@ -91,7 +97,7 @@ describe('Carousel Component', () => {
       component.template = template;
       component.ngOnInit();
       let results: number;
-
+      component.ngOnChanges();
       component.size$.subscribe((value) => (results = value)).unsubscribe();
 
       expect(results).toEqual(4);
@@ -101,6 +107,7 @@ describe('Carousel Component', () => {
       spyOn(service, 'getItemsPerSlide').and.returnValue(of(4));
       component.template = template;
       component.ngOnInit();
+      component.ngOnChanges();
       component.size$.subscribe().unsubscribe();
       expect(component.activeSlide).toEqual(0);
     });
@@ -139,6 +146,7 @@ describe('Carousel Component', () => {
       it('should have h2 with title', () => {
         component.title = 'test carousel with title';
         component.ngOnInit();
+        component.ngOnChanges();
         fixture.detectChanges();
 
         const el = fixture.debugElement.query(By.css('h2'));
@@ -163,6 +171,7 @@ describe('Carousel Component', () => {
         spyOn(service, 'getItemsPerSlide').and.returnValue(of(4));
         component.items = [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY];
         component.ngOnInit();
+        component.ngOnChanges();
         fixture.detectChanges();
       });
 
@@ -278,6 +287,7 @@ describe('Carousel Component', () => {
         spyOn(service, 'getItemsPerSlide').and.returnValue(of(4));
         component.items = [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY];
         component.ngOnInit();
+        component.ngOnChanges();
         fixture.detectChanges();
       });
 
@@ -325,6 +335,7 @@ describe('Carousel Component', () => {
           EMPTY,
         ];
         component.ngOnInit();
+        component.ngOnChanges();
         fixture.detectChanges();
       });
 
@@ -363,6 +374,7 @@ describe('Carousel Component', () => {
         component.title = 'test carousel with title';
         component.items = [EMPTY, EMPTY, EMPTY];
         component.ngOnInit();
+        component.ngOnChanges();
         fixture.detectChanges();
       });
 
@@ -589,6 +601,44 @@ describe('Carousel Component', () => {
         expect(focusableElements[initialIndex].focus).not.toHaveBeenCalled();
         expect(component.activeSlide).toBe(0);
       });
+    });
+
+    describe('skipTabForCarouselItems', () => {
+      let carouselItems: HTMLElement[] = [];
+      beforeEach(() => {
+        component.template = template;
+        nativeElement = fixture.nativeElement;
+
+        for (let i = 0; i < 10; i++) {
+          const element = document.createElement('div');
+          element.setAttribute('cxFocusableCarouselItem', '');
+          nativeElement.appendChild(element);
+          carouselItems.push(element);
+        }
+        fixture.detectChanges();
+      });
+
+      afterEach(() => {
+        carouselItems.forEach((item) => nativeElement.removeChild(item));
+        carouselItems = [];
+      });
+
+      it('should set tabIndex to -1 for all carousel items', () => {
+        component['skipTabForCarouselItems']();
+        carouselItems.forEach((item) => {
+          expect(item.tabIndex).toBe(-1);
+        });
+      });
+
+      it('should restore tabIndex to 0 after a short delay', fakeAsync(() => {
+        component['skipTabForCarouselItems']();
+
+        tick(100);
+
+        carouselItems.forEach((item) => {
+          expect(item.tabIndex).toBe(0);
+        });
+      }));
     });
   });
 });

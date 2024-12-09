@@ -542,6 +542,7 @@ export function completeOrderProcess(
   const tokenAuthRequestAlias = login.listenForTokenAuthenticationRequest();
   authForm.login(user.email, user.password);
   cy.wait(tokenAuthRequestAlias).its('response.statusCode').should('eq', 200);
+  login.checkUserIsSignedIn(user);
   this.searchForProduct(productName);
   common.clickOnAddToCartBtnOnPD();
   this.clickOnProceedToCheckoutBtnOnPD();

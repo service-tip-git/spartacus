@@ -1,9 +1,13 @@
 <cx-org-form [i18nRoot]="i18nRoot">
   <ng-container *ngIf="form" [formGroup]="form" main>
+    <p *cxFeature="'a11yRequiredAsterisks'" class="form-legend">
+      {{ 'formLegend.required' | cxTranslate }}
+    </p>
     <label>
-      <span class="label-content required">{{
-        'orgUnit.name' | cxTranslate
-      }}</span>
+      <span class="label-content required">
+        <span>{{ 'orgUnit.name' | cxTranslate }}</span>
+        <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
+      </span>
       <input
         type="text"
         class="form-control"
@@ -12,7 +16,6 @@
         formControlName="name"
         (blur)="createUidWithName(form.get('name'), form.get('uid'))"
       />
-
       <!-- TODO: (CXSPA-7315) Remove feature toggle in the next major -->
       <cx-form-errors
         *cxFeature="'formErrorsDescriptiveMessages'"
@@ -29,9 +32,10 @@
     </label>
 
     <label>
-      <span class="label-content required">{{
-        'orgUnit.uid' | cxTranslate
-      }}</span>
+      <span class="label-content required">
+        <span>{{ 'orgUnit.uid' | cxTranslate }}</span>
+        <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
+      </span>
       <input
         class="form-control"
         type="text"
@@ -60,6 +64,21 @@
         'orgUnit.approvalProcess' | cxTranslate
       }}</span>
       <ng-select
+        *cxFeature="'a11yApprovalProcessWithNoClearable'"
+        [inputAttrs]="{ required: 'true' }"
+        formControlName="code"
+        [searchable]="false"
+        [clearable]="false"
+        [items]="approvalProcess$ | async"
+        bindLabel="name"
+        bindValue="code"
+        appendTo="cx-org-list"
+        [placeholder]="'orgUnit.approvalProcess' | cxTranslate"
+        [cxNgSelectA11y]="{}"
+      >
+      </ng-select>
+      <ng-select
+        *cxFeature="'!a11yApprovalProcessWithNoClearable'"
         [inputAttrs]="{ required: 'true' }"
         formControlName="code"
         [searchable]="false"
@@ -87,10 +106,26 @@
     </label>
     <ng-container *ngIf="form.get('parentOrgUnit'); else parentOrgUnitNotes">
       <label formGroupName="parentOrgUnit">
-        <span class="label-content required">{{
-          'orgUnit.form.parentOrgUnit' | cxTranslate
-        }}</span>
+        <span class="label-content required">
+          {{ 'orgUnit.form.parentOrgUnit' | cxTranslate }}
+          <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
+        </span>
         <ng-select
+          *cxFeature="'a11yApprovalProcessWithNoClearable'"
+          [inputAttrs]="{ required: 'true' }"
+          formControlName="uid"
+          [searchable]="true"
+          [clearable]="false"
+          [items]="(units$ | async) ?? null"
+          bindLabel="name"
+          bindValue="id"
+          appendTo="cx-org-list"
+          [placeholder]="'orgUnit.form.parentOrgUnit' | cxTranslate"
+          [cxNgSelectA11y]="{}"
+        >
+        </ng-select>
+        <ng-select
+          *cxFeature="'!a11yApprovalProcessWithNoClearable'"
           [inputAttrs]="{ required: 'true' }"
           formControlName="uid"
           [searchable]="true"
@@ -125,3 +160,13 @@
     </ng-template>
   </ng-container>
 </cx-org-form>
+
+<ng-template #requiredAsterisk>
+  <abbr
+    *cxFeature="'a11yRequiredAsterisks'"
+    class="text-decoration-none required-asterisk"
+    aria-hidden="true"
+    title="{{ 'common.required' | cxTranslate }}"
+    >*</abbr
+  >
+</ng-template>
