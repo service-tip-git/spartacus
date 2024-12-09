@@ -9,6 +9,6 @@ export interface OpfMetadataModel {
   selectedPaymentOptionId: number | undefined;
   defaultSelectedPaymentOptionId?: number;
   isPaymentInProgress: boolean;
-  paymentSessionId: string | undefined;
+  opfPaymentSessionId: string | undefined;
   isTermsAndConditionsAlertClosed: boolean;
 }

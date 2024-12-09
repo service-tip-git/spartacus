@@ -14,7 +14,7 @@ export class OpfMetadataStoreService {
     termsAndConditionsChecked: false,
     selectedPaymentOptionId: undefined,
     isPaymentInProgress: false,
-    paymentSessionId: undefined,
+    opfPaymentSessionId: undefined,
     isTermsAndConditionsAlertClosed: false,
   });
 

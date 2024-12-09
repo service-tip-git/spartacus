@@ -71,6 +71,7 @@ describe('OpfResourceLoaderService', () => {
 
     it('should load provider resources successfully for scripts', fakeAsync(() => {
       const mockScriptResource = {
+        attributes: [{ key: 'crossorigin', value: 'use-credentials' }],
         url: 'script-url',
         sri: 'fake-hash-code',
         type: OpfDynamicScriptResourceType.SCRIPT,
@@ -176,6 +177,10 @@ describe('OpfResourceLoaderService', () => {
       const mockStylesResources = {
         url: 'style-url',
         sri: 'fake-hash-code',
+        attributes: [
+          { key: 'mock-key', value: 'mock-value' },
+          { key: 'crossorigin', value: 'use-credentials' },
+        ],
         type: OpfDynamicScriptResourceType.STYLES,
       };
 

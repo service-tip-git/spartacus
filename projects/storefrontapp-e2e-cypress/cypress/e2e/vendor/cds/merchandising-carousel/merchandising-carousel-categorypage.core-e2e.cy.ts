@@ -88,7 +88,7 @@ context('Merchandising Carousel - Category page', () => {
     });
 
     it('should request products filtered by additional facets when facets on a category page are changed', () => {
-      merchandisingCarousel.applyFacet(
+      merchandisingCarousel.openHiddenFacetAndApply(
         'Brand',
         merchandisingCarousel.canonBrandName
       );

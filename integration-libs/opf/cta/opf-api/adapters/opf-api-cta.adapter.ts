@@ -14,7 +14,11 @@ import {
   tryNormalizeHttpError,
 } from '@spartacus/core';
 import { OpfEndpointsService } from '@spartacus/opf/base/core';
-import { OPF_CC_PUBLIC_KEY_HEADER, OpfConfig } from '@spartacus/opf/base/root';
+import {
+  OPF_CC_PUBLIC_KEY_HEADER,
+  OpfConfig,
+  OpfMetadataStatePersistanceService,
+} from '@spartacus/opf/base/root';
 import {
   OPF_CTA_SCRIPTS_NORMALIZER,
   OpfCtaAdapter,
@@ -32,6 +36,9 @@ export class OpfApiCtaAdapter implements OpfCtaAdapter {
   protected http = inject(HttpClient);
   protected converter = inject(ConverterService);
   protected opfEndpointsService = inject(OpfEndpointsService);
+  protected opfMetadataStatePersistanceService = inject(
+    OpfMetadataStatePersistanceService
+  );
   protected config = inject(OpfConfig);
 
   protected logger = inject(LoggerService);
@@ -42,12 +49,14 @@ export class OpfApiCtaAdapter implements OpfCtaAdapter {
   };
   protected header: { [name: string]: string } = {
     ...this.headerWithNoLanguage,
-    'Accept-Language': 'en-us',
+    'Accept-Language':
+      this.opfMetadataStatePersistanceService.getActiveLanguage(),
   };
 
   protected headerWithContentLanguage: { [name: string]: string } = {
     ...this.headerWithNoLanguage,
-    'Content-Language': 'en-us',
+    'Content-Language':
+      this.opfMetadataStatePersistanceService.getActiveLanguage(),
   };
 
   getCtaScripts(

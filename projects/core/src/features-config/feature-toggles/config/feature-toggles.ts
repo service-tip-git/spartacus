@@ -212,7 +212,7 @@ export interface FeatureTogglesInterface {
   a11yPopoverFocus?: boolean;
 
   /**
-   * Adds Datepicker label and corrects heading order for 'CheckoutScheduleReplenishmentOrderComponent'.
+   * Adds Datepicker and Combobox label and corrects heading order for 'CheckoutScheduleReplenishmentOrderComponent'.
    */
   a11yScheduleReplenishment?: boolean;
 
@@ -401,6 +401,11 @@ export interface FeatureTogglesInterface {
   a11yTruncatedTextForResponsiveView?: boolean;
 
   /**
+   * `StoreFinderListItemComponent` street name is not truncated
+   */
+  a11yTruncatedTextStoreFinder?: boolean;
+
+  /**
    * When enabled focus outline on the close button inside `ProductImageZoomDialogComponent`
    * will be fully visible
    */
@@ -516,7 +521,8 @@ export interface FeatureTogglesInterface {
   a11yFacetsDialogFocusHandling?: boolean;
 
   /**
-   * `StorefrontComponent`: Prevents header links from wrapping on smaller screen sizes
+   * `StorefrontComponent`: Prevents header links from wrapping on smaller screen sizes.
+   * Enables support for increased letter-spacing up to 0.12em for header layout
    */
   headerLayoutForSmallerViewports?: boolean;
 
@@ -530,6 +536,11 @@ export interface FeatureTogglesInterface {
    * Removes 'aria-live' from 'StoreFinderComponent' and adds 'alert' role to child components elements.
    */
   a11yStoreFinderAlerts?: boolean;
+
+  /**
+   * Adds label to 'StoreFinderSearchComponent' store search input field.
+   */
+  a11yStoreFinderLabel?: boolean;
 
   /**
    * Stops the icon inside 'FormErrorsComponent' from being read out by screen readers.
@@ -731,6 +742,12 @@ export interface FeatureTogglesInterface {
   a11yDifferentiateFocusedAndSelected?: boolean;
 
   /**
+   * Adds horizontal padding to the 'carousel-panel' to fix the issue where the focus only covers three sides of the 'Previous slide' and 'Next slide' buttons within the carousel section.
+   * Affects: CarouselComponent
+   */
+  a11yAddPaddingToCarouselPanel?: boolean;
+
+  /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
    * into a request body, instead of query params.
    * This toggle is used in the following classes: `OccCartAdapter`, `OccSavedCartAdapter`, `SavedCartOccModule`, `CartBaseOccModule`.
@@ -824,6 +841,12 @@ export interface FeatureTogglesInterface {
   showRealTimeStockInPDP?: boolean;
 
   /**
+   * When enabled, the scroll-to-top button adjusts its position when other UI elements
+   * (like cookie consent banner) appear at the bottom of the page to prevent overlapping
+   */
+  a11yScrollToTopPositioning?: boolean;
+
+  /**
    * Creates a section element with applied aria-label in "Review Order" page of the checkout.
    * Moves components to be children of this section element.
    */
@@ -893,6 +916,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yOrganizationLinkableCells: false,
   a11yVisibleFocusOverflows: true,
   a11yTruncatedTextForResponsiveView: true,
+  a11yTruncatedTextStoreFinder: false,
   a11ySemanticPaginationLabel: false,
   a11yPreventCartItemsFormRedundantRecreation: false,
   a11yPreventSRFocusOnHiddenElements: false,
@@ -911,6 +935,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yFacetsDialogFocusHandling: true,
   headerLayoutForSmallerViewports: false,
   a11yStoreFinderAlerts: false,
+  a11yStoreFinderLabel: false,
   a11yFormErrorMuteIcon: false,
   a11yCxMessageFocus: false,
   a11yLinkBtnsToTertiaryBtns: false,
@@ -949,6 +974,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yTableHeaderReadout: false,
   a11ySearchboxAssistiveMessage: false,
   a11yDifferentiateFocusedAndSelected: false,
+  a11yAddPaddingToCarouselPanel: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
@@ -957,6 +983,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   allPageMetaResolversEnabledInCsr: false,
   a11yPdpGridArrangement: false,
   useExtendedMediaComponentConfiguration: false,
+  a11yScrollToTopPositioning: false,
   showRealTimeStockInPDP: false,
   enableSecurePasswordValidation: false,
 };

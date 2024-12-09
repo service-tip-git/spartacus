@@ -11,7 +11,7 @@ const initialState: OpfMetadataModel = {
   termsAndConditionsChecked: false,
   selectedPaymentOptionId: undefined,
   isPaymentInProgress: false,
-  paymentSessionId: undefined,
+  opfPaymentSessionId: undefined,
   isTermsAndConditionsAlertClosed: false,
 };
 
@@ -19,7 +19,7 @@ const state: OpfMetadataModel = {
   isPaymentInProgress: true,
   selectedPaymentOptionId: 111,
   termsAndConditionsChecked: true,
-  paymentSessionId: '111111',
+  opfPaymentSessionId: '111111',
   isTermsAndConditionsAlertClosed: false,
 };
 
@@ -77,7 +77,7 @@ describe('OpfMetadataStoreService', () => {
       isPaymentInProgress: true,
       termsAndConditionsChecked: true,
       selectedPaymentOptionId: 111,
-      paymentSessionId: '111111',
+      opfPaymentSessionId: '111111',
       isTermsAndConditionsAlertClosed: false,
     };
 

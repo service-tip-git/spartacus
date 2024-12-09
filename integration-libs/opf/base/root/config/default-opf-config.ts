@@ -9,5 +9,8 @@ import { OpfConfig } from './opf-config';
 export const defaultOpfConfig: OpfConfig = {
   opf: {
     opfBaseUrl: '',
+    paymentOption: {
+      enableInfoMessage: true,
+    },
   },
 };

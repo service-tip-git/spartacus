@@ -25,6 +25,11 @@ export class OpfCheckoutTermsAndConditionsAlertComponent implements OnInit {
 
   iconTypes = ICON_TYPE;
 
+  /**
+   * Defines if alert could be dismissed or not
+   */
+  @Input() isDismissible: boolean;
+
   @Input() isVisible: boolean;
   /**
    * Explicit Terms and Conditions (isExplicit true) requires user to accept T&C to see and select payments options.

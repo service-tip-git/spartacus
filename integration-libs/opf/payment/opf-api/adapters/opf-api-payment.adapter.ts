@@ -18,6 +18,7 @@ import {
   OPF_CC_ACCESS_CODE_HEADER,
   OPF_CC_PUBLIC_KEY_HEADER,
   OpfConfig,
+  OpfMetadataStatePersistanceService,
 } from '@spartacus/opf/base/root';
 import {
   OPF_AFTER_REDIRECT_SCRIPTS_NORMALIZER,
@@ -47,6 +48,9 @@ export class OpfApiPaymentAdapter implements OpfPaymentAdapter {
   protected converter = inject(ConverterService);
   protected opfEndpointsService = inject(OpfEndpointsService);
   protected config = inject(OpfConfig);
+  protected opfMetadataStatePersistanceService = inject(
+    OpfMetadataStatePersistanceService
+  );
   protected logger = inject(LoggerService);
 
   protected headerWithNoLanguage: { [name: string]: string } = {
@@ -55,12 +59,14 @@ export class OpfApiPaymentAdapter implements OpfPaymentAdapter {
   };
   protected header: { [name: string]: string } = {
     ...this.headerWithNoLanguage,
-    'Accept-Language': 'en-us',
+    'Accept-Language':
+      this.opfMetadataStatePersistanceService.getActiveLanguage(),
   };
 
   protected headerWithContentLanguage: { [name: string]: string } = {
     ...this.headerWithNoLanguage,
-    'Content-Language': 'en-us',
+    'Content-Language':
+      this.opfMetadataStatePersistanceService.getActiveLanguage(),
   };
 
   verifyPayment(
@@ -178,7 +184,8 @@ export class OpfApiPaymentAdapter implements OpfPaymentAdapter {
     paymentConfig: OpfPaymentInitiationConfig
   ): Observable<OpfPaymentSessionData> {
     const headers = new HttpHeaders({
-      'Accept-Language': 'en-us',
+      'Accept-Language':
+        this.opfMetadataStatePersistanceService.getActiveLanguage(),
     })
       .set(
         OPF_CC_PUBLIC_KEY_HEADER,

@@ -1,19 +1,5 @@
 <div class="form-group" *ngIf="attribute?.values?.length">
   <label
-    *cxFeature="'a11yShowLabelOfSelect'"
-    for="{{ createAttributeIdForConfigurator(attribute) }}"
-    class="label-content"
-  >
-    {{
-      'configurator.a11y.listbox'
-        | cxTranslate
-          : {
-              count: attribute.values?.length,
-            }
-    }}
-  </label>
-  <label
-    *cxFeature="'!a11yShowLabelOfSelect'"
     for="{{ createAttributeIdForConfigurator(attribute) }}"
     class="cx-visually-hidden"
   >

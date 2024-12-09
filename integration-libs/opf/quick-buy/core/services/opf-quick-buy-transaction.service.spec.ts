@@ -427,8 +427,10 @@ describe('OpfQuickBuyTransactionService', () => {
   });
 
   describe('deleteUserAddresses', () => {
-    it('should call deleteUserAddress for each address ID', () => {
+    it('should call `deleteUserAddress` for each address ID for logged in users', () => {
       const addrIds = ['addr1', 'addr2', 'addr3'];
+
+      authService.isUserLoggedIn.and.returnValue(of(true));
 
       service.deleteUserAddresses(addrIds);
 
@@ -439,8 +441,20 @@ describe('OpfQuickBuyTransactionService', () => {
       });
     });
 
+    it('should not call `deleteUserAddress` for unauthenticated users', () => {
+      const addrIds = ['addr1', 'addr2', 'addr3'];
+
+      authService.isUserLoggedIn.and.returnValue(of(false));
+
+      service.deleteUserAddresses(addrIds);
+
+      expect(userAddressService.deleteUserAddress).toHaveBeenCalledTimes(0);
+    });
+
     it('should disable global messages for address deletion success', () => {
       const addrIds = ['addr1', 'addr2'];
+
+      authService.isUserLoggedIn.and.returnValue(of(true));
 
       service.deleteUserAddresses(addrIds);
 

@@ -22,6 +22,7 @@ import {
   OpfActiveConfigurationsPagination,
   OpfActiveConfigurationsResponse,
   OpfConfig,
+  OpfMetadataStatePersistanceService,
   OpfPaymentProviderType,
 } from '@spartacus/opf/base/root';
 import { map } from 'rxjs';
@@ -84,6 +85,14 @@ class MockOpfEndpointsService implements Partial<OpfEndpointsService> {
   }
 }
 
+class MockOpfMetadataStatePersistanceService
+  implements Partial<OpfMetadataStatePersistanceService>
+{
+  getActiveLanguage(): string {
+    return 'en-us';
+  }
+}
+
 describe('OpfApiBaseAdapter', () => {
   let service: OpfApiBaseAdapter;
   let httpMock: HttpTestingController;
@@ -99,6 +108,10 @@ describe('OpfApiBaseAdapter', () => {
         ConverterService,
         { provide: LoggerService, useClass: MockLoggerService },
         { provide: OpfEndpointsService, useClass: MockOpfEndpointsService },
+        {
+          provide: OpfMetadataStatePersistanceService,
+          useClass: MockOpfMetadataStatePersistanceService,
+        },
         { provide: OpfConfig, useValue: mockOpfConfig },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),

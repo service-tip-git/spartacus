@@ -45,4 +45,23 @@
   .cx-payment-options-list-pagination {
     justify-content: flex-end;
   }
+
+  .cx-payment-info-box {
+    display: flex;
+    margin: 12px 0;
+    padding: 16px;
+    border: 1px solid #d3d6db;
+    border-radius: 10px;
+    background-color: #f1f1f1f1;
+
+    cx-icon {
+      color: var(--cx-color-info);
+    }
+  }
+
+  .cx-payment-info-box-message {
+    text-transform: none;
+    margin: 0;
+    font-weight: 600;
+  }
 }

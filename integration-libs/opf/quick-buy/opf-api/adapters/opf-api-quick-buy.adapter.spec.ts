@@ -10,20 +10,29 @@ import {
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { ConverterService, LoggerService } from '@spartacus/core';
 import { OpfEndpointsService } from '@spartacus/opf/base/core';
 import {
   OPF_CC_ACCESS_CODE_HEADER,
   OPF_CC_PUBLIC_KEY_HEADER,
   OpfConfig,
+  OpfMetadataStatePersistanceService,
 } from '@spartacus/opf/base/root';
-import { OpfApiQuickBuyAdapter } from './opf-api-quick-buy.adapter';
 import { ApplePaySessionVerificationRequest } from '@spartacus/opf/quick-buy/root';
 import { catchError, Observable, throwError } from 'rxjs';
-import {
-  provideHttpClient,
-  withInterceptorsFromDi,
-} from '@angular/common/http';
+import { OpfApiQuickBuyAdapter } from './opf-api-quick-buy.adapter';
+
+class MockOpfMetadataStatePersistanceService
+  implements Partial<OpfMetadataStatePersistanceService>
+{
+  getActiveLanguage(): string {
+    return 'en-us';
+  }
+}
 
 describe('OpfApiQuickBuyAdapter', () => {
   let service: OpfApiQuickBuyAdapter;
@@ -68,6 +77,10 @@ describe('OpfApiQuickBuyAdapter', () => {
         { provide: OpfEndpointsService, useValue: mockOpfEndpointsService },
         { provide: OpfConfig, useValue: mockOpfConfig },
         { provide: LoggerService, useValue: mockLogger },
+        {
+          provide: OpfMetadataStatePersistanceService,
+          useClass: MockOpfMetadataStatePersistanceService,
+        },
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
       ],

@@ -15,6 +15,7 @@ import {
   OPF_CC_PUBLIC_KEY_HEADER,
   OpfConfig,
   OpfDynamicScriptResourceType,
+  OpfMetadataStatePersistanceService,
 } from '@spartacus/opf/base/root';
 import {
   OpfCtaScriptsRequest,
@@ -66,6 +67,14 @@ const mockOpfConfig: OpfConfig = {
   },
 };
 
+class MockOpfMetadataStatePersistanceService
+  implements Partial<OpfMetadataStatePersistanceService>
+{
+  getActiveLanguage(): string {
+    return 'en-us';
+  }
+}
+
 describe('OpfApiCtaAdapter', () => {
   let adapter: OpfApiCtaAdapter;
   let httpMock: HttpTestingController;
@@ -85,6 +94,10 @@ describe('OpfApiCtaAdapter', () => {
         { provide: OpfConfig, useValue: mockOpfConfig },
         { provide: ConverterService, useValue: converterSpy },
         { provide: OpfEndpointsService, useValue: opfEndpointsSpy },
+        {
+          provide: OpfMetadataStatePersistanceService,
+          useClass: MockOpfMetadataStatePersistanceService,
+        },
         LoggerService,
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),

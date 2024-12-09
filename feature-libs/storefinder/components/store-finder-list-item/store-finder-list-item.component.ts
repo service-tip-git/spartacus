@@ -6,6 +6,7 @@
 
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { StoreFinderService } from '@spartacus/storefinder/core';
+import { useFeatureStyles } from '@spartacus/core';
 import { StoreFinderOutlets } from '@spartacus/storefinder/root';
 import { AbstractStoreItemComponent } from '../abstract-store-item/abstract-store-item.component';
 
@@ -29,6 +30,7 @@ export class StoreFinderListItemComponent extends AbstractStoreItemComponent {
 
   constructor(protected storeFinderService: StoreFinderService) {
     super(storeFinderService);
+    useFeatureStyles('a11yTruncatedTextStoreFinder');
   }
 
   handleStoreItemClick() {
