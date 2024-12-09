@@ -4,19 +4,23 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import {
   AbstractOrderType,
   CartOutlets,
   PromotionLocation,
 } from '@spartacus/cart/base/root';
+import { FeatureConfigService } from '@spartacus/core';
 import { Consignment, Order, OrderOutlets } from '@spartacus/order/root';
+import { OrderConsignmentService } from '@spartacus/order/core';
 
 @Component({
   selector: 'cx-order-consigned-entries',
   templateUrl: './order-consigned-entries.component.html',
 })
-export class OrderConsignedEntriesComponent {
+export class OrderConsignedEntriesComponent implements OnInit{
+  private featureConfig = inject(FeatureConfigService);
+
   @Input() consignments: Consignment[];
   @Input() order: Order;
   @Input() enableAddToCart: boolean | undefined;
@@ -27,4 +31,15 @@ export class OrderConsignedEntriesComponent {
   readonly OrderOutlets = OrderOutlets;
   readonly CartOutlets = CartOutlets;
   readonly abstractOrderType = AbstractOrderType;
+
+  constructor(
+    protected orderConsignmentService: OrderConsignmentService,
+  ) {}
+
+  ngOnInit() {
+    if (this.featureConfig.isEnabled('enableBundles')) {
+      this.consignments =
+        this.orderConsignmentService.assignEntryGroupsToConsignments(this.order, this.consignments);
+    }
+  }
 }

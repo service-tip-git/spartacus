@@ -3,6 +3,7 @@ import { RoutingService } from '@spartacus/core';
 import { Order, OrderHistoryFacade } from '@spartacus/order/root';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { OrderDetailsService } from './order-details.service';
+import { OrderEntryGroup } from '@spartacus/cart/base/root';
 
 const mockOrder: Order = {
   code: '1',
@@ -46,6 +47,50 @@ const mockOrder: Order = {
   },
 };
 
+const mockEntryGroups: OrderEntryGroup[] = [
+  {
+    entryGroupNumber: 1,
+    entries: [
+      {
+        entryNumber: 1,
+        product: { code: 'P001' },
+        quantity: 2,
+        deliveryPointOfService: {
+          name: 'Store A',
+        },
+      },
+    ],
+    entryGroups: [
+      {
+        entryGroupNumber: 2,
+        entries: [
+          {
+            entryNumber: 2,
+            product: { code: 'P002' },
+            quantity: 1,
+            deliveryPointOfService: {
+              name: 'Store B',
+            },
+          },
+        ],
+        entryGroups: [],
+      },
+    ],
+  },
+  {
+    entryGroupNumber: 3,
+    entries: [
+      {
+        entryNumber: 3,
+        product: { code: 'P003' },
+        quantity: 1,
+        deliveryPointOfService: undefined,
+      },
+    ],
+    entryGroups: [],
+  },
+];
+
 const mockRouterWithoutOrderCode = {
   state: {
     url: '/',
@@ -74,6 +119,12 @@ class MockOrderHistoryFacade implements Partial<OrderHistoryFacade> {
   }
   loadOrderDetails(_orderCode: string): void {}
   clearOrderDetails(): void {}
+  getEntryGroups(): Observable<OrderEntryGroup[]> {
+    return of(mockEntryGroups);
+  }
+  getOrderDetailsLoading(): Observable<boolean> {
+    return of(false);
+  }
 }
 
 class MockRoutingService implements Partial<RoutingService> {
@@ -110,6 +161,7 @@ describe('OrderDetailsService', () => {
     spyOn(orderHistoryFacade, 'loadOrderDetails');
     spyOn(orderHistoryFacade, 'clearOrderDetails');
     spyOn(orderHistoryFacade, 'getOrderDetails').and.returnValue(of(mockOrder));
+    spyOn(orderHistoryFacade, 'getEntryGroups').and.callThrough();
   });
 
   it('should be created', () => {
@@ -118,28 +170,20 @@ describe('OrderDetailsService', () => {
 
   it('should load order details', () => {
     routerSubject.next(mockRouter);
-
-    let orderDetails: Order;
-    service
-      .getOrderDetails()
-      .subscribe((data) => (orderDetails = data))
-      .unsubscribe();
-    expect(orderHistoryFacade.loadOrderDetails).toHaveBeenCalledWith('1');
-    expect(orderHistoryFacade.getOrderDetails).toHaveBeenCalled();
-    expect(orderDetails).toBe(mockOrder);
+    service.getOrderDetails().subscribe((data) => {
+      expect(orderHistoryFacade.loadOrderDetails).toHaveBeenCalledWith('1');
+      expect(orderHistoryFacade.getOrderDetails).toHaveBeenCalled();
+      expect(data).toBe(mockOrder);
+    }).unsubscribe();
   });
 
   it('should clean order details', () => {
     routerSubject.next(mockRouterWithoutOrderCode);
-
-    let orderDetails: Order;
-    service
-      .getOrderDetails()
-      .subscribe((data) => (orderDetails = data))
-      .unsubscribe();
-    expect(orderHistoryFacade.clearOrderDetails).toHaveBeenCalled();
-    expect(orderHistoryFacade.getOrderDetails).toHaveBeenCalled();
-    expect(orderDetails).toBe(mockOrder);
+    service.getOrderDetails().subscribe((data) => {
+      expect(orderHistoryFacade.clearOrderDetails).toHaveBeenCalled();
+      expect(orderHistoryFacade.getOrderDetails).toHaveBeenCalled();
+      expect(data).toBe(mockOrder);
+    }).unsubscribe();
   });
 
   it('should emit distinct orderCode values', () => {
@@ -155,15 +199,51 @@ describe('OrderDetailsService', () => {
 
     routerSubject.next(mockRouter);
 
-    let orderCode: string;
+    const orderCodes: string[] = [];
     service.orderCode$.subscribe((data) => {
-      orderCode = data;
+      orderCodes.push(data);
     });
 
-    expect(orderCode).toEqual(mockRouter.state.params.orderCode);
+    expect(orderCodes[0]).toEqual(mockRouter.state.params.orderCode);
 
     routerSubject.next(mockRouterNewOrderCode);
 
-    expect(orderCode).toEqual(mockRouterNewOrderCode.state.params.orderCode);
+    expect(orderCodes[1]).toEqual(mockRouterNewOrderCode.state.params.orderCode);
+  });
+
+  it('should get entry groups', () => {
+    let entryGroups: OrderEntryGroup[] = [];
+    service.getEntryGroups().subscribe((data) => (entryGroups = data)).unsubscribe();
+
+    expect(orderHistoryFacade.getEntryGroups).toHaveBeenCalled();
+    expect(entryGroups).toEqual(mockEntryGroups);
+  });
+
+  it('should filter pickup entry groups', () => {
+    let pickupGroups: OrderEntryGroup[] = [];
+    service.getPickupEntryGroups().subscribe((data) => (pickupGroups = data)).unsubscribe();
+
+    expect(pickupGroups[0].entryGroupNumber).toBe(1);
+
+    const childGroups = pickupGroups[0].entryGroups || [];
+    expect(childGroups.length).toBe(1);
+    expect(childGroups[0].entryGroupNumber).toBe(2);
+  });
+
+  it('should filter delivery entry groups', () => {
+    let deliveryGroups: OrderEntryGroup[] = [];
+    service.getDeliveryEntryGroups().subscribe((data) => (deliveryGroups = data)).unsubscribe();
+
+    expect(deliveryGroups.length).toBe(1);
+    expect(deliveryGroups[0].entryGroupNumber).toBe(3);
+  });
+
+
+
+  it('should return correct order loading status', () => {
+    const isLoading: boolean[] = [];
+    service.isOrderDetailsLoading().subscribe((data) => isLoading.push(data));
+
+    expect(isLoading[0]).toBe(false);
   });
 });

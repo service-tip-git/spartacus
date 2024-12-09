@@ -23,6 +23,7 @@ import {
 import { OrderOutlets, USE_MY_ACCOUNT_V2_ORDER } from '@spartacus/order/root';
 import {
   CardModule,
+  HierarchyModule,
   IconModule,
   KeyboardFocusModule,
   OutletModule,
@@ -110,7 +111,8 @@ const moduleComponents = [
     IconModule,
     MyAccountV2DownloadInvoicesModule,
     AbstractOrderContextModule,
-  ],
+    HierarchyModule
+],
   providers: [
     OrderOverviewComponentService,
     provideDefaultConfig(<CmsConfig | FeaturesConfig>{

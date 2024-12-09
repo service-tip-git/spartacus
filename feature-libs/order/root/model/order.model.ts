@@ -26,6 +26,7 @@ import {
   Principal,
   SortModel,
 } from '@spartacus/core';
+import { HierarchyNode } from '@spartacus/storefront';
 
 export interface CancelOrReturnRequestEntryInput {
   orderEntryNumber?: number;
@@ -80,6 +81,8 @@ export interface Consignment {
   status?: string;
   statusDate?: Date;
   trackingID?: string;
+  entryGroups?: OrderEntryGroup[];
+  hierachyTrees?: HierarchyNode[];
 }
 
 export interface OrderHistory {

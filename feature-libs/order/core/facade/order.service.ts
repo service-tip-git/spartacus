@@ -5,7 +5,7 @@
  */
 
 import { Injectable } from '@angular/core';
-import { ActiveCartFacade, OrderEntry } from '@spartacus/cart/base/root';
+import { ActiveCartFacade, OrderEntry, OrderEntryGroup } from '@spartacus/cart/base/root';
 import {
   Command,
   CommandService,
@@ -15,7 +15,7 @@ import {
   UserIdService,
 } from '@spartacus/core';
 import { Order, OrderFacade, OrderPlacedEvent } from '@spartacus/order/root';
-import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { map, switchMap, take, tap } from 'rxjs/operators';
 import { OrderConnector } from '../connectors/order.connector';
 
@@ -121,4 +121,47 @@ export class OrderService implements OrderFacade {
       )
     );
   }
+
+  getDeliveryEntryGroups(): Observable<OrderEntryGroup[]> {
+    return of([]);
+    // return this.getFilteredEntryGroups(
+    //   (entry) => entry.deliveryPointOfService === undefined
+    // );
+  }
+
+// /**
+//  * Return cart's entry groups based on a filter condition
+//  * @param predicate - Function to determine the filtering condition for entries
+//  */
+//   private getFilteredEntryGroups(
+//     predicate: (entry: OrderEntry) => boolean
+//   ): Observable<OrderEntryGroup[]> {
+//     return this.getEntryGroups().pipe(
+//       map((entryGroups) => {
+//         function traverse(groups: OrderEntryGroup[]): OrderEntryGroup[] {
+//           const localResult: OrderEntryGroup[] = [];
+
+//           for (const group of groups) {
+//             const newGroup = { ...group };
+//             const hasMatchingEntry = group.entries?.some(predicate);
+
+//             if (hasMatchingEntry) {
+//               localResult.push(newGroup);
+//             }
+
+//             if (group.entryGroups && group.entryGroups.length > 0) {
+//               const childGroups = traverse(group.entryGroups);
+//               if (childGroups.length > 0) {
+//                 newGroup.entryGroups = childGroups;
+//                 localResult.push(newGroup);
+//               }
+//             }
+//           }
+//           return localResult;
+//         }
+//         return traverse(entryGroups);
+//       })
+//     );
+//   }
+
 }

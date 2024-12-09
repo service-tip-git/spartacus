@@ -22,6 +22,7 @@ import {
 import {
   CardModule,
   FormErrorsModule,
+  HierarchyModule,
   OutletModule,
   PasswordVisibilityToggleModule,
   PromotionsModule,
@@ -60,6 +61,7 @@ const orderConfirmationComponents = [
     PasswordVisibilityToggleModule,
     AbstractOrderContextModule,
     FeaturesConfigModule,
+    HierarchyModule,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -114,6 +116,12 @@ const orderConfirmationComponents = [
 
         OrderConfirmationShippingComponent: {
           component: OrderConfirmationShippingComponent,
+          providers: [
+            {
+              provide: OrderDetailsService,
+              useExisting: OrderFacade,
+            },
+          ],
           guards: [OrderConfirmationGuard],
         },
 

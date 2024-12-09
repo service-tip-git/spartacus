@@ -12,7 +12,7 @@ export const defaultOccOrderConfig: OccConfig = {
       endpoints: {
         /* eslint-disable max-len */
         orderHistory: 'users/${userId}/orders',
-        orderDetail: 'users/${userId}/orders/${orderId}?fields=FULL',
+        orderDetail: 'users/${userId}/orders/${orderId}?fields=FULL,entryGroups(FULL)',
         consignmentTracking:
           'users/${userId}/orders/${orderCode}/consignments/${consignmentCode}/tracking',
         cancelOrder: 'users/${userId}/orders/${orderId}/cancellation',
@@ -36,7 +36,7 @@ export const defaultOccOrderConfig: OccConfig = {
         /** scheduled replenishment endpoints end */
 
         /** placing an order endpoints start **/
-        placeOrder: 'users/${userId}/orders?fields=FULL',
+        placeOrder: 'users/${userId}/orders?fields=FULL,entryGroups(FULL)',
         /** placing an order endpoints end **/
       },
     },
