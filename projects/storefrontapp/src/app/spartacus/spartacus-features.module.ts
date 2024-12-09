@@ -415,7 +415,6 @@ if (environment.cpq) {
         allPageMetaResolversEnabledInCsr: true,
         a11yPdpGridArrangement: true,
         useExtendedMediaComponentConfiguration: true,
-        a11yScrollToTopPositioning: true,
         showRealTimeStockInPDP: false,
         a11yWrapReviewOrderInSection: true,
         enableSecurePasswordValidation: true,
