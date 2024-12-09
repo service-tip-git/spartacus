@@ -841,12 +841,6 @@ export interface FeatureTogglesInterface {
   showRealTimeStockInPDP?: boolean;
 
   /**
-   * When enabled, the scroll-to-top button adjusts its position when other UI elements
-   * (like cookie consent banner) appear at the bottom of the page to prevent overlapping
-   */
-  a11yScrollToTopPositioning?: boolean;
-
-  /**
    * Creates a section element with applied aria-label in "Review Order" page of the checkout.
    * Moves components to be children of this section element.
    */
@@ -983,7 +977,6 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   allPageMetaResolversEnabledInCsr: false,
   a11yPdpGridArrangement: false,
   useExtendedMediaComponentConfiguration: false,
-  a11yScrollToTopPositioning: false,
   showRealTimeStockInPDP: false,
   enableSecurePasswordValidation: false,
 };
