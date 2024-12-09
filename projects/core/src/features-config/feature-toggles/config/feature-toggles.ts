@@ -396,6 +396,7 @@ export interface FeatureTogglesInterface {
    * 2. `QuickOrderFormComponent` - search combobox options are not truncated
    * 3. `BreadcrumbComponent` - breadcrumb heading is not truncated
    * 4. `CheckoutProgressMobileTopComponent` - checkout step names do not have huge vertical white space
+   * 5. 'UnitLevelOrderHistoryComponent' - sorting dropdown options will not be truncated
    */
   a11yTruncatedTextForResponsiveView?: boolean;
 
@@ -650,6 +651,11 @@ export interface FeatureTogglesInterface {
   a11yViewHoursButtonIconContrast?: boolean;
 
   /**
+   * `StoreComponent` `In Stock` icon has an acceptable contrast ratio in a default theme
+   */
+  a11yStoreInStockIconContrast?: boolean;
+
+  /**
    * `Checkout` add a landmarks to content representing steps
    */
   a11yCheckoutStepsLandmarks?: boolean;
@@ -658,6 +664,14 @@ export interface FeatureTogglesInterface {
    * In `CartItemListComponent`, change QTY into Quantity.
    */
   a11yQTY2Quantity?: boolean;
+
+  /**
+   * In `Card component`, replace button classes to .btn .btn-tertiary and use cx-generic link
+   * instead of regular <a> tag.
+   * In `My Preferred Store component`, replace a `Get directions` action from CardAction to CardLinkAction
+   * to so that Card component perceive it as a link;
+   */
+  a11yImproveButtonsInCardComponent?: boolean;
 
   /**
    * In `UnitFormComponent`, set 'clearable' as false for select of `ApprovalProcess`.
@@ -687,7 +701,7 @@ export interface FeatureTogglesInterface {
   /**
    * Fixes various instances of the focus ring being cropped in the UI.
    * The focus ring on interactive elements should have all its sides visible and not include any extra padding.
-   * Affects styles of: 'CartItemListComponent, CartItemComponent, ListComponent, FutureStockAccordionComponent, QuoteConfirmDialogComponent, MessagingComponent
+   * Affects styles of: 'CartItemListComponent, CartItemComponent, ListComponent, FutureStockAccordionComponent, QuoteConfirmDialogComponent, MessagingComponent, TabComponent
    */
   a11yCroppedFocusRing?: boolean;
 
@@ -704,6 +718,17 @@ export interface FeatureTogglesInterface {
    * InvoicesListComponent, MyInterestsComponent
    */
   a11yTableHeaderReadout?: boolean;
+
+  /**
+   * Removes the repetition of assistive message after the results are provided to the `SearchBoxComponent`.
+   */
+  a11ySearchboxAssistiveMessage?: boolean;
+
+  /**
+   * Adds additional styling to help differentiate between focused and selected items in the list.
+   * Affects: ConfiguratorAttributeSingleSelectionImageComponent, ProductImagesComponent
+   */
+  a11yDifferentiateFocusedAndSelected?: boolean;
 
   /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
@@ -757,10 +782,11 @@ export interface FeatureTogglesInterface {
   allPageMetaResolversEnabledInCsr?: boolean;
 
   /**
-   * CDS/ISS is integrated into the SAP Cloud Identity Service (SCI). The downstream services use different domains and URL formats.
-   * This feature toggle can be used to make the CDS module use these new URLs.
+   * Modifies grid arrangement in Product Details Page for better accessibility:
+   * - add to cart button should be last step
+   * - future stock accordion is moved before add to cart button
    */
-  sciEnabled?: boolean;
+  a11yPdpGridArrangement?: boolean;
 
   /**
    * When enabled, allows to provide extended formats and media queries for <picture> element if used in MediaComponent.
@@ -802,6 +828,8 @@ export interface FeatureTogglesInterface {
    * Moves components to be children of this section element.
    */
   a11yWrapReviewOrderInSection?: boolean;
+
+  enableSecurePasswordValidation?: boolean;
 }
 
 export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
@@ -906,8 +934,10 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yItemCounterFocus: false,
   a11yScrollToReviewByShowReview: false,
   a11yViewHoursButtonIconContrast: false,
+  a11yStoreInStockIconContrast: false,
   a11yCheckoutStepsLandmarks: false,
   a11yQTY2Quantity: false,
+  a11yImproveButtonsInCardComponent: false,
   a11yWrapReviewOrderInSection: false,
   a11yApprovalProcessWithNoClearable: false,
   a11yPostRegisterSuccessMessage: false,
@@ -917,13 +947,16 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yCroppedFocusRing: false,
   a11yTextSpacingAdjustments: false,
   a11yTableHeaderReadout: false,
+  a11ySearchboxAssistiveMessage: false,
+  a11yDifferentiateFocusedAndSelected: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
   enableConsecutiveCharactersPasswordRequirement: false,
   enablePasswordsCannotMatchInPasswordUpdateForm: false,
   allPageMetaResolversEnabledInCsr: false,
-  sciEnabled: false,
+  a11yPdpGridArrangement: false,
   useExtendedMediaComponentConfiguration: false,
   showRealTimeStockInPDP: false,
+  enableSecurePasswordValidation: false,
 };

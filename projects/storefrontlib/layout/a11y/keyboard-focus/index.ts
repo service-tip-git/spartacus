@@ -11,6 +11,7 @@ export { FocusConfig, TrapFocus, TrapFocusType } from './keyboard-focus.model';
 export * from './keyboard-focus.module';
 export * from './focus-testing.module';
 export * from './services/index';
+export * from './keyboard-focus.utils';
 
 // export * from './autofocus/index';
 // export * from './base/index';

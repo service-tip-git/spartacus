@@ -15,7 +15,7 @@ import {
   provideDefaultConfig,
   UrlModule,
 } from '@spartacus/core';
-import { PageSlotModule } from '@spartacus/storefront';
+import { BtnLikeLinkModule, PageSlotModule } from '@spartacus/storefront';
 import { LoginRegisterComponent } from './login-register.component';
 
 @NgModule({
@@ -26,6 +26,7 @@ import { LoginRegisterComponent } from './login-register.component';
     PageSlotModule,
     I18nModule,
     FeaturesConfigModule,
+    BtnLikeLinkModule,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{

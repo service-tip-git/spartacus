@@ -6,12 +6,11 @@
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, switchMap, take } from 'rxjs';
+import { Observable } from 'rxjs';
 import { CdsEndpointsService } from '../../../services/cds-endpoints.service';
 import { MerchandisingStrategyAdapter } from '../../connectors/strategy/merchandising-strategy.adapter';
 import { StrategyProducts } from '../../model/strategy-products.model';
 import { StrategyRequest } from './../../../cds-models/cds-strategy-request.model';
-import { BaseSiteService } from '@spartacus/core';
 
 const STRATEGY_PRODUCTS_ENDPOINT_KEY = 'strategyProducts';
 
@@ -21,7 +20,6 @@ export class CdsMerchandisingStrategyAdapter
 {
   constructor(
     private cdsEndpointsService: CdsEndpointsService,
-    private baseSiteService: BaseSiteService,
     protected http: HttpClient
   ) {}
 
@@ -36,21 +34,15 @@ export class CdsMerchandisingStrategyAdapter
         strategyRequest.headers.consentReference
       );
     }
-    return this.baseSiteService.getActive().pipe(
-      take(1),
-      switchMap((baseSite) =>
-        this.http.get(
-          this.cdsEndpointsService.getUrl(
-            STRATEGY_PRODUCTS_ENDPOINT_KEY,
-            {
-              baseSite,
-              strategyId,
-            },
-            strategyRequest.queryParams
-          ),
-          { headers }
-        )
-      )
+    return this.http.get(
+      this.cdsEndpointsService.getUrl(
+        STRATEGY_PRODUCTS_ENDPOINT_KEY,
+        {
+          strategyId,
+        },
+        strategyRequest.queryParams
+      ),
+      { headers }
     );
   }
 }

@@ -26,6 +26,7 @@ import { defaultSuggestedAddressesDialogLayoutConfig } from './address-form/sugg
     AddressFormModule,
     SpinnerModule,
     I18nModule,
+    FeaturesConfigModule,
   ],
   declarations: [AddressBookComponent],
   exports: [AddressBookComponent],
@@ -40,7 +41,6 @@ import { defaultSuggestedAddressesDialogLayoutConfig } from './address-form/sugg
     }),
     provideDefaultConfig(defaultSuggestedAddressesDialogLayoutConfig),
     UserAddressService,
-    FeaturesConfigModule,
   ],
 })
 export class AddressBookModule {}

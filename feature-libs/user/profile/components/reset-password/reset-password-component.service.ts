@@ -32,20 +32,24 @@ export class ResetPasswordComponentService {
   protected passwordValidators = this.featureConfigService?.isEnabled(
     'formErrorsDescriptiveMessages'
   )
-    ? this.featureConfigService.isEnabled(
-        'enableConsecutiveCharactersPasswordRequirement'
-      )
-      ? [
-          ...CustomFormValidators.passwordValidators,
-          CustomFormValidators.noConsecutiveCharacters,
-        ]
-      : CustomFormValidators.passwordValidators
+    ? this.featureConfigService.isEnabled('enableSecurePasswordValidation')
+      ? CustomFormValidators.securePasswordValidators
+      : this.featureConfigService.isEnabled(
+            'enableConsecutiveCharactersPasswordRequirement'
+          )
+        ? [
+            ...CustomFormValidators.passwordValidators,
+            CustomFormValidators.noConsecutiveCharacters,
+          ]
+        : CustomFormValidators.passwordValidators
     : [
-        this.featureConfigService.isEnabled(
-          'enableConsecutiveCharactersPasswordRequirement'
-        )
-          ? CustomFormValidators.strongPasswordValidator
-          : CustomFormValidators.passwordValidator,
+        this.featureConfigService.isEnabled('enableSecurePasswordValidation')
+          ? CustomFormValidators.securePasswordValidator
+          : this.featureConfigService.isEnabled(
+                'enableConsecutiveCharactersPasswordRequirement'
+              )
+            ? CustomFormValidators.strongPasswordValidator
+            : CustomFormValidators.passwordValidator,
       ];
 
   constructor(

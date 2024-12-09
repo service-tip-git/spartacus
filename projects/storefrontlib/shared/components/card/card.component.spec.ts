@@ -401,6 +401,74 @@ describe('CardComponent', () => {
     expect(editActionButton.textContent).toContain(link.name);
     expect(editActionButton.href).toContain(link.link);
   });
+
+  it('should set aria-labelledby correctly based on index', () => {
+    const mockCard: Card = { header: 'Card Header' };
+    component.content = mockCard;
+    component.index = 1;
+    fixture.detectChanges();
+
+    const cardElement = el.query(By.css('.cx-card')).nativeNode;
+    expect(cardElement.getAttribute('aria-labelledby')).toBe(
+      'content-header-1'
+    );
+  });
+
+  it('should set aria-labelledby correctly when index is negative', () => {
+    const mockCard: Card = { header: 'Card Header' };
+    component.content = mockCard;
+    component.index = -1;
+    fixture.detectChanges();
+
+    const cardElement = el.query(By.css('.cx-card')).nativeNode;
+    expect(cardElement.getAttribute('aria-labelledby')).toBe('content-header');
+  });
+
+  it('should set aria-describedby correctly when content.title is present', () => {
+    const mockCard: Card = { title: 'Card Title' };
+    component.content = mockCard;
+    component.index = 1;
+    fixture.detectChanges();
+
+    const cardElement = el.query(By.css('.cx-card')).nativeNode;
+    expect(cardElement.getAttribute('aria-describedby')).toBe(
+      'content-title-1 cx-card-container-1'
+    );
+  });
+
+  it('should set aria-describedby correctly when content.title is not present', () => {
+    component.content = {};
+    component.index = 1;
+    fixture.detectChanges();
+
+    const cardElement = el.query(By.css('.cx-card')).nativeNode;
+    expect(cardElement.getAttribute('aria-describedby')).toBe(
+      'cx-card-container-1'
+    );
+  });
+
+  it('should set aria-describedby correctly when content.title is present and index is negative', () => {
+    const mockCard: Card = { title: 'Card Title' };
+    component.content = mockCard;
+    component.index = -1;
+    fixture.detectChanges();
+
+    const cardElement = el.query(By.css('.cx-card')).nativeNode;
+    expect(cardElement.getAttribute('aria-describedby')).toBe(
+      'content-title cx-card-container'
+    );
+  });
+
+  it('should set aria-describedby correctly when content.title is not present and index is negative', () => {
+    component.content = {};
+    component.index = -1;
+    fixture.detectChanges();
+
+    const cardElement = el.query(By.css('.cx-card')).nativeNode;
+    expect(cardElement.getAttribute('aria-describedby')).toBe(
+      'cx-card-container'
+    );
+  });
 });
 
 function checkParagraph(

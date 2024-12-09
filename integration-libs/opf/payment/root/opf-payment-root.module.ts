@@ -7,11 +7,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { provideDefaultConfig } from '@spartacus/core';
+import { OpfPaymentMethodDetailsModule } from './components/opf-payment-method-details';
 import { OpfPaymentVerificationComponent } from './components/opf-payment-verification';
 import { defaultOpfPaymentRoutingConfig } from './config';
 
 @NgModule({
   imports: [
+    OpfPaymentMethodDetailsModule,
     RouterModule.forChild([
       {
         // @ts-ignore

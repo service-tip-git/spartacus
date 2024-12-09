@@ -31,6 +31,7 @@ import {
   PromotionsModule,
   ProvideOutletOptions,
   SpinnerModule,
+  BtnLikeLinkModule,
 } from '@spartacus/storefront';
 import {
   MyAccountV2ConsignmentTrackingComponent,
@@ -110,6 +111,7 @@ const moduleComponents = [
     IconModule,
     MyAccountV2DownloadInvoicesModule,
     AbstractOrderContextModule,
+    BtnLikeLinkModule,
   ],
   providers: [
     OrderOverviewComponentService,

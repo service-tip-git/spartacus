@@ -14,6 +14,7 @@ import {
   UrlModule,
 } from '@spartacus/core';
 import {
+  BtnLikeLinkModule,
   CardModule,
   ListNavigationModule,
   PromotionsModule,
@@ -42,6 +43,7 @@ const moduleComponents = [ReplenishmentOrderCancellationComponent];
     SpinnerModule,
     ListNavigationModule,
     RouterModule,
+    BtnLikeLinkModule,
   ],
   providers: [
     provideDefaultConfig(defaultReplenishmentOrderCancellationLayoutConfig),

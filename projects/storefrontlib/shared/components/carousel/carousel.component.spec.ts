@@ -1,5 +1,11 @@
 import { Component, Input, TemplateRef } from '@angular/core';
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  fakeAsync,
+  TestBed,
+  tick,
+  waitForAsync,
+} from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { I18nTestingModule, LoggerService, Product } from '@spartacus/core';
 import { ICON_TYPE } from '@spartacus/storefront';
@@ -594,6 +600,44 @@ describe('Carousel Component', () => {
         expect(focusableElements[initialIndex].focus).not.toHaveBeenCalled();
         expect(component.activeSlide).toBe(0);
       });
+    });
+
+    describe('skipTabForCarouselItems', () => {
+      let carouselItems: HTMLElement[] = [];
+      beforeEach(() => {
+        component.template = template;
+        nativeElement = fixture.nativeElement;
+
+        for (let i = 0; i < 10; i++) {
+          const element = document.createElement('div');
+          element.setAttribute('cxFocusableCarouselItem', '');
+          nativeElement.appendChild(element);
+          carouselItems.push(element);
+        }
+        fixture.detectChanges();
+      });
+
+      afterEach(() => {
+        carouselItems.forEach((item) => nativeElement.removeChild(item));
+        carouselItems = [];
+      });
+
+      it('should set tabIndex to -1 for all carousel items', () => {
+        component['skipTabForCarouselItems']();
+        carouselItems.forEach((item) => {
+          expect(item.tabIndex).toBe(-1);
+        });
+      });
+
+      it('should restore tabIndex to 0 after a short delay', fakeAsync(() => {
+        component['skipTabForCarouselItems']();
+
+        tick(100);
+
+        carouselItems.forEach((item) => {
+          expect(item.tabIndex).toBe(0);
+        });
+      }));
     });
   });
 });

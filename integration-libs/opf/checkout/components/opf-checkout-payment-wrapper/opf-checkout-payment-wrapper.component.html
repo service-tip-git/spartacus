@@ -13,50 +13,53 @@
 
 <ng-template #paymentData let-paymentLink="paymentLink">
   <div>
-    <div
-      *ngIf="
-        paymentLink.renderType === RENDER_PATTERN.FULL_PAGE &&
-        paymentLink?.destination?.url
-      "
-      class="cx-payment-link"
-    >
-      <a class="btn btn-primary" [href]="paymentLink.destination.url">{{
-        'opfCheckout.proceedPayment' | cxTranslate
-      }}</a>
-    </div>
-    <ng-container
-      *ngIf="
-        paymentLink.data && paymentLink.renderType === RENDER_PATTERN.IFRAME
-      "
-    >
-      <iframe
-        class="cx-payment-iframe"
+    <ng-container *ngIf="paymentLink?.destination?.url">
+      <div
         *ngIf="
-          !paymentLink.destination?.form?.length && paymentLink.destination?.url
+          paymentLink.renderType === RENDER_PATTERN.FULL_PAGE &&
+          !paymentLink.destination?.form?.length
         "
-        [src]="bypassSecurityTrustResourceUrl(paymentLink.destination?.url)"
-      ></iframe>
-
-      <form
-        *ngIf="paymentLink.destination?.form?.length"
-        [action]="paymentLink.destination?.url"
-        [method]="paymentLink.destination?.method"
-        [enctype]="paymentLink.destination?.contentType"
+        class="cx-payment-link"
       >
-        <fieldset>
+        <a class="btn btn-primary" [href]="paymentLink.destination.url">{{
+          'opfCheckout.proceedPayment' | cxTranslate
+        }}</a>
+      </div>
+      <ng-container
+        *ngIf="
+          paymentLink.renderType === RENDER_PATTERN.IFRAME &&
+          !paymentLink?.destination?.form?.length
+        "
+      >
+        <iframe
+          class="cx-payment-iframe"
+          [src]="bypassSecurityTrustResourceUrl(paymentLink.destination?.url)"
+        ></iframe>
+      </ng-container>
+      <div
+        *ngIf="paymentLink?.destination?.form?.length"
+        class="cx-payment-link"
+      >
+        <form
+          [action]="paymentLink.destination?.url"
+          [method]="paymentLink.destination?.method"
+          [enctype]="paymentLink.destination?.contentType"
+        >
+          <fieldset>
+            <input
+              *ngFor="let field of paymentLink.destination?.form"
+              type="hidden"
+              [name]="field?.name"
+              [value]="field?.value"
+            />
+          </fieldset>
           <input
-            *ngFor="let field of paymentLink.destination?.form"
-            type="hidden"
-            [name]="field?.name"
-            [value]="field?.value"
+            class="btn btn-primary"
+            type="submit"
+            [value]="'opfCheckout.proceedPayment' | cxTranslate"
           />
-        </fieldset>
-        <input
-          class="btn btn-primary"
-          type="submit"
-          [value]="'opfCheckout.proceedPayment' | cxTranslate"
-        />
-      </form>
+        </form>
+      </div>
     </ng-container>
     <ng-container *ngIf="paymentLink.data && !paymentLink?.destination?.url">
       <div [innerHTML]="bypassSecurityTrustHtml(paymentLink.data)"></div>
