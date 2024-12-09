@@ -16,20 +16,17 @@ import { Observable, concat, endWith, first, of, skipWhile } from 'rxjs';
 /**
  * Replacement for the Angular's deprecated type `CanActivate`.
  */
-//TODO: discuss moving this to `@spartacus/core`
 export type CanActivate = { canActivate: CanActivateFn };
 
 /**
  * Observable that emits a boolean or an UrlTree.
  */
-//TODO: discuss moving this to `@spartacus/core`
 export type CanActivateObservable = Observable<GuardResult>;
 
 /**
  * Utility service for running multiple guards and composing their results
  * into a single result observable.
  */
-//TODO: discuss moving this to `@spartacus/core`
 @Injectable({ providedIn: 'root' })
 export class GuardsComposer {
   /**

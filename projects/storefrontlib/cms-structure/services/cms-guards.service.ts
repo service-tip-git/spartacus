@@ -60,11 +60,11 @@ export class CmsGuardsService {
     // When the FeatureToggle 'cmsGuardsServiceUseGuardsComposer' is disabled,
     // use the old approach:
     if (guards.length) {
-      const canActivateObservabless = guards.map((guard) =>
+      const canActivateObservables = guards.map((guard) =>
         this.canActivateGuard(guard, route, state)
       );
 
-      return concat(...canActivateObservabless).pipe(
+      return concat(...canActivateObservables).pipe(
         skipWhile((canActivate: GuardResult) => canActivate === true),
         endWith(true),
         first()
