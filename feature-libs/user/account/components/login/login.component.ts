@@ -12,7 +12,7 @@ import {
 } from '@spartacus/core';
 import { User, UserAccountFacade } from '@spartacus/user/account/root';
 import { Observable, of } from 'rxjs';
-import { switchMap, tap } from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'cx-login',
@@ -20,6 +20,7 @@ import { switchMap, tap } from 'rxjs/operators';
 })
 export class LoginComponent implements OnInit {
   user$: Observable<User | undefined>;
+  greeting$: Observable<string | undefined>;
 
   constructor(
     private auth: AuthService,
@@ -40,23 +41,21 @@ export class LoginComponent implements OnInit {
         }
       })
     );
-  }
-
-  get greeting$() {
-    return this.user$.pipe(
+    this.greeting$ = this.user$.pipe(
       switchMap((user) =>
         this.translation.translate(`miniLogin.userGreeting`, {
           name: user?.name,
         })
-      ),
-      tap((greeting) => {
-        const rootNavButton = this.elemRef.nativeElement.querySelector(
-          'cx-navigation-ui nav ul li:first-child button'
-        );
-        if (rootNavButton) {
-          rootNavButton.setAttribute('aria-label', greeting);
-        }
-      })
+      )
     );
+  }
+
+  onDomChange(greeting: string) {
+    const target = this.elemRef.nativeElement.querySelector(
+      'cx-navigation-ui nav ul li:first-child button'
+    );
+    if (target) {
+      target.setAttribute('aria-label', greeting);
+    }
   }
 }

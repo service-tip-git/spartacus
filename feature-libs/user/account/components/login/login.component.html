@@ -1,8 +1,14 @@
 <ng-container *ngIf="user$ | async as user; else login">
-  <div class="cx-login-greet">
-    {{ greeting$ | async }}
-  </div>
-  <cx-page-slot id="account-nav" position="HeaderLinks"></cx-page-slot>
+  <ng-container *ngIf="greeting$ | async as greeting">
+    <div class="cx-login-greet">
+      {{ greeting$ | async }}
+    </div>
+    <cx-page-slot
+      (buttonAdded)="onDomChange(greeting)"
+      id="account-nav"
+      position="HeaderLinks"
+    ></cx-page-slot>
+  </ng-container>
 </ng-container>
 
 <ng-template #login>

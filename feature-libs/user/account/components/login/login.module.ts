@@ -15,6 +15,7 @@ import {
 } from '@spartacus/core';
 import { PageSlotModule } from '@spartacus/storefront';
 import { LoginComponent } from './login.component';
+import { DomChangeDirective } from './dom-change.directive';
 
 @NgModule({
   imports: [CommonModule, RouterModule, UrlModule, PageSlotModule, I18nModule],
@@ -27,6 +28,6 @@ import { LoginComponent } from './login.component';
       },
     }),
   ],
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, DomChangeDirective],
 })
 export class LoginModule {}

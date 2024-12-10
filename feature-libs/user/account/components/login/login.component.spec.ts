@@ -64,7 +64,7 @@ class MockUrlPipe implements PipeTransform {
   transform(): void {}
 }
 
-const expectedGreeting = `miniLogin.userGreeting name:${mockUserDetails.name}`;
+let expectedGreeting = `miniLogin.userGreeting name:${mockUserDetails.name}`;
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -159,9 +159,11 @@ describe('LoginComponent', () => {
     });
 
     it('should contain the dynamic slot: HeaderLinks', () => {
+      spyOn(component, 'onDomChange').and.callThrough();
       component.ngOnInit();
       fixture.detectChanges();
-
+      expectedGreeting = 'Testing;';
+      component.onDomChange(expectedGreeting);
       const expectedRootNavBtn = fixture.debugElement.query(
         By.css('cx-navigation-ui nav ul li:first-child button')
       );
