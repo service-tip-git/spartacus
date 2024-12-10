@@ -57,11 +57,7 @@
         <td role="cell">
           <div class="cx-table-item-container">
             <cx-media
-              [container]="
-                isBundleConfig
-                  ? item.product.images
-                  : item.product.images?.PRIMARY
-              "
+              [container]="item.product.images?.PRIMARY"
               format="thumbnail"
             ></cx-media>
 

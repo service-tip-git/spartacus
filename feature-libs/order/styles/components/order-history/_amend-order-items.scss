@@ -5,6 +5,7 @@
     margin: 0;
     tr {
       border-top: none;
+      border-bottom: 1px solid var(--cx-color-medium);
     }
     .cx-item-tr-border {
       border-top: 1px solid var(--cx-color-medium);
