@@ -846,6 +846,16 @@ export interface FeatureTogglesInterface {
    */
   a11yWrapReviewOrderInSection?: boolean;
 
+  /**
+   * Enables the product carousel to include products based on specified category codes.
+   *
+   * - When this feature is enabled, the carousel will fetch and display products
+   *   associated with the `categoryCodes` provided.
+   * - The `categoryCodes` are configured and managed through SmartEdit
+   *
+   */
+  enableCarouselCategoryProducts?: boolean;
+
   enableSecurePasswordValidation?: boolean;
 }
 
@@ -979,4 +989,5 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   useExtendedMediaComponentConfiguration: false,
   showRealTimeStockInPDP: false,
   enableSecurePasswordValidation: false,
+  enableCarouselCategoryProducts: false,
 };
