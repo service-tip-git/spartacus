@@ -5,17 +5,16 @@ import {
   PipeTransform,
   TemplateRef,
 } from '@angular/core';
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { RouterTestingModule } from '@angular/router/testing';
 import {
   CmsProductCarouselComponent,
-  I18nTestingModule,
   FeatureConfigService,
+  I18nTestingModule,
   Product,
   ProductScope,
-  ProductService,
   ProductSearchByCodeService,
+  ProductService,
 } from '@spartacus/core';
 import { Observable, of } from 'rxjs';
 import { CmsComponentData } from '../../../../cms-structure/page/model/cms-component-data';
@@ -161,7 +160,7 @@ describe('ProductCarouselComponent', () => {
   let productSearchByCodeService: MockProductSearchByCodeService;
 
   const testBedDefaults = {
-    imports: [RouterTestingModule, I18nTestingModule],
+    imports: [I18nTestingModule],
     declarations: [
       ProductCarouselComponent,
       MockProductCarouselItemComponent,
