@@ -55,7 +55,6 @@ export class QuickOrderFormComponent implements OnInit, OnDestroy {
   private featureConfigService = inject(FeatureConfigService);
   protected subscription = new Subscription();
   protected searchSubscription = new Subscription();
-  private featureConfigService = inject(FeatureConfigService);
 
   constructor(
     public config: Config,
