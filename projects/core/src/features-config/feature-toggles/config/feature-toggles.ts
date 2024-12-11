@@ -841,6 +841,13 @@ export interface FeatureTogglesInterface {
   sciEnabled?: boolean;
 
   /**
+   * Header. Fixes trapping focus on menu items on mobile when the menu is expanded.
+   * Sets `tabindex` attribute  to `-1` for all visible focusable elements in the header section to exclude them from
+   * keyboard navigation
+   */
+  a11yHamburgerMenuTrapFocus?: boolean;
+
+  /**
    * When enabled, allows to provide extended formats and media queries for <picture> element if used in MediaComponent.
    *
    * Important: After activation default HTML element in MediaComponent will be `<img>`
@@ -1015,6 +1022,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   allPageMetaResolversEnabledInCsr: false,
   a11yPdpGridArrangement: false,
   sciEnabled: false,
+  a11yHamburgerMenuTrapFocus: false,
   useExtendedMediaComponentConfiguration: false,
   a11yScrollToTopPositioning: false,
 };

@@ -415,6 +415,7 @@ if (environment.cpq) {
         enablePasswordsCannotMatchInPasswordUpdateForm: true,
         allPageMetaResolversEnabledInCsr: true,
         a11yPdpGridArrangement: true,
+        a11yHamburgerMenuTrapFocus: true,
         sciEnabled: true,
         useExtendedMediaComponentConfiguration: true,
         a11yScrollToTopPositioning: true,
