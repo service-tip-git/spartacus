@@ -14,17 +14,14 @@ import {
   Optional,
   ViewChild,
   inject,
-  OnDestroy,
 } from '@angular/core';
 import {
   CmsScrollToTopComponent,
   FeatureConfigService,
   ScrollBehavior,
   WindowRef,
-  AnonymousConsentsService,
-  useFeatureStyles,
 } from '@spartacus/core';
-import { take, Subscription } from 'rxjs';
+import { take } from 'rxjs/operators';
 import { CmsComponentData } from '../../../cms-structure/page/model/cms-component-data';
 import { SelectFocusUtility } from '../../../layout/a11y/index';
 import { ICON_TYPE } from '../../misc/icon/icon.model';
@@ -34,20 +31,16 @@ import { ICON_TYPE } from '../../misc/icon/icon.model';
   templateUrl: './scroll-to-top.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ScrollToTopComponent implements OnInit, OnDestroy {
+export class ScrollToTopComponent implements OnInit {
   iconTypes = ICON_TYPE;
 
   @HostBinding('class.display')
   display: boolean | undefined;
 
-  @HostBinding('class.elevated-position')
-  elevatedPosition: boolean = false;
-
   protected window: Window | undefined = this.winRef.nativeWindow;
   protected scrollBehavior: ScrollBehavior = ScrollBehavior.SMOOTH;
   protected displayThreshold: number = (this.window?.innerHeight ?? 400) / 2;
   protected triggedByKeypress: boolean = false;
-  protected subscription = new Subscription();
 
   @ViewChild('button')
   button: ElementRef;
@@ -56,32 +49,15 @@ export class ScrollToTopComponent implements OnInit, OnDestroy {
   @Optional() protected featureConfigService = inject(FeatureConfigService, {
     optional: true,
   });
-  @Optional() protected anonymousConsentsService = inject(
-    AnonymousConsentsService,
-    {
-      optional: true,
-    }
-  );
 
   constructor(
     protected winRef: WindowRef,
     protected componentData: CmsComponentData<CmsScrollToTopComponent>,
     protected selectFocusUtility: SelectFocusUtility
-  ) {
-    useFeatureStyles('a11yScrollToTopPositioning');
-  }
+  ) {}
 
   ngOnInit(): void {
     this.setConfig();
-    if (this.featureConfigService?.isEnabled('a11yScrollToTopPositioning')) {
-      this.subscription.add(
-        this.anonymousConsentsService
-          ?.isBannerVisible()
-          .subscribe((visible) => {
-            this.elevatedPosition = visible;
-          })
-      );
-    }
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -165,9 +141,5 @@ export class ScrollToTopComponent implements OnInit, OnDestroy {
     if (!this.display) {
       this.triggedByKeypress = false;
     }
-  }
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
   }
 }
