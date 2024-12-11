@@ -10,7 +10,7 @@
 // The Sparta buttons use uppercase type but future themes may want normal case
 // so a variable was created to make this available for other themes.
 @import 'functions';
-@import 'bootstrap/scss/variables';
+//@import 'bootstrap/scss/variables';
 
 $background: $white !default;
 $inverse: $white !default;
@@ -30,8 +30,22 @@ $theme-colors: map-merge(
 $font-weight-semi: 600 !default;
 $btn-text-transform: capitalize !default;
 $direction: ltr !default;
-
+$headings-font-weight: 440 !default;
 //set defaults for type size and weights
+
+
+$h1-font-size: 2.5rem;
+$h2-font-size: 2rem;
+$h3-font-size: 1.75rem;
+$h4-font-size: 1.5rem;
+$h5-font-size: 1.25rem;
+$h6-font-size: 1rem;
+$small-font-size: 0.875rem;
+$headings-font-weight: 700;
+$font-weight-normal: 400;
+
+
+
 $type: () !default;
 $type: map-merge(
   (
