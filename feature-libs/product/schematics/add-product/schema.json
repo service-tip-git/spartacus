@@ -24,6 +24,7 @@
     "features": {
       "type": "array",
       "uniqueItems": true,
+      "default": ["Product-Variants", "Image-Zoom", "Future-Stock"],
       "items": {
         "enum": [
           "Bulk-Pricing",

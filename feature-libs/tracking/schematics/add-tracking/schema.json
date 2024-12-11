@@ -24,6 +24,7 @@
     "features": {
       "type": "array",
       "uniqueItems": true,
+      "default": ["Personalization"],
       "items": {
         "enum": ["Personalization", "TMS-GTM", "TMS-AEPL"],
         "type": "string"
