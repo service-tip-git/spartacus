@@ -24,7 +24,7 @@ import {
   GlobalMessageType,
   useFeatureStyles,
 } from '@spartacus/core';
-import { combineLatest, Observable, Subscription } from 'rxjs';
+import { combineLatest, Observable, Subject, Subscription } from 'rxjs';
 import { distinctUntilChanged, take, tap } from 'rxjs/operators';
 import { ICON_TYPE } from '../../../cms-components/misc/icon/index';
 import { FocusConfig } from '../../../layout/a11y/keyboard-focus/index';
@@ -59,6 +59,8 @@ export class AnonymousConsentDialogComponent implements OnInit, OnDestroy {
   @Optional() globalMessageService = inject(GlobalMessageService, {
     optional: true,
   });
+  globalMessageType = GlobalMessageType;
+  message$ = new Subject<{ type: GlobalMessageType; key: string } | null>();
 
   @HostListener('click', ['$event'])
   handleClick(event: UIEvent): void {
@@ -83,6 +85,7 @@ export class AnonymousConsentDialogComponent implements OnInit, OnDestroy {
     }
     useFeatureStyles('a11yUseButtonsForBtnLinks');
     useFeatureStyles('a11yExpandedFocusIndicator');
+    useFeatureStyles('a11yAnonymousConsentMessageInDialog');
   }
 
   ngOnInit(): void {
@@ -121,7 +124,13 @@ export class AnonymousConsentDialogComponent implements OnInit, OnDestroy {
         )
         .subscribe(() => this.onConsentWithdrawnSuccess())
     );
-    this.close('rejectAll');
+    if (
+      !this.featureConfigService.isEnabled(
+        'a11yAnonymousConsentMessageInDialog'
+      )
+    ) {
+      this.close('rejectAll');
+    }
   }
 
   allowAll(): void {
@@ -151,7 +160,13 @@ export class AnonymousConsentDialogComponent implements OnInit, OnDestroy {
         )
         .subscribe(() => this.onConsentGivenSuccess())
     );
-    this.close('allowAll');
+    if (
+      !this.featureConfigService.isEnabled(
+        'a11yAnonymousConsentMessageInDialog'
+      )
+    ) {
+      this.close('allowAll');
+    }
   }
 
   private isRequiredConsent(template: ConsentTemplate): boolean {
@@ -194,6 +209,13 @@ export class AnonymousConsentDialogComponent implements OnInit, OnDestroy {
 
   protected onConsentGivenSuccess(): void {
     if (
+      this.featureConfigService.isEnabled('a11yAnonymousConsentMessageInDialog')
+    ) {
+      this.message$.next({
+        type: GlobalMessageType.MSG_TYPE_CONFIRMATION,
+        key: 'consentManagementForm.message.success.given',
+      });
+    } else if (
       this.featureConfigService.isEnabled('a11yNotificationsOnConsentChange')
     ) {
       this.globalMessageService?.add(
@@ -205,6 +227,13 @@ export class AnonymousConsentDialogComponent implements OnInit, OnDestroy {
 
   protected onConsentWithdrawnSuccess(): void {
     if (
+      this.featureConfigService.isEnabled('a11yAnonymousConsentMessageInDialog')
+    ) {
+      this.message$.next({
+        type: GlobalMessageType.MSG_TYPE_CONFIRMATION,
+        key: 'consentManagementForm.message.success.withdrawn',
+      });
+    } else if (
       this.featureConfigService.isEnabled('a11yNotificationsOnConsentChange')
     ) {
       this.globalMessageService?.add(
@@ -212,6 +241,10 @@ export class AnonymousConsentDialogComponent implements OnInit, OnDestroy {
         GlobalMessageType.MSG_TYPE_CONFIRMATION
       );
     }
+  }
+
+  closeMessage(): void {
+    this.message$.next(null);
   }
 
   ngOnDestroy(): void {
