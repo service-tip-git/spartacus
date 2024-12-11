@@ -765,6 +765,12 @@ export interface FeatureTogglesInterface {
   a11yKeyboardFocusInSearchBox?: boolean;
 
   /**
+   * Search dropdowns will display the focus ring correctly when navigating to the options using the down arrow key.
+   * Affects: SearchBoxComponent, QuickOrderFormComponent
+   */
+  a11ySearchableDropdownFirstElementFocus?: boolean;
+
+  /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
    * into a request body, instead of query params.
    * This toggle is used in the following classes: `OccCartAdapter`, `OccSavedCartAdapter`, `SavedCartOccModule`, `CartBaseOccModule`.
@@ -993,6 +999,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yAddPaddingToCarouselPanel: false,
   a11yQuickOrderSearchBoxRefocusOnClose: false,
   a11yKeyboardFocusInSearchBox: false,
+  a11ySearchableDropdownFirstElementFocus: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,

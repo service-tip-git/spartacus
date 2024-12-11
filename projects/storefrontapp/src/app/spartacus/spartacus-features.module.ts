@@ -407,6 +407,7 @@ if (environment.cpq) {
         a11yAddPaddingToCarouselPanel: true,
         a11yQuickOrderSearchBoxRefocusOnClose: true,
         a11yKeyboardFocusInSearchBox: true,
+        a11ySearchableDropdownFirstElementFocus: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
         useSiteThemeService: false,
         enableConsecutiveCharactersPasswordRequirement: true,
