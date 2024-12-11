@@ -804,6 +804,12 @@ export interface FeatureTogglesInterface {
    */
   a11yHideConsentButtonWhenBannerVisible?: boolean;
 
+  /*
+   * Restores the focus to the card once a option has been selected and the checkout has updated.
+   * Affects: CheckoutPaymentMethodComponent, CheckoutDeliveryAddressComponent
+   */
+  a11yFocusOnCardAfterSelecting?: boolean;
+
   /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
    * into a request body, instead of query params.
@@ -1046,6 +1052,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yKeyboardFocusInSearchBox: false,
   a11ySearchableDropdownFirstElementFocus: false,
   a11yHideConsentButtonWhenBannerVisible: false,
+  a11yFocusOnCardAfterSelecting: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,

@@ -413,6 +413,7 @@ if (environment.cpq) {
         a11yKeyboardFocusInSearchBox: true,
         a11ySearchableDropdownFirstElementFocus: true,
         a11yHideConsentButtonWhenBannerVisible: true,
+        a11yFocusOnCardAfterSelecting: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
         useSiteThemeService: false,
         enableConsecutiveCharactersPasswordRequirement: true,
