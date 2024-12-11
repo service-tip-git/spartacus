@@ -23,6 +23,7 @@ module.exports = {
   ],
   resolve: {
     fallback: {
+      bootstrap: path.join(__dirname, 'projects/styles/bootstrap-copy'),
       '@spartacus/styles': path.join(__dirname, 'projects/storefrontstyles'),
       '@spartacus/user': path.join(__dirname, 'feature-libs/user'),
       '@spartacus/organization': path.join(
