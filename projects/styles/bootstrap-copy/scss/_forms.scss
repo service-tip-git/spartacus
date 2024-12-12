@@ -81,11 +81,6 @@ select.form-control {
 }
 
 // Make file inputs better match text inputs by forcing them to new lines.
-.form-control-file,
-.form-control-range {
-  display: block;
-  width: 100%;
-}
 
 
 //
@@ -122,25 +117,6 @@ select.form-control {
 // Apply class to a readonly input to make it appear like regular plain
 // text (without any border, background color, focus indicator)
 
-.form-control-plaintext {
-  display: block;
-  width: 100%;
-  padding: $input-padding-y 0;
-  margin-bottom: 0; // match inputs if this class comes on inputs with default margins
-  @include font-size($input-font-size);
-  line-height: $input-line-height;
-  color: $input-plaintext-color;
-  background-color: transparent;
-  border: solid transparent;
-  border-width: $input-border-width 0;
-
-  &.form-control-sm,
-  &.form-control-lg {
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
-
 
 // Form control sizing
 //
@@ -148,14 +124,6 @@ select.form-control {
 // height and font-size of form controls.
 //
 // Repeated in `_input_group.scss` to avoid Sass extend issues.
-
-.form-control-sm {
-  height: $input-height-sm;
-  padding: $input-padding-y-sm $input-padding-x-sm;
-  @include font-size($input-font-size-sm);
-  line-height: $input-line-height-sm;
-  @include border-radius($input-border-radius-sm);
-}
 
 .form-control-lg {
   height: $input-height-lg;
@@ -310,9 +278,6 @@ textarea.form-control {
     }
 
     // Make static controls behave like regular ones
-    .form-control-plaintext {
-      display: inline-block;
-    }
 
     .input-group,
     .custom-select {
@@ -339,9 +304,6 @@ textarea.form-control {
     .custom-control {
       align-items: center;
       justify-content: center;
-    }
-    .custom-control-label {
-      margin-bottom: 0;
     }
   }
 }

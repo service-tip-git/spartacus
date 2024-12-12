@@ -114,11 +114,6 @@ $rfs-breakpoint-unit-cache: unit($rfs-breakpoint);
 @mixin _rfs-disable-class {
   @if $rfs-class == "disable" {
     // Adding an extra class increases specificity, which prevents the media query to override the font size
-    &,
-    .disable-responsive-font-size &,
-    &.disable-responsive-font-size {
-      @content;
-    }
   }
   @else {
     @content;
@@ -128,10 +123,6 @@ $rfs-breakpoint-unit-cache: unit($rfs-breakpoint);
 // Internal mixin that adds enable classes to the selector if needed.
 @mixin _rfs-enable-class {
   @if $rfs-class == "enable" {
-    .enable-responsive-font-size &,
-    &.enable-responsive-font-size {
-      @content;
-    }
   }
   @else {
     @content;

@@ -148,47 +148,11 @@
     }
   }
 
-  .custom-control-input {
-    @include form-validation-state-selector($state) {
-      ~ .custom-control-label {
-        color: $color;
-
-        &::before {
-          border-color: $color;
-        }
-      }
-
-      &:checked {
-        ~ .custom-control-label::before {
-          border-color: lighten($color, 10%);
-          @include gradient-bg(lighten($color, 10%));
-        }
-      }
-
-      &:focus {
-        ~ .custom-control-label::before {
-          box-shadow: 0 0 0 $input-focus-width rgba($color, .25);
-        }
-
-        &:not(:checked) ~ .custom-control-label::before {
-          border-color: $color;
-        }
-      }
-    }
-  }
-
   // custom file
   .custom-file-input {
     @include form-validation-state-selector($state) {
-      ~ .custom-file-label {
-        border-color: $color;
-      }
 
       &:focus {
-        ~ .custom-file-label {
-          border-color: $color;
-          box-shadow: 0 0 0 $input-focus-width rgba($color, .25);
-        }
       }
     }
   }
