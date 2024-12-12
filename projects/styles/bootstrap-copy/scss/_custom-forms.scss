@@ -2,7 +2,6 @@
 // Released under MIT and copyright 2014 Waybury.
 // https://useiconic.com/open
 
-
 // Checkboxes and radios
 //
 // Base class takes care of all the key behavioral aspects.
@@ -20,7 +19,6 @@
 //
 // Build the custom controls out of pseudo-elements.
 
-
 // Checkboxes
 //
 // Tweak just a few things for checkboxes.
@@ -29,16 +27,13 @@
 //
 // Tweak just a few things for radios.
 
-
 // switches
 //
 // Tweak a few things for switches
 
 .custom-switch {
   padding-left: $custom-switch-width + $custom-control-gutter;
-
 }
-
 
 // Select
 //
@@ -50,7 +45,9 @@
   display: inline-block;
   width: 100%;
   height: $custom-select-height;
-  padding: $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding) $custom-select-padding-y $custom-select-padding-x;
+  padding: $custom-select-padding-y
+    ($custom-select-padding-x + $custom-select-indicator-padding)
+    $custom-select-padding-y $custom-select-padding-x;
   font-family: $custom-select-font-family;
   @include font-size($custom-select-font-size);
   font-weight: $custom-select-font-weight;
@@ -67,7 +64,10 @@
     border-color: $custom-select-focus-border-color;
     outline: 0;
     @if $enable-shadows {
-      @include box-shadow($custom-select-box-shadow, $custom-select-focus-box-shadow);
+      @include box-shadow(
+        $custom-select-box-shadow,
+        $custom-select-focus-box-shadow
+      );
     } @else {
       // Avoid using mixin so we can pass custom focus shadow properly
       box-shadow: $custom-select-focus-box-shadow;
@@ -85,7 +85,7 @@
   }
 
   &[multiple],
-  &[size]:not([size="1"]) {
+  &[size]:not([size='1']) {
     height: auto;
     padding-right: $custom-select-padding-x;
     background-image: none;
@@ -107,7 +107,6 @@
     text-shadow: 0 0 0 $custom-select-color;
   }
 }
-
 
 // File
 //
@@ -134,7 +133,6 @@
 
   @each $lang, $value in $custom-file-text {
   }
-
 }
 
 // Range
@@ -142,4 +140,3 @@
 // Style range inputs the same across browsers. Vendor-specific rules for pseudo
 // elements cannot be mixed. As such, there are no shared styles for focus or
 // active states on prefixed selectors.
-

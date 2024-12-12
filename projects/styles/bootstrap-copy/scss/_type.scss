@@ -4,11 +4,26 @@
 // Headings
 //
 
-h1, .h1 { @include font-size($h1-font-size); }
-h2, .h2 { @include font-size($h2-font-size); }
-h3, .h3 { @include font-size($h3-font-size); }
-h4, .h4 { @include font-size($h4-font-size); }
-h5, .h5 { @include font-size($h5-font-size); }
+h1,
+.h1 {
+  @include font-size($h1-font-size);
+}
+h2,
+.h2 {
+  @include font-size($h2-font-size);
+}
+h3,
+.h3 {
+  @include font-size($h3-font-size);
+}
+h4,
+.h4 {
+  @include font-size($h4-font-size);
+}
+h5,
+.h5 {
+  @include font-size($h5-font-size);
+}
 
 .lead {
   @include font-size($lead-font-size);
@@ -37,7 +52,6 @@ h5, .h5 { @include font-size($h5-font-size); }
   line-height: $display-line-height;
 }
 
-
 //
 // Horizontal rules
 //
@@ -48,7 +62,6 @@ hr {
   border: 0;
   border-top: $hr-border-width solid $hr-border-color;
 }
-
 
 //
 // Emphasis
@@ -65,30 +78,3 @@ mark,
   padding: $mark-padding;
   background-color: $mark-bg;
 }
-
-
-//
-// Lists
-//
-
-// Inline turns list items into inline-block
-.list-inline {
-  @include list-unstyled();
-}
-.list-inline-item {
-  display: inline-block;
-
-  &:not(:last-child) {
-    margin-right: $list-inline-padding;
-  }
-}
-
-
-//
-// Misc
-//
-
-// Builds on `abbr`
-
-// Blockquotes
-

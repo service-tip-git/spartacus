@@ -28,7 +28,7 @@
       @include border-top-radius($card-inner-border-radius);
     }
 
-    &:last-child  {
+    &:last-child {
       border-bottom-width: 0;
       @include border-bottom-radius($card-inner-border-radius);
     }
@@ -83,7 +83,9 @@
   border-bottom: $card-border-width solid $card-border-color;
 
   &:first-child {
-    @include border-radius($card-inner-border-radius $card-inner-border-radius 0 0);
+    @include border-radius(
+      $card-inner-border-radius $card-inner-border-radius 0 0
+    );
   }
 }
 
@@ -94,10 +96,11 @@
   border-top: $card-border-width solid $card-border-color;
 
   &:last-child {
-    @include border-radius(0 0 $card-inner-border-radius $card-inner-border-radius);
+    @include border-radius(
+      0 0 $card-inner-border-radius $card-inner-border-radius
+    );
   }
 }
-
 
 //
 // Header navs
@@ -105,9 +108,7 @@
 
 // Card image
 
-
 // Card deck
-
 
 //
 // Card groups
@@ -139,23 +140,19 @@
       @if $enable-rounded {
         &:not(:last-child) {
           @include border-right-radius(0);
-
         }
 
         &:not(:first-child) {
           @include border-left-radius(0);
-
         }
       }
     }
   }
 }
 
-
 //
 // Columns
 //
-
 
 //
 // Accordion

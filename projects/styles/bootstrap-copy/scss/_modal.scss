@@ -3,7 +3,6 @@
 // .modal-dialog    - positioning shell for the actual modal
 // .modal-content   - actual modal w/ bg and corners and stuff
 
-
 .modal-open {
   // Kill the scroll on the body
   overflow: hidden;
@@ -65,7 +64,7 @@
     display: block; // IE10
     height: subtract(100vh, $modal-dialog-margin * 2);
     height: min-content; // Reset height to 0 except on IE
-    content: "";
+    content: '';
   }
 
   // Ensure `.modal-body` shows scrollbar (IE10/11)
@@ -104,7 +103,8 @@
   .close {
     padding: $modal-header-padding;
     // auto on the left force icon to the right even when there is no .modal-title
-    margin: (-$modal-header-padding-y) (-$modal-header-padding-x) (-$modal-header-padding-y) auto;
+    margin: (-$modal-header-padding-y) (-$modal-header-padding-x)
+      (-$modal-header-padding-y) auto;
   }
 }
 
@@ -130,7 +130,7 @@
   flex-wrap: wrap;
   align-items: center; // vertically center
   justify-content: flex-end; // Right align buttons with flex property because text-align doesn't work on flex items
-  padding: $modal-inner-padding - $modal-footer-margin-between * .5;
+  padding: $modal-inner-padding - $modal-footer-margin-between * 0.5;
   border-top: $modal-footer-border-width solid $modal-footer-border-color;
   @include border-bottom-radius($modal-content-inner-border-radius);
 
@@ -138,7 +138,7 @@
   // This solution is far from ideal because of the universal selector usage,
   // but is needed to fix https://github.com/twbs/bootstrap/issues/24800
   > * {
-    margin: $modal-footer-margin-between * .5;
+    margin: $modal-footer-margin-between * 0.5;
   }
 }
 
@@ -165,7 +165,9 @@
     @include box-shadow($modal-content-box-shadow-sm-up);
   }
 
-  .modal-sm { max-width: $modal-sm; }
+  .modal-sm {
+    max-width: $modal-sm;
+  }
 }
 
 @include media-breakpoint-up(lg) {
