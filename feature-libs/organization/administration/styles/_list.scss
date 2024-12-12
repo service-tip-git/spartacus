@@ -90,6 +90,12 @@
       }
     }
   }
+
+  @include forFeature('a11yCroppedFocusRing') {
+    .header h2 button {
+      outline-offset: -2px;
+    }
+  }
   @include forFeature('a11yOrganizationListHeadingOrder') {
     .title {
       h2,
@@ -99,6 +105,7 @@
         button {
           border: none;
           background-color: inherit;
+
           cx-icon {
             pointer-events: none;
             color: var(--cx-color, var(--cx-color-info));

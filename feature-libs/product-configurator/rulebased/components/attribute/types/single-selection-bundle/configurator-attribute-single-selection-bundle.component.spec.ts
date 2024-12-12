@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { StoreModule } from '@ngrx/store';
-import { I18nTestingModule } from '@spartacus/core';
+import { I18nTestingModule, ProductConnector } from '@spartacus/core';
 import { ItemCounterComponent } from '@spartacus/storefront';
 import { CommonConfiguratorTestUtilsService } from '../../../../../common/testing/common-configurator-test-utils.service';
 import { Configurator } from '../../../../core/model/configurator.model';
@@ -57,6 +57,7 @@ function getFirstValue(
   const values = component.attribute?.values;
   return values ? values[0] : { valueCode: 'a' };
 }
+class MockProductConnector {}
 
 describe('ConfiguratorAttributeSingleSelectionBundleComponent', () => {
   let component: ConfiguratorAttributeSingleSelectionBundleComponent;
@@ -115,6 +116,7 @@ describe('ConfiguratorAttributeSingleSelectionBundleComponent', () => {
           provide: ConfiguratorAttributeCompositionContext,
           useValue: ConfiguratorTestUtils.getAttributeContext(),
         },
+        { provide: ProductConnector, useClass: MockProductConnector },
       ],
     })
       .overrideComponent(ConfiguratorAttributeSingleSelectionBundleComponent, {

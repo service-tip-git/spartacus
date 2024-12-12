@@ -15,6 +15,7 @@ import {
   UrlModule,
 } from '@spartacus/core';
 import {
+  BtnLikeLinkModule,
   IconModule,
   ItemCounterModule,
   KeyboardFocusModule,
@@ -40,6 +41,7 @@ import { defaultAddedToCartLayoutConfig } from './default-added-to-cart-layout.c
     ItemCounterModule,
     KeyboardFocusModule,
     FeaturesConfigModule,
+    BtnLikeLinkModule,
   ],
   providers: [provideDefaultConfig(defaultAddedToCartLayoutConfig)],
   declarations: [AddedToCartDialogComponent],

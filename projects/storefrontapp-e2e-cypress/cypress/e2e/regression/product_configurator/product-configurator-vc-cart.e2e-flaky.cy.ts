@@ -107,6 +107,8 @@ context('Product Configuration', () => {
     });
 
     it('should increase quantity of a configured product via a quantity stepper (CXSPA-3193)', () => {
+      configurationCart.registerQuantityPatchRoute();
+      configurationCart.registerCartRoute();
       clickAllowAllFromBanner();
       configurationVc.goToConfigurationPage(
         electronicsShop,
@@ -121,10 +123,13 @@ context('Product Configuration', () => {
       configurationVc.clickAddToCartBtn();
       configurationOverviewVc.checkQuantityNotDisplayed();
       configurationVc.goToCart(electronicsShop);
+      configurationCart.checkItemsList(1);
       configurationCart.checkQuantityStepper(0, 10);
-      configurationCart.increaseQuantity(0);
-      configurationCart.increaseQuantity(0);
-      configurationCart.decreaseQuantity(0);
+      configurationCart.increaseQuantityInCartAndWait(0);
+      configurationCart.checkQuantityStepper(0, 11);
+      configurationCart.increaseQuantityInCartAndWait(0);
+      configurationCart.checkQuantityStepper(0, 12);
+      configurationCart.decreaseQuantityInCartAndWait(0);
       configurationCart.checkQuantityStepper(0, 11);
       configurationCart.clickOnEditConfigurationLink(0);
       configuration.checkQuantityStepperNotDisplayed();

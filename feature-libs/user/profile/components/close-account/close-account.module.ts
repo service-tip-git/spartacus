@@ -16,6 +16,7 @@ import {
   UrlModule,
 } from '@spartacus/core';
 import {
+  BtnLikeLinkModule,
   IconModule,
   KeyboardFocusModule,
   SpinnerModule,
@@ -34,6 +35,7 @@ import { CloseAccountComponent } from './components/close-account/close-account.
     SpinnerModule,
     KeyboardFocusModule,
     FeaturesConfigModule,
+    BtnLikeLinkModule,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{

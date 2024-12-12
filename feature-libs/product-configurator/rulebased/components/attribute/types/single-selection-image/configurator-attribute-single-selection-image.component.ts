@@ -13,8 +13,8 @@ import {
 import { UntypedFormControl } from '@angular/forms';
 import {
   Config,
-  useFeatureStyles,
   FeatureConfigService,
+  useFeatureStyles,
 } from '@spartacus/core';
 import { ICON_TYPE } from '@spartacus/storefront';
 import { ConfiguratorCommonsService } from '../../../../core/facade/configurator-commons.service';
@@ -48,6 +48,8 @@ export class ConfiguratorAttributeSingleSelectionImageComponent
     protected attributeComponentContext: ConfiguratorAttributeCompositionContext,
     protected configuratorCommonsService: ConfiguratorCommonsService
   ) {
+    useFeatureStyles('a11yDifferentiateFocusedAndSelected');
+
     super();
     this.attribute = attributeComponentContext.attribute;
     this.ownerKey = attributeComponentContext.owner.key;

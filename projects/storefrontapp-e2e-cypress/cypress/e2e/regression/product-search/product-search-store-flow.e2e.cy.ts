@@ -23,14 +23,6 @@ context('Product search store flow', () => {
     before(() => {
       cy.window().then((win) => win.sessionStorage.clear());
 
-      // TODO: No longer needed to toggle a11yTabComponent feature when set to true
-      // by default.
-      cy.cxConfig({
-        features: {
-          a11yTabComponent: true,
-        },
-      });
-
       cy.visit('/');
     });
 

@@ -129,20 +129,6 @@ describe('CmsParagraphComponent in CmsLib', () => {
       expect(router.navigateByUrl).toHaveBeenCalledWith(url);
     });
 
-    it('should NOT use router navigation for external links', () => {
-      const url = 'http://example.com';
-      const link = setupLink(url);
-      link.click();
-      expect(router.navigateByUrl).not.toHaveBeenCalled();
-    });
-
-    it('should NOT use router navigation for other protocols', () => {
-      const url = 'mailto:test-email@test.com';
-      const link = setupLink(url);
-      link.click();
-      expect(router.navigateByUrl).not.toHaveBeenCalled();
-    });
-
     it('should call DOM sanitizer', () => {
       const bypassSecurityTrustHtmlSpy = spyOn(
         domSanitizer,
@@ -166,13 +152,57 @@ describe('CmsParagraphComponent in CmsLib', () => {
         documentUrlObject.pathname + documentUrlObject.hash
       );
     });
-
-    function setupLink(url: string): HTMLLinkElement {
-      const dataWithLinks = Object.assign({}, componentData);
-      dataWithLinks.content = `<a href="${url}">Link</a>`;
-      data$.next(dataWithLinks);
-      fixture.detectChanges();
-      return el.query(By.css('a')).nativeElement;
-    }
   });
+
+  /**
+   * We call the `handleClick` method to test external links.
+   * Calling `click` can cause unintended navigations which can cause test failures.
+   */
+  describe('External Link Navigation', () => {
+    beforeEach(() => {
+      spyOn(router, 'navigateByUrl');
+
+      // Prevent external link navigation
+      window.onbeforeunload = function () {
+        return '';
+      };
+    });
+
+    // This test lets us make sure we are calling the click method correctly.
+    it('should use router navigation for internal links with query params', () => {
+      const url = '/internal-link?test=yes';
+      const link = setupLink(url);
+      paragraphComponent.handleClick(<any>{
+        target: link,
+        preventDefault: () => {},
+      });
+      expect(router.navigateByUrl).toHaveBeenCalledWith(url);
+    });
+
+    it('should NOT use router navigation for external links', () => {
+      const url = 'http://example.com';
+      const link = setupLink(url);
+      paragraphComponent.handleClick(<any>{
+        target: link,
+      });
+      expect(router.navigateByUrl).not.toHaveBeenCalled();
+    });
+
+    it('should NOT use router navigation for other protocols', () => {
+      const url = 'mailto:test-email@test.com';
+      const link = setupLink(url);
+      paragraphComponent.handleClick(<any>{
+        target: link,
+      });
+      expect(router.navigateByUrl).not.toHaveBeenCalled();
+    });
+  });
+
+  function setupLink(url: string): HTMLLinkElement {
+    const dataWithLinks = Object.assign({}, componentData);
+    dataWithLinks.content = `<a href="${url}">Link</a>`;
+    data$.next(dataWithLinks);
+    fixture.detectChanges();
+    return el.query(By.css('a')).nativeElement;
+  }
 });

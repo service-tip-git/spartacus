@@ -14,6 +14,10 @@ export interface Tab {
    */
   headerKey?: string;
   /**
+   * Params passed down to the translation function
+   */
+  headerParams?: Record<string, any>;
+  /**
    * Name the tab with a string.
    */
   header?: string;

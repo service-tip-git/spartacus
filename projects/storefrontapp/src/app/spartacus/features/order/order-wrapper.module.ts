@@ -5,10 +5,11 @@
  */
 
 import { NgModule, Type } from '@angular/core';
-import { OrderModule } from '@spartacus/order';
-import { environment } from '../../../../environments/environment';
-import { S4ServiceOrderModule } from '@spartacus/s4-service/order';
 import { OmfOrderModule } from '@spartacus/omf/order';
+import { OpfOrderModule } from '@spartacus/opf/order';
+import { OrderModule } from '@spartacus/order';
+import { S4ServiceOrderModule } from '@spartacus/s4-service/order';
+import { environment } from '../../../../environments/environment';
 
 const extensions: Type<any>[] = [];
 if (environment.s4Service) {
@@ -16,6 +17,9 @@ if (environment.s4Service) {
 }
 if (environment.omf) {
   extensions.push(OmfOrderModule);
+}
+if (environment.opf) {
+  extensions.push(OpfOrderModule);
 }
 @NgModule({
   imports: [OrderModule, ...extensions],
