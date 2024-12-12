@@ -50,10 +50,8 @@ exports[`Spartacus Product Multi-Dimensional schematics: ng-add list feature gen
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -70,13 +68,13 @@ exports[`Spartacus Product Multi-Dimensional schematics: ng-add list feature gen
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
+                  "maximumWarning": "500kb",
                   "maximumError": "3.5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ],
               "outputHashing": "all"
@@ -102,7 +100,10 @@ exports[`Spartacus Product Multi-Dimensional schematics: ng-add list feature gen
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n"
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "schematics-test:build"
+          }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -114,10 +115,8 @@ exports[`Spartacus Product Multi-Dimensional schematics: ng-add list feature gen
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -233,10 +232,8 @@ exports[`Spartacus Product Multi-Dimensional schematics: ng-add selector feature
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss",
@@ -254,13 +251,13 @@ exports[`Spartacus Product Multi-Dimensional schematics: ng-add selector feature
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
+                  "maximumWarning": "500kb",
                   "maximumError": "3.5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ],
               "outputHashing": "all"
@@ -286,7 +283,10 @@ exports[`Spartacus Product Multi-Dimensional schematics: ng-add selector feature
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n"
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "schematics-test:build"
+          }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -298,10 +298,8 @@ exports[`Spartacus Product Multi-Dimensional schematics: ng-add selector feature
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss",

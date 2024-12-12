@@ -108,10 +108,8 @@ exports[`Spartacus SAP OPF integration schematics: ng-add SAP OPF feature genera
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss",
@@ -129,13 +127,13 @@ exports[`Spartacus SAP OPF integration schematics: ng-add SAP OPF feature genera
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
+                  "maximumWarning": "500kb",
                   "maximumError": "3.5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ],
               "outputHashing": "all"
@@ -161,7 +159,10 @@ exports[`Spartacus SAP OPF integration schematics: ng-add SAP OPF feature genera
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n"
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "schematics-test:build"
+          }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -173,10 +174,8 @@ exports[`Spartacus SAP OPF integration schematics: ng-add SAP OPF feature genera
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss",

@@ -23,12 +23,12 @@ exports[`add-ssr angular.json should be configured properly 1`] = `
               "budgets": [
                 {
                   "maximumError": "3.5mb",
-                  "maximumWarning": "500kB",
+                  "maximumWarning": "500kb",
                   "type": "initial",
                 },
                 {
-                  "maximumError": "4kB",
-                  "maximumWarning": "2kB",
+                  "maximumError": "4kb",
+                  "maximumWarning": "2kb",
                   "type": "anyComponentStyle",
                 },
               ],
@@ -38,10 +38,8 @@ exports[`add-ssr angular.json should be configured properly 1`] = `
           "defaultConfiguration": "production",
           "options": {
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public",
-              },
+              "src/favicon.ico",
+              "src/assets",
             ],
             "browser": "src/main.ts",
             "index": "src/index.html",
@@ -69,6 +67,9 @@ exports[`add-ssr angular.json should be configured properly 1`] = `
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "schematics-test:build",
+          },
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -86,10 +87,8 @@ exports[`add-ssr angular.json should be configured properly 1`] = `
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public",
-              },
+              "src/favicon.ico",
+              "src/assets",
             ],
             "inlineStyleLanguage": "scss",
             "polyfills": [

@@ -169,10 +169,8 @@ exports[`Spartacus Checkout schematics: ng-add Checkout feature b2b general setu
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss",
@@ -190,13 +188,13 @@ exports[`Spartacus Checkout schematics: ng-add Checkout feature b2b general setu
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
+                  "maximumWarning": "500kb",
                   "maximumError": "3.5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ],
               "outputHashing": "all"
@@ -222,7 +220,10 @@ exports[`Spartacus Checkout schematics: ng-add Checkout feature b2b general setu
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n"
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "schematics-test:build"
+          }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -234,10 +235,8 @@ exports[`Spartacus Checkout schematics: ng-add Checkout feature b2b general setu
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss",
@@ -354,10 +353,8 @@ exports[`Spartacus Checkout schematics: ng-add Checkout feature base general set
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss",
@@ -375,13 +372,13 @@ exports[`Spartacus Checkout schematics: ng-add Checkout feature base general set
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
+                  "maximumWarning": "500kb",
                   "maximumError": "3.5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ],
               "outputHashing": "all"
@@ -407,7 +404,10 @@ exports[`Spartacus Checkout schematics: ng-add Checkout feature base general set
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n"
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "schematics-test:build"
+          }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -419,10 +419,8 @@ exports[`Spartacus Checkout schematics: ng-add Checkout feature base general set
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss",
@@ -633,10 +631,8 @@ exports[`Spartacus Checkout schematics: ng-add Checkout feature scheduled replen
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss",
@@ -654,13 +650,13 @@ exports[`Spartacus Checkout schematics: ng-add Checkout feature scheduled replen
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
+                  "maximumWarning": "500kb",
                   "maximumError": "3.5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ],
               "outputHashing": "all"
@@ -686,7 +682,10 @@ exports[`Spartacus Checkout schematics: ng-add Checkout feature scheduled replen
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n"
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "schematics-test:build"
+          }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -698,10 +697,8 @@ exports[`Spartacus Checkout schematics: ng-add Checkout feature scheduled replen
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss",

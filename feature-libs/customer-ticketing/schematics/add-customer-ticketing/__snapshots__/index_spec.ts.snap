@@ -97,10 +97,8 @@ exports[`Spartacus Customer Ticketing schematics: ng-add Customer Ticketing feat
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss",
@@ -118,13 +116,13 @@ exports[`Spartacus Customer Ticketing schematics: ng-add Customer Ticketing feat
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
+                  "maximumWarning": "500kb",
                   "maximumError": "3.5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ],
               "outputHashing": "all"
@@ -150,7 +148,10 @@ exports[`Spartacus Customer Ticketing schematics: ng-add Customer Ticketing feat
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n"
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "schematics-test:build"
+          }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -162,10 +163,8 @@ exports[`Spartacus Customer Ticketing schematics: ng-add Customer Ticketing feat
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss",
