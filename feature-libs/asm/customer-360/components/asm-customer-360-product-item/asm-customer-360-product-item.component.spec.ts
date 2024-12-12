@@ -14,8 +14,9 @@ import { By } from '@angular/platform-browser';
 import { AsmCustomer360ProductItemComponent } from './asm-customer-360-product-item.component';
 
 @Component({
-  template: '',
-  selector: 'cx-media',
+    template: '',
+    selector: 'cx-media',
+    standalone: false
 })
 class MockMediaComponent {
   @Input() container: any;
@@ -24,7 +25,8 @@ class MockMediaComponent {
 }
 
 @Directive({
-  selector: '[cxFocus]',
+    selector: '[cxFocus]',
+    standalone: false
 })
 export class MockKeyboadFocusDirective {
   @Input('cxFocus') config: FocusConfig = {};
@@ -55,14 +57,16 @@ describe('AsmCustomer360ProductItemComponent', () => {
 
   @Pipe({
     name: 'cxTranslate',
-  })
+    standalone: false
+})
   class MockTranslatePipe implements PipeTransform {
     transform(): any {}
   }
   @Component({
     selector: 'cx-icon',
     template: '',
-  })
+    standalone: false
+})
   class MockCxIconComponent {
     @Input() type: ICON_TYPE;
   }

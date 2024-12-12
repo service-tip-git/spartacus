@@ -13,16 +13,17 @@ import { ItemService } from '../../shared/item.service';
 import { UnitItemService } from '../services/unit-item.service';
 
 @Component({
-  selector: 'cx-org-unit-details',
-  templateUrl: './unit-details.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    {
-      provide: ItemService,
-      useExisting: UnitItemService,
-    },
-  ],
-  host: { class: 'content-wrapper' },
+    selector: 'cx-org-unit-details',
+    templateUrl: './unit-details.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [
+        {
+            provide: ItemService,
+            useExisting: UnitItemService,
+        },
+    ],
+    host: { class: 'content-wrapper' },
+    standalone: false
 })
 export class UnitDetailsComponent {
   model$: Observable<B2BUnit> = this.itemService.key$.pipe(

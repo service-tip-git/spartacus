@@ -12,16 +12,17 @@ import { ItemService } from '../../shared/item.service';
 import { BudgetItemService } from '../services/budget-item.service';
 
 @Component({
-  selector: 'cx-org-budget-details',
-  templateUrl: './budget-details.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    {
-      provide: ItemService,
-      useExisting: BudgetItemService,
-    },
-  ],
-  host: { class: 'content-wrapper' },
+    selector: 'cx-org-budget-details',
+    templateUrl: './budget-details.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [
+        {
+            provide: ItemService,
+            useExisting: BudgetItemService,
+        },
+    ],
+    host: { class: 'content-wrapper' },
+    standalone: false
 })
 export class BudgetDetailsComponent implements OnInit {
   model$: Observable<Budget>;

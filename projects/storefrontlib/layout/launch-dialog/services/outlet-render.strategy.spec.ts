@@ -8,7 +8,8 @@ import { LaunchOutletDialog, LAUNCH_CALLER } from '../config';
 import { OutletRenderStrategy } from './outlet-render.strategy';
 
 @Component({
-  template: 'test',
+    template: 'test',
+    standalone: false
 })
 class TestContainerComponent {
   componentType = 'TestContainerComponent';

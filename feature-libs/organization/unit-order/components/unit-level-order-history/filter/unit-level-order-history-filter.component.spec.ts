@@ -20,15 +20,17 @@ import { OrderHistoryQueryParams } from '@spartacus/organization/unit-order/core
 import { UnitLevelOrderHistoryFilterComponent } from './unit-level-order-history-filter.component';
 
 @Pipe({
-  name: 'cxTranslate',
+    name: 'cxTranslate',
+    standalone: false
 })
 class MockTranslatePipe implements PipeTransform {
   transform(): any {}
 }
 
 @Component({
-  template: '',
-  selector: 'cx-pagination',
+    template: '',
+    selector: 'cx-pagination',
+    standalone: false
 })
 class MockPaginationComponent {
   @Input() pagination: PaginationModel;
@@ -36,8 +38,9 @@ class MockPaginationComponent {
 }
 
 @Component({
-  selector: 'cx-icon',
-  template: '',
+    selector: 'cx-icon',
+    template: '',
+    standalone: false
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;

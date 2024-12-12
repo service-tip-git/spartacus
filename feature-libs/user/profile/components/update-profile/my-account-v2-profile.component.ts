@@ -17,9 +17,10 @@ import { Observable } from 'rxjs';
 import { UpdateProfileComponentService } from './update-profile-component.service';
 
 @Component({
-  selector: 'cx-my-account-v2-profile',
-  templateUrl: './my-account-v2-profile.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-my-account-v2-profile',
+    templateUrl: './my-account-v2-profile.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class MyAccountV2ProfileComponent implements OnInit {
   protected service = inject(UpdateProfileComponentService);

@@ -24,8 +24,9 @@ import { ProductScrollComponent } from './product-scroll/product-scroll.componen
 import createSpy = jasmine.createSpy;
 
 @Component({
-  selector: 'cx-star-rating',
-  template: '',
+    selector: 'cx-star-rating',
+    template: '',
+    standalone: false
 })
 class MockStarRatingComponent {
   @Input() rating;
@@ -42,8 +43,9 @@ class MockPageLayoutService {
 }
 
 @Component({
-  template: '',
-  selector: 'cx-product-list-item',
+    template: '',
+    selector: 'cx-product-list-item',
+    standalone: false
 })
 class MockProductListItemComponent {
   @Input()
@@ -51,23 +53,26 @@ class MockProductListItemComponent {
 }
 
 @Pipe({
-  name: 'cxUrl',
+    name: 'cxUrl',
+    standalone: false
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
 
 @Component({
-  selector: 'cx-icon',
-  template: '',
+    selector: 'cx-icon',
+    template: '',
+    standalone: false
 })
 class MockCxIconComponent {
   @Input() type;
 }
 
 @Component({
-  selector: 'cx-add-to-cart',
-  template: '<button>add to cart</button>',
+    selector: 'cx-add-to-cart',
+    template: '<button>add to cart</button>',
+    standalone: false
 })
 class MockAddToCartComponent {
   @Input() product;

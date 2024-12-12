@@ -21,9 +21,10 @@ import {
 } from '@spartacus/storefront';
 
 @Component({
-  selector: 'cx-my-account-v2-download-invoices',
-  templateUrl: './my-account-v2-download-invoices.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-my-account-v2-download-invoices',
+    templateUrl: './my-account-v2-download-invoices.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class MyAccountV2DownloadInvoicesComponent implements AfterViewChecked {
   @ViewChild(InvoicesListComponent, { static: false })

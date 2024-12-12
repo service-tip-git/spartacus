@@ -10,9 +10,10 @@ import { Order, OrderFacade } from '@spartacus/order/root';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'cx-order-confirmation-totals',
-  templateUrl: './order-confirmation-totals.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-order-confirmation-totals',
+    templateUrl: './order-confirmation-totals.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class OrderConfirmationTotalsComponent implements OnDestroy {
   readonly cartOutlets = CartOutlets;

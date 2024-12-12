@@ -19,10 +19,9 @@ import { DatePickerService } from './date-picker.service';
  * Most of the implementation is done in the `DatePickerFallbackDirective`.
  */
 @Component({
-  selector: 'cx-date-picker',
-  templateUrl: './date-picker.component.html',
-  // we cannot use onPush change detection as the form state isn't updated without explicit
-  // change detection, see https://github.com/angular/angular/issues/10816
+    selector: 'cx-date-picker',
+    templateUrl: './date-picker.component.html',
+    standalone: false
 })
 export class DatePickerComponent {
   constructor(protected service: DatePickerService) {}

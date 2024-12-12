@@ -52,9 +52,10 @@ export interface ConfiguratorAttributeProductCardComponentOptions {
 }
 
 @Component({
-  selector: 'cx-configurator-attribute-product-card',
-  templateUrl: './configurator-attribute-product-card.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-configurator-attribute-product-card',
+    templateUrl: './configurator-attribute-product-card.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ConfiguratorAttributeProductCardComponent
   extends ConfiguratorAttributeBaseComponent

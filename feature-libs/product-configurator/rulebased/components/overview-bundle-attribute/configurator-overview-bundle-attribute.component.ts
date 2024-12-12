@@ -23,9 +23,10 @@ import { Configurator } from '../../core/model/configurator.model';
 import { ConfiguratorPriceComponentOptions } from '../price/configurator-price.component';
 
 @Component({
-  selector: 'cx-configurator-cpq-overview-attribute',
-  templateUrl: './configurator-overview-bundle-attribute.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-configurator-cpq-overview-attribute',
+    templateUrl: './configurator-overview-bundle-attribute.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ConfiguratorOverviewBundleAttributeComponent implements OnInit {
   product$: Observable<Product>;

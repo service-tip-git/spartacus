@@ -30,8 +30,9 @@ describe('StoreAddressComponent', () => {
  * for the purposes of testing the components that wrap it.
  */
 @Component({
-  selector: 'cx-store-address',
-  template: '',
+    selector: 'cx-store-address',
+    template: '',
+    standalone: false
 })
 export class StoreAddressStubComponent {
   @Input() storeDetails: PointOfService;

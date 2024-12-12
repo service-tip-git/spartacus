@@ -33,8 +33,9 @@ import { CheckoutDeliveryModeComponent } from './checkout-delivery-mode.componen
 import createSpy = jasmine.createSpy;
 
 @Component({
-  selector: 'cx-spinner',
-  template: '',
+    selector: 'cx-spinner',
+    template: '',
+    standalone: false
 })
 class MockSpinnerComponent {}
 

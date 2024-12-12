@@ -51,9 +51,10 @@ import {
 } from 'rxjs/operators';
 
 @Component({
-  selector: 'cx-product-image-zoom-view',
-  templateUrl: './product-image-zoom-view.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-product-image-zoom-view',
+    templateUrl: './product-image-zoom-view.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ProductImageZoomViewComponent implements OnInit, OnDestroy {
   iconType = ICON_TYPE;

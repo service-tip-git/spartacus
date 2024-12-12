@@ -27,9 +27,10 @@ import { Observable } from 'rxjs';
  * given `template` and `headerTemplate`.
  */
 @Component({
-  selector: 'cx-epd-visualization-paged-list',
-  templateUrl: './paged-list.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-epd-visualization-paged-list',
+    templateUrl: './paged-list.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class PagedListComponent implements OnInit {
   /**

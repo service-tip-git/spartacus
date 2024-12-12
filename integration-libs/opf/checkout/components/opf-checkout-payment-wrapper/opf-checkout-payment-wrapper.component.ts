@@ -30,9 +30,10 @@ import { Subscription } from 'rxjs';
 import { OpfCheckoutPaymentWrapperService } from './opf-checkout-payment-wrapper.service';
 
 @Component({
-  selector: 'cx-opf-checkout-payment-wrapper',
-  templateUrl: './opf-checkout-payment-wrapper.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-opf-checkout-payment-wrapper',
+    templateUrl: './opf-checkout-payment-wrapper.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class OpfCheckoutPaymentWrapperComponent implements OnInit, OnDestroy {
   protected service = inject(OpfCheckoutPaymentWrapperService);

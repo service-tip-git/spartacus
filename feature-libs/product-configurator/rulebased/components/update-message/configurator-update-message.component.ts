@@ -12,9 +12,10 @@ import { ConfiguratorCommonsService } from '../../core/facade/configurator-commo
 import { ConfiguratorMessageConfig } from '../config/configurator-message.config';
 
 @Component({
-  selector: 'cx-configurator-update-message',
-  templateUrl: './configurator-update-message.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-configurator-update-message',
+    templateUrl: './configurator-update-message.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ConfiguratorUpdateMessageComponent {
   hasPendingChanges$: Observable<boolean> = this.configRouterExtractorService

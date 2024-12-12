@@ -15,7 +15,8 @@ import { TrackingEventsComponent } from './tracking-events.component';
 const shipDate = new Date('2019-02-11T13:05:12+0000');
 
 @Pipe({
-  name: 'cxTranslateUrl',
+    name: 'cxTranslateUrl',
+    standalone: false
 })
 class MockTranslateUrlPipe implements PipeTransform {
   transform(): any {}

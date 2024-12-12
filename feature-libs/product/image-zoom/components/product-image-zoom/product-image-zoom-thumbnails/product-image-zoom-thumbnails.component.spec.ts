@@ -25,14 +25,15 @@ const secondImage = {
 };
 
 @Component({
-  selector: 'cx-carousel',
-  template: `
+    selector: 'cx-carousel',
+    template: `
     <ng-container *ngFor="let item of items">
       <ng-container
         *ngTemplateOutlet="template; context: { item: item }"
       ></ng-container>
     </ng-container>
   `,
+    standalone: false
 })
 class MockCarouselComponent {
   @Input() items;

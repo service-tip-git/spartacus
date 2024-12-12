@@ -41,7 +41,8 @@ class Service {
 }
 
 @Pipe({
-  name: 'cxTranslate',
+    name: 'cxTranslate',
+    standalone: false
 })
 class MockTranslatePipe implements PipeTransform {
   transform(): any {}

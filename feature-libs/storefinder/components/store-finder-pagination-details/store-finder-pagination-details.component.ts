@@ -8,8 +8,9 @@ import { Component, Input } from '@angular/core';
 import { PaginationModel } from '@spartacus/core';
 
 @Component({
-  selector: 'cx-store-finder-pagination-details',
-  templateUrl: './store-finder-pagination-details.component.html',
+    selector: 'cx-store-finder-pagination-details',
+    templateUrl: './store-finder-pagination-details.component.html',
+    standalone: false
 })
 export class StoreFinderPaginationDetailsComponent {
   @Input()

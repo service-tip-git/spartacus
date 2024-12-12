@@ -13,16 +13,17 @@ import { UserItemService } from '../services/user-item.service';
 import { B2BUserService } from '@spartacus/organization/administration/core';
 
 @Component({
-  selector: 'cx-org-user-details',
-  templateUrl: './user-details.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    {
-      provide: ItemService,
-      useExisting: UserItemService,
-    },
-  ],
-  host: { class: 'content-wrapper' },
+    selector: 'cx-org-user-details',
+    templateUrl: './user-details.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [
+        {
+            provide: ItemService,
+            useExisting: UserItemService,
+        },
+    ],
+    host: { class: 'content-wrapper' },
+    standalone: false
 })
 export class UserDetailsComponent {
   userGuardSubscription: Subscription;

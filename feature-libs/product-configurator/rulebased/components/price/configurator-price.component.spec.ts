@@ -7,7 +7,8 @@ import { ConfiguratorPriceComponent } from './configurator-price.component';
 import { ConfiguratorTestUtils } from '../../testing/configurator-test-utils';
 
 @Pipe({
-  name: 'cxNumeric',
+    name: 'cxNumeric',
+    standalone: false
 })
 class MockNumericPipe implements PipeTransform {
   transform(value: string): string {

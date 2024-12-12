@@ -16,9 +16,10 @@ import { Observable } from 'rxjs';
 import { OpfCheckoutBillingAddressFormService } from './opf-checkout-billing-address-form.service';
 
 @Component({
-  selector: 'cx-opf-checkout-billing-address-form',
-  templateUrl: './opf-checkout-billing-address-form.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-opf-checkout-billing-address-form',
+    templateUrl: './opf-checkout-billing-address-form.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class OpfCheckoutBillingAddressFormComponent implements OnInit {
   protected service = inject(OpfCheckoutBillingAddressFormService);

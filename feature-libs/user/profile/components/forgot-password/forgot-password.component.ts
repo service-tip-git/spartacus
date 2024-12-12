@@ -16,9 +16,10 @@ import { ForgotPasswordComponentService } from './forgot-password-component.serv
 import { RoutingService } from '@spartacus/core';
 
 @Component({
-  selector: 'cx-forgot-password',
-  templateUrl: './forgot-password.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-forgot-password',
+    templateUrl: './forgot-password.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ForgotPasswordComponent {
   @Optional() protected routingService = inject(RoutingService, {

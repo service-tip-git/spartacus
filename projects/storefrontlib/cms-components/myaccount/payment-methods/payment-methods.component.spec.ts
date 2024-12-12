@@ -20,13 +20,15 @@ class MockGlobalMessageService {
 }
 
 @Component({
-  template: '<div>Spinner</div>',
-  selector: 'cx-spinner',
+    template: '<div>Spinner</div>',
+    selector: 'cx-spinner',
+    standalone: false
 })
 class MockCxSpinnerComponent {}
 
 @Directive({
-  selector: '[cxAtMessage]',
+    selector: '[cxAtMessage]',
+    standalone: false
 })
 class MockAtMessageDirective {
   @Input() cxAtMessage: string | string[] | undefined;
@@ -45,8 +47,9 @@ const mockPayment: PaymentDetails = {
 };
 
 @Component({
-  selector: 'cx-icon',
-  template: '',
+    selector: 'cx-icon',
+    template: '',
+    standalone: false
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;

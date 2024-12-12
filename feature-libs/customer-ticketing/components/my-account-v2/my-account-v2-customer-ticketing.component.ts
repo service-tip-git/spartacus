@@ -12,8 +12,9 @@ import {
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'cx-my-account-v2-customer-ticketing',
-  templateUrl: './my-account-v2-customer-ticketing.component.html',
+    selector: 'cx-my-account-v2-customer-ticketing',
+    templateUrl: './my-account-v2-customer-ticketing.component.html',
+    standalone: false
 })
 export class MyAccountV2CustomerTicketingComponent {
   protected readonly PAGE_SIZE = 1;

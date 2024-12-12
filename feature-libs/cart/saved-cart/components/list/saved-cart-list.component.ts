@@ -30,9 +30,10 @@ import { from, mergeMap, Observable, Subscription } from 'rxjs';
 import { map, skip, take } from 'rxjs/operators';
 
 @Component({
-  selector: 'cx-saved-cart-list',
-  templateUrl: './saved-cart-list.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-saved-cart-list',
+    templateUrl: './saved-cart-list.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class SavedCartListComponent implements OnInit, OnDestroy {
   private subscription = new Subscription();

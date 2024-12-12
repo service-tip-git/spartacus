@@ -18,8 +18,9 @@ import { combineLatest, Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
 @Component({
-  selector: 'cx-customer-ticketing-list',
-  templateUrl: './customer-ticketing-list.component.html',
+    selector: 'cx-customer-ticketing-list',
+    templateUrl: './customer-ticketing-list.component.html',
+    standalone: false
 })
 export class CustomerTicketingListComponent {
   constructor(

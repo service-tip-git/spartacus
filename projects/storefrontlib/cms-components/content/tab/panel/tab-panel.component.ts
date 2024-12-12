@@ -8,8 +8,9 @@ import { Component, Input } from '@angular/core';
 import { Tab, TAB_MODE } from '../tab.model';
 
 @Component({
-  selector: 'cx-tab-panel',
-  templateUrl: './tab-panel.component.html',
+    selector: 'cx-tab-panel',
+    templateUrl: './tab-panel.component.html',
+    standalone: false
 })
 export class TabPanelComponent {
   TAB_MODE = TAB_MODE;

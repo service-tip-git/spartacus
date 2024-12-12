@@ -11,8 +11,9 @@ import createSpy = jasmine.createSpy;
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'cx-navigation-ui',
-  template: '',
+    selector: 'cx-navigation-ui',
+    template: '',
+    standalone: false
 })
 class MockNavigationUIComponent {
   @Input()

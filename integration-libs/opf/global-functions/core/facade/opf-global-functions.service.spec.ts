@@ -21,7 +21,8 @@ import { EMPTY, Observable, of } from 'rxjs';
 import { OpfGlobalFunctionsService } from './opf-global-functions.service';
 export const WINDOW = new InjectionToken<Window>('window');
 @Component({
-  template: '',
+    template: '',
+    standalone: false
 })
 class TestContainerComponent {
   constructor(public vcr: ViewContainerRef) {}

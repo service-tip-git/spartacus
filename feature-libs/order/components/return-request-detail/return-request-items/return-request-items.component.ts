@@ -10,9 +10,10 @@ import { Observable } from 'rxjs';
 import { ReturnRequestService } from '../return-request.service';
 
 @Component({
-  selector: 'cx-return-request-items',
-  templateUrl: './return-request-items.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-return-request-items',
+    templateUrl: './return-request-items.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ReturnRequestItemsComponent {
   constructor(protected returnRequestService: ReturnRequestService) {}

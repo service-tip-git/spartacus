@@ -10,10 +10,10 @@ import { ConfiguratorAttributeProductCardComponentOptions } from '../../product-
 import { ConfiguratorAttributeSingleSelectionBaseComponent } from '../base/configurator-attribute-single-selection-base.component';
 
 @Component({
-  selector: 'cx-configurator-attribute-single-selection-bundle',
-  templateUrl:
-    './configurator-attribute-single-selection-bundle.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-configurator-attribute-single-selection-bundle',
+    templateUrl: './configurator-attribute-single-selection-bundle.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ConfiguratorAttributeSingleSelectionBundleComponent extends ConfiguratorAttributeSingleSelectionBaseComponent {
   /**

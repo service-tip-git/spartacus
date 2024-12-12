@@ -13,7 +13,8 @@ import { of } from 'rxjs';
 import { ProductImageZoomTriggerComponent } from './product-image-zoom-trigger.component';
 
 @Component({
-  template: '',
+    template: '',
+    standalone: false
 })
 class TestDialogComponent {
   @Input() galleryItem: number;

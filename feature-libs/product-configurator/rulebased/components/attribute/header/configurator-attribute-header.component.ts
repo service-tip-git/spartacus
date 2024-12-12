@@ -25,9 +25,10 @@ import { ConfiguratorAttributeCompositionContext } from '../composition/configur
 import { ConfiguratorAttributeBaseComponent } from '../types/base/configurator-attribute-base.component';
 
 @Component({
-  selector: 'cx-configurator-attribute-header',
-  templateUrl: './configurator-attribute-header.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-configurator-attribute-header',
+    templateUrl: './configurator-attribute-header.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ConfiguratorAttributeHeaderComponent
   extends ConfiguratorAttributeBaseComponent

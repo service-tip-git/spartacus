@@ -87,16 +87,18 @@ const mockReplenishmentOrder$ = new BehaviorSubject<ReplenishmentOrder>(
 );
 
 @Component({
-  template: '',
-  selector: 'cx-pagination',
+    template: '',
+    selector: 'cx-pagination',
+    standalone: false
 })
 class MockPaginationComponent {
   @Input() pagination;
   @Output() viewPageEvent = new EventEmitter<string>();
 }
 @Component({
-  template: '',
-  selector: 'cx-sorting',
+    template: '',
+    selector: 'cx-sorting',
+    standalone: false
 })
 class MockSortingComponent {
   @Input() sortOptions;
@@ -107,7 +109,8 @@ class MockSortingComponent {
 }
 
 @Pipe({
-  name: 'cxUrl',
+    name: 'cxUrl',
+    standalone: false
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}

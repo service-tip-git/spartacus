@@ -18,16 +18,17 @@ import {
 } from '../../product-list';
 
 @Component({
-  selector: 'cx-product-carousel-item',
-  templateUrl: './product-carousel-item.component.html',
-  providers: [
-    ProductListItemContextSource,
-    {
-      provide: ProductListItemContext,
-      useExisting: ProductListItemContextSource,
-    },
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-product-carousel-item',
+    templateUrl: './product-carousel-item.component.html',
+    providers: [
+        ProductListItemContextSource,
+        {
+            provide: ProductListItemContext,
+            useExisting: ProductListItemContextSource,
+        },
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ProductCarouselItemComponent implements OnChanges {
   @Input() item: Product;

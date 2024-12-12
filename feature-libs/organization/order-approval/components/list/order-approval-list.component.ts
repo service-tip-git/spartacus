@@ -18,9 +18,10 @@ import { OrderApproval } from '../../core/model/order-approval.model';
 import { OrderApprovalService } from '../../core/services/order-approval.service';
 
 @Component({
-  selector: 'cx-order-approval-list',
-  templateUrl: './order-approval-list.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-order-approval-list',
+    templateUrl: './order-approval-list.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class OrderApprovalListComponent implements OnInit {
   constructor(

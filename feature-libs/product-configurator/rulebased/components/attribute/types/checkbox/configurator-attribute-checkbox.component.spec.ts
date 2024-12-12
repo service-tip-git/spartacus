@@ -21,23 +21,26 @@ import { ConfiguratorAttributePriceChangeService } from '../../price-change/conf
 import { ConfiguratorAttributeCheckBoxComponent } from './configurator-attribute-checkbox.component';
 
 @Directive({
-  selector: '[cxFocus]',
+    selector: '[cxFocus]',
+    standalone: false
 })
 export class MockFocusDirective {
   @Input('cxFocus') protected config: string;
 }
 
 @Component({
-  selector: 'cx-configurator-price',
-  template: '',
+    selector: 'cx-configurator-price',
+    template: '',
+    standalone: false
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;
 }
 
 @Component({
-  selector: 'cx-configurator-show-more',
-  template: '',
+    selector: 'cx-configurator-show-more',
+    template: '',
+    standalone: false
 })
 class MockConfiguratorShowMoreComponent {
   @Input() text: string;

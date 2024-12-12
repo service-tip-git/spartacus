@@ -37,23 +37,26 @@ function initializeMocks() {
 }
 
 @Component({
-  selector: 'cx-icon',
-  template: '',
+    selector: 'cx-icon',
+    template: '',
+    standalone: false
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
 }
 
 @Component({
-  selector: 'cx-configurator-overview-filter',
-  template: '',
+    selector: 'cx-configurator-overview-filter',
+    template: '',
+    standalone: false
 })
 class MockConfiguratorOverviewFilterComponent {
   @Input() showFilterBar: boolean = true;
   @Input() config: Configurator.ConfigurationWithOverview;
 }
 @Directive({
-  selector: '[cxFocus]',
+    selector: '[cxFocus]',
+    standalone: false
 })
 export class MockKeyboadFocusDirective {
   @Input('cxFocus') config: FocusConfig = {};

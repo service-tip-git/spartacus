@@ -26,10 +26,11 @@ import { filter, map, take } from 'rxjs/operators';
 import { ConfirmationContext } from './quote-confirm-dialog.model';
 
 @Component({
-  selector: 'cx-quote-confirm-dialog',
-  templateUrl: './quote-confirm-dialog.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [CxDatePipe],
+    selector: 'cx-quote-confirm-dialog',
+    templateUrl: './quote-confirm-dialog.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [CxDatePipe],
+    standalone: false
 })
 export class QuoteConfirmDialogComponent implements OnInit {
   protected launchDialogService = inject(LaunchDialogService);

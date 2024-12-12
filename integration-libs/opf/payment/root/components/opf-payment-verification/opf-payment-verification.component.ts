@@ -20,8 +20,9 @@ import { concatMap } from 'rxjs/operators';
 import { OpfPaymentVerificationService } from './opf-payment-verification.service';
 
 @Component({
-  selector: 'cx-opf-verify-payment',
-  templateUrl: './opf-payment-verification.component.html',
+    selector: 'cx-opf-verify-payment',
+    templateUrl: './opf-payment-verification.component.html',
+    standalone: false
 })
 export class OpfPaymentVerificationComponent implements OnInit, OnDestroy {
   protected route = inject(ActivatedRoute);

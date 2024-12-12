@@ -24,8 +24,9 @@ import { ConfiguratorCommonsService } from '../../core/facade/configurator-commo
 import { Configurator } from '../../core/model/configurator.model';
 
 @Component({
-  selector: 'cx-configurator-exit-button',
-  templateUrl: './configurator-exit-button.component.html',
+    selector: 'cx-configurator-exit-button',
+    templateUrl: './configurator-exit-button.component.html',
+    standalone: false
 })
 export class ConfiguratorExitButtonComponent {
   container$: Observable<{

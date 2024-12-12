@@ -19,11 +19,12 @@ import { Observable } from 'rxjs';
 import { distinctUntilChanged, take, tap } from 'rxjs/operators';
 
 @Component({
-  selector: 'cx-gigya-raas',
-  templateUrl: './gigya-raas.component.html',
-  styleUrls: ['./gigya-raas.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-gigya-raas',
+    templateUrl: './gigya-raas.component.html',
+    styleUrls: ['./gigya-raas.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class GigyaRaasComponent implements OnInit {
   protected renderScreenSet = true;

@@ -61,8 +61,9 @@ function initTestComponent() {
 }
 
 @Component({
-  selector: 'cx-configurator-overview-filter-bar',
-  template: '',
+    selector: 'cx-configurator-overview-filter-bar',
+    template: '',
+    standalone: false
 })
 class MockConfiguratorOverviewFilterBarComponent {
   @Input() config: Configurator.ConfigurationWithOverview;

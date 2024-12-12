@@ -27,7 +27,8 @@ import { AsmCustomer360SectionContext } from '../asm-customer-360-section-contex
 import { AsmCustomer360ActivityComponent } from './asm-customer-360-activity.component';
 
 @Directive({
-  selector: '[cxFocus]',
+    selector: '[cxFocus]',
+    standalone: false
 })
 export class MockKeyboadFocusDirective {
   @Input('cxFocus') config: FocusConfig = {};
@@ -36,14 +37,16 @@ export class MockKeyboadFocusDirective {
 describe('AsmCustomer360ActivityComponent', () => {
   @Pipe({
     name: 'cxTranslate',
-  })
+    standalone: false
+})
   class MockTranslatePipe implements PipeTransform {
     transform(): any {}
   }
   @Component({
     selector: 'cx-icon',
     template: '',
-  })
+    standalone: false
+})
   class MockCxIconComponent {
     @Input() type: ICON_TYPE;
   }

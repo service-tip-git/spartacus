@@ -17,8 +17,9 @@ import { OrderHistoryQueryParams } from '@spartacus/organization/unit-order/core
 import { ICON_TYPE } from '@spartacus/storefront';
 
 @Component({
-  selector: 'cx-unit-level-order-history-filter',
-  templateUrl: './unit-level-order-history-filter.component.html',
+    selector: 'cx-unit-level-order-history-filter',
+    templateUrl: './unit-level-order-history-filter.component.html',
+    standalone: false
 })
 export class UnitLevelOrderHistoryFilterComponent {
   iconTypes = ICON_TYPE;

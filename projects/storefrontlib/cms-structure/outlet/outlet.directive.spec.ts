@@ -25,7 +25,7 @@ class MockDeferLoaderService {
 describe('OutletDirective', () => {
   describe('(Non-stacked)', () => {
     @Component({
-      template: `
+    template: `
         <ng-template cxOutletRef="${replacedOutlet}">
           <div id="new">replaced</div>
         </ng-template>
@@ -42,11 +42,12 @@ describe('OutletDirective', () => {
           </ng-container>
         </div>
       `,
-    })
+    standalone: false
+})
     class MockTemplateComponent {}
 
     @Component({
-      template: `
+    template: `
         <ng-template
           cxOutletRef="before"
           cxOutletPos="${OutletPosition.BEFORE}"
@@ -60,11 +61,12 @@ describe('OutletDirective', () => {
           </ng-container>
         </div>
       `,
-    })
+    standalone: false
+})
     class MockOutletBeforeComponent {}
 
     @Component({
-      template: `
+    template: `
         <ng-template cxOutletRef="after" cxOutletPos="${OutletPosition.AFTER}">
           <div id="new">after</div>
         </ng-template>
@@ -75,7 +77,8 @@ describe('OutletDirective', () => {
           </ng-container>
         </div>
       `,
-    })
+    standalone: false
+})
     class MockOutletAfterComponent {}
 
     beforeEach(waitForAsync(() => {
@@ -131,7 +134,7 @@ describe('OutletDirective', () => {
 
   describe('(stacked)', () => {
     @Component({
-      template: `
+    template: `
         <ng-template cxOutletRef="replace">
           <div id="first">after</div>
         </ng-template>
@@ -146,11 +149,12 @@ describe('OutletDirective', () => {
           </ng-container>
         </div>
       `,
-    })
+    standalone: false
+})
     class MockStackedReplaceOutletComponent {}
 
     @Component({
-      template: `
+    template: `
         <ng-template
           cxOutletRef="before"
           cxOutletPos="${OutletPosition.BEFORE}"
@@ -171,7 +175,8 @@ describe('OutletDirective', () => {
           </ng-container>
         </div>
       `,
-    })
+    standalone: false
+})
     class MockStackedBeforeOutletComponent {}
 
     let compiled: HTMLElement;
@@ -217,16 +222,17 @@ describe('OutletDirective', () => {
 
   describe('defer loading', () => {
     @Component({
-      template: `
+    template: `
         <ng-template cxOutlet="instant">
           <div id="first">instant</div>
         </ng-template>
       `,
-    })
+    standalone: false
+})
     class MockInstantOutletComponent {}
 
     @Component({
-      template: `
+    template: `
         <ng-template
           cxOutlet="deferred"
           [cxOutletDefer]="{}"
@@ -235,7 +241,8 @@ describe('OutletDirective', () => {
           <div id="first">deferred</div>
         </ng-template>
       `,
-    })
+    standalone: false
+})
     class MockDeferredOutletComponent {
       load(_eventValue: boolean) {}
     }
@@ -278,12 +285,13 @@ describe('OutletDirective', () => {
 
   describe('on outlet name change', () => {
     @Component({
-      template: `
+    template: `
         <ng-template cxOutletRef="A">A</ng-template>
         <ng-template cxOutletRef="B">B</ng-template>
         <ng-container *cxOutlet="outletName"> </ng-container>
       `,
-    })
+    standalone: false
+})
     class HostComponent {
       outletName = 'A';
     }
@@ -324,7 +332,7 @@ describe('OutletDirective', () => {
     let mockContextSubject$: BehaviorSubject<string>;
 
     @Component({
-      template: `
+    template: `
         <div id="kept">
           <ng-template
             [cxOutlet]="'${keptOutlet}'"
@@ -334,7 +342,8 @@ describe('OutletDirective', () => {
           </ng-template>
         </div>
       `,
-    })
+    standalone: false
+})
     class MockTemplateComponent {
       constructor(
         @Inject('mockContext') public mockContext$: Observable<string>
@@ -342,9 +351,10 @@ describe('OutletDirective', () => {
     }
 
     @Component({
-      template: ` <div id="component">TestData</div> `,
-      selector: 'cx-test-component',
-    })
+    template: ` <div id="component">TestData</div> `,
+    selector: 'cx-test-component',
+    standalone: false
+})
     class MockOutletComponent {
       constructor(public outlet: OutletContextData) {}
     }
@@ -468,24 +478,25 @@ describe('OutletDirective', () => {
 
   describe('after component or view created', () => {
     @Component({
-      template: `
+    template: `
         <ng-template
           [cxOutlet]="'${keptOutlet}'"
           [(cxComponentRef)]="innerCompRef"
         >
         </ng-template>
       `,
-      changeDetection: ChangeDetectionStrategy.OnPush,
-    })
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
+})
     class MockTestOutletComponent {
       innerCompRef: any;
     }
 
     @Component({
-      template: ` <div id="component">TestData</div> `,
-      selector: 'cx-test-component',
-      //changeDetection: ChangeDetectionStrategy.OnPush,
-    })
+    template: ` <div id="component">TestData</div> `,
+    selector: 'cx-test-component',
+    standalone: false
+})
     class MockOutletComponent {}
 
     beforeEach(waitForAsync(() => {

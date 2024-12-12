@@ -11,9 +11,10 @@ import { ConfiguratorPriceComponentOptions } from '../price/configurator-price.c
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'cx-configurator-overview-attribute',
-  templateUrl: './configurator-overview-attribute.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-configurator-overview-attribute',
+    templateUrl: './configurator-overview-attribute.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ConfiguratorOverviewAttributeComponent {
   @Input() attributeOverview: Configurator.AttributeOverview;

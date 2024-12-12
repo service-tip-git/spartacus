@@ -24,8 +24,9 @@ import {
 } from '../buyer-edit/quote-header-buyer-edit.component';
 
 @Component({
-  selector: 'cx-quote-header-overview',
-  templateUrl: './quote-header-overview.component.html',
+    selector: 'cx-quote-header-overview',
+    templateUrl: './quote-header-overview.component.html',
+    standalone: false
 })
 export class QuoteHeaderOverviewComponent {
   protected quoteFacade = inject(QuoteFacade);

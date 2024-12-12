@@ -20,20 +20,21 @@ import { CostCenterItemService } from '../services/cost-center-item.service';
 import { CurrentCostCenterService } from '../services/current-cost-center.service';
 
 @Component({
-  selector: 'cx-org-cost-center-form',
-  templateUrl: './cost-center-form.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'content-wrapper' },
-  providers: [
-    {
-      provide: ItemService,
-      useExisting: CostCenterItemService,
-    },
-    {
-      provide: CurrentItemService,
-      useExisting: CurrentCostCenterService,
-    },
-  ],
+    selector: 'cx-org-cost-center-form',
+    templateUrl: './cost-center-form.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'content-wrapper' },
+    providers: [
+        {
+            provide: ItemService,
+            useExisting: CostCenterItemService,
+        },
+        {
+            provide: CurrentItemService,
+            useExisting: CurrentCostCenterService,
+        },
+    ],
+    standalone: false
 })
 export class CostCenterFormComponent {
   form: UntypedFormGroup | null = this.itemService.getForm();

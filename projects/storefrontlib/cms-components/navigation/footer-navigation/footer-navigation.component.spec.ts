@@ -15,8 +15,9 @@ import { FooterNavigationComponent } from './footer-navigation.component';
 import createSpy = jasmine.createSpy;
 
 @Component({
-  selector: 'cx-navigation-ui',
-  template: '',
+    selector: 'cx-navigation-ui',
+    template: '',
+    standalone: false
 })
 class MockNavigationUIComponent {
   @Input() flyout = true;
@@ -31,8 +32,9 @@ const mockAnonymousConsentsConfig = {
 };
 
 @Component({
-  selector: 'cx-generic-link',
-  template: '<ng-content></ng-content>',
+    selector: 'cx-generic-link',
+    template: '<ng-content></ng-content>',
+    standalone: false
 })
 class MockGenericLinkComponent {
   @Input() url: string | any[];

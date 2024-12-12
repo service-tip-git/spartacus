@@ -20,8 +20,9 @@ import { ConfiguratorCartEntryBundleInfoService } from './configurator-cart-entr
  * which would not be proper detected with onPush strategy.
  */
 @Component({
-  selector: 'cx-configurator-cart-entry-bundle-info',
-  templateUrl: './configurator-cart-entry-bundle-info.component.html',
+    selector: 'cx-configurator-cart-entry-bundle-info',
+    templateUrl: './configurator-cart-entry-bundle-info.component.html',
+    standalone: false
 })
 export class ConfiguratorCartEntryBundleInfoComponent {
   constructor(

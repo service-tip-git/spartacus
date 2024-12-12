@@ -20,9 +20,10 @@ import {
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'cx-cart-proceed-to-checkout',
-  templateUrl: './cart-proceed-to-checkout.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-cart-proceed-to-checkout',
+    templateUrl: './cart-proceed-to-checkout.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class CartProceedToCheckoutComponent implements OnInit, OnDestroy {
   cartValidationInProgress = false;

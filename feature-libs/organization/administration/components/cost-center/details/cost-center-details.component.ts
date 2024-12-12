@@ -12,16 +12,17 @@ import { ItemService } from '../../shared/item.service';
 import { CostCenterItemService } from '../services/cost-center-item.service';
 
 @Component({
-  selector: 'cx-org-cost-center-details',
-  templateUrl: './cost-center-details.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    {
-      provide: ItemService,
-      useExisting: CostCenterItemService,
-    },
-  ],
-  host: { class: 'content-wrapper' },
+    selector: 'cx-org-cost-center-details',
+    templateUrl: './cost-center-details.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [
+        {
+            provide: ItemService,
+            useExisting: CostCenterItemService,
+        },
+    ],
+    host: { class: 'content-wrapper' },
+    standalone: false
 })
 export class CostCenterDetailsComponent {
   model$: Observable<CostCenter> = this.itemService.key$.pipe(

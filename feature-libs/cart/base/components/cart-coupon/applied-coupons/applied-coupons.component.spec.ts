@@ -10,15 +10,16 @@ const coupon1: Voucher = { code: 'coupon1', voucherCode: 'coupon1' };
 const coupon2: Voucher = { code: 'coupon2', voucherCode: 'coupon2' };
 
 @Component({
-  selector: 'cx-icon',
-  template: '',
+    selector: 'cx-icon',
+    template: '',
+    standalone: false
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
 }
 
 @Component({
-  template: `
+    template: `
     <cx-applied-coupons
       [vouchers]="coupons"
       [cartIsLoading]="cartIsLoading"
@@ -26,6 +27,7 @@ class MockCxIconComponent {
     >
     </cx-applied-coupons>
   `,
+    standalone: false
 })
 class MockedCartCouponComponent {
   coupons = [coupon2, coupon1];

@@ -20,8 +20,9 @@ import {
 import { WishListItemComponent } from './wish-list-item.component';
 
 @Component({
-  selector: 'cx-add-to-cart',
-  template: '<button>add to cart</button>',
+    selector: 'cx-add-to-cart',
+    template: '<button>add to cart</button>',
+    standalone: false
 })
 class MockAddToCartComponent {
   @Input() product;
@@ -29,8 +30,9 @@ class MockAddToCartComponent {
 }
 
 @Component({
-  selector: 'cx-media',
-  template: 'mock picture component',
+    selector: 'cx-media',
+    template: 'mock picture component',
+    standalone: false
 })
 class MockPictureComponent {
   @Input() container;
@@ -38,7 +40,8 @@ class MockPictureComponent {
 }
 
 @Pipe({
-  name: 'cxUrl',
+    name: 'cxUrl',
+    standalone: false
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
@@ -72,7 +75,8 @@ const mockCartEntry: OrderEntry = {
 };
 
 @Directive({
-  selector: '[cxAtMessage]',
+    selector: '[cxAtMessage]',
+    standalone: false
 })
 class MockAtMessageDirective {
   @Input() cxAtMessage: string | string[] | undefined;

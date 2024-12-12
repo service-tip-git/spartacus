@@ -31,8 +31,9 @@ const mockedWindowRef = {
 };
 
 @Component({
-  selector: 'cx-page-layout',
-  template: 'mock',
+    selector: 'cx-page-layout',
+    template: 'mock',
+    standalone: false
 })
 class MockPageLayoutComponent {}
 

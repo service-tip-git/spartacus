@@ -25,8 +25,9 @@ import { CheckoutPaymentMethodComponent } from './checkout-payment-method.compon
 import createSpy = jasmine.createSpy;
 
 @Component({
-  selector: 'cx-icon',
-  template: '',
+    selector: 'cx-icon',
+    template: '',
+    standalone: false
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -144,8 +145,9 @@ const mockAddress: Address = {
 };
 
 @Component({
-  selector: 'cx-payment-form',
-  template: '',
+    selector: 'cx-payment-form',
+    template: '',
+    standalone: false
 })
 class MockPaymentFormComponent {
   @Input()
@@ -159,8 +161,9 @@ class MockPaymentFormComponent {
 }
 
 @Component({
-  selector: 'cx-spinner',
-  template: '',
+    selector: 'cx-spinner',
+    template: '',
+    standalone: false
 })
 class MockSpinnerComponent {}
 

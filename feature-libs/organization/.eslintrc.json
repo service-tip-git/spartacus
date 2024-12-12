@@ -1,4 +1,12 @@
 {
   "extends": "../../.eslintrc.json",
-  "ignorePatterns": ["schematics/**/*.d.ts"]
+  "ignorePatterns": ["schematics/**/*.d.ts"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "rules": {
+        "@angular-eslint/prefer-standalone": "off"
+      }
+    }
+  ]
 }

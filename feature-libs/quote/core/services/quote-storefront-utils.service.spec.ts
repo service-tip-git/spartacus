@@ -16,14 +16,15 @@ class MockedWindowRef extends WindowRef {
 }
 
 @Component({
-  selector: 'cx-quote',
-  template: `
+    selector: 'cx-quote',
+    template: `
     <cx-quote-list>
       <label id="ATTR_1--value_1">value_1</label>
       <label id="ATTR_1--value_2">value_2</label>
       <label id="ATTR_1--value_3">value_3</label>
     </cx-quote-list>
   `,
+    standalone: false
 })
 class MockQuoteComponent {}
 

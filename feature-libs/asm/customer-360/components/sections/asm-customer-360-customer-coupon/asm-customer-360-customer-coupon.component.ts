@@ -24,9 +24,10 @@ import { CustomerCouponEntry } from './asm-customer-360-customer-coupon.model';
 import { ICON_TYPE } from '@spartacus/storefront';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'cx-asm-customer-360-customer-coupon',
-  templateUrl: './asm-customer-360-customer-coupon.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-asm-customer-360-customer-coupon',
+    templateUrl: './asm-customer-360-customer-coupon.component.html',
+    standalone: false
 })
 export class AsmCustomer360CustomerCouponComponent
   implements OnInit, OnDestroy

@@ -31,9 +31,10 @@ import { concatMap } from 'rxjs/operators';
 import { AsmCustomer360SectionContext } from '../asm-customer-360-section-context.model';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'cx-asm-customer-360-map',
-  templateUrl: './asm-customer-360-map.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-asm-customer-360-map',
+    templateUrl: './asm-customer-360-map.component.html',
+    standalone: false
 })
 export class AsmCustomer360MapComponent implements OnDestroy, OnInit {
   storeData: StoreFinderSearchPage;

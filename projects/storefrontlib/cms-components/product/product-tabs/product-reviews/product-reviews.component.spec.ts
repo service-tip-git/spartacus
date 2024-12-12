@@ -27,8 +27,9 @@ class MockProductReviewService {
 }
 
 @Component({
-  selector: 'cx-star-rating',
-  template: '',
+    selector: 'cx-star-rating',
+    template: '',
+    standalone: false
 })
 class MockStarRatingComponent {
   @Input() rating;

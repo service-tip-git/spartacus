@@ -16,8 +16,9 @@ import { CustomFormValidators } from '@spartacus/storefront';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'cx-checkout-login',
-  templateUrl: './checkout-login.component.html',
+    selector: 'cx-checkout-login',
+    templateUrl: './checkout-login.component.html',
+    standalone: false
 })
 export class CheckoutLoginComponent implements OnDestroy {
   checkoutLoginForm: UntypedFormGroup = this.formBuilder.group(

@@ -8,7 +8,8 @@ import {
 } from './asm-bind-cart-dialog.component';
 
 @Pipe({
-  name: 'cxTranslate',
+    name: 'cxTranslate',
+    standalone: false
 })
 class MockTranslatePipe implements PipeTransform {
   transform(): any {}

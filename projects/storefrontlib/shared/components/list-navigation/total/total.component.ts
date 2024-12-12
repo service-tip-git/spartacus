@@ -8,9 +8,10 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { PaginationModel } from '@spartacus/core';
 
 @Component({
-  selector: 'cx-total',
-  templateUrl: './total.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-total',
+    templateUrl: './total.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class TotalComponent {
   private _pagination: PaginationModel;

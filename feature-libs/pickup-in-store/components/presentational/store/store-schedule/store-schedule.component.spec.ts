@@ -78,8 +78,9 @@ describe('StoreScheduleComponent', () => {
  * for the purposes of testing the components that wrap it.
  */
 @Component({
-  selector: 'cx-store-schedule',
-  template: '',
+    selector: 'cx-store-schedule',
+    template: '',
+    standalone: false
 })
 export class StoreScheduleStubComponent {
   @Input() storeDetails: PointOfService;

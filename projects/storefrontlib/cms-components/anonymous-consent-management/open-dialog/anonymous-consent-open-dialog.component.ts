@@ -15,8 +15,9 @@ import { LAUNCH_CALLER } from '../../../layout/launch-dialog/config/launch-confi
 import { take } from 'rxjs/operators';
 
 @Component({
-  selector: 'cx-anonymous-consent-open-dialog',
-  templateUrl: './anonymous-consent-open-dialog.component.html',
+    selector: 'cx-anonymous-consent-open-dialog',
+    templateUrl: './anonymous-consent-open-dialog.component.html',
+    standalone: false
 })
 export class AnonymousConsentOpenDialogComponent {
   @ViewChild('open') openElement: ElementRef;

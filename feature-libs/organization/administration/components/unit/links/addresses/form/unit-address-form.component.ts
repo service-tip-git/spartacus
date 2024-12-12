@@ -14,16 +14,17 @@ import { UnitAddressItemService } from '../services/unit-address-item.service';
 import { UnitAddressFormService } from './unit-address-form.service';
 
 @Component({
-  selector: 'cx-org-unit-address-form',
-  templateUrl: './unit-address-form.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'content-wrapper' },
-  providers: [
-    {
-      provide: ItemService,
-      useExisting: UnitAddressItemService,
-    },
-  ],
+    selector: 'cx-org-unit-address-form',
+    templateUrl: './unit-address-form.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'content-wrapper' },
+    providers: [
+        {
+            provide: ItemService,
+            useExisting: UnitAddressItemService,
+        },
+    ],
+    standalone: false
 })
 export class UnitAddressFormComponent implements OnInit {
   form: UntypedFormGroup | null = this.itemService.getForm();

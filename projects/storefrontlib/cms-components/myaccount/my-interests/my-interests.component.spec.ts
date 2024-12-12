@@ -30,16 +30,18 @@ import { MockFeatureLevelDirective } from '../../../shared/test/mock-feature-lev
 import { MyInterestsComponent } from './my-interests.component';
 
 @Component({
-  template: '',
-  selector: 'cx-pagination',
+    template: '',
+    selector: 'cx-pagination',
+    standalone: false
 })
 class MockPaginationComponent {
   @Input() pagination;
   @Output() viewPageEvent = new EventEmitter<string>();
 }
 @Component({
-  template: '',
-  selector: 'cx-sorting',
+    template: '',
+    selector: 'cx-sorting',
+    standalone: false
 })
 class MockSortingComponent {
   @Input() sortOptions;
@@ -50,8 +52,9 @@ class MockSortingComponent {
 }
 
 @Component({
-  template: '',
-  selector: 'cx-media',
+    template: '',
+    selector: 'cx-media',
+    standalone: false
 })
 class MockMediaComponent {
   @Input() container;
@@ -72,7 +75,8 @@ const MockOccModuleConfig: OccConfig = {
 const MockLayoutConfig: LayoutConfig = {};
 
 @Pipe({
-  name: 'cxUrl',
+    name: 'cxUrl',
+    standalone: false
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
@@ -84,13 +88,15 @@ class MockGlobalMessageService implements Partial<GlobalMessageService> {
 }
 
 @Component({
-  selector: 'cx-spinner',
-  template: '',
+    selector: 'cx-spinner',
+    template: '',
+    standalone: false
 })
 class MockSpinnerComponent {}
 
 @Directive({
-  selector: '[cxAtMessage]',
+    selector: '[cxAtMessage]',
+    standalone: false
 })
 class MockAtMessageDirective {
   @Input() cxAtMessage: string | string[] | undefined;

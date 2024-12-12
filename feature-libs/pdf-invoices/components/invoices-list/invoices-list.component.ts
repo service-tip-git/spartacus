@@ -39,9 +39,10 @@ import {
 import { catchError, skip, switchMap, take, tap } from 'rxjs/operators';
 
 @Component({
-  selector: 'cx-invoices-list',
-  templateUrl: './invoices-list.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-invoices-list',
+    templateUrl: './invoices-list.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class InvoicesListComponent implements OnInit, OnDestroy {
   /* For Enum use in HTML */

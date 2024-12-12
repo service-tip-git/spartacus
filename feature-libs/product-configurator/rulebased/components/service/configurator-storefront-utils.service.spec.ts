@@ -94,14 +94,15 @@ function createFocusedElements(
 }
 
 @Component({
-  selector: 'cx-configurator',
-  template: `
+    selector: 'cx-configurator',
+    template: `
     <cx-configurator-form>
       <label id="ATTR_1--value_1">value_1</label>
       <label id="ATTR_1--value_2">value_2</label>
       <label id="ATTR_1--value_3">value_3</label>
     </cx-configurator-form>
   `,
+    standalone: false
 })
 class MockComponent {}
 

@@ -26,15 +26,17 @@ class MockQuickOrderFacade implements Partial<QuickOrderFacade> {
 }
 
 @Pipe({
-  name: 'cxUrl',
+    name: 'cxUrl',
+    standalone: false
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
 
 @Component({
-  template: '',
-  selector: 'cx-item-counter',
+    template: '',
+    selector: 'cx-item-counter',
+    standalone: false
 })
 class MockItemCounterComponent {
   @Input() max: number;
@@ -43,8 +45,9 @@ class MockItemCounterComponent {
 }
 
 @Component({
-  template: '',
-  selector: 'cx-media',
+    template: '',
+    selector: 'cx-media',
+    standalone: false
 })
 class MockMediaComponent {
   @Input() container;

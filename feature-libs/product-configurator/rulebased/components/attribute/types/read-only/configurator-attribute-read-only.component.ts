@@ -13,10 +13,11 @@ import { ConfiguratorAttributePriceChangeService } from '../../price-change/conf
 import { ConfiguratorAttributeBaseComponent } from '../base/configurator-attribute-base.component';
 
 @Component({
-  selector: 'cx-configurator-attribute-read-only',
-  templateUrl: './configurator-attribute-read-only.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [ConfiguratorAttributePriceChangeService],
+    selector: 'cx-configurator-attribute-read-only',
+    templateUrl: './configurator-attribute-read-only.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [ConfiguratorAttributePriceChangeService],
+    standalone: false
 })
 export class ConfiguratorAttributeReadOnlyComponent extends ConfiguratorAttributeBaseComponent {
   attribute: Configurator.Attribute;

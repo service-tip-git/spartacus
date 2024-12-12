@@ -22,9 +22,10 @@ import { combineLatest, Observable } from 'rxjs';
 import { filter, map, take, tap } from 'rxjs/operators';
 
 @Component({
-  selector: 'cx-order-history',
-  templateUrl: './order-history.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-order-history',
+    templateUrl: './order-history.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class OrderHistoryComponent implements OnDestroy {
   constructor(

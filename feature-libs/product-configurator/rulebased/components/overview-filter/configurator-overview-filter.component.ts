@@ -12,8 +12,9 @@ import { Configurator } from '../../core/model/configurator.model';
 import { ConfiguratorStorefrontUtilsService } from '../service/configurator-storefront-utils.service';
 
 @Component({
-  selector: 'cx-configurator-overview-filter',
-  templateUrl: './configurator-overview-filter.component.html',
+    selector: 'cx-configurator-overview-filter',
+    templateUrl: './configurator-overview-filter.component.html',
+    standalone: false
 })
 export class ConfiguratorOverviewFilterComponent implements OnChanges {
   protected configuratorStorefrontUtilsService = inject(

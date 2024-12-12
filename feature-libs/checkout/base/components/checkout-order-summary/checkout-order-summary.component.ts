@@ -9,9 +9,10 @@ import { ActiveCartFacade, Cart, CartOutlets } from '@spartacus/cart/base/root';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'cx-checkout-order-summary',
-  templateUrl: './checkout-order-summary.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-checkout-order-summary',
+    templateUrl: './checkout-order-summary.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class CheckoutOrderSummaryComponent {
   cart$: Observable<Cart>;

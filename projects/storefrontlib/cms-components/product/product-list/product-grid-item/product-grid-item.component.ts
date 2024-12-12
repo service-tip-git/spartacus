@@ -18,16 +18,17 @@ import { ProductListItemContext } from '../model/product-list-item-context.model
 import { ProductListService } from '../product-list.service';
 
 @Component({
-  selector: 'cx-product-grid-item',
-  templateUrl: './product-grid-item.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    ProductListItemContextSource,
-    {
-      provide: ProductListItemContext,
-      useExisting: ProductListItemContextSource,
-    },
-  ],
+    selector: 'cx-product-grid-item',
+    templateUrl: './product-grid-item.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [
+        ProductListItemContextSource,
+        {
+            provide: ProductListItemContext,
+            useExisting: ProductListItemContextSource,
+        },
+    ],
+    standalone: false
 })
 export class ProductGridItemComponent implements OnChanges {
   protected productListService = inject(ProductListService);

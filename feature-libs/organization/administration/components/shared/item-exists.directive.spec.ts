@@ -11,9 +11,10 @@ import createSpy = jasmine.createSpy;
 const mockCode = 'mc1';
 
 @Component({
-  // eslint-disable-next-line @angular-eslint/component-selector
-  selector: 'cx-host',
-  template: `<div [cxOrgItemExists]>TEST</div>`,
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'cx-host',
+    template: `<div [cxOrgItemExists]>TEST</div>`,
+    standalone: false
 })
 class TestComponent {
   form: UntypedFormGroup = new UntypedFormGroup({});

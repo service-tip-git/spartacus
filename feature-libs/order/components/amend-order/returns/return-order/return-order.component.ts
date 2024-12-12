@@ -12,9 +12,10 @@ import { tap } from 'rxjs/operators';
 import { OrderAmendService } from '../../amend-order.service';
 
 @Component({
-  selector: 'cx-return-order',
-  templateUrl: './return-order.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-return-order',
+    templateUrl: './return-order.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ReturnOrderComponent {
   orderCode: string;

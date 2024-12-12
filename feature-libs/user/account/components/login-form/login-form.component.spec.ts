@@ -26,7 +26,8 @@ class MockLoginFormComponentService
   login = createSpy().and.stub();
 }
 @Pipe({
-  name: 'cxUrl',
+    name: 'cxUrl',
+    standalone: false
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}

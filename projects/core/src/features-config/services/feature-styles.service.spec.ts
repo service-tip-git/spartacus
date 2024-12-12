@@ -4,9 +4,10 @@ import { Config, provideConfig } from '../../config';
 import { FeatureStylesService } from './feature-styles.service';
 
 @Component({
-  selector: 'cx-test-root',
-  template: '',
-  host: { class: 'originalHostClass' },
+    selector: 'cx-test-root',
+    template: '',
+    host: { class: 'originalHostClass' },
+    standalone: false
 })
 class TestRootComponent {}
 

@@ -30,20 +30,21 @@ import { CurrentUserService } from '../services/current-user.service';
 import { UserItemService } from '../services/user-item.service';
 
 @Component({
-  selector: 'cx-org-user-form',
-  templateUrl: './user-form.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'content-wrapper' },
-  providers: [
-    {
-      provide: ItemService,
-      useExisting: UserItemService,
-    },
-    {
-      provide: CurrentItemService,
-      useExisting: CurrentUserService,
-    },
-  ],
+    selector: 'cx-org-user-form',
+    templateUrl: './user-form.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'content-wrapper' },
+    providers: [
+        {
+            provide: ItemService,
+            useExisting: UserItemService,
+        },
+        {
+            provide: CurrentItemService,
+            useExisting: CurrentUserService,
+        },
+    ],
+    standalone: false
 })
 export class UserFormComponent implements OnInit {
   form: UntypedFormGroup | null = this.itemService.getForm();

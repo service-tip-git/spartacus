@@ -19,9 +19,10 @@ import { useFeatureStyles } from '@spartacus/core';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: '[cx-quick-order-item], cx-quick-order-item',
-  templateUrl: './quick-order-item.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: '[cx-quick-order-item], cx-quick-order-item',
+    templateUrl: './quick-order-item.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class QuickOrderItemComponent implements OnInit, OnDestroy {
   quantityControl: UntypedFormControl;

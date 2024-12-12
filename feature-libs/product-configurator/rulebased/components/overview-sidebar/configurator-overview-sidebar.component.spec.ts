@@ -94,8 +94,9 @@ class MockProductService {
 }
 
 @Component({
-  selector: 'cx-configurator-overview-filter',
-  template: '',
+    selector: 'cx-configurator-overview-filter',
+    template: '',
+    standalone: false
 })
 class MockConfiguratorOverviewFilterComponent {
   @Input() showFilterBar: boolean = true;
@@ -103,8 +104,9 @@ class MockConfiguratorOverviewFilterComponent {
 }
 
 @Component({
-  selector: 'cx-configurator-overview-menu',
-  template: '',
+    selector: 'cx-configurator-overview-menu',
+    template: '',
+    standalone: false
 })
 class MockConfiguratorOverviewMenuComponent {
   @Input() config: Configurator.ConfigurationWithOverview;

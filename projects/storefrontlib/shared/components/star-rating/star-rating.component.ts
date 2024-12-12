@@ -21,9 +21,10 @@ import { ICON_TYPE } from '../../../cms-components/misc/index';
  * as create new ratings. The component can be used for any ratings.
  */
 @Component({
-  selector: 'cx-star-rating',
-  templateUrl: './star-rating.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-star-rating',
+    templateUrl: './star-rating.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class StarRatingComponent {
   protected initialRate = 0;

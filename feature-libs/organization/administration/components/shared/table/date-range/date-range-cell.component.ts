@@ -14,9 +14,10 @@ import { FeatureConfigService } from '@spartacus/core';
 import { CellComponent } from '../cell.component';
 
 @Component({
-  selector: 'cx-org-date-range-cell',
-  templateUrl: './date-range-cell.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-org-date-range-cell',
+    templateUrl: './date-range-cell.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class DateRangeCellComponent extends CellComponent {
   @Optional() featuteConfigService = inject(FeatureConfigService, {

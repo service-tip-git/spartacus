@@ -10,9 +10,10 @@ import { OrderDetailsService } from '@spartacus/order/components';
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'cx-cancel-service-order-headline',
-  templateUrl: './cancel-service-order-headline.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-cancel-service-order-headline',
+    templateUrl: './cancel-service-order-headline.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class CancelServiceOrderHeadlineComponent {
   protected orderDetailsService = inject(OrderDetailsService);

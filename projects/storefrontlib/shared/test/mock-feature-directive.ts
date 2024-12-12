@@ -7,7 +7,8 @@
 import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 
 @Directive({
-  selector: '[cxFeature]',
+    selector: '[cxFeature]',
+    standalone: false
 })
 export class MockFeatureDirective {
   constructor(

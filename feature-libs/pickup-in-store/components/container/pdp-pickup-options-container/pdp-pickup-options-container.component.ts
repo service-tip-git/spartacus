@@ -54,8 +54,9 @@ function isProductWithCode(
  * A container component of the pair of the pickup options radio buttons for cart entry.
  */
 @Component({
-  selector: 'cx-cart-pickup-options-container',
-  templateUrl: 'pdp-pickup-options-container.component.html',
+    selector: 'cx-cart-pickup-options-container',
+    templateUrl: 'pdp-pickup-options-container.component.html',
+    standalone: false
 })
 export class PdpPickupOptionsContainerComponent implements OnInit, OnDestroy {
   // TODO: Remove element reference once 'a11yDialogTriggerRefocus' feature flag is removed.

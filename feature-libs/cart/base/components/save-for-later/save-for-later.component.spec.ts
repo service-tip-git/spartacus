@@ -13,8 +13,9 @@ import { CmsService, I18nTestingModule } from '@spartacus/core';
 import { Observable, of } from 'rxjs';
 import { SaveForLaterComponent } from './save-for-later.component';
 @Component({
-  template: '',
-  selector: 'cx-cart-item-list',
+    template: '',
+    selector: 'cx-cart-item-list',
+    standalone: false
 })
 class MockCartItemListComponent {
   @Input() readonly = false;

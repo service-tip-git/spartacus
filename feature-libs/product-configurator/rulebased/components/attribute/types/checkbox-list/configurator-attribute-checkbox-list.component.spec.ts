@@ -28,15 +28,17 @@ import { Observable, of } from 'rxjs';
 class MockGroupService {}
 
 @Directive({
-  selector: '[cxFocus]',
+    selector: '[cxFocus]',
+    standalone: false
 })
 export class MockFocusDirective {
   @Input('cxFocus') protected config: any;
 }
 
 @Component({
-  selector: 'cx-configurator-attribute-quantity',
-  template: '',
+    selector: 'cx-configurator-attribute-quantity',
+    template: '',
+    standalone: false
 })
 class MockConfiguratorAttributeQuantityComponent {
   @Input() quantityOptions: ConfiguratorAttributeQuantityComponentOptions;
@@ -44,16 +46,18 @@ class MockConfiguratorAttributeQuantityComponent {
 }
 
 @Component({
-  selector: 'cx-configurator-price',
-  template: '',
+    selector: 'cx-configurator-price',
+    template: '',
+    standalone: false
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;
 }
 
 @Component({
-  selector: 'cx-configurator-show-more',
-  template: '',
+    selector: 'cx-configurator-show-more',
+    template: '',
+    standalone: false
 })
 class MockConfiguratorShowMoreComponent {
   @Input() text: string;

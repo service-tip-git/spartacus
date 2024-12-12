@@ -8,7 +8,8 @@ import { Component } from '@angular/core';
 import { ConsentManagementComponent } from '../../../consent-management/components/consent-management.component';
 
 @Component({
-  selector: 'cx-my-account-v2-consent-management',
-  templateUrl: './my-account-v2-consent-management.component.html',
+    selector: 'cx-my-account-v2-consent-management',
+    templateUrl: './my-account-v2-consent-management.component.html',
+    standalone: false
 })
 export class MyAccountV2ConsentManagementComponent extends ConsentManagementComponent {}

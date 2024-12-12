@@ -9,9 +9,10 @@ import { OrgUnitService } from '@spartacus/organization/administration/core';
 import { UnitTreeService } from '../services/unit-tree.service';
 
 @Component({
-  selector: 'cx-org-unit-list',
-  templateUrl: './unit-list.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-org-unit-list',
+    templateUrl: './unit-list.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UnitListComponent {
   constructor(

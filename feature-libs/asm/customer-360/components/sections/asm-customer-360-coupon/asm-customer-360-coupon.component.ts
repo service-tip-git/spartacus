@@ -23,9 +23,10 @@ import { ActiveCartFacade, CartVoucherFacade } from '@spartacus/cart/base/root';
 import { AsmCustomer360SectionContext } from '../asm-customer-360-section-context.model';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'cx-asm-customer-360-coupon',
-  templateUrl: './asm-customer-360-coupon.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-asm-customer-360-coupon',
+    templateUrl: './asm-customer-360-coupon.component.html',
+    standalone: false
 })
 export class AsmCustomer360CouponComponent implements OnInit, OnDestroy {
   showErrorAlert$ = new BehaviorSubject<boolean>(false);

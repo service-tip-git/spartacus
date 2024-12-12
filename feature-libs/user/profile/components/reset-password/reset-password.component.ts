@@ -11,10 +11,11 @@ import { Observable } from 'rxjs';
 import { ResetPasswordComponentService } from './reset-password-component.service';
 
 @Component({
-  selector: 'cx-reset-password',
-  templateUrl: './reset-password.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'user-form' },
+    selector: 'cx-reset-password',
+    templateUrl: './reset-password.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'user-form' },
+    standalone: false
 })
 export class ResetPasswordComponent {
   form: UntypedFormGroup = this.service.form;

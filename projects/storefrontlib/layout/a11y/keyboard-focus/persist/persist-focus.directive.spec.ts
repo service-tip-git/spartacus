@@ -6,19 +6,21 @@ import { PersistFocusDirective } from './persist-focus.directive';
 import { PersistFocusService } from './persist-focus.service';
 
 @Directive({
-  selector: '[cxPersistFocus]',
+    selector: '[cxPersistFocus]',
+    standalone: false
 })
 class CustomFocusDirective extends PersistFocusDirective {
   @Input('cxPersistFocus') protected config: PersistFocusConfig;
 }
 @Component({
-  selector: 'cx-host',
-  template: `
+    selector: 'cx-host',
+    template: `
     <div id="a" cxPersistFocus></div>
     <div id="b" cxPersistFocus="key-b"></div>
     <div id="c" [cxPersistFocus]="{ key: 'key-c' }"></div>
     <div id="d" [cxPersistFocus]="{ key: 'key-d' }"></div>
   `,
+    standalone: false
 })
 class MockComponent {}
 

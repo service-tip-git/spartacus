@@ -26,20 +26,21 @@ import { CurrentPermissionService } from '../services/current-permission.service
 import { PermissionItemService } from '../services/permission-item.service';
 
 @Component({
-  selector: 'cx-org-permission-form',
-  templateUrl: './permission-form.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'content-wrapper' },
-  providers: [
-    {
-      provide: ItemService,
-      useExisting: PermissionItemService,
-    },
-    {
-      provide: CurrentItemService,
-      useExisting: CurrentPermissionService,
-    },
-  ],
+    selector: 'cx-org-permission-form',
+    templateUrl: './permission-form.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'content-wrapper' },
+    providers: [
+        {
+            provide: ItemService,
+            useExisting: PermissionItemService,
+        },
+        {
+            provide: CurrentItemService,
+            useExisting: CurrentPermissionService,
+        },
+    ],
+    standalone: false
 })
 export class PermissionFormComponent implements OnInit {
   form: UntypedFormGroup | null = this.itemService.getForm();

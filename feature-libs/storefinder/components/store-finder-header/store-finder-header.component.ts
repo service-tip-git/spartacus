@@ -7,7 +7,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'cx-store-finder-header',
-  templateUrl: './store-finder-header.component.html',
+    selector: 'cx-store-finder-header',
+    templateUrl: './store-finder-header.component.html',
+    standalone: false
 })
 export class StoreFinderHeaderComponent {}

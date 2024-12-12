@@ -44,8 +44,9 @@ class MockOrderApprovalDetailService {
 }
 
 @Component({
-  selector: 'cx-form-errors',
-  template: '',
+    selector: 'cx-form-errors',
+    template: '',
+    standalone: false
 })
 class MockFormErrorsComponent {
   @Input() control: UntypedFormControl;
@@ -54,13 +55,15 @@ class MockFormErrorsComponent {
 }
 
 @Component({
-  selector: 'cx-spinner',
-  template: '',
+    selector: 'cx-spinner',
+    template: '',
+    standalone: false
 })
 class MockSpinnerComponent {}
 
 @Pipe({
-  name: 'cxUrl',
+    name: 'cxUrl',
+    standalone: false
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}

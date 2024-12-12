@@ -37,9 +37,10 @@ const defaultTabConfig = {
 };
 
 @Component({
-  selector: 'cx-tab-paragraph-container',
-  templateUrl: './tab-paragraph-container.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-tab-paragraph-container',
+    templateUrl: './tab-paragraph-container.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class TabParagraphContainerComponent implements AfterViewInit, OnInit {
   /**

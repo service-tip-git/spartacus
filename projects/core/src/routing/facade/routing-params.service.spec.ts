@@ -4,8 +4,9 @@ import { Router, RouterModule } from '@angular/router';
 import { RoutingParamsService } from './routing-params.service';
 
 @Component({
-  selector: 'cx-mock',
-  template: '',
+    selector: 'cx-mock',
+    template: '',
+    standalone: false
 })
 export class MockComponent {}
 

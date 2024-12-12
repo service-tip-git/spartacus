@@ -60,15 +60,17 @@ class MockLaunchDialogService implements Partial<LaunchDialogService> {
 }
 
 @Directive({
-  selector: '[cxFocus]',
+    selector: '[cxFocus]',
+    standalone: false
 })
 export class MockKeyboardFocusDirective {
   @Input('cxFocus') config: FocusConfig = {};
 }
 
 @Component({
-  selector: 'cx-configurator-group',
-  template: '',
+    selector: 'cx-configurator-group',
+    template: '',
+    standalone: false
 })
 class MockConfiguratorDefaultFormComponent {
   @Input() group: Configurator.Group;

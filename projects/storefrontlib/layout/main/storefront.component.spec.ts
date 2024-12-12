@@ -8,26 +8,30 @@ import { HamburgerMenuService } from '../header/hamburger-menu/hamburger-menu.se
 import { StorefrontComponent } from './storefront.component';
 
 @Component({
-  selector: 'cx-header',
-  template: '',
+    selector: 'cx-header',
+    template: '',
+    standalone: false
 })
 class MockHeaderComponent {}
 
 @Component({
-  selector: 'cx-global-message',
-  template: '',
+    selector: 'cx-global-message',
+    template: '',
+    standalone: false
 })
 class MockGlobalMessageComponent {}
 
 @Component({
-  selector: 'cx-page-slot',
-  template: '',
+    selector: 'cx-page-slot',
+    template: '',
+    standalone: false
 })
 class DynamicSlotComponent {}
 
 @Component({
-  selector: 'cx-footer',
-  template: '',
+    selector: 'cx-footer',
+    template: '',
+    standalone: false
 })
 class MockFooterComponent {}
 
@@ -38,14 +42,16 @@ class MockRoutingService {
 }
 
 @Component({
-  selector: 'cx-schema',
-  template: '',
+    selector: 'cx-schema',
+    template: '',
+    standalone: false
 })
 class MockSchemaComponent {}
 
 @Component({
-  selector: 'cx-page-layout',
-  template: '',
+    selector: 'cx-page-layout',
+    template: '',
+    standalone: false
 })
 class MockPageLayoutComponent {}
 
@@ -54,7 +60,8 @@ class MockHamburgerMenuService {
 }
 
 @Directive({
-  selector: '[cxOutlet]',
+    selector: '[cxOutlet]',
+    standalone: false
 })
 class MockOutletDirective implements Partial<OutletDirective> {
   @Input() cxOutlet: string;

@@ -17,9 +17,10 @@ import { combineLatest, Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
 @Component({
-  selector: 'cx-unit-level-order-history',
-  templateUrl: './unit-level-order-history.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-unit-level-order-history',
+    templateUrl: './unit-level-order-history.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UnitLevelOrderHistoryComponent implements OnDestroy {
   private PAGE_SIZE = 5;

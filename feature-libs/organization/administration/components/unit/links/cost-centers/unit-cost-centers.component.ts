@@ -12,16 +12,17 @@ import { CurrentUnitService } from '../../services/current-unit.service';
 import { UnitCostCenterListService } from './unit-cost-centers.service';
 
 @Component({
-  selector: 'cx-org-unit-cost-centers',
-  templateUrl: './unit-cost-centers.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'content-wrapper' },
-  providers: [
-    {
-      provide: ListService,
-      useExisting: UnitCostCenterListService,
-    },
-  ],
+    selector: 'cx-org-unit-cost-centers',
+    templateUrl: './unit-cost-centers.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'content-wrapper' },
+    providers: [
+        {
+            provide: ListService,
+            useExisting: UnitCostCenterListService,
+        },
+    ],
+    standalone: false
 })
 export class UnitCostCenterListComponent {
   unit$: Observable<B2BUnit | undefined> = this.currentUnitService

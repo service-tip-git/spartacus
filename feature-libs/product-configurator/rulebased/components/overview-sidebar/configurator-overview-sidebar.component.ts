@@ -13,8 +13,9 @@ import { Configurator } from '../../core/model/configurator.model';
 import { ConfiguratorStorefrontUtilsService } from '../service/configurator-storefront-utils.service';
 
 @Component({
-  selector: 'cx-configurator-overview-sidebar',
-  templateUrl: './configurator-overview-sidebar.component.html',
+    selector: 'cx-configurator-overview-sidebar',
+    templateUrl: './configurator-overview-sidebar.component.html',
+    standalone: false
 })
 export class ConfiguratorOverviewSidebarComponent {
   @HostBinding('class.ghost') ghostStyle = true;

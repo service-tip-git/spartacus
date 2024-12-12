@@ -10,9 +10,10 @@ import { CxDatePipe, TranslationService } from '@spartacus/core';
 import { EMPTY, Observable } from 'rxjs';
 
 @Component({
-  selector: 'cx-schedule-lines',
-  templateUrl: './schedule-lines.component.html',
-  providers: [CxDatePipe],
+    selector: 'cx-schedule-lines',
+    templateUrl: './schedule-lines.component.html',
+    providers: [CxDatePipe],
+    standalone: false
 })
 export class ScheduleLinesComponent {
   constructor(

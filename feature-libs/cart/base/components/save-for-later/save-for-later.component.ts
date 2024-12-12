@@ -16,8 +16,9 @@ import { CmsParagraphComponent, CmsService } from '@spartacus/core';
 import { combineLatest, Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 @Component({
-  selector: 'cx-save-for-later',
-  templateUrl: './save-for-later.component.html',
+    selector: 'cx-save-for-later',
+    templateUrl: './save-for-later.component.html',
+    standalone: false
 })
 export class SaveForLaterComponent implements OnInit {
   saveForLater$: Observable<Cart>;

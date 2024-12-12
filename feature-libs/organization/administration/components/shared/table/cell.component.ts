@@ -18,9 +18,10 @@ import {
 } from '@spartacus/storefront';
 
 @Component({
-  selector: 'cx-org-cell',
-  templateUrl: './cell.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-org-cell',
+    templateUrl: './cell.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class CellComponent {
   @Optional() featuteConfigService = inject(FeatureConfigService, {

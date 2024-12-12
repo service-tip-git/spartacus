@@ -6,7 +6,8 @@ import { I18nTestingModule } from '@spartacus/core';
 import { FileUploadComponent } from './file-upload.component';
 
 @Component({
-  selector: 'cx-form-errors',
+    selector: 'cx-form-errors',
+    standalone: false
 })
 class MockFormErrorComponent {
   @Input() control: UntypedFormControl;

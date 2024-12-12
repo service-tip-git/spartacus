@@ -8,8 +8,9 @@ import { of } from 'rxjs';
 import { OrderSummaryComponent } from './order-summary.component';
 
 @Component({
-  selector: 'cx-applied-coupons',
-  template: '',
+    selector: 'cx-applied-coupons',
+    template: '',
+    standalone: false
 })
 class MockAppliedCouponsComponent {
   @Input()

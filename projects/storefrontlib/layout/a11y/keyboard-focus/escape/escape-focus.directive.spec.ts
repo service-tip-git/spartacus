@@ -6,14 +6,15 @@ import { EscapeFocusDirective } from './escape-focus.directive';
 import { EscapeFocusService } from './escape-focus.service';
 
 @Directive({
-  selector: '[cxEscFocus]',
+    selector: '[cxEscFocus]',
+    standalone: false
 })
 class CustomFocusDirective extends EscapeFocusDirective {
   @Input('cxEscFocus') protected config: EscapeFocusConfig;
 }
 @Component({
-  selector: 'cx-host',
-  template: `
+    selector: 'cx-host',
+    template: `
     <div id="a" cxEscFocus (esc)="handleEmit($event)"></div>
     <div
       id="b"
@@ -41,6 +42,7 @@ class CustomFocusDirective extends EscapeFocusDirective {
       </div>
     </div>
   `,
+    standalone: false
 })
 class MockComponent {
   // eslint-disable-next-line @typescript-eslint/naming-convention, no-underscore-dangle, id-match

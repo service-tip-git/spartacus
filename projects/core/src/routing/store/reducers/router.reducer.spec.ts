@@ -15,8 +15,9 @@ import { RouterState } from '../routing-state';
 import * as fromReducer from './router.reducer';
 
 @Component({
-  selector: 'cx-test-cmp',
-  template: 'test-cmp',
+    selector: 'cx-test-cmp',
+    template: 'test-cmp',
+    standalone: false
 })
 class TestComponent {}
 

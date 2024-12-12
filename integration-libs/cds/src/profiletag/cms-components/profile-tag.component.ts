@@ -9,11 +9,12 @@ import { Observable } from 'rxjs';
 import { ProfileTagInjectorService } from '../services/profile-tag.injector.service';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'cx-profiletag',
-  template: `
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-profiletag',
+    template: `
     <ng-container *ngIf="profileTagEnabled$ | async"></ng-container>
   `,
+    standalone: false
 })
 export class ProfileTagComponent {
   profileTagEnabled$: Observable<boolean> = this.profileTagInjector.track();

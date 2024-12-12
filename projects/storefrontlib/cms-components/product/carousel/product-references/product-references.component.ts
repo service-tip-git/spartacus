@@ -18,9 +18,10 @@ import { CmsComponentData } from '../../../../cms-structure/page/model/cms-compo
 import { CurrentProductService } from '../../current-product.service';
 
 @Component({
-  selector: 'cx-product-references',
-  templateUrl: './product-references.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-product-references',
+    templateUrl: './product-references.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ProductReferencesComponent {
   constructor(

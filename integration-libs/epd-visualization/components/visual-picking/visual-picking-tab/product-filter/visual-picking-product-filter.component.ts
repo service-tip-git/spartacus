@@ -9,9 +9,10 @@ import { ICON_TYPE } from '@spartacus/storefront';
 import { VisualPickingProductFilterService } from './visual-picking-product-filter.service';
 
 @Component({
-  selector: 'cx-epd-visualization-product-filter',
-  templateUrl: './visual-picking-product-filter.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-epd-visualization-product-filter',
+    templateUrl: './visual-picking-product-filter.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class VisualPickingProductFilterComponent {
   constructor(

@@ -23,7 +23,8 @@ import {
 import { ProductCarouselItemComponent } from './product-carousel-item.component';
 
 @Pipe({
-  name: 'cxUrl',
+    name: 'cxUrl',
+    standalone: false
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
@@ -33,15 +34,17 @@ class MockRoutingService {}
 class MockProductService {}
 
 @Directive({
-  selector: '[cxOutlet]',
+    selector: '[cxOutlet]',
+    standalone: false
 })
 class MockOutletDirective implements Partial<OutletDirective> {
   @Input() cxOutlet: string;
 }
 
 @Component({
-  selector: 'cx-media',
-  template: '<img>',
+    selector: 'cx-media',
+    template: '<img>',
+    standalone: false
 })
 class MockMediaComponent {
   @Input() container: any;

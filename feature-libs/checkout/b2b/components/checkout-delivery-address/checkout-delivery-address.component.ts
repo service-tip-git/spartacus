@@ -41,9 +41,10 @@ export interface CardWithAddress {
 }
 
 @Component({
-  selector: 'cx-delivery-address',
-  templateUrl: './checkout-delivery-address.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-delivery-address',
+    templateUrl: './checkout-delivery-address.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class B2BCheckoutDeliveryAddressComponent
   extends CheckoutDeliveryAddressComponent

@@ -12,9 +12,10 @@ import { CmsComponentData } from '../../../cms-structure/page/model/cms-componen
 import { MediaService } from '../../../shared/components/media/media.service';
 
 @Component({
-  selector: 'cx-pdf',
-  templateUrl: './pdf.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-pdf',
+    templateUrl: './pdf.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class PDFComponent {
   url?: string;

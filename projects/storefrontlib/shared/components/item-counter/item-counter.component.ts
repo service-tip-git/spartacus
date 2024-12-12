@@ -26,12 +26,9 @@ import { startWith } from 'rxjs/operators';
  * so that the state of the control can be managed outside of this component.
  */
 @Component({
-  selector: 'cx-item-counter',
-  templateUrl: './item-counter.component.html',
-  // do not use OnPush change detection strategy as we would not
-  // get updates of other form control state (disabled). We want to have a
-  // disabled state in order to ensure that the control cannot be used while
-  // the cart is updated.
+    selector: 'cx-item-counter',
+    templateUrl: './item-counter.component.html',
+    standalone: false
 })
 export class ItemCounterComponent implements OnInit, OnDestroy {
   /**

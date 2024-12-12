@@ -12,8 +12,9 @@ import { of } from 'rxjs';
 import { MyAccountV2NotificationPreferenceComponent } from './my-account-v2-notification-preference.component';
 
 @Component({
-  selector: 'cx-spinner',
-  template: ` <div>spinner</div> `,
+    selector: 'cx-spinner',
+    template: ` <div>spinner</div> `,
+    standalone: false
 })
 class MockCxSpinnerComponent {}
 

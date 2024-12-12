@@ -14,22 +14,25 @@ import { ICON_TYPE } from '../../../misc/icon/icon.model';
 import { ProductFacetNavigationComponent } from './product-facet-navigation.component';
 
 @Component({
-  selector: 'cx-icon',
-  template: '',
+    selector: 'cx-icon',
+    template: '',
+    standalone: false
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
 }
 @Component({
-  selector: 'cx-active-facets',
-  template: '',
+    selector: 'cx-active-facets',
+    template: '',
+    standalone: false
 })
 class MockActiveFacetsComponent {
   @Input() facetList;
 }
 @Component({
-  selector: 'cx-facet-list',
-  template: '',
+    selector: 'cx-facet-list',
+    template: '',
+    standalone: false
 })
 class MockFacetListComponent {
   @Input() isDialog;

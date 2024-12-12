@@ -22,9 +22,10 @@ import { FocusConfig } from '../../../../layout/a11y/keyboard-focus/keyboard-foc
 import { LaunchDialogService } from '../../../../layout/index';
 
 @Component({
-  selector: 'cx-stock-notification-dialog',
-  templateUrl: './stock-notification-dialog.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-stock-notification-dialog',
+    templateUrl: './stock-notification-dialog.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class StockNotificationDialogComponent implements OnInit, OnDestroy {
   private subscription = new Subscription();

@@ -28,9 +28,10 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
 
 @Component({
-  selector: 'cx-close-account-modal',
-  templateUrl: './close-account-modal.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-close-account-modal',
+    templateUrl: './close-account-modal.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class CloseAccountModalComponent implements OnInit {
   iconTypes = ICON_TYPE;

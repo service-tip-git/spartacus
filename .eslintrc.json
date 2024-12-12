@@ -15,7 +15,6 @@
       ],
       "plugins": ["deprecation", "@typescript-eslint", "@nx", "@stylistic/ts"],
       "rules": {
-        "@angular-eslint/no-host-metadata-property": "off",
         "deprecation/deprecation": "warn",
         "prefer-arrow/prefer-arrow-functions": "off",
         "space-before-function-paren": "off",

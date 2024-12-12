@@ -12,9 +12,10 @@ import { NavigationNode } from '../navigation/navigation-node.model';
 import { NavigationService } from '../navigation/navigation.service';
 
 @Component({
-  selector: 'cx-category-navigation',
-  templateUrl: './category-navigation.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-category-navigation',
+    templateUrl: './category-navigation.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class CategoryNavigationComponent {
   node$: Observable<NavigationNode> = this.service.getNavigationNode(

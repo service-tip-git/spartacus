@@ -6,8 +6,9 @@ import { MockFeatureDirective } from '../../test/mock-feature-directive';
 import { StarRatingComponent } from './star-rating.component';
 
 @Component({
-  selector: 'cx-icon',
-  template: '',
+    selector: 'cx-icon',
+    template: '',
+    standalone: false
 })
 class MockIconComponent {
   @Input() type;

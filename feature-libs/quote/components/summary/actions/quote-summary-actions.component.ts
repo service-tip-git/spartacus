@@ -41,8 +41,9 @@ import {
 import { ConfirmationContext } from '../../confirm-dialog/quote-confirm-dialog.model';
 
 @Component({
-  selector: 'cx-quote-summary-actions',
-  templateUrl: './quote-summary-actions.component.html',
+    selector: 'cx-quote-summary-actions',
+    templateUrl: './quote-summary-actions.component.html',
+    standalone: false
 })
 export class QuoteSummaryActionsComponent
   implements AfterViewInit, OnInit, OnDestroy

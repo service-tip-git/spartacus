@@ -27,8 +27,9 @@ import {
  */
 
 @Component({
-  selector: 'cx-quote-items',
-  templateUrl: './quote-items.component.html',
+    selector: 'cx-quote-items',
+    templateUrl: './quote-items.component.html',
+    standalone: false
 })
 export class QuoteItemsComponent {
   protected quoteItemsComponentService = inject(QuoteItemsComponentService);

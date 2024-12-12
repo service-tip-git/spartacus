@@ -13,9 +13,10 @@ import { ConfiguratorCommonsService } from '../../core/facade/configurator-commo
 import { Configurator } from '../../core/model/configurator.model';
 
 @Component({
-  selector: 'cx-configuration-conflict-and-error-messages',
-  templateUrl: './configurator-conflict-and-error-messages.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-configuration-conflict-and-error-messages',
+    templateUrl: './configurator-conflict-and-error-messages.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ConfiguratorConflictAndErrorMessagesComponent {
   iconTypes = ICON_TYPE;

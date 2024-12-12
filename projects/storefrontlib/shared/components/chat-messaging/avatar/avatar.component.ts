@@ -9,8 +9,9 @@ import { ICON_TYPE } from '../../../../cms-components/misc/icon/icon.model';
 import { MessageEvent } from '../messaging/messaging.model';
 
 @Component({
-  selector: 'cx-avatar',
-  templateUrl: './avatar.component.html',
+    selector: 'cx-avatar',
+    templateUrl: './avatar.component.html',
+    standalone: false
 })
 export class AvatarComponent {
   @Input() message: MessageEvent;

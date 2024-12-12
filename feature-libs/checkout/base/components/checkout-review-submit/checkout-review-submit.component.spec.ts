@@ -66,8 +66,9 @@ const mockPaymentDetails: PaymentDetails = {
 const mockEntries: OrderEntry[] = [{ entryNumber: 123 }, { entryNumber: 456 }];
 
 @Component({
-  selector: 'cx-card',
-  template: '',
+    selector: 'cx-card',
+    template: '',
+    standalone: false
 })
 class MockCardComponent {
   @Input()
@@ -134,7 +135,8 @@ class MockCheckoutStepService {
 }
 
 @Pipe({
-  name: 'cxUrl',
+    name: 'cxUrl',
+    standalone: false
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}

@@ -21,7 +21,8 @@ const mockOrder2 = {
 };
 
 @Pipe({
-  name: 'cxUrl',
+    name: 'cxUrl',
+    standalone: false
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
@@ -39,8 +40,9 @@ class MockOrderDetailsService {
 }
 
 @Component({
-  template: '',
-  selector: 'cx-order-details-actions',
+    template: '',
+    selector: 'cx-order-details-actions',
+    standalone: false
 })
 class MockOrderDetailActionsComponent {}
 

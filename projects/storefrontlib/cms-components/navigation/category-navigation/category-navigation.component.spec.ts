@@ -9,8 +9,9 @@ import { NavigationService } from '../navigation/navigation.service';
 import { CategoryNavigationComponent } from './category-navigation.component';
 
 @Component({
-  template: '',
-  selector: 'cx-navigation-ui',
+    template: '',
+    selector: 'cx-navigation-ui',
+    standalone: false
 })
 class MockNavigationComponent {
   @Input() node: NavigationNode;

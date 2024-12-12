@@ -20,9 +20,10 @@ import {
 import { Observable, throwError } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 @Component({
-  selector: 'cx-cancel-service-order',
-  templateUrl: './cancel-service-order.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-cancel-service-order',
+    templateUrl: './cancel-service-order.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class CancelServiceOrderComponent {
   protected orderDetailsService = inject(OrderDetailsService);

@@ -16,9 +16,10 @@ import { tap } from 'rxjs/operators';
 import { ReturnRequestService } from '../return-request.service';
 
 @Component({
-  selector: 'cx-return-request-overview',
-  templateUrl: './return-request-overview.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-return-request-overview',
+    templateUrl: './return-request-overview.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ReturnRequestOverviewComponent implements OnInit, OnDestroy {
   constructor(protected returnRequestService: ReturnRequestService) {}

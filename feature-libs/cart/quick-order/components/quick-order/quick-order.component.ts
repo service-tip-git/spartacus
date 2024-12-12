@@ -31,9 +31,10 @@ import { first, map, tap } from 'rxjs/operators';
 import { QuickOrderFormComponent } from './form/quick-order-form.component';
 
 @Component({
-  selector: 'cx-quick-order',
-  templateUrl: './quick-order.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-quick-order',
+    templateUrl: './quick-order.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class QuickOrderComponent implements OnInit, OnDestroy {
   cartId$: Observable<string>;

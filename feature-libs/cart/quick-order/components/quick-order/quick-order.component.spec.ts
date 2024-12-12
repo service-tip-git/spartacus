@@ -126,8 +126,9 @@ const MockCmsComponentData = <CmsComponentData<any>>{
 };
 
 @Component({
-  template: '',
-  selector: 'cx-quick-order-form',
+    template: '',
+    selector: 'cx-quick-order-form',
+    standalone: false
 })
 class MockQuickOrderFormComponent {
   @Input() isLoading: boolean;
@@ -135,8 +136,9 @@ class MockQuickOrderFormComponent {
 }
 
 @Component({
-  template: '',
-  selector: 'cx-quick-order-table',
+    template: '',
+    selector: 'cx-quick-order-table',
+    standalone: false
 })
 class MockQuickOrderTableComponent {
   @Input() entries: OrderEntry[];
@@ -144,8 +146,9 @@ class MockQuickOrderTableComponent {
 }
 
 @Component({
-  template: '',
-  selector: 'cx-progress-button',
+    template: '',
+    selector: 'cx-progress-button',
+    standalone: false
 })
 class MockProgressButtonComponent {
   @Input() loading: boolean;

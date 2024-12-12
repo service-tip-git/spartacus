@@ -18,9 +18,10 @@ import { take, tap } from 'rxjs/operators';
 import { CmsComponentData } from '../../../cms-structure/page/model/cms-component-data';
 
 @Component({
-  selector: 'cx-banner',
-  templateUrl: './banner.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-banner',
+    templateUrl: './banner.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class BannerComponent {
   routerLink: string | any[] | undefined;

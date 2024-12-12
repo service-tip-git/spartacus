@@ -18,11 +18,12 @@ import { MessageService } from '../message/services/message.service';
 import { BaseItem } from '../organization.model';
 
 @Component({
-  selector: 'cx-org-card',
-  templateUrl: './card.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'content-wrapper' },
-  providers: [MessageService],
+    selector: 'cx-org-card',
+    templateUrl: './card.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'content-wrapper' },
+    providers: [MessageService],
+    standalone: false
 })
 export class CardComponent<T extends BaseItem> {
   @Input() i18nRoot: string;

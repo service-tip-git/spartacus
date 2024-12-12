@@ -6,13 +6,14 @@ import { BaseFocusService } from './base-focus.service';
 
 // create custom mock to test extending from the abstract base
 @Directive({
-  selector: '[cxCustomFocus]',
+    selector: '[cxCustomFocus]',
+    standalone: false
 })
 class CustomFocusDirective extends BaseFocusDirective {}
 
 @Component({
-  selector: 'cx-host',
-  template: `
+    selector: 'cx-host',
+    template: `
     <div id="a" cxCustomFocus></div>
     <div id="b" tabindex="-1" cxCustomFocus></div>
     <div id="c" tabindex="0" cxCustomFocus></div>
@@ -28,6 +29,7 @@ class CustomFocusDirective extends BaseFocusDirective {}
     <a id="inactive" cxCustomFocus>inactive link</a>
     <a id="routerlink" routerlink="/link" cxCustomFocus>router link</a>
   `,
+    standalone: false
 })
 class MockComponent {}
 

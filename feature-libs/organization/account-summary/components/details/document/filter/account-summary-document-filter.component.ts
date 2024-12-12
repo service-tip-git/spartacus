@@ -44,9 +44,10 @@ interface GroupValidator {
 }
 
 @Component({
-  selector: 'cx-account-summary-document-filter',
-  templateUrl: './account-summary-document-filter.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-account-summary-document-filter',
+    templateUrl: './account-summary-document-filter.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class AccountSummaryDocumentFilterComponent
   implements OnInit, OnDestroy

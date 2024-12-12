@@ -26,8 +26,9 @@ class MockLanguageService {
 }
 
 @Component({
-  selector: 'cx-schedule-lines',
-  template: '',
+    selector: 'cx-schedule-lines',
+    template: '',
+    standalone: false
 })
 class MockConfigureScheduleLineComponent {
   @Input() cartEntry: Partial<OrderEntry & Array<ScheduleLine>>;

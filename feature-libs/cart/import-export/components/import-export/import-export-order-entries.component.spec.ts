@@ -49,8 +49,9 @@ class MockContextService implements Partial<ContextService> {
 }
 
 @Component({
-  selector: 'cx-import-order-entries',
-  template: '',
+    selector: 'cx-import-order-entries',
+    template: '',
+    standalone: false
 })
 export class MockImportOrderEntriesComponent {
   @ViewChild('open') element: ElementRef;
@@ -60,8 +61,9 @@ export class MockImportOrderEntriesComponent {
 }
 
 @Component({
-  selector: 'cx-export-order-entries',
-  template: '',
+    selector: 'cx-export-order-entries',
+    template: '',
+    standalone: false
 })
 export class MockExportOrderEntriesComponent {
   @Input()

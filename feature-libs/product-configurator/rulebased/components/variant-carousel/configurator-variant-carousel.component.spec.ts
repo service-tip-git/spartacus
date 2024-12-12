@@ -48,8 +48,9 @@ const product: Product = {
 };
 
 @Component({
-  selector: 'cx-carousel',
-  template: '',
+    selector: 'cx-carousel',
+    template: '',
+    standalone: false
 })
 class MockCarouselComponent {
   @Input() items;
@@ -59,7 +60,8 @@ class MockCarouselComponent {
 }
 
 @Pipe({
-  name: 'cxTranslate',
+    name: 'cxTranslate',
+    standalone: false
 })
 class MockTranslatePipe implements PipeTransform {
   transform(): any {}

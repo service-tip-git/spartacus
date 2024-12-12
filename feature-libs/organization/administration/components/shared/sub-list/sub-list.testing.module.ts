@@ -8,8 +8,9 @@ import { Component, Input, NgModule } from '@angular/core';
 import { ListService } from '../list/list.service';
 
 @Component({
-  selector: 'cx-org-sub-list',
-  template: '',
+    selector: 'cx-org-sub-list',
+    template: '',
+    standalone: false
 })
 class MockSubListComponent {
   @Input() i18nRoot;

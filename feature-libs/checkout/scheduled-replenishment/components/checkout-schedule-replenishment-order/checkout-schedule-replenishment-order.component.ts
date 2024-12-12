@@ -22,9 +22,10 @@ import { Observable, Subscription } from 'rxjs';
 import { CheckoutReplenishmentFormService } from '../services/checkout-replenishment-form.service';
 
 @Component({
-  selector: 'cx-schedule-replenishment-order',
-  templateUrl: './checkout-schedule-replenishment-order.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-schedule-replenishment-order',
+    templateUrl: './checkout-schedule-replenishment-order.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class CheckoutScheduleReplenishmentOrderComponent
   implements OnInit, OnDestroy

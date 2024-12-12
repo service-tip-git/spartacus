@@ -14,9 +14,10 @@ import { ICON_TYPE } from '@spartacus/storefront';
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'cx-cart-validation-warnings',
-  templateUrl: './cart-validation-warnings.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-cart-validation-warnings',
+    templateUrl: './cart-validation-warnings.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class CartValidationWarningsComponent {
   iconTypes = ICON_TYPE;

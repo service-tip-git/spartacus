@@ -7,9 +7,10 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'cx-truncate-text-popover',
-  templateUrl: './truncate-text-popover.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-truncate-text-popover',
+    templateUrl: './truncate-text-popover.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class TruncateTextPopoverComponent {
   /**

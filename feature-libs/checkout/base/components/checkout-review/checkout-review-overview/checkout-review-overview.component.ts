@@ -16,9 +16,10 @@ import { FeatureConfigService, TranslationService } from '@spartacus/core';
 import { Observable, take } from 'rxjs';
 
 @Component({
-  selector: 'cx-checkout-review-overview',
-  templateUrl: './checkout-review-overview.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-checkout-review-overview',
+    templateUrl: './checkout-review-overview.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class CheckoutReviewOverviewComponent implements AfterViewInit {
   protected document = inject(DOCUMENT, { optional: true });

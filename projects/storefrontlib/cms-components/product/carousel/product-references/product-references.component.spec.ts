@@ -19,14 +19,15 @@ import { CurrentProductService } from '../../current-product.service';
 import { ProductReferencesComponent } from './product-references.component';
 
 @Component({
-  selector: 'cx-carousel',
-  template: `
+    selector: 'cx-carousel',
+    template: `
     <ng-container *ngFor="let item$ of items">
       <ng-container
         *ngTemplateOutlet="template; context: { item: item$ | async }"
       ></ng-container>
     </ng-container>
   `,
+    standalone: false
 })
 class MockCarouselComponent {
   @Input() title: string;
@@ -35,15 +36,17 @@ class MockCarouselComponent {
 }
 
 @Pipe({
-  name: 'cxUrl',
+    name: 'cxUrl',
+    standalone: false
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
 }
 
 @Component({
-  selector: 'cx-media',
-  template: '',
+    selector: 'cx-media',
+    template: '',
+    standalone: false
 })
 class MockMediaComponent {
   @Input() container: any;

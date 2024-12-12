@@ -14,9 +14,10 @@ import { DP_CARD_REGISTRATION_STATUS } from '../../../../utils/dp-constants';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'cx-dp-confirmation-dialog',
-  templateUrl: './dp-confirmation-dialog.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-dp-confirmation-dialog',
+    templateUrl: './dp-confirmation-dialog.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class DpConfirmationDialogComponent {
   focusConfig: FocusConfig = {

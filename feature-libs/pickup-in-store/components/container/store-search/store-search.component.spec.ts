@@ -79,8 +79,9 @@ describe('StoreSearchComponent', () => {
  * for the purposes of testing the components that wrap it.
  */
 @Component({
-  selector: 'cx-store-search',
-  template: '',
+    selector: 'cx-store-search',
+    template: '',
+    standalone: false
 })
 export class StoreSearchStubComponent {
   @Input() hideOutOfStock = false;

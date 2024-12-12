@@ -28,9 +28,10 @@ import { filter, map } from 'rxjs/operators';
 import { CheckoutStepService } from '../../services/checkout-step.service';
 
 @Component({
-  selector: 'cx-checkout-review-shipping',
-  templateUrl: './checkout-review-shipping.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-checkout-review-shipping',
+    templateUrl: './checkout-review-shipping.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class CheckoutReviewShippingComponent {
   protected featureConfig = inject(FeatureConfigService);

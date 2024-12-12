@@ -23,13 +23,14 @@ import { CellComponent } from '../table/cell.component';
 import { SubListService } from './sub-list.service';
 
 @Component({
-  selector: 'cx-org-assign-cell',
-  template: `
+    selector: 'cx-org-assign-cell',
+    template: `
     <button type="button" *ngIf="hasItem" (click)="toggleAssign()" class="link">
       {{ isAssigned ? 'unassign' : 'assign' }}
     </button>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class AssignCellComponent<T extends BaseItem> extends CellComponent {
   constructor(

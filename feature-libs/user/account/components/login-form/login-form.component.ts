@@ -11,9 +11,10 @@ import { Observable } from 'rxjs';
 import { LoginFormComponentService } from './login-form-component.service';
 
 @Component({
-  selector: 'cx-login-form',
-  templateUrl: './login-form.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-login-form',
+    templateUrl: './login-form.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class LoginFormComponent {
   constructor(protected service: LoginFormComponentService) {

@@ -26,8 +26,9 @@ const DEFAULT_COMMENT_MAX_CHARS = 1000;
 const ALL_PRODUCTS_ID = '';
 
 @Component({
-  selector: 'cx-quote-comments',
-  templateUrl: './quote-comments.component.html',
+    selector: 'cx-quote-comments',
+    templateUrl: './quote-comments.component.html',
+    standalone: false
 })
 export class QuoteCommentsComponent {
   protected quoteFacade = inject(QuoteFacade);

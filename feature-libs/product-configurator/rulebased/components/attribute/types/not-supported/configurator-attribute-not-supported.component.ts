@@ -7,8 +7,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'cx-configurator-attribute-not-supported',
-  templateUrl: './configurator-attribute-not-supported.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-configurator-attribute-not-supported',
+    templateUrl: './configurator-attribute-not-supported.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ConfiguratorAttributeNotSupportedComponent {}

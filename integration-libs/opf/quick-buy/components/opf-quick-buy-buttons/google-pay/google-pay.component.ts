@@ -19,9 +19,10 @@ import { BehaviorSubject } from 'rxjs';
 import { OpfGooglePayService } from './google-pay.service';
 
 @Component({
-  selector: 'cx-opf-google-pay',
-  templateUrl: './google-pay.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-opf-google-pay',
+    templateUrl: './google-pay.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class OpfGooglePayComponent implements OnInit {
   protected opfGooglePayService = inject(OpfGooglePayService);

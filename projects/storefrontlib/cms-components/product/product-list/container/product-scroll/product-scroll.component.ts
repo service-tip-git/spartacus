@@ -12,8 +12,9 @@ import { ViewModes } from '../../product-view/product-view.component';
 import { ProductListComponentService } from '../product-list-component.service';
 
 @Component({
-  selector: 'cx-product-scroll',
-  templateUrl: './product-scroll.component.html',
+    selector: 'cx-product-scroll',
+    templateUrl: './product-scroll.component.html',
+    standalone: false
 })
 export class ProductScrollComponent implements OnDestroy {
   private subscription = new Subscription();

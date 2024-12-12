@@ -25,9 +25,10 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'cx-opf-checkout-payment-and-review',
-  templateUrl: './opf-checkout-payment-and-review.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-opf-checkout-payment-and-review',
+    templateUrl: './opf-checkout-payment-and-review.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class OpfCheckoutPaymentAndReviewComponent
   extends CheckoutReviewSubmitComponent

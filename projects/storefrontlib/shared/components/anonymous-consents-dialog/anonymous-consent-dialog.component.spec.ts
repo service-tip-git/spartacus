@@ -18,22 +18,25 @@ import { MockFeatureDirective } from '../../test/mock-feature-directive';
 import { AnonymousConsentDialogComponent } from './anonymous-consent-dialog.component';
 
 @Component({
-  selector: 'cx-spinner',
-  template: ` <div>spinner</div> `,
+    selector: 'cx-spinner',
+    template: ` <div>spinner</div> `,
+    standalone: false
 })
 class MockCxSpinnerComponent {}
 
 @Component({
-  selector: 'cx-icon',
-  template: ``,
+    selector: 'cx-icon',
+    template: ``,
+    standalone: false
 })
 class MockCxIconComponent {
   @Input() type: string;
 }
 
 @Component({
-  selector: 'cx-consent-management-form',
-  template: ``,
+    selector: 'cx-consent-management-form',
+    template: ``,
+    standalone: false
 })
 class MockConsentManagementFormComponent {
   @Input()

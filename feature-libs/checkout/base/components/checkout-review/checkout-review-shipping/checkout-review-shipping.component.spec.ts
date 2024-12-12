@@ -107,15 +107,17 @@ class MockActiveCartService implements Partial<ActiveCartFacade> {
 }
 
 @Pipe({
-  name: 'cxUrl',
+    name: 'cxUrl',
+    standalone: false
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
 }
 
 @Component({
-  selector: 'cx-card',
-  template: '',
+    selector: 'cx-card',
+    template: '',
+    standalone: false
 })
 class MockCardComponent {
   @Input()

@@ -22,13 +22,15 @@ import { UpdateProfileComponent } from './update-profile.component';
 import createSpy = jasmine.createSpy;
 
 @Component({
-  selector: 'cx-spinner',
-  template: ` <div>spinner</div> `,
+    selector: 'cx-spinner',
+    template: ` <div>spinner</div> `,
+    standalone: false
 })
 class MockCxSpinnerComponent {}
 
 @Directive({
-  selector: '[cxNgSelectA11y]',
+    selector: '[cxNgSelectA11y]',
+    standalone: false
 })
 class MockNgSelectA11yDirective {
   @Input() cxNgSelectA11y: { ariaLabel?: string; ariaControls?: string };

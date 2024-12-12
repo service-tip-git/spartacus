@@ -21,9 +21,10 @@ import { ConfirmationMessageData } from './confirmation-message.model';
  * Renders a confirmation message and cancel/confirm button in the message component.
  */
 @Component({
-  selector: 'cx-org-confirmation',
-  templateUrl: './confirmation-message.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-org-confirmation',
+    templateUrl: './confirmation-message.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ConfirmationMessageComponent
   extends BaseMessageComponent

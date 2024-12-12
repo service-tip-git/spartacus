@@ -23,9 +23,10 @@ import {
 } from '@spartacus/s4-service/root';
 
 @Component({
-  selector: 'cx-service-details',
-  templateUrl: './checkout-service-details.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-service-details',
+    templateUrl: './checkout-service-details.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class CheckoutServiceDetailsComponent implements OnInit, OnDestroy {
   protected activatedRoute = inject(ActivatedRoute);

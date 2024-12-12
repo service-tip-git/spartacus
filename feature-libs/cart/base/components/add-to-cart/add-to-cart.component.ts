@@ -46,9 +46,10 @@ import { Observable, Subscription } from 'rxjs';
 import { filter, map, take } from 'rxjs/operators';
 
 @Component({
-  selector: 'cx-add-to-cart',
-  templateUrl: './add-to-cart.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-add-to-cart',
+    templateUrl: './add-to-cart.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class AddToCartComponent implements OnInit, OnDestroy {
   @Input() productCode: string;

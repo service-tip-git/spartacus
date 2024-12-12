@@ -32,7 +32,8 @@ describe('CustomerEmulationComponent', () => {
   @Component({
     selector: 'cx-asm-bind-cart',
     template: '',
-  })
+    standalone: false
+})
   class MockAsmBindCartComponent {}
 
   const dialogClose$ = new BehaviorSubject<any>('');

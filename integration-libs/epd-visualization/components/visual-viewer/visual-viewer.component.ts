@@ -17,10 +17,11 @@ import { VisualizationLoadInfo } from './models/visualization-load-info';
 import { VisualViewerService } from './visual-viewer.service';
 
 @Component({
-  selector: 'cx-epd-visualization-viewer',
-  templateUrl: './visual-viewer.component.html',
-  providers: [VisualViewerService],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-epd-visualization-viewer',
+    templateUrl: './visual-viewer.component.html',
+    providers: [VisualViewerService],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class VisualViewerComponent {
   constructor(protected visualViewerService: VisualViewerService) {}

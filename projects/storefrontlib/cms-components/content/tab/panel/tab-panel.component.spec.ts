@@ -9,9 +9,10 @@ const mockTab: Tab | any = {
 };
 
 @Component({
-  template: `<ng-template #templateRef
+    template: `<ng-template #templateRef
     ><span id="tempRef">hello</span></ng-template
   >`,
+    standalone: false
 })
 class MockComponent {
   @ViewChild('templateRef') templateRef: TemplateRef<any>;

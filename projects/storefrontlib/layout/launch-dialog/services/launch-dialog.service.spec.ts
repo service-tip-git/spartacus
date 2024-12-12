@@ -72,7 +72,8 @@ class MockInlineRenderStrategy {
 }
 
 @Component({
-  template: '',
+    template: '',
+    standalone: false
 })
 class TestContainerComponent {
   constructor(public vcr: ViewContainerRef) {}

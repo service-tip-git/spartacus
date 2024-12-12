@@ -7,8 +7,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'cx-test-outlet-slot',
-  templateUrl: './test-outlet-slot.component.html',
+    selector: 'cx-test-outlet-slot',
+    templateUrl: './test-outlet-slot.component.html',
+    standalone: false
 })
 export class TestOutletSlotComponent {
   testSlot1 = 'Section2A';

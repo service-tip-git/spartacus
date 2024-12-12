@@ -32,7 +32,8 @@ import { LoggerService } from '@spartacus/core';
  * ```
  */
 @Directive({
-  selector: '[cxFocusableCarouselItem]',
+    selector: '[cxFocusableCarouselItem]',
+    standalone: false
 })
 export class FocusableCarouselItemDirective {
   constructor(

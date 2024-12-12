@@ -18,16 +18,17 @@ import { createCodeForEntityName } from '../../shared/utility/entity-code';
 import { UserGroupItemService } from '../services/user-group-item.service';
 
 @Component({
-  selector: 'cx-org-user-group-form',
-  templateUrl: './user-group-form.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'content-wrapper' },
-  providers: [
-    {
-      provide: ItemService,
-      useExisting: UserGroupItemService,
-    },
-  ],
+    selector: 'cx-org-user-group-form',
+    templateUrl: './user-group-form.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'content-wrapper' },
+    providers: [
+        {
+            provide: ItemService,
+            useExisting: UserGroupItemService,
+        },
+    ],
+    standalone: false
 })
 export class UserGroupFormComponent implements OnInit {
   form: UntypedFormGroup | null = this.itemService.getForm();

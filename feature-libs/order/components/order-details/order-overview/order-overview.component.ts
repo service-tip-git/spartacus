@@ -21,9 +21,10 @@ import { OrderOutlets, paymentMethodCard } from '@spartacus/order/root';
 import { OrderOverviewComponentService } from './order-overview-component.service';
 
 @Component({
-  selector: 'cx-order-overview',
-  templateUrl: './order-overview.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-order-overview',
+    templateUrl: './order-overview.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class OrderOverviewComponent {
   protected orderOverviewComponentService = inject(

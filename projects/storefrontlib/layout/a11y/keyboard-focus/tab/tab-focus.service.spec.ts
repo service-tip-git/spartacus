@@ -5,7 +5,7 @@ import { SelectFocusUtility } from '../services';
 import { TabFocusService } from './tab-focus.service';
 
 @Component({
-  template: `
+    template: `
     <div id="a">
       <button id="a1"></button>
       <button id="a2"></button>
@@ -22,6 +22,7 @@ import { TabFocusService } from './tab-focus.service';
     </div>
     <div id="c"></div>
   `,
+    standalone: false
 })
 class MockComponent {}
 

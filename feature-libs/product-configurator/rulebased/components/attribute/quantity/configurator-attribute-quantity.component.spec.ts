@@ -45,8 +45,9 @@ function initializeWithObs(disableObs: Observable<boolean>) {
   fixture.detectChanges();
 }
 @Component({
-  template: '',
-  selector: 'cx-item-counter',
+    template: '',
+    selector: 'cx-item-counter',
+    standalone: false
 })
 class MockItemCounterComponent {
   @Input() min: number;

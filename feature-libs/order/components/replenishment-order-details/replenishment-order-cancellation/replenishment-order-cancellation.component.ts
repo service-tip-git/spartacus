@@ -20,8 +20,9 @@ import { Observable, Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
 
 @Component({
-  selector: 'cx-replenishment-order-cancellation',
-  templateUrl: './replenishment-order-cancellation.component.html',
+    selector: 'cx-replenishment-order-cancellation',
+    templateUrl: './replenishment-order-cancellation.component.html',
+    standalone: false
 })
 export class ReplenishmentOrderCancellationComponent implements OnDestroy {
   @ViewChild('element') element: ElementRef;

@@ -22,9 +22,10 @@ import { LaunchDialogService, LAUNCH_CALLER } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'cx-place-order',
-  templateUrl: './checkout-place-order.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-place-order',
+    templateUrl: './checkout-place-order.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class CheckoutPlaceOrderComponent implements OnDestroy {
   placedOrder: void | Observable<ComponentRef<any> | undefined>;

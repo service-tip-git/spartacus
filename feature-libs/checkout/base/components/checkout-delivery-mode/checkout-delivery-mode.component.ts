@@ -36,9 +36,10 @@ import { CheckoutConfigService } from '../services/checkout-config.service';
 import { CheckoutStepService } from '../services/checkout-step.service';
 
 @Component({
-  selector: 'cx-delivery-mode',
-  templateUrl: './checkout-delivery-mode.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-delivery-mode',
+    templateUrl: './checkout-delivery-mode.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class CheckoutDeliveryModeComponent {
   protected globalMessageService = inject(GlobalMessageService);

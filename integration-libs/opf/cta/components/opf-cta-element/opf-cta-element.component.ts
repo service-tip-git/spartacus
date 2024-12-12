@@ -17,9 +17,10 @@ import { OpfDynamicScript } from '@spartacus/opf/base/root';
 import { OpfCtaScriptsService } from '../opf-cta-scripts/opf-cta-scripts.service';
 
 @Component({
-  selector: 'cx-opf-cta-element',
-  templateUrl: './opf-cta-element.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-opf-cta-element',
+    templateUrl: './opf-cta-element.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class OpfCtaElementComponent implements AfterViewInit {
   protected sanitizer = inject(DomSanitizer);

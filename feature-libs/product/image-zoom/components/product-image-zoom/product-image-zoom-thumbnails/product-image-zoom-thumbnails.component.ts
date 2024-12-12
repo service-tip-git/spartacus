@@ -19,9 +19,10 @@ import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 
 @Component({
-  selector: 'cx-product-image-zoom-thumbnails',
-  templateUrl: './product-image-zoom-thumbnails.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-product-image-zoom-thumbnails',
+    templateUrl: './product-image-zoom-thumbnails.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ProductImageZoomThumbnailsComponent implements OnInit, OnDestroy {
   private mainMediaContainer = new BehaviorSubject<ImageGroup>({});

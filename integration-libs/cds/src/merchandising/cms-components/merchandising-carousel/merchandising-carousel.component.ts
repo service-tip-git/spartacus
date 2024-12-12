@@ -23,9 +23,10 @@ import { MerchandisingCarouselComponentService } from './merchandising-carousel.
 import { MerchandisingCarouselModel } from './model/index';
 
 @Component({
-  selector: 'cx-merchandising-carousel',
-  templateUrl: './merchandising-carousel.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-merchandising-carousel',
+    templateUrl: './merchandising-carousel.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class MerchandisingCarouselComponent {
   protected lastEventModelId: string;

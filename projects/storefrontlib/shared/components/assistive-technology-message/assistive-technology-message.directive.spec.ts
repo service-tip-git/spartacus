@@ -11,7 +11,7 @@ import { AtMessageModule } from './assistive-technology-message.module';
 import createSpy = jasmine.createSpy;
 
 @Component({
-  template: `
+    template: `
     <button class="cancel-btn" [cxAtMessage]="'common.cancel' | cxTranslate">
       Action
     </button>
@@ -31,6 +31,7 @@ import createSpy = jasmine.createSpy;
       Action
     </button>
   `,
+    standalone: false
 })
 class MockComponent {}
 

@@ -24,14 +24,15 @@ import { MerchandisingCarouselModel } from './model/index';
 import createSpy = jasmine.createSpy;
 
 @Component({
-  selector: 'cx-carousel',
-  template: `
+    selector: 'cx-carousel',
+    template: `
     <ng-container *ngFor="let item$ of items">
       <ng-container
         *ngTemplateOutlet="template; context: { item: item$ | async }"
       ></ng-container>
     </ng-container>
   `,
+    standalone: false
 })
 class MockCarouselComponent {
   @Input() title: string;
@@ -45,9 +46,10 @@ class MockCarouselComponent {
  * metadata attributes to contain any kind of prefix
  */
 @Directive({
-  selector: '[cxAttributes]',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['cxAttributes', 'cxAttributesNamePrefix'],
+    selector: '[cxAttributes]',
+    // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+    inputs: ['cxAttributes', 'cxAttributesNamePrefix'],
+    standalone: false
 })
 class MockAttributesDirective {
   @Input() cxAttributes: { [attribute: string]: any };
@@ -55,15 +57,17 @@ class MockAttributesDirective {
 }
 
 @Pipe({
-  name: 'cxUrl',
+    name: 'cxUrl',
+    standalone: false
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
 }
 
 @Component({
-  selector: 'cx-media',
-  template: '',
+    selector: 'cx-media',
+    template: '',
+    standalone: false
 })
 class MockMediaComponent {
   @Input() container: any;

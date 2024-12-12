@@ -48,9 +48,10 @@ import { filter, map, switchMap, tap } from 'rxjs/operators';
 import { CheckoutBillingAddressFormService } from '../../checkout-billing-address';
 
 @Component({
-  selector: 'cx-payment-form',
-  templateUrl: './checkout-payment-form.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-payment-form',
+    templateUrl: './checkout-payment-form.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class CheckoutPaymentFormComponent implements OnInit {
   iconTypes = ICON_TYPE;

@@ -15,9 +15,10 @@ import { Product } from '@spartacus/core';
 import { ProductItem } from '../asm-customer-360-product-listing/product-item.model';
 
 @Component({
-  selector: 'cx-asm-customer-360-product-item',
-  templateUrl: './asm-customer-360-product-item.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-asm-customer-360-product-item',
+    templateUrl: './asm-customer-360-product-item.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class AsmCustomer360ProductItemComponent {
   @Input() product: ProductItem;

@@ -18,8 +18,9 @@ import { By } from '@angular/platform-browser';
 import { PickupOptionsTabs } from './pickup-options.model';
 
 @Component({
-  selector: 'cx-tab',
-  template: `<div></div>`,
+    selector: 'cx-tab',
+    template: `<div></div>`,
+    standalone: false
 })
 class MockTabComponent {
   @Input() disabled: boolean;
@@ -30,7 +31,8 @@ class MockTabComponent {
 // Reverted mock directive used to check whether all parts of the component works properly
 // if the feature flag is disabled.
 @Directive({
-  selector: '[cxFeature]',
+    selector: '[cxFeature]',
+    standalone: false
 })
 export class MockRevertedFeatureDirective {
   constructor(
@@ -360,8 +362,9 @@ describe('PickupOptionsComponent', () => {
  * for the purposes of testing the components that wrap it.
  */
 @Component({
-  selector: 'cx-pickup-options',
-  template: '',
+    selector: 'cx-pickup-options',
+    template: '',
+    standalone: false
 })
 export class PickupOptionsStubComponent {
   @Input() selectedOption: PickupOption;

@@ -25,10 +25,11 @@ import { ConfiguratorStorefrontUtilsService } from '../service/configurator-stor
 import { KeyboardFocusService } from '@spartacus/storefront';
 
 @Component({
-  selector: 'cx-configurator-tab-bar',
-  templateUrl: './configurator-tab-bar.component.html',
-  //here we cannot go with OnPush, as we otherwise do not take the change to host binding into account
-  changeDetection: ChangeDetectionStrategy.Default,
+    selector: 'cx-configurator-tab-bar',
+    templateUrl: './configurator-tab-bar.component.html',
+    //here we cannot go with OnPush, as we otherwise do not take the change to host binding into account
+    changeDetection: ChangeDetectionStrategy.Default,
+    standalone: false
 })
 export class ConfiguratorTabBarComponent {
   @HostBinding('class.ghost') ghostStyle = true;

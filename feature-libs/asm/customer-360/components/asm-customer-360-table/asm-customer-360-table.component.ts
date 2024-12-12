@@ -40,9 +40,10 @@ import { AsmCustomer360Config } from '../config/asm-customer-360-config';
 import { KeyBoardEventCode } from '@spartacus/asm/customer-360/root';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'cx-asm-customer-360-table',
-  templateUrl: './asm-customer-360-table.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-asm-customer-360-table',
+    templateUrl: './asm-customer-360-table.component.html',
+    standalone: false
 })
 export class AsmCustomer360TableComponent
   implements OnChanges, AfterViewChecked

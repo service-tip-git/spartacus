@@ -11,9 +11,10 @@ import { CurrentProductService } from '../current-product.service';
 import { ProductDetailOutlets } from '../product-outlets.model';
 
 @Component({
-  selector: 'cx-product-summary',
-  templateUrl: './product-summary.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-product-summary',
+    templateUrl: './product-summary.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ProductSummaryComponent {
   private featureConfig = inject(FeatureConfigService);

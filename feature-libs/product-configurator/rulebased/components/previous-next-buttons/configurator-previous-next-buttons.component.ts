@@ -17,9 +17,10 @@ import { Configurator } from '../../core/model/configurator.model';
 import { ConfiguratorStorefrontUtilsService } from '../service/configurator-storefront-utils.service';
 
 @Component({
-  selector: 'cx-configurator-previous-next-buttons',
-  templateUrl: './configurator-previous-next-buttons.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-configurator-previous-next-buttons',
+    templateUrl: './configurator-previous-next-buttons.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ConfiguratorPreviousNextButtonsComponent {
   configuration$: Observable<Configurator.Configuration> =

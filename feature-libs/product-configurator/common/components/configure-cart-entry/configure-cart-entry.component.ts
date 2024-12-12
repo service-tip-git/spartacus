@@ -28,9 +28,10 @@ import {
 import { CommonConfiguratorUtilsService } from '../../shared/utils/common-configurator-utils.service';
 
 @Component({
-  selector: 'cx-configure-cart-entry',
-  templateUrl: './configure-cart-entry.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-configure-cart-entry',
+    templateUrl: './configure-cart-entry.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ConfigureCartEntryComponent {
   protected routingService = inject(RoutingService);

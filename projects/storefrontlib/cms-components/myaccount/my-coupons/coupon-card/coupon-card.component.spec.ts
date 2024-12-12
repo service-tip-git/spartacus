@@ -34,15 +34,16 @@ const subLoading$ = new BehaviorSubject<boolean>(false);
 const unsubLoading$ = new BehaviorSubject<boolean>(false);
 
 @Pipe({
-  name: 'cxUrl',
+    name: 'cxUrl',
+    standalone: false
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
 }
 
 @Component({
-  selector: 'cx-my-coupons',
-  template: `
+    selector: 'cx-my-coupons',
+    template: `
     <cx-coupon-card
       [coupon]="coupon"
       [couponSubscriptionLoading$]="couponSubscriptionLoading$"
@@ -50,6 +51,7 @@ class MockUrlPipe implements PipeTransform {
     >
     </cx-coupon-card>
   `,
+    standalone: false
 })
 class MyCouponsComponent {
   eventObj: {

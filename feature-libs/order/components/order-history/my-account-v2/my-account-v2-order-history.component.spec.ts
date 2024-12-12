@@ -48,8 +48,9 @@ const mockEmptyOrderList: OrderHistoryList = {
 };
 
 @Component({
-  template: '',
-  selector: 'cx-pagination',
+    template: '',
+    selector: 'cx-pagination',
+    standalone: false
 })
 class MockPaginationComponent {
   @Input() pagination: any;
@@ -57,7 +58,8 @@ class MockPaginationComponent {
 }
 
 @Pipe({
-  name: 'cxUrl',
+    name: 'cxUrl',
+    standalone: false
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
@@ -110,16 +112,18 @@ class MockReplenishmentOrderHistoryFacade
 }
 
 @Component({
-  selector: 'cx-my-account-v2-order-consolidated-information',
-  template: '',
+    selector: 'cx-my-account-v2-order-consolidated-information',
+    template: '',
+    standalone: false
 })
 export class MockMyAccountV2OrderConsolidatedInformationComponent {
   @Input() order?: OrderHistoryView;
 }
 
 @Component({
-  selector: 'cx-spinner',
-  template: '',
+    selector: 'cx-spinner',
+    template: '',
+    standalone: false
 })
 class MockSpinnerComponent {}
 

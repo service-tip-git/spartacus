@@ -30,9 +30,10 @@ import { map, switchMap, take, tap } from 'rxjs/operators';
 import { SavedCartDetailsService } from '../saved-cart-details.service';
 
 @Component({
-  selector: 'cx-saved-cart-details-items',
-  templateUrl: './saved-cart-details-items.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-saved-cart-details-items',
+    templateUrl: './saved-cart-details-items.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class SavedCartDetailsItemsComponent implements OnInit, OnDestroy {
   private subscription = new Subscription();

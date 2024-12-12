@@ -46,8 +46,9 @@ class MockAuthService implements Partial<AuthService> {
 }
 
 @Component({
-  selector: 'cx-icon',
-  template: '',
+    selector: 'cx-icon',
+    template: '',
+    standalone: false
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -101,28 +102,32 @@ class MockLaunchDialogService implements Partial<LaunchDialogService> {
 }
 
 @Component({
-  selector: 'cx-asm-toggle-ui',
-  template: '',
+    selector: 'cx-asm-toggle-ui',
+    template: '',
+    standalone: false
 })
 class MockAsmToggleUiComponent {}
 
 @Component({
-  selector: 'cx-asm-session-timer',
-  template: '',
+    selector: 'cx-asm-session-timer',
+    template: '',
+    standalone: false
 })
 class MockAsmSessionTimerComponent {}
 
 @Component({
-  selector: 'cx-customer-selection',
-  template: '',
+    selector: 'cx-customer-selection',
+    template: '',
+    standalone: false
 })
 class MockCustomerSelectionComponent {
   @Output()
   submitEvent = new EventEmitter();
 }
 @Component({
-  selector: 'cx-csagent-login-form',
-  template: '',
+    selector: 'cx-csagent-login-form',
+    template: '',
+    standalone: false
 })
 class MockCSAgentLoginFormComponent {
   @Output()
@@ -131,8 +136,9 @@ class MockCSAgentLoginFormComponent {
   csAgentTokenLoading = false;
 }
 @Component({
-  template: '',
-  selector: 'cx-customer-emulation',
+    template: '',
+    selector: 'cx-customer-emulation',
+    standalone: false
 })
 class MockCustomerEmulationComponent {}
 

@@ -9,7 +9,7 @@ export const Mock = {
 };
 
 @Component({
-  template: `
+    template: `
     <a class="btn affected-link" cxBtnLikeLink (click)="onClick('Affected')">
       Affected Link
     </a>
@@ -20,6 +20,7 @@ export const Mock = {
       Unaffected Link 2
     </a>
   `,
+    standalone: false
 })
 class TestContainerComponent {
   onClick(value: string) {

@@ -25,14 +25,16 @@ import { ConsentManagementComponent } from './consent-management.component';
 import { MockFeatureDirective } from 'projects/storefrontlib/shared/test/mock-feature-directive';
 
 @Component({
-  selector: 'cx-spinner',
-  template: ` <div>spinner</div> `,
+    selector: 'cx-spinner',
+    template: ` <div>spinner</div> `,
+    standalone: false
 })
 class MockCxSpinnerComponent {}
 
 @Component({
-  selector: 'cx-consent-management-form',
-  template: ` <div>form</div> `,
+    selector: 'cx-consent-management-form',
+    template: ` <div>form</div> `,
+    standalone: false
 })
 class MockConsentManagementFormComponent {
   @Input()

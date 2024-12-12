@@ -21,20 +21,21 @@ import { BudgetItemService } from '../services/budget-item.service';
 import { CurrentBudgetService } from '../services/current-budget.service';
 
 @Component({
-  selector: 'cx-org-budget-form',
-  templateUrl: './budget-form.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'content-wrapper' },
-  providers: [
-    {
-      provide: ItemService,
-      useExisting: BudgetItemService,
-    },
-    {
-      provide: CurrentItemService,
-      useExisting: CurrentBudgetService,
-    },
-  ],
+    selector: 'cx-org-budget-form',
+    templateUrl: './budget-form.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'content-wrapper' },
+    providers: [
+        {
+            provide: ItemService,
+            useExisting: BudgetItemService,
+        },
+        {
+            provide: CurrentItemService,
+            useExisting: CurrentBudgetService,
+        },
+    ],
+    standalone: false
 })
 export class BudgetFormComponent implements OnInit {
   form: UntypedFormGroup | null = this.itemService.getForm();

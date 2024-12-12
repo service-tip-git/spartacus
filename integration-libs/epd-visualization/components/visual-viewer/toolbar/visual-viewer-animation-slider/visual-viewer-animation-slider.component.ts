@@ -17,10 +17,11 @@ import {
 import { VisualViewerAnimationSliderService } from './visual-viewer-animation-slider.service';
 
 @Component({
-  selector: 'cx-epd-visualization-animation-slider',
-  templateUrl: './visual-viewer-animation-slider.component.html',
-  providers: [VisualViewerAnimationSliderService],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-epd-visualization-animation-slider',
+    templateUrl: './visual-viewer-animation-slider.component.html',
+    providers: [VisualViewerAnimationSliderService],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class VisualViewerAnimationSliderComponent implements AfterViewInit {
   constructor(

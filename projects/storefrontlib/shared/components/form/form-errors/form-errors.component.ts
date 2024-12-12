@@ -32,9 +32,10 @@ import { map, startWith } from 'rxjs/operators';
  * (if only it's an object) merged with the optional input object `translationParams`.
  */
 @Component({
-  selector: 'cx-form-errors',
-  templateUrl: './form-errors.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-form-errors',
+    templateUrl: './form-errors.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class FormErrorsComponent implements DoCheck {
   private featureConfigService = inject(FeatureConfigService);

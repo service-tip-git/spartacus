@@ -5,7 +5,8 @@ import { LaunchDialogService } from '@spartacus/storefront';
 import { CustomerTicketingDialogComponent } from './customer-ticketing-dialog.component';
 
 @Component({
-  template: '',
+    template: '',
+    standalone: false
 })
 class DialogComponent extends CustomerTicketingDialogComponent {}
 

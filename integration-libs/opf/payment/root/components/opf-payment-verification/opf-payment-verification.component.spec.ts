@@ -13,8 +13,9 @@ import { OpfPaymentVerificationComponent } from './opf-payment-verification.comp
 import { OpfPaymentVerificationService } from './opf-payment-verification.service';
 
 @Component({
-  selector: 'cx-spinner',
-  template: '',
+    selector: 'cx-spinner',
+    template: '',
+    standalone: false
 })
 class MockSpinnerComponent {}
 

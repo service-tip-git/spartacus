@@ -13,8 +13,9 @@ const mockEntries: OrderEntry[] = [
 ];
 
 @Component({
-  template: '',
-  selector: '[cx-quick-order-item], cx-quick-order-item',
+    template: '',
+    selector: '[cx-quick-order-item], cx-quick-order-item',
+    standalone: false
 })
 class MockQuickOrderItemComponent {
   @Input() entry: OrderEntry;

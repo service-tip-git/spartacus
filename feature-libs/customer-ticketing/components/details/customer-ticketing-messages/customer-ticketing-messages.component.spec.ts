@@ -45,7 +45,8 @@ describe('CustomerTicketMessagesComponent', () => {
   @Component({
     selector: 'cx-messaging',
     template: '',
-  })
+    standalone: false
+})
   class MockCxMessagingComponent {
     @Input() messageEvents$: Observable<Array<MessageEvent>>;
     @Input() scrollToInput?: boolean = true;

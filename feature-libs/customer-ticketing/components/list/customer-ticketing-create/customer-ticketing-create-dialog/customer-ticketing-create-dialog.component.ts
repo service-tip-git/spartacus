@@ -25,8 +25,9 @@ import {
 import { catchError, first, tap } from 'rxjs/operators';
 
 @Component({
-  selector: 'cx-customer-ticketing-create-dialog',
-  templateUrl: './customer-ticketing-create-dialog.component.html',
+    selector: 'cx-customer-ticketing-create-dialog',
+    templateUrl: './customer-ticketing-create-dialog.component.html',
+    standalone: false
 })
 export class CustomerTicketingCreateDialogComponent
   extends CustomerTicketingDialogComponent

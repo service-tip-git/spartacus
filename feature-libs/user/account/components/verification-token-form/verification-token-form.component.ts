@@ -24,9 +24,10 @@ import { VerificationTokenFormComponentService } from './verification-token-form
 import { RoutingService } from '@spartacus/core';
 
 @Component({
-  selector: 'cx-verification-token-form',
-  templateUrl: './verification-token-form.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-verification-token-form',
+    templateUrl: './verification-token-form.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class VerificationTokenFormComponent implements OnInit {
   constructor() {}

@@ -16,9 +16,10 @@ import { Observable } from 'rxjs';
 import { OpfQuickBuyButtonsService } from './opf-quick-buy-buttons.service';
 
 @Component({
-  selector: 'cx-opf-quick-buy-buttons',
-  templateUrl: './opf-quick-buy-buttons.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-opf-quick-buy-buttons',
+    templateUrl: './opf-quick-buy-buttons.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class OpfQuickBuyButtonsComponent implements OnInit {
   protected opfQuickBuyButtonsService = inject(OpfQuickBuyButtonsService);

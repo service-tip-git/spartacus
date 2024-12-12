@@ -63,8 +63,9 @@ class MockCheckoutStepService {
 }
 
 @Component({
-  selector: 'cx-card',
-  template: '',
+    selector: 'cx-card',
+    template: '',
+    standalone: false
 })
 class MockCardComponent {
   @Input()
@@ -72,7 +73,8 @@ class MockCardComponent {
 }
 
 @Pipe({
-  name: 'cxUrl',
+    name: 'cxUrl',
+    standalone: false
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}

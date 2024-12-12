@@ -11,9 +11,10 @@ import { StoreFinderService } from '@spartacus/storefinder/core';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'cx-store-finder-grid',
-  templateUrl: './store-finder-grid.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-store-finder-grid',
+    templateUrl: './store-finder-grid.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class StoreFinderGridComponent implements OnInit {
   defaultLocation: GeoPoint;

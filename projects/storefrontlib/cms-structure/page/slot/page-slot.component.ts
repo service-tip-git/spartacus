@@ -43,9 +43,10 @@ import { PageSlotService } from './page-slot.service';
  * - The `page-fold` style class is added for the page slot which is configured as the page fold.
  */
 @Component({
-  selector: 'cx-page-slot,[cx-page-slot]',
-  templateUrl: './page-slot.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-page-slot,[cx-page-slot]',
+    templateUrl: './page-slot.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class PageSlotComponent implements OnInit, OnDestroy {
   /**

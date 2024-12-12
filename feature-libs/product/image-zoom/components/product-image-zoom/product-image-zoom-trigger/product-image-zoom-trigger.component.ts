@@ -27,9 +27,10 @@ import { filter, tap } from 'rxjs/operators';
 import { ProductImageZoomDialogComponent } from '../product-image-zoom-dialog/product-image-zoom-dialog.component';
 
 @Component({
-  selector: 'cx-product-image-zoom-trigger',
-  templateUrl: 'product-image-zoom-trigger.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-product-image-zoom-trigger',
+    templateUrl: 'product-image-zoom-trigger.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ProductImageZoomTriggerComponent implements OnDestroy {
   iconType = ICON_TYPE;

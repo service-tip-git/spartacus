@@ -39,7 +39,8 @@ import {
 } from '../sections';
 
 @Directive({
-  selector: '[cxFocus]',
+    selector: '[cxFocus]',
+    standalone: false
 })
 export class MockKeyboadFocusDirective {
   @Input('cxFocus') config: FocusConfig = {};
@@ -83,14 +84,16 @@ describe('AsmCustomer360TableComponent', () => {
   };
   @Pipe({
     name: 'cxTranslate',
-  })
+    standalone: false
+})
   class MockTranslatePipe implements PipeTransform {
     transform(): any {}
   }
   @Component({
     selector: 'cx-icon',
     template: '',
-  })
+    standalone: false
+})
   class MockCxIconComponent {
     @Input() type: ICON_TYPE;
   }
@@ -217,7 +220,8 @@ describe('AsmCustomer360TableComponent', () => {
         (selectItem)="itemSelected($event)"
       ></cx-asm-customer-360-table>
     `,
-  })
+    standalone: false
+})
   class TestHostComponent {
     @Input() columns: Array<CustomerTableColumn>;
     @Input() emptyStateText: string;

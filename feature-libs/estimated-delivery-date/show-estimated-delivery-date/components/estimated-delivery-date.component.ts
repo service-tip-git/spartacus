@@ -20,9 +20,10 @@ import { EMPTY, Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 
 @Component({
-  selector: 'cx-estimated-delivery-date',
-  templateUrl: './estimated-delivery-date.component.html',
-  providers: [CxDatePipe],
+    selector: 'cx-estimated-delivery-date',
+    templateUrl: './estimated-delivery-date.component.html',
+    providers: [CxDatePipe],
+    standalone: false
 })
 export class EstimatedDeliveryDateComponent {
   @Optional() protected cartItemContext = inject(CartItemContext);

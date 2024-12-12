@@ -5,7 +5,7 @@ import { SelectFocusUtility } from '../services';
 import { AutoFocusService } from './auto-focus.service';
 
 @Component({
-  template: `
+    template: `
     <div id="a"></div>
     <div id="b">
       <button id="b1"></button>
@@ -24,6 +24,7 @@ import { AutoFocusService } from './auto-focus.service';
       <div id="e2"></div>
     </div>
   `,
+    standalone: false
 })
 class MockComponent {}
 

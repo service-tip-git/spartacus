@@ -11,10 +11,11 @@ const abstractOrderId = '129374';
 let emissionCounterKey = 0;
 
 @Component({
-  selector: 'cx-test-cmp',
-  template: ` <span [cxAbstractOrderContext]="abstractOrderKey"
+    selector: 'cx-test-cmp',
+    template: ` <span [cxAbstractOrderContext]="abstractOrderKey"
     ><cx-test-cmp-inner />
   </span>`,
+    standalone: false
 })
 class TestComponent {
   abstractOrderKey: AbstractOrderKeyInput = {
@@ -24,13 +25,14 @@ class TestComponent {
 }
 
 @Component({
-  selector: 'cx-test-cmp-inner',
-  template: `
+    selector: 'cx-test-cmp-inner',
+    template: `
     <ng-container *ngIf="myKey$ | async as key">
       {{ key.id }}
       {{ key.type }}
     </ng-container>
   `,
+    standalone: false
 })
 class TestInnerComponent {
   abstractOrderContext = inject(AbstractOrderContext, { optional: true });

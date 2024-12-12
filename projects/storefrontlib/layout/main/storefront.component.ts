@@ -29,8 +29,9 @@ import { HamburgerMenuService } from '../header/hamburger-menu/hamburger-menu.se
 import { StorefrontOutlets } from './storefront-outlets.model';
 
 @Component({
-  selector: 'cx-storefront',
-  templateUrl: './storefront.component.html',
+    selector: 'cx-storefront',
+    templateUrl: './storefront.component.html',
+    standalone: false
 })
 export class StorefrontComponent implements OnInit, OnDestroy {
   navigateSubscription: Subscription;

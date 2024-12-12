@@ -8,8 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { PointOfService, WeekdayOpeningDay } from '@spartacus/core';
 
 @Component({
-  selector: 'cx-schedule',
-  templateUrl: './schedule.component.html',
+    selector: 'cx-schedule',
+    templateUrl: './schedule.component.html',
+    standalone: false
 })
 export class ScheduleComponent implements OnInit {
   @Input()

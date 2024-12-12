@@ -107,16 +107,18 @@ const mockOrderInvoiceList: OrderInvoiceList = {
 };
 
 @Component({
-  template: '',
-  selector: 'cx-pagination',
+    template: '',
+    selector: 'cx-pagination',
+    standalone: false
 })
 class MockPaginationComponent {
   @Input() pagination: any;
   @Output() viewPageEvent = new EventEmitter<string>();
 }
 @Component({
-  template: '',
-  selector: 'cx-sorting',
+    template: '',
+    selector: 'cx-sorting',
+    standalone: false
 })
 class MockSortingComponent {
   @Input() sortOptions: any;

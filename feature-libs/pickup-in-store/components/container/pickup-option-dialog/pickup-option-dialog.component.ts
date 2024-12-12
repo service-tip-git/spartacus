@@ -35,8 +35,9 @@ import { filter, map, take, tap } from 'rxjs/operators';
  * The dialog box to select the pickup location for a product.
  */
 @Component({
-  selector: 'cx-pickup-option-dialog',
-  templateUrl: './pickup-option-dialog.component.html',
+    selector: 'cx-pickup-option-dialog',
+    templateUrl: './pickup-option-dialog.component.html',
+    standalone: false
 })
 export class PickupOptionDialogComponent implements OnInit, OnDestroy {
   productCode: string;

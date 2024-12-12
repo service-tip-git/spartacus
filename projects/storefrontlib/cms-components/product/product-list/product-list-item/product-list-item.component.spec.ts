@@ -20,8 +20,9 @@ import { ProductListItemContextSource } from '../model/product-list-item-context
 import { ProductListItemContext } from '../model/product-list-item-context.model';
 import { ProductListItemComponent } from './product-list-item.component';
 @Component({
-  selector: 'cx-add-to-cart',
-  template: '<button>add to cart</button>',
+    selector: 'cx-add-to-cart',
+    template: '<button>add to cart</button>',
+    standalone: false
 })
 class MockAddToCartComponent {
   @Input() product;
@@ -29,8 +30,9 @@ class MockAddToCartComponent {
 }
 
 @Component({
-  selector: 'cx-star-rating',
-  template: '*****',
+    selector: 'cx-star-rating',
+    template: '*****',
+    standalone: false
 })
 class MockStarRatingComponent {
   @Input() rating;
@@ -38,8 +40,9 @@ class MockStarRatingComponent {
 }
 
 @Component({
-  selector: 'cx-media',
-  template: 'mock picture component',
+    selector: 'cx-media',
+    template: 'mock picture component',
+    standalone: false
 })
 class MockPictureComponent {
   @Input() container;
@@ -47,15 +50,17 @@ class MockPictureComponent {
 }
 
 @Component({
-  selector: 'cx-icon',
-  template: '',
+    selector: 'cx-icon',
+    template: '',
+    standalone: false
 })
 class MockCxIconComponent {
   @Input() type;
 }
 
 @Pipe({
-  name: 'cxUrl',
+    name: 'cxUrl',
+    standalone: false
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
@@ -65,7 +70,8 @@ class MockRoutingService {}
 class MockProductService {}
 
 @Directive({
-  selector: '[cxOutlet]',
+    selector: '[cxOutlet]',
+    standalone: false
 })
 class MockOutletDirective implements Partial<OutletDirective> {
   @Input() cxOutlet: string;

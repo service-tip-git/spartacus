@@ -21,9 +21,10 @@ import { map } from 'rxjs/operators';
 import { ProductItem } from './product-item.model';
 
 @Component({
-  selector: 'cx-asm-customer-360-product-listing',
-  templateUrl: './asm-customer-360-product-listing.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-asm-customer-360-product-listing',
+    templateUrl: './asm-customer-360-product-listing.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class AsmCustomer360ProductListingComponent implements OnInit {
   @Input()

@@ -33,8 +33,9 @@ import { filter, map } from 'rxjs/operators';
 import { RegisterComponentService } from './register-component.service';
 
 @Component({
-  selector: 'cx-register',
-  templateUrl: './register.component.html',
+    selector: 'cx-register',
+    templateUrl: './register.component.html',
+    standalone: false
 })
 export class RegisterComponent implements OnInit, OnDestroy {
   // TODO: (CXSPA-7315) Remove feature toggle in the next major

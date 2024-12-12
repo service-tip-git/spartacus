@@ -12,7 +12,8 @@ import { InlineRenderStrategy } from './inline-render.strategy';
 const testTemplate = {} as ComponentFactory<any>;
 
 @Component({
-  template: '',
+    template: '',
+    standalone: false
 })
 class TestContainerComponent {
   constructor(public vcr: ViewContainerRef) {}

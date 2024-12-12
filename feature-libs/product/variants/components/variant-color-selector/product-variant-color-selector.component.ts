@@ -14,9 +14,10 @@ import {
 } from '@spartacus/core';
 
 @Component({
-  selector: 'cx-product-variant-color-selector',
-  templateUrl: './product-variant-color-selector.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cx-product-variant-color-selector',
+    templateUrl: './product-variant-color-selector.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ProductVariantColorSelectorComponent {
   constructor(private routingService: RoutingService) {}

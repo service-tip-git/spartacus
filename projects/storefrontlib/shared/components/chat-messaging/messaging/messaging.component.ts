@@ -30,8 +30,9 @@ import {
 } from './messaging.model';
 
 @Component({
-  selector: 'cx-messaging',
-  templateUrl: './messaging.component.html',
+    selector: 'cx-messaging',
+    templateUrl: './messaging.component.html',
+    standalone: false
 })
 export class MessagingComponent implements OnInit, AfterViewChecked {
   // can be undefined if you press add message button very fast on slow network

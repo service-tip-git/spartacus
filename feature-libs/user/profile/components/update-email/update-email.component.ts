@@ -11,10 +11,11 @@ import { Observable } from 'rxjs';
 import { UpdateEmailComponentService } from './update-email-component.service';
 
 @Component({
-  selector: 'cx-update-email',
-  templateUrl: './update-email.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'user-form' },
+    selector: 'cx-update-email',
+    templateUrl: './update-email.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'user-form' },
+    standalone: false
 })
 export class UpdateEmailComponent {
   constructor(protected service: UpdateEmailComponentService) {

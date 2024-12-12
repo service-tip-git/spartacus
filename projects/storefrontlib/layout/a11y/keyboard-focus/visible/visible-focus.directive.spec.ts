@@ -12,7 +12,8 @@ import { VisibleFocusConfig } from '../keyboard-focus.model';
 import { VisibleFocusDirective } from './visible-focus.directive';
 
 @Directive({
-  selector: '[cxVisibleFocus]',
+    selector: '[cxVisibleFocus]',
+    standalone: false
 })
 class CustomFocusDirective extends VisibleFocusDirective {
   @Input('cxVisibleFocus') protected config: VisibleFocusConfig;
@@ -26,7 +27,8 @@ class CustomFocusDirective extends VisibleFocusDirective {
 }
 
 @Directive({
-  selector: '[cxCustomFocus]',
+    selector: '[cxCustomFocus]',
+    standalone: false
 })
 class CustomFakeFocusDirective extends VisibleFocusDirective {
   protected defaultConfig = {};
@@ -40,12 +42,13 @@ class CustomFakeFocusDirective extends VisibleFocusDirective {
 }
 
 @Component({
-  selector: 'cx-host',
-  template: `
+    selector: 'cx-host',
+    template: `
     <div id="a" cxVisibleFocus></div>
     <div id="b" [cxVisibleFocus]="{ disableMouseFocus: false }"></div>
     <div id="c" cxCustomFocus></div>
   `,
+    standalone: false
 })
 class MockComponent {}
 

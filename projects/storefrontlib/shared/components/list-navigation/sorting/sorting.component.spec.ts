@@ -8,7 +8,8 @@ import { Directive, Input } from '@angular/core';
 describe('SortingComponent', () => {
   @Directive({
     selector: '[cxNgSelectA11y]',
-  })
+    standalone: false
+})
   class MockNgSelectA11yDirective {
     @Input() cxNgSelectA11y: { ariaLabel?: string; ariaControls?: string };
   }

@@ -12,16 +12,17 @@ import { CurrentUnitService } from '../../services/current-unit.service';
 import { UnitChildrenService } from './unit-children.service';
 
 @Component({
-  selector: 'cx-org-unit-children',
-  templateUrl: './unit-children.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'content-wrapper' },
-  providers: [
-    {
-      provide: ListService,
-      useExisting: UnitChildrenService,
-    },
-  ],
+    selector: 'cx-org-unit-children',
+    templateUrl: './unit-children.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'content-wrapper' },
+    providers: [
+        {
+            provide: ListService,
+            useExisting: UnitChildrenService,
+        },
+    ],
+    standalone: false
 })
 export class UnitChildrenComponent {
   unit$: Observable<B2BUnit | undefined> = this.currentUnitService

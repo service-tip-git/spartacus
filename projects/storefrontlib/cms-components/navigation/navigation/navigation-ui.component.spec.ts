@@ -19,16 +19,18 @@ import { NavigationNode } from './navigation-node.model';
 import { NavigationUIComponent } from './navigation-ui.component';
 
 @Component({
-  selector: 'cx-icon',
-  template: '',
+    selector: 'cx-icon',
+    template: '',
+    standalone: false
 })
 class MockIconComponent {
   @Input() type: string;
 }
 
 @Component({
-  selector: 'cx-generic-link',
-  template: '<a href={{url}}>{{title}}</a>',
+    selector: 'cx-generic-link',
+    template: '<a href={{url}}>{{title}}</a>',
+    standalone: false
 })
 class MockGenericLinkComponent {
   @Input() url: string | any[];

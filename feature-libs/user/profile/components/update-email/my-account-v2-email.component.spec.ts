@@ -23,8 +23,9 @@ import { UpdateEmailComponentService } from './update-email-component.service';
 import createSpy = jasmine.createSpy;
 
 @Component({
-  selector: 'cx-spinner',
-  template: '',
+    selector: 'cx-spinner',
+    template: '',
+    standalone: false
 })
 class MockCxSpinnerComponent {}
 

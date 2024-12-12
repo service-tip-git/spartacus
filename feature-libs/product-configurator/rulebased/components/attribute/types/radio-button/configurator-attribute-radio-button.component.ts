@@ -16,10 +16,11 @@ import { ConfiguratorAttributeSingleSelectionBaseComponent } from '../base/confi
 import { ConfiguratorAttributePriceChangeService } from '../../price-change/configurator-attribute-price-change.service';
 
 @Component({
-  selector: 'cx-configurator-attribute-radio-button',
-  templateUrl: './configurator-attribute-radio-button.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [ConfiguratorAttributePriceChangeService],
+    selector: 'cx-configurator-attribute-radio-button',
+    templateUrl: './configurator-attribute-radio-button.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [ConfiguratorAttributePriceChangeService],
+    standalone: false
 })
 export class ConfiguratorAttributeRadioButtonComponent
   extends ConfiguratorAttributeSingleSelectionBaseComponent

@@ -21,17 +21,16 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
  * Component that adds a file upload control.
  */
 @Component({
-  selector: 'cx-file-upload',
-  templateUrl: './file-upload.component.html',
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => FileUploadComponent),
-      multi: true,
-    },
-  ],
-  // we cannot use onPush change detection as the form state isn't updated without explicit
-  // change detection, see https://github.com/angular/angular/issues/10816
+    selector: 'cx-file-upload',
+    templateUrl: './file-upload.component.html',
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => FileUploadComponent),
+            multi: true,
+        },
+    ],
+    standalone: false
 })
 export class FileUploadComponent implements ControlValueAccessor {
   /**

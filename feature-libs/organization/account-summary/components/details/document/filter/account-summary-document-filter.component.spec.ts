@@ -21,8 +21,9 @@ const mockQueryParams: DocumentQueryParams = {
 };
 
 @Component({
-  selector: 'cx-date-picker',
-  template: '',
+    selector: 'cx-date-picker',
+    template: '',
+    standalone: false
 })
 class MockDatePickerComponent {
   @Input() control: any;
