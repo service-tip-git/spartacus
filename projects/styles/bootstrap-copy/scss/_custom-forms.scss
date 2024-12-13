@@ -2,38 +2,6 @@
 // Released under MIT and copyright 2014 Waybury.
 // https://useiconic.com/open
 
-// Checkboxes and radios
-//
-// Base class takes care of all the key behavioral aspects.
-
-.custom-control {
-  position: relative;
-  z-index: 1;
-  display: block;
-  min-height: $font-size-base * $line-height-base;
-  padding-left: $custom-control-gutter + $custom-control-indicator-size;
-  print-color-adjust: exact; // Keep themed appearance for print
-}
-
-// Custom control indicators
-//
-// Build the custom controls out of pseudo-elements.
-
-// Checkboxes
-//
-// Tweak just a few things for checkboxes.
-
-// Radios
-//
-// Tweak just a few things for radios.
-
-// switches
-//
-// Tweak a few things for switches
-
-.custom-switch {
-  padding-left: $custom-switch-width + $custom-control-gutter;
-}
 
 // Select
 //
@@ -134,9 +102,3 @@
   @each $lang, $value in $custom-file-text {
   }
 }
-
-// Range
-//
-// Style range inputs the same across browsers. Vendor-specific rules for pseudo
-// elements cannot be mixed. As such, there are no shared styles for focus or
-// active states on prefixed selectors.
