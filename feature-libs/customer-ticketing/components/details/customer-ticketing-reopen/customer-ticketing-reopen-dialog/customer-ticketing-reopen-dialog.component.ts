@@ -15,9 +15,9 @@ import { Subscription } from 'rxjs';
 import { CustomerTicketingDialogComponent } from '../../../shared/customer-ticketing-dialog/customer-ticketing-dialog.component';
 
 @Component({
-    selector: 'cx-customer-ticketing-reopen-dialog',
-    templateUrl: './customer-ticketing-reopen-dialog.component.html',
-    standalone: false
+  selector: 'cx-customer-ticketing-reopen-dialog',
+  templateUrl: './customer-ticketing-reopen-dialog.component.html',
+  standalone: false,
 })
 export class CustomerTicketingReopenDialogComponent
   extends CustomerTicketingDialogComponent
@@ -34,8 +34,7 @@ export class CustomerTicketingReopenDialogComponent
       this.form.markAllAsTouched();
       FormUtils.deepUpdateValueAndValidity(this.form);
     } else {
-      const mustWaitForAttachment =
-        this.form.get('file')?.value?.length > 0 ?? false;
+      const mustWaitForAttachment = this.form.get('file')?.value?.length > 0;
       this.isDataLoading$.next(true);
       this.subscription = this.customerTicketingFacade
         .createTicketEvent(this.prepareTicketEvent(), mustWaitForAttachment)
