@@ -47,7 +47,8 @@ export class MiniCartComponentService {
         if (activeCartRequired) {
           return this.activeCartFacade.getActive().pipe(
             startWith({ totalUnitCount: 0 }),
-            map((cart) => cart.totalUnitCount || 0)
+            map((cart) => cart.totalUnitCount || 0),
+            map((count) => (count >= 3 ? 3 : count))
           );
         } else {
           return of(0);
