@@ -287,6 +287,11 @@ export interface FeatureTogglesInterface {
   a11yMobileFocusOnFirstNavigationItem?: boolean;
 
   /**
+   * `QuickOrderFormComponent` - disable navigation with Tab/Shift+Tab for search results list
+   */
+  a11yQuickOrderSearchListKeyboardNavigation?: boolean;
+
+  /**
    * Corrects heading order inside 'OrderSummaryComponent' template.
    */
   a11yCartSummaryHeadingOrder?: boolean;
@@ -943,6 +948,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yListOversizedFocus: true,
   a11yStoreFinderOverflow: true,
   a11yMobileFocusOnFirstNavigationItem: false,
+  a11yQuickOrderSearchListKeyboardNavigation: false,
   a11yCartSummaryHeadingOrder: true,
   a11ySearchBoxMobileFocus: true,
   a11yFacetKeyboardNavigation: true,
