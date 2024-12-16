@@ -9,7 +9,6 @@ import { StateUtils } from '@spartacus/core';
 import { Order } from '@spartacus/order/root';
 import { OrderState, StateWithOrder } from '../order-state';
 import { getOrderState } from './feature.selector';
-import { OrderEntryGroup } from '@spartacus/cart/base/root';
 
 export const getOrderDetailState: MemoizedSelector<
   StateWithOrder,
@@ -26,9 +25,4 @@ export const getOrderDetailsLoading: MemoizedSelector<StateWithOrder, boolean> =
     StateUtils.loaderLoadingSelector(state)
   );
 
-export const getOrderEntryGroups: MemoizedSelector<StateWithOrder, OrderEntryGroup[]> =
-  createSelector(getOrderDetails,(state: Order) => {
-      return state && state.entryGroups ? state.entryGroups : [];
-    }
-  );
 

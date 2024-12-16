@@ -2,15 +2,12 @@ import { Component, DebugElement, Input } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
-import { PromotionLocation, OrderEntryGroup } from '@spartacus/cart/base/root';
-import { FeatureConfigService, FeaturesConfig, FeaturesConfigModule, I18nTestingModule } from '@spartacus/core';
+import { PromotionLocation } from '@spartacus/cart/base/root';
+import { FeaturesConfig, FeatureConfigService, I18nTestingModule } from '@spartacus/core';
 import { Consignment, Order } from '@spartacus/order/root';
 import { CardModule, OutletModule } from '@spartacus/storefront';
-import { of } from 'rxjs';
 import { OrderConsignedEntriesComponent } from './order-consigned-entries.component';
-import { OrderDetailsService } from '../../order-details.service';
-import { HierarchyComponentService } from '@spartacus/storefront';
-import { AbstractOrderContextModule } from '@spartacus/cart/base/components';
+import { OrderConsignmentService } from '@spartacus/order/core';
 
 const mockProduct = { product: { code: 'test' } };
 
@@ -21,6 +18,7 @@ const mockOrder: Order = {
     {
       code: 'a00000341',
       status: 'SHIPPED',
+      statusDate: new Date('2019-02-11T13:05:12+0000'),
       entries: [
         {
           orderEntry: mockProduct,
@@ -45,23 +43,12 @@ describe('OrderConsignedEntriesComponent', () => {
   let component: OrderConsignedEntriesComponent;
   let fixture: ComponentFixture<OrderConsignedEntriesComponent>;
   let el: DebugElement;
-  let mockOrderDetailsService: jasmine.SpyObj<OrderDetailsService>;
-  let mockHierarchyService: jasmine.SpyObj<HierarchyComponentService>;
-  const mockFeatureConfigService = jasmine.createSpyObj(
-    'FeatureConfigService',
-    ['isEnabled']
-  );
+  let mockFeatureConfigService: jasmine.SpyObj<FeatureConfigService>;
+  let mockOrderConsignmentService: jasmine.SpyObj<OrderConsignmentService>;
 
   beforeEach(waitForAsync(() => {
-    mockOrderDetailsService = jasmine.createSpyObj('OrderDetailsService', [
-      'getEntryGroups',
-      'getPickupEntryGroups',
-      'getDeliveryEntryGroups',
-    ]);
-    mockHierarchyService = jasmine.createSpyObj('HierarchyComponentService', [
-      'getEntriesFromGroups',
-      'getBundlesFromGroups',
-    ]);
+    mockFeatureConfigService = jasmine.createSpyObj('FeatureConfigService', ['isEnabled']);
+    mockOrderConsignmentService = jasmine.createSpyObj('OrderConsignmentService', ['assignEntryGroupsToConsignments']);
 
     TestBed.configureTestingModule({
       imports: [
@@ -69,8 +56,6 @@ describe('OrderConsignedEntriesComponent', () => {
         I18nTestingModule,
         RouterTestingModule,
         OutletModule,
-        FeaturesConfigModule,
-        AbstractOrderContextModule,
       ],
       providers: [
         {
@@ -79,9 +64,8 @@ describe('OrderConsignedEntriesComponent', () => {
             features: { level: '1.4', consignmentTracking: true },
           },
         },
-        { provide: OrderDetailsService, useValue: mockOrderDetailsService },
-        { provide: HierarchyComponentService, useValue: mockHierarchyService },
         { provide: FeatureConfigService, useValue: mockFeatureConfigService },
+        { provide: OrderConsignmentService, useValue: mockOrderConsignmentService },
       ],
       declarations: [
         OrderConsignedEntriesComponent,
@@ -96,51 +80,41 @@ describe('OrderConsignedEntriesComponent', () => {
 
     component = fixture.componentInstance;
     component.order = mockOrder;
-    component.consignments = mockOrder.consignments || [];
+    component.consignments = mockOrder.consignments;
     component.promotionLocation = PromotionLocation.Order;
 
-    // Mock service methods
-    mockOrderDetailsService.getEntryGroups.and.returnValue(of([{ entryGroupNumber: 1 }] as OrderEntryGroup[]));
-    mockHierarchyService.getEntriesFromGroups.and.returnValue(of([{ entryNumber: 1 }] as any));
-    mockOrderDetailsService.getPickupEntryGroups.and.returnValue(of([]));
-    mockOrderDetailsService.getDeliveryEntryGroups.and.returnValue(of([]));
-    mockHierarchyService.getBundlesFromGroups.and.returnValue(of([]));
-  });
+    mockFeatureConfigService.isEnabled.and.returnValue(false);
+    mockOrderConsignmentService.assignEntryGroupsToConsignments.and.callFake(
+      (_order: any, consignments: any) => consignments
+    );
+      });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should call services and set streams on ngOnInit', () => {
-    mockFeatureConfigService.isEnabled.and.returnValue(true);
-    component.consignments = [{ deliveryPointOfService: {} }] as Consignment[];
-
-    component.ngOnInit();
-
-    expect(mockOrderDetailsService.getEntryGroups).toHaveBeenCalled();
-    expect(mockHierarchyService.getEntriesFromGroups).toHaveBeenCalled();
-    expect(mockOrderDetailsService.getPickupEntryGroups).toHaveBeenCalled();
-    expect(mockOrderDetailsService.getDeliveryEntryGroups).not.toHaveBeenCalled();
-    expect(mockHierarchyService.getBundlesFromGroups).toHaveBeenCalled();
-  });
-
 
   it('should render order consignment entries', () => {
     fixture.detectChanges();
     expect(el.query(By.css('.cx-list'))).toBeTruthy();
   });
 
-  it('should handle pickup consignments correctly', () => {
-    component.consignments = [{ deliveryPointOfService: {} }] as Consignment[];
+  it('should not modify consignments if enableBundles is disabled', () => {
+    mockFeatureConfigService.isEnabled.and.returnValue(false);
 
     component.ngOnInit();
-    expect(mockOrderDetailsService.getPickupEntryGroups).toHaveBeenCalled();
+
+    expect(mockOrderConsignmentService.assignEntryGroupsToConsignments).not.toHaveBeenCalled();
+    expect(component.consignments).toEqual(mockOrder.consignments);
   });
 
-  it('should handle shipping consignments correctly', () => {
-    component.consignments = [{ deliveryPointOfService: undefined }] as Consignment[];
+  it('should assign entry groups to consignments if enableBundles is enabled', () => {
+    const modifiedConsignments = [{ code: 'modified' }] as Consignment[];
+    mockFeatureConfigService.isEnabled.and.returnValue(true);
+    mockOrderConsignmentService.assignEntryGroupsToConsignments.and.returnValue(modifiedConsignments);
 
     component.ngOnInit();
-    expect(mockOrderDetailsService.getDeliveryEntryGroups).toHaveBeenCalled();
+
+    expect(mockOrderConsignmentService.assignEntryGroupsToConsignments).toHaveBeenCalledWith(mockOrder, mockOrder.consignments);
+    expect(component.consignments).toEqual(modifiedConsignments);
   });
 });
