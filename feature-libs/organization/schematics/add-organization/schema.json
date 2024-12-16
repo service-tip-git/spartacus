@@ -24,6 +24,13 @@
     "features": {
       "type": "array",
       "uniqueItems": true,
+      "default": [
+        "Administration",
+        "Order-Approval",
+        "Account-Summary",
+        "Organization-User-Registration",
+        "Unit-Order"
+      ],
       "items": {
         "enum": [
           "Administration",

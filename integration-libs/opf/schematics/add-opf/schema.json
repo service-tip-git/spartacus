@@ -24,6 +24,14 @@
     "features": {
       "type": "array",
       "uniqueItems": true,
+      "default": [
+        "OPF-Checkout",
+        "OPF-Base",
+        "OPF-Payment",
+        "OPF-Cta",
+        "OPF-Global-Functions",
+        "OPF-Quick-Buy"
+      ],
       "items": {
         "enum": [
           "OPF-Checkout",
