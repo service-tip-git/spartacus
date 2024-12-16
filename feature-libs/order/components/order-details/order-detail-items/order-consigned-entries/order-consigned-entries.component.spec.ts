@@ -93,7 +93,7 @@ describe('OrderConsignedEntriesComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render order consignment entries', () => {
+  it('should order consignment entries be rendered', () => {
     fixture.detectChanges();
     expect(el.query(By.css('.cx-list'))).toBeTruthy();
   });

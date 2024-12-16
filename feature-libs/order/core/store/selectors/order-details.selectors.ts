@@ -24,5 +24,3 @@ export const getOrderDetailsLoading: MemoizedSelector<StateWithOrder, boolean> =
   createSelector(getOrderDetailState, (state: StateUtils.LoaderState<Order>) =>
     StateUtils.loaderLoadingSelector(state)
   );
-
-
