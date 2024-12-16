@@ -24,8 +24,8 @@ import {
   FeatureConfigService,
   PageType,
   RoutingService,
-  WindowRef,
   useFeatureStyles,
+  WindowRef,
 } from '@spartacus/core';
 import { Observable, of, Subscription } from 'rxjs';
 import { filter, map, switchMap, tap } from 'rxjs/operators';
@@ -156,6 +156,7 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
     protected routingService: RoutingService
   ) {
     useFeatureStyles('a11ySearchboxLabel');
+    useFeatureStyles('a11yKeyboardFocusInSearchBox');
   }
 
   /**
