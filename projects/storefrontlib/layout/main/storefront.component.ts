@@ -6,13 +6,14 @@
 
 import {
   Component,
+  DestroyRef,
   ElementRef,
   HostBinding,
   HostListener,
+  inject,
   OnDestroy,
   OnInit,
   ViewChild,
-  inject,
 } from '@angular/core';
 import {
   FeatureConfigService,
@@ -22,11 +23,14 @@ import {
 import { Observable, Subscription, tap } from 'rxjs';
 import {
   FocusConfig,
+  SkipFocusConfig,
   KeyboardFocusService,
 } from '../a11y/keyboard-focus/index';
 import { SkipLinkComponent } from '../a11y/skip-link/index';
 import { HamburgerMenuService } from '../header/hamburger-menu/hamburger-menu.service';
 import { StorefrontOutlets } from './storefront-outlets.model';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
   selector: 'cx-storefront',
@@ -34,11 +38,17 @@ import { StorefrontOutlets } from './storefront-outlets.model';
 })
 export class StorefrontComponent implements OnInit, OnDestroy {
   navigateSubscription: Subscription;
+  focusConfig: FocusConfig = { disableMouseFocus: true, trap: false };
+  skipFocusConfig: SkipFocusConfig = {
+    isEnabled: false,
+    activeElementSelectors: ['button.cx-hamburger'],
+  };
   isExpanded$: Observable<boolean> = this.hamburgerMenuService.isExpanded;
 
   readonly StorefrontOutlets = StorefrontOutlets;
 
   private featureConfigService = inject(FeatureConfigService);
+  protected destroyRef = inject(DestroyRef);
 
   @HostBinding('class.start-navigating') startNavigating: boolean;
   @HostBinding('class.stop-navigating') stopNavigating: boolean;
@@ -106,6 +116,10 @@ export class StorefrontComponent implements OnInit, OnDestroy {
         })
       );
     }
+
+    if (this.featureConfigService.isEnabled('a11yHamburgerMenuTrapFocus')) {
+      this.trapFocusOnMenuIfExpanded();
+    }
   }
 
   collapseMenuIfClickOutside(event: any): void {
@@ -120,6 +134,18 @@ export class StorefrontComponent implements OnInit, OnDestroy {
 
   collapseMenu(): void {
     this.hamburgerMenuService.toggle(true);
+  }
+
+  protected trapFocusOnMenuIfExpanded(): void {
+    this.isExpanded$
+      .pipe(distinctUntilChanged(), takeUntilDestroyed(this.destroyRef))
+      .subscribe((isExpanded) => {
+        this.focusConfig = { ...this.focusConfig, trap: isExpanded };
+        this.skipFocusConfig = {
+          ...this.skipFocusConfig,
+          isEnabled: isExpanded,
+        };
+      });
   }
 
   protected focusOnFirstNavigationItem() {
