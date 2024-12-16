@@ -742,6 +742,12 @@ export interface FeatureTogglesInterface {
   a11yDifferentiateFocusedAndSelected?: boolean;
 
   /**
+   * Adds a visible focus indicator for keyboard navigation in the `SearchBoxComponent` without affecting the visual state for mouse interactions.
+   * Affects: SearchBoxComponent
+   */
+  a11yKeyboardFocusInSearchBox?: boolean;
+
+  /**
    * Adds horizontal padding to the 'carousel-panel' to fix the issue where the focus only covers three sides of the 'Previous slide' and 'Next slide' buttons within the carousel section.
    * Affects: CarouselComponent
    */
@@ -993,6 +999,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yTableHeaderReadout: false,
   a11ySearchboxAssistiveMessage: false,
   a11yDifferentiateFocusedAndSelected: false,
+  a11yKeyboardFocusInSearchBox: false,
   a11yAddPaddingToCarouselPanel: false,
   a11yHideConsentButtonWhenBannerVisible: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
