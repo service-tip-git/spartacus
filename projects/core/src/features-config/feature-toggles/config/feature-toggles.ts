@@ -406,6 +406,12 @@ export interface FeatureTogglesInterface {
   a11yTruncatedTextStoreFinder?: boolean;
 
   /**
+   * `UnitLevelOrderHistoryComponent` filter input label and table email address
+   * are not truncated
+   */
+  a11yTruncatedTextUnitLevelOrderHistory?: boolean;
+
+  /**
    * When enabled focus outline on the close button inside `ProductImageZoomDialogComponent`
    * will be fully visible
    */
@@ -942,6 +948,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yVisibleFocusOverflows: true,
   a11yTruncatedTextForResponsiveView: true,
   a11yTruncatedTextStoreFinder: false,
+  a11yTruncatedTextUnitLevelOrderHistory: false,
   a11ySemanticPaginationLabel: true,
   a11yPreventCartItemsFormRedundantRecreation: false,
   a11yPreventSRFocusOnHiddenElements: true,
