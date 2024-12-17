@@ -19,8 +19,8 @@ exports[`Workspace utils getProject should return project 1`] = `
               "type": "initial",
             },
             {
-              "maximumError": "4kB",
-              "maximumWarning": "2kB",
+              "maximumError": "8kB",
+              "maximumWarning": "4kB",
               "type": "anyComponentStyle",
             },
           ],
@@ -133,8 +133,8 @@ exports[`Workspace utils getProjectTargets should return project targets 1`] = `
             "type": "initial",
           },
           {
-            "maximumError": "4kB",
-            "maximumWarning": "2kB",
+            "maximumError": "8kB",
+            "maximumWarning": "4kB",
             "type": "anyComponentStyle",
           },
         ],
