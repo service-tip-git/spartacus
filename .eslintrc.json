@@ -29,6 +29,7 @@
         "no-fallthrough": "off",
         "prefer-const": "off",
         "@angular-eslint/use-lifecycle-interface": "error",
+        "@angular-eslint/prefer-standalone": "off",
         "@stylistic/ts/quotes": "off",
         "@stylistic/ts/member-delimiter-style": [
           "error",

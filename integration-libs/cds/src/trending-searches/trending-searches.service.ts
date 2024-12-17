@@ -5,7 +5,7 @@
  */
 
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, OnDestroy } from '@angular/core';
 import { BaseSiteService, WindowRef } from '@spartacus/core';
 import {
   catchError,
@@ -19,7 +19,7 @@ import {
   take,
   takeUntil,
   takeWhile,
-  timer
+  timer,
 } from 'rxjs';
 import { CdsConfig } from '../config';
 import { CdsEndpointsService } from '../services';
@@ -33,7 +33,7 @@ const TRENDING_SEARCHES_ENDPOINT_KEY = 'searchIntelligence';
 @Injectable({
   providedIn: 'root',
 })
-export class TrendingSearchesService {
+export class TrendingSearchesService implements OnDestroy {
   protected baseSiteService = inject(BaseSiteService);
   protected cdsConfig = inject(CdsConfig);
   protected cdsEndpointsService = inject(CdsEndpointsService);

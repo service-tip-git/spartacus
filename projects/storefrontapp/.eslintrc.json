@@ -14,8 +14,7 @@
           {
             "checkDynamicDependenciesExceptions": ["@spartacus/**"]
           }
-        ],
-        "@angular-eslint/prefer-standalone": "off"
+        ]
       }
     }
   ]
