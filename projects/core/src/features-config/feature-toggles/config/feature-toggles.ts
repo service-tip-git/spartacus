@@ -701,6 +701,11 @@ export interface FeatureTogglesInterface {
   a11yImproveButtonsInCardComponent?: boolean;
 
   /**
+   * In `MiniCart component`, improve visible focus contrast on mobile.
+   */
+  a11yMiniCartFocusOnMobile?: boolean;
+
+  /**
    * In `UnitFormComponent`, set 'clearable' as false for select of `ApprovalProcess`.
    */
   a11yApprovalProcessWithNoClearable?: boolean;
@@ -1030,6 +1035,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yCheckoutStepsLandmarks: false,
   a11yQTY2Quantity: false,
   a11yImproveButtonsInCardComponent: false,
+  a11yMiniCartFocusOnMobile: false,
   a11yWrapReviewOrderInSection: false,
   a11yApprovalProcessWithNoClearable: false,
   a11yPostRegisterSuccessMessage: false,
