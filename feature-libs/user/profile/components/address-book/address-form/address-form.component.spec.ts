@@ -115,8 +115,8 @@ class MockLaunchDialogService implements Partial<LaunchDialogService> {
 }
 
 @Directive({
-    selector: '[cxNgSelectA11y]',
-    standalone: false
+  selector: '[cxNgSelectA11y]',
+  standalone: false,
 })
 class MockNgSelectA11yDirective {
   @Input() cxNgSelectA11y: { ariaLabel?: string; ariaControls?: string };

@@ -22,8 +22,8 @@ import { MyCouponsComponent } from './my-coupons.component';
 import { MyCouponsComponentService } from './my-coupons.component.service';
 
 @Component({
-    selector: 'cx-coupon-card',
-    template: `
+  selector: 'cx-coupon-card',
+  template: `
     <input
       type="checkbox"
       class="form-check-input"
@@ -33,7 +33,7 @@ import { MyCouponsComponentService } from './my-coupons.component.service';
       (click)="notificationChange()"
     />
   `,
-    standalone: false
+  standalone: false,
 })
 class MockedCouponCardComponent {
   @Input()
@@ -57,9 +57,9 @@ class MockedCouponCardComponent {
 }
 
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    standalone: false
+  selector: 'cx-icon',
+  template: '',
+  standalone: false,
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -124,9 +124,9 @@ const sortLabels = {
 };
 
 @Component({
-    template: '',
-    selector: 'cx-pagination',
-    standalone: false
+  template: '',
+  selector: 'cx-pagination',
+  standalone: false,
 })
 class MockPaginationComponent {
   @Input() pagination;
@@ -134,9 +134,9 @@ class MockPaginationComponent {
 }
 
 @Component({
-    template: '',
-    selector: 'cx-sorting',
-    standalone: false
+  template: '',
+  selector: 'cx-sorting',
+  standalone: false,
 })
 class MockSortingComponent {
   @Input() sortOptions;

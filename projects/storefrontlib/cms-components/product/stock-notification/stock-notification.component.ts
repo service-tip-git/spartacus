@@ -33,10 +33,10 @@ import { LaunchDialogService, LAUNCH_CALLER } from '../../../layout/index';
 import { take } from 'rxjs/operators';
 
 @Component({
-    selector: 'cx-stock-notification',
-    templateUrl: './stock-notification.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-stock-notification',
+  templateUrl: './stock-notification.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class StockNotificationComponent implements OnInit, OnDestroy {
   hasProductInterests$: Observable<boolean>;

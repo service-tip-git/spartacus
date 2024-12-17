@@ -113,9 +113,9 @@ describe('SetPreferredStoreComponent with outlet.context$', () => {
  * for the purposes of testing the components that wrap it.
  */
 @Component({
-    selector: 'cx-set-preferred-store',
-    template: '',
-    standalone: false
+  selector: 'cx-set-preferred-store',
+  template: '',
+  standalone: false,
 })
 export class SetPreferredStoreStubComponent {
   @Input() pointOfServiceName: PointOfServiceNames;

@@ -21,9 +21,9 @@ import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CustomerTicketingMessagesComponentService } from './customer-ticketing-messages-component.service';
 @Component({
-    selector: 'cx-customer-ticketing-messages',
-    templateUrl: './customer-ticketing-messages.component.html',
-    standalone: false
+  selector: 'cx-customer-ticketing-messages',
+  templateUrl: './customer-ticketing-messages.component.html',
+  standalone: false,
 })
 export class CustomerTicketingMessagesComponent implements OnDestroy {
   @ViewChild(MessagingComponent) messagingComponent: MessagingComponent;

@@ -23,11 +23,11 @@ import { ConfiguratorAttributeSingleSelectionBaseComponent } from '../base/confi
 import { ConfiguratorAttributePriceChangeService } from '../../price-change/configurator-attribute-price-change.service';
 
 @Component({
-    selector: 'cx-configurator-attribute-drop-down',
-    templateUrl: './configurator-attribute-drop-down.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    providers: [ConfiguratorAttributePriceChangeService],
-    standalone: false
+  selector: 'cx-configurator-attribute-drop-down',
+  templateUrl: './configurator-attribute-drop-down.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [ConfiguratorAttributePriceChangeService],
+  standalone: false,
 })
 export class ConfiguratorAttributeDropDownComponent
   extends ConfiguratorAttributeSingleSelectionBaseComponent

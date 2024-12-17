@@ -14,9 +14,9 @@ import { AsmCustomer360Service } from './asm-customer-360.service';
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'cx-dummy',
-    template: '<div>This is a dummy component</div>',
-    standalone: false
+  selector: 'cx-dummy',
+  template: '<div>This is a dummy component</div>',
+  standalone: false,
 })
 export class DummyComponent {}
 

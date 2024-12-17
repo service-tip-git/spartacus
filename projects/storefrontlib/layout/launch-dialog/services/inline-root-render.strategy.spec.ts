@@ -9,15 +9,15 @@ import { LaunchInlineRootDialog, LAUNCH_CALLER } from '../config';
 import { InlineRootRenderStrategy } from './inline-root-render.strategy';
 
 @Component({
-    template: '',
-    standalone: false
+  template: '',
+  standalone: false,
 })
 class TestComponent {}
 
 @Component({
-    selector: 'cx-root-app',
-    template: '',
-    standalone: false
+  selector: 'cx-root-app',
+  template: '',
+  standalone: false,
 })
 class MockRootComponent {}
 

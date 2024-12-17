@@ -14,26 +14,26 @@ import { ICON_TYPE } from '../../../cms-components/misc/index';
 import { Card, CardComponent, CardLinkAction } from './card.component';
 
 @Directive({
-    selector: '[cxAtMessage]',
-    standalone: false
+  selector: '[cxAtMessage]',
+  standalone: false,
 })
 export class MockAtMessageDirective {
   @Input() cxAtMessage: string | string[] | undefined;
 }
 
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    standalone: false
+  selector: 'cx-icon',
+  template: '',
+  standalone: false,
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
 }
 
 @Component({
-    selector: 'cx-truncate-text-popover',
-    template: '',
-    standalone: false
+  selector: 'cx-truncate-text-popover',
+  template: '',
+  standalone: false,
 })
 class MockCxTruncateTextPopoverComponent {
   @Input() content: string;
@@ -46,8 +46,8 @@ function getTruncatedPopover(elem: DebugElement) {
 }
 let isActiveStoreFrontLibCardParagraphTruncated: boolean;
 @Directive({
-    selector: '[cxFeature]',
-    standalone: false
+  selector: '[cxFeature]',
+  standalone: false,
 })
 class MockFeatureDirective {
   constructor(

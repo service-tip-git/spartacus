@@ -18,8 +18,8 @@ import { MediaService } from '../../../shared/components/media/media.service';
 import { VideoComponent } from './video.component';
 
 @Pipe({
-    name: 'cxTranslate',
-    standalone: false
+  name: 'cxTranslate',
+  standalone: false,
 })
 class MockTranslatePipe implements PipeTransform {
   transform(): any {}

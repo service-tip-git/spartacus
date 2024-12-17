@@ -21,10 +21,10 @@ import { ConfigFormUpdateEvent } from '../form/configurator-form.event';
 import { ConfiguratorExpertModeService } from '../../core/services/configurator-expert-mode.service';
 
 @Component({
-    selector: 'cx-configurator-group',
-    templateUrl: './configurator-group.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-configurator-group',
+  templateUrl: './configurator-group.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ConfiguratorGroupComponent {
   protected readonly typePrefix = 'AttributeType_';

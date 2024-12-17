@@ -13,10 +13,10 @@ import { combineLatest, Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
 @Component({
-    selector: 'cx-notification-preference',
-    templateUrl: './notification-preference.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-notification-preference',
+  templateUrl: './notification-preference.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class NotificationPreferenceComponent implements OnInit {
   preferences$: Observable<NotificationPreference[]>;

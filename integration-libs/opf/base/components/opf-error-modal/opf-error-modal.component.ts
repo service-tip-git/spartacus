@@ -20,10 +20,10 @@ import { switchMap } from 'rxjs/operators';
 import { OpfErrorModalService } from './opf-error-modal.service';
 
 @Component({
-    selector: 'cx-opf-error-modal',
-    templateUrl: './opf-error-modal.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-opf-error-modal',
+  templateUrl: './opf-error-modal.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class OpfErrorModalComponent implements OnInit {
   protected launchDialogService = inject(LaunchDialogService);

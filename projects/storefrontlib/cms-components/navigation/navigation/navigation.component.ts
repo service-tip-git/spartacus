@@ -13,10 +13,10 @@ import { NavigationNode } from './navigation-node.model';
 import { NavigationService } from './navigation.service';
 
 @Component({
-    selector: 'cx-navigation',
-    templateUrl: './navigation.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-navigation',
+  templateUrl: './navigation.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class NavigationComponent {
   node$: Observable<NavigationNode> = this.service.createNavigation(

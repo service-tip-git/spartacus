@@ -75,9 +75,9 @@ class MockActivatedRoute {
 }
 
 @Component({
-    template: '',
-    selector: 'cx-sorting',
-    standalone: false
+  template: '',
+  selector: 'cx-sorting',
+  standalone: false,
 })
 class MockSortingComponent {
   @Input() sortOptions;

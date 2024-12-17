@@ -7,10 +7,10 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-    selector: 'cx-checkout-orchestrator',
-    template: '',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-checkout-orchestrator',
+  template: '',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class CheckoutOrchestratorComponent {
   constructor() {

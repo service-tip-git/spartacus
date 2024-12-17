@@ -24,10 +24,10 @@ import { CmsComponentData } from '../../../cms-structure/page/model/cms-componen
 import { PageTitleComponent } from '../page-header/page-title.component';
 
 @Component({
-    selector: 'cx-breadcrumb',
-    templateUrl: './breadcrumb.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-breadcrumb',
+  templateUrl: './breadcrumb.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class BreadcrumbComponent extends PageTitleComponent implements OnInit {
   crumbs$: Observable<any[]>;

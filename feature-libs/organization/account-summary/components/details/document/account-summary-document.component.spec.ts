@@ -31,18 +31,18 @@ import { mockAccountSummaryList } from '../account-summary-mock-data';
 const blob = new Blob();
 
 @Component({
-    template: '',
-    selector: 'cx-pagination',
-    standalone: false
+  template: '',
+  selector: 'cx-pagination',
+  standalone: false,
 })
 class MockPaginationComponent {
   @Input() pagination: any;
   @Output() viewPageEvent = new EventEmitter<string>();
 }
 @Component({
-    template: '',
-    selector: 'cx-sorting',
-    standalone: false
+  template: '',
+  selector: 'cx-sorting',
+  standalone: false,
 })
 class MockSortingComponent {
   @Input() sortOptions: any;
@@ -53,9 +53,9 @@ class MockSortingComponent {
 }
 
 @Component({
-    template: '',
-    selector: 'cx-account-summary-document-filter',
-    standalone: false
+  template: '',
+  selector: 'cx-account-summary-document-filter',
+  standalone: false,
 })
 class MockAccountSummaryDocumentFilterComponent {
   @Input() documentTypeOptions: any;

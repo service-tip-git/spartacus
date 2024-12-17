@@ -27,10 +27,10 @@ import {
 import { ONE_TIME_PASSWORD_LOGIN_PURPOSE } from '../user-account-constants';
 
 @Component({
-    selector: 'cx-otp-login-form',
-    templateUrl: './otp-login-form.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-otp-login-form',
+  templateUrl: './otp-login-form.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class OneTimePasswordLoginFormComponent {
   protected routingService = inject(RoutingService);

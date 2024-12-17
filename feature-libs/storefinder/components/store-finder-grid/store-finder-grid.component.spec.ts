@@ -13,9 +13,9 @@ const countryIsoCode = 'CA';
 const regionIsoCode = 'CA-QC';
 
 @Component({
-    selector: 'cx-store-finder-list-item',
-    template: '',
-    standalone: false
+  selector: 'cx-store-finder-list-item',
+  template: '',
+  standalone: false,
 })
 class MockStoreFinderListItemComponent {
   @Input()

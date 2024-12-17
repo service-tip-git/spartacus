@@ -6,16 +6,16 @@ import { AutoFocusDirective } from './auto-focus.directive';
 import { AutoFocusService } from './auto-focus.service';
 
 @Directive({
-    selector: '[cxAutoFocus]',
-    standalone: false
+  selector: '[cxAutoFocus]',
+  standalone: false,
 })
 class CustomFocusDirective extends AutoFocusDirective {
   @Input('cxAutoFocus') protected config: AutoFocusConfig;
 }
 
 @Component({
-    selector: 'cx-host',
-    template: `
+  selector: 'cx-host',
+  template: `
     <div cxAutoFocus id="a">
       <button id="a1"></button>
       <button id="a2"></button>
@@ -36,7 +36,7 @@ class CustomFocusDirective extends AutoFocusDirective {
       <button id="d2"></button>
     </div>
   `,
-    standalone: false
+  standalone: false,
 })
 class MockComponent {}
 

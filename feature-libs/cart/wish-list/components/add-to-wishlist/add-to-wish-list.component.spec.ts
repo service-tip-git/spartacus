@@ -83,17 +83,17 @@ class MockCurrentProductService {
 }
 
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    standalone: false
+  selector: 'cx-icon',
+  template: '',
+  standalone: false,
 })
 class MockIconComponent {
   @Input() type;
 }
 
 @Pipe({
-    name: 'cxUrl',
-    standalone: false
+  name: 'cxUrl',
+  standalone: false,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
@@ -106,8 +106,8 @@ class MockFeatureConfigService {
 }
 
 @Directive({
-    selector: '[cxAtMessage]',
-    standalone: false
+  selector: '[cxAtMessage]',
+  standalone: false,
 })
 class MockAtMessageDirective {
   @Input() cxAtMessage: string | string[] | undefined;

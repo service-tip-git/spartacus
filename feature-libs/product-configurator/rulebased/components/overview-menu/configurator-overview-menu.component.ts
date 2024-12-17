@@ -17,10 +17,10 @@ import { Configurator } from '../../core/model/configurator.model';
 import { ConfiguratorStorefrontUtilsService } from '../service/configurator-storefront-utils.service';
 
 @Component({
-    selector: 'cx-configurator-overview-menu',
-    templateUrl: './configurator-overview-menu.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-configurator-overview-menu',
+  templateUrl: './configurator-overview-menu.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ConfiguratorOverviewMenuComponent implements AfterViewInit {
   @HostBinding('style.height') height = this.getHeight();

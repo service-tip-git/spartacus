@@ -18,9 +18,9 @@ import { ICON_TYPE } from '../../../cms-components/misc/icon';
 import { Card } from '../../../shared/components/card/card.component';
 
 @Component({
-    selector: 'cx-payment-methods',
-    templateUrl: './payment-methods.component.html',
-    standalone: false
+  selector: 'cx-payment-methods',
+  templateUrl: './payment-methods.component.html',
+  standalone: false,
 })
 export class PaymentMethodsComponent implements OnInit {
   paymentMethods$: Observable<PaymentDetails[]>;

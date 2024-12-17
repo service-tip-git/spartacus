@@ -12,9 +12,9 @@ import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 @Component({
-    selector: 'cx-bulk-pricing-table',
-    templateUrl: './bulk-pricing-table.component.html',
-    standalone: false
+  selector: 'cx-bulk-pricing-table',
+  templateUrl: './bulk-pricing-table.component.html',
+  standalone: false,
 })
 export class BulkPricingTableComponent implements OnInit {
   protected readonly PRODUCT_KEY = 'productCode';

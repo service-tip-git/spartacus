@@ -34,35 +34,35 @@ import { ConfiguratorAttributeSingleSelectionBundleDropdownComponent } from './c
 
 const VALUE_DISPLAY_NAME = 'Lorem Ipsum Dolor';
 @Component({
-    selector: 'cx-configurator-attribute-product-card',
-    template: '',
-    standalone: false
+  selector: 'cx-configurator-attribute-product-card',
+  template: '',
+  standalone: false,
 })
 class MockProductCardComponent {
   @Input() productCardOptions: ConfiguratorAttributeProductCardComponentOptions;
 }
 
 @Component({
-    selector: 'cx-configurator-attribute-quantity',
-    template: '',
-    standalone: false
+  selector: 'cx-configurator-attribute-quantity',
+  template: '',
+  standalone: false,
 })
 class MockConfiguratorAttributeQuantityComponent {
   @Input() quantityOptions: ConfiguratorAttributeQuantityComponentOptions;
 }
 
 @Component({
-    selector: 'cx-configurator-price',
-    template: '',
-    standalone: false
+  selector: 'cx-configurator-price',
+  template: '',
+  standalone: false,
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;
 }
 
 @Directive({
-    selector: '[cxFocus]',
-    standalone: false
+  selector: '[cxFocus]',
+  standalone: false,
 })
 export class MockFocusDirective {
   @Input('cxFocus') protected config: any;

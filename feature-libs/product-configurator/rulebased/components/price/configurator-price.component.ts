@@ -17,10 +17,10 @@ export interface ConfiguratorPriceComponentOptions {
 }
 
 @Component({
-    selector: 'cx-configurator-price',
-    templateUrl: './configurator-price.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-configurator-price',
+  templateUrl: './configurator-price.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;

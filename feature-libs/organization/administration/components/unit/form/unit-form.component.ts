@@ -25,21 +25,21 @@ import { CurrentUnitService } from '../services/current-unit.service';
 import { UnitItemService } from '../services/unit-item.service';
 
 @Component({
-    selector: 'cx-org-unit-form',
-    templateUrl: './unit-form.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    host: { class: 'content-wrapper' },
-    providers: [
-        {
-            provide: ItemService,
-            useExisting: UnitItemService,
-        },
-        {
-            provide: CurrentItemService,
-            useExisting: CurrentUnitService,
-        },
-    ],
-    standalone: false
+  selector: 'cx-org-unit-form',
+  templateUrl: './unit-form.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: { class: 'content-wrapper' },
+  providers: [
+    {
+      provide: ItemService,
+      useExisting: UnitItemService,
+    },
+    {
+      provide: CurrentItemService,
+      useExisting: CurrentUnitService,
+    },
+  ],
+  standalone: false,
 })
 export class UnitFormComponent implements OnInit {
   @Input() i18nRoot = 'orgUnit';

@@ -7,33 +7,33 @@ import { EMPTY } from 'rxjs';
 import { PagedListComponent } from './paged-list.component';
 
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    standalone: false
+  selector: 'cx-icon',
+  template: '',
+  standalone: false,
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
 }
 
 @Component({
-    template: `
+  template: `
     <ng-template #itemTemplate>
       <div id="templateEl"></div>
     </ng-template>
   `,
-    standalone: false
+  standalone: false,
 })
 class MockTemplateComponent {
   @ViewChild('itemTemplate') template: TemplateRef<any>;
 }
 
 @Component({
-    template: `
+  template: `
     <ng-template #headerTemplate>
       <div id="headerTemplateEl"></div>
     </ng-template>
   `,
-    standalone: false
+  standalone: false,
 })
 class MockHeaderTemplateComponent {
   @ViewChild('headerTemplate') template: TemplateRef<any>;

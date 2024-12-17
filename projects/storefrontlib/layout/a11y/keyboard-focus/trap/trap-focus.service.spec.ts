@@ -6,7 +6,7 @@ import { SelectFocusUtility } from '../services';
 import { TrapFocusService } from './trap-focus.service';
 
 @Component({
-    template: `
+  template: `
     <div id="a"></div>
     <div id="b">
       <button id="b1"></button>
@@ -17,7 +17,7 @@ import { TrapFocusService } from './trap-focus.service';
     </div>
     <div id="c"></div>
   `,
-    standalone: false
+  standalone: false,
 })
 class MockComponent {}
 

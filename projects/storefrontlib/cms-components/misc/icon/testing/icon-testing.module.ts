@@ -9,9 +9,9 @@ import { IconLoaderService } from '../icon-loader.service';
 
 // PRIVATE TESTING UTIL
 @Component({
-    selector: 'cx-icon,[cxIcon]',
-    template: `{{ type || cxIcon }}`,
-    standalone: false
+  selector: 'cx-icon,[cxIcon]',
+  template: `{{ type || cxIcon }}`,
+  standalone: false,
 })
 export class MockIconComponent {
   @Input() cxIcon: any;

@@ -19,11 +19,11 @@ import { Configurator } from '../../core/model/configurator.model';
 import { ConfiguratorStorefrontUtilsService } from '../service/configurator-storefront-utils.service';
 
 @Component({
-    selector: 'cx-configurator-overview-form',
-    templateUrl: './configurator-overview-form.component.html',
-    //here we cannot go with OnPush, as we otherwise do not take the change to host binding into account
-    changeDetection: ChangeDetectionStrategy.Default,
-    standalone: false
+  selector: 'cx-configurator-overview-form',
+  templateUrl: './configurator-overview-form.component.html',
+  //here we cannot go with OnPush, as we otherwise do not take the change to host binding into account
+  changeDetection: ChangeDetectionStrategy.Default,
+  standalone: false,
 })
 export class ConfiguratorOverviewFormComponent {
   @HostBinding('class.ghost') ghostStyle = true;

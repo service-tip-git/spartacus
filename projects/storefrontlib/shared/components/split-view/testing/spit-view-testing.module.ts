@@ -8,18 +8,18 @@ import { Component, Input, NgModule, Output } from '@angular/core';
 
 // PRIVATE TESTING UTIL
 @Component({
-    template: '<ng-content></ng-content>',
-    selector: 'cx-split-view',
-    standalone: false
+  template: '<ng-content></ng-content>',
+  selector: 'cx-split-view',
+  standalone: false,
 })
 export class MockSplitViewComponent {
   @Input() hideMode;
 }
 
 @Component({
-    template: '<ng-content></ng-content>',
-    selector: 'cx-view',
-    standalone: false
+  template: '<ng-content></ng-content>',
+  selector: 'cx-view',
+  standalone: false,
 })
 export class MockViewComponent {
   @Input() position: number;

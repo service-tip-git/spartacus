@@ -9,9 +9,9 @@ import { ActivatedRoute } from '@angular/router';
 import { RoutingService } from '@spartacus/core';
 
 @Component({
-    selector: 'cx-login-register',
-    templateUrl: './login-register.component.html',
-    standalone: false
+  selector: 'cx-login-register',
+  templateUrl: './login-register.component.html',
+  standalone: false,
 })
 export class LoginRegisterComponent implements OnInit {
   loginAsGuest = false;

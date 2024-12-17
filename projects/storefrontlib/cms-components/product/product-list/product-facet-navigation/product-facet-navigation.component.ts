@@ -16,10 +16,10 @@ import { ICON_TYPE } from '../../../../cms-components/misc/icon/icon.model';
 import { BreakpointService } from '../../../../layout/breakpoint/breakpoint.service';
 
 @Component({
-    selector: 'cx-product-facet-navigation',
-    templateUrl: './product-facet-navigation.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-product-facet-navigation',
+  templateUrl: './product-facet-navigation.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ProductFacetNavigationComponent {
   iconTypes = ICON_TYPE;

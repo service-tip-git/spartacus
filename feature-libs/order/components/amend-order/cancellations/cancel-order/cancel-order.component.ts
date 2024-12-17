@@ -13,10 +13,10 @@ import { tap } from 'rxjs/operators';
 import { OrderAmendService } from '../../amend-order.service';
 
 @Component({
-    selector: 'cx-cancel-order',
-    templateUrl: './cancel-order.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-cancel-order',
+  templateUrl: './cancel-order.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class CancelOrderComponent {
   orderCode: string;

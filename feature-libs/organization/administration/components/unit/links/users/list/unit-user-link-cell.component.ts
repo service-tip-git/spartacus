@@ -16,8 +16,8 @@ import { ItemService } from '../../../../shared/item.service';
 import { CellComponent } from '../../../../shared/table/cell.component';
 
 @Component({
-    selector: 'cx-org-unit-user-link-cell',
-    template: `
+  selector: 'cx-org-unit-user-link-cell',
+  template: `
     <!--  TODO: (CXSPA-6457) - Remove feature flag next major release -->
     <ng-container *cxFeature="'a11yListOversizedFocus'">
       <a
@@ -41,8 +41,8 @@ import { CellComponent } from '../../../../shared/table/cell.component';
       </a>
     </ng-container>
   `,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class UnitUserRolesCellComponent extends CellComponent {
   unitKey$: Observable<string> = this.itemService.key$;

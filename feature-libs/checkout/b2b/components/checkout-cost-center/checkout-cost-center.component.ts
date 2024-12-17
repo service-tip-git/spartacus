@@ -20,10 +20,10 @@ import { combineLatest, Observable, Subscription } from 'rxjs';
 import { distinctUntilChanged, filter, map, take, tap } from 'rxjs/operators';
 
 @Component({
-    selector: 'cx-cost-center',
-    templateUrl: './checkout-cost-center.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-cost-center',
+  templateUrl: './checkout-cost-center.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class CheckoutCostCenterComponent implements OnInit, OnDestroy {
   protected subscription = new Subscription();

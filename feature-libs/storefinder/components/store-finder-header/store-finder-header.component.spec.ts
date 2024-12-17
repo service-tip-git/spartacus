@@ -4,9 +4,9 @@ import { StoreFinderHeaderComponent } from './store-finder-header.component';
 import { I18nTestingModule } from '@spartacus/core';
 
 @Component({
-    template: '',
-    selector: 'cx-store-finder-search',
-    standalone: false
+  template: '',
+  selector: 'cx-store-finder-search',
+  standalone: false,
 })
 class MockStoreFinderSearchComponent {}
 

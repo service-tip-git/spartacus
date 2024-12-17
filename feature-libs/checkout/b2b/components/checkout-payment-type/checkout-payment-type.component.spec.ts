@@ -18,9 +18,9 @@ import { CheckoutPaymentTypeComponent } from './checkout-payment-type.component'
 import createSpy = jasmine.createSpy;
 
 @Component({
-    selector: 'cx-spinner',
-    template: '',
-    standalone: false
+  selector: 'cx-spinner',
+  template: '',
+  standalone: false,
 })
 class MockSpinnerComponent {}
 

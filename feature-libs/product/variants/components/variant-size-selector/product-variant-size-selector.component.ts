@@ -18,10 +18,10 @@ import {
 import { filter, take } from 'rxjs/operators';
 
 @Component({
-    selector: 'cx-product-variant-size-selector',
-    templateUrl: './product-variant-size-selector.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-product-variant-size-selector',
+  templateUrl: './product-variant-size-selector.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ProductVariantSizeSelectorComponent {
   constructor(

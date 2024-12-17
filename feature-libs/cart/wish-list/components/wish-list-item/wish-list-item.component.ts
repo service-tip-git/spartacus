@@ -21,17 +21,17 @@ import {
 } from '@spartacus/storefront';
 
 @Component({
-    selector: '[cx-wish-list-item], cx-wish-list-item',
-    templateUrl: './wish-list-item.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    providers: [
-        ProductListItemContextSource,
-        {
-            provide: ProductListItemContext,
-            useExisting: ProductListItemContextSource,
-        },
-    ],
-    standalone: false
+  selector: '[cx-wish-list-item], cx-wish-list-item',
+  templateUrl: './wish-list-item.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [
+    ProductListItemContextSource,
+    {
+      provide: ProductListItemContext,
+      useExisting: ProductListItemContextSource,
+    },
+  ],
+  standalone: false,
 })
 export class WishListItemComponent implements OnChanges {
   @Input()

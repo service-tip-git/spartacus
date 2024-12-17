@@ -9,8 +9,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { PDFComponent } from './pdf.component';
 
 @Pipe({
-    name: 'cxTranslate',
-    standalone: false
+  name: 'cxTranslate',
+  standalone: false,
 })
 class MockTranslatePipe implements PipeTransform {
   transform(value: string): any {
@@ -30,9 +30,9 @@ class MockMediaService {
 }
 
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    standalone: false
+  selector: 'cx-icon',
+  template: '',
+  standalone: false,
 })
 class MockCxIconComponent {
   @Input() type: any;

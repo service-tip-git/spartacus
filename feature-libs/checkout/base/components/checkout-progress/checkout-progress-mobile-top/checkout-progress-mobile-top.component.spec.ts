@@ -49,8 +49,8 @@ class MockActiveCartService implements Partial<ActiveCartFacade> {
 }
 
 @Pipe({
-    name: 'cxUrl',
-    standalone: false
+  name: 'cxUrl',
+  standalone: false,
 })
 class MockTranslateUrlPipe implements PipeTransform {
   transform(): any {}

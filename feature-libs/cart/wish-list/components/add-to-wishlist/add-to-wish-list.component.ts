@@ -25,10 +25,10 @@ import { Observable } from 'rxjs';
 import { filter, map, take, tap } from 'rxjs/operators';
 
 @Component({
-    selector: 'cx-add-to-wishlist',
-    templateUrl: './add-to-wish-list.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-add-to-wishlist',
+  templateUrl: './add-to-wish-list.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class AddToWishListComponent {
   product$: Observable<Product> = this.currentProductService.getProduct().pipe(

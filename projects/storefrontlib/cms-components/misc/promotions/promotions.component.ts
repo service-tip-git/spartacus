@@ -8,10 +8,10 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Promotion } from '@spartacus/core';
 
 @Component({
-    selector: 'cx-promotions',
-    templateUrl: './promotions.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-promotions',
+  templateUrl: './promotions.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class PromotionsComponent {
   @Input()

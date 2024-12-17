@@ -24,10 +24,10 @@ import { RequestedDeliveryDateFacade } from '../../facade/requested-delivery-dat
 import { DateValidationService } from '../shared/date-validation.service';
 
 @Component({
-    selector: 'cx-request-delivery-date',
-    templateUrl: './delivery-mode-date-picker.component.html',
-    providers: [CxDatePipe],
-    standalone: false
+  selector: 'cx-request-delivery-date',
+  templateUrl: './delivery-mode-date-picker.component.html',
+  providers: [CxDatePipe],
+  standalone: false,
 })
 export class DeliveryModeDatePickerComponent implements OnInit, OnDestroy {
   constructor(

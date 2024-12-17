@@ -31,10 +31,10 @@ import { Observable, Subscription, combineLatest, of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
 @Component({
-    selector: 'cx-order-confirmation-shipping',
-    templateUrl: './order-confirmation-shipping.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-order-confirmation-shipping',
+  templateUrl: './order-confirmation-shipping.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class OrderConfirmationShippingComponent implements OnInit, OnDestroy {
   @Input() showItemList: boolean = true;

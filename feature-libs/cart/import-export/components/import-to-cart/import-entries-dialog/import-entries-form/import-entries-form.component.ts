@@ -31,10 +31,10 @@ import { ImportProductsFromCsvService } from '../../import-products-from-csv.ser
 import { GlobalMessageType } from '@spartacus/core';
 
 @Component({
-    selector: 'cx-import-entries-form',
-    templateUrl: './import-entries-form.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-import-entries-form',
+  templateUrl: './import-entries-form.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ImportEntriesFormComponent implements OnInit {
   form: UntypedFormGroup;

@@ -14,17 +14,17 @@ import { UnitUserListService } from '../services/unit-user-list.service';
 import { B2BUserService } from '@spartacus/organization/administration/core';
 
 @Component({
-    selector: 'cx-org-unit-user-list',
-    templateUrl: './unit-user-list.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    host: { class: 'content-wrapper' },
-    providers: [
-        {
-            provide: ListService,
-            useExisting: UnitUserListService,
-        },
-    ],
-    standalone: false
+  selector: 'cx-org-unit-user-list',
+  templateUrl: './unit-user-list.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: { class: 'content-wrapper' },
+  providers: [
+    {
+      provide: ListService,
+      useExisting: UnitUserListService,
+    },
+  ],
+  standalone: false,
 })
 export class UnitUserListComponent {
   routerKey = ROUTE_PARAMS.userCode;

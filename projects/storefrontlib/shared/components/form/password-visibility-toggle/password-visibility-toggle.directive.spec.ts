@@ -18,7 +18,7 @@ const mockFormConfig: FormConfig = {
 };
 
 @Component({
-    template: `
+  template: `
     <div>
       <form [formGroup]="form">
         <input
@@ -34,7 +34,7 @@ const mockFormConfig: FormConfig = {
       </form>
     </div>
   `,
-    standalone: false
+  standalone: false,
 })
 class MockFormComponent {
   form: UntypedFormGroup = new UntypedFormGroup({

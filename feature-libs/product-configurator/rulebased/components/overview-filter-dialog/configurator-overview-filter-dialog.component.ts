@@ -12,9 +12,9 @@ import {
 } from '@spartacus/storefront';
 
 @Component({
-    selector: 'cx-configurator-overview-filter-dialog',
-    templateUrl: './configurator-overview-filter-dialog.component.html',
-    standalone: false
+  selector: 'cx-configurator-overview-filter-dialog',
+  templateUrl: './configurator-overview-filter-dialog.component.html',
+  standalone: false,
 })
 export class ConfiguratorOverviewFilterDialogComponent {
   constructor(protected launchDialogService: LaunchDialogService) {}

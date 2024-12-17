@@ -13,10 +13,10 @@ import {
 import { Product } from '@spartacus/core';
 
 @Component({
-    selector: 'cx-product-images',
-    templateUrl: './product-image-zoom-product-images.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-product-images',
+  templateUrl: './product-image-zoom-product-images.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ProductImageZoomProductImagesComponent extends ProductImagesComponent {
   expandImage = new BehaviorSubject(false);

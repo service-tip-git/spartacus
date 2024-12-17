@@ -12,10 +12,10 @@ import { Observable } from 'rxjs';
 import { OrderAmendService } from '../amend-order.service';
 
 @Component({
-    selector: 'cx-amend-order-items',
-    templateUrl: './amend-order-items.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-amend-order-items',
+  templateUrl: './amend-order-items.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class CancelOrReturnItemsComponent {
   @Input() entries: OrderEntry[];

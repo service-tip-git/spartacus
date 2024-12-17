@@ -17,11 +17,11 @@ import { VisualPickingProductListService } from './product-list/visual-picking-p
 import { VisualPickingTabService } from './visual-picking-tab.service';
 
 @Component({
-    selector: 'cx-epd-visualization-visual-picking-tab',
-    templateUrl: './visual-picking-tab.component.html',
-    providers: [VisualPickingTabService],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-epd-visualization-visual-picking-tab',
+  templateUrl: './visual-picking-tab.component.html',
+  providers: [VisualPickingTabService],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class VisualPickingTabComponent implements AfterViewInit {
   constructor(protected visualPickingTabService: VisualPickingTabService) {}

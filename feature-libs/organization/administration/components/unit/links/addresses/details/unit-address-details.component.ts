@@ -19,17 +19,17 @@ import { CurrentUnitService } from '../../../services/current-unit.service';
 import { UnitAddressItemService } from '../services/unit-address-item.service';
 
 @Component({
-    selector: 'cx-org-unit-address-details',
-    templateUrl: './unit-address-details.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    host: { class: 'content-wrapper' },
-    providers: [
-        {
-            provide: ItemService,
-            useExisting: UnitAddressItemService,
-        },
-    ],
-    standalone: false
+  selector: 'cx-org-unit-address-details',
+  templateUrl: './unit-address-details.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: { class: 'content-wrapper' },
+  providers: [
+    {
+      provide: ItemService,
+      useExisting: UnitAddressItemService,
+    },
+  ],
+  standalone: false,
 })
 export class UnitAddressDetailsComponent {
   unit$: Observable<B2BUnit | undefined> = this.currentUnitService.item$;

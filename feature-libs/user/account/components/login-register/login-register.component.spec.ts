@@ -16,8 +16,8 @@ describe('LoginRegisterComponent', () => {
 
   @Pipe({
     name: 'cxUrl',
-    standalone: false
-})
+    standalone: false,
+  })
   class MockUrlPipe implements PipeTransform {
     transform() {}
   }

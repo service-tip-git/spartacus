@@ -14,10 +14,10 @@ import { RoutingService } from '@spartacus/core';
 import { UntypedFormGroup } from '@angular/forms';
 
 @Component({
-    selector: 'cx-amend-order-actions',
-    templateUrl: './amend-order-actions.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-amend-order-actions',
+  templateUrl: './amend-order-actions.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class AmendOrderActionsComponent {
   @Input() orderCode: string;

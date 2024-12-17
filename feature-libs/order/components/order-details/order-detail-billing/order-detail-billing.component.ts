@@ -17,10 +17,10 @@ import { map } from 'rxjs/operators';
 import { OrderDetailsService } from '../order-details.service';
 
 @Component({
-    selector: 'cx-order-detail-billing',
-    templateUrl: './order-detail-billing.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-order-detail-billing',
+  templateUrl: './order-detail-billing.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class OrderDetailBillingComponent {
   order$: Observable<Order | undefined> =

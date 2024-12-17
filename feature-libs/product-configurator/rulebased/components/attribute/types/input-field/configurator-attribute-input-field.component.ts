@@ -22,10 +22,10 @@ import { ConfiguratorAttributeCompositionContext } from '../../composition/confi
 import { ConfiguratorAttributeBaseComponent } from '../base/configurator-attribute-base.component';
 
 @Component({
-    selector: 'cx-configurator-attribute-input-field',
-    templateUrl: './configurator-attribute-input-field.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-configurator-attribute-input-field',
+  templateUrl: './configurator-attribute-input-field.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ConfiguratorAttributeInputFieldComponent
   extends ConfiguratorAttributeBaseComponent

@@ -26,17 +26,17 @@ const owner: CommonConfigurator.Owner =
 const product: Product = { code: 'pCode' };
 
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    standalone: false
+  selector: 'cx-icon',
+  template: '',
+  standalone: false,
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
 }
 
 @Directive({
-    selector: '[cxFocus]',
-    standalone: false
+  selector: '[cxFocus]',
+  standalone: false,
 })
 export class MockKeyboadFocusDirective {
   @Input('cxFocus') config: FocusConfig = {};

@@ -12,9 +12,9 @@ import {
 } from '@spartacus/core';
 
 @Component({
-    selector: 'cx-consent-management-form',
-    templateUrl: './consent-management-form.component.html',
-    standalone: false
+  selector: 'cx-consent-management-form',
+  templateUrl: './consent-management-form.component.html',
+  standalone: false,
 })
 export class ConsentManagementFormComponent implements OnInit {
   consentGiven = false;

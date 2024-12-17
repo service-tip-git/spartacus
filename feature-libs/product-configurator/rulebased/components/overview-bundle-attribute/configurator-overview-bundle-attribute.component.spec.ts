@@ -17,8 +17,8 @@ import { ConfiguratorPriceComponentOptions } from '../price/configurator-price.c
 import { ConfiguratorOverviewBundleAttributeComponent } from './configurator-overview-bundle-attribute.component';
 
 @Pipe({
-    name: 'cxNumeric',
-    standalone: false
+  name: 'cxNumeric',
+  standalone: false,
 })
 class MockNumericPipe implements PipeTransform {
   transform(): any {}
@@ -54,10 +54,10 @@ class MockProductService {
 }
 
 @Component({
-    // tslint:disable-next-line: component-selector
-    selector: 'cx-configurator-price',
-    template: '',
-    standalone: false
+  // tslint:disable-next-line: component-selector
+  selector: 'cx-configurator-price',
+  template: '',
+  standalone: false,
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;

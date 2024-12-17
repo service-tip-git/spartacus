@@ -16,17 +16,17 @@ import { CurrentUserGroupService } from '../services/current-user-group.service'
 import { UserGroupUserListService } from './user-group-user-list.service';
 
 @Component({
-    selector: 'cx-org-user-group-user-list',
-    templateUrl: './user-group-user-list.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    host: { class: 'content-wrapper' },
-    providers: [
-        {
-            provide: ListService,
-            useExisting: UserGroupUserListService,
-        },
-    ],
-    standalone: false
+  selector: 'cx-org-user-group-user-list',
+  templateUrl: './user-group-user-list.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: { class: 'content-wrapper' },
+  providers: [
+    {
+      provide: ListService,
+      useExisting: UserGroupUserListService,
+    },
+  ],
+  standalone: false,
 })
 export class UserGroupUserListComponent {
   constructor(

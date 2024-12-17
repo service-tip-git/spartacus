@@ -8,23 +8,23 @@ import { CommonQuoteTestUtilsService } from '../testing/common-quote-test-utils.
 import { QuoteSummaryComponent } from './quote-summary.component';
 
 @Component({
-    selector: 'cx-quote-summary-prices',
-    template: '',
-    standalone: false
+  selector: 'cx-quote-summary-prices',
+  template: '',
+  standalone: false,
 })
 class MockQuoteSummaryPricesComponent {}
 
 @Component({
-    selector: 'cx-quote-summary-actions',
-    template: '',
-    standalone: false
+  selector: 'cx-quote-summary-actions',
+  template: '',
+  standalone: false,
 })
 class MockQuoteSummaryActionsComponent {}
 
 @Component({
-    selector: 'cx-quote-summary-seller-edit',
-    template: '',
-    standalone: false
+  selector: 'cx-quote-summary-seller-edit',
+  template: '',
+  standalone: false,
 })
 class MockQuoteSummarySellerEditComponent {}
 

@@ -28,8 +28,8 @@ import { CommonConfiguratorTestUtilsService } from '../../testing/common-configu
 import { ConfiguratorCartEntryBundleInfoComponent } from './configurator-cart-entry-bundle-info.component';
 
 @Pipe({
-    name: 'cxNumeric',
-    standalone: false
+  name: 'cxNumeric',
+  standalone: false,
 })
 class MockNumericPipe implements PipeTransform {
   transform(value: string): string {
@@ -38,9 +38,9 @@ class MockNumericPipe implements PipeTransform {
 }
 
 @Component({
-    selector: 'cx-configure-cart-entry',
-    template: '',
-    standalone: false
+  selector: 'cx-configure-cart-entry',
+  template: '',
+  standalone: false,
 })
 class MockConfigureCartEntryComponent {
   @Input() cartEntry: OrderEntry;

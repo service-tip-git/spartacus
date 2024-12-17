@@ -21,10 +21,10 @@ import { SiteContextComponentService } from './site-context-component.service';
 import { SiteContextType } from './site-context.model';
 
 @Component({
-    selector: 'cx-site-context-selector',
-    templateUrl: './site-context-selector.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-site-context-selector',
+  templateUrl: './site-context-selector.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class SiteContextSelectorComponent {
   /**

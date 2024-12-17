@@ -37,10 +37,10 @@ import { FacetComponent } from '../facet/facet.component';
 import { FacetService } from '../services/facet.service';
 
 @Component({
-    selector: 'cx-facet-list',
-    templateUrl: './facet-list.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-facet-list',
+  templateUrl: './facet-list.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class FacetListComponent implements OnInit, OnDestroy, AfterViewInit {
   protected subscriptions = new Subscription();

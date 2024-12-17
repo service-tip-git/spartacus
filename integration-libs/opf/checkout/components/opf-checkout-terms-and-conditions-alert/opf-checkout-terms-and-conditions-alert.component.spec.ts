@@ -3,17 +3,17 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { OpfCheckoutTermsAndConditionsAlertComponent } from './opf-checkout-terms-and-conditions-alert.component';
 
 @Component({
-    selector: 'cx-icon',
-    template: '<ng-content></ng-content>',
-    standalone: false
+  selector: 'cx-icon',
+  template: '<ng-content></ng-content>',
+  standalone: false,
 })
 class MockIconComponent {
   @Input() type: string;
 }
 
 @Pipe({
-    name: 'cxTranslate',
-    standalone: false
+  name: 'cxTranslate',
+  standalone: false,
 })
 class MockTranslatePipe implements PipeTransform {
   transform(): any {}

@@ -9,10 +9,10 @@ import { ICON_TYPE } from '../../../../cms-components/misc/icon/icon.model';
 import { PasswordInputState } from './password-input-visibility.model';
 
 @Component({
-    selector: 'cx-password-visibility-toggle',
-    templateUrl: './password-visibility-toggle.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-password-visibility-toggle',
+  templateUrl: './password-visibility-toggle.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class PasswordVisibilityToggleComponent {
   protected showState: PasswordInputState = {

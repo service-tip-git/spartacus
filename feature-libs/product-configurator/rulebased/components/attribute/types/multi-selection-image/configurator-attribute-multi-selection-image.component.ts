@@ -21,11 +21,11 @@ import { ConfiguratorAttributePriceChangeService } from '../../price-change/conf
 import { ConfiguratorAttributeBaseComponent } from '../base/configurator-attribute-base.component';
 
 @Component({
-    selector: 'cx-configurator-attribute-multi-selection-image',
-    templateUrl: './configurator-attribute-multi-selection-image.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    providers: [ConfiguratorAttributePriceChangeService],
-    standalone: false
+  selector: 'cx-configurator-attribute-multi-selection-image',
+  templateUrl: './configurator-attribute-multi-selection-image.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [ConfiguratorAttributePriceChangeService],
+  standalone: false,
 })
 export class ConfiguratorAttributeMultiSelectionImageComponent
   extends ConfiguratorAttributeBaseComponent

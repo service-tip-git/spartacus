@@ -20,17 +20,17 @@ import { UnitUserRolesFormService } from './unit-user-roles-form.service';
 import { UnitUserRolesItemService } from './unit-user-roles-item.service';
 
 @Component({
-    selector: 'cx-org-unit-user-roles',
-    templateUrl: './unit-user-roles.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    host: { class: 'content-wrapper' },
-    providers: [
-        {
-            provide: ItemService,
-            useExisting: UnitUserRolesItemService,
-        },
-    ],
-    standalone: false
+  selector: 'cx-org-unit-user-roles',
+  templateUrl: './unit-user-roles.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: { class: 'content-wrapper' },
+  providers: [
+    {
+      provide: ItemService,
+      useExisting: UnitUserRolesItemService,
+    },
+  ],
+  standalone: false,
 })
 export class UnitUserRolesFormComponent {
   protected item: B2BUser | undefined;

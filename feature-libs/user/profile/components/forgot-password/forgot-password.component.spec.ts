@@ -26,8 +26,8 @@ class MockForgotPasswordService
   resetForm = createSpy().and.stub();
 }
 @Pipe({
-    name: 'cxUrl',
-    standalone: false
+  name: 'cxUrl',
+  standalone: false,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}

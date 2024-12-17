@@ -39,12 +39,12 @@ import { Observable, Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
 @Component({
-    selector: 'cx-customer-selection',
-    templateUrl: './customer-selection.component.html',
-    host: {
-        '(document:click)': 'onDocumentClick($event)',
-    },
-    standalone: false
+  selector: 'cx-customer-selection',
+  templateUrl: './customer-selection.component.html',
+  host: {
+    '(document:click)': 'onDocumentClick($event)',
+  },
+  standalone: false,
 })
 export class CustomerSelectionComponent implements OnInit, OnDestroy {
   customerSelectionForm: UntypedFormGroup;

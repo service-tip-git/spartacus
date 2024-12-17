@@ -11,10 +11,10 @@ import { distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { PageLayoutService } from './page-layout.service';
 
 @Component({
-    selector: 'cx-page-layout',
-    templateUrl: './page-layout.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-page-layout',
+  templateUrl: './page-layout.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class PageLayoutComponent {
   @Input() set section(value: string) {

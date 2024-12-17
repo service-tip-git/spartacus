@@ -12,9 +12,9 @@ import { EMPTY, Observable } from 'rxjs';
 import { CommonConfiguratorUtilsService } from '../../shared/utils/common-configurator-utils.service';
 
 @Component({
-    selector: 'cx-configurator-issues-notification',
-    templateUrl: './configurator-issues-notification.component.html',
-    standalone: false
+  selector: 'cx-configurator-issues-notification',
+  templateUrl: './configurator-issues-notification.component.html',
+  standalone: false,
 })
 export class ConfiguratorIssuesNotificationComponent {
   iconTypes = ICON_TYPE;

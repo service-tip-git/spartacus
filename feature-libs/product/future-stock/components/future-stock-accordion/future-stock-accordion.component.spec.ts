@@ -9,9 +9,9 @@ import { FutureStockService } from '../../core/services';
 import { FutureStockAccordionComponent } from './future-stock-accordion.component';
 
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    standalone: false
+  selector: 'cx-icon',
+  template: '',
+  standalone: false,
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;

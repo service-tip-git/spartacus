@@ -12,28 +12,28 @@ class MockOutletService {
 }
 
 @Component({
-    template: '',
-    standalone: false
+  template: '',
+  standalone: false,
 })
 class MockGlobalDataComponent {}
 @Component({
-    template: '',
-    standalone: false
+  template: '',
+  standalone: false,
 })
 class MockGlobalHeaderComponent {}
 @Component({
-    template: '',
-    standalone: false
+  template: '',
+  standalone: false,
 })
 class MockDataComponent {}
 @Component({
-    template: '',
-    standalone: false
+  template: '',
+  standalone: false,
 })
 class MockHeaderComponent {}
 @Component({
-    template: '',
-    standalone: false
+  template: '',
+  standalone: false,
 })
 class MockCodeRendererComponent {}
 

@@ -8,10 +8,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CellComponent } from '../cell.component';
 
 @Component({
-    selector: 'cx-org-status-cell',
-    templateUrl: './status-cell.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-org-status-cell',
+  templateUrl: './status-cell.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class StatusCellComponent extends CellComponent {
   get label() {

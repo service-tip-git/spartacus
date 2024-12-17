@@ -33,11 +33,11 @@ import { ImportProductsFromCsvService } from '../../import-products-from-csv.ser
 import { ImportEntriesFormComponent } from '../import-entries-form/import-entries-form.component';
 
 @Component({
-    selector: 'cx-import-to-new-saved-cart-form',
-    templateUrl: './import-to-new-saved-cart-form.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    providers: [CxDatePipe],
-    standalone: false
+  selector: 'cx-import-to-new-saved-cart-form',
+  templateUrl: './import-to-new-saved-cart-form.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [CxDatePipe],
+  standalone: false,
 })
 export class ImportToNewSavedCartFormComponent extends ImportEntriesFormComponent {
   descriptionMaxLength: number = 250;

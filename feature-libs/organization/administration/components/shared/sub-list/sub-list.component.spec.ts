@@ -37,10 +37,10 @@ const mockEmptyList: EntitiesModel<any> = {
 };
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'cx-table',
-    template: '',
-    standalone: false
+  // eslint-disable-next-line @angular-eslint/component-selector
+  selector: 'cx-table',
+  template: '',
+  standalone: false,
 })
 class MockTableComponent {
   @Input() data;
@@ -79,9 +79,9 @@ class ActivatedRouteMock {
 }
 
 @Directive({
-    // eslint-disable-next-line @angular-eslint/directive-selector
-    selector: '[cxFocus]',
-    standalone: false
+  // eslint-disable-next-line @angular-eslint/directive-selector
+  selector: '[cxFocus]',
+  standalone: false,
 })
 export class MockKeyboadFocusDirective {
   @Input('cxFocus') config: FocusConfig = {};

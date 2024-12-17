@@ -7,8 +7,8 @@ import { MockFeatureDirective } from 'projects/storefrontlib/shared/test/mock-fe
 import { MessageComponent } from './message.component';
 
 @Component({
-    template: `<cx-message>Test</cx-message>`,
-    standalone: false
+  template: `<cx-message>Test</cx-message>`,
+  standalone: false,
 })
 class TestHostComponent {}
 
@@ -20,17 +20,17 @@ const mockCssClassForMessage: Record<string, boolean> = {
 };
 
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    standalone: false
+  selector: 'cx-icon',
+  template: '',
+  standalone: false,
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
 }
 
 @Directive({
-    selector: '[cxAtMessage]',
-    standalone: false
+  selector: '[cxAtMessage]',
+  standalone: false,
 })
 class MockAtMessageDirective {
   @Input() cxAtMessage: string | string[] | undefined;

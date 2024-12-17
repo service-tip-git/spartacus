@@ -16,10 +16,10 @@ import { ICON_TYPE } from '@spartacus/storefront';
 import { filter, take } from 'rxjs';
 
 @Component({
-    selector: 'cx-opf-checkout-terms-and-conditions-alert',
-    templateUrl: './opf-checkout-terms-and-conditions-alert.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-opf-checkout-terms-and-conditions-alert',
+  templateUrl: './opf-checkout-terms-and-conditions-alert.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class OpfCheckoutTermsAndConditionsAlertComponent implements OnInit {
   protected opfMetadataStoreService = inject(OpfMetadataStoreService);

@@ -70,9 +70,9 @@ class MockBreakpointService {
 }
 
 @Component({
-    selector: 'cx-hamburger-menu',
-    template: '',
-    standalone: false
+  selector: 'cx-hamburger-menu',
+  template: '',
+  standalone: false,
 })
 class MockHamburgerMenuComponent {}
 

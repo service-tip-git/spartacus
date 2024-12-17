@@ -211,9 +211,9 @@ class MockVisualViewerService {
 }
 
 @Component({
-    selector: 'cx-epd-visualization-animation-slider',
-    template: '',
-    standalone: false
+  selector: 'cx-epd-visualization-animation-slider',
+  template: '',
+  standalone: false,
 })
 export class MockVisualViewerAnimationSliderComponent {
   set value(value: number) {

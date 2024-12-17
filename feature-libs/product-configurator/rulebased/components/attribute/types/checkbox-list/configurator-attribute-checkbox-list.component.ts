@@ -22,11 +22,11 @@ import { ConfiguratorAttributeQuantityService } from '../../quantity/configurato
 import { ConfiguratorAttributeMultiSelectionBaseComponent } from '../base/configurator-attribute-multi-selection-base.component';
 
 @Component({
-    selector: 'cx-configurator-attribute-checkbox-list',
-    templateUrl: './configurator-attribute-checkbox-list.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    providers: [ConfiguratorAttributePriceChangeService],
-    standalone: false
+  selector: 'cx-configurator-attribute-checkbox-list',
+  templateUrl: './configurator-attribute-checkbox-list.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [ConfiguratorAttributePriceChangeService],
+  standalone: false,
 })
 export class ConfiguratorAttributeCheckBoxListComponent
   extends ConfiguratorAttributeMultiSelectionBaseComponent

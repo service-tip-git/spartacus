@@ -10,9 +10,9 @@ import { ConfiguratorPriceComponentOptions } from '../price/configurator-price.c
 import { ConfiguratorOverviewAttributeComponent } from './configurator-overview-attribute.component';
 
 @Component({
-    selector: 'cx-configurator-price',
-    template: '',
-    standalone: false
+  selector: 'cx-configurator-price',
+  template: '',
+  standalone: false,
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;

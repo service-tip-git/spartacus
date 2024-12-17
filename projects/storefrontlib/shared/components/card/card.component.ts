@@ -35,9 +35,9 @@ export interface Card {
 }
 
 @Component({
-    selector: 'cx-card',
-    templateUrl: './card.component.html',
-    standalone: false
+  selector: 'cx-card',
+  templateUrl: './card.component.html',
+  standalone: false,
 })
 export class CardComponent implements OnInit {
   iconTypes = ICON_TYPE;

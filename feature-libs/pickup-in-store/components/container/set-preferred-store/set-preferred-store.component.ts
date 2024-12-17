@@ -15,9 +15,9 @@ import { ICON_TYPE, OutletContextData } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 
 @Component({
-    selector: 'cx-set-preferred-store',
-    templateUrl: './set-preferred-store.component.html',
-    standalone: false
+  selector: 'cx-set-preferred-store',
+  templateUrl: './set-preferred-store.component.html',
+  standalone: false,
 })
 export class SetPreferredStoreComponent implements OnInit, OnDestroy {
   readonly ICON_TYPE = ICON_TYPE;

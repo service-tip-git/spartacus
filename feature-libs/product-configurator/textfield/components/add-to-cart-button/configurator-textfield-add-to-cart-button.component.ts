@@ -10,10 +10,10 @@ import { ConfiguratorTextfieldService } from '../../core/facade/configurator-tex
 import { ConfiguratorTextfield } from '../../core/model/configurator-textfield.model';
 
 @Component({
-    selector: 'cx-configurator-textfield-add-to-cart-button',
-    templateUrl: './configurator-textfield-add-to-cart-button.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-configurator-textfield-add-to-cart-button',
+  templateUrl: './configurator-textfield-add-to-cart-button.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ConfiguratorTextfieldAddToCartButtonComponent {
   @Input() configuration: ConfiguratorTextfield.Configuration;

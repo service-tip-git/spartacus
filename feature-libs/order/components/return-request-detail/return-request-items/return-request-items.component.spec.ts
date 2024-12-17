@@ -18,9 +18,9 @@ class MockCheckoutService {
 }
 
 @Component({
-    template: '',
-    selector: 'cx-media',
-    standalone: false
+  template: '',
+  selector: 'cx-media',
+  standalone: false,
 })
 class MockMediaComponent {
   @Input() container;

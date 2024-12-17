@@ -34,9 +34,9 @@ import { ConfiguratorFormComponent } from './configurator-form.component';
 import { KeyboardFocusService } from '@spartacus/storefront';
 
 @Component({
-    selector: 'cx-configurator-group',
-    template: '',
-    standalone: false
+  selector: 'cx-configurator-group',
+  template: '',
+  standalone: false,
 })
 class MockConfiguratorGroupComponent {
   @Input() group: Configurator.Group;

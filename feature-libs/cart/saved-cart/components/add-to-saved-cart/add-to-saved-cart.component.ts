@@ -20,10 +20,10 @@ import { Observable, Subscription, combineLatest } from 'rxjs';
 import { map, take, tap } from 'rxjs/operators';
 
 @Component({
-    selector: 'cx-add-to-saved-cart',
-    templateUrl: './add-to-saved-cart.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-add-to-saved-cart',
+  templateUrl: './add-to-saved-cart.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class AddToSavedCartComponent implements OnInit, OnDestroy {
   protected subscription = new Subscription();

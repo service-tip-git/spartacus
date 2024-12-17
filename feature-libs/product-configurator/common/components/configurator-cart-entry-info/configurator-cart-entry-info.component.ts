@@ -11,9 +11,9 @@ import { EMPTY, Observable } from 'rxjs';
 import { CommonConfiguratorUtilsService } from '../../shared/utils/common-configurator-utils.service';
 
 @Component({
-    selector: 'cx-configurator-cart-entry-info',
-    templateUrl: './configurator-cart-entry-info.component.html',
-    standalone: false
+  selector: 'cx-configurator-cart-entry-info',
+  templateUrl: './configurator-cart-entry-info.component.html',
+  standalone: false,
 })
 export class ConfiguratorCartEntryInfoComponent {
   constructor(

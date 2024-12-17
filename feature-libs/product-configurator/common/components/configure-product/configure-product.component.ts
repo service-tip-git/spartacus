@@ -24,10 +24,10 @@ import {
 import { ConfiguratorProductScope } from '../../core/model/configurator-product-scope';
 
 @Component({
-    selector: 'cx-configure-product',
-    templateUrl: './configure-product.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-configure-product',
+  templateUrl: './configure-product.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ConfigureProductComponent {
   nonConfigurable: Product = { configurable: false };

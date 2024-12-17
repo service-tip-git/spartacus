@@ -27,17 +27,17 @@ class MockGroupService {}
 const VALUE_NAME_3 = 'val3';
 
 @Directive({
-    selector: '[cxFocus]',
-    standalone: false
+  selector: '[cxFocus]',
+  standalone: false,
 })
 export class MockFocusDirective {
   @Input('cxFocus') protected config: any;
 }
 
 @Component({
-    selector: 'cx-configurator-price',
-    template: '',
-    standalone: false
+  selector: 'cx-configurator-price',
+  template: '',
+  standalone: false,
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;

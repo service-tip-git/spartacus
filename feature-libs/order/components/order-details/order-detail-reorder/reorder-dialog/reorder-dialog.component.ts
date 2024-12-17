@@ -32,10 +32,10 @@ import {
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
-    selector: 'cx-reorder-dialog',
-    templateUrl: './reorder-dialog.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-reorder-dialog',
+  templateUrl: './reorder-dialog.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ReorderDialogComponent {
   iconTypes = ICON_TYPE;

@@ -22,16 +22,16 @@ import {
 import { ConfiguratorOverviewNotificationBannerComponent } from './configurator-overview-notification-banner.component';
 
 @Pipe({
-    name: 'cxTranslate',
-    standalone: false
+  name: 'cxTranslate',
+  standalone: false,
 })
 class MockTranslatePipe implements PipeTransform {
   transform(): any {}
 }
 
 @Pipe({
-    name: 'cxUrl',
-    standalone: false
+  name: 'cxUrl',
+  standalone: false,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
@@ -117,9 +117,9 @@ function initialize(router: ConfiguratorRouter.Data) {
   fixture.detectChanges();
 }
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    standalone: false
+  selector: 'cx-icon',
+  template: '',
+  standalone: false,
 })
 class MockCxIconComponent {
   @Input() type: any;

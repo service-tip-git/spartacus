@@ -26,9 +26,9 @@ import { startWith } from 'rxjs/operators';
  * so that the state of the control can be managed outside of this component.
  */
 @Component({
-    selector: 'cx-item-counter',
-    templateUrl: './item-counter.component.html',
-    standalone: false
+  selector: 'cx-item-counter',
+  templateUrl: './item-counter.component.html',
+  standalone: false,
 })
 export class ItemCounterComponent implements OnInit, OnDestroy {
   /**

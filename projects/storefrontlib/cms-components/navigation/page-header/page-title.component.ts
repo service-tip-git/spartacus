@@ -20,10 +20,10 @@ import { filter, map } from 'rxjs/operators';
 import { CmsComponentData } from '../../../cms-structure/page/model/cms-component-data';
 
 @Component({
-    selector: 'cx-page-title',
-    templateUrl: './page-title.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-page-title',
+  templateUrl: './page-title.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class PageTitleComponent implements OnInit, AfterViewInit {
   title$: Observable<string>;

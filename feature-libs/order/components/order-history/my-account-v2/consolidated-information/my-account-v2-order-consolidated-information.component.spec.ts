@@ -34,17 +34,17 @@ const mock_images: Images[] = [
 ];
 
 @Component({
-    template: '',
-    selector: 'cx-media',
-    standalone: false
+  template: '',
+  selector: 'cx-media',
+  standalone: false,
 })
 class MockMediaComponent {
   @Input() container: MediaContainer;
 }
 
 @Pipe({
-    name: 'cxUrl',
-    standalone: false
+  name: 'cxUrl',
+  standalone: false,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}

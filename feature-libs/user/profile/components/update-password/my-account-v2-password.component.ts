@@ -11,10 +11,10 @@ import { Observable } from 'rxjs';
 import { UpdatePasswordComponentService } from './update-password-component.service';
 
 @Component({
-    selector: 'cx-my-account-v2-password',
-    templateUrl: './my-account-v2-password.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-my-account-v2-password',
+  templateUrl: './my-account-v2-password.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class MyAccountV2PasswordComponent {
   protected service = inject(UpdatePasswordComponentService);

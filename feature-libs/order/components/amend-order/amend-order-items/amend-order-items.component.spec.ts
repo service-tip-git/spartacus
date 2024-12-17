@@ -33,9 +33,9 @@ mockEntries.forEach((entry) => {
 });
 
 @Component({
-    template: '',
-    selector: 'cx-media',
-    standalone: false
+  template: '',
+  selector: 'cx-media',
+  standalone: false,
 })
 class MockMediaComponent {
   @Input() container;
@@ -43,9 +43,9 @@ class MockMediaComponent {
 }
 
 @Component({
-    template: '',
-    selector: 'cx-item-counter',
-    standalone: false
+  template: '',
+  selector: 'cx-item-counter',
+  standalone: false,
 })
 class MockItemCounterComponent {
   @Input() min;

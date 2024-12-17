@@ -21,10 +21,10 @@ import { take } from 'rxjs/operators';
 import { MyCouponsComponentService } from '../my-coupons.component.service';
 
 @Component({
-    selector: 'cx-coupon-card',
-    templateUrl: './coupon-card.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-coupon-card',
+  templateUrl: './coupon-card.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class CouponCardComponent {
   @Input() coupon: CustomerCoupon;

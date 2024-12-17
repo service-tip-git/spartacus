@@ -19,8 +19,8 @@ const MockMessageData: Partial<MessageData> = {
 };
 
 @Component({
-    template: '',
-    standalone: false
+  template: '',
+  standalone: false,
 })
 class MessageComponent extends BaseMessageComponent {}
 

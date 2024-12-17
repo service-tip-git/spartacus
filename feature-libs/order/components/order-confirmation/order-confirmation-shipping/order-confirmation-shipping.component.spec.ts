@@ -45,9 +45,9 @@ class MockOrderFacade implements Partial<OrderFacade> {
 }
 
 @Component({
-    selector: 'cx-card',
-    template: '',
-    standalone: false
+  selector: 'cx-card',
+  template: '',
+  standalone: false,
 })
 class MockCardComponent {
   @Input()

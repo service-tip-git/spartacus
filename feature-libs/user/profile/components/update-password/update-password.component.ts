@@ -16,11 +16,11 @@ import { Observable } from 'rxjs';
 import { UpdatePasswordComponentService } from './update-password-component.service';
 
 @Component({
-    selector: 'cx-update-password',
-    templateUrl: './update-password.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    host: { class: 'user-form' },
-    standalone: false
+  selector: 'cx-update-password',
+  templateUrl: './update-password.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: { class: 'user-form' },
+  standalone: false,
 })
 export class UpdatePasswordComponent {
   @Optional() protected routingService = inject(RoutingService, {

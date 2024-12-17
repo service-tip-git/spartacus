@@ -19,9 +19,9 @@ class MockAuthService implements Partial<AuthService> {
 }
 
 @Component({
-    selector: 'cx-page-layout',
-    template: 'mock',
-    standalone: false
+  selector: 'cx-page-layout',
+  template: 'mock',
+  standalone: false,
 })
 class MockPageLayoutComponent {}
 

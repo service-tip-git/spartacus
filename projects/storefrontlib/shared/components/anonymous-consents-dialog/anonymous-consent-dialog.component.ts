@@ -31,9 +31,9 @@ import { FocusConfig } from '../../../layout/a11y/keyboard-focus/index';
 import { LaunchDialogService } from '../../../layout/launch-dialog/services/launch-dialog.service';
 
 @Component({
-    selector: 'cx-anonymous-consent-dialog',
-    templateUrl: './anonymous-consent-dialog.component.html',
-    standalone: false
+  selector: 'cx-anonymous-consent-dialog',
+  templateUrl: './anonymous-consent-dialog.component.html',
+  standalone: false,
 })
 export class AnonymousConsentDialogComponent implements OnInit, OnDestroy {
   @HostBinding('attr.role') role = 'dialog';

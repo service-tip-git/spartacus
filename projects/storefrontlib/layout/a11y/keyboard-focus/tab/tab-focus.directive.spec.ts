@@ -6,21 +6,21 @@ import { TabFocusDirective } from './tab-focus.directive';
 import { TabFocusService } from './tab-focus.service';
 
 @Directive({
-    selector: '[cxTabFocus]',
-    standalone: false
+  selector: '[cxTabFocus]',
+  standalone: false,
 })
 class CustomFocusDirective extends TabFocusDirective {
   @Input('cxTabFocus') protected config: TabFocusConfig;
 }
 
 @Component({
-    selector: 'cx-host',
-    template: `
+  selector: 'cx-host',
+  template: `
     <div cxTabFocus id="a"></div>
     <div [cxTabFocus]="{ tab: true }" id="b"></div>
     <div [cxTabFocus]="{ tab: false }" id="c"></div>
   `,
-    standalone: false
+  standalone: false,
 })
 class MockComponent {}
 

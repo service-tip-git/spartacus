@@ -14,9 +14,9 @@ import { DpCheckoutPaymentService } from '../../../facade';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    selector: 'cx-dp-payment-form',
-    templateUrl: './dp-payment-form.component.html',
-    standalone: false
+  selector: 'cx-dp-payment-form',
+  templateUrl: './dp-payment-form.component.html',
+  standalone: false,
 })
 export class DpPaymentFormComponent implements OnInit {
   @Output()

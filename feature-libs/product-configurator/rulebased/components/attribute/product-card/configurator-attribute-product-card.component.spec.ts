@@ -68,18 +68,18 @@ class MockProductService {
 let focusService: KeyboardFocusService;
 
 @Component({
-    selector: 'cx-configurator-price',
-    template: '',
-    standalone: false
+  selector: 'cx-configurator-price',
+  template: '',
+  standalone: false,
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;
 }
 
 @Component({
-    selector: 'cx-configurator-attribute-quantity',
-    template: '',
-    standalone: false
+  selector: 'cx-configurator-attribute-quantity',
+  template: '',
+  standalone: false,
 })
 class MockConfiguratorAttributeQuantityComponent {
   @Input() quantityOptions: ConfiguratorAttributeQuantityComponentOptions;
@@ -87,8 +87,8 @@ class MockConfiguratorAttributeQuantityComponent {
 }
 
 @Directive({
-    selector: '[cxFocus]',
-    standalone: false
+  selector: '[cxFocus]',
+  standalone: false,
 })
 export class MockFocusDirective {
   @Input('cxFocus') protected config: any;

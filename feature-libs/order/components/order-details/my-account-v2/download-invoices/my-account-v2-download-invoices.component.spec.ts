@@ -75,18 +75,18 @@ class MockGlobalMessageService implements Partial<GlobalMessageService> {
 }
 
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    standalone: false
+  selector: 'cx-icon',
+  template: '',
+  standalone: false,
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
 }
 
 @Component({
-    selector: 'cx-spinner',
-    template: '',
-    standalone: false
+  selector: 'cx-spinner',
+  template: '',
+  standalone: false,
 })
 class MockSpinnerComponent {}
 

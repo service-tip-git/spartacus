@@ -14,10 +14,10 @@ import { combineLatest, Observable } from 'rxjs';
 import { filter, map, take, tap } from 'rxjs/operators';
 
 @Component({
-    selector: 'cx-order-return-request-list',
-    templateUrl: './order-return-request-list.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-order-return-request-list',
+  templateUrl: './order-return-request-list.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class OrderReturnRequestListComponent implements OnDestroy {
   constructor(

@@ -17,10 +17,10 @@ import { AsmCustomer360SectionContext } from '../asm-customer-360-section-contex
 import { ActivityEntry, TypeCodes } from './asm-customer-360-activity.model';
 
 @Component({
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    selector: 'cx-asm-customer-360-activity',
-    templateUrl: './asm-customer-360-activity.component.html',
-    standalone: false
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'cx-asm-customer-360-activity',
+  templateUrl: './asm-customer-360-activity.component.html',
+  standalone: false,
 })
 export class AsmCustomer360ActivityComponent implements OnInit {
   entries$: Observable<Array<ActivityEntry>>;

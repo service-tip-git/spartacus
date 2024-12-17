@@ -12,10 +12,10 @@ import { tap } from 'rxjs/operators';
 import { OrderAmendService } from '../../amend-order.service';
 
 @Component({
-    selector: 'cx-return-order-confirmation',
-    templateUrl: './return-order-confirmation.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-return-order-confirmation',
+  templateUrl: './return-order-confirmation.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ReturnOrderConfirmationComponent {
   orderCode: string;

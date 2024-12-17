@@ -20,10 +20,10 @@ import { DisableInfoService } from '../disable-info/disable-info.service';
  * my company entities.
  */
 @Component({
-    selector: 'cx-org-toggle-status',
-    templateUrl: './toggle-status.component.html',
-    host: { class: 'content-wrapper' },
-    standalone: false
+  selector: 'cx-org-toggle-status',
+  templateUrl: './toggle-status.component.html',
+  host: { class: 'content-wrapper' },
+  standalone: false,
 })
 export class ToggleStatusComponent<T extends BaseItem> implements OnDestroy {
   /**

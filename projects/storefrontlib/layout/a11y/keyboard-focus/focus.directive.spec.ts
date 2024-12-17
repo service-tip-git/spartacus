@@ -5,12 +5,12 @@ import { FocusDirective } from './focus.directive';
 import { KeyboardFocusService } from './services';
 
 @Component({
-    selector: 'cx-host',
-    template: ` <div
+  selector: 'cx-host',
+  template: ` <div
     id="a"
     [cxFocus]="{ autofocus: true, refreshFocus: modelA }"
   ></div>`,
-    standalone: false
+  standalone: false,
 })
 class MockComponent {
   modelA = '';

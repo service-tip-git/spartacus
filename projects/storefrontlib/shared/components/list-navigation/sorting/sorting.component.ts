@@ -14,10 +14,10 @@ import {
 import { SortModel } from '@spartacus/core';
 
 @Component({
-    selector: 'cx-sorting',
-    templateUrl: './sorting.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-sorting',
+  templateUrl: './sorting.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class SortingComponent {
   @Input()

@@ -48,25 +48,25 @@ const mockQuote: Quote = {
 };
 
 @Component({
-    selector: 'cx-quote-actions-link',
-    template: '',
-    standalone: false
+  selector: 'cx-quote-actions-link',
+  template: '',
+  standalone: false,
 })
 export class MockQuoteActionsLinkComponent {}
 
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    standalone: false
+  selector: 'cx-icon',
+  template: '',
+  standalone: false,
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
 }
 
 @Component({
-    selector: 'cx-quote-header-buyer-edit',
-    template: '',
-    standalone: false
+  selector: 'cx-quote-header-buyer-edit',
+  template: '',
+  standalone: false,
 })
 class MockQuoteHeaderBuyerEditComponent {
   @Input() content: EditCard | null;

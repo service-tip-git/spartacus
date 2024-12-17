@@ -20,16 +20,16 @@ import { AsmCustomer360SectionContextSource } from '../asm-customer-360-section-
 import { AsmCustomer360SectionContext } from '../asm-customer-360-section-context.model';
 
 @Component({
-    selector: 'cx-asm-customer-360-section',
-    templateUrl: './asm-customer-360-section.component.html',
-    providers: [
-        AsmCustomer360SectionContextSource,
-        {
-            provide: AsmCustomer360SectionContext,
-            useExisting: AsmCustomer360SectionContextSource,
-        },
-    ],
-    standalone: false
+  selector: 'cx-asm-customer-360-section',
+  templateUrl: './asm-customer-360-section.component.html',
+  providers: [
+    AsmCustomer360SectionContextSource,
+    {
+      provide: AsmCustomer360SectionContext,
+      useExisting: AsmCustomer360SectionContextSource,
+    },
+  ],
+  standalone: false,
 })
 export class AsmCustomer360SectionComponent implements OnDestroy {
   @Input()

@@ -5,7 +5,7 @@ import { I18nTestingModule } from '@spartacus/core';
 import { PopoverModule } from './popover.module';
 
 @Component({
-    template: `
+  template: `
     <ng-template #content>
       <div class="content-wrapper">
         <h1>Test</h1>
@@ -27,7 +27,7 @@ import { PopoverModule } from './popover.module';
       Popover
     </button>
   `,
-    standalone: false
+  standalone: false,
 })
 class PopoverTestComponent {
   open() {

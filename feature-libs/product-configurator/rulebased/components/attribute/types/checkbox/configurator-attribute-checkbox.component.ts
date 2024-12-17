@@ -13,11 +13,11 @@ import { ConfiguratorAttributePriceChangeService } from '../../price-change/conf
 import { ConfiguratorAttributeBaseComponent } from '../base/configurator-attribute-base.component';
 
 @Component({
-    selector: 'cx-configurator-attribute-checkbox',
-    templateUrl: './configurator-attribute-checkbox.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    providers: [ConfiguratorAttributePriceChangeService],
-    standalone: false
+  selector: 'cx-configurator-attribute-checkbox',
+  templateUrl: './configurator-attribute-checkbox.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [ConfiguratorAttributePriceChangeService],
+  standalone: false,
 })
 export class ConfiguratorAttributeCheckBoxComponent
   extends ConfiguratorAttributeBaseComponent

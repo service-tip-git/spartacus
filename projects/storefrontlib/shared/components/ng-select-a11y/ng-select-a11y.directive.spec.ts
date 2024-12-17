@@ -9,7 +9,7 @@ import { NgSelectA11yDirective } from './ng-select-a11y.directive';
 import { NgSelectA11yModule } from './ng-select-a11y.module';
 
 @Component({
-    template: `
+  template: `
     <ng-select
       [searchable]="isSearchable"
       [cxNgSelectA11y]="{ ariaLabel: 'Size', ariaControls: 'size-results' }"
@@ -19,7 +19,7 @@ import { NgSelectA11yModule } from './ng-select-a11y.module';
     </ng-select>
     <div id="size-results"></div>
   `,
-    standalone: false
+  standalone: false,
 })
 class MockComponent {
   isSearchable: boolean = false;

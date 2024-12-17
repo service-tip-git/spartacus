@@ -49,9 +49,9 @@ class MockLaunchDialogService implements Partial<LaunchDialogService> {
 }
 
 @Component({
-    selector: 'cx-import-entries-form',
-    template: '',
-    standalone: false
+  selector: 'cx-import-entries-form',
+  template: '',
+  standalone: false,
 })
 class MockImportEntriesFormComponent {
   @Input()

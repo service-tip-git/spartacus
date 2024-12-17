@@ -4,8 +4,9 @@ import { FeaturesConfig, FeaturesConfigModule } from '@spartacus/core';
 import { By } from '@angular/platform-browser';
 
 @Component({
-    selector: 'cx-test-cmp', template: '',
-    standalone: false
+  selector: 'cx-test-cmp',
+  template: '',
+  standalone: false,
 })
 class TestComponent {}
 

@@ -90,8 +90,8 @@ class MockConfigUtilsService {
 class MockConfiguratorGroupsService {}
 
 @Pipe({
-    name: 'cxUrl',
-    standalone: false
+  name: 'cxUrl',
+  standalone: false,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}

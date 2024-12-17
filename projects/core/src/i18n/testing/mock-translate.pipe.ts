@@ -9,8 +9,8 @@ import { Translatable, isTranslatable } from '../translatable';
 import { mockTranslate } from './mock-translate';
 
 @Pipe({
-    name: 'cxTranslate',
-    standalone: false
+  name: 'cxTranslate',
+  standalone: false,
 })
 export class MockTranslatePipe implements PipeTransform {
   transform(

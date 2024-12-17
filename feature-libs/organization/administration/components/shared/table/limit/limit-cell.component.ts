@@ -9,10 +9,10 @@ import { Permission } from '@spartacus/organization/administration/core';
 import { CellComponent } from '../cell.component';
 
 @Component({
-    selector: 'cx-org-limit-cell',
-    templateUrl: './limit-cell.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-org-limit-cell',
+  templateUrl: './limit-cell.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class LimitCellComponent extends CellComponent {
   get isTimeSpanThreshold(): boolean {

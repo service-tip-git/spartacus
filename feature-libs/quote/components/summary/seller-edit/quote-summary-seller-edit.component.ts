@@ -36,9 +36,9 @@ import {
 } from './quote-summary-seller-edit.component.service';
 
 @Component({
-    selector: 'cx-quote-summary-seller-edit',
-    templateUrl: './quote-summary-seller-edit.component.html',
-    standalone: false
+  selector: 'cx-quote-summary-seller-edit',
+  templateUrl: './quote-summary-seller-edit.component.html',
+  standalone: false,
 })
 export class QuoteSummarySellerEditComponent implements OnInit, OnDestroy {
   protected quoteFacade = inject(QuoteFacade);

@@ -9,8 +9,8 @@ describe('AccountSummaryListComponent', () => {
   @Component({
     template: '<ng-content select="[actions]"></ng-content>',
     selector: 'cx-org-list',
-    standalone: false
-})
+    standalone: false,
+  })
   class MockListComponent {
     @Input() key: any;
     @Input() hideAddButton = false;

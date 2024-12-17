@@ -17,11 +17,11 @@ import { UpdateProfileComponentService } from './update-profile-component.servic
 import { RoutingService } from '@spartacus/core';
 
 @Component({
-    selector: 'cx-update-profile',
-    templateUrl: './update-profile.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    host: { class: 'user-form' },
-    standalone: false
+  selector: 'cx-update-profile',
+  templateUrl: './update-profile.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: { class: 'user-form' },
+  standalone: false,
 })
 export class UpdateProfileComponent {
   @Optional() protected routingService = inject(RoutingService, {

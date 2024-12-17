@@ -31,17 +31,17 @@ class MockRoutingService implements Partial<RoutingService> {
 }
 
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    standalone: false
+  selector: 'cx-icon',
+  template: '',
+  standalone: false,
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
 }
 
 @Component({
-    selector: 'cx-messaging',
-    standalone: false
+  selector: 'cx-messaging',
+  standalone: false,
 })
 class MockCxMessagingComponent {
   @Input() messageEvents$: Observable<Array<MessageEvent>>;
@@ -50,8 +50,8 @@ class MockCxMessagingComponent {
 }
 
 @Directive({
-    selector: '[cxFocus]',
-    standalone: false
+  selector: '[cxFocus]',
+  standalone: false,
 })
 export class MockKeyboadFocusDirective {
   @Input('cxFocus') config: FocusConfig = {};

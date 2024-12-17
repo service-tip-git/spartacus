@@ -101,9 +101,9 @@ const mockPaymentTypes: PaymentType[] = [
 const mockScheduledAt = '2024-06-27T09:30:00-04:00';
 
 @Component({
-    selector: 'cx-card',
-    template: '',
-    standalone: false
+  selector: 'cx-card',
+  template: '',
+  standalone: false,
 })
 class MockCardComponent {
   @Input()
@@ -240,8 +240,8 @@ class MockCheckoutServiceSchedulePickerService
 }
 
 @Pipe({
-    name: 'cxUrl',
-    standalone: false
+  name: 'cxUrl',
+  standalone: false,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}

@@ -15,11 +15,11 @@ import { UserItemService } from '../services/user-item.service';
 import { UserChangePasswordFormService } from './user-change-password-form.service';
 
 @Component({
-    selector: 'cx-org-user-change-password-form',
-    templateUrl: './user-change-password-form.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    host: { class: 'content-wrapper' },
-    standalone: false
+  selector: 'cx-org-user-change-password-form',
+  templateUrl: './user-change-password-form.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: { class: 'content-wrapper' },
+  standalone: false,
 })
 export class UserChangePasswordFormComponent {
   form$: Observable<UntypedFormGroup | null> = this.itemService.current$.pipe(

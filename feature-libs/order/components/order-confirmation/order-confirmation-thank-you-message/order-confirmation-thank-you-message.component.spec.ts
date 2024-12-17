@@ -22,14 +22,16 @@ const mockOrder = {
 };
 
 @Component({
-    selector: 'cx-add-to-home-screen-banner', template: '',
-    standalone: false
+  selector: 'cx-add-to-home-screen-banner',
+  template: '',
+  standalone: false,
 })
 class MockAddtoHomeScreenBannerComponent {}
 
 @Component({
-    selector: 'cx-guest-register-form', template: '',
-    standalone: false
+  selector: 'cx-guest-register-form',
+  template: '',
+  standalone: false,
 })
 class MockGuestRegisterFormComponent {
   @Input() guid: string;

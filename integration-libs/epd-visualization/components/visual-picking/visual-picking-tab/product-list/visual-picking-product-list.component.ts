@@ -16,11 +16,11 @@ import { VisualPickingProductListItem } from './model/visual-picking-product-lis
 import { VisualPickingProductListService } from './visual-picking-product-list.service';
 
 @Component({
-    selector: 'cx-epd-visualization-product-list',
-    templateUrl: './visual-picking-product-list.component.html',
-    providers: [VisualPickingProductListService],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-epd-visualization-product-list',
+  templateUrl: './visual-picking-product-list.component.html',
+  providers: [VisualPickingProductListService],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class VisualPickingProductListComponent implements OnInit {
   constructor(

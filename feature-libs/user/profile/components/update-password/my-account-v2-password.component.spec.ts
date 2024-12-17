@@ -22,9 +22,9 @@ import { UpdatePasswordComponentService } from './update-password-component.serv
 import createSpy = jasmine.createSpy;
 
 @Component({
-    selector: 'cx-spinner',
-    template: '',
-    standalone: false
+  selector: 'cx-spinner',
+  template: '',
+  standalone: false,
 })
 class MockCxSpinnerComponent {}
 

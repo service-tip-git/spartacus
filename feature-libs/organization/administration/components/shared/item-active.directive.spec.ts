@@ -11,10 +11,10 @@ import createSpy = jasmine.createSpy;
 const mockCode = 'mc1';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'cx-host',
-    template: `<div cxOrgItemActive>TEST</div>`,
-    standalone: false
+  // eslint-disable-next-line @angular-eslint/component-selector
+  selector: 'cx-host',
+  template: `<div cxOrgItemActive>TEST</div>`,
+  standalone: false,
 })
 class TestComponent {}
 

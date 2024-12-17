@@ -15,9 +15,9 @@ import {
 } from '@spartacus/storefinder/core';
 
 @Component({
-    selector: 'cx-store-finder-search-result',
-    templateUrl: './store-finder-search-result.component.html',
-    standalone: false
+  selector: 'cx-store-finder-search-result',
+  templateUrl: './store-finder-search-result.component.html',
+  standalone: false,
 })
 export class StoreFinderSearchResultComponent implements OnInit, OnDestroy {
   locations: any;

@@ -28,10 +28,10 @@ import { filter, map } from 'rxjs/operators';
 import { CheckoutStepService } from '../services/checkout-step.service';
 
 @Component({
-    selector: 'cx-review-submit',
-    templateUrl: './checkout-review-submit.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-review-submit',
+  templateUrl: './checkout-review-submit.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class CheckoutReviewSubmitComponent {
   readonly cartOutlets = CartOutlets;

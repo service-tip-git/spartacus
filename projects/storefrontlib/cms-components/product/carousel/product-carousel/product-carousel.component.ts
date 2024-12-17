@@ -18,10 +18,10 @@ import { filter, map } from 'rxjs/operators';
 import { CmsComponentData } from '../../../../cms-structure/page/model/cms-component-data';
 
 @Component({
-    selector: 'cx-product-carousel',
-    templateUrl: './product-carousel.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-product-carousel',
+  templateUrl: './product-carousel.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ProductCarouselComponent {
   private featureConfigService: FeatureConfigService =

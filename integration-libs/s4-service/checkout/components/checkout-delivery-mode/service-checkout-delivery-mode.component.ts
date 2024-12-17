@@ -13,10 +13,10 @@ import {
 import { Observable } from 'rxjs';
 
 @Component({
-    selector: 'cx-delivery-mode',
-    templateUrl: './service-checkout-delivery-mode.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-delivery-mode',
+  templateUrl: './service-checkout-delivery-mode.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ServiceCheckoutDeliveryModeComponent extends CheckoutDeliveryModeComponent {
   protected checkoutServiceDetailsFacade = inject(CheckoutServiceDetailsFacade);

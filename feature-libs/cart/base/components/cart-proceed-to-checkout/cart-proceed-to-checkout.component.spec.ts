@@ -8,8 +8,8 @@ import { CartProceedToCheckoutComponent } from './cart-proceed-to-checkout.compo
 import createSpy = jasmine.createSpy;
 
 @Pipe({
-    name: 'cxUrl',
-    standalone: false
+  name: 'cxUrl',
+  standalone: false,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}

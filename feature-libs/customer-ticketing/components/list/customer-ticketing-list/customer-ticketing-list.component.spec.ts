@@ -147,18 +147,18 @@ const mockTicketList2: TicketList = {
 };
 
 @Component({
-    template: '',
-    selector: 'cx-pagination',
-    standalone: false
+  template: '',
+  selector: 'cx-pagination',
+  standalone: false,
 })
 class MockPaginationComponent {
   @Input() pagination: any;
   @Output() viewPageEvent = new EventEmitter<string>();
 }
 @Component({
-    template: '',
-    selector: 'cx-sorting',
-    standalone: false
+  template: '',
+  selector: 'cx-sorting',
+  standalone: false,
 })
 class MockSortingComponent {
   @Input() sortOptions: any;
@@ -169,8 +169,8 @@ class MockSortingComponent {
 }
 
 @Pipe({
-    name: 'cxUrl',
-    standalone: false
+  name: 'cxUrl',
+  standalone: false,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}
@@ -198,8 +198,8 @@ class MockCustomerTicketingFacade {
   clearTicketList() {}
 }
 @Component({
-    selector: 'cx-customer-ticketing-create',
-    standalone: false
+  selector: 'cx-customer-ticketing-create',
+  standalone: false,
 })
 class MockCustomerTicketingCreateComponent {}
 

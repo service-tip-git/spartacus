@@ -38,9 +38,9 @@ class MockLanguageService {
 }
 
 @Component({
-    selector: 'cx-estimated-delivery-date',
-    template: '',
-    standalone: false
+  selector: 'cx-estimated-delivery-date',
+  template: '',
+  standalone: false,
 })
 class MockConfigureEstimatedDeliveryDateComponent {
   @Input() cartEntry: Partial<OrderEntry & Array<ArrivalSlots>>;

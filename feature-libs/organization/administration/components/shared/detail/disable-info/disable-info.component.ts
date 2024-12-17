@@ -12,10 +12,10 @@ import { BaseItem } from '../../organization.model';
 import { DisableInfoService } from './disable-info.service';
 
 @Component({
-    selector: 'cx-org-disable-info',
-    templateUrl: './disable-info.component.html',
-    host: { class: 'content-wrapper' },
-    standalone: false
+  selector: 'cx-org-disable-info',
+  templateUrl: './disable-info.component.html',
+  host: { class: 'content-wrapper' },
+  standalone: false,
 })
 export class DisableInfoComponent<T extends BaseItem> implements OnInit {
   /**

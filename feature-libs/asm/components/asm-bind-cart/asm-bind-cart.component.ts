@@ -53,10 +53,10 @@ import { SAVE_CART_DIALOG_ACTION } from '../asm-save-cart-dialog/asm-save-cart-d
 import { AsmComponentService } from '../services/asm-component.service';
 
 @Component({
-    selector: 'cx-asm-bind-cart',
-    templateUrl: './asm-bind-cart.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-asm-bind-cart',
+  templateUrl: './asm-bind-cart.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class AsmBindCartComponent implements OnInit, OnDestroy {
   activeCartValidator: ValidatorFn = (control) => {

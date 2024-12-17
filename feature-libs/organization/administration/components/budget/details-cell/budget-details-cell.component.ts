@@ -8,9 +8,9 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CellComponent } from '../../shared';
 
 @Component({
-    selector: 'cx-org-budget-details-cell',
-    templateUrl: './budget-details-cell.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-org-budget-details-cell',
+  templateUrl: './budget-details-cell.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class BudgetDetailsCellComponent extends CellComponent {}

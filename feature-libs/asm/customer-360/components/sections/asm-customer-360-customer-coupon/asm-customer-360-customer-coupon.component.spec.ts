@@ -20,8 +20,8 @@ describe('AsmCustomer360CouponComponent', () => {
   @Component({
     selector: 'cx-icon',
     template: '',
-    standalone: false
-})
+    standalone: false,
+  })
   class MockCxIconComponent {
     @Input() type: ICON_TYPE;
   }

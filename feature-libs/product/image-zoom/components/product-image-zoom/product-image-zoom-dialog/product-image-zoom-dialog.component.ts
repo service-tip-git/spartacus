@@ -19,10 +19,10 @@ import {
 } from '@spartacus/storefront';
 
 @Component({
-    selector: 'cx-product-image-zoom-dialog',
-    templateUrl: 'product-image-zoom-dialog.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-product-image-zoom-dialog',
+  templateUrl: 'product-image-zoom-dialog.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ProductImageZoomDialogComponent {
   iconType = ICON_TYPE;

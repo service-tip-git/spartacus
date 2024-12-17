@@ -16,9 +16,9 @@ import { LayoutConfig } from '../../../layout/config/layout-config';
 import { TabParagraphContainerComponent } from './tab-paragraph-container.component';
 
 @Component({
-    selector: 'cx-test-cmp',
-    template: '',
-    standalone: false
+  selector: 'cx-test-cmp',
+  template: '',
+  standalone: false,
 })
 class TestComponent {
   tabTitleParam$ = of('title param');

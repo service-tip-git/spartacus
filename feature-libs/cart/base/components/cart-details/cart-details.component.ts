@@ -18,10 +18,10 @@ import { combineLatest, Observable, of } from 'rxjs';
 import { filter, map, tap } from 'rxjs/operators';
 
 @Component({
-    selector: 'cx-cart-details',
-    templateUrl: './cart-details.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-cart-details',
+  templateUrl: './cart-details.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class CartDetailsComponent implements OnInit {
   cart$: Observable<Cart>;

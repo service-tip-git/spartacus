@@ -41,10 +41,10 @@ interface PreferredStoreContent {
 }
 
 @Component({
-    selector: 'cx-my-preferred-store',
-    templateUrl: 'my-preferred-store.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-my-preferred-store',
+  templateUrl: 'my-preferred-store.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class MyPreferredStoreComponent implements OnInit {
   preferredStore$: Observable<PointOfService>;

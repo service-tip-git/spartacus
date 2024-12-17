@@ -26,10 +26,10 @@ import { BehaviorSubject, merge, Subscription } from 'rxjs';
 import { CheckoutReplenishmentFormService } from '../services/checkout-replenishment-form.service';
 
 @Component({
-    selector: 'cx-place-order',
-    templateUrl: './checkout-place-order.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-place-order',
+  templateUrl: './checkout-place-order.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class CheckoutScheduledReplenishmentPlaceOrderComponent
   extends CheckoutPlaceOrderComponent

@@ -6,9 +6,9 @@
 
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 @Component({
-    selector: 'cx-progress-button',
-    templateUrl: './progress-button.component.html',
-    standalone: false
+  selector: 'cx-progress-button',
+  templateUrl: './progress-button.component.html',
+  standalone: false,
 })
 export class ProgressButtonComponent {
   @Input()

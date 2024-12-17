@@ -16,10 +16,10 @@ import { FocusConfig, ICON_TYPE } from '@spartacus/storefront';
 import { ClearCartDialogComponentService } from './clear-cart-dialog-component.service';
 
 @Component({
-    selector: 'cx-clear-cart-dialog',
-    templateUrl: './clear-cart-dialog.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-clear-cart-dialog',
+  templateUrl: './clear-cart-dialog.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ClearCartDialogComponent implements OnDestroy {
   focusConfig: FocusConfig = {

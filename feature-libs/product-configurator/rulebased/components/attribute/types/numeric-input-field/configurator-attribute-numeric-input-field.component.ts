@@ -36,10 +36,10 @@ class DefaultSettings {
 }
 
 @Component({
-    selector: 'cx-configurator-attribute-numeric-input-field',
-    templateUrl: './configurator-attribute-numeric-input-field.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-configurator-attribute-numeric-input-field',
+  templateUrl: './configurator-attribute-numeric-input-field.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ConfiguratorAttributeNumericInputFieldComponent
   extends ConfiguratorAttributeInputFieldComponent

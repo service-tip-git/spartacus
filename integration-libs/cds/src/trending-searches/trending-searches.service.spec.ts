@@ -13,11 +13,7 @@ import {
   HttpTestingController,
   provideHttpClientTesting,
 } from '@angular/common/http/testing';
-import {
-  fakeAsync,
-  TestBed,
-  tick
-} from '@angular/core/testing';
+import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { CdsConfig } from '@spartacus/cds';
 import { BaseSiteService, WindowRef } from '@spartacus/core';
 import { Observable, of } from 'rxjs';
@@ -86,12 +82,10 @@ describe('TrendingSearchesService', () => {
       { searchPhrase: 'test2', count: 15 },
     ];
 
-    const subscription = service
-      .getTrendingSearches()
-      .subscribe((result) => {
-        // Verify the result
-        expect(result).toEqual(mockSearchPhrases);
-      });
+    const subscription = service.getTrendingSearches().subscribe((result) => {
+      // Verify the result
+      expect(result).toEqual(mockSearchPhrases);
+    });
 
     // Fast-forward through the availability check
     tick(250);

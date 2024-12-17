@@ -11,7 +11,7 @@ const STANDARD_TEXT = 'standard';
 const CUSTOM_TEXT = 'customized';
 
 @Component({
-    template: `
+  template: `
     <ng-container *ngIf="outletRefVisible">
       <ng-template cxOutletRef="${OUTLET_NAME}"> ${CUSTOM_TEXT} </ng-template>
     </ng-container>
@@ -22,7 +22,7 @@ const CUSTOM_TEXT = 'customized';
       </ng-container>
     </ng-container>
   `,
-    standalone: false
+  standalone: false,
 })
 class TestContainerComponent {
   outletRefVisible = true;

@@ -34,9 +34,9 @@ class MockDpCheckoutPaymentService
 }
 
 @Component({
-    selector: 'cx-spinner',
-    template: '',
-    standalone: false
+  selector: 'cx-spinner',
+  template: '',
+  standalone: false,
 })
 class MockSpinnerComponent {}
 

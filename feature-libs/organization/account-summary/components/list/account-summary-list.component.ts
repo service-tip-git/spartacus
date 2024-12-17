@@ -7,8 +7,8 @@
 import { Component } from '@angular/core';
 import { UnitListComponent } from '@spartacus/organization/administration/components';
 @Component({
-    selector: 'cx-account-summary-list',
-    templateUrl: './account-summary-list.component.html',
-    standalone: false
+  selector: 'cx-account-summary-list',
+  templateUrl: './account-summary-list.component.html',
+  standalone: false,
 })
 export class AccountSummaryListComponent extends UnitListComponent {}

@@ -24,17 +24,17 @@ class MockCarouselService {
 }
 
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    standalone: false
+  selector: 'cx-icon',
+  template: '',
+  standalone: false,
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
 }
 
 @Component({
-    template: ` <div id="templateEl"></div> `,
-    standalone: false
+  template: ` <div id="templateEl"></div> `,
+  standalone: false,
 })
 class MockTemplateComponent {}
 

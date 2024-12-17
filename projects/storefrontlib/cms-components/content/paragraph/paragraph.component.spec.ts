@@ -8,8 +8,8 @@ import { BehaviorSubject } from 'rxjs';
 import { ParagraphComponent } from './paragraph.component';
 
 @Pipe({
-    name: 'cxSupplementHashAnchors',
-    standalone: false
+  name: 'cxSupplementHashAnchors',
+  standalone: false,
 })
 export class MockAnchorPipe implements PipeTransform {
   public transform(html: string): string {

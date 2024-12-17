@@ -36,10 +36,10 @@ import {
 } from 'rxjs/operators';
 
 @Component({
-    selector: 'cx-payment-type',
-    templateUrl: './checkout-payment-type.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-payment-type',
+  templateUrl: './checkout-payment-type.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class CheckoutPaymentTypeComponent {
   @ViewChild('poNumber', { static: false })

@@ -10,16 +10,18 @@ class StoreFinderServiceMock {
 }
 
 @Component({
-    selector: 'cx-schedule', template: '',
-    standalone: false
+  selector: 'cx-schedule',
+  template: '',
+  standalone: false,
 })
 class MockScheduleComponent {
   @Input() location;
 }
 
 @Component({
-    selector: 'cx-store-finder-map', template: '',
-    standalone: false
+  selector: 'cx-store-finder-map',
+  template: '',
+  standalone: false,
 })
 class MockStoreFinderMapComponent {
   @Input() locations;

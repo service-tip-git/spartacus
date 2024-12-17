@@ -20,16 +20,16 @@ import {
 import { RecentSearchesService } from './recent-searches.service';
 
 @Pipe({
-    name: 'cxHighlight',
-    standalone: false
+  name: 'cxHighlight',
+  standalone: false,
 })
 class MockHighlightPipe implements PipeTransform {
   transform(): any {}
 }
 
 @Pipe({
-    name: 'cxUrl',
-    standalone: false
+  name: 'cxUrl',
+  standalone: false,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {

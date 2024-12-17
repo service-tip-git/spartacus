@@ -30,10 +30,10 @@ import {
 } from '@spartacus/s4-service/root';
 
 @Component({
-    selector: 'cx-review-submit',
-    templateUrl: './service-checkout-review-submit.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-review-submit',
+  templateUrl: './service-checkout-review-submit.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ServiceCheckoutReviewSubmitComponent extends B2BCheckoutReviewSubmitComponent {
   checkoutStepTypeServiceDetails = CheckoutStepType.SERVICE_DETAILS;

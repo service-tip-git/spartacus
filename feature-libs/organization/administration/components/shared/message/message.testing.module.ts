@@ -7,9 +7,9 @@
 import { Component, NgModule } from '@angular/core';
 
 @Component({
-    selector: 'cx-org-message',
-    template: '',
-    standalone: false
+  selector: 'cx-org-message',
+  template: '',
+  standalone: false,
 })
 class MessageComponent {}
 

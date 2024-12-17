@@ -89,10 +89,10 @@ class ActivatedRouteMock {
 }
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'cx-table',
-    template: '',
-    standalone: false
+  // eslint-disable-next-line @angular-eslint/component-selector
+  selector: 'cx-table',
+  template: '',
+  standalone: false,
 })
 class MockTableComponent {
   @Input() data;
@@ -104,8 +104,8 @@ class MockTableComponent {
 }
 
 @Component({
-    templateUrl: './list.component.html',
-    standalone: false
+  templateUrl: './list.component.html',
+  standalone: false,
 })
 class MockListComponent extends ListComponent<Mock> {
   constructor(

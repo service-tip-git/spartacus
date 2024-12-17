@@ -8,10 +8,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CellComponent } from '../cell.component';
 
 @Component({
-    selector: 'cx-org-amount-cell',
-    templateUrl: '../cell.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-org-amount-cell',
+  templateUrl: '../cell.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class AmountCellComponent extends CellComponent {
   get property(): string | undefined {

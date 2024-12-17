@@ -8,14 +8,14 @@ const testAttributeValue = 'test-attribute-value';
 const attributeNamePrefix = 'attribute-prefix';
 
 @Component({
-    selector: 'cx-test-cmp',
-    template: `
+  selector: 'cx-test-cmp',
+  template: `
     <div
       [cxAttributes]="attributes"
       [cxAttributesNamePrefix]="attributesNamePrefix"
     ></div>
   `,
-    standalone: false
+  standalone: false,
 })
 class TestComponent {
   attributes: { [attribute: string]: any };

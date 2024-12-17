@@ -21,16 +21,16 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
  * Component that adds a file upload control.
  */
 @Component({
-    selector: 'cx-file-upload',
-    templateUrl: './file-upload.component.html',
-    providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => FileUploadComponent),
-            multi: true,
-        },
-    ],
-    standalone: false
+  selector: 'cx-file-upload',
+  templateUrl: './file-upload.component.html',
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => FileUploadComponent),
+      multi: true,
+    },
+  ],
+  standalone: false,
 })
 export class FileUploadComponent implements ControlValueAccessor {
   /**

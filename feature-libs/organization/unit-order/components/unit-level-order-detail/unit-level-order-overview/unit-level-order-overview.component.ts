@@ -20,10 +20,10 @@ import { filter, map } from 'rxjs/operators';
 import { UnitLevelOrderDetailService } from '../unit-level-order-detail.service';
 
 @Component({
-    selector: 'cx-unit-level-order-overview',
-    templateUrl: './unit-level-order-overview.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-unit-level-order-overview',
+  templateUrl: './unit-level-order-overview.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class UnitLevelOrderOverviewComponent implements OnInit {
   constructor(

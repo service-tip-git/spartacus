@@ -12,9 +12,9 @@ import { LAUNCH_CALLER } from '../../../layout/launch-dialog/config/launch-confi
 import { LaunchDialogService } from '../../../layout/launch-dialog/services/launch-dialog.service';
 
 @Component({
-    selector: 'cx-anonymous-consent-management-banner',
-    templateUrl: './anonymous-consent-management-banner.component.html',
-    standalone: false
+  selector: 'cx-anonymous-consent-management-banner',
+  templateUrl: './anonymous-consent-management-banner.component.html',
+  standalone: false,
 })
 export class AnonymousConsentManagementBannerComponent implements OnDestroy {
   private subscriptions = new Subscription();

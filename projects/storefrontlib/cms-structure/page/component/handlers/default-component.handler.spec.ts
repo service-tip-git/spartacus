@@ -10,16 +10,16 @@ const mockCmsMappingService = {
 };
 
 @Component({
-    template: '',
-    standalone: false
+  template: '',
+  standalone: false,
 })
 class WrapperComponent {
   constructor(public vcr: ViewContainerRef) {}
 }
 
 @Component({
-    template: 'testComponent',
-    standalone: false
+  template: 'testComponent',
+  standalone: false,
 })
 class TestComponent {}
 

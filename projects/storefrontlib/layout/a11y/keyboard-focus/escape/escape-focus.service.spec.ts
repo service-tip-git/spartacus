@@ -6,8 +6,8 @@ import { SelectFocusUtility } from '../services';
 import { EscapeFocusService } from './escape-focus.service';
 
 @Component({
-    template: '<div id="a"></div><div id="b" tabindex="5"></div>',
-    standalone: false
+  template: '<div id="a"></div><div id="b" tabindex="5"></div>',
+  standalone: false,
 })
 class MockComponent {}
 

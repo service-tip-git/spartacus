@@ -9,9 +9,9 @@ import { UnitTreeService } from '../services/unit-tree.service';
 import createSpy = jasmine.createSpy;
 
 @Component({
-    template: '<ng-content select="[actions]"></ng-content>',
-    selector: 'cx-org-list',
-    standalone: false
+  template: '<ng-content select="[actions]"></ng-content>',
+  selector: 'cx-org-list',
+  standalone: false,
 })
 class MockListComponent {
   @Input() key: any;

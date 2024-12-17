@@ -19,9 +19,9 @@ import { DatePickerService } from './date-picker.service';
  * Most of the implementation is done in the `DatePickerFallbackDirective`.
  */
 @Component({
-    selector: 'cx-date-picker',
-    templateUrl: './date-picker.component.html',
-    standalone: false
+  selector: 'cx-date-picker',
+  templateUrl: './date-picker.component.html',
+  standalone: false,
 })
 export class DatePickerComponent {
   constructor(protected service: DatePickerService) {}

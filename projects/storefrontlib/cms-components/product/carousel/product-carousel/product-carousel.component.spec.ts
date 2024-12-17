@@ -21,15 +21,15 @@ import { CmsComponentData } from '../../../../cms-structure/page/model/cms-compo
 import { ProductCarouselComponent } from './product-carousel.component';
 
 @Component({
-    selector: 'cx-carousel',
-    template: `
+  selector: 'cx-carousel',
+  template: `
     <ng-container *ngFor="let item$ of items">
       <ng-container
         *ngTemplateOutlet="template; context: { item: item$ | async }"
       ></ng-container>
     </ng-container>
   `,
-    standalone: false
+  standalone: false,
 })
 class MockCarouselComponent {
   @Input() title: string;
@@ -38,25 +38,26 @@ class MockCarouselComponent {
 }
 
 @Component({
-    selector: 'cx-product-carousel-item', template: '',
-    standalone: false
+  selector: 'cx-product-carousel-item',
+  template: '',
+  standalone: false,
 })
 class MockProductCarouselItemComponent {
   @Input() item: any;
 }
 
 @Pipe({
-    name: 'cxUrl',
-    standalone: false
+  name: 'cxUrl',
+  standalone: false,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}
 }
 
 @Component({
-    selector: 'cx-media',
-    template: '',
-    standalone: false
+  selector: 'cx-media',
+  template: '',
+  standalone: false,
 })
 class MockMediaComponent {
   @Input() container: any;

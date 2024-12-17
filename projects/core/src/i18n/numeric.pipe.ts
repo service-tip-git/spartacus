@@ -10,8 +10,8 @@ import { LoggerService } from '../logger';
 import { LanguageService } from '../site-context/facade/language.service';
 
 @Pipe({
-    name: 'cxNumeric',
-    standalone: false
+  name: 'cxNumeric',
+  standalone: false,
 })
 export class CxNumericPipe extends DecimalPipe implements PipeTransform {
   protected logger = inject(LoggerService);

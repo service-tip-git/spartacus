@@ -12,9 +12,9 @@ import { filter, map, Observable, Subscription } from 'rxjs';
 import { OpfPaymentMethodDetails } from '../../model';
 
 @Component({
-    selector: 'cx-opf-payment-method-details',
-    templateUrl: './opf-payment-method-details.component.html',
-    standalone: false
+  selector: 'cx-opf-payment-method-details',
+  templateUrl: './opf-payment-method-details.component.html',
+  standalone: false,
 })
 export class OpfPaymentMethodDetailsComponent implements OnInit, OnDestroy {
   protected translationService = inject(TranslationService);

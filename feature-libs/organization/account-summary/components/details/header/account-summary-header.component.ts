@@ -20,10 +20,10 @@ import { Observable, Subscription } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 
 @Component({
-    selector: 'cx-account-summary-header',
-    templateUrl: './account-summary-header.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-account-summary-header',
+  templateUrl: './account-summary-header.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class AccountSummaryHeaderComponent implements OnInit, OnDestroy {
   notApplicable: string;

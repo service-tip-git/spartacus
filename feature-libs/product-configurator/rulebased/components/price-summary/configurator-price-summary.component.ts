@@ -12,10 +12,10 @@ import { ConfiguratorCommonsService } from '../../core/facade/configurator-commo
 import { Configurator } from '../../core/model/configurator.model';
 
 @Component({
-    selector: 'cx-configurator-price-summary',
-    templateUrl: './configurator-price-summary.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-configurator-price-summary',
+  templateUrl: './configurator-price-summary.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ConfiguratorPriceSummaryComponent {
   configuration$: Observable<Configurator.Configuration> =

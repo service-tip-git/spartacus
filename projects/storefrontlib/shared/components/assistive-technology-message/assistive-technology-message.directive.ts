@@ -20,8 +20,8 @@ import {
 import { take } from 'rxjs/operators';
 
 @Directive({
-    selector: '[cxAtMessage]',
-    standalone: false
+  selector: '[cxAtMessage]',
+  standalone: false,
 })
 export class AtMessageDirective {
   /**

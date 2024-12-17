@@ -65,8 +65,8 @@ class MockCmsComponentData {
 }
 
 @Pipe({
-    name: 'cxUrl',
-    standalone: false
+  name: 'cxUrl',
+  standalone: false,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {
@@ -75,26 +75,26 @@ class MockUrlPipe implements PipeTransform {
 }
 
 @Pipe({
-    name: 'cxHighlight',
-    standalone: false
+  name: 'cxHighlight',
+  standalone: false,
 })
 class MockHighlightPipe implements PipeTransform {
   transform(): any {}
 }
 
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    standalone: false
+  selector: 'cx-icon',
+  template: '',
+  standalone: false,
 })
 class MockCxIconComponent {
   @Input() type;
 }
 
 @Component({
-    selector: 'cx-media',
-    template: '<img>',
-    standalone: false
+  selector: 'cx-media',
+  template: '<img>',
+  standalone: false,
 })
 class MockMediaComponent {
   @Input() container;
@@ -103,8 +103,8 @@ class MockMediaComponent {
 }
 
 @Directive({
-    selector: '[cxOutlet]',
-    standalone: false
+  selector: '[cxOutlet]',
+  standalone: false,
 })
 class MockOutletDirective implements Partial<OutletDirective> {
   @Input() cxOutlet: string;
@@ -112,9 +112,9 @@ class MockOutletDirective implements Partial<OutletDirective> {
 }
 
 @Component({
-    selector: 'cx-carousel',
-    template: ``,
-    standalone: false
+  selector: 'cx-carousel',
+  template: ``,
+  standalone: false,
 })
 class MockCarouselComponent {
   @Input() items: any;

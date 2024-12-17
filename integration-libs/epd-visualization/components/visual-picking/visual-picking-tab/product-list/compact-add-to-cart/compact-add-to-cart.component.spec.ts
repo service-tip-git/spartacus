@@ -98,9 +98,9 @@ class MockEventService implements Partial<EventService> {
 class MockProductAvailabilityAdapter {}
 
 @Component({
-    template: '',
-    selector: 'cx-item-counter',
-    standalone: false
+  template: '',
+  selector: 'cx-item-counter',
+  standalone: false,
 })
 class MockItemCounterComponent {
   @Input() min: number;

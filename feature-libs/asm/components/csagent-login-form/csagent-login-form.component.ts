@@ -13,9 +13,9 @@ import {
 import { useFeatureStyles } from '@spartacus/core';
 
 @Component({
-    selector: 'cx-csagent-login-form',
-    templateUrl: './csagent-login-form.component.html',
-    standalone: false
+  selector: 'cx-csagent-login-form',
+  templateUrl: './csagent-login-form.component.html',
+  standalone: false,
 })
 export class CSAgentLoginFormComponent implements OnInit {
   csAgentLoginForm: UntypedFormGroup;

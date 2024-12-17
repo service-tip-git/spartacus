@@ -10,9 +10,9 @@ import { StoreFinderService } from '@spartacus/storefinder/core';
 import { Observable } from 'rxjs';
 
 @Component({
-    selector: 'cx-store-finder-stores-count',
-    templateUrl: './store-finder-stores-count.component.html',
-    standalone: false
+  selector: 'cx-store-finder-stores-count',
+  templateUrl: './store-finder-stores-count.component.html',
+  standalone: false,
 })
 export class StoreFinderStoresCountComponent implements OnInit {
   // TODO: CXSPA-6884 Make service required in next major.

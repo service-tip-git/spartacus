@@ -21,10 +21,10 @@ import { FacetService } from '../services/facet.service';
  * which can be used to remove the applied facet value.
  */
 @Component({
-    selector: 'cx-active-facets',
-    templateUrl: './active-facets.component.html',
-    changeDetection: ChangeDetectionStrategy.Default,
-    standalone: false
+  selector: 'cx-active-facets',
+  templateUrl: './active-facets.component.html',
+  changeDetection: ChangeDetectionStrategy.Default,
+  standalone: false,
 })
 export class ActiveFacetsComponent {
   @HostBinding('attr.role') role = 'group';

@@ -7,11 +7,11 @@ import { PersistFocusService } from './persist-focus.service';
 class MockSelectFocusUtility {}
 
 @Component({
-    template: `
+  template: `
     <div id="a"></div>
     <div id="b" tabindex="5" data-cx-focus-group="pg"></div>
   `,
-    standalone: false
+  standalone: false,
 })
 class MockComponent {}
 

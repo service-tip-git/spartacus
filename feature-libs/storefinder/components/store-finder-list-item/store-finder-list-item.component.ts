@@ -11,9 +11,9 @@ import { StoreFinderOutlets } from '@spartacus/storefinder/root';
 import { AbstractStoreItemComponent } from '../abstract-store-item/abstract-store-item.component';
 
 @Component({
-    selector: 'cx-store-finder-list-item',
-    templateUrl: './store-finder-list-item.component.html',
-    standalone: false
+  selector: 'cx-store-finder-list-item',
+  templateUrl: './store-finder-list-item.component.html',
+  standalone: false,
 })
 export class StoreFinderListItemComponent extends AbstractStoreItemComponent {
   @Input()

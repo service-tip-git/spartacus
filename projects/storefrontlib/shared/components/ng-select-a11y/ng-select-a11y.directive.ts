@@ -30,8 +30,8 @@ import { BREAKPOINT, BreakpointService } from '../../../layout';
 const ARIA_LABEL = 'aria-label';
 
 @Directive({
-    selector: '[cxNgSelectA11y]',
-    standalone: false
+  selector: '[cxNgSelectA11y]',
+  standalone: false,
 })
 export class NgSelectA11yDirective implements AfterViewInit {
   /**

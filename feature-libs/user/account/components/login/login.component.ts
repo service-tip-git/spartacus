@@ -11,9 +11,9 @@ import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 @Component({
-    selector: 'cx-login',
-    templateUrl: './login.component.html',
-    standalone: false
+  selector: 'cx-login',
+  templateUrl: './login.component.html',
+  standalone: false,
 })
 export class LoginComponent implements OnInit {
   user$: Observable<User | undefined>;

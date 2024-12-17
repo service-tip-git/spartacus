@@ -10,9 +10,9 @@ import { StoreFinderService } from '@spartacus/storefinder/core';
 import { AbstractStoreItemComponent } from '../abstract-store-item/abstract-store-item.component';
 
 @Component({
-    selector: 'cx-store-finder-store-description',
-    templateUrl: './store-finder-store-description.component.html',
-    standalone: false
+  selector: 'cx-store-finder-store-description',
+  templateUrl: './store-finder-store-description.component.html',
+  standalone: false,
 })
 export class StoreFinderStoreDescriptionComponent extends AbstractStoreItemComponent {
   @Input() location: PointOfService;

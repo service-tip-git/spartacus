@@ -43,10 +43,10 @@ import { USE_LEGACY_MEDIA_COMPONENT } from './media.token';
  * ```
  */
 @Component({
-    selector: 'cx-media',
-    templateUrl: './media.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-media',
+  templateUrl: './media.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class MediaComponent implements OnChanges {
   /**

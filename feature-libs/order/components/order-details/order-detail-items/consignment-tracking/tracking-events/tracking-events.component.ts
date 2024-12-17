@@ -17,10 +17,10 @@ import { FocusConfig, LaunchDialogService } from '@spartacus/storefront';
 import { Observable, Subscription } from 'rxjs';
 
 @Component({
-    selector: 'cx-tracking-events',
-    templateUrl: './tracking-events.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-tracking-events',
+  templateUrl: './tracking-events.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class TrackingEventsComponent implements OnDestroy, OnInit {
   private subscription = new Subscription();

@@ -20,11 +20,11 @@ import { QuoteState } from '@spartacus/quote/root';
 import { ICON_TYPE } from '@spartacus/storefront';
 
 @Component({
-    selector: 'cx-quote-list',
-    templateUrl: './quote-list.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    providers: [CxDatePipe],
-    standalone: false
+  selector: 'cx-quote-list',
+  templateUrl: './quote-list.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [CxDatePipe],
+  standalone: false,
 })
 export class QuoteListComponent implements OnInit {
   protected quoteListComponentService = inject(QuoteListComponentService);

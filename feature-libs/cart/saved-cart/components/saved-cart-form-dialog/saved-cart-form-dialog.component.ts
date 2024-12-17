@@ -49,10 +49,10 @@ export interface SavedCartFormDialogOptions {
 }
 
 @Component({
-    selector: 'cx-saved-cart-form-dialog',
-    templateUrl: './saved-cart-form-dialog.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-saved-cart-form-dialog',
+  templateUrl: './saved-cart-form-dialog.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class SavedCartFormDialogComponent implements OnInit, OnDestroy {
   private subscription = new Subscription();

@@ -11,9 +11,9 @@ import { Configurator } from '../../core/model/configurator.model';
 import { ConfiguratorStorefrontUtilsService } from '../service/configurator-storefront-utils.service';
 
 @Component({
-    selector: 'cx-configurator-overview-filter-bar',
-    templateUrl: './configurator-overview-filter-bar.component.html',
-    standalone: false
+  selector: 'cx-configurator-overview-filter-bar',
+  templateUrl: './configurator-overview-filter-bar.component.html',
+  standalone: false,
 })
 export class ConfiguratorOverviewFilterBarComponent {
   readonly PREFIX_ID = 'cx-overview-filter-applied-';

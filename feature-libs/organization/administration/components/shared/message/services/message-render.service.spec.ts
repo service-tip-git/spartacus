@@ -6,8 +6,8 @@ import { NotificationMessageComponent } from '../notification/notification-messa
 import { MessageRenderService } from './message-render.service';
 
 @Component({
-    template: '',
-    standalone: false
+  template: '',
+  standalone: false,
 })
 class MockComponent extends BaseMessageComponent {}
 

@@ -17,10 +17,10 @@ import { AsmCustomer360SectionContext } from '../asm-customer-360-section-contex
 import { SupportTicketEntry } from './asm-customer-360-support-tickets.model';
 
 @Component({
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    selector: 'cx-asm-customer-360-support-tickets',
-    templateUrl: './asm-customer-360-support-tickets.component.html',
-    standalone: false
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'cx-asm-customer-360-support-tickets',
+  templateUrl: './asm-customer-360-support-tickets.component.html',
+  standalone: false,
 })
 export class AsmCustomer360SupportTicketsComponent implements OnInit {
   supportTicketsColumns: Array<CustomerTableColumn> = [

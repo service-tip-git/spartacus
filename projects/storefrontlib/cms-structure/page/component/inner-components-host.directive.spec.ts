@@ -28,23 +28,23 @@ import { WebComponentHandler } from './handlers/web-component.handler';
 import { CxApiService } from './services/cx-api.service';
 
 @Component({
-    selector: 'cx-inner-a',
-    template: `_A_`,
-    standalone: false
+  selector: 'cx-inner-a',
+  template: `_A_`,
+  standalone: false,
 })
 class InnerAComponent {}
 
 @Component({
-    selector: 'cx-inner-b',
-    template: `_B_`,
-    standalone: false
+  selector: 'cx-inner-b',
+  template: `_B_`,
+  standalone: false,
 })
 class InnerBComponent {}
 
 @Component({
-    selector: 'cx-host',
-    template: `<div [cxInnerComponentsHost]></div>`,
-    standalone: false
+  selector: 'cx-host',
+  template: `<div [cxInnerComponentsHost]></div>`,
+  standalone: false,
 })
 class HostComponent {}
 

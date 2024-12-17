@@ -98,9 +98,9 @@ const mockOrderEntries: OrderEntry[] = [
 ];
 
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    standalone: false
+  selector: 'cx-icon',
+  template: '',
+  standalone: false,
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;
@@ -116,9 +116,9 @@ class MockRoutingService implements Partial<RoutingService> {
 }
 
 @Component({
-    selector: 'cx-cart-item',
-    template: '',
-    standalone: false
+  selector: 'cx-cart-item',
+  template: '',
+  standalone: false,
 })
 class MockCartItemComponent {
   @Input() compact = false;
@@ -129,8 +129,8 @@ class MockCartItemComponent {
 }
 
 @Pipe({
-    name: 'cxUrl',
-    standalone: false
+  name: 'cxUrl',
+  standalone: false,
 })
 class MockUrlPipe implements PipeTransform {
   transform(): any {}

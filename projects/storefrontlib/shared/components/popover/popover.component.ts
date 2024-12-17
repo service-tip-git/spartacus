@@ -28,10 +28,10 @@ import { PositioningService } from '../../services/positioning/positioning.servi
 import { PopoverEvent, PopoverPosition } from './popover.model';
 
 @Component({
-    selector: 'cx-popover',
-    templateUrl: './popover.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-popover',
+  templateUrl: './popover.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class PopoverComponent implements OnInit, OnDestroy, AfterViewChecked {
   /**

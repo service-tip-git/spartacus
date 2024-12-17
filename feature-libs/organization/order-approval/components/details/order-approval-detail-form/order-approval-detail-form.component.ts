@@ -20,10 +20,10 @@ import { OrderApprovalService } from '../../../core/services/order-approval.serv
 import { OrderApprovalDetailService } from '../order-approval-detail.service';
 
 @Component({
-    selector: 'cx-order-approval-detail-form',
-    templateUrl: './order-approval-detail-form.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-order-approval-detail-form',
+  templateUrl: './order-approval-detail-form.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class OrderApprovalDetailFormComponent implements OnDestroy {
   approvalDecisionValue = OrderApprovalDecisionValue;

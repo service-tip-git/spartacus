@@ -17,10 +17,10 @@ import { filter, map } from 'rxjs/operators';
 import { CheckoutStepService } from '../../services/checkout-step.service';
 
 @Component({
-    selector: 'cx-checkout-review-payment',
-    templateUrl: './checkout-review-payment.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-checkout-review-payment',
+  templateUrl: './checkout-review-payment.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class CheckoutReviewPaymentComponent {
   iconTypes = ICON_TYPE;

@@ -28,9 +28,9 @@ import { ConfiguratorAttributeQuantityComponentOptions } from '../../quantity/co
 import { ConfiguratorAttributeMultiSelectionBundleComponent } from './configurator-attribute-multi-selection-bundle.component';
 
 @Component({
-    selector: 'cx-configurator-attribute-product-card',
-    template: '',
-    standalone: false
+  selector: 'cx-configurator-attribute-product-card',
+  template: '',
+  standalone: false,
 })
 class MockProductCardComponent {
   @Input()
@@ -38,9 +38,9 @@ class MockProductCardComponent {
 }
 
 @Component({
-    selector: 'cx-configurator-attribute-quantity',
-    template: '',
-    standalone: false
+  selector: 'cx-configurator-attribute-quantity',
+  template: '',
+  standalone: false,
 })
 class MockConfiguratorAttributeQuantityComponent {
   @Input() quantityOptions: ConfiguratorAttributeQuantityComponentOptions;
@@ -48,9 +48,9 @@ class MockConfiguratorAttributeQuantityComponent {
 }
 
 @Component({
-    selector: 'cx-configurator-price',
-    template: '',
-    standalone: false
+  selector: 'cx-configurator-price',
+  template: '',
+  standalone: false,
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;

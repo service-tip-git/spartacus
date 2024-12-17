@@ -16,8 +16,9 @@ import { OrderOverviewComponent } from './order-overview.component';
 import { OrderOverviewComponentService } from './order-overview-component.service';
 
 @Component({
-    selector: 'cx-card', template: '',
-    standalone: false
+  selector: 'cx-card',
+  template: '',
+  standalone: false,
 })
 class MockCardComponent {
   @Input()

@@ -65,24 +65,24 @@ class MockCurrentProductService {
 }
 
 @Component({
-    selector: 'cx-media',
-    template: '',
-    standalone: false
+  selector: 'cx-media',
+  template: '',
+  standalone: false,
 })
 class MockMediaComponent {
   @Input() container: any;
 }
 
 @Component({
-    selector: 'cx-carousel',
-    template: `
+  selector: 'cx-carousel',
+  template: `
     <ng-container *ngFor="let item$ of items">
       <ng-container
         *ngTemplateOutlet="template; context: { item: item$ | async }"
       ></ng-container>
     </ng-container>
   `,
-    standalone: false
+  standalone: false,
 })
 class MockCarouselComponent {
   @Input() items: any;
@@ -92,9 +92,9 @@ class MockCarouselComponent {
 }
 
 @Component({
-    selector: 'cx-product-image-zoom-trigger',
-    template: ``,
-    standalone: false
+  selector: 'cx-product-image-zoom-trigger',
+  template: ``,
+  standalone: false,
 })
 class MockProductImageZoomTriggerComponent {
   @Input() expandImage: any;

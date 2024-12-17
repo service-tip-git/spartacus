@@ -37,9 +37,9 @@ import {
 import { CheckoutBillingAddressFormService } from './checkout-billing-address-form.service';
 
 @Component({
-    selector: 'cx-checkout-billing-address-form',
-    templateUrl: './checkout-billing-address-form.component.html',
-    standalone: false
+  selector: 'cx-checkout-billing-address-form',
+  templateUrl: './checkout-billing-address-form.component.html',
+  standalone: false,
 })
 export class CheckoutBillingAddressFormComponent implements OnInit {
   showSameAsDeliveryAddressCheckbox$: Observable<boolean>;

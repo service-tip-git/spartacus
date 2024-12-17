@@ -9,9 +9,9 @@ import { ThemeService } from './theme.service';
 import { of } from 'rxjs';
 
 @Component({
-    selector: 'cx-test',
-    template: '',
-    standalone: false
+  selector: 'cx-test',
+  template: '',
+  standalone: false,
 })
 class TestComponent {}
 

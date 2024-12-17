@@ -12,10 +12,10 @@ import { CmsComponentData } from '../../../../cms-structure/page/model/cms-compo
 import { CurrentProductService } from '../../current-product.service';
 
 @Component({
-    selector: 'cx-product-details-tab',
-    templateUrl: './product-details-tab.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-product-details-tab',
+  templateUrl: './product-details-tab.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ProductDetailsTabComponent implements OnInit {
   product$: Observable<Product | null>;

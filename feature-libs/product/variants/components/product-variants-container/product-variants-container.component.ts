@@ -17,10 +17,10 @@ import { Observable } from 'rxjs';
 import { distinctUntilChanged, filter, tap } from 'rxjs/operators';
 
 @Component({
-    selector: 'cx-product-variants-container',
-    templateUrl: './product-variants-container.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-product-variants-container',
+  templateUrl: './product-variants-container.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ProductVariantsContainerComponent implements OnInit {
   constructor(private currentProductService: CurrentProductService) {}

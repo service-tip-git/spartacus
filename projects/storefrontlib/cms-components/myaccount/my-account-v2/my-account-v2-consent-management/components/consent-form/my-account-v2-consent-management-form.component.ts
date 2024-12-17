@@ -9,9 +9,9 @@ import { ANONYMOUS_CONSENT_STATUS } from '@spartacus/core';
 import { ConsentManagementFormComponent } from '../../../../consent-management/components/consent-form/consent-management-form.component';
 
 @Component({
-    selector: 'cx-my-account-v2-consent-management-form',
-    templateUrl: './my-account-v2-consent-management-form.component.html',
-    standalone: false
+  selector: 'cx-my-account-v2-consent-management-form',
+  templateUrl: './my-account-v2-consent-management-form.component.html',
+  standalone: false,
 })
 export class MyAccountV2ConsentManagementFormComponent
   extends ConsentManagementFormComponent

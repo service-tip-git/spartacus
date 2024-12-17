@@ -16,10 +16,11 @@ import { ConfiguratorAttributeQuantityService } from '../../quantity/configurato
 import { ConfiguratorAttributeSingleSelectionBaseComponent } from '../base/configurator-attribute-single-selection-base.component';
 
 @Component({
-    selector: 'cx-configurator-attribute-single-selection-bundle-dropdown',
-    templateUrl: './configurator-attribute-single-selection-bundle-dropdown.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-configurator-attribute-single-selection-bundle-dropdown',
+  templateUrl:
+    './configurator-attribute-single-selection-bundle-dropdown.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ConfiguratorAttributeSingleSelectionBundleDropdownComponent
   extends ConfiguratorAttributeSingleSelectionBaseComponent

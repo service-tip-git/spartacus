@@ -6,8 +6,8 @@ import { Observable, of } from 'rxjs';
 import { VisualViewerAnimationSliderComponent } from './visual-viewer-animation-slider.component';
 
 @Pipe({
-    name: 'cxNumeric',
-    standalone: false
+  name: 'cxNumeric',
+  standalone: false,
 })
 class MockNumericPipe implements PipeTransform {
   transform(): any {}

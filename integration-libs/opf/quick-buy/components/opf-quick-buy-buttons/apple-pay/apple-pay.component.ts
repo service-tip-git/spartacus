@@ -24,10 +24,10 @@ import { switchMap, take } from 'rxjs/operators';
 import { ApplePayService } from './apple-pay.service';
 
 @Component({
-    selector: 'cx-opf-apple-pay',
-    templateUrl: './apple-pay.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-opf-apple-pay',
+  templateUrl: './apple-pay.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ApplePayComponent implements OnInit {
   @Input() activeConfiguration: OpfActiveConfiguration;

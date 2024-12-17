@@ -29,10 +29,10 @@ import { BehaviorSubject, combineLatest, Observable, Subscription } from 'rxjs';
 import { skip, switchMap, take, tap } from 'rxjs/operators';
 
 @Component({
-    selector: 'cx-account-summary-document',
-    templateUrl: './account-summary-document.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-account-summary-document',
+  templateUrl: './account-summary-document.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class AccountSummaryDocumentComponent implements OnInit, OnDestroy {
   /* For Enum use in HTML */

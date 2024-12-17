@@ -30,9 +30,9 @@ import { OpfCheckoutTermsAndConditionsAlertModule } from '../opf-checkout-terms-
 import { OpfCheckoutPaymentsComponent } from './opf-checkout-payments.component';
 
 @Component({
-    template: '',
-    selector: 'cx-pagination',
-    standalone: false
+  template: '',
+  selector: 'cx-pagination',
+  standalone: false,
 })
 class MockPaginationComponent {
   @Input() pagination: PaginationModel;

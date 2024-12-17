@@ -23,26 +23,26 @@ import { FacetService } from '../services/facet.service';
 import { FacetListComponent } from './facet-list.component';
 
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    standalone: false
+  selector: 'cx-icon',
+  template: '',
+  standalone: false,
 })
 class MockIconComponent {
   @Input() type: ICON_TYPE;
 }
 
 @Component({
-    selector: 'cx-facet',
-    template: '',
-    standalone: false
+  selector: 'cx-facet',
+  template: '',
+  standalone: false,
 })
 class MockFacetComponent {
   @Input() facet;
 }
 
 @Directive({
-    selector: '[cxFocus]',
-    standalone: false
+  selector: '[cxFocus]',
+  standalone: false,
 })
 class MockKeyboadFocusDirective {
   @Input() cxFocus;

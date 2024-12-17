@@ -24,10 +24,10 @@ import { wrapIntoBounds } from './tab.utils';
 import { TranslationService, useFeatureStyles } from '@spartacus/core';
 
 @Component({
-    selector: 'cx-tab',
-    templateUrl: './tab.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-tab',
+  templateUrl: './tab.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class TabComponent implements OnInit, AfterViewInit, OnDestroy {
   /**

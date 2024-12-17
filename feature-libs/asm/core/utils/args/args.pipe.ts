@@ -31,8 +31,8 @@ import { Pipe, PipeTransform } from '@angular/core';
  * ```
  */
 @Pipe({
-    name: 'cxArgs',
-    standalone: false
+  name: 'cxArgs',
+  standalone: false,
 })
 export class ArgsPipe implements PipeTransform {
   transform<A extends Array<any>, R>(

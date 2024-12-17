@@ -13,18 +13,18 @@ import { ConfiguratorAttributePriceChangeService } from '../../price-change/conf
 import { ConfiguratorStorefrontUtilsService } from '../../../service/configurator-storefront-utils.service';
 
 @Component({
-    selector: 'cx-configurator-price',
-    template: '',
-    standalone: false
+  selector: 'cx-configurator-price',
+  template: '',
+  standalone: false,
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;
 }
 
 @Component({
-    selector: 'cx-configurator-show-more',
-    template: '',
-    standalone: false
+  selector: 'cx-configurator-show-more',
+  template: '',
+  standalone: false,
 })
 class MockConfiguratorShowMoreComponent {
   @Input() text: string;

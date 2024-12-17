@@ -18,26 +18,26 @@ import {
 import { ConfiguratorIssuesNotificationComponent } from './configurator-issues-notification.component';
 
 @Pipe({
-    name: 'cxTranslate',
-    standalone: false
+  name: 'cxTranslate',
+  standalone: false,
 })
 class MockTranslatePipe implements PipeTransform {
   transform(): any {}
 }
 
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    standalone: false
+  selector: 'cx-icon',
+  template: '',
+  standalone: false,
 })
 class MockCxIconComponent {
   @Input() type: any;
 }
 
 @Component({
-    selector: 'cx-configure-cart-entry',
-    template: '',
-    standalone: false
+  selector: 'cx-configure-cart-entry',
+  template: '',
+  standalone: false,
 })
 class MockConfigureCartEntryComponent {
   @Input() cartEntry: OrderEntry;

@@ -19,10 +19,10 @@ export enum ViewModes {
 }
 
 @Component({
-    selector: 'cx-product-view',
-    templateUrl: './product-view.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-product-view',
+  templateUrl: './product-view.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ProductViewComponent {
   iconTypes = ICON_TYPE;

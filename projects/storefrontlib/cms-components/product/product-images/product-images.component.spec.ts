@@ -53,24 +53,24 @@ class MockCurrentProductService {
 }
 
 @Component({
-    selector: 'cx-media',
-    template: '',
-    standalone: false
+  selector: 'cx-media',
+  template: '',
+  standalone: false,
 })
 class MockMediaComponent {
   @Input() container;
 }
 
 @Component({
-    selector: 'cx-carousel',
-    template: `
+  selector: 'cx-carousel',
+  template: `
     <ng-container *ngFor="let item$ of items">
       <ng-container
         *ngTemplateOutlet="template; context: { item: item$ | async }"
       ></ng-container>
     </ng-container>
   `,
-    standalone: false
+  standalone: false,
 })
 class MockCarouselComponent {
   @Input() items;

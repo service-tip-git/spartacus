@@ -11,10 +11,10 @@ import { tap } from 'rxjs/operators';
 import { CheckoutStepService } from '../../services/checkout-step.service';
 
 @Component({
-    selector: 'cx-checkout-progress-mobile-bottom',
-    templateUrl: './checkout-progress-mobile-bottom.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-checkout-progress-mobile-bottom',
+  templateUrl: './checkout-progress-mobile-bottom.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class CheckoutProgressMobileBottomComponent {
   private _steps$: BehaviorSubject<CheckoutStep[]> =

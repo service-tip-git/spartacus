@@ -12,9 +12,9 @@ import { ICON_TYPE } from '@spartacus/storefront';
 import { StoreFinderService } from '@spartacus/storefinder/core';
 
 @Component({
-    selector: 'cx-store-finder-store',
-    templateUrl: './store-finder-store.component.html',
-    standalone: false
+  selector: 'cx-store-finder-store',
+  templateUrl: './store-finder-store.component.html',
+  standalone: false,
 })
 export class StoreFinderStoreComponent implements OnInit {
   location$: Observable<any>;

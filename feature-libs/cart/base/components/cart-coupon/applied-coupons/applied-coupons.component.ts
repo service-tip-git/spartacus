@@ -9,10 +9,10 @@ import { CartVoucherFacade, Voucher } from '@spartacus/cart/base/root';
 import { ICON_TYPE } from '@spartacus/storefront';
 
 @Component({
-    selector: 'cx-applied-coupons',
-    templateUrl: './applied-coupons.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-applied-coupons',
+  templateUrl: './applied-coupons.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class AppliedCouponsComponent {
   @Input()

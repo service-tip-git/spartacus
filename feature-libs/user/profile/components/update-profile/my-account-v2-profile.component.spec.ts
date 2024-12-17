@@ -20,9 +20,9 @@ import { MyAccountV2ProfileComponent } from './my-account-v2-profile.component';
 import { UpdateProfileComponentService } from './update-profile-component.service';
 import createSpy = jasmine.createSpy;
 @Component({
-    selector: 'cx-spinner',
-    template: ` <div>spinner</div> `,
-    standalone: false
+  selector: 'cx-spinner',
+  template: ` <div>spinner</div> `,
+  standalone: false,
 })
 class MockCxSpinnerComponent {}
 

@@ -12,8 +12,8 @@ import { QuoteRequestButtonComponent } from './quote-request-button.component';
 import createSpy = jasmine.createSpy;
 
 @Pipe({
-    name: 'cxUrl',
-    standalone: false
+  name: 'cxUrl',
+  standalone: false,
 })
 class MockUrlPipe implements PipeTransform {
   transform() {}

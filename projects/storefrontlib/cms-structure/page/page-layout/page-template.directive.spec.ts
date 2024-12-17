@@ -11,7 +11,7 @@ class MockPageLayoutService {
 }
 
 @Component({
-    template: `
+  template: `
     <div id="host1" cxPageTemplateStyle></div>
 
     <div id="host2">
@@ -34,8 +34,8 @@ class MockPageLayoutService {
       </ng-template>
     </div>
   `,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 class MockTemplateComponent {}
 

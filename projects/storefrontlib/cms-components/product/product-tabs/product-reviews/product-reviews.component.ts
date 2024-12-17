@@ -33,10 +33,10 @@ import {
 import { CurrentProductService } from '../../current-product.service';
 
 @Component({
-    selector: 'cx-product-reviews',
-    templateUrl: './product-reviews.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-product-reviews',
+  templateUrl: './product-reviews.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ProductReviewsComponent {
   @ViewChild('titleInput', { static: false }) titleInput: ElementRef;

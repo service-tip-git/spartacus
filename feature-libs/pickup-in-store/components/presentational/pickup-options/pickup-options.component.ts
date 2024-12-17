@@ -30,9 +30,9 @@ import { PickupOptionsTabs } from './pickup-options.model';
  * The presentational component of a pair of radio buttons for pickup options for a product.
  */
 @Component({
-    selector: 'cx-pickup-options',
-    templateUrl: './pickup-options.component.html',
-    standalone: false
+  selector: 'cx-pickup-options',
+  templateUrl: './pickup-options.component.html',
+  standalone: false,
 })
 export class PickupOptionsComponent
   implements OnChanges, AfterViewInit, OnDestroy

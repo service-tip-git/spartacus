@@ -9,9 +9,9 @@ import { AddToHomeScreenService } from '../../services/add-to-home-screen.servic
 import { AddToHomeScreenComponent } from '../add-to-home-screen.component';
 
 @Component({
-    selector: 'cx-add-to-home-screen-banner',
-    templateUrl: './add-to-home-screen-banner.component.html',
-    standalone: false
+  selector: 'cx-add-to-home-screen-banner',
+  templateUrl: './add-to-home-screen-banner.component.html',
+  standalone: false,
 })
 export class AddToHomeScreenBannerComponent extends AddToHomeScreenComponent {
   constructor(protected addToHomeScreenService: AddToHomeScreenService) {

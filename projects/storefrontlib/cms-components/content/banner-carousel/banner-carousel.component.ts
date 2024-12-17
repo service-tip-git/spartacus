@@ -18,10 +18,10 @@ import { CmsComponentData } from '../../../cms-structure/index';
  * Generic carousel that renders CMS Components.
  */
 @Component({
-    selector: 'cx-banner-carousel',
-    templateUrl: 'banner-carousel.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-banner-carousel',
+  templateUrl: 'banner-carousel.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class BannerCarouselComponent {
   private componentData$: Observable<model> = this.componentData.data$.pipe(

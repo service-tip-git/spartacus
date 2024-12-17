@@ -19,9 +19,9 @@ import {
 import { AsmCustomer360SectionContext } from '../asm-customer-360-section-context.model';
 
 @Component({
-    selector: 'cx-asm-customer-360-profile',
-    templateUrl: './asm-customer-360-profile.component.html',
-    standalone: false
+  selector: 'cx-asm-customer-360-profile',
+  templateUrl: './asm-customer-360-profile.component.html',
+  standalone: false,
 })
 export class AsmCustomer360ProfileComponent implements OnInit {
   focusConfig: FocusConfig = {

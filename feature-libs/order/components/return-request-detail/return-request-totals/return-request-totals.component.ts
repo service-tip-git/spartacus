@@ -10,10 +10,10 @@ import { Observable } from 'rxjs';
 import { ReturnRequestService } from '../return-request.service';
 
 @Component({
-    selector: 'cx-return-request-totals',
-    templateUrl: './return-request-totals.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-return-request-totals',
+  templateUrl: './return-request-totals.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ReturnRequestTotalsComponent implements OnDestroy {
   constructor(protected returnRequestService: ReturnRequestService) {}

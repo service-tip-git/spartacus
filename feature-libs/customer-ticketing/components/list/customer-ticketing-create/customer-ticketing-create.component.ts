@@ -16,9 +16,9 @@ import { Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
 
 @Component({
-    selector: 'cx-customer-ticketing-create',
-    templateUrl: './customer-ticketing-create.component.html',
-    standalone: false
+  selector: 'cx-customer-ticketing-create',
+  templateUrl: './customer-ticketing-create.component.html',
+  standalone: false,
 })
 export class CustomerTicketingCreateComponent implements OnDestroy {
   protected subscription = new Subscription();

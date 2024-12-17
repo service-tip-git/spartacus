@@ -24,10 +24,10 @@ import { take } from 'rxjs/operators';
 import { ConfiguratorStorefrontUtilsService } from '../service/configurator-storefront-utils.service';
 
 @Component({
-    selector: 'cx-configurator-conflict-solver-dialog',
-    templateUrl: './configurator-conflict-solver-dialog.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-configurator-conflict-solver-dialog',
+  templateUrl: './configurator-conflict-solver-dialog.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ConfiguratorConflictSolverDialogComponent
   implements OnInit, OnDestroy

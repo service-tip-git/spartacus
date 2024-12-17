@@ -19,9 +19,9 @@ import { take } from 'rxjs/operators';
 import { CustomerTicketingReopenComponentService } from './customer-ticketing-reopen-component.service';
 
 @Component({
-    selector: 'cx-customer-ticketing-reopen',
-    templateUrl: './customer-ticketing-reopen.component.html',
-    standalone: false
+  selector: 'cx-customer-ticketing-reopen',
+  templateUrl: './customer-ticketing-reopen.component.html',
+  standalone: false,
 })
 export class CustomerTicketingReopenComponent implements OnDestroy {
   protected subscription = new Subscription();

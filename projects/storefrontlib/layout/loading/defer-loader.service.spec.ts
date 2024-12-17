@@ -19,9 +19,9 @@ const MockDeferLayoutConfig: LayoutConfig = {
 };
 
 @Component({
-    selector: 'cx-any',
-    template: '<div id="any"></div>',
-    standalone: false
+  selector: 'cx-any',
+  template: '<div id="any"></div>',
+  standalone: false,
 })
 class MockAnyComponent {}
 

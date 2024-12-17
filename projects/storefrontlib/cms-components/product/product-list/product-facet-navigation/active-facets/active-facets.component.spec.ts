@@ -15,9 +15,9 @@ import { FacetService } from '../services/facet.service';
 import { ActiveFacetsComponent } from './active-facets.component';
 
 @Component({
-    selector: 'cx-icon',
-    template: '',
-    standalone: false
+  selector: 'cx-icon',
+  template: '',
+  standalone: false,
 })
 class MockCxIconComponent {
   @Input() type: ICON_TYPE;

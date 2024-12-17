@@ -38,9 +38,9 @@ import { CxApiService } from './services/cx-api.service';
 const testText = 'test text';
 
 @Component({
-    selector: 'cx-test',
-    template: ` <div id="debugEl1">${testText}</div> `,
-    standalone: false
+  selector: 'cx-test',
+  template: ` <div id="debugEl1">${testText}</div> `,
+  standalone: false,
 })
 class TestComponent {
   constructor(
@@ -78,13 +78,13 @@ class MockDynamicAttributeService {
 }
 
 @Component({
-    template: `<ng-container
+  template: `<ng-container
     [cxComponentWrapper]="component"
     (cxComponentRef)="testComponentRef($event)"
   >
     +
   </ng-container>`,
-    standalone: false
+  standalone: false,
 })
 class TestWrapperComponent {
   component: ContentSlotComponentData = {

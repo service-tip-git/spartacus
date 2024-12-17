@@ -28,8 +28,8 @@ const mockSkipLinks: SkipLink[] = [
 ];
 
 @Directive({
-    selector: '[cxFocus]',
-    standalone: false
+  selector: '[cxFocus]',
+  standalone: false,
 })
 export class MockFocusDirective {
   @Input('cxFocus') protected config;

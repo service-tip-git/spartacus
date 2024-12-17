@@ -18,10 +18,10 @@ import { ICON_TYPE } from '../../../../../cms-components/misc/icon/index';
 import { FocusConfig, LaunchDialogService } from '../../../../../layout/index';
 
 @Component({
-    selector: 'cx-coupon-dialog',
-    templateUrl: './coupon-dialog.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-coupon-dialog',
+  templateUrl: './coupon-dialog.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class CouponDialogComponent implements OnDestroy, OnInit {
   private subscription = new Subscription();

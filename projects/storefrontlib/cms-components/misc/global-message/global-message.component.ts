@@ -14,9 +14,9 @@ import { Observable } from 'rxjs';
 import { ICON_TYPE } from '../../../cms-components/misc/icon/icon.model';
 
 @Component({
-    selector: 'cx-global-message',
-    templateUrl: './global-message.component.html',
-    standalone: false
+  selector: 'cx-global-message',
+  templateUrl: './global-message.component.html',
+  standalone: false,
 })
 export class GlobalMessageComponent implements OnInit {
   iconTypes = ICON_TYPE;

@@ -16,10 +16,10 @@ import { UntypedFormControl } from '@angular/forms';
 import { ConfiguratorTextfield } from '../../core/model/configurator-textfield.model';
 
 @Component({
-    selector: 'cx-configurator-textfield-input-field',
-    templateUrl: './configurator-textfield-input-field.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-configurator-textfield-input-field',
+  templateUrl: './configurator-textfield-input-field.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ConfiguratorTextfieldInputFieldComponent implements OnInit {
   PREFIX_TEXTFIELD = 'cx-configurator-textfield';

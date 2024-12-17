@@ -16,8 +16,8 @@ describe('AsmCustomer360PromotionListingComponent', () => {
   @Component({
     selector: 'cx-icon',
     template: '',
-    standalone: false
-})
+    standalone: false,
+  })
   class MockCxIconComponent {
     @Input() type: ICON_TYPE;
   }
@@ -25,8 +25,8 @@ describe('AsmCustomer360PromotionListingComponent', () => {
   @Component({
     selector: 'cx-message',
     template: '',
-    standalone: false
-})
+    standalone: false,
+  })
   class MockCxMessageComponent {
     @Input() text: string;
     @Input() type: GlobalMessageType;
@@ -75,8 +75,8 @@ describe('AsmCustomer360PromotionListingComponent', () => {
       >
       </cx-asm-customer-360-promotion-listing>
     `,
-    standalone: false
-})
+    standalone: false,
+  })
   class TestHostComponent {
     @Input() headerText: string;
     @Input() emptyStateText: string;

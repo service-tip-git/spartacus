@@ -35,10 +35,10 @@ import { NavigationNode } from './navigation-node.model';
 const ARIA_EXPANDED_ATTR = 'aria-expanded';
 
 @Component({
-    selector: 'cx-navigation-ui',
-    templateUrl: './navigation-ui.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-navigation-ui',
+  templateUrl: './navigation-ui.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class NavigationUIComponent implements OnInit, OnDestroy {
   /**

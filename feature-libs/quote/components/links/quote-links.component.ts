@@ -20,10 +20,10 @@ import { FileDownloadService } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 
 @Component({
-    selector: 'cx-quote-links',
-    templateUrl: './quote-links.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-quote-links',
+  templateUrl: './quote-links.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class QuoteLinksComponent {
   protected quoteFacade = inject(QuoteFacade);

@@ -22,10 +22,10 @@ import { SearchBoxOutletTrendingSearches, SearchPhrases } from './model';
 const MAX_TRENDING_SEARCHES = 5;
 
 @Component({
-    selector: 'cx-trending-searches',
-    templateUrl: './trending-searches.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-trending-searches',
+  templateUrl: './trending-searches.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class TrendingSearchesComponent implements OnInit {
   public searchPhrases$: Observable<SearchPhrases[]>;

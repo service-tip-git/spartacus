@@ -17,9 +17,9 @@ import { Observable } from 'rxjs';
  * Used in the PickupOptionDialog component for selecting a pickup location.
  */
 @Component({
-    selector: 'cx-store-list',
-    templateUrl: 'store-list.component.html',
-    standalone: false
+  selector: 'cx-store-list',
+  templateUrl: 'store-list.component.html',
+  standalone: false,
 })
 export class StoreListComponent implements OnInit {
   /** The product code for the stock levels at each location */

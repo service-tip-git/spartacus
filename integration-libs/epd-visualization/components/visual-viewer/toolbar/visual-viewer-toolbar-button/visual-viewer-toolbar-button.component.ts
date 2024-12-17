@@ -7,10 +7,10 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'cx-epd-visualization-viewer-toolbar-button',
-    templateUrl: './visual-viewer-toolbar-button.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cx-epd-visualization-viewer-toolbar-button',
+  templateUrl: './visual-viewer-toolbar-button.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class VisualViewerToolbarButtonComponent {
   @Input() text = '';

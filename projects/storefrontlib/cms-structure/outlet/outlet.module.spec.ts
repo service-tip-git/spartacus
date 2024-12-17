@@ -28,12 +28,12 @@ class MockOutletService implements Partial<OutletService> {
 }
 
 @Component({
-    standalone: false
+  standalone: false,
 })
 class AlphaComponent {}
 
 @Component({
-    standalone: false
+  standalone: false,
 })
 class BetaComponent {}
 
