@@ -926,10 +926,10 @@ export interface FeatureTogglesInterface {
 
 export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   showDeliveryOptionsTranslation: false,
-  formErrorsDescriptiveMessages: false,
+  formErrorsDescriptiveMessages: true,
   showSearchingCustomerByOrderInASM: false,
   showStyleChangesInASM: false,
-  shouldHideAddToCartForUnpurchasableProducts: false,
+  shouldHideAddToCartForUnpurchasableProducts: true,
   useExtractedBillingAddressComponent: true,
   showBillingAddressInDigitalPayments: true,
   showDownloadProposalButton: true,
