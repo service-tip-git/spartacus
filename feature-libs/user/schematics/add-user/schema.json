@@ -25,6 +25,7 @@
     "features": {
       "type": "array",
       "uniqueItems": true,
+      "default": ["User-Account", "User-Profile"],
       "items": {
         "enum": ["User-Account", "User-Profile"],
         "type": "string"

@@ -24,6 +24,10 @@
     "features": {
       "type": "array",
       "uniqueItems": true,
+      "default": [
+        "Product-Multi-Dimensional-Selector",
+        "Product-Multi-Dimensional-List"
+      ],
       "items": {
         "enum": [
           "Product-Multi-Dimensional-Selector",
