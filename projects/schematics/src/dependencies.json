@@ -17,11 +17,16 @@
   "@spartacus/schematics": {
     "@angular-devkit/core": "^18.2.9",
     "@angular-devkit/schematics": "^18.2.9",
+    "@angular/common": "^18.2.9",
     "@angular/compiler": "^18.2.9",
+    "@angular/core": "^18.2.9",
     "@schematics/angular": "^18.2.9",
+    "jest-preset-angular": "14.1.1",
     "jsonc-parser": "~3.2.1",
     "parse5": "^7.1.2",
-    "typescript": "^5.2.2"
+    "rxjs": "^7.8.0",
+    "typescript": "^5.2.2",
+    "zone.js": "0.14.10"
   },
   "ssr-tests": {
     "@spartacus/core": "2211.32.0-1",
@@ -507,7 +512,6 @@
     "@types/google.maps": "^3.54.0",
     "@types/googlepay": "^0.7.4",
     "angular-oauth2-oidc": "^17.0.1",
-    "bootstrap": "^4.6.2",
     "comment-json": "^4.2.3",
     "express": "^4.21.2",
     "hamburgers": "^1.2.1",
