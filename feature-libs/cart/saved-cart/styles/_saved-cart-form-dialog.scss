@@ -2,11 +2,11 @@ cx-saved-cart-form-dialog {
   background-color: rgba(0, 0, 0, 0.5);
 
   .cx-saved-cart-form-dialog {
-    @extend .modal-dialog;
-    @extend .modal-dialog-centered;
+    // @extend .modal-dialog;
+    // @extend .modal-dialog-centered;
 
     .cx-saved-cart-form-container {
-      @extend .modal-content;
+      // @extend .modal-content;
 
       .cx-saved-cart-form-header {
         .cx-saved-cart-form-title {
@@ -17,7 +17,7 @@ cx-saved-cart-form-dialog {
       }
 
       .cx-saved-cart-form-body {
-        @extend .modal-body;
+        // @extend .modal-body;
 
         .cx-saved-cart-form-row {
           margin-bottom: 1.5rem;

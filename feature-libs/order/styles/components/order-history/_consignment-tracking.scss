@@ -6,12 +6,12 @@
 
 %cx-tracking-events {
   .cx-consignment-tracking-dialog {
-    @extend .modal-dialog;
-    @extend .modal-dialog-centered;
-    @extend .modal-lg;
+    // @extend .modal-dialog;
+    // @extend .modal-dialog-centered;
+    // @extend .modal-lg;
 
     .cx-consignment-tracking-container {
-      @extend .modal-content;
+      // @extend .modal-content;
 
       .cx-consignment-tracking-title {
         @include type('3');

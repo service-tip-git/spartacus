@@ -2,11 +2,11 @@
   background-color: rgba(0, 0, 0, 0.5);
 
   .cx-clear-cart-dialog {
-    @extend .modal-dialog;
-    @extend .modal-dialog-centered;
+    // @extend .modal-dialog;
+    // @extend .modal-dialog-centered;
 
     .cx-clear-cart-container {
-      @extend .modal-content;
+      // @extend .modal-content;
 
       .cx-clear-cart-header {
         .cx-clear-cart-title {
@@ -17,7 +17,7 @@
       }
 
       .cx-clear-cart-body {
-        @extend .modal-body;
+        // @extend .modal-body;
 
         .clear-cart-msg {
           margin-bottom: 1.5rem;

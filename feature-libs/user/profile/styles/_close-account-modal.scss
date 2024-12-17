@@ -1,10 +1,10 @@
 %cx-close-account-modal {
   .cx-close-account-modal {
-    @extend .modal-dialog;
-    @extend .modal-dialog-centered;
+    // @extend .modal-dialog;
+    // @extend .modal-dialog-centered;
 
     .cx-close-account-modal-container {
-      @extend .modal-content;
+      // @extend .modal-content;
 
       .cx-close-account-modal-header {
         display: flex;
@@ -15,7 +15,7 @@
       }
 
       .cx-close-account-modal-body {
-        @extend .modal-body;
+        // @extend .modal-body;
       }
 
       .cx-confirmation {
