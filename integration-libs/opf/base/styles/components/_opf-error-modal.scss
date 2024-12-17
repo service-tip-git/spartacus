@@ -2,11 +2,11 @@
 
 %cx-opf-error-modal {
   .cx-opf-error-modal {
-    @extend .modal-dialog;
-    @extend .modal-dialog-centered;
+    // @extend .modal-dialog;
+    // @extend .modal-dialog-centered;
 
     .cx-opf-error-modal-container {
-      @extend .modal-content;
+      // @extend .modal-content;
 
       .cx-opf-error-modal-header {
         display: flex;
@@ -17,7 +17,7 @@
       }
 
       .cx-opf-error-modal-body {
-        @extend .modal-body;
+        // @extend .modal-body;
       }
 
       .cx-confirmation {

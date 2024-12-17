@@ -23,16 +23,16 @@
   background-color: rgba(0, 0, 0, 0.5);
 
   .cx-cancel-replenishment-dialog-foreground {
-    @extend .modal-dialog;
-    @extend .modal-dialog-centered;
-    @extend .modal-sm;
+    // @extend .modal-dialog;
+    // @extend .modal-dialog-centered;
+    // @extend .modal-sm;
 
     .cx-cancel-replenishment-dialog-content {
-      @extend .modal-content;
+      // @extend .modal-content;
 
       .cx-cancel-replenishment-dialog {
         &-header {
-          @extend .modal-header;
+          // @extend .modal-header;
         }
 
         &-description {
@@ -43,7 +43,7 @@
         }
 
         &-body {
-          @extend .modal-body;
+          // @extend .modal-body;
         }
       }
     }

@@ -4,11 +4,11 @@
   background-color: rgba(0, 0, 0, 0.5);
 
   .cx-customer-ticket-form-dialog {
-    @extend .modal-dialog;
-    @extend .modal-dialog-centered;
+    // @extend .modal-dialog;
+    // @extend .modal-dialog-centered;
 
     .cx-customer-ticket-form-container {
-      @extend .modal-content;
+      // @extend .modal-content;
 
       .cx-customer-ticket-form-header {
         .cx-customer-ticket-form-title {
@@ -19,7 +19,7 @@
       }
 
       .cx-customer-ticket-form-body {
-        @extend .modal-body;
+        // @extend .modal-body;
         display: flex;
         flex-direction: column;
         gap: 1rem;
