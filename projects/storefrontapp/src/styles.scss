@@ -1,5 +1,9 @@
 @import 'styles-config';
 
+// ORDER IMPORTANT: Spartacus core first
+@import '@spartacus/styles/scss/core';
+
+// ORDER IMPORTANT: Bootstrap next
 @import 'bootstrap/scss/reboot';
 @import 'bootstrap/scss/type';
 @import 'bootstrap/scss/grid';
@@ -28,4 +32,5 @@
 // @import 'bootstrap/scss/link'; DOESNT EXIST IN BOOTSTRAP 4
 @import 'bootstrap/scss/dropdown';
 
+// ORDER IMPORTANT: Spartacus styles last
 @import '@spartacus/styles';
