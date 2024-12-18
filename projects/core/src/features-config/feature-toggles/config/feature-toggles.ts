@@ -874,20 +874,13 @@ export interface FeatureTogglesInterface {
    *  ```ts
    * provideConfig({
    *   pictureElementFormats: {
-   *    mediaQueries: {
-   *     'max-width': '767px',
-   *      ...
-   *    },
-   *    width: 50,
-   *    height: 50,
+   *    mediaQueries: '(max-width: 480px)',
    *   },
    * })
    * ```
    *
-   * After activating this toggle, new inputs in `MediaComponent` — specifically
-   * `width`, `height`, and `sizes` — will be passed to the template as HTML attributes.
-   *
-   * Toggle activates `@Input() elementType: 'img' | 'picture' = 'img'` in `MediaComponent`
+   * Toggle activates `@Input() elementType: 'img' | 'picture' = 'img'`
+   * and `@Input() sizesForImgElement: string` in `MediaComponent`
    *
    */
   useExtendedMediaComponentConfiguration?: boolean;
