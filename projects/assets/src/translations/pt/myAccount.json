@@ -1,109 +1,109 @@
 {
-  "closeAccount": {
-    "confirmAccountClosure": "Confirmar fechamento de conta",
-    "confirmAccountClosureMessage": "Tem certeza de que quer fechar sua conta?",
-    "closeMyAccount": "CLOSE MY ACCOUNT",
-    "accountClosedSuccessfully": "Account closed with success",
-    "accountClosedFailure": "Failed to close account"
+  "closeAccount" : {
+    "confirmAccountClosure" : "Confirmar fechamento de conta",
+    "confirmAccountClosureMessage" : "Tem certeza de que quer fechar sua conta?",
+    "closeMyAccount" : "FECHAR MINHA CONTA",
+    "accountClosedSuccessfully" : "Conta fechada com êxito",
+    "accountClosedFailure" : "Falha ao fechar conta"
   },
-  "updatePasswordForm": {
-    "oldPassword": {
-      "label": "Senha antiga",
-      "placeholder": "Senha antiga"
+  "updatePasswordForm" : {
+    "oldPassword" : {
+      "label" : "Senha antiga",
+      "placeholder" : "Senha antiga"
     },
-    "oldPasswordIsRequired": "Old password is required.",
-    "newPassword": {
-      "label": "Nova senha",
-      "placeholder": "Nova senha"
+    "oldPasswordIsRequired" : "A senha antiga é obrigatória.",
+    "newPassword" : {
+      "label" : "Nova senha",
+      "placeholder" : "Nova senha"
     },
-    "passwordMinRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
-    "passwordStrengthRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
-    "confirmPassword": {
-      "label": "Confirmar nova senha",
-      "placeholder": "Confirmar senha"
+    "passwordMinRequirements" : "Aqui está um guia rápido para uma senha segura: utilize pelo menos 8 caracteres com uma mistura de letras maiúsculas e minúsculas, números e símbolos.",
+    "passwordStrengthRequirements" : "Aqui está um guia rápido para uma senha segura: Use pelo menos 8 caracteres com uma combinação de letras maiúsculas e minúsculas, números e símbolos.",
+    "confirmPassword" : {
+      "label" : "Confirmar nova senha",
+      "placeholder" : "Confirmar senha"
     },
-    "bothPasswordMustMatch": "Both password must match",
-    "passwordUpdateSuccess": "Password updated with success",
-    "accessDeniedError": "Access is denied"
+    "bothPasswordMustMatch" : "As duas senhas devem corresponder",
+    "passwordUpdateSuccess" : "Senha atualizada com êxito",
+    "accessDeniedError" : "O acesso foi negado"
   },
-  "updateProfileForm": {
-    "title": "Título",
-    "none": "",
-    "firstName": {
-      "label": "Nome",
-      "placeholder": "Nome"
+  "updateProfileForm" : {
+    "title" : "Título",
+    "none" : "",
+    "firstName" : {
+      "label" : "Nome",
+      "placeholder" : "Nome"
     },
-    "firstNameIsRequired": "First name is required.",
-    "lastName": {
-      "label": "Sobrenome",
-      "placeholder": "Sobrenome"
+    "firstNameIsRequired" : "O nome é obrigatório.",
+    "lastName" : {
+      "label" : "Sobrenome",
+      "placeholder" : "Sobrenome"
     },
-    "lastNameIsRequired": "Last name is required.",
-    "profileUpdateSuccess": "Personal details successfully updated",
-    "customerId": "Customer #"
+    "lastNameIsRequired" : "O sobrenome é obrigatório.",
+    "profileUpdateSuccess" : "Detalhes pessoais atualizados com êxito",
+    "customerId" : "Nº do cliente"
   },
-  "consentManagementForm": {
-    "clearAll": "Clear all",
-    "selectAll": "Selecionar todos",
-    "message": {
-      "success": {
-        "given": "Consent successfully given.",
-        "withdrawn": "Consent successfully withdrawn."
+  "consentManagementForm" : {
+    "clearAll" : "Limpar tudo",
+    "selectAll" : "Selecionar tudo",
+    "message" : {
+      "success" : {
+        "given" : "Consentimento dado com êxito.",
+        "withdrawn" : "Consentimento retirado com êxito."
       }
     }
   },
-  "myCoupons": {
-    "noCouponsMessage": "You have no coupons available.",
-    "effectiveTitle": "Efetivo:",
-    "Effective": "EFFECTIVE",
-    "PreSession": "EFFECTIVE SOON",
-    "ExpireSoon": "EXPIRING SOON",
-    "readMore": "Read more",
-    "notification": "Notificação",
-    "findProducts": "Encontrar produtos",
-    "status": "Status:",
-    "dialogTitle": "Cupom",
-    "claimCustomerCoupon": "Você reivindicou este cupom com sucesso.",
-    "myCoupons": "My coupons",
-    "startDateAsc": "Start Date (ascending)",
-    "startDateDesc": "Start Date (descending)",
-    "endDateAsc": "End Date (ascending)",
-    "endDateDesc": "End Date (descending)",
-    "sortBy": "Ordenar por",
-    "sortCoupons": "Sort coupons",
-    "notesPreffix": "You can set your preferred channels for receiving coupon notifications on the ",
-    "notesLink": "Canais de notificação",
-    "notesSuffix": " page."
+  "myCoupons" : {
+    "noCouponsMessage" : "Você não tem cupons disponíveis.",
+    "effectiveTitle" : "Efetivo:",
+    "Effective" : "EFETIVO",
+    "PreSession" : "EFETIVO EM BREVE",
+    "ExpireSoon" : "EXPIRANDO EM BREVE",
+    "readMore" : "Ler mais",
+    "notification" : "Notificação",
+    "findProducts" : "Encontrar produtos",
+    "status" : "Status:",
+    "dialogTitle" : "Cupom",
+    "claimCustomerCoupon" : "Você reivindicou este cupom com êxito.",
+    "myCoupons" : "Meus cupons",
+    "startDateAsc" : "Data inicial (em ordem crescente)",
+    "startDateDesc" : "Data inicial (em ordem decrescente)",
+    "endDateAsc" : "Data final (em ordem crescente)",
+    "endDateDesc" : "Data final (em ordem decrescente)",
+    "sortBy" : "Ordenar por",
+    "sortCoupons" : "Ordenar cupons",
+    "notesPreffix" : "Você pode definir seus canais preferidos para receber notificações de cupom na página ",
+    "notesLink" : "Canais de notificação",
+    "notesSuffix" : " ."
   },
-  "notificationPreference": {
-    "message": "Select your preferred notification channels",
-    "note": "Note: ",
-    "noteMessage": "If you deactivate all channels you will not be able to receive any further notifications.",
-    "EMAIL": "Email:",
-    "SMS": "SMS:",
-    "SITE_MESSAGE": "SiteMessage"
+  "notificationPreference" : {
+    "message" : "Selecione seus canais de notificação preferidos",
+    "note" : "Nota: ",
+    "noteMessage" : "Se você desativar todos os canais, não poderá receber mais notificações.",
+    "EMAIL" : "E-mail:",
+    "SMS" : "SMS:",
+    "SITE_MESSAGE" : "SiteMessage"
   },
-  "myInterests": {
-    "header": "Meus juros",
-    "item": "ITEM",
-    "price": "PRICE",
-    "notifications": "NOTIFICATIONS",
-    "noInterests": "You have no registered interests yet.",
-    "inStock": "Em estoque",
-    "lowStock": "Estoque baixo",
-    "outOfStock": "Sem estoque",
-    "BACK_IN_STOCK": "De novo em estoque",
-    "sortBy": "Ordenar por",
-    "sortInterests": "Sort interests",
-    "expirationDate": " - Till {{ expirationDate }}",
-    "productId": "ID {{ code }}",
-    "remove": "Remover",
-    "sorting": {
-      "byNameAsc": "Nome (ascendente)",
-      "byNameDesc": "Nome (descendente)"
+  "myInterests" : {
+    "header" : "Meus interesses",
+    "item" : "ITEM",
+    "price" : "PREÇO",
+    "notifications" : "NOTIFICAÇÕES",
+    "noInterests" : "Você ainda não tem interesses registrados.",
+    "inStock" : "Em estoque",
+    "lowStock" : "Estoque baixo",
+    "outOfStock" : "Sem estoque",
+    "BACK_IN_STOCK" : "De novo em estoque",
+    "sortBy" : "Ordenar por",
+    "sortInterests" : "Ordenar interesses",
+    "expirationDate" : " - Até {{ expirationDate }}",
+    "productId" : "ID {{ code }}",
+    "remove" : "Remover",
+    "sorting" : {
+      "byNameAsc" : "Nome (em ordem crescente)",
+      "byNameDesc" : "Nome (em ordem decrescente)"
     },
-    "actions": "ACTIONS",
-    "caption": "My Interests contents.",
-    "itemRemoved": "Selected item has been removed."
+    "actions" : "AÇÕES",
+    "caption" : "Conteúdo de Meus interesses.",
+    "itemRemoved" : "O item selecionado foi removido."
   }
 }

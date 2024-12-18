@@ -1,13 +1,13 @@
 {
-  "myAccountV2Consent": {
-    "header": "Manajemen Persetujuan",
-    "dateDescription": "Approved on ",
-    "clearAll": "Disable All",
-    "selectAll": "Enable All",
-    "message": {
-      "success": {
-        "given": "Consent successfully given.",
-        "withdrawn": "Consent successfully withdrawn."
+  "myAccountV2Consent" : {
+    "header" : "Manajemen Persetujuan",
+    "dateDescription" : "Disetujui pada ",
+    "clearAll" : "Nonaktifkan Semua",
+    "selectAll" : "Aktifkan Semua",
+    "message" : {
+      "success" : {
+        "given" : "Persetujuan berhasil diberikan.",
+        "withdrawn" : "Persetujuan berhasil dibatalkan."
       }
     }
   }

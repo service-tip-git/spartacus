@@ -1,47 +1,47 @@
 {
-  "loginForm": {
-    "forgotPassword": "Forgot password?",
-    "signIn": "Zarejestruj się",
-    "register": "Rejestracja",
-    "dontHaveAccount": "Don’t have an account?",
-    "guestCheckout": "Guest Checkout",
-    "emailAddress": {
-      "label": "Adres e-mail",
-      "placeholder": "Enter Email Address"
+  "loginForm" : {
+    "forgotPassword" : "Zapomniałeś(-aś) hasła?",
+    "signIn" : "Zaloguj się",
+    "register" : "Zarejestruj się",
+    "dontHaveAccount" : "Nie masz konta?",
+    "guestCheckout" : "Kup jako gość",
+    "emailAddress" : {
+      "label" : "Adres e-mail",
+      "placeholder" : "Wprowadź adres e-mail."
     },
-    "password": {
-      "label": "Hasło",
-      "placeholder": "Enter Your Password"
+    "password" : {
+      "label" : "Hasło",
+      "placeholder" : "Wprowadź swoje hasło"
     },
-    "wrongEmailFormat": "This is not a valid email format."
+    "wrongEmailFormat" : "To nie jest prawidłowy format adresu e-mail."
   },
-  "verificationTokenForm": {
-    "createVerificationToken": "Verification code sent to {{target}}. Please check and enter the code.",
-    "needInputCredentials": "Please enter your credentials to continue.",
-    "sendRateLime": "in {{waitTime}} seconds",
-    "resend": "Wyślij ponownie",
-    "verificationCode": {
-      "label": "Verification Code",
-      "placeholder": "Enter Verification Code"
+  "verificationTokenForm" : {
+    "createVerificationToken" : "Kod weryfikacyjny wysłany do {{target}}. Proszę sprawdź i wprowadź kod.",
+    "needInputCredentials" : "Proszę wprowadź swoje dane uwierzytelniające, by kontynuować.",
+    "sendRateLime" : "Za {{waitTime}} sekund(y)",
+    "resend" : "Wyślij ponownie",
+    "verificationCode" : {
+      "label" : "Kod weryfikacyjny",
+      "placeholder" : "Wprowadź kod weryfikacji"
     },
-    "noReceiveCode": "Didn't receive the code?",
-    "verify": "Verify",
-    "back": "Wstecz",
-    "tokenInputHint": "You can request a new code. A timer starts indicating the seconds left until you can resend your request."
+    "noReceiveCode" : "Kod nie dotarł?",
+    "verify" : "Zweryfikuj",
+    "back" : "Wstecz",
+    "tokenInputHint" : "Możesz poprosić o nowy kod. Uruchomi się licznik czasu wskazujący sekundy pozostałe do ponownego wysłania żądania."
   },
-  "verificationTokenDialog": {
-    "title": "Didn’t receive the code",
-    "noReceiveCode": "If you didn't receive the code, the reasons might be:",
-    "contentLine1": "1. The email hasn't come yet.",
-    "contentLine2": "2. The received email has been treated as junk email.",
-    "contentLine3": "3. Either the email address or the password you entered is incorrect.",
-    "close": "Zamknij"
+  "verificationTokenDialog" : {
+    "title" : "Kod nie dotarł?",
+    "noReceiveCode" : "Jeśli nie otrzymałeś kodu, powodem tego może być:",
+    "contentLine1" : "1. E-mail jeszcze nie dotarł.",
+    "contentLine2" : "2. Otrzymany e-mail został potraktowany jako spam.",
+    "contentLine3" : "3. Wprowadzony adres e-mail lub hasło są nieprawidłowe.",
+    "close" : "Zamknij"
   },
-  "miniLogin": {
-    "userGreeting": "Hi, {{name}}",
-    "signInRegister": "Sign In / Register"
+  "miniLogin" : {
+    "userGreeting" : "Witaj, {{name}}",
+    "signInRegister" : "Zaloguj się / Zarejestruj"
   },
-  "myAccountV2User": {
-    "signOut": "Wyloguj się"
+  "myAccountV2User" : {
+    "signOut" : "Wyloguj się"
   }
 }

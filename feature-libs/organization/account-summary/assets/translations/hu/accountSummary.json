@@ -1,88 +1,88 @@
 {
-  "orgAccountSummary": {
-    "groupName": "Account Summaries",
-    "header": "All Account Summaries ({{count}})",
-    "name": "Egység",
-    "details": {
-      "header": "Számlaösszegzés részletei",
-      "uid": "Egység azonosítója",
-      "name": "Egység neve",
-      "address": "Cím",
-      "creditRep": "Információ",
-      "creditLine": "Hitelkeret",
-      "currentBalance": "Aktuális egyenleg",
-      "openBalance": "Nyitott egyenleg",
-      "pastDueBalance": "Lejárt esedékességű egyenleg",
-      "dayRange": "{{minBoundary}}-{{maxBoundary}} Days",
-      "dayPlus": "{{minBoundary}}+ Days",
-      "notApplicable": "N/A"
+  "orgAccountSummary" : {
+    "groupName" : "Számlaösszegzések",
+    "header" : "Összes számlaösszegzés ({{count}})",
+    "name" : "Egység",
+    "details" : {
+      "header" : "Számlaösszegzés részletei",
+      "uid" : "Egység azonosítója",
+      "name" : "Egység neve",
+      "address" : "Cím",
+      "creditRep" : "Információ",
+      "creditLine" : "Hitelkeret",
+      "currentBalance" : "Jelenlegi egyenleg",
+      "openBalance" : "Nyitott egyenleg",
+      "pastDueBalance" : "Lejárt esedékességű egyenleg",
+      "dayRange" : "{{minBoundary}}–{{maxBoundary}} nap",
+      "dayPlus" : "{{minBoundary}}+ nap",
+      "notApplicable" : "N/A"
     },
-    "document": {
-      "header": "Dokumentumok",
-      "id": "Bizonylatszám",
-      "type": "Dokumentumfajta",
-      "date": "Létrehozás dátuma",
-      "dueDate": "Due On",
-      "originalAmount": "Eredeti összeg",
-      "openAmount": "Nyitott összeg",
-      "status": "Státus",
-      "attachment": "Melléklet",
-      "download": "Letöltés",
-      "attachmentDescription": "Download attachment for {{type}} {{id}}.",
-      "noneFound": "No Documents Found"
+    "document" : {
+      "header" : "Dokumentumok",
+      "id" : "Dokumentumszám",
+      "type" : "Dokumentumtípus",
+      "date" : "Létrehozás dátuma",
+      "dueDate" : "Esedékesség napja",
+      "originalAmount" : "Eredeti összeg",
+      "openAmount" : "Nyitott összeg",
+      "status" : "Státus",
+      "attachment" : "Csatolmány",
+      "download" : "Letöltés",
+      "attachmentDescription" : "Csatolmány letöltése a következőhöz: {{type}} {{id}}.",
+      "noneFound" : "Nem található dokumentum"
     },
-    "sorts": {
-      "byCreatedAtDateAsc": "Created On Ascending",
-      "byCreatedAtDateDesc": "Created On Descending",
-      "byDueAtDateAsc": "Due On Ascending",
-      "byDueAtDateDesc": "Due On Descending",
-      "byOriginalAmountAsc": "Original Amount Ascending",
-      "byOriginalAmountDesc": "Original Amount Descending",
-      "byOpenAmountAsc": "Open Amount Ascending",
-      "byOpenAmountDesc": "Open Amount Descending",
-      "byOrgDocumentTypeAsc": "Document Type Ascending",
-      "byOrgDocumentTypeDesc": "Document Type Descending",
-      "byStatusAsc": "Status Ascending",
-      "byStatusDesc": "Status Descending",
-      "byOrgDocumentIdAsc": "Document Number Ascending",
-      "byOrgDocumentIdDesc": "Document Number Descending"
+    "sorts" : {
+      "byCreatedAtDateAsc" : "Létrehozás dátuma szerint növekvő",
+      "byCreatedAtDateDesc" : "Létrehozás dátuma szerint csökkenő",
+      "byDueAtDateAsc" : "Esedékesség szerint növekvő",
+      "byDueAtDateDesc" : "Esedékesség szerint csökkenő",
+      "byOriginalAmountAsc" : "Eredeti összeg szerint növekvő",
+      "byOriginalAmountDesc" : "Eredeti összeg szerint csökkenő",
+      "byOpenAmountAsc" : "Nyitott összeg szerint növekvő",
+      "byOpenAmountDesc" : "Nyitott összeg szerint csökkenő",
+      "byOrgDocumentTypeAsc" : "Dokumentumtípus szerint növekvő",
+      "byOrgDocumentTypeDesc" : "Dokumentumtípus szerint csökkenő",
+      "byStatusAsc" : "Státus szerint növekvő",
+      "byStatusDesc" : "Státus szerint csökkenő",
+      "byOrgDocumentIdAsc" : "Dokumentumszám szerint növekvő",
+      "byOrgDocumentIdDesc" : "Dokumentumszám szerint csökkenő"
     },
-    "statuses": {
-      "open": "Nyitott",
-      "closed": "Zárva",
-      "all": "Minden"
+    "statuses" : {
+      "open" : "Nyitott",
+      "closed" : "Lezárt",
+      "all" : "Összes"
     },
-    "filterByOptions": {
-      "orgDocumentId": "Bizonylatszám",
-      "orgDocumentIdRange": "Document Number Range",
-      "orgDocumentType": "Dokumentumfajta",
-      "createdAtDateRange": "Created On Range",
-      "dueAtDateRange": "Due On Range",
-      "amountRange": "Eredetiösszeg-tartomány",
-      "openAmountRange": "Nyitottösszeg-tartomány"
+    "filterByOptions" : {
+      "orgDocumentId" : "Dokumentumszám",
+      "orgDocumentIdRange" : "Dokumentumszám-tartomány",
+      "orgDocumentType" : "Dokumentumtípus",
+      "createdAtDateRange" : "Létrehozás tartománya",
+      "dueAtDateRange" : "Esedékesség tartománya",
+      "amountRange" : "Eredeti összeg tartománya",
+      "openAmountRange" : "Nyitott összeg tartománya"
     },
-    "sortBy": "Sort By",
-    "sortDocuments": "Sort documents",
-    "filter": {
-      "status": "Státus",
-      "filterBy": "Szűrés szempontja",
-      "documentNumber": "Bizonylatszám",
-      "documentType": "Dokumentumfajta",
-      "startRange": "Ettől:",
-      "endRange": "Eddig:",
-      "clear": "Összes törlése",
-      "search": "Keresés",
-      "errors": {
-        "toDateMustComeAfterFrom": "Choose an end date that's later than the start date.",
-        "toAmountMustBeLargeThanFrom": "Choose an end range value that's smaller than the start value."
+    "sortBy" : "Rendezés alapja",
+    "sortDocuments" : "Dokumentumok rendezése",
+    "filter" : {
+      "status" : "Státus",
+      "filterBy" : "Szűrés szempontja",
+      "documentNumber" : "Dokumentumszám",
+      "documentType" : "Dokumentumtípus",
+      "startRange" : "Ettől:",
+      "endRange" : "Eddig:",
+      "clear" : "Összes törlése",
+      "search" : "Keresés",
+      "errors" : {
+        "toDateMustComeAfterFrom" : "Olyan dátumot válasszon befejezési dátumként, amely későbbi a kezdési dátumnál.",
+        "toAmountMustBeLargeThanFrom" : "Olyan értéket válasszon befejezési tartományként, amely kisebb a kezdési értéknél."
       }
     },
-    "hint": "Account summaries allow you to review general information about a unit, including balances and aging summary of invoices. Here, you can also browse through a list of transaction documents for a unit."
+    "hint" : "A számlaösszegzések lehetővé teszik, hogy ellenőrizze egy egység általános információit, beleértve az egyenlegeket és a számlák lejáratának összesítését. Ezen felül itt tekintheti meg az egységek tranzakciós dokumentumainak listáját is."
   },
-  "orgAccountSummaryList": {
-    "breadcrumbs": {
-      "list": "Account Summaries",
-      "details": "{{name}}"
+  "orgAccountSummaryList" : {
+    "breadcrumbs" : {
+      "list" : "Számlaösszegzések",
+      "details" : "{{name}}"
     }
   }
 }

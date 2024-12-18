@@ -1,66 +1,66 @@
 {
-  "userRegistrationForm": {
-    "fields": {
-      "titleCode": {
-        "label": "Title (optional)",
-        "placeholder": "Обращение"
+  "userRegistrationForm" : {
+    "fields" : {
+      "titleCode" : {
+        "label" : "Обращение (необязательно)",
+        "placeholder" : "Обращение"
       },
-      "firstName": {
-        "label": "Имя",
-        "placeholder": "Имя"
+      "firstName" : {
+        "label" : "Имя",
+        "placeholder" : "Имя"
       },
-      "lastName": {
-        "label": "Фамилия",
-        "placeholder": "Фамилия"
+      "lastName" : {
+        "label" : "Фамилия",
+        "placeholder" : "Фамилия"
       },
-      "companyName": {
-        "label": "Company name",
-        "placeholder": "Company name"
+      "companyName" : {
+        "label" : "Название компании",
+        "placeholder" : "Название компании"
       },
-      "email": {
-        "label": "Отправить на эл. почту",
-        "placeholder": "Отправить на эл. почту"
+      "email" : {
+        "label" : "Электронная почта",
+        "placeholder" : "Электронная почта"
       },
-      "city": {
-        "label": "City/Town (optional)",
-        "placeholder": "Please select City/Town"
+      "city" : {
+        "label" : "Город (необязательно)",
+        "placeholder" : "Выберите город"
       },
-      "country": {
-        "label": "Country (optional)",
-        "placeholder": "Select Country"
+      "country" : {
+        "label" : "Страна (необязательно)",
+        "placeholder" : "Выберите страну"
       },
-      "state": {
-        "label": "State/Province (optional)",
-        "placeholder": "Select State/Province"
+      "state" : {
+        "label" : "Регион/область (необязательно)",
+        "placeholder" : "Выберите регион/область"
       },
-      "postalCode": {
-        "label": "Zip/Postal code (optional)",
-        "placeholder": "Zip/Postal code"
+      "postalCode" : {
+        "label" : "Почтовый индекс (необязательно)",
+        "placeholder" : "Почтовый индекс"
       },
-      "addressLine": {
-        "label": "Address (optional)",
-        "placeholder": "Адрес"
+      "addressLine" : {
+        "label" : "Адрес (необязательно)",
+        "placeholder" : "Адрес"
       },
-      "secondAddressLine": {
-        "label": "Address line 2 (optional)",
-        "placeholder": "Address line 2"
+      "secondAddressLine" : {
+        "label" : "Адрес, строка 2 (необязательно)",
+        "placeholder" : "Адрес, строка 2"
       },
-      "phoneNumber": {
-        "label": "Phone number (optional)",
-        "placeholder": "Номер телефона"
+      "phoneNumber" : {
+        "label" : "Телефон (необязательно)",
+        "placeholder" : "Телефон"
       },
-      "message": {
-        "label": "Message (optional)",
-        "placeholder": "An example data for the message field: \"Department: Ground support; Position: Chief safe guard; Report to: Steve Jackson; Comments: Please create new account for me\"."
+      "message" : {
+        "label" : "Сообщение (необязательно)",
+        "placeholder" : "Пример данных для поля сообщения: \"Отдел: наземная поддержка; должность: главный охранник; начальник: Стив Джексон; комментарий: Пожалуйста, создайте для меня новую учетную запись\"."
       }
     },
-    "messageToApproverTemplate": "Company name: {{companyName}},\n  Phone number: {{phoneNumber}},\n  Address: {{addressLine}} {{secondAddressLine}} {{city}} {{state}} {{postalCode}} {{country}},\n  Message: {{message}}",
-    "successFormSubmitMessage": "Thank you for registering! A representative will contact you shortly and confirm your access information.",
-    "formSubmitButtonLabel": "Зарегистрироваться",
-    "goToLoginButtonLabel": "Already registered? Go to Sign in",
-    "httpHandlers": {
-      "conflict": "User with this e-mail address already exists."
+    "messageToApproverTemplate" : "Название компании: {{companyName}},\n  Телефон: {{phoneNumber}},\n  Адрес: {{addressLine}} {{secondAddressLine}} {{city}} {{state}} {{postalCode}} {{country}},\n  Сообщение: {{message}}",
+    "successFormSubmitMessage" : "Спасибо за регистрацию! Наш представитель свяжется с вами в ближайшее время для подтверждения данных для доступа.",
+    "formSubmitButtonLabel" : "Зарегистрироваться",
+    "goToLoginButtonLabel" : "Уже зарегистрированы? Используйте кнопку входа.",
+    "httpHandlers" : {
+      "conflict" : "Пользователь с таким адресом электронной почты уже существует."
     },
-    "messageToFailedToRegister": "Failed to register. Please contact your admin for further assistance."
+    "messageToFailedToRegister" : "Регистрация не удалась. Обратитесь к администратору."
   }
 }

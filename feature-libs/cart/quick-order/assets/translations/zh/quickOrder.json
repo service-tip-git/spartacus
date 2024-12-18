@@ -1,78 +1,80 @@
 {
-  "quickOrderCartForm": {
-    "entriesWereAdded": "({{ quantity }}) {{ product }} has been added to the cart",
-    "entryWasAdded": "{{ product }} has been added to the cart",
-    "noResults": "We could not find any products",
-    "stockLevelReached": "The maximum stock level has been reached",
-    "title": "快速订单",
-    "productCodePlaceholder": "Enter ID",
-    "entryProductCode": "Enter Product ID for Quick Order",
-    "quantity": "Quantity for Quick Order",
-    "addToCart": "Add Product to Quick Order",
-    "add": "添加",
-    "product": "产品",
-    "products": "产品",
-    "productCodeLabel": "产品 ID",
-    "quantityLabel": "数量"
+  "quickOrderCartForm" : {
+    "entriesWereAdded" : "({{ quantity }}) {{ product }} 已添加到购物车",
+    "entryWasAdded" : "{{ product }} 已添加到购物车",
+    "noResults" : "我们无法找到任何产品",
+    "stockLevelReached" : "已达到最大库存水平",
+    "title" : "快速订单",
+    "productCodePlaceholder" : "输入标识",
+    "entryProductCode" : "输入快速订单的产品标识",
+    "quantity" : "快速订单的数量",
+    "addToCart" : "将产品添加到快速订单",
+    "add" : "添加",
+    "product" : "产品",
+    "products" : "产品",
+    "productCodeLabel" : "产品标识",
+    "quantityLabel" : "数量",
+    "quantityFullLabel" : "数量"
   },
-  "quickOrderForm": {
-    "placeholder": "Enter Product name or SKU",
-    "searchBoxLabel": "Enter Product name or SKU for quick order. You can add up to {{ limit }} products per order.",
-    "listLimitReached": "The product limit has been reached.",
-    "id": "ID {{ id }}",
-    "noResults": "We could not find any results",
-    "addProduct": "Add product {{ product }}",
-    "initialDescription": "When autocomplete results are available use up and down arrows to review and enter to select.",
-    "productsResults": "{{ count }} products are available.",
-    "quickOrderSearch": "Find product for quick order"
+  "quickOrderForm" : {
+    "placeholder" : "输入产品名称或 SKU",
+    "searchBoxLabel" : "输入快速订单的产品名称或 SKU。每个订单最多可以添加 {{ limit }} 个产品。",
+    "listLimitReached" : "已达到产品限制。",
+    "id" : "标识 {{ id }}",
+    "noResults" : "我们找不到任何结果",
+    "addProduct" : "添加产品 {{ product }}",
+    "initialDescription" : "自动完成时结果将可用，使用上下箭头进行审阅，按回车键以选择。",
+    "productsResults" : "{{ count }} 个产品可用。",
+    "quickOrderSearch" : "查找快速订单的产品"
   },
-  "quickOrderList": {
-    "addToCart": "添加到购物车",
-    "emptyList": "Empty list",
-    "header": "Add Products/SKUs",
-    "subHeader": "You can add up to {{ limit }} valid SKU at a time.",
-    "errorProceedingToCart": "Error proceeding to Cart.",
-    "warningProceedingToCart": "Warning proceeding to Cart.",
-    "successfullyAddedToCart": "Successfully added to Cart.",
-    "errors": {
-      "productIsOutOfStock": "{{ name }} (#{{code}}) is out of stock.",
-      "reviewErrors": "Please review these errors.",
-      "listIsFull": "The list is full, add these {{ count }} products to Cart in order to continue.",
-      "nonPurchasableError": "Product {{ name }} cannot be purchased",
-      "outOfStockErrorFound": "{{count}} out of stock product was not added.",
-      "outOfStockErrorFound_other": "{{count}} out of stock products were not added."
+  "quickOrderList" : {
+    "addToCart" : "添加到购物车",
+    "emptyList" : "空列表",
+    "header" : "添加产品/SKU",
+    "subHeader" : "您一次最多可以添加 {{ limit }} 个有效 SKU。",
+    "errorProceedingToCart" : "进入购物车时出错。",
+    "warningProceedingToCart" : "进入购物车时出现警告。",
+    "successfullyAddedToCart" : "已成功添加到购物车。",
+    "errors" : {
+      "productIsOutOfStock" : "{{ name }} (#{{code}}) 缺货。",
+      "reviewErrors" : "请查看这些错误。",
+      "listIsFull" : "列表已满，请将这 {{ count }} 种产品添加到购物车以继续。",
+      "nonPurchasableError" : "无法购买产品 {{ name }}",
+      "outOfStockErrorFound" : "{{count}} 个缺货产品尚未添加。",
+      "outOfStockErrorFound_other" : "{{count}} 个缺货产品尚未添加。"
     },
-    "warnings": {
-      "productWasReduced": "Quantity for {{ name }} (#{{code}}) was reduced to {{ quantityAdded}}.",
-      "reviewWarnings": "Please review these warnings.",
-      "reduceWarningFound": "{{count}} product quantity was reduced.",
-      "reduceWarningFound_other": "{{count}} products quantity were reduced."
+    "warnings" : {
+      "productWasReduced" : "{{ name }} (#{{code}}) 的数量已减少至 {{ quantityAdded}}。",
+      "reviewWarnings" : "请查看这些警告。",
+      "reduceWarningFound" : "{{count}} 个产品数量已减少。",
+      "reduceWarningFound_other" : "{{count}} 个产品数量已减少。"
     },
-    "successes": {
-      "productAddedToCart": "{{ name }} (#{{code}}) was added to cart.",
-      "addedToCartFound": "{{ count }} product was added to cart.",
-      "addedToCartFound_other": "{{ count }} products were added to cart."
+    "successes" : {
+      "productAddedToCart" : "{{ name }} (#{{code}}) 已添加到购物车。",
+      "addedToCartFound" : "{{ count }} 个产品已添加到购物车。",
+      "addedToCartFound_other" : "{{ count }} 个产品已添加到购物车。"
     },
-    "informations": {
-      "addProductBeforeAddingToCart": "Add products to the list before adding to the cart."
+    "informations" : {
+      "addProductBeforeAddingToCart" : "将产品添加到购物车之前先添加到列表中。"
     },
-    "undo": "UNDO",
-    "revokeUndo": "Revoked product \"{{name}}\" deletion.",
-    "productWasDeleted": "Product \"{{ name }}\" moved to trash."
+    "undo" : "撤销",
+    "revokeUndo" : "已撤销产品“{{name}}”删除。",
+    "productWasDeleted" : "产品“{{ name }}”已移至垃圾箱。"
   },
-  "quickOrderTable": {
-    "product": "产品",
-    "id": "标识",
-    "price": "价格",
-    "quantity": "数量",
-    "itemPrice": "商品价格",
-    "qty": "数量",
-    "actions": "操作",
-    "inStock": "现货",
-    "lowStock": "库存不足",
-    "outOfStock": "缺货",
-    "listCleared": "Quick order list has been cleared",
-    "addedtoCart": "Quick order list has been added to the cart",
-    "caption": "Quick order contents."
+  "quickOrderTable" : {
+    "product" : "产品",
+    "id" : "标识",
+    "price" : "价格",
+    "quantity" : "数量",
+    "quantityFull" : "数量",
+    "itemPrice" : "项目价格",
+    "qty" : "数量",
+    "actions" : "操作",
+    "inStock" : "现货",
+    "lowStock" : "低库存",
+    "outOfStock" : "缺货",
+    "listCleared" : "已清除快速订单列表",
+    "addedtoCart" : "快速订单列表已添加到购物车",
+    "caption" : "快速订单内容。"
   }
 }

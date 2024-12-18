@@ -1,32 +1,32 @@
 {
-  "anonymousConsents": {
-    "dialog": {
-      "title": "Consent Management",
-      "legalDescription": "We use cookies/browser's storage to personalize the content and improve user experience. We also might share the data about your site usage with our social media. For more, please review our privacy policy.",
-      "selectAll": "全部选择",
-      "clearAll": "Clear all"
+  "anonymousConsents" : {
+    "dialog" : {
+      "title" : "Consent Management",
+      "legalDescription" : "我们使用 cookie/浏览器的存储个性化内容并改善用户体验。我们还可以与我们的社交媒体共享站点使用数据。有关详细信息，请审阅我们的隐私政策。",
+      "selectAll" : "全选",
+      "clearAll" : "全部清除"
     },
-    "banner": {
-      "title": "This website uses cookies",
-      "description": "We use cookies/browser's storage to personalize the content and improve user experience.",
-      "allowAll": "Allow All",
-      "viewDetails": "查看详情"
+    "banner" : {
+      "title" : "此网站使用 cookie",
+      "description" : "我们使用 cookie/浏览器的存储个性化内容并改善用户体验。",
+      "allowAll" : "全部显示",
+      "viewDetails" : "查看详情"
     }
   },
-  "checkoutLogin": {
-    "emailAddress": {
-      "label": "电子邮件地址",
-      "placeholder": "Enter email"
+  "checkoutLogin" : {
+    "emailAddress" : {
+      "label" : "电子邮件地址",
+      "placeholder" : "输入电子邮件"
     },
-    "confirmEmail": {
-      "label": "Confirm email",
-      "placeholder": "Confirm email"
+    "confirmEmail" : {
+      "label" : "确认电子邮件",
+      "placeholder" : "确认电子邮件"
     },
-    "continue": "继续",
-    "emailIsRequired": "Invalid email format",
-    "emailsMustMatch": "Email does not match"
+    "continue" : "继续",
+    "emailIsRequired" : "电子邮件格式无效",
+    "emailsMustMatch" : "电子邮件不匹配"
   },
-  "authMessages": {
-    "signedOutSuccessfully": "You have successfully signed out."
+  "authMessages" : {
+    "signedOutSuccessfully" : "您已成功退出。"
   }
 }

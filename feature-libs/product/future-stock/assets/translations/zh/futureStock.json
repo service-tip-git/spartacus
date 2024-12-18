@@ -1,7 +1,7 @@
 {
-  "futureStockDropdown": {
-    "header": "未来可用性",
-    "quantity": "数量",
-    "noFutureStocks": "该产品没有未来库存信息."
+  "futureStockDropdown" : {
+    "header" : "未来可用性",
+    "quantity" : "数量",
+    "noFutureStocks" : "此产品没有未来可用性信息。"
   }
 }

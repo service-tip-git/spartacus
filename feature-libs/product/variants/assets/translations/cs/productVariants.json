@@ -1,9 +1,9 @@
 {
-  "productVariants": {
-    "style": "Styl",
-    "selectedStyle": "Selected style",
-    "size": "Velikost",
-    "color": "Barva",
-    "sizeGuideLabel": "Style guide"
+  "productVariants" : {
+    "style" : "Styl",
+    "selectedStyle" : "Vybraný styl",
+    "size" : "Velikost",
+    "color" : "Barva",
+    "sizeGuideLabel" : "Průvodce styly"
   }
 }

@@ -1,22 +1,22 @@
 {
-  "checkoutB2B": {
-    "noPoNumber": "Aucun(e)",
-    "poNumber": "Purchase order number (optional)",
-    "costCenter": "Centre de coûts",
-    "placeholder": "Enter P.O",
-    "availableLabel": "Delivery addresses available to you depend on the cost center's unit",
-    "invalid": {
-      "accountType": "Votre compte ne vous permet pas d'effectuer le règlement ici."
+  "checkoutB2B" : {
+    "noPoNumber" : "Aucun",
+    "poNumber" : "Numéro de commande d'achat (facultatif)",
+    "costCenter" : "Centre de coûts",
+    "placeholder" : "Saisir la commande d'achat",
+    "availableLabel" : "Les adresses de livraison disponibles dépendent de l'unité du centre de coûts.",
+    "invalid" : {
+      "accountType" : "Votre compte ne vous permet pas d'effectuer le règlement ici."
     },
-    "methodOfPayment": {
-      "paymentType": "Type de paiement"
+    "methodOfPayment" : {
+      "paymentType" : "Type de paiement"
     },
-    "review": {
-      "poNumber": "Numéro de commande de l'achat"
+    "review" : {
+      "poNumber" : "Numéro de commande de l'achat"
     },
-    "progress": {
-      "methodOfPayment": "Method of Payment"
+    "progress" : {
+      "methodOfPayment" : "Mode de paiement"
     },
-    "invalidCostCenter": "Invalid cost center."
+    "invalidCostCenter" : "Centre de coûts non valide"
   }
 }

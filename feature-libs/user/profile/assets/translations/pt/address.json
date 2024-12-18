@@ -1,78 +1,79 @@
 {
-  "addressForm": {
-    "title": "Título",
-    "titleOptional": "Title (optional)",
-    "defaultTitle": "Título",
-    "firstName": {
-      "label": "Nome",
-      "placeholder": "Nome"
+  "addressForm" : {
+    "title" : "Título",
+    "titleOptional" : "Título (opcional)",
+    "defaultTitle" : "Título",
+    "firstName" : {
+      "label" : "Nome",
+      "placeholder" : "Nome"
     },
-    "lastName": {
-      "label": "Sobrenome",
-      "placeholder": "Sobrenome"
+    "lastName" : {
+      "label" : "Sobrenome",
+      "placeholder" : "Sobrenome"
     },
-    "address1": "Address 1",
-    "address2": "Address 2 (optional)",
-    "country": "País/região",
-    "city": {
-      "label": "Cidade",
-      "placeholder": "Cidade"
+    "address1" : "Endereço 1",
+    "address2" : "Endereço 2 (opcional)",
+    "country" : "País/região",
+    "city" : {
+      "label" : "Cidade",
+      "placeholder" : "Cidade"
     },
-    "state": "Estado",
-    "zipCode": {
-      "label": "Zip code",
-      "placeholder": "Postal Code/Zip"
+    "state" : "Estado",
+    "zipCode" : {
+      "label" : "CEP",
+      "placeholder" : "Código postal/CEP"
     },
-    "phoneNumber": {
-      "label": "Phone number (optional)",
-      "placeholder": "e.g. (###) - ### - ####"
+    "phoneNumber" : {
+      "label" : "Número de telefone (opcional)",
+      "placeholder" : "por exemplo, (###) - ### - ####"
     },
-    "cellphone": {
-      "label": "Mobile number (optional)",
-      "placeholder": "e.g. (###) - ### - ####"
+    "cellphone" : {
+      "label" : "Número de celular (opcional)",
+      "placeholder" : "por exemplo, (###) - ### - ####"
     },
-    "saveAsDefault": "Save as default",
-    "chooseAddress": "Choose address",
-    "streetAddress": "Street Address",
-    "aptSuite": "Apartment Number",
-    "selectOne": "Select One...",
-    "setAsDefault": "Set as default delivery address",
-    "titleRequired": "Title is required.",
-    "userAddressAddSuccess": "New address was added successfully!",
-    "userAddressUpdateSuccess": "Address updated successfully!",
-    "userAddressDeleteSuccess": "Address deleted successfully!",
-    "invalidAddress": "Invalid Address"
+    "saveAsDefault" : "Gravar como padrão",
+    "chooseAddress" : "Escolher endereço",
+    "streetAddress" : "Endereço",
+    "aptSuite" : "Número do apartamento",
+    "selectOne" : "Selecionar um...",
+    "setAsDefault" : "Definir como endereço de entrega padrão",
+    "titleRequired" : "O título é obrigatório.",
+    "userAddressAddSuccess" : "O novo endereço foi adicionado com êxito.",
+    "userAddressUpdateSuccess" : "Endereço atualizado com êxito.",
+    "userAddressDeleteSuccess" : "Endereço eliminado com êxito.",
+    "invalidAddress" : "Endereço inválido"
   },
-  "addressBook": {
-    "addNewDeliveryAddress": "Add a new delivery address",
-    "editDeliveryAddress": "Edit delivery address",
-    "areYouSureToDeleteAddress": "Tem certeza de que deseja excluir este endereço?",
-    "addNewAddress": "Adicionar novo endereço",
-    "addAddress": "Add address",
-    "updateAddress": "Update address",
-    "backToAddressList": "Back to address list",
-    "defaultDeliveryAddress": "Default Delivery Address",
-    "additionalDeliveryAddress": "Additional Delivery Address {{number}}"
+  "addressBook" : {
+    "addNewDeliveryAddress" : "Adicionar um novo endereço de entrega",
+    "editDeliveryAddress" : "Editar endereço de entrega",
+    "areYouSureToDeleteAddress" : "Tem certeza de que quer eliminar este endereço?",
+    "addNewAddress" : "Adicionar novo endereço",
+    "addAddress" : "Adicionar endereço",
+    "updateAddress" : "Atualizar endereço",
+    "backToAddressList" : "Voltar à lista de endereços",
+    "defaultDeliveryAddress" : "Endereço de entrega padrão",
+    "additionalDeliveryAddress" : "Endereço de entrega adicional {{number}}"
   },
-  "addressCard": {
-    "default": "DEFAULT",
-    "selected": "Selecionado",
-    "setAsDefault": "Definir como padrão",
-    "shipTo": "Entregar a",
-    "billTo": "Bill To",
-    "phoneNumber": "P",
-    "mobileNumber": "M"
+  "addressCard" : {
+    "default" : "PADRÃO",
+    "selected" : "Selecionado",
+    "selectedAddress" : "Endereço selecionado",
+    "setAsDefault" : "Definir como padrão",
+    "shipTo" : "Entregar a",
+    "billTo" : "Faturar para",
+    "phoneNumber" : "T",
+    "mobileNumber" : "C"
   },
-  "addressSuggestion": {
-    "verifyYourAddress": "Verify your address",
-    "ensureAccuracySuggestChange": "To ensure delivery accuracy, we suggest the change selected below.",
-    "chooseAddressToUse": "Please choose which address you would like to use:",
-    "suggestedAddress": "Suggested address",
-    "enteredAddress": "Entered address",
-    "editAddress": "Editar endereço",
-    "saveAddress": "Salvar endereço"
+  "addressSuggestion" : {
+    "verifyYourAddress" : "Verifique seu endereço",
+    "ensureAccuracySuggestChange" : "Para assegurar a exatidão da entrega, sugerimos a modificação selecionada embaixo.",
+    "chooseAddressToUse" : "Selecione o endereço que você gostaria de utilizar:",
+    "suggestedAddress" : "Endereço sugerido",
+    "enteredAddress" : "Endereço inserido",
+    "editAddress" : "Editar endereço",
+    "saveAddress" : "Gravar endereço"
   },
-  "addressMessages": {
-    "setAsDefaultSuccessfully": "Address {{ streetAddress }} was successfully set as default"
+  "addressMessages" : {
+    "setAsDefaultSuccessfully" : "O endereço {{ streetAddress }} foi definido como padrão com êxito"
   }
 }

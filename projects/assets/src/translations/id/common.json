@@ -1,252 +1,254 @@
 {
-  "common": {
-    "cancel": "Batalkan",
-    "delete": "Hapus",
-    "remove": "Hapus",
-    "edit": "Edit",
-    "restore": "Kembalikan",
-    "back": "Kembali",
-    "submit": "Kirim",
-    "continue": "Lanjutkan",
-    "save": "Simpan",
-    "done": "Selesai",
-    "home": "Beranda",
-    "noData": "No data.",
-    "confirm": "Konfirmasi",
-    "more": "lainnya",
-    "close": "Tutup",
-    "loading": "Memuat",
-    "menu": "Menu",
-    "reset": "Atur Ulang",
-    "search": "Cari",
-    "add": "Tambahkan",
-    "breadcrumbs": "breadcrumbs",
-    "selectFile": "Select file",
-    "clear": "Hapus",
-    "loaded": "Loaded",
-    "results": "Hasil",
-    "of": "dari",
-    "required": "required",
-    "zoomIn": "Zoom in",
-    "zoomOut": "Zoom out",
-    "selected": "Dipilih",
-    "expand": "Bentang",
-    "collapse": "Susutkan"
+  "common" : {
+    "cancel" : "Batalkan",
+    "delete" : "Hapus",
+    "remove" : "Hapus",
+    "edit" : "Edit",
+    "restore" : "Pulihkan",
+    "back" : "Kembali",
+    "submit" : "Kirim",
+    "continue" : "Lanjutkan",
+    "save" : "Simpan",
+    "done" : "Selesai",
+    "home" : "Beranda",
+    "noData" : "Tidak ada data.",
+    "confirm" : "Konfirmasi",
+    "more" : "lainnya",
+    "close" : "Tutup",
+    "loading" : "Memuat",
+    "menu" : "Menu",
+    "reset" : "Atur Ulang",
+    "search" : "Cari",
+    "add" : "Tambahkan",
+    "breadcrumbs" : "jejak navigasi",
+    "selectFile" : "Pilih file",
+    "clear" : "Hapus",
+    "loaded" : "Dimuat",
+    "results" : "Hasil",
+    "of" : "dari",
+    "required" : "diwajibkan",
+    "zoomIn" : "Perbesar",
+    "zoomOut" : "Perkecil",
+    "selected" : "Dipilih",
+    "expand" : "Perluas",
+    "collapse" : "Ciutkan"
   },
-  "pageMetaResolver": {
-    "category": {
-      "title": "{{count}} result for {{query}}",
-      "title_other": "{{count}} results for {{query}}"
+  "pageMetaResolver" : {
+    "category" : {
+      "title" : "{{count}} hasil untuk {{query}}",
+      "title_other" : "{{count}} hasil untuk {{query}}"
     },
-    "checkout": {
-      "title": "Pembayaran"
+    "checkout" : {
+      "title" : "Pembayaran"
     },
-    "search": {
-      "title": "{{count}} result for \"{{query}}\"",
-      "title_other": "{{count}} results for \"{{query}}\"",
-      "findProductTitle": "{{count}} result for coupon \"{{coupon}}\"",
-      "findProductTitle_other": "{{count}} results for coupon \"{{coupon}}\"",
-      "default_title": "Semua produk"
+    "search" : {
+      "title" : "{{count}} hasil untuk \"{{query}}\"",
+      "title_other" : "{{count}} hasil untuk \"{{query}}\"",
+      "findProductTitle" : "{{count}} hasil untuk kupon \"{{coupon}}\"",
+      "findProductTitle_other" : "{{count}} hasil untuk kupon \"{{coupon}}\"",
+      "default_title" : "Semua produk"
     },
-    "product": {
-      "description": "{{description}}",
-      "heading": "{{heading}}",
-      "title": "{{title}}"
+    "product" : {
+      "description" : "{{description}}",
+      "heading" : "{{heading}}",
+      "title" : "{{title}}"
     }
   },
-  "spinner": {
-    "loading": "Memuat..."
+  "spinner" : {
+    "loading" : "Memuat..."
   },
-  "navigation": {
-    "categoryNavLabel": "Category menu",
-    "footerNavLabel": "Footer links",
-    "goTo": "Masuk ke {{location}}",
-    "navigateTo": "Navigate to {{nav}}",
-    "scrollToTop": "Scroll back to the top of the page",
-    "linkItemInList": "{{title}}. {{position}} of {{listLength}}"
+  "navigation" : {
+    "categoryNavLabel" : "Menu kategori",
+    "footerNavLabel" : "Tautan footer",
+    "goTo" : "Buka {{location}}",
+    "navigateTo" : "Arahkan ke {{nav}}",
+    "scrollToTop" : "Kembali ke bagian atas halaman",
+    "linkItemInList" : "{{title}}. {{position}} dari {{listLength}}"
   },
-  "searchBox": {
-    "placeholder": "Enter product name or SKU",
-    "productSearch": "Find a product",
-    "ariaLabelInput": "Cari di sini...",
-    "ariaLabelSuggestions": "typing suggestions",
-    "ariaLabelProducts": "product results",
-    "initialDescription": "When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.",
-    "suggestions": "Suggested Keywords",
-    "suggestionsResult": "{{ count }} suggestion and ",
-    "suggestionsResult_other": "{{ count }} suggestions and ",
-    "products": "Recommended Products",
-    "productsResult": "{{ count }} product is available.",
-    "productsResult_other": "{{ count }} products are available.",
-    "resetLabel": "Reset Search",
-    "help": {
-      "insufficientChars": "Please type more characters",
-      "noMatch": "We could not find any results",
-      "exactMatch": "{{ term }}",
-      "empty": "Ask us anything"
+  "searchBox" : {
+    "placeholder" : "Masukkan nama produk atau SKU",
+    "productSearch" : "Cari produk",
+    "ariaLabelInput" : "Cari di sini...",
+    "ariaLabelSuggestions" : "saran pengetikan",
+    "ariaLabelProducts" : "hasil produk",
+    "initialDescription" : "Jika hasil pengisian otomatis tersedia, gunakan tombol panah atas dan bawah untuk meninjau dan tombol enter untuk memilih. Untuk pengguna dengan perangkat layar sentuh, jelajahi dengan sentuhan atau gerakan geser.",
+    "suggestions" : "Kata Kunci yang Disarankan",
+    "suggestionsResult" : "{{ count }} saran dan ",
+    "suggestionsResult_other" : "{{ count }} saran dan ",
+    "products" : "Produk yang Direkomendasikan",
+    "productsResult" : "{{ count }} produk tersedia.",
+    "productsResult_other" : "{{ count }} produk tersedia.",
+    "resetLabel" : "Atur Ulang Pencarian",
+    "help" : {
+      "insufficientChars" : "Silakan ketikkan lebih banyak karakter",
+      "noMatch" : "Kami tidak dapat menemukan hasil apa pun",
+      "exactMatch" : "{{ term }}",
+      "empty" : "Tanyakan apa saja kepada kami"
     },
-    "closeSearchPanel": "Tutup"
+    "closeSearchPanel" : "Tutup"
   },
-  "sorting": {
-    "date": "Tanggal",
-    "orderNumber": "Nomor Pesanan",
-    "rma": "Return Number",
-    "replenishmentNumber": "Nomor Pengadaan Ulang",
-    "nextOrderDate": "Tanggal Pemesanan Berikutnya",
-    "pageViewUpdated": "Page view updated with your selected options."
+  "sorting" : {
+    "date" : "Tanggal",
+    "orderNumber" : "Nomor Pemesanan",
+    "rma" : "Nomor Pengembalian",
+    "replenishmentNumber" : "Nomor Pengadaan Ulang",
+    "nextOrderDate" : "Tanggal Pemesanan Berikutnya",
+    "pageViewUpdated" : "Tampilan halaman diperbarui sesuai dengan opsi pilihan Anda."
   },
-  "httpHandlers": {
-    "badRequest": {
-      "bad_credentials": "{{ errorMessage }}. Please login again.",
-      "user_is_disabled": "{{ errorMessage }}. Please contact administration."
+  "httpHandlers" : {
+    "badRequest" : {
+      "bad_credentials" : "{{ errorMessage }}. Silakan masuk kembali.",
+      "user_is_disabled" : "{{ errorMessage }}. Silakan hubungi bagian administrasi."
     },
-    "badGateway": "A server error occurred. Please try again later.",
-    "badRequestPleaseLoginAgain": "{{ errorMessage }}. Please login again.",
-    "badRequestOldPasswordIncorrect": "Old password incorrect.",
-    "badRequestGuestDuplicateEmail": "{{ errorMessage }} email already exist. Please checkout with a different email to register using a guest account.",
-    "conflict": "Already exists.",
-    "forbidden": "You are not authorized to perform this action. Please contact your administrator if you think this is a mistake.",
-    "gatewayTimeout": "The server did not respond, please try again later.",
-    "internalServerError": "An Internal Server Error occurred. Please try again later.",
-    "sessionExpired": "Your session has expired. Please login again.",
-    "unknownError": "An unknown error occurred",
-    "unauthorized": {
-      "common": "An unknown authorization error occured",
-      "invalid_client": "Bad client credentials"
+    "badGateway" : "Terjadi kesalahan pada server. Silakan coba lagi nanti.",
+    "badRequestPleaseLoginAgain" : "{{ errorMessage }}. Silakan masuk kembali.",
+    "badRequestOldPasswordIncorrect" : "Kata sandi lama salah.",
+    "badRequestGuestDuplicateEmail" : "{{ errorMessage }} email sudah ada. Silakan lakukan proses pembayaran dengan email lain untuk mendaftar dengan akun tamu.",
+    "conflict" : "Sudah ada.",
+    "forbidden" : "Anda tidak diizinkan untuk melakukan tindakan ini. Jika Anda merasa ini adalah kesalahan, hubungi administrator Anda.",
+    "gatewayTimeout" : "Server tidak merespons, silakan coba lagi nanti.",
+    "internalServerError" : "Terjadi Kesalahan pada Server Internal. Silakan coba lagi nanti.",
+    "sessionExpired" : "Sesi Anda telah berakhir. Silakan masuk kembali.",
+    "unknownError" : "Terjadi kesalahan yang tidak diketahui",
+    "unauthorized" : {
+      "common" : "Terjadi kesalahan otorisasi yang tidak diketahui",
+      "invalid_client" : "Kredensial klien tidak valid"
     },
-    "validationErrors": {
-      "missing": {
-        "card_cardType": "The selected credit card is not supported. Please select another.",
-        "card_accountNumber": "The credit card number entered is not valid.",
-        "card_cvNumber": "The security code entered is not valid.",
-        "card_expirationMonth": "The credit card expiration date entered is not valid.",
-        "card_expirationYear": "The credit card expiration date entered is not valid.",
-        "billTo_firstName": "The first name entered is not valid.",
-        "billTo_lastName": "The last name entered is not valid.",
-        "billTo_street1": "The address entered is not valid.",
-        "billTo_street2": "The address entered is not valid.",
-        "billTo_city": "The city entered is not valid for this credit card.",
-        "billTo_state": "The state/province entered is not valid for this credit card.",
-        "billTo_country": "The country/region entered is not valid for this credit card.",
-        "billTo_postalCode": "The zip/postal code is not valid for this credit card.",
-        "country": {
-          "isocode": "Missing country/region"
+    "validationErrors" : {
+      "missing" : {
+        "card_cardType" : "Kartu kredit yang dipilih tidak didukung. Silakan pilih kartu lain.",
+        "card_accountNumber" : "Nomor kartu kredit yang dimasukkan tidak valid.",
+        "card_cvNumber" : "Kode keamanan yang dimasukkan tidak valid.",
+        "card_expirationMonth" : "Tanggal kedaluwarsa kartu kredit yang dimasukkan tidak valid.",
+        "card_expirationYear" : "Tanggal kedaluwarsa kartu kredit yang dimasukkan tidak valid.",
+        "billTo_firstName" : "Nama depan yang dimasukkan tidak valid.",
+        "billTo_lastName" : "Nama belakang yang dimasukkan tidak valid.",
+        "billTo_street1" : "Alamat yang dimasukkan tidak valid.",
+        "billTo_street2" : "Alamat yang dimasukkan tidak valid.",
+        "billTo_city" : "Kota yang dimasukkan tidak valid untuk kartu kredit ini.",
+        "billTo_state" : "Provinsi/negara bagian yang dimasukkan tidak valid untuk kartu kredit ini.",
+        "billTo_country" : "Wilayah/negara yang dimasukkan tidak valid untuk kartu kredit ini.",
+        "billTo_postalCode" : "Kode pos tidak valid untuk kartu kredit ini.",
+        "country" : {
+          "isocode" : "Wilayah/negara tidak ditemukan"
         }
       },
-      "invalid": {
-        "card_expirationMonth": "The credit card expiration date entered is not valid.",
-        "firstName": "First Name entered is not valid.",
-        "lastName": "Last Name entered is not valid.",
-        "password": "Password entered is not valid.",
-        "uid": "UID is not valid.",
-        "code": "Code is not valid.",
-        "email": "Email is not valid.",
-        "loginId": "Email is not valid."
+      "invalid" : {
+        "card_expirationMonth" : "Tanggal kedaluwarsa kartu kredit yang dimasukkan tidak valid.",
+        "firstName" : "Nama Depan yang dimasukkan tidak valid.",
+        "lastName" : "Nama Belakang yang dimasukkan tidak valid.",
+        "password" : "Kata sandi yang dimasukkan tidak valid.",
+        "uid" : "UID tidak valid.",
+        "code" : "Kode tidak valid.",
+        "email" : "Email tidak valid.",
+        "loginId" : "Email tidak valid."
       }
     },
-    "cartNotFound": "Cart not found.",
-    "invalidCodeProvided": "Invalid code provided.",
-    "voucherExceeded": "This coupon has exceeded the number of times it can be used",
-    "unknownIdentifier": "Item not found.",
-    "otherCartErrors": "Cart errors occurred."
+    "cartNotFound" : "Keranjang tidak ditemukan.",
+    "invalidCodeProvided" : "Kode yang diberikan tidak valid.",
+    "voucherExceeded" : "Kupon ini telah melebihi jumlah penggunaan yang diizinkan",
+    "unknownIdentifier" : "Item tidak ditemukan.",
+    "otherCartErrors" : "Ada masalah dengan keranjang belanja."
   },
-  "miniCart": {
-    "item": "{{count}} item currently in your cart",
-    "item_other": "{{count}} items currently in your cart",
-    "total": "{{total}}",
-    "count": "{{count}}"
+  "miniCart" : {
+    "item" : "Saat ini ada {{count}} item di keranjang Anda",
+    "item_other" : "Saat ini ada {{count}} item di keranjang Anda",
+    "total" : "{{total}}",
+    "count" : "{{count}}"
   },
-  "skipLink": {
-    "skipTo": "Skip to",
-    "labels": {
-      "header": "Header",
-      "main": "Main Content",
-      "footer": "Footer",
-      "productFacets": "Product Facets",
-      "productList": "Daftar Produk"
+  "skipLink" : {
+    "skipTo" : "Lompat ke",
+    "labels" : {
+      "header" : "Header",
+      "main" : "Konten Utama",
+      "footer" : "Footer",
+      "productFacets" : "Fitur Produk",
+      "productList" : "Daftar Produk"
     }
   },
-  "carousel": {
-    "previousSlide": "Previous slide",
-    "nextSlide": "Next slide",
-    "slideNumber": "Slide {{currentSlideNumber}} contains {{numberOfSlides}} items",
-    "carouselForProduct": "Carousel, Images for {{product}}"
+  "carousel" : {
+    "previousSlide" : "Slide sebelumnya",
+    "nextSlide" : "Slide berikutnya",
+    "slideNumber" : "Slide ke-{{currentSlideNumber}} terdapat {{numberOfSlides}} item",
+    "carouselForProduct" : "Korsel, Gambar {{product}}"
   },
-  "formErrors": {
-    "labeled": {
-      "required": "Field {{label}} is required",
-      "cxInvalidEmail": "Field {{label}} has not a valid email format. Match pattern: example@yourdomain.com",
-      "cxInvalidPassword": "Field {{label}} has not a valid password format",
-      "cxMinOneUpperCaseCharacter": "Password must contain at least one uppercase character",
-      "cxMinOneDigit": "Password must contain at least one digit",
-      "cxMinOneSpecialCharacter": "Password must contain at least one special character",
-      "cxMinSixCharactersLength": "Password must contain at least 6 characters",
-      "cxContainsSpecialCharacters": "Password cannot contain special characters",
-      "cxNoConsecutiveCharacters": "Password cannot contain consecutive identical characters",
-      "date": {
-        "required": "Field {{label}} is required",
-        "min": "Field {{label}} cannot be before {{min}}",
-        "max": "Field {{label}} cannot be after {{max}}",
-        "pattern": "Use dateformat yyyy-mm-dd in field {{label}}",
-        "invalid": "Use a valid date in field {{label}}"
+  "formErrors" : {
+    "labeled" : {
+      "required" : "Bidang {{label}} wajib diisi",
+      "cxInvalidEmail" : "Bidang {{label}} tidak memiliki format email yang valid. Pola yang sesuai: contoh@domainanda.com",
+      "cxInvalidPassword" : "Bidang {{label}} tidak memiliki format email yang valid",
+      "cxMinOneUpperCaseCharacter" : "Kata sandi harus berisi minimal satu karakter huruf besar",
+      "cxMinOneDigit" : "Kata sandi harus berisi minimal satu digit",
+      "cxMinOneSpecialCharacter" : "Kata sandi harus berisi minimal satu karakter khusus",
+      "cxMinSixCharactersLength" : "Kata sandi harus berisi minimal 6 karakter",
+      "cxMinEightCharactersLength" : "Kata sandi harus berisi minimal 8 karakter",
+      "cxMaxCharactersLength" : "Kata sandi tidak boleh lebih dari 128 karakter",
+      "cxContainsSpecialCharacters" : "Kata sandi tidak boleh berisi karakter khusus",
+      "cxNoConsecutiveCharacters" : "Kata sandi tidak boleh berisi karakter identik yang berurutan",
+      "date" : {
+        "required" : "Bidang {{label}} wajib diisi",
+        "min" : "Bidang {{label}} tidak boleh sebelum {{min}}",
+        "max" : "Bidang {{label}} tidak boleh setelah {{max}}",
+        "pattern" : "Gunakan format tanggal tttt-bb-hh pada bidang {{label}}",
+        "invalid" : "Gunakan tanggal yang valid pada bidang {{label}}"
       }
     },
-    "globalMessage": "The form you are trying to submit contains errors.",
-    "required": "Bidang ini diperlukan",
-    "cxInvalidEmail": "This is not a valid email format",
-    "cxInvalidPassword": "This is not a valid password format",
-    "cxPasswordsMustMatch": "Password fields must match",
-    "cxPasswordsCannotMatch": "Password fields cannot match",
-    "cxEmailsMustMatch": "Email fields must match",
-    "cxStarRatingEmpty": "Rating field is required",
-    "cxNoSelectedItemToCancel": "Select at least one item",
-    "cxNegativeAmount": "Amount must be equal or greater than zero",
-    "cxContainsSpecialCharacters": "Field cannot contain special characters",
-    "date": {
-      "required": "Bidang ini diperlukan",
-      "min": "Date cannot be before {{min}}",
-      "max": "Date cannot be after {{max}}",
-      "pattern": "Use dateformat yyyy-mm-dd",
-      "invalid": "Use a valid date"
+    "globalMessage" : "Formulir yang Anda coba kirimkan mengandung kesalahan.",
+    "required" : "Bidang ini wajib diisi",
+    "cxInvalidEmail" : "Format email ini tidak valid",
+    "cxInvalidPassword" : "Format kata sandi ini tidak valid",
+    "cxPasswordsMustMatch" : "Bidang kata sandi harus sama",
+    "cxPasswordsCannotMatch" : "Bidang kata sandi tidak boleh sama",
+    "cxEmailsMustMatch" : "Bidang email harus sama",
+    "cxStarRatingEmpty" : "Bidang penilaian wajib diisi",
+    "cxNoSelectedItemToCancel" : "Pilih setidaknya satu item",
+    "cxNegativeAmount" : "Jumlah harus sama dengan atau lebih besar dari nol",
+    "cxContainsSpecialCharacters" : "Bidang tidak boleh berisi karakter khusus",
+    "date" : {
+      "required" : "Bidang ini wajib diisi",
+      "min" : "Tanggal tidak boleh sebelum {{min}}",
+      "max" : "Tanggal tidak boleh setelah {{max}}",
+      "pattern" : "Gunakan format tanggal tttt-bb-hh",
+      "invalid" : "Gunakan tanggal yang valid"
     },
-    "file": {
-      "required": "File is required",
-      "empty": "File should not be empty",
-      "invalidExtension": "File extension is not valid",
-      "tooLarge": "File size should not exceed {{ maxSize }} MB",
-      "tooManyEntries": "The number of items is greater than {{ maxEntries }}",
-      "notParsable": "File is not parsable",
-      "fileNotAllowed": "This file type is not allowed"
+    "file" : {
+      "required" : "File diwajibkan",
+      "empty" : "File tidak boleh kosong",
+      "invalidExtension" : "Ekstensi file tidak valid",
+      "tooLarge" : "Ukuran file tidak boleh melebihi {{ maxSize }} MB",
+      "tooManyEntries" : "Jumlah item melebihi {{ maxEntries }}",
+      "notParsable" : "File tidak dapat dibaca",
+      "fileNotAllowed" : "Tipe file ini tidak diizinkan"
     }
   },
-  "errorHandlers": {
-    "scriptFailedToLoad": "Failed to load the script.",
-    "refreshThePage": "Please refresh the page."
+  "errorHandlers" : {
+    "scriptFailedToLoad" : "Gagal memuat skrip.",
+    "refreshThePage" : "Silakan segarkan halaman."
   },
-  "assistiveMessage": {
-    "actionCancelled": "Action cancelled, nothing changed"
+  "assistiveMessage" : {
+    "actionCancelled" : "Tindakan dibatalkan, tidak ada yang berubah"
   },
-  "passwordVisibility": {
-    "showPassword": "Show password",
-    "hidePassword": "Hide password"
+  "passwordVisibility" : {
+    "showPassword" : "Tampilkan kata sandi",
+    "hidePassword" : "Sembunyikan kata sandi"
   },
-  "generalErrors": {
-    "pageFailure": "The page could not be loaded. Please try again later."
+  "generalErrors" : {
+    "pageFailure" : "Halaman tidak dapat dimuat. Silakan coba lagi nanti."
   },
-  "formLegend": {
-    "required": "The following fields marked with \"*\" are required."
+  "formLegend" : {
+    "required" : "Bidang berikut yang ditandai dengan “*” wajib diisi."
   },
-  "chatMessaging": {
-    "charactersLeft": "characters left: {{count}}",
-    "addNewMessage": "Add New Message",
-    "send": "Kirim",
-    "uploadFile": "Unggah Berkas",
-    "informationLabel": "{{author}}. {{text}} at {{date}}",
-    "messages": "Pesan",
-    "addMessagePlaceHolder": "Start Typing...",
-    "characterLimitAlert": "Characters limit reached.",
-    "a11y": {
-      "itemListBoxLabel": "Select the item to which the message should apply."
+  "chatMessaging" : {
+    "charactersLeft" : "karakter tersisa: {{count}}",
+    "addNewMessage" : "Tambahkan Pesan Baru",
+    "send" : "Kirim",
+    "uploadFile" : "Unggah File",
+    "informationLabel" : "{{author}}. {{text}} pada {{date}}",
+    "messages" : "Pesan",
+    "addMessagePlaceHolder" : "Mulai Mengetik...",
+    "characterLimitAlert" : "Batas karakter tercapai.",
+    "a11y" : {
+      "itemListBoxLabel" : "Pilih item yang akan diterapkan pesan tersebut."
     }
   }
 }

@@ -1,78 +1,80 @@
 {
-  "quickOrderCartForm": {
-    "entriesWereAdded": "({{ quantity }}) {{ product }} has been added to the cart",
-    "entryWasAdded": "{{ product }} has been added to the cart",
-    "noResults": "We could not find any products",
-    "stockLevelReached": "The maximum stock level has been reached",
-    "title": "Schnellbestellung",
-    "productCodePlaceholder": "Enter ID",
-    "entryProductCode": "Enter Product ID for Quick Order",
-    "quantity": "Quantity for Quick Order",
-    "addToCart": "Add Product to Quick Order",
-    "add": "Hinzufügen",
-    "product": "Produkt",
-    "products": "Produkte",
-    "productCodeLabel": "Produkt-ID",
-    "quantityLabel": "Menge"
+  "quickOrderCartForm" : {
+    "entriesWereAdded" : "({{ quantity }}) {{ product }} wurde dem Warenkorb hinzugefügt",
+    "entryWasAdded" : "{{ product }} wurde dem Warenkorb hinzugefügt",
+    "noResults" : "Es wurden keine Produkte gefunden",
+    "stockLevelReached" : "Der Höchstbestand wurde erreicht",
+    "title" : "Schnellbestellung",
+    "productCodePlaceholder" : "ID eingeben",
+    "entryProductCode" : "Produkt-ID für Schnellbestellung eingeben",
+    "quantity" : "Menge für Schnellbestellung",
+    "addToCart" : "Produkt zur Schnellbestellung hinzufügen",
+    "add" : "Hinzufügen",
+    "product" : "Produkt",
+    "products" : "Produkte",
+    "productCodeLabel" : "Produkt-ID",
+    "quantityLabel" : "Menge",
+    "quantityFullLabel" : "Menge"
   },
-  "quickOrderForm": {
-    "placeholder": "Enter Product name or SKU",
-    "searchBoxLabel": "Enter Product name or SKU for quick order. You can add up to {{ limit }} products per order.",
-    "listLimitReached": "The product limit has been reached.",
-    "id": "ID {{ id }}",
-    "noResults": "We could not find any results",
-    "addProduct": "Add product {{ product }}",
-    "initialDescription": "When autocomplete results are available use up and down arrows to review and enter to select.",
-    "productsResults": "{{ count }} products are available.",
-    "quickOrderSearch": "Find product for quick order"
+  "quickOrderForm" : {
+    "placeholder" : "Produktname oder SKU eingeben",
+    "searchBoxLabel" : "Geben Sie den Produktnamen oder die SKU für die Schnellbestellung ein. Sie können bis zu {{ limit }} Produkte pro Bestellung hinzufügen.",
+    "listLimitReached" : "Das Produktlimit wurde erreicht.",
+    "id" : "ID {{ id }}",
+    "noResults" : "Keine Ergebnisse gefunden",
+    "addProduct" : "Produkt {{ product }} hinzufügen",
+    "initialDescription" : "Wenn Ergebnisse aus der automatischen Vervollständigung verfügbar sind, können Sie sie mit den nach oben und unten zeigenden Pfeiltasten ansehen und mit der Eingabetaste auswählen.",
+    "productsResults" : "{{ count }} Produkte sind verfügbar.",
+    "quickOrderSearch" : "Produkte für Schnellbestellung suchen"
   },
-  "quickOrderList": {
-    "addToCart": "In den Warenkorb",
-    "emptyList": "Empty list",
-    "header": "Add Products/SKUs",
-    "subHeader": "You can add up to {{ limit }} valid SKU at a time.",
-    "errorProceedingToCart": "Error proceeding to Cart.",
-    "warningProceedingToCart": "Warning proceeding to Cart.",
-    "successfullyAddedToCart": "Successfully added to Cart.",
-    "errors": {
-      "productIsOutOfStock": "{{ name }} (#{{code}}) is out of stock.",
-      "reviewErrors": "Please review these errors.",
-      "listIsFull": "The list is full, add these {{ count }} products to Cart in order to continue.",
-      "nonPurchasableError": "Product {{ name }} cannot be purchased",
-      "outOfStockErrorFound": "{{count}} out of stock product was not added.",
-      "outOfStockErrorFound_other": "{{count}} out of stock products were not added."
+  "quickOrderList" : {
+    "addToCart" : "In den Warenkorb",
+    "emptyList" : "Liste leeren",
+    "header" : "Produkte/SKUs hinzufügen",
+    "subHeader" : "Sie können bis zu {{ limit }} gültige SKU gleichzeitig hinzufügen.",
+    "errorProceedingToCart" : "Fehler beim Wechsel zum Warenkorb.",
+    "warningProceedingToCart" : "Warnung beim Wechsel zum Warenkorb.",
+    "successfullyAddedToCart" : "Erfolgreich dem Warenkorb hinzugefügt.",
+    "errors" : {
+      "productIsOutOfStock" : "{{ name }} (Nr. {{code}}) ist nicht vorrätig.",
+      "reviewErrors" : "Überprüfen Sie diese Fehler.",
+      "listIsFull" : "Die Liste ist voll, fügen Sie diese {{ count }} Produkte dem Warenkorb hinzu, um fortzufahren.",
+      "nonPurchasableError" : "Produkt {{ name }} kann nicht gekauft werden",
+      "outOfStockErrorFound" : "{{count}} Produkt, das nicht vorrätig ist, wurde nicht hinzugefügt.",
+      "outOfStockErrorFound_other" : "{{count}} Produkte, die nicht vorrätig sind, wurden nicht hinzugefügt."
     },
-    "warnings": {
-      "productWasReduced": "Quantity for {{ name }} (#{{code}}) was reduced to {{ quantityAdded}}.",
-      "reviewWarnings": "Please review these warnings.",
-      "reduceWarningFound": "{{count}} product quantity was reduced.",
-      "reduceWarningFound_other": "{{count}} products quantity were reduced."
+    "warnings" : {
+      "productWasReduced" : "Menge für {{ name }} (Nr. {{code}}) wurde auf {{ quantityAdded}} verringert.",
+      "reviewWarnings" : "Überprüfen Sie diese Warnungen.",
+      "reduceWarningFound" : "Menge von {{count}} Produkt wurde verringert.",
+      "reduceWarningFound_other" : "Menge von {{count}} Produkten wurde verringert."
     },
-    "successes": {
-      "productAddedToCart": "{{ name }} (#{{code}}) was added to cart.",
-      "addedToCartFound": "{{ count }} product was added to cart.",
-      "addedToCartFound_other": "{{ count }} products were added to cart."
+    "successes" : {
+      "productAddedToCart" : "{{ name }} (Nr. {{code}}) wurde dem Warenkorb hinzugefügt.",
+      "addedToCartFound" : "{{ count }} Produkt wurde dem Warenkorb hinzugefügt.",
+      "addedToCartFound_other" : "{{ count }} Produkte wurden dem Warenkorb hinzugefügt."
     },
-    "informations": {
-      "addProductBeforeAddingToCart": "Add products to the list before adding to the cart."
+    "informations" : {
+      "addProductBeforeAddingToCart" : "Bevor Sie die Produkte dem Warenkorb hinzufügen, müssen Sie sie der Liste hinzufügen."
     },
-    "undo": "UNDO",
-    "revokeUndo": "Revoked product \"{{name}}\" deletion.",
-    "productWasDeleted": "Product \"{{ name }}\" moved to trash."
+    "undo" : "RÜCKGÄNGIG",
+    "revokeUndo" : "Löschung des Produkts \"{{name}}\" wurde widerrufen.",
+    "productWasDeleted" : "Produkt \"{{ name }}\" wurde in den Papierkorb verschoben."
   },
-  "quickOrderTable": {
-    "product": "Produkt",
-    "id": "ID",
-    "price": "Preis",
-    "quantity": "ANZAHL",
-    "itemPrice": "Artikelpreis",
-    "qty": "Menge",
-    "actions": "Aktionen",
-    "inStock": "Vorrätig",
-    "lowStock": "Niederbestand",
-    "outOfStock": "Nicht vorrätig",
-    "listCleared": "Quick order list has been cleared",
-    "addedtoCart": "Quick order list has been added to the cart",
-    "caption": "Quick order contents."
+  "quickOrderTable" : {
+    "product" : "Produkt",
+    "id" : "ID",
+    "price" : "Preis",
+    "quantity" : "MENGE",
+    "quantityFull" : "Menge",
+    "itemPrice" : "Positionspreis",
+    "qty" : "Menge",
+    "actions" : "Aktionen",
+    "inStock" : "Vorrätig",
+    "lowStock" : "Niederbestand",
+    "outOfStock" : "Nicht vorrätig",
+    "listCleared" : "Schnellbestellungsliste wurde geleert",
+    "addedtoCart" : "Schnellbestellungsliste wurde dem Warenkorb hinzugefügt",
+    "caption" : "Inhalte der Schnellbestellung."
   }
 }

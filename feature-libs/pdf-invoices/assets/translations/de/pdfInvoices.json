@@ -1,31 +1,31 @@
 {
-  "pdfInvoices": {
-    "featureNotEnabled": "Unable to obtain invoices, ensure that SAP Invoice and API for Invoices are enabled.",
-    "invoicesLoadingError": "Something went wrong. Unable to display invoices for the order",
-    "invoicesTable": {
-      "header": "Invoices",
-      "label": "Invoices Table",
-      "invoiceId": "Invoice #",
-      "createdAt": "Datum",
-      "netAmount": "Nettobetrag",
-      "totalAmount": "Gesamtbetrag",
-      "attachment": "Download Invoice",
-      "download": "Herunterladen",
-      "attachmentDescription": "Download PDF for invoice {{id}}.",
-      "noneFound": "No Invoices Found"
+  "pdfInvoices" : {
+    "featureNotEnabled" : "Rechnungen konnten nicht abgerufen werden. Stellen Sie sicher, dass SAP Invoice und das API für Rechnungen aktiviert sind.",
+    "invoicesLoadingError" : "Es ist ein Fehler aufgetreten. Für die Bestellung können keine Rechnungen angezeigt werden",
+    "invoicesTable" : {
+      "header" : "Rechnungen",
+      "label" : "Rechnungstabelle",
+      "invoiceId" : "Rechnungsnummer",
+      "createdAt" : "Datum",
+      "netAmount" : "Nettobetrag",
+      "totalAmount" : "Gesamtbetrag",
+      "attachment" : "Rechnung herunterladen.",
+      "download" : "Herunterladen",
+      "attachmentDescription" : "Laden Sie eine PDF-Datei für die Rechnung {{id}} herunter.",
+      "noneFound" : "Keine Rechnungen gefunden"
     },
-    "downloadPDFError": "Something went wrong. Unable to obtain the invoice PDF.",
-    "sortBy": "Sortieren nach",
-    "sortInvoices": "Sort invoices",
-    "sorts": {
-      "byCreatedAtAsc": "Date Ascending",
-      "byCreatedAtDesc": "Date Descending",
-      "byInvoiceIdAsc": "Invoice Number Ascending",
-      "byInvoiceIdDesc": "Invoice Number Descending",
-      "byNetAmountAsc": "Net Amount Ascending",
-      "byNetAmountDesc": "Net Amount Descending",
-      "byTotalAmountAsc": "Total Amount Ascending",
-      "byTotalAmountDesc": "Total Amount Descending"
+    "downloadPDFError" : "Es ist ein Fehler aufgetreten. Die PDF-Datei für die Rechnung kann nicht abgerufen werden",
+    "sortBy" : "Sortieren nach",
+    "sortInvoices" : "Rechnungen sortieren",
+    "sorts" : {
+      "byCreatedAtAsc" : "Datum aufsteigend",
+      "byCreatedAtDesc" : "Datum absteigend",
+      "byInvoiceIdAsc" : "Rechnungsnummer aufsteigend",
+      "byInvoiceIdDesc" : "Rechnungsnummer absteigend",
+      "byNetAmountAsc" : "Nettobetrag aufsteigend",
+      "byNetAmountDesc" : "Nettobetrag absteigend",
+      "byTotalAmountAsc" : "Gesamtbetrag aufsteigend",
+      "byTotalAmountDesc" : "Nettobetrag absteigend"
     }
   }
 }

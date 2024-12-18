@@ -1,5 +1,5 @@
 {
-  "setDeliveryMode": {
-    "unknownError": "An unknown error occurred. Please contact support."
+  "setDeliveryMode" : {
+    "unknownError" : "Une erreur inconnue s'est produite. Veuillez contacter le service d'assistance."
   }
 }

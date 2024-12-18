@@ -1,4 +1,4 @@
 {
-  "cpqQuoteHeading": "Harga Item",
-  "discountCaption": "This item is {{ discount }}% off"
+  "cpqQuoteHeading" : "Harga Item",
+  "discountCaption" : "Item ini mendapatkan diskon {{ discount }}%"
 }

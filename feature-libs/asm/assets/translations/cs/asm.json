@@ -1,175 +1,176 @@
 {
-  "asm": {
-    "mainLogoLabel": "SAP",
-    "mainTitle": "Assisted Service Mode",
-    "logout": "Odhlásit se",
-    "hideUi": "Close ASM",
-    "helpPortalUrl": "Nápověda",
-    "customers": "Zákazníci",
-    "asmCustomer360Button": "Customer 360 View",
-    "asmCustomer360ViewButton": "Customer 360°",
-    "createCustomerSuccessfullyAlert": "The customer account has been created and the customer session has started.",
-    "saveInactiveCartAlertInfo": "The identified cart is an inactive cart. To take further actions on this cart, save it first.",
-    "activeCartAlertInfo": "The identified cart is an active cart.",
-    "startCustomerEmulationAlertInfo": "Customer emulation has started. Any actions you do will reflect the effects on the customer account.",
-    "toggleUi": {
-      "collapse": "Hide ASM",
-      "expand": "Show ASM"
+  "asm" : {
+    "mainLogoLabel" : "SAP",
+    "mainTitle" : "Režim asistenční služby",
+    "logout" : "Odhlásit se",
+    "hideUi" : "Zavřít ASM",
+    "helpPortalUrl" : "Nápověda",
+    "customers" : "Zákazníci",
+    "asmCustomer360Button" : "Zobrazení Zákazník 360",
+    "asmCustomer360ViewButton" : "Zákazník 360°",
+    "createCustomerSuccessfullyAlert" : "Byl vytvořen zákaznický účet a zahájena relace zákazníka.",
+    "saveInactiveCartAlertInfo" : "Identifikovaný košík není aktivní. Abyste mohli s košíkem dál pracovat, je třeba jej nejdřív uložit.",
+    "activeCartAlertInfo" : "Identifikovaný košík není aktivní.",
+    "startCustomerEmulationAlertInfo" : "Byla zahájena emulace zákazníka. Veškeré provedené činnosti budou odrážet účinky na účtu zákazníka.",
+    "toggleUi" : {
+      "collapse" : "Skrýt ASM",
+      "expand" : "Zobrazit ASM"
     },
-    "loginForm": {
-      "submit": "Přihlásit se",
-      "userId": {
-        "label": "Agent ID or Email"
+    "loginForm" : {
+      "submit" : "Přihlásit se",
+      "userId" : {
+        "label" : "ID nebo e-mail agenta"
       },
-      "password": {
-        "label": "Heslo"
+      "password" : {
+        "label" : "Heslo"
       }
     },
-    "customerSearch": {
-      "searchTerm": {
-        "label": "Jméno/e-mailová adresa zákazníka"
+    "customerSearch" : {
+      "searchTerm" : {
+        "label" : "Jméno / e-mailová adresa zákazníka"
       },
-      "searchCustomer": {
-        "label": "Search by name or email address"
+      "searchCustomer" : {
+        "label" : "Hledat podle jména nebo e-mailové adresy"
       },
-      "searchOrder": {
-        "label": "Search by full order ID"
+      "searchOrder" : {
+        "label" : "Hledat podle ID celé objednávky."
       },
-      "submit": "Start Session",
-      "startEmulation": "Start Emulation",
-      "noMatch": "No customer found.",
-      "noMatchResult": "This account cannot be found.",
-      "noCustomerMatchResult": "No matching customer found.",
-      "noOrderMatchResult": "Search by full order ID.",
-      "createCustomer": "Create New Customer",
-      "customer": "Zákazník",
-      "orderID": "ID objednávky"
+      "submit" : "Zahájit relaci",
+      "startEmulation" : "Zahájit emulaci",
+      "noMatch" : "Nebyl nalezen žádný zákazník",
+      "noMatchResult" : "Tento účet nelze najít.",
+      "noCustomerMatchResult" : "Nebyl nalezen žádný odpovídající zákazník.",
+      "noOrderMatchResult" : "Vyhledat podle celého ID objednávky.",
+      "createCustomer" : "Vytvořit nového zákazníka",
+      "customer" : "Zákazník",
+      "orderID" : "ID objednávky"
     },
-    "createCustomerForm": {
-      "title": "Create New Customer",
-      "createAccount": "Vytvořit",
-      "cancel": "Zrušit",
-      "firstName": {
-        "label": "Jméno",
-        "placeholder": "Jméno"
+    "createCustomerForm" : {
+      "title" : "Vytvořit nového zákazníka",
+      "createAccount" : "Vytvořit",
+      "cancel" : "Zrušit",
+      "firstName" : {
+        "label" : "Křestní jméno",
+        "placeholder" : "Křestní jméno"
       },
-      "lastName": {
-        "label": "Příjmení",
-        "placeholder": "Příjmení"
+      "lastName" : {
+        "label" : "Příjmení",
+        "placeholder" : "Příjmení"
       },
-      "emailAddress": {
-        "label": "E-mailová adresa",
-        "placeholder": "E-mailová adresa"
+      "emailAddress" : {
+        "label" : "E-mailová adresa",
+        "placeholder" : "E-mailová adresa"
       },
-      "createAccountAlert": "The customer session starts once you create the customer account.",
-      "validationErrors": {
-        "firstName": "Enter a valid first name.",
-        "lastName": "Enter a valid last name.",
-        "emailAddress": "Enter a valid email address."
+      "createAccountAlert" : "Relace zákazníka začíná po vytvoření účtu zákazníka.",
+      "validationErrors" : {
+        "firstName" : "Zadejte platné křestní jméno.",
+        "lastName" : "Zadejte platné příjmení.",
+        "emailAddress" : "Zadejte platnou e-mailovou adresu."
       },
-      "badRequestDuplicatedEmail": "Enter a different email address as {{ emailAddress }} already exists."
+      "badRequestDuplicatedEmail" : "Zadejte jinou e-mailovou adresu, protože {{ emailAddress }} již existuje."
     },
-    "customerList": {
-      "title": "Seznam zákazníků",
-      "description": "Select a customer from one of several provided lists.",
-      "createCustomer": "Create New Customer",
-      "cancel": "Zrušit",
-      "tableHeader": {
-        "customer": "Zákazník",
-        "customerName": "Jméno zákazníka",
-        "name": "Název",
-        "email": "E-mail",
-        "emailId": "Email/ID",
-        "phone": "Telefon",
-        "account": "Účet",
-        "cart": "Košík",
-        "order": "Objednávka",
-        "view": "360 pohled",
-        "activeCart": "Aktivní košík",
-        "viewActiveCart": "View Active Cart",
-        "orders": "Objednávky",
-        "viewOrders": "Zobrazit objednávky",
-        "customer360": "Customer 360°",
-        "viewCustomer360": "View Customer 360°"
+    "customerList" : {
+      "title" : "Seznam zákazníků",
+      "description" : "Vyberte zákazníka z některého z poskytnutých seznamů.",
+      "createCustomer" : "Vytvořit nového zákazníka",
+      "cancel" : "Zrušit",
+      "tableHeader" : {
+        "customer" : "Zákazník",
+        "customerName" : "Jméno/název zákazníka",
+        "name" : "Jméno/název",
+        "email" : "E-mail",
+        "emailId" : "Email/ID",
+        "phone" : "Telefon",
+        "account" : "Účet",
+        "cart" : "Košík",
+        "order" : "Objednávka",
+        "view" : "360 pohled",
+        "activeCart" : "Aktivní košík",
+        "viewActiveCart" : "Zobrazit aktivní košík",
+        "orders" : "Objednávky",
+        "viewOrders" : "Zobrazit objednávky",
+        "customer360" : "Zákazník 360°",
+        "viewCustomer360" : "Zobrazit Zákazník 360°"
       },
-      "tableSort": {
-        "sortBy": "Řadit podle",
-        "byName": "Jméno (vzestupně)",
-        "byNameAsc": "Jméno (vzestupně)",
-        "byNameDesc": "Jméno (sestupně)",
-        "byDateAsc": "Datum (vzestupně)",
-        "byDateDesc": "Datum (sestupně)",
-        "byOrderDateAsc": "Order date (Asc)",
-        "byOrderDateDesc": "Order date (Desc)",
-        "byUnit": "Účet (vzestupně)",
-        "byUnitDesc": "Účet (sestupně)"
+      "tableSort" : {
+        "sortBy" : "Řadit podle",
+        "byName" : "Jméno (vzestupně)",
+        "byNameAsc" : "Jméno (vzestupně)",
+        "byNameDesc" : "Jméno (sestupně)",
+        "byDateAsc" : "Datum (vzestupně)",
+        "byDateDesc" : "Datum (sestupně)",
+        "byOrderDateAsc" : "Datum objednávky (vzestupně)",
+        "byOrderDateDesc" : "Datum objednávky (sestupně)",
+        "byUnit" : "Účet (vzestupně)",
+        "byUnitDesc" : "Účet (sestupně)"
       },
-      "page": {
-        "page": "Page {{count}}",
-        "previous": "Předchozí",
-        "next": "Další"
+      "page" : {
+        "page" : "Strana {{count}}",
+        "previous" : "Předchozí",
+        "next" : "Další"
       },
-      "noOfCustomers": "{{count}} zákazn.",
-      "oneCustomer": "1 zákazník",
-      "noCustomers": "V tomto seznamu zákazníků momentálně neexistují žádní zákazníci.",
-      "noLists": "There are currently no customer lists available. Contact your system administrator.",
-      "listsError": "The customer lists could not be retrieved. Please try again later.",
-      "searchBox": "Hledat",
-      "enterSearchBox": "Enter customer name or email"
+      "noOfCustomers" : "Počet zákazníků: {{count}} ",
+      "oneCustomer" : "1 zákazník",
+      "noCustomers" : "V tomto seznamu zákazníků momentálně nejsou žádní zákazníci.",
+      "noLists" : "Momentálně není k dispozici žádný seznam zákazníků. Obraťte se na správce systému.",
+      "listsError" : "Seznam zákazníků nelze načíst. Zkuste to znovu později.",
+      "searchBox" : "Hledat",
+      "enterSearchBox" : "Zadejte jméno nebo e-mail zákazníka"
     },
-    "switchCustomer": {
-      "dialog": {
-        "title": "Upozornění",
-        "body": "Clicking \"Switch Customer\" will end the emulation for \"{{ customerA }}\" and start for \"{{ customerB }}\". Any unsaved changes for \"{{ customerA }}\" will be lost.",
-        "actions": {
-          "switch": "Switch Customer"
+    "switchCustomer" : {
+      "dialog" : {
+        "title" : "Upozornění",
+        "body" : "Kliknutím na „Přepnout zákazníka“ ukončíte emulaci pro „{{ customerA }}“ a zahájíte emulaci pro „{{ customerB }}“. Veškeré neuložené změny pro „{{ customerA }}“ budou ztraceny.",
+        "actions" : {
+          "switch" : "Přepnout zákazníka"
         }
       }
     },
-    "saveCart": {
-      "saveCartBtn": "Uložit na později",
-      "dialog": {
-        "saveInfo": "Save the cart before you can take further actions.",
-        "disableInfo": "Cannot save the cart as it is empty.",
-        "title": "Uložit košík",
-        "row": {
-          "id": "ID",
-          "qty": "Množství",
-          "total": "Celkem"
+    "saveCart" : {
+      "saveCartBtn" : "Uložit na později",
+      "dialog" : {
+        "saveInfo" : "Před další činností uložte košík.",
+        "disableInfo" : "Košík nelze uložit, protože je prázdný.",
+        "title" : "Uložit košík",
+        "row" : {
+          "id" : "ID",
+          "qty" : "Množství",
+          "qtyFull" : "Množství",
+          "total" : "Celkem"
         },
-        "actions": {
-          "save": "Uložit na později"
+        "actions" : {
+          "save" : "Uložit na později"
         }
       }
     },
-    "bindCart": {
-      "cartNumber": "Cart Number",
-      "bindCartToCustomer": "Assign Cart to Customer",
-      "success": "Cart has been successfully assigned",
-      "assignCartId": "Assign a cart id to customer",
-      "enterCartId": "Enter cart id",
-      "resetCartId": "Resetovat",
-      "dialog": {
-        "title": "Assign Anonymous Cart",
-        "body": "Do you want to replace the current active cart with the anonymous cart? If you replace the current active cart, it is saved as a saved cart.",
-        "actions": {
-          "replace": "Replace Cart"
+    "bindCart" : {
+      "cartNumber" : "Číslo košíku",
+      "bindCartToCustomer" : "Přiřadit košík zákazníkovi",
+      "success" : "Košík byl úspěšně přiřazen",
+      "assignCartId" : "Přiřadit ID košíku zákazníkovi",
+      "enterCartId" : "Zadejte ID košíku",
+      "resetCartId" : "Resetovat",
+      "dialog" : {
+        "title" : "Přiřadit anonymní košík",
+        "body" : "Chcete nahradit aktuální aktivní košík anonymním košíkem? Pokud nahradíte aktuální aktivní košík, uloží se jako uložený košík.",
+        "actions" : {
+          "replace" : "Nahradit košík"
         }
       }
     },
-    "csagentTokenExpired": "Your customer support agent session is expired.",
-    "endSession": "Konec relace",
-    "endEmulation": "End Emulation",
-    "agentSessionTimer": {
-      "label": "Session Timeout",
-      "minutes": "min.",
-      "reset": "Resetovat"
+    "csagentTokenExpired" : "Časový limit relace agenta zákaznické podpory vypršel.",
+    "endSession" : "Ukončit relaci",
+    "endEmulation" : "Ukončit emulaci",
+    "agentSessionTimer" : {
+      "label" : "Vypršel časový limit relace",
+      "minutes" : "min",
+      "reset" : "Resetovat"
     },
-    "auth": {
-      "agentLoggedInError": "Cannot login as user when there is an active CS agent session. Please either emulate user or logout CS agent."
+    "auth" : {
+      "agentLoggedInError" : "Nemůžete se přihlásit jako uživatel, pokud existuje aktivní relace agenta zák. podpory. Buď emulujte uživatele, nebo odhlaste agenta zák. podpory."
     },
-    "error": {
-      "noCustomerId": "No customerId found for selected user. Session cannot be started."
+    "error" : {
+      "noCustomerId" : "Pro vybraného uživatele nebylo nalezeno ID zákazníka. Relace nemůže být zahájena."
     }
   }
 }

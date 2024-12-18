@@ -1,145 +1,149 @@
 {
-  "productDetails": {
-    "id": "标识",
-    "quantity": "数量",
-    "productDetails": "产品详细信息",
-    "specification": "规格",
-    "reviews": "评论",
-    "shipping": "发货",
-    "share": "共享",
-    "showReviews": "Show reviews",
-    "noReviews": "No reviews yet",
-    "productPrice": "产品价格",
-    "noProductImage": "No image available, {{ product }}"
+  "productDetails" : {
+    "id" : "标识",
+    "quantity" : "数量",
+    "quantityFull" : "数量",
+    "productDetails" : "产品详细信息",
+    "specification" : "规格",
+    "reviews" : "评论",
+    "shipping" : "发货",
+    "share" : "共享",
+    "showReviews" : "显示评论",
+    "noReviews" : "尚无评论",
+    "productPrice" : "产品价格",
+    "noProductImage" : "没有可用图像，{{ product }}"
   },
-  "productList": {
-    "filterBy": {
-      "label": "Filter by",
-      "action": "Filter by"
+  "productList" : {
+    "filterBy" : {
+      "label" : "过滤条件",
+      "action" : "过滤条件"
     },
-    "activeFilter": "{{filter}} filter, clicking on this button will remove the filter",
-    "appliedFilter": "Applied filter:",
-    "showLess": "显示更少...",
-    "showMore": "显示更多...",
-    "sortBy": "排序依据",
-    "sortResults": "Sort results",
-    "backToTopBtn": "BACK TO TOP",
-    "showMoreBtn": "SHOW MORE",
-    "productSearchPagination": "Product search pagination",
-    "productListResults": "Product Results List"
+    "activeFilter" : "{{filter}} 过滤器，单击此按钮将移除过滤器",
+    "appliedFilter" : "已应用过滤器：",
+    "showLess" : "显示更少...",
+    "showMore" : "显示更多...",
+    "sortBy" : "排序依据",
+    "sortResults" : "排序结果",
+    "backToTopBtn" : "返回顶部",
+    "showMoreBtn" : "显示更多",
+    "productSearchPagination" : "产品搜索分页",
+    "productListResults" : "产品搜索列表"
   },
-  "productFacetNavigation": {
-    "filterBy": {
-      "label": "Filter by",
-      "action": "Filter by",
-      "facet": "Filter results by Facets",
-      "name": "Filter by {{name}}"
+  "productFacetNavigation" : {
+    "filterBy" : {
+      "label" : "过滤条件",
+      "action" : "过滤条件",
+      "facet" : "按构面过滤结果",
+      "name" : "按 {{name}} 过滤"
     },
-    "appliedFilter": "Applied filter:",
-    "showLess": "显示更少...",
-    "showMore": "显示更多...",
-    "sortBy": "排序依据",
-    "ariaLabelShowLess": "Show Less, button, clicking on this button will reduce options for the active group",
-    "ariaLabelShowMore": "Show more, button, clicking on this button will show all options for the active group",
-    "ariaLabelItemsAvailable": "{{name}}, {{state}} {{count}} item available",
-    "ariaLabelItemsAvailable_other": "{{name}}, {{state}} {{count}} items available",
-    "decreaseOptionsVisibility": "Options were hidden from the active group, tab backward to read them or forward for the next group",
-    "increaseOptionsVisibility": "More options were added to the active group, tab backward to read them or forward for the next group",
-    "backToResults": "Back To Results"
+    "appliedFilter" : "已应用过滤器：",
+    "showLess" : "显示更少...",
+    "showMore" : "显示更多...",
+    "sortBy" : "排序依据",
+    "ariaLabelShowLess" : "“显示更少”按钮，单击此按钮将减少已激活组的选项",
+    "ariaLabelShowMore" : "“显示更多”按钮，单击此按钮将显示已激活组的所有选项",
+    "ariaLabelItemsAvailable" : "{{count}} 个 {{name}}（{{state}} 状态）商品可购买",
+    "ariaLabelItemsAvailable_other" : "{{count}} 个 {{name}}（{{state}} 状态）商品可购买",
+    "decreaseOptionsVisibility" : "已激活组隐藏了选项，后退阅读这些选项或前进进入下一个组",
+    "increaseOptionsVisibility" : "为已激活组添加了更多选项，后退阅读这些选项或前进进入下一个组",
+    "backToResults" : "返回结果",
+    "productFacets" : "产品构面"
   },
-  "productSummary": {
-    "id": "标识",
-    "showReviews": "Show reviews",
-    "showReviewsDetailed": "Show {{count}} reviews, Rated {{rating}} out of 5 stars",
-    "share": "共享",
-    "newItemPrice": "New item price"
+  "productSummary" : {
+    "id" : "标识",
+    "showReviews" : "显示评论",
+    "showReviewsDetailed" : "显示 {{count}} 条评论（评级为 {{rating}}，共 5 颗星）",
+    "share" : "共享",
+    "newItemPrice" : "新商品价格"
   },
-  "productReview": {
-    "overallRating": "Overall Rating",
-    "reviewTitle": "评论标题",
-    "writeYourComments": "Write your comments",
-    "rating": "评级",
-    "ratingRequired": "Product rating, required",
-    "addRate": "Add rate: {{count}} star",
-    "addRate_other": "Add rate: {{count}} stars",
-    "reviewerName": "Reviewer name (optional)",
-    "writeReview": "发表评论",
-    "more": "Show More Reviews",
-    "less": "Show Less Reviews",
-    "thankYouForReview": "Thank you for the review! Note that reviews may require review before appearing here.",
-    "postReviewFail": "Something went wrong while posting your review. Please try again later.",
-    "ratedOutOf": "Rated: {{rating}} out of 5"
+  "productReview" : {
+    "overallRating" : "整体评级",
+    "reviewTitle" : "评论标题",
+    "writeYourComments" : "写下您的备注",
+    "rating" : "评级",
+    "ratingRequired" : "产品评级（必需）",
+    "addRate" : "添加评级：{{count}} 颗星",
+    "addRate_other" : "添加评级：{{count}} 颗星",
+    "reviewerName" : "评论人姓名（可选）",
+    "writeReview" : "发表评论",
+    "more" : "显示更多评论",
+    "less" : "显示更少评论",
+    "thankYouForReview" : "感谢您的评论！请注意，评论可能先需要审核才能在此显示。",
+    "postReviewFail" : "发布评论时出错。请稍后重试。",
+    "ratedOutOf" : "评级为 {{rating}}，共 5 级"
   },
-  "productCarousel": {
-    "carouselLabel": "Carousel, {{title}}"
+  "productCarousel" : {
+    "carouselLabel" : "轮播控件，{{title}}"
   },
-  "addToCart": {
-    "itemsAddedToYourCart": "Item(s) added to your cart",
-    "itemsIncrementedInYourCart": "This item was already in your cart. The quantity was updated.",
-    "items": "项目",
-    "updatingCart": "Updating cart...",
-    "addToCart": "添加到购物车",
-    "viewCart": "view cart",
-    "proceedToCheckout": "proceed to checkout",
-    "quantity": "数量",
-    "outOfStock": "Out of stock",
-    "inStock": "In stock",
-    "selectStyleAndSize": "Select style and size to check stock",
-    "removeFromCart": "Remove Product from Cart",
-    "closeModal": "Close Modal",
-    "buyItAgain": "Buy It Again",
-    "addToActiveCart": "Add To Active Cart"
+  "addToCart" : {
+    "itemAddedToYourCart" : "商品已加入购物车",
+    "itemsAddedToYourCart" : "商品已加入购物车",
+    "itemsIncrementedInYourCart" : "此商品已在购物车中。数量已更新。",
+    "items" : "商品",
+    "updatingCart" : "正在更新购物车...",
+    "addToCart" : "加入购物车",
+    "viewCart" : "查看购物车",
+    "proceedToCheckout" : "继续结账",
+    "quantity" : "数量",
+    "quantityFull" : "数量",
+    "outOfStock" : "缺货",
+    "inStock" : "有现货",
+    "selectStyleAndSize" : "选择样式和尺寸以查看库存",
+    "removeFromCart" : "从购物车中移除产品",
+    "closeModal" : "关闭模式",
+    "buyItAgain" : "再次购买",
+    "addToActiveCart" : "加入已激活购物车"
   },
-  "TabPanelContainer": {
-    "tabs": {
-      "ProductDetailsTabComponent": "产品详细信息",
-      "ProductSpecsTabComponent": "规格",
-      "ProductReviewsTabComponent": "评论",
-      "deliveryTab": "发货",
-      "SparePartsTabComponent": " Spare Parts"
+  "TabPanelContainer" : {
+    "tabs" : {
+      "ProductDetailsTabComponent" : "产品详细信息",
+      "ProductSpecsTabComponent" : "规格",
+      "ProductReviewsTabComponent" : "评论",
+      "deliveryTab" : "发货",
+      "SparePartsTabComponent" : " 备件"
     },
-    "tabPanelContainerRegion": "Tab group with more product details",
-    "tabPanelContainerRegionGroup": "Group with more product details"
+    "tabPanelContainerRegion" : "提供更多产品详细信息的选项卡组",
+    "tabPanelContainerRegionGroup" : "提供更多产品详细信息的组"
   },
-  "addToWishList": {
-    "add": "Add to Wish List",
-    "remove": "Remove from Wish List",
-    "anonymous": "Sign in to add to wish list",
-    "addedToWishList": "Product added to wish list",
-    "removedFromWishList": "Product removed from wish list"
+  "addToWishList" : {
+    "add" : "加入愿望清单",
+    "remove" : "从愿望清单中移除",
+    "anonymous" : "登录即可加入愿望清单",
+    "addedToWishList" : "产品已加入愿望清单",
+    "removedFromWishList" : "产品已从愿望清单中移除"
   },
-  "stockNotification": {
-    "notifyMe": "NOTIFY ME",
-    "stopNotify": "STOP NOTIFICATION",
-    "getNotify": "Get notified when this product is available.",
-    "getNotifySuffix": "to get notified when this product is available.",
-    "activateChannelsPrefix": "To be notified you need to activate the ",
-    "channelsLink": "通知渠道",
-    "activateChannelsSuffix": ".",
-    "notified": "You will be notified when this product is back in stock.",
-    "getNotified": "Get notified when this product is back in stock.",
-    "unsubscribeSuccess": "You will not receive back-in-stock notification for this product.",
-    "subscriptionDialog": {
-      "header": "Out of stock subscription",
-      "notifiedPrefix": "You will be notified on:",
-      "notifiedSuffix": "as soon as this product is back in stock.",
-      "manageChannelsPrefix": "Manage your preferred notification channels on the ",
-      "manageChannelsLink": "通知首选项",
-      "manageChannelsSuffix": " page.",
-      "manageSubscriptionsPrefix": "You can manage your subscriptions on ",
-      "manageSubscriptionsLink": "我的关注对象",
-      "manageSubscriptionsSuffix": " page.",
-      "okBtn": "确定",
-      "subscribing": "Subscribing you to Out of Stock notifications for this product"
+  "stockNotification" : {
+    "notifyMe" : "通知我",
+    "stopNotify" : "停止通知",
+    "getNotify" : "此产品可购买时通知。",
+    "getNotifySuffix" : "在此产品可购买时通知。",
+    "activateChannelsPrefix" : "要获得通知，您需要激活 ",
+    "channelsLink" : "通知渠道",
+    "activateChannelsSuffix" : "。",
+    "notified" : "此产品补货时，您将会收到通知。",
+    "getNotified" : "此产品补货时通知。",
+    "unsubscribeSuccess" : "您将不会收到此产品的补货通知。",
+    "subscriptionDialog" : {
+      "header" : "缺货订阅",
+      "notifiedPrefix" : "您将在以下情况收到通知：",
+      "notifiedSuffix" : "此产品补货后。",
+      "manageChannelsPrefix" : "在 ",
+      "manageChannelsLink" : "“通知首选项”",
+      "manageChannelsSuffix" : " 页面上管理您的首选通知渠道。",
+      "manageSubscriptionsPrefix" : "您可以在 ",
+      "manageSubscriptionsLink" : "“我的关注对象”",
+      "manageSubscriptionsSuffix" : " 页面上管理您的订阅。",
+      "okBtn" : "确定",
+      "subscribing" : "订阅此产品的缺货通知"
     }
   },
-  "itemCounter": {
-    "removeOne": "Remove one",
-    "addOneMore": "Add one more",
-    "quantity": "数量"
+  "itemCounter" : {
+    "removeOne" : "移除一个",
+    "addOneMore" : "再添加一个",
+    "quantity" : "数量"
   },
-  "productView": {
-    "gridView": "Select to change to Grid View",
-    "listView": "Select to change to List View"
+  "productView" : {
+    "gridView" : "选择以更改为网格视图",
+    "listView" : "选择以更改为列表视图"
   }
 }

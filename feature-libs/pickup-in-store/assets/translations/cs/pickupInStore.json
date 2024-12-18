@@ -1,86 +1,92 @@
 {
-  "pickupInfo": {
-    "inStorePickup": "In Store Pickup",
-    "pickupBy": "Pick up by",
-    "pickupFrom": "Pick up from"
+  "pickupInfo" : {
+    "inStorePickup" : "Vyzvednutí v prodejně",
+    "pickupBy" : "Vyzvedne",
+    "pickupFrom" : "Místo vyzvednutí:"
   },
-  "pickupOptionDialog": {
-    "close": "Zavřít",
-    "modalHeader": "Vyzvednutí v obchodě"
+  "pickupOptionDialog" : {
+    "close" : "Zavřít",
+    "modalHeader" : "Vyzvednutí v prodejně"
   },
-  "pickupOptions": {
-    "legend": "Způsob dodání",
-    "changeStore": "Změnit obchod",
-    "delivery": "Ship It (Free Return)",
-    "pickup": "Free Pickup In Store",
-    "selectStore": "Select Store"
+  "pickupOptions" : {
+    "legend" : "Způsob dodání",
+    "changeStore" : "Změnit prodejnu",
+    "delivery" : "Doručit (vrácení zdarma)",
+    "pickup" : "Bezplatné vyzvednutí v prodejně",
+    "shipIt" : "Doručit",
+    "selectStore" : "Vybrat prodejnu",
+    "freeReturn" : "Vrácení zdarma",
+    "storeIsNotSelected" : "Nebylo vybráno vyzvednutí v prodejně."
   },
-  "setPreferredStore": {
-    "makeThisMyStore": "Make This My Store",
-    "myStore": "My Store"
+  "setPreferredStore" : {
+    "makeThisMyStore" : "Nastavit jako Moji prodejnu",
+    "myStore" : "Moje prodejna"
   },
-  "store": {
-    "pickupFromHere": "Pick Up from here",
-    "stockLevel_inStock": "{{ count }} in Stock",
-    "stockLevel_outOfStock": "Není skladem",
-    "viewHours": "View Hours"
+  "store" : {
+    "pickupFromHere" : "Vyzvednout zde",
+    "stockLevel_inStock" : "{{ count }} skladem",
+    "stockLevel_outOfStock" : "Není skladem",
+    "viewHours" : "Zobrazit hodiny"
   },
-  "storeList": {
-    "noStoresMessage": "No stores found in database..."
+  "storeList" : {
+    "noStoresMessage" : "V databázi nebyly nalezeny žádné prodejny…"
   },
-  "storeSchedule": {
-    "closed": "Zavřeno",
-    "storeHours": "Store hours"
+  "storeSchedule" : {
+    "closed" : "Zavřeno",
+    "storeHours" : "Otevírací doba prodejny"
   },
-  "storeSearch": {
-    "findAStore": "Najít obchod",
-    "findStores": "Najít obchody",
-    "hideOutOfStockOptions": "Hide out of stock options",
-    "searchPlaceholder": "Enter Zip Code or Town or Address",
-    "useMyLocation": "Use my location"
+  "storeSearch" : {
+    "findAStore" : "Najít prodejnu",
+    "findStores" : "Najít prodejnu",
+    "hideOutOfStockOptions" : "Skrýt možnosti, které nejsou skladem.",
+    "searchPlaceholder" : "Zadejte PSČ nebo město nebo adresu",
+    "useMyLocation" : "Použít mou polohu"
   },
-  "addressBookPickupInStore": {
-    "heading": "Pick-Up Store"
+  "addressBookPickupInStore" : {
+    "heading" : "Prodejna pro vyzvednutí"
   },
-  "storeFinderPickupInStore": {
-    "heading": "My Store"
+  "storeFinderPickupInStore" : {
+    "heading" : "Moje prodejna"
   },
-  "checkoutPickupInStore": {
-    "heading": "Items to be Picked Up",
-    "storeItemHeading": "Pick Up Store Address"
+  "checkoutPickupInStore" : {
+    "heading" : "Položky, které mají být vyzvednuty",
+    "storeItemHeading" : "Adresa prodejny pro vyzvednutí"
   },
-  "cartItems": {
-    "item": "Položka"
+  "cartItems" : {
+    "item" : "Položka"
   },
-  "deliveryPointOfServiceDetails": {
-    "itemsToBePickUp": "Items To Be Pick-Up",
-    "pickUpInStoreAddress": "Pick Up Store Address",
-    "itemsToBeShipped": "Items To Be Shipped",
-    "shippingAddress": "Dodací adresa",
-    "deliveryMethod": "Způsob dodání",
-    "deliveryOptions": "Možnosti dodání",
-    "statusDisplay_cancelled": "Zrušeno",
-    "statusDisplay_cancelling": "Probíhá zrušení",
-    "statusDisplay_completed": "Dokončeno",
-    "statusDisplay_created": "Vytvořeno",
-    "statusDisplay_error": "Čeká",
-    "statusDisplay_Error": "Čeká",
-    "statusDisplay_processing": "Čeká",
-    "statusDisplay_open": "Otevřeno",
-    "statusDisplay_pending": {
-      "approval": "Čeká na schválení",
-      "merchant": {
-        "approval": "Čeká na schválení obchodníka"
+  "cardActions" : {
+    "getDirections" : "Získat popis cesty – tento odkaz otevře nové okno"
+  },
+  "deliveryPointOfServiceDetails" : {
+    "itemsToBePickUp" : "Položky, které mají být vyzvednuty",
+    "pickUpInStoreAddress" : "Adresa prodejny pro vyzvednutí",
+    "itemsToBeShipped" : "Položky k odeslání",
+    "shippingAddress" : "Dodací adresa",
+    "deliveryMethod" : "Způsob dodání",
+    "deliveryOptions" : "Možnosti dodání",
+    "statusDisplay_cancelled" : "Zrušeno",
+    "statusDisplay_cancelling" : "Probíhá zrušení",
+    "statusDisplay_completed" : "Dokončeno",
+    "statusDisplay_created" : "Vytvořeno",
+    "statusDisplay_error" : "Čeká",
+    "statusDisplay_Error" : "Čeká",
+    "statusDisplay_processing" : "Čeká",
+    "statusDisplay_open" : "Otevřeno",
+    "statusDisplay_pending" : {
+      "approval" : "Čeká na schválení",
+      "merchant" : {
+        "approval" : "Čeká na schválení obchodníka"
       }
     },
-    "statusDisplay_approved": "Schváleno",
-    "statusDisplay_rejected": "Zamítnuto",
-    "statusDisplay_merchant": {
-      "approved": "Obchodník byl schválen",
-      "rejected": "Obchodník byl zamítnut"
+    "statusDisplay_approved" : "Schváleno",
+    "statusDisplay_rejected" : "Zamítnuto",
+    "statusDisplay_merchant" : {
+      "approved" : "Obchodník byl schválen",
+      "rejected" : "Obchodník byl zamítnut"
     },
-    "statusDisplay_assigned": {
-      "admin": "Přiřazeno správci"
+    "statusDisplay_assigned" : {
+      "admin" : "Přiřazeno správci"
     }
   }
 }

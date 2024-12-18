@@ -1,8 +1,8 @@
 {
-  "requestedDeliveryDate": {
-    "datePickerLabel": "Request Delivery Date",
-    "readOnlyTextLabel": "Requested Delivery Date",
-    "successMessage": "Delivery Date updated successfully.",
-    "errorMessage": "Something went wrong. Unable to update the requested date."
+  "requestedDeliveryDate" : {
+    "datePickerLabel" : "Data de entrega de solicitação",
+    "readOnlyTextLabel" : "Data de entrega solicitada",
+    "successMessage" : "Data de entrega atualizada com êxito.",
+    "errorMessage" : "Algo deu errado. Impossível atualizar a data solicitada."
   }
 }

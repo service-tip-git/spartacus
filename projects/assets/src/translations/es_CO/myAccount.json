@@ -1,109 +1,109 @@
 {
-  "closeAccount": {
-    "confirmAccountClosure": "Confirmar cierre de cuenta",
-    "confirmAccountClosureMessage": "¿Confirma que desea cerrar su cuenta?",
-    "closeMyAccount": "CLOSE MY ACCOUNT",
-    "accountClosedSuccessfully": "Account closed with success",
-    "accountClosedFailure": "Failed to close account"
+  "closeAccount" : {
+    "confirmAccountClosure" : "Confirmar cierre de cuenta",
+    "confirmAccountClosureMessage" : "¿Confirma que desea cerrar su cuenta?",
+    "closeMyAccount" : "CERRAR MI CUENTA",
+    "accountClosedSuccessfully" : "Cuenta cerrada correctamente",
+    "accountClosedFailure" : "Error al cerrar la cuenta"
   },
-  "updatePasswordForm": {
-    "oldPassword": {
-      "label": "Contraseña antigua",
-      "placeholder": "Contraseña antigua"
+  "updatePasswordForm" : {
+    "oldPassword" : {
+      "label" : "Contraseña anterior",
+      "placeholder" : "Contraseña anterior"
     },
-    "oldPasswordIsRequired": "Old password is required.",
-    "newPassword": {
-      "label": "Nueva contraseña",
-      "placeholder": "Nueva contraseña"
+    "oldPasswordIsRequired" : "Se requiere la contraseña anterior.",
+    "newPassword" : {
+      "label" : "Contraseña nueva",
+      "placeholder" : "Contraseña nueva"
     },
-    "passwordMinRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
-    "passwordStrengthRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
-    "confirmPassword": {
-      "label": "Confirmar contraseña nueva",
-      "placeholder": "Confirmar contraseña"
+    "passwordMinRequirements" : "Esta es una guía rápida para generar una contraseña segura: utilice al menos 8 caracteres e incluya letras en mayúscula y minúscula, números y símbolos.",
+    "passwordStrengthRequirements" : "Esta es una guía rápida para generar una contraseña segura: utilice al menos 8 caracteres e incluya letras en mayúscula y minúscula, números y símbolos. Asegúrese de no utilizar el mismo carácter de forma consecutiva.",
+    "confirmPassword" : {
+      "label" : "Confirmar contraseña nueva",
+      "placeholder" : "Confirmar contraseña"
     },
-    "bothPasswordMustMatch": "Both password must match",
-    "passwordUpdateSuccess": "Password updated with success",
-    "accessDeniedError": "Access is denied"
+    "bothPasswordMustMatch" : "Ambas contraseñas deben coincidir",
+    "passwordUpdateSuccess" : "Contraseña actualizada correctamente",
+    "accessDeniedError" : "Se denegó el acceso"
   },
-  "updateProfileForm": {
-    "title": "Título",
-    "none": "",
-    "firstName": {
-      "label": "Nombre",
-      "placeholder": "Nombre"
+  "updateProfileForm" : {
+    "title" : "Tratamiento",
+    "none" : "",
+    "firstName" : {
+      "label" : "Nombre",
+      "placeholder" : "Nombre"
     },
-    "firstNameIsRequired": "First name is required.",
-    "lastName": {
-      "label": "Apellido",
-      "placeholder": "Apellido"
+    "firstNameIsRequired" : "Se requiere el nombre.",
+    "lastName" : {
+      "label" : "Apellido",
+      "placeholder" : "Apellido"
     },
-    "lastNameIsRequired": "Last name is required.",
-    "profileUpdateSuccess": "Personal details successfully updated",
-    "customerId": "Customer #"
+    "lastNameIsRequired" : "Se requiere el apellido.",
+    "profileUpdateSuccess" : "Detalles personales actualizados correctamente",
+    "customerId" : "Cliente n. º"
   },
-  "consentManagementForm": {
-    "clearAll": "Clear all",
-    "selectAll": "Seleccionar todo",
-    "message": {
-      "success": {
-        "given": "Consent successfully given.",
-        "withdrawn": "Consent successfully withdrawn."
+  "consentManagementForm" : {
+    "clearAll" : "Borrar todo",
+    "selectAll" : "Seleccionar todo",
+    "message" : {
+      "success" : {
+        "given" : "Consentimiento otorgado correctamente.",
+        "withdrawn" : "Consentimiento retirado correctamente."
       }
     }
   },
-  "myCoupons": {
-    "noCouponsMessage": "You have no coupons available.",
-    "effectiveTitle": "Efectivo:",
-    "Effective": "EFFECTIVE",
-    "PreSession": "EFFECTIVE SOON",
-    "ExpireSoon": "EXPIRING SOON",
-    "readMore": "Read more",
-    "notification": "Notificación",
-    "findProducts": "Buscar productos",
-    "status": "Estado:",
-    "dialogTitle": "Cupón",
-    "claimCustomerCoupon": "Ha reclamado correctamente este cupón.",
-    "myCoupons": "My coupons",
-    "startDateAsc": "Start Date (ascending)",
-    "startDateDesc": "Start Date (descending)",
-    "endDateAsc": "End Date (ascending)",
-    "endDateDesc": "End Date (descending)",
-    "sortBy": "Clasificar por",
-    "sortCoupons": "Sort coupons",
-    "notesPreffix": "You can set your preferred channels for receiving coupon notifications on the ",
-    "notesLink": "Canales de notificaciones",
-    "notesSuffix": " page."
+  "myCoupons" : {
+    "noCouponsMessage" : "No tiene cupones disponibles.",
+    "effectiveTitle" : "Entrada en vigencia:",
+    "Effective" : "EN VIGENCIA",
+    "PreSession" : "EN VIGENCIA PRONTO",
+    "ExpireSoon" : "VENCE PRONTO",
+    "readMore" : "Más información",
+    "notification" : "Notificación",
+    "findProducts" : "Buscar productos",
+    "status" : "Estado:",
+    "dialogTitle" : "Cupón",
+    "claimCustomerCoupon" : "Ha reclamado correctamente este cupón.",
+    "myCoupons" : "Mis cupones",
+    "startDateAsc" : "Fecha de inicio (ascendente)",
+    "startDateDesc" : "Fecha de inicio (descendente)",
+    "endDateAsc" : "Fecha de fin (ascendente)",
+    "endDateDesc" : "Fecha de fin (descendente)",
+    "sortBy" : "Clasificar por",
+    "sortCoupons" : "Clasificar cupones",
+    "notesPreffix" : "Puede definir sus canales favoritos para recibir notificaciones sobre cupones en la página ",
+    "notesLink" : "Canales de notificación",
+    "notesSuffix" : " ."
   },
-  "notificationPreference": {
-    "message": "Select your preferred notification channels",
-    "note": "Note: ",
-    "noteMessage": "If you deactivate all channels you will not be able to receive any further notifications.",
-    "EMAIL": "Email:",
-    "SMS": "SMS:",
-    "SITE_MESSAGE": "SiteMessage"
+  "notificationPreference" : {
+    "message" : "Seleccione sus canales de notificación preferidos",
+    "note" : "Nota: ",
+    "noteMessage" : "Si desactiva todos los canales, no pdorá recibir más notificaciones.",
+    "EMAIL" : "Correo electrónico:",
+    "SMS" : "SMS:",
+    "SITE_MESSAGE" : "SiteMessage"
   },
-  "myInterests": {
-    "header": "Mis intereses",
-    "item": "ELEMENTO",
-    "price": "PRICE",
-    "notifications": "NOTIFICATIONS",
-    "noInterests": "You have no registered interests yet.",
-    "inStock": "En stock",
-    "lowStock": "Existencias bajas",
-    "outOfStock": "No disponibles en stock",
-    "BACK_IN_STOCK": "De vuelta en stock",
-    "sortBy": "Clasificar por",
-    "sortInterests": "Sort interests",
-    "expirationDate": " - Till {{ expirationDate }}",
-    "productId": "ID {{ code }}",
-    "remove": "Eliminar",
-    "sorting": {
-      "byNameAsc": "Nombre (ascendente)",
-      "byNameDesc": "Nombre (descendente)"
+  "myInterests" : {
+    "header" : "Mis intereses",
+    "item" : "ARTÍCULO",
+    "price" : "PRECIO",
+    "notifications" : "NOTIFICACIONES",
+    "noInterests" : "Aún no tiene intereses registrados.",
+    "inStock" : "En stock",
+    "lowStock" : "Existencias bajas",
+    "outOfStock" : "No disponible en stock",
+    "BACK_IN_STOCK" : "De vuelta en stock",
+    "sortBy" : "Clasificar por",
+    "sortInterests" : "Clasificar intereses",
+    "expirationDate" : " - hasta {{ expirationDate }}",
+    "productId" : "ID {{ code }}",
+    "remove" : "Eliminar",
+    "sorting" : {
+      "byNameAsc" : "Nombre (ascendente)",
+      "byNameDesc" : "Nombre (descendente)"
     },
-    "actions": "ACTIONS",
-    "caption": "My Interests contents.",
-    "itemRemoved": "Selected item has been removed."
+    "actions" : "ACCIONES",
+    "caption" : "Contenido de Mis intereses.",
+    "itemRemoved" : "Se eliminó el artículo seleccionado."
   }
 }

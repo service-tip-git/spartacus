@@ -1,663 +1,663 @@
 {
-  "organization": {
-    "enabled": "Активно",
-    "disabled": "Отключено",
-    "enable": "Включить",
-    "disable": "Отключить",
-    "name": "Имя",
-    "code": "Код",
-    "done": "done",
-    "cancel": "Отменить",
-    "add": "Добавить",
-    "manageUsers": "Управление пользователями",
-    "create": "Создать {{name}}",
-    "edit": "Редактировать",
-    "save": "Save {{name}}",
-    "delete": "Удалить",
-    "assign": "Управление",
-    "active": "Активно",
-    "status": "Статус",
-    "details": "Сведения",
-    "messages": {
-      "emptyList": "The list is empty"
+  "organization" : {
+    "enabled" : "Активно",
+    "disabled" : "Отключено",
+    "enable" : "Включить",
+    "disable" : "Отключить",
+    "name" : "Имя",
+    "code" : "Код",
+    "done" : "выполнено",
+    "cancel" : "Отменить",
+    "add" : "Добавить",
+    "manageUsers" : "Управление пользователями",
+    "create" : "Создать {{name}}",
+    "edit" : "Редактировать",
+    "save" : "Сохранить {{name}}",
+    "delete" : "Удалить",
+    "assign" : "Управление",
+    "active" : "Активно",
+    "status" : "Статус",
+    "details" : "Сведения",
+    "messages" : {
+      "emptyList" : "Список пуст"
     },
-    "userRoles": {
-      "b2bcustomergroup": "Клиент",
-      "b2bapprovergroup": "Утверждающий",
-      "b2bmanagergroup": "Руководитель",
-      "b2badmingroup": "Администратор"
+    "userRoles" : {
+      "b2bcustomergroup" : "Клиент",
+      "b2bapprovergroup" : "Утверждающий",
+      "b2bmanagergroup" : "Руководитель",
+      "b2badmingroup" : "Администратор"
     },
-    "userRights": {
-      "unitorderviewergroup": "View Unit-Level Orders"
+    "userRights" : {
+      "unitorderviewergroup" : "Просмотреть заказы на уровне единицы"
     },
-    "breadcrumb": "Организация",
-    "notification": {
-      "noSufficientPermissions": "No sufficient permissions to access this page",
-      "notExist": "This item does not exist",
-      "disabled": "You cannot edit a disabled item"
+    "breadcrumb" : "Организация",
+    "notification" : {
+      "noSufficientPermissions" : "Нет полномочий на доступ к странице",
+      "notExist" : "Этот элемент не существует",
+      "disabled" : "Невозможно редактировать отключенный элемент"
     },
-    "confirmation": {
-      "cancel": "ОТМЕНА",
-      "confirm": "CONFIRM",
-      "disable": "DISABLE",
-      "delete": "DELETE"
+    "confirmation" : {
+      "cancel" : "ОТМЕНИТЬ",
+      "confirm" : "ПОДТВЕРДИТЬ",
+      "disable" : "ОТКЛЮЧИТЬ",
+      "delete" : "УДАЛИТЬ"
     },
-    "httpHandlers": {
-      "conflict": {
-        "budget": "Budget with code {{ code }} already exists.",
-        "costCenter": "Cost center with code {{ code }} already exists.",
-        "unit": "Organizational unit with uid {{ code }} already exists.",
-        "user": "User with email {{ code }} already exists",
-        "userGroup": "User Group with id {{ code }} already exists",
-        "permission": "Approval Permission with code {{ code }} already exists.",
-        "unknown": "Server validation error."
+    "httpHandlers" : {
+      "conflict" : {
+        "budget" : "Бюджет с кодом {{ code }} уже существует.",
+        "costCenter" : "МВЗ с кодом {{ code }} уже существует.",
+        "unit" : "Орг. единица с UID {{ code }} уже существует.",
+        "user" : "Пользователь с адресом электронной почты {{ code }} уже существует",
+        "userGroup" : "Группа пользователей с ид. {{ code }} уже существует.",
+        "permission" : "Полномочие на утверждение с кодом {{ code }} уже существует",
+        "unknown" : "Ошибка проверки сервера."
       }
     },
-    "information": "More information about {{title}}"
+    "information" : "Подробнее о {{title}}"
   },
-  "orgCostCenter": {
-    "groupName": "МВЗ",
-    "header": "All cost centers ({{count}})",
-    "code": "Код",
-    "active": "Статус",
-    "name": "Имя",
-    "currency": "Валюта",
-    "unit": "Родительская единица",
-    "actions": "",
-    "sortBy": "Сортировать по",
-    "sort": {
-      "byName": "Имя",
-      "byUnitName": "Единица",
-      "byCode": "Код"
+  "orgCostCenter" : {
+    "groupName" : "МВЗ",
+    "header" : "Все МВЗ ({{count}})",
+    "code" : "Код",
+    "active" : "Статус",
+    "name" : "Имя",
+    "currency" : "Валюта",
+    "unit" : "Родительская единица",
+    "actions" : "",
+    "sortBy" : "Сортировать по",
+    "sort" : {
+      "byName" : "Имя",
+      "byUnitName" : "Единица",
+      "byCode" : "Код"
     },
-    "hint": "All orders placed through your organization's purchase account are linked to a cost center for tracking purposes. Each unit can have multiple cost centers. To limit spending, budgets are assigned to cost centers. A buyer selects a cost center when checking out.",
-    "disable": {
-      "confirm": "Отключить"
+    "hint" : "Все заказы, размещенные через учетную запись организации для закупок, связываются с МВЗ для целей отслеживания. Каждая единица может иметь несколько МВЗ. В целях ограничения расходов каждому МВЗ присваивается бюджет. Покупатель выбирает МВЗ при оформлении заказа.",
+    "disable" : {
+      "confirm" : "Отключить"
     },
-    "messages": {
-      "deactivateTitle": "Disable this cost center?",
-      "deactivate": "Disabled cost centers cannot be used for placing new orders. Ensure that your unit has at least one cost center. Existing orders are not affected.",
-      "confirmEnabled": "Cost Center {{ item.name }} enabled successfully",
-      "confirmDisabled": "Cost Center {{ item.name }} disabled successfully",
-      "update": "Cost Center {{ item.name }} updated successfully",
-      "create": "Cost Center {{ item.name }} created successfully"
+    "messages" : {
+      "deactivateTitle" : "Отключить МВЗ?",
+      "deactivate" : "Отключенные МВЗ невозможно использовать для размещения новых заказов. Убедитесь, что для единицы существует минимум одно МВЗ. Существующие заказы не будут затронуты.",
+      "confirmEnabled" : "МВЗ {{ item.name }} включено",
+      "confirmDisabled" : "МВЗ {{ item.name }} отключено",
+      "update" : "МВЗ {{ item.name }} обновлено",
+      "create" : "МВЗ {{ item.name }} создано"
     },
-    "info": {
-      "disabledEdit": "Enable the cost center to allow editing.",
-      "disabledEnable": "Unit must be enabled before this cost center may be enabled."
+    "info" : {
+      "disabledEdit" : "Включите МВЗ, чтобы разрешить редактирование.",
+      "disabledEnable" : "Чтобы включить МВЗ, сначала включите единицу."
     },
-    "details": {
-      "title": "Сведения о МВЗ",
-      "subtitle": "Cost Center: {{ item.name }}"
+    "details" : {
+      "title" : "Сведения о МВЗ",
+      "subtitle" : "МВЗ: {{ item.name }}"
     },
-    "edit": {
-      "title": "Редактировать МВЗ",
-      "subtitle": "Cost Center: {{ item.name }}"
+    "edit" : {
+      "title" : "Редактировать МВЗ",
+      "subtitle" : "МВЗ: {{ item.name }}"
     },
-    "create": {
-      "title": "Создать МВЗ",
-      "subtitle": ""
+    "create" : {
+      "title" : "Создать МВЗ",
+      "subtitle" : ""
     },
-    "budget": {
-      "link": "Бюджеты"
+    "budget" : {
+      "link" : "Бюджеты"
     },
-    "breadcrumbs": {
-      "list": "All cost centers",
-      "details": "{{name}}",
-      "budgets": "Бюджеты"
+    "breadcrumbs" : {
+      "list" : "Все МВЗ",
+      "details" : "{{name}}",
+      "budgets" : "Бюджеты"
     }
   },
-  "orgCostCenterBudgets": {
-    "title": "Manage budgets",
-    "subtitle": "Cost Center: {{ item.name }}",
-    "assigned": "Budget {{ item.name }} assigned successfully",
-    "unassigned": "Budget {{ item.name }} unassigned successfully"
+  "orgCostCenterBudgets" : {
+    "title" : "Управление бюджетами",
+    "subtitle" : "МВЗ: {{ item.name }}",
+    "assigned" : "Бюджет {{ item.name }} присвоен",
+    "unassigned" : "Присвоение бюджета {{ item.name }} отменено"
   },
-  "orgCostCenterAssignedBudgets": {
-    "title": "Assigned budgets",
-    "subtitle": "Cost Center: {{ item.name }}",
-    "assigned": "Budget {{ item.name }} assigned successfully",
-    "unassigned": "Budget {{ item.name }} unassigned successfully"
+  "orgCostCenterAssignedBudgets" : {
+    "title" : "Присвоенные бюджеты",
+    "subtitle" : "МВЗ: {{ item.name }}",
+    "assigned" : "Бюджет {{ item.name }} присвоен",
+    "unassigned" : "Присвоение бюджета {{ item.name }} отменено"
   },
-  "orgBudget": {
-    "groupName": "Бюджеты",
-    "header": "All budgets ({{count}})",
-    "code": "Код",
-    "name": "Имя",
-    "active": "Статус",
-    "currency": "Валюта",
-    "amount": "Сумма",
-    "unit": "Единица",
-    "businessUnits": "Единица",
-    "dateRange": "Start - End",
-    "startDate": "Начало",
-    "endDate": "Конец",
-    "actions": "",
-    "sortBy": "Сортировать по",
-    "sort": {
-      "byName": "Имя",
-      "byUnitName": "Единица",
-      "byCode": "Код",
-      "byValue": "Значение"
+  "orgBudget" : {
+    "groupName" : "Бюджеты",
+    "header" : "Все бюджеты ({{count}})",
+    "code" : "Код",
+    "name" : "Имя",
+    "active" : "Статус",
+    "currency" : "Валюта",
+    "amount" : "Сумма",
+    "unit" : "Единица",
+    "businessUnits" : "Единица",
+    "dateRange" : "Начало — окончание",
+    "startDate" : "Начало",
+    "endDate" : "Окончание",
+    "actions" : "",
+    "sortBy" : "Сортировать по",
+    "sort" : {
+      "byName" : "Имя",
+      "byUnitName" : "Единица",
+      "byCode" : "Код",
+      "byValue" : "Значение"
     },
-    "hint": "Budgets set overall purchase limits and are assigned to cost centers. A buyer selects a cost center when checking out.",
-    "details": {
-      "title": "Детали бюджета",
-      "subtitle": "Budget: {{ item.name }}"
+    "hint" : "Бюджеты устанавливают общие ограничения для покупок и присваиваются МВЗ. Покупатель выбирает МВЗ при оформлении заказа.",
+    "details" : {
+      "title" : "Сведения о бюджете",
+      "subtitle" : "Бюджет: {{ item.name }}"
     },
-    "edit": {
-      "title": "Редактировать бюджет",
-      "subtitle": "Budget: {{ item.name }}"
+    "edit" : {
+      "title" : "Редактировать бюджет",
+      "subtitle" : "Бюджет: {{ item.name }}"
     },
-    "create": {
-      "title": "Create Budget",
-      "subtitle": ""
+    "create" : {
+      "title" : "Создать бюджет",
+      "subtitle" : ""
     },
-    "messages": {
-      "deactivateTitle": "Disable this budget?",
-      "deactivate": "Disabled budgets no longer apply to the cost centers they are assigned to. Ensure that the associated cost center has at least one budget.",
-      "confirmEnabled": "Budget {{ item.name }} enabled successfully",
-      "confirmDisabled": "Budget {{ item.name }} disabled successfully",
-      "update": "Budget {{ item.name }} updated successfully",
-      "create": "Budget {{ item.name }} created successfully"
+    "messages" : {
+      "deactivateTitle" : "Отключить бюджет?",
+      "deactivate" : "Отключенные бюджеты больше не применяются к МВЗ, которым присвоены. Убедитесь, что связанное МВЗ имеет минимум один бюджет.",
+      "confirmEnabled" : "Бюджет {{ item.name }} присвоен",
+      "confirmDisabled" : "Бюджет {{ item.name }} отключен",
+      "update" : "Бюджет {{ item.name }} обновлен",
+      "create" : "Бюджет {{ item.name }} создан"
     },
-    "info": {
-      "disabledEdit": "Enable the budget to allow editing.",
-      "disabledEnable": "Unit must be enabled before this budget may be enabled."
+    "info" : {
+      "disabledEdit" : "Включите бюджет, чтобы разрешить редактирование.",
+      "disabledEnable" : "Чтобы включить бюджет, сначала включите единицу."
     },
-    "links": {
-      "costCenters": "МВЗ"
+    "links" : {
+      "costCenters" : "МВЗ"
     },
-    "breadcrumbs": {
-      "list": "All budgets",
-      "details": "{{name}}"
+    "breadcrumbs" : {
+      "list" : "Все бюджеты",
+      "details" : "{{name}}"
     }
   },
-  "orgBudgetAssignedCostCenters": {
-    "title": "Cost centers",
-    "subtitle": "Budget: {{ item.name }}"
+  "orgBudgetAssignedCostCenters" : {
+    "title" : "МВЗ",
+    "subtitle" : "Бюджет: {{ item.name }}"
   },
-  "orgUnit": {
-    "groupName": "Единицы",
-    "header": "All units ({{count}})",
-    "unit": "Единица",
-    "name": "Имя",
-    "uid": "Ид.",
-    "approvalProcess": "Approval process",
-    "parentUnit": "Родительская единица",
-    "active": "Статус",
-    "hint": "Units represent departments, stores, regions, or any other logical grouping that makes sense to you. The cost centers and delivery addresses available to a buyer when checking out, depend on their unit. Users have access to all child units of their primary unit.",
-    "details": {
-      "title": "Сведения о единице",
-      "subtitle": "Unit: {{ item.name }}",
-      "hint": "Units represent departments, stores, regions, or any other logical grouping that makes sense to you. Disabling a unit disables all children of the unit, including child units, users, approvers, and cost centers. Disabled units cannot be edited."
+  "orgUnit" : {
+    "groupName" : "Единицы",
+    "header" : "Все единицы ({{count}})",
+    "unit" : "Единица",
+    "name" : "Имя",
+    "uid" : "Ид.",
+    "approvalProcess" : "Процесс утверждения",
+    "parentUnit" : "Родительская единица",
+    "active" : "Статус",
+    "hint" : "Единицы представляют отделы, магазины, регионы или другое логическое группирование, полезное для вас. МВЗ и адрес доставки, доступные для покупателя при оформлении заказа, зависят от его единицы. Пользователь имеет доступ ко всем подчиненным единицам для своей основной единицы.",
+    "details" : {
+      "title" : "Сведения о единице",
+      "subtitle" : "Единица: {{ item.name }}",
+      "hint" : "Единицы представляют отделы, магазины, регионы или другое логическое группирование, полезное для вас. При отключении единицы также отключаются все ее дочерние элементы, включая подчиненные единицы, пользователей, утверждающих и МВЗ. Отключенные единицы невозможно редактировать."
     },
-    "edit": {
-      "title": "Edit Unit",
-      "subtitle": "Unit: {{ item.name }}"
+    "edit" : {
+      "title" : "Редактировать единицу",
+      "subtitle" : "Единица: {{ item.name }}"
     },
-    "create": {
-      "title": "Создать единицу",
-      "subtitle": ""
+    "create" : {
+      "title" : "Создать единицу",
+      "subtitle" : ""
     },
-    "messages": {
-      "deactivateTitle": "Disable this unit?",
-      "deactivate": "Disabling a unit has wide-ranging affects on your commerce organization. ALL the unit's child units, users, budgets, and cost centers will also disabled.",
-      "confirmEnabled": "Unit {{item.name}} enabled successfully",
-      "confirmDisabled": "Unit {{item.name}} disabled successfully",
-      "update": "Unit {{ item.name }} updated successfully",
-      "create": "Unit {{ item.name }} created successfully"
+    "messages" : {
+      "deactivateTitle" : "Отключить единицу?",
+      "deactivate" : "Отключение единицы значительно повлияет на вашу коммерческую организацию. При этом также будут отключены ВСЕ ее подчиненные единицы, пользователи, бюджеты и МВЗ.",
+      "confirmEnabled" : "Единица {{ item.name }} включена",
+      "confirmDisabled" : "Единица {{ item.name }} отключена",
+      "update" : "Единица {{ item.name }} обновлена",
+      "create" : "Единица {{ item.name }} создана"
     },
-    "info": {
-      "disabledEdit": "Enable the unit to allow editing.",
-      "disabledEnable": "Parent must be enabled before this unit may be enabled.",
-      "disabledDisable": "Root unit can not be disabled."
+    "info" : {
+      "disabledEdit" : "Включите единицу, чтобы разрешить редактирование.",
+      "disabledEnable" : "Чтобы включить единицу, сначала включите вышестоящую единицу.",
+      "disabledDisable" : "Корневую единицу нельзя отключить."
     },
-    "links": {
-      "units": "Подчиненные единицы",
-      "users": "Пользователи",
-      "approvers": "Утверждающие",
-      "shippingAddresses": "Delivery Addresses",
-      "costCenters": "МВЗ"
+    "links" : {
+      "units" : "Подчиненные единицы",
+      "users" : "Пользователи",
+      "approvers" : "Утверждающие",
+      "shippingAddresses" : "Адреса доставки",
+      "costCenters" : "МВЗ"
     },
-    "tree": {
-      "expandAll": "Развернуть все",
-      "collapseAll": "Свернуть все",
-      "expand": "Развернуть",
-      "collapse": "collapse",
-      "explore": "Explore sub-units"
+    "tree" : {
+      "expandAll" : "Развернуть все",
+      "collapseAll" : "Свернуть все",
+      "expand" : "Развернуть",
+      "collapse" : "Свернуть",
+      "explore" : "Просмотреть подчиненные единицы"
     },
-    "children": {
-      "create": {
-        "title": "Create child unit",
-        "subtitle": ""
+    "children" : {
+      "create" : {
+        "title" : "Создать подчиненную единицу",
+        "subtitle" : ""
       },
-      "messages": {
-        "create": "Unit {{ item.name }} created successfully"
+      "messages" : {
+        "create" : "Единица {{ item.name }} создана"
       }
     },
-    "costCenters": {
-      "create": {
-        "title": "Create cost center",
-        "subtitle": ""
+    "costCenters" : {
+      "create" : {
+        "title" : "Создать МВЗ",
+        "subtitle" : ""
       }
     },
-    "form": {
-      "parentOrgUnit": "Родительская бизнес-единица",
-      "create": "Создать единицу",
-      "parentOrgUnitNotes": "This unit is the top-level unit for your organization. It cannot be assigned to another unit."
+    "form" : {
+      "parentOrgUnit" : "Вышестоящая бизнес-единица",
+      "create" : "Создать единицу",
+      "parentOrgUnitNotes" : "Это единица высшего уровня в вашей организации. Ее нельзя присвоить другой единице."
     },
-    "users": {
-      "header": "Users in {{code}}",
-      "changeUserRoles": "Change user roles",
-      "newUser": "New user"
+    "users" : {
+      "header" : "Пользователи в {{code}}",
+      "changeUserRoles" : "Изменить роли пользователей",
+      "newUser" : "Новый пользователь"
     },
-    "assignRoles": {
-      "header": "Manage roles in {{code}}",
-      "instructions": {
-        "check": "To assign a role to a user, select the role's check box.",
-        "uncheck": "To remove a role, clear the role's check box.",
-        "changes": "Changes are saved automatically."
+    "assignRoles" : {
+      "header" : "Управление ролями в {{code}}",
+      "instructions" : {
+        "check" : "Чтобы присвоить роль пользователю, установите индикатор возле роли.",
+        "uncheck" : "Чтобы удалить роль, снимите индикатор.",
+        "changes" : "Изменения сохраняются автоматически."
       }
     },
-    "approvers": {
-      "header": "Approvers in {{code}}",
-      "assign": "Manage approvers",
-      "new": "New approver"
+    "approvers" : {
+      "header" : "Утверждающие в {{code}}",
+      "assign" : "Управление утверждающими",
+      "new" : "Новый утверждающий"
     },
-    "assignApprovers": {
-      "header": "Manage approvers in {{code}}",
-      "instructions": {
-        "check": "To assign an approver to this unit, select the user's check box.",
-        "uncheck": "To remove an approver, clear the user's check box.",
-        "changes": "Changes are saved automatically."
+    "assignApprovers" : {
+      "header" : "Управление утверждающими в {{code}}",
+      "instructions" : {
+        "check" : "Чтобы присвоить единице утверждающего, установите индикатор возле пользователя.",
+        "uncheck" : "Чтобы удалить утверждающего, снимите индикатор.",
+        "changes" : "Изменения сохраняются автоматически."
       },
-      "hint": "Users displayed under the Approvers list are assigned approval privileges for the buyers of this unit and of child units. Note that a user who has the approver role is separate from an approver who appears under the Approvers list. If an approver doesn't exist for a unit, or if approvers do not have sufficient approval purchase privileges, an approver higher up the unit hierarchy is found, until an administration is chosen."
+      "hint" : "Пользователи в списке утверждающих получают привилегии на утверждение покупателей для выбранной единицы и подчиненных единиц. Обратите внимание: пользователь с ролью утверждающего не совпадает с утверждающим в списке утверждающих. Если для единицы нет утверждающего, или утверждающие не имеют привилегий на утверждение покупки, выполняется поиск утверждающего выше по иерархии, вплоть до администратора."
     },
-    "breadcrumbs": {
-      "list": "All units",
-      "details": "{{name}}",
-      "children": "Child units",
-      "users": "Пользователи",
-      "approvers": "Утверждающие",
-      "addresses": "Delivery addresses",
-      "addressDetails": "{{formattedAddress}}",
-      "costCenters": "МВЗ"
+    "breadcrumbs" : {
+      "list" : "Все единицы",
+      "details" : "{{name}}",
+      "children" : "Подчиненные единицы",
+      "users" : "Пользователи",
+      "approvers" : "Утверждающие",
+      "addresses" : "Адреса доставки",
+      "addressDetails" : "{{formattedAddress}}",
+      "costCenters" : "МВЗ"
     }
   },
-  "orgUnitChildren": {
-    "title": "Child units",
-    "subtitle": "Unit: {{item.name}}",
-    "info": {
-      "disabledCreate": "Child unit can not be created for disabled unit."
+  "orgUnitChildren" : {
+    "title" : "Подчиненные единицы",
+    "subtitle" : "Единица: {{ item.name }}",
+    "info" : {
+      "disabledCreate" : "Невозможно создать подчиненную единицу для отключенной единицы."
     },
-    "hint": "Units represent departments, stores, regions, or any other logical grouping that makes sense to you. Users \"inherit\" child units, meaning buyers have access to cost centers and delivery addresses of child units when checking out."
+    "hint" : "Единицы представляют отделы, магазины, регионы или другое логическое группирование, полезное для вас. Пользователи наследуют подчиненные единицы, то есть имеют доступ к МВЗ и адресам доставки подчиненных единиц при оформлении заказа."
   },
-  "orgUnitApprovers": {
-    "title": "Manage approvers",
-    "subtitle": "Unit: {{item.name}}",
-    "assigned": "User {{item.name}} assigned successfully",
-    "unassigned": "User {{item.name}} unassigned successfully"
+  "orgUnitApprovers" : {
+    "title" : "Управление утверждающими",
+    "subtitle" : "Единица: {{ item.name }}",
+    "assigned" : "Единица {{ item.name }} присвоена",
+    "unassigned" : "Присвоение единицы {{ item.name }} отменено"
   },
-  "orgUnitAssignedApprovers": {
-    "title": "Assigned approvers",
-    "subtitle": "Unit: {{item.name}}",
-    "assigned": "User {{item.name}} assigned successfully",
-    "unassigned": "User {{item.name}} unassigned successfully",
-    "hint": "Users displayed under the Approvers list are assigned approval privileges for the buyers of this unit and of child units. Note that a user who has the approver role is separate from an approver who appears under the Approvers list. If an approver doesn't exist for a unit, or if approvers do not have sufficient approval purchase privileges, an approver higher up the unit hierarchy is found, until an administration is chosen."
+  "orgUnitAssignedApprovers" : {
+    "title" : "Присвоенные утверждающие",
+    "subtitle" : "Единица: {{ item.name }}",
+    "assigned" : "Единица {{ item.name }} присвоена",
+    "unassigned" : "Присвоение единицы {{ item.name }} отменено",
+    "hint" : "Пользователи в списке утверждающих получают привилегии на утверждение покупателей для выбранной единицы и подчиненных единиц. Обратите внимание: пользователь с ролью утверждающего не совпадает с утверждающим в списке утверждающих. Если для единицы нет утверждающего, или утвер;дающие не имеют привилегий на утверждение покупки, выполняется поиск утверждающего выше по иерархии, вплоть до администратора."
   },
-  "orgUnitAssignedRoles": {
-    "header": "Manage roles in {{code}}",
-    "name": "Имя",
-    "email": "Электронная почта",
-    "roles": "Роли",
-    "roleCustomer": "Клиент",
-    "roleApprover": "Утверждающий",
-    "roleManager": "Руководитель",
-    "roleAdministrator": "Администратор"
+  "orgUnitAssignedRoles" : {
+    "header" : "Управление ролями в {{code}}",
+    "name" : "Имя",
+    "email" : "Электронная почта",
+    "roles" : "Роли",
+    "roleCustomer" : "Клиент",
+    "roleApprover" : "Утверждающий",
+    "roleManager" : "Руководитель",
+    "roleAdministrator" : "Администратор"
   },
-  "orgUnitUsers": {
-    "title": "Assigned users",
-    "subtitle": "Unit: {{item.name}}",
-    "info": {
-      "disabledCreate": "User can not be created for disabled unit."
+  "orgUnitUsers" : {
+    "title" : "Присвоенные пользователи",
+    "subtitle" : "Единица: {{ item.name }}",
+    "info" : {
+      "disabledCreate" : "Невозможно создать пользователя для отключенной единицы."
     },
-    "hint": "Users are the buyers, approvers, managers, and administrators of your organization. Each user is assigned a role for making or approving purchases. Users \"inherit\" child units, meaning buyers have access to cost centers and delivery addresses of child units when checking out."
+    "hint" : "Пользователи - это покупатели, утверждающие, руководители и администраторы вашей организации. Каждому пользователю присваивается роль для выполнения или утверждения покупки. Пользователи наследуют подчиненные единицы, то есть имеют доступ к МВЗ и адресам доставки подчиненных единиц при оформлении заказа."
   },
-  "orgUnitUserRoles": {
-    "title": "User roles and rights",
-    "subtitle": "User: {{item.name}}",
-    "messages": {
-      "rolesUpdated": "Roles successfully updated for {{item.name}}"
+  "orgUnitUserRoles" : {
+    "title" : "Роли и права пользователей",
+    "subtitle" : "Пользователь: {{ item.name }}",
+    "messages" : {
+      "rolesUpdated" : "Роли для {{item.name}} обновлены"
     }
   },
-  "orgUnitAssignedUsers": {
-    "title": "Assigned users",
-    "subtitle": "Unit: {{item.name}}"
+  "orgUnitAssignedUsers" : {
+    "title" : "Присвоенные пользователи",
+    "subtitle" : "Единица: {{ item.name }}"
   },
-  "orgUnitCostCenters": {
-    "title": "Assigned cost centers",
-    "subtitle": "Unit: {{item.name}}",
-    "info": {
-      "disabledCreate": "Cost center can not be created for disabled unit."
+  "orgUnitCostCenters" : {
+    "title" : "Присвоенные МВЗ",
+    "subtitle" : "Единица: {{ item.name }}",
+    "info" : {
+      "disabledCreate" : "Невозможно создать МВЗ для отключенной единицы."
     },
-    "hint": "All orders placed through your organization's purchase account are linked to a cost center for tracking purposes. A buyer selects a cost center when checking out using the \"Account\" purchase method. Each unit can have multiple cost centers, but a single cost center can only be assigned to a single unit. To define ultimate spending limits, budgets are assigned to cost centers. "
+    "hint" : "Все заказы, размещенные через учетную запись организации для закупок, связываются с МВЗ для целей отслеживания. Покупатель выбирает МВЗ при оформлении заказа со способом оплаты \"Счет\" . Каждая единица может иметь несколько МВЗ, однако одно МВЗ может быть присвоено только одной единице. Чтобы определить общие лимиты расходов, каждому МВЗ присваивается бюджет.  "
   },
-  "orgUnitAddress": {
-    "title": "Delivery addresses",
-    "subtitle": "Unit: {{item.name}}",
-    "country": "Страна/регион",
-    "titles": "Обращение",
-    "firstName": "Имя",
-    "lastName": "Фамилия",
-    "formattedAddress": "Адрес",
-    "address1": "Адрес",
-    "address2": "2nd address (optional)",
-    "city": "Город",
-    "state": "Статус",
-    "zipCode": "Zip code",
-    "phoneNumber": "Phone number (optional)",
-    "streetAddress": "Street Address",
-    "aptSuite": "Apartment Number",
-    "selectOne": "Select One...",
-    "hint": "When a buyer is checking out using the \"Account\" purchase method, they much choose a cost center. The delivery addresses available to the buyer depend on the unit of the cost center chosen.",
-    "details": {
-      "title": "Address details",
-      "subtitle": "Unit: {{item.name}}"
+  "orgUnitAddress" : {
+    "title" : "Адреса доставки",
+    "subtitle" : "Единица: {{ item.name }}",
+    "country" : "Страна/регион",
+    "titles" : "Обращение",
+    "firstName" : "Имя",
+    "lastName" : "Фамилия",
+    "formattedAddress" : "Адрес",
+    "address1" : "Адрес",
+    "address2" : "2 адрес (необязательно)",
+    "city" : "Город",
+    "state" : "Штат/область",
+    "zipCode" : "Почтовый индекс:",
+    "phoneNumber" : "Телефон (необязательно)",
+    "streetAddress" : "Адрес (улица)",
+    "aptSuite" : "Номер квартиры",
+    "selectOne" : "Выберите...",
+    "hint" : "При выборе способа оплаты \"Счет\"  покупатель должен выбрать МВЗ. Доступные покупателю адреса доставки зависят от единицы выбранного МВЗ.",
+    "details" : {
+      "title" : "Сведения об адресе",
+      "subtitle" : "Единица: {{ item.name }}"
     },
-    "edit": {
-      "title": "Редактировать адрес"
+    "edit" : {
+      "title" : "Редактировать адрес"
     },
-    "create": {
-      "title": "Создать адрес"
+    "create" : {
+      "title" : "Создать адрес"
     },
-    "form": {
-      "subtitle": "Unit: {{item.name}}"
+    "form" : {
+      "subtitle" : "Единица: {{ item.name }}"
     },
-    "messages": {
-      "create": "Address {{ item.firstName }} {{ item.lastName }} created successfully",
-      "update": "Address {{ item.firstName }} {{ item.lastName }} updated successfully",
-      "delete": "The address cannot be brought back. Existing orders are not affected.",
-      "deleteTitle": "Delete this address?",
-      "deleted": "Address {{ item.firstName }} {{ item.lastName }} deleted successfully"
+    "messages" : {
+      "create" : "Адрес {{ item.firstName }} {{ item.lastName }} создан",
+      "update" : "Адрес {{ item.firstName }} {{ item.lastName }} обновлен",
+      "delete" : "Невозможно вернуть адрес. Существующие заказы не будут затронуты.",
+      "deleteTitle" : "Удалить этот адрес?",
+      "deleted" : "Адрес {{ item.firstName }} {{ item.lastName }} удален"
     }
   },
-  "orgUserGroup": {
-    "groupName": "Группы пользователей",
-    "header": "All user groups ({{count}})",
-    "disabled": "(disabled)",
-    "uid": "Код",
-    "name": "Имя",
-    "unit": "Единица",
-    "orgUnit": "Единица",
-    "actions": "",
-    "sortBy": "Сортировать по",
-    "sort": {
-      "byName": "Имя",
-      "byUnitName": "Единица",
-      "byGroupID": "Группа"
+  "orgUserGroup" : {
+    "groupName" : "Группы пользователей",
+    "header" : "Все группы пользователей ({{count}})",
+    "disabled" : "(отключено)",
+    "uid" : "Код",
+    "name" : "Имя",
+    "unit" : "Единица",
+    "orgUnit" : "Единица",
+    "actions" : "",
+    "sortBy" : "Сортировать по",
+    "sort" : {
+      "byName" : "Имя",
+      "byUnitName" : "Единица",
+      "byGroupID" : "Группа"
     },
-    "hint": "User groups allow you to combine users together in one group, for the purposes of assigning purchase limits for many users at once.",
-    "details": {
-      "title": "User group Details",
-      "subtitle": "User group: {{ item.name }}"
+    "hint" : "Группы пользователей позволяют комбинировать пользователей, чтобы присвоить лимит покупок сразу нескольким.",
+    "details" : {
+      "title" : "Сведения о группе пользователей",
+      "subtitle" : "Группа пользователей: {{ item.name }}"
     },
-    "edit": {
-      "title": "Редактировать группу пользователей",
-      "subtitle": "User group: {{ item.name }}"
+    "edit" : {
+      "title" : "Редактировать группу пользователей",
+      "subtitle" : "Группа пользователей: {{ item.name }}"
     },
-    "create": {
-      "title": "Создать группу пользователей",
-      "subtitle": ""
+    "create" : {
+      "title" : "Создать группу пользователей",
+      "subtitle" : ""
     },
-    "links": {
-      "user": "Пользователи",
-      "permission": "Purchase limits"
+    "links" : {
+      "user" : "Пользователи",
+      "permission" : "Лимиты покупок"
     },
-    "messages": {
-      "update": "User Group {{ item.name }} updated successfully",
-      "create": "User Group {{ item.name }} created successfully",
-      "deleteTitle": "Delete this user group?",
-      "delete": "The users in this group are not affected when the user group is deleted.",
-      "deleted": "User Group {{ item.name }} deleted successfully"
+    "messages" : {
+      "update" : "Группа пользователей {{ item.name }} обновлена",
+      "create" : "Группа пользователей {{ item.name }} создана",
+      "deleteTitle" : "Удалить группу пользователей?",
+      "delete" : "Пользователи в группе не будут затронуты при ее удалении.",
+      "deleted" : "Группа пользователей {{ item.name }} удалена"
     },
-    "breadcrumbs": {
-      "list": "All user groups",
-      "details": "{{name}}",
-      "users": "Пользователи",
-      "permissions": "Purchase limits"
+    "breadcrumbs" : {
+      "list" : "Все группы пользователей",
+      "details" : "{{name}}",
+      "users" : "Пользователи",
+      "permissions" : "Лимиты покупок"
     }
   },
-  "orgUserGroupUsers": {
-    "title": "Manage users",
-    "subtitle": "User group: {{ item.name }}",
-    "assigned": "User {{item.name}} assigned successfully",
-    "unassigned": "User {{item.name}} unassigned successfully",
-    "unassignAll": "Unassign All",
-    "unassignAllConfirmation": "All users unassigned successfully"
+  "orgUserGroupUsers" : {
+    "title" : "Управление пользователями",
+    "subtitle" : "Группа пользователей: {{ item.name }}",
+    "assigned" : "Единица {{ item.name }} присвоена",
+    "unassigned" : "Присвоение единицы {{ item.name }} отменено",
+    "unassignAll" : "Отменить присвоение всех",
+    "unassignAllConfirmation" : "Присвоение всех пользователей отменено"
   },
-  "orgUserGroupAssignedUsers": {
-    "title": "Assigned users",
-    "subtitle": "User group: {{ item.name }}",
-    "assigned": "User {{item.name}} assigned successfully",
-    "unassigned": "User {{item.name}} unassigned successfully"
+  "orgUserGroupAssignedUsers" : {
+    "title" : "Присвоенные пользователи",
+    "subtitle" : "Группа пользователей: {{ item.name }}",
+    "assigned" : "Единица {{ item.name }} присвоена",
+    "unassigned" : "Присвоение единицы {{ item.name }} отменено"
   },
-  "orgUserGroupPermissions": {
-    "title": "Manage purchase limits",
-    "subtitle": "Limit: {{ item.name }}",
-    "assigned": "Purchase limits {{item.code}} assigned successfully",
-    "unassigned": "Purchase limits {{item.code}} unassigned successfully"
+  "orgUserGroupPermissions" : {
+    "title" : "Управление лимитами покупок",
+    "subtitle" : "Лимит: {{ item.name }}",
+    "assigned" : "Лимиты покупок {{item.code}} присвоены",
+    "unassigned" : "Присвоения лимитов покупок {{item.code}} отменены"
   },
-  "orgUserGroupAssignedPermissions": {
-    "title": "Assigned purchase limits",
-    "subtitle": "Limit: {{ item.name }}",
-    "assigned": "Purchase limits {{item.code}} assigned successfully",
-    "unassigned": "Purchase limits {{item.code}} unassigned successfully"
+  "orgUserGroupAssignedPermissions" : {
+    "title" : "Присвоенные лимиты покупок",
+    "subtitle" : "Лимит: {{ item.name }}",
+    "assigned" : "Лимиты покупок {{item.code}} присвоены",
+    "unassigned" : "Присвоения лимитов покупок {{item.code}} отменены"
   },
-  "orgUser": {
-    "groupName": "Пользователи",
-    "header": "All users ({{count}})",
-    "disabled": "(disabled)",
-    "uid": "Электронная почта",
-    "active": "Статус",
-    "name": "Имя",
-    "firstName": "Имя",
-    "lastName": "Фамилия",
-    "email": "Электронная почта",
-    "orgUnit": "Единица",
-    "unit": "Единица",
-    "roles": "Роли",
-    "rights": "Rights",
-    "title": "Обращение",
-    "hint": "Users are the buyers, approvers, managers, and administrators of your organization. Each user is assigned a role for making or approving purchases. Each user belongs to a unit, and they have access to all child units of their primary unit.",
-    "unitApprover": "Unit approver",
-    "assignApprover": "Add the user to approvers for the unit",
-    "actions": "",
-    "sortBy": "Сортировать по",
-    "sort": {
-      "byName": "Имя",
-      "byUnit": "Единица"
+  "orgUser" : {
+    "groupName" : "Пользователи",
+    "header" : "Все пользователи ({{count}})",
+    "disabled" : "(отключено)",
+    "uid" : "Электронная почта",
+    "active" : "Статус",
+    "name" : "Имя",
+    "firstName" : "Имя",
+    "lastName" : "Фамилия",
+    "email" : "Электронная почта",
+    "orgUnit" : "Единица",
+    "unit" : "Единица",
+    "roles" : "Роли",
+    "rights" : "Права",
+    "title" : "Заголовок",
+    "hint" : "Пользователи - это покупатели, утверждающие, руководители и администраторы вашей организации. Каждому пользователю присваивается роль для выполнения или утверждения покупки. Каждый пользователь принадлежит единице и имеет доступ ко всем подчиненным единицам своей основной единицы.",
+    "unitApprover" : "Утверждающий для единицы",
+    "assignApprover" : "Добавить пользователя к утверждающим для единицы",
+    "actions" : "",
+    "sortBy" : "Сортировать по",
+    "sort" : {
+      "byName" : "Имя",
+      "byUnit" : "Единица"
     },
-    "details": {
-      "title": "Сведения о пользователе",
-      "subtitle": "User: {{ item.name }}"
+    "details" : {
+      "title" : "Сведения о пользователе",
+      "subtitle" : "Пользователь: {{ item.name }}"
     },
-    "edit": {
-      "title": "Редактировать пользователя",
-      "subtitle": "User: {{ item.name }}"
+    "edit" : {
+      "title" : "Редактировать пользователя",
+      "subtitle" : "Пользователь: {{ item.name }}"
     },
-    "create": {
-      "title": "Create User",
-      "subtitle": ""
+    "create" : {
+      "title" : "Создать пользователя",
+      "subtitle" : ""
     },
-    "links": {
-      "password": "Change password",
-      "approvers": "Утверждающие",
-      "userGroup": "Группы пользователей",
-      "permission": "Purchase limits",
-      "rolesAndRights": "Roles and Rights"
+    "links" : {
+      "password" : "Изменить пароль",
+      "approvers" : "Утверждающие",
+      "userGroup" : "Группы пользователей",
+      "permission" : "Лимиты покупок",
+      "rolesAndRights" : "Роли и права"
     },
-    "messages": {
-      "deactivateTitle": "Disable this user?",
-      "deactivate": "Disabled users cannot log onto the storefront and place orders.",
-      "confirmEnabled": "User {{item.firstName}} {{item.lastName}} enabled successfully",
-      "confirmDisabled": "User {{item.firstName}} {{item.lastName}} disabled successfully",
-      "update": "User {{item.firstName}} {{item.lastName}} updated successfully",
-      "create": "User {{item.firstName}} {{item.lastName}} created successfully",
-      "updatePassword": "User {{item.firstName}} {{item.lastName}} password updated successfully"
+    "messages" : {
+      "deactivateTitle" : "Отключить пользователя?",
+      "deactivate" : "Отключенные пользователи не могут входить в систему для просмотра витрины и размещения заказов.",
+      "confirmEnabled" : "Пользователь {{item.firstName}} {{item.lastName}} включен",
+      "confirmDisabled" : "Пользователь {{item.firstName}} {{item.lastName}} отключен",
+      "update" : "Пользователь {{item.firstName}} {{item.lastName}} обновлен",
+      "create" : "Пользователь {{item.firstName}} {{item.lastName}} создан",
+      "updatePassword" : "Пароль для пользователя {{item.firstName}} {{item.lastName}} обновлен"
     },
-    "info": {
-      "disabledEdit": "Enable the user to allow editing.",
-      "disabledEnable": "Unit must be enabled before this user may be enabled."
+    "info" : {
+      "disabledEdit" : "Включите пользователя, чтобы разрешить редактирование.",
+      "disabledEnable" : "Чтобы включить пользователя, сначала включите единицу."
     },
-    "approver": {
-      "link": "Утверждающие",
-      "header": "Approvers in {{code}}",
-      "assign": "Assign Approvers",
-      "assignHeader": "Assign Approvers in {{code}}",
-      "back": "Назад",
-      "new": "New approver",
-      "instructions": {
-        "check": "To assign an approver to this user, select the user's check box.",
-        "uncheck": "To remove an approver, clear the user's check box.",
-        "changes": "Changes are saved automatically."
+    "approver" : {
+      "link" : "Утверждающие",
+      "header" : "Утверждающие в {{code}}",
+      "assign" : "Присвоить утверждающих",
+      "assignHeader" : "Присвоить утверждающих в {{code}}",
+      "back" : "Назад",
+      "new" : "Новый утверждающий",
+      "instructions" : {
+        "check" : "Чтобы присвоить пользователю утверждающего, установите индикатор возле пользователя.",
+        "uncheck" : "Чтобы удалить утверждающего, снимите индикатор.",
+        "changes" : "Изменения сохраняются автоматически."
       }
     },
-    "userGroup": {
-      "link": "Группы пользователей",
-      "header": "User groups in {{code}}",
-      "assign": "Assign user groups",
-      "assignHeader": "Assign user groups in {{code}}",
-      "back": "Назад",
-      "instructions": {
-        "check": "To assign an user group to this user, select the user's check box.",
-        "uncheck": "To remove aa user group, clear the user's check box.",
-        "changes": "Changes are saved automatically."
+    "userGroup" : {
+      "link" : "Группы пользователей",
+      "header" : "Группы пользователей в {{code}}",
+      "assign" : "Присвоить группы пользователей",
+      "assignHeader" : "Присвоить группы пользователей в {{code}}",
+      "back" : "Назад",
+      "instructions" : {
+        "check" : "Чтобы присвоить пользователю группу пользователей, установите индикатор возле пользователя.",
+        "uncheck" : "Чтобы удалить группу пользователей, снимите индикатор.",
+        "changes" : "Изменения сохраняются автоматически."
       }
     },
-    "permission": {
-      "link": "Purchase limits",
-      "header": "Purchase limits in {{code}}",
-      "assign": "Assign purchase limits",
-      "assignHeader": "Assign purchase limits in {{code}}",
-      "back": "Назад",
-      "instructions": {
-        "check": "To assign a purchase limits to this user, select its check box.",
-        "uncheck": "To unassign a purchase limits, clear its check box.",
-        "changes": "Changes are saved automatically."
+    "permission" : {
+      "link" : "Лимиты покупок",
+      "header" : "Лимиты покупок в {{code}}",
+      "assign" : "Присвоить лимиты покупок",
+      "assignHeader" : "Присвоить лимиты покупок в {{code}}",
+      "back" : "Назад",
+      "instructions" : {
+        "check" : "Чтобы присвоить лимиты покупок пользователю, установите индикатор.",
+        "uncheck" : "Чтобы отменить присвоения лимитов покупок, снимите индикатор.",
+        "changes" : "Изменения сохраняются автоматически."
       },
-      "per": {
-        "undefined": "",
-        "MONTH": "per Month",
-        "YEAR": "per Year",
-        "WEEK": "per Week",
-        "QUARTER": "per Quarter"
+      "per" : {
+        "undefined" : "",
+        "MONTH" : "в месяц",
+        "YEAR" : "в год",
+        "WEEK" : "в неделю",
+        "QUARTER" : "в квартал"
       }
     },
-    "password": {
-      "title": "Change password",
-      "subtitle": "User: {{ item.email }}",
-      "newPassword": "New password",
-      "confirmPassword": "Retype new password"
+    "password" : {
+      "title" : "Изменить пароль",
+      "subtitle" : "Пользователь: {{ item.email }}",
+      "newPassword" : "Новый пароль",
+      "confirmPassword" : "Введите новый пароль еще раз"
     },
-    "breadcrumbs": {
-      "list": "All users",
-      "details": "{{name}}",
-      "userGroups": "Группы пользователей",
-      "approvers": "Утверждающие",
-      "permissions": "Purchase limits"
+    "breadcrumbs" : {
+      "list" : "Все пользователи",
+      "details" : "{{name}}",
+      "userGroups" : "Группы пользователей",
+      "approvers" : "Утверждающие",
+      "permissions" : "Лимиты покупок"
     }
   },
-  "orgUserUserGroups": {
-    "title": "Manage user groups",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "User group {{item.name}} assigned successfully",
-    "unassigned": "User group {{item.name}} unassigned successfully"
+  "orgUserUserGroups" : {
+    "title" : "Управлять группами пользователей",
+    "subtitle" : "Пользователь: {{ item.name }}",
+    "assigned" : "Группа пользователей {{ item.name }} присвоена",
+    "unassigned" : "Присвоение группы пользователей {{ item.name }} отменено"
   },
-  "orgUserAssignedUserGroups": {
-    "title": "Assigned user groups",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "User group {{item.name}} assigned successfully",
-    "unassigned": "User group {{item.name}} unassigned successfully"
+  "orgUserAssignedUserGroups" : {
+    "title" : "Присвоенные группы пользователей",
+    "subtitle" : "Пользователь: {{ item.name }}",
+    "assigned" : "Группа пользователей {{ item.name }} присвоена",
+    "unassigned" : "Присвоение группы пользователей {{ item.name }} отменено"
   },
-  "orgUserApprovers": {
-    "title": "Manage approvers",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "Approver {{ item.name }} assigned successfully",
-    "unassigned": "Approver {{ item.name }} unassigned successfully"
+  "orgUserApprovers" : {
+    "title" : "Управление утверждающими",
+    "subtitle" : "Пользователь: {{ item.name }}",
+    "assigned" : "Утверждающий {{ item.name }} присвоен",
+    "unassigned" : "Присвоение утверждающего {{ item.name }} отменено"
   },
-  "orgUserAssignedApprovers": {
-    "title": "Assigned approvers",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "Approver {{ item.name }} assigned successfully",
-    "unassigned": "Approver {{ item.name }} unassigned successfully"
+  "orgUserAssignedApprovers" : {
+    "title" : "Присвоенные утверждающие",
+    "subtitle" : "Пользователь: {{ item.name }}",
+    "assigned" : "Утверждающий {{ item.name }} присвоен",
+    "unassigned" : "Присвоение утверждающего {{ item.name }} отменено"
   },
-  "orgUserPermissions": {
-    "title": "Manage purchase limits",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "Purchase limit {{ item.code }} assigned successfully",
-    "unassigned": "Purchase limit {{ item.code }} unassigned successfully"
+  "orgUserPermissions" : {
+    "title" : "Управление лимитами покупок",
+    "subtitle" : "Пользователь: {{ item.name }}",
+    "assigned" : "Лимит покупок {{item.code}} присвоен",
+    "unassigned" : "Присвоение лимита покупок {{item.code}} отменено"
   },
-  "orgUserAssignedPermissions": {
-    "title": "Assigned purchase limits",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "Purchase limit {{ item.code }} assigned successfully",
-    "unassigned": "Purchase limit {{ item.code }} unassigned successfully"
+  "orgUserAssignedPermissions" : {
+    "title" : "Присвоенные лимиты покупок",
+    "subtitle" : "Пользователь: {{ item.name }}",
+    "assigned" : "Лимит покупок {{item.code}} присвоен",
+    "unassigned" : "Присвоение лимита покупок {{item.code}} отменено"
   },
-  "orgPurchaseLimit": {
-    "groupName": "Purchase Limits",
-    "header": "All purchase limits ({{count}})",
-    "name": "Имя",
-    "code": "Код",
-    "active": "Статус",
-    "limit": "Лимит",
-    "orderApprovalPermissionType": "Тип",
-    "threshold": "Пороговое значение",
-    "periodRange": "Период",
-    "currency": "Валюта",
-    "orgUnit": "Родительская единица",
-    "unit": "Родительская единица",
-    "actions": "",
-    "hint": "Purchase limits help control spending by defining how much buyers can spend per order or per week, month, quarter, or year. Purchase limits are assigned to users or user groups. Purchase limits are also assigned to approvers, defining how much they are permitted to approve. You can assign purchase limits to many users at once with user groups.",
-    "details": {
-      "title": "Purchase Limit Details",
-      "subtitle": "Purchase Limit: {{ item.code }}"
+  "orgPurchaseLimit" : {
+    "groupName" : "Лимиты покупок",
+    "header" : "Все лимиты покупок ({{count}})",
+    "name" : "Имя",
+    "code" : "Код",
+    "active" : "Статус",
+    "limit" : "Лимит",
+    "orderApprovalPermissionType" : "Тип",
+    "threshold" : "Пороговое значение",
+    "periodRange" : "Период",
+    "currency" : "Валюта",
+    "orgUnit" : "Вышестоящая единица",
+    "unit" : "Вышестоящая единица",
+    "actions" : "",
+    "hint" : "Лимиты покупок позволяют контролировать расходы, определяя суммы, которые покупатели могут потратить на заказы в неделю, в месяц, в квартал или в гол. Лимиты покупок присваиваются пользователям или группам пользователей, а также утверждающим и в таком случае определяют суммы, которые можно утвердить. Можно присвоить лимит покупок нескольким пользователям сразу, объединив их в группу пользователей.",
+    "details" : {
+      "title" : "Сведения о лимите покупок",
+      "subtitle" : "Лимит покупок: {{ item.code }}"
     },
-    "edit": {
-      "title": "Edit Purchase Limit",
-      "subtitle": "Purchase limits : {{ item.code }}"
+    "edit" : {
+      "title" : "Редактировать лимит покупок",
+      "subtitle" : "Лимиты покупок: {{ item.code }}"
     },
-    "create": {
-      "title": "Create Purchase Limit",
-      "subtitle": ""
+    "create" : {
+      "title" : "Создать лимит покупок",
+      "subtitle" : ""
     },
-    "sortBy": "Сортировать по",
-    "sort": {
-      "byName": "Имя",
-      "byUnitName": "Единица"
+    "sortBy" : "Сортировать по",
+    "sort" : {
+      "byName" : "Имя",
+      "byUnitName" : "Единица"
     },
-    "messages": {
-      "deactivateTitle": "Disable this purchase limit?",
-      "deactivate": "Disabled purchase limits can no longer be assigned to a user or user group. Current assignments will have no effect.",
-      "confirmEnabled": "Purchase Limit {{ item.code }} enabled successfully",
-      "confirmDisabled": "Purchase Limit {{ item.code }} disabled successfully",
-      "update": "Purchase Limit {{ item.code }} updated successfully",
-      "create": "Purchase Limit {{ item.code }} created successfully"
+    "messages" : {
+      "deactivateTitle" : "Отключить лимит покупок?",
+      "deactivate" : "Отключенные лимиты покупок больше нельзя присвоить пользователю или группе пользователей. Текущие присвоения не будут затронуты.",
+      "confirmEnabled" : "Лимит покупок {{item.code}} включен",
+      "confirmDisabled" : "Лимит покупок {{item.code}} отключен",
+      "update" : "Лимит покупок {{item.code}} обновлен",
+      "create" : "Лимит покупок {{item.code}} создан"
     },
-    "info": {
-      "disabledEdit": "Enable the purchase limit to allow editing.",
-      "disabledEnable": "Unit must be enabled before this purchase limit may be enabled."
+    "info" : {
+      "disabledEdit" : "Включите лимит покупок, чтобы разрешить редактирование.",
+      "disabledEnable" : "Чтобы включить лимит покупок, сначала включите единицу."
     },
-    "per": {
-      "DAY": "per day",
-      "WEEK": "per week",
-      "MONTH": "per month",
-      "QUARTER": "per quarter",
-      "YEAR": "per year"
+    "per" : {
+      "DAY" : "в день",
+      "WEEK" : "в неделю",
+      "MONTH" : "в месяц",
+      "QUARTER" : "в квартал",
+      "YEAR" : "в год"
     },
-    "breadcrumbs": {
-      "list": "All purchase limits",
-      "details": "{{code}}"
+    "breadcrumbs" : {
+      "list" : "Все лимиты покупок",
+      "details" : "{{code}}"
     }
   }
 }

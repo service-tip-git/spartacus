@@ -1,66 +1,66 @@
 {
-  "userRegistrationForm": {
-    "fields": {
-      "titleCode": {
-        "label": "Title (optional)",
-        "placeholder": "标题"
+  "userRegistrationForm" : {
+    "fields" : {
+      "titleCode" : {
+        "label" : "标题（可选）",
+        "placeholder" : "标题"
       },
-      "firstName": {
-        "label": "名字",
-        "placeholder": "名字"
+      "firstName" : {
+        "label" : "名字",
+        "placeholder" : "名字"
       },
-      "lastName": {
-        "label": "姓氏",
-        "placeholder": "姓氏"
+      "lastName" : {
+        "label" : "姓氏",
+        "placeholder" : "姓氏"
       },
-      "companyName": {
-        "label": "Company name",
-        "placeholder": "Company name"
+      "companyName" : {
+        "label" : "公司名称",
+        "placeholder" : "公司名称"
       },
-      "email": {
-        "label": "电子邮件地址",
-        "placeholder": "电子邮件地址"
+      "email" : {
+        "label" : "电子邮件",
+        "placeholder" : "电子邮件"
       },
-      "city": {
-        "label": "City/Town (optional)",
-        "placeholder": "Please select City/Town"
+      "city" : {
+        "label" : "市/镇（可选）",
+        "placeholder" : "请选择市/镇"
       },
-      "country": {
-        "label": "Country (optional)",
-        "placeholder": "Select Country"
+      "country" : {
+        "label" : "国家/地区（可选）",
+        "placeholder" : "选择国家/地区"
       },
-      "state": {
-        "label": "State/Province (optional)",
-        "placeholder": "Select State/Province"
+      "state" : {
+        "label" : "州/省（可选）",
+        "placeholder" : "选择州/省"
       },
-      "postalCode": {
-        "label": "Zip/Postal code (optional)",
-        "placeholder": "Zip/Postal code"
+      "postalCode" : {
+        "label" : "邮政编码（可选）",
+        "placeholder" : "邮政编码"
       },
-      "addressLine": {
-        "label": "Address (optional)",
-        "placeholder": "地址"
+      "addressLine" : {
+        "label" : "地址（可选）",
+        "placeholder" : "地址"
       },
-      "secondAddressLine": {
-        "label": "Address line 2 (optional)",
-        "placeholder": "Address line 2"
+      "secondAddressLine" : {
+        "label" : "地址行 2（可选）",
+        "placeholder" : "地址行 2"
       },
-      "phoneNumber": {
-        "label": "Phone number (optional)",
-        "placeholder": "电话号码"
+      "phoneNumber" : {
+        "label" : "电话号码（可选）",
+        "placeholder" : "电话号码"
       },
-      "message": {
-        "label": "Message (optional)",
-        "placeholder": "An example data for the message field: \"Department: Ground support; Position: Chief safe guard; Report to: Steve Jackson; Comments: Please create new account for me\"."
+      "message" : {
+        "label" : "消息（可选）",
+        "placeholder" : "消息字段的示例数据：“部门：地面支援；职位：首席安全官；直接上级：Steve Jackson；注释：请为我创建新帐户”。"
       }
     },
-    "messageToApproverTemplate": "Company name: {{companyName}},\n  Phone number: {{phoneNumber}},\n  Address: {{addressLine}} {{secondAddressLine}} {{city}} {{state}} {{postalCode}} {{country}},\n  Message: {{message}}",
-    "successFormSubmitMessage": "Thank you for registering! A representative will contact you shortly and confirm your access information.",
-    "formSubmitButtonLabel": "注册",
-    "goToLoginButtonLabel": "Already registered? Go to Sign in",
-    "httpHandlers": {
-      "conflict": "User with this e-mail address already exists."
+    "messageToApproverTemplate" : "公司名称：{{companyName}}，\n  电话号码：{{phoneNumber}}，\n  地址：{{addressLine}} {{secondAddressLine}} {{city}} {{state}} {{postalCode}} {{country}}，\n  消息：{{message}}",
+    "successFormSubmitMessage" : "感谢您的注册！代表会尽快与您联系并确认您的访问信息。",
+    "formSubmitButtonLabel" : "注册",
+    "goToLoginButtonLabel" : "已经注册？请转到“注册”",
+    "httpHandlers" : {
+      "conflict" : "具有此电子邮件地址的用户已存在。"
     },
-    "messageToFailedToRegister": "Failed to register. Please contact your admin for further assistance."
+    "messageToFailedToRegister" : "注册失败。请联系您的管理员寻求进一步帮助。"
   }
 }

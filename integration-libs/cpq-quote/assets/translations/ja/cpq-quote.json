@@ -1,4 +1,4 @@
 {
-  "cpqQuoteHeading": "商品価格",
-  "discountCaption": "This item is {{ discount }}% off"
+  "cpqQuoteHeading" : "アイテム価格",
+  "discountCaption" : "このアイテムは {{ discount }}% オフです"
 }

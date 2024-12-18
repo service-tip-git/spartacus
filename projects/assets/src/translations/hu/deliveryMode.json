@@ -1,5 +1,5 @@
 {
-  "setDeliveryMode": {
-    "unknownError": "An unknown error occurred. Please contact support."
+  "setDeliveryMode" : {
+    "unknownError" : "Ismeretlen hiba történt. Forduljon a támogatáshoz."
   }
 }

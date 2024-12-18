@@ -1,7 +1,7 @@
 {
-  "wishlist": {
-    "empty": "No products in your wish list yet",
-    "itemRemoved": "Selected item has been removed.",
-    "caption": "Wish list contents."
+  "wishlist" : {
+    "empty" : "V seznamu přání zatím nemáte žádné produkty",
+    "itemRemoved" : "Vybraná položka byla odebrána.",
+    "caption" : "Obsah seznamu přání."
   }
 }

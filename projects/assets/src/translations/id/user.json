@@ -1,32 +1,32 @@
 {
-  "anonymousConsents": {
-    "dialog": {
-      "title": "Manajemen Persetujuan",
-      "legalDescription": "We use cookies/browser's storage to personalize the content and improve user experience. We also might share the data about your site usage with our social media. For more, please review our privacy policy.",
-      "selectAll": "Pilih semua",
-      "clearAll": "Clear all"
+  "anonymousConsents" : {
+    "dialog" : {
+      "title" : "Pengelolaan Persetujuan",
+      "legalDescription" : "Kami menggunakan cookie/penyimpanan browser untuk mempersonalisasi konten dan meningkatkan pengalaman pengguna. Kami juga mungkin membagikan data tentang penggunaan situs Anda dengan media sosial kami. Untuk mengetahui selengkapnya, silakan tinjau kebijakan privasi kami.",
+      "selectAll" : "Pilih semua",
+      "clearAll" : "Hapus semua"
     },
-    "banner": {
-      "title": "This website uses cookies",
-      "description": "We use cookies/browser's storage to personalize the content and improve user experience.",
-      "allowAll": "Allow All",
-      "viewDetails": "Lihat Detail"
+    "banner" : {
+      "title" : "Situs web ini menggunakan cookie",
+      "description" : "Kami menggunakan cookie/penyimpanan browser untuk mempersonalisasi konten dan meningkatkan pengalaman pengguna.",
+      "allowAll" : "Izinkan Semua",
+      "viewDetails" : "Lihat Rincian"
     }
   },
-  "checkoutLogin": {
-    "emailAddress": {
-      "label": "Alamat email",
-      "placeholder": "Enter email"
+  "checkoutLogin" : {
+    "emailAddress" : {
+      "label" : "Alamat email",
+      "placeholder" : "Masukkan email"
     },
-    "confirmEmail": {
-      "label": "Confirm email",
-      "placeholder": "Confirm email"
+    "confirmEmail" : {
+      "label" : "Konfirmasi email",
+      "placeholder" : "Konfirmasi email"
     },
-    "continue": "Lanjutkan",
-    "emailIsRequired": "Invalid email format",
-    "emailsMustMatch": "Email does not match"
+    "continue" : "Lanjutkan",
+    "emailIsRequired" : "Format email tidak valid",
+    "emailsMustMatch" : "Email tidak cocok"
   },
-  "authMessages": {
-    "signedOutSuccessfully": "You have successfully signed out."
+  "authMessages" : {
+    "signedOutSuccessfully" : "Anda berhasil keluar."
   }
 }

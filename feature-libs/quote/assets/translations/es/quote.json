@@ -1,249 +1,249 @@
 {
-  "quote": {
-    "confirmDialog": {
-      "name": "Name:",
-      "description": "Description:",
-      "validity": "Esta oferta es válida hasta {{ expirationTime }}",
-      "option": {
-        "yes": "Sí",
-        "no": "No"
+  "quote" : {
+    "confirmDialog" : {
+      "name" : "Nombre:",
+      "description" : "Descripción:",
+      "validity" : "Esta oferta es válida hasta {{ expirationTime }}",
+      "option" : {
+        "yes" : "Sí",
+        "no" : "No"
       },
-      "buyer": {
-        "submit": {
-          "a11y": {
-            "close": "Close submit quote modal"
+      "buyer" : {
+        "submit" : {
+          "a11y" : {
+            "close" : "Cerrar el modo de envío de oferta"
           },
-          "title": "Submit Quote Request {{ code }}?",
-          "confirmNote": "Are you sure you want to submit this quote request?",
-          "successMessage": "Quote request submitted successfully"
+          "title" : "¿Desea enviar la solicitud de oferta {{ code }}?",
+          "confirmNote" : "¿Confirma que desea enviar esta solicitud de oferta?",
+          "successMessage" : "Solicitud de oferta enviada correctamente"
         },
-        "cancel": {
-          "a11y": {
-            "close": "Close cancel quote modal"
+        "cancel" : {
+          "a11y" : {
+            "close" : "Cerrar modo de cancelación de oferta"
           },
-          "title": "Cancel Quote Request {{ code }}?",
-          "confirmNote": "Are you sure you want to cancel this quote request?",
-          "successMessage": "Quote request cancelled"
+          "title" : "¿Desea cancelar la solicitud de oferta {{ code }}?",
+          "confirmNote" : "¿Confirma que desea cancelar esta solicitud de oferta?",
+          "successMessage" : "Solicitud de oferta cancelada"
         }
       },
-      "buyer_offer": {
-        "edit": {
-          "a11y": {
-            "close": "Close edit quote modal"
+      "buyer_offer" : {
+        "edit" : {
+          "a11y" : {
+            "close" : "Cerrar el modo de edición de ofertas"
           },
-          "title": "Confirm Edit Quote {{ code }}?",
-          "confirmNote": "¿Está seguro de que desea editar esta oferta aprobada?",
-          "warningNote": "This Quote has been Approved. Editing this Quote will prevent Checkout until new edits are approved."
+          "title" : "¿Confirma la edición de oferta {{ code }}?",
+          "confirmNote" : "¿Confirma que desea editar esta oferta aprobada?",
+          "warningNote" : "Esta oferta ya se aprobó. Si la edita, no podrá realizar el pago hasta que se aprueben las nuevas modificaciones."
         },
-        "cancel": {
-          "a11y": {
-            "close": "Close cancel quote modal"
+        "cancel" : {
+          "a11y" : {
+            "close" : "Cerrar modo de cancelación de oferta"
           },
-          "title": "Cancel Quote {{ code }}?",
-          "confirmNote": "¿Está seguro de que desea cancelar esta oferta?",
-          "successMessage": "Quote cancelled"
+          "title" : "¿Cancelar oferta {{ code }}?",
+          "confirmNote" : "¿Confirma que desea cancelar esta oferta?",
+          "successMessage" : "Oferta cancelada"
         },
-        "checkout": {
-          "a11y": {
-            "close": "Close checkout quote modal"
+        "checkout" : {
+          "a11y" : {
+            "close" : "Cerrar el modo de pago de oferta"
           },
-          "title": "Checkout Quote {{ code }}?",
-          "confirmNote": "Are you sure you want to accept and checkout this quote?"
+          "title" : "¿Finalizar la compra de la oferta{{ code }}?",
+          "confirmNote" : "¿Confirma que desea aceptar y pagar esta oferta?"
         }
       },
-      "expired": {
-        "edit": {
-          "a11y": {
-            "close": "Close edit quote modal"
+      "expired" : {
+        "edit" : {
+          "a11y" : {
+            "close" : "Cerrar el modo de edición de ofertas"
           },
-          "title": "Confirm Edit Quote {{ code }}?",
-          "confirmNote": "Are you sure you want to edit this expired quote?",
-          "warningNote": "This Quote is expired. Editing this quote will prevent checkout until new edits are approved."
+          "title" : "¿Confirma la edición de la oferta {{ code }}?",
+          "confirmNote" : "¿Confirma que desea editar esta oferta vencida?",
+          "warningNote" : "Esta oferta ha caducado. Si la edita, no podrá realizar el pago hasta que se aprueben las nuevas modificaciones."
         },
-        "requote": {
-          "a11y": {
-            "close": "Close requote modal"
+        "requote" : {
+          "a11y" : {
+            "close" : "Cerrar modo para volver a crear oferta"
           },
-          "title": "Recreate Quote Request {{ code }}?",
-          "confirmNote": "Are you sure you want to recreate this quote request?",
-          "warningNote": "This Quote is expired. Re-quoting it will create a new quote request with same contents, which can be edited and submitted for approval afterwards."
+          "title" : "¿Recrear solicitud de oferta {{ code }}?",
+          "confirmNote" : "¿Confirma que desea recrear esta solicitud de oferta?",
+          "warningNote" : "Esta oferta ha caducado. Si la vuelve a crear, se generará una nueva solicitud de oferta con el mismo contenido, que se puede editar y enviar para su aprobación posterior."
         }
       },
-      "seller": {
-        "submit": {
-          "a11y": {
-            "close": "Close submit quote modal"
+      "seller" : {
+        "submit" : {
+          "a11y" : {
+            "close" : "Cerrar el modo de envío de oferta"
           },
-          "title": "Submit Quote {{ code }}?",
-          "confirmNote": "¿Está seguro de que desea enviar esta oferta?",
-          "warningNote": "Depending on the total value of the quote, an additional approval might be required before the buyer can check out this quote.",
-          "successMessage": "Quote submitted successfully"
+          "title" : "¿Enviar oferta {{ code }}?",
+          "confirmNote" : "¿Confirma que desea enviar esta oferta?",
+          "warningNote" : "Dependiendo del valor total de la oferta, podría requerirse una aprobación adicional antes de que el comprador pueda consultar esta oferta.",
+          "successMessage" : "Oferta enviada correctamente"
         }
       },
-      "sellerapprover": {
-        "approve": {
-          "a11y": {
-            "close": "Close approve quote modal"
+      "sellerapprover" : {
+        "approve" : {
+          "a11y" : {
+            "close" : "Cerrar modo de aprobación de oferta"
           },
-          "title": "Approve Quote {{ code }}?",
-          "confirmNote": "Are you sure you want to approve this quote?",
-          "successMessage": "Quote approved successfully"
+          "title" : "¿Aprobar oferta {{ code }}?",
+          "confirmNote" : "¿Confirma que desea aprobar esta oferta?",
+          "successMessage" : "Oferta aprobada correctamente"
         },
-        "reject": {
-          "a11y": {
-            "close": "Close reject quote modal"
+        "reject" : {
+          "a11y" : {
+            "close" : "Cerrar modo de oferta rechazada"
           },
-          "title": "Reject Quote {{ code }}?",
-          "confirmNote": "Are you sure you want to reject this quote?",
-          "successMessage": "Quote rejected"
+          "title" : "¿Rechazar oferta {{ code }}?",
+          "confirmNote" : "¿Confirma que desea rechazar esta oferta?",
+          "successMessage" : "Oferta rechazada"
         }
       },
-      "cancelled": {
-        "requote": {
-          "a11y": {
-            "close": "Close requote modal"
+      "cancelled" : {
+        "requote" : {
+          "a11y" : {
+            "close" : "Cerrar modo para volver a crear oferta"
           },
-          "title": "Recreate Quote Request {{ code }}?",
-          "confirmNote": "Are you sure you want to recreate this quote request?",
-          "warningNote": "Your current cart will be converted to a saved cart."
+          "title" : "¿Recrear solicitud de oferta {{ code }}?",
+          "confirmNote" : "¿Confirma que desea recrear esta solicitud de oferta?",
+          "warningNote" : "Su cesta actual se convertirá en una cesta guardada."
         }
       },
-      "all": {
-        "edit": {
-          "a11y": {
-            "close": "Close edit quote modal"
+      "all" : {
+        "edit" : {
+          "a11y" : {
+            "close" : "Cerrar el modo de edición de ofertas"
           },
-          "title": "Edit Quote {{ code }}?",
-          "confirmNote": "Are you sure you want to edit this quote?",
-          "warningNote": "Your current cart will be converted to a saved cart."
+          "title" : "¿Editar oferta {{ code }}?",
+          "confirmNote" : "¿Confirma que desea editar esta oferta?",
+          "warningNote" : "Su cesta actual se convertirá en una cesta guardada."
         }
       }
     },
-    "comments": {
-      "regionTitle": "Contact/Comment Box",
-      "title": "Contacto",
-      "invalidComment": "Invalid Input - Please type again...",
-      "allProducts": "Todos los productos"
+    "comments" : {
+      "regionTitle" : "Contacto/Cuadro de comentarios",
+      "title" : "Contacto",
+      "invalidComment" : "Entrada no válida. Escriba nuevamente...",
+      "allProducts" : "Todos los productos"
     },
-    "commons": {
-      "requestQuote": "Request Quote",
-      "cart": "Cesta",
-      "minRequestInitiationNote": "Minimum ${{minValue}} subtotal is required to submit a quote ",
-      "savedActiveCart": "Your active cart was converted to saved cart {{ code }}"
+    "commons" : {
+      "requestQuote" : "Solicitar oferta",
+      "cart" : "Cesta",
+      "minRequestInitiationNote" : "Se requiere un subtotal mínimo de ${{minValue}} para enviar una oferta ",
+      "savedActiveCart" : "Su cesta activa se convirtió en cesta guardada {{ code }}"
     },
-    "header": {
-      "buyerEdit": {
-        "a11y": {
-          "cancel": "Cancel editing quote header information",
-          "save": "Save quote header information"
+    "header" : {
+      "buyerEdit" : {
+        "a11y" : {
+          "cancel" : "Cancelar la edición de la información del encabezado de oferta",
+          "save" : "Guardar la información del encabezado de oferta"
         }
       },
-      "overview": {
-        "regionTitle": "Quote details summary",
-        "id": "ID de oferta",
-        "status": "Estado",
-        "information": "Quote Information",
-        "name": "Nombre",
-        "description": "Descripción",
-        "charactersLeft": "characters left: {{count}}",
-        "priceAndExpiry": "Price & Expiry",
-        "estimatedTotal": "Estimated Total",
-        "total": "Total",
-        "expirationTime": "Fecha de caducidad",
-        "a11y": {
-          "edit": "Edit quote header information"
+      "overview" : {
+        "regionTitle" : "Resumen de detalles de la oferta",
+        "id" : "ID de oferta",
+        "status" : "Estado",
+        "information" : "Información de la oferta",
+        "name" : "Nombre",
+        "description" : "Descripción",
+        "charactersLeft" : "caracteres restantes: {{count}}",
+        "priceAndExpiry" : "Precio y caducidad",
+        "estimatedTotal" : "Total estimado",
+        "total" : "Total",
+        "expirationTime" : "Fecha de caducidad",
+        "a11y" : {
+          "edit" : "Editar información de encabezado de oferta"
         },
-        "createdAndUpdated": "Created & Updated",
-        "createdDate": "Creado",
-        "lastUpdatedDate": "Última actualización"
+        "createdAndUpdated" : "Creado y actualizado",
+        "createdDate" : "Creado",
+        "lastUpdatedDate" : "Última actualización"
       }
     },
-    "httpHandlers": {
-      "cartValidationIssue": "There are problems with your entries. Please review your cart.",
-      "quoteCartIssue": "Not possible to do changes to cart entries. Proceed to checkout",
-      "absoluteDiscountIssue": "Choose a discount that does not exceed the total value",
-      "expirationDateIssue": "Choose an expiration date in the future",
-      "threshold": {
-        "underThresholdError": "Total price of requested quote does not meet the minimum threshold"
+    "httpHandlers" : {
+      "cartValidationIssue" : "Hay problemas con sus entradas. Revise su cesta.",
+      "quoteCartIssue" : "No es posible realizar cambios en las entradas de la cesta. Proceda al pago",
+      "absoluteDiscountIssue" : "Elija un descuento que no exceda el valor total",
+      "expirationDateIssue" : "Elija una fecha de vencimiento futura",
+      "threshold" : {
+        "underThresholdError" : "El precio total de la oferta solicitada no alcanza el umbral mínimo"
       },
-      "expired": "This quote has expired. You must resubmit your quote request to receive another vendor quote.",
-      "downloadPDFError": "Something went wrong. Unable to obtain the proposal document PDF."
+      "expired" : "Esta oferta ha caducado. Debe volver a enviar su solicitud de oferta para recibir la oferta de otro proveedor.",
+      "downloadPDFError" : "Algo salió mal. No se pudo obtener el documento de propuesta en formato PDF."
     },
-    "items": {
-      "regionTitle": "Cart items"
+    "items" : {
+      "regionTitle" : "Elementos de la cesta"
     },
-    "links": {
-      "newCart": "Nueva cesta",
-      "quotes": "Ofertas",
-      "download": "Download Proposal",
-      "a11y": {
-        "newCart": "Create new empty cart and navigate to it.",
-        "quotes": "Navigate to quote search result list.",
-        "download": "Start downloading a quote proposal"
+    "links" : {
+      "newCart" : "Nueva cesta",
+      "quotes" : "Ofertas",
+      "download" : "Descargar propuesta",
+      "a11y" : {
+        "newCart" : "Crear una cesta nueva vacía e ir hasta ella.",
+        "quotes" : "Ir a la lista de resultados de búsqueda de ofertas.",
+        "download" : "Comenzar a descargar la propuesta de oferta"
       }
     },
-    "list": {
-      "regionTitle": "Quote list summary",
-      "title": "Quote List",
-      "name": "Nombre",
-      "updated": "Actualizado",
-      "sortBy": "Ordenar por",
-      "sortQuotes": "Sort Quotes",
-      "empty": "We have no quote records for this account.",
-      "quoteId": "ID de oferta",
-      "status": "Estado",
-      "clickableRow": "Click on the row for more quote details"
+    "list" : {
+      "regionTitle" : "Resumen de lista de ofertas",
+      "title" : "Lista de ofertas",
+      "name" : "Nombre",
+      "updated" : "Actualizado",
+      "sortBy" : "Ordenar por",
+      "sortQuotes" : "Ordenar ofertas",
+      "empty" : "No tenemos registro de ofertas para esta cuenta.",
+      "quoteId" : "ID de oferta",
+      "status" : "Estado",
+      "clickableRow" : "Haga clic en la fila para obtener más información de las ofertas"
     },
-    "states": {
-      "BUYER_DRAFT": "Borrador",
-      "BUYER_SUBMITTED": "Enviada",
-      "BUYER_ACCEPTED": "Aceptada",
-      "BUYER_APPROVED": "Aprobada",
-      "BUYER_REJECTED": "Rechazada",
-      "BUYER_OFFER": "Oferta de proveedor",
-      "BUYER_ORDERED": "Pedida",
-      "SELLER_DRAFT": "Borrador",
-      "SELLER_REQUEST": "Solicitada",
-      "SELLER_SUBMITTED": "Enviada",
-      "SELLERAPPROVER_DRAFT": "Borrador",
-      "SELLERAPPROVER_PENDING": "Aprobación pendiente",
-      "SELLERAPPROVER_APPROVED": "Aprobada",
-      "SELLERAPPROVER_REJECTED": "Rechazada",
-      "CREATED": "Creado",
-      "CANCELLED": "Cancelada",
-      "EXPIRED": "Caducada"
+    "states" : {
+      "BUYER_DRAFT" : "Borrador",
+      "BUYER_SUBMITTED" : "Enviada",
+      "BUYER_ACCEPTED" : "Aceptada",
+      "BUYER_APPROVED" : "Aprobada",
+      "BUYER_REJECTED" : "Rechazada",
+      "BUYER_OFFER" : "Oferta de proveedor",
+      "BUYER_ORDERED" : "Pedida",
+      "SELLER_DRAFT" : "Borrador",
+      "SELLER_REQUEST" : "Solicitada",
+      "SELLER_SUBMITTED" : "Enviada",
+      "SELLERAPPROVER_DRAFT" : "Borrador",
+      "SELLERAPPROVER_PENDING" : "Aprobación pendiente",
+      "SELLERAPPROVER_APPROVED" : "Aprobada",
+      "SELLERAPPROVER_REJECTED" : "Rechazada",
+      "CREATED" : "Creada",
+      "CANCELLED" : "Cancelada",
+      "EXPIRED" : "Caducada"
     },
-    "summary": {
-      "regionTitle": "Resumen de pedido",
-      "actions": {
-        "APPROVE": "Aprobar oferta",
-        "CANCEL": "Cancelar oferta",
-        "CHECKOUT": "Aceptar y finalizar compra",
-        "EDIT": "Editar oferta",
-        "REJECT": "Rechazar oferta",
-        "REQUOTE": "Request new Quote",
-        "SAVE": "Grabar oferta",
-        "SUBMIT": "Enviar oferta",
-        "VIEW": "Ver oferta"
+    "summary" : {
+      "regionTitle" : "Resumen del pedido",
+      "actions" : {
+        "APPROVE" : "Aprobar oferta",
+        "CANCEL" : "Cancelar oferta",
+        "CHECKOUT" : "Aceptar y finalizar compra",
+        "EDIT" : "Editar oferta",
+        "REJECT" : "Rechazar oferta",
+        "REQUOTE" : "Solicitar oferta nueva",
+        "SAVE" : "Grabar oferta",
+        "SUBMIT" : "Enviar oferta",
+        "VIEW" : "Ver oferta"
       },
-      "prices": {
-        "title": "Resumen de pedido",
-        "subtotal": "Subtotal",
-        "productDiscount": "Item Discount",
-        "orderDiscount": "Descuento del pedido",
-        "quoteDiscount": "Descuentos de la oferta",
-        "total": "Total",
-        "hint": "No taxes are included in the total"
+      "prices" : {
+        "title" : "Resumen del pedido",
+        "subtotal" : "Subtotal",
+        "productDiscount" : "Descuento del elemento",
+        "orderDiscount" : "Descuento del pedido",
+        "quoteDiscount" : "Descuentos de la oferta",
+        "total" : "Total",
+        "hint" : "No se incluyen impuestos en el total"
       },
-      "sellerEdit": {
-        "discount": "Descuento",
-        "apply": "Aplicar",
-        "expiryDate": "Fecha de caducidad",
-        "discountValidationText": "Enter a valid percentage discount",
-        "a11y": {
-          "apply": "Click to apply the entered discount value to this quote",
-          "discount": "Enter a percentage discount value to be applied to this quote",
-          "expiryDate": "Enter an expiry date for this quote"
+      "sellerEdit" : {
+        "discount" : "Descuento",
+        "apply" : "Aplicar",
+        "expiryDate" : "Fecha de caducidad",
+        "discountValidationText" : "Ingresar un descuento de porcentaje válido",
+        "a11y" : {
+          "apply" : "Haga clic para aplicar el valor de descuento ingresado a esta oferta",
+          "discount" : "Ingrese un valor de descuento porcentual que se aplicará a esta oferta",
+          "expiryDate" : "Ingrese una fecha de vencimiento para esta oferta"
         }
       }
     }

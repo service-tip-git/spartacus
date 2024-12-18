@@ -1,53 +1,62 @@
 {
-  "paymentForm": {
-    "payment": "Pagamento",
-    "choosePaymentMethod": "Choose a payment method",
-    "paymentType": "Tipo de pagamento",
-    "accountHolderName": {
-      "label": "Account Holder Name",
-      "placeholder": "Account Holder Name"
+  "paymentForm" : {
+    "payment" : "Pagamento",
+    "choosePaymentMethod" : "Selecionar uma forma de pagamento",
+    "paymentType" : "Tipo de pagamento",
+    "accountHolderName" : {
+      "label" : "Nome do titular da conta",
+      "placeholder" : "Nome do titular da conta"
     },
-    "cardNumber": "Número do cartão",
-    "expirationDate": "Data de expiração",
-    "securityCode": "Security code (CVV)",
-    "securityCodeTitle": "Card Verification Value",
-    "saveAsDefault": "Save as default",
-    "setAsDefault": "Set as default payment method",
-    "billingAddress": "Endereço de faturamento",
-    "sameAsDeliveryAddress": "Same as delivery address",
-    "billingAddressSameAsShipping": "Billing address is the same as delivery address",
-    "selectOne": "Select One...",
-    "monthMask": "MM",
-    "yearMask": "YYYY",
-    "expirationYear": "Expiration year {{ selected }}",
-    "expirationMonth": "Expiration month {{ selected }}",
-    "useThisPayment": "Use this payment",
-    "addNewPayment": "Add New Payment",
-    "paymentAddedSuccessfully": "New payment was added successfully",
-    "changePayment": "Change Payment"
+    "cardNumber" : "Número do cartão",
+    "expirationDate" : "Data de expiração",
+    "securityCode" : "Código de segurança (CVV)",
+    "securityCodeTitle" : "Valor de verificação de cartão",
+    "saveAsDefault" : "Gravar como padrão",
+    "setAsDefault" : "Definir como forma de pagamento padrão",
+    "billingAddress" : "Endereço de faturamento",
+    "sameAsDeliveryAddress" : "Igual ao endereço de entrega",
+    "billingAddressSameAsShipping" : "O endereço de faturamento é igual ao endereço de entrega",
+    "selectOne" : "Selecionar um...",
+    "monthMask" : "MM",
+    "yearMask" : "AAAA",
+    "expirationYear" : "Ano da expiração {{ selected }}",
+    "expirationMonth" : "Mês da expiração {{ selected }}",
+    "useThisPayment" : "Utilizar este pagamento",
+    "addNewPayment" : "Adicionar novo pagamento",
+    "paymentAddedSuccessfully" : "O novo pagamento foi adicionado com êxito",
+    "changePayment" : "Modificar pagamento"
   },
-  "paymentMethods": {
-    "paymentMethods": "Payment methods",
-    "paymentMethodSelected": "Payment method selected",
-    "newPaymentMethodsAreAddedDuringCheckout": "New payment methods are added during checkout.",
-    "invalidField": "InvalidField: {{ field }}"
+  "paymentMethods" : {
+    "paymentMethods" : "Formas de pagamento",
+    "paymentMethodSelected" : "Forma de pagamento selecionada",
+    "newPaymentMethodsAreAddedDuringCheckout" : "As novas formas de pagamento são adicionadas durante o check-out.",
+    "invalidField" : "Campo inválido: {{ field }}"
   },
-  "paymentCard": {
-    "deleteConfirmation": "Are you sure you want to delete this payment method?",
-    "setAsDefault": "Definir como padrão",
-    "expires": "Expires: {{ month }}/{{ year }}",
-    "defaultPaymentMethod": "✓ DEFAULT",
-    "defaultPaymentLabel": "Default payment method",
-    "additionalPaymentLabel": "Additional payment method {{ number }}",
-    "selected": "Selecionado",
-    "deletePaymentSuccess": "Payment method deleted successfully"
+  "paymentCard" : {
+    "deleteConfirmation" : "Tem certeza de que quer eliminar esta forma de pagamento?",
+    "setAsDefault" : "Definir como padrão",
+    "expires" : "Expira: {{ month }}/{{ year }}",
+    "defaultPaymentMethod" : "✓ PADRÃO",
+    "defaultPaymentLabel" : "Forma de pagamento padrão",
+    "additionalPaymentLabel" : "Forma de pagamento adicional {{ number }}",
+    "selected" : "Selecionado",
+    "selectedPayment" : "Pagamento selecionado",
+    "deletePaymentSuccess" : "Forma de pagamento eliminada com êxito",
+    "visa" : "Cartão Visa",
+    "master" : "Cartão MasterCard",
+    "masterEuro" : "Cartão MasterCard Eurocard",
+    "dinersClub" : "Cartão Diners Club",
+    "switch" : "Mudar cartão",
+    "maestro" : "Cartão Maestro",
+    "amex" : "Cartão American Express",
+    "credit" : "Cartão de crédito"
   },
-  "paymentTypes": {
-    "title": "Forma de pagamento",
-    "paymentType_CARD": "Cartão de crédito",
-    "paymentType_ACCOUNT": "Conta"
+  "paymentTypes" : {
+    "title" : "Forma de pagamento",
+    "paymentType_CARD" : "Cartão de crédito",
+    "paymentType_ACCOUNT" : "Conta"
   },
-  "paymentMessages": {
-    "setAsDefaultSuccessfully": "New payment was successfully set as default"
+  "paymentMessages" : {
+    "setAsDefaultSuccessfully" : "O novo pagamento foi definido como padrão com êxito"
   }
 }

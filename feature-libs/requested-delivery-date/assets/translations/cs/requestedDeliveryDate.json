@@ -1,8 +1,8 @@
 {
-  "requestedDeliveryDate": {
-    "datePickerLabel": "Request Delivery Date",
-    "readOnlyTextLabel": "Requested Delivery Date",
-    "successMessage": "Delivery Date updated successfully.",
-    "errorMessage": "Something went wrong. Unable to update the requested date."
+  "requestedDeliveryDate" : {
+    "datePickerLabel" : "Vyžádat datum dodání",
+    "readOnlyTextLabel" : "Požadované datum dodání",
+    "successMessage" : "Datum dodání úspěšně aktualizováno.",
+    "errorMessage" : "Něco se pokazilo. Nelze aktualizovat požadované datum."
   }
 }

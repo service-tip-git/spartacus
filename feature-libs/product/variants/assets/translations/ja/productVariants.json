@@ -1,9 +1,9 @@
 {
-  "productVariants": {
-    "style": "スタイル",
-    "selectedStyle": "Selected style",
-    "size": "サイズ",
-    "color": "色",
-    "sizeGuideLabel": "Style guide"
+  "productVariants" : {
+    "style" : "スタイル",
+    "selectedStyle" : "選択したスタイル",
+    "size" : "サイズ",
+    "color" : "色",
+    "sizeGuideLabel" : "スタイルガイド"
   }
 }

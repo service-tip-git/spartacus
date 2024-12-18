@@ -1,66 +1,66 @@
 {
-  "userRegistrationForm": {
-    "fields": {
-      "titleCode": {
-        "label": "Title (optional)",
-        "placeholder": "शीर्षक"
+  "userRegistrationForm" : {
+    "fields" : {
+      "titleCode" : {
+        "label" : "शीर्षक (वैकल्पिक)",
+        "placeholder" : "शीर्षक"
       },
-      "firstName": {
-        "label": "प्रथम नाम",
-        "placeholder": "प्रथम नाम"
+      "firstName" : {
+        "label" : "प्रथम नाम",
+        "placeholder" : "प्रथम नाम"
       },
-      "lastName": {
-        "label": "अंतिम नाम",
-        "placeholder": "अंतिम नाम"
+      "lastName" : {
+        "label" : "अंतिम नाम",
+        "placeholder" : "अंतिम नाम"
       },
-      "companyName": {
-        "label": "Company name",
-        "placeholder": "Company name"
+      "companyName" : {
+        "label" : "कंपनी का नाम",
+        "placeholder" : "कंपनी का नाम"
       },
-      "email": {
-        "label": "ईमेल",
-        "placeholder": "ईमेल"
+      "email" : {
+        "label" : "ईमेल",
+        "placeholder" : "ईमेल"
       },
-      "city": {
-        "label": "City/Town (optional)",
-        "placeholder": "Please select City/Town"
+      "city" : {
+        "label" : "शहर/नगर (वैकल्पिक)",
+        "placeholder" : "कृपया शहर/नगर चुनें"
       },
-      "country": {
-        "label": "Country (optional)",
-        "placeholder": "Select Country"
+      "country" : {
+        "label" : "देश (वैकल्पिक)",
+        "placeholder" : "देश चुनें"
       },
-      "state": {
-        "label": "State/Province (optional)",
-        "placeholder": "Select State/Province"
+      "state" : {
+        "label" : "राज्य/प्रांत (वैकल्पिक)",
+        "placeholder" : "राज्य/ प्रांत चुनें"
       },
-      "postalCode": {
-        "label": "Zip/Postal code (optional)",
-        "placeholder": "Zip/Postal code"
+      "postalCode" : {
+        "label" : "ज़िप/पोस्टल कोड (वैकल्पिक)",
+        "placeholder" : "ज़िप/पोस्टल कोड"
       },
-      "addressLine": {
-        "label": "Address (optional)",
-        "placeholder": "पता"
+      "addressLine" : {
+        "label" : "पता (वैकल्पिक)",
+        "placeholder" : "पता"
       },
-      "secondAddressLine": {
-        "label": "Address line 2 (optional)",
-        "placeholder": "Address line 2"
+      "secondAddressLine" : {
+        "label" : "पता पंक्ति 2 (वैकल्पिक)",
+        "placeholder" : "पता पंक्ति 2"
       },
-      "phoneNumber": {
-        "label": "Phone number (optional)",
-        "placeholder": "फ़ोन नंबर"
+      "phoneNumber" : {
+        "label" : "फोन नंबर (वैकल्पिक)",
+        "placeholder" : "फ़ोन नंबर"
       },
-      "message": {
-        "label": "Message (optional)",
-        "placeholder": "An example data for the message field: \"Department: Ground support; Position: Chief safe guard; Report to: Steve Jackson; Comments: Please create new account for me\"."
+      "message" : {
+        "label" : "संदेश (वैकल्पिक)",
+        "placeholder" : "संदेश फ़ील्ड के लिए उदाहरण डेटाः \"विभागः ग्राउंड सहायता; पदः प्रमुख सुरक्षा गार्ड; रिपोर्ट करेंः स्टीव जैकसन; टिप्पणियांः कृपया मेरे लिए नया खाता बनाएं\"."
       }
     },
-    "messageToApproverTemplate": "Company name: {{companyName}},\n  Phone number: {{phoneNumber}},\n  Address: {{addressLine}} {{secondAddressLine}} {{city}} {{state}} {{postalCode}} {{country}},\n  Message: {{message}}",
-    "successFormSubmitMessage": "Thank you for registering! A representative will contact you shortly and confirm your access information.",
-    "formSubmitButtonLabel": "पंजीकृत करें",
-    "goToLoginButtonLabel": "Already registered? Go to Sign in",
-    "httpHandlers": {
-      "conflict": "User with this e-mail address already exists."
+    "messageToApproverTemplate" : "कंपनी नामः {{companyName}}, फोन नंबरः {{phoneNumber}}, पताः {{addressLine}} {{secondAddressLine}} {{city}} {{state}} {{postalCode}} {{country}}, संदेशः {{message}}",
+    "successFormSubmitMessage" : "पंजीकरण करने के लिए धन्यवाद! कोई प्रतिनिधि जल्द ही आपसे संपर्क करेगा और आपकी पहुंच जानकारी की पुष्टि करेगा.",
+    "formSubmitButtonLabel" : "पंजीकृत करें",
+    "goToLoginButtonLabel" : "पहले से पंजीकृत हैं? साइन इन पर जाएं",
+    "httpHandlers" : {
+      "conflict" : "इस ईमेल के साथ उपयोगकर्ता पहले से मौजूद है."
     },
-    "messageToFailedToRegister": "Failed to register. Please contact your admin for further assistance."
+    "messageToFailedToRegister" : "पंजीकरण करने में विफल. आगे सहायता के लिए कृपया अपने व्यवस्थापक से संपर्क करें."
   }
 }

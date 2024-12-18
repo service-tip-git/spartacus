@@ -1,9 +1,9 @@
 {
-  "productImageZoomTrigger": {
-    "expand": "Expand image"
+  "productImageZoomTrigger" : {
+    "expand" : "Rozšířit obrázek"
   },
-  "productImageZoomDialog": {
-    "zoomedInImage": "Zoomed in image",
-    "close": "Zavřít"
+  "productImageZoomDialog" : {
+    "zoomedInImage" : "Zvětšený obrázek",
+    "close" : "Zavřít"
   }
 }

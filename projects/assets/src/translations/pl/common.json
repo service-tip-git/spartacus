@@ -1,252 +1,254 @@
 {
-  "common": {
-    "cancel": "Anuluj",
-    "delete": "Usuń",
-    "remove": "Usuń",
-    "edit": "Edytuj",
-    "restore": "Przywróć",
-    "back": "Wstecz",
-    "submit": "Wyślij",
-    "continue": "Kontynuuj",
-    "save": "Zapisz",
-    "done": "Gotowe",
-    "home": "Strona główna",
-    "noData": "No data.",
-    "confirm": "Potwierdź",
-    "more": "więcej",
-    "close": "Zamknij",
-    "loading": "Ładowanie",
-    "menu": "Menu",
-    "reset": "Resetuj",
-    "search": "Szukaj",
-    "add": "Dodaj",
-    "breadcrumbs": "breadcrumbs",
-    "selectFile": "Select file",
-    "clear": "Wyczyść",
-    "loaded": "Loaded",
-    "results": "Wyniki",
-    "of": "z",
-    "required": "required",
-    "zoomIn": "Zoom in",
-    "zoomOut": "Zoom out",
-    "selected": "Wybrane",
-    "expand": "Rozwiń",
-    "collapse": "Zwiń"
+  "common" : {
+    "cancel" : "Anuluj",
+    "delete" : "Usuń",
+    "remove" : "Usuń",
+    "edit" : "Edytuj",
+    "restore" : "Przywróć",
+    "back" : "Wstecz",
+    "submit" : "Prześlij",
+    "continue" : "Kontynuuj",
+    "save" : "Zapisz",
+    "done" : "Gotowe",
+    "home" : "Strona główna",
+    "noData" : "Brak danych",
+    "confirm" : "Potwierdź",
+    "more" : "więcej",
+    "close" : "Zamknij",
+    "loading" : "Ładowanie",
+    "menu" : "Menu",
+    "reset" : "Resetuj",
+    "search" : "Szukaj",
+    "add" : "Dodaj",
+    "breadcrumbs" : "Ścieżka nawigacji",
+    "selectFile" : "Wybierz plik",
+    "clear" : "Wyczyść",
+    "loaded" : "Załadowane",
+    "results" : "Wyniki",
+    "of" : "z",
+    "required" : "wymagane",
+    "zoomIn" : "Powiększ",
+    "zoomOut" : "Pomniejsz",
+    "selected" : "Wybrane",
+    "expand" : "Rozwiń",
+    "collapse" : "Zwiń"
   },
-  "pageMetaResolver": {
-    "category": {
-      "title": "{{count}} result for {{query}}",
-      "title_other": "{{count}} results for {{query}}"
+  "pageMetaResolver" : {
+    "category" : {
+      "title" : "{{count}} wynik dla {{query}}",
+      "title_other" : "{{count}} wyniki dla {{query}}"
     },
-    "checkout": {
-      "title": "Realizacja zakupu"
+    "checkout" : {
+      "title" : "Realizacja zakupu"
     },
-    "search": {
-      "title": "{{count}} result for \"{{query}}\"",
-      "title_other": "{{count}} results for \"{{query}}\"",
-      "findProductTitle": "{{count}} result for coupon \"{{coupon}}\"",
-      "findProductTitle_other": "{{count}} results for coupon \"{{coupon}}\"",
-      "default_title": "Wszystkie produkty"
+    "search" : {
+      "title" : "{{count}} wynik dla \"{{query}}\"",
+      "title_other" : "{{count}} wyniki dla \"{{query}}\"",
+      "findProductTitle" : "{{count}} wynik dla kuponu \"{{coupon}}\"",
+      "findProductTitle_other" : "{{count}} wyniki dla kuponu \"{{coupon}}\"",
+      "default_title" : "Wszystkie produkty"
     },
-    "product": {
-      "description": "{{description}}",
-      "heading": "{{heading}}",
-      "title": "{{title}}"
+    "product" : {
+      "description" : "{{description}}",
+      "heading" : "{{heading}}",
+      "title" : "{{title}}"
     }
   },
-  "spinner": {
-    "loading": "Wczytywanie..."
+  "spinner" : {
+    "loading" : "Wczytywanie..."
   },
-  "navigation": {
-    "categoryNavLabel": "Category menu",
-    "footerNavLabel": "Footer links",
-    "goTo": "Przejdź do {{location}}",
-    "navigateTo": "Navigate to {{nav}}",
-    "scrollToTop": "Scroll back to the top of the page",
-    "linkItemInList": "{{title}}. {{position}} of {{listLength}}"
+  "navigation" : {
+    "categoryNavLabel" : "Menu kategorii",
+    "footerNavLabel" : "Linki w stopce",
+    "goTo" : "Przejdź do {{location}}",
+    "navigateTo" : "Przejdź do {{nav}}",
+    "scrollToTop" : "Przewiń na górę strony",
+    "linkItemInList" : "{{title}}. {{position}} z {{listLength}}"
   },
-  "searchBox": {
-    "placeholder": "Enter product name or SKU",
-    "productSearch": "Find a product",
-    "ariaLabelInput": "Szukaj tutaj...",
-    "ariaLabelSuggestions": "typing suggestions",
-    "ariaLabelProducts": "product results",
-    "initialDescription": "When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.",
-    "suggestions": "Suggested Keywords",
-    "suggestionsResult": "{{ count }} suggestion and ",
-    "suggestionsResult_other": "{{ count }} suggestions and ",
-    "products": "Recommended Products",
-    "productsResult": "{{ count }} product is available.",
-    "productsResult_other": "{{ count }} products are available.",
-    "resetLabel": "Reset Search",
-    "help": {
-      "insufficientChars": "Please type more characters",
-      "noMatch": "We could not find any results",
-      "exactMatch": "{{ term }}",
-      "empty": "Ask us anything"
+  "searchBox" : {
+    "placeholder" : "Wprowadź nazwę produktu lub SKU",
+    "productSearch" : "Znajdż produkt",
+    "ariaLabelInput" : "Szukaj tutaj...",
+    "ariaLabelSuggestions" : "pisanie sugestii",
+    "ariaLabelProducts" : "lista wyszukanych produktów",
+    "initialDescription" : "Gdy dostępne są wyniki autouzupełniania, użyj strzałek w górę i w dół, aby je przejrzeć i naciśnij Enter, aby je wybrać. Użytkownicy urządzeń dotykowych mogą przeglądać za pomocą dotknięcia lub przesunięcia palcem.",
+    "suggestions" : "Sugerowane słowa kluczowe",
+    "suggestionsResult" : " {{ count }} sugestia i ",
+    "suggestionsResult_other" : " {{ count }} sugestie i ",
+    "products" : "Polecane produkty",
+    "productsResult" : "{{ count }} produkt jest dostępny.",
+    "productsResult_other" : "{{ count }} produkty są dostępne.",
+    "resetLabel" : "Resetuj wyszukiwanie",
+    "help" : {
+      "insufficientChars" : "Wpisz więcej znaków",
+      "noMatch" : "Nie udało się znaleźć żadnych wyników",
+      "exactMatch" : "{{ term }}",
+      "empty" : "Zapytaj nas o cokolwiek"
     },
-    "closeSearchPanel": "Zamknij"
+    "closeSearchPanel" : "Zamknij"
   },
-  "sorting": {
-    "date": "Data",
-    "orderNumber": "Numer zamówienia",
-    "rma": "Return Number",
-    "replenishmentNumber": "Numer uzupełnienia",
-    "nextOrderDate": "Data następnego zamówienia",
-    "pageViewUpdated": "Page view updated with your selected options."
+  "sorting" : {
+    "date" : "Data",
+    "orderNumber" : "Numer zamówienia",
+    "rma" : "Numer zwrotu",
+    "replenishmentNumber" : "Numer uzupełnienia",
+    "nextOrderDate" : "Data następnego zamówienia",
+    "pageViewUpdated" : "Widok strony zaktualizowany o wybrane opcje."
   },
-  "httpHandlers": {
-    "badRequest": {
-      "bad_credentials": "{{ errorMessage }}. Please login again.",
-      "user_is_disabled": "{{ errorMessage }}. Please contact administration."
+  "httpHandlers" : {
+    "badRequest" : {
+      "bad_credentials" : "{{ errorMessage }}. Zaloguj się ponownie.",
+      "user_is_disabled" : "{{ errorMessage }}. Skontaktuj się z administracją."
     },
-    "badGateway": "A server error occurred. Please try again later.",
-    "badRequestPleaseLoginAgain": "{{ errorMessage }}. Please login again.",
-    "badRequestOldPasswordIncorrect": "Old password incorrect.",
-    "badRequestGuestDuplicateEmail": "{{ errorMessage }} email already exist. Please checkout with a different email to register using a guest account.",
-    "conflict": "Already exists.",
-    "forbidden": "You are not authorized to perform this action. Please contact your administrator if you think this is a mistake.",
-    "gatewayTimeout": "The server did not respond, please try again later.",
-    "internalServerError": "An Internal Server Error occurred. Please try again later.",
-    "sessionExpired": "Your session has expired. Please login again.",
-    "unknownError": "An unknown error occurred",
-    "unauthorized": {
-      "common": "An unknown authorization error occured",
-      "invalid_client": "Bad client credentials"
+    "badGateway" : "Wystąpił wewnętrzny błąd serwera. Spróbuj ponownie później.",
+    "badRequestPleaseLoginAgain" : "{{ errorMessage }}. Zaloguj się ponownie.",
+    "badRequestOldPasswordIncorrect" : "Stare hasło jest niepoprawne.",
+    "badRequestGuestDuplicateEmail" : "{{ errorMessage }} e-mail już istnieje. Aby zarejestrować się za pomocą konta gościa, podaj inny adres e-mail.",
+    "conflict" : "Już istnieje.",
+    "forbidden" : "Nie masz uprawnień do wykonania tej czynności. Jeśli uważasz, że jest to błąd, skontaktuj się z administratorem.",
+    "gatewayTimeout" : "Serwer nie odpowiedział, spróbuj ponownie później.",
+    "internalServerError" : "Wystąpił wewnętrzny błąd serwera. Spróbuj ponownie później.",
+    "sessionExpired" : "Sesja wygasła. Zaloguj się ponownie.",
+    "unknownError" : "Wystąpił nieznany błąd",
+    "unauthorized" : {
+      "common" : "Wystąpił nieznany błąd autoryzacji",
+      "invalid_client" : "Błędne dane uwierzytelniające klienta"
     },
-    "validationErrors": {
-      "missing": {
-        "card_cardType": "The selected credit card is not supported. Please select another.",
-        "card_accountNumber": "The credit card number entered is not valid.",
-        "card_cvNumber": "The security code entered is not valid.",
-        "card_expirationMonth": "The credit card expiration date entered is not valid.",
-        "card_expirationYear": "The credit card expiration date entered is not valid.",
-        "billTo_firstName": "The first name entered is not valid.",
-        "billTo_lastName": "The last name entered is not valid.",
-        "billTo_street1": "The address entered is not valid.",
-        "billTo_street2": "The address entered is not valid.",
-        "billTo_city": "The city entered is not valid for this credit card.",
-        "billTo_state": "The state/province entered is not valid for this credit card.",
-        "billTo_country": "The country/region entered is not valid for this credit card.",
-        "billTo_postalCode": "The zip/postal code is not valid for this credit card.",
-        "country": {
-          "isocode": "Missing country/region"
+    "validationErrors" : {
+      "missing" : {
+        "card_cardType" : "Wybrana karta kredytowa nie jest obsługiwana. Wybierz inną kartę.",
+        "card_accountNumber" : "Wprowadzony numer karty kredytowej jest nieważny.",
+        "card_cvNumber" : "Kod bezpieczeństwa jest nieprawidłowy.",
+        "card_expirationMonth" : "Wprowadzona data ważności karty kredytowej jest nieprawidłowa.",
+        "card_expirationYear" : "Wprowadzona data ważności karty kredytowej jest nieprawidłowa.",
+        "billTo_firstName" : "Wprowadzone imię jest nieprawidłowe.",
+        "billTo_lastName" : "Wprowadzone nazwisko jest nieprawidłowe.",
+        "billTo_street1" : "Wprowadzony adres jest nieprawidłowy.",
+        "billTo_street2" : "Wprowadzony adres jest nieprawidłowy.",
+        "billTo_city" : "Wprowadzone miasto jest nieprawidłowe dla tej karty kredytowej.",
+        "billTo_state" : "Wprowadzony stan/prowincja jest nieprawidłowy dla tej karty kredytowej.",
+        "billTo_country" : "Wprowadzony kraj jest nieprawidłowy dla tej karty kredytowej.",
+        "billTo_postalCode" : "Kod pocztowy jest nieprawidłowy dla tej karty kredytowej.",
+        "country" : {
+          "isocode" : "Brak informacji o kraju/regionie"
         }
       },
-      "invalid": {
-        "card_expirationMonth": "The credit card expiration date entered is not valid.",
-        "firstName": "First Name entered is not valid.",
-        "lastName": "Last Name entered is not valid.",
-        "password": "Password entered is not valid.",
-        "uid": "UID is not valid.",
-        "code": "Code is not valid.",
-        "email": "Email is not valid.",
-        "loginId": "Email is not valid."
+      "invalid" : {
+        "card_expirationMonth" : "Wprowadzona data ważności karty kredytowej jest nieprawidłowa.",
+        "firstName" : "Wprowadzone imię jest nieprawidłowe.",
+        "lastName" : "Wprowadzone nazwisko jest nieprawidłowe.",
+        "password" : "Wprowadzone hasło jest nieprawidłowe.",
+        "uid" : "UID jest nieprawidłowy.",
+        "code" : "Kod jest nieprawidłowy.",
+        "email" : "Adres e-mail jest nieprawidłowy.",
+        "loginId" : "Adres e-mail jest nieprawidłowy."
       }
     },
-    "cartNotFound": "Cart not found.",
-    "invalidCodeProvided": "Invalid code provided.",
-    "voucherExceeded": "This coupon has exceeded the number of times it can be used",
-    "unknownIdentifier": "Item not found.",
-    "otherCartErrors": "Cart errors occurred."
+    "cartNotFound" : "Koszyk nie odnaleziony.",
+    "invalidCodeProvided" : "Podano niepoprawny kod.",
+    "voucherExceeded" : "Ten kupon przekroczył dozwoloną liczbę możliwych zastosowań",
+    "unknownIdentifier" : "Nie znaleziono pozycji.",
+    "otherCartErrors" : "Wystąpił błąd koszyka."
   },
-  "miniCart": {
-    "item": "{{count}} item currently in your cart",
-    "item_other": "{{count}} items currently in your cart",
-    "total": "{{total}}",
-    "count": "{{count}}"
+  "miniCart" : {
+    "item" : "{{count}} pozycja aktualnie w twoim koszyku",
+    "item_other" : "{{count}} pozycje aktualnie w twoim koszyku",
+    "total" : "{{total}}",
+    "count" : "{{count}}"
   },
-  "skipLink": {
-    "skipTo": "Skip to",
-    "labels": {
-      "header": "Header",
-      "main": "Main Content",
-      "footer": "Footer",
-      "productFacets": "Product Facets",
-      "productList": "Lista produktów"
+  "skipLink" : {
+    "skipTo" : "Pomiń i przejdź do",
+    "labels" : {
+      "header" : "Nagłówek",
+      "main" : "Zawartość główna",
+      "footer" : "Stopka",
+      "productFacets" : "Właściwości produktu",
+      "productList" : "Lista produktów"
     }
   },
-  "carousel": {
-    "previousSlide": "Previous slide",
-    "nextSlide": "Next slide",
-    "slideNumber": "Slide {{currentSlideNumber}} contains {{numberOfSlides}} items",
-    "carouselForProduct": "Carousel, Images for {{product}}"
+  "carousel" : {
+    "previousSlide" : "Poprzedni slajd",
+    "nextSlide" : "Następny slajd",
+    "slideNumber" : "Slajd {{currentSlideNumber}} zawiera {{numberOfSlides}} pozycje",
+    "carouselForProduct" : "Karuzela, zdjęcia dla {{product}}"
   },
-  "formErrors": {
-    "labeled": {
-      "required": "Field {{label}} is required",
-      "cxInvalidEmail": "Field {{label}} has not a valid email format. Match pattern: example@yourdomain.com",
-      "cxInvalidPassword": "Field {{label}} has not a valid password format",
-      "cxMinOneUpperCaseCharacter": "Password must contain at least one uppercase character",
-      "cxMinOneDigit": "Password must contain at least one digit",
-      "cxMinOneSpecialCharacter": "Password must contain at least one special character",
-      "cxMinSixCharactersLength": "Password must contain at least 6 characters",
-      "cxContainsSpecialCharacters": "Password cannot contain special characters",
-      "cxNoConsecutiveCharacters": "Password cannot contain consecutive identical characters",
-      "date": {
-        "required": "Field {{label}} is required",
-        "min": "Field {{label}} cannot be before {{min}}",
-        "max": "Field {{label}} cannot be after {{max}}",
-        "pattern": "Use dateformat yyyy-mm-dd in field {{label}}",
-        "invalid": "Use a valid date in field {{label}}"
+  "formErrors" : {
+    "labeled" : {
+      "required" : "Pole {{label}} jest wymagane",
+      "cxInvalidEmail" : "Pole {{label}} ma nieprawidłowy format e-mail. Dopasuj do wzoru: przyklad@twojadomena.com",
+      "cxInvalidPassword" : "Pole {{label}} ma nieprawidłowy format hasła",
+      "cxMinOneUpperCaseCharacter" : "Hasło powinno zawierać co najmniej jedną wielką literę",
+      "cxMinOneDigit" : "Hasło musi zawierać co najmniej jedną cyfrę",
+      "cxMinOneSpecialCharacter" : "Hasło musi zawierać co najmniej jeden znak specjalny",
+      "cxMinSixCharactersLength" : "Hasło musi zawierać co najmniej 6 znaków",
+      "cxMinEightCharactersLength" : "Hasło musi zawierać co najmniej 8 znaków",
+      "cxMaxCharactersLength" : "Hasło nie może mieć więcej niż 128 znaków",
+      "cxContainsSpecialCharacters" : "Hasło nie może zawierać znaków specjalnych",
+      "cxNoConsecutiveCharacters" : "Hasło nie może zawierać następujących po sobie identycznych znaków",
+      "date" : {
+        "required" : "Pole {{label}} jest wymagane",
+        "min" : "Pole {{label}} nie może być przed {{min}}",
+        "max" : "Pole {{label}} nie może być po {{max}}",
+        "pattern" : "W polu {{label}} użyj formatu daty rrrr-mm-dd",
+        "invalid" : "Użyj ważnej daty w polu {{label}}"
       }
     },
-    "globalMessage": "The form you are trying to submit contains errors.",
-    "required": "To pole jest obowiązkowe",
-    "cxInvalidEmail": "This is not a valid email format",
-    "cxInvalidPassword": "This is not a valid password format",
-    "cxPasswordsMustMatch": "Password fields must match",
-    "cxPasswordsCannotMatch": "Password fields cannot match",
-    "cxEmailsMustMatch": "Email fields must match",
-    "cxStarRatingEmpty": "Rating field is required",
-    "cxNoSelectedItemToCancel": "Select at least one item",
-    "cxNegativeAmount": "Amount must be equal or greater than zero",
-    "cxContainsSpecialCharacters": "Field cannot contain special characters",
-    "date": {
-      "required": "To pole jest obowiązkowe",
-      "min": "Date cannot be before {{min}}",
-      "max": "Date cannot be after {{max}}",
-      "pattern": "Use dateformat yyyy-mm-dd",
-      "invalid": "Use a valid date"
+    "globalMessage" : "Formularz, który próbujesz przesłać, zawiera błędy.",
+    "required" : "To pole jest obowiązkowe",
+    "cxInvalidEmail" : "To nie jest prawidłowy format adresu e-mail",
+    "cxInvalidPassword" : "To nie jest prawidłowy format hasła",
+    "cxPasswordsMustMatch" : "Pola hasła muszą być zgodne",
+    "cxPasswordsCannotMatch" : "Pola hasła nie mogą być zgodne",
+    "cxEmailsMustMatch" : "Pola adresu e-mail muszą być zgodne",
+    "cxStarRatingEmpty" : "Pole oceny jest wymagane",
+    "cxNoSelectedItemToCancel" : "Wybierz przynajmniej jedną pozycję",
+    "cxNegativeAmount" : "Liczba musi być równa lub większa od zera",
+    "cxContainsSpecialCharacters" : "Pole nie może zawierać znaków specjalnych",
+    "date" : {
+      "required" : "To pole jest obowiązkowe",
+      "min" : "Data nie może być przed {{min}}",
+      "max" : "Data nie może być po {{max}}",
+      "pattern" : "Użyj formatu daty rrrr-mm-dd",
+      "invalid" : "Użyj ważnej daty"
     },
-    "file": {
-      "required": "File is required",
-      "empty": "File should not be empty",
-      "invalidExtension": "File extension is not valid",
-      "tooLarge": "File size should not exceed {{ maxSize }} MB",
-      "tooManyEntries": "The number of items is greater than {{ maxEntries }}",
-      "notParsable": "File is not parsable",
-      "fileNotAllowed": "This file type is not allowed"
+    "file" : {
+      "required" : "Pole jest wymagane",
+      "empty" : "Pole nie powinno być puste",
+      "invalidExtension" : "Rozszerzenie pliku jest nieważne",
+      "tooLarge" : "Wielkość pliku nie może przekroczyć {{ maxSize }} MB",
+      "tooManyEntries" : "Liczba pozycji jest większa niż {{ maxEntries }}",
+      "notParsable" : "Plik nie jest przetwarzalny",
+      "fileNotAllowed" : "Ten typ pliku jest niedozwolony"
     }
   },
-  "errorHandlers": {
-    "scriptFailedToLoad": "Failed to load the script.",
-    "refreshThePage": "Please refresh the page."
+  "errorHandlers" : {
+    "scriptFailedToLoad" : "Załadowanie skryptu nie powiodło się.",
+    "refreshThePage" : "Odśwież stronę."
   },
-  "assistiveMessage": {
-    "actionCancelled": "Action cancelled, nothing changed"
+  "assistiveMessage" : {
+    "actionCancelled" : "Akcja anulowana, nic nie zmieniono"
   },
-  "passwordVisibility": {
-    "showPassword": "Show password",
-    "hidePassword": "Hide password"
+  "passwordVisibility" : {
+    "showPassword" : "Pokaż hasło",
+    "hidePassword" : "Ukryj hasło"
   },
-  "generalErrors": {
-    "pageFailure": "The page could not be loaded. Please try again later."
+  "generalErrors" : {
+    "pageFailure" : "Nie można załadować strony. Spróbuj ponownie później."
   },
-  "formLegend": {
-    "required": "The following fields marked with \"*\" are required."
+  "formLegend" : {
+    "required" : "Pola oznaczone znakiem * są wymagane."
   },
-  "chatMessaging": {
-    "charactersLeft": "characters left: {{count}}",
-    "addNewMessage": "Add New Message",
-    "send": "Wyślij",
-    "uploadFile": "Przekaż plik",
-    "informationLabel": "{{author}}. {{text}} at {{date}}",
-    "messages": "Komunikaty",
-    "addMessagePlaceHolder": "Start Typing...",
-    "characterLimitAlert": "Characters limit reached.",
-    "a11y": {
-      "itemListBoxLabel": "Select the item to which the message should apply."
+  "chatMessaging" : {
+    "charactersLeft" : "pozostało znaków: {{count}}",
+    "addNewMessage" : "Dodaj nową wiadomość",
+    "send" : "Wyślij",
+    "uploadFile" : "Załaduj plik",
+    "informationLabel" : "{{author}}. {{text}} w {{date}}",
+    "messages" : "Komunikaty",
+    "addMessagePlaceHolder" : "Zacznij pisać…",
+    "characterLimitAlert" : "Osiągnięto limit znaków.",
+    "a11y" : {
+      "itemListBoxLabel" : "Wybierz element, którego ma dotyczyć wiadomość."
     }
   }
 }

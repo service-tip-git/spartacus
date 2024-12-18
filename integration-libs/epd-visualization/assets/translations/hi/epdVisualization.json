@@ -1,70 +1,70 @@
 {
-  "epdVisualization": {
-    "visualViewer": {
-      "contentType": {
-        "drawing2D": "2D",
-        "model3D": "3D"
+  "epdVisualization" : {
+    "visualViewer" : {
+      "contentType" : {
+        "drawing2D" : "2D",
+        "model3D" : "3D"
       },
-      "toolbar": {
-        "homeButton": {
-          "label": "मुख्य पृष्ठ"
+      "toolbar" : {
+        "homeButton" : {
+          "label" : "होम"
         },
-        "zoomButton": {
-          "label": "ज़ूम करें"
+        "zoomButton" : {
+          "label" : "ज़ूम करें"
         },
-        "panButton": {
-          "label": "Pan"
+        "panButton" : {
+          "label" : "पैन"
         },
-        "rotateButton": {
-          "label": "Rotate"
+        "rotateButton" : {
+          "label" : "घुमाएं"
         },
-        "isolateButton": {
-          "label": "Isolate"
+        "isolateButton" : {
+          "label" : "आइसोलेट"
         },
-        "playButton": {
-          "label": "प्ले करें"
+        "playButton" : {
+          "label" : "प्ले करें"
         },
-        "pauseButton": {
-          "label": "विराम"
+        "pauseButton" : {
+          "label" : "विराम"
         },
-        "hotspotsButton": {
-          "label": "Hotspots",
-          "show": "दिखाएं",
-          "hide": "छिपाएं"
+        "hotspotsButton" : {
+          "label" : "हॉटस्पॉट",
+          "show" : "दिखाएं",
+          "hide" : "छिपाएं"
         },
-        "visualViewerAnimationSlider": {
-          "label": "Animation Slider",
-          "role": "Slider"
+        "visualViewerAnimationSlider" : {
+          "label" : "एनिमेशन स्लाइडर",
+          "role" : "स्लाइडर"
         }
       }
     },
-    "visualPicking": {
-      "visualPickingTab": {
-        "noProductReferences": "No spare parts are available for this product."
+    "visualPicking" : {
+      "visualPickingTab" : {
+        "noProductReferences" : "इस उत्पाद के लिए कोई स्पेयर पार्ट उपलब्ध नहीं हैं."
       },
-      "visualPickingProductList": {
-        "description": "वर्णन",
-        "itemPrice": "मूल्य",
-        "outOfStock": "Out of stock",
-        "id": "ID"
+      "visualPickingProductList" : {
+        "description" : "वर्णन",
+        "itemPrice" : "मूल्य",
+        "outOfStock" : "स्टॉक समाप्त",
+        "id" : "ID"
       },
-      "visualPickingProductFilter": {
-        "input": {
-          "placeholder": "Filter by name or id"
+      "visualPickingProductFilter" : {
+        "input" : {
+          "placeholder" : "नाम या  id के अनुसार फ़िल्टर करें"
         },
-        "searchButton": {
-          "label": "search"
+        "searchButton" : {
+          "label" : "खोजें"
         },
-        "resetButton": {
-          "label": "रीसेट करें"
+        "resetButton" : {
+          "label" : "रीसेट करें"
         }
       }
     },
-    "errors": {
-      "visualLoad": {
-        "noMatchingVisualFound": "No matching visualization found",
-        "multipleMatchingVisualsFound": "Multiple matching visualizations found",
-        "unexpectedLoadError": "Error occurred while loading visualization"
+    "errors" : {
+      "visualLoad" : {
+        "noMatchingVisualFound" : "कोई मेलखाते दृश्य नहीं मिले",
+        "multipleMatchingVisualsFound" : "एक से अधिक मेल खाते दृश्य मिले",
+        "unexpectedLoadError" : "दृश्य लोड करते समय त्रुटि उत्पन्न हुई"
       }
     }
   }

@@ -1,12 +1,12 @@
 {
-  "reconsent": {
-    "dialog": {
-      "title": "Profile Completion",
-      "description": "We still need your consent for the following"
+  "reconsent" : {
+    "dialog" : {
+      "title" : "Acciones para completar el perfil",
+      "description" : "Aún necesitamos su consentimiento para lo siguiente"
     }
   },
-  "cdcProfile": {
-    "profileUpdateSuccess": "Profile details successfully updated",
-    "profileUpdateFailure": "Failed to update profile details"
+  "cdcProfile" : {
+    "profileUpdateSuccess" : "Detalles del perfil actualizados correctamente",
+    "profileUpdateFailure" : "Se produjo un error al actualizar los detalles del perfil"
   }
 }

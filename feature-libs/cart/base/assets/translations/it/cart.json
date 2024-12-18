@@ -1,74 +1,75 @@
 {
-  "cartDetails": {
-    "id": "ID",
-    "proceedToCheckout": "Passa al check-out",
-    "cartName": "Cart #{{code}}"
+  "cartDetails" : {
+    "id" : "ID",
+    "proceedToCheckout" : "Passa al check-out",
+    "cartName" : "Carrello n. {{code}}"
   },
-  "cartItems": {
-    "id": "ID",
-    "description": "Descrizione",
-    "item": "Articolo",
-    "itemPrice": "Prezzo articolo",
-    "quantity": "Qtà",
-    "quantityTitle": "The quantity represents the total number of this item in your cart.",
-    "total": "Totale",
-    "actions": "Azioni",
-    "cartTotal": "Cart total ({{count}} item)",
-    "cartTotal_other": "Cart total ({{count}} items)",
-    "itemRemoved": "Selected item has been removed. Cart total has been updated.",
-    "caption": "Shopping cart contents."
+  "cartItems" : {
+    "id" : "ID",
+    "description" : "Descrizione",
+    "item" : "Articolo",
+    "itemPrice" : "Prezzo articolo",
+    "quantity" : "Qtà",
+    "quantityFull" : "Quantità",
+    "quantityTitle" : "La quantità rappresenta il numero totale di questo articolo nel carrello acquisti.",
+    "total" : "Totale",
+    "actions" : "Azioni",
+    "cartTotal" : "Totale carrello acquisti ({{count}} articolo)",
+    "cartTotal_other" : "Totale carrello acquisti ({{count}} articoli)",
+    "itemRemoved" : "L'articolo selezionato è stato rimosso. Il totale del carrello acquisti è stato aggiornato.",
+    "caption" : "Contenuto del carrello acquisti."
   },
-  "orderCost": {
-    "orderSummary": "Riepilogo dell'ordine",
-    "subtotal": "Subtotal after discounts:",
-    "shipping": "Spedizione:",
-    "estimatedShipping": "Estimated shipping:",
-    "discount": "You saved:",
-    "salesTax": "Sales Tax:",
-    "grossTax": "The order total does not include tax of",
-    "grossIncludeTax": "The order total includes tax of",
-    "total": "Totale:",
-    "toBeDetermined": "TBD"
+  "orderCost" : {
+    "orderSummary" : "Riepilogo dell'ordine",
+    "subtotal" : "Totale parziale dopo gli sconti:",
+    "shipping" : "Spedizione:",
+    "estimatedShipping" : "Spedizione stimata:",
+    "discount" : "Risparmio:",
+    "salesTax" : "IVA:",
+    "grossTax" : "Il totale dell'ordine non include l'imposta pari a",
+    "grossIncludeTax" : "Il totale dell'ordine include l'imposta pari a",
+    "total" : "Totale:",
+    "toBeDetermined" : "Da definire"
   },
-  "voucher": {
-    "coupon": "Have a coupon?",
-    "coupon_other": "Coupon codes",
-    "couponLabel": "Enter a promo code here",
-    "addCoupon": "Add a coupon",
-    "apply": "Applica",
-    "placeholder": "Promo code",
-    "applyVoucherSuccess": "{{voucherCode}} has been applied.",
-    "removeVoucherSuccess": "{{voucherCode}} has been removed.",
-    "anchorLabel": "Enter or remove your coupon code",
-    "vouchersApplied": "Coupon applicati",
-    "availableCoupons": "Available coupons",
-    "availableCouponsLabel": "You can add these coupons to this order."
+  "voucher" : {
+    "coupon" : "Hai un coupon?",
+    "coupon_other" : "Codici coupon",
+    "couponLabel" : "Inserisci qui un codice promozionale",
+    "addCoupon" : "Aggiungi un coupon",
+    "apply" : "Applica",
+    "placeholder" : "Codice promozionale",
+    "applyVoucherSuccess" : "{{voucherCode}} è stato applicato.",
+    "removeVoucherSuccess" : "{{voucherCode}} è stato rimosso.",
+    "anchorLabel" : "Inserisci o rimuovi il codice coupon",
+    "vouchersApplied" : "Coupon applicati",
+    "availableCoupons" : "Coupon disponibili",
+    "availableCouponsLabel" : "È possibile aggiungere questi coupon a questo ordine."
   },
-  "saveForLaterItems": {
-    "itemTotal": "Saved for later ({{count}} item)",
-    "itemTotal_other": "Salvato per un momento successivo ({{count}} articoli)",
-    "cartTitle": "Carrello",
-    "saveForLater": "Save For Later",
-    "moveToCart": "Move To Cart",
-    "stock": "Scorte",
-    "forceInStock": "In stock"
+  "saveForLaterItems" : {
+    "itemTotal" : "Salvato per uso successivo ({{count}} articolo)",
+    "itemTotal_other" : "Salvato per uso successivo ({{count}} articoli)",
+    "cartTitle" : "Carrello acquisti",
+    "saveForLater" : "Salva per uso successivo",
+    "moveToCart" : "Sposta nel carrello acquisti",
+    "stock" : "Stock",
+    "forceInStock" : "In stock"
   },
-  "clearCart": {
-    "clearCart": "Clear Cart",
-    "clearingCart": "Clearing Cart...",
-    "cartClearedSuccessfully": "Active cart cleared successfully.",
-    "areYouSureToClearCart": "Are you sure you want to clear this cart?",
-    "allItemsWillBeRemoved": "All items in your active cart will be removed."
+  "clearCart" : {
+    "clearCart" : "Svuota carrello acquisti",
+    "clearingCart" : "Svuotamento del carrello acquisti in corso...",
+    "cartClearedSuccessfully" : "Carrello acquisti attivo svuotato correttamente.",
+    "areYouSureToClearCart" : "Confermare lo svuotamento di questo carrello acquisti?",
+    "allItemsWillBeRemoved" : "Tutti gli articoli nel carrello acquisti verranno rimossi."
   },
-  "validation": {
-    "cartEntriesChangeDuringCheckout": "During checkout we found problems with your entries. Please review your cart.",
-    "cartEntryRemoved": "{{name}} was removed from the cart due to being out of stock.",
-    "productOutOfStock": "{{name}} è stato rimosso dal carrello acquisti a causa di scorte insufficienti.",
-    "lowStock": "Quantity has reduced to {{quantity}} due to insufficient stock.",
-    "reviewConfiguration": "Resolve the issues in the configuration for cart entry first.",
-    "configurationError": "Resolve the issues in the configuration for cart entries first.",
-    "pricingError": "Configurator pricing is currently not available. Checkout/quote submission is not possible. Please try again later.",
-    "unresolvableIssues": "The product configuration requires additional entries in the back end. As a result, you cannot proceed. Please contact support.",
-    "inProgress": "In elaborazione"
+  "validation" : {
+    "cartEntriesChangeDuringCheckout" : "Durante il check-out sono stati rilevati problemi con le voci. Rivedere il carrello acquisti.",
+    "cartEntryRemoved" : "{{name}} è stato rimosso dal carrello acquisti perché non disponibile.",
+    "productOutOfStock" : "{{name}} è stato rimosso dal carrello acquisti a causa di scorte insufficienti.",
+    "lowStock" : "Quantità ridotta di {{quantity}} a causa di scorte insufficienti.",
+    "reviewConfiguration" : "Risolvere innanzitutto i problemi nella configurazione della voce nel carrello acquisti.",
+    "configurationError" : "Risolvere innanzitutto i problemi nella configurazione delle voci nel carrello acquisti.",
+    "pricingError" : "Determinazione del prezzo con configuratore al momento non disponibile; impossibile procedere al check-out o inviare offerte. Riprovare più tardi.",
+    "unresolvableIssues" : "La configurazione del prodotto richiede voci supplementari nel back-end. Di conseguenza, non è possibile procedere. Contattare il supporto.",
+    "inProgress" : "In elaborazione"
   }
 }

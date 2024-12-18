@@ -1,86 +1,92 @@
 {
-  "pickupInfo": {
-    "inStorePickup": "In Store Pickup",
-    "pickupBy": "Pick up by",
-    "pickupFrom": "Pick up from"
+  "pickupInfo" : {
+    "inStorePickup" : "Ritiro al punto vendita",
+    "pickupBy" : "Ritiro da parte di",
+    "pickupFrom" : "Ritiro da"
   },
-  "pickupOptionDialog": {
-    "close": "Chiudi",
-    "modalHeader": "Prelievo in punto vendita"
+  "pickupOptionDialog" : {
+    "close" : "Chiudi",
+    "modalHeader" : "Ritiro al punto vendita"
   },
-  "pickupOptions": {
-    "legend": "Metodo di consegna",
-    "changeStore": "Cambia punto vendita",
-    "delivery": "Ship It (Free Return)",
-    "pickup": "Free Pickup In Store",
-    "selectStore": "Select Store"
+  "pickupOptions" : {
+    "legend" : "Metodo di consegna",
+    "changeStore" : "Cambia punto vendita",
+    "delivery" : "Spedisci (reso gratuito)",
+    "pickup" : "Ritiro gratuito al punto vendita",
+    "shipIt" : "Spedisci",
+    "selectStore" : "Seleziona punto vendita",
+    "freeReturn" : "Reso gratuito",
+    "storeIsNotSelected" : "Punto vendita per ritiro non selezionato."
   },
-  "setPreferredStore": {
-    "makeThisMyStore": "Make This My Store",
-    "myStore": "My Store"
+  "setPreferredStore" : {
+    "makeThisMyStore" : "Impostalo come punto vendita personale",
+    "myStore" : "Punto vendita personale"
   },
-  "store": {
-    "pickupFromHere": "Pick Up from here",
-    "stockLevel_inStock": "{{ count }} in Stock",
-    "stockLevel_outOfStock": "Non disponibile",
-    "viewHours": "View Hours"
+  "store" : {
+    "pickupFromHere" : "Ritira qui",
+    "stockLevel_inStock" : "{{ count }} in stock",
+    "stockLevel_outOfStock" : "Non disponibile",
+    "viewHours" : "Visualizza orari"
   },
-  "storeList": {
-    "noStoresMessage": "No stores found in database..."
+  "storeList" : {
+    "noStoresMessage" : "Nessun punto vendita trovato nel database..."
   },
-  "storeSchedule": {
-    "closed": "Chiuso",
-    "storeHours": "Store hours"
+  "storeSchedule" : {
+    "closed" : "Chiuso",
+    "storeHours" : "Orari del punto vendita"
   },
-  "storeSearch": {
-    "findAStore": "Trova un punto vendita",
-    "findStores": "Trova punti vendita",
-    "hideOutOfStockOptions": "Hide out of stock options",
-    "searchPlaceholder": "Enter Zip Code or Town or Address",
-    "useMyLocation": "Use my location"
+  "storeSearch" : {
+    "findAStore" : "Trova un punto vendita",
+    "findStores" : "Trova punti vendita",
+    "hideOutOfStockOptions" : "Nascondi le opzioni non disponibili",
+    "searchPlaceholder" : "Inserisci CAP o città o indirizzo",
+    "useMyLocation" : "Utilizza la mia posizione"
   },
-  "addressBookPickupInStore": {
-    "heading": "Pick-Up Store"
+  "addressBookPickupInStore" : {
+    "heading" : "Punto vendita del ritiro"
   },
-  "storeFinderPickupInStore": {
-    "heading": "My Store"
+  "storeFinderPickupInStore" : {
+    "heading" : "Punto vendita personale"
   },
-  "checkoutPickupInStore": {
-    "heading": "Items to be Picked Up",
-    "storeItemHeading": "Pick Up Store Address"
+  "checkoutPickupInStore" : {
+    "heading" : "Articoli da ritirare",
+    "storeItemHeading" : "Indirizzo del punto vendita di ritiro"
   },
-  "cartItems": {
-    "item": "Articolo"
+  "cartItems" : {
+    "item" : "Articolo"
   },
-  "deliveryPointOfServiceDetails": {
-    "itemsToBePickUp": "Items To Be Pick-Up",
-    "pickUpInStoreAddress": "Pick Up Store Address",
-    "itemsToBeShipped": "Items To Be Shipped",
-    "shippingAddress": "Indirizzo di spedizione",
-    "deliveryMethod": "Metodo di consegna",
-    "deliveryOptions": "Opzioni di consegna",
-    "statusDisplay_cancelled": "Annullato",
-    "statusDisplay_cancelling": "Annullamento in sospeso",
-    "statusDisplay_completed": "Completato",
-    "statusDisplay_created": "Creato",
-    "statusDisplay_error": "In sospeso",
-    "statusDisplay_Error": "In sospeso",
-    "statusDisplay_processing": "In sospeso",
-    "statusDisplay_open": "Aperto",
-    "statusDisplay_pending": {
-      "approval": "In attesa di approvazione",
-      "merchant": {
-        "approval": "In attesa di approvazione da esercente"
+  "cardActions" : {
+    "getDirections" : "Ottieni indicazioni stradali; questo collegamento aprirà una nuova finestra"
+  },
+  "deliveryPointOfServiceDetails" : {
+    "itemsToBePickUp" : "Articoli da ritirare",
+    "pickUpInStoreAddress" : "Indirizzo del punto vendita di ritiro",
+    "itemsToBeShipped" : "Articoli da spedire",
+    "shippingAddress" : "Indirizzo di spedizione",
+    "deliveryMethod" : "Metodo di consegna",
+    "deliveryOptions" : "Opzioni di consegna",
+    "statusDisplay_cancelled" : "Annullato",
+    "statusDisplay_cancelling" : "Annullamento in sospeso",
+    "statusDisplay_completed" : "Completato",
+    "statusDisplay_created" : "Creato",
+    "statusDisplay_error" : "In sospeso",
+    "statusDisplay_Error" : "In sospeso",
+    "statusDisplay_processing" : "In sospeso",
+    "statusDisplay_open" : "Aperto",
+    "statusDisplay_pending" : {
+      "approval" : "In attesa di approvazione",
+      "merchant" : {
+        "approval" : "In attesa di approvazione da esercente"
       }
     },
-    "statusDisplay_approved": "Approvata",
-    "statusDisplay_rejected": "Rifiutata",
-    "statusDisplay_merchant": {
-      "approved": "Approvato dall'esercente",
-      "rejected": "Rifiutato dall'esercente"
+    "statusDisplay_approved" : "Approvato",
+    "statusDisplay_rejected" : "Rifiutato",
+    "statusDisplay_merchant" : {
+      "approved" : "Approvato dall'esercente",
+      "rejected" : "Rifiutato dall'esercente"
     },
-    "statusDisplay_assigned": {
-      "admin": "Assegnato ad amministratore"
+    "statusDisplay_assigned" : {
+      "admin" : "Assegnato ad amministratore"
     }
   }
 }

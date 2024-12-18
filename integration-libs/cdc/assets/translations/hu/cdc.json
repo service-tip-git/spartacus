@@ -1,12 +1,12 @@
 {
-  "reconsent": {
-    "dialog": {
-      "title": "Profile Completion",
-      "description": "We still need your consent for the following"
+  "reconsent" : {
+    "dialog" : {
+      "title" : "Profil kitöltöttsége",
+      "description" : "Még el kell fogadnia a következőt:"
     }
   },
-  "cdcProfile": {
-    "profileUpdateSuccess": "Profile details successfully updated",
-    "profileUpdateFailure": "Failed to update profile details"
+  "cdcProfile" : {
+    "profileUpdateSuccess" : "Profiladatok sikeresen frissítve",
+    "profileUpdateFailure" : "Nem sikerült frissíteni a profiladatokat"
   }
 }

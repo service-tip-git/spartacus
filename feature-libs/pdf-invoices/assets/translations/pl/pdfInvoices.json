@@ -1,31 +1,31 @@
 {
-  "pdfInvoices": {
-    "featureNotEnabled": "Unable to obtain invoices, ensure that SAP Invoice and API for Invoices are enabled.",
-    "invoicesLoadingError": "Something went wrong. Unable to display invoices for the order",
-    "invoicesTable": {
-      "header": "Invoices",
-      "label": "Invoices Table",
-      "invoiceId": "Invoice #",
-      "createdAt": "Data",
-      "netAmount": "Kwota netto",
-      "totalAmount": "Kwota łączna",
-      "attachment": "Download Invoice",
-      "download": "Pobierz",
-      "attachmentDescription": "Download PDF for invoice {{id}}.",
-      "noneFound": "No Invoices Found"
+  "pdfInvoices" : {
+    "featureNotEnabled" : "Nie można uzyskać faktur, upewnij się, że SAP Invoice i API for Invoices są włączone.",
+    "invoicesLoadingError" : "Coś poszło nie tak. Nie można wyświetlić faktur dla zamówienia",
+    "invoicesTable" : {
+      "header" : "Faktury",
+      "label" : "Tabela faktur",
+      "invoiceId" : "Faktura #",
+      "createdAt" : "Data",
+      "netAmount" : "Kwota netto",
+      "totalAmount" : "Kwota łączna",
+      "attachment" : "Pobierz fakturę",
+      "download" : "Pobierz",
+      "attachmentDescription" : "Pobierz PDF z fakturą {{id}}.",
+      "noneFound" : "Nie znaleziono żadnej faktury."
     },
-    "downloadPDFError": "Something went wrong. Unable to obtain the invoice PDF.",
-    "sortBy": "Sortuj według",
-    "sortInvoices": "Sort invoices",
-    "sorts": {
-      "byCreatedAtAsc": "Date Ascending",
-      "byCreatedAtDesc": "Date Descending",
-      "byInvoiceIdAsc": "Invoice Number Ascending",
-      "byInvoiceIdDesc": "Invoice Number Descending",
-      "byNetAmountAsc": "Net Amount Ascending",
-      "byNetAmountDesc": "Net Amount Descending",
-      "byTotalAmountAsc": "Total Amount Ascending",
-      "byTotalAmountDesc": "Total Amount Descending"
+    "downloadPDFError" : "Coś poszło nie tak. Nie można uzyskać pliku PDF z fakturą.",
+    "sortBy" : "Sortuj według",
+    "sortInvoices" : "Sortuj faktury",
+    "sorts" : {
+      "byCreatedAtAsc" : "Daty rosnąco",
+      "byCreatedAtDesc" : "Daty malejąco",
+      "byInvoiceIdAsc" : "Numery faktur rosnąco",
+      "byInvoiceIdDesc" : "Numery faktur malejąco",
+      "byNetAmountAsc" : "Kwoty netto rosnąco",
+      "byNetAmountDesc" : "Kwoty netto malejąco",
+      "byTotalAmountAsc" : "Kwoty łączne rosnąco",
+      "byTotalAmountDesc" : "Kwoty łączne malejąco"
     }
   }
 }

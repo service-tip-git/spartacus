@@ -1,72 +1,73 @@
 {
-  "updateEmailForm": {
-    "newEmailAddress": {
-      "label": "New email address",
-      "placeholder": "Enter email"
+  "updateEmailForm" : {
+    "newEmailAddress" : {
+      "label" : "Новый адрес электронной почты",
+      "placeholder" : "Введите электронную почту"
     },
-    "confirmNewEmailAddress": {
-      "label": "Confirm new email address",
-      "placeholder": "Enter email"
+    "confirmNewEmailAddress" : {
+      "label" : "Подтвердить новый адрес электронной почты",
+      "placeholder" : "Введите электронную почту"
     },
-    "enterValidEmail": "Введите действительный адрес электронной почты.",
-    "bothEmailMustMatch": "Both emails must match",
-    "password": {
-      "label": "Пароль",
-      "placeholder": "Введите пароль"
+    "enterValidEmail" : "Введите действительный адрес электронной почты.",
+    "bothEmailMustMatch" : "Адреса электронной почты должны совпадать",
+    "password" : {
+      "label" : "Пароль",
+      "placeholder" : "Введите пароль"
     },
-    "pleaseInputPassword": "Please input password",
-    "emailUpdateSuccess": "Success. Please sign in with {{ newUid }}"
+    "pleaseInputPassword" : "Введите пароль",
+    "emailUpdateSuccess" : "Отлично! Войдите в систему с {{ newUid }}"
   },
-  "register": {
-    "confirmPassword": {
-      "action": "Confirm password",
-      "label": "Confirm password",
-      "placeholder": "Подтвердить пароль"
+  "register" : {
+    "confirmPassword" : {
+      "action" : "Подтвердить пароль",
+      "label" : "Подтвердить пароль",
+      "placeholder" : "Подтвердить пароль"
     },
-    "managementInMyAccount": "Management in My Account.",
-    "termsAndConditions": "Условия",
-    "signIn": "I already have an account. Sign In",
-    "register": "Зарегистрироваться",
-    "confirmNewPassword": "Подтвердить новый пароль",
-    "resetPassword": "Сбросить пароль",
-    "createAccount": "Create an account",
-    "title": "Обращение",
-    "titleOptional": "Title (optional)",
-    "firstName": {
-      "label": "Имя",
-      "placeholder": "Имя"
+    "managementInMyAccount" : "Управление в моей учетной записи.",
+    "termsAndConditions" : "Условия",
+    "signIn" : "У меня уже есть учетная запись. Войти в систему.",
+    "register" : "Зарегистрироваться",
+    "confirmNewPassword" : "Подтвердить новый пароль",
+    "resetPassword" : "Сбросить пароль",
+    "createAccount" : "Создать учетную запись",
+    "title" : "Обращение",
+    "titleOptional" : "Обращение (необязательно)",
+    "firstName" : {
+      "label" : "Имя",
+      "placeholder" : "Имя"
     },
-    "lastName": {
-      "label": "Фамилия",
-      "placeholder": "Фамилия"
+    "lastName" : {
+      "label" : "Фамилия",
+      "placeholder" : "Фамилия"
     },
-    "emailAddress": {
-      "label": "Адрес эл. почты",
-      "placeholder": "Адрес эл. почты"
+    "emailAddress" : {
+      "label" : "Адрес электронной почты",
+      "placeholder" : "Адрес электронной почты"
     },
-    "password": {
-      "label": "Пароль",
-      "placeholder": "Пароль"
+    "password" : {
+      "label" : "Пароль",
+      "placeholder" : "Пароль"
     },
-    "newPassword": "Новый пароль",
-    "emailMarketing": "Use my personal data to receive e-mail newsletters for marketing campaigns. To change your settings, go to Consent Management in My Account.",
-    "confirmThatRead": "I am confirming that I have read and agreed with the",
-    "selectTitle": "Select Title",
-    "passwordMinRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
-    "passwordStrengthRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
-    "bothPasswordMustMatch": "Both password must match",
-    "titleRequired": "Title is required.",
-    "postRegisterMessage": "Please log in with provided credentials."
+    "newPassword" : "Новый пароль",
+    "emailMarketing" : "Использовать мои персональные данные для получения новостных рассылок по электронной почте по маркетинговым кампаниям. Чтобы изменить настройки, перейдите в \"Управление согласиями\" в \"Моя учетная запись\".",
+    "confirmThatRead" : "Я подтверждаю, что прочитал(а) и принимаю",
+    "selectTitle" : "Выбрать обращение",
+    "passwordMinRequirements" : "Вот краткие правила создания надежного пароля: используйте не менее 8 символов, в числе которых должны быть буквы в верхнем и нижнем регистре, цифры и спецсимволы.",
+    "passwordStrengthRequirements" : "Вот краткие правила создания надежного пароля: используйте не менее 8 символов, в числе которых должны быть буквы в верхнем и нижнем регистре, цифры и спецсимволы. Не используйте один и тот же символ несколько раз подряд.",
+    "bothPasswordMustMatch" : "Пароли должны совпадать",
+    "titleRequired" : "Обращение обязательно.",
+    "postRegisterMessage" : "Войдите в систему с предоставленными учетными данными.",
+    "postRegisterSuccessMessage" : "Успешная регистрация: войдите в систему с предоставленными учетными данными"
   },
-  "forgottenPassword": {
-    "resetPassword": "Reset password",
-    "enterEmailAddressAssociatedWithYourAccount": "Enter the email address associated with your account",
-    "emailAddress": {
-      "label": "Адрес эл. почты",
-      "placeholder": "Enter email"
+  "forgottenPassword" : {
+    "resetPassword" : "Сбросить пароль",
+    "enterEmailAddressAssociatedWithYourAccount" : "Введите адрес электронной почты, связанный с вашей учетной записью",
+    "emailAddress" : {
+      "label" : "Адрес электронной почты",
+      "placeholder" : "Введите электронную почту"
     },
-    "enterValidEmail": "Введите действительный адрес электронной почты.",
-    "passwordResetEmailSent": "An email has been sent to you with information on how to reset your password.",
-    "passwordResetSuccess": "Отлично! Теперь вы можете войти в систему с новым паролем."
+    "enterValidEmail" : "Введите действительный адрес электронной почты.",
+    "passwordResetEmailSent" : "Вам отправлено письмо с информацией о том, как сбросить пароль.",
+    "passwordResetSuccess" : "Отлично! Теперь вы можете войти в систему с новым паролем."
   }
 }

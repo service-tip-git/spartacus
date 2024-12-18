@@ -1,31 +1,31 @@
 {
-  "pdfInvoices": {
-    "featureNotEnabled": "Unable to obtain invoices, ensure that SAP Invoice and API for Invoices are enabled.",
-    "invoicesLoadingError": "Something went wrong. Unable to display invoices for the order",
-    "invoicesTable": {
-      "header": "Invoices",
-      "label": "Invoices Table",
-      "invoiceId": "Invoice #",
-      "createdAt": "日期",
-      "netAmount": "淨額",
-      "totalAmount": "總金額",
-      "attachment": "Download Invoice",
-      "download": "下載",
-      "attachmentDescription": "Download PDF for invoice {{id}}.",
-      "noneFound": "No Invoices Found"
+  "pdfInvoices" : {
+    "featureNotEnabled" : "無法取得發票，請確保已啟用 SAP 發票和發票 API。",
+    "invoicesLoadingError" : "發生錯誤，無法顯示訂單的發票",
+    "invoicesTable" : {
+      "header" : "發票",
+      "label" : "發票表格",
+      "invoiceId" : "發票號碼",
+      "createdAt" : "日期",
+      "netAmount" : "淨額",
+      "totalAmount" : "總金額",
+      "attachment" : "下載發票",
+      "download" : "下載",
+      "attachmentDescription" : "下載發票 {{id}} 的 PDF。",
+      "noneFound" : "找不到發票"
     },
-    "downloadPDFError": "Something went wrong. Unable to obtain the invoice PDF.",
-    "sortBy": "排序依據",
-    "sortInvoices": "Sort invoices",
-    "sorts": {
-      "byCreatedAtAsc": "Date Ascending",
-      "byCreatedAtDesc": "Date Descending",
-      "byInvoiceIdAsc": "Invoice Number Ascending",
-      "byInvoiceIdDesc": "Invoice Number Descending",
-      "byNetAmountAsc": "Net Amount Ascending",
-      "byNetAmountDesc": "Net Amount Descending",
-      "byTotalAmountAsc": "Total Amount Ascending",
-      "byTotalAmountDesc": "Total Amount Descending"
+    "downloadPDFError" : "發生錯誤。無法取得發票 PDF。",
+    "sortBy" : "排序依據",
+    "sortInvoices" : "排序發票",
+    "sorts" : {
+      "byCreatedAtAsc" : "日期 (升冪)",
+      "byCreatedAtDesc" : "日期 (降冪)",
+      "byInvoiceIdAsc" : "發票號碼 (升冪)",
+      "byInvoiceIdDesc" : "發票號碼 (降冪)",
+      "byNetAmountAsc" : "淨額 (升冪)",
+      "byNetAmountDesc" : "淨額 (降冪)",
+      "byTotalAmountAsc" : "總金額 (升冪)",
+      "byTotalAmountDesc" : "總金額 (降冪)"
     }
   }
 }

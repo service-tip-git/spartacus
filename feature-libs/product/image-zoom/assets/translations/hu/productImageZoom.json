@@ -1,9 +1,9 @@
 {
-  "productImageZoomTrigger": {
-    "expand": "Expand image"
+  "productImageZoomTrigger" : {
+    "expand" : "Kép kibontása"
   },
-  "productImageZoomDialog": {
-    "zoomedInImage": "Zoomed in image",
-    "close": "Bezárás"
+  "productImageZoomDialog" : {
+    "zoomedInImage" : "Felnagyított kép",
+    "close" : "Bezárás"
   }
 }

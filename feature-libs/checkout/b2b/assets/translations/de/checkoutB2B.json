@@ -1,22 +1,22 @@
 {
-  "checkoutB2B": {
-    "noPoNumber": "Keine",
-    "poNumber": "Purchase order number (optional)",
-    "costCenter": "Kostenstelle",
-    "placeholder": "Enter P.O",
-    "availableLabel": "Delivery addresses available to you depend on the cost center's unit",
-    "invalid": {
-      "accountType": "Ihr Konto berechtigt Sie nicht dazu, hier zu bezahlen."
+  "checkoutB2B" : {
+    "noPoNumber" : "Keine",
+    "poNumber" : "Bestellnummer (optional)",
+    "costCenter" : "Kostenstelle",
+    "placeholder" : "Bestellung eingeben",
+    "availableLabel" : "Welche Lieferadressen für Sie verfügbar sind, hängt von der Einheit der Kostenstelle ab.",
+    "invalid" : {
+      "accountType" : "Ihr Konto berechtigt Sie nicht dazu, hier zu bezahlen."
     },
-    "methodOfPayment": {
-      "paymentType": "Zahlungsart"
+    "methodOfPayment" : {
+      "paymentType" : "Zahlungstyp"
     },
-    "review": {
-      "poNumber": "Bestellnummer"
+    "review" : {
+      "poNumber" : "Bestellnummer"
     },
-    "progress": {
-      "methodOfPayment": "Method of Payment"
+    "progress" : {
+      "methodOfPayment" : "Art der Zahlung"
     },
-    "invalidCostCenter": "Invalid cost center."
+    "invalidCostCenter" : "Ungültige Kostenstelle."
   }
 }

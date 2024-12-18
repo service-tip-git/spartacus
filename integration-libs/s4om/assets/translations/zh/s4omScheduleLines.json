@@ -1,8 +1,8 @@
 {
-  "s4omScheduleLines": {
-    "quantity": "-  Qty",
-    "a11y": {
-      "scheduleLineEntryInfo": "{{ quantity }} quantity will be delivered by {{ date }}"
+  "s4omScheduleLines" : {
+    "quantity" : "- 数量",
+    "a11y" : {
+      "scheduleLineEntryInfo" : "数量 {{ quantity }} 将于 {{ date }} 前交付"
     }
   }
 }

@@ -1,663 +1,663 @@
 {
-  "organization": {
-    "enabled": "Aktywne",
-    "disabled": "Wyłączone",
-    "enable": "Włącz",
-    "disable": "Wyłącz",
-    "name": "Nazwa",
-    "code": "Kod",
-    "done": "done",
-    "cancel": "Anuluj",
-    "add": "Dodaj",
-    "manageUsers": "Zarządzaj użytkownikami",
-    "create": "Utwórz {{name}}",
-    "edit": "Edytuj",
-    "save": "Save {{name}}",
-    "delete": "Usuń",
-    "assign": "Zarządzaj",
-    "active": "Aktywne",
-    "status": "Status",
-    "details": "Szczegóły",
-    "messages": {
-      "emptyList": "The list is empty"
+  "organization" : {
+    "enabled" : "Aktywne",
+    "disabled" : "Wyłączone",
+    "enable" : "Włącz",
+    "disable" : "Wyłącz",
+    "name" : "Nazwa",
+    "code" : "Kod",
+    "done" : "gotowe",
+    "cancel" : "Anuluj",
+    "add" : "Dodaj",
+    "manageUsers" : "Zarządzaj użytkownikami",
+    "create" : "Utwórz {{name}}",
+    "edit" : "Edytuj",
+    "save" : "Zapisz {{name}}",
+    "delete" : "Usuń",
+    "assign" : "Zarządzaj",
+    "active" : "Aktywne",
+    "status" : "Status",
+    "details" : "Szczegóły",
+    "messages" : {
+      "emptyList" : "Ta lista jest pusta"
     },
-    "userRoles": {
-      "b2bcustomergroup": "Klient",
-      "b2bapprovergroup": "Osoba zatwierdzająca",
-      "b2bmanagergroup": "Menedżer",
-      "b2badmingroup": "Administrator"
+    "userRoles" : {
+      "b2bcustomergroup" : "Klient",
+      "b2bapprovergroup" : "Osoba zatwierdzająca",
+      "b2bmanagergroup" : "Menedżer",
+      "b2badmingroup" : "Administrator"
     },
-    "userRights": {
-      "unitorderviewergroup": "View Unit-Level Orders"
+    "userRights" : {
+      "unitorderviewergroup" : "Wyświetl zamówienia na poziomie jednostki"
     },
-    "breadcrumb": "Organizacja",
-    "notification": {
-      "noSufficientPermissions": "No sufficient permissions to access this page",
-      "notExist": "This item does not exist",
-      "disabled": "You cannot edit a disabled item"
+    "breadcrumb" : "Organizacja",
+    "notification" : {
+      "noSufficientPermissions" : "Niewystarczające uprawnienia dostępu do tej strony.",
+      "notExist" : "Ta pozycja nie istnieje.",
+      "disabled" : "Nie możesz edytować wyłączonej pozycji"
     },
-    "confirmation": {
-      "cancel": "ANULUJ",
-      "confirm": "CONFIRM",
-      "disable": "DISABLE",
-      "delete": "DELETE"
+    "confirmation" : {
+      "cancel" : "ANULUJ",
+      "confirm" : "POTWIERDŹ",
+      "disable" : "WYŁĄCZ",
+      "delete" : "USUŃ"
     },
-    "httpHandlers": {
-      "conflict": {
-        "budget": "Budget with code {{ code }} already exists.",
-        "costCenter": "Cost center with code {{ code }} already exists.",
-        "unit": "Organizational unit with uid {{ code }} already exists.",
-        "user": "User with email {{ code }} already exists",
-        "userGroup": "User Group with id {{ code }} already exists",
-        "permission": "Approval Permission with code {{ code }} already exists.",
-        "unknown": "Server validation error."
+    "httpHandlers" : {
+      "conflict" : {
+        "budget" : "Budżet z kodem {{ code }} już istnieje.",
+        "costCenter" : "Miejsce powstawania kosztów z kodem {{ code }} już istnieje.",
+        "unit" : "Jednostka organizacyjna z UID {{ code }} już istnieje.",
+        "user" : "Użytkownik z adresem e-mail {{ code }} już istnieje",
+        "userGroup" : "Grupa użytkowników z ID {{ code }} już istnieje",
+        "permission" : "Uprawnienie do zatwierdzania z kodem {{ code }} już istnieje.",
+        "unknown" : "Błąd walidacji serwera."
       }
     },
-    "information": "More information about {{title}}"
+    "information" : "Więcej informacji o planie {{title}}"
   },
-  "orgCostCenter": {
-    "groupName": "Centra kosztów",
-    "header": "All cost centers ({{count}})",
-    "code": "Kod",
-    "active": "Status",
-    "name": "Nazwa",
-    "currency": "Waluta",
-    "unit": "Jednostka nadrzędna",
-    "actions": "",
-    "sortBy": "Sortuj według",
-    "sort": {
-      "byName": "Nazwa",
-      "byUnitName": "Jednostka",
-      "byCode": "Kod"
+  "orgCostCenter" : {
+    "groupName" : "Miejsca powstawania kosztów",
+    "header" : "Wszystkie miejsca powstawania kosztów ({{count}})",
+    "code" : "Kod",
+    "active" : "Status",
+    "name" : "Nazwa",
+    "currency" : "Waluta",
+    "unit" : "Jednostka nadrzędna",
+    "actions" : "",
+    "sortBy" : "Sortuj według",
+    "sort" : {
+      "byName" : "Nazwa",
+      "byUnitName" : "Jednostka",
+      "byCode" : "Kod"
     },
-    "hint": "All orders placed through your organization's purchase account are linked to a cost center for tracking purposes. Each unit can have multiple cost centers. To limit spending, budgets are assigned to cost centers. A buyer selects a cost center when checking out.",
-    "disable": {
-      "confirm": "Wyłącz"
+    "hint" : "Wszystkie zamówienia złożone za pośrednictwem konta zakupowego organizacji są powiązane z miejscem powstawania kosztów w celu ich śledzenia. Każda jednostka może mieć wiele miejsc powstawania kosztów. Aby ograniczyć wydatki, budżety są przypisywane do miejsc powstawania kosztów. Nabywca wybiera miejsce powstawania kosztów podczas dokonywania zakupu.",
+    "disable" : {
+      "confirm" : "Wyłącz"
     },
-    "messages": {
-      "deactivateTitle": "Disable this cost center?",
-      "deactivate": "Disabled cost centers cannot be used for placing new orders. Ensure that your unit has at least one cost center. Existing orders are not affected.",
-      "confirmEnabled": "Cost Center {{ item.name }} enabled successfully",
-      "confirmDisabled": "Cost Center {{ item.name }} disabled successfully",
-      "update": "Cost Center {{ item.name }} updated successfully",
-      "create": "Cost Center {{ item.name }} created successfully"
+    "messages" : {
+      "deactivateTitle" : "Wyłączyć to miejsce powstawania kosztów?",
+      "deactivate" : "Wyłączone miejsca powstawania kosztów nie mogą być używane do składania nowych zamówień. Upewnij się, że Twoja jednostka ma co najmniej jedno miejsce powstawania kosztów. Nie ma to wpływu na istniejące zamówienia.",
+      "confirmEnabled" : "Miejsce powstawania kosztów {{ item.name }} zostało włączone",
+      "confirmDisabled" : "Miejsce powstawania kosztów {{ item.name }} zostało wyłączone",
+      "update" : "Miejsce powstawania kosztów {{ item.name }} zostało zaktualizowane",
+      "create" : "Miejsce powstawania kosztów {{ item.name }} zostało utworzone"
     },
-    "info": {
-      "disabledEdit": "Enable the cost center to allow editing.",
-      "disabledEnable": "Unit must be enabled before this cost center may be enabled."
+    "info" : {
+      "disabledEdit" : "Włącz miejsce powstawania kosztów, aby umożliwić edycję",
+      "disabledEnable" : "Jednostkę należy włączyć przed włączeniem tego miejsca powstawania kosztów."
     },
-    "details": {
-      "title": "Szczegóły centrum kosztów",
-      "subtitle": "Cost Center: {{ item.name }}"
+    "details" : {
+      "title" : "Szczegóły miejsca powstawania kosztów",
+      "subtitle" : "Miejsce powstawania kosztów: {{ item.name }}"
     },
-    "edit": {
-      "title": "Edytuj centrum kosztów",
-      "subtitle": "Cost Center: {{ item.name }}"
+    "edit" : {
+      "title" : "Edytuj miejsce powstawania kosztów",
+      "subtitle" : "Miejsce powstawania kosztów: {{ item.name }}"
     },
-    "create": {
-      "title": "Utwórz centrum kosztów",
-      "subtitle": ""
+    "create" : {
+      "title" : "Utwórz miejsce powstawania kosztów",
+      "subtitle" : ""
     },
-    "budget": {
-      "link": "Budżety"
+    "budget" : {
+      "link" : "Budżety"
     },
-    "breadcrumbs": {
-      "list": "All cost centers",
-      "details": "{{name}}",
-      "budgets": "Budżety"
+    "breadcrumbs" : {
+      "list" : "Wszystkie miejsca powstawania kosztów",
+      "details" : "{{name}}",
+      "budgets" : "Budżety"
     }
   },
-  "orgCostCenterBudgets": {
-    "title": "Manage budgets",
-    "subtitle": "Cost Center: {{ item.name }}",
-    "assigned": "Budget {{ item.name }} assigned successfully",
-    "unassigned": "Budget {{ item.name }} unassigned successfully"
+  "orgCostCenterBudgets" : {
+    "title" : "Zarządzanie budżetami",
+    "subtitle" : "Miejsce powstawania kosztów: {{ item.name }}",
+    "assigned" : "Budżet {{ item.name }} został przypisany",
+    "unassigned" : "Usunięto przypisanie budżetu {{ item.name }}"
   },
-  "orgCostCenterAssignedBudgets": {
-    "title": "Assigned budgets",
-    "subtitle": "Cost Center: {{ item.name }}",
-    "assigned": "Budget {{ item.name }} assigned successfully",
-    "unassigned": "Budget {{ item.name }} unassigned successfully"
+  "orgCostCenterAssignedBudgets" : {
+    "title" : "Przypisane budżety",
+    "subtitle" : "Miejsce powstawania kosztów: {{ item.name }}",
+    "assigned" : "Budżet {{ item.name }} został przypisany",
+    "unassigned" : "Usunięto przypisanie budżetu {{ item.name }}"
   },
-  "orgBudget": {
-    "groupName": "Budżety",
-    "header": "All budgets ({{count}})",
-    "code": "Kod",
-    "name": "Nazwa",
-    "active": "Status",
-    "currency": "Waluta",
-    "amount": "Kwota",
-    "unit": "Jednostka",
-    "businessUnits": "Jednostka",
-    "dateRange": "Start - End",
-    "startDate": "Początek",
-    "endDate": "Koniec",
-    "actions": "",
-    "sortBy": "Sortuj według",
-    "sort": {
-      "byName": "Nazwa",
-      "byUnitName": "Jednostka",
-      "byCode": "Kod",
-      "byValue": "Wartość"
+  "orgBudget" : {
+    "groupName" : "Budżety",
+    "header" : "Wszystkie budżety ({{count}})",
+    "code" : "Kod",
+    "name" : "Nazwa",
+    "active" : "Status",
+    "currency" : "Waluta",
+    "amount" : "Kwota",
+    "unit" : "Jednostka",
+    "businessUnits" : "Jednostka",
+    "dateRange" : "Początek - Koniec",
+    "startDate" : "Początek",
+    "endDate" : "Koniec",
+    "actions" : "",
+    "sortBy" : "Sortuj według",
+    "sort" : {
+      "byName" : "Nazwa",
+      "byUnitName" : "Jednostka",
+      "byCode" : "Kod",
+      "byValue" : "Wartość"
     },
-    "hint": "Budgets set overall purchase limits and are assigned to cost centers. A buyer selects a cost center when checking out.",
-    "details": {
-      "title": "Szczegóły budżetu",
-      "subtitle": "Budget: {{ item.name }}"
+    "hint" : "Budżety określają ogólne limity zakupów i są przypisane do miejsc powstawania kosztów. Nabywca wybiera miejsce powstawania kosztów podczas dokonywania zakupu.",
+    "details" : {
+      "title" : "Szczegóły budżetu",
+      "subtitle" : "Budżet: {{ item.name }}"
     },
-    "edit": {
-      "title": "Edytuj budżet",
-      "subtitle": "Budget: {{ item.name }}"
+    "edit" : {
+      "title" : "Edytuj budżet",
+      "subtitle" : "Budżet: {{ item.name }}"
     },
-    "create": {
-      "title": "Create Budget",
-      "subtitle": ""
+    "create" : {
+      "title" : "Utwórz budżet",
+      "subtitle" : ""
     },
-    "messages": {
-      "deactivateTitle": "Disable this budget?",
-      "deactivate": "Disabled budgets no longer apply to the cost centers they are assigned to. Ensure that the associated cost center has at least one budget.",
-      "confirmEnabled": "Budget {{ item.name }} enabled successfully",
-      "confirmDisabled": "Budget {{ item.name }} disabled successfully",
-      "update": "Budget {{ item.name }} updated successfully",
-      "create": "Budget {{ item.name }} created successfully"
+    "messages" : {
+      "deactivateTitle" : "Czy wyłączyć budżet?",
+      "deactivate" : "Wyłączone budżety nie mają już zastosowania do miejsc powstawania kosztów, do których zostały przypisane. Upewnij się, że powiązane miejsce powstawania kosztów ma co najmniej jeden budżet.",
+      "confirmEnabled" : "Budżet {{ item.name }} został włączony",
+      "confirmDisabled" : "Budżet {{ item.name }} został wyłączony",
+      "update" : "Budżet {{ item.name }} został zaktualizowany",
+      "create" : "Budżet {{ item.name }} został utworzony"
     },
-    "info": {
-      "disabledEdit": "Enable the budget to allow editing.",
-      "disabledEnable": "Unit must be enabled before this budget may be enabled."
+    "info" : {
+      "disabledEdit" : "Włącz budżet, aby umożliwić edycję.",
+      "disabledEnable" : "Jednostkę należy włączyć przed włączeniem tego budżetu."
     },
-    "links": {
-      "costCenters": "Centra kosztów"
+    "links" : {
+      "costCenters" : "Miejsca powstawania kosztów"
     },
-    "breadcrumbs": {
-      "list": "All budgets",
-      "details": "{{name}}"
+    "breadcrumbs" : {
+      "list" : "Wszystkie budżety",
+      "details" : "{{name}}"
     }
   },
-  "orgBudgetAssignedCostCenters": {
-    "title": "Cost centers",
-    "subtitle": "Budget: {{ item.name }}"
+  "orgBudgetAssignedCostCenters" : {
+    "title" : "Miejsca powstawania kosztów",
+    "subtitle" : "Budżet: {{ item.name }}"
   },
-  "orgUnit": {
-    "groupName": "Jednostki",
-    "header": "All units ({{count}})",
-    "unit": "Jednostka",
-    "name": "Nazwa",
-    "uid": "ID",
-    "approvalProcess": "Approval process",
-    "parentUnit": "Jednostka nadrzędna",
-    "active": "Status",
-    "hint": "Units represent departments, stores, regions, or any other logical grouping that makes sense to you. The cost centers and delivery addresses available to a buyer when checking out, depend on their unit. Users have access to all child units of their primary unit.",
-    "details": {
-      "title": "Szczegóły jednostki",
-      "subtitle": "Unit: {{ item.name }}",
-      "hint": "Units represent departments, stores, regions, or any other logical grouping that makes sense to you. Disabling a unit disables all children of the unit, including child units, users, approvers, and cost centers. Disabled units cannot be edited."
+  "orgUnit" : {
+    "groupName" : "Jednostki",
+    "header" : "Wszystkie jednostki ({{count}})",
+    "unit" : "Jednostka",
+    "name" : "Nazwa",
+    "uid" : "ID",
+    "approvalProcess" : "Proces zatwierdzania",
+    "parentUnit" : "Jednostka nadrzędna",
+    "active" : "Status",
+    "hint" : "Jednostki reprezentują działy, sklepy, regiony lub inne grupy logiczne, które mają sens. Miejsca powstawania kosztów i adresy dostawy dostępne dla nabywcy podczas dokonywania płatności zależą od jego jednostki. Użytkownicy mają dostęp do wszystkich jednostek podrzędnych swojej jednostki podstawowej.",
+    "details" : {
+      "title" : "Szczegóły jednostki",
+      "subtitle" : "Jednostka: {{ item.name }}",
+      "hint" : "Jednostki reprezentują działy, sklepy, regiony lub inne grupy logiczne, które mają sens. Wyłączenie jednostki powoduje wyłączenie wszystkich elementów podrzędnych tej jednostki, w tym jednostek podrzędnych, użytkowników, osób zatwierdzających i miejsc powstawania kosztów. Wyłączonych jednostek nie można edytować."
     },
-    "edit": {
-      "title": "Edit Unit",
-      "subtitle": "Unit: {{ item.name }}"
+    "edit" : {
+      "title" : "Edytuj jednostkę",
+      "subtitle" : "Jednostka: {{ item.name }}"
     },
-    "create": {
-      "title": "Utwórz jednostkę",
-      "subtitle": ""
+    "create" : {
+      "title" : "Utwórz jednostkę",
+      "subtitle" : ""
     },
-    "messages": {
-      "deactivateTitle": "Disable this unit?",
-      "deactivate": "Disabling a unit has wide-ranging affects on your commerce organization. ALL the unit's child units, users, budgets, and cost centers will also disabled.",
-      "confirmEnabled": "Unit {{item.name}} enabled successfully",
-      "confirmDisabled": "Unit {{item.name}} disabled successfully",
-      "update": "Unit {{ item.name }} updated successfully",
-      "create": "Unit {{ item.name }} created successfully"
+    "messages" : {
+      "deactivateTitle" : "Czy wyłączyć jednostkę?",
+      "deactivate" : "Wyłączenie jednostki ma szeroki wpływ na organizację handlową. WSZYSTKIE jednostki podrzędne danej jednostki, użytkownicy, budżety i miejsca powstawania kosztów również zostaną wyłączone.",
+      "confirmEnabled" : "Jednostka {{ item.name }} została włączona",
+      "confirmDisabled" : "Jednostka {{ item.name }} została wyłączona",
+      "update" : "Jednostka {{ item.name }} została zaktualizowana",
+      "create" : "Jednostka {{ item.name }} została utworzona"
     },
-    "info": {
-      "disabledEdit": "Enable the unit to allow editing.",
-      "disabledEnable": "Parent must be enabled before this unit may be enabled.",
-      "disabledDisable": "Root unit can not be disabled."
+    "info" : {
+      "disabledEdit" : "Włącz jednostkę, aby umożliwić edycję.",
+      "disabledEnable" : "Jednostkę nadrzędną należy włączyć przed włączeniem tej jednostki.",
+      "disabledDisable" : "Nie można wyłączyć jednostki głównej."
     },
-    "links": {
-      "units": "Jednostki podrzędne",
-      "users": "Użytkownicy",
-      "approvers": "Osoby zatwierdzające",
-      "shippingAddresses": "Delivery Addresses",
-      "costCenters": "Centra kosztów"
+    "links" : {
+      "units" : "Jednostki podrzędne",
+      "users" : "Użytkownicy",
+      "approvers" : "Osoby zatwierdzające",
+      "shippingAddresses" : "Adresy dostawy",
+      "costCenters" : "Miejsca powstawania kosztów"
     },
-    "tree": {
-      "expandAll": "Rozwiń wszystkie",
-      "collapseAll": "Zwiń wszystkie",
-      "expand": "Rozwiń",
-      "collapse": "collapse",
-      "explore": "Explore sub-units"
+    "tree" : {
+      "expandAll" : "Rozwiń wszystkie",
+      "collapseAll" : "Zwiń wszystkie",
+      "expand" : "Rozwiń",
+      "collapse" : "zwiń",
+      "explore" : "Analizuj jednostki podrzędne"
     },
-    "children": {
-      "create": {
-        "title": "Create child unit",
-        "subtitle": ""
+    "children" : {
+      "create" : {
+        "title" : "Utwórz jednostkę podrzędną",
+        "subtitle" : ""
       },
-      "messages": {
-        "create": "Unit {{ item.name }} created successfully"
+      "messages" : {
+        "create" : "Jednostka {{ item.name }} została utworzona"
       }
     },
-    "costCenters": {
-      "create": {
-        "title": "Create cost center",
-        "subtitle": ""
+    "costCenters" : {
+      "create" : {
+        "title" : "Utwórz miejsce powstawania kosztów",
+        "subtitle" : ""
       }
     },
-    "form": {
-      "parentOrgUnit": "Nadrzędna jednostka biznesowa",
-      "create": "Utwórz jednostkę",
-      "parentOrgUnitNotes": "This unit is the top-level unit for your organization. It cannot be assigned to another unit."
+    "form" : {
+      "parentOrgUnit" : "Nadrzędna jednostka biznesowa",
+      "create" : "Utwórz jednostkę",
+      "parentOrgUnitNotes" : "Ta jednostka jest jednostką najwyższego poziomu w organizacji. Nie można jej przypisać do innej jednostki."
     },
-    "users": {
-      "header": "Users in {{code}}",
-      "changeUserRoles": "Change user roles",
-      "newUser": "New user"
+    "users" : {
+      "header" : "Użytkownicy w {{code}}",
+      "changeUserRoles" : "Zmień role użytkownika",
+      "newUser" : "Nowy użytkownik"
     },
-    "assignRoles": {
-      "header": "Manage roles in {{code}}",
-      "instructions": {
-        "check": "To assign a role to a user, select the role's check box.",
-        "uncheck": "To remove a role, clear the role's check box.",
-        "changes": "Changes are saved automatically."
+    "assignRoles" : {
+      "header" : "Zarządzanie rolami w {{code}}",
+      "instructions" : {
+        "check" : "Aby przypisać rolę do użytkownika, zaznacz pole wyboru roli.",
+        "uncheck" : "Aby usunąć rolę, wyczyść jej pole wyboru.",
+        "changes" : "Zmiany są zapisywane automatycznie."
       }
     },
-    "approvers": {
-      "header": "Approvers in {{code}}",
-      "assign": "Manage approvers",
-      "new": "New approver"
+    "approvers" : {
+      "header" : "Osoby zatwierdzające w {{code}}",
+      "assign" : "Zarządzanie osobami zatwierdzającymi",
+      "new" : "Nowa osoba zatwierdzająca"
     },
-    "assignApprovers": {
-      "header": "Manage approvers in {{code}}",
-      "instructions": {
-        "check": "To assign an approver to this unit, select the user's check box.",
-        "uncheck": "To remove an approver, clear the user's check box.",
-        "changes": "Changes are saved automatically."
+    "assignApprovers" : {
+      "header" : "Zarządzanie osobami zatwierdzającymi w {{code}}",
+      "instructions" : {
+        "check" : "Aby przypisać osobę zatwierdzającą do jednostki, zaznacz pole wyboru użytkownika.",
+        "uncheck" : "Aby usunąć osobę zatwierdzającą, odznacz pole wyboru użytkownika.",
+        "changes" : "Zmiany są zapisywane automatycznie."
       },
-      "hint": "Users displayed under the Approvers list are assigned approval privileges for the buyers of this unit and of child units. Note that a user who has the approver role is separate from an approver who appears under the Approvers list. If an approver doesn't exist for a unit, or if approvers do not have sufficient approval purchase privileges, an approver higher up the unit hierarchy is found, until an administration is chosen."
+      "hint" : "Użytkownicy wyświetlani na liście zatwierdzających mają przypisane uprawnienia do zatwierdzania nabywców danej jednostki i jednostek podrzędnych. Zwróć uwagę, że użytkownik, który ma rolę osoby zatwierdzającej, jest niezależny od osoby zatwierdzającej, która pojawia się na liście osób zatwierdzających. Jeśli osoba zatwierdzająca nie istnieje dla jednostki lub jeśli osoby zatwierdzające nie mają wystarczających uprawnień do zatwierdzania zakupów, wyszukiwana jest osoba zatwierdzająca znajdująca się wyżej w hierarchii jednostek, aż do momentu wybrania administratora."
     },
-    "breadcrumbs": {
-      "list": "All units",
-      "details": "{{name}}",
-      "children": "Child units",
-      "users": "Użytkownicy",
-      "approvers": "Osoby zatwierdzające",
-      "addresses": "Delivery addresses",
-      "addressDetails": "{{formattedAddress}}",
-      "costCenters": "Centra kosztów"
+    "breadcrumbs" : {
+      "list" : "Wszystkie jednostki",
+      "details" : "{{name}}",
+      "children" : "Jednostki podrzędne",
+      "users" : "Użytkownicy",
+      "approvers" : "Osoby zatwierdzające",
+      "addresses" : "Adresy dostawy",
+      "addressDetails" : "{{formattedAddress}}",
+      "costCenters" : "Miejsca powstawania kosztów"
     }
   },
-  "orgUnitChildren": {
-    "title": "Child units",
-    "subtitle": "Unit: {{item.name}}",
-    "info": {
-      "disabledCreate": "Child unit can not be created for disabled unit."
+  "orgUnitChildren" : {
+    "title" : "Jednostki podrzędne",
+    "subtitle" : "Jednostka: {{item.name}}",
+    "info" : {
+      "disabledCreate" : "Nie można utworzyć jednostki podrzędnej dla wyłączonej jednostki."
     },
-    "hint": "Units represent departments, stores, regions, or any other logical grouping that makes sense to you. Users \"inherit\" child units, meaning buyers have access to cost centers and delivery addresses of child units when checking out."
+    "hint" : "Jednostki reprezentują działy, sklepy, regiony lub inne logiczne grupy, które mają sens. Użytkownicy \"dziedziczą\" jednostki podrzędne, co oznacza, że nabywcy mają dostęp do miejsc powstawania kosztów i adresów dostawy jednostek podrzędnych podczas dokonywania płatności."
   },
-  "orgUnitApprovers": {
-    "title": "Manage approvers",
-    "subtitle": "Unit: {{item.name}}",
-    "assigned": "User {{item.name}} assigned successfully",
-    "unassigned": "User {{item.name}} unassigned successfully"
+  "orgUnitApprovers" : {
+    "title" : "Zarządzanie osobami zatwierdzającymi",
+    "subtitle" : "Jednostka: {{item.name}}",
+    "assigned" : "Użytkownik {{ item.name }} został przypisany",
+    "unassigned" : "Usunięto przypisanie użytkownika {{ item.name }}"
   },
-  "orgUnitAssignedApprovers": {
-    "title": "Assigned approvers",
-    "subtitle": "Unit: {{item.name}}",
-    "assigned": "User {{item.name}} assigned successfully",
-    "unassigned": "User {{item.name}} unassigned successfully",
-    "hint": "Users displayed under the Approvers list are assigned approval privileges for the buyers of this unit and of child units. Note that a user who has the approver role is separate from an approver who appears under the Approvers list. If an approver doesn't exist for a unit, or if approvers do not have sufficient approval purchase privileges, an approver higher up the unit hierarchy is found, until an administration is chosen."
+  "orgUnitAssignedApprovers" : {
+    "title" : "Przypisane osoby zatwierdzające",
+    "subtitle" : "Jednostka: {{item.name}}",
+    "assigned" : "Użytkownik {{ item.name }} został przypisany",
+    "unassigned" : "Usunięto przypisanie użytkownika {{ item.name }}",
+    "hint" : "Użytkownicy wyświetlani na liście zatwierdzających mają przypisane uprawnienia do zatwierdzania nabywców danej jednostki i jednostek podrzędnych. Zwróć uwagę, że użytkownik, który ma rolę osoby zatwierdzającej, jest niezależny od osoby zatwierdzającej, która pojawia się na liście osób zatwierdzających. Jeśli osoba zatwierdzająca nie istnieje dla jednostki lub jeśli osoby zatwierdzające nie mają wystarczających uprawnień do zatwierdzania zakupów, wyszukiwana jest osoba zatwierdzająca znajdująca się wyżej w hierarchii jednostek, aż do momentu wybrania administratora."
   },
-  "orgUnitAssignedRoles": {
-    "header": "Manage roles in {{code}}",
-    "name": "Nazwa",
-    "email": "E-mail",
-    "roles": "Role",
-    "roleCustomer": "Klient",
-    "roleApprover": "Osoba zatwierdzająca",
-    "roleManager": "Menedżer",
-    "roleAdministrator": "Administrator"
+  "orgUnitAssignedRoles" : {
+    "header" : "Zarządzanie rolami w {{code}}",
+    "name" : "Nazwa",
+    "email" : "E-mail",
+    "roles" : "Role",
+    "roleCustomer" : "Klient",
+    "roleApprover" : "Osoba zatwierdzająca",
+    "roleManager" : "Menedżer",
+    "roleAdministrator" : "Administrator"
   },
-  "orgUnitUsers": {
-    "title": "Assigned users",
-    "subtitle": "Unit: {{item.name}}",
-    "info": {
-      "disabledCreate": "User can not be created for disabled unit."
+  "orgUnitUsers" : {
+    "title" : "Przypisani użytkownicy",
+    "subtitle" : "Jednostka: {{item.name}}",
+    "info" : {
+      "disabledCreate" : "Nie można utworzyć użytkownika dla wyłączonej jednostki."
     },
-    "hint": "Users are the buyers, approvers, managers, and administrators of your organization. Each user is assigned a role for making or approving purchases. Users \"inherit\" child units, meaning buyers have access to cost centers and delivery addresses of child units when checking out."
+    "hint" : "Użytkownicy to nabywcy, osoby zatwierdzające, menedżerowie i administratorzy organizacji. Każdy użytkownik ma przypisaną rolę umożliwiającą dokonywanie lub zatwierdzanie zakupów. Użytkownicy \"dziedziczą\" jednostki podrzędne, co oznacza, że nabywcy mają dostęp do miejsc powstawania kosztów i adresów dostawy jednostek podrzędnych podczas dokonywania płatności."
   },
-  "orgUnitUserRoles": {
-    "title": "User roles and rights",
-    "subtitle": "User: {{item.name}}",
-    "messages": {
-      "rolesUpdated": "Roles successfully updated for {{item.name}}"
+  "orgUnitUserRoles" : {
+    "title" : "Role i uprawnienia użytkownika",
+    "subtitle" : "Użytkownik: {{item.name}}",
+    "messages" : {
+      "rolesUpdated" : "Role zostały zaktualizowane dla {{item.name}}"
     }
   },
-  "orgUnitAssignedUsers": {
-    "title": "Assigned users",
-    "subtitle": "Unit: {{item.name}}"
+  "orgUnitAssignedUsers" : {
+    "title" : "Przypisani użytkownicy",
+    "subtitle" : "Jednostka: {{item.name}}"
   },
-  "orgUnitCostCenters": {
-    "title": "Assigned cost centers",
-    "subtitle": "Unit: {{item.name}}",
-    "info": {
-      "disabledCreate": "Cost center can not be created for disabled unit."
+  "orgUnitCostCenters" : {
+    "title" : "Przypisane miejsca powstawania kosztów",
+    "subtitle" : "Jednostka: {{item.name}}",
+    "info" : {
+      "disabledCreate" : "Nie można utworzyć miejsca powstawania kosztów dla wyłączonej jednostki."
     },
-    "hint": "All orders placed through your organization's purchase account are linked to a cost center for tracking purposes. A buyer selects a cost center when checking out using the \"Account\" purchase method. Each unit can have multiple cost centers, but a single cost center can only be assigned to a single unit. To define ultimate spending limits, budgets are assigned to cost centers. "
+    "hint" : "Wszystkie zamówienia złożone za pośrednictwem konta zakupowego organizacji są powiązane z miejscem powstawania kosztów na potrzeby śledzenia. Nabywca wybiera miejsce powstawania kosztów podczas dokonywania płatności używając metody zakupu \"Konto\". Każda jednostka może mieć wiele miejsc powstawania kosztów, ale jedno miejsce powstawania kosztów może być przypisane tylko do jednej jednostki. Aby zdefiniować ostateczne limity wydatków, budżety są przypisywane do miejsc powstawania kosztów. "
   },
-  "orgUnitAddress": {
-    "title": "Delivery addresses",
-    "subtitle": "Unit: {{item.name}}",
-    "country": "Kraj/region",
-    "titles": "Tytuł",
-    "firstName": "Imię",
-    "lastName": "Nazwisko",
-    "formattedAddress": "Adres",
-    "address1": "Adres",
-    "address2": "2nd address (optional)",
-    "city": "Miasto",
-    "state": "Status",
-    "zipCode": "Zip code",
-    "phoneNumber": "Phone number (optional)",
-    "streetAddress": "Street Address",
-    "aptSuite": "Apartment Number",
-    "selectOne": "Select One...",
-    "hint": "When a buyer is checking out using the \"Account\" purchase method, they much choose a cost center. The delivery addresses available to the buyer depend on the unit of the cost center chosen.",
-    "details": {
-      "title": "Address details",
-      "subtitle": "Unit: {{item.name}}"
+  "orgUnitAddress" : {
+    "title" : "Adresy dostawy",
+    "subtitle" : "Jednostka: {{item.name}}",
+    "country" : "Kraj/region",
+    "titles" : "Tytuł",
+    "firstName" : "Imię",
+    "lastName" : "Nazwisko",
+    "formattedAddress" : "Adres",
+    "address1" : "Adres",
+    "address2" : "2. adres (opcjonalny)",
+    "city" : "Miasto",
+    "state" : "Status",
+    "zipCode" : "Kod pocztowy",
+    "phoneNumber" : "Numer telefonu (opcjonalny)",
+    "streetAddress" : "Ulica",
+    "aptSuite" : "Numer mieszkania",
+    "selectOne" : "Wybierz jeden...",
+    "hint" : "Gdy nabywca dokonuje płatności, używając metody zakupu \"Konto\", wybiera miejsce powstawania kosztów. Adresy dostawy dostępne dla nabywcy zależą od jednostki wybranego miejsca powstawania kosztów.",
+    "details" : {
+      "title" : "Dane adresowe",
+      "subtitle" : "Jednostka: {{item.name}}"
     },
-    "edit": {
-      "title": "Edytuj adres"
+    "edit" : {
+      "title" : "Edytuj adres"
     },
-    "create": {
-      "title": "Utwórz adres"
+    "create" : {
+      "title" : "Utwórz adres"
     },
-    "form": {
-      "subtitle": "Unit: {{item.name}}"
+    "form" : {
+      "subtitle" : "Jednostka: {{item.name}}"
     },
-    "messages": {
-      "create": "Address {{ item.firstName }} {{ item.lastName }} created successfully",
-      "update": "Address {{ item.firstName }} {{ item.lastName }} updated successfully",
-      "delete": "The address cannot be brought back. Existing orders are not affected.",
-      "deleteTitle": "Delete this address?",
-      "deleted": "Address {{ item.firstName }} {{ item.lastName }} deleted successfully"
+    "messages" : {
+      "create" : "Adres {{ item.firstName }} {{ item.lastName }} został utworzony",
+      "update" : "Adres {{ item.firstName }} {{ item.lastName }} został zaktualizowany",
+      "delete" : "Nie można przywrócić adresu. Nie ma to wpływu na istniejące zamówienia.",
+      "deleteTitle" : "Czy usunąć ten adres?",
+      "deleted" : "Adres {{ item.firstName }} {{ item.lastName }} został usunięty"
     }
   },
-  "orgUserGroup": {
-    "groupName": "Grupy użytkowników",
-    "header": "All user groups ({{count}})",
-    "disabled": "(disabled)",
-    "uid": "Kod",
-    "name": "Nazwa",
-    "unit": "Jednostka",
-    "orgUnit": "Jednostka",
-    "actions": "",
-    "sortBy": "Sortuj według",
-    "sort": {
-      "byName": "Nazwa",
-      "byUnitName": "Jednostka",
-      "byGroupID": "Grupa"
+  "orgUserGroup" : {
+    "groupName" : "Grupy użytkowników",
+    "header" : "Wszystkie grupy użytkowników ({{count}})",
+    "disabled" : "(wyłączony)",
+    "uid" : "Kod",
+    "name" : "Nazwa",
+    "unit" : "Jednostka",
+    "orgUnit" : "Jednostka",
+    "actions" : "",
+    "sortBy" : "Sortuj według",
+    "sort" : {
+      "byName" : "Nazwa",
+      "byUnitName" : "Jednostka",
+      "byGroupID" : "Grupa"
     },
-    "hint": "User groups allow you to combine users together in one group, for the purposes of assigning purchase limits for many users at once.",
-    "details": {
-      "title": "User group Details",
-      "subtitle": "User group: {{ item.name }}"
+    "hint" : "Grupy użytkowników umożliwiają łączenie użytkowników w jedną grupę w celu przypisania limitów zakupów dla wielu użytkowników jednocześnie.",
+    "details" : {
+      "title" : "Szczegóły grupy użytkowników",
+      "subtitle" : "Grupa użytkowników: {{item.name}}"
     },
-    "edit": {
-      "title": "Edytuj grupę użytkowników",
-      "subtitle": "User group: {{ item.name }}"
+    "edit" : {
+      "title" : "Edytuj grupę użytkowników",
+      "subtitle" : "Grupa użytkowników: {{item.name}}"
     },
-    "create": {
-      "title": "Utwórz grupę użytkowników",
-      "subtitle": ""
+    "create" : {
+      "title" : "Utwórz grupę użytkowników",
+      "subtitle" : ""
     },
-    "links": {
-      "user": "Użytkownicy",
-      "permission": "Purchase limits"
+    "links" : {
+      "user" : "Użytkownicy",
+      "permission" : "Limity zakupów"
     },
-    "messages": {
-      "update": "User Group {{ item.name }} updated successfully",
-      "create": "User Group {{ item.name }} created successfully",
-      "deleteTitle": "Delete this user group?",
-      "delete": "The users in this group are not affected when the user group is deleted.",
-      "deleted": "User Group {{ item.name }} deleted successfully"
+    "messages" : {
+      "update" : "Grupa użytkowników {{ item.name }} została zaktualizowana",
+      "create" : "Grupa użytkowników {{ item.name }} została utworzona",
+      "deleteTitle" : "Usunąć tę grupę użytkowników?",
+      "delete" : "Usunięcie grupy użytkowników nie ma wpływu na użytkowników należących do tej grupy.",
+      "deleted" : "Grupa użytkowników {{ item.name }} została usunięta"
     },
-    "breadcrumbs": {
-      "list": "All user groups",
-      "details": "{{name}}",
-      "users": "Użytkownicy",
-      "permissions": "Purchase limits"
+    "breadcrumbs" : {
+      "list" : "Wszystkie grupy użytkowników",
+      "details" : "{{name}}",
+      "users" : "Użytkownicy",
+      "permissions" : "Limity zakupów"
     }
   },
-  "orgUserGroupUsers": {
-    "title": "Manage users",
-    "subtitle": "User group: {{ item.name }}",
-    "assigned": "User {{item.name}} assigned successfully",
-    "unassigned": "User {{item.name}} unassigned successfully",
-    "unassignAll": "Unassign All",
-    "unassignAllConfirmation": "All users unassigned successfully"
+  "orgUserGroupUsers" : {
+    "title" : "Zarządzanie użytkownikami",
+    "subtitle" : "Grupa użytkowników: {{item.name}}",
+    "assigned" : "Użytkownik {{ item.name }} został przypisany",
+    "unassigned" : "Usunięto przypisanie użytkownika {{ item.name }}",
+    "unassignAll" : "Usuń przypisania wszystkich",
+    "unassignAllConfirmation" : "Usunięto przypisania wszystkich użytkowników"
   },
-  "orgUserGroupAssignedUsers": {
-    "title": "Assigned users",
-    "subtitle": "User group: {{ item.name }}",
-    "assigned": "User {{item.name}} assigned successfully",
-    "unassigned": "User {{item.name}} unassigned successfully"
+  "orgUserGroupAssignedUsers" : {
+    "title" : "Przypisani użytkownicy",
+    "subtitle" : "Grupa użytkowników: {{item.name}}",
+    "assigned" : "Użytkownik {{ item.name }} został przypisany",
+    "unassigned" : "Usunięto przypisanie użytkownika {{ item.name }}"
   },
-  "orgUserGroupPermissions": {
-    "title": "Manage purchase limits",
-    "subtitle": "Limit: {{ item.name }}",
-    "assigned": "Purchase limits {{item.code}} assigned successfully",
-    "unassigned": "Purchase limits {{item.code}} unassigned successfully"
+  "orgUserGroupPermissions" : {
+    "title" : "Zarządzanie limitami zakupów",
+    "subtitle" : "Limit: {{ item.name }}",
+    "assigned" : "Limity zakupów {{item.code}} zostały przypisane",
+    "unassigned" : "Usunięto przypisania limitów zakupów {{item.code}}"
   },
-  "orgUserGroupAssignedPermissions": {
-    "title": "Assigned purchase limits",
-    "subtitle": "Limit: {{ item.name }}",
-    "assigned": "Purchase limits {{item.code}} assigned successfully",
-    "unassigned": "Purchase limits {{item.code}} unassigned successfully"
+  "orgUserGroupAssignedPermissions" : {
+    "title" : "Przypisane limity zakupów",
+    "subtitle" : "Limit: {{ item.name }}",
+    "assigned" : "Limity zakupów {{item.code}} zostały przypisane",
+    "unassigned" : "Usunięto przypisania limitów zakupów {{item.code}}"
   },
-  "orgUser": {
-    "groupName": "Użytkownicy",
-    "header": "All users ({{count}})",
-    "disabled": "(disabled)",
-    "uid": "E-mail",
-    "active": "Status",
-    "name": "Nazwa",
-    "firstName": "Imię",
-    "lastName": "Nazwisko",
-    "email": "E-mail",
-    "orgUnit": "Jednostka",
-    "unit": "Jednostka",
-    "roles": "Role",
-    "rights": "Rights",
-    "title": "Tytuł",
-    "hint": "Users are the buyers, approvers, managers, and administrators of your organization. Each user is assigned a role for making or approving purchases. Each user belongs to a unit, and they have access to all child units of their primary unit.",
-    "unitApprover": "Unit approver",
-    "assignApprover": "Add the user to approvers for the unit",
-    "actions": "",
-    "sortBy": "Sortuj według",
-    "sort": {
-      "byName": "Nazwa",
-      "byUnit": "Jednostka"
+  "orgUser" : {
+    "groupName" : "Użytkownicy",
+    "header" : "Wszyscy użytkownicy ({{count}})",
+    "disabled" : "(wyłączony)",
+    "uid" : "E-mail",
+    "active" : "Status",
+    "name" : "Nazwa",
+    "firstName" : "Imię",
+    "lastName" : "Nazwisko",
+    "email" : "E-mail",
+    "orgUnit" : "Jednostka",
+    "unit" : "Jednostka",
+    "roles" : "Role",
+    "rights" : "Uprawnienia",
+    "title" : "Tytuł",
+    "hint" : "Użytkownicy to nabywcy, osoby zatwierdzające, menedżerowie i administratorzy organizacji. Każdy użytkownik ma przypisaną rolę umożliwiającą dokonywanie lub zatwierdzanie zakupów. Każdy użytkownik należy do jednostki i ma dostęp do wszystkich jednostek podrzędnych swojej jednostki podstawowej.",
+    "unitApprover" : "Osoba zatwierdzająca jednostki",
+    "assignApprover" : "Dodanie użytkownika do osób zatwierdzających dla jednostki",
+    "actions" : "",
+    "sortBy" : "Sortuj według",
+    "sort" : {
+      "byName" : "Nazwa",
+      "byUnit" : "Jednostka"
     },
-    "details": {
-      "title": "Szczegóły użytkownika",
-      "subtitle": "User: {{ item.name }}"
+    "details" : {
+      "title" : "Szczegóły użytkownika",
+      "subtitle" : "Użytkownik: {{item.name}}"
     },
-    "edit": {
-      "title": "Edytuj użytkownika",
-      "subtitle": "User: {{ item.name }}"
+    "edit" : {
+      "title" : "Edytuj użytkownika",
+      "subtitle" : "Użytkownik: {{item.name}}"
     },
-    "create": {
-      "title": "Create User",
-      "subtitle": ""
+    "create" : {
+      "title" : "Utwórz użytkownika",
+      "subtitle" : ""
     },
-    "links": {
-      "password": "Change password",
-      "approvers": "Osoby zatwierdzające",
-      "userGroup": "Grupy użytkowników",
-      "permission": "Purchase limits",
-      "rolesAndRights": "Roles and Rights"
+    "links" : {
+      "password" : "Zmień hasło",
+      "approvers" : "Osoby zatwierdzające",
+      "userGroup" : "Grupy użytkowników",
+      "permission" : "Limity zakupów",
+      "rolesAndRights" : "Role i uprawnienia"
     },
-    "messages": {
-      "deactivateTitle": "Disable this user?",
-      "deactivate": "Disabled users cannot log onto the storefront and place orders.",
-      "confirmEnabled": "User {{item.firstName}} {{item.lastName}} enabled successfully",
-      "confirmDisabled": "User {{item.firstName}} {{item.lastName}} disabled successfully",
-      "update": "User {{item.firstName}} {{item.lastName}} updated successfully",
-      "create": "User {{item.firstName}} {{item.lastName}} created successfully",
-      "updatePassword": "User {{item.firstName}} {{item.lastName}} password updated successfully"
+    "messages" : {
+      "deactivateTitle" : "Czy wyłączyć użytkownika?",
+      "deactivate" : "Wyłączeni użytkownicy nie mogą logować się do sklepu i składać zamówień.",
+      "confirmEnabled" : "Użytkownik {{ item.firstName }} {{ item.lastName }} został włączony",
+      "confirmDisabled" : "Użytkownik {{ item.firstName }} {{ item.lastName }} został wyłączony",
+      "update" : "Użytkownik {{ item.firstName }} {{ item.lastName }} został zaktualizowany",
+      "create" : "Użytkownik {{ item.firstName }} {{ item.lastName }} został utworzony",
+      "updatePassword" : "Hasło użytkownika {{ item.firstName }} {{ item.lastName }} zostało zaktualizowane"
     },
-    "info": {
-      "disabledEdit": "Enable the user to allow editing.",
-      "disabledEnable": "Unit must be enabled before this user may be enabled."
+    "info" : {
+      "disabledEdit" : "Włącz użytkownika, aby umożliwić edycję.",
+      "disabledEnable" : "Jednostkę należy włączyć przed włączeniem tego użytkownika."
     },
-    "approver": {
-      "link": "Osoby zatwierdzające",
-      "header": "Approvers in {{code}}",
-      "assign": "Assign Approvers",
-      "assignHeader": "Assign Approvers in {{code}}",
-      "back": "Wstecz",
-      "new": "New approver",
-      "instructions": {
-        "check": "To assign an approver to this user, select the user's check box.",
-        "uncheck": "To remove an approver, clear the user's check box.",
-        "changes": "Changes are saved automatically."
+    "approver" : {
+      "link" : "Osoby zatwierdzające",
+      "header" : "Osoby zatwierdzające w {{code}}",
+      "assign" : "Przypisz osoby zatwierdzające",
+      "assignHeader" : "Przypisz osoby zatwierdzające w {{code}}",
+      "back" : "Wstecz",
+      "new" : "Nowa osoba zatwierdzająca",
+      "instructions" : {
+        "check" : "Aby przypisać osobę zatwierdzającą do użytkownika, zaznacz pole wyboru użytkownika.",
+        "uncheck" : "Aby usunąć osobę zatwierdzającą, odznacz pole wyboru użytkownika.",
+        "changes" : "Zmiany są zapisywane automatycznie."
       }
     },
-    "userGroup": {
-      "link": "Grupy użytkowników",
-      "header": "User groups in {{code}}",
-      "assign": "Assign user groups",
-      "assignHeader": "Assign user groups in {{code}}",
-      "back": "Wstecz",
-      "instructions": {
-        "check": "To assign an user group to this user, select the user's check box.",
-        "uncheck": "To remove aa user group, clear the user's check box.",
-        "changes": "Changes are saved automatically."
+    "userGroup" : {
+      "link" : "Grupy użytkowników",
+      "header" : "Grupy użytkowników w {{code}}",
+      "assign" : "Przypisz grupy użytkowników",
+      "assignHeader" : "Przypisz grupy użytkowników do {{code}}",
+      "back" : "Wstecz",
+      "instructions" : {
+        "check" : "Aby przypisać grupę do użytkownika, zaznacz pole wyboru użytkownika.",
+        "uncheck" : "Aby usunąć grupę użytkowników, odznacz pole wyboru użytkownika.",
+        "changes" : "Zmiany są zapisywane automatycznie."
       }
     },
-    "permission": {
-      "link": "Purchase limits",
-      "header": "Purchase limits in {{code}}",
-      "assign": "Assign purchase limits",
-      "assignHeader": "Assign purchase limits in {{code}}",
-      "back": "Wstecz",
-      "instructions": {
-        "check": "To assign a purchase limits to this user, select its check box.",
-        "uncheck": "To unassign a purchase limits, clear its check box.",
-        "changes": "Changes are saved automatically."
+    "permission" : {
+      "link" : "Limity zakupów",
+      "header" : "Limity zakupów w {{code}}",
+      "assign" : "Przypisz limity zakupów",
+      "assignHeader" : "Przypisz limity zakupów w {{code}}",
+      "back" : "Wstecz",
+      "instructions" : {
+        "check" : "Aby przypisać limity zakupów do użytkownika, zaznacz jego pole wyboru.",
+        "uncheck" : "Aby usunąć przypisanie limitów zakupu, odznacz pole wyboru.",
+        "changes" : "Zmiany są zapisywane automatycznie."
       },
-      "per": {
-        "undefined": "",
-        "MONTH": "per Month",
-        "YEAR": "per Year",
-        "WEEK": "per Week",
-        "QUARTER": "per Quarter"
+      "per" : {
+        "undefined" : "",
+        "MONTH" : "na miesiąc",
+        "YEAR" : "na rok",
+        "WEEK" : "na tydzień",
+        "QUARTER" : "na kwartał"
       }
     },
-    "password": {
-      "title": "Change password",
-      "subtitle": "User: {{ item.email }}",
-      "newPassword": "New password",
-      "confirmPassword": "Retype new password"
+    "password" : {
+      "title" : "Zmień hasło",
+      "subtitle" : "Użytkownik: {{item.name}}",
+      "newPassword" : "Nowe hasło",
+      "confirmPassword" : "Wpisz ponownie nowe hasło"
     },
-    "breadcrumbs": {
-      "list": "All users",
-      "details": "{{name}}",
-      "userGroups": "Grupy użytkowników",
-      "approvers": "Osoby zatwierdzające",
-      "permissions": "Purchase limits"
+    "breadcrumbs" : {
+      "list" : "Wszyscy użytkownicy",
+      "details" : "{{name}}",
+      "userGroups" : "Grupy użytkowników",
+      "approvers" : "Osoby zatwierdzające",
+      "permissions" : "Limity zakupów"
     }
   },
-  "orgUserUserGroups": {
-    "title": "Manage user groups",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "User group {{item.name}} assigned successfully",
-    "unassigned": "User group {{item.name}} unassigned successfully"
+  "orgUserUserGroups" : {
+    "title" : "Zarządzanie grupami użytkowników",
+    "subtitle" : "Użytkownik: {{item.name}}",
+    "assigned" : "Grupa użytkowników {{ item.name }} została przypisana",
+    "unassigned" : "Usunięto przypisanie grupy użytkowników {{ item.name }}"
   },
-  "orgUserAssignedUserGroups": {
-    "title": "Assigned user groups",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "User group {{item.name}} assigned successfully",
-    "unassigned": "User group {{item.name}} unassigned successfully"
+  "orgUserAssignedUserGroups" : {
+    "title" : "Przypisane grupy użytkowników",
+    "subtitle" : "Użytkownik: {{item.name}}",
+    "assigned" : "Grupa użytkowników {{ item.name }} została przypisana",
+    "unassigned" : "Usunięto przypisanie grupy użytkowników {{ item.name }}"
   },
-  "orgUserApprovers": {
-    "title": "Manage approvers",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "Approver {{ item.name }} assigned successfully",
-    "unassigned": "Approver {{ item.name }} unassigned successfully"
+  "orgUserApprovers" : {
+    "title" : "Zarządzanie osobami zatwierdzającymi",
+    "subtitle" : "Użytkownik: {{item.name}}",
+    "assigned" : "Osoba zatwierdzająca {{ item.name }} została przypisana",
+    "unassigned" : "Usunięto przypisanie osoby zatwierdzającej {{ item.name }}"
   },
-  "orgUserAssignedApprovers": {
-    "title": "Assigned approvers",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "Approver {{ item.name }} assigned successfully",
-    "unassigned": "Approver {{ item.name }} unassigned successfully"
+  "orgUserAssignedApprovers" : {
+    "title" : "Przypisane osoby zatwierdzające",
+    "subtitle" : "Użytkownik: {{item.name}}",
+    "assigned" : "Osoba zatwierdzająca {{ item.name }} została przypisana",
+    "unassigned" : "Usunięto przypisanie osoby zatwierdzającej {{ item.name }}"
   },
-  "orgUserPermissions": {
-    "title": "Manage purchase limits",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "Purchase limit {{ item.code }} assigned successfully",
-    "unassigned": "Purchase limit {{ item.code }} unassigned successfully"
+  "orgUserPermissions" : {
+    "title" : "Zarządzanie limitami zakupów",
+    "subtitle" : "Użytkownik: {{item.name}}",
+    "assigned" : "Limit zakupów {{item.code}} został przypisany",
+    "unassigned" : "Usunięto przypisanie limitu zakupów {{item.code}}"
   },
-  "orgUserAssignedPermissions": {
-    "title": "Assigned purchase limits",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "Purchase limit {{ item.code }} assigned successfully",
-    "unassigned": "Purchase limit {{ item.code }} unassigned successfully"
+  "orgUserAssignedPermissions" : {
+    "title" : "Przypisane limity zakupów",
+    "subtitle" : "Użytkownik: {{item.name}}",
+    "assigned" : "Limit zakupów {{item.code}} został przypisany",
+    "unassigned" : "Usunięto przypisanie limitu zakupów {{item.code}}"
   },
-  "orgPurchaseLimit": {
-    "groupName": "Purchase Limits",
-    "header": "All purchase limits ({{count}})",
-    "name": "Nazwa",
-    "code": "Kod",
-    "active": "Status",
-    "limit": "Limit",
-    "orderApprovalPermissionType": "Typ",
-    "threshold": "Wartość progowa",
-    "periodRange": "Okres",
-    "currency": "Waluta",
-    "orgUnit": "Jednostka nadrzędna",
-    "unit": "Jednostka nadrzędna",
-    "actions": "",
-    "hint": "Purchase limits help control spending by defining how much buyers can spend per order or per week, month, quarter, or year. Purchase limits are assigned to users or user groups. Purchase limits are also assigned to approvers, defining how much they are permitted to approve. You can assign purchase limits to many users at once with user groups.",
-    "details": {
-      "title": "Purchase Limit Details",
-      "subtitle": "Purchase Limit: {{ item.code }}"
+  "orgPurchaseLimit" : {
+    "groupName" : "Limity zakupów",
+    "header" : "Wszystkie limity zakupów ({{count}})",
+    "name" : "Nazwa",
+    "code" : "Kod",
+    "active" : "Status",
+    "limit" : "Limit",
+    "orderApprovalPermissionType" : "Typ",
+    "threshold" : "Wartość progowa",
+    "periodRange" : "Okres",
+    "currency" : "Waluta",
+    "orgUnit" : "Jednostka nadrzędna",
+    "unit" : "Jednostka nadrzędna",
+    "actions" : "",
+    "hint" : "Limity zakupów pomagają kontrolować wydatki, określając, ile nabywcy mogą wydać na zamówienie lub na tydzień, miesiąc, kwartał lub rok. Limity zakupów są przypisywane do użytkowników lub grup użytkowników. Limity zakupów są również przypisywane do osób zatwierdzających, określając, ile mogą zatwierdzić. Za pomocą grup użytkowników można przypisać limity zakupów do wielu użytkowników jednocześnie.",
+    "details" : {
+      "title" : "Szczegóły limitów zakupów",
+      "subtitle" : "Limit zakupów: {{ item.code }}"
     },
-    "edit": {
-      "title": "Edit Purchase Limit",
-      "subtitle": "Purchase limits : {{ item.code }}"
+    "edit" : {
+      "title" : "Edytuj limit zakupów",
+      "subtitle" : "Limity zakupów: {{ item.code }}"
     },
-    "create": {
-      "title": "Create Purchase Limit",
-      "subtitle": ""
+    "create" : {
+      "title" : "Utwórz limit zakupów",
+      "subtitle" : ""
     },
-    "sortBy": "Sortuj według",
-    "sort": {
-      "byName": "Nazwa",
-      "byUnitName": "Jednostka"
+    "sortBy" : "Sortuj według",
+    "sort" : {
+      "byName" : "Nazwa",
+      "byUnitName" : "Jednostka"
     },
-    "messages": {
-      "deactivateTitle": "Disable this purchase limit?",
-      "deactivate": "Disabled purchase limits can no longer be assigned to a user or user group. Current assignments will have no effect.",
-      "confirmEnabled": "Purchase Limit {{ item.code }} enabled successfully",
-      "confirmDisabled": "Purchase Limit {{ item.code }} disabled successfully",
-      "update": "Purchase Limit {{ item.code }} updated successfully",
-      "create": "Purchase Limit {{ item.code }} created successfully"
+    "messages" : {
+      "deactivateTitle" : "Czy wyłączyć ten limit zakupów?",
+      "deactivate" : "Wyłączonych limitów zakupów nie można już przypisywać do użytkownika lub grupy użytkowników. Bieżące przypisania nie będą działać.",
+      "confirmEnabled" : "Limit zakupów {{item.code}} został włączony",
+      "confirmDisabled" : "Limit zakupów {{item.code}} został wyłączony",
+      "update" : "Limit zakupów {{item.code}} został zaktualizowany",
+      "create" : "Limit zakupów {{item.code}} został utworzony"
     },
-    "info": {
-      "disabledEdit": "Enable the purchase limit to allow editing.",
-      "disabledEnable": "Unit must be enabled before this purchase limit may be enabled."
+    "info" : {
+      "disabledEdit" : "Włącz limit zakupów, aby umożliwić edycję.",
+      "disabledEnable" : "Jednostkę należy włączyć przed włączeniem tego limitu zakupów."
     },
-    "per": {
-      "DAY": "per day",
-      "WEEK": "per week",
-      "MONTH": "per month",
-      "QUARTER": "per quarter",
-      "YEAR": "per year"
+    "per" : {
+      "DAY" : "na dzień",
+      "WEEK" : "na tydzień",
+      "MONTH" : "na miesiąc",
+      "QUARTER" : "na kwartał",
+      "YEAR" : "na rok"
     },
-    "breadcrumbs": {
-      "list": "All purchase limits",
-      "details": "{{code}}"
+    "breadcrumbs" : {
+      "list" : "Wszystkie limity zakupów",
+      "details" : "{{code}}"
     }
   }
 }

@@ -1,9 +1,9 @@
 {
-  "myAccountV2NotifiationPerference": {
-    "header": "Kanały powiadamiania",
-    "message": "Select your preferred notification channels",
-    "note": "Note: ",
-    "noteMessage": "If you deactivate all channels you will not be able to receive any further notifications.",
-    "EMAIL": "Email:"
+  "myAccountV2NotifiationPerference" : {
+    "header" : "Kanały powiadomień",
+    "message" : "Wybierz swoje kanały powiadomień",
+    "note" : "Uwaga: ",
+    "noteMessage" : "Jeżeli wyłączysz wszystkie kanały, nie otrzymasz kolejnych powiadomień.",
+    "EMAIL" : "E-mail:"
   }
 }

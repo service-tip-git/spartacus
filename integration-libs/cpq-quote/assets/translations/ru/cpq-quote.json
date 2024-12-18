@@ -1,4 +1,4 @@
 {
-  "cpqQuoteHeading": "Цена позиции",
-  "discountCaption": "This item is {{ discount }}% off"
+  "cpqQuoteHeading" : "Цена позиции",
+  "discountCaption" : "Цена на эту позицию снижена на {{ discount }}%"
 }

@@ -1,7 +1,7 @@
 {
-  "futureStockDropdown": {
-    "header": "Будущая доступность ",
-    "quantity": "К-во",
-    "noFutureStocks": "По этому продукту нет информации о его будущей доступности."
+  "futureStockDropdown" : {
+    "header" : "Доступность в будущем",
+    "quantity" : "Кол.",
+    "noFutureStocks" : "По этому продукту нет информации о его доступности в будущем."
   }
 }

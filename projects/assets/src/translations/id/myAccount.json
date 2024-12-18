@@ -1,109 +1,109 @@
 {
-  "closeAccount": {
-    "confirmAccountClosure": "Konfirmasi Penutupan Akun",
-    "confirmAccountClosureMessage": "Apakah Anda yakin untuk menutup akun Anda?",
-    "closeMyAccount": "CLOSE MY ACCOUNT",
-    "accountClosedSuccessfully": "Account closed with success",
-    "accountClosedFailure": "Failed to close account"
+  "closeAccount" : {
+    "confirmAccountClosure" : "Konfirmasi Penutupan Akun",
+    "confirmAccountClosureMessage" : "Apakah Anda yakin untuk menutup akun Anda?",
+    "closeMyAccount" : "TUTUP AKUN SAYA",
+    "accountClosedSuccessfully" : "Akun berhasil ditutup",
+    "accountClosedFailure" : "Akun gagal ditutup"
   },
-  "updatePasswordForm": {
-    "oldPassword": {
-      "label": "Kata Sandi Lama",
-      "placeholder": "Kata Sandi Lama"
+  "updatePasswordForm" : {
+    "oldPassword" : {
+      "label" : "Kata Sandi Lama",
+      "placeholder" : "Kata Sandi Lama"
     },
-    "oldPasswordIsRequired": "Old password is required.",
-    "newPassword": {
-      "label": "Kata Sandi Baru",
-      "placeholder": "Kata Sandi Baru"
+    "oldPasswordIsRequired" : "Kata sandi lama wajib diisi.",
+    "newPassword" : {
+      "label" : "Kata Sandi Baru",
+      "placeholder" : "Kata Sandi Baru"
     },
-    "passwordMinRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
-    "passwordStrengthRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
-    "confirmPassword": {
-      "label": "Konfirmasi Kata Sandi Baru",
-      "placeholder": "Konfirmasikan Kata Sandi"
+    "passwordMinRequirements" : "Berikut panduan singkat untuk membuat kata sandi yang aman: Gunakan setidaknya 8 karakter dengan kombinasi huruf besar dan kecil, angka, serta simbol.",
+    "passwordStrengthRequirements" : "Berikut panduan singkat untuk membuat kata sandi yang aman: Gunakan setidaknya 8 karakter dengan kombinasi huruf besar dan kecil, angka, serta simbol. Pastikan untuk tidak menggunakan karakter yang sama secara berurutan.",
+    "confirmPassword" : {
+      "label" : "Konfirmasi Kata Sandi Baru",
+      "placeholder" : "Konfirmasikan Kata Sandi"
     },
-    "bothPasswordMustMatch": "Both password must match",
-    "passwordUpdateSuccess": "Password updated with success",
-    "accessDeniedError": "Access is denied"
+    "bothPasswordMustMatch" : "Kedua kata sandi harus sama",
+    "passwordUpdateSuccess" : "Kata sandi berhasil diperbarui",
+    "accessDeniedError" : "Akses ditolak"
   },
-  "updateProfileForm": {
-    "title": "Jabatan",
-    "none": "",
-    "firstName": {
-      "label": "Nama depan",
-      "placeholder": "Nama depan"
+  "updateProfileForm" : {
+    "title" : "Gelar",
+    "none" : "",
+    "firstName" : {
+      "label" : "Nama depan",
+      "placeholder" : "Nama depan"
     },
-    "firstNameIsRequired": "First name is required.",
-    "lastName": {
-      "label": "Nama belakang",
-      "placeholder": "Nama belakang"
+    "firstNameIsRequired" : "Nama depan wajib diisi.",
+    "lastName" : {
+      "label" : "Nama belakang",
+      "placeholder" : "Nama belakang"
     },
-    "lastNameIsRequired": "Last name is required.",
-    "profileUpdateSuccess": "Personal details successfully updated",
-    "customerId": "Customer #"
+    "lastNameIsRequired" : "Nama belakang wajib diisi.",
+    "profileUpdateSuccess" : "Rincian pribadi berhasil diperbarui",
+    "customerId" : "Pelanggan #"
   },
-  "consentManagementForm": {
-    "clearAll": "Clear all",
-    "selectAll": "Pilih semua",
-    "message": {
-      "success": {
-        "given": "Consent successfully given.",
-        "withdrawn": "Consent successfully withdrawn."
+  "consentManagementForm" : {
+    "clearAll" : "Hapus semua",
+    "selectAll" : "Pilih semua",
+    "message" : {
+      "success" : {
+        "given" : "Persetujuan berhasil diberikan.",
+        "withdrawn" : "Persetujuan berhasil dibatalkan."
       }
     }
   },
-  "myCoupons": {
-    "noCouponsMessage": "You have no coupons available.",
-    "effectiveTitle": "Berlaku:",
-    "Effective": "EFFECTIVE",
-    "PreSession": "EFFECTIVE SOON",
-    "ExpireSoon": "EXPIRING SOON",
-    "readMore": "Read more",
-    "notification": "Notifikasi",
-    "findProducts": "Cari Produk",
-    "status": "Status:",
-    "dialogTitle": "Kupon",
-    "claimCustomerCoupon": "Anda telah berhasil mengklaim kupon ini.",
-    "myCoupons": "My coupons",
-    "startDateAsc": "Start Date (ascending)",
-    "startDateDesc": "Start Date (descending)",
-    "endDateAsc": "End Date (ascending)",
-    "endDateDesc": "End Date (descending)",
-    "sortBy": "Urutkan berdasarkan",
-    "sortCoupons": "Sort coupons",
-    "notesPreffix": "You can set your preferred channels for receiving coupon notifications on the ",
-    "notesLink": "Saluran Notifikasi",
-    "notesSuffix": " page."
+  "myCoupons" : {
+    "noCouponsMessage" : "Anda tidak memiliki kupon yang tersedia.",
+    "effectiveTitle" : "Berlaku:",
+    "Effective" : "BERLAKU",
+    "PreSession" : "SEGERA BERLAKU",
+    "ExpireSoon" : "SEGERA BERAKHIR",
+    "readMore" : "Baca selengkapnya",
+    "notification" : "Notifikasi",
+    "findProducts" : "Cari Produk",
+    "status" : "Status:",
+    "dialogTitle" : "Kupon",
+    "claimCustomerCoupon" : "Anda telah berhasil mengeklaim kupon ini.",
+    "myCoupons" : "Kupon saya",
+    "startDateAsc" : "Tanggal Mulai (urutkan naik)",
+    "startDateDesc" : "Tanggal Mulai (urutkan turun)",
+    "endDateAsc" : "Tanggal Berakhir (urutkan naik)",
+    "endDateDesc" : "Tanggal Berakhir (urutkan turun)",
+    "sortBy" : "Urutkan berdasarkan",
+    "sortCoupons" : "Urutkan kupon",
+    "notesPreffix" : "Saluran favorit Anda dapat diatur untuk menerima notifikasi kupon di halaman ",
+    "notesLink" : "Saluran Notifikasi",
+    "notesSuffix" : " ."
   },
-  "notificationPreference": {
-    "message": "Select your preferred notification channels",
-    "note": "Note: ",
-    "noteMessage": "If you deactivate all channels you will not be able to receive any further notifications.",
-    "EMAIL": "Email:",
-    "SMS": "SMS:",
-    "SITE_MESSAGE": "SiteMessage"
+  "notificationPreference" : {
+    "message" : "Pilih saluran notifikasi favorit Anda",
+    "note" : "Catatan: ",
+    "noteMessage" : "Jika Anda menonaktifkan semua saluran, notifikasi selanjutnya tidak akan diterima.",
+    "EMAIL" : "Email:",
+    "SMS" : "SMS:",
+    "SITE_MESSAGE" : "Pesan Situs"
   },
-  "myInterests": {
-    "header": "Minat Saya",
-    "item": "ITEM",
-    "price": "PRICE",
-    "notifications": "NOTIFICATIONS",
-    "noInterests": "You have no registered interests yet.",
-    "inStock": "Dalam Stok",
-    "lowStock": "Stok Sedikit",
-    "outOfStock": "Stok Habis",
-    "BACK_IN_STOCK": "Tersedia Kembali dalam Stok",
-    "sortBy": "Urutkan berdasarkan",
-    "sortInterests": "Sort interests",
-    "expirationDate": " - Till {{ expirationDate }}",
-    "productId": "ID {{ code }}",
-    "remove": "Hapus",
-    "sorting": {
-      "byNameAsc": "Nama (menaik)",
-      "byNameDesc": "Nama (menurun)"
+  "myInterests" : {
+    "header" : "Minat Saya",
+    "item" : "ITEM",
+    "price" : "HARGA",
+    "notifications" : "NOTIFIKASI",
+    "noInterests" : "Anda belum memiliki minat yang terdaftar.",
+    "inStock" : "Stok Tersedia",
+    "lowStock" : "Stok Sedikit",
+    "outOfStock" : "Stok Habis",
+    "BACK_IN_STOCK" : "Stok Tersedia Kembali",
+    "sortBy" : "Urutkan berdasarkan",
+    "sortInterests" : "Urutkan minat",
+    "expirationDate" : " - Hingga {{ expirationDate }}",
+    "productId" : "ID {{ code }}",
+    "remove" : "Hapus",
+    "sorting" : {
+      "byNameAsc" : "Nama (urutkan naik)",
+      "byNameDesc" : "Nama (urutkan turun)"
     },
-    "actions": "ACTIONS",
-    "caption": "My Interests contents.",
-    "itemRemoved": "Selected item has been removed."
+    "actions" : "TINDAKAN",
+    "caption" : "Konten Minat Saya.",
+    "itemRemoved" : "Item yang dipilih telah dihapus."
   }
 }

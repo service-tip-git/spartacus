@@ -1,129 +1,129 @@
 {
-  "asmCustomer360": {
-    "alertErrorMessage": "The information cannot be be loaded. Please try again later or contact your system administrator.",
-    "errorMessageHeader": "Oops! Something went wrong",
-    "applyActionAlter": "The action couldn't be completed. Please try again later.",
-    "header": {
-      "title": "Customer Profile",
-      "newTitle": "Customer 360°",
-      "subTitle": "{{name}} Customer 360° View",
-      "newSubTitle": "{{name}} 360 View",
-      "activeCartLabel": "{{cartSize}} item added to cart",
-      "recentOrderLabel": "Last order {{price}}",
-      "recentTicketLabel": "Utolsó jegy",
-      "signedUpAt": "Account created on {{date}}"
+  "asmCustomer360" : {
+    "alertErrorMessage" : "Nem lehet betölteni az információkat. Próbálja újra később, vagy forduljon a rendszergazdájához.",
+    "errorMessageHeader" : "Hoppá! Hiba történt.",
+    "applyActionAlter" : "A műveletet nem lehetett végrehajtani. Próbálja újra később.",
+    "header" : {
+      "title" : "Ügyfélprofil",
+      "newTitle" : "Ügyfél 360°",
+      "subTitle" : "{{name}} Ügyfél 360°-os nézete",
+      "newSubTitle" : "{{name}} 360 fokos nézet",
+      "activeCartLabel" : "{{cartSize}} tétel hozzáadva a kosárhoz",
+      "recentOrderLabel" : "Legutóbbi rendelés: {{price}}",
+      "recentTicketLabel" : "Utolsó jegy",
+      "signedUpAt" : "A fiók létrehozásának dátuma: {{date}}"
     },
-    "productListing": {
-      "totalNoItems": "Total No. Items {{count}}",
-      "totalPrice": "Total Price {{price}}",
-      "showMore": "Több megjelenítése",
-      "showLess": "Kevesebb megjelenítése"
+    "productListing" : {
+      "totalNoItems" : "Összes tétel száma: {{count}}",
+      "totalPrice" : "Teljes ár: {{price}}",
+      "showMore" : "Több megjelenítése",
+      "showLess" : "Kevesebb megjelenítése"
     },
-    "productItem": {
-      "outOfStock": "Nincs készleten",
-      "quantity": "Qty: {{count}}",
-      "itemPrice": "Item Price: {{price}}"
+    "productItem" : {
+      "outOfStock" : "Nincs készleten",
+      "quantity" : "Menny.: {{count}}",
+      "itemPrice" : "Tétel ára: {{price}}"
     },
-    "activeCart": {
-      "header": "Aktív bevásárlókosár",
-      "emptyDescription": "There are currently no active cart Items",
-      "aria": {
-        "linkLabel": "Active Cart {{code}}"
+    "activeCart" : {
+      "header" : "Aktív kosár",
+      "emptyDescription" : "Jelenleg nincsenek aktív kosártételek",
+      "aria" : {
+        "linkLabel" : "Aktív kosár: {{code}}"
       }
     },
-    "savedCart": {
-      "header": "Last Saved Cart",
-      "emptyDescription": "There are currently no saved cart items",
-      "aria": {
-        "linkLabel": "Last Saved Cart {{code}}"
+    "savedCart" : {
+      "header" : "Legutóbb mentett kosár",
+      "emptyDescription" : "Jelenleg nincsenek mentett kosártételek",
+      "aria" : {
+        "linkLabel" : "Legutóbb mentett kosár: {{code}}"
       }
     },
-    "productInterests": {
-      "header": "Érdeklődési kör",
-      "emptyDescription": "There are currently no interest items"
+    "productInterests" : {
+      "header" : "Érdeklődési körök",
+      "emptyDescription" : "Jelenleg nincsenek az érdeklődési körnek megfelelő tételek"
     },
-    "profile": {
-      "address": "Cím",
-      "billingAddress": "Számlázási cím",
-      "deliveryAddress": "Szállítási cím",
-      "phone1": "Telefonszám 1",
-      "phone2": "Telefonszám 2",
-      "paymentMethodHeader": "Mentett fizetési módok"
+    "profile" : {
+      "address" : "Cím",
+      "billingAddress" : "Számlázási cím",
+      "deliveryAddress" : "Kézbesítési cím",
+      "phone1" : "Telefonszám 1",
+      "phone2" : "Telefonszám 2",
+      "paymentMethodHeader" : "Mentett fizetési módok"
     },
-    "activity": {
-      "type": "Típus",
-      "id": "Azonosító",
-      "description": "Leírás",
-      "status": "Státus",
-      "created": "Létrehozva",
-      "updated": "Aktualizálva",
-      "numberOfCartItems": "Cart with {{count}} items",
-      "cart": "Kosár",
-      "order": "Rendelés",
-      "savedCart": "Mentett bevásárlókosár",
-      "emptyStateText": "There is currently no recorded customer activity",
-      "headerText": "Általános"
+    "activity" : {
+      "type" : "Típus",
+      "id" : "Azonosító",
+      "description" : "Leírás",
+      "status" : "Státus",
+      "created" : "Létrehozva",
+      "updated" : "Aktualizálva",
+      "numberOfCartItems" : "Kosár {{count}} tétellel",
+      "cart" : "Kosár",
+      "order" : "Rendelés",
+      "savedCart" : "Mentett bevásárlókosár",
+      "emptyStateText" : "Jelenleg nincs rögzített ügyféltevékenység",
+      "headerText" : "Általános"
     },
-    "productReviews": {
-      "columnHeaders": {
-        "item": "Tétel",
-        "dateAndStatus": "Dátum / Státus",
-        "rating": "Értékelés",
-        "review": "Vélemény"
+    "productReviews" : {
+      "columnHeaders" : {
+        "item" : "Tétel",
+        "dateAndStatus" : "Dátum / Státus",
+        "rating" : "Értékelés",
+        "review" : "Vélemény"
       },
-      "header": "Termékvélemények",
-      "emptyDescription": "There are currently no product review items",
-      "sku": "cikkszám"
+      "header" : "Termékvélemények",
+      "emptyDescription" : "Jelenleg nincsenek termékvélemény-tételek",
+      "sku" : "Cikkszám"
     },
-    "supportTickets": {
-      "columnHeaders": {
-        "id": "Azonosító",
-        "headline": "Fejléc",
-        "category": "Kategória"
+    "supportTickets" : {
+      "columnHeaders" : {
+        "id" : "Azonosító",
+        "headline" : "Címsor",
+        "category" : "Kategória"
       },
-      "header": "Támogatási jegyek",
-      "emptyDescription": "There are currently no support tickets"
+      "header" : "Támogatási jegyek",
+      "emptyDescription" : "Jelenleg nincsenek támogatási jegyek"
     },
-    "coupons": {
-      "headerText": "Kuponok",
-      "emptyDescription": "There are currently no coupons",
-      "applyButtonText": "Apply to Cart",
-      "applied": "Kupon alkalmazva",
-      "removeButtonText": "Eltávolítás"
+    "coupons" : {
+      "headerText" : "Kuponok",
+      "emptyDescription" : "Jelenleg nincsenek kuponok",
+      "applyButtonText" : "Alkalmazás a kosárra",
+      "applied" : "Kupon alkalmazva",
+      "removeButtonText" : "Eltávolítás"
     },
-    "promotions": {
-      "headerText": "Promóciók",
-      "emptyDescription": "There are currently no promotions",
-      "applied": "A promóció alkalmazva",
-      "headerName": "Név",
-      "headerAction": "Művelet"
+    "promotions" : {
+      "headerText" : "Promóciók",
+      "emptyDescription" : "Jelenleg nincsenek promóciók",
+      "applied" : "A promóció alkalmazva",
+      "headerName" : "Név",
+      "headerAction" : "Művelet"
     },
-    "customerCoupons": {
-      "headerText": "Vevői kuponok",
-      "emptyDescription": "There are currently no customer coupons",
-      "applyButtonText": "Assign to Customer",
-      "removeButtonText": "Eltávolítás",
-      "availableTab": "Elérhető",
-      "sentTab": "Elküldve",
-      "searchBox": "Kupon"
+    "customerCoupons" : {
+      "headerText" : "Ügyfélkuponok",
+      "emptyDescription" : "Jelenleg nincsenek ügyfélkuponok",
+      "applyButtonText" : "Hozzárendelés ügyfélhez",
+      "removeButtonText" : "Eltávolítás",
+      "availableTab" : "Elérhető",
+      "sentTab" : "Elküldve",
+      "searchBox" : "Kupon"
     },
-    "maps": {
-      "storeClosed": "Bezárás",
-      "storesFound": "{{ initial }} - {{ end }} from {{ total }} stores found"
+    "maps" : {
+      "storeClosed" : "Bezárás",
+      "storesFound" : "{{ initial }}–{{ end }} a talált {{ total }} üzletből"
     },
-    "overviewTab": "Áttekintés",
-    "profileTab": "Profil",
-    "activityTab": "Tevékenység",
-    "feedbackTab": "Visszajelzés",
-    "promotionsTab": "Promóciók",
-    "mapsTab": "Maps",
-    "storeLocationsTab": "Helyek tárolása",
-    "aria": {
-      "activeCartCode": "Active Cart {{code}}",
-      "recentOrderCode": "Last Order {{code}}"
+    "overviewTab" : "Áttekintés",
+    "profileTab" : "Profil",
+    "activityTab" : "Tevékenység",
+    "feedbackTab" : "Visszajelzés",
+    "promotionsTab" : "Promóciók",
+    "mapsTab" : "Térképek",
+    "storeLocationsTab" : "Üzletek helye",
+    "aria" : {
+      "activeCartCode" : "Aktív kosár: {{code}}",
+      "recentOrderCode" : "Legutóbbi rendelés: {{code}}"
     },
-    "pagination": "Tördelés",
-    "page": "Page {{number}}",
-    "emptyCellValue": "---"
+    "pagination" : "Lapszámozás",
+    "page" : "{{number}}. oldal",
+    "emptyCellValue" : "---"
   }
 }

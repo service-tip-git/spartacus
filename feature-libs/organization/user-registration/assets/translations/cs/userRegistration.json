@@ -1,66 +1,66 @@
 {
-  "userRegistrationForm": {
-    "fields": {
-      "titleCode": {
-        "label": "Title (optional)",
-        "placeholder": "Oslovení"
+  "userRegistrationForm" : {
+    "fields" : {
+      "titleCode" : {
+        "label" : "Titul (volitelný)",
+        "placeholder" : "Oslovení"
       },
-      "firstName": {
-        "label": "Jméno",
-        "placeholder": "Jméno"
+      "firstName" : {
+        "label" : "Křestní jméno",
+        "placeholder" : "Křestní jméno"
       },
-      "lastName": {
-        "label": "Příjmení",
-        "placeholder": "Příjmení"
+      "lastName" : {
+        "label" : "Příjmení",
+        "placeholder" : "Příjmení"
       },
-      "companyName": {
-        "label": "Company name",
-        "placeholder": "Company name"
+      "companyName" : {
+        "label" : "Název společnosti",
+        "placeholder" : "Název společnosti"
       },
-      "email": {
-        "label": "E-mail",
-        "placeholder": "E-mail"
+      "email" : {
+        "label" : "E-mail",
+        "placeholder" : "E-mail"
       },
-      "city": {
-        "label": "City/Town (optional)",
-        "placeholder": "Please select City/Town"
+      "city" : {
+        "label" : "Město/obec (volitelné)",
+        "placeholder" : "Vyberte město/obec"
       },
-      "country": {
-        "label": "Country (optional)",
-        "placeholder": "Select Country"
+      "country" : {
+        "label" : "Země (volitelná)",
+        "placeholder" : "Vyberte zemi"
       },
-      "state": {
-        "label": "State/Province (optional)",
-        "placeholder": "Select State/Province"
+      "state" : {
+        "label" : "Stát / správní celek (volitelný)",
+        "placeholder" : "Vyberte stát / správní celek"
       },
-      "postalCode": {
-        "label": "Zip/Postal code (optional)",
-        "placeholder": "Zip/Postal code"
+      "postalCode" : {
+        "label" : "PSČ (volitelné)",
+        "placeholder" : "PSČ"
       },
-      "addressLine": {
-        "label": "Address (optional)",
-        "placeholder": "Adresa"
+      "addressLine" : {
+        "label" : "Adresa (volitelná)",
+        "placeholder" : "Adresa"
       },
-      "secondAddressLine": {
-        "label": "Address line 2 (optional)",
-        "placeholder": "Address line 2"
+      "secondAddressLine" : {
+        "label" : "2. řádek adresy (volitelný)",
+        "placeholder" : "2. řádek adresy"
       },
-      "phoneNumber": {
-        "label": "Phone number (optional)",
-        "placeholder": "Telefonní číslo"
+      "phoneNumber" : {
+        "label" : "Telefonní číslo (volitelné)",
+        "placeholder" : "Telefonní číslo"
       },
-      "message": {
-        "label": "Message (optional)",
-        "placeholder": "An example data for the message field: \"Department: Ground support; Position: Chief safe guard; Report to: Steve Jackson; Comments: Please create new account for me\"."
+      "message" : {
+        "label" : "Zpráva (volitelná)",
+        "placeholder" : "Příklad dat pro pole zprávy: „Oddělení: pozemní podpora, Pozice: velitel bezpečnosti; Přímý nadřízený: Steve Jackson; Komentáře: Vytvořte mi prosím nový účet“."
       }
     },
-    "messageToApproverTemplate": "Company name: {{companyName}},\n  Phone number: {{phoneNumber}},\n  Address: {{addressLine}} {{secondAddressLine}} {{city}} {{state}} {{postalCode}} {{country}},\n  Message: {{message}}",
-    "successFormSubmitMessage": "Thank you for registering! A representative will contact you shortly and confirm your access information.",
-    "formSubmitButtonLabel": "Registrovat",
-    "goToLoginButtonLabel": "Already registered? Go to Sign in",
-    "httpHandlers": {
-      "conflict": "User with this e-mail address already exists."
+    "messageToApproverTemplate" : "Název společnost: {{companyName}},\n  Telefonní číslo: {{phoneNumber}},\n  Adresa: {{addressLine}} {{secondAddressLine}} {{city}} {{state}} {{postalCode}} {{country}},\n  Zpráva: {{message}}",
+    "successFormSubmitMessage" : "Děkujeme za registraci! Zástupce vás bude brzy kontaktovat a potvrdí vaše přístupové údaje.",
+    "formSubmitButtonLabel" : "Registrovat",
+    "goToLoginButtonLabel" : "Už jste zaregistrováni? Přihlaste se.",
+    "httpHandlers" : {
+      "conflict" : "Uživatel s touto e-mailovou adresou už existuje."
     },
-    "messageToFailedToRegister": "Failed to register. Please contact your admin for further assistance."
+    "messageToFailedToRegister" : "Registrace se nezdařila. Obraťte se na správce."
   }
 }

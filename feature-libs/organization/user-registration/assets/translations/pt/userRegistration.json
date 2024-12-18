@@ -1,66 +1,66 @@
 {
-  "userRegistrationForm": {
-    "fields": {
-      "titleCode": {
-        "label": "Title (optional)",
-        "placeholder": "Título"
+  "userRegistrationForm" : {
+    "fields" : {
+      "titleCode" : {
+        "label" : "Título (opcional)",
+        "placeholder" : "Título"
       },
-      "firstName": {
-        "label": "Nome",
-        "placeholder": "Nome"
+      "firstName" : {
+        "label" : "Nome",
+        "placeholder" : "Nome"
       },
-      "lastName": {
-        "label": "Sobrenome",
-        "placeholder": "Sobrenome"
+      "lastName" : {
+        "label" : "Sobrenome",
+        "placeholder" : "Sobrenome"
       },
-      "companyName": {
-        "label": "Company name",
-        "placeholder": "Company name"
+      "companyName" : {
+        "label" : "Nome da empresa",
+        "placeholder" : "Nome da empresa"
       },
-      "email": {
-        "label": "E-mail",
-        "placeholder": "E-mail"
+      "email" : {
+        "label" : "E-mail",
+        "placeholder" : "E-mail"
       },
-      "city": {
-        "label": "City/Town (optional)",
-        "placeholder": "Please select City/Town"
+      "city" : {
+        "label" : "Cidade (opcional)",
+        "placeholder" : "Selecione a cidade"
       },
-      "country": {
-        "label": "Country (optional)",
-        "placeholder": "Select Country"
+      "country" : {
+        "label" : "País (opcional)",
+        "placeholder" : "Selecione o país"
       },
-      "state": {
-        "label": "State/Province (optional)",
-        "placeholder": "Select State/Province"
+      "state" : {
+        "label" : "Estado/município (opcional)",
+        "placeholder" : "Selecione o estado/município"
       },
-      "postalCode": {
-        "label": "Zip/Postal code (optional)",
-        "placeholder": "Zip/Postal code"
+      "postalCode" : {
+        "label" : "CEP/código postal (opcional)",
+        "placeholder" : "CEP/código postal"
       },
-      "addressLine": {
-        "label": "Address (optional)",
-        "placeholder": "Endereço"
+      "addressLine" : {
+        "label" : "Endereço (opcional)",
+        "placeholder" : "Endereço"
       },
-      "secondAddressLine": {
-        "label": "Address line 2 (optional)",
-        "placeholder": "Address line 2"
+      "secondAddressLine" : {
+        "label" : "Linha 2 do endereço (opcional)",
+        "placeholder" : "Linha 2 do endereço"
       },
-      "phoneNumber": {
-        "label": "Phone number (optional)",
-        "placeholder": "Número de telefone"
+      "phoneNumber" : {
+        "label" : "Número de telefone (opcional)",
+        "placeholder" : "Número de telefone"
       },
-      "message": {
-        "label": "Message (optional)",
-        "placeholder": "An example data for the message field: \"Department: Ground support; Position: Chief safe guard; Report to: Steve Jackson; Comments: Please create new account for me\"."
+      "message" : {
+        "label" : "Mensagem (opcional)",
+        "placeholder" : "Um exemplo de dados para o campo da mensagem: \"Departamento: apoio em terra; Posição: chefe de segurança; Reportar a: Steve Jackson; Comentários: crie uma nova conta para mim\"."
       }
     },
-    "messageToApproverTemplate": "Company name: {{companyName}},\n  Phone number: {{phoneNumber}},\n  Address: {{addressLine}} {{secondAddressLine}} {{city}} {{state}} {{postalCode}} {{country}},\n  Message: {{message}}",
-    "successFormSubmitMessage": "Thank you for registering! A representative will contact you shortly and confirm your access information.",
-    "formSubmitButtonLabel": "Registrar",
-    "goToLoginButtonLabel": "Already registered? Go to Sign in",
-    "httpHandlers": {
-      "conflict": "User with this e-mail address already exists."
+    "messageToApproverTemplate" : "Nome da empresa: {{companyName}},\n  Número de telefone: {{phoneNumber}},\n  Endereço: {{addressLine}} {{secondAddressLine}} {{city}} {{state}} {{postalCode}} {{country}},\n  Mensagem: {{message}}",
+    "successFormSubmitMessage" : "Obrigado por se registrar! Um representante irá contatar você em breve e confirmar suas informações de acesso.",
+    "formSubmitButtonLabel" : "Registrar",
+    "goToLoginButtonLabel" : "Já registrado? Vá para Iniciar sessão",
+    "httpHandlers" : {
+      "conflict" : "Já existe um utilizador com este endereço de e-mail."
     },
-    "messageToFailedToRegister": "Failed to register. Please contact your admin for further assistance."
+    "messageToFailedToRegister" : "Falha no registro. Contate seu administrador para mais assistência."
   }
 }

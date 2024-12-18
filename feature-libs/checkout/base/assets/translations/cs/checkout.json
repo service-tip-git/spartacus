@@ -1,54 +1,55 @@
 {
-  "checkout": {
-    "backToCart": "Back to cart"
+  "checkout" : {
+    "backToCart" : "Zpět do košíku"
   },
-  "checkoutProgress": {
-    "label": "Checkout Progress",
-    "deliveryAddress": "Dodací adresa",
-    "deliveryMode": "Způsob dodání",
-    "paymentDetails": "Platba",
-    "reviewOrder": "Recenze",
-    "state": {
-      "completed": "{{step}}, Completed",
-      "selected": "{{step}}, Selected",
-      "disabled": "{{step}}, Disabled"
+  "checkoutProgress" : {
+    "label" : "Průběh kontroly a potvrzení",
+    "deliveryAddress" : "Dodací adresa",
+    "deliveryMode" : "Způsob dodání",
+    "paymentDetails" : "Platba",
+    "reviewOrder" : "Recenze",
+    "state" : {
+      "completed" : "{{step}}, dokončeno",
+      "selected" : "{{step}}, vybráno",
+      "disabled" : "{{step}}, deaktivováno"
     }
   },
-  "checkoutAddress": {
-    "shippingAddress": "Dodací adresa",
-    "selectYourDeliveryAddress": "Select your Delivery Address",
-    "defaultDeliveryAddress": "Default Delivery Address",
-    "addNewAddress": "Add New Address",
-    "shipToThisAddress": "Ship to this address",
-    "deliveryAddressSelected": "Delivery address selected"
+  "checkoutAddress" : {
+    "shippingAddress" : "Dodací adresa",
+    "selectYourDeliveryAddress" : "Vyberte dodací adresu",
+    "defaultDeliveryAddress" : "Standardní dodací adresa",
+    "addNewAddress" : "Přidat novou adresu",
+    "shipToThisAddress" : "Doručit na tuto adresu",
+    "deliveryAddressSelected" : "Dodací adresa vybrána"
   },
-  "checkoutMode": {
-    "deliveryMethod": "Způsob dodání",
-    "deliveryOptions": "Možnosti dodání",
-    "standardDelivery": "Standardní dodání",
-    "premiumDelivery": "Prémiové dodání",
-    "deliveryEntries": "Items to be Shipped"
+  "checkoutMode" : {
+    "deliveryMethod" : "Způsob dodání",
+    "deliveryOptions" : "Možnosti dodání",
+    "standardDelivery" : "Standardní dodání",
+    "premiumDelivery" : "Prémiové dodání",
+    "deliveryEntries" : "Položky k odeslání"
   },
-  "checkoutReview": {
-    "review": "Recenze",
-    "orderItems": "Položky objednávky",
-    "confirmThatRead": "I am confirming that I have read and agreed with the",
-    "placeOrder": "Objednat",
-    "termsAndConditions": "Obchodní podmínky",
-    "editDeliveryAddressDetails": "Edit delivery address details, opens Delivery Address page",
-    "editBillingDetails": "Edit billing address, opens Payment Details page",
-    "editPaymentDetails": "Edit payment details, opens Payment Details page",
-    "editPaymentType": "Edit payment method, opens Method of Payment page",
-    "editDeliveryMode": "Edit delivery mode, opens Delivery Mode page",
-    "orderInProcess": "Order is in process. Please wait."
+  "checkoutReview" : {
+    "review" : "Recenze",
+    "reviewOrder" : "Zkontrolovat objednávku",
+    "orderItems" : "Položky objednávky",
+    "confirmThatRead" : "Potvrzuji, že po přečtení souhlasím s",
+    "placeOrder" : "Objednat",
+    "termsAndConditions" : "Obchodní podmínky",
+    "editDeliveryAddressDetails" : "Upravit podrobnosti dodací adresy, otevře stránku s dodací adresou",
+    "editBillingDetails" : "Upravit fakturační adresu, otevře stránku Platební údaje",
+    "editPaymentDetails" : "Upravit platební údaje, otevře stránku Platební údaje",
+    "editPaymentType" : "Upravit způsob platby, otevře stránku Způsob platby",
+    "editDeliveryMode" : "Upravit režim dodání, otevře stránku Režim dodání",
+    "orderInProcess" : "Objednávka se zpracovává, vyčkejte."
   },
-  "checkoutOrderConfirmation": {
-    "confirmationOfOrder": "Confirmation of Order:",
-    "thankYou": "Thank you for your order!",
-    "invoiceHasBeenSentByEmail": "An invoice has been sent by email. You should receive it soon.",
-    "orderItems": "Položky objednávky",
-    "orderPlacedSuccessfully": "Order placed successfully",
-    "createAccount": "Create an account?",
-    "createAccountForNext": "Create an account for <{{email}}> for a faster checkout on your next visit."
+  "checkoutOrderConfirmation" : {
+    "confirmationOfOrder" : "Potvrzení objednávky:",
+    "thankYou" : "Děkujeme vám za objednávku!",
+    "invoiceHasBeenSentByEmail" : "Fakturu jsme odeslali e-mailem. Brzy byste ji měli obdržet.",
+    "orderItems" : "Položky objednávky",
+    "orderPlacedSuccessfully" : "Objednávka úspěšně podána",
+    "createAccount" : "Vytvořit účet?",
+    "createAccountForNext" : "Vytvořte si účet pro <{{email}}> za  účelem rychlejší kontroly a potvrzení při příští návštěvě."
   }
 }

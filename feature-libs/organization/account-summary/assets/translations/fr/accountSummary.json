@@ -1,88 +1,88 @@
 {
-  "orgAccountSummary": {
-    "groupName": "Account Summaries",
-    "header": "All Account Summaries ({{count}})",
-    "name": "Unité",
-    "details": {
-      "header": "Détails du récapitulatif du compte",
-      "uid": "ID de l'unité",
-      "name": "Nom de l'unité",
-      "address": "Adresse",
-      "creditRep": "Rapport de solvabilité",
-      "creditLine": "Marge de crédit",
-      "currentBalance": "Solde actuel",
-      "openBalance": "Solde non utilisé",
-      "pastDueBalance": "Ancien solde dû",
-      "dayRange": "{{minBoundary}}-{{maxBoundary}} Days",
-      "dayPlus": "{{minBoundary}}+ Days",
-      "notApplicable": "non applicable"
+  "orgAccountSummary" : {
+    "groupName" : "Récapitulatifs de comptes",
+    "header" : "Tous les récapitulatifs de comptes ({{count}})",
+    "name" : "Unité",
+    "details" : {
+      "header" : "Détails du récapitulatif du compte",
+      "uid" : "ID de l'unité",
+      "name" : "Nom de l'unité",
+      "address" : "Adresse",
+      "creditRep" : "Rapport de solvabilité",
+      "creditLine" : "Marge de crédit",
+      "currentBalance" : "Solde actuel",
+      "openBalance" : "Solde non utilisé",
+      "pastDueBalance" : "Ancien solde dû",
+      "dayRange" : "{{minBoundary}}-{{maxBoundary}} jours",
+      "dayPlus" : "{{minBoundary}}+ jours",
+      "notApplicable" : "non applicable"
     },
-    "document": {
-      "header": "Documents",
-      "id": "Numéro de document",
-      "type": "Type de document",
-      "date": "Créé le",
-      "dueDate": "Due On",
-      "originalAmount": "Montant d'origine",
-      "openAmount": "Montant en suspens",
-      "status": "Statut",
-      "attachment": "Pièce jointe",
-      "download": "Télécharger",
-      "attachmentDescription": "Download attachment for {{type}} {{id}}.",
-      "noneFound": "No Documents Found"
+    "document" : {
+      "header" : "Documents",
+      "id" : "Numéro de document",
+      "type" : "Type de document",
+      "date" : "Créé le",
+      "dueDate" : "Dû le",
+      "originalAmount" : "Montant d'origine",
+      "openAmount" : "Montant en suspens",
+      "status" : "Statut",
+      "attachment" : "Pièce jointe",
+      "download" : "Télécharger",
+      "attachmentDescription" : "Télécharger la pièce jointe pour {{type}} {{id}}",
+      "noneFound" : "Aucun document trouvé"
     },
-    "sorts": {
-      "byCreatedAtDateAsc": "Created On Ascending",
-      "byCreatedAtDateDesc": "Created On Descending",
-      "byDueAtDateAsc": "Due On Ascending",
-      "byDueAtDateDesc": "Due On Descending",
-      "byOriginalAmountAsc": "Original Amount Ascending",
-      "byOriginalAmountDesc": "Original Amount Descending",
-      "byOpenAmountAsc": "Open Amount Ascending",
-      "byOpenAmountDesc": "Open Amount Descending",
-      "byOrgDocumentTypeAsc": "Document Type Ascending",
-      "byOrgDocumentTypeDesc": "Document Type Descending",
-      "byStatusAsc": "Status Ascending",
-      "byStatusDesc": "Status Descending",
-      "byOrgDocumentIdAsc": "Document Number Ascending",
-      "byOrgDocumentIdDesc": "Document Number Descending"
+    "sorts" : {
+      "byCreatedAtDateAsc" : "Créé le (croissant)",
+      "byCreatedAtDateDesc" : "Créé le (décroissant)",
+      "byDueAtDateAsc" : "Dû le (croissant)",
+      "byDueAtDateDesc" : "Dû le (décroissant)",
+      "byOriginalAmountAsc" : "Montant d'origine (croissant)",
+      "byOriginalAmountDesc" : "Montant d'origine (décroissant)",
+      "byOpenAmountAsc" : "Montant en suspens (croissant)",
+      "byOpenAmountDesc" : "Montant en suspens (décroissant)",
+      "byOrgDocumentTypeAsc" : "Type de document (croissant)",
+      "byOrgDocumentTypeDesc" : "Type de document (décroissant)",
+      "byStatusAsc" : "Statut (croissant)",
+      "byStatusDesc" : "Statut (décroissant)",
+      "byOrgDocumentIdAsc" : "Numéro de document (croissant)",
+      "byOrgDocumentIdDesc" : "Numéro de document (décroissant)"
     },
-    "statuses": {
-      "open": "En cours",
-      "closed": "Fermé",
-      "all": "Tous"
+    "statuses" : {
+      "open" : "En cours",
+      "closed" : "Fermé",
+      "all" : "Tous"
     },
-    "filterByOptions": {
-      "orgDocumentId": "Numéro de document",
-      "orgDocumentIdRange": "Document Number Range",
-      "orgDocumentType": "Type de document",
-      "createdAtDateRange": "Created On Range",
-      "dueAtDateRange": "Due On Range",
-      "amountRange": "Plage de montants d'origine",
-      "openAmountRange": "Plage de montants en suspens"
+    "filterByOptions" : {
+      "orgDocumentId" : "Numéro de document",
+      "orgDocumentIdRange" : "Numéro de document (intervalle)",
+      "orgDocumentType" : "Type de document",
+      "createdAtDateRange" : "Créé le (intervalle)",
+      "dueAtDateRange" : "Dû le (intervalle)",
+      "amountRange" : "Montant d'origine (intervalle)",
+      "openAmountRange" : "Montant en suspens (intervalle)"
     },
-    "sortBy": "Sort By",
-    "sortDocuments": "Sort documents",
-    "filter": {
-      "status": "Statut",
-      "filterBy": "Filtrer par",
-      "documentNumber": "Numéro de document",
-      "documentType": "Type de document",
-      "startRange": "Du",
-      "endRange": "Au",
-      "clear": "Tout réinitialiser",
-      "search": "Rechercher",
-      "errors": {
-        "toDateMustComeAfterFrom": "Choose an end date that's later than the start date.",
-        "toAmountMustBeLargeThanFrom": "Choose an end range value that's smaller than the start value."
+    "sortBy" : "Trier par",
+    "sortDocuments" : "Trier les documents",
+    "filter" : {
+      "status" : "Statut",
+      "filterBy" : "Filtrer par",
+      "documentNumber" : "Numéro de document",
+      "documentType" : "Type de document",
+      "startRange" : "De",
+      "endRange" : "À",
+      "clear" : "Effacer tout",
+      "search" : "Rechercher",
+      "errors" : {
+        "toDateMustComeAfterFrom" : "Sélectionnez une date de fin postérieure à la date de début.",
+        "toAmountMustBeLargeThanFrom" : "Sélectionnez une valeur d'intervalle de fin inférieure à la valeur de début."
       }
     },
-    "hint": "Account summaries allow you to review general information about a unit, including balances and aging summary of invoices. Here, you can also browse through a list of transaction documents for a unit."
+    "hint" : "Les récapitulatifs de comptes vous permettent de consulter des informations générales sur une unité, y compris les soldes et le récapitulatif chronologique des factures. Vous pouvez également parcourir la liste des documents de transaction d'une unité."
   },
-  "orgAccountSummaryList": {
-    "breadcrumbs": {
-      "list": "Account Summaries",
-      "details": "{{name}}"
+  "orgAccountSummaryList" : {
+    "breadcrumbs" : {
+      "list" : "Récapitulatifs de comptes",
+      "details" : "{{name}}"
     }
   }
 }

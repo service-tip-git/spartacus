@@ -1,88 +1,88 @@
 {
-  "orgAccountSummary": {
-    "groupName": "Account Summaries",
-    "header": "All Account Summaries ({{count}})",
-    "name": "Единица",
-    "details": {
-      "header": "Подробные данные учетной записи",
-      "uid": "Идентификатор единицы",
-      "name": "Название единицы",
-      "address": "Адрес",
-      "creditRep": "Обработчик кредитов:",
-      "creditLine": "Кредитная линия:",
-      "currentBalance": "Текущее сальдо",
-      "openBalance": "Сумма задолженности",
-      "pastDueBalance": "Просроченное сальдо:",
-      "dayRange": "{{minBoundary}}-{{maxBoundary}} Days",
-      "dayPlus": "{{minBoundary}}+ Days",
-      "notApplicable": "н/п"
+  "orgAccountSummary" : {
+    "groupName" : "Сводки по учетной записи",
+    "header" : "Все сводки по учетной записи ({{count}})",
+    "name" : "Единица",
+    "details" : {
+      "header" : "Сведения сводки по учетной записи",
+      "uid" : "Ид. единицы",
+      "name" : "Имя единицы",
+      "address" : "Адрес",
+      "creditRep" : "Обработчик кредитов",
+      "creditLine" : "Кредитная линия",
+      "currentBalance" : "Текущее сальдо",
+      "openBalance" : "Открытое сальдо",
+      "pastDueBalance" : "Просроченное сальдо",
+      "dayRange" : "{{minBoundary}}-{{maxBoundary}} дн.",
+      "dayPlus" : "{{minBoundary}}+ дн.",
+      "notApplicable" : "неприменимо"
     },
-    "document": {
-      "header": "Документы",
-      "id": "Номер документа",
-      "type": "Тип документа",
-      "date": "Дата создания",
-      "dueDate": "Due On",
-      "originalAmount": "Исходная сумма",
-      "openAmount": "Неоплаченная сумма",
-      "status": "Статус",
-      "attachment": "Вложение",
-      "download": "Выгрузить",
-      "attachmentDescription": "Download attachment for {{type}} {{id}}.",
-      "noneFound": "No Documents Found"
+    "document" : {
+      "header" : "Документы",
+      "id" : "Номер документа",
+      "type" : "Тип документа",
+      "date" : "Дата создания",
+      "dueDate" : "Дата платежа",
+      "originalAmount" : "Исходная сумма",
+      "openAmount" : "Открытая сумма",
+      "status" : "Статус",
+      "attachment" : "Вложение",
+      "download" : "Выгрузить",
+      "attachmentDescription" : "Выгрузить вложение для {{type}} {{id}}.",
+      "noneFound" : "Документы не найдены"
     },
-    "sorts": {
-      "byCreatedAtDateAsc": "Created On Ascending",
-      "byCreatedAtDateDesc": "Created On Descending",
-      "byDueAtDateAsc": "Due On Ascending",
-      "byDueAtDateDesc": "Due On Descending",
-      "byOriginalAmountAsc": "Original Amount Ascending",
-      "byOriginalAmountDesc": "Original Amount Descending",
-      "byOpenAmountAsc": "Open Amount Ascending",
-      "byOpenAmountDesc": "Open Amount Descending",
-      "byOrgDocumentTypeAsc": "Document Type Ascending",
-      "byOrgDocumentTypeDesc": "Document Type Descending",
-      "byStatusAsc": "Status Ascending",
-      "byStatusDesc": "Status Descending",
-      "byOrgDocumentIdAsc": "Document Number Ascending",
-      "byOrgDocumentIdDesc": "Document Number Descending"
+    "sorts" : {
+      "byCreatedAtDateAsc" : "По дате создания по восходящей",
+      "byCreatedAtDateDesc" : "По дате создания по нисходящей",
+      "byDueAtDateAsc" : "По дате платежа по восходящей",
+      "byDueAtDateDesc" : "По дате платежа по нисходящей",
+      "byOriginalAmountAsc" : "Исходная сумма по восходящей",
+      "byOriginalAmountDesc" : "По исходной сумме по нисходящей",
+      "byOpenAmountAsc" : "По открытой сумме по восходящей",
+      "byOpenAmountDesc" : "По открытой сумме по нисходящей",
+      "byOrgDocumentTypeAsc" : "По типу документа по восходящей",
+      "byOrgDocumentTypeDesc" : "По типу документа по нисходящей",
+      "byStatusAsc" : "По статусу по восходящей",
+      "byStatusDesc" : "По статусу по нисходящей",
+      "byOrgDocumentIdAsc" : "По номеру документа по восходящей",
+      "byOrgDocumentIdDesc" : "По номеру документа по нисходящей"
     },
-    "statuses": {
-      "open": "Открыто",
-      "closed": "Закрыто",
-      "all": "Все"
+    "statuses" : {
+      "open" : "Открыто",
+      "closed" : "Закрыто",
+      "all" : "Все"
     },
-    "filterByOptions": {
-      "orgDocumentId": "Номер документа",
-      "orgDocumentIdRange": "Document Number Range",
-      "orgDocumentType": "Тип документа",
-      "createdAtDateRange": "Created On Range",
-      "dueAtDateRange": "Due On Range",
-      "amountRange": "Диапазон исходных сумм",
-      "openAmountRange": "Диапазон открытых сумм"
+    "filterByOptions" : {
+      "orgDocumentId" : "Номер документа",
+      "orgDocumentIdRange" : "Номер документа",
+      "orgDocumentType" : "Тип документа",
+      "createdAtDateRange" : "Диапазон дат создания",
+      "dueAtDateRange" : "Диапазон дат платежа",
+      "amountRange" : "Диапазон исходных сумм",
+      "openAmountRange" : "Диапазон открытых сумм"
     },
-    "sortBy": "Sort By",
-    "sortDocuments": "Sort documents",
-    "filter": {
-      "status": "Статус",
-      "filterBy": "Фильтрация по",
-      "documentNumber": "Номер документа",
-      "documentType": "Тип документа",
-      "startRange": "С",
-      "endRange": "По",
-      "clear": "Очистить все",
-      "search": "Поиск",
-      "errors": {
-        "toDateMustComeAfterFrom": "Choose an end date that's later than the start date.",
-        "toAmountMustBeLargeThanFrom": "Choose an end range value that's smaller than the start value."
+    "sortBy" : "Сортировать по",
+    "sortDocuments" : "Сортировать документы",
+    "filter" : {
+      "status" : "Статус",
+      "filterBy" : "Фильтр по",
+      "documentNumber" : "Номер документа",
+      "documentType" : "Тип документа",
+      "startRange" : "С",
+      "endRange" : "По",
+      "clear" : "Очистить все",
+      "search" : "Поиск",
+      "errors" : {
+        "toDateMustComeAfterFrom" : "Выберите дату окончания позже даты начала.",
+        "toAmountMustBeLargeThanFrom" : "Выберите значение конца диапазона больше значения начала."
       }
     },
-    "hint": "Account summaries allow you to review general information about a unit, including balances and aging summary of invoices. Here, you can also browse through a list of transaction documents for a unit."
+    "hint" : "Сводки по учетной записи позволяют просматривать общую информацию о единицах, включая сальдо и сводку по устареванию счетов. Здесь также можно просмотреть список документов по операциям для единицы."
   },
-  "orgAccountSummaryList": {
-    "breadcrumbs": {
-      "list": "Account Summaries",
-      "details": "{{name}}"
+  "orgAccountSummaryList" : {
+    "breadcrumbs" : {
+      "list" : "Сводки по учетной записи",
+      "details" : "{{name}}"
     }
   }
 }

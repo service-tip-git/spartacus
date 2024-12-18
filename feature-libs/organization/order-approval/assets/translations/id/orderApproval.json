@@ -1,49 +1,49 @@
 {
-  "orderApprovalDetails": {
-    "back": "Back To List",
-    "showForm_APPROVE": "Approve Order...",
-    "showForm_REJECT": "Reject Order...",
-    "form": {
-      "title_APPROVE": "Approve order {{orderCode}} totalling {{orderTotal}}",
-      "title_REJECT": "Reject order {{orderCode}} totalling {{orderTotal}}",
-      "submit_APPROVE": "Setujui",
-      "submit_REJECT": "Tolak",
-      "cancel": "Batalkan",
-      "comment_APPROVE": {
-        "label": "Comment (optional, maximum 255 characters)",
-        "placeholder": ""
+  "orderApprovalDetails" : {
+    "back" : "Kembali Ke Daftar",
+    "showForm_APPROVE" : "Setujui Pemesanan...",
+    "showForm_REJECT" : "Tolak Pemesanan...",
+    "form" : {
+      "title_APPROVE" : "Setujui pemesanan {{orderCode}} dengan total {{orderTotal}}",
+      "title_REJECT" : "Tolak pemesanan {{orderCode}} dengan total {{orderTotal}}",
+      "submit_APPROVE" : "Setujui",
+      "submit_REJECT" : "Tolak",
+      "cancel" : "Batalkan",
+      "comment_APPROVE" : {
+        "label" : "Komentar (opsional, maksimal 255 karakter)",
+        "placeholder" : ""
       },
-      "comment_REJECT": {
-        "label": "Comment (maximum 255 characters)",
-        "placeholder": ""
+      "comment_REJECT" : {
+        "label" : "Komentar (maksimal 255 karakter)",
+        "placeholder" : ""
       }
     },
-    "permissionResults": {
-      "header": "Rincian Persetujuan Pelanggan",
-      "permission": "Izin",
-      "approver": "Pemberi Persetujuan",
-      "status": "Status",
-      "approverComments": "Komentar Pemberi Persetujuan",
-      "noApprovalComments": "Tidak ada",
-      "permissionType_B2BBudgetExceededPermission": "The budget associated with the chosen cost center has been exceeded",
-      "permissionType_B2BOrderThresholdPermission": "Order total exceeded the per-order limit",
-      "permissionType_B2BOrderThresholdTimespanPermission": "Order total exceeded the per-timespan limit"
+    "permissionResults" : {
+      "header" : "Rincian Persetujuan Pelanggan",
+      "permission" : "Izin",
+      "approver" : "Penyetuju",
+      "status" : "Status",
+      "approverComments" : "Komentar Penyetuju",
+      "noApprovalComments" : "Tidak ada",
+      "permissionType_B2BBudgetExceededPermission" : "Anggaran yang terkait dengan pusat biaya yang dipilih telah terlampaui",
+      "permissionType_B2BOrderThresholdPermission" : "Total pesanan melampaui batas untuk setiap pemesanannya",
+      "permissionType_B2BOrderThresholdTimespanPermission" : "Total pesanan melampaui batas untuk setiap rentang waktunya"
     }
   },
-  "orderApprovalList": {
-    "orderCode": "# Order",
-    "POCode": "PO #",
-    "placedBy": "Placed by",
-    "date": "Tanggal",
-    "status": "Status",
-    "total": "Total",
-    "none": "Tidak ada",
-    "emptyList": "There are no orders to approve at this time.",
-    "orderApprovalList": "Order Approval List"
+  "orderApprovalList" : {
+    "orderCode" : "Pemesanan #",
+    "POCode" : "PO #",
+    "placedBy" : "Dipesan oleh",
+    "date" : "Tanggal",
+    "status" : "Status",
+    "total" : "Total",
+    "none" : "Tidak ada",
+    "emptyList" : "Saat ini tidak ada pemesanan yang perlu disetujui.",
+    "orderApprovalList" : "Daftar Persetujuan Pemesanan"
   },
-  "orderApprovalGlobal": {
-    "notification": {
-      "noSufficientPermissions": "No sufficient permissions to access this page."
+  "orderApprovalGlobal" : {
+    "notification" : {
+      "noSufficientPermissions" : "Tidak memiliki izin yang memadai untuk mengakses halaman ini."
     }
   }
 }

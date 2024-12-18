@@ -1,6 +1,6 @@
 {
-  "cdsRecentSearches": {
-    "recentSearches": "Recent Searches",
-    "ariaRecentSearches": "typing recent searches"
+  "cdsRecentSearches" : {
+    "recentSearches" : "Vor kurzem verwendete Suchen",
+    "ariaRecentSearches" : "Eingabe der vor kurzem verwendeten Suchen"
   }
 }

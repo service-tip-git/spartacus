@@ -1,249 +1,249 @@
 {
-  "quote": {
-    "confirmDialog": {
-      "name": "Name:",
-      "description": "Description:",
-      "validity": "Ce devis est valable jusqu'au {{ expirationTime }}",
-      "option": {
-        "yes": "Oui",
-        "no": "Non"
+  "quote" : {
+    "confirmDialog" : {
+      "name" : "Nom :",
+      "description" : "Description :",
+      "validity" : "Ce devis est valable jusqu'au {{ expirationTime }}",
+      "option" : {
+        "yes" : "Oui",
+        "no" : "Non"
       },
-      "buyer": {
-        "submit": {
-          "a11y": {
-            "close": "Close submit quote modal"
+      "buyer" : {
+        "submit" : {
+          "a11y" : {
+            "close" : "Fermer la boîte de dialogue modale d'envoi du devis"
           },
-          "title": "Submit Quote Request {{ code }}?",
-          "confirmNote": "Are you sure you want to submit this quote request?",
-          "successMessage": "Quote request submitted successfully"
+          "title" : "Envoyer la demande de devis {{ code }} ?",
+          "confirmNote" : "Voulez-vous vraiment envoyer cette demande de devis ?",
+          "successMessage" : "La demande de devis a été envoyée avec succès."
         },
-        "cancel": {
-          "a11y": {
-            "close": "Close cancel quote modal"
+        "cancel" : {
+          "a11y" : {
+            "close" : "Fermer la boîte de dialogue modale d'annulation du devis"
           },
-          "title": "Cancel Quote Request {{ code }}?",
-          "confirmNote": "Are you sure you want to cancel this quote request?",
-          "successMessage": "Quote request cancelled"
+          "title" : "Annuler la demande de devis {{ code }} ?",
+          "confirmNote" : "Voulez-vous vraiment annuler cette demande de devis ?",
+          "successMessage" : "Demande de devis annulée"
         }
       },
-      "buyer_offer": {
-        "edit": {
-          "a11y": {
-            "close": "Close edit quote modal"
+      "buyer_offer" : {
+        "edit" : {
+          "a11y" : {
+            "close" : "Fermer la boîte de dialogue modale de modification du devis"
           },
-          "title": "Confirm Edit Quote {{ code }}?",
-          "confirmNote": "Voulez-vous vraiment modifier ce devis approuvé ?",
-          "warningNote": "This Quote has been Approved. Editing this Quote will prevent Checkout until new edits are approved."
+          "title" : "Confirmer la modification du devis {{ code }} ?",
+          "confirmNote" : "Voulez-vous vraiment modifier ce devis approuvé ?",
+          "warningNote" : "Ce devis a été approuvé. La modification de ce devis empêchera sa validation tant que les modifications n'auront pas été approuvées."
         },
-        "cancel": {
-          "a11y": {
-            "close": "Close cancel quote modal"
+        "cancel" : {
+          "a11y" : {
+            "close" : "Fermer la boîte de dialogue modale d'annulation du devis"
           },
-          "title": "Cancel Quote {{ code }}?",
-          "confirmNote": "Voulez-vous vraiment annuler ce devis ?",
-          "successMessage": "Quote cancelled"
+          "title" : "Annuler le devis {{ code }} ?",
+          "confirmNote" : "Voulez-vous vraiment annuler ce devis ?",
+          "successMessage" : "Devis annulé"
         },
-        "checkout": {
-          "a11y": {
-            "close": "Close checkout quote modal"
+        "checkout" : {
+          "a11y" : {
+            "close" : "Fermer la boîte de dialogue modale de validation du devis"
           },
-          "title": "Checkout Quote {{ code }}?",
-          "confirmNote": "Are you sure you want to accept and checkout this quote?"
+          "title" : "Valider le devis {{ code }} ?",
+          "confirmNote" : "Voulez-vous vraiment accepter et valider ce devis ?"
         }
       },
-      "expired": {
-        "edit": {
-          "a11y": {
-            "close": "Close edit quote modal"
+      "expired" : {
+        "edit" : {
+          "a11y" : {
+            "close" : "Fermer la boîte de dialogue modale de modification du devis"
           },
-          "title": "Confirm Edit Quote {{ code }}?",
-          "confirmNote": "Are you sure you want to edit this expired quote?",
-          "warningNote": "This Quote is expired. Editing this quote will prevent checkout until new edits are approved."
+          "title" : "Confirmer la modification du devis {{ code }} ?",
+          "confirmNote" : "Voulez-vous vraiment modifier ce devis expiré ?",
+          "warningNote" : "Ce devis a expiré. La modification de ce devis empêchera sa validation tant que les modifications n'auront pas été approuvées."
         },
-        "requote": {
-          "a11y": {
-            "close": "Close requote modal"
+        "requote" : {
+          "a11y" : {
+            "close" : "Fermer la boîte de dialogue modale de recréation du devis"
           },
-          "title": "Recreate Quote Request {{ code }}?",
-          "confirmNote": "Are you sure you want to recreate this quote request?",
-          "warningNote": "This Quote is expired. Re-quoting it will create a new quote request with same contents, which can be edited and submitted for approval afterwards."
+          "title" : "Recréer la demande de devis{{ code }} ?",
+          "confirmNote" : "Voulez-vous vraiment recréer cette demande de devis ?",
+          "warningNote" : "Ce devis a expiré. Le fait de le recréer générera une nouvelle demande de devis avec le même contenu, qui pourra être modifiée et soumise à approbation par la suite."
         }
       },
-      "seller": {
-        "submit": {
-          "a11y": {
-            "close": "Close submit quote modal"
+      "seller" : {
+        "submit" : {
+          "a11y" : {
+            "close" : "Fermer la boîte de dialogue modale d'envoi du devis"
           },
-          "title": "Submit Quote {{ code }}?",
-          "confirmNote": "Voulez-vous vraiment envoyer ce devis ?",
-          "warningNote": "Depending on the total value of the quote, an additional approval might be required before the buyer can check out this quote.",
-          "successMessage": "Quote submitted successfully"
+          "title" : "Envoyer le devis {{ code }} ?",
+          "confirmNote" : "Voulez-vous vraiment envoyer ce devis ?",
+          "warningNote" : "Selon la valeur totale du devis, une approbation supplémentaire peut être nécessaire avant que l'acheteur puisse valider ce devis.",
+          "successMessage" : "Devis envoyé avec succès"
         }
       },
-      "sellerapprover": {
-        "approve": {
-          "a11y": {
-            "close": "Close approve quote modal"
+      "sellerapprover" : {
+        "approve" : {
+          "a11y" : {
+            "close" : "Fermer la boîte de dialogue modale d'approbation du devis"
           },
-          "title": "Approve Quote {{ code }}?",
-          "confirmNote": "Are you sure you want to approve this quote?",
-          "successMessage": "Quote approved successfully"
+          "title" : "Approuver le devis {{ code }} ?",
+          "confirmNote" : "Voulez-vous vraiment approuver ce devis ?",
+          "successMessage" : "Devis approuvé avec succès"
         },
-        "reject": {
-          "a11y": {
-            "close": "Close reject quote modal"
+        "reject" : {
+          "a11y" : {
+            "close" : "Fermer la boîte de dialogue modale de refus du devis"
           },
-          "title": "Reject Quote {{ code }}?",
-          "confirmNote": "Are you sure you want to reject this quote?",
-          "successMessage": "Quote rejected"
+          "title" : "Refuser le devis {{ code }} ?",
+          "confirmNote" : "Voulez-vous vraiment refuser ce devis ?",
+          "successMessage" : "Devis refusé"
         }
       },
-      "cancelled": {
-        "requote": {
-          "a11y": {
-            "close": "Close requote modal"
+      "cancelled" : {
+        "requote" : {
+          "a11y" : {
+            "close" : "Fermer la boîte de dialogue modale de recréation de devis"
           },
-          "title": "Recreate Quote Request {{ code }}?",
-          "confirmNote": "Are you sure you want to recreate this quote request?",
-          "warningNote": "Your current cart will be converted to a saved cart."
+          "title" : "Recréer la demande de devis{{ code }} ?",
+          "confirmNote" : "Voulez-vous vraiment recréer cette demande de devis ?",
+          "warningNote" : "Votre panier actuel sera converti en panier sauvegardé."
         }
       },
-      "all": {
-        "edit": {
-          "a11y": {
-            "close": "Close edit quote modal"
+      "all" : {
+        "edit" : {
+          "a11y" : {
+            "close" : "Fermer la boîte de dialogue modale de modification du devis"
           },
-          "title": "Edit Quote {{ code }}?",
-          "confirmNote": "Are you sure you want to edit this quote?",
-          "warningNote": "Your current cart will be converted to a saved cart."
+          "title" : "Modifier le devis {{ code }} ?",
+          "confirmNote" : "Voulez-vous vraiment modifier ce devis ?",
+          "warningNote" : "Votre panier actuel sera converti en panier sauvegardé."
         }
       }
     },
-    "comments": {
-      "regionTitle": "Contact/Comment Box",
-      "title": "Contact",
-      "invalidComment": "Invalid Input - Please type again...",
-      "allProducts": "Tous les produits"
+    "comments" : {
+      "regionTitle" : "Cadre pour contact/commentaire",
+      "title" : "Contact",
+      "invalidComment" : "Saisie non valide - Veuillez ressaisir du texte...",
+      "allProducts" : "Tous les produits"
     },
-    "commons": {
-      "requestQuote": "Request Quote",
-      "cart": "Panier",
-      "minRequestInitiationNote": "Minimum ${{minValue}} subtotal is required to submit a quote ",
-      "savedActiveCart": "Your active cart was converted to saved cart {{ code }}"
+    "commons" : {
+      "requestQuote" : "Demander un devis",
+      "cart" : "Panier",
+      "minRequestInitiationNote" : "Un sous-total minimum de ${{minValue}} est requis pour envoyer un devis. ",
+      "savedActiveCart" : "Votre panier actif a été converti en panier sauvegardé {{ code }}."
     },
-    "header": {
-      "buyerEdit": {
-        "a11y": {
-          "cancel": "Cancel editing quote header information",
-          "save": "Save quote header information"
+    "header" : {
+      "buyerEdit" : {
+        "a11y" : {
+          "cancel" : "Informations d'en-tête pour l'annulation de la modification du devis",
+          "save" : "Informations d'en-tête pour la sauvegarde du devis"
         }
       },
-      "overview": {
-        "regionTitle": "Quote details summary",
-        "id": "ID du devis",
-        "status": "Statut",
-        "information": "Quote Information",
-        "name": "Nom",
-        "description": "Description",
-        "charactersLeft": "characters left: {{count}}",
-        "priceAndExpiry": "Price & Expiry",
-        "estimatedTotal": "Estimated Total",
-        "total": "Total",
-        "expirationTime": "Date d'expiration",
-        "a11y": {
-          "edit": "Edit quote header information"
+      "overview" : {
+        "regionTitle" : "Synthèse des détails du devis",
+        "id" : "ID du devis",
+        "status" : "Statut",
+        "information" : "Informations sur le devis",
+        "name" : "Nom",
+        "description" : "Description",
+        "charactersLeft" : "Caractères restants : {{count}}",
+        "priceAndExpiry" : "Prix et expiration",
+        "estimatedTotal" : "Total estimé",
+        "total" : "Total",
+        "expirationTime" : "Date d'expiration",
+        "a11y" : {
+          "edit" : "Informations d'en-tête pour la modification du devis"
         },
-        "createdAndUpdated": "Created & Updated",
-        "createdDate": "Créée",
-        "lastUpdatedDate": "Dernière mise à jour"
+        "createdAndUpdated" : "Créé et mis à jour",
+        "createdDate" : "Créé",
+        "lastUpdatedDate" : "Dernière mise à jour"
       }
     },
-    "httpHandlers": {
-      "cartValidationIssue": "There are problems with your entries. Please review your cart.",
-      "quoteCartIssue": "Not possible to do changes to cart entries. Proceed to checkout",
-      "absoluteDiscountIssue": "Choose a discount that does not exceed the total value",
-      "expirationDateIssue": "Choose an expiration date in the future",
-      "threshold": {
-        "underThresholdError": "Total price of requested quote does not meet the minimum threshold"
+    "httpHandlers" : {
+      "cartValidationIssue" : "Vos entrées comportent des erreurs. Veuillez vérifier votre panier.",
+      "quoteCartIssue" : "Impossible de modifier les entrées du panier. Veuillez passer à la validation.",
+      "absoluteDiscountIssue" : "Sélectionnez une remise qui ne dépasse pas la valeur totale.",
+      "expirationDateIssue" : "Sélectionnez une date d'expiration dans le futur.",
+      "threshold" : {
+        "underThresholdError" : "Le prix total du devis demandé n'atteint pas le seuil minimum."
       },
-      "expired": "This quote has expired. You must resubmit your quote request to receive another vendor quote.",
-      "downloadPDFError": "Something went wrong. Unable to obtain the proposal document PDF."
+      "expired" : "Ce devis a expiré. Vous devez renvoyer votre demande de devis pour recevoir un autre devis du fournisseur.",
+      "downloadPDFError" : "Une erreur s'est produite. Impossible d'obtenir le document PDF de la proposition."
     },
-    "items": {
-      "regionTitle": "Cart items"
+    "items" : {
+      "regionTitle" : "Articles du panier"
     },
-    "links": {
-      "newCart": "Nouveau panier",
-      "quotes": "Devis",
-      "download": "Download Proposal",
-      "a11y": {
-        "newCart": "Create new empty cart and navigate to it.",
-        "quotes": "Navigate to quote search result list.",
-        "download": "Start downloading a quote proposal"
+    "links" : {
+      "newCart" : "Nouveau panier",
+      "quotes" : "Devis",
+      "download" : "Télécharger la proposition",
+      "a11y" : {
+        "newCart" : "Créez un nouveau panier vide et naviguez vers celui-ci.",
+        "quotes" : "Naviguez vers la liste des résultats de la recherche de devis.",
+        "download" : "Commencer par télécharger une proposition de devis."
       }
     },
-    "list": {
-      "regionTitle": "Quote list summary",
-      "title": "Quote List",
-      "name": "Nom",
-      "updated": "Mis à jour",
-      "sortBy": "Trier par",
-      "sortQuotes": "Sort Quotes",
-      "empty": "We have no quote records for this account.",
-      "quoteId": "ID du devis",
-      "status": "Statut",
-      "clickableRow": "Click on the row for more quote details"
+    "list" : {
+      "regionTitle" : "Synthèse de la liste des devis",
+      "title" : "Liste des devis",
+      "name" : "Nom",
+      "updated" : "Mis à jour",
+      "sortBy" : "Trier par",
+      "sortQuotes" : "Trier les devis",
+      "empty" : "Nous n'avons pas de devis pour ce compte.",
+      "quoteId" : "ID du devis",
+      "status" : "Statut",
+      "clickableRow" : "Cliquez sur la ligne pour plus de détails concernant le devis."
     },
-    "states": {
-      "BUYER_DRAFT": "Version préliminaire",
-      "BUYER_SUBMITTED": "Envoyé",
-      "BUYER_ACCEPTED": "Accepté",
-      "BUYER_APPROVED": "Approuvé",
-      "BUYER_REJECTED": "Rejeté",
-      "BUYER_OFFER": "Devis du fournisseur",
-      "BUYER_ORDERED": "Commandé",
-      "SELLER_DRAFT": "Version préliminaire",
-      "SELLER_REQUEST": "Demandé",
-      "SELLER_SUBMITTED": "Envoyé",
-      "SELLERAPPROVER_DRAFT": "Version préliminaire",
-      "SELLERAPPROVER_PENDING": "En attente d'approbation",
-      "SELLERAPPROVER_APPROVED": "Approuvé",
-      "SELLERAPPROVER_REJECTED": "Rejeté",
-      "CREATED": "Créée",
-      "CANCELLED": "Annulé",
-      "EXPIRED": "Expiré"
+    "states" : {
+      "BUYER_DRAFT" : "Version préliminaire",
+      "BUYER_SUBMITTED" : "Envoyé",
+      "BUYER_ACCEPTED" : "Accepté",
+      "BUYER_APPROVED" : "Approuvé",
+      "BUYER_REJECTED" : "Refusé",
+      "BUYER_OFFER" : "Devis du fournisseur",
+      "BUYER_ORDERED" : "Commandé",
+      "SELLER_DRAFT" : "Version préliminaire",
+      "SELLER_REQUEST" : "Demandé",
+      "SELLER_SUBMITTED" : "Envoyé",
+      "SELLERAPPROVER_DRAFT" : "Version préliminaire",
+      "SELLERAPPROVER_PENDING" : "En attente d'approbation",
+      "SELLERAPPROVER_APPROVED" : "Approuvé",
+      "SELLERAPPROVER_REJECTED" : "Refusé",
+      "CREATED" : "Créé",
+      "CANCELLED" : "Annulé",
+      "EXPIRED" : "Expiré"
     },
-    "summary": {
-      "regionTitle": "Synthèse de la commande",
-      "actions": {
-        "APPROVE": "Approuver le devis",
-        "CANCEL": "Annuler le devis",
-        "CHECKOUT": "Accepter et régler",
-        "EDIT": "Modifier le devis",
-        "REJECT": "Rejeter le devis",
-        "REQUOTE": "Request new Quote",
-        "SAVE": "Enregistrer le devis",
-        "SUBMIT": "Envoyer le devis",
-        "VIEW": "Afficher le devis"
+    "summary" : {
+      "regionTitle" : "Synthèse de la commande",
+      "actions" : {
+        "APPROVE" : "Approuver le devis",
+        "CANCEL" : "Annuler le devis",
+        "CHECKOUT" : "Accepter et valider",
+        "EDIT" : "Modifier le devis",
+        "REJECT" : "Refuser le devis",
+        "REQUOTE" : "Demander un nouveau devis",
+        "SAVE" : "Sauvegarder le devis",
+        "SUBMIT" : "Envoyer le devis",
+        "VIEW" : "Afficher le devis"
       },
-      "prices": {
-        "title": "Synthèse de la commande",
-        "subtotal": "Sous-total",
-        "productDiscount": "Item Discount",
-        "orderDiscount": "Remise sur commande",
-        "quoteDiscount": "Remise sur devis",
-        "total": "Total",
-        "hint": "No taxes are included in the total"
+      "prices" : {
+        "title" : "Synthèse de la commande",
+        "subtotal" : "Sous-total",
+        "productDiscount" : "Remise sur l'article",
+        "orderDiscount" : "Remise sur commande",
+        "quoteDiscount" : "Remise sur devis",
+        "total" : "Total",
+        "hint" : "Aucune taxe n'est incluse dans le montant total"
       },
-      "sellerEdit": {
-        "discount": "Remise",
-        "apply": "Appliquer",
-        "expiryDate": "Date d'expiration",
-        "discountValidationText": "Enter a valid percentage discount",
-        "a11y": {
-          "apply": "Click to apply the entered discount value to this quote",
-          "discount": "Enter a percentage discount value to be applied to this quote",
-          "expiryDate": "Enter an expiry date for this quote"
+      "sellerEdit" : {
+        "discount" : "Remise",
+        "apply" : "Appliquer",
+        "expiryDate" : "Date d'expiration",
+        "discountValidationText" : "Saisissez un pourcentage de remise valide.",
+        "a11y" : {
+          "apply" : "Cliquez pour appliquer à ce devis la valeur de remise saisie .",
+          "discount" : "Saisissez une valeur de remise en pourcentage à appliquer à ce devis.",
+          "expiryDate" : "Saisissez une date d'expiration pour ce devis."
         }
       }
     }

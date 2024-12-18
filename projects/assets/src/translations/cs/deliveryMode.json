@@ -1,5 +1,5 @@
 {
-  "setDeliveryMode": {
-    "unknownError": "An unknown error occurred. Please contact support."
+  "setDeliveryMode" : {
+    "unknownError" : "Došlo k neznámé chybě. Obraťte se na podporu."
   }
 }

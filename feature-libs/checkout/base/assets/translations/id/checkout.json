@@ -1,54 +1,55 @@
 {
-  "checkout": {
-    "backToCart": "Back to cart"
+  "checkout" : {
+    "backToCart" : "Kembali ke keranjang"
   },
-  "checkoutProgress": {
-    "label": "Checkout Progress",
-    "deliveryAddress": "Alamat Pengiriman",
-    "deliveryMode": "Mode Pengantaran",
-    "paymentDetails": "Pembayaran",
-    "reviewOrder": "Ulasan",
-    "state": {
-      "completed": "{{step}}, Completed",
-      "selected": "{{step}}, Selected",
-      "disabled": "{{step}}, Disabled"
+  "checkoutProgress" : {
+    "label" : "Kemajuan Proses Pembayaran",
+    "deliveryAddress" : "Alamat Pengiriman",
+    "deliveryMode" : "Mode Pengiriman",
+    "paymentDetails" : "Pembayaran",
+    "reviewOrder" : "Peninjauan",
+    "state" : {
+      "completed" : "{{step}}, Selesai",
+      "selected" : "{{step}}, Dipilih",
+      "disabled" : "{{step}}, Nonaktif"
     }
   },
-  "checkoutAddress": {
-    "shippingAddress": "Alamat Pengiriman",
-    "selectYourDeliveryAddress": "Select your Delivery Address",
-    "defaultDeliveryAddress": "Default Delivery Address",
-    "addNewAddress": "Add New Address",
-    "shipToThisAddress": "Ship to this address",
-    "deliveryAddressSelected": "Delivery address selected"
+  "checkoutAddress" : {
+    "shippingAddress" : "Alamat Pengiriman",
+    "selectYourDeliveryAddress" : "Pilih Alamat Pengiriman Anda",
+    "defaultDeliveryAddress" : "Alamat Pengiriman Default",
+    "addNewAddress" : "Tambah Alamat Baru",
+    "shipToThisAddress" : "Kirim ke alamat ini",
+    "deliveryAddressSelected" : "Alamat pengiriman dipilih"
   },
-  "checkoutMode": {
-    "deliveryMethod": "Metode Pengiriman",
-    "deliveryOptions": "Pilihan Pengiriman",
-    "standardDelivery": "Pengantaran Standar",
-    "premiumDelivery": "Pengantaran Premium",
-    "deliveryEntries": "Items to be Shipped"
+  "checkoutMode" : {
+    "deliveryMethod" : "Metode Pengiriman",
+    "deliveryOptions" : "Opsi Pengiriman",
+    "standardDelivery" : "Pengiriman Standar",
+    "premiumDelivery" : "Pengiriman Premium",
+    "deliveryEntries" : "Item yang akan Dikirim"
   },
-  "checkoutReview": {
-    "review": "Ulasan",
-    "orderItems": "Item yang Dipesan",
-    "confirmThatRead": "I am confirming that I have read and agreed with the",
-    "placeOrder": "Buat Pesanan",
-    "termsAndConditions": "Syarat & Ketentuan",
-    "editDeliveryAddressDetails": "Edit delivery address details, opens Delivery Address page",
-    "editBillingDetails": "Edit billing address, opens Payment Details page",
-    "editPaymentDetails": "Edit payment details, opens Payment Details page",
-    "editPaymentType": "Edit payment method, opens Method of Payment page",
-    "editDeliveryMode": "Edit delivery mode, opens Delivery Mode page",
-    "orderInProcess": "Order is in process. Please wait."
+  "checkoutReview" : {
+    "review" : "Peninjauan",
+    "reviewOrder" : "Tinjau Pesanan",
+    "orderItems" : "Item yang Dipesan",
+    "confirmThatRead" : "Saya mengonfirmasikan bahwa saya telah membaca dan menyetujui",
+    "placeOrder" : "Lakukan Pemesanan",
+    "termsAndConditions" : "Syarat & Ketentuan",
+    "editDeliveryAddressDetails" : "Mengedit rincian alamat pengiriman akan membuka halaman Alamat Pengiriman",
+    "editBillingDetails" : "Mengedit alamat penagihan akan membuka halaman Rincian Pembayaran",
+    "editPaymentDetails" : "Mengedit rincian pembayaran akan membuka halaman Rincian Pembayaran",
+    "editPaymentType" : "Mengedit metode pembayaran akan membuka halaman Metode Pembayaran",
+    "editDeliveryMode" : "Mengedit mode pengiriman akan membuka halaman Mode Pengiriman",
+    "orderInProcess" : "Pesanan sedang diproses. Harap tunggu."
   },
-  "checkoutOrderConfirmation": {
-    "confirmationOfOrder": "Confirmation of Order:",
-    "thankYou": "Thank you for your order!",
-    "invoiceHasBeenSentByEmail": "An invoice has been sent by email. You should receive it soon.",
-    "orderItems": "Item yang Dipesan",
-    "orderPlacedSuccessfully": "Order placed successfully",
-    "createAccount": "Create an account?",
-    "createAccountForNext": "Create an account for <{{email}}> for a faster checkout on your next visit."
+  "checkoutOrderConfirmation" : {
+    "confirmationOfOrder" : "Konfirmasi Pesanan:",
+    "thankYou" : "Terima kasih atas pesanan Anda!",
+    "invoiceHasBeenSentByEmail" : "Tagihan telah dikirim melalui email. Anda akan segera menerimanya.",
+    "orderItems" : "Item yang Dipesan",
+    "orderPlacedSuccessfully" : "Pemesanan berhasil dilakukan",
+    "createAccount" : "Buat akun?",
+    "createAccountForNext" : "Buat akun untuk <{{email}}> agar mempercepat proses pembayaran dalam kunjungan Anda yang berikutnya."
   }
 }

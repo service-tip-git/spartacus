@@ -1,53 +1,62 @@
 {
-  "paymentForm": {
-    "payment": "支払",
-    "choosePaymentMethod": "Choose a payment method",
-    "paymentType": "支払方法",
-    "accountHolderName": {
-      "label": "Account Holder Name",
-      "placeholder": "Account Holder Name"
+  "paymentForm" : {
+    "payment" : "支払",
+    "choosePaymentMethod" : "支払方法を選択",
+    "paymentType" : "支払タイプ",
+    "accountHolderName" : {
+      "label" : "口座名義人名",
+      "placeholder" : "口座名義人名"
     },
-    "cardNumber": "カード番号",
-    "expirationDate": "有効期限",
-    "securityCode": "Security code (CVV)",
-    "securityCodeTitle": "Card Verification Value",
-    "saveAsDefault": "Save as default",
-    "setAsDefault": "Set as default payment method",
-    "billingAddress": "請求先住所",
-    "sameAsDeliveryAddress": "Same as delivery address",
-    "billingAddressSameAsShipping": "Billing address is the same as delivery address",
-    "selectOne": "Select One...",
-    "monthMask": "MM",
-    "yearMask": "YYYY",
-    "expirationYear": "Expiration year {{ selected }}",
-    "expirationMonth": "Expiration month {{ selected }}",
-    "useThisPayment": "Use this payment",
-    "addNewPayment": "Add New Payment",
-    "paymentAddedSuccessfully": "New payment was added successfully",
-    "changePayment": "Change Payment"
+    "cardNumber" : "カード番号",
+    "expirationDate" : "有効期限",
+    "securityCode" : "セキュリティコード (CVV)",
+    "securityCodeTitle" : "カード照合番号",
+    "saveAsDefault" : "デフォルトとして保存",
+    "setAsDefault" : "デフォルトの支払方法として設定",
+    "billingAddress" : "請求先住所",
+    "sameAsDeliveryAddress" : "配送先住所と同じ",
+    "billingAddressSameAsShipping" : "請求先住所は配送先住所と同じです",
+    "selectOne" : "1 つ選択...",
+    "monthMask" : "MM",
+    "yearMask" : "YYYY",
+    "expirationYear" : "有効期限の年 {{ selected }}",
+    "expirationMonth" : "有効期限の月 {{ selected }}",
+    "useThisPayment" : "この支払を使用",
+    "addNewPayment" : "新しい支払を追加",
+    "paymentAddedSuccessfully" : "新しい支払が正常に追加されました",
+    "changePayment" : "支払を変更"
   },
-  "paymentMethods": {
-    "paymentMethods": "Payment methods",
-    "paymentMethodSelected": "Payment method selected",
-    "newPaymentMethodsAreAddedDuringCheckout": "New payment methods are added during checkout.",
-    "invalidField": "InvalidField: {{ field }}"
+  "paymentMethods" : {
+    "paymentMethods" : "支払方法",
+    "paymentMethodSelected" : "支払方法選択済み",
+    "newPaymentMethodsAreAddedDuringCheckout" : "チェックアウト時に新しい支払方法が追加されます。",
+    "invalidField" : "InvalidField: {{ field }}"
   },
-  "paymentCard": {
-    "deleteConfirmation": "Are you sure you want to delete this payment method?",
-    "setAsDefault": "既定に設定",
-    "expires": "Expires: {{ month }}/{{ year }}",
-    "defaultPaymentMethod": "✓ DEFAULT",
-    "defaultPaymentLabel": "Default payment method",
-    "additionalPaymentLabel": "Additional payment method {{ number }}",
-    "selected": "選択済み",
-    "deletePaymentSuccess": "Payment method deleted successfully"
+  "paymentCard" : {
+    "deleteConfirmation" : "この支払方法を削除してもよろしいですか?",
+    "setAsDefault" : "デフォルトに設定",
+    "expires" : "有効期限: {{ month }}/{{ year }}",
+    "defaultPaymentMethod" : "✓ デフォルト",
+    "defaultPaymentLabel" : "デフォルトの支払方法",
+    "additionalPaymentLabel" : "その他の支払方法 {{ number }}",
+    "selected" : "選択済み",
+    "selectedPayment" : "選択された支払",
+    "deletePaymentSuccess" : "支払方法が正常に削除されました",
+    "visa" : "Visa カード",
+    "master" : "Mastercard カード",
+    "masterEuro" : "Mastercard Eurocard カード",
+    "dinersClub" : "Diners Club カード",
+    "switch" : "Switch カード",
+    "maestro" : "Maestro カード",
+    "amex" : "American Express カード",
+    "credit" : "クレジットカード"
   },
-  "paymentTypes": {
-    "title": "支払方法",
-    "paymentType_CARD": "クレジット カード",
-    "paymentType_ACCOUNT": "アカウント"
+  "paymentTypes" : {
+    "title" : "支払方法",
+    "paymentType_CARD" : "クレジットカード",
+    "paymentType_ACCOUNT" : "アカウント"
   },
-  "paymentMessages": {
-    "setAsDefaultSuccessfully": "New payment was successfully set as default"
+  "paymentMessages" : {
+    "setAsDefaultSuccessfully" : "新しい支払がデフォルトとして正常に設定されました"
   }
 }

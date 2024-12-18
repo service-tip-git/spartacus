@@ -1,7 +1,7 @@
 {
-  "wishlist": {
-    "empty": "No products in your wish list yet",
-    "itemRemoved": "Selected item has been removed.",
-    "caption": "Wish list contents."
+  "wishlist" : {
+    "empty" : "您的愿望清单中尚无产品",
+    "itemRemoved" : "所选项目已移除。",
+    "caption" : "愿望清单内容。"
   }
 }

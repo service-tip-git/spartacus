@@ -1,109 +1,109 @@
 {
-  "closeAccount": {
-    "confirmAccountClosure": "确认帐户关闭",
-    "confirmAccountClosureMessage": "是否确定要关闭帐户?",
-    "closeMyAccount": "CLOSE MY ACCOUNT",
-    "accountClosedSuccessfully": "Account closed with success",
-    "accountClosedFailure": "Failed to close account"
+  "closeAccount" : {
+    "confirmAccountClosure" : "确认帐户关闭",
+    "confirmAccountClosureMessage" : "是否确定要关闭帐户？",
+    "closeMyAccount" : "关闭我的帐户",
+    "accountClosedSuccessfully" : "帐户已成功关闭",
+    "accountClosedFailure" : "无法关闭帐户"
   },
-  "updatePasswordForm": {
-    "oldPassword": {
-      "label": "旧密码",
-      "placeholder": "旧密码"
+  "updatePasswordForm" : {
+    "oldPassword" : {
+      "label" : "旧密码",
+      "placeholder" : "旧密码"
     },
-    "oldPasswordIsRequired": "Old password is required.",
-    "newPassword": {
-      "label": "新密码",
-      "placeholder": "新密码"
+    "oldPasswordIsRequired" : "需要提供旧密码。",
+    "newPassword" : {
+      "label" : "新密码",
+      "placeholder" : "新密码"
     },
-    "passwordMinRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
-    "passwordStrengthRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
-    "confirmPassword": {
-      "label": "确认新密码",
-      "placeholder": "确认密码"
+    "passwordMinRequirements" : "以下是确保密码安全的快速指南：使用至少 8 个字符，且大写和小写字母、数字和符号混合。",
+    "passwordStrengthRequirements" : "以下是确保密码安全的快速指南：使用至少 8 个字符，且大写和小写字母、数字和符号混合。确保不要连续使用相同字符。",
+    "confirmPassword" : {
+      "label" : "确认新密码",
+      "placeholder" : "确认密码"
     },
-    "bothPasswordMustMatch": "Both password must match",
-    "passwordUpdateSuccess": "Password updated with success",
-    "accessDeniedError": "Access is denied"
+    "bothPasswordMustMatch" : "两个密码必须一致",
+    "passwordUpdateSuccess" : "密码已成功更新",
+    "accessDeniedError" : "访问遭到拒绝"
   },
-  "updateProfileForm": {
-    "title": "标题",
-    "none": "",
-    "firstName": {
-      "label": "名字",
-      "placeholder": "名字"
+  "updateProfileForm" : {
+    "title" : "标题",
+    "none" : "",
+    "firstName" : {
+      "label" : "名字",
+      "placeholder" : "名字"
     },
-    "firstNameIsRequired": "First name is required.",
-    "lastName": {
-      "label": "姓氏",
-      "placeholder": "姓氏"
+    "firstNameIsRequired" : "名字为必填项。",
+    "lastName" : {
+      "label" : "姓氏",
+      "placeholder" : "姓氏"
     },
-    "lastNameIsRequired": "Last name is required.",
-    "profileUpdateSuccess": "Personal details successfully updated",
-    "customerId": "Customer #"
+    "lastNameIsRequired" : "姓氏为必填项。",
+    "profileUpdateSuccess" : "个人详细信息已成功更新",
+    "customerId" : "客户 #"
   },
-  "consentManagementForm": {
-    "clearAll": "Clear all",
-    "selectAll": "全部选择",
-    "message": {
-      "success": {
-        "given": "Consent successfully given.",
-        "withdrawn": "Consent successfully withdrawn."
+  "consentManagementForm" : {
+    "clearAll" : "全部清除",
+    "selectAll" : "全选",
+    "message" : {
+      "success" : {
+        "given" : "已成功给予许可。",
+        "withdrawn" : "已成功撤销许可。"
       }
     }
   },
-  "myCoupons": {
-    "noCouponsMessage": "You have no coupons available.",
-    "effectiveTitle": "有效:",
-    "Effective": "EFFECTIVE",
-    "PreSession": "EFFECTIVE SOON",
-    "ExpireSoon": "EXPIRING SOON",
-    "readMore": "Read more",
-    "notification": "通知",
-    "findProducts": "查找产品",
-    "status": "状态:",
-    "dialogTitle": "优惠券",
-    "claimCustomerCoupon": "您已成功领取此优惠券.",
-    "myCoupons": "My coupons",
-    "startDateAsc": "Start Date (ascending)",
-    "startDateDesc": "Start Date (descending)",
-    "endDateAsc": "End Date (ascending)",
-    "endDateDesc": "End Date (descending)",
-    "sortBy": "排序依据",
-    "sortCoupons": "Sort coupons",
-    "notesPreffix": "You can set your preferred channels for receiving coupon notifications on the ",
-    "notesLink": "通知渠道",
-    "notesSuffix": " page."
+  "myCoupons" : {
+    "noCouponsMessage" : "您没有可用的优惠券。",
+    "effectiveTitle" : "生效：",
+    "Effective" : "生效",
+    "PreSession" : "即将生效",
+    "ExpireSoon" : "即将到期",
+    "readMore" : "继续阅读",
+    "notification" : "通知",
+    "findProducts" : "查找产品",
+    "status" : "状态:",
+    "dialogTitle" : "优惠券",
+    "claimCustomerCoupon" : "您已成功领取此优惠券.",
+    "myCoupons" : "我的优惠券",
+    "startDateAsc" : "开始日期（升序）",
+    "startDateDesc" : "开始日期（降序）",
+    "endDateAsc" : "结束日期（升序）",
+    "endDateDesc" : "结束日期（降序）",
+    "sortBy" : "排序依据",
+    "sortCoupons" : "对优惠券进行排序",
+    "notesPreffix" : "您可以在 ",
+    "notesLink" : "“通知渠道”",
+    "notesSuffix" : " 页面上设置接收优惠卷通知的首选渠道。"
   },
-  "notificationPreference": {
-    "message": "Select your preferred notification channels",
-    "note": "Note: ",
-    "noteMessage": "If you deactivate all channels you will not be able to receive any further notifications.",
-    "EMAIL": "Email:",
-    "SMS": "SMS:",
-    "SITE_MESSAGE": "SiteMessage"
+  "notificationPreference" : {
+    "message" : "选择您的首选通知渠道",
+    "note" : "注意： ",
+    "noteMessage" : "如果您取消激活所有渠道，将无法接收任何进一步的通知。",
+    "EMAIL" : "电子邮件：",
+    "SMS" : "SMS：",
+    "SITE_MESSAGE" : "SiteMessage"
   },
-  "myInterests": {
-    "header": "我的关注对象",
-    "item": "项目",
-    "price": "PRICE",
-    "notifications": "NOTIFICATIONS",
-    "noInterests": "You have no registered interests yet.",
-    "inStock": "现货",
-    "lowStock": "库存不足",
-    "outOfStock": "缺货",
-    "BACK_IN_STOCK": "重新到货",
-    "sortBy": "排序依据",
-    "sortInterests": "Sort interests",
-    "expirationDate": " - Till {{ expirationDate }}",
-    "productId": "ID {{ code }}",
-    "remove": "移除",
-    "sorting": {
-      "byNameAsc": "名称（升序）",
-      "byNameDesc": "名称（降序）"
+  "myInterests" : {
+    "header" : "我的关注对象",
+    "item" : "项目",
+    "price" : "价格",
+    "notifications" : "通知",
+    "noInterests" : "您还没有已注册的关注对象",
+    "inStock" : "现货",
+    "lowStock" : "库存不足",
+    "outOfStock" : "缺货",
+    "BACK_IN_STOCK" : "重新到货",
+    "sortBy" : "排序依据",
+    "sortInterests" : "对关注对象进行排序",
+    "expirationDate" : " - 截至 {{ expirationDate }}",
+    "productId" : "标识 {{ code }}",
+    "remove" : "移除",
+    "sorting" : {
+      "byNameAsc" : "名称（升序）",
+      "byNameDesc" : "名称（降序）"
     },
-    "actions": "ACTIONS",
-    "caption": "My Interests contents.",
-    "itemRemoved": "Selected item has been removed."
+    "actions" : "操作",
+    "caption" : "我的关注对象内容。",
+    "itemRemoved" : "所选项目已移除。"
   }
 }

@@ -1,663 +1,663 @@
 {
-  "organization": {
-    "enabled": "有効",
-    "disabled": "無効",
-    "enable": "有効",
-    "disable": "無効",
-    "name": "名前",
-    "code": "コード",
-    "done": "done",
-    "cancel": "キャンセル",
-    "add": "追加",
-    "manageUsers": "ユーザの管理",
-    "create": "{{name}} を作成",
-    "edit": "編集",
-    "save": "Save {{name}}",
-    "delete": "削除",
-    "assign": "管理",
-    "active": "有効",
-    "status": "ステータス",
-    "details": "詳細",
-    "messages": {
-      "emptyList": "The list is empty"
+  "organization" : {
+    "enabled" : "有効",
+    "disabled" : "無効",
+    "enable" : "有効",
+    "disable" : "無効",
+    "name" : "名前",
+    "code" : "コード",
+    "done" : "完了",
+    "cancel" : "キャンセル",
+    "add" : "追加",
+    "manageUsers" : "ユーザの管理",
+    "create" : "{{name}} の作成",
+    "edit" : "編集",
+    "save" : "{{name}} の保存",
+    "delete" : "削除",
+    "assign" : "管理",
+    "active" : "有効",
+    "status" : "ステータス",
+    "details" : "詳細",
+    "messages" : {
+      "emptyList" : "リストは空です"
     },
-    "userRoles": {
-      "b2bcustomergroup": "顧客",
-      "b2bapprovergroup": "承認者",
-      "b2bmanagergroup": "マネージャ",
-      "b2badmingroup": "管理"
+    "userRoles" : {
+      "b2bcustomergroup" : "顧客",
+      "b2bapprovergroup" : "承認者",
+      "b2bmanagergroup" : "マネージャ",
+      "b2badmingroup" : "管理"
     },
-    "userRights": {
-      "unitorderviewergroup": "View Unit-Level Orders"
+    "userRights" : {
+      "unitorderviewergroup" : "ユニットレベルの注文の表示"
     },
-    "breadcrumb": "組織",
-    "notification": {
-      "noSufficientPermissions": "No sufficient permissions to access this page",
-      "notExist": "This item does not exist",
-      "disabled": "You cannot edit a disabled item"
+    "breadcrumb" : "組織",
+    "notification" : {
+      "noSufficientPermissions" : "このページにアクセスするのに十分な権限がありません",
+      "notExist" : "このアイテムは存在しません。",
+      "disabled" : "無効化されたアイテムは編集できません"
     },
-    "confirmation": {
-      "cancel": "キャンセル",
-      "confirm": "CONFIRM",
-      "disable": "DISABLE",
-      "delete": "DELETE"
+    "confirmation" : {
+      "cancel" : "キャンセル",
+      "confirm" : "確認",
+      "disable" : "無効",
+      "delete" : "削除"
     },
-    "httpHandlers": {
-      "conflict": {
-        "budget": "Budget with code {{ code }} already exists.",
-        "costCenter": "Cost center with code {{ code }} already exists.",
-        "unit": "Organizational unit with uid {{ code }} already exists.",
-        "user": "User with email {{ code }} already exists",
-        "userGroup": "User Group with id {{ code }} already exists",
-        "permission": "Approval Permission with code {{ code }} already exists.",
-        "unknown": "Server validation error."
+    "httpHandlers" : {
+      "conflict" : {
+        "budget" : "コードが {{ code }} の予算はすでに存在します。",
+        "costCenter" : "コードが {{ code }} の原価センタはすでに存在します。",
+        "unit" : "UID が {{ code }} の組織ユニットはすでに存在します。",
+        "user" : "電子メールが {{ code }} のユーザはすでに存在します",
+        "userGroup" : "ID が {{ code }} のユーザグループはすでに存在します",
+        "permission" : "コードが {{ code }} の承認権限はすでに存在します。",
+        "unknown" : "サーバ検証エラー"
       }
     },
-    "information": "More information about {{title}}"
+    "information" : "{{title}} に関するその他の情報"
   },
-  "orgCostCenter": {
-    "groupName": "コストセンター",
-    "header": "All cost centers ({{count}})",
-    "code": "コード",
-    "active": "ステータス",
-    "name": "名前",
-    "currency": "通貨",
-    "unit": "親単位",
-    "actions": "",
-    "sortBy": "ソート基準",
-    "sort": {
-      "byName": "名前",
-      "byUnitName": "単位",
-      "byCode": "コード"
+  "orgCostCenter" : {
+    "groupName" : "原価センタ",
+    "header" : "すべての原価センタ ({{count}})",
+    "code" : "コード",
+    "active" : "ステータス",
+    "name" : "名前",
+    "currency" : "通貨",
+    "unit" : "親ユニット",
+    "actions" : "",
+    "sortBy" : "ソート基準",
+    "sort" : {
+      "byName" : "名前",
+      "byUnitName" : "ユニット",
+      "byCode" : "コード"
     },
-    "hint": "All orders placed through your organization's purchase account are linked to a cost center for tracking purposes. Each unit can have multiple cost centers. To limit spending, budgets are assigned to cost centers. A buyer selects a cost center when checking out.",
-    "disable": {
-      "confirm": "無効"
+    "hint" : "組織の購入アカウントを介して行われるすべての注文は、追跡の目的で原価センタにリンクされます。各ユニットは複数の原価センタを持つことができます。支出を制限するには予算を原価センタに割り当てます。購入担当者はチェックアウト時に原価センタを選択します。",
+    "disable" : {
+      "confirm" : "無効"
     },
-    "messages": {
-      "deactivateTitle": "Disable this cost center?",
-      "deactivate": "Disabled cost centers cannot be used for placing new orders. Ensure that your unit has at least one cost center. Existing orders are not affected.",
-      "confirmEnabled": "Cost Center {{ item.name }} enabled successfully",
-      "confirmDisabled": "Cost Center {{ item.name }} disabled successfully",
-      "update": "Cost Center {{ item.name }} updated successfully",
-      "create": "Cost Center {{ item.name }} created successfully"
+    "messages" : {
+      "deactivateTitle" : "原価センタの無効化",
+      "deactivate" : "無効化された原価センタは新しい注文に使用することができません。ユニットに少なくとも 1 つの原価センタがあることを確認してください。既存の注文は影響を受けません。",
+      "confirmEnabled" : "原価センタ {{ item.name }} が正常に有効化されました",
+      "confirmDisabled" : "原価センタ {{ item.name }} が正常に無効化されました",
+      "update" : "原価センタ {{ item.name }} が正常に更新されました",
+      "create" : "原価センタ {{ item.name }} が正常に作成されました"
     },
-    "info": {
-      "disabledEdit": "Enable the cost center to allow editing.",
-      "disabledEnable": "Unit must be enabled before this cost center may be enabled."
+    "info" : {
+      "disabledEdit" : "編集を許可するために原価センタを有効化します。",
+      "disabledEnable" : "ユニットはこの原価センタが有効化される前に有効化されている必要があります。"
     },
-    "details": {
-      "title": "原価センタ詳細",
-      "subtitle": "Cost Center: {{ item.name }}"
+    "details" : {
+      "title" : "原価センタ詳細",
+      "subtitle" : "原価センタ: {{ item.name }}"
     },
-    "edit": {
-      "title": "原価センタを編集",
-      "subtitle": "Cost Center: {{ item.name }}"
+    "edit" : {
+      "title" : "原価センタの編集",
+      "subtitle" : "原価センタ: {{ item.name }}"
     },
-    "create": {
-      "title": "原価センタを作成",
-      "subtitle": ""
+    "create" : {
+      "title" : "原価センタの作成",
+      "subtitle" : ""
     },
-    "budget": {
-      "link": "予算"
+    "budget" : {
+      "link" : "予算"
     },
-    "breadcrumbs": {
-      "list": "All cost centers",
-      "details": "{{name}}",
-      "budgets": "予算"
+    "breadcrumbs" : {
+      "list" : "すべての原価センタ",
+      "details" : "{{name}}",
+      "budgets" : "予算"
     }
   },
-  "orgCostCenterBudgets": {
-    "title": "Manage budgets",
-    "subtitle": "Cost Center: {{ item.name }}",
-    "assigned": "Budget {{ item.name }} assigned successfully",
-    "unassigned": "Budget {{ item.name }} unassigned successfully"
+  "orgCostCenterBudgets" : {
+    "title" : "予算の管理",
+    "subtitle" : "原価センタ: {{ item.name }}",
+    "assigned" : "予算 {{ item.name }} が正常に割り当てられました",
+    "unassigned" : "予算 {{ item.name }} が正常に割り当て解除されました"
   },
-  "orgCostCenterAssignedBudgets": {
-    "title": "Assigned budgets",
-    "subtitle": "Cost Center: {{ item.name }}",
-    "assigned": "Budget {{ item.name }} assigned successfully",
-    "unassigned": "Budget {{ item.name }} unassigned successfully"
+  "orgCostCenterAssignedBudgets" : {
+    "title" : "割当済み予算",
+    "subtitle" : "原価センタ: {{ item.name }}",
+    "assigned" : "予算 {{ item.name }} が正常に割り当てられました",
+    "unassigned" : "予算 {{ item.name }} が正常に割り当て解除されました"
   },
-  "orgBudget": {
-    "groupName": "予算",
-    "header": "All budgets ({{count}})",
-    "code": "コード",
-    "name": "名前",
-    "active": "ステータス",
-    "currency": "通貨",
-    "amount": "金額",
-    "unit": "単位",
-    "businessUnits": "単位",
-    "dateRange": "Start - End",
-    "startDate": "開始",
-    "endDate": "終了",
-    "actions": "",
-    "sortBy": "ソート基準",
-    "sort": {
-      "byName": "名前",
-      "byUnitName": "単位",
-      "byCode": "コード",
-      "byValue": "値"
+  "orgBudget" : {
+    "groupName" : "予算",
+    "header" : "すべての予算 ({{count}})",
+    "code" : "コード",
+    "name" : "名前",
+    "active" : "ステータス",
+    "currency" : "通貨",
+    "amount" : "金額",
+    "unit" : "ユニット",
+    "businessUnits" : "ユニット",
+    "dateRange" : "開始 - 終了",
+    "startDate" : "開始",
+    "endDate" : "終了",
+    "actions" : "",
+    "sortBy" : "ソート基準",
+    "sort" : {
+      "byName" : "名前",
+      "byUnitName" : "ユニット",
+      "byCode" : "コード",
+      "byValue" : "値"
     },
-    "hint": "Budgets set overall purchase limits and are assigned to cost centers. A buyer selects a cost center when checking out.",
-    "details": {
-      "title": "予算詳細",
-      "subtitle": "Budget: {{ item.name }}"
+    "hint" : "予算には全体的な購入制限が設定され、原価センタに割り当てられます。購入担当者はチェックアウト時に原価センタを選択します。",
+    "details" : {
+      "title" : "予算詳細",
+      "subtitle" : "予算: {{ item.name }}"
     },
-    "edit": {
-      "title": "予算を編集",
-      "subtitle": "Budget: {{ item.name }}"
+    "edit" : {
+      "title" : "予算を編集",
+      "subtitle" : "予算: {{ item.name }}"
     },
-    "create": {
-      "title": "Create Budget",
-      "subtitle": ""
+    "create" : {
+      "title" : "予算の作成",
+      "subtitle" : ""
     },
-    "messages": {
-      "deactivateTitle": "Disable this budget?",
-      "deactivate": "Disabled budgets no longer apply to the cost centers they are assigned to. Ensure that the associated cost center has at least one budget.",
-      "confirmEnabled": "Budget {{ item.name }} enabled successfully",
-      "confirmDisabled": "Budget {{ item.name }} disabled successfully",
-      "update": "Budget {{ item.name }} updated successfully",
-      "create": "Budget {{ item.name }} created successfully"
+    "messages" : {
+      "deactivateTitle" : "この予算を無効化しますか?",
+      "deactivate" : "無効化された予算は割り当てられていた原価センタには適用されなくなります。関連する原価センタに少なくとも 1 つの予算があることを確認してください。",
+      "confirmEnabled" : "予算 {{ item.name }} が正常に有効化されました",
+      "confirmDisabled" : "予算 {{ item.name }} が正常に無効化されました",
+      "update" : "予算 {{ item.name }} が正常に更新されました",
+      "create" : "予算 {{ item.name }} が正常に作成されました"
     },
-    "info": {
-      "disabledEdit": "Enable the budget to allow editing.",
-      "disabledEnable": "Unit must be enabled before this budget may be enabled."
+    "info" : {
+      "disabledEdit" : "編集を許可するために予算を有効化します。",
+      "disabledEnable" : "ユニットはこの予算が有効化される前に有効化されている必要があります。"
     },
-    "links": {
-      "costCenters": "コストセンター"
+    "links" : {
+      "costCenters" : "原価センタ"
     },
-    "breadcrumbs": {
-      "list": "All budgets",
-      "details": "{{name}}"
+    "breadcrumbs" : {
+      "list" : "すべての予算",
+      "details" : "{{name}}"
     }
   },
-  "orgBudgetAssignedCostCenters": {
-    "title": "Cost centers",
-    "subtitle": "Budget: {{ item.name }}"
+  "orgBudgetAssignedCostCenters" : {
+    "title" : "原価センタ",
+    "subtitle" : "予算: {{ item.name }}"
   },
-  "orgUnit": {
-    "groupName": "ユニット",
-    "header": "All units ({{count}})",
-    "unit": "単位",
-    "name": "名前",
-    "uid": "ID",
-    "approvalProcess": "Approval process",
-    "parentUnit": "親単位",
-    "active": "ステータス",
-    "hint": "Units represent departments, stores, regions, or any other logical grouping that makes sense to you. The cost centers and delivery addresses available to a buyer when checking out, depend on their unit. Users have access to all child units of their primary unit.",
-    "details": {
-      "title": "単位詳細",
-      "subtitle": "Unit: {{ item.name }}",
-      "hint": "Units represent departments, stores, regions, or any other logical grouping that makes sense to you. Disabling a unit disables all children of the unit, including child units, users, approvers, and cost centers. Disabled units cannot be edited."
+  "orgUnit" : {
+    "groupName" : "ユニット",
+    "header" : "すべてのユニット ({{count}})",
+    "unit" : "ユニット",
+    "name" : "名前",
+    "uid" : "ID",
+    "approvalProcess" : "承認プロセス",
+    "parentUnit" : "親ユニット",
+    "active" : "ステータス",
+    "hint" : "ユニットは、部門、店舗、地域、またはその他ユーザにとって意味のある任意の論理的なグループを表しています。原価センタおよび配送先住所は、購入担当者のユニットに応じてチェックアウト時に使用することができます。ユーザはプライマリユニットのすべての子ユニットにアクセスできます。",
+    "details" : {
+      "title" : "ユニット詳細",
+      "subtitle" : "ユニット: {{ item.name }}",
+      "hint" : "ユニットは、部門、店舗、地域、またはその他ユーザにとって意味のある任意の論理的なグループを表しています。ユニットを無効化すると子ユニット、ユーザ、承認者、および原価センタを含めて、ユニットのすべての子も無効化されます。無効化されたユニットを編集することはできません。"
     },
-    "edit": {
-      "title": "Edit Unit",
-      "subtitle": "Unit: {{ item.name }}"
+    "edit" : {
+      "title" : "ユニットの編集",
+      "subtitle" : "ユニット: {{ item.name }}"
     },
-    "create": {
-      "title": "単位を作成",
-      "subtitle": ""
+    "create" : {
+      "title" : "ユニットの作成",
+      "subtitle" : ""
     },
-    "messages": {
-      "deactivateTitle": "Disable this unit?",
-      "deactivate": "Disabling a unit has wide-ranging affects on your commerce organization. ALL the unit's child units, users, budgets, and cost centers will also disabled.",
-      "confirmEnabled": "Unit {{item.name}} enabled successfully",
-      "confirmDisabled": "Unit {{item.name}} disabled successfully",
-      "update": "Unit {{ item.name }} updated successfully",
-      "create": "Unit {{ item.name }} created successfully"
+    "messages" : {
+      "deactivateTitle" : "このユニットを無効化しますか?",
+      "deactivate" : "ユニットの無効化は、コマース組織に幅広い影響を与えます。組織のすべての子ユニット、ユーザ、予算、および原価センタも無効化されます。",
+      "confirmEnabled" : "ユニット {{ item.name }} が正常に有効化されました",
+      "confirmDisabled" : "ユニット {{ item.name }} が正常に無効化されました",
+      "update" : "ユニット {{ item.name }} が正常に更新されました",
+      "create" : "ユニット {{ item.name }} が正常に作成されました"
     },
-    "info": {
-      "disabledEdit": "Enable the unit to allow editing.",
-      "disabledEnable": "Parent must be enabled before this unit may be enabled.",
-      "disabledDisable": "Root unit can not be disabled."
+    "info" : {
+      "disabledEdit" : "編集を許可するためにユニットを有効化します。",
+      "disabledEnable" : "このユニットが有効化される前に親ユニットが有効化されている必要があります。",
+      "disabledDisable" : "ルートユニットは無効化できません。"
     },
-    "links": {
-      "units": "子単位",
-      "users": "ユーザ",
-      "approvers": "承認者",
-      "shippingAddresses": "Delivery Addresses",
-      "costCenters": "コストセンター"
+    "links" : {
+      "units" : "子ユニット",
+      "users" : "ユーザ",
+      "approvers" : "承認者",
+      "shippingAddresses" : "配送先住所",
+      "costCenters" : "原価センタ"
     },
-    "tree": {
-      "expandAll": "すべて展開",
-      "collapseAll": "すべて縮小",
-      "expand": "展開",
-      "collapse": "collapse",
-      "explore": "Explore sub-units"
+    "tree" : {
+      "expandAll" : "すべて展開",
+      "collapseAll" : "すべて圧縮",
+      "expand" : "展開",
+      "collapse" : "圧縮",
+      "explore" : "サブユニットを参照"
     },
-    "children": {
-      "create": {
-        "title": "Create child unit",
-        "subtitle": ""
+    "children" : {
+      "create" : {
+        "title" : "子ユニットの作成",
+        "subtitle" : ""
       },
-      "messages": {
-        "create": "Unit {{ item.name }} created successfully"
+      "messages" : {
+        "create" : "ユニット {{ item.name }} が正常に作成されました"
       }
     },
-    "costCenters": {
-      "create": {
-        "title": "Create cost center",
-        "subtitle": ""
+    "costCenters" : {
+      "create" : {
+        "title" : "原価センタの作成",
+        "subtitle" : ""
       }
     },
-    "form": {
-      "parentOrgUnit": "親ビジネス単位",
-      "create": "単位を作成",
-      "parentOrgUnitNotes": "This unit is the top-level unit for your organization. It cannot be assigned to another unit."
+    "form" : {
+      "parentOrgUnit" : "親ビジネスユニット",
+      "create" : "ユニットの作成",
+      "parentOrgUnitNotes" : "このユニットは組織のトップレベルユニットです。このユニットを別のユニットに割り当てることはできません。"
     },
-    "users": {
-      "header": "Users in {{code}}",
-      "changeUserRoles": "Change user roles",
-      "newUser": "New user"
+    "users" : {
+      "header" : "{{code}} のユーザ",
+      "changeUserRoles" : "ユーザロールの変更",
+      "newUser" : "新しいユーザ"
     },
-    "assignRoles": {
-      "header": "Manage roles in {{code}}",
-      "instructions": {
-        "check": "To assign a role to a user, select the role's check box.",
-        "uncheck": "To remove a role, clear the role's check box.",
-        "changes": "Changes are saved automatically."
+    "assignRoles" : {
+      "header" : "{{code}} でのロールの管理",
+      "instructions" : {
+        "check" : "ユーザにロールを割り当てるには、ロールのチェックボックスを選択します。",
+        "uncheck" : "ロールを削除するにはロールのチェックボックスを選択解除します。",
+        "changes" : "変更は自動的に保存されます。"
       }
     },
-    "approvers": {
-      "header": "Approvers in {{code}}",
-      "assign": "Manage approvers",
-      "new": "New approver"
+    "approvers" : {
+      "header" : "{{code}} の承認者",
+      "assign" : "承認者の管理",
+      "new" : "新しい承認者"
     },
-    "assignApprovers": {
-      "header": "Manage approvers in {{code}}",
-      "instructions": {
-        "check": "To assign an approver to this unit, select the user's check box.",
-        "uncheck": "To remove an approver, clear the user's check box.",
-        "changes": "Changes are saved automatically."
+    "assignApprovers" : {
+      "header" : "{{code}} の承認者の管理",
+      "instructions" : {
+        "check" : "このユニットに承認者を割り当てるには、ユーザのチェックボックスを選択します。",
+        "uncheck" : "承認者を削除するには、ユーザのチェックボックスを選択解除します。",
+        "changes" : "変更は自動的に保存されます。"
       },
-      "hint": "Users displayed under the Approvers list are assigned approval privileges for the buyers of this unit and of child units. Note that a user who has the approver role is separate from an approver who appears under the Approvers list. If an approver doesn't exist for a unit, or if approvers do not have sufficient approval purchase privileges, an approver higher up the unit hierarchy is found, until an administration is chosen."
+      "hint" : "承認者リストに表示されるユーザには、このユニットおよびその子ユニットの購入担当者の承認権限が割り当てられています。承認者ロールを持つユーザと承認者リストに表示される承認者とは異なるので注意してください。ユニットに承認者が存在しない場合、または承認者に十分な購入承認権限がない場合は、管理が選択されるまで、ユニット階層の上位にいる承認者が検索されます。"
     },
-    "breadcrumbs": {
-      "list": "All units",
-      "details": "{{name}}",
-      "children": "Child units",
-      "users": "ユーザ",
-      "approvers": "承認者",
-      "addresses": "Delivery addresses",
-      "addressDetails": "{{formattedAddress}}",
-      "costCenters": "コストセンター"
+    "breadcrumbs" : {
+      "list" : "すべてのユニット",
+      "details" : "{{name}}",
+      "children" : "子ユニット",
+      "users" : "ユーザ",
+      "approvers" : "承認者",
+      "addresses" : "配送先住所",
+      "addressDetails" : "{{formattedAddress}}",
+      "costCenters" : "原価センタ"
     }
   },
-  "orgUnitChildren": {
-    "title": "Child units",
-    "subtitle": "Unit: {{item.name}}",
-    "info": {
-      "disabledCreate": "Child unit can not be created for disabled unit."
+  "orgUnitChildren" : {
+    "title" : "子ユニット",
+    "subtitle" : "ユニット: {{ item.name }}",
+    "info" : {
+      "disabledCreate" : "無効化されたユニットに対して子ユニットを作成することはできません。"
     },
-    "hint": "Units represent departments, stores, regions, or any other logical grouping that makes sense to you. Users \"inherit\" child units, meaning buyers have access to cost centers and delivery addresses of child units when checking out."
+    "hint" : "ユニットは、部門、店舗、地域、またはその他ユーザにとって意味のある任意の論理的なグループを表しています。ユーザの \"継承\" 子ユニットとは、購入担当者がチェックアウト時に子ユニットの原価センタおよび配送先住所にアクセスできることを表しています。"
   },
-  "orgUnitApprovers": {
-    "title": "Manage approvers",
-    "subtitle": "Unit: {{item.name}}",
-    "assigned": "User {{item.name}} assigned successfully",
-    "unassigned": "User {{item.name}} unassigned successfully"
+  "orgUnitApprovers" : {
+    "title" : "承認者の管理",
+    "subtitle" : "ユニット: {{ item.name }}",
+    "assigned" : "ユーザ {{ item.name }} が正常に割り当てられました",
+    "unassigned" : "ユーザ {{ item.name }} が正常に割り当て解除されました"
   },
-  "orgUnitAssignedApprovers": {
-    "title": "Assigned approvers",
-    "subtitle": "Unit: {{item.name}}",
-    "assigned": "User {{item.name}} assigned successfully",
-    "unassigned": "User {{item.name}} unassigned successfully",
-    "hint": "Users displayed under the Approvers list are assigned approval privileges for the buyers of this unit and of child units. Note that a user who has the approver role is separate from an approver who appears under the Approvers list. If an approver doesn't exist for a unit, or if approvers do not have sufficient approval purchase privileges, an approver higher up the unit hierarchy is found, until an administration is chosen."
+  "orgUnitAssignedApprovers" : {
+    "title" : "割り当て済み承認者",
+    "subtitle" : "ユニット: {{ item.name }}",
+    "assigned" : "ユーザ {{ item.name }} が正常に割り当てられました",
+    "unassigned" : "ユーザ {{ item.name }} が正常に割り当て解除されました",
+    "hint" : "承認者リストに表示されるユーザには、このユニットおよびその子ユニットの購入担当者の承認権限が割り当てられています。承認者ロールを持つユーザと承認者リストに表示される承認者とは異なるので注意してください。ユニットに承認者が存在しない場合、または承認者に十分な購入承認権限がない場合は、管理が選択されるまで、ユニット階層の上位にいる承認者が検索されます。"
   },
-  "orgUnitAssignedRoles": {
-    "header": "Manage roles in {{code}}",
-    "name": "名前",
-    "email": "電子メール",
-    "roles": "ロール",
-    "roleCustomer": "顧客",
-    "roleApprover": "承認者",
-    "roleManager": "マネージャ",
-    "roleAdministrator": "管理"
+  "orgUnitAssignedRoles" : {
+    "header" : "{{code}} でのロールの管理",
+    "name" : "名前",
+    "email" : "電子メール",
+    "roles" : "ロール",
+    "roleCustomer" : "顧客",
+    "roleApprover" : "承認者",
+    "roleManager" : "マネージャ",
+    "roleAdministrator" : "管理"
   },
-  "orgUnitUsers": {
-    "title": "Assigned users",
-    "subtitle": "Unit: {{item.name}}",
-    "info": {
-      "disabledCreate": "User can not be created for disabled unit."
+  "orgUnitUsers" : {
+    "title" : "割り当て済みユーザ",
+    "subtitle" : "ユニット: {{ item.name }}",
+    "info" : {
+      "disabledCreate" : "無効化されたユニットに対してユーザを作成することはできません。"
     },
-    "hint": "Users are the buyers, approvers, managers, and administrators of your organization. Each user is assigned a role for making or approving purchases. Users \"inherit\" child units, meaning buyers have access to cost centers and delivery addresses of child units when checking out."
+    "hint" : "ユーザは、組織の購入担当者、承認者、マネージャ、および管理者です。各ユーザには購入を実行または承認するためのロールが割り当てられます。ユーザの \"継承\" 子ユニットとは、購入担当者がチェックアウト時に子ユニットの原価センタおよび配送先住所にアクセスできることを表しています。"
   },
-  "orgUnitUserRoles": {
-    "title": "User roles and rights",
-    "subtitle": "User: {{item.name}}",
-    "messages": {
-      "rolesUpdated": "Roles successfully updated for {{item.name}}"
+  "orgUnitUserRoles" : {
+    "title" : "ユーザロールおよび権限",
+    "subtitle" : "ユーザ: {{ item.name }}",
+    "messages" : {
+      "rolesUpdated" : "{{item.name}} のロールが正常に更新されました"
     }
   },
-  "orgUnitAssignedUsers": {
-    "title": "Assigned users",
-    "subtitle": "Unit: {{item.name}}"
+  "orgUnitAssignedUsers" : {
+    "title" : "割り当て済みユーザ",
+    "subtitle" : "ユニット: {{ item.name }}"
   },
-  "orgUnitCostCenters": {
-    "title": "Assigned cost centers",
-    "subtitle": "Unit: {{item.name}}",
-    "info": {
-      "disabledCreate": "Cost center can not be created for disabled unit."
+  "orgUnitCostCenters" : {
+    "title" : "割当済み原価センタ",
+    "subtitle" : "ユニット: {{ item.name }}",
+    "info" : {
+      "disabledCreate" : "無効化されたユニットに対して原価センタを作成することはできません。"
     },
-    "hint": "All orders placed through your organization's purchase account are linked to a cost center for tracking purposes. A buyer selects a cost center when checking out using the \"Account\" purchase method. Each unit can have multiple cost centers, but a single cost center can only be assigned to a single unit. To define ultimate spending limits, budgets are assigned to cost centers. "
+    "hint" : "組織の購入アカウントを介して行われるすべての注文は、追跡の目的で原価センタにリンクされます。購入担当者はチェックアウト時に \"アカウント\" 購入方法を使用して原価センタを選択します。各ユニットは複数の原価センタを持つことができますが、1 つの原価センタは 1 つのユニットにのみ割り当てることができます。最終的な支出制限を定義するには予算を原価センタに割り当てます。 "
   },
-  "orgUnitAddress": {
-    "title": "Delivery addresses",
-    "subtitle": "Unit: {{item.name}}",
-    "country": "国/地域",
-    "titles": "タイトル",
-    "firstName": "名",
-    "lastName": "姓",
-    "formattedAddress": "住所",
-    "address1": "住所",
-    "address2": "2nd address (optional)",
-    "city": "都市",
-    "state": "ステータス",
-    "zipCode": "Zip code",
-    "phoneNumber": "Phone number (optional)",
-    "streetAddress": "Street Address",
-    "aptSuite": "Apartment Number",
-    "selectOne": "Select One...",
-    "hint": "When a buyer is checking out using the \"Account\" purchase method, they much choose a cost center. The delivery addresses available to the buyer depend on the unit of the cost center chosen.",
-    "details": {
-      "title": "Address details",
-      "subtitle": "Unit: {{item.name}}"
+  "orgUnitAddress" : {
+    "title" : "配送先住所",
+    "subtitle" : "ユニット: {{ item.name }}",
+    "country" : "国/地域",
+    "titles" : "タイトル",
+    "firstName" : "名",
+    "lastName" : "姓",
+    "formattedAddress" : "住所",
+    "address1" : "住所",
+    "address2" : "2 番目の住所 (オプション)",
+    "city" : "市区町村",
+    "state" : "都道府県/州",
+    "zipCode" : "郵便番号",
+    "phoneNumber" : "電話番号 (オプション)",
+    "streetAddress" : "番地",
+    "aptSuite" : "部屋番号",
+    "selectOne" : "1 つ選択...",
+    "hint" : "購入担当者が \"アカウント\" 購入方法を使用してチェックアウトするとき、多くの場合は原価センタを選択します。購入担当者が使用できる配送先住所は、選択した原価センタのユニットに依存します。",
+    "details" : {
+      "title" : "住所詳細",
+      "subtitle" : "ユニット: {{ item.name }}"
     },
-    "edit": {
-      "title": "住所を編集"
+    "edit" : {
+      "title" : "住所を編集"
     },
-    "create": {
-      "title": "住所を作成"
+    "create" : {
+      "title" : "住所を作成"
     },
-    "form": {
-      "subtitle": "Unit: {{item.name}}"
+    "form" : {
+      "subtitle" : "ユニット: {{ item.name }}"
     },
-    "messages": {
-      "create": "Address {{ item.firstName }} {{ item.lastName }} created successfully",
-      "update": "Address {{ item.firstName }} {{ item.lastName }} updated successfully",
-      "delete": "The address cannot be brought back. Existing orders are not affected.",
-      "deleteTitle": "Delete this address?",
-      "deleted": "Address {{ item.firstName }} {{ item.lastName }} deleted successfully"
+    "messages" : {
+      "create" : "住所 {{ item.firstName }} {{ item.lastName }} が正常に作成されました",
+      "update" : "住所 {{ item.firstName }} {{ item.lastName }} が正常に更新されました",
+      "delete" : "住所を戻すことができません。既存の注文は影響を受けません。",
+      "deleteTitle" : "この住所を削除しますか?",
+      "deleted" : "住所 {{ item.firstName }} {{ item.lastName }} が正常に削除されました"
     }
   },
-  "orgUserGroup": {
-    "groupName": "ユーザグループ",
-    "header": "All user groups ({{count}})",
-    "disabled": "(disabled)",
-    "uid": "コード",
-    "name": "名前",
-    "unit": "単位",
-    "orgUnit": "単位",
-    "actions": "",
-    "sortBy": "ソート基準",
-    "sort": {
-      "byName": "名前",
-      "byUnitName": "単位",
-      "byGroupID": "グループ"
+  "orgUserGroup" : {
+    "groupName" : "ユーザグループ",
+    "header" : "すべてのユーザグループ ({{count}})",
+    "disabled" : "(無効)",
+    "uid" : "コード",
+    "name" : "名前",
+    "unit" : "ユニット",
+    "orgUnit" : "ユニット",
+    "actions" : "",
+    "sortBy" : "ソート基準",
+    "sort" : {
+      "byName" : "名前",
+      "byUnitName" : "ユニット",
+      "byGroupID" : "グループ"
     },
-    "hint": "User groups allow you to combine users together in one group, for the purposes of assigning purchase limits for many users at once.",
-    "details": {
-      "title": "User group Details",
-      "subtitle": "User group: {{ item.name }}"
+    "hint" : "ユーザグループは、多数のユーザに購入制限を同時に割り当てる目的で、ユーザを 1 つのグループにまとめることができます。",
+    "details" : {
+      "title" : "ユーザグループ詳細",
+      "subtitle" : "ユーザグループ: {{ item.name }}"
     },
-    "edit": {
-      "title": "ユーザグループを編集",
-      "subtitle": "User group: {{ item.name }}"
+    "edit" : {
+      "title" : "ユーザグループを編集",
+      "subtitle" : "ユーザグループ: {{ item.name }}"
     },
-    "create": {
-      "title": "ユーザグループを作成",
-      "subtitle": ""
+    "create" : {
+      "title" : "ユーザグループを作成",
+      "subtitle" : ""
     },
-    "links": {
-      "user": "ユーザ",
-      "permission": "Purchase limits"
+    "links" : {
+      "user" : "ユーザ",
+      "permission" : "購入制限"
     },
-    "messages": {
-      "update": "User Group {{ item.name }} updated successfully",
-      "create": "User Group {{ item.name }} created successfully",
-      "deleteTitle": "Delete this user group?",
-      "delete": "The users in this group are not affected when the user group is deleted.",
-      "deleted": "User Group {{ item.name }} deleted successfully"
+    "messages" : {
+      "update" : "ユーザグループ {{ item.name }} が正常に更新されました",
+      "create" : "ユーザグループ {{ item.name }} が正常に作成されました",
+      "deleteTitle" : "このユーザグループを削除しますか?",
+      "delete" : "このグループにいるユーザは、ユーザグループが削除されても影響を受けません。",
+      "deleted" : "ユーザグループ {{ item.name }} が正常に削除されました"
     },
-    "breadcrumbs": {
-      "list": "All user groups",
-      "details": "{{name}}",
-      "users": "ユーザ",
-      "permissions": "Purchase limits"
+    "breadcrumbs" : {
+      "list" : "すべてのユーザグループ",
+      "details" : "{{name}}",
+      "users" : "ユーザ",
+      "permissions" : "購入制限"
     }
   },
-  "orgUserGroupUsers": {
-    "title": "Manage users",
-    "subtitle": "User group: {{ item.name }}",
-    "assigned": "User {{item.name}} assigned successfully",
-    "unassigned": "User {{item.name}} unassigned successfully",
-    "unassignAll": "Unassign All",
-    "unassignAllConfirmation": "All users unassigned successfully"
+  "orgUserGroupUsers" : {
+    "title" : "ユーザの管理",
+    "subtitle" : "ユーザグループ: {{ item.name }}",
+    "assigned" : "ユーザ {{ item.name }} が正常に割り当てられました",
+    "unassigned" : "ユーザ {{ item.name }} が正常に割り当て解除されました",
+    "unassignAll" : "すべての割り当てを解除",
+    "unassignAllConfirmation" : "すべてのユーザが正常に割り当て解除されました"
   },
-  "orgUserGroupAssignedUsers": {
-    "title": "Assigned users",
-    "subtitle": "User group: {{ item.name }}",
-    "assigned": "User {{item.name}} assigned successfully",
-    "unassigned": "User {{item.name}} unassigned successfully"
+  "orgUserGroupAssignedUsers" : {
+    "title" : "割り当て済みユーザ",
+    "subtitle" : "ユーザグループ: {{ item.name }}",
+    "assigned" : "ユーザ {{ item.name }} が正常に割り当てられました",
+    "unassigned" : "ユーザ {{ item.name }} が正常に割り当て解除されました"
   },
-  "orgUserGroupPermissions": {
-    "title": "Manage purchase limits",
-    "subtitle": "Limit: {{ item.name }}",
-    "assigned": "Purchase limits {{item.code}} assigned successfully",
-    "unassigned": "Purchase limits {{item.code}} unassigned successfully"
+  "orgUserGroupPermissions" : {
+    "title" : "購入制限の管理",
+    "subtitle" : "制限: {{ item.name }}",
+    "assigned" : "購入制限 {{item.code}} が正常に割り当てられました",
+    "unassigned" : "購入制限 {{item.code}} が正常に割り当て解除されました"
   },
-  "orgUserGroupAssignedPermissions": {
-    "title": "Assigned purchase limits",
-    "subtitle": "Limit: {{ item.name }}",
-    "assigned": "Purchase limits {{item.code}} assigned successfully",
-    "unassigned": "Purchase limits {{item.code}} unassigned successfully"
+  "orgUserGroupAssignedPermissions" : {
+    "title" : "割り当て済み購入制限",
+    "subtitle" : "制限: {{ item.name }}",
+    "assigned" : "購入制限 {{item.code}} が正常に割り当てられました",
+    "unassigned" : "購入制限 {{item.code}} が正常に割り当て解除されました"
   },
-  "orgUser": {
-    "groupName": "ユーザ",
-    "header": "All users ({{count}})",
-    "disabled": "(disabled)",
-    "uid": "電子メール",
-    "active": "ステータス",
-    "name": "名前",
-    "firstName": "名",
-    "lastName": "姓",
-    "email": "電子メール",
-    "orgUnit": "単位",
-    "unit": "単位",
-    "roles": "ロール",
-    "rights": "Rights",
-    "title": "タイトル",
-    "hint": "Users are the buyers, approvers, managers, and administrators of your organization. Each user is assigned a role for making or approving purchases. Each user belongs to a unit, and they have access to all child units of their primary unit.",
-    "unitApprover": "Unit approver",
-    "assignApprover": "Add the user to approvers for the unit",
-    "actions": "",
-    "sortBy": "ソート基準",
-    "sort": {
-      "byName": "名前",
-      "byUnit": "単位"
+  "orgUser" : {
+    "groupName" : "ユーザ",
+    "header" : "すべてのユーザ ({{count}})",
+    "disabled" : "(無効)",
+    "uid" : "電子メール",
+    "active" : "ステータス",
+    "name" : "名前",
+    "firstName" : "名",
+    "lastName" : "姓",
+    "email" : "電子メール",
+    "orgUnit" : "ユニット",
+    "unit" : "ユニット",
+    "roles" : "ロール",
+    "rights" : "権限",
+    "title" : "タイトル",
+    "hint" : "ユーザは、組織の購入担当者、承認者、マネージャ、および管理者です。各ユーザには購入を実行または承認するためのロールが割り当てられます。各ユーザはユニットに属しており、ユーザのプライマリユニットのすべての子ユニットにアクセスできます。",
+    "unitApprover" : "ユニット承認者",
+    "assignApprover" : "ユニットを承認するためのユーザを追加します",
+    "actions" : "",
+    "sortBy" : "ソート基準",
+    "sort" : {
+      "byName" : "名前",
+      "byUnit" : "ユニット"
     },
-    "details": {
-      "title": "ユーザ詳細",
-      "subtitle": "User: {{ item.name }}"
+    "details" : {
+      "title" : "ユーザ詳細",
+      "subtitle" : "ユーザ: {{ item.name }}"
     },
-    "edit": {
-      "title": "ユーザを編集",
-      "subtitle": "User: {{ item.name }}"
+    "edit" : {
+      "title" : "ユーザの編集",
+      "subtitle" : "ユーザ: {{ item.name }}"
     },
-    "create": {
-      "title": "Create User",
-      "subtitle": ""
+    "create" : {
+      "title" : "ユーザの作成",
+      "subtitle" : ""
     },
-    "links": {
-      "password": "Change password",
-      "approvers": "承認者",
-      "userGroup": "ユーザグループ",
-      "permission": "Purchase limits",
-      "rolesAndRights": "Roles and Rights"
+    "links" : {
+      "password" : "パスワードの変更",
+      "approvers" : "承認者",
+      "userGroup" : "ユーザグループ",
+      "permission" : "購入制限",
+      "rolesAndRights" : "ロールおよび権限"
     },
-    "messages": {
-      "deactivateTitle": "Disable this user?",
-      "deactivate": "Disabled users cannot log onto the storefront and place orders.",
-      "confirmEnabled": "User {{item.firstName}} {{item.lastName}} enabled successfully",
-      "confirmDisabled": "User {{item.firstName}} {{item.lastName}} disabled successfully",
-      "update": "User {{item.firstName}} {{item.lastName}} updated successfully",
-      "create": "User {{item.firstName}} {{item.lastName}} created successfully",
-      "updatePassword": "User {{item.firstName}} {{item.lastName}} password updated successfully"
+    "messages" : {
+      "deactivateTitle" : "このユーザを無効にしますか?",
+      "deactivate" : "無効化されたユーザは storefront にログオンして注文を行うことができません。",
+      "confirmEnabled" : "ユーザ {{ item.firstName }} {{ item.lastName }} が正常に有効化されました",
+      "confirmDisabled" : "ユーザ {{ item.firstName }} {{ item.lastName }} が正常に無効化されました",
+      "update" : "ユーザ {{ item.firstName }} {{ item.lastName }} が正常に更新されました",
+      "create" : "ユーザ {{ item.firstName }} {{ item.lastName }} が正常に作成されました",
+      "updatePassword" : "ユーザ {{ item.firstName }} {{ item.lastName }} のパスワードが正常に更新されました"
     },
-    "info": {
-      "disabledEdit": "Enable the user to allow editing.",
-      "disabledEnable": "Unit must be enabled before this user may be enabled."
+    "info" : {
+      "disabledEdit" : "編集を許可するためにユーザを有効化します。",
+      "disabledEnable" : "ユニットはこのユーザが有効化される前に有効化されている必要があります。"
     },
-    "approver": {
-      "link": "承認者",
-      "header": "Approvers in {{code}}",
-      "assign": "Assign Approvers",
-      "assignHeader": "Assign Approvers in {{code}}",
-      "back": "戻る",
-      "new": "New approver",
-      "instructions": {
-        "check": "To assign an approver to this user, select the user's check box.",
-        "uncheck": "To remove an approver, clear the user's check box.",
-        "changes": "Changes are saved automatically."
+    "approver" : {
+      "link" : "承認者",
+      "header" : "{{code}} の承認者",
+      "assign" : "承認者の割り当て",
+      "assignHeader" : "{{code}} の承認者の割り当て",
+      "back" : "戻る",
+      "new" : "新しい承認者",
+      "instructions" : {
+        "check" : "このユーザに承認者を割り当てるには、ユーザのチェックボックスを選択します。",
+        "uncheck" : "承認者を削除するには、ユーザのチェックボックスを選択解除します。",
+        "changes" : "変更は自動的に保存されます。"
       }
     },
-    "userGroup": {
-      "link": "ユーザグループ",
-      "header": "User groups in {{code}}",
-      "assign": "Assign user groups",
-      "assignHeader": "Assign user groups in {{code}}",
-      "back": "戻る",
-      "instructions": {
-        "check": "To assign an user group to this user, select the user's check box.",
-        "uncheck": "To remove aa user group, clear the user's check box.",
-        "changes": "Changes are saved automatically."
+    "userGroup" : {
+      "link" : "ユーザグループ",
+      "header" : "{{code}} のユーザグループ",
+      "assign" : "ユーザグループの割り当て",
+      "assignHeader" : "{{code}} のユーザグループの割り当て",
+      "back" : "戻る",
+      "instructions" : {
+        "check" : "このユーザにユーザグループを割り当てるには、ユーザのチェックボックスを選択します。",
+        "uncheck" : "ユーザグループを削除するには、ユーザのチェックボックスを選択解除します。",
+        "changes" : "変更は自動的に保存されます。"
       }
     },
-    "permission": {
-      "link": "Purchase limits",
-      "header": "Purchase limits in {{code}}",
-      "assign": "Assign purchase limits",
-      "assignHeader": "Assign purchase limits in {{code}}",
-      "back": "戻る",
-      "instructions": {
-        "check": "To assign a purchase limits to this user, select its check box.",
-        "uncheck": "To unassign a purchase limits, clear its check box.",
-        "changes": "Changes are saved automatically."
+    "permission" : {
+      "link" : "購入制限",
+      "header" : "{{code}} の購入制限",
+      "assign" : "購入制限の割り当て",
+      "assignHeader" : "{{code}} の購入制限の割り当て",
+      "back" : "戻る",
+      "instructions" : {
+        "check" : "このユーザに購入制限を割り当てるには、ユーザのチェックボックスを選択します。",
+        "uncheck" : "購入制限の割り当てを解除するには、ユーザのチェックボックスを選択解除します。",
+        "changes" : "変更は自動的に保存されます。"
       },
-      "per": {
-        "undefined": "",
-        "MONTH": "per Month",
-        "YEAR": "per Year",
-        "WEEK": "per Week",
-        "QUARTER": "per Quarter"
+      "per" : {
+        "undefined" : "",
+        "MONTH" : "月ごと",
+        "YEAR" : "年ごと",
+        "WEEK" : "週ごと",
+        "QUARTER" : "四半期ごと"
       }
     },
-    "password": {
-      "title": "Change password",
-      "subtitle": "User: {{ item.email }}",
-      "newPassword": "New password",
-      "confirmPassword": "Retype new password"
+    "password" : {
+      "title" : "パスワードの変更",
+      "subtitle" : "ユーザ: {{ item.email }}",
+      "newPassword" : "新しいパスワード",
+      "confirmPassword" : "新しいパスワードの再入力"
     },
-    "breadcrumbs": {
-      "list": "All users",
-      "details": "{{name}}",
-      "userGroups": "ユーザグループ",
-      "approvers": "承認者",
-      "permissions": "Purchase limits"
+    "breadcrumbs" : {
+      "list" : "すべてのユーザ",
+      "details" : "{{name}}",
+      "userGroups" : "ユーザグループ",
+      "approvers" : "承認者",
+      "permissions" : "購入制限"
     }
   },
-  "orgUserUserGroups": {
-    "title": "Manage user groups",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "User group {{item.name}} assigned successfully",
-    "unassigned": "User group {{item.name}} unassigned successfully"
+  "orgUserUserGroups" : {
+    "title" : "ユーザグループの管理",
+    "subtitle" : "ユーザ: {{ item.name }}",
+    "assigned" : "ユーザグループ {{ item.name }} が正常に割り当てられました",
+    "unassigned" : "ユーザグループ {{ item.name }} が正常に割り当て解除されました"
   },
-  "orgUserAssignedUserGroups": {
-    "title": "Assigned user groups",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "User group {{item.name}} assigned successfully",
-    "unassigned": "User group {{item.name}} unassigned successfully"
+  "orgUserAssignedUserGroups" : {
+    "title" : "割り当て済みユーザグループ",
+    "subtitle" : "ユーザ: {{ item.name }}",
+    "assigned" : "ユーザグループ {{ item.name }} が正常に割り当てられました",
+    "unassigned" : "ユーザグループ {{ item.name }} が正常に割り当て解除されました"
   },
-  "orgUserApprovers": {
-    "title": "Manage approvers",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "Approver {{ item.name }} assigned successfully",
-    "unassigned": "Approver {{ item.name }} unassigned successfully"
+  "orgUserApprovers" : {
+    "title" : "承認者の管理",
+    "subtitle" : "ユーザ: {{ item.name }}",
+    "assigned" : "承認者 {{ item.name }} が正常に割り当てられました",
+    "unassigned" : "承認者 {{ item.name }} が正常に割り当て解除されました"
   },
-  "orgUserAssignedApprovers": {
-    "title": "Assigned approvers",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "Approver {{ item.name }} assigned successfully",
-    "unassigned": "Approver {{ item.name }} unassigned successfully"
+  "orgUserAssignedApprovers" : {
+    "title" : "割り当て済み承認者",
+    "subtitle" : "ユーザ: {{ item.name }}",
+    "assigned" : "承認者 {{ item.name }} が正常に割り当てられました",
+    "unassigned" : "承認者 {{ item.name }} が正常に割り当て解除されました"
   },
-  "orgUserPermissions": {
-    "title": "Manage purchase limits",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "Purchase limit {{ item.code }} assigned successfully",
-    "unassigned": "Purchase limit {{ item.code }} unassigned successfully"
+  "orgUserPermissions" : {
+    "title" : "購入制限の管理",
+    "subtitle" : "ユーザ: {{ item.name }}",
+    "assigned" : "購入制限 {{item.code}} が正常に割り当てられました",
+    "unassigned" : "購入制限 {{item.code}} が正常に割り当て解除されました"
   },
-  "orgUserAssignedPermissions": {
-    "title": "Assigned purchase limits",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "Purchase limit {{ item.code }} assigned successfully",
-    "unassigned": "Purchase limit {{ item.code }} unassigned successfully"
+  "orgUserAssignedPermissions" : {
+    "title" : "割り当て済み購入制限",
+    "subtitle" : "ユーザ: {{ item.name }}",
+    "assigned" : "購入制限 {{item.code}} が正常に割り当てられました",
+    "unassigned" : "購入制限 {{item.code}} が正常に割り当て解除されました"
   },
-  "orgPurchaseLimit": {
-    "groupName": "Purchase Limits",
-    "header": "All purchase limits ({{count}})",
-    "name": "名前",
-    "code": "コード",
-    "active": "ステータス",
-    "limit": "制限",
-    "orderApprovalPermissionType": "タイプ",
-    "threshold": "しきい値",
-    "periodRange": "期間",
-    "currency": "通貨",
-    "orgUnit": "親単位",
-    "unit": "親単位",
-    "actions": "",
-    "hint": "Purchase limits help control spending by defining how much buyers can spend per order or per week, month, quarter, or year. Purchase limits are assigned to users or user groups. Purchase limits are also assigned to approvers, defining how much they are permitted to approve. You can assign purchase limits to many users at once with user groups.",
-    "details": {
-      "title": "Purchase Limit Details",
-      "subtitle": "Purchase Limit: {{ item.code }}"
+  "orgPurchaseLimit" : {
+    "groupName" : "購入制限",
+    "header" : "すべての購入制限 ({{count}})",
+    "name" : "名前",
+    "code" : "コード",
+    "active" : "ステータス",
+    "limit" : "制限",
+    "orderApprovalPermissionType" : "タイプ",
+    "threshold" : "しきい値",
+    "periodRange" : "期間",
+    "currency" : "通貨",
+    "orgUnit" : "親ユニット",
+    "unit" : "親ユニット",
+    "actions" : "",
+    "hint" : "購入制限は、購入担当者が注文ごと、週ごと、月ごと、四半期ごと、または年ごとにどれだけ支出できるのかを定義することで、支出の制御を行います。購入制限はユーザまたはユーザグループに割り当てられます。購入制限は、どれだけ承認できるのかを定義するために、承認者にも割り当てられます。ユーザグループを使用して多くのユーザに同時に購入制限を割り当てることができます。",
+    "details" : {
+      "title" : "購入制限の詳細",
+      "subtitle" : "購入制限: {{ item.code }}"
     },
-    "edit": {
-      "title": "Edit Purchase Limit",
-      "subtitle": "Purchase limits : {{ item.code }}"
+    "edit" : {
+      "title" : "購入制限の編集",
+      "subtitle" : "購入制限: {{ item.code }}"
     },
-    "create": {
-      "title": "Create Purchase Limit",
-      "subtitle": ""
+    "create" : {
+      "title" : "購入制限の作成",
+      "subtitle" : ""
     },
-    "sortBy": "ソート基準",
-    "sort": {
-      "byName": "名前",
-      "byUnitName": "単位"
+    "sortBy" : "ソート基準",
+    "sort" : {
+      "byName" : "名前",
+      "byUnitName" : "ユニット"
     },
-    "messages": {
-      "deactivateTitle": "Disable this purchase limit?",
-      "deactivate": "Disabled purchase limits can no longer be assigned to a user or user group. Current assignments will have no effect.",
-      "confirmEnabled": "Purchase Limit {{ item.code }} enabled successfully",
-      "confirmDisabled": "Purchase Limit {{ item.code }} disabled successfully",
-      "update": "Purchase Limit {{ item.code }} updated successfully",
-      "create": "Purchase Limit {{ item.code }} created successfully"
+    "messages" : {
+      "deactivateTitle" : "この購入制限を無効化しますか?",
+      "deactivate" : "無効化された購入制限はユーザまたはユーザグループに割り当てられなくなります。現在の割り当ては影響を受けません。",
+      "confirmEnabled" : "購入制限 {{item.code}} が正常に有効化されました",
+      "confirmDisabled" : "購入制限 {{item.code}} が正常に無効化されました",
+      "update" : "購入制限 {{item.code}} が正常に更新されました",
+      "create" : "購入制限 {{item.code}} が正常に作成されました"
     },
-    "info": {
-      "disabledEdit": "Enable the purchase limit to allow editing.",
-      "disabledEnable": "Unit must be enabled before this purchase limit may be enabled."
+    "info" : {
+      "disabledEdit" : "編集を許可するために購入制限を有効化します。",
+      "disabledEnable" : "ユニットはこの購入制限ザが有効化される前に有効化されている必要があります。"
     },
-    "per": {
-      "DAY": "per day",
-      "WEEK": "per week",
-      "MONTH": "per month",
-      "QUARTER": "per quarter",
-      "YEAR": "per year"
+    "per" : {
+      "DAY" : "日ごと",
+      "WEEK" : "週ごと",
+      "MONTH" : "月ごと",
+      "QUARTER" : "四半期ごと",
+      "YEAR" : "年ごと"
     },
-    "breadcrumbs": {
-      "list": "All purchase limits",
-      "details": "{{code}}"
+    "breadcrumbs" : {
+      "list" : "すべての購入制限",
+      "details" : "{{code}}"
     }
   }
 }

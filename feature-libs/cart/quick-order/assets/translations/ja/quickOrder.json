@@ -1,78 +1,80 @@
 {
-  "quickOrderCartForm": {
-    "entriesWereAdded": "({{ quantity }}) {{ product }} has been added to the cart",
-    "entryWasAdded": "{{ product }} has been added to the cart",
-    "noResults": "We could not find any products",
-    "stockLevelReached": "The maximum stock level has been reached",
-    "title": "簡易注文",
-    "productCodePlaceholder": "Enter ID",
-    "entryProductCode": "Enter Product ID for Quick Order",
-    "quantity": "Quantity for Quick Order",
-    "addToCart": "Add Product to Quick Order",
-    "add": "追加",
-    "product": "商品",
-    "products": "商品",
-    "productCodeLabel": "商品 ID",
-    "quantityLabel": "数量"
+  "quickOrderCartForm" : {
+    "entriesWereAdded" : "({{ quantity }}) {{ product }} がカートに追加されました",
+    "entryWasAdded" : "{{ product }} がカートに追加されました",
+    "noResults" : "商品が見つかりません",
+    "stockLevelReached" : "在庫の最大レベルに達しました",
+    "title" : "簡易注文",
+    "productCodePlaceholder" : "ID を入力",
+    "entryProductCode" : "簡易注文の商品 ID を入力",
+    "quantity" : "簡易注文の数量",
+    "addToCart" : "簡易注文に商品を追加",
+    "add" : "追加",
+    "product" : "商品",
+    "products" : "商品",
+    "productCodeLabel" : "商品 ID",
+    "quantityLabel" : "数量",
+    "quantityFullLabel" : "数量"
   },
-  "quickOrderForm": {
-    "placeholder": "Enter Product name or SKU",
-    "searchBoxLabel": "Enter Product name or SKU for quick order. You can add up to {{ limit }} products per order.",
-    "listLimitReached": "The product limit has been reached.",
-    "id": "ID {{ id }}",
-    "noResults": "We could not find any results",
-    "addProduct": "Add product {{ product }}",
-    "initialDescription": "When autocomplete results are available use up and down arrows to review and enter to select.",
-    "productsResults": "{{ count }} products are available.",
-    "quickOrderSearch": "Find product for quick order"
+  "quickOrderForm" : {
+    "placeholder" : "商品名または SKU を入力",
+    "searchBoxLabel" : "簡易注文の商品名または SKU を入力します。注文ごとに最大で {{ limit }} 商品を追加することができます。",
+    "listLimitReached" : "商品の制限に達しました。",
+    "id" : "ID {{ id }}",
+    "noResults" : "結果が見つかりませんでした",
+    "addProduct" : "商品 {{ product }} を追加",
+    "initialDescription" : "オートコンプリート結果が表示されたら、上下の矢印キーを使用して確認し、Enter キーで選択します。",
+    "productsResults" : "{{ count }} 商品を利用できます。",
+    "quickOrderSearch" : "簡易注文の商品を検索"
   },
-  "quickOrderList": {
-    "addToCart": "カートに追加",
-    "emptyList": "Empty list",
-    "header": "Add Products/SKUs",
-    "subHeader": "You can add up to {{ limit }} valid SKU at a time.",
-    "errorProceedingToCart": "Error proceeding to Cart.",
-    "warningProceedingToCart": "Warning proceeding to Cart.",
-    "successfullyAddedToCart": "Successfully added to Cart.",
-    "errors": {
-      "productIsOutOfStock": "{{ name }} (#{{code}}) is out of stock.",
-      "reviewErrors": "Please review these errors.",
-      "listIsFull": "The list is full, add these {{ count }} products to Cart in order to continue.",
-      "nonPurchasableError": "Product {{ name }} cannot be purchased",
-      "outOfStockErrorFound": "{{count}} out of stock product was not added.",
-      "outOfStockErrorFound_other": "{{count}} out of stock products were not added."
+  "quickOrderList" : {
+    "addToCart" : "カートに追加",
+    "emptyList" : "リストを空にする",
+    "header" : "製品/SKU の追加",
+    "subHeader" : "同時に最大で {{ limit }} の有効な SKU を追加できます。",
+    "errorProceedingToCart" : "カートに進むときにエラーが発生しました。",
+    "warningProceedingToCart" : "カートに進むときに警告が発生しました。",
+    "successfullyAddedToCart" : "カートへ正常に追加されました。",
+    "errors" : {
+      "productIsOutOfStock" : "{{ name }} (#{{code}}) は在庫がありません。",
+      "reviewErrors" : "これらのエラーを確認してください。",
+      "listIsFull" : "リストがいっぱいです。続行するにはこれら {{ count }} の商品をカートに追加します。",
+      "nonPurchasableError" : "商品 {{ name }} を購入できません",
+      "outOfStockErrorFound" : "{{count}} の在庫切れ商品は追加されませんでした。",
+      "outOfStockErrorFound_other" : "{{count}} の在庫切れ商品は追加されませんでした。"
     },
-    "warnings": {
-      "productWasReduced": "Quantity for {{ name }} (#{{code}}) was reduced to {{ quantityAdded}}.",
-      "reviewWarnings": "Please review these warnings.",
-      "reduceWarningFound": "{{count}} product quantity was reduced.",
-      "reduceWarningFound_other": "{{count}} products quantity were reduced."
+    "warnings" : {
+      "productWasReduced" : "{{ name }} の数量 (#{{code}}) は {{ quantityAdded}} に削減されました。",
+      "reviewWarnings" : "これらの警告を確認してください。",
+      "reduceWarningFound" : "{{count}} 商品の数量が削減されました。",
+      "reduceWarningFound_other" : "{{count}} 商品の数量が削減されました。"
     },
-    "successes": {
-      "productAddedToCart": "{{ name }} (#{{code}}) was added to cart.",
-      "addedToCartFound": "{{ count }} product was added to cart.",
-      "addedToCartFound_other": "{{ count }} products were added to cart."
+    "successes" : {
+      "productAddedToCart" : "{{ name }} (#{{code}}) がカートに追加されました。",
+      "addedToCartFound" : "{{ count }} 商品がカートに追加されました。",
+      "addedToCartFound_other" : "{{ count }} 商品がカートに追加されました。"
     },
-    "informations": {
-      "addProductBeforeAddingToCart": "Add products to the list before adding to the cart."
+    "informations" : {
+      "addProductBeforeAddingToCart" : "カートに追加する前に、商品をリストに追加します。"
     },
-    "undo": "UNDO",
-    "revokeUndo": "Revoked product \"{{name}}\" deletion.",
-    "productWasDeleted": "Product \"{{ name }}\" moved to trash."
+    "undo" : "元に戻す",
+    "revokeUndo" : "取り消された商品 \"{{name}}\" の削除。",
+    "productWasDeleted" : "商品 \"{{ name }}\" をごみ箱に移動します。"
   },
-  "quickOrderTable": {
-    "product": "商品",
-    "id": "ID",
-    "price": "価格",
-    "quantity": "数量",
-    "itemPrice": "商品価格",
-    "qty": "数量",
-    "actions": "アクション",
-    "inStock": "在庫有り",
-    "lowStock": "在庫が少ない",
-    "outOfStock": "在庫なし",
-    "listCleared": "Quick order list has been cleared",
-    "addedtoCart": "Quick order list has been added to the cart",
-    "caption": "Quick order contents."
+  "quickOrderTable" : {
+    "product" : "商品",
+    "id" : "ID",
+    "price" : "価格",
+    "quantity" : "数量",
+    "quantityFull" : "数量",
+    "itemPrice" : "商品価格",
+    "qty" : "数量",
+    "actions" : "アクション",
+    "inStock" : "在庫有り",
+    "lowStock" : "在庫僅少",
+    "outOfStock" : "在庫なし",
+    "listCleared" : "簡易注文リストがクリアされました",
+    "addedtoCart" : "簡易注文リストがカートに追加されました",
+    "caption" : "簡易注文の内容です。"
   }
 }

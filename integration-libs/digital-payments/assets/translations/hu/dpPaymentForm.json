@@ -1,16 +1,16 @@
 {
-  "dpPaymentForm": {
-    "redirect": "You will soon be redirected to third party page for card registration",
-    "callback": "Please Wait... Fetching payment details...",
-    "cancelledOrFailed": "Card registration failed or cancelled",
-    "error": {
-      "redirect": "Unable to initiate operation. Please try again",
-      "paymentFetch": "Unable to fetch payment details. Please try again.",
-      "unknown": "Unknown error occurred while fetching payment. Please contact support"
+  "dpPaymentForm" : {
+    "redirect" : "Hamarosan átirányítjuk egy külső oldalra, ahol regisztrálhatja a kártyáját",
+    "callback" : "Várjon... Folyamatban a fizetési adatok lekérése...",
+    "cancelledOrFailed" : "A kártyaregisztráció sikertelen volt vagy megszakították",
+    "error" : {
+      "redirect" : "Nem sikerült elindítani a műveletet. Próbálja újra.",
+      "paymentFetch" : "Nem sikerült lekérni a fizetési adatokat. Próbálja újra.",
+      "unknown" : "Ismeretlen hiba történt a fizetés lekérésekor. Forduljon a támogatáshoz."
     },
-    "confirmation": {
-      "heading": "You Have Unsaved Changes.",
-      "text": "If you close this dialog, you wil lose all the changes you have made. Are you sure you wish to close?"
+    "confirmation" : {
+      "heading" : "Nem mentette a módosításait.",
+      "text" : "Ha bezárja ezt a párbeszédablakot, elveszíti az összes végrehajtott módosítást. Biztosan szeretné bezárni?"
     }
   }
 }

@@ -1,47 +1,47 @@
 {
-  "loginForm": {
-    "forgotPassword": "Forgot password?",
-    "signIn": "Iniciar sesión",
-    "register": "Registrar",
-    "dontHaveAccount": "Don’t have an account?",
-    "guestCheckout": "Guest Checkout",
-    "emailAddress": {
-      "label": "Dirección de correo electrónico",
-      "placeholder": "Enter Email Address"
+  "loginForm" : {
+    "forgotPassword" : "¿Olvidó la contraseña?",
+    "signIn" : "Iniciar sesión",
+    "register" : "Registrarse",
+    "dontHaveAccount" : "¿No tiene una cuenta?",
+    "guestCheckout" : "Registro de invitado",
+    "emailAddress" : {
+      "label" : "Dirección de correo electrónico",
+      "placeholder" : "Introduzca dirección de correo electrónico"
     },
-    "password": {
-      "label": "Contraseña",
-      "placeholder": "Enter Your Password"
+    "password" : {
+      "label" : "Contraseña",
+      "placeholder" : "Introduzca su contraseña"
     },
-    "wrongEmailFormat": "This is not a valid email format."
+    "wrongEmailFormat" : "Este no es un formato de correo electrónico válido."
   },
-  "verificationTokenForm": {
-    "createVerificationToken": "Verification code sent to {{target}}. Please check and enter the code.",
-    "needInputCredentials": "Please enter your credentials to continue.",
-    "sendRateLime": "in {{waitTime}} seconds",
-    "resend": "Reenviar",
-    "verificationCode": {
-      "label": "Verification Code",
-      "placeholder": "Enter Verification Code"
+  "verificationTokenForm" : {
+    "createVerificationToken" : "Código de verificación enviado a {{target}}. Verifique e introduzca el código.",
+    "needInputCredentials" : "Introduzca sus credenciales para continuar.",
+    "sendRateLime" : "En {{waitTime}} segundos",
+    "resend" : "Reenviar",
+    "verificationCode" : {
+      "label" : "Código de verificación",
+      "placeholder" : "Introduzca código de verificación"
     },
-    "noReceiveCode": "Didn't receive the code?",
-    "verify": "Verify",
-    "back": "Atrás",
-    "tokenInputHint": "You can request a new code. A timer starts indicating the seconds left until you can resend your request."
+    "noReceiveCode" : "¿No recibió el código?",
+    "verify" : "Verificar",
+    "back" : "Atrás",
+    "tokenInputHint" : "Puede solicitar un nuevo código. Se inicia un temporizador que indica los segundos que faltan para que pueda volver a enviar su solicitud."
   },
-  "verificationTokenDialog": {
-    "title": "Didn’t receive the code",
-    "noReceiveCode": "If you didn't receive the code, the reasons might be:",
-    "contentLine1": "1. The email hasn't come yet.",
-    "contentLine2": "2. The received email has been treated as junk email.",
-    "contentLine3": "3. Either the email address or the password you entered is incorrect.",
-    "close": "Cerrar"
+  "verificationTokenDialog" : {
+    "title" : "No recibí un código",
+    "noReceiveCode" : "Si no recibió un código, estas podrían ser las causas:",
+    "contentLine1" : "1. El correo electrónico no ha llegado.",
+    "contentLine2" : "2. El correo electrónico recibido ha sido tratado como correo no deseado.",
+    "contentLine3" : "3. La dirección de correo electrónico o la contraseña introducidas son incorrectas.",
+    "close" : "Cerrar"
   },
-  "miniLogin": {
-    "userGreeting": "Hi, {{name}}",
-    "signInRegister": "Sign In / Register"
+  "miniLogin" : {
+    "userGreeting" : "Hola, {{name}}",
+    "signInRegister" : "Iniciar sesión / Registrarse"
   },
-  "myAccountV2User": {
-    "signOut": "Cerrar sesión"
+  "myAccountV2User" : {
+    "signOut" : "Cerrar sesión"
   }
 }

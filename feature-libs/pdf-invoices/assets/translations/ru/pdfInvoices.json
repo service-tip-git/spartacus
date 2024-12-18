@@ -1,31 +1,31 @@
 {
-  "pdfInvoices": {
-    "featureNotEnabled": "Unable to obtain invoices, ensure that SAP Invoice and API for Invoices are enabled.",
-    "invoicesLoadingError": "Something went wrong. Unable to display invoices for the order",
-    "invoicesTable": {
-      "header": "Invoices",
-      "label": "Invoices Table",
-      "invoiceId": "Invoice #",
-      "createdAt": "Дата",
-      "netAmount": "Сумма нетто",
-      "totalAmount": "Итоговая сумма",
-      "attachment": "Download Invoice",
-      "download": "Выгрузить",
-      "attachmentDescription": "Download PDF for invoice {{id}}.",
-      "noneFound": "No Invoices Found"
+  "pdfInvoices" : {
+    "featureNotEnabled" : "Невозможно получить счета, убедитесь, что активирован счет SAP и API для счетов.",
+    "invoicesLoadingError" : "Что-то пошло не так. Невозможно просмотреть счета для заказа",
+    "invoicesTable" : {
+      "header" : "Счета",
+      "label" : "Таблица счетов",
+      "invoiceId" : "Счет №",
+      "createdAt" : "Дата",
+      "netAmount" : "Сумма нетто",
+      "totalAmount" : "Общая сумма",
+      "attachment" : "Выгрузить счет",
+      "download" : "Выгрузить",
+      "attachmentDescription" : "Выгрузить PDF для счета {{id}}.",
+      "noneFound" : "Счета не найдены"
     },
-    "downloadPDFError": "Something went wrong. Unable to obtain the invoice PDF.",
-    "sortBy": "Сортировать по",
-    "sortInvoices": "Sort invoices",
-    "sorts": {
-      "byCreatedAtAsc": "Date Ascending",
-      "byCreatedAtDesc": "Date Descending",
-      "byInvoiceIdAsc": "Invoice Number Ascending",
-      "byInvoiceIdDesc": "Invoice Number Descending",
-      "byNetAmountAsc": "Net Amount Ascending",
-      "byNetAmountDesc": "Net Amount Descending",
-      "byTotalAmountAsc": "Total Amount Ascending",
-      "byTotalAmountDesc": "Total Amount Descending"
+    "downloadPDFError" : "Что-то пошло не так. Невозможно получить PDF счета.",
+    "sortBy" : "Сортировать по",
+    "sortInvoices" : "Сортировать счета",
+    "sorts" : {
+      "byCreatedAtAsc" : "Дата по возрастанию",
+      "byCreatedAtDesc" : "Дата по убыванию",
+      "byInvoiceIdAsc" : "Номер счета по возрастанию",
+      "byInvoiceIdDesc" : "Номер счета по убыванию",
+      "byNetAmountAsc" : "Сумма нетто по возрастанию",
+      "byNetAmountDesc" : "Сумма нетто по убыванию",
+      "byTotalAmountAsc" : "Общая сумма по возрастанию",
+      "byTotalAmountDesc" : "Общая сумма по убыванию"
     }
   }
 }

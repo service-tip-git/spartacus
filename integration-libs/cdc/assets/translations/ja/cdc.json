@@ -1,12 +1,12 @@
 {
-  "reconsent": {
-    "dialog": {
-      "title": "Profile Completion",
-      "description": "We still need your consent for the following"
+  "reconsent" : {
+    "dialog" : {
+      "title" : "プロファイル作成完了",
+      "description" : "次に対する同意が必要です"
     }
   },
-  "cdcProfile": {
-    "profileUpdateSuccess": "Profile details successfully updated",
-    "profileUpdateFailure": "Failed to update profile details"
+  "cdcProfile" : {
+    "profileUpdateSuccess" : "プロファイル詳細が正常に更新されました",
+    "profileUpdateFailure" : "プロファイル詳細を更新できませんでした"
   }
 }

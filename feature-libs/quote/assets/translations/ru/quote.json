@@ -1,249 +1,249 @@
 {
-  "quote": {
-    "confirmDialog": {
-      "name": "Name:",
-      "description": "Description:",
-      "validity": "Это предложение действительно до {{ expirationTime }}",
-      "option": {
-        "yes": "Да",
-        "no": "Нет"
+  "quote" : {
+    "confirmDialog" : {
+      "name" : "Имя:",
+      "description" : "Описание:",
+      "validity" : "Это предложение действительно до {{ expirationTime }}",
+      "option" : {
+        "yes" : "Да",
+        "no" : "Нет"
       },
-      "buyer": {
-        "submit": {
-          "a11y": {
-            "close": "Close submit quote modal"
+      "buyer" : {
+        "submit" : {
+          "a11y" : {
+            "close" : "Закрыть модальное окно отправки предложения"
           },
-          "title": "Submit Quote Request {{ code }}?",
-          "confirmNote": "Are you sure you want to submit this quote request?",
-          "successMessage": "Quote request submitted successfully"
+          "title" : "Отправить запрос предложения {{ code }}?",
+          "confirmNote" : "Действительно отправить запрос предложения?",
+          "successMessage" : "Запрос предложения отправлен"
         },
-        "cancel": {
-          "a11y": {
-            "close": "Close cancel quote modal"
+        "cancel" : {
+          "a11y" : {
+            "close" : "Закрыть модальное окно отмены предложения"
           },
-          "title": "Cancel Quote Request {{ code }}?",
-          "confirmNote": "Are you sure you want to cancel this quote request?",
-          "successMessage": "Quote request cancelled"
+          "title" : "Отменить запрос предложения {{ code }}?",
+          "confirmNote" : "Действительно отменить запрос предложения?",
+          "successMessage" : "Запрос предложения отменен"
         }
       },
-      "buyer_offer": {
-        "edit": {
-          "a11y": {
-            "close": "Close edit quote modal"
+      "buyer_offer" : {
+        "edit" : {
+          "a11y" : {
+            "close" : "Закрыть модальное окно редактирования предложения"
           },
-          "title": "Confirm Edit Quote {{ code }}?",
-          "confirmNote": "Действительно отредактировать это утвержденное предложение?",
-          "warningNote": "This Quote has been Approved. Editing this Quote will prevent Checkout until new edits are approved."
+          "title" : "Подтвердить редактирование предложения {{ code }}?",
+          "confirmNote" : "Действительно отредактировать утвержденное предложение?",
+          "warningNote" : "Это предложение утверждено. Редактирование предложения не позволит оформить заказ до утверждения новых редакций."
         },
-        "cancel": {
-          "a11y": {
-            "close": "Close cancel quote modal"
+        "cancel" : {
+          "a11y" : {
+            "close" : "Закрыть модальное окно отмены предложения"
           },
-          "title": "Cancel Quote {{ code }}?",
-          "confirmNote": "Действительно отменить это предложение?",
-          "successMessage": "Quote cancelled"
+          "title" : "Отменить предложение {{ code }}?",
+          "confirmNote" : "Действительно отменить предложение?",
+          "successMessage" : "Предложение отменено"
         },
-        "checkout": {
-          "a11y": {
-            "close": "Close checkout quote modal"
+        "checkout" : {
+          "a11y" : {
+            "close" : "Закрыть модальное окно оформления заказа по предложению"
           },
-          "title": "Checkout Quote {{ code }}?",
-          "confirmNote": "Are you sure you want to accept and checkout this quote?"
+          "title" : "Оформить заказ по предложению {{ code }}?",
+          "confirmNote" : "Действительно принять предложение и оформить заказ?"
         }
       },
-      "expired": {
-        "edit": {
-          "a11y": {
-            "close": "Close edit quote modal"
+      "expired" : {
+        "edit" : {
+          "a11y" : {
+            "close" : "Закрыть модальное окно редактирования предложения"
           },
-          "title": "Confirm Edit Quote {{ code }}?",
-          "confirmNote": "Are you sure you want to edit this expired quote?",
-          "warningNote": "This Quote is expired. Editing this quote will prevent checkout until new edits are approved."
+          "title" : "Подтвердить редактирование предложения {{ code }}?",
+          "confirmNote" : "Действительно отредактировать просроченное предложение?",
+          "warningNote" : "Это предложение просрочено. Редактирование предложения не позволит оформить заказ до утверждения новых редакций."
         },
-        "requote": {
-          "a11y": {
-            "close": "Close requote modal"
+        "requote" : {
+          "a11y" : {
+            "close" : "Закрыть модальное окно повторного предложения"
           },
-          "title": "Recreate Quote Request {{ code }}?",
-          "confirmNote": "Are you sure you want to recreate this quote request?",
-          "warningNote": "This Quote is expired. Re-quoting it will create a new quote request with same contents, which can be edited and submitted for approval afterwards."
+          "title" : "Повторно создать запрос предложения {{ code }}?",
+          "confirmNote" : "Действительно повторно создать запрос предложения?",
+          "warningNote" : "Это предложение просрочено. Повторное предложение позволяет создать новый запрос предложения с тем же контентом, который можно отредактировать и отправить на утверждение."
         }
       },
-      "seller": {
-        "submit": {
-          "a11y": {
-            "close": "Close submit quote modal"
+      "seller" : {
+        "submit" : {
+          "a11y" : {
+            "close" : "Закрыть модальное окно отправки предложения"
           },
-          "title": "Submit Quote {{ code }}?",
-          "confirmNote": "Действительно отправить это предложение?",
-          "warningNote": "Depending on the total value of the quote, an additional approval might be required before the buyer can check out this quote.",
-          "successMessage": "Quote submitted successfully"
+          "title" : "Отправить предложение {{ code }}?",
+          "confirmNote" : "Действительно отправить предложение?",
+          "warningNote" : "В зависимости от общей стоимости предложения может потребоваться дополнительное предложение перед тем, как покупатель сможет оформить заказ по предложению.",
+          "successMessage" : "Предложение отправлено"
         }
       },
-      "sellerapprover": {
-        "approve": {
-          "a11y": {
-            "close": "Close approve quote modal"
+      "sellerapprover" : {
+        "approve" : {
+          "a11y" : {
+            "close" : "Закрыть модальное окно утверждения предложения"
           },
-          "title": "Approve Quote {{ code }}?",
-          "confirmNote": "Are you sure you want to approve this quote?",
-          "successMessage": "Quote approved successfully"
+          "title" : "Утвердить предложение {{ code }}?",
+          "confirmNote" : "Действительно утвердить предложение?",
+          "successMessage" : "Предложение утверждено"
         },
-        "reject": {
-          "a11y": {
-            "close": "Close reject quote modal"
+        "reject" : {
+          "a11y" : {
+            "close" : "Закрыть модальное окно отклонения предложения"
           },
-          "title": "Reject Quote {{ code }}?",
-          "confirmNote": "Are you sure you want to reject this quote?",
-          "successMessage": "Quote rejected"
+          "title" : "Отклонить предложение {{ code }}?",
+          "confirmNote" : "Действительно отклонить предложение?",
+          "successMessage" : "Предложение отклонено"
         }
       },
-      "cancelled": {
-        "requote": {
-          "a11y": {
-            "close": "Close requote modal"
+      "cancelled" : {
+        "requote" : {
+          "a11y" : {
+            "close" : "Закрыть модальное окно повторного предложения"
           },
-          "title": "Recreate Quote Request {{ code }}?",
-          "confirmNote": "Are you sure you want to recreate this quote request?",
-          "warningNote": "Your current cart will be converted to a saved cart."
+          "title" : "Повторно создать запрос предложения {{ code }}?",
+          "confirmNote" : "Действительно повторно создать запрос предложения?",
+          "warningNote" : "Текущая корзина будет преобразована в сохраненную."
         }
       },
-      "all": {
-        "edit": {
-          "a11y": {
-            "close": "Close edit quote modal"
+      "all" : {
+        "edit" : {
+          "a11y" : {
+            "close" : "Закрыть модальное окно редактирования предложения"
           },
-          "title": "Edit Quote {{ code }}?",
-          "confirmNote": "Are you sure you want to edit this quote?",
-          "warningNote": "Your current cart will be converted to a saved cart."
+          "title" : "Редактировать предложение {{ code }}?",
+          "confirmNote" : "Действительно отредактировать предложение?",
+          "warningNote" : "Текущая корзина будет преобразована в сохраненную."
         }
       }
     },
-    "comments": {
-      "regionTitle": "Contact/Comment Box",
-      "title": "Контакт",
-      "invalidComment": "Invalid Input - Please type again...",
-      "allProducts": "Все продукты"
+    "comments" : {
+      "regionTitle" : "Окно контакта/комментария",
+      "title" : "Контакт",
+      "invalidComment" : "Недействительный ввод. Введите снова...",
+      "allProducts" : "Все продукты"
     },
-    "commons": {
-      "requestQuote": "Request Quote",
-      "cart": "Корзина",
-      "minRequestInitiationNote": "Minimum ${{minValue}} subtotal is required to submit a quote ",
-      "savedActiveCart": "Your active cart was converted to saved cart {{ code }}"
+    "commons" : {
+      "requestQuote" : "Запросить предложение",
+      "cart" : "Корзина",
+      "minRequestInitiationNote" : "Минимальная промежуточная сумма для отправки предложения: {{minValue}}$ ",
+      "savedActiveCart" : "Ваша активная корзина преобразована в сохраненную {{ code }}"
     },
-    "header": {
-      "buyerEdit": {
-        "a11y": {
-          "cancel": "Cancel editing quote header information",
-          "save": "Save quote header information"
+    "header" : {
+      "buyerEdit" : {
+        "a11y" : {
+          "cancel" : "Отменить редактирование информации заголовка предложения",
+          "save" : "Сохранить информацию заголовка предложения"
         }
       },
-      "overview": {
-        "regionTitle": "Quote details summary",
-        "id": "ID предложения",
-        "status": "Статус",
-        "information": "Quote Information",
-        "name": "Имя",
-        "description": "Описание",
-        "charactersLeft": "characters left: {{count}}",
-        "priceAndExpiry": "Price & Expiry",
-        "estimatedTotal": "Estimated Total",
-        "total": "Итого",
-        "expirationTime": "Срок действия",
-        "a11y": {
-          "edit": "Edit quote header information"
+      "overview" : {
+        "regionTitle" : "Обзор сведений предложения",
+        "id" : "Ид. предложения",
+        "status" : "Статус",
+        "information" : "Информация о предложении",
+        "name" : "Имя",
+        "description" : "Описание",
+        "charactersLeft" : "Осталось символов: {{count}}",
+        "priceAndExpiry" : "Цена и истечение срока",
+        "estimatedTotal" : "Ориентировочная итоговая сумма",
+        "total" : "Итого",
+        "expirationTime" : "Срок действия",
+        "a11y" : {
+          "edit" : "Редактировать информацию заголовка предложения"
         },
-        "createdAndUpdated": "Created & Updated",
-        "createdDate": "Создано",
-        "lastUpdatedDate": "Последнее обновление"
+        "createdAndUpdated" : "Создано и обновлено",
+        "createdDate" : "Создано",
+        "lastUpdatedDate" : "Последнее обновление"
       }
     },
-    "httpHandlers": {
-      "cartValidationIssue": "There are problems with your entries. Please review your cart.",
-      "quoteCartIssue": "Not possible to do changes to cart entries. Proceed to checkout",
-      "absoluteDiscountIssue": "Choose a discount that does not exceed the total value",
-      "expirationDateIssue": "Choose an expiration date in the future",
-      "threshold": {
-        "underThresholdError": "Total price of requested quote does not meet the minimum threshold"
+    "httpHandlers" : {
+      "cartValidationIssue" : "Возникла проблема с записями. Проверьте корзину.",
+      "quoteCartIssue" : "Невозможно изменить записи корзины. Выполнен переход к оформлению заказа.",
+      "absoluteDiscountIssue" : "Выберите скидку, которая не превышает общую стоимость",
+      "expirationDateIssue" : "Выберите срок действия в будущем",
+      "threshold" : {
+        "underThresholdError" : "Общая цена запрошенного предложения ниже минимального порогового значения"
       },
-      "expired": "This quote has expired. You must resubmit your quote request to receive another vendor quote.",
-      "downloadPDFError": "Something went wrong. Unable to obtain the proposal document PDF."
+      "expired" : "Это предложение просрочено. Можно повторно отправить запрос предложения, чтобы получить предложение от другого поставщика.",
+      "downloadPDFError" : "Что-то пошло не так. Невозможно получить PDF документа предложения."
     },
-    "items": {
-      "regionTitle": "Cart items"
+    "items" : {
+      "regionTitle" : "Позиции корзины"
     },
-    "links": {
-      "newCart": "Новая корзина",
-      "quotes": "Предложения",
-      "download": "Download Proposal",
-      "a11y": {
-        "newCart": "Create new empty cart and navigate to it.",
-        "quotes": "Navigate to quote search result list.",
-        "download": "Start downloading a quote proposal"
+    "links" : {
+      "newCart" : "Новая корзина",
+      "quotes" : "Предложения",
+      "download" : "Выгрузить предложение",
+      "a11y" : {
+        "newCart" : "Создайте новую пустую корзину и перейдите к ней.",
+        "quotes" : "Перейдите к списку результатов поиска предложений.",
+        "download" : "Начать выгрузку предложения"
       }
     },
-    "list": {
-      "regionTitle": "Quote list summary",
-      "title": "Quote List",
-      "name": "Имя",
-      "updated": "Обновлено",
-      "sortBy": "Сортировать по",
-      "sortQuotes": "Sort Quotes",
-      "empty": "We have no quote records for this account.",
-      "quoteId": "ID предложения",
-      "status": "Статус",
-      "clickableRow": "Click on the row for more quote details"
+    "list" : {
+      "regionTitle" : "Обзор списка предложений",
+      "title" : "Список предложений",
+      "name" : "Имя",
+      "updated" : "Обновлено",
+      "sortBy" : "Сортировать по",
+      "sortQuotes" : "Сортировать предложения",
+      "empty" : "Нет записей предложений для этой учетной записи.",
+      "quoteId" : "Ид. предложения",
+      "status" : "Статус",
+      "clickableRow" : "Щелкните строку, чтобы просмотреть сведения о предложении"
     },
-    "states": {
-      "BUYER_DRAFT": "Черновик",
-      "BUYER_SUBMITTED": "Отправлено",
-      "BUYER_ACCEPTED": "Принято",
-      "BUYER_APPROVED": "Утверждено",
-      "BUYER_REJECTED": "Отклонено",
-      "BUYER_OFFER": "Предложение поставщика",
-      "BUYER_ORDERED": "Заказано",
-      "SELLER_DRAFT": "Черновик",
-      "SELLER_REQUEST": "Запрошено",
-      "SELLER_SUBMITTED": "Отправлено",
-      "SELLERAPPROVER_DRAFT": "Черновик",
-      "SELLERAPPROVER_PENDING": "Ожидает утверждения",
-      "SELLERAPPROVER_APPROVED": "Утверждено",
-      "SELLERAPPROVER_REJECTED": "Отклонено",
-      "CREATED": "Создано",
-      "CANCELLED": "Отменено",
-      "EXPIRED": "Истекло"
+    "states" : {
+      "BUYER_DRAFT" : "Черновик",
+      "BUYER_SUBMITTED" : "Отправлено",
+      "BUYER_ACCEPTED" : "Принято",
+      "BUYER_APPROVED" : "Утверждено",
+      "BUYER_REJECTED" : "Отклонено",
+      "BUYER_OFFER" : "Предложение поставщика",
+      "BUYER_ORDERED" : "Заказано",
+      "SELLER_DRAFT" : "Черновик",
+      "SELLER_REQUEST" : "Запрошено",
+      "SELLER_SUBMITTED" : "Отправлено",
+      "SELLERAPPROVER_DRAFT" : "Черновик",
+      "SELLERAPPROVER_PENDING" : "Ожидает утверждения",
+      "SELLERAPPROVER_APPROVED" : "Утверждено",
+      "SELLERAPPROVER_REJECTED" : "Отклонено",
+      "CREATED" : "Создано",
+      "CANCELLED" : "Отменено",
+      "EXPIRED" : "Просрочено"
     },
-    "summary": {
-      "regionTitle": "Обзор заказа",
-      "actions": {
-        "APPROVE": "Утвердить предложение",
-        "CANCEL": "Отменить предложение",
-        "CHECKOUT": "Принять и оформить заказ",
-        "EDIT": "Редактировать предложение",
-        "REJECT": "Отклонить предложение",
-        "REQUOTE": "Request new Quote",
-        "SAVE": "Сохранить предложение",
-        "SUBMIT": "Отправить предложение",
-        "VIEW": "Посмотреть предложение"
+    "summary" : {
+      "regionTitle" : "Обзор заказа",
+      "actions" : {
+        "APPROVE" : "Утвердить предложение",
+        "CANCEL" : "Отменить предложение",
+        "CHECKOUT" : "Принять и оформить заказ",
+        "EDIT" : "Редактировать предложение",
+        "REJECT" : "Отклонить предложение",
+        "REQUOTE" : "Запросить новое предложение",
+        "SAVE" : "Сохранить предложение",
+        "SUBMIT" : "Отправить предложение",
+        "VIEW" : "Просмотреть предложение"
       },
-      "prices": {
-        "title": "Обзор заказа",
-        "subtotal": "Промежуточная сумма",
-        "productDiscount": "Item Discount",
-        "orderDiscount": "Скидка по заказу",
-        "quoteDiscount": "Скидка по предложению",
-        "total": "Итого",
-        "hint": "No taxes are included in the total"
+      "prices" : {
+        "title" : "Обзор заказа",
+        "subtotal" : "Промежуточная сумма",
+        "productDiscount" : "Скидка по позиции",
+        "orderDiscount" : "Скидка по заказу",
+        "quoteDiscount" : "Скидка по предложению",
+        "total" : "Итого",
+        "hint" : "Итоговая сумма не включает налог"
       },
-      "sellerEdit": {
-        "discount": "Скидка",
-        "apply": "Применить",
-        "expiryDate": "Срок действия",
-        "discountValidationText": "Enter a valid percentage discount",
-        "a11y": {
-          "apply": "Click to apply the entered discount value to this quote",
-          "discount": "Enter a percentage discount value to be applied to this quote",
-          "expiryDate": "Enter an expiry date for this quote"
+      "sellerEdit" : {
+        "discount" : "Скидка",
+        "apply" : "Применить",
+        "expiryDate" : "Срок действия",
+        "discountValidationText" : "Введите действительный процент скидки",
+        "a11y" : {
+          "apply" : "Щелкните, чтобы применить указанное значение скидки к предложению",
+          "discount" : "Введите значение процента скидки для предложения",
+          "expiryDate" : "Введите срок действия предложения"
         }
       }
     }

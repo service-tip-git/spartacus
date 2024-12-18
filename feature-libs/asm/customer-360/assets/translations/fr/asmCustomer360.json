@@ -1,129 +1,129 @@
 {
-  "asmCustomer360": {
-    "alertErrorMessage": "The information cannot be be loaded. Please try again later or contact your system administrator.",
-    "errorMessageHeader": "Oops! Something went wrong",
-    "applyActionAlter": "The action couldn't be completed. Please try again later.",
-    "header": {
-      "title": "Customer Profile",
-      "newTitle": "Customer 360°",
-      "subTitle": "{{name}} Customer 360° View",
-      "newSubTitle": "{{name}} 360 View",
-      "activeCartLabel": "{{cartSize}} item added to cart",
-      "recentOrderLabel": "Last order {{price}}",
-      "recentTicketLabel": "Dernier ticket",
-      "signedUpAt": "Account created on {{date}}"
+  "asmCustomer360" : {
+    "alertErrorMessage" : "Impossible de charger les informations. Veuillez réessayer ultérieurement ou contacter votre administrateur système.",
+    "errorMessageHeader" : "Oups ! une erreur s'est produite",
+    "applyActionAlter" : "Impossible de terminer l'action. Veuillez réessayer ultérieurement.",
+    "header" : {
+      "title" : "Profil client",
+      "newTitle" : "Client 360°",
+      "subTitle" : "Vue client à 360° {{name}}",
+      "newSubTitle" : "Vue à 360° {{name}} ",
+      "activeCartLabel" : "{{cartSize}} article ajouté au panier",
+      "recentOrderLabel" : "Dernière commande {{price}}",
+      "recentTicketLabel" : "Dernier ticket",
+      "signedUpAt" : "Compte créé le {{date}}"
     },
-    "productListing": {
-      "totalNoItems": "Total No. Items {{count}}",
-      "totalPrice": "Total Price {{price}}",
-      "showMore": "Afficher plus",
-      "showLess": "Afficher moins"
+    "productListing" : {
+      "totalNoItems" : "Nombre total d'articles {{count}}",
+      "totalPrice" : "Prix total {{price}}",
+      "showMore" : "Afficher plus",
+      "showLess" : "Afficher moins"
     },
-    "productItem": {
-      "outOfStock": "Épuisé",
-      "quantity": "Qty: {{count}}",
-      "itemPrice": "Item Price: {{price}}"
+    "productItem" : {
+      "outOfStock" : "Épuisé",
+      "quantity" : "Qté : {{count}}",
+      "itemPrice" : "Prix de l'article : {{price}}"
     },
-    "activeCart": {
-      "header": "Panier actif",
-      "emptyDescription": "There are currently no active cart Items",
-      "aria": {
-        "linkLabel": "Active Cart {{code}}"
+    "activeCart" : {
+      "header" : "Panier actif",
+      "emptyDescription" : "Il n'y a actuellement aucun article dans le panier actif.",
+      "aria" : {
+        "linkLabel" : "Panier actif {{code}}"
       }
     },
-    "savedCart": {
-      "header": "Last Saved Cart",
-      "emptyDescription": "There are currently no saved cart items",
-      "aria": {
-        "linkLabel": "Last Saved Cart {{code}}"
+    "savedCart" : {
+      "header" : "Dernier panier enregistré",
+      "emptyDescription" : "Il n'y a actuellement aucun article dans le panier enregistré.",
+      "aria" : {
+        "linkLabel" : "Dernier panier enregistré {{code}}"
       }
     },
-    "productInterests": {
-      "header": "Intérêts",
-      "emptyDescription": "There are currently no interest items"
+    "productInterests" : {
+      "header" : "Intérêts",
+      "emptyDescription" : "Il n'y a actuellement aucun élément d'intérêt."
     },
-    "profile": {
-      "address": "Adresse",
-      "billingAddress": "Adresse de facturation",
-      "deliveryAddress": "Adresse de livraison",
-      "phone1": "Téléphone (1)",
-      "phone2": "Téléphone (2)",
-      "paymentMethodHeader": "Méthodes de paiement enregistrées"
+    "profile" : {
+      "address" : "Adresse",
+      "billingAddress" : "Adresse de facturation",
+      "deliveryAddress" : "Adresse de livraison",
+      "phone1" : "Téléphone 1",
+      "phone2" : "Téléphone 2",
+      "paymentMethodHeader" : "Modes de paiement enregistrés"
     },
-    "activity": {
-      "type": "Type",
-      "id": "ID",
-      "description": "Description",
-      "status": "Statut",
-      "created": "Créée",
-      "updated": "Mis à jour",
-      "numberOfCartItems": "Cart with {{count}} items",
-      "cart": "Panier",
-      "order": "Commande",
-      "savedCart": "Panier enregistré",
-      "emptyStateText": "There is currently no recorded customer activity",
-      "headerText": "Général"
+    "activity" : {
+      "type" : "Type",
+      "id" : "ID",
+      "description" : "Description",
+      "status" : "Statut",
+      "created" : "Créé",
+      "updated" : "Mis à jour",
+      "numberOfCartItems" : "Panier avec {{count}} articles",
+      "cart" : "Panier",
+      "order" : "Commande",
+      "savedCart" : "Panier enregistré",
+      "emptyStateText" : "Il n'y a actuellement aucune activité client enregistrée.",
+      "headerText" : "Général"
     },
-    "productReviews": {
-      "columnHeaders": {
-        "item": "Article",
-        "dateAndStatus": "Date / Statut",
-        "rating": "Note",
-        "review": "Revue"
+    "productReviews" : {
+      "columnHeaders" : {
+        "item" : "Article",
+        "dateAndStatus" : "Date / Statut",
+        "rating" : "Notation",
+        "review" : "Évaluation"
       },
-      "header": "Revues de produits",
-      "emptyDescription": "There are currently no product review items",
-      "sku": "UGS"
+      "header" : "Évaluations de produits",
+      "emptyDescription" : "Il n'y a actuellement aucun élément d'évaluation de produit.",
+      "sku" : "UGS"
     },
-    "supportTickets": {
-      "columnHeaders": {
-        "id": "ID",
-        "headline": "Titre",
-        "category": "Catégorie"
+    "supportTickets" : {
+      "columnHeaders" : {
+        "id" : "ID",
+        "headline" : "Titre",
+        "category" : "Catégorie"
       },
-      "header": "Tickets de support",
-      "emptyDescription": "There are currently no support tickets"
+      "header" : "Tickets de support",
+      "emptyDescription" : "Il n'y a actuellement aucun ticket de support."
     },
-    "coupons": {
-      "headerText": "Bons de réduction",
-      "emptyDescription": "There are currently no coupons",
-      "applyButtonText": "Apply to Cart",
-      "applied": "Coupon appliqué",
-      "removeButtonText": "Supprimer"
+    "coupons" : {
+      "headerText" : "Bons de réduction",
+      "emptyDescription" : "Il n'y a actuellement aucun bon de réduction.",
+      "applyButtonText" : "Appliquer au panier",
+      "applied" : "Bon de réduction appliqué",
+      "removeButtonText" : "Supprimer"
     },
-    "promotions": {
-      "headerText": "Promotions",
-      "emptyDescription": "There are currently no promotions",
-      "applied": "Promotion appliquée",
-      "headerName": "Nom",
-      "headerAction": "Action"
+    "promotions" : {
+      "headerText" : "Promotions",
+      "emptyDescription" : "Il n'y a actuellement aucune promotion.",
+      "applied" : "Promotion appliquée",
+      "headerName" : "Nom",
+      "headerAction" : "Action"
     },
-    "customerCoupons": {
-      "headerText": "Bons de réduction client",
-      "emptyDescription": "There are currently no customer coupons",
-      "applyButtonText": "Assign to Customer",
-      "removeButtonText": "Supprimer",
-      "availableTab": "Disponible",
-      "sentTab": "Envoyé",
-      "searchBox": "Bon de réduction"
+    "customerCoupons" : {
+      "headerText" : "Bons de réduction client",
+      "emptyDescription" : "Il n’y a actuellement aucun bon de réduction client.",
+      "applyButtonText" : "Affecter au client",
+      "removeButtonText" : "Supprimer",
+      "availableTab" : "Disponible",
+      "sentTab" : "Envoyé",
+      "searchBox" : "Bon de réduction"
     },
-    "maps": {
-      "storeClosed": "Fermer",
-      "storesFound": "{{ initial }} - {{ end }} from {{ total }} stores found"
+    "maps" : {
+      "storeClosed" : "Fermer",
+      "storesFound" : "{{ initial }} - {{ end }} de {{ total }} points de vente trouvés"
     },
-    "overviewTab": "Synthèse",
-    "profileTab": "Profil",
-    "activityTab": "Activité",
-    "feedbackTab": "Feedback",
-    "promotionsTab": "Promotions",
-    "mapsTab": "Maps",
-    "storeLocationsTab": "Lieux des points de vente",
-    "aria": {
-      "activeCartCode": "Active Cart {{code}}",
-      "recentOrderCode": "Last Order {{code}}"
+    "overviewTab" : "Synthèse",
+    "profileTab" : "Profil",
+    "activityTab" : "Activité",
+    "feedbackTab" : "Feedback",
+    "promotionsTab" : "Promotions",
+    "mapsTab" : "Cartes",
+    "storeLocationsTab" : "Lieux des points de vente",
+    "aria" : {
+      "activeCartCode" : "Panier actif {{code}}",
+      "recentOrderCode" : "Dernière commande {{code}}"
     },
-    "pagination": "Pagination",
-    "page": "Page {{number}}",
-    "emptyCellValue": "---"
+    "pagination" : "Pagination",
+    "page" : "Page {{number}}",
+    "emptyCellValue" : "---"
   }
 }

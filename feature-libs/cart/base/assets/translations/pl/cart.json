@@ -1,74 +1,75 @@
 {
-  "cartDetails": {
-    "id": "ID",
-    "proceedToCheckout": "Przejdź do realizacji zakupu",
-    "cartName": "Cart #{{code}}"
+  "cartDetails" : {
+    "id" : "ID",
+    "proceedToCheckout" : "Przejdź do realizacji zakupu",
+    "cartName" : "Koszyk nr {{code}}"
   },
-  "cartItems": {
-    "id": "ID",
-    "description": "Opis",
-    "item": "Pozycja",
-    "itemPrice": "Cena pozycji",
-    "quantity": "Ilość",
-    "quantityTitle": "The quantity represents the total number of this item in your cart.",
-    "total": "Suma",
-    "actions": "Czynności",
-    "cartTotal": "Cart total ({{count}} item)",
-    "cartTotal_other": "Cart total ({{count}} items)",
-    "itemRemoved": "Selected item has been removed. Cart total has been updated.",
-    "caption": "Shopping cart contents."
+  "cartItems" : {
+    "id" : "ID",
+    "description" : "Opis",
+    "item" : "Pozycja",
+    "itemPrice" : "Cena pozycji",
+    "quantity" : "Ilość",
+    "quantityFull" : "Ilość",
+    "quantityTitle" : "Ilość reprezentuje całkowitą liczbę tego produktu w koszyku.",
+    "total" : "Suma",
+    "actions" : "Czynności",
+    "cartTotal" : "Suma koszyka: ({{count}} pozycja)",
+    "cartTotal_other" : "Suma koszyka: ({{count}} pozycje(-i))",
+    "itemRemoved" : "Wybrana pozycja została usunięta. Suma koszyka została zaktualizowana.",
+    "caption" : "Zawartość koszyka zakupów."
   },
-  "orderCost": {
-    "orderSummary": "Podsumowanie zamówienia",
-    "subtotal": "Subtotal after discounts:",
-    "shipping": "Wysyłka:",
-    "estimatedShipping": "Estimated shipping:",
-    "discount": "You saved:",
-    "salesTax": "Sales Tax:",
-    "grossTax": "The order total does not include tax of",
-    "grossIncludeTax": "The order total includes tax of",
-    "total": "Suma:",
-    "toBeDetermined": "TBD"
+  "orderCost" : {
+    "orderSummary" : "Podsumowanie zamówienia",
+    "subtotal" : "Suma pośrednia po rabatach:",
+    "shipping" : "Wysyłka:",
+    "estimatedShipping" : "Szacowana wysyłka:",
+    "discount" : "Oszczędzasz:",
+    "salesTax" : "VAT:",
+    "grossTax" : "Suma zamówienia nie obejmuje podatku",
+    "grossIncludeTax" : "Suma zamówienia zawiera podatek",
+    "total" : "Suma:",
+    "toBeDetermined" : "Do ustalenia"
   },
-  "voucher": {
-    "coupon": "Have a coupon?",
-    "coupon_other": "Coupon codes",
-    "couponLabel": "Enter a promo code here",
-    "addCoupon": "Add a coupon",
-    "apply": "Zastosuj",
-    "placeholder": "Promo code",
-    "applyVoucherSuccess": "{{voucherCode}} has been applied.",
-    "removeVoucherSuccess": "{{voucherCode}} has been removed.",
-    "anchorLabel": "Enter or remove your coupon code",
-    "vouchersApplied": "Zastosowane kupony",
-    "availableCoupons": "Available coupons",
-    "availableCouponsLabel": "You can add these coupons to this order."
+  "voucher" : {
+    "coupon" : "Masz kupon?",
+    "coupon_other" : "Kody kuponów",
+    "couponLabel" : "Wprowadź kod promocyjny tutaj",
+    "addCoupon" : "Dodaj kupon",
+    "apply" : "Zastosuj",
+    "placeholder" : "Kod promocyjny",
+    "applyVoucherSuccess" : "Zastosowano {{voucherCode}}.",
+    "removeVoucherSuccess" : "Usunięto {{voucherCode}}.",
+    "anchorLabel" : "Wprowadź lub usuń kod kuponu",
+    "vouchersApplied" : "Zastosowane kupony",
+    "availableCoupons" : "Dostępne kupony",
+    "availableCouponsLabel" : "Możesz dodać te kupony do tego zamówienia."
   },
-  "saveForLaterItems": {
-    "itemTotal": "Saved for later ({{count}} item)",
-    "itemTotal_other": "Zapisane w celu późniejszego użycia (pozycje: {{count}})",
-    "cartTitle": "Koszyk zakupów",
-    "saveForLater": "Save For Later",
-    "moveToCart": "Move To Cart",
-    "stock": "Zapas",
-    "forceInStock": "W magazynie"
+  "saveForLaterItems" : {
+    "itemTotal" : "Zapisane w celu późniejszego użycia (pozycje: {{count}})",
+    "itemTotal_other" : "Zapisane w celu późniejszego użycia (pozycje: {{count}})",
+    "cartTitle" : "Koszyk",
+    "saveForLater" : "Zapisz na później",
+    "moveToCart" : "Przenieś do koszyka",
+    "stock" : "Zapas",
+    "forceInStock" : "W magazynie"
   },
-  "clearCart": {
-    "clearCart": "Clear Cart",
-    "clearingCart": "Clearing Cart...",
-    "cartClearedSuccessfully": "Active cart cleared successfully.",
-    "areYouSureToClearCart": "Are you sure you want to clear this cart?",
-    "allItemsWillBeRemoved": "All items in your active cart will be removed."
+  "clearCart" : {
+    "clearCart" : "Wyczyść koszyk",
+    "clearingCart" : "Czyszczenie koszyka...",
+    "cartClearedSuccessfully" : "Aktywny koszyk został wyczyszczony.",
+    "areYouSureToClearCart" : "Czy na pewno chcesz wyczyścić ten koszyk?",
+    "allItemsWillBeRemoved" : "Wszystkie produkty w aktywnym koszyku zostaną usunięte."
   },
-  "validation": {
-    "cartEntriesChangeDuringCheckout": "During checkout we found problems with your entries. Please review your cart.",
-    "cartEntryRemoved": "{{name}} was removed from the cart due to being out of stock.",
-    "productOutOfStock": "Usunięto {{name}} z koszyka z powodu niewystarczającego stanu magazynowego.",
-    "lowStock": "Quantity has reduced to {{quantity}} due to insufficient stock.",
-    "reviewConfiguration": "Resolve the issues in the configuration for cart entry first.",
-    "configurationError": "Resolve the issues in the configuration for cart entries first.",
-    "pricingError": "Configurator pricing is currently not available. Checkout/quote submission is not possible. Please try again later.",
-    "unresolvableIssues": "The product configuration requires additional entries in the back end. As a result, you cannot proceed. Please contact support.",
-    "inProgress": "Przetwarzanie"
+  "validation" : {
+    "cartEntriesChangeDuringCheckout" : "Wystąpiły problemy z twoimi wpisami. Sprawdź swój koszyk.",
+    "cartEntryRemoved" : "Usunięto {{name}} z koszyka z powodu niedostępności w magazynie.",
+    "productOutOfStock" : "Usunięto {{name}} z koszyka z powodu niewystarczającego stanu magazynowego.",
+    "lowStock" : "Ilość została zmniejszona {{quantity}} z powodu niewystarczającego stanu magazynowego.",
+    "reviewConfiguration" : "Najpierw rozwiąż problemy w konfiguracji wpisu koszyka.",
+    "configurationError" : "Najpierw rozwiąż problemy w konfiguracji wpisów koszyka.",
+    "pricingError" : "Ustalanie cen konfiguratora nie jest obecnie dostępne. Realizacja płatności/przesłanie oferty nie jest możliwe. Spróbuj ponownie później.",
+    "unresolvableIssues" : "Konfiguracja produktu wymaga dodatkowych wpisów w systemie zaplecza. W rezultacie nie możesz kontynuować. Prosimy o kontakt z pomocą techniczną.",
+    "inProgress" : "Przetwarzanie"
   }
 }

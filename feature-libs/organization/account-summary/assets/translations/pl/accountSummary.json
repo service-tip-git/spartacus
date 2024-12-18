@@ -1,88 +1,88 @@
 {
-  "orgAccountSummary": {
-    "groupName": "Account Summaries",
-    "header": "All Account Summaries ({{count}})",
-    "name": "Jednostka",
-    "details": {
-      "header": "Szczegóły podsumowania konta",
-      "uid": "ID jednostki",
-      "name": "Nazwa jednostki",
-      "address": "Adres",
-      "creditRep": "Ref. ds. kredytów",
-      "creditLine": "Linia kredytowa",
-      "currentBalance": "Bieżące saldo",
-      "openBalance": "Nierozliczone saldo",
-      "pastDueBalance": "Zaległe saldo",
-      "dayRange": "{{minBoundary}}-{{maxBoundary}} Days",
-      "dayPlus": "{{minBoundary}}+ Days",
-      "notApplicable": "Nie dotyczy"
+  "orgAccountSummary" : {
+    "groupName" : "Podsumowania kont",
+    "header" : "Wszystkie podsumowania kont ({{count}})",
+    "name" : "Jednostka",
+    "details" : {
+      "header" : "Szczegóły podsumowania konta",
+      "uid" : "ID jednostki",
+      "name" : "Nazwa jednostki",
+      "address" : "Adres",
+      "creditRep" : "Ref. ds. kredytów",
+      "creditLine" : "Linia kredytowa",
+      "currentBalance" : "Bieżące saldo",
+      "openBalance" : "Nierozliczone saldo",
+      "pastDueBalance" : "Zaległe saldo",
+      "dayRange" : "{{minBoundary}}-{{maxBoundary}} dni",
+      "dayPlus" : "{{minBoundary}}+ dni",
+      "notApplicable" : "Nie dotyczy"
     },
-    "document": {
-      "header": "Dokumenty",
-      "id": "Numer dokumentu",
-      "type": "Typ dokumentu",
-      "date": "Utworzono dnia",
-      "dueDate": "Due On",
-      "originalAmount": "Pierwotna kwota",
-      "openAmount": "Kwota nierozliczona",
-      "status": "Status",
-      "attachment": "Załącznik",
-      "download": "Pobierz",
-      "attachmentDescription": "Download attachment for {{type}} {{id}}.",
-      "noneFound": "No Documents Found"
+    "document" : {
+      "header" : "Dokumenty",
+      "id" : "Numer dokumentu",
+      "type" : "Typ dokumentu",
+      "date" : "Data utworzenia",
+      "dueDate" : "Termin",
+      "originalAmount" : "Pierwotna kwota",
+      "openAmount" : "Kwota nierozliczona",
+      "status" : "Status",
+      "attachment" : "Załącznik",
+      "download" : "Pobierz",
+      "attachmentDescription" : "Pobierz załącznik dla {{type}} {{id}}.",
+      "noneFound" : "Nie znaleziono dokumentów"
     },
-    "sorts": {
-      "byCreatedAtDateAsc": "Created On Ascending",
-      "byCreatedAtDateDesc": "Created On Descending",
-      "byDueAtDateAsc": "Due On Ascending",
-      "byDueAtDateDesc": "Due On Descending",
-      "byOriginalAmountAsc": "Original Amount Ascending",
-      "byOriginalAmountDesc": "Original Amount Descending",
-      "byOpenAmountAsc": "Open Amount Ascending",
-      "byOpenAmountDesc": "Open Amount Descending",
-      "byOrgDocumentTypeAsc": "Document Type Ascending",
-      "byOrgDocumentTypeDesc": "Document Type Descending",
-      "byStatusAsc": "Status Ascending",
-      "byStatusDesc": "Status Descending",
-      "byOrgDocumentIdAsc": "Document Number Ascending",
-      "byOrgDocumentIdDesc": "Document Number Descending"
+    "sorts" : {
+      "byCreatedAtDateAsc" : "Data utworzenia rosnąco",
+      "byCreatedAtDateDesc" : "Data utworzenia malejąco",
+      "byDueAtDateAsc" : "Termin rosnąco",
+      "byDueAtDateDesc" : "Termin malejąco",
+      "byOriginalAmountAsc" : "Kwota pierwotna rosnąco",
+      "byOriginalAmountDesc" : "Kwota pierwotna malejąco",
+      "byOpenAmountAsc" : "Kwota nierozliczona rosnąco",
+      "byOpenAmountDesc" : "Kwota nierozliczona malejąco",
+      "byOrgDocumentTypeAsc" : "Typ dokumentu rosnąco",
+      "byOrgDocumentTypeDesc" : "Typ dokumentu malejąco",
+      "byStatusAsc" : "Status rosnąco",
+      "byStatusDesc" : "Status malejąco",
+      "byOrgDocumentIdAsc" : "Numer dokumentu rosnąco",
+      "byOrgDocumentIdDesc" : "Numer dokumentu malejąco"
     },
-    "statuses": {
-      "open": "Otwarte",
-      "closed": "Zamknięte",
-      "all": "Wszystkie"
+    "statuses" : {
+      "open" : "Otwarte",
+      "closed" : "Zamknięte",
+      "all" : "Wszystkie"
     },
-    "filterByOptions": {
-      "orgDocumentId": "Numer dokumentu",
-      "orgDocumentIdRange": "Document Number Range",
-      "orgDocumentType": "Typ dokumentu",
-      "createdAtDateRange": "Created On Range",
-      "dueAtDateRange": "Due On Range",
-      "amountRange": "Zakres kwot pierwotnych",
-      "openAmountRange": "Zakres kwot nierozliczonych"
+    "filterByOptions" : {
+      "orgDocumentId" : "Numer dokumentu",
+      "orgDocumentIdRange" : "Zakres numerów dokumentów",
+      "orgDocumentType" : "Typ dokumentu",
+      "createdAtDateRange" : "Zakres dat utworzenia",
+      "dueAtDateRange" : "Zakres terminów",
+      "amountRange" : "Zakres kwot pierwotnych",
+      "openAmountRange" : "Zakres kwot nierozliczonych"
     },
-    "sortBy": "Sort By",
-    "sortDocuments": "Sort documents",
-    "filter": {
-      "status": "Status",
-      "filterBy": "Filtruj wg",
-      "documentNumber": "Numer dokumentu",
-      "documentType": "Typ dokumentu",
-      "startRange": "Od",
-      "endRange": "Do",
-      "clear": "Wyczyść wszystko",
-      "search": "Szukaj",
-      "errors": {
-        "toDateMustComeAfterFrom": "Choose an end date that's later than the start date.",
-        "toAmountMustBeLargeThanFrom": "Choose an end range value that's smaller than the start value."
+    "sortBy" : "Sortuj wg",
+    "sortDocuments" : "Sortuj dokumenty",
+    "filter" : {
+      "status" : "Status",
+      "filterBy" : "Filtruj wg",
+      "documentNumber" : "Numer dokumentu",
+      "documentType" : "Typ dokumentu",
+      "startRange" : "Od",
+      "endRange" : "Do",
+      "clear" : "Wyczyść wszystko",
+      "search" : "Szukaj",
+      "errors" : {
+        "toDateMustComeAfterFrom" : "Wybierz datę końcową późniejszą niż data rozpoczęcia.",
+        "toAmountMustBeLargeThanFrom" : "Wybierz wartość końcową zakresu, która jest mniejsza niż wartość początkowa."
       }
     },
-    "hint": "Account summaries allow you to review general information about a unit, including balances and aging summary of invoices. Here, you can also browse through a list of transaction documents for a unit."
+    "hint" : "Podsumowania kont umożliwiają przeglądanie ogólnych informacji o jednostce, w tym sald i podsumowań wiekowania faktur. W tym miejscu można również przeglądać listę dokumentów transakcji dla jednostki."
   },
-  "orgAccountSummaryList": {
-    "breadcrumbs": {
-      "list": "Account Summaries",
-      "details": "{{name}}"
+  "orgAccountSummaryList" : {
+    "breadcrumbs" : {
+      "list" : "Podsumowania kont",
+      "details" : "{{name}}"
     }
   }
 }

@@ -1,51 +1,51 @@
 {
-  "exportEntries": {
-    "exportToCsv": "Eksportuj do CSV",
-    "exportMessage": "CSV file will download automatically to your device, if it does not please check your browser settings",
-    "columnNames": {
-      "code": "Kod",
-      "quantity": "Ilość",
-      "name": "Nazwa",
-      "price": "Cena"
+  "exportEntries" : {
+    "exportToCsv" : "Eksportuj do CSV",
+    "exportMessage" : "Plik CSV zostanie automatycznie pobrany na urządzenie. Jeśli tak się nie stanie, sprawdź ustawienia przeglądarki.",
+    "columnNames" : {
+      "code" : "Kod",
+      "quantity" : "Ilość",
+      "name" : "Nazwa",
+      "price" : "Cena"
     },
-    "exportProductToCsv": "Export Product to CSV"
+    "exportProductToCsv" : "Eksportuj produkt do pliku CSV"
   },
-  "importEntries": {
-    "importProducts": "Import Products"
+  "importEntries" : {
+    "importProducts" : "Importuj produkty"
   },
-  "importEntriesDialog": {
-    "importProducts": "Import Products",
-    "importProductsSubtitle": "Add products by importing a .CSV file.",
-    "importProductsNewSavedCartSubtitle": "Add products by importing a .CSV file and creating a new saved cart.",
-    "importProductFileDetails": "Text file should contain list of products with required columns separated by comma: SKU and quantity.",
-    "selectFile": "Select File",
-    "selectedSuccessfully": "CSV file has been successfully selected.",
-    "savedCartName": "Saved Cart Name",
-    "savedCartDescription": "Saved Cart Description",
-    "optional": "optional",
-    "charactersLeft": "characters left: {{count}}",
-    "cancel": "Anuluj",
-    "upload": "Przekaż",
-    "close": "Zamknij",
-    "summary": {
-      "info": "Do not close or refresh this window while products are being imported.",
-      "loadedToCart": "Products has been loaded to cart {{ cartName }}",
-      "loaded": "Products has been loaded",
-      "loading": "Products are being processed... ({{ count }}/{{ total }})",
-      "successes": "{{ successesCount }} out of {{ total }} products have been imported successfully.",
-      "warning": "{{ count }} product was not imported totally.",
-      "warning_other": "{{ count }} products were not imported totally.",
-      "error": "{{ count }} product was not imported.",
-      "error_other": "{{ count }} products were not imported.",
-      "messages": {
-        "unknownIdentifier": "Product SKU \"{{ productCode}}\" does not exist.",
-        "lowStock": "Quantity for {{ productName }}: {{ quantity }} has been reduced to {{ quantityAdded }}.",
-        "noStock": "{{ productName }} is currently out of stock.",
-        "unknownError": "Unrecognized problem with \"{{ productCode }}\".",
-        "limitExceeded": "Can not add \"{{ productCode }}\". Limit exceeded."
+  "importEntriesDialog" : {
+    "importProducts" : "Importuj produkty",
+    "importProductsSubtitle" : "Dodaj produkty, importując plik .CSV.",
+    "importProductsNewSavedCartSubtitle" : "Dodaj produkty, importując plik .CSV i tworząc nowy zapisany koszyk.",
+    "importProductFileDetails" : "Plik tekstowy powinien zawierać listę produktów z wymaganymi kolumnami oddzielonymi przecinkami: SKU i ilość.",
+    "selectFile" : "Wybierz plik",
+    "selectedSuccessfully" : "Plik CSV został wybrany.",
+    "savedCartName" : "Zapisana nazwa koszyka",
+    "savedCartDescription" : "Zapisany opis koszyka",
+    "optional" : "opcjonalne",
+    "charactersLeft" : "pozostało znaków: {{count}}",
+    "cancel" : "Anuluj",
+    "upload" : "Przekaż",
+    "close" : "Zamknij",
+    "summary" : {
+      "info" : "Nie zamykaj ani nie odświeżaj tego okna podczas importowania produktów.",
+      "loadedToCart" : "Produkty zostały wczytane do koszyka {{ cartName }}",
+      "loaded" : "Produkty zostały wczytane",
+      "loading" : "Trwa przetwarzanie produktów... ({{ count }}/{{ total }})",
+      "successes" : "Zaimportowano {{ successesCount }} z {{ total }} produktów.",
+      "warning" : "Nie zaimportowano całkowicie {{ count }} produktu.",
+      "warning_other" : "Nie zaimportowano całkowicie {{ count }} produktów.",
+      "error" : "Nie zaimportowano {{ count }} produktu.",
+      "error_other" : "Nie zaimportowano {{ count }} produktów.",
+      "messages" : {
+        "unknownIdentifier" : "SKU produktu \"{{ productCode}}\" nie istnieje.",
+        "lowStock" : "Ilość dla {{ productName }}: {{ quantity }} została zmniejszona do {{ quantityAdded }}.",
+        "noStock" : "{{ productName }} jest obecnie niedostępny w magazynie.",
+        "unknownError" : "Niezidentyfikowany problem z \"{{ productCode }}\".",
+        "limitExceeded" : "Nie można dodać \"{{ productCode }}\". Przekroczono limit."
       },
-      "show": "Pokaż",
-      "hide": "Ukryj"
+      "show" : "Pokaż",
+      "hide" : "Ukryj"
     }
   }
 }

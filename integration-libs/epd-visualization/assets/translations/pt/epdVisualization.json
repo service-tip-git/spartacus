@@ -1,70 +1,70 @@
 {
-  "epdVisualization": {
-    "visualViewer": {
-      "contentType": {
-        "drawing2D": "2D",
-        "model3D": "3D"
+  "epdVisualization" : {
+    "visualViewer" : {
+      "contentType" : {
+        "drawing2D" : "2D",
+        "model3D" : "3D"
       },
-      "toolbar": {
-        "homeButton": {
-          "label": "Página inicial"
+      "toolbar" : {
+        "homeButton" : {
+          "label" : "Página inicial"
         },
-        "zoomButton": {
-          "label": "Zoom"
+        "zoomButton" : {
+          "label" : "Zoom"
         },
-        "panButton": {
-          "label": "Pan"
+        "panButton" : {
+          "label" : "Deslocar"
         },
-        "rotateButton": {
-          "label": "Rotate"
+        "rotateButton" : {
+          "label" : "Girar"
         },
-        "isolateButton": {
-          "label": "Isolate"
+        "isolateButton" : {
+          "label" : "Isolar"
         },
-        "playButton": {
-          "label": "Reproduzir"
+        "playButton" : {
+          "label" : "Reproduzir"
         },
-        "pauseButton": {
-          "label": "Pausar"
+        "pauseButton" : {
+          "label" : "Pausar"
         },
-        "hotspotsButton": {
-          "label": "Hotspots",
-          "show": "Mostrar",
-          "hide": "Ocultar"
+        "hotspotsButton" : {
+          "label" : "Pontos ativos",
+          "show" : "Mostrar",
+          "hide" : "Ocultar"
         },
-        "visualViewerAnimationSlider": {
-          "label": "Animation Slider",
-          "role": "Slider"
+        "visualViewerAnimationSlider" : {
+          "label" : "Controle deslizante de animação",
+          "role" : "Controle deslizante"
         }
       }
     },
-    "visualPicking": {
-      "visualPickingTab": {
-        "noProductReferences": "No spare parts are available for this product."
+    "visualPicking" : {
+      "visualPickingTab" : {
+        "noProductReferences" : "Nenhuma peça de reposição disponível para este produto."
       },
-      "visualPickingProductList": {
-        "description": "Descrição",
-        "itemPrice": "Preço",
-        "outOfStock": "Out of stock",
-        "id": "ID"
+      "visualPickingProductList" : {
+        "description" : "Descrição",
+        "itemPrice" : "Preço",
+        "outOfStock" : "Sem estoque",
+        "id" : "ID"
       },
-      "visualPickingProductFilter": {
-        "input": {
-          "placeholder": "Filter by name or id"
+      "visualPickingProductFilter" : {
+        "input" : {
+          "placeholder" : "Filtrar por nome ou ID"
         },
-        "searchButton": {
-          "label": "search"
+        "searchButton" : {
+          "label" : "procurar"
         },
-        "resetButton": {
-          "label": "reinicializar"
+        "resetButton" : {
+          "label" : "reinicializar"
         }
       }
     },
-    "errors": {
-      "visualLoad": {
-        "noMatchingVisualFound": "No matching visualization found",
-        "multipleMatchingVisualsFound": "Multiple matching visualizations found",
-        "unexpectedLoadError": "Error occurred while loading visualization"
+    "errors" : {
+      "visualLoad" : {
+        "noMatchingVisualFound" : "Nenhuma visualização correspondente encontrada",
+        "multipleMatchingVisualsFound" : "Várias visualizações correspondentes encontradas",
+        "unexpectedLoadError" : "Erro ocorrido ao carregar visualização"
       }
     }
   }

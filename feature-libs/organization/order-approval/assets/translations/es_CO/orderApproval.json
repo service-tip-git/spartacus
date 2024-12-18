@@ -1,49 +1,49 @@
 {
-  "orderApprovalDetails": {
-    "back": "Back To List",
-    "showForm_APPROVE": "Approve Order...",
-    "showForm_REJECT": "Reject Order...",
-    "form": {
-      "title_APPROVE": "Approve order {{orderCode}} totalling {{orderTotal}}",
-      "title_REJECT": "Reject order {{orderCode}} totalling {{orderTotal}}",
-      "submit_APPROVE": "Aprobar",
-      "submit_REJECT": "Rechazar",
-      "cancel": "Cancelar",
-      "comment_APPROVE": {
-        "label": "Comment (optional, maximum 255 characters)",
-        "placeholder": ""
+  "orderApprovalDetails" : {
+    "back" : "Volver a la lista",
+    "showForm_APPROVE" : "Aprobar pedido...",
+    "showForm_REJECT" : "Rechazar pedido...",
+    "form" : {
+      "title_APPROVE" : "Aprobar pedido {{orderCode}} con un total de {{orderTotal}}",
+      "title_REJECT" : "Rechazar pedido {{orderCode}} con un total de {{orderTotal}}",
+      "submit_APPROVE" : "Aprobar",
+      "submit_REJECT" : "Rechazar",
+      "cancel" : "Cancelar",
+      "comment_APPROVE" : {
+        "label" : "Comentario (opcional, 255 caracteres como máximo)",
+        "placeholder" : ""
       },
-      "comment_REJECT": {
-        "label": "Comment (maximum 255 characters)",
-        "placeholder": ""
+      "comment_REJECT" : {
+        "label" : "Comentario (255 caracteres como máximo)",
+        "placeholder" : ""
       }
     },
-    "permissionResults": {
-      "header": "Detalles de la aprobación del cliente",
-      "permission": "Permiso",
-      "approver": "Aprobador",
-      "status": "Estado",
-      "approverComments": "Comentarios del aprobador",
-      "noApprovalComments": "Ninguno",
-      "permissionType_B2BBudgetExceededPermission": "The budget associated with the chosen cost center has been exceeded",
-      "permissionType_B2BOrderThresholdPermission": "Order total exceeded the per-order limit",
-      "permissionType_B2BOrderThresholdTimespanPermission": "Order total exceeded the per-timespan limit"
+    "permissionResults" : {
+      "header" : "Detalles de la aprobación del cliente",
+      "permission" : "Permiso",
+      "approver" : "Aprobador",
+      "status" : "Estado",
+      "approverComments" : "Comentarios del aprobador",
+      "noApprovalComments" : "Ninguno",
+      "permissionType_B2BBudgetExceededPermission" : "Se superó el presupuesto asociado al centro de costos seleccionado",
+      "permissionType_B2BOrderThresholdPermission" : "El total del pedido superó el límite por pedido",
+      "permissionType_B2BOrderThresholdTimespanPermission" : "El total del pedido superó el límite por intervalo de tiempo"
     }
   },
-  "orderApprovalList": {
-    "orderCode": "Número de pedido",
-    "POCode": "PO #",
-    "placedBy": "Placed by",
-    "date": "Fecha",
-    "status": "Estado",
-    "total": "Total",
-    "none": "Ninguno",
-    "emptyList": "There are no orders to approve at this time.",
-    "orderApprovalList": "Order Approval List"
+  "orderApprovalList" : {
+    "orderCode" : "Número de pedido",
+    "POCode" : "Número de pedido",
+    "placedBy" : "Realizado por",
+    "date" : "Fecha",
+    "status" : "Estado",
+    "total" : "Total",
+    "none" : "Ninguno",
+    "emptyList" : "No hay pedidos para aprobar en este momento.",
+    "orderApprovalList" : "Lista de aprobación de pedidos"
   },
-  "orderApprovalGlobal": {
-    "notification": {
-      "noSufficientPermissions": "No sufficient permissions to access this page."
+  "orderApprovalGlobal" : {
+    "notification" : {
+      "noSufficientPermissions" : "No tiene permisos suficientes para acceder a esta página."
     }
   }
 }

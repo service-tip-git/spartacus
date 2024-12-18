@@ -1,9 +1,9 @@
 {
-  "productVariants": {
-    "style": "스타일",
-    "selectedStyle": "Selected style",
-    "size": "크기",
-    "color": "색",
-    "sizeGuideLabel": "Style guide"
+  "productVariants" : {
+    "style" : "스타일",
+    "selectedStyle" : "선택한 스타일",
+    "size" : "크기",
+    "color" : "색상",
+    "sizeGuideLabel" : "스타일 가이드"
   }
 }

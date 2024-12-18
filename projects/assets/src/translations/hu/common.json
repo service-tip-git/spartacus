@@ -1,252 +1,254 @@
 {
-  "common": {
-    "cancel": "Mégse",
-    "delete": "Törlés",
-    "remove": "Eltávolítás",
-    "edit": "Szerkesztés",
-    "restore": "Visszaállítás",
-    "back": "Vissza",
-    "submit": "Elküldés",
-    "continue": "Folytatás",
-    "save": "Mentés",
-    "done": "Kész",
-    "home": "Kezdőlap",
-    "noData": "No data.",
-    "confirm": "Megerősítés",
-    "more": "több",
-    "close": "Bezárás",
-    "loading": "Betöltés",
-    "menu": "Menü",
-    "reset": "Alaphelyzetbe állítás",
-    "search": "Keresés",
-    "add": "Hozzáadás",
-    "breadcrumbs": "breadcrumbs",
-    "selectFile": "Select file",
-    "clear": "Törlés",
-    "loaded": "Loaded",
-    "results": "Eredmények",
-    "of": "/",
-    "required": "required",
-    "zoomIn": "Zoom in",
-    "zoomOut": "Zoom out",
-    "selected": "Kiválasztva",
-    "expand": "Kibontás",
-    "collapse": "Visszazárás"
+  "common" : {
+    "cancel" : "Mégse",
+    "delete" : "Törlés",
+    "remove" : "Eltávolítás",
+    "edit" : "Szerkesztés",
+    "restore" : "Visszaállítás",
+    "back" : "Vissza",
+    "submit" : "Elküldés",
+    "continue" : "Folytatás",
+    "save" : "Mentés",
+    "done" : "Kész",
+    "home" : "Kezdőlap",
+    "noData" : "Nincs adat.",
+    "confirm" : "Megerősítés",
+    "more" : "több",
+    "close" : "Bezárás",
+    "loading" : "Betöltés",
+    "menu" : "Menü",
+    "reset" : "Alaphelyzetbe állítás",
+    "search" : "Keresés",
+    "add" : "Hozzáadás",
+    "breadcrumbs" : "útkövetések",
+    "selectFile" : "Fájl kiválasztása",
+    "clear" : "Törlés",
+    "loaded" : "Betöltve",
+    "results" : "Eredmények",
+    "of" : "/",
+    "required" : "kötelező",
+    "zoomIn" : "Nagyítás",
+    "zoomOut" : "Kicsinyítés",
+    "selected" : "Kiválasztva",
+    "expand" : "Kibontás",
+    "collapse" : "Összecsukás"
   },
-  "pageMetaResolver": {
-    "category": {
-      "title": "{{count}} result for {{query}}",
-      "title_other": "{{count}} results for {{query}}"
+  "pageMetaResolver" : {
+    "category" : {
+      "title" : "{{count}} találat a következőre: {{query}}",
+      "title_other" : "{{count}} találat a következőre: {{query}}"
     },
-    "checkout": {
-      "title": "Fizetés"
+    "checkout" : {
+      "title" : "Fizetés"
     },
-    "search": {
-      "title": "{{count}} result for \"{{query}}\"",
-      "title_other": "{{count}} results for \"{{query}}\"",
-      "findProductTitle": "{{count}} result for coupon \"{{coupon}}\"",
-      "findProductTitle_other": "{{count}} results for coupon \"{{coupon}}\"",
-      "default_title": "Összes termék"
+    "search" : {
+      "title" : "{{count}} találat a következőre: „{{query}}”",
+      "title_other" : "{{count}} találat a következőre: „{{query}}”",
+      "findProductTitle" : "{{count}} találat a következő kuponra: „{{coupon}}”",
+      "findProductTitle_other" : "{{count}} találat a következő kuponra: „{{coupon}}”",
+      "default_title" : "Összes termék"
     },
-    "product": {
-      "description": "{{description}}",
-      "heading": "{{heading}}",
-      "title": "{{title}}"
+    "product" : {
+      "description" : "{{description}}",
+      "heading" : "{{heading}}",
+      "title" : "{{title}}"
     }
   },
-  "spinner": {
-    "loading": "Betöltés..."
+  "spinner" : {
+    "loading" : "Betöltés..."
   },
-  "navigation": {
-    "categoryNavLabel": "Category menu",
-    "footerNavLabel": "Footer links",
-    "goTo": "Tovább (a)z {{location}} oldalra",
-    "navigateTo": "Navigate to {{nav}}",
-    "scrollToTop": "Scroll back to the top of the page",
-    "linkItemInList": "{{title}}. {{position}} of {{listLength}}"
+  "navigation" : {
+    "categoryNavLabel" : "Kategória menü",
+    "footerNavLabel" : "Lábléchivatkozások",
+    "goTo" : "Tovább: {{location}}",
+    "navigateTo" : "Navigálás: {{nav}}",
+    "scrollToTop" : "Visszagörgetés az oldal tetejére",
+    "linkItemInList" : "{{title}}. {{position}}/{{listLength}}"
   },
-  "searchBox": {
-    "placeholder": "Enter product name or SKU",
-    "productSearch": "Find a product",
-    "ariaLabelInput": "Itt kereshet...",
-    "ariaLabelSuggestions": "typing suggestions",
-    "ariaLabelProducts": "product results",
-    "initialDescription": "When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.",
-    "suggestions": "Suggested Keywords",
-    "suggestionsResult": "{{ count }} suggestion and ",
-    "suggestionsResult_other": "{{ count }} suggestions and ",
-    "products": "Recommended Products",
-    "productsResult": "{{ count }} product is available.",
-    "productsResult_other": "{{ count }} products are available.",
-    "resetLabel": "Reset Search",
-    "help": {
-      "insufficientChars": "Please type more characters",
-      "noMatch": "We could not find any results",
-      "exactMatch": "{{ term }}",
-      "empty": "Ask us anything"
+  "searchBox" : {
+    "placeholder" : "Adja meg a terméknevet vagy cikkszámot",
+    "productSearch" : "Termék keresése",
+    "ariaLabelInput" : "Itt kereshet...",
+    "ariaLabelSuggestions" : "javaslatok begépelése",
+    "ariaLabelProducts" : "terméktalálatok",
+    "initialDescription" : "Ha elérhetők az automatikus kiegészítés találatai, a fel és le nyilakkal ellenőrizheti, az Enter billentyűvel pedig kiválaszthatja őket. Az érintőképernyős eszközök felhasználói érintéssel vagy húzással navigálhatnak.",
+    "suggestions" : "Javasolt kulcsszavak",
+    "suggestionsResult" : "{{ count }} javaslat és ",
+    "suggestionsResult_other" : "{{ count }} javaslat és ",
+    "products" : "Ajánlott termékek",
+    "productsResult" : "{{ count }} termék elérhető.",
+    "productsResult_other" : "{{ count }} termék elérhető.",
+    "resetLabel" : "Keresés visszaállítása",
+    "help" : {
+      "insufficientChars" : "Gépeljen be több karaktert",
+      "noMatch" : "Nem találtunk semmit",
+      "exactMatch" : "{{ term }}",
+      "empty" : "Kérdezzen bármit"
     },
-    "closeSearchPanel": "Bezárás"
+    "closeSearchPanel" : "Bezárás"
   },
-  "sorting": {
-    "date": "Dátum",
-    "orderNumber": "Rendelésszám",
-    "rma": "Return Number",
-    "replenishmentNumber": "Utánpótlás száma",
-    "nextOrderDate": "Következő rendelés dátuma",
-    "pageViewUpdated": "Page view updated with your selected options."
+  "sorting" : {
+    "date" : "Dátum",
+    "orderNumber" : "Rendelésszám",
+    "rma" : "Visszáru száma",
+    "replenishmentNumber" : "Utánpótlás száma",
+    "nextOrderDate" : "Következő rendelés dátuma",
+    "pageViewUpdated" : "Az oldalnézet frissült a kiválasztott beállítások alapján."
   },
-  "httpHandlers": {
-    "badRequest": {
-      "bad_credentials": "{{ errorMessage }}. Please login again.",
-      "user_is_disabled": "{{ errorMessage }}. Please contact administration."
+  "httpHandlers" : {
+    "badRequest" : {
+      "bad_credentials" : "{{ errorMessage }}. Jelentkezzen be újra.",
+      "user_is_disabled" : "{{ errorMessage }}. Forduljon egy rendszergazdához."
     },
-    "badGateway": "A server error occurred. Please try again later.",
-    "badRequestPleaseLoginAgain": "{{ errorMessage }}. Please login again.",
-    "badRequestOldPasswordIncorrect": "Old password incorrect.",
-    "badRequestGuestDuplicateEmail": "{{ errorMessage }} email already exist. Please checkout with a different email to register using a guest account.",
-    "conflict": "Already exists.",
-    "forbidden": "You are not authorized to perform this action. Please contact your administrator if you think this is a mistake.",
-    "gatewayTimeout": "The server did not respond, please try again later.",
-    "internalServerError": "An Internal Server Error occurred. Please try again later.",
-    "sessionExpired": "Your session has expired. Please login again.",
-    "unknownError": "An unknown error occurred",
-    "unauthorized": {
-      "common": "An unknown authorization error occured",
-      "invalid_client": "Bad client credentials"
+    "badGateway" : "Szerverhiba történt. Próbálja újra később.",
+    "badRequestPleaseLoginAgain" : "{{ errorMessage }}. Jelentkezzen be újra.",
+    "badRequestOldPasswordIncorrect" : "A régi jelszó helytelen.",
+    "badRequestGuestDuplicateEmail" : "Az e-mail már létezik ({{ errorMessage }}). Fizessen egy másik e-mail-címmel, vagy regisztráljon egy vendégfiókkal.",
+    "conflict" : "Már létezik.",
+    "forbidden" : "Nincs jogosultsága végrehajtani ezt a műveletet. Ha úgy gondolja, ez egy hiba, forduljon a rendszergazdájához.",
+    "gatewayTimeout" : "A szerver nem válaszolt, próbálja újra később.",
+    "internalServerError" : "Belső szerverhiba történt. Próbálja újra később.",
+    "sessionExpired" : "Munkamenete lejárt. Jelentkezzen be újból.",
+    "unknownError" : "Ismeretlen hiba történt",
+    "unauthorized" : {
+      "common" : "Ismeretlen hitelesítési hiba történt",
+      "invalid_client" : "A kliens hitelesítési adatai hibásak"
     },
-    "validationErrors": {
-      "missing": {
-        "card_cardType": "The selected credit card is not supported. Please select another.",
-        "card_accountNumber": "The credit card number entered is not valid.",
-        "card_cvNumber": "The security code entered is not valid.",
-        "card_expirationMonth": "The credit card expiration date entered is not valid.",
-        "card_expirationYear": "The credit card expiration date entered is not valid.",
-        "billTo_firstName": "The first name entered is not valid.",
-        "billTo_lastName": "The last name entered is not valid.",
-        "billTo_street1": "The address entered is not valid.",
-        "billTo_street2": "The address entered is not valid.",
-        "billTo_city": "The city entered is not valid for this credit card.",
-        "billTo_state": "The state/province entered is not valid for this credit card.",
-        "billTo_country": "The country/region entered is not valid for this credit card.",
-        "billTo_postalCode": "The zip/postal code is not valid for this credit card.",
-        "country": {
-          "isocode": "Missing country/region"
+    "validationErrors" : {
+      "missing" : {
+        "card_cardType" : "A kiválasztott hitelkártya nem támogatott. Válasszon másikat.",
+        "card_accountNumber" : "A megadott hitelkártyaszám nem érvényes.",
+        "card_cvNumber" : "A megadott biztonsági kód nem érvényes.",
+        "card_expirationMonth" : "A hitelkártya megadott lejárati dátuma nem érvényes.",
+        "card_expirationYear" : "A hitelkártya megadott lejárati dátuma nem érvényes.",
+        "billTo_firstName" : "A megadott utónév nem érvényes.",
+        "billTo_lastName" : "A megadott vezetéknév nem érvényes.",
+        "billTo_street1" : "A megadott cím nem érvényes.",
+        "billTo_street2" : "A megadott cím nem érvényes.",
+        "billTo_city" : "A megadott város nem érvényes ehhez a hitelkártyához.",
+        "billTo_state" : "A megadott állam/tartomány nem érvényes ehhez a hitelkártyához.",
+        "billTo_country" : "A megadott ország/régió nem érvényes ehhez a hitelkártyához.",
+        "billTo_postalCode" : "A megadott irányítószám nem érvényes ehhez a hitelkártyához.",
+        "country" : {
+          "isocode" : "Hiányzó ország/régió"
         }
       },
-      "invalid": {
-        "card_expirationMonth": "The credit card expiration date entered is not valid.",
-        "firstName": "First Name entered is not valid.",
-        "lastName": "Last Name entered is not valid.",
-        "password": "Password entered is not valid.",
-        "uid": "UID is not valid.",
-        "code": "Code is not valid.",
-        "email": "Email is not valid.",
-        "loginId": "Email is not valid."
+      "invalid" : {
+        "card_expirationMonth" : "A hitelkártya megadott lejárati dátuma nem érvényes.",
+        "firstName" : "A megadott utónév nem érvényes.",
+        "lastName" : "A megadott vezetéknév nem érvényes.",
+        "password" : "A megadott jelszó nem érvényes.",
+        "uid" : "Az egyedi azonosító nem érvényes.",
+        "code" : "A kód nem érvényes.",
+        "email" : "Az e-mail nem érvényes.",
+        "loginId" : "Az e-mail nem érvényes."
       }
     },
-    "cartNotFound": "Cart not found.",
-    "invalidCodeProvided": "Invalid code provided.",
-    "voucherExceeded": "This coupon has exceeded the number of times it can be used",
-    "unknownIdentifier": "Item not found.",
-    "otherCartErrors": "Cart errors occurred."
+    "cartNotFound" : "A kosár nem található.",
+    "invalidCodeProvided" : "A megadott kód érvénytelen.",
+    "voucherExceeded" : "A kupon túllépte a felhasználási számára vonatkozó korlátot",
+    "unknownIdentifier" : "A tétel nem található.",
+    "otherCartErrors" : "Kosárhibák történtek."
   },
-  "miniCart": {
-    "item": "{{count}} item currently in your cart",
-    "item_other": "{{count}} items currently in your cart",
-    "total": "{{total}}",
-    "count": "{{count}}"
+  "miniCart" : {
+    "item" : "Jelenleg {{count}} tétel található a kosarában",
+    "item_other" : "Jelenleg {{count}} tétel található a kosarában",
+    "total" : "{{total}}",
+    "count" : "{{count}}"
   },
-  "skipLink": {
-    "skipTo": "Skip to",
-    "labels": {
-      "header": "Header",
-      "main": "Main Content",
-      "footer": "Footer",
-      "productFacets": "Product Facets",
-      "productList": "Terméklista"
+  "skipLink" : {
+    "skipTo" : "Ugrás a következőre:",
+    "labels" : {
+      "header" : "Fejléc",
+      "main" : "Fő tartalom",
+      "footer" : "Lábléc",
+      "productFacets" : "Termékkategória",
+      "productList" : "Terméklista"
     }
   },
-  "carousel": {
-    "previousSlide": "Previous slide",
-    "nextSlide": "Next slide",
-    "slideNumber": "Slide {{currentSlideNumber}} contains {{numberOfSlides}} items",
-    "carouselForProduct": "Carousel, Images for {{product}}"
+  "carousel" : {
+    "previousSlide" : "Előző dia",
+    "nextSlide" : "Következő dia",
+    "slideNumber" : "A(z) {{currentSlideNumber}} dia {{numberOfSlides}} tételt tartalmaz",
+    "carouselForProduct" : "Forgótár, képek a következőhöz: {{product}}"
   },
-  "formErrors": {
-    "labeled": {
-      "required": "Field {{label}} is required",
-      "cxInvalidEmail": "Field {{label}} has not a valid email format. Match pattern: example@yourdomain.com",
-      "cxInvalidPassword": "Field {{label}} has not a valid password format",
-      "cxMinOneUpperCaseCharacter": "Password must contain at least one uppercase character",
-      "cxMinOneDigit": "Password must contain at least one digit",
-      "cxMinOneSpecialCharacter": "Password must contain at least one special character",
-      "cxMinSixCharactersLength": "Password must contain at least 6 characters",
-      "cxContainsSpecialCharacters": "Password cannot contain special characters",
-      "cxNoConsecutiveCharacters": "Password cannot contain consecutive identical characters",
-      "date": {
-        "required": "Field {{label}} is required",
-        "min": "Field {{label}} cannot be before {{min}}",
-        "max": "Field {{label}} cannot be after {{max}}",
-        "pattern": "Use dateformat yyyy-mm-dd in field {{label}}",
-        "invalid": "Use a valid date in field {{label}}"
+  "formErrors" : {
+    "labeled" : {
+      "required" : "A(z) {{label}} mező kötelező",
+      "cxInvalidEmail" : "A(z) {{label}} mező nem egy érvényes e-mail-formátummal rendelkezik. Példa: pelda@tartomany.hu",
+      "cxInvalidPassword" : "A(z) {{label}} mező nem egy érvényes jelszóformátummal rendelkezik",
+      "cxMinOneUpperCaseCharacter" : "A jelszónak tartalmaznia kell legalább egy nagybetűt",
+      "cxMinOneDigit" : "A jelszónak tartalmaznia kell legalább egy számjegyet",
+      "cxMinOneSpecialCharacter" : "A jelszónak tartalmaznia kell legalább egy speciális karaktert",
+      "cxMinSixCharactersLength" : "A jelszónak legalább 6 karakter hosszúságúnak kell lennie",
+      "cxMinEightCharactersLength" : "A jelszónak legalább 8 karakter hosszúságúnak kell lennie",
+      "cxMaxCharactersLength" : "A jelszó nem tartalmazhat 128 karakternél többet",
+      "cxContainsSpecialCharacters" : "A jelszó nem tartalmazhat speciális karaktereket",
+      "cxNoConsecutiveCharacters" : "A jelszó nem tartalmazhat egymást követő azonos karaktereket",
+      "date" : {
+        "required" : "A(z) {{label}} mező kötelező",
+        "min" : "A(z) {{label}} mező nem eshet {{min}} elé",
+        "max" : "A(z) {{label}} mező nem eshet {{max}} után",
+        "pattern" : "Használjon éééé-hh-nn dátumformátumot a(z) {{label}} mezőben",
+        "invalid" : "Használjon érvényes dátumot a(z) {{label}} mezőben"
       }
     },
-    "globalMessage": "The form you are trying to submit contains errors.",
-    "required": "Ez a mező kötelező",
-    "cxInvalidEmail": "This is not a valid email format",
-    "cxInvalidPassword": "This is not a valid password format",
-    "cxPasswordsMustMatch": "Password fields must match",
-    "cxPasswordsCannotMatch": "Password fields cannot match",
-    "cxEmailsMustMatch": "Email fields must match",
-    "cxStarRatingEmpty": "Rating field is required",
-    "cxNoSelectedItemToCancel": "Select at least one item",
-    "cxNegativeAmount": "Amount must be equal or greater than zero",
-    "cxContainsSpecialCharacters": "Field cannot contain special characters",
-    "date": {
-      "required": "Ez a mező kötelező",
-      "min": "Date cannot be before {{min}}",
-      "max": "Date cannot be after {{max}}",
-      "pattern": "Use dateformat yyyy-mm-dd",
-      "invalid": "Use a valid date"
+    "globalMessage" : "Az elküldeni kívánt űrlap hibákat tartalmaz.",
+    "required" : "Ez a mező kötelező",
+    "cxInvalidEmail" : "Ez nem egy érvényes e-mail-formátum",
+    "cxInvalidPassword" : "Ez nem egy érvényes jelszóformátum",
+    "cxPasswordsMustMatch" : "A jelszómezőknek egyezniük kell",
+    "cxPasswordsCannotMatch" : "A jelszómezők nem egyezhetnek",
+    "cxEmailsMustMatch" : "Az e-mail-mezőknek egyezniük kell",
+    "cxStarRatingEmpty" : "Az értékelés mező kitöltése kötelező",
+    "cxNoSelectedItemToCancel" : "Válasszon ki legalább egy tételt",
+    "cxNegativeAmount" : "Az összegnek legalább nullának kell lennie",
+    "cxContainsSpecialCharacters" : "A mező nem tartalmazhat speciális karaktereket",
+    "date" : {
+      "required" : "Ez a mező kötelező",
+      "min" : "A dátum nem eshet {{min}} elé",
+      "max" : "A dátum nem eshet {{max}} után",
+      "pattern" : "Használjon éééé-hh-nn dátumformátumot",
+      "invalid" : "Használjon érvényes dátumot"
     },
-    "file": {
-      "required": "File is required",
-      "empty": "File should not be empty",
-      "invalidExtension": "File extension is not valid",
-      "tooLarge": "File size should not exceed {{ maxSize }} MB",
-      "tooManyEntries": "The number of items is greater than {{ maxEntries }}",
-      "notParsable": "File is not parsable",
-      "fileNotAllowed": "This file type is not allowed"
+    "file" : {
+      "required" : "A fájl kitöltése kötelező",
+      "empty" : "A fájl nem lehet üres",
+      "invalidExtension" : "A fájlkiterjesztés nem érvényes",
+      "tooLarge" : "A fájlméret nem haladhatja meg a(z) {{ maxSize }} MB-ot",
+      "tooManyEntries" : "A tételek száma több mint {{ maxEntries }}",
+      "notParsable" : "A fájl nem értelmezhető",
+      "fileNotAllowed" : "Ez a fájltípus nem engedélyezett"
     }
   },
-  "errorHandlers": {
-    "scriptFailedToLoad": "Failed to load the script.",
-    "refreshThePage": "Please refresh the page."
+  "errorHandlers" : {
+    "scriptFailedToLoad" : "Nem sikerült betölteni a szkriptet.",
+    "refreshThePage" : "Frissítse az oldalt."
   },
-  "assistiveMessage": {
-    "actionCancelled": "Action cancelled, nothing changed"
+  "assistiveMessage" : {
+    "actionCancelled" : "Művelet megszakítva, semmi nem módosult"
   },
-  "passwordVisibility": {
-    "showPassword": "Show password",
-    "hidePassword": "Hide password"
+  "passwordVisibility" : {
+    "showPassword" : "Jelszó megjelenítése",
+    "hidePassword" : "Jelszó elrejtése"
   },
-  "generalErrors": {
-    "pageFailure": "The page could not be loaded. Please try again later."
+  "generalErrors" : {
+    "pageFailure" : "Nem sikerült betölteni az oldalt. Próbálja újra később."
   },
-  "formLegend": {
-    "required": "The following fields marked with \"*\" are required."
+  "formLegend" : {
+    "required" : "A *-gal jelölt mezők kitöltése kötelező."
   },
-  "chatMessaging": {
-    "charactersLeft": "characters left: {{count}}",
-    "addNewMessage": "Add New Message",
-    "send": "Küldés",
-    "uploadFile": "Fájl feltöltése",
-    "informationLabel": "{{author}}. {{text}} at {{date}}",
-    "messages": "Üzenetek",
-    "addMessagePlaceHolder": "Start Typing...",
-    "characterLimitAlert": "Characters limit reached.",
-    "a11y": {
-      "itemListBoxLabel": "Select the item to which the message should apply."
+  "chatMessaging" : {
+    "charactersLeft" : "hátralévő karakterek: {{count}}",
+    "addNewMessage" : "Új üzenet hozzáadása",
+    "send" : "Küldés",
+    "uploadFile" : "Fájl feltöltése",
+    "informationLabel" : "{{author}}. {{text}}, {{date}}",
+    "messages" : "Üzenetek",
+    "addMessagePlaceHolder" : "Kezdjen el gépelni...",
+    "characterLimitAlert" : "Elérte a karakterkorlátot.",
+    "a11y" : {
+      "itemListBoxLabel" : "Válassza ki a tételt, amelyre szeretné, hogy vonatkozzon az üzenet."
     }
   }
 }

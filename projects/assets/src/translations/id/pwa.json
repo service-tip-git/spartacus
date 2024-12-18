@@ -1,9 +1,9 @@
 {
-  "pwa": {
-    "addToHomeScreenDescription": "Add SAP storefront to your device homescreen for a faster return visit",
-    "noInstallationNeeded": "No installation needed",
-    "fastAccessToApplication": "Fast access to application",
-    "addToHomeScreen": "Add to home screen",
-    "addedToHomeScreen": "SAP Storefront was added to your home screen"
+  "pwa" : {
+    "addToHomeScreenDescription" : "Tambahkan etalase SAP ke halaman utama perangkat untuk kemudahan pengaksesan kunjungan Anda",
+    "noInstallationNeeded" : "Tidak diperlukan instalasi",
+    "fastAccessToApplication" : "Akses cepat ke aplikasi",
+    "addToHomeScreen" : "Tambahkan ke halaman utama",
+    "addedToHomeScreen" : "Etalase SAP ditambahkan ke halaman utama Anda"
   }
 }

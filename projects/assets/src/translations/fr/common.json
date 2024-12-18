@@ -1,252 +1,254 @@
 {
-  "common": {
-    "cancel": "Annuler",
-    "delete": "Supprimer",
-    "remove": "Supprimer",
-    "edit": "Modifier",
-    "restore": "Restaurer",
-    "back": "Précédent",
-    "submit": "Envoyer",
-    "continue": "Continuer",
-    "save": "Sauvegarder",
-    "done": "Terminé",
-    "home": "Accueil",
-    "noData": "No data.",
-    "confirm": "Confirmer",
-    "more": "plus",
-    "close": "Fermer",
-    "loading": "Chargement",
-    "menu": "Menu",
-    "reset": "Réinitialiser",
-    "search": "Rechercher",
-    "add": "Ajouter",
-    "breadcrumbs": "breadcrumbs",
-    "selectFile": "Select file",
-    "clear": "Effacer",
-    "loaded": "Loaded",
-    "results": "Résultats",
-    "of": "sur",
-    "required": "required",
-    "zoomIn": "Zoom in",
-    "zoomOut": "Zoom out",
-    "selected": "Sélectionné",
-    "expand": "Développer",
-    "collapse": "Réduire"
+  "common" : {
+    "cancel" : "Annuler",
+    "delete" : "Supprimer",
+    "remove" : "Retirer",
+    "edit" : "Modifier",
+    "restore" : "Restaurer",
+    "back" : "Retour",
+    "submit" : "Envoyer",
+    "continue" : "Poursuivre",
+    "save" : "Sauvegarder",
+    "done" : "Terminé",
+    "home" : "Accueil",
+    "noData" : "Aucune donnée",
+    "confirm" : "Confirmer",
+    "more" : "plus",
+    "close" : "Fermer",
+    "loading" : "Chargement",
+    "menu" : "Menu",
+    "reset" : "Réinitialiser",
+    "search" : "Rechercher",
+    "add" : "Ajouter",
+    "breadcrumbs" : "Chemin de navigation",
+    "selectFile" : "Sélectionner le fichier",
+    "clear" : "Effacer",
+    "loaded" : "Chargé",
+    "results" : "Résultats",
+    "of" : "sur",
+    "required" : "obligatoire",
+    "zoomIn" : "Zoom avant",
+    "zoomOut" : "Zoom arrière",
+    "selected" : "Sélectionné",
+    "expand" : "Développer",
+    "collapse" : "Réduire"
   },
-  "pageMetaResolver": {
-    "category": {
-      "title": "{{count}} result for {{query}}",
-      "title_other": "{{count}} results for {{query}}"
+  "pageMetaResolver" : {
+    "category" : {
+      "title" : "{{count}} résultat pour {{query}}",
+      "title_other" : "{{count}} résultats pour {{query}}"
     },
-    "checkout": {
-      "title": "Règlement"
+    "checkout" : {
+      "title" : "Règlement"
     },
-    "search": {
-      "title": "{{count}} result for \"{{query}}\"",
-      "title_other": "{{count}} results for \"{{query}}\"",
-      "findProductTitle": "{{count}} result for coupon \"{{coupon}}\"",
-      "findProductTitle_other": "{{count}} results for coupon \"{{coupon}}\"",
-      "default_title": "Tous les produits"
+    "search" : {
+      "title" : "{{count}} résultat pour \"{{query}}\"",
+      "title_other" : "{{count}} résultats pour \"{{query}}\"",
+      "findProductTitle" : "{{count}} résultat pour le coupon \"{{coupon}}\"",
+      "findProductTitle_other" : "{{count}} résultats pour le coupon \"{{coupon}}\"",
+      "default_title" : "Tous les produits"
     },
-    "product": {
-      "description": "{{description}}",
-      "heading": "{{heading}}",
-      "title": "{{title}}"
+    "product" : {
+      "description" : "{{description}}",
+      "heading" : "{{heading}}",
+      "title" : "{{title}}"
     }
   },
-  "spinner": {
-    "loading": "Chargement en cours..."
+  "spinner" : {
+    "loading" : "Chargement en cours..."
   },
-  "navigation": {
-    "categoryNavLabel": "Category menu",
-    "footerNavLabel": "Footer links",
-    "goTo": "Passer à {{location}}",
-    "navigateTo": "Navigate to {{nav}}",
-    "scrollToTop": "Scroll back to the top of the page",
-    "linkItemInList": "{{title}}. {{position}} of {{listLength}}"
+  "navigation" : {
+    "categoryNavLabel" : "Menu Catégorie",
+    "footerNavLabel" : "Liens de pied de page",
+    "goTo" : "Passer à {{location}}",
+    "navigateTo" : "Naviguer vers {{nav}}",
+    "scrollToTop" : "Revenir en haut de la page",
+    "linkItemInList" : "{{title}}. {{position}} sur {{listLength}}"
   },
-  "searchBox": {
-    "placeholder": "Enter product name or SKU",
-    "productSearch": "Find a product",
-    "ariaLabelInput": "Rechercher ici...",
-    "ariaLabelSuggestions": "typing suggestions",
-    "ariaLabelProducts": "product results",
-    "initialDescription": "When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.",
-    "suggestions": "Suggested Keywords",
-    "suggestionsResult": "{{ count }} suggestion and ",
-    "suggestionsResult_other": "{{ count }} suggestions and ",
-    "products": "Recommended Products",
-    "productsResult": "{{ count }} product is available.",
-    "productsResult_other": "{{ count }} products are available.",
-    "resetLabel": "Reset Search",
-    "help": {
-      "insufficientChars": "Please type more characters",
-      "noMatch": "We could not find any results",
-      "exactMatch": "{{ term }}",
-      "empty": "Ask us anything"
+  "searchBox" : {
+    "placeholder" : "Saisir le nom du produit ou l'UGS",
+    "productSearch" : "Rechercher un produit",
+    "ariaLabelInput" : "Rechercher ici...",
+    "ariaLabelSuggestions" : "Suggestions de saisie",
+    "ariaLabelProducts" : "Résultats de produits",
+    "initialDescription" : "Lorsque les résultats du remplissage automatique sont disponibles, utilisez les flèches vers le haut et vers le bas pour passer en revue et la touche Entrée pour sélectionner. Pour les utilisateurs d'appareils tactiles, explorez par le toucher ou par balayage.",
+    "suggestions" : "Mots-clés suggérés",
+    "suggestionsResult" : "{{ count }} suggestion et ",
+    "suggestionsResult_other" : "{{ count }} suggestions et ",
+    "products" : "Produits recommandés",
+    "productsResult" : "{{ count }} produit est disponible.",
+    "productsResult_other" : "{{ count }} produits sont disponibles.",
+    "resetLabel" : "Réinitialiser la recherche",
+    "help" : {
+      "insufficientChars" : "Veuillez saisir davantage de caractères",
+      "noMatch" : "Nous n'avons pas trouvé de résultats",
+      "exactMatch" : "{{ term }}",
+      "empty" : "Demandez-nous ce que vous voulez"
     },
-    "closeSearchPanel": "Fermer"
+    "closeSearchPanel" : "Fermer"
   },
-  "sorting": {
-    "date": "Date",
-    "orderNumber": "Numéro de commande",
-    "rma": "Return Number",
-    "replenishmentNumber": "Numéro de réapprovisionnement",
-    "nextOrderDate": "Prochaine date de commande",
-    "pageViewUpdated": "Page view updated with your selected options."
+  "sorting" : {
+    "date" : "Date",
+    "orderNumber" : "Numéro de commande",
+    "rma" : "Numéro de retour",
+    "replenishmentNumber" : "Numéro de réapprovisionnement",
+    "nextOrderDate" : "Prochaine date de commande",
+    "pageViewUpdated" : "La vue de page a été mise à jour avec vos options de sélection."
   },
-  "httpHandlers": {
-    "badRequest": {
-      "bad_credentials": "{{ errorMessage }}. Please login again.",
-      "user_is_disabled": "{{ errorMessage }}. Please contact administration."
+  "httpHandlers" : {
+    "badRequest" : {
+      "bad_credentials" : "{{ errorMessage }}. Veuillez vous reconnecter.",
+      "user_is_disabled" : "{{ errorMessage }}. Veuillez contacter l'administration."
     },
-    "badGateway": "A server error occurred. Please try again later.",
-    "badRequestPleaseLoginAgain": "{{ errorMessage }}. Please login again.",
-    "badRequestOldPasswordIncorrect": "Old password incorrect.",
-    "badRequestGuestDuplicateEmail": "{{ errorMessage }} email already exist. Please checkout with a different email to register using a guest account.",
-    "conflict": "Already exists.",
-    "forbidden": "You are not authorized to perform this action. Please contact your administrator if you think this is a mistake.",
-    "gatewayTimeout": "The server did not respond, please try again later.",
-    "internalServerError": "An Internal Server Error occurred. Please try again later.",
-    "sessionExpired": "Your session has expired. Please login again.",
-    "unknownError": "An unknown error occurred",
-    "unauthorized": {
-      "common": "An unknown authorization error occured",
-      "invalid_client": "Bad client credentials"
+    "badGateway" : "Une erreur du serveur s'est produite. Veuillez réessayer ultérieurement.",
+    "badRequestPleaseLoginAgain" : "{{ errorMessage }}. Veuillez vous reconnecter.",
+    "badRequestOldPasswordIncorrect" : "L'ancien mot de passe est incorrect.",
+    "badRequestGuestDuplicateEmail" : "L'e-mail {{ errorMessage }} existe déjà. Veuillez valider la commande avec un autre e-mail pour vous inscrire via un compte d'invité.",
+    "conflict" : "Déjà existant",
+    "forbidden" : "Vous n'êtes pas autorisé à effectuer cette action. Veuillez contacter votre administrateur si vous pensez qu'il s'agit d'une erreur.",
+    "gatewayTimeout" : "Le serveur n'a pas répondu. Veuillez réessayer ultérieurement.",
+    "internalServerError" : "Une erreur de serveur interne s'est produite. Veuillez réessayer ultérieurement.",
+    "sessionExpired" : "Votre session a expiré. Veuillez vous reconnecter.",
+    "unknownError" : "Une erreur inconnue s'est produite.",
+    "unauthorized" : {
+      "common" : "Une erreur d'autorisation inconnue s'est produite.",
+      "invalid_client" : "Identifiants client incorrects"
     },
-    "validationErrors": {
-      "missing": {
-        "card_cardType": "The selected credit card is not supported. Please select another.",
-        "card_accountNumber": "The credit card number entered is not valid.",
-        "card_cvNumber": "The security code entered is not valid.",
-        "card_expirationMonth": "The credit card expiration date entered is not valid.",
-        "card_expirationYear": "The credit card expiration date entered is not valid.",
-        "billTo_firstName": "The first name entered is not valid.",
-        "billTo_lastName": "The last name entered is not valid.",
-        "billTo_street1": "The address entered is not valid.",
-        "billTo_street2": "The address entered is not valid.",
-        "billTo_city": "The city entered is not valid for this credit card.",
-        "billTo_state": "The state/province entered is not valid for this credit card.",
-        "billTo_country": "The country/region entered is not valid for this credit card.",
-        "billTo_postalCode": "The zip/postal code is not valid for this credit card.",
-        "country": {
-          "isocode": "Missing country/region"
+    "validationErrors" : {
+      "missing" : {
+        "card_cardType" : "La carte de crédit sélectionnée n'est pas prise en charge. Veuillez en sélectionner un autre.",
+        "card_accountNumber" : "Le numéro de carte de crédit que vous avez saisi n'est pas valide.",
+        "card_cvNumber" : "Le code de sécurité que vous avez saisi n'est pas valide.",
+        "card_expirationMonth" : "La date d'expiration de la carte de crédit que vous avez saisie n'est pas valide.",
+        "card_expirationYear" : "La date d'expiration de la carte de crédit que vous avez saisie n'est pas valide.",
+        "billTo_firstName" : "Le prénom que vous avez saisi n'est pas valide.",
+        "billTo_lastName" : "Le nom de famille que vous avez saisi n'est pas valide.",
+        "billTo_street1" : "L'adresse que vous avez saisie n'est pas valide.",
+        "billTo_street2" : "L'adresse que vous avez saisie n'est pas valide.",
+        "billTo_city" : "La ville saisie n'est pas valide pour cette carte de crédit.",
+        "billTo_state" : "L'État/la province saisi(e) n'est pas valide pour cette carte de crédit.",
+        "billTo_country" : "Le pays/la région saisi(e) n'est pas valide pour cette carte de crédit.",
+        "billTo_postalCode" : "Le code postal n'est pas valide pour cette carte de crédit.",
+        "country" : {
+          "isocode" : "Pays/Région manquant(e)"
         }
       },
-      "invalid": {
-        "card_expirationMonth": "The credit card expiration date entered is not valid.",
-        "firstName": "First Name entered is not valid.",
-        "lastName": "Last Name entered is not valid.",
-        "password": "Password entered is not valid.",
-        "uid": "UID is not valid.",
-        "code": "Code is not valid.",
-        "email": "Email is not valid.",
-        "loginId": "Email is not valid."
+      "invalid" : {
+        "card_expirationMonth" : "La date d'expiration de la carte de crédit que vous avez saisie n'est pas valide.",
+        "firstName" : "Le prénom que vous avez saisi n'est pas valide.",
+        "lastName" : "Le nom de famille que vous avez saisi n'est pas valide.",
+        "password" : "Le mot de passe que vous avez saisi n'est pas valide.",
+        "uid" : "L'UID n'est pas valide.",
+        "code" : "Le code n'est pas valide.",
+        "email" : "L'e-mail n'est pas valide.",
+        "loginId" : "L'e-mail n'est pas valide."
       }
     },
-    "cartNotFound": "Cart not found.",
-    "invalidCodeProvided": "Invalid code provided.",
-    "voucherExceeded": "This coupon has exceeded the number of times it can be used",
-    "unknownIdentifier": "Item not found.",
-    "otherCartErrors": "Cart errors occurred."
+    "cartNotFound" : "Panier non trouvé",
+    "invalidCodeProvided" : "Le code fourni n'est pas valide.",
+    "voucherExceeded" : "Ce coupon a dépassé le nombre de fois où il peut être utilisé.",
+    "unknownIdentifier" : "Article non trouvé",
+    "otherCartErrors" : "Des erreurs avec le panier se sont produites."
   },
-  "miniCart": {
-    "item": "{{count}} item currently in your cart",
-    "item_other": "{{count}} items currently in your cart",
-    "total": "{{total}}",
-    "count": "{{count}}"
+  "miniCart" : {
+    "item" : "{{count}} article est actuellement dans votre panier.",
+    "item_other" : "{{count}} articles sont actuellement dans votre panier.",
+    "total" : "{{total}}",
+    "count" : "{{count}}"
   },
-  "skipLink": {
-    "skipTo": "Skip to",
-    "labels": {
-      "header": "Header",
-      "main": "Main Content",
-      "footer": "Footer",
-      "productFacets": "Product Facets",
-      "productList": "Liste des produits"
+  "skipLink" : {
+    "skipTo" : "Passer à",
+    "labels" : {
+      "header" : "En-tête",
+      "main" : "Contenu principal",
+      "footer" : "Pied de page",
+      "productFacets" : "Facettes de produits",
+      "productList" : "Liste des produits"
     }
   },
-  "carousel": {
-    "previousSlide": "Previous slide",
-    "nextSlide": "Next slide",
-    "slideNumber": "Slide {{currentSlideNumber}} contains {{numberOfSlides}} items",
-    "carouselForProduct": "Carousel, Images for {{product}}"
+  "carousel" : {
+    "previousSlide" : "Diapositive précédente",
+    "nextSlide" : "Diapositive suivante",
+    "slideNumber" : "La diapositive {{currentSlideNumber}} contient {{numberOfSlides}} articles.",
+    "carouselForProduct" : "Carrousel, images pour {{product}}"
   },
-  "formErrors": {
-    "labeled": {
-      "required": "Field {{label}} is required",
-      "cxInvalidEmail": "Field {{label}} has not a valid email format. Match pattern: example@yourdomain.com",
-      "cxInvalidPassword": "Field {{label}} has not a valid password format",
-      "cxMinOneUpperCaseCharacter": "Password must contain at least one uppercase character",
-      "cxMinOneDigit": "Password must contain at least one digit",
-      "cxMinOneSpecialCharacter": "Password must contain at least one special character",
-      "cxMinSixCharactersLength": "Password must contain at least 6 characters",
-      "cxContainsSpecialCharacters": "Password cannot contain special characters",
-      "cxNoConsecutiveCharacters": "Password cannot contain consecutive identical characters",
-      "date": {
-        "required": "Field {{label}} is required",
-        "min": "Field {{label}} cannot be before {{min}}",
-        "max": "Field {{label}} cannot be after {{max}}",
-        "pattern": "Use dateformat yyyy-mm-dd in field {{label}}",
-        "invalid": "Use a valid date in field {{label}}"
+  "formErrors" : {
+    "labeled" : {
+      "required" : "La zone {{label}} est obligatoire.",
+      "cxInvalidEmail" : "Le format d'e-mail de la zone {{label}} n'est pas valide. Modèle de correspondance : example@yourdomain.com",
+      "cxInvalidPassword" : "Le format du mot de passe de la zone {{label}} n'est pas valide.",
+      "cxMinOneUpperCaseCharacter" : "Le mot de passe doit contenir au moins un lettre en majuscule.",
+      "cxMinOneDigit" : "Le mot de passe doit contenir au moins un chiffre.",
+      "cxMinOneSpecialCharacter" : "Le mot de passe doit contenir au moins un caractère spécial.",
+      "cxMinSixCharactersLength" : "Le mot de passe doit contenir au moins 6 caractères.",
+      "cxMinEightCharactersLength" : "Le mot de passe doit contenir au moins 8 caractères.",
+      "cxMaxCharactersLength" : "Le mot de passe ne peut pas avoir plus de 128 caractères.",
+      "cxContainsSpecialCharacters" : "Le mot de passe ne doit pas contenir de caractères spéciaux.",
+      "cxNoConsecutiveCharacters" : "Le mot de passe ne doit pas contenir de caractères identiques consécutifs.",
+      "date" : {
+        "required" : "La zone {{label}} est obligatoire.",
+        "min" : "La zone {{label}} ne peut pas être avant le {{min}}.",
+        "max" : "La zone {{label}} ne peut pas être après le {{max}}.",
+        "pattern" : "Utilisez le format de date aaaa-mm-jj dans la zone {{label}}.",
+        "invalid" : "Utilisez une date valide dans la zone {{label}}."
       }
     },
-    "globalMessage": "The form you are trying to submit contains errors.",
-    "required": "Cette zone est obligatoire.",
-    "cxInvalidEmail": "This is not a valid email format",
-    "cxInvalidPassword": "This is not a valid password format",
-    "cxPasswordsMustMatch": "Password fields must match",
-    "cxPasswordsCannotMatch": "Password fields cannot match",
-    "cxEmailsMustMatch": "Email fields must match",
-    "cxStarRatingEmpty": "Rating field is required",
-    "cxNoSelectedItemToCancel": "Select at least one item",
-    "cxNegativeAmount": "Amount must be equal or greater than zero",
-    "cxContainsSpecialCharacters": "Field cannot contain special characters",
-    "date": {
-      "required": "Cette zone est obligatoire.",
-      "min": "Date cannot be before {{min}}",
-      "max": "Date cannot be after {{max}}",
-      "pattern": "Use dateformat yyyy-mm-dd",
-      "invalid": "Use a valid date"
+    "globalMessage" : "Le formulaire que vous tentez d'envoyer contient des erreurs.",
+    "required" : "Cette zone est obligatoire.",
+    "cxInvalidEmail" : "Le format de l'e-mail n'est pas valide.",
+    "cxInvalidPassword" : "Le format du mot de passe n'est pas valide.",
+    "cxPasswordsMustMatch" : "Les zones du mot de passe doivent correspondre.",
+    "cxPasswordsCannotMatch" : "Les zones du mot de passe ne correspondent pas.",
+    "cxEmailsMustMatch" : "Les zones de l'e-mail doivent correspondre.",
+    "cxStarRatingEmpty" : "La zone de notation est obligatoire.",
+    "cxNoSelectedItemToCancel" : "Sélectionnez au moins un article.",
+    "cxNegativeAmount" : "Le montant doit être supérieur ou égal à zéro.",
+    "cxContainsSpecialCharacters" : "La zone ne doit pas contenir de caractères spéciaux.",
+    "date" : {
+      "required" : "Cette zone est obligatoire.",
+      "min" : "La date ne peut pas être avant le {{min}}.",
+      "max" : "La date ne peut pas être après le {{max}}",
+      "pattern" : "Utilisez le format de date aaaa-mm-jj.",
+      "invalid" : "Utilisez une date valide."
     },
-    "file": {
-      "required": "File is required",
-      "empty": "File should not be empty",
-      "invalidExtension": "File extension is not valid",
-      "tooLarge": "File size should not exceed {{ maxSize }} MB",
-      "tooManyEntries": "The number of items is greater than {{ maxEntries }}",
-      "notParsable": "File is not parsable",
-      "fileNotAllowed": "This file type is not allowed"
+    "file" : {
+      "required" : "Le fichier est requis.",
+      "empty" : "Le fichier ne doit pas être vide.",
+      "invalidExtension" : "L'extension de fichier n'est pas valide.",
+      "tooLarge" : "La taille du fichier ne doit pas dépasser {{ maxSize }} Mo.",
+      "tooManyEntries" : "Le nombre d'articles est supérieur à {{ maxEntries }}.",
+      "notParsable" : "Impossible d'analyser le fichier",
+      "fileNotAllowed" : "Ce type de fichier n'est pas autorisé."
     }
   },
-  "errorHandlers": {
-    "scriptFailedToLoad": "Failed to load the script.",
-    "refreshThePage": "Please refresh the page."
+  "errorHandlers" : {
+    "scriptFailedToLoad" : "Échec de chargement du script",
+    "refreshThePage" : "Veuillez rafraîchir la page."
   },
-  "assistiveMessage": {
-    "actionCancelled": "Action cancelled, nothing changed"
+  "assistiveMessage" : {
+    "actionCancelled" : "Action annulée, aucune modification n'a été apportée."
   },
-  "passwordVisibility": {
-    "showPassword": "Show password",
-    "hidePassword": "Hide password"
+  "passwordVisibility" : {
+    "showPassword" : "Afficher le mot de passe",
+    "hidePassword" : "Masquer le mot de passe"
   },
-  "generalErrors": {
-    "pageFailure": "The page could not be loaded. Please try again later."
+  "generalErrors" : {
+    "pageFailure" : "Impossible de charger la page. Veuillez réessayer ultérieurement."
   },
-  "formLegend": {
-    "required": "The following fields marked with \"*\" are required."
+  "formLegend" : {
+    "required" : "Les zones suivantes marquées d'un \"*\" sont obligatoires."
   },
-  "chatMessaging": {
-    "charactersLeft": "characters left: {{count}}",
-    "addNewMessage": "Add New Message",
-    "send": "Envoyer",
-    "uploadFile": "Charger un fichier",
-    "informationLabel": "{{author}}. {{text}} at {{date}}",
-    "messages": "Messages",
-    "addMessagePlaceHolder": "Start Typing...",
-    "characterLimitAlert": "Characters limit reached.",
-    "a11y": {
-      "itemListBoxLabel": "Select the item to which the message should apply."
+  "chatMessaging" : {
+    "charactersLeft" : "Caractères restants : {{count}}",
+    "addNewMessage" : "Ajouter un nouveau message",
+    "send" : "Envoyer",
+    "uploadFile" : "Charger un fichier",
+    "informationLabel" : "{{author}}. {{text}} à {{date}}",
+    "messages" : "Messages",
+    "addMessagePlaceHolder" : "Commencez à saisir des caractères...",
+    "characterLimitAlert" : "La limite de caractères a été atteinte.",
+    "a11y" : {
+      "itemListBoxLabel" : "Sélectionnez l'article auquel le message doit s'appliquer."
     }
   }
 }

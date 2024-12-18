@@ -1,109 +1,109 @@
 {
-  "closeAccount": {
-    "confirmAccountClosure": "Подтвердить закрытие учетной записи",
-    "confirmAccountClosureMessage": "Действительно закрыть учетную запись?",
-    "closeMyAccount": "CLOSE MY ACCOUNT",
-    "accountClosedSuccessfully": "Account closed with success",
-    "accountClosedFailure": "Failed to close account"
+  "closeAccount" : {
+    "confirmAccountClosure" : "Подтвердить закрытие учетной записи",
+    "confirmAccountClosureMessage" : "Действительно закрыть учетную запись?",
+    "closeMyAccount" : "ЗАКРЫТЬ МОЮ УЧЕТНУЮ ЗАПИСЬ ",
+    "accountClosedSuccessfully" : "Учетная запись закрыта",
+    "accountClosedFailure" : "Не удалось закрыть учетную запись"
   },
-  "updatePasswordForm": {
-    "oldPassword": {
-      "label": "Старый пароль",
-      "placeholder": "Старый пароль"
+  "updatePasswordForm" : {
+    "oldPassword" : {
+      "label" : "Старый пароль",
+      "placeholder" : "Старый пароль"
     },
-    "oldPasswordIsRequired": "Old password is required.",
-    "newPassword": {
-      "label": "Новый пароль",
-      "placeholder": "Новый пароль"
+    "oldPasswordIsRequired" : "Требуется старый пароль.",
+    "newPassword" : {
+      "label" : "Новый пароль",
+      "placeholder" : "Новый пароль"
     },
-    "passwordMinRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
-    "passwordStrengthRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
-    "confirmPassword": {
-      "label": "Подтвердить новый пароль",
-      "placeholder": "Подтвердить пароль"
+    "passwordMinRequirements" : "Вот краткие правила создания надежного пароля: используйте не менее 8 символов, в числе которых должны быть буквы в верхнем и нижнем регистре, цифры и спецсимволы.",
+    "passwordStrengthRequirements" : "Вот краткие правила создания надежного пароля: используйте не менее 8 символов, в числе которых должны быть буквы в верхнем и нижнем регистре, цифры и спецсимволы. Не используйте один и тот же символ несколько раз подряд.",
+    "confirmPassword" : {
+      "label" : "Подтвердить новый пароль",
+      "placeholder" : "Подтвердить пароль"
     },
-    "bothPasswordMustMatch": "Both password must match",
-    "passwordUpdateSuccess": "Password updated with success",
-    "accessDeniedError": "Access is denied"
+    "bothPasswordMustMatch" : "Пароли должны совпадать",
+    "passwordUpdateSuccess" : "Пароль успешно обновлен",
+    "accessDeniedError" : "В доступе отказано"
   },
-  "updateProfileForm": {
-    "title": "Обращение",
-    "none": "",
-    "firstName": {
-      "label": "Имя",
-      "placeholder": "Имя"
+  "updateProfileForm" : {
+    "title" : "Обращение",
+    "none" : "",
+    "firstName" : {
+      "label" : "Имя",
+      "placeholder" : "Имя"
     },
-    "firstNameIsRequired": "First name is required.",
-    "lastName": {
-      "label": "Фамилия",
-      "placeholder": "Фамилия"
+    "firstNameIsRequired" : "Ввод имени обязателен.",
+    "lastName" : {
+      "label" : "Фамилия",
+      "placeholder" : "Фамилия"
     },
-    "lastNameIsRequired": "Last name is required.",
-    "profileUpdateSuccess": "Personal details successfully updated",
-    "customerId": "Customer #"
+    "lastNameIsRequired" : "Ввод фамилии обязателен.",
+    "profileUpdateSuccess" : "Персональные данные обновлены",
+    "customerId" : "№ клиента"
   },
-  "consentManagementForm": {
-    "clearAll": "Clear all",
-    "selectAll": "Выделить все",
-    "message": {
-      "success": {
-        "given": "Consent successfully given.",
-        "withdrawn": "Consent successfully withdrawn."
+  "consentManagementForm" : {
+    "clearAll" : "Очистить все",
+    "selectAll" : "Выделить все",
+    "message" : {
+      "success" : {
+        "given" : "Согласие получено.",
+        "withdrawn" : "Согласие отозвано."
       }
     }
   },
-  "myCoupons": {
-    "noCouponsMessage": "You have no coupons available.",
-    "effectiveTitle": "Действует:",
-    "Effective": "EFFECTIVE",
-    "PreSession": "EFFECTIVE SOON",
-    "ExpireSoon": "EXPIRING SOON",
-    "readMore": "Read more",
-    "notification": "Уведомление",
-    "findProducts": "Найти продукты",
-    "status": "Статус:",
-    "dialogTitle": "Купон",
-    "claimCustomerCoupon": "Вы успешно использовали этот купон.",
-    "myCoupons": "My coupons",
-    "startDateAsc": "Start Date (ascending)",
-    "startDateDesc": "Start Date (descending)",
-    "endDateAsc": "End Date (ascending)",
-    "endDateDesc": "End Date (descending)",
-    "sortBy": "Сортировать по",
-    "sortCoupons": "Sort coupons",
-    "notesPreffix": "You can set your preferred channels for receiving coupon notifications on the ",
-    "notesLink": "Каналы уведомления",
-    "notesSuffix": " page."
+  "myCoupons" : {
+    "noCouponsMessage" : "У вас нет купонов.",
+    "effectiveTitle" : "Действует:",
+    "Effective" : "ДЕЙСТВУЕТ ",
+    "PreSession" : "СКОРО ВСТУПАЕТ В СИЛУ ",
+    "ExpireSoon" : "СКОРО ИСТЕЧЕТ",
+    "readMore" : "Подробнее",
+    "notification" : "Уведомление",
+    "findProducts" : "Найти продукты",
+    "status" : "Статус:",
+    "dialogTitle" : "Купон",
+    "claimCustomerCoupon" : "Вы успешно использовали этот купон.",
+    "myCoupons" : "Мои купоны",
+    "startDateAsc" : "Дата начала (по возрастанию)",
+    "startDateDesc" : "Дата начала (по убыванию)",
+    "endDateAsc" : "Дата окончания (по возрастанию)",
+    "endDateDesc" : "Дата окончания (по убыванию)",
+    "sortBy" : "Сортировать по",
+    "sortCoupons" : "Сортировать купоны",
+    "notesPreffix" : "Вы можете настроить предпочтительные каналы для получения уведомлений о купонах на странице ",
+    "notesLink" : "Каналы уведомления",
+    "notesSuffix" : " ."
   },
-  "notificationPreference": {
-    "message": "Select your preferred notification channels",
-    "note": "Note: ",
-    "noteMessage": "If you deactivate all channels you will not be able to receive any further notifications.",
-    "EMAIL": "Email:",
-    "SMS": "SMS:",
-    "SITE_MESSAGE": "SiteMessage"
+  "notificationPreference" : {
+    "message" : "Выберите предпочтительные каналы уведомления",
+    "note" : "Примечание: ",
+    "noteMessage" : "Если вы деактивируете все каналы, вы больше не будете получать уведомления.",
+    "EMAIL" : "Электронная почта:",
+    "SMS" : "SMS:",
+    "SITE_MESSAGE" : "Сообщение на сайте"
   },
-  "myInterests": {
-    "header": "Мои интересы",
-    "item": "ЭЛЕМЕНТ",
-    "price": "PRICE",
-    "notifications": "NOTIFICATIONS",
-    "noInterests": "You have no registered interests yet.",
-    "inStock": "В наличии",
-    "lowStock": "Недостаточно в наличии",
-    "outOfStock": "Нет в наличии",
-    "BACK_IN_STOCK": "Поступило на склад",
-    "sortBy": "Сортировать по",
-    "sortInterests": "Sort interests",
-    "expirationDate": " - Till {{ expirationDate }}",
-    "productId": "ID {{ code }}",
-    "remove": "Удалить",
-    "sorting": {
-      "byNameAsc": "По названию (по возрастанию)",
-      "byNameDesc": "По названию (по убыванию)"
+  "myInterests" : {
+    "header" : "Мои интересы",
+    "item" : "ПОЗИЦИЯ",
+    "price" : "ЦЕНА",
+    "notifications" : "УВЕДОМЛЕНИЯ",
+    "noInterests" : "У вас пока нет интересов.",
+    "inStock" : "В наличии",
+    "lowStock" : "В наличии мало",
+    "outOfStock" : "Нет в наличии",
+    "BACK_IN_STOCK" : "Снова в наличии",
+    "sortBy" : "Сортировать по",
+    "sortInterests" : "Сортировать интересы",
+    "expirationDate" : " - До {{ expirationDate }}",
+    "productId" : "Ид. {{ code }}",
+    "remove" : "Удалить",
+    "sorting" : {
+      "byNameAsc" : "По имени (по возрастанию)",
+      "byNameDesc" : "По имени (по убыванию)"
     },
-    "actions": "ACTIONS",
-    "caption": "My Interests contents.",
-    "itemRemoved": "Selected item has been removed."
+    "actions" : "ДЕЙСТВИЯ",
+    "caption" : "Содержимое моих интересов.",
+    "itemRemoved" : "Выбранная позиция удалена."
   }
 }

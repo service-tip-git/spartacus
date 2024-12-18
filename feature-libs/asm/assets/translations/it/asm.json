@@ -1,175 +1,176 @@
 {
-  "asm": {
-    "mainLogoLabel": "SAP",
-    "mainTitle": "Assisted Service Mode",
-    "logout": "Esci",
-    "hideUi": "Close ASM",
-    "helpPortalUrl": "Guida",
-    "customers": "Clienti",
-    "asmCustomer360Button": "Customer 360 View",
-    "asmCustomer360ViewButton": "Customer 360°",
-    "createCustomerSuccessfullyAlert": "The customer account has been created and the customer session has started.",
-    "saveInactiveCartAlertInfo": "The identified cart is an inactive cart. To take further actions on this cart, save it first.",
-    "activeCartAlertInfo": "The identified cart is an active cart.",
-    "startCustomerEmulationAlertInfo": "Customer emulation has started. Any actions you do will reflect the effects on the customer account.",
-    "toggleUi": {
-      "collapse": "Hide ASM",
-      "expand": "Show ASM"
+  "asm" : {
+    "mainLogoLabel" : "SAP",
+    "mainTitle" : "Modalità di servizio assistito",
+    "logout" : "Esci",
+    "hideUi" : "Chiudi ASM",
+    "helpPortalUrl" : "Guida",
+    "customers" : "Clienti",
+    "asmCustomer360Button" : "Vista cliente 360°",
+    "asmCustomer360ViewButton" : "Cliente 360°",
+    "createCustomerSuccessfullyAlert" : "L'account cliente è stato creato e la sessione cliente è stata avviata.",
+    "saveInactiveCartAlertInfo" : "Il carrello acquisti identificato è un carrello acquisti inattivo. Per intervenire ulteriormente su questo carrello acquisti, innanzitutto salvarlo.",
+    "activeCartAlertInfo" : "Il carrello acquisti identificato è un carrello acquisti attivo.",
+    "startCustomerEmulationAlertInfo" : "L'emulazione cliente è stata avviata. Qualsiasi azione intrapresa rispecchierà gli effetti sull'account cliente.",
+    "toggleUi" : {
+      "collapse" : "Nascondi ASM",
+      "expand" : "Mostra ASM"
     },
-    "loginForm": {
-      "submit": "Accedi",
-      "userId": {
-        "label": "Agent ID or Email"
+    "loginForm" : {
+      "submit" : "Accedi",
+      "userId" : {
+        "label" : "ID o e-mail utente"
       },
-      "password": {
-        "label": "Password"
+      "password" : {
+        "label" : "Password"
       }
     },
-    "customerSearch": {
-      "searchTerm": {
-        "label": "Nome/indirizzo e-mail cliente"
+    "customerSearch" : {
+      "searchTerm" : {
+        "label" : "Nome/indirizzo e-mail cliente"
       },
-      "searchCustomer": {
-        "label": "Search by name or email address"
+      "searchCustomer" : {
+        "label" : "Cerca in base a nome o indirizzo e-mail"
       },
-      "searchOrder": {
-        "label": "Search by full order ID"
+      "searchOrder" : {
+        "label" : "Cerca in base a ID ordine completo"
       },
-      "submit": "Start Session",
-      "startEmulation": "Start Emulation",
-      "noMatch": "No customer found.",
-      "noMatchResult": "This account cannot be found.",
-      "noCustomerMatchResult": "No matching customer found.",
-      "noOrderMatchResult": "Search by full order ID.",
-      "createCustomer": "Create New Customer",
-      "customer": "Cliente",
-      "orderID": "ID ordine"
+      "submit" : "Avvia sessione",
+      "startEmulation" : "Avvia emulazione",
+      "noMatch" : "Nessun cliente trovato.",
+      "noMatchResult" : "Impossibile trovare questo account.",
+      "noCustomerMatchResult" : "Nessun cliente corrispondente trovato.",
+      "noOrderMatchResult" : "Cerca in base a ID ordine completo",
+      "createCustomer" : "Crea nuovo cliente",
+      "customer" : "Cliente",
+      "orderID" : "ID ordine"
     },
-    "createCustomerForm": {
-      "title": "Create New Customer",
-      "createAccount": "Crea",
-      "cancel": "Annulla",
-      "firstName": {
-        "label": "Nome",
-        "placeholder": "Nome"
+    "createCustomerForm" : {
+      "title" : "Crea nuovo cliente",
+      "createAccount" : "Crea",
+      "cancel" : "Annulla",
+      "firstName" : {
+        "label" : "Nome",
+        "placeholder" : "Nome"
       },
-      "lastName": {
-        "label": "Cognome",
-        "placeholder": "Cognome"
+      "lastName" : {
+        "label" : "Cognome",
+        "placeholder" : "Cognome"
       },
-      "emailAddress": {
-        "label": "Indirizzo e-mail",
-        "placeholder": "Indirizzo e-mail"
+      "emailAddress" : {
+        "label" : "Indirizzo e-mail",
+        "placeholder" : "Indirizzo e-mail"
       },
-      "createAccountAlert": "The customer session starts once you create the customer account.",
-      "validationErrors": {
-        "firstName": "Enter a valid first name.",
-        "lastName": "Enter a valid last name.",
-        "emailAddress": "Enter a valid email address."
+      "createAccountAlert" : "La sessione cliente inizia dopo aver creato l'account cliente.",
+      "validationErrors" : {
+        "firstName" : "Inserire un nome valido.",
+        "lastName" : "Inserire un cognome valido.",
+        "emailAddress" : "Inserire un indirizzo e-mail valido."
       },
-      "badRequestDuplicatedEmail": "Enter a different email address as {{ emailAddress }} already exists."
+      "badRequestDuplicatedEmail" : "Inserire un diverso indirizzo e-mail, poiché {{ emailAddress }} esiste già."
     },
-    "customerList": {
-      "title": "Elenco clienti",
-      "description": "Select a customer from one of several provided lists.",
-      "createCustomer": "Create New Customer",
-      "cancel": "Annulla",
-      "tableHeader": {
-        "customer": "Cliente",
-        "customerName": "Nome cliente",
-        "name": "Nome",
-        "email": "E-mail",
-        "emailId": "Email/ID",
-        "phone": "Telefono",
-        "account": "Account",
-        "cart": "Carrello",
-        "order": "Ordine",
-        "view": "Vista 360°",
-        "activeCart": "Carrello attivo",
-        "viewActiveCart": "View Active Cart",
-        "orders": "Ordini",
-        "viewOrders": "Visualizza ordini",
-        "customer360": "Customer 360°",
-        "viewCustomer360": "View Customer 360°"
+    "customerList" : {
+      "title" : "Lista clienti",
+      "description" : "Selezionare un cliente da una delle numerose liste fornite.",
+      "createCustomer" : "Crea nuovo cliente",
+      "cancel" : "Annulla",
+      "tableHeader" : {
+        "customer" : "Cliente",
+        "customerName" : "Nome cliente",
+        "name" : "Nome",
+        "email" : "E-mail",
+        "emailId" : "E-mail/ID",
+        "phone" : "Telefono",
+        "account" : "Account",
+        "cart" : "Carrello acquisti",
+        "order" : "Ordine",
+        "view" : "Vista 360°",
+        "activeCart" : "Carrello acquisti attivo",
+        "viewActiveCart" : "Visualizza carrello acquisti attivo",
+        "orders" : "Ordini",
+        "viewOrders" : "Visualizza ordini",
+        "customer360" : "Cliente 360°",
+        "viewCustomer360" : "Visualizza cliente 360°"
       },
-      "tableSort": {
-        "sortBy": "Ordina per",
-        "byName": "Nome (in ordine crescente)",
-        "byNameAsc": "Nome (in ordine crescente)",
-        "byNameDesc": "Nome (in ordine decrescente)",
-        "byDateAsc": "Data (in ordine crescente)",
-        "byDateDesc": "Data (in ordine decrescente)",
-        "byOrderDateAsc": "Order date (Asc)",
-        "byOrderDateDesc": "Order date (Desc)",
-        "byUnit": "Account (in ordine crescente)",
-        "byUnitDesc": "Account (in ordine decrescente)"
+      "tableSort" : {
+        "sortBy" : "Ordina per",
+        "byName" : "Nome (in ordine crescente)",
+        "byNameAsc" : "Nome (in ordine crescente)",
+        "byNameDesc" : "Nome (in ordine decrescente)",
+        "byDateAsc" : "Data (in ordine crescente)",
+        "byDateDesc" : "Data (in ordine decrescente)",
+        "byOrderDateAsc" : "Data ordine (in ordine crescente)",
+        "byOrderDateDesc" : "Data ordine (in ordine decrescente)",
+        "byUnit" : "Account (in ordine crescente)",
+        "byUnitDesc" : "Account (in ordine decrescente)"
       },
-      "page": {
-        "page": "Page {{count}}",
-        "previous": "Indietro",
-        "next": "Avanti"
+      "page" : {
+        "page" : "Pagina {{count}}",
+        "previous" : "Indietro",
+        "next" : "Avanti"
       },
-      "noOfCustomers": "{{count}} clienti",
-      "oneCustomer": "1 cliente",
-      "noCustomers": "Al momento, non ci sono clienti in questo elenco dei clienti",
-      "noLists": "There are currently no customer lists available. Contact your system administrator.",
-      "listsError": "The customer lists could not be retrieved. Please try again later.",
-      "searchBox": "Cerca",
-      "enterSearchBox": "Enter customer name or email"
+      "noOfCustomers" : "{{count}} clienti",
+      "oneCustomer" : "1 cliente",
+      "noCustomers" : "Al momento, non ci sono clienti in questa lista clienti.",
+      "noLists" : "Al momento non sono disponibili liste clienti. Rivolgersi all'amministratore di sistema.",
+      "listsError" : "Non è stato possibile recuperare liste clienti. Riprovare più tardi.",
+      "searchBox" : "Cerca",
+      "enterSearchBox" : "Inserisci nome o e-mail del cliente"
     },
-    "switchCustomer": {
-      "dialog": {
-        "title": "Messaggio di avvertimento",
-        "body": "Clicking \"Switch Customer\" will end the emulation for \"{{ customerA }}\" and start for \"{{ customerB }}\". Any unsaved changes for \"{{ customerA }}\" will be lost.",
-        "actions": {
-          "switch": "Switch Customer"
+    "switchCustomer" : {
+      "dialog" : {
+        "title" : "Messaggio di avvertimento",
+        "body" : "La selezione di \"Cambia cliente\" terminerà l'emulazione per \"{{ customerA }}\" e la avvierà per \"{{ customerB }}\". Le modifiche a \"{{ customerA }}\" non salvate andranno perse.",
+        "actions" : {
+          "switch" : "Cambia cliente"
         }
       }
     },
-    "saveCart": {
-      "saveCartBtn": "Salva per un momento successivo",
-      "dialog": {
-        "saveInfo": "Save the cart before you can take further actions.",
-        "disableInfo": "Cannot save the cart as it is empty.",
-        "title": "Salva carrello acquisti",
-        "row": {
-          "id": "ID",
-          "qty": "Qtà",
-          "total": "Totale"
+    "saveCart" : {
+      "saveCartBtn" : "Salva per uso successivo",
+      "dialog" : {
+        "saveInfo" : "Salvare il carrello acquisti prima di poter intervenire ulteriormente.",
+        "disableInfo" : "Non è possibile salvare il carrello acquisti, poiché è vuoto.",
+        "title" : "Salva carrello acquisti",
+        "row" : {
+          "id" : "ID",
+          "qty" : "Qtà",
+          "qtyFull" : "Quantità",
+          "total" : "Totale"
         },
-        "actions": {
-          "save": "Salva per un momento successivo"
+        "actions" : {
+          "save" : "Salva per uso successivo"
         }
       }
     },
-    "bindCart": {
-      "cartNumber": "Cart Number",
-      "bindCartToCustomer": "Assign Cart to Customer",
-      "success": "Cart has been successfully assigned",
-      "assignCartId": "Assign a cart id to customer",
-      "enterCartId": "Enter cart id",
-      "resetCartId": "Reimposta",
-      "dialog": {
-        "title": "Assign Anonymous Cart",
-        "body": "Do you want to replace the current active cart with the anonymous cart? If you replace the current active cart, it is saved as a saved cart.",
-        "actions": {
-          "replace": "Replace Cart"
+    "bindCart" : {
+      "cartNumber" : "Numero carrello acquisti",
+      "bindCartToCustomer" : "Assegna carrello acquisti al cliente",
+      "success" : "Il carrello acquisti è stato assegnato correttamente",
+      "assignCartId" : "Assegna un ID carrello acquisti al cliente",
+      "enterCartId" : "Inserisci ID carrello acquisti",
+      "resetCartId" : "Reimposta",
+      "dialog" : {
+        "title" : "Assegna carrello acquisti anonimo",
+        "body" : "Sostituire il carrello attivo attuale con il carrello anonimo? Se si sostituisce, il carrello attivo attuale verrà salvato come carrello acquisti salvato. ",
+        "actions" : {
+          "replace" : "Sostituisci carrello acquisti"
         }
       }
     },
-    "csagentTokenExpired": "Your customer support agent session is expired.",
-    "endSession": "Termina sessione",
-    "endEmulation": "End Emulation",
-    "agentSessionTimer": {
-      "label": "Session Timeout",
-      "minutes": "min",
-      "reset": "Reimposta"
+    "csagentTokenExpired" : "La sessione dell'agente di supporto cliente è scaduta.",
+    "endSession" : "Termina sessione",
+    "endEmulation" : "Termina emulazione",
+    "agentSessionTimer" : {
+      "label" : "Timeout sessione",
+      "minutes" : "min",
+      "reset" : "Reimposta"
     },
-    "auth": {
-      "agentLoggedInError": "Cannot login as user when there is an active CS agent session. Please either emulate user or logout CS agent."
+    "auth" : {
+      "agentLoggedInError" : "Impossibile accedere come utente quando è attiva una sessione utente CS. Emulare l'utente o disconnettere l'utente CS."
     },
-    "error": {
-      "noCustomerId": "No customerId found for selected user. Session cannot be started."
+    "error" : {
+      "noCustomerId" : "Nessun ID cliente trovato per l'utente selezionato. Impossibile avviare la sessione."
     }
   }
 }

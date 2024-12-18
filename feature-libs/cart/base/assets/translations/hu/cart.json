@@ -1,74 +1,75 @@
 {
-  "cartDetails": {
-    "id": "Azonosító",
-    "proceedToCheckout": "Tovább a fizetéshez",
-    "cartName": "Cart #{{code}}"
+  "cartDetails" : {
+    "id" : "Azonosító",
+    "proceedToCheckout" : "Tovább a fizetéshez",
+    "cartName" : "Kosár #{{code}}"
   },
-  "cartItems": {
-    "id": "Azonosító",
-    "description": "Leírás",
-    "item": "Tétel",
-    "itemPrice": "Tétel ára",
-    "quantity": "Menny.",
-    "quantityTitle": "The quantity represents the total number of this item in your cart.",
-    "total": "Összesen",
-    "actions": "Műveletek",
-    "cartTotal": "Cart total ({{count}} item)",
-    "cartTotal_other": "Cart total ({{count}} items)",
-    "itemRemoved": "Selected item has been removed. Cart total has been updated.",
-    "caption": "Shopping cart contents."
+  "cartItems" : {
+    "id" : "Azonosító",
+    "description" : "Leírás",
+    "item" : "Tétel",
+    "itemPrice" : "Tétel ára",
+    "quantity" : "Menny.",
+    "quantityFull" : "Mennyiség",
+    "quantityTitle" : "A mennyiség a tétel teljes darabszámát jelzi a kosárban.",
+    "total" : "Összesen",
+    "actions" : "Műveletek",
+    "cartTotal" : "Kosár összege ({{count}} tétel)",
+    "cartTotal_other" : "Kosár összege ({{count}} tétel)",
+    "itemRemoved" : "A kiválasztott tétel el lett távolítva. A kosár összege frissült.",
+    "caption" : "A bevásárlókosár tartalma."
   },
-  "orderCost": {
-    "orderSummary": "Rendelés összefoglalása",
-    "subtotal": "Subtotal after discounts:",
-    "shipping": "Kiszállítás:",
-    "estimatedShipping": "Estimated shipping:",
-    "discount": "You saved:",
-    "salesTax": "Sales Tax:",
-    "grossTax": "The order total does not include tax of",
-    "grossIncludeTax": "The order total includes tax of",
-    "total": "Összesen:",
-    "toBeDetermined": "TBD"
+  "orderCost" : {
+    "orderSummary" : "Rendelés összefoglalása",
+    "subtotal" : "Részösszeg az engedmények után:",
+    "shipping" : "Kiszállítás:",
+    "estimatedShipping" : "Becsült kiszállítás:",
+    "discount" : "Megtakarítás:",
+    "salesTax" : "Forgalmi adó:",
+    "grossTax" : "A rendelés összege nem tartalmazza az adókat:",
+    "grossIncludeTax" : "A rendelés összege tartalmazza az adókat:",
+    "total" : "Összesen:",
+    "toBeDetermined" : "Meghatározandó"
   },
-  "voucher": {
-    "coupon": "Have a coupon?",
-    "coupon_other": "Coupon codes",
-    "couponLabel": "Enter a promo code here",
-    "addCoupon": "Add a coupon",
-    "apply": "Alkalmaz",
-    "placeholder": "Promo code",
-    "applyVoucherSuccess": "{{voucherCode}} has been applied.",
-    "removeVoucherSuccess": "{{voucherCode}} has been removed.",
-    "anchorLabel": "Enter or remove your coupon code",
-    "vouchersApplied": "Alkalmazott kuponok",
-    "availableCoupons": "Available coupons",
-    "availableCouponsLabel": "You can add these coupons to this order."
+  "voucher" : {
+    "coupon" : "Szeretne felhasználni egy kupont?",
+    "coupon_other" : "Kuponkódok",
+    "couponLabel" : "Itt megadhatja a promóciós kódot",
+    "addCoupon" : "Kupon hozzáadása",
+    "apply" : "Alkalmaz",
+    "placeholder" : "Promóciós kód",
+    "applyVoucherSuccess" : "{{voucherCode}} alkalmazva.",
+    "removeVoucherSuccess" : "{{voucherCode}} eltávolítva.",
+    "anchorLabel" : "Kuponkód megadása vagy eltávolítása",
+    "vouchersApplied" : "Alkalmazott kuponok",
+    "availableCoupons" : "Elérhető kuponok",
+    "availableCouponsLabel" : "Ezeket a kuponokat hozzáadhatja a rendeléshez."
   },
-  "saveForLaterItems": {
-    "itemTotal": "Saved for later ({{count}} item)",
-    "itemTotal_other": "Mentve későbbre ({{count}} tétel)",
-    "cartTitle": "Kosár",
-    "saveForLater": "Save For Later",
-    "moveToCart": "Move To Cart",
-    "stock": "Készlet",
-    "forceInStock": "Készleten"
+  "saveForLaterItems" : {
+    "itemTotal" : "Mentve későbbre ({{count}} tétel)",
+    "itemTotal_other" : "Mentve későbbre ({{count}} tétel)",
+    "cartTitle" : "Kosár",
+    "saveForLater" : "Mentés későbbre",
+    "moveToCart" : "Kosárba",
+    "stock" : "Készlet",
+    "forceInStock" : "Készleten"
   },
-  "clearCart": {
-    "clearCart": "Clear Cart",
-    "clearingCart": "Clearing Cart...",
-    "cartClearedSuccessfully": "Active cart cleared successfully.",
-    "areYouSureToClearCart": "Are you sure you want to clear this cart?",
-    "allItemsWillBeRemoved": "All items in your active cart will be removed."
+  "clearCart" : {
+    "clearCart" : "Kosár kiürítése",
+    "clearingCart" : "Kosár kiürítése...",
+    "cartClearedSuccessfully" : "Az aktív kosár kiürítése sikeres.",
+    "areYouSureToClearCart" : "Biztosan szeretné kiüríteni ezt a kosarat?",
+    "allItemsWillBeRemoved" : "Az aktív kosárban található minden tétel el lesz távolítva."
   },
-  "validation": {
-    "cartEntriesChangeDuringCheckout": "During checkout we found problems with your entries. Please review your cart.",
-    "cartEntryRemoved": "{{name}} was removed from the cart due to being out of stock.",
-    "productOutOfStock": "Nincs elegendő készlet, így a(z) {{name}} el lett távolítva a bevásárlókosárból.",
-    "lowStock": "Quantity has reduced to {{quantity}} due to insufficient stock.",
-    "reviewConfiguration": "Resolve the issues in the configuration for cart entry first.",
-    "configurationError": "Resolve the issues in the configuration for cart entries first.",
-    "pricingError": "Configurator pricing is currently not available. Checkout/quote submission is not possible. Please try again later.",
-    "unresolvableIssues": "The product configuration requires additional entries in the back end. As a result, you cannot proceed. Please contact support.",
-    "inProgress": "Feldolgozás"
+  "validation" : {
+    "cartEntriesChangeDuringCheckout" : "A fizetés során hibát észleltünk a bejegyzéseiben. Ellenőrizze a kosarát.",
+    "cartEntryRemoved" : "A(z) {{name}} nincs készleten, így el lett távolítva a kosárból.",
+    "productOutOfStock" : "Nincs elegendő készlet, így a(z) {{name}} el lett távolítva a kosárból.",
+    "lowStock" : "Mennyiség a következőre csökkentve alacsony készlet miatt: {{quantity}}.",
+    "reviewConfiguration" : "Előbb oldja meg a kosárbejegyzés konfigurációs problémáit.",
+    "configurationError" : "Előbb oldja meg a kosárbejegyzések konfigurációs problémáit.",
+    "pricingError" : "A konfiguráló árképzése jelenleg nem áll rendelkezésre. Fizetés/ajánlat beküldése nem lehetséges. Próbálkozzon újra később.",
+    "unresolvableIssues" : "A termék konfigurációja kiegészítő bejegyzéseket igényel a háttérrendszerben. Emiatt nem tud továbblépni. Forduljon a támogatáshoz.",
+    "inProgress" : "Feldolgozás"
   }
 }

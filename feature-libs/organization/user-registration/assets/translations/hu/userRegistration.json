@@ -1,66 +1,66 @@
 {
-  "userRegistrationForm": {
-    "fields": {
-      "titleCode": {
-        "label": "Title (optional)",
-        "placeholder": "Megszólítás"
+  "userRegistrationForm" : {
+    "fields" : {
+      "titleCode" : {
+        "label" : "Megszólítás (opcionális)",
+        "placeholder" : "Megszólítás"
       },
-      "firstName": {
-        "label": "Utónév",
-        "placeholder": "Utónév"
+      "firstName" : {
+        "label" : "Utónév",
+        "placeholder" : "Utónév"
       },
-      "lastName": {
-        "label": "Vezetéknév",
-        "placeholder": "Vezetéknév"
+      "lastName" : {
+        "label" : "Vezetéknév",
+        "placeholder" : "Vezetéknév"
       },
-      "companyName": {
-        "label": "Company name",
-        "placeholder": "Company name"
+      "companyName" : {
+        "label" : "Vállalat neve",
+        "placeholder" : "Vállalat neve"
       },
-      "email": {
-        "label": "E-mail",
-        "placeholder": "E-mail"
+      "email" : {
+        "label" : "E-mail",
+        "placeholder" : "E-mail"
       },
-      "city": {
-        "label": "City/Town (optional)",
-        "placeholder": "Please select City/Town"
+      "city" : {
+        "label" : "Település (opcionális)",
+        "placeholder" : "Válassza ki a települést"
       },
-      "country": {
-        "label": "Country (optional)",
-        "placeholder": "Select Country"
+      "country" : {
+        "label" : "Ország (opcionális)",
+        "placeholder" : "Válassza ki az országot"
       },
-      "state": {
-        "label": "State/Province (optional)",
-        "placeholder": "Select State/Province"
+      "state" : {
+        "label" : "Állam/tartomány (opcionális)",
+        "placeholder" : "Válassza ki az államot/tartományt"
       },
-      "postalCode": {
-        "label": "Zip/Postal code (optional)",
-        "placeholder": "Zip/Postal code"
+      "postalCode" : {
+        "label" : "Irányítószám (opcionális)",
+        "placeholder" : "Irányítószám"
       },
-      "addressLine": {
-        "label": "Address (optional)",
-        "placeholder": "Cím"
+      "addressLine" : {
+        "label" : "Cím (opcionális)",
+        "placeholder" : "Cím"
       },
-      "secondAddressLine": {
-        "label": "Address line 2 (optional)",
-        "placeholder": "Address line 2"
+      "secondAddressLine" : {
+        "label" : "Cím 2. sora (opcionális)",
+        "placeholder" : "Cím 2. sora"
       },
-      "phoneNumber": {
-        "label": "Phone number (optional)",
-        "placeholder": "Telefonszám"
+      "phoneNumber" : {
+        "label" : "Telefonszám (opcionális)",
+        "placeholder" : "Telefonszám"
       },
-      "message": {
-        "label": "Message (optional)",
-        "placeholder": "An example data for the message field: \"Department: Ground support; Position: Chief safe guard; Report to: Steve Jackson; Comments: Please create new account for me\"."
+      "message" : {
+        "label" : "Üzenet (opcionális)",
+        "placeholder" : "Az üzenet mező példaadata: „Osztály: szárazföldi támogatás; Pozíció: vezető biztonsági hivatalnok; Felettes: Steve Jackson; Megjegyzés: Új fiók létrehozását szeretném igényelni”."
       }
     },
-    "messageToApproverTemplate": "Company name: {{companyName}},\n  Phone number: {{phoneNumber}},\n  Address: {{addressLine}} {{secondAddressLine}} {{city}} {{state}} {{postalCode}} {{country}},\n  Message: {{message}}",
-    "successFormSubmitMessage": "Thank you for registering! A representative will contact you shortly and confirm your access information.",
-    "formSubmitButtonLabel": "Regisztráció",
-    "goToLoginButtonLabel": "Already registered? Go to Sign in",
-    "httpHandlers": {
-      "conflict": "User with this e-mail address already exists."
+    "messageToApproverTemplate" : "Vállalat neve: {{companyName}},\n  Telefonszám: {{phoneNumber}},\n  Cím: {{addressLine}} {{secondAddressLine}} {{city}} {{state}} {{postalCode}} {{country}},\n  Üzenet: {{message}}",
+    "successFormSubmitMessage" : "Köszönjük a regisztrációt! Egy képviselőnk hamarosan felveszi Önnel a kapcsolatot, és tájékoztatja a hozzáférési információkról.",
+    "formSubmitButtonLabel" : "Regisztráció",
+    "goToLoginButtonLabel" : "Már regisztrált? Lépjen be.",
+    "httpHandlers" : {
+      "conflict" : "Már létezik felhasználó ezzel az e-mail-címmel."
     },
-    "messageToFailedToRegister": "Failed to register. Please contact your admin for further assistance."
+    "messageToFailedToRegister" : "Sikertelen regisztráció. További segítségért forduljon a rendszergazdájához."
   }
 }

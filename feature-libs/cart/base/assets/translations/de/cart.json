@@ -1,74 +1,75 @@
 {
-  "cartDetails": {
-    "id": "ID",
-    "proceedToCheckout": "Zur Kasse gehen",
-    "cartName": "Cart #{{code}}"
+  "cartDetails" : {
+    "id" : "ID",
+    "proceedToCheckout" : "Zur Kasse gehen",
+    "cartName" : "Warenkorbnr. {{code}}"
   },
-  "cartItems": {
-    "id": "ID",
-    "description": "Beschreibung",
-    "item": "Artikel",
-    "itemPrice": "Artikelpreis",
-    "quantity": "Menge",
-    "quantityTitle": "The quantity represents the total number of this item in your cart.",
-    "total": "Gesamtsumme",
-    "actions": "Aktionen",
-    "cartTotal": "Cart total ({{count}} item)",
-    "cartTotal_other": "Cart total ({{count}} items)",
-    "itemRemoved": "Selected item has been removed. Cart total has been updated.",
-    "caption": "Shopping cart contents."
+  "cartItems" : {
+    "id" : "ID",
+    "description" : "Beschreibung",
+    "item" : "Position",
+    "itemPrice" : "Positionspreis",
+    "quantity" : "Menge",
+    "quantityFull" : "Menge",
+    "quantityTitle" : "Die Menge stellt die Gesamtmenge dieser Position in Ihrem Warenkorb dar.",
+    "total" : "Gesamtsumme",
+    "actions" : "Aktionen",
+    "cartTotal" : "Gesamtsumme des Warenkorbs ({{count}} Position)",
+    "cartTotal_other" : "Gesamtsumme des Warenkorbs ({{count}} Positionen)",
+    "itemRemoved" : "Ausgewählte Position wurde entfernt. Gesamtsumme des Warenkorbs wurde aktualisiert.",
+    "caption" : "Inhalte des Warenkorbs."
   },
-  "orderCost": {
-    "orderSummary": "Bestellungszusammenfassung",
-    "subtotal": "Subtotal after discounts:",
-    "shipping": "Versand:",
-    "estimatedShipping": "Estimated shipping:",
-    "discount": "You saved:",
-    "salesTax": "Sales Tax:",
-    "grossTax": "The order total does not include tax of",
-    "grossIncludeTax": "The order total includes tax of",
-    "total": "Gesamtsumme:",
-    "toBeDetermined": "TBD"
+  "orderCost" : {
+    "orderSummary" : "Bestellungszusammenfassung",
+    "subtotal" : "Zwischensumme nach Rabatten:",
+    "shipping" : "Versand:",
+    "estimatedShipping" : "Versand voraussichtlich:",
+    "discount" : "Sie haben gespart:",
+    "salesTax" : "Umsatzsteuer",
+    "grossTax" : "Die Bestellsumme enthält nicht die Steuer von",
+    "grossIncludeTax" : "Die Bestellsumme enthält die Steuer von",
+    "total" : "Gesamtsumme:",
+    "toBeDetermined" : "Noch nicht festgelegt"
   },
-  "voucher": {
-    "coupon": "Have a coupon?",
-    "coupon_other": "Coupon codes",
-    "couponLabel": "Enter a promo code here",
-    "addCoupon": "Add a coupon",
-    "apply": "Anwenden",
-    "placeholder": "Promo code",
-    "applyVoucherSuccess": "{{voucherCode}} has been applied.",
-    "removeVoucherSuccess": "{{voucherCode}} has been removed.",
-    "anchorLabel": "Enter or remove your coupon code",
-    "vouchersApplied": "Angewendete Coupons",
-    "availableCoupons": "Available coupons",
-    "availableCouponsLabel": "You can add these coupons to this order."
+  "voucher" : {
+    "coupon" : "Haben Sie einen Coupon?",
+    "coupon_other" : "Couponcodes",
+    "couponLabel" : "Hier einen Aktionscode eingeben",
+    "addCoupon" : "Coupon hinzufügen",
+    "apply" : "Anwenden",
+    "placeholder" : "Aktionscode",
+    "applyVoucherSuccess" : "{{voucherCode}} wurde angewendet.",
+    "removeVoucherSuccess" : "{{voucherCode}} wurde entfernt.",
+    "anchorLabel" : "Couponcode eingeben oder entfernen",
+    "vouchersApplied" : "Angewendete Coupons",
+    "availableCoupons" : "Verfügbare Coupons",
+    "availableCouponsLabel" : "Sie können der Bestellung diese Coupons hinzufügen."
   },
-  "saveForLaterItems": {
-    "itemTotal": "Saved for later ({{count}} item)",
-    "itemTotal_other": "Für später gespeichert ({{count}} Elemente)",
-    "cartTitle": "Warenkorb",
-    "saveForLater": "Save For Later",
-    "moveToCart": "Move To Cart",
-    "stock": "Lagerbestand",
-    "forceInStock": "Vorrätig"
+  "saveForLaterItems" : {
+    "itemTotal" : "Für später gespeichert ({{count}} Position)",
+    "itemTotal_other" : "Für später gespeichert ({{count}} Positionen)",
+    "cartTitle" : "Warenkorb",
+    "saveForLater" : "Für später speichern",
+    "moveToCart" : "In Warenkorb verschieben",
+    "stock" : "Bestand",
+    "forceInStock" : "Vorrätig"
   },
-  "clearCart": {
-    "clearCart": "Clear Cart",
-    "clearingCart": "Clearing Cart...",
-    "cartClearedSuccessfully": "Active cart cleared successfully.",
-    "areYouSureToClearCart": "Are you sure you want to clear this cart?",
-    "allItemsWillBeRemoved": "All items in your active cart will be removed."
+  "clearCart" : {
+    "clearCart" : "Warenkorb löschen",
+    "clearingCart" : "Warenkorb wird gelöscht...",
+    "cartClearedSuccessfully" : "Aktiver Warenkorb wurde erfolgreich gelöscht.",
+    "areYouSureToClearCart" : "Möchten Sie diesen Warenkorb wirklich löschen?",
+    "allItemsWillBeRemoved" : "Alle Positionen in Ihrem aktiven Warenkorb werden entfernt."
   },
-  "validation": {
-    "cartEntriesChangeDuringCheckout": "During checkout we found problems with your entries. Please review your cart.",
-    "cartEntryRemoved": "{{name}} was removed from the cart due to being out of stock.",
-    "productOutOfStock": "Aufgrund fehlenden Lagerbestands wurde {{name}} aus dem Warenkorb entfernt.",
-    "lowStock": "Quantity has reduced to {{quantity}} due to insufficient stock.",
-    "reviewConfiguration": "Resolve the issues in the configuration for cart entry first.",
-    "configurationError": "Resolve the issues in the configuration for cart entries first.",
-    "pricingError": "Configurator pricing is currently not available. Checkout/quote submission is not possible. Please try again later.",
-    "unresolvableIssues": "The product configuration requires additional entries in the back end. As a result, you cannot proceed. Please contact support.",
-    "inProgress": "Bearbeitung"
+  "validation" : {
+    "cartEntriesChangeDuringCheckout" : "Beim Bezahlen wurden Probleme mit Ihren Einträgen festgestellt. Überprüfen Sie Ihren Warenkorb.",
+    "cartEntryRemoved" : "{{name}} ist nicht vorrätig und wurde deshalb aus dem Warenkorb entfernt.",
+    "productOutOfStock" : "Aufgrund des zu geringen Bestands wurde {{name}} aus dem Warenkorb entfernt.",
+    "lowStock" : "Menge wurde aufgrund des zu geringen Bestands auf {{quantity}} verringert.",
+    "reviewConfiguration" : "Beheben Sie zuerst die Probleme in der Konfiguration für den Warenkorbeintrag.",
+    "configurationError" : "Beheben Sie zuerst die Probleme in der Konfiguration für Warenkorbeinträge.",
+    "pricingError" : "Konfiguratorpreisfindung ist zurzeit nicht verfügbar. Kaufabwicklung/Angebotsübermittlung ist nicht möglich. Versuchen Sie es später noch einmal.",
+    "unresolvableIssues" : "Für die Produktkonfiguration sind zusätzliche Einträge im Backend erforderlich. Deshalb können Sie nicht fortfahren. Wenden Sie sich an den Support.",
+    "inProgress" : "Wird bearbeitet"
   }
 }

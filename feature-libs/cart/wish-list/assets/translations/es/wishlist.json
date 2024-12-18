@@ -1,7 +1,7 @@
 {
-  "wishlist": {
-    "empty": "No products in your wish list yet",
-    "itemRemoved": "Selected item has been removed.",
-    "caption": "Wish list contents."
+  "wishlist" : {
+    "empty" : "No hay productos en su lista de deseos aún",
+    "itemRemoved" : "Se eliminó el artículo seleccionado.",
+    "caption" : "Contenidos de la lista de deseos."
   }
 }

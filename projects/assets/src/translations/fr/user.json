@@ -1,32 +1,32 @@
 {
-  "anonymousConsents": {
-    "dialog": {
-      "title": "Gestion des consentements",
-      "legalDescription": "We use cookies/browser's storage to personalize the content and improve user experience. We also might share the data about your site usage with our social media. For more, please review our privacy policy.",
-      "selectAll": "Tout sélectionner",
-      "clearAll": "Clear all"
+  "anonymousConsents" : {
+    "dialog" : {
+      "title" : "Gestion des consentements",
+      "legalDescription" : "Nous utilisons les cookies/le stockage du navigateur pour personnaliser le contenu et améliorer l'expérience de l'utilisateur. Nous sommes également susceptibles de partager les données relatives à l'utilisation du site avec nos médias sociaux. Pour en savoir plus, consultez notre politique de confidentialité.",
+      "selectAll" : "Sélectionner tout",
+      "clearAll" : "Effacer tout"
     },
-    "banner": {
-      "title": "This website uses cookies",
-      "description": "We use cookies/browser's storage to personalize the content and improve user experience.",
-      "allowAll": "Allow All",
-      "viewDetails": "Afficher les détails"
+    "banner" : {
+      "title" : "Ce site Web utilise des cookies",
+      "description" : "Nous utilisons les cookies/le stockage du navigateur pour personnaliser le contenu et améliorer l'expérience de l'utilisateur.",
+      "allowAll" : "Autoriser tout",
+      "viewDetails" : "Afficher les détails"
     }
   },
-  "checkoutLogin": {
-    "emailAddress": {
-      "label": "Adresse électronique",
-      "placeholder": "Enter email"
+  "checkoutLogin" : {
+    "emailAddress" : {
+      "label" : "Adresse e-mail",
+      "placeholder" : "Saisir l'adresse e-mail"
     },
-    "confirmEmail": {
-      "label": "Confirm email",
-      "placeholder": "Confirm email"
+    "confirmEmail" : {
+      "label" : "Confirmer l'adresse e-mail",
+      "placeholder" : "Confirmer l'adresse e-mail"
     },
-    "continue": "Continuer",
-    "emailIsRequired": "Invalid email format",
-    "emailsMustMatch": "Email does not match"
+    "continue" : "Poursuivre",
+    "emailIsRequired" : "Format d'e-mail non valide",
+    "emailsMustMatch" : "L'e-mail ne correspond pas"
   },
-  "authMessages": {
-    "signedOutSuccessfully": "You have successfully signed out."
+  "authMessages" : {
+    "signedOutSuccessfully" : "Vous vous êtes déconnecté avec succès."
   }
 }

@@ -1,6 +1,6 @@
 {
-  "cdsTrendingSearches": {
-    "trendingSearches": "Trending Searches",
-    "ariaTrendingSearches": "typing trending searches"
+  "cdsTrendingSearches" : {
+    "trendingSearches" : "Népszerű keresések",
+    "ariaTrendingSearches" : "népszerű keresések begépelése"
   }
 }

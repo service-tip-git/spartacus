@@ -1,663 +1,663 @@
 {
-  "organization": {
-    "enabled": "Aktivní",
-    "disabled": "Deaktivováno",
-    "enable": "Aktivovat",
-    "disable": "Deaktivovat",
-    "name": "Název",
-    "code": "Kód",
-    "done": "done",
-    "cancel": "Zrušit",
-    "add": "Přidat",
-    "manageUsers": "Správa uživatelů",
-    "create": "Vytvořit {{name}}",
-    "edit": "Upravit",
-    "save": "Save {{name}}",
-    "delete": "Vymazat",
-    "assign": "Spravovat",
-    "active": "Aktivní",
-    "status": "Status",
-    "details": "Detaily",
-    "messages": {
-      "emptyList": "The list is empty"
+  "organization" : {
+    "enabled" : "Aktivní",
+    "disabled" : "Deaktivováno",
+    "enable" : "Aktivovat",
+    "disable" : "Deaktivovat",
+    "name" : "Název",
+    "code" : "Kód",
+    "done" : "hotovo",
+    "cancel" : "Zrušit",
+    "add" : "Přidat",
+    "manageUsers" : "Správa uživatelů",
+    "create" : "Vytvořit {{name}}",
+    "edit" : "Upravit",
+    "save" : "Uložit {{name}}",
+    "delete" : "Vymazat",
+    "assign" : "Spravovat",
+    "active" : "Aktivní",
+    "status" : "Status",
+    "details" : "Detaily",
+    "messages" : {
+      "emptyList" : "Tento seznam je prázdný."
     },
-    "userRoles": {
-      "b2bcustomergroup": "Zákazník",
-      "b2bapprovergroup": "Schvalovatel",
-      "b2bmanagergroup": "Manažer",
-      "b2badmingroup": "Správce"
+    "userRoles" : {
+      "b2bcustomergroup" : "Zákazník",
+      "b2bapprovergroup" : "Schvalovatel",
+      "b2bmanagergroup" : "Manažer",
+      "b2badmingroup" : "Správce"
     },
-    "userRights": {
-      "unitorderviewergroup": "View Unit-Level Orders"
+    "userRights" : {
+      "unitorderviewergroup" : "Zobrazit objednávky na úrovni jednotek"
     },
-    "breadcrumb": "Organizace",
-    "notification": {
-      "noSufficientPermissions": "No sufficient permissions to access this page",
-      "notExist": "This item does not exist",
-      "disabled": "You cannot edit a disabled item"
+    "breadcrumb" : "Organizace",
+    "notification" : {
+      "noSufficientPermissions" : "Pro přístup na tuto stránku nemáte dostatečné oprávnění",
+      "notExist" : "Tato položka neexistuje.",
+      "disabled" : "Nemůžete upravovat deaktivovanou položku"
     },
-    "confirmation": {
-      "cancel": "ZRUŠIT",
-      "confirm": "CONFIRM",
-      "disable": "DISABLE",
-      "delete": "DELETE"
+    "confirmation" : {
+      "cancel" : "ZRUŠIT",
+      "confirm" : "POTVRDIT",
+      "disable" : "DEAKTIVOVAT",
+      "delete" : "SMAZAT"
     },
-    "httpHandlers": {
-      "conflict": {
-        "budget": "Budget with code {{ code }} already exists.",
-        "costCenter": "Cost center with code {{ code }} already exists.",
-        "unit": "Organizational unit with uid {{ code }} already exists.",
-        "user": "User with email {{ code }} already exists",
-        "userGroup": "User Group with id {{ code }} already exists",
-        "permission": "Approval Permission with code {{ code }} already exists.",
-        "unknown": "Server validation error."
+    "httpHandlers" : {
+      "conflict" : {
+        "budget" : "Rozpočet s kódem {{ code }} již existuje.",
+        "costCenter" : "Nákladové středisko s kódem {{ code }} již existuje.",
+        "unit" : "Organizační jednotka s UID {{ code }} již existuje.",
+        "user" : "Uživatel s e-mailem {{ code }} již existuje.",
+        "userGroup" : "Uživatelská skupina s ID {{ code }} již existuje.",
+        "permission" : "Oprávnění ke schvalování s kódem {{ code }} již existuje.",
+        "unknown" : "Chyba ověření serveru."
       }
     },
-    "information": "More information about {{title}}"
+    "information" : "Další informace o {{title}}"
   },
-  "orgCostCenter": {
-    "groupName": "Nákladová střediska",
-    "header": "All cost centers ({{count}})",
-    "code": "Kód",
-    "active": "Status",
-    "name": "Název",
-    "currency": "Měna",
-    "unit": "Nadřazená jednotka",
-    "actions": "",
-    "sortBy": "Řadit podle",
-    "sort": {
-      "byName": "Název",
-      "byUnitName": "Jednotka",
-      "byCode": "Kód"
+  "orgCostCenter" : {
+    "groupName" : "Nákladová střediska",
+    "header" : "Všechna nákladová střediska ({{count}})",
+    "code" : "Kód",
+    "active" : "Status",
+    "name" : "Název",
+    "currency" : "Měna",
+    "unit" : "Nadřazená jednotka",
+    "actions" : "",
+    "sortBy" : "Řadit podle",
+    "sort" : {
+      "byName" : "Název",
+      "byUnitName" : "Jednotka",
+      "byCode" : "Kód"
     },
-    "hint": "All orders placed through your organization's purchase account are linked to a cost center for tracking purposes. Each unit can have multiple cost centers. To limit spending, budgets are assigned to cost centers. A buyer selects a cost center when checking out.",
-    "disable": {
-      "confirm": "Deaktivovat"
+    "hint" : "Všechny objednávky zadané prostřednictvím nákupního účtu vaší organizace jsou pro účely sledování propojeny s nákladovým střediskem. Každá jednotka může mít více nákladových středisek. K omezení výdajů se nákladovým střediskům přiřazují rozpočty. Nákupčí si ve fázi kontroly a potvrzení vybere nákladové středisko.",
+    "disable" : {
+      "confirm" : "Deaktivovat"
     },
-    "messages": {
-      "deactivateTitle": "Disable this cost center?",
-      "deactivate": "Disabled cost centers cannot be used for placing new orders. Ensure that your unit has at least one cost center. Existing orders are not affected.",
-      "confirmEnabled": "Cost Center {{ item.name }} enabled successfully",
-      "confirmDisabled": "Cost Center {{ item.name }} disabled successfully",
-      "update": "Cost Center {{ item.name }} updated successfully",
-      "create": "Cost Center {{ item.name }} created successfully"
+    "messages" : {
+      "deactivateTitle" : "Deaktivovat nákladové středisko?",
+      "deactivate" : "Deaktivovaná nákladová střediska nemohou být použita pro zadávání nových objednávek. Ujistěte se, že vaše jednotka má alespoň jedno nákladové středisko. Existující objednávky nejsou dotčeny.",
+      "confirmEnabled" : "Nákladové středisko {{ item.name }} bylo úspěšně aktivováno.",
+      "confirmDisabled" : "Nákladové středisko {{ item.name }} bylo úspěšně deaktivováno.",
+      "update" : "Nákladové středisko {{ item.name }} bylo úspěšně aktualizováno.",
+      "create" : "Nákladové středisko {{ item.name }} bylo úspěšně vytvořeno."
     },
-    "info": {
-      "disabledEdit": "Enable the cost center to allow editing.",
-      "disabledEnable": "Unit must be enabled before this cost center may be enabled."
+    "info" : {
+      "disabledEdit" : "Aktivujte nákladové středisko, aby ho bylo možné upravovat.",
+      "disabledEnable" : "Než bude možné aktivovat toto nákladové středisko, je třeba aktivovat jednotku."
     },
-    "details": {
-      "title": "Detaily nákladového střediska",
-      "subtitle": "Cost Center: {{ item.name }}"
+    "details" : {
+      "title" : "Detaily nákladového střediska",
+      "subtitle" : "Nákladové středisko: {{ item.name }}"
     },
-    "edit": {
-      "title": "Upravit nákladové středisko",
-      "subtitle": "Cost Center: {{ item.name }}"
+    "edit" : {
+      "title" : "Upravit nákladové středisko",
+      "subtitle" : "Nákladové středisko: {{ item.name }}"
     },
-    "create": {
-      "title": "Vytvořit nákladové středisko",
-      "subtitle": ""
+    "create" : {
+      "title" : "Vytvořit nákladové středisko",
+      "subtitle" : ""
     },
-    "budget": {
-      "link": "Rozpočty"
+    "budget" : {
+      "link" : "Rozpočty"
     },
-    "breadcrumbs": {
-      "list": "All cost centers",
-      "details": "{{name}}",
-      "budgets": "Rozpočty"
+    "breadcrumbs" : {
+      "list" : "Všechna nákladové střediska",
+      "details" : "{{name}}",
+      "budgets" : "Rozpočty"
     }
   },
-  "orgCostCenterBudgets": {
-    "title": "Manage budgets",
-    "subtitle": "Cost Center: {{ item.name }}",
-    "assigned": "Budget {{ item.name }} assigned successfully",
-    "unassigned": "Budget {{ item.name }} unassigned successfully"
+  "orgCostCenterBudgets" : {
+    "title" : "Správa rozpočtů.",
+    "subtitle" : "Nákladové středisko: {{ item.name }}",
+    "assigned" : "Rozpočet {{ item.name }} úspěšně přiřazen",
+    "unassigned" : "Přiřazení rozpočtu {{ item.name }} úspěšně zrušeno"
   },
-  "orgCostCenterAssignedBudgets": {
-    "title": "Assigned budgets",
-    "subtitle": "Cost Center: {{ item.name }}",
-    "assigned": "Budget {{ item.name }} assigned successfully",
-    "unassigned": "Budget {{ item.name }} unassigned successfully"
+  "orgCostCenterAssignedBudgets" : {
+    "title" : "Přiřazené rozpočty",
+    "subtitle" : "Nákladové středisko: {{ item.name }}",
+    "assigned" : "Rozpočet {{ item.name }} úspěšně přiřazen",
+    "unassigned" : "Přiřazení rozpočtu {{ item.name }} úspěšně zrušeno"
   },
-  "orgBudget": {
-    "groupName": "Rozpočty",
-    "header": "All budgets ({{count}})",
-    "code": "Kód",
-    "name": "Název",
-    "active": "Status",
-    "currency": "Měna",
-    "amount": "Částka",
-    "unit": "Jednotka",
-    "businessUnits": "Jednotka",
-    "dateRange": "Start - End",
-    "startDate": "Zahájit",
-    "endDate": "Konec",
-    "actions": "",
-    "sortBy": "Řadit podle",
-    "sort": {
-      "byName": "Název",
-      "byUnitName": "Jednotka",
-      "byCode": "Kód",
-      "byValue": "Hodnota"
+  "orgBudget" : {
+    "groupName" : "Rozpočty",
+    "header" : "Všechny rozpočty ({{count}})",
+    "code" : "Kód",
+    "name" : "Název",
+    "active" : "Status",
+    "currency" : "Měna",
+    "amount" : "Částka",
+    "unit" : "Jednotka",
+    "businessUnits" : "Jednotka",
+    "dateRange" : "Začátek – konec",
+    "startDate" : "Začátek",
+    "endDate" : "Konec",
+    "actions" : "",
+    "sortBy" : "Řadit podle",
+    "sort" : {
+      "byName" : "Název",
+      "byUnitName" : "Jednotka",
+      "byCode" : "Kód",
+      "byValue" : "Hodnota"
     },
-    "hint": "Budgets set overall purchase limits and are assigned to cost centers. A buyer selects a cost center when checking out.",
-    "details": {
-      "title": "Detaily rozpočtu",
-      "subtitle": "Budget: {{ item.name }}"
+    "hint" : "Rozpočty určují celkové limity nákupů a jsou přiřazeny nákladovým střediskům. Nákupčí si vybere nákladové středisko při kontrole a potvrzení.",
+    "details" : {
+      "title" : "Detaily rozpočtu",
+      "subtitle" : "Rozpočet: {{ item.name }}"
     },
-    "edit": {
-      "title": "Upravit rozpočet",
-      "subtitle": "Budget: {{ item.name }}"
+    "edit" : {
+      "title" : "Upravit rozpočet",
+      "subtitle" : "Rozpočet: {{ item.name }}"
     },
-    "create": {
-      "title": "Create Budget",
-      "subtitle": ""
+    "create" : {
+      "title" : "Vytvořit rozpočet",
+      "subtitle" : ""
     },
-    "messages": {
-      "deactivateTitle": "Disable this budget?",
-      "deactivate": "Disabled budgets no longer apply to the cost centers they are assigned to. Ensure that the associated cost center has at least one budget.",
-      "confirmEnabled": "Budget {{ item.name }} enabled successfully",
-      "confirmDisabled": "Budget {{ item.name }} disabled successfully",
-      "update": "Budget {{ item.name }} updated successfully",
-      "create": "Budget {{ item.name }} created successfully"
+    "messages" : {
+      "deactivateTitle" : "Deaktivovat tento rozpočet?",
+      "deactivate" : "Deaktivované rozpočty se již nevztahují na nákladová střediska, ke kterým byly přiřazeny. Ujistěte se, že přiřazené nákladové středisko má alespoň jeden rozpočet.",
+      "confirmEnabled" : "Rozpočet {{ item.name }} úspěšně aktivován",
+      "confirmDisabled" : "Rozpočet {{ item.name }} úspěšně deaktivován",
+      "update" : "Rozpočet {{ item.name }} úspěšně aktualizován",
+      "create" : "Rozpočet {{ item.name }} úspěšně vytvořen"
     },
-    "info": {
-      "disabledEdit": "Enable the budget to allow editing.",
-      "disabledEnable": "Unit must be enabled before this budget may be enabled."
+    "info" : {
+      "disabledEdit" : "Aktivujte rozpočet, aby ho bylo možné upravovat.",
+      "disabledEnable" : "Než bude možné aktivovat tento rozpočet, je třeba aktivovat jednotku."
     },
-    "links": {
-      "costCenters": "Nákladová střediska"
+    "links" : {
+      "costCenters" : "Nákladová střediska"
     },
-    "breadcrumbs": {
-      "list": "All budgets",
-      "details": "{{name}}"
+    "breadcrumbs" : {
+      "list" : "Všechny rozpočty",
+      "details" : "{{name}}"
     }
   },
-  "orgBudgetAssignedCostCenters": {
-    "title": "Cost centers",
-    "subtitle": "Budget: {{ item.name }}"
+  "orgBudgetAssignedCostCenters" : {
+    "title" : "Nákladová střediska",
+    "subtitle" : "Rozpočet: {{ item.name }}"
   },
-  "orgUnit": {
-    "groupName": "Jednotky",
-    "header": "All units ({{count}})",
-    "unit": "Jednotka",
-    "name": "Název",
-    "uid": "ID",
-    "approvalProcess": "Approval process",
-    "parentUnit": "Nadřazená jednotka",
-    "active": "Status",
-    "hint": "Units represent departments, stores, regions, or any other logical grouping that makes sense to you. The cost centers and delivery addresses available to a buyer when checking out, depend on their unit. Users have access to all child units of their primary unit.",
-    "details": {
-      "title": "Detaily jednotky",
-      "subtitle": "Unit: {{ item.name }}",
-      "hint": "Units represent departments, stores, regions, or any other logical grouping that makes sense to you. Disabling a unit disables all children of the unit, including child units, users, approvers, and cost centers. Disabled units cannot be edited."
+  "orgUnit" : {
+    "groupName" : "Jednotky",
+    "header" : "Všechny jednotky ({{count}})",
+    "unit" : "Jednotka",
+    "name" : "Název",
+    "uid" : "ID",
+    "approvalProcess" : "Proces schvalování",
+    "parentUnit" : "Nadřazená jednotka",
+    "active" : "Status",
+    "hint" : "Jednotky představují oddělení, prodejny, regiony nebo jakékoli další logická uskupení, která vám dávají smysl. Nákladová střediska a dodací adresy, které má nákupčí k dispozici při kontrole a potvrzení, závisí na jeho jednotce. Uživatelé mají přístup ke všem podřízeným jednotkám své primární jednotky.",
+    "details" : {
+      "title" : "Detaily jednotky",
+      "subtitle" : "Jednotka: {{ item.name }}",
+      "hint" : "Jednotky představují oddělení, prodejny, regiony nebo jakékoli další logická uskupení, která vám dávají smysl. Když deaktivujete jednotku, deaktivujete tím všechny její podřízené elementy včetně podřízených jednotek, uživatelů, schvalovatelů a nákladových středisek. Deaktivované jednotky nelze upravovat."
     },
-    "edit": {
-      "title": "Edit Unit",
-      "subtitle": "Unit: {{ item.name }}"
+    "edit" : {
+      "title" : "Upravit jednotku",
+      "subtitle" : "Jednotka: {{ item.name }}"
     },
-    "create": {
-      "title": "Vytvořit jednotku",
-      "subtitle": ""
+    "create" : {
+      "title" : "Vytvořit jednotku",
+      "subtitle" : ""
     },
-    "messages": {
-      "deactivateTitle": "Disable this unit?",
-      "deactivate": "Disabling a unit has wide-ranging affects on your commerce organization. ALL the unit's child units, users, budgets, and cost centers will also disabled.",
-      "confirmEnabled": "Unit {{item.name}} enabled successfully",
-      "confirmDisabled": "Unit {{item.name}} disabled successfully",
-      "update": "Unit {{ item.name }} updated successfully",
-      "create": "Unit {{ item.name }} created successfully"
+    "messages" : {
+      "deactivateTitle" : "Deaktivovat tuto jednotku?",
+      "deactivate" : "Deaktivace jednotky má rozsáhlý vliv na celou vaši obchodní organizaci. VŠECHNY podřízené jednotky, uživatelé, rozpočty a nákladová střediska budou rovněž deaktivována.",
+      "confirmEnabled" : "Jednotka {{ item.name }} úspěšně aktivována",
+      "confirmDisabled" : "Jednotka {{ item.name }} úspěšně deaktivována",
+      "update" : "Jednotka {{ item.name }} úspěšně aktualizována",
+      "create" : "Jednotka {{ item.name }} úspěšně vytvořena"
     },
-    "info": {
-      "disabledEdit": "Enable the unit to allow editing.",
-      "disabledEnable": "Parent must be enabled before this unit may be enabled.",
-      "disabledDisable": "Root unit can not be disabled."
+    "info" : {
+      "disabledEdit" : "Aktivujte jednotku, aby ji bylo možné upravovat.",
+      "disabledEnable" : "Než bude možné aktivovat tuto jednotku, je třeba aktivovat její nadřazenou jednotku.",
+      "disabledDisable" : "Kořenovou jednotku nelze deaktivovat."
     },
-    "links": {
-      "units": "Podřízené jednotky",
-      "users": "Uživatelé",
-      "approvers": "Schvalovatelé",
-      "shippingAddresses": "Delivery Addresses",
-      "costCenters": "Nákladová střediska"
+    "links" : {
+      "units" : "Podřízené jednotky",
+      "users" : "Uživatelé",
+      "approvers" : "Schvalovatelé",
+      "shippingAddresses" : "Dodací adresy",
+      "costCenters" : "Nákladová střediska"
     },
-    "tree": {
-      "expandAll": "Rozbalit vše",
-      "collapseAll": "Sbalit vše",
-      "expand": "Rozbalit",
-      "collapse": "collapse",
-      "explore": "Explore sub-units"
+    "tree" : {
+      "expandAll" : "Rozbalit vše",
+      "collapseAll" : "Sbalit vše",
+      "expand" : "Rozbalit",
+      "collapse" : "Sbalit",
+      "explore" : "Prozkoumat podjednotky"
     },
-    "children": {
-      "create": {
-        "title": "Create child unit",
-        "subtitle": ""
+    "children" : {
+      "create" : {
+        "title" : "Vytvořit podřízenou jednotku",
+        "subtitle" : ""
       },
-      "messages": {
-        "create": "Unit {{ item.name }} created successfully"
+      "messages" : {
+        "create" : "Jednotka {{ item.name }} úspěšně vytvořena"
       }
     },
-    "costCenters": {
-      "create": {
-        "title": "Create cost center",
-        "subtitle": ""
+    "costCenters" : {
+      "create" : {
+        "title" : "Vytvořit nákladové středisko",
+        "subtitle" : ""
       }
     },
-    "form": {
-      "parentOrgUnit": "Nadřazená obchodní jednotka",
-      "create": "Vytvořit jednotku",
-      "parentOrgUnitNotes": "This unit is the top-level unit for your organization. It cannot be assigned to another unit."
+    "form" : {
+      "parentOrgUnit" : "Nadřazená obchodní jednotka",
+      "create" : "Vytvořit jednotku",
+      "parentOrgUnitNotes" : "Tato jednotka je ve vaší organizaci jednotkou nejvyšší úrovně. Nelze ji přiřadit jiné jednotce."
     },
-    "users": {
-      "header": "Users in {{code}}",
-      "changeUserRoles": "Change user roles",
-      "newUser": "New user"
+    "users" : {
+      "header" : "Uživatelé v {{code}}",
+      "changeUserRoles" : "Změnit role uživatelů",
+      "newUser" : "Nový uživatel"
     },
-    "assignRoles": {
-      "header": "Manage roles in {{code}}",
-      "instructions": {
-        "check": "To assign a role to a user, select the role's check box.",
-        "uncheck": "To remove a role, clear the role's check box.",
-        "changes": "Changes are saved automatically."
+    "assignRoles" : {
+      "header" : "Spravovat role v {{code}}",
+      "instructions" : {
+        "check" : "Chcete-li uživateli přiřadit roli, zaškrtněte příslušné pole dané role.",
+        "uncheck" : "Chcete-li uživateli odebrat roli, zrušte zaškrtnutí příslušného pole.",
+        "changes" : "Změny se ukládají automaticky."
       }
     },
-    "approvers": {
-      "header": "Approvers in {{code}}",
-      "assign": "Manage approvers",
-      "new": "New approver"
+    "approvers" : {
+      "header" : "Schvalovatelé v {{code}}",
+      "assign" : "Správa schvalovatelů",
+      "new" : "Nový schvalovatel"
     },
-    "assignApprovers": {
-      "header": "Manage approvers in {{code}}",
-      "instructions": {
-        "check": "To assign an approver to this unit, select the user's check box.",
-        "uncheck": "To remove an approver, clear the user's check box.",
-        "changes": "Changes are saved automatically."
+    "assignApprovers" : {
+      "header" : "Spravovat schvalovatele v {{code}}",
+      "instructions" : {
+        "check" : "Chcete-li této jednotce přiřadit schvalovatele, zaškrtněte u něj příslušné pole.",
+        "uncheck" : "Chcete-li odebrat schvalovatele, zrušte zaškrtnutí příslušného pole.",
+        "changes" : "Změny se ukládají automaticky."
       },
-      "hint": "Users displayed under the Approvers list are assigned approval privileges for the buyers of this unit and of child units. Note that a user who has the approver role is separate from an approver who appears under the Approvers list. If an approver doesn't exist for a unit, or if approvers do not have sufficient approval purchase privileges, an approver higher up the unit hierarchy is found, until an administration is chosen."
+      "hint" : "Uživatelé uvedení v seznamu Schvalovatelé mají přidělena práva schvalovat nákupčí dané jednotky a podřízených jednotek. Vezměte na vědomí, že uživatel s rolí schvalovatele není totéž jako schvalovatel uvedený v seznamu Schvalovatelé. Pokud pro jednotku neexistuje schvalovatel nebo pokud schvalovatelé nemají dostatečná práva ke schválení nákupu, hledá se schvalovatel výše v hierarchii jednotek, až je vybrán správce."
     },
-    "breadcrumbs": {
-      "list": "All units",
-      "details": "{{name}}",
-      "children": "Child units",
-      "users": "Uživatelé",
-      "approvers": "Schvalovatelé",
-      "addresses": "Delivery addresses",
-      "addressDetails": "{{formattedAddress}}",
-      "costCenters": "Nákladová střediska"
+    "breadcrumbs" : {
+      "list" : "Všechny jednotky",
+      "details" : "{{name}}",
+      "children" : "Podřízené jednotky",
+      "users" : "Uživatelé",
+      "approvers" : "Schvalovatelé",
+      "addresses" : "Dodací adresy",
+      "addressDetails" : "{{formattedAddress}}",
+      "costCenters" : "Nákladová střediska"
     }
   },
-  "orgUnitChildren": {
-    "title": "Child units",
-    "subtitle": "Unit: {{item.name}}",
-    "info": {
-      "disabledCreate": "Child unit can not be created for disabled unit."
+  "orgUnitChildren" : {
+    "title" : "Podřízené jednotky",
+    "subtitle" : "Jednotka: {{ item.name }}",
+    "info" : {
+      "disabledCreate" : "K deaktivovaným jednotkám nelze vytvářet podřízené jednotky."
     },
-    "hint": "Units represent departments, stores, regions, or any other logical grouping that makes sense to you. Users \"inherit\" child units, meaning buyers have access to cost centers and delivery addresses of child units when checking out."
+    "hint" : "Jednotky představují oddělení, prodejny, regiony nebo jakékoli další logická uskupení, která vám dávají smysl. Uživatelé „dědí“ podřízené jednotky. To znamená, že nákupčí mají při kontrole a potvrzení přístup do nákladových středisek a k dodacím adresám podřízených jednotek."
   },
-  "orgUnitApprovers": {
-    "title": "Manage approvers",
-    "subtitle": "Unit: {{item.name}}",
-    "assigned": "User {{item.name}} assigned successfully",
-    "unassigned": "User {{item.name}} unassigned successfully"
+  "orgUnitApprovers" : {
+    "title" : "Správa schvalovatelů",
+    "subtitle" : "Jednotka: {{ item.name }}",
+    "assigned" : "Uživatel {{ item.name }} úspěšně přiřazen",
+    "unassigned" : "Přiřazení uživatele {{ item.name }} úspěšně zrušeno"
   },
-  "orgUnitAssignedApprovers": {
-    "title": "Assigned approvers",
-    "subtitle": "Unit: {{item.name}}",
-    "assigned": "User {{item.name}} assigned successfully",
-    "unassigned": "User {{item.name}} unassigned successfully",
-    "hint": "Users displayed under the Approvers list are assigned approval privileges for the buyers of this unit and of child units. Note that a user who has the approver role is separate from an approver who appears under the Approvers list. If an approver doesn't exist for a unit, or if approvers do not have sufficient approval purchase privileges, an approver higher up the unit hierarchy is found, until an administration is chosen."
+  "orgUnitAssignedApprovers" : {
+    "title" : "Přiřazení schvalovatelé",
+    "subtitle" : "Jednotka: {{ item.name }}",
+    "assigned" : "Uživatel {{ item.name }} úspěšně přiřazen",
+    "unassigned" : "Přiřazení uživatele {{ item.name }} úspěšně zrušeno",
+    "hint" : "Uživatelé uvedení v seznamu Schvalovatelé mají přidělena práva schvalovat nákupčí dané jednotky a podřízených jednotek. Vezměte na vědomí, že uživatel s rolí schvalovatele není totéž jako schvalovatel uvedený v seznamu Schvalovatelé. Pokud pro jednotku neexistuje schvalovatel nebo pokud schvalovatelé nemají dostatečná práva ke schválení nákupu, hledá se schvalovatel výše v hierarchii jednotek, až je vybrán správce."
   },
-  "orgUnitAssignedRoles": {
-    "header": "Manage roles in {{code}}",
-    "name": "Název",
-    "email": "E-mail",
-    "roles": "Role",
-    "roleCustomer": "Zákazník",
-    "roleApprover": "Schvalovatel",
-    "roleManager": "Manažer",
-    "roleAdministrator": "Správce"
+  "orgUnitAssignedRoles" : {
+    "header" : "Spravovat role v {{code}}",
+    "name" : "Název",
+    "email" : "E-mail",
+    "roles" : "Role",
+    "roleCustomer" : "Zákazník",
+    "roleApprover" : "Schvalovatel",
+    "roleManager" : "Manažer",
+    "roleAdministrator" : "Správce"
   },
-  "orgUnitUsers": {
-    "title": "Assigned users",
-    "subtitle": "Unit: {{item.name}}",
-    "info": {
-      "disabledCreate": "User can not be created for disabled unit."
+  "orgUnitUsers" : {
+    "title" : "Přiřazení uživatelé",
+    "subtitle" : "Jednotka: {{ item.name }}",
+    "info" : {
+      "disabledCreate" : "K deaktivovaným jednotkám nelze vytvářet uživatele."
     },
-    "hint": "Users are the buyers, approvers, managers, and administrators of your organization. Each user is assigned a role for making or approving purchases. Users \"inherit\" child units, meaning buyers have access to cost centers and delivery addresses of child units when checking out."
+    "hint" : "Uživatelé jsou nákupčí, schvalovatelé, manažeři a správci vaší organizace. Každému uživateli je přiřazena role k provádění nebo schvalování nákupů. Uživatelé „dědí“ podřízené jednotky, což znamená, že nákupčí mají při kontrole a potvrzení přístup k nákladovým střediskům a dodacím adresám podřízených jednotek."
   },
-  "orgUnitUserRoles": {
-    "title": "User roles and rights",
-    "subtitle": "User: {{item.name}}",
-    "messages": {
-      "rolesUpdated": "Roles successfully updated for {{item.name}}"
+  "orgUnitUserRoles" : {
+    "title" : "Role a práva uživatelů",
+    "subtitle" : "Uživatel: {{ item.name }}",
+    "messages" : {
+      "rolesUpdated" : "Role {{item.name}} byly úspěšně aktualizovány"
     }
   },
-  "orgUnitAssignedUsers": {
-    "title": "Assigned users",
-    "subtitle": "Unit: {{item.name}}"
+  "orgUnitAssignedUsers" : {
+    "title" : "Přiřazení uživatelé",
+    "subtitle" : "Jednotka: {{ item.name }}"
   },
-  "orgUnitCostCenters": {
-    "title": "Assigned cost centers",
-    "subtitle": "Unit: {{item.name}}",
-    "info": {
-      "disabledCreate": "Cost center can not be created for disabled unit."
+  "orgUnitCostCenters" : {
+    "title" : "Přiřazená nákladová střediska",
+    "subtitle" : "Jednotka: {{ item.name }}",
+    "info" : {
+      "disabledCreate" : "K deaktivovaným jednotkám nelze vytvářet nákladová střediska."
     },
-    "hint": "All orders placed through your organization's purchase account are linked to a cost center for tracking purposes. A buyer selects a cost center when checking out using the \"Account\" purchase method. Each unit can have multiple cost centers, but a single cost center can only be assigned to a single unit. To define ultimate spending limits, budgets are assigned to cost centers. "
+    "hint" : "Veškeré objednávky podané prostřednictvím nákupního účtu vaší organizace jsou pro účely sledování propojeny s nákladovým střediskem. Nákupčí si zvolí nákladové středisko ve fázi kontroly a potvrzení při použití metody nákupu „Účet“. Každá jednotka může mít více nákladových středisek, ale konkrétní nákladové středisko smí být přiřazeno pouze jedné jednotce. Nákladovým střediskům se přiřazují rozpočty, které definují limit maximálních výdajů. "
   },
-  "orgUnitAddress": {
-    "title": "Delivery addresses",
-    "subtitle": "Unit: {{item.name}}",
-    "country": "Stát/region",
-    "titles": "Oslovení",
-    "firstName": "Jméno",
-    "lastName": "Příjmení",
-    "formattedAddress": "Adresa",
-    "address1": "Adresa",
-    "address2": "2nd address (optional)",
-    "city": "Město",
-    "state": "Stav",
-    "zipCode": "Zip code",
-    "phoneNumber": "Phone number (optional)",
-    "streetAddress": "Street Address",
-    "aptSuite": "Apartment Number",
-    "selectOne": "Select One...",
-    "hint": "When a buyer is checking out using the \"Account\" purchase method, they much choose a cost center. The delivery addresses available to the buyer depend on the unit of the cost center chosen.",
-    "details": {
-      "title": "Address details",
-      "subtitle": "Unit: {{item.name}}"
+  "orgUnitAddress" : {
+    "title" : "Dodací adresy",
+    "subtitle" : "Jednotka: {{ item.name }}",
+    "country" : "Země/region",
+    "titles" : "Oslovení",
+    "firstName" : "Křestní jméno",
+    "lastName" : "Příjmení",
+    "formattedAddress" : "Adresa",
+    "address1" : "Adresa",
+    "address2" : "2. adresa (volitelná)",
+    "city" : "Město",
+    "state" : "Stát",
+    "zipCode" : "PSČ",
+    "phoneNumber" : "Telefonní číslo (volitelné)",
+    "streetAddress" : "Ulice",
+    "aptSuite" : "Číslo bytu",
+    "selectOne" : "Vyberte jedno…",
+    "hint" : "Když nákupčí finalizuje objednávku ve fázi kontrola a potvrzení prostřednictvím metody nákupu „Účet“, musí vybrat nákladové středisko. Dodací adresy, které má nákupčí k dispozici, závisejí na jednotce zvoleného nákladového střediska.",
+    "details" : {
+      "title" : "Detaily adresy",
+      "subtitle" : "Jednotka: {{ item.name }}"
     },
-    "edit": {
-      "title": "Upravit adresu"
+    "edit" : {
+      "title" : "Upravit adresu"
     },
-    "create": {
-      "title": "Vytvořit adresu"
+    "create" : {
+      "title" : "Vytvořit adresu"
     },
-    "form": {
-      "subtitle": "Unit: {{item.name}}"
+    "form" : {
+      "subtitle" : "Jednotka: {{ item.name }}"
     },
-    "messages": {
-      "create": "Address {{ item.firstName }} {{ item.lastName }} created successfully",
-      "update": "Address {{ item.firstName }} {{ item.lastName }} updated successfully",
-      "delete": "The address cannot be brought back. Existing orders are not affected.",
-      "deleteTitle": "Delete this address?",
-      "deleted": "Address {{ item.firstName }} {{ item.lastName }} deleted successfully"
+    "messages" : {
+      "create" : "Adresa {{ item.firstName }} {{ item.lastName }} úspěšně vytvořena",
+      "update" : "Adresa {{ item.firstName }} {{ item.lastName }} úspěšně aktualizována",
+      "delete" : "Adresu nelze vrátit. Existující objednávky nebudou dotčeny.",
+      "deleteTitle" : "Odstranit tuto adresu?",
+      "deleted" : "Adresa {{ item.firstName }} {{ item.lastName }} úspěšně odstraněna"
     }
   },
-  "orgUserGroup": {
-    "groupName": "Skupiny uživatelů",
-    "header": "All user groups ({{count}})",
-    "disabled": "(disabled)",
-    "uid": "Kód",
-    "name": "Název",
-    "unit": "Jednotka",
-    "orgUnit": "Jednotka",
-    "actions": "",
-    "sortBy": "Řadit podle",
-    "sort": {
-      "byName": "Název",
-      "byUnitName": "Jednotka",
-      "byGroupID": "Skupina"
+  "orgUserGroup" : {
+    "groupName" : "Skupiny uživatelů",
+    "header" : "Všechny skupiny uživatelů: ({{count}})",
+    "disabled" : "(deaktivováno)",
+    "uid" : "Kód",
+    "name" : "Název",
+    "unit" : "Jednotka",
+    "orgUnit" : "Jednotka",
+    "actions" : "",
+    "sortBy" : "Řadit podle",
+    "sort" : {
+      "byName" : "Název",
+      "byUnitName" : "Jednotka",
+      "byGroupID" : "Skupina"
     },
-    "hint": "User groups allow you to combine users together in one group, for the purposes of assigning purchase limits for many users at once.",
-    "details": {
-      "title": "User group Details",
-      "subtitle": "User group: {{ item.name }}"
+    "hint" : "Skupiny uživatelů umožňují sdružit uživatele do skupin a následně nastavovat více uživatelům limity nákupu najednou.",
+    "details" : {
+      "title" : "Detaily skupiny uživatelů",
+      "subtitle" : "Skupina uživatelů: {{ item.name }}"
     },
-    "edit": {
-      "title": "Upravit uživatelskou skupinu",
-      "subtitle": "User group: {{ item.name }}"
+    "edit" : {
+      "title" : "Upravit skupinu uživatelů",
+      "subtitle" : "Skupina uživatelů: {{ item.name }}"
     },
-    "create": {
-      "title": "Vytvořit uživatelskou skupinu",
-      "subtitle": ""
+    "create" : {
+      "title" : "Vytvořit skupinu uživatelů",
+      "subtitle" : ""
     },
-    "links": {
-      "user": "Uživatelé",
-      "permission": "Purchase limits"
+    "links" : {
+      "user" : "Uživatelé",
+      "permission" : "Limity nákupu"
     },
-    "messages": {
-      "update": "User Group {{ item.name }} updated successfully",
-      "create": "User Group {{ item.name }} created successfully",
-      "deleteTitle": "Delete this user group?",
-      "delete": "The users in this group are not affected when the user group is deleted.",
-      "deleted": "User Group {{ item.name }} deleted successfully"
+    "messages" : {
+      "update" : "Skupina uživatelů {{ item.name }} úspěšně aktualizována",
+      "create" : "Skupina uživatelů {{ item.name }} úspěšně vytvořena",
+      "deleteTitle" : "Odstranit skupinu uživatelů?",
+      "delete" : "Uživatelů v této skupině se nijak nedotkne, když bude skupina odstraněna.",
+      "deleted" : "Skupina uživatelů {{ item.name }} úspěšně odstraněna"
     },
-    "breadcrumbs": {
-      "list": "All user groups",
-      "details": "{{name}}",
-      "users": "Uživatelé",
-      "permissions": "Purchase limits"
+    "breadcrumbs" : {
+      "list" : "Všechny skupiny uživatelů",
+      "details" : "{{name}}",
+      "users" : "Uživatelé",
+      "permissions" : "Limity nákupu"
     }
   },
-  "orgUserGroupUsers": {
-    "title": "Manage users",
-    "subtitle": "User group: {{ item.name }}",
-    "assigned": "User {{item.name}} assigned successfully",
-    "unassigned": "User {{item.name}} unassigned successfully",
-    "unassignAll": "Unassign All",
-    "unassignAllConfirmation": "All users unassigned successfully"
+  "orgUserGroupUsers" : {
+    "title" : "Správa uživatelů",
+    "subtitle" : "Skupina uživatelů: {{ item.name }}",
+    "assigned" : "Uživatel {{ item.name }} úspěšně přiřazen",
+    "unassigned" : "Přiřazení uživatele {{ item.name }} úspěšně zrušeno",
+    "unassignAll" : "Zrušit přiřazení všech",
+    "unassignAllConfirmation" : "Přiřazení všech uživatelů úspěšně zrušeno"
   },
-  "orgUserGroupAssignedUsers": {
-    "title": "Assigned users",
-    "subtitle": "User group: {{ item.name }}",
-    "assigned": "User {{item.name}} assigned successfully",
-    "unassigned": "User {{item.name}} unassigned successfully"
+  "orgUserGroupAssignedUsers" : {
+    "title" : "Přiřazení uživatelé",
+    "subtitle" : "Skupina uživatelů: {{ item.name }}",
+    "assigned" : "Uživatel {{ item.name }} úspěšně přiřazen",
+    "unassigned" : "Přiřazení uživatele {{ item.name }} úspěšně zrušeno"
   },
-  "orgUserGroupPermissions": {
-    "title": "Manage purchase limits",
-    "subtitle": "Limit: {{ item.name }}",
-    "assigned": "Purchase limits {{item.code}} assigned successfully",
-    "unassigned": "Purchase limits {{item.code}} unassigned successfully"
+  "orgUserGroupPermissions" : {
+    "title" : "Správa limitů nákupu",
+    "subtitle" : "Limit: {{ item.name }}",
+    "assigned" : "Limity nákupu {{item.code}} úspěšně přiřazeny",
+    "unassigned" : "Přiřazení limitů nákupu {{item.code}} úspěšně zrušeno"
   },
-  "orgUserGroupAssignedPermissions": {
-    "title": "Assigned purchase limits",
-    "subtitle": "Limit: {{ item.name }}",
-    "assigned": "Purchase limits {{item.code}} assigned successfully",
-    "unassigned": "Purchase limits {{item.code}} unassigned successfully"
+  "orgUserGroupAssignedPermissions" : {
+    "title" : "Přiřazené limity nákupu",
+    "subtitle" : "Limit: {{ item.name }}",
+    "assigned" : "Limity nákupu {{item.code}} úspěšně přiřazeny",
+    "unassigned" : "Přiřazení limitů nákupu {{item.code}} úspěšně zrušeno"
   },
-  "orgUser": {
-    "groupName": "Uživatelé",
-    "header": "All users ({{count}})",
-    "disabled": "(disabled)",
-    "uid": "E-mail",
-    "active": "Status",
-    "name": "Název",
-    "firstName": "Jméno",
-    "lastName": "Příjmení",
-    "email": "E-mail",
-    "orgUnit": "Jednotka",
-    "unit": "Jednotka",
-    "roles": "Role",
-    "rights": "Rights",
-    "title": "Oslovení",
-    "hint": "Users are the buyers, approvers, managers, and administrators of your organization. Each user is assigned a role for making or approving purchases. Each user belongs to a unit, and they have access to all child units of their primary unit.",
-    "unitApprover": "Unit approver",
-    "assignApprover": "Add the user to approvers for the unit",
-    "actions": "",
-    "sortBy": "Řadit podle",
-    "sort": {
-      "byName": "Název",
-      "byUnit": "Jednotka"
+  "orgUser" : {
+    "groupName" : "Uživatelé",
+    "header" : "Všichni uživatelé ({{count}})",
+    "disabled" : "(deaktivováno)",
+    "uid" : "E-mail",
+    "active" : "Status",
+    "name" : "Název",
+    "firstName" : "Křestní jméno",
+    "lastName" : "Příjmení",
+    "email" : "E-mail",
+    "orgUnit" : "Jednotka",
+    "unit" : "Jednotka",
+    "roles" : "Role",
+    "rights" : "Práva",
+    "title" : "Oslovení",
+    "hint" : "Uživatelé jsou nákupčí, schvalovatelé, manažeři a správci vaší organizace. Každému uživateli je přiřazena role k provádění nebo schvalování nákupů. Každý uživatel je přiřazen konkrétní jednotce a má přístup ke všem podřízeným jednotkám dané primární jednotky.",
+    "unitApprover" : "Schvalovatel jednotky",
+    "assignApprover" : "Přidat uživatele mezi schvalovatele jednotky",
+    "actions" : "",
+    "sortBy" : "Řadit podle",
+    "sort" : {
+      "byName" : "Název",
+      "byUnit" : "Jednotka"
     },
-    "details": {
-      "title": "Detaily uživatele",
-      "subtitle": "User: {{ item.name }}"
+    "details" : {
+      "title" : "Detaily uživatele",
+      "subtitle" : "Uživatel: {{ item.name }}"
     },
-    "edit": {
-      "title": "Upravit uživatele",
-      "subtitle": "User: {{ item.name }}"
+    "edit" : {
+      "title" : "Upravit uživatele",
+      "subtitle" : "Uživatel: {{ item.name }}"
     },
-    "create": {
-      "title": "Create User",
-      "subtitle": ""
+    "create" : {
+      "title" : "Vytvořit uživatele",
+      "subtitle" : ""
     },
-    "links": {
-      "password": "Change password",
-      "approvers": "Schvalovatelé",
-      "userGroup": "Uživatelské skupiny",
-      "permission": "Purchase limits",
-      "rolesAndRights": "Roles and Rights"
+    "links" : {
+      "password" : "Změnit heslo",
+      "approvers" : "Schvalovatelé",
+      "userGroup" : "Uživatelské skupiny",
+      "permission" : "Limity nákupu",
+      "rolesAndRights" : "Role a práva"
     },
-    "messages": {
-      "deactivateTitle": "Disable this user?",
-      "deactivate": "Disabled users cannot log onto the storefront and place orders.",
-      "confirmEnabled": "User {{item.firstName}} {{item.lastName}} enabled successfully",
-      "confirmDisabled": "User {{item.firstName}} {{item.lastName}} disabled successfully",
-      "update": "User {{item.firstName}} {{item.lastName}} updated successfully",
-      "create": "User {{item.firstName}} {{item.lastName}} created successfully",
-      "updatePassword": "User {{item.firstName}} {{item.lastName}} password updated successfully"
+    "messages" : {
+      "deactivateTitle" : "Deaktivovat tohoto uživatele?",
+      "deactivate" : "Deaktivovaní uživatelé se nemohou přihlásit na storefront a zadávat objednávky.",
+      "confirmEnabled" : "Uživatel {{ item.firstName }} {{ item.lastName }} úspěšně aktivován",
+      "confirmDisabled" : "Uživatel {{ item.firstName }} {{ item.lastName }} úspěšně deaktivován",
+      "update" : "Uživatel {{ item.firstName }} {{ item.lastName }} úspěšně aktualizován",
+      "create" : "Uživatel {{ item.firstName }} {{ item.lastName }} úspěšně vytvořen",
+      "updatePassword" : "Heslo uživatele {{item.firstName}} {{item.lastName}} úspěšně aktualizováno"
     },
-    "info": {
-      "disabledEdit": "Enable the user to allow editing.",
-      "disabledEnable": "Unit must be enabled before this user may be enabled."
+    "info" : {
+      "disabledEdit" : "Aktivujte uživatele, aby ho bylo možné upravovat.",
+      "disabledEnable" : "Než bude možné aktivovat tohoto uživatele, je třeba aktivovat jednotku."
     },
-    "approver": {
-      "link": "Schvalovatelé",
-      "header": "Approvers in {{code}}",
-      "assign": "Assign Approvers",
-      "assignHeader": "Assign Approvers in {{code}}",
-      "back": "Zpět",
-      "new": "New approver",
-      "instructions": {
-        "check": "To assign an approver to this user, select the user's check box.",
-        "uncheck": "To remove an approver, clear the user's check box.",
-        "changes": "Changes are saved automatically."
+    "approver" : {
+      "link" : "Schvalovatelé",
+      "header" : "Schvalovatelé v {{code}}",
+      "assign" : "Přiřadit schvalovatele",
+      "assignHeader" : "Přiřadit schvalovatele {{code}}",
+      "back" : "Zpět",
+      "new" : "Nový schvalovatel",
+      "instructions" : {
+        "check" : "Chcete-li tomuto uživateli přiřadit schvalovatele, zaškrtněte u něj příslušné pole.",
+        "uncheck" : "Chcete-li odebrat schvalovatele, zrušte zaškrtnutí příslušného pole.",
+        "changes" : "Změny se ukládají automaticky."
       }
     },
-    "userGroup": {
-      "link": "Uživatelské skupiny",
-      "header": "User groups in {{code}}",
-      "assign": "Assign user groups",
-      "assignHeader": "Assign user groups in {{code}}",
-      "back": "Zpět",
-      "instructions": {
-        "check": "To assign an user group to this user, select the user's check box.",
-        "uncheck": "To remove aa user group, clear the user's check box.",
-        "changes": "Changes are saved automatically."
+    "userGroup" : {
+      "link" : "Skupiny uživatelů",
+      "header" : "Skupiny uživatelů v {{code}}",
+      "assign" : "Přiřadit skupiny uživatelů",
+      "assignHeader" : "Přiřadit skupiny uživatelů v {{code}}",
+      "back" : "Zpět",
+      "instructions" : {
+        "check" : "Chcete-li tomuto uživateli přiřadit skupinu, zaškrtněte u něj příslušné pole.",
+        "uncheck" : "Chcete-li odebrat skupinu uživatelů, zrušte zaškrtnutí příslušného pole.",
+        "changes" : "Změny se ukládají automaticky."
       }
     },
-    "permission": {
-      "link": "Purchase limits",
-      "header": "Purchase limits in {{code}}",
-      "assign": "Assign purchase limits",
-      "assignHeader": "Assign purchase limits in {{code}}",
-      "back": "Zpět",
-      "instructions": {
-        "check": "To assign a purchase limits to this user, select its check box.",
-        "uncheck": "To unassign a purchase limits, clear its check box.",
-        "changes": "Changes are saved automatically."
+    "permission" : {
+      "link" : "Limity nákupu",
+      "header" : "Limity nákupu v {{code}}",
+      "assign" : "Přiřadit limity nákupu",
+      "assignHeader" : "Přiřadit limity nákupu v {{code}}",
+      "back" : "Zpět",
+      "instructions" : {
+        "check" : "Chcete-li přiřadit tomuto uživateli limity nákupu, zaškrtněte u něj příslušné pole.",
+        "uncheck" : "Chcete-li odebrat limity nákupu, zrušte zaškrtnutí příslušného pole.",
+        "changes" : "Změny se ukládají automaticky."
       },
-      "per": {
-        "undefined": "",
-        "MONTH": "per Month",
-        "YEAR": "per Year",
-        "WEEK": "per Week",
-        "QUARTER": "per Quarter"
+      "per" : {
+        "undefined" : "",
+        "MONTH" : "za měsíc",
+        "YEAR" : "za rok",
+        "WEEK" : "za týden",
+        "QUARTER" : "za čtvrletí"
       }
     },
-    "password": {
-      "title": "Change password",
-      "subtitle": "User: {{ item.email }}",
-      "newPassword": "New password",
-      "confirmPassword": "Retype new password"
+    "password" : {
+      "title" : "Změnit heslo",
+      "subtitle" : "Uživatel: {{ item.name }}",
+      "newPassword" : "Nové heslo",
+      "confirmPassword" : "Napište nové heslo znovu"
     },
-    "breadcrumbs": {
-      "list": "All users",
-      "details": "{{name}}",
-      "userGroups": "Uživatelské skupiny",
-      "approvers": "Schvalovatelé",
-      "permissions": "Purchase limits"
+    "breadcrumbs" : {
+      "list" : "Všichni uživatelé",
+      "details" : "{{name}}",
+      "userGroups" : "Skupiny uživatelů",
+      "approvers" : "Schvalovatelé",
+      "permissions" : "Limity nákupu"
     }
   },
-  "orgUserUserGroups": {
-    "title": "Manage user groups",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "User group {{item.name}} assigned successfully",
-    "unassigned": "User group {{item.name}} unassigned successfully"
+  "orgUserUserGroups" : {
+    "title" : "Správa skupin uživatelů",
+    "subtitle" : "Uživatel: {{ item.name }}",
+    "assigned" : "Skupina uživatelů {{ item.name }} úspěšně přiřazena",
+    "unassigned" : "Přiřazení skupiny uživatelů {{item.name}} úspěšně zrušeno"
   },
-  "orgUserAssignedUserGroups": {
-    "title": "Assigned user groups",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "User group {{item.name}} assigned successfully",
-    "unassigned": "User group {{item.name}} unassigned successfully"
+  "orgUserAssignedUserGroups" : {
+    "title" : "Přiřazené skupiny uživatelů",
+    "subtitle" : "Uživatel: {{ item.name }}",
+    "assigned" : "Skupina uživatelů {{ item.name }} úspěšně přiřazena",
+    "unassigned" : "Přiřazení skupiny uživatelů {{item.name}} úspěšně zrušeno"
   },
-  "orgUserApprovers": {
-    "title": "Manage approvers",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "Approver {{ item.name }} assigned successfully",
-    "unassigned": "Approver {{ item.name }} unassigned successfully"
+  "orgUserApprovers" : {
+    "title" : "Správa schvalovatelů",
+    "subtitle" : "Uživatel: {{ item.name }}",
+    "assigned" : "Schvalovatel {{ item.name }} úspěšně přiřazen",
+    "unassigned" : "Přiřazení schvalovatele {{ item.name }} úspěšně zrušeno"
   },
-  "orgUserAssignedApprovers": {
-    "title": "Assigned approvers",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "Approver {{ item.name }} assigned successfully",
-    "unassigned": "Approver {{ item.name }} unassigned successfully"
+  "orgUserAssignedApprovers" : {
+    "title" : "Přiřazení schvalovatelé",
+    "subtitle" : "Uživatel: {{ item.name }}",
+    "assigned" : "Schvalovatel {{ item.name }} úspěšně přiřazen",
+    "unassigned" : "Přiřazení schvalovatele {{ item.name }} úspěšně zrušeno"
   },
-  "orgUserPermissions": {
-    "title": "Manage purchase limits",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "Purchase limit {{ item.code }} assigned successfully",
-    "unassigned": "Purchase limit {{ item.code }} unassigned successfully"
+  "orgUserPermissions" : {
+    "title" : "Správa limitů nákupu",
+    "subtitle" : "Uživatel: {{ item.name }}",
+    "assigned" : "Limity nákupu {{item.code}} úspěšně přiřazeny",
+    "unassigned" : "Přiřazení limitů nákupu {{item.code}} úspěšně zrušeno"
   },
-  "orgUserAssignedPermissions": {
-    "title": "Assigned purchase limits",
-    "subtitle": "User: {{ item.name }}",
-    "assigned": "Purchase limit {{ item.code }} assigned successfully",
-    "unassigned": "Purchase limit {{ item.code }} unassigned successfully"
+  "orgUserAssignedPermissions" : {
+    "title" : "Přiřazené limity nákupu",
+    "subtitle" : "Uživatel: {{ item.name }}",
+    "assigned" : "Limity nákupu {{item.code}} úspěšně přiřazeny",
+    "unassigned" : "Přiřazení limitů nákupu {{item.code}} úspěšně zrušeno"
   },
-  "orgPurchaseLimit": {
-    "groupName": "Purchase Limits",
-    "header": "All purchase limits ({{count}})",
-    "name": "Název",
-    "code": "Kód",
-    "active": "Status",
-    "limit": "Limit",
-    "orderApprovalPermissionType": "Typ",
-    "threshold": "Práh",
-    "periodRange": "Období",
-    "currency": "Měna",
-    "orgUnit": "Nadřazená jednotka",
-    "unit": "Nadřazená jednotka",
-    "actions": "",
-    "hint": "Purchase limits help control spending by defining how much buyers can spend per order or per week, month, quarter, or year. Purchase limits are assigned to users or user groups. Purchase limits are also assigned to approvers, defining how much they are permitted to approve. You can assign purchase limits to many users at once with user groups.",
-    "details": {
-      "title": "Purchase Limit Details",
-      "subtitle": "Purchase Limit: {{ item.code }}"
+  "orgPurchaseLimit" : {
+    "groupName" : "Limity nákupu",
+    "header" : "Všechny limity nákupu ({{count}})",
+    "name" : "Název",
+    "code" : "Kód",
+    "active" : "Status",
+    "limit" : "Limit",
+    "orderApprovalPermissionType" : "Typ",
+    "threshold" : "Práh",
+    "periodRange" : "Období",
+    "currency" : "Měna",
+    "orgUnit" : "Nadřazená jednotka",
+    "unit" : "Nadřazená jednotka",
+    "actions" : "",
+    "hint" : "Limity nákupu pomáhají kontrolovat výdaje stanovením, kolik mohou nákupčí utratit za jednu objednávku nebo za týden, měsíc, čtvrtletí či rok. Nákupní limity se přiřazují uživatelům nebo skupinám uživatelů. Nákupní limity se přidělují také schvalovatelům a určují, do jaké výše mohou nákupy schvalovat. Pomocí skupin uživatelů můžete limity nákupu přiřadit mnoha uživatelům najednou.",
+    "details" : {
+      "title" : "Detaily limitu nákupu",
+      "subtitle" : "Limit nákupu: {{ item.code }}"
     },
-    "edit": {
-      "title": "Edit Purchase Limit",
-      "subtitle": "Purchase limits : {{ item.code }}"
+    "edit" : {
+      "title" : "Upravit limit nákupu",
+      "subtitle" : "Limity nákupu: {{ item.code }}"
     },
-    "create": {
-      "title": "Create Purchase Limit",
-      "subtitle": ""
+    "create" : {
+      "title" : "Vytvořit limit nákupu",
+      "subtitle" : ""
     },
-    "sortBy": "Řadit podle",
-    "sort": {
-      "byName": "Název",
-      "byUnitName": "Jednotka"
+    "sortBy" : "Řadit podle",
+    "sort" : {
+      "byName" : "Název",
+      "byUnitName" : "Jednotka"
     },
-    "messages": {
-      "deactivateTitle": "Disable this purchase limit?",
-      "deactivate": "Disabled purchase limits can no longer be assigned to a user or user group. Current assignments will have no effect.",
-      "confirmEnabled": "Purchase Limit {{ item.code }} enabled successfully",
-      "confirmDisabled": "Purchase Limit {{ item.code }} disabled successfully",
-      "update": "Purchase Limit {{ item.code }} updated successfully",
-      "create": "Purchase Limit {{ item.code }} created successfully"
+    "messages" : {
+      "deactivateTitle" : "Deaktivovat tento limit nákupu?",
+      "deactivate" : "Deaktivované limity nákupu již nelze dále přiřazovat uživatelům ani skupinám uživatelů. Na stávající přiřazení to nebude mít vliv.",
+      "confirmEnabled" : "Limity nákupu {{item.code}} úspěšně aktivovány",
+      "confirmDisabled" : "Limity nákupu {{item.code}} úspěšně deaktivovány",
+      "update" : "Limity nákupu {{item.code}} úspěšně aktualizovány",
+      "create" : "Limity nákupu {{item.code}} úspěšně vytvořeny"
     },
-    "info": {
-      "disabledEdit": "Enable the purchase limit to allow editing.",
-      "disabledEnable": "Unit must be enabled before this purchase limit may be enabled."
+    "info" : {
+      "disabledEdit" : "Aktivujte limit nákupu, aby jej bylo možné upravovat.",
+      "disabledEnable" : "Než bude možné aktivovat tento limit nákupu, je třeba aktivovat jednotku."
     },
-    "per": {
-      "DAY": "per day",
-      "WEEK": "per week",
-      "MONTH": "per month",
-      "QUARTER": "per quarter",
-      "YEAR": "per year"
+    "per" : {
+      "DAY" : "za den",
+      "WEEK" : "za týden",
+      "MONTH" : "za měsíc",
+      "QUARTER" : "za čtvrtletí",
+      "YEAR" : "za rok"
     },
-    "breadcrumbs": {
-      "list": "All purchase limits",
-      "details": "{{code}}"
+    "breadcrumbs" : {
+      "list" : "Všechny limity nákupu",
+      "details" : "{{code}}"
     }
   }
 }

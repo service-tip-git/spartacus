@@ -1,65 +1,67 @@
 {
-  "savedCartDetails": {
-    "cartName": "Nama",
-    "cartDescription": "Deskripsi",
-    "cartId": "ID",
-    "dateSaved": "Tanggal Tersimpan",
-    "items": "Item",
-    "quantity": "Jumlah",
-    "total": "Total",
-    "editSavedCart": "Ubah Troli Tersimpan",
-    "deleteSavedCart": "Hapus Permanen Troli Tersimpan",
-    "addSelectedItems": "Add selected items",
-    "emptyCartItems": "Empty Cart Items"
+  "savedCartDetails" : {
+    "cartName" : "Nama",
+    "cartDescription" : "Deskripsi",
+    "cartId" : "ID",
+    "dateSaved" : "Tanggal Tersimpan",
+    "items" : "Item",
+    "quantity" : "Jumlah",
+    "total" : "Total",
+    "editSavedCart" : "Edit Keranjang Tersimpan",
+    "deleteSavedCart" : "Hapus Keranjang Tersimpan",
+    "addSelectedItems" : "Tambahkan item yang dipilih",
+    "emptyCartItems" : "Kosongkan Item dalam Keranjang"
   },
-  "savedCartList": {
-    "savedCarts": "Troli Tersimpan ({{count}})",
-    "cartName": "Nama",
-    "cartId": "Id",
-    "dateSaved": "Tanggal Tersimpan",
-    "cartDescription": "Deskripsi",
-    "quantity": "Jml",
-    "total": "Total",
-    "actions": "Tindakan",
-    "makeCartActive": "Make cart active",
-    "notFound": "Tidak Ada Troli Tersimpan yang Ditemukan",
-    "swapCartNoActiveCart": "Existing cart is activated by {{cartName}} successfully.",
-    "swapCartWithActiveCart": "Existing cart is activated by {{cartName}} successfully. Your previous items were saved in a cart {{previousCartName}}."
+  "savedCartList" : {
+    "savedCarts" : "Keranjang Tersimpan ({{count}})",
+    "cartName" : "Nama",
+    "cartId" : "Id",
+    "dateSaved" : "Tanggal Tersimpan",
+    "cartDescription" : "Deskripsi",
+    "quantity" : "Jml",
+    "quantityFull" : "Jumlah",
+    "total" : "Total",
+    "actions" : "Tindakan",
+    "makeCartActive" : "Aktifkan keranjang",
+    "notFound" : "Tidak Ditemukan Keranjang Tersimpan",
+    "swapCartNoActiveCart" : "Keranjang yang ada berhasil diaktifkan oleh {{cartName}}.",
+    "swapCartWithActiveCart" : "Keranjang yang ada berhasil diaktifkan oleh {{cartName}}. Item Anda sebelumnya telah disimpan dalam keranjang {{previousCartName}}."
   },
-  "savedCartCartPage": {
-    "messages": {
-      "cartSaved": "Your cart items have been successfully saved for later in the \"{{cartName}}\" cart"
+  "savedCartCartPage" : {
+    "messages" : {
+      "cartSaved" : "Item dalam keranjang Anda berhasil disimpan untuk nanti dalam keranjang \"{{cartName}}\""
     }
   },
-  "savedCartDialog": {
-    "saveForLater": "Save For Later",
-    "itemsSavedForLater": "All of the items in your cart will be saved for later",
-    "savedCartName": "Saved Cart Name",
-    "savedCartDescription": "Saved Cart Description",
-    "optional": "optional",
-    "charactersLeft": "characters left: {{count}}",
-    "cancel": "Batalkan",
-    "save": "Simpan",
-    "restore": "Kembalikan",
-    "followingCartDelete": "The following saved cart will be deleted",
-    "followingCartRestore": "The following saved cart will be restored as the active cart",
-    "delete": "Hapus",
-    "deleteCartSuccess": "Cart Deleted Successfully",
-    "editCartSuccess": "Cart Edited Successfully",
-    "editSavedCart": "Ubah Troli Tersimpan",
-    "deleteSavedCart": "Hapus Permanen Troli Tersimpan",
-    "restoreSavedCart": "Pulihkan Troli Tersimpan",
-    "name": "Nama",
-    "id": "ID",
-    "description": "Deskripsi",
-    "quantity": "JML",
-    "total": "Total",
-    "keepCopySavedCart": "Keep a copy of this cart in the saved carts list",
-    "defaultCloneCartName": "Kopian dari {{name}}",
-    "nameOfCloneCart": "Name of copied cart"
+  "savedCartDialog" : {
+    "saveForLater" : "Simpan Untuk Nanti",
+    "itemsSavedForLater" : "Semua item dalam keranjang Anda akan disimpan untuk nanti",
+    "savedCartName" : "Nama Keranjang Tersimpan",
+    "savedCartDescription" : "Deskripsi Keranjang Tersimpan",
+    "optional" : "opsional",
+    "charactersLeft" : "karakter tersisa: {{count}}",
+    "cancel" : "Batalkan",
+    "save" : "Simpan",
+    "restore" : "Pulihkan",
+    "followingCartDelete" : "Keranjang tersimpan berikut akan dihapus",
+    "followingCartRestore" : "Keranjang tersimpan berikut akan dipulihkan sebagai keranjang aktif",
+    "delete" : "Hapus",
+    "deleteCartSuccess" : "Keranjang Berhasil Dihapus",
+    "editCartSuccess" : "Keranjang Berhasil Diedit",
+    "editSavedCart" : "Edit Keranjang Tersimpan",
+    "deleteSavedCart" : "Hapus Keranjang Tersimpan",
+    "restoreSavedCart" : "Pulihkan Keranjang Tersimpan",
+    "name" : "Nama",
+    "id" : "ID",
+    "description" : "Deskripsi",
+    "quantity" : "JML",
+    "quantityFull" : "Jumlah",
+    "total" : "Total",
+    "keepCopySavedCart" : "Simpan salinan keranjang ini dalam daftar keranjang tersimpan",
+    "defaultCloneCartName" : "Salinan dari {{name}}",
+    "nameOfCloneCart" : "Nama keranjang yang disalin"
   },
-  "addToSavedCart": {
-    "savedCarts": "Saved carts",
-    "saveCartForLater": "Save cart for later"
+  "addToSavedCart" : {
+    "savedCarts" : "Keranjang tersimpan",
+    "saveCartForLater" : "Simpan keranjang untuk nanti"
   }
 }

@@ -1,109 +1,109 @@
 {
-  "closeAccount": {
-    "confirmAccountClosure": "Fiókbezárás megerősítése",
-    "confirmAccountClosureMessage": "Biztosan szeretné bezárni a fiókját?",
-    "closeMyAccount": "CLOSE MY ACCOUNT",
-    "accountClosedSuccessfully": "Account closed with success",
-    "accountClosedFailure": "Failed to close account"
+  "closeAccount" : {
+    "confirmAccountClosure" : "Fiókbezárás megerősítése",
+    "confirmAccountClosureMessage" : "Biztosan szeretné bezárni a fiókját?",
+    "closeMyAccount" : "FIÓK BEZÁRÁSA",
+    "accountClosedSuccessfully" : "Fiók bezárása sikeres",
+    "accountClosedFailure" : "Fiók bezárása sikertelen"
   },
-  "updatePasswordForm": {
-    "oldPassword": {
-      "label": "Régi jelszó",
-      "placeholder": "Régi jelszó"
+  "updatePasswordForm" : {
+    "oldPassword" : {
+      "label" : "Régi jelszó",
+      "placeholder" : "Régi jelszó"
     },
-    "oldPasswordIsRequired": "Old password is required.",
-    "newPassword": {
-      "label": "Új jelszó",
-      "placeholder": "Új jelszó"
+    "oldPasswordIsRequired" : "A régi jelszó megadása kötelező.",
+    "newPassword" : {
+      "label" : "Új jelszó",
+      "placeholder" : "Új jelszó"
     },
-    "passwordMinRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
-    "passwordStrengthRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
-    "confirmPassword": {
-      "label": "Új jelszó megerősítése",
-      "placeholder": "Jelszó megerősítése"
+    "passwordMinRequirements" : "Íme egy gyors útmutató a biztonságos jelszó létrehozásához: Használjon legalább 8 karaktert, kis- és nagybetűket, számokat és szimbólumokat.",
+    "passwordStrengthRequirements" : "Íme egy gyors útmutató a biztonságos jelszó létrehozásához: Használjon legalább 8 karaktert, kis- és nagybetűket, számokat és szimbólumokat. Ne használja többször egymás után ugyanazt a karaktert.",
+    "confirmPassword" : {
+      "label" : "Új jelszó megerősítése",
+      "placeholder" : "Jelszó megerősítése"
     },
-    "bothPasswordMustMatch": "Both password must match",
-    "passwordUpdateSuccess": "Password updated with success",
-    "accessDeniedError": "Access is denied"
+    "bothPasswordMustMatch" : "A két jelszónak egyeznie kell",
+    "passwordUpdateSuccess" : "Jelszó frissítése sikeres",
+    "accessDeniedError" : "Hozzáférés megtagadva"
   },
-  "updateProfileForm": {
-    "title": "Megszólítás",
-    "none": "",
-    "firstName": {
-      "label": "Utónév",
-      "placeholder": "Utónév"
+  "updateProfileForm" : {
+    "title" : "Megszólítás",
+    "none" : "",
+    "firstName" : {
+      "label" : "Utónév",
+      "placeholder" : "Utónév"
     },
-    "firstNameIsRequired": "First name is required.",
-    "lastName": {
-      "label": "Vezetéknév",
-      "placeholder": "Vezetéknév"
+    "firstNameIsRequired" : "Az utónév megadása kötelező.",
+    "lastName" : {
+      "label" : "Vezetéknév",
+      "placeholder" : "Vezetéknév"
     },
-    "lastNameIsRequired": "Last name is required.",
-    "profileUpdateSuccess": "Personal details successfully updated",
-    "customerId": "Customer #"
+    "lastNameIsRequired" : "A vezetéknév megadása kötelező.",
+    "profileUpdateSuccess" : "A személyes adatok frissítése sikeres",
+    "customerId" : "Ügyfél #"
   },
-  "consentManagementForm": {
-    "clearAll": "Clear all",
-    "selectAll": "Összes kiválasztása",
-    "message": {
-      "success": {
-        "given": "Consent successfully given.",
-        "withdrawn": "Consent successfully withdrawn."
+  "consentManagementForm" : {
+    "clearAll" : "Összes törlése",
+    "selectAll" : "Összes kiválasztása",
+    "message" : {
+      "success" : {
+        "given" : "Hozzájárulás megadása sikeres.",
+        "withdrawn" : "Hozzájárulás visszavonása sikeres."
       }
     }
   },
-  "myCoupons": {
-    "noCouponsMessage": "You have no coupons available.",
-    "effectiveTitle": "Érvényes:",
-    "Effective": "EFFECTIVE",
-    "PreSession": "EFFECTIVE SOON",
-    "ExpireSoon": "EXPIRING SOON",
-    "readMore": "Read more",
-    "notification": "Értesítés",
-    "findProducts": "Termékek keresése",
-    "status": "Státus:",
-    "dialogTitle": "Kupon",
-    "claimCustomerCoupon": "Sikeresen igényelte ezt a kupont.",
-    "myCoupons": "My coupons",
-    "startDateAsc": "Start Date (ascending)",
-    "startDateDesc": "Start Date (descending)",
-    "endDateAsc": "End Date (ascending)",
-    "endDateDesc": "End Date (descending)",
-    "sortBy": "Rendezés alapja",
-    "sortCoupons": "Sort coupons",
-    "notesPreffix": "You can set your preferred channels for receiving coupon notifications on the ",
-    "notesLink": "Értesítési csatornák",
-    "notesSuffix": " page."
+  "myCoupons" : {
+    "noCouponsMessage" : "Nincsenek elérhető kuponjai.",
+    "effectiveTitle" : "Érvényes:",
+    "Effective" : "ÉRVÉNYES",
+    "PreSession" : "HAMAROSAN ÉRVÉNYBE LÉP",
+    "ExpireSoon" : "HAMAROSAN LEJÁR",
+    "readMore" : "További információ",
+    "notification" : "Értesítés",
+    "findProducts" : "Termékek keresése",
+    "status" : "Státus:",
+    "dialogTitle" : "Kupon",
+    "claimCustomerCoupon" : "Sikeresen igényelte ezt a kupont.",
+    "myCoupons" : "Saját kuponok",
+    "startDateAsc" : "Kezdő dátum (növekvő)",
+    "startDateDesc" : "Kezdő dátum (csökkenő)",
+    "endDateAsc" : "Záró dátum (növekvő)",
+    "endDateDesc" : "Záró dátum (csökkenő)",
+    "sortBy" : "Rendezés alapja",
+    "sortCoupons" : "Kuponok rendezése",
+    "notesPreffix" : "A kuponértesítések fogadása esetén előnyben részesített csatornát az ",
+    "notesLink" : "Értesítési csatornák",
+    "notesSuffix" : " oldalon kezelheti."
   },
-  "notificationPreference": {
-    "message": "Select your preferred notification channels",
-    "note": "Note: ",
-    "noteMessage": "If you deactivate all channels you will not be able to receive any further notifications.",
-    "EMAIL": "Email:",
-    "SMS": "SMS:",
-    "SITE_MESSAGE": "SiteMessage"
+  "notificationPreference" : {
+    "message" : "A preferált értesítési csatornáit az",
+    "note" : "Megjegyzés: ",
+    "noteMessage" : "Ha inaktiválja az összes csatornát, nem fog tudni további értesítéseket fogadni.",
+    "EMAIL" : "E-mail:",
+    "SMS" : "SMS:",
+    "SITE_MESSAGE" : "Webhelyüzenet"
   },
-  "myInterests": {
-    "header": "Engem érdeklők",
-    "item": "TÉTEL",
-    "price": "PRICE",
-    "notifications": "NOTIFICATIONS",
-    "noInterests": "You have no registered interests yet.",
-    "inStock": "Készleten",
-    "lowStock": "Kevés van készleten",
-    "outOfStock": "Nincs készleten",
-    "BACK_IN_STOCK": "Újra készleten",
-    "sortBy": "Rendezés alapja",
-    "sortInterests": "Sort interests",
-    "expirationDate": " - Till {{ expirationDate }}",
-    "productId": "ID {{ code }}",
-    "remove": "Eltávolítás",
-    "sorting": {
-      "byNameAsc": "Név (növekvő sorrend)",
-      "byNameDesc": "Név (csökkenő sorrend)"
+  "myInterests" : {
+    "header" : "Érdeklődési köreim",
+    "item" : "TÉTEL",
+    "price" : "ÁR",
+    "notifications" : "ÉRTESÍTÉSEK",
+    "noInterests" : "Még nem regisztrált érdeklődési kört.",
+    "inStock" : "Készleten",
+    "lowStock" : "Kevés van készleten",
+    "outOfStock" : "Nincs készleten",
+    "BACK_IN_STOCK" : "Újra készleten",
+    "sortBy" : "Rendezés alapja",
+    "sortInterests" : "Érdeklődési körök rendezése",
+    "expirationDate" : " Eddig: {{ expirationDate }}",
+    "productId" : "Azonosító: {{ code }}",
+    "remove" : "Eltávolítás",
+    "sorting" : {
+      "byNameAsc" : "Név (növekvő sorrend)",
+      "byNameDesc" : "Név (csökkenő sorrend)"
     },
-    "actions": "ACTIONS",
-    "caption": "My Interests contents.",
-    "itemRemoved": "Selected item has been removed."
+    "actions" : "MŰVELETEK",
+    "caption" : "Az „Engem érdeklők” tartalma.",
+    "itemRemoved" : "A kiválasztott tétel el lett távolítva."
   }
 }

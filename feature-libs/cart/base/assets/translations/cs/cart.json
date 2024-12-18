@@ -1,74 +1,75 @@
 {
-  "cartDetails": {
-    "id": "ID",
-    "proceedToCheckout": "Pokračovat k pokladně",
-    "cartName": "Cart #{{code}}"
+  "cartDetails" : {
+    "id" : "ID",
+    "proceedToCheckout" : "Pokračovat k pokladně",
+    "cartName" : "Košík č. {{code}}"
   },
-  "cartItems": {
-    "id": "ID",
-    "description": "Popis",
-    "item": "Položka",
-    "itemPrice": "Cena položky",
-    "quantity": "Množství",
-    "quantityTitle": "The quantity represents the total number of this item in your cart.",
-    "total": "Celkem",
-    "actions": "Akce",
-    "cartTotal": "Cart total ({{count}} item)",
-    "cartTotal_other": "Cart total ({{count}} items)",
-    "itemRemoved": "Selected item has been removed. Cart total has been updated.",
-    "caption": "Shopping cart contents."
+  "cartItems" : {
+    "id" : "ID",
+    "description" : "Popis",
+    "item" : "Položka",
+    "itemPrice" : "Cena položky",
+    "quantity" : "Množství",
+    "quantityFull" : "Množství",
+    "quantityTitle" : "Množství znamená celkové množství této položky ve vašem košíku.",
+    "total" : "Celkem",
+    "actions" : "Akce",
+    "cartTotal" : "Košík celkem ({{count}} položka)",
+    "cartTotal_other" : "Košík celkem (Počet položek: {{count}})",
+    "itemRemoved" : "Vybraná položka byla vyjmuta. Součet košíku byla aktualizován.",
+    "caption" : "Obsah nákupního košíku."
   },
-  "orderCost": {
-    "orderSummary": "Souhrn objednávky",
-    "subtotal": "Subtotal after discounts:",
-    "shipping": "Expedice:",
-    "estimatedShipping": "Estimated shipping:",
-    "discount": "You saved:",
-    "salesTax": "Sales Tax:",
-    "grossTax": "The order total does not include tax of",
-    "grossIncludeTax": "The order total includes tax of",
-    "total": "Celkem:",
-    "toBeDetermined": "TBD"
+  "orderCost" : {
+    "orderSummary" : "Souhrn objednávky",
+    "subtotal" : "Mezisoučet po slevách:",
+    "shipping" : "Doručení:",
+    "estimatedShipping" : "Odhadované datum dodání:",
+    "discount" : "Ušetřili jste:",
+    "salesTax" : "Prodejní daň",
+    "grossTax" : "Celková suma objednávky nezahrnuje daň",
+    "grossIncludeTax" : "Celková suma objednávky zahrnuje daň",
+    "total" : "Celkem:",
+    "toBeDetermined" : "Bude určeno později"
   },
-  "voucher": {
-    "coupon": "Have a coupon?",
-    "coupon_other": "Coupon codes",
-    "couponLabel": "Enter a promo code here",
-    "addCoupon": "Add a coupon",
-    "apply": "Použít",
-    "placeholder": "Promo code",
-    "applyVoucherSuccess": "{{voucherCode}} has been applied.",
-    "removeVoucherSuccess": "{{voucherCode}} has been removed.",
-    "anchorLabel": "Enter or remove your coupon code",
-    "vouchersApplied": "Použité kupóny",
-    "availableCoupons": "Available coupons",
-    "availableCouponsLabel": "You can add these coupons to this order."
+  "voucher" : {
+    "coupon" : "Máte kupón?",
+    "coupon_other" : "Kódy kupónů",
+    "couponLabel" : "Sem zadejte propagační kód",
+    "addCoupon" : "Přidat kupón",
+    "apply" : "Použít",
+    "placeholder" : "Propagační kód",
+    "applyVoucherSuccess" : "{{voucherCode}} byl použit.",
+    "removeVoucherSuccess" : "{{voucherCode}} byl odebrán.",
+    "anchorLabel" : "Zadejte nebo odeberte kód kupónu",
+    "vouchersApplied" : "Použité kupóny",
+    "availableCoupons" : "Dostupné kupóny",
+    "availableCouponsLabel" : "Na tuto objednávku můžete použít tyto kupóny."
   },
-  "saveForLaterItems": {
-    "itemTotal": "Saved for later ({{count}} item)",
-    "itemTotal_other": "Uložit na později (položek: {{count}})",
-    "cartTitle": "Košík",
-    "saveForLater": "Save For Later",
-    "moveToCart": "Move To Cart",
-    "stock": "Zásoba",
-    "forceInStock": "Na skladě"
+  "saveForLaterItems" : {
+    "itemTotal" : "Uloženo na později (položek: {{count}})",
+    "itemTotal_other" : "Uloženo na později (položek: {{count}})",
+    "cartTitle" : "Košík",
+    "saveForLater" : "Uložit na později",
+    "moveToCart" : "Přesunout do košíku",
+    "stock" : "Zásoba",
+    "forceInStock" : "Na skladě"
   },
-  "clearCart": {
-    "clearCart": "Clear Cart",
-    "clearingCart": "Clearing Cart...",
-    "cartClearedSuccessfully": "Active cart cleared successfully.",
-    "areYouSureToClearCart": "Are you sure you want to clear this cart?",
-    "allItemsWillBeRemoved": "All items in your active cart will be removed."
+  "clearCart" : {
+    "clearCart" : "Vyprázdnit košík",
+    "clearingCart" : "Vyprazdňování košíku…",
+    "cartClearedSuccessfully" : "Aktivní košík byl úspěšně vyprázdněn.",
+    "areYouSureToClearCart" : "Opravdu chcete vyprázdnit tento košík?",
+    "allItemsWillBeRemoved" : "Všechny položky v aktuálním košíku budou odebrány."
   },
-  "validation": {
-    "cartEntriesChangeDuringCheckout": "During checkout we found problems with your entries. Please review your cart.",
-    "cartEntryRemoved": "{{name}} was removed from the cart due to being out of stock.",
-    "productOutOfStock": "Z košíku bylo odebráno {{name}} z důvodu nedostatečného množství zásob.",
-    "lowStock": "Quantity has reduced to {{quantity}} due to insufficient stock.",
-    "reviewConfiguration": "Resolve the issues in the configuration for cart entry first.",
-    "configurationError": "Resolve the issues in the configuration for cart entries first.",
-    "pricingError": "Configurator pricing is currently not available. Checkout/quote submission is not possible. Please try again later.",
-    "unresolvableIssues": "The product configuration requires additional entries in the back end. As a result, you cannot proceed. Please contact support.",
-    "inProgress": "Zpracování"
+  "validation" : {
+    "cartEntriesChangeDuringCheckout" : "U pokladny se vyskytl problém s vašimi položkami. Zkontrolujte svůj košík.",
+    "cartEntryRemoved" : "Položka {{name}} byla odebrána z vašeho košíku, protože není skladem.",
+    "productOutOfStock" : "Z košíku byla odebrána položka {{name}} z důvodu nedostatečného množství zásob.",
+    "lowStock" : "Množství bylo sníženo na {{quantity}} kvůli nedostatečnému stavu zásob.",
+    "reviewConfiguration" : "Nejprve vyřešte problémy v konfiguraci pro položku v košíku.",
+    "configurationError" : "Nejprve vyřešte problémy v konfiguraci pro položku v košíku.",
+    "pricingError" : "Ceny konfigurátoru nejsou v současné době k dispozici. Odeslání objednávky/nabídky není možné. Zkuste to později.",
+    "unresolvableIssues" : "Konfigurace produktu vyžaduje další záznamy v backendu. Proto nemůžete pokračovat. Obraťte se na podporu.",
+    "inProgress" : "Zpracování"
   }
 }

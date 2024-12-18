@@ -1,14 +1,14 @@
 {
-  "checkoutScheduledReplenishment": {
-    "autoReplenishOrder": "Auto Replenish Order",
-    "orderType_PLACE_ORDER": "None (one time order only)",
-    "orderType_SCHEDULE_REPLENISHMENT_ORDER": "Replenish Order",
-    "every": "Jeden",
-    "recurrencePeriodType_DAILY": "Day(s)",
-    "recurrencePeriodType_WEEKLY": "Week(s)",
-    "recurrencePeriodType_MONTHLY": "Monat",
-    "dayOfMonth": "On day",
-    "startOn": "Start on",
-    "repeatOnDays": "Repeat on the following days"
+  "checkoutScheduledReplenishment" : {
+    "autoReplenishOrder" : "Automatische Nachbestellung",
+    "orderType_PLACE_ORDER" : "Keine (nur einmalige Bestellung)",
+    "orderType_SCHEDULE_REPLENISHMENT_ORDER" : "Nachbestellung",
+    "every" : "Alle/Jede(n)",
+    "recurrencePeriodType_DAILY" : "Tag(e)",
+    "recurrencePeriodType_WEEKLY" : "Woche(n)",
+    "recurrencePeriodType_MONTHLY" : "Monat",
+    "dayOfMonth" : "Am Tag",
+    "startOn" : "Start am",
+    "repeatOnDays" : "An den folgenden Tagen wiederholen"
   }
 }

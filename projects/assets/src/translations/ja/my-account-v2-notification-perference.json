@@ -1,9 +1,9 @@
 {
-  "myAccountV2NotifiationPerference": {
-    "header": "通知チャネル",
-    "message": "Select your preferred notification channels",
-    "note": "Note: ",
-    "noteMessage": "If you deactivate all channels you will not be able to receive any further notifications.",
-    "EMAIL": "Email:"
+  "myAccountV2NotifiationPerference" : {
+    "header" : "通知チャネル",
+    "message" : "優先通知チャネルを選択してください",
+    "note" : "注記:  ",
+    "noteMessage" : "すべてのチャネルを無効化すると、今後通知を受信できなくなります。",
+    "EMAIL" : "電子メール: "
   }
 }

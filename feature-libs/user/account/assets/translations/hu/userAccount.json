@@ -1,47 +1,47 @@
 {
-  "loginForm": {
-    "forgotPassword": "Forgot password?",
-    "signIn": "Bejelentkezés",
-    "register": "Regisztráció",
-    "dontHaveAccount": "Don’t have an account?",
-    "guestCheckout": "Guest Checkout",
-    "emailAddress": {
-      "label": "E-mail cím",
-      "placeholder": "Enter Email Address"
+  "loginForm" : {
+    "forgotPassword" : "Elfelejtette a jelszavát?",
+    "signIn" : "Bejelentkezés",
+    "register" : "Regisztráció",
+    "dontHaveAccount" : "Nincs fiókja?",
+    "guestCheckout" : "Fizetés vendégként",
+    "emailAddress" : {
+      "label" : "E-mail-cím",
+      "placeholder" : "Adja meg az e-mail-címet"
     },
-    "password": {
-      "label": "Jelszó",
-      "placeholder": "Enter Your Password"
+    "password" : {
+      "label" : "Jelszó",
+      "placeholder" : "Adja meg jelszavát"
     },
-    "wrongEmailFormat": "This is not a valid email format."
+    "wrongEmailFormat" : "Ez nem egy érvényes e-mail-formátum."
   },
-  "verificationTokenForm": {
-    "createVerificationToken": "Verification code sent to {{target}}. Please check and enter the code.",
-    "needInputCredentials": "Please enter your credentials to continue.",
-    "sendRateLime": "in {{waitTime}} seconds",
-    "resend": "Újraküldés",
-    "verificationCode": {
-      "label": "Verification Code",
-      "placeholder": "Enter Verification Code"
+  "verificationTokenForm" : {
+    "createVerificationToken" : "Ellenőrző kód elküldve a következő címre: {{target}}. Ellenőrizze, és adja meg a kódot.",
+    "needInputCredentials" : "A folytatáshoz adja meg a hitelesítő adatait.",
+    "sendRateLime" : "{{waitTime}} másodpercen belül",
+    "resend" : "Újraküldés",
+    "verificationCode" : {
+      "label" : "Ellenőrző kód",
+      "placeholder" : "Adja meg az ellenőrző kódot"
     },
-    "noReceiveCode": "Didn't receive the code?",
-    "verify": "Verify",
-    "back": "Vissza",
-    "tokenInputHint": "You can request a new code. A timer starts indicating the seconds left until you can resend your request."
+    "noReceiveCode" : "Nem kapta meg a kódot?",
+    "verify" : "Ellenőrzés",
+    "back" : "Vissza",
+    "tokenInputHint" : "Igényelhet egy új kódot. Egy időzítő jelzi, hogy mikor kérheti a kód ismételt elküldését."
   },
-  "verificationTokenDialog": {
-    "title": "Didn’t receive the code",
-    "noReceiveCode": "If you didn't receive the code, the reasons might be:",
-    "contentLine1": "1. The email hasn't come yet.",
-    "contentLine2": "2. The received email has been treated as junk email.",
-    "contentLine3": "3. Either the email address or the password you entered is incorrect.",
-    "close": "Bezárás"
+  "verificationTokenDialog" : {
+    "title" : "Nem kaptam meg a kódot",
+    "noReceiveCode" : "Lehetséges okok, amiért nem kapta meg a kódot:",
+    "contentLine1" : "1. Az e-mail még nem érkezett meg.",
+    "contentLine2" : "2. A kapott e-mail a levélszemét mappába került.",
+    "contentLine3" : "3. A megadott e-mail-cím vagy jelszó helytelen.",
+    "close" : "Bezárás"
   },
-  "miniLogin": {
-    "userGreeting": "Hi, {{name}}",
-    "signInRegister": "Sign In / Register"
+  "miniLogin" : {
+    "userGreeting" : "Üdv, {{name}}!",
+    "signInRegister" : "Bejelentkezés / Regisztráció"
   },
-  "myAccountV2User": {
-    "signOut": "Kijelentkezés"
+  "myAccountV2User" : {
+    "signOut" : "Kijelentkezés"
   }
 }

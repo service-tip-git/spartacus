@@ -1,4 +1,4 @@
 {
-  "cpqQuoteHeading": "Cena položky",
-  "discountCaption": "This item is {{ discount }}% off"
+  "cpqQuoteHeading" : "Cena položky",
+  "discountCaption" : "Tato položka má slevu {{ discount }} %"
 }

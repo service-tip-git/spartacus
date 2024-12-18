@@ -1,6 +1,6 @@
 {
-  "cdsTrendingSearches": {
-    "trendingSearches": "Trending Searches",
-    "ariaTrendingSearches": "typing trending searches"
+  "cdsTrendingSearches" : {
+    "trendingSearches" : "Ricerche di tendenza",
+    "ariaTrendingSearches" : "inserimento di ricerche di tendenza in corso"
   }
 }

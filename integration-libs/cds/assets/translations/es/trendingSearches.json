@@ -1,6 +1,6 @@
 {
-  "cdsTrendingSearches": {
-    "trendingSearches": "Trending Searches",
-    "ariaTrendingSearches": "typing trending searches"
+  "cdsTrendingSearches" : {
+    "trendingSearches" : "Búsquedas populares",
+    "ariaTrendingSearches" : "escribiendo búsquedas populares"
   }
 }

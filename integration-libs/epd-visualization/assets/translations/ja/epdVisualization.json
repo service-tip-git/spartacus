@@ -1,70 +1,70 @@
 {
-  "epdVisualization": {
-    "visualViewer": {
-      "contentType": {
-        "drawing2D": "2D",
-        "model3D": "3D"
+  "epdVisualization" : {
+    "visualViewer" : {
+      "contentType" : {
+        "drawing2D" : "2D",
+        "model3D" : "3D"
       },
-      "toolbar": {
-        "homeButton": {
-          "label": "ホーム"
+      "toolbar" : {
+        "homeButton" : {
+          "label" : "ホーム"
         },
-        "zoomButton": {
-          "label": "ズーム"
+        "zoomButton" : {
+          "label" : "ズーム"
         },
-        "panButton": {
-          "label": "Pan"
+        "panButton" : {
+          "label" : "パン"
         },
-        "rotateButton": {
-          "label": "Rotate"
+        "rotateButton" : {
+          "label" : "回転"
         },
-        "isolateButton": {
-          "label": "Isolate"
+        "isolateButton" : {
+          "label" : "分離"
         },
-        "playButton": {
-          "label": "再生"
+        "playButton" : {
+          "label" : "再生"
         },
-        "pauseButton": {
-          "label": "一時停止"
+        "pauseButton" : {
+          "label" : "一時停止"
         },
-        "hotspotsButton": {
-          "label": "Hotspots",
-          "show": "表示",
-          "hide": "非表示"
+        "hotspotsButton" : {
+          "label" : "ホットスポット",
+          "show" : "表示",
+          "hide" : "非表示"
         },
-        "visualViewerAnimationSlider": {
-          "label": "Animation Slider",
-          "role": "Slider"
+        "visualViewerAnimationSlider" : {
+          "label" : "アニメーションスライダ",
+          "role" : "スライダ"
         }
       }
     },
-    "visualPicking": {
-      "visualPickingTab": {
-        "noProductReferences": "No spare parts are available for this product."
+    "visualPicking" : {
+      "visualPickingTab" : {
+        "noProductReferences" : "この商品にはスペアパーツがありません。"
       },
-      "visualPickingProductList": {
-        "description": "説明",
-        "itemPrice": "価格",
-        "outOfStock": "Out of stock",
-        "id": "ID"
+      "visualPickingProductList" : {
+        "description" : "説明",
+        "itemPrice" : "価格",
+        "outOfStock" : "在庫なし",
+        "id" : "ID"
       },
-      "visualPickingProductFilter": {
-        "input": {
-          "placeholder": "Filter by name or id"
+      "visualPickingProductFilter" : {
+        "input" : {
+          "placeholder" : "名前または ID でフィルタ"
         },
-        "searchButton": {
-          "label": "search"
+        "searchButton" : {
+          "label" : "検索"
         },
-        "resetButton": {
-          "label": "リセット"
+        "resetButton" : {
+          "label" : "リセット"
         }
       }
     },
-    "errors": {
-      "visualLoad": {
-        "noMatchingVisualFound": "No matching visualization found",
-        "multipleMatchingVisualsFound": "Multiple matching visualizations found",
-        "unexpectedLoadError": "Error occurred while loading visualization"
+    "errors" : {
+      "visualLoad" : {
+        "noMatchingVisualFound" : "一致するビジュアライゼーションが見つかりません",
+        "multipleMatchingVisualsFound" : "一致するビジュアライゼーションが複数見つかりました",
+        "unexpectedLoadError" : "ビジュアライゼーションのロード中にエラーが発生しました"
       }
     }
   }

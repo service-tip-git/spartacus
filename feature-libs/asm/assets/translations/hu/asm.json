@@ -1,175 +1,176 @@
 {
-  "asm": {
-    "mainLogoLabel": "SAP",
-    "mainTitle": "Assisted Service Mode",
-    "logout": "Kijelentkezés",
-    "hideUi": "Close ASM",
-    "helpPortalUrl": "Súgó",
-    "customers": "Vevők",
-    "asmCustomer360Button": "Customer 360 View",
-    "asmCustomer360ViewButton": "Customer 360°",
-    "createCustomerSuccessfullyAlert": "The customer account has been created and the customer session has started.",
-    "saveInactiveCartAlertInfo": "The identified cart is an inactive cart. To take further actions on this cart, save it first.",
-    "activeCartAlertInfo": "The identified cart is an active cart.",
-    "startCustomerEmulationAlertInfo": "Customer emulation has started. Any actions you do will reflect the effects on the customer account.",
-    "toggleUi": {
-      "collapse": "Hide ASM",
-      "expand": "Show ASM"
+  "asm" : {
+    "mainLogoLabel" : "SAP",
+    "mainTitle" : "Támogatott szolgáltatási mód",
+    "logout" : "Kijelentkezés",
+    "hideUi" : "ASM bezárása",
+    "helpPortalUrl" : "Súgó",
+    "customers" : "Ügyfelek",
+    "asmCustomer360Button" : "Ügyfél 360 fokos nézete",
+    "asmCustomer360ViewButton" : "Ügyfél 360°",
+    "createCustomerSuccessfullyAlert" : "Az ügyfélfiók létrejött, és megkezdődött az ügyfélmunkamenet.",
+    "saveInactiveCartAlertInfo" : "Az azonosított kosár inaktív. Ha további műveleteket szeretne végezni a kosárral, először mentse.",
+    "activeCartAlertInfo" : "Az azonosított kosár aktív.",
+    "startCustomerEmulationAlertInfo" : "Ügyfélemulálás megkezdve. A végrehajtott műveletek hatásai megjelennek az ügyfélfiókon is.",
+    "toggleUi" : {
+      "collapse" : "ASM elrejtése",
+      "expand" : "ASM megjelenítése"
     },
-    "loginForm": {
-      "submit": "Bejelentkezés",
-      "userId": {
-        "label": "Agent ID or Email"
+    "loginForm" : {
+      "submit" : "Bejelentkezés",
+      "userId" : {
+        "label" : "Ügynök azonosítója vagy e-mail címe"
       },
-      "password": {
-        "label": "Jelszó"
+      "password" : {
+        "label" : "Jelszó"
       }
     },
-    "customerSearch": {
-      "searchTerm": {
-        "label": "Vevő neve/e-mail címe"
+    "customerSearch" : {
+      "searchTerm" : {
+        "label" : "Ügyfél neve/e-mail-címe"
       },
-      "searchCustomer": {
-        "label": "Search by name or email address"
+      "searchCustomer" : {
+        "label" : "Keresés név vagy e-mail-cím szerint"
       },
-      "searchOrder": {
-        "label": "Search by full order ID"
+      "searchOrder" : {
+        "label" : "Keresés teljes rendelésazonosító szerint"
       },
-      "submit": "Start Session",
-      "startEmulation": "Start Emulation",
-      "noMatch": "No customer found.",
-      "noMatchResult": "This account cannot be found.",
-      "noCustomerMatchResult": "No matching customer found.",
-      "noOrderMatchResult": "Search by full order ID.",
-      "createCustomer": "Create New Customer",
-      "customer": "Vevő",
-      "orderID": "Rendelésazonosító"
+      "submit" : "Munkamenet indítása",
+      "startEmulation" : "Emulálás indítása",
+      "noMatch" : "Nem található ügyfél.",
+      "noMatchResult" : "Ez a fiók nem található.",
+      "noCustomerMatchResult" : "Nem található egyező ügyfél.",
+      "noOrderMatchResult" : "Keresés teljes rendelési azonosító szerint.",
+      "createCustomer" : "Új ügyfél létrehozása",
+      "customer" : "Ügyfél",
+      "orderID" : "Rendelésazonosító"
     },
-    "createCustomerForm": {
-      "title": "Create New Customer",
-      "createAccount": "Létrehozás",
-      "cancel": "Mégse",
-      "firstName": {
-        "label": "Utónév",
-        "placeholder": "Utónév"
+    "createCustomerForm" : {
+      "title" : "Új ügyfél létrehozása",
+      "createAccount" : "Létrehozás",
+      "cancel" : "Mégse",
+      "firstName" : {
+        "label" : "Utónév",
+        "placeholder" : "Utónév"
       },
-      "lastName": {
-        "label": "Vezetéknév",
-        "placeholder": "Vezetéknév"
+      "lastName" : {
+        "label" : "Vezetéknév",
+        "placeholder" : "Vezetéknév"
       },
-      "emailAddress": {
-        "label": "E-mail-cím",
-        "placeholder": "E-mail cím"
+      "emailAddress" : {
+        "label" : "E-mail-cím",
+        "placeholder" : "E-mail cím"
       },
-      "createAccountAlert": "The customer session starts once you create the customer account.",
-      "validationErrors": {
-        "firstName": "Enter a valid first name.",
-        "lastName": "Enter a valid last name.",
-        "emailAddress": "Enter a valid email address."
+      "createAccountAlert" : "Az ügyfélmunkamenet az ügyfélfiók létrehozása után indul.",
+      "validationErrors" : {
+        "firstName" : "Érvényes utónevet adjon meg.",
+        "lastName" : "Érvényes vezetéknevet adjon meg.",
+        "emailAddress" : "Érvényes e-mail-címet adjon meg."
       },
-      "badRequestDuplicatedEmail": "Enter a different email address as {{ emailAddress }} already exists."
+      "badRequestDuplicatedEmail" : "Adjon meg egy másik e-mail-címet; {{ emailAddress }} már létezik."
     },
-    "customerList": {
-      "title": "Vevőlista",
-      "description": "Select a customer from one of several provided lists.",
-      "createCustomer": "Create New Customer",
-      "cancel": "Mégse",
-      "tableHeader": {
-        "customer": "Vevő",
-        "customerName": "Vevő neve",
-        "name": "Név",
-        "email": "E-mail",
-        "emailId": "Email/ID",
-        "phone": "Telefon",
-        "account": "Fiók",
-        "cart": "Kosár",
-        "order": "Rendelés",
-        "view": "360-fokos nézet",
-        "activeCart": "Aktív bevásárlókosár",
-        "viewActiveCart": "View Active Cart",
-        "orders": "Rendelések",
-        "viewOrders": "Rendelések megtekintése",
-        "customer360": "Customer 360°",
-        "viewCustomer360": "View Customer 360°"
+    "customerList" : {
+      "title" : "Ügyféllista",
+      "description" : "Válasszon ki egy ügyfelet a megadott listák egyikéről.",
+      "createCustomer" : "Új ügyfél létrehozása",
+      "cancel" : "Mégse",
+      "tableHeader" : {
+        "customer" : "Ügyfél",
+        "customerName" : "Ügyfél neve",
+        "name" : "Név",
+        "email" : "E-mail",
+        "emailId" : "E-mail/azonosító",
+        "phone" : "Telefon",
+        "account" : "Fiók",
+        "cart" : "Kosár",
+        "order" : "Rendelés",
+        "view" : "360 fokos nézet",
+        "activeCart" : "Aktív kosár",
+        "viewActiveCart" : "Aktív kosár megtekintése",
+        "orders" : "Rendelések",
+        "viewOrders" : "Rendelések megtekintése",
+        "customer360" : "Ügyfél 360°",
+        "viewCustomer360" : "Ügyfél 360° megtekintése"
       },
-      "tableSort": {
-        "sortBy": "Rendezés alapja",
-        "byName": "Név (növ.)",
-        "byNameAsc": "Név (növ.)",
-        "byNameDesc": "Név (csökk.)",
-        "byDateAsc": "Dátum (növ.)",
-        "byDateDesc": "Dátum (csökk.)",
-        "byOrderDateAsc": "Order date (Asc)",
-        "byOrderDateDesc": "Order date (Desc)",
-        "byUnit": "Fiók (növ.)",
-        "byUnitDesc": "Fiók (csökk.)"
+      "tableSort" : {
+        "sortBy" : "Rendezés alapja",
+        "byName" : "Név (növ.)",
+        "byNameAsc" : "Név (növ.)",
+        "byNameDesc" : "Név (csökk.)",
+        "byDateAsc" : "Dátum (növ.)",
+        "byDateDesc" : "Dátum (csökk.)",
+        "byOrderDateAsc" : "Rendelés dátuma (növ.)",
+        "byOrderDateDesc" : "Rendelés dátuma (csökk.)",
+        "byUnit" : "Fiók (növ.)",
+        "byUnitDesc" : "Fiók (csökk.)"
       },
-      "page": {
-        "page": "Page {{count}}",
-        "previous": "Előző",
-        "next": "Következő"
+      "page" : {
+        "page" : "{{count}}. oldal",
+        "previous" : "Előző",
+        "next" : "Következő"
       },
-      "noOfCustomers": "{{count}} vevő",
-      "oneCustomer": "1 vevő",
-      "noCustomers": "Jelenleg nincsenek vevők ebben a vevőlistában.",
-      "noLists": "There are currently no customer lists available. Contact your system administrator.",
-      "listsError": "The customer lists could not be retrieved. Please try again later.",
-      "searchBox": "Keresés",
-      "enterSearchBox": "Enter customer name or email"
+      "noOfCustomers" : "{{count}} ügyfél",
+      "oneCustomer" : "1 ügyfél",
+      "noCustomers" : "Jelenleg nincsenek ügyfelek ebben az ügyféllistában.",
+      "noLists" : "Jelenleg nincsenek elérhető ügyféllisták. Forduljon a rendszergazdájához.",
+      "listsError" : "Nem sikerült lekérni az ügyféllistát. Próbálja újra később.",
+      "searchBox" : "Keresés",
+      "enterSearchBox" : "Adja meg az ügyfél nevét vagy e-mail-címét"
     },
-    "switchCustomer": {
-      "dialog": {
-        "title": "Figyelmeztetés",
-        "body": "Clicking \"Switch Customer\" will end the emulation for \"{{ customerA }}\" and start for \"{{ customerB }}\". Any unsaved changes for \"{{ customerA }}\" will be lost.",
-        "actions": {
-          "switch": "Switch Customer"
+    "switchCustomer" : {
+      "dialog" : {
+        "title" : "Figyelmeztetés",
+        "body" : "Az „Ügyfél váltása” gombra kattintva befejezheti a(z) „{{ customerA }}”, és megkezdheti a(z) „{{ customerB }}” emulálását. A(z) „{{ customerA }}” nem mentett módosításai elvesznek.",
+        "actions" : {
+          "switch" : "Ügyfél váltása"
         }
       }
     },
-    "saveCart": {
-      "saveCartBtn": "Mentés későbbre",
-      "dialog": {
-        "saveInfo": "Save the cart before you can take further actions.",
-        "disableInfo": "Cannot save the cart as it is empty.",
-        "title": "Kosár mentése",
-        "row": {
-          "id": "Azonosító",
-          "qty": "Menny.",
-          "total": "Összesen"
+    "saveCart" : {
+      "saveCartBtn" : "Mentés későbbre",
+      "dialog" : {
+        "saveInfo" : "A további műveletek végrehajtása előtt mentse a kosarat.",
+        "disableInfo" : "A kosár nem menthető, mert üres.",
+        "title" : "Kosár mentése",
+        "row" : {
+          "id" : "Azonosító",
+          "qty" : "Menny.",
+          "qtyFull" : "Mennyiség",
+          "total" : "Összesen"
         },
-        "actions": {
-          "save": "Mentés későbbre"
+        "actions" : {
+          "save" : "Mentés későbbre"
         }
       }
     },
-    "bindCart": {
-      "cartNumber": "Cart Number",
-      "bindCartToCustomer": "Assign Cart to Customer",
-      "success": "Cart has been successfully assigned",
-      "assignCartId": "Assign a cart id to customer",
-      "enterCartId": "Enter cart id",
-      "resetCartId": "Alaphelyzetbe állítás",
-      "dialog": {
-        "title": "Assign Anonymous Cart",
-        "body": "Do you want to replace the current active cart with the anonymous cart? If you replace the current active cart, it is saved as a saved cart.",
-        "actions": {
-          "replace": "Replace Cart"
+    "bindCart" : {
+      "cartNumber" : "Kosár száma",
+      "bindCartToCustomer" : "Kosár hozzárendelése ügyfélhez",
+      "success" : "Kosár sikeresen hozzárendelve",
+      "assignCartId" : "Kosárazonosító hozzárendelése ügyfélhez",
+      "enterCartId" : "Kosárazonosító megadása",
+      "resetCartId" : "Alaphelyzetbe állítás",
+      "dialog" : {
+        "title" : "Névtelen kosár hozzárendelése",
+        "body" : "Szeretné lecserélni a jelenlegi aktív kosarat a névtelen kosárra? Ha lecseréli a jelenlegi aktív kosarat, a rendszer mentett kosárként menti.",
+        "actions" : {
+          "replace" : "Kosár lecserélése"
         }
       }
     },
-    "csagentTokenExpired": "Your customer support agent session is expired.",
-    "endSession": "Session befejezése",
-    "endEmulation": "End Emulation",
-    "agentSessionTimer": {
-      "label": "Session Timeout",
-      "minutes": "perc",
-      "reset": "Alaphelyzetbe állítás"
+    "csagentTokenExpired" : "Az ügyféltámogatási ügynökmunkamenete lejárt.",
+    "endSession" : "Munkamenet befejezése",
+    "endEmulation" : "Emulálás befejezése",
+    "agentSessionTimer" : {
+      "label" : "Munkamenet időtúllépése",
+      "minutes" : "perc",
+      "reset" : "Alaphelyzetbe állítás"
     },
-    "auth": {
-      "agentLoggedInError": "Cannot login as user when there is an active CS agent session. Please either emulate user or logout CS agent."
+    "auth" : {
+      "agentLoggedInError" : "Nem lehet bejelentkezni felhasználóként, ha aktív az ügyfélszolgálati ügynök munkamenete. Emulálja a felhasználót, vagy jelentkezzen ki az ügyfélszolgálati ügynökből."
     },
-    "error": {
-      "noCustomerId": "No customerId found for selected user. Session cannot be started."
+    "error" : {
+      "noCustomerId" : "Nem található customerId a kiválasztott felhasználóhoz. Nem lehet elindítani a munkamenetet."
     }
   }
 }

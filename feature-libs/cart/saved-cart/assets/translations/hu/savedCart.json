@@ -1,65 +1,67 @@
 {
-  "savedCartDetails": {
-    "cartName": "Név",
-    "cartDescription": "Leírás",
-    "cartId": "Azonosító",
-    "dateSaved": "Mentés dátuma",
-    "items": "Tételek",
-    "quantity": "Mennyiség",
-    "total": "Összesen",
-    "editSavedCart": "Mentett kosár szerkesztése",
-    "deleteSavedCart": "Mentett kosár törlése",
-    "addSelectedItems": "Add selected items",
-    "emptyCartItems": "Empty Cart Items"
+  "savedCartDetails" : {
+    "cartName" : "Név",
+    "cartDescription" : "Leírás",
+    "cartId" : "Azonosító",
+    "dateSaved" : "Mentés dátuma",
+    "items" : "Tételek",
+    "quantity" : "Mennyiség",
+    "total" : "Összesen",
+    "editSavedCart" : "Mentett kosár szerkesztése",
+    "deleteSavedCart" : "Mentett kosár törlése",
+    "addSelectedItems" : "Kiválasztott tételek hozzáadása",
+    "emptyCartItems" : "Kosár tételeinek kiürítése"
   },
-  "savedCartList": {
-    "savedCarts": "Mentett kosarak ({{count}})",
-    "cartName": "Név",
-    "cartId": "Azonosító",
-    "dateSaved": "Mentés dátuma",
-    "cartDescription": "Leírás",
-    "quantity": "Menny.",
-    "total": "Összesen",
-    "actions": "Műveletek",
-    "makeCartActive": "Make cart active",
-    "notFound": "Nem találhatók mentett kosarak",
-    "swapCartNoActiveCart": "Existing cart is activated by {{cartName}} successfully.",
-    "swapCartWithActiveCart": "Existing cart is activated by {{cartName}} successfully. Your previous items were saved in a cart {{previousCartName}}."
+  "savedCartList" : {
+    "savedCarts" : "Mentett kosarak ({{count}})",
+    "cartName" : "Név",
+    "cartId" : "Azonosító",
+    "dateSaved" : "Mentés dátuma",
+    "cartDescription" : "Leírás",
+    "quantity" : "Menny.",
+    "quantityFull" : "Mennyiség",
+    "total" : "Összesen",
+    "actions" : "Műveletek",
+    "makeCartActive" : "Kosár aktiválása",
+    "notFound" : "Nem találhatók mentett kosarak",
+    "swapCartNoActiveCart" : "A meglévő kosár aktiválása sikeres {{cartName}} által.",
+    "swapCartWithActiveCart" : "A meglévő kosár aktiválása sikeres {{cartName}} által. A rendszer a korábbi tételeit egy {{previousCartName}} kosárban mentette."
   },
-  "savedCartCartPage": {
-    "messages": {
-      "cartSaved": "Your cart items have been successfully saved for later in the \"{{cartName}}\" cart"
+  "savedCartCartPage" : {
+    "messages" : {
+      "cartSaved" : "A kosár tételei sikeresen mentve későbbi felhasználásra a(z) „{{cartName}}” kosárban"
     }
   },
-  "savedCartDialog": {
-    "saveForLater": "Save For Later",
-    "itemsSavedForLater": "All of the items in your cart will be saved for later",
-    "savedCartName": "Saved Cart Name",
-    "savedCartDescription": "Saved Cart Description",
-    "optional": "optional",
-    "charactersLeft": "characters left: {{count}}",
-    "cancel": "Mégse",
-    "save": "Mentés",
-    "restore": "Visszaállítás",
-    "followingCartDelete": "The following saved cart will be deleted",
-    "followingCartRestore": "The following saved cart will be restored as the active cart",
-    "delete": "Törlés",
-    "deleteCartSuccess": "Cart Deleted Successfully",
-    "editCartSuccess": "Cart Edited Successfully",
-    "editSavedCart": "Mentett kosár szerkesztése",
-    "deleteSavedCart": "Mentett kosár törlése",
-    "restoreSavedCart": "Mentett kosár visszaállítása",
-    "name": "Név",
-    "id": "Azonosító",
-    "description": "Leírás",
-    "quantity": "MENNY.",
-    "total": "Összesen",
-    "keepCopySavedCart": "Keep a copy of this cart in the saved carts list",
-    "defaultCloneCartName": "{{name}} másolata",
-    "nameOfCloneCart": "Name of copied cart"
+  "savedCartDialog" : {
+    "saveForLater" : "Mentés későbbre",
+    "itemsSavedForLater" : "A kosarában található összes tétel mentve lesz későbbre",
+    "savedCartName" : "Mentett kosár neve",
+    "savedCartDescription" : "Mentett kosár leírása",
+    "optional" : "opcionális",
+    "charactersLeft" : "hátralévő karakterek: {{count}}",
+    "cancel" : "Mégse",
+    "save" : "Mentés",
+    "restore" : "Visszaállítás",
+    "followingCartDelete" : "A következő mentett kosár törölve lesz",
+    "followingCartRestore" : "A következő mentett kosár aktív kosárként lesz visszaállítva",
+    "delete" : "Törlés",
+    "deleteCartSuccess" : "Kosár sikeresen törölve",
+    "editCartSuccess" : "Kosár sikeresen szerkesztve",
+    "editSavedCart" : "Mentett kosár szerkesztése",
+    "deleteSavedCart" : "Mentett kosár törlése",
+    "restoreSavedCart" : "Mentett kosár visszaállítása",
+    "name" : "Név",
+    "id" : "Azonosító",
+    "description" : "Leírás",
+    "quantity" : "MENNY.",
+    "quantityFull" : "Mennyiség",
+    "total" : "Összesen",
+    "keepCopySavedCart" : "Tartson meg egy másolatot a kosárról a mentett kosarak listáján",
+    "defaultCloneCartName" : "{{name}} másolata",
+    "nameOfCloneCart" : "A másolt kosár neve"
   },
-  "addToSavedCart": {
-    "savedCarts": "Saved carts",
-    "saveCartForLater": "Save cart for later"
+  "addToSavedCart" : {
+    "savedCarts" : "Mentett kosarak",
+    "saveCartForLater" : "Kosár mentése későbbre"
   }
 }

@@ -1,32 +1,32 @@
 {
-  "anonymousConsents": {
-    "dialog": {
-      "title": "Správa souhlasů",
-      "legalDescription": "We use cookies/browser's storage to personalize the content and improve user experience. We also might share the data about your site usage with our social media. For more, please review our privacy policy.",
-      "selectAll": "Vybrat vše",
-      "clearAll": "Clear all"
+  "anonymousConsents" : {
+    "dialog" : {
+      "title" : "Správa souhlasů",
+      "legalDescription" : "K personalizaci obsahu a zlepšení zkušenosti uživatele používáme soubory cookie ukládané do úložiště prohlížeče. Údaje o tom, jak používáte naše stránky, můžeme také sdílet s našimi sociálními sítěmi. Více informací naleznete v našich zásadách ochrany osobních údajů.",
+      "selectAll" : "Vybrat vše",
+      "clearAll" : "Vymazat vše"
     },
-    "banner": {
-      "title": "This website uses cookies",
-      "description": "We use cookies/browser's storage to personalize the content and improve user experience.",
-      "allowAll": "Allow All",
-      "viewDetails": "Zobrazit detaily"
+    "banner" : {
+      "title" : "Tyto webové stránky používají soubory cookie",
+      "description" : "Používáme soubory cookie ukládané do úložiště prohlížeče k personalizaci obsahu a zlepšení zkušenosti uživatele.",
+      "allowAll" : "Povolit vše",
+      "viewDetails" : "Zobrazit detaily"
     }
   },
-  "checkoutLogin": {
-    "emailAddress": {
-      "label": "E-mailová adresa",
-      "placeholder": "Enter email"
+  "checkoutLogin" : {
+    "emailAddress" : {
+      "label" : "E-mailová adresa",
+      "placeholder" : "Zadejte e-mail"
     },
-    "confirmEmail": {
-      "label": "Confirm email",
-      "placeholder": "Confirm email"
+    "confirmEmail" : {
+      "label" : "Potvrďte e-mail",
+      "placeholder" : "Potvrďte e-mail"
     },
-    "continue": "Pokračovat",
-    "emailIsRequired": "Invalid email format",
-    "emailsMustMatch": "Email does not match"
+    "continue" : "Pokračovat",
+    "emailIsRequired" : "Neplatný formát e-mailu",
+    "emailsMustMatch" : "E-mail se neshoduje"
   },
-  "authMessages": {
-    "signedOutSuccessfully": "You have successfully signed out."
+  "authMessages" : {
+    "signedOutSuccessfully" : "Byli jste úspěšně odhlášeni."
   }
 }

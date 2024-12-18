@@ -1,7 +1,8 @@
 {
-  "estimatedDeliveryDate": {
-    "quantity": "Qty-",
-    "ETA": "Estimated delivery date:",
-    "estimatedDeliveryDateEntryInfo": "{{ quantity }} quantity will be delivered by {{ date }}"
+  "estimatedDeliveryDate" : {
+    "quantity" : "数量-",
+    "quantityFull" : "数量-",
+    "ETA" : "配送予定日:",
+    "estimatedDeliveryDateEntryInfo" : "数量 {{ quantity }} が {{ date }} までに配送されます "
   }
 }

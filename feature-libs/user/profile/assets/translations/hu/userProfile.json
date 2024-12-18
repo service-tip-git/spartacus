@@ -1,72 +1,73 @@
 {
-  "updateEmailForm": {
-    "newEmailAddress": {
-      "label": "New email address",
-      "placeholder": "Enter email"
+  "updateEmailForm" : {
+    "newEmailAddress" : {
+      "label" : "Új e-mail-cím",
+      "placeholder" : "E-mail-cím megadása"
     },
-    "confirmNewEmailAddress": {
-      "label": "Confirm new email address",
-      "placeholder": "Enter email"
+    "confirmNewEmailAddress" : {
+      "label" : "Új e-mail-cím megerősítése",
+      "placeholder" : "E-mail-cím megadása"
     },
-    "enterValidEmail": "Érvényes e-mail-címet adjon meg.",
-    "bothEmailMustMatch": "Both emails must match",
-    "password": {
-      "label": "Jelszó",
-      "placeholder": "Adja meg a jelszót"
+    "enterValidEmail" : "Érvényes e-mail-címet adjon meg.",
+    "bothEmailMustMatch" : "A két e-mail-címnek egyeznie kell",
+    "password" : {
+      "label" : "Jelszó",
+      "placeholder" : "Jelszó megadása"
     },
-    "pleaseInputPassword": "Please input password",
-    "emailUpdateSuccess": "Success. Please sign in with {{ newUid }}"
+    "pleaseInputPassword" : "Adja meg a jelszót",
+    "emailUpdateSuccess" : "Siker. Jelentkezzen be a következővel: {{ newUid }}"
   },
-  "register": {
-    "confirmPassword": {
-      "action": "Confirm password",
-      "label": "Confirm password",
-      "placeholder": "Jelszó megerősítése"
+  "register" : {
+    "confirmPassword" : {
+      "action" : "Jelszó megerősítése",
+      "label" : "Jelszó megerősítése",
+      "placeholder" : "Jelszó megerősítése"
     },
-    "managementInMyAccount": "Management in My Account.",
-    "termsAndConditions": "Használati feltételek",
-    "signIn": "I already have an account. Sign In",
-    "register": "Regisztráció",
-    "confirmNewPassword": "Új jelszó megerősítése",
-    "resetPassword": "Jelszó visszaállítása",
-    "createAccount": "Create an account",
-    "title": "Megszólítás",
-    "titleOptional": "Title (optional)",
-    "firstName": {
-      "label": "Utónév",
-      "placeholder": "Utónév"
+    "managementInMyAccount" : "Kezelés a Saját fiók menüben.",
+    "termsAndConditions" : "Használati feltételek",
+    "signIn" : "Már van fiókom. Bejelentkezés",
+    "register" : "Regisztráció",
+    "confirmNewPassword" : "Új jelszó megerősítése",
+    "resetPassword" : "Jelszó visszaállítása",
+    "createAccount" : "Fiók létrehozása",
+    "title" : "Megszólítás",
+    "titleOptional" : "Megszólítás (opcionális)",
+    "firstName" : {
+      "label" : "Utónév",
+      "placeholder" : "Utónév"
     },
-    "lastName": {
-      "label": "Vezetéknév",
-      "placeholder": "Vezetéknév"
+    "lastName" : {
+      "label" : "Vezetéknév",
+      "placeholder" : "Vezetéknév"
     },
-    "emailAddress": {
-      "label": "E-mail cím",
-      "placeholder": "E-mail cím"
+    "emailAddress" : {
+      "label" : "E-mail-cím",
+      "placeholder" : "E-mail-cím"
     },
-    "password": {
-      "label": "Jelszó",
-      "placeholder": "Jelszó"
+    "password" : {
+      "label" : "Jelszó",
+      "placeholder" : "Jelszó"
     },
-    "newPassword": "Új jelszó",
-    "emailMarketing": "Use my personal data to receive e-mail newsletters for marketing campaigns. To change your settings, go to Consent Management in My Account.",
-    "confirmThatRead": "I am confirming that I have read and agreed with the",
-    "selectTitle": "Select Title",
-    "passwordMinRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols.",
-    "passwordStrengthRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
-    "bothPasswordMustMatch": "Both password must match",
-    "titleRequired": "Title is required.",
-    "postRegisterMessage": "Please log in with provided credentials."
+    "newPassword" : "Új jelszó",
+    "emailMarketing" : "A személyes adatai felhasználhatók, hogy e-mailes hírlevelet küldjük a marketingkampányok részeként. A beállításait a Saját fiók Hozzájárulás-kezelés menüjében módosíthatja.",
+    "confirmThatRead" : "Megerősítem, hogy elolvastam és elfogadom a következőt:",
+    "selectTitle" : "Megszólítás kiválasztása",
+    "passwordMinRequirements" : "Íme egy gyors útmutató a biztonságos jelszó létrehozásához: Használjon legalább 8 karaktert, kis- és nagybetűket, számokat és szimbólumokat.",
+    "passwordStrengthRequirements" : "Íme egy gyors útmutató a biztonságos jelszó létrehozásához: Használjon legalább 8 karaktert, kis- és nagybetűket, számokat és szimbólumokat. Ne használja többször egymás után ugyanazt a karaktert.",
+    "bothPasswordMustMatch" : "A két jelszónak egyeznie kell.",
+    "titleRequired" : "A megszólítás kitöltése kötelező.",
+    "postRegisterMessage" : "Jelentkezzen be a megadott azonosító adatokkal.",
+    "postRegisterSuccessMessage" : "Sikeres regisztráció: Jelentkezzen be a megadott azonosító adatokkal."
   },
-  "forgottenPassword": {
-    "resetPassword": "Reset password",
-    "enterEmailAddressAssociatedWithYourAccount": "Enter the email address associated with your account",
-    "emailAddress": {
-      "label": "E-mail cím",
-      "placeholder": "Enter email"
+  "forgottenPassword" : {
+    "resetPassword" : "Jelszó visszaállítása",
+    "enterEmailAddressAssociatedWithYourAccount" : "Adja meg a fiókjához társított e-mail-címet",
+    "emailAddress" : {
+      "label" : "E-mail-cím",
+      "placeholder" : "E-mail-cím megadása"
     },
-    "enterValidEmail": "Érvényes e-mail-címet adjon meg.",
-    "passwordResetEmailSent": "An email has been sent to you with information on how to reset your password.",
-    "passwordResetSuccess": "Siker! Most már bejelentkezhet az új jelszavával."
+    "enterValidEmail" : "Érvényes e-mail-címet adjon meg.",
+    "passwordResetEmailSent" : "Elküldtünk Önnek egy e-mailt a jelszó visszaállítására vonatkozó útmutatóval.",
+    "passwordResetSuccess" : "Siker! Most már bejelentkezhet az új jelszavával."
   }
 }

@@ -1,31 +1,31 @@
 {
-  "pdfInvoices": {
-    "featureNotEnabled": "Unable to obtain invoices, ensure that SAP Invoice and API for Invoices are enabled.",
-    "invoicesLoadingError": "Something went wrong. Unable to display invoices for the order",
-    "invoicesTable": {
-      "header": "Invoices",
-      "label": "Invoices Table",
-      "invoiceId": "Invoice #",
-      "createdAt": "Data",
-      "netAmount": "Importo netto",
-      "totalAmount": "Importo totale",
-      "attachment": "Download Invoice",
-      "download": "Scarica",
-      "attachmentDescription": "Download PDF for invoice {{id}}.",
-      "noneFound": "No Invoices Found"
+  "pdfInvoices" : {
+    "featureNotEnabled" : "Impossibile ottenere le fatture; assicurarsi che SAP Invoice e le API per Invoices siano attivati.",
+    "invoicesLoadingError" : "Si è verificato un errore. Impossibile visualizzare le fatture per l'ordine.",
+    "invoicesTable" : {
+      "header" : "Fatture",
+      "label" : "Tabella fatture",
+      "invoiceId" : "N. fattura",
+      "createdAt" : "Data",
+      "netAmount" : "Importo netto",
+      "totalAmount" : "Importo totale",
+      "attachment" : "Scarica fattura",
+      "download" : "Scarica",
+      "attachmentDescription" : "Scarica PDF per la fattura {{id}}.",
+      "noneFound" : "Nessuna fattura trovata"
     },
-    "downloadPDFError": "Something went wrong. Unable to obtain the invoice PDF.",
-    "sortBy": "Ordina per",
-    "sortInvoices": "Sort invoices",
-    "sorts": {
-      "byCreatedAtAsc": "Date Ascending",
-      "byCreatedAtDesc": "Date Descending",
-      "byInvoiceIdAsc": "Invoice Number Ascending",
-      "byInvoiceIdDesc": "Invoice Number Descending",
-      "byNetAmountAsc": "Net Amount Ascending",
-      "byNetAmountDesc": "Net Amount Descending",
-      "byTotalAmountAsc": "Total Amount Ascending",
-      "byTotalAmountDesc": "Total Amount Descending"
+    "downloadPDFError" : "Si è verificato un errore. Impossibile ottenere il PDF della fattura.",
+    "sortBy" : "Ordina per",
+    "sortInvoices" : "Ordina fatture",
+    "sorts" : {
+      "byCreatedAtAsc" : "Data (in ordine crescente)",
+      "byCreatedAtDesc" : "Data (in ordine decrescente)",
+      "byInvoiceIdAsc" : "Numero fattura (in ordine crescente)",
+      "byInvoiceIdDesc" : "Numero fattura (in ordine decrescente)",
+      "byNetAmountAsc" : "Importo netto (in ordine crescente)",
+      "byNetAmountDesc" : "Importo netto (in ordine decrescente)",
+      "byTotalAmountAsc" : "Importo totale (in ordine crescente)",
+      "byTotalAmountDesc" : "Importo totale (in ordine decrescente)"
     }
   }
 }

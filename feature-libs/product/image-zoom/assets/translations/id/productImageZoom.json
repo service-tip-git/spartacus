@@ -1,9 +1,9 @@
 {
-  "productImageZoomTrigger": {
-    "expand": "Expand image"
+  "productImageZoomTrigger" : {
+    "expand" : "Perluas gambar"
   },
-  "productImageZoomDialog": {
-    "zoomedInImage": "Zoomed in image",
-    "close": "Tutup"
+  "productImageZoomDialog" : {
+    "zoomedInImage" : "Gambar yang diperbesar",
+    "close" : "Tutup"
   }
 }

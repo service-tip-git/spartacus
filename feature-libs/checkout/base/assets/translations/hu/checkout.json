@@ -1,54 +1,55 @@
 {
-  "checkout": {
-    "backToCart": "Back to cart"
+  "checkout" : {
+    "backToCart" : "Vissza a kosárba"
   },
-  "checkoutProgress": {
-    "label": "Checkout Progress",
-    "deliveryAddress": "Szállítási cím",
-    "deliveryMode": "Szállítási mód",
-    "paymentDetails": "Fizetés",
-    "reviewOrder": "Vélemény",
-    "state": {
-      "completed": "{{step}}, Completed",
-      "selected": "{{step}}, Selected",
-      "disabled": "{{step}}, Disabled"
+  "checkoutProgress" : {
+    "label" : "Fizetési folyamat",
+    "deliveryAddress" : "Szállítási cím",
+    "deliveryMode" : "Kézbesítési mód",
+    "paymentDetails" : "Fizetés",
+    "reviewOrder" : "Vélemény",
+    "state" : {
+      "completed" : "{{step}}, befejezve",
+      "selected" : "{{step}}, kiválasztva",
+      "disabled" : "{{step}}, letiltva"
     }
   },
-  "checkoutAddress": {
-    "shippingAddress": "Szállítási cím",
-    "selectYourDeliveryAddress": "Select your Delivery Address",
-    "defaultDeliveryAddress": "Default Delivery Address",
-    "addNewAddress": "Add New Address",
-    "shipToThisAddress": "Ship to this address",
-    "deliveryAddressSelected": "Delivery address selected"
+  "checkoutAddress" : {
+    "shippingAddress" : "Szállítási cím",
+    "selectYourDeliveryAddress" : "Válassza ki a kézbesítési címét",
+    "defaultDeliveryAddress" : "Alapértelmezett kézbesítési cím",
+    "addNewAddress" : "Új cím hozzáadása",
+    "shipToThisAddress" : "Szállítás erre a címre",
+    "deliveryAddressSelected" : "Kézbesítési cím kiválasztva"
   },
-  "checkoutMode": {
-    "deliveryMethod": "Szállítási mód",
-    "deliveryOptions": "Szállítási opciók",
-    "standardDelivery": "Normál kiszállítás",
-    "premiumDelivery": "Prémium kiszállítás",
-    "deliveryEntries": "Items to be Shipped"
+  "checkoutMode" : {
+    "deliveryMethod" : "Kézbesítési mód",
+    "deliveryOptions" : "Kézbesítési lehetőségek",
+    "standardDelivery" : "Normál kiszállítás",
+    "premiumDelivery" : "Prémium kiszállítás",
+    "deliveryEntries" : "Szállítandó tételek"
   },
-  "checkoutReview": {
-    "review": "Vélemény",
-    "orderItems": "Rendelésben szereplő tételek",
-    "confirmThatRead": "I am confirming that I have read and agreed with the",
-    "placeOrder": "Rendelés leadása",
-    "termsAndConditions": "Használati feltételek",
-    "editDeliveryAddressDetails": "Edit delivery address details, opens Delivery Address page",
-    "editBillingDetails": "Edit billing address, opens Payment Details page",
-    "editPaymentDetails": "Edit payment details, opens Payment Details page",
-    "editPaymentType": "Edit payment method, opens Method of Payment page",
-    "editDeliveryMode": "Edit delivery mode, opens Delivery Mode page",
-    "orderInProcess": "Order is in process. Please wait."
+  "checkoutReview" : {
+    "review" : "Áttekintés",
+    "reviewOrder" : "Rendelés áttekintése",
+    "orderItems" : "Rendelésben szereplő tételek",
+    "confirmThatRead" : "Igazolom, hogy elolvastam és elfogadom a következőt:",
+    "placeOrder" : "Rendelés leadása",
+    "termsAndConditions" : "Használati feltételek",
+    "editDeliveryAddressDetails" : "A kézbesítési cím adatainak szerkesztése, megnyitja a Kézbesítési cím oldalt",
+    "editBillingDetails" : "A számlázási cím szerkesztése, megnyitja a Fizetési adatok oldalt",
+    "editPaymentDetails" : "A fizetési adatok szerkesztése, megnyitja a Fizetési adatok oldalt",
+    "editPaymentType" : "A fizetési mód szerkesztése, megnyitja a Fizetési mód oldalt",
+    "editDeliveryMode" : "A kézbesítési mód szerkesztése, megnyitja a Kézbesítési mód oldalt",
+    "orderInProcess" : "A rendelés folyamatban van. Kérjük, várjon."
   },
-  "checkoutOrderConfirmation": {
-    "confirmationOfOrder": "Confirmation of Order:",
-    "thankYou": "Thank you for your order!",
-    "invoiceHasBeenSentByEmail": "An invoice has been sent by email. You should receive it soon.",
-    "orderItems": "Rendelésben szereplő tételek",
-    "orderPlacedSuccessfully": "Order placed successfully",
-    "createAccount": "Create an account?",
-    "createAccountForNext": "Create an account for <{{email}}> for a faster checkout on your next visit."
+  "checkoutOrderConfirmation" : {
+    "confirmationOfOrder" : "Rendelés megerősítése:",
+    "thankYou" : "Köszönjük a rendelést!",
+    "invoiceHasBeenSentByEmail" : "A számlát elküldtük e-mailben. Hamarosan megkapja.",
+    "orderItems" : "Rendelésben szereplő tételek",
+    "orderPlacedSuccessfully" : "Rendelés sikeresen leadva",
+    "createAccount" : "Szeretne létrehozni egy fiókot?",
+    "createAccountForNext" : "Egy <{{email}}>-fiók létrehozásával gyorsabban leadhatja rendelését a következő látogatáskor."
   }
 }

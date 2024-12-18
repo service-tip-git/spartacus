@@ -1,13 +1,13 @@
 {
-  "myAccountV2Consent": {
-    "header": "Einwilligungsmanagement",
-    "dateDescription": "Approved on ",
-    "clearAll": "Disable All",
-    "selectAll": "Enable All",
-    "message": {
-      "success": {
-        "given": "Consent successfully given.",
-        "withdrawn": "Consent successfully withdrawn."
+  "myAccountV2Consent" : {
+    "header" : "Einwilligungsmanagement",
+    "dateDescription" : "Genehmigt am ",
+    "clearAll" : "Alle deaktivieren",
+    "selectAll" : "Alle aktivieren",
+    "message" : {
+      "success" : {
+        "given" : "Einwilligung wurde erfolgreich erteilt.",
+        "withdrawn" : "Einwilligung wurde erfolgreich widerrufen."
       }
     }
   }

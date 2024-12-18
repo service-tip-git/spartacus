@@ -1,249 +1,249 @@
 {
-  "quote": {
-    "confirmDialog": {
-      "name": "Name:",
-      "description": "Description:",
-      "validity": "Ta oferta jest ważna do {{ expirationTime }}",
-      "option": {
-        "yes": "Tak",
-        "no": "Nie"
+  "quote" : {
+    "confirmDialog" : {
+      "name" : "Nazwa:",
+      "description" : "Opis:",
+      "validity" : "Ta wycena jest ważna do {{ expirationTime }}",
+      "option" : {
+        "yes" : "Tak",
+        "no" : "Nie"
       },
-      "buyer": {
-        "submit": {
-          "a11y": {
-            "close": "Close submit quote modal"
+      "buyer" : {
+        "submit" : {
+          "a11y" : {
+            "close" : "Zamknij okno dialogowe przesyłania wyceny"
           },
-          "title": "Submit Quote Request {{ code }}?",
-          "confirmNote": "Are you sure you want to submit this quote request?",
-          "successMessage": "Quote request submitted successfully"
+          "title" : "Przesłać zapytanie ofertowe {{ code }}?",
+          "confirmNote" : "Na pewno chcesz przesłać to zapytanie ofertowe?",
+          "successMessage" : "Zapytanie ofertowe zostało przesłane"
         },
-        "cancel": {
-          "a11y": {
-            "close": "Close cancel quote modal"
+        "cancel" : {
+          "a11y" : {
+            "close" : "Zamknij okno dialogowe anulowania wyceny"
           },
-          "title": "Cancel Quote Request {{ code }}?",
-          "confirmNote": "Are you sure you want to cancel this quote request?",
-          "successMessage": "Quote request cancelled"
+          "title" : "Anulować zapytanie ofertowe {{ code }}?",
+          "confirmNote" : "Czy na pewno chcesz anulować to zapytanie ofertowe?",
+          "successMessage" : "Zapytanie ofertowe zostało anulowana"
         }
       },
-      "buyer_offer": {
-        "edit": {
-          "a11y": {
-            "close": "Close edit quote modal"
+      "buyer_offer" : {
+        "edit" : {
+          "a11y" : {
+            "close" : "Zamknij okno dialogowe edycji wyceny"
           },
-          "title": "Confirm Edit Quote {{ code }}?",
-          "confirmNote": "Czy na pewno chcesz edytować zatwierdzoną ofertę?",
-          "warningNote": "This Quote has been Approved. Editing this Quote will prevent Checkout until new edits are approved."
+          "title" : "Potwierdzić edycję wyceny {{ code }}?",
+          "confirmNote" : "Czy na pewno chcesz edytować zatwierdzoną wycenę?",
+          "warningNote" : "Ta wycena została zatwierdzona. Jej edycja uniemożliwi realizację zakupu do czasu zatwierdzenia nowych zmian."
         },
-        "cancel": {
-          "a11y": {
-            "close": "Close cancel quote modal"
+        "cancel" : {
+          "a11y" : {
+            "close" : "Zamknij okno dialogowe anulowania oferty"
           },
-          "title": "Cancel Quote {{ code }}?",
-          "confirmNote": "Czy na pewno chcesz anulować tę ofertę?",
-          "successMessage": "Quote cancelled"
+          "title" : "Anulować ofertę {{ code }}?",
+          "confirmNote" : "Czy na pewno chcesz anulować tę ofertę?",
+          "successMessage" : "Oferta została anulowana"
         },
-        "checkout": {
-          "a11y": {
-            "close": "Close checkout quote modal"
+        "checkout" : {
+          "a11y" : {
+            "close" : "Zamknij okno dialogowe realizacji oferty"
           },
-          "title": "Checkout Quote {{ code }}?",
-          "confirmNote": "Are you sure you want to accept and checkout this quote?"
+          "title" : "Realizować ofertę {{ code }}?",
+          "confirmNote" : "Na pewno chcesz zaakceptować i zrealizować tę ofertę cenową?"
         }
       },
-      "expired": {
-        "edit": {
-          "a11y": {
-            "close": "Close edit quote modal"
+      "expired" : {
+        "edit" : {
+          "a11y" : {
+            "close" : "Zamknij okno dialogowe edycji oferty"
           },
-          "title": "Confirm Edit Quote {{ code }}?",
-          "confirmNote": "Are you sure you want to edit this expired quote?",
-          "warningNote": "This Quote is expired. Editing this quote will prevent checkout until new edits are approved."
+          "title" : "Potwierdzić edycję oferty {{ code }}?",
+          "confirmNote" : "Czy na pewno chcesz edytować wygasłą ofertę?",
+          "warningNote" : "Ta oferta wygasła. Jej edycja uniemożliwi realizację zakupu do czasu zatwierdzenia nowych zmian."
         },
-        "requote": {
-          "a11y": {
-            "close": "Close requote modal"
+        "requote" : {
+          "a11y" : {
+            "close" : "Zamknij okno ponowienia zapytania"
           },
-          "title": "Recreate Quote Request {{ code }}?",
-          "confirmNote": "Are you sure you want to recreate this quote request?",
-          "warningNote": "This Quote is expired. Re-quoting it will create a new quote request with same contents, which can be edited and submitted for approval afterwards."
+          "title" : "Odtworzyć zapytanie ofertowe {{ code }}?",
+          "confirmNote" : "Na pewno chcesz odtworzyć to zapytanie ofertowe?",
+          "warningNote" : "Ta oferta wygasła. Ponowienie prośby utworzy nowe zapytanie ofertowe o tej samej treści, które można następnie edytować i przesłać do zatwierdzenia."
         }
       },
-      "seller": {
-        "submit": {
-          "a11y": {
-            "close": "Close submit quote modal"
+      "seller" : {
+        "submit" : {
+          "a11y" : {
+            "close" : "Zamknij okno dialogowe przesyłania wyceny"
           },
-          "title": "Submit Quote {{ code }}?",
-          "confirmNote": "Czy na pewno chcesz przesłać tę ofertę?",
-          "warningNote": "Depending on the total value of the quote, an additional approval might be required before the buyer can check out this quote.",
-          "successMessage": "Quote submitted successfully"
+          "title" : "Przesłać zapytanie ofertowe {{ code }}?",
+          "confirmNote" : "Czy na pewno chcesz przesłać to zapytanie ofertowe?",
+          "warningNote" : "W zależności od całkowitej wartości wyceny, może być wymagane dodatkowe zatwierdzenie, zanim kupujący będzie mógł procedować tę ofertę.",
+          "successMessage" : "Wycena została przesłana"
         }
       },
-      "sellerapprover": {
-        "approve": {
-          "a11y": {
-            "close": "Close approve quote modal"
+      "sellerapprover" : {
+        "approve" : {
+          "a11y" : {
+            "close" : "Zamknij okno zatwierdzania oferty"
           },
-          "title": "Approve Quote {{ code }}?",
-          "confirmNote": "Are you sure you want to approve this quote?",
-          "successMessage": "Quote approved successfully"
+          "title" : "Zatwierdzić wycenę {{ code }}?",
+          "confirmNote" : "Czy na pewno chcesz zatwierdzić tę wycenę?",
+          "successMessage" : "Zatwierdzono wycenę"
         },
-        "reject": {
-          "a11y": {
-            "close": "Close reject quote modal"
+        "reject" : {
+          "a11y" : {
+            "close" : "Zamknij okno odrzucenia oferty"
           },
-          "title": "Reject Quote {{ code }}?",
-          "confirmNote": "Are you sure you want to reject this quote?",
-          "successMessage": "Quote rejected"
+          "title" : "Odrzucić ofertę {{ code }}?",
+          "confirmNote" : "Na pewno chcesz odrzucić tę ofertę?",
+          "successMessage" : "Oferta odrzucona"
         }
       },
-      "cancelled": {
-        "requote": {
-          "a11y": {
-            "close": "Close requote modal"
+      "cancelled" : {
+        "requote" : {
+          "a11y" : {
+            "close" : "Zamknij okno ponowienia zapytania"
           },
-          "title": "Recreate Quote Request {{ code }}?",
-          "confirmNote": "Are you sure you want to recreate this quote request?",
-          "warningNote": "Your current cart will be converted to a saved cart."
+          "title" : "Odtworzyć zapytanie ofertowe {{ code }}?",
+          "confirmNote" : "Na pewno chcesz odtworzyć to zapytanie ofertowe?",
+          "warningNote" : "Twój aktualny koszyk zostanie przekonwertowany na zapisany koszyk."
         }
       },
-      "all": {
-        "edit": {
-          "a11y": {
-            "close": "Close edit quote modal"
+      "all" : {
+        "edit" : {
+          "a11y" : {
+            "close" : "Zamknij okno dialogowe edycji wyceny"
           },
-          "title": "Edit Quote {{ code }}?",
-          "confirmNote": "Are you sure you want to edit this quote?",
-          "warningNote": "Your current cart will be converted to a saved cart."
+          "title" : "Edytować ofertę {{ code }}?",
+          "confirmNote" : "Czy na pewno chcesz edytować tę ofertę?",
+          "warningNote" : "Twój aktualny koszyk zostanie przekonwertowany na zapisany koszyk."
         }
       }
     },
-    "comments": {
-      "regionTitle": "Contact/Comment Box",
-      "title": "Kontakt",
-      "invalidComment": "Invalid Input - Please type again...",
-      "allProducts": "Wszystkie produkty"
+    "comments" : {
+      "regionTitle" : "Kontakt/Komentarz",
+      "title" : "Kontakt",
+      "invalidComment" : "Nieprawidłowy wpis - wpisz ponownie...",
+      "allProducts" : "Wszystkie produkty"
     },
-    "commons": {
-      "requestQuote": "Request Quote",
-      "cart": "Koszyk zakupów",
-      "minRequestInitiationNote": "Minimum ${{minValue}} subtotal is required to submit a quote ",
-      "savedActiveCart": "Your active cart was converted to saved cart {{ code }}"
+    "commons" : {
+      "requestQuote" : "Zapytaj o wycenę",
+      "cart" : "Koszyk zakupów",
+      "minRequestInitiationNote" : "Minimalna ${{minValue}} suma częściowa jest wymagana do przesłania oferty. ",
+      "savedActiveCart" : "Twój aktualny koszyk został przekonwertowany na zapisany koszyk {{ code }}"
     },
-    "header": {
-      "buyerEdit": {
-        "a11y": {
-          "cancel": "Cancel editing quote header information",
-          "save": "Save quote header information"
+    "header" : {
+      "buyerEdit" : {
+        "a11y" : {
+          "cancel" : "Anuluj edycję informacji w nagłówku wyceny",
+          "save" : "Zapisz informacje z nagłówka wyceny"
         }
       },
-      "overview": {
-        "regionTitle": "Quote details summary",
-        "id": "ID oferty",
-        "status": "Status",
-        "information": "Quote Information",
-        "name": "Nazwa",
-        "description": "Opis",
-        "charactersLeft": "characters left: {{count}}",
-        "priceAndExpiry": "Price & Expiry",
-        "estimatedTotal": "Estimated Total",
-        "total": "Suma",
-        "expirationTime": "Data wygaśnięcia",
-        "a11y": {
-          "edit": "Edit quote header information"
+      "overview" : {
+        "regionTitle" : "Podsumowanie oferty",
+        "id" : "ID oferty",
+        "status" : "Status",
+        "information" : "Treść oferty cenowej",
+        "name" : "Nazwa",
+        "description" : "Opis",
+        "charactersLeft" : "pozostało znaków: {{count}}",
+        "priceAndExpiry" : "Cena i data wygaśnięcia",
+        "estimatedTotal" : "Szacowana suma",
+        "total" : "Suma",
+        "expirationTime" : "Data wygaśnięcia",
+        "a11y" : {
+          "edit" : "Edytuj informacje w nagłówku wyceny"
         },
-        "createdAndUpdated": "Created & Updated",
-        "createdDate": "Utworzone",
-        "lastUpdatedDate": "Ostatnio zaktualizowane"
+        "createdAndUpdated" : "Utworzone i zaktualizowane",
+        "createdDate" : "Utworzone",
+        "lastUpdatedDate" : "Ostatnio zaktualizowane"
       }
     },
-    "httpHandlers": {
-      "cartValidationIssue": "There are problems with your entries. Please review your cart.",
-      "quoteCartIssue": "Not possible to do changes to cart entries. Proceed to checkout",
-      "absoluteDiscountIssue": "Choose a discount that does not exceed the total value",
-      "expirationDateIssue": "Choose an expiration date in the future",
-      "threshold": {
-        "underThresholdError": "Total price of requested quote does not meet the minimum threshold"
+    "httpHandlers" : {
+      "cartValidationIssue" : "Wystąpiły problemy z twoimi wpisami. Sprawdź swój koszyk.",
+      "quoteCartIssue" : "Nie można wprowadzać zmian we wpisach koszyka. Przejdź do finalizacji zakupu",
+      "absoluteDiscountIssue" : "Wybierz rabat, który nie przekracza sumy całkowitej",
+      "expirationDateIssue" : "Wybierz datę wygaśnięcia w przyszłości",
+      "threshold" : {
+        "underThresholdError" : "Łączna cena wnioskowanej oferty nie osiąga minimalnego progu"
       },
-      "expired": "This quote has expired. You must resubmit your quote request to receive another vendor quote.",
-      "downloadPDFError": "Something went wrong. Unable to obtain the proposal document PDF."
+      "expired" : "Ta wycena wygasła. Musisz ponownie przesłać prośbę o wycenę, aby otrzymać kolejną ofertę od dostawcy.",
+      "downloadPDFError" : "Coś poszło nie tak. Nie można uzyskać pliku PDF z ofertą."
     },
-    "items": {
-      "regionTitle": "Cart items"
+    "items" : {
+      "regionTitle" : "Pozycje koszyka"
     },
-    "links": {
-      "newCart": "Nowy koszyk",
-      "quotes": "Oferty",
-      "download": "Download Proposal",
-      "a11y": {
-        "newCart": "Create new empty cart and navigate to it.",
-        "quotes": "Navigate to quote search result list.",
-        "download": "Start downloading a quote proposal"
+    "links" : {
+      "newCart" : "Nowy koszyk",
+      "quotes" : "Oferty",
+      "download" : "Pobierz propozycję",
+      "a11y" : {
+        "newCart" : "Utwórz nowy pusty koszyk i przejdź do niego.",
+        "quotes" : "Przejdź do listy wyników wyszukiwania ofert.",
+        "download" : "Pobierz proponowaną wycenę"
       }
     },
-    "list": {
-      "regionTitle": "Quote list summary",
-      "title": "Quote List",
-      "name": "Nazwa",
-      "updated": "Zaktualizowane",
-      "sortBy": "Sortuj według",
-      "sortQuotes": "Sort Quotes",
-      "empty": "We have no quote records for this account.",
-      "quoteId": "ID oferty",
-      "status": "Status",
-      "clickableRow": "Click on the row for more quote details"
+    "list" : {
+      "regionTitle" : "Podsumowanie listy ofert",
+      "title" : "Lista ofert",
+      "name" : "Nazwa",
+      "updated" : "Zaktualizowane",
+      "sortBy" : "Sortuj według",
+      "sortQuotes" : "Sortuj oferty",
+      "empty" : "Nie mamy rekordów wycen dla tego konta.",
+      "quoteId" : "ID oferty",
+      "status" : "Status",
+      "clickableRow" : "Kliknij wiersz, aby uzyskać więcej szczegółów wyceny"
     },
-    "states": {
-      "BUYER_DRAFT": "Wersja robocza",
-      "BUYER_SUBMITTED": "Przesłane",
-      "BUYER_ACCEPTED": "Zaakceptowane",
-      "BUYER_APPROVED": "Zatwierdzone",
-      "BUYER_REJECTED": "Odrzucone",
-      "BUYER_OFFER": "Oferta dostawcy",
-      "BUYER_ORDERED": "Zamówione",
-      "SELLER_DRAFT": "Wersja robocza",
-      "SELLER_REQUEST": "Wnioskowano",
-      "SELLER_SUBMITTED": "Przesłane",
-      "SELLERAPPROVER_DRAFT": "Wersja robocza",
-      "SELLERAPPROVER_PENDING": "Oczekuje na zatwierdzenie",
-      "SELLERAPPROVER_APPROVED": "Zatwierdzone",
-      "SELLERAPPROVER_REJECTED": "Odrzucone",
-      "CREATED": "Utworzone",
-      "CANCELLED": "Anulowane",
-      "EXPIRED": "Wygasłe"
+    "states" : {
+      "BUYER_DRAFT" : "Wersja robocza",
+      "BUYER_SUBMITTED" : "Przesłane",
+      "BUYER_ACCEPTED" : "Zaakceptowane",
+      "BUYER_APPROVED" : "Zatwierdzone",
+      "BUYER_REJECTED" : "Odrzucone",
+      "BUYER_OFFER" : "Oferta dostawcy",
+      "BUYER_ORDERED" : "Zamówione",
+      "SELLER_DRAFT" : "Wersja robocza",
+      "SELLER_REQUEST" : "Wnioskowane",
+      "SELLER_SUBMITTED" : "Przesłane",
+      "SELLERAPPROVER_DRAFT" : "Wersja robocza",
+      "SELLERAPPROVER_PENDING" : "Oczekuje na zatwierdzenie",
+      "SELLERAPPROVER_APPROVED" : "Zatwierdzone",
+      "SELLERAPPROVER_REJECTED" : "Odrzucone",
+      "CREATED" : "Utworzone",
+      "CANCELLED" : "Anulowane",
+      "EXPIRED" : "Wygasłe"
     },
-    "summary": {
-      "regionTitle": "Podsumowanie zamówienia",
-      "actions": {
-        "APPROVE": "Zatwierdź ofertę",
-        "CANCEL": "Anuluj ofertę",
-        "CHECKOUT": "Zaakceptuj i zrealizuj zakupy",
-        "EDIT": "Edytuj ofertę",
-        "REJECT": "Odrzuć ofertę",
-        "REQUOTE": "Request new Quote",
-        "SAVE": "Zapisz ofertę",
-        "SUBMIT": "Prześlij ofertę",
-        "VIEW": "Wyświetl ofertę"
+    "summary" : {
+      "regionTitle" : "Podsumowanie zamówienia",
+      "actions" : {
+        "APPROVE" : "Zatwierdź ofertę",
+        "CANCEL" : "Anuluj ofertę",
+        "CHECKOUT" : "Zaakceptuj i zrealizuj zakup",
+        "EDIT" : "Edytuj ofertę",
+        "REJECT" : "Odrzuć ofertę",
+        "REQUOTE" : "Poproś o nową wycenę",
+        "SAVE" : "Zapisz ofertę",
+        "SUBMIT" : "Prześlij ofertę",
+        "VIEW" : "Wyświetl ofertę"
       },
-      "prices": {
-        "title": "Podsumowanie zamówienia",
-        "subtotal": "Suma częściowa",
-        "productDiscount": "Item Discount",
-        "orderDiscount": "Rabat zamówienia",
-        "quoteDiscount": "Rabat oferty",
-        "total": "Suma",
-        "hint": "No taxes are included in the total"
+      "prices" : {
+        "title" : "Podsumowanie zamówienia",
+        "subtotal" : "Suma częściowa",
+        "productDiscount" : "Rabat dla pozycji",
+        "orderDiscount" : "Rabat zamówienia",
+        "quoteDiscount" : "Rabat oferty",
+        "total" : "Suma",
+        "hint" : "Podatki nie są uwzględnione w kwocie całkowitej"
       },
-      "sellerEdit": {
-        "discount": "Rabat",
-        "apply": "Zastosuj",
-        "expiryDate": "Data wygaśnięcia",
-        "discountValidationText": "Enter a valid percentage discount",
-        "a11y": {
-          "apply": "Click to apply the entered discount value to this quote",
-          "discount": "Enter a percentage discount value to be applied to this quote",
-          "expiryDate": "Enter an expiry date for this quote"
+      "sellerEdit" : {
+        "discount" : "Rabat",
+        "apply" : "Zastosuj",
+        "expiryDate" : "Data wygaśnięcia",
+        "discountValidationText" : "Wprowadź ważny upust procentowy",
+        "a11y" : {
+          "apply" : "Kliknij, aby zastosować wprowadzoną wartość rabatu do tej oferty",
+          "discount" : "Wprowadź procentową wartość rabatu, który ma zostać zastosowany do tej oferty",
+          "expiryDate" : "Wprowadź datę wygaśnięcia tej oferty"
         }
       }
     }
