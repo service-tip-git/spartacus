@@ -5,7 +5,6 @@
  */
 
 import userRegistration from './userRegistration.json';
-
 export const de = {
   userRegistration,
 };

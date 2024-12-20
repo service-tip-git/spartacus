@@ -5,7 +5,6 @@
  */
 
 import quote from './quote.json';
-
 export const zh = {
   quote,
 };

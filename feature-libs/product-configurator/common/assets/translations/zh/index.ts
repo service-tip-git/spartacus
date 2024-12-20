@@ -5,7 +5,6 @@
  */
 
 import configurator from './configurator.json';
-
 export const zh = {
   configurator,
 };

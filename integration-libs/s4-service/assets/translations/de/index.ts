@@ -5,7 +5,6 @@
  */
 
 import s4Service from './s4-service.json';
-
 export const de = {
   s4Service,
 };
