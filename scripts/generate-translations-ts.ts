@@ -51,13 +51,18 @@ function getLicenseHeader(): string {
 
 function getPrefix(translationDir: string): string | undefined {
   const configPath = path.join(
-    path.dirname(translationDir),
+    translationDir,
     'translations-ts-generator.config'
   );
   if (fs.existsSync(configPath)) {
     const content = fs.readFileSync(configPath, 'utf-8');
     const match = content.match(/PUBLIC_API_PREFIX=(.+)/);
     return match ? match[1].trim() : undefined;
+  } else {
+    // SPIKE TODO REMOVE
+    throw new Error(
+      `No translations-ts-generator.config file found in ${translationDir}`
+    );
   }
   return undefined;
 }
@@ -67,6 +72,9 @@ function generateLanguageIndex(
   translationFiles: TranslationFile[],
   modifiedFiles: ModifiedFiles
 ): void {
+  // SPIKE TODO REMOVE - TEMPORARILY WE DONT WANT TO USE THIS FUNCTION
+  return;
+
   const imports = translationFiles
     .map((file) => `import ${file.name} from '${file.importPath}';`)
     .join('\n');
@@ -87,6 +95,7 @@ function generateMainTranslations(
   modifiedFiles: ModifiedFiles
 ): void {
   const prefix = getPrefix(translationDir);
+
   const languageExports = languages
     .map((lang) => {
       const capitalizedLang = lang.charAt(0).toUpperCase() + lang.slice(1);
@@ -97,10 +106,29 @@ function generateMainTranslations(
     })
     .join('\n');
 
+  const deprecatedExportName = prefix
+    ? `${prefix}Translations`
+    : 'translations';
+  const deprecatedExport = `import { en } from './en/index';
+
+/**
+ * @deprecated use **specific language** translations (suffixed with language code) instead,
+ * like in the following example:
+ *             \`\`\`diff
+ *               i18n: {
+ *             -   resources: ${deprecatedExportName}
+ *             +   resources: { en: ${deprecatedExportName}En }
+ *               }
+ *             \`\`\`
+ */
+export const ${deprecatedExportName} = {
+  en,
+};`;
+
   const translationsPath = path.join(translationDir, 'translations.ts');
   fs.writeFileSync(
     translationsPath,
-    getLicenseHeader() + languageExports + '\n'
+    getLicenseHeader() + deprecatedExport + '\n\n' + languageExports + '\n'
   );
   modifiedFiles.translationFiles.add(translationsPath);
 }
@@ -170,6 +198,11 @@ async function main(): Promise<void> {
     } catch (error) {
       console.error('Error running prettier:', error);
     }
+
+    // SPIKE TODO REMOVE:
+    console.log(
+      'SPIKE TODO ADD RUNNING PRETTIER - but only on the changed files'
+    );
   }
 }
 

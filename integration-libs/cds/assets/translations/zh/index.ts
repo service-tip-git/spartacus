@@ -7,6 +7,6 @@
 import recentSearches from './recentSearches.json';
 import trendingSearches from './trendingSearches.json';
 export const zh = {
-  cdsRecentSearches: recentSearches,
-  cdsTrendingSearches: trendingSearches,
+  recentSearches,
+  trendingSearches,
 };

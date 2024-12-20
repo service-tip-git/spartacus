@@ -5,7 +5,6 @@
  */
 
 import cdc from './cdc.json';
-
 export const de = {
   cdc,
 };

@@ -7,6 +7,6 @@
 import recentSearches from './recentSearches.json';
 import trendingSearches from './trendingSearches.json';
 export const de = {
-  cdsRecentSearches: recentSearches,
-  cdsTrendingSearches: trendingSearches,
+  recentSearches,
+  trendingSearches,
 };

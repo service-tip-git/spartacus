@@ -5,7 +5,6 @@
  */
 
 import checkoutB2B from './checkoutB2B.json';
-
 export const ja = {
   checkoutB2B,
 };

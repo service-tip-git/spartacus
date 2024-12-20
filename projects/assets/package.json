@@ -12,6 +12,7 @@
   "dependencies": {
     "tslib": "^2.6.2"
   },
+  "peerDependencies": {},
   "publishConfig": {
     "access": "public"
   }

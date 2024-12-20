@@ -5,7 +5,6 @@
  */
 
 import importExport from './importExport.json';
-
 export const de = {
   importExport,
 };

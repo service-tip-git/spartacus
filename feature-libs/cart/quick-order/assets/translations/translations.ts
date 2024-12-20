@@ -4,25 +4,36 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { TranslationChunksConfig, TranslationResources } from '@spartacus/core';
 import { en } from './en/index';
-import { ja } from './ja/index';
-import { de } from './de/index';
-import { zh } from './zh/index';
 
-export const quickOrderTranslations: TranslationResources = {
+/**
+ * @deprecated use **specific language** translations (suffixed with language code) instead,
+ * like in the following example:
+ *             ```diff
+ *               i18n: {
+ *             -   resources: quickOrderTranslations
+ *             +   resources: { en: quickOrderTranslationsEn }
+ *               }
+ *             ```
+ */
+export const quickOrderTranslations = {
   en,
-  ja,
-  de,
-  zh,
 };
 
-// expose all translation chunk mapping for quickOrder feature
-export const quickOrderTranslationChunksConfig: TranslationChunksConfig = {
-  quickOrder: [
-    'quickOrderCartForm',
-    'quickOrderForm',
-    'quickOrderList',
-    'quickOrderTable',
-  ],
-};
+export { cs as quickOrderTranslationsCs } from './cs/index';
+export { de as quickOrderTranslationsDe } from './de/index';
+export { en as quickOrderTranslationsEn } from './en/index';
+export { es as quickOrderTranslationsEs } from './es/index';
+export { es_CO as quickOrderTranslationsEs_CO } from './es_CO/index';
+export { fr as quickOrderTranslationsFr } from './fr/index';
+export { hi as quickOrderTranslationsHi } from './hi/index';
+export { hu as quickOrderTranslationsHu } from './hu/index';
+export { id as quickOrderTranslationsId } from './id/index';
+export { it as quickOrderTranslationsIt } from './it/index';
+export { ja as quickOrderTranslationsJa } from './ja/index';
+export { ko as quickOrderTranslationsKo } from './ko/index';
+export { pl as quickOrderTranslationsPl } from './pl/index';
+export { pt as quickOrderTranslationsPt } from './pt/index';
+export { ru as quickOrderTranslationsRu } from './ru/index';
+export { zh as quickOrderTranslationsZh } from './zh/index';
+export { zh_TW as quickOrderTranslationsZh_TW } from './zh_TW/index';
