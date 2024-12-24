@@ -835,6 +835,14 @@ export interface FeatureTogglesInterface {
   enableConsecutiveCharactersPasswordRequirement?: boolean;
 
   /**
+   * In CustomerCouponConnector, Enables claiming customer coupon with coupon code in httpRequest body with POST method.
+   *
+   * When set to `false`, claiming customer coupon works with coupon code as parameter in URL, which exposes sensitive data and has security risk.
+   * When set to `true`, claiming customer coupon works with coupon code in httpRequest body with POST method(the new Occ endpoint is available since Commerce 2211.28), which avoids security risk.
+   */
+  enableClaimCustomerCouponWithCodeInRequestBody?: boolean;
+
+  /**
    * Enables a validation that prevents new passwords from matching the current password
    * in the password update form.
    *
@@ -1069,4 +1077,5 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yScrollToTopPositioning: false,
   enableSecurePasswordValidation: false,
   enableCarouselCategoryProducts: false,
+  enableClaimCustomerCouponWithCodeInRequestBody: false,
 };

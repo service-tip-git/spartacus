@@ -430,6 +430,7 @@ if (environment.cpq) {
         a11yWrapReviewOrderInSection: true,
         enableCarouselCategoryProducts: true,
         enableSecurePasswordValidation: true,
+        enableClaimCustomerCouponWithCodeInRequestBody: false,
       };
       return appFeatureToggles;
     }),
