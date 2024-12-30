@@ -201,6 +201,21 @@ export interface Product {
   variantType?: VariantType;
   volumePrices?: Price[];
   volumePricesFlag?: boolean;
+
+  /**
+   * Default unit of measure to be used for the product stock availability
+   */
+  sapUnit?: SapUnit;
+}
+
+/**
+ * Unit of measure used for the product stock availability
+ */
+export interface SapUnit {
+  code?: string;
+  name?: string;
+  availabilityCode?: string;
+  sapCode?: string;
 }
 
 export enum VariantQualifier {
@@ -241,4 +256,9 @@ export interface StoreFinderStockSearchPage {
   sourceLatitude?: number;
   sourceLongitude?: number;
   stores?: PointOfServiceStock[];
+}
+
+export interface ProductAvailabilities {
+  quantity?: string;
+  status?: string;
 }

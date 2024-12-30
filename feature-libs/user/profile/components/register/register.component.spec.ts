@@ -468,9 +468,10 @@ describe('RegisterComponent', () => {
       expect(validators).toEqual({
         required: true,
         cxMinOneDigit: true,
-        cxMinOneUpperCaseCharacter: true,
         cxMinOneSpecialCharacter: true,
-        cxMinSixCharactersLength: true,
+        cxMinOneUpperCaseCharacter: true,
+        cxMinEightCharactersLength: true,
+        cxMaxCharactersLength: true,
       });
     });
 

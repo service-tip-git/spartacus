@@ -55,6 +55,9 @@
   "cartItems": {
     "item": "Item"
   },
+  "cardActions": {
+    "getDirections": "Get Directions, this link opens in a new window"
+  },
   "deliveryPointOfServiceDetails": {
     "itemsToBePickUp": "Items To Be Pick-Up",
     "pickUpInStoreAddress": "Pick Up Store Address",

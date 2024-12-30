@@ -18,6 +18,7 @@ import {
   PDFInvoicesFacade,
 } from '@spartacus/pdf-invoices/root';
 import { FileDownloadService, IconTestingModule } from '@spartacus/storefront';
+import { MockFeatureDirective } from 'projects/storefrontlib/shared/test/mock-feature-directive';
 import { EMPTY, Observable, of, throwError } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { InvoicesListComponent } from './invoices-list.component';
@@ -196,6 +197,7 @@ describe('InvoicesListComponent', () => {
         InvoicesListComponent,
         MockPaginationComponent,
         MockSortingComponent,
+        MockFeatureDirective,
       ],
       providers: [
         { provide: PDFInvoicesFacade, useClass: MockPDFInvoicesFacade },
@@ -368,7 +370,7 @@ describe('InvoicesListComponent', () => {
       By.css('.cx-invoices-list-table')
     );
 
-    const tableRows = tableElement.queryAll(By.css('tr'));
+    const tableRows = tableElement.queryAll(By.css('tbody tr'));
     expect(tableRows?.length).toEqual(5);
 
     tableRows?.forEach((row, rowNumber) => {

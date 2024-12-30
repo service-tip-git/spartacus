@@ -6,10 +6,14 @@
   "
 >
   <ng-container *ngIf="form" [formGroup]="form" main>
+    <p *cxFeature="'a11yRequiredAsterisks'" class="form-legend">
+      {{ 'formLegend.required' | cxTranslate }}
+    </p>
     <label formGroupName="country">
-      <span class="label-content required">{{
-        'orgUnitAddress.country' | cxTranslate
-      }}</span>
+      <span class="label-content required"
+        >{{ 'orgUnitAddress.country' | cxTranslate
+        }}<ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template
+      ></span>
       <ng-select
         [inputAttrs]="{ required: 'true' }"
         class="country-select"
@@ -55,9 +59,10 @@
     </label>
 
     <label>
-      <span class="label-content required">{{
-        'orgUnitAddress.firstName' | cxTranslate
-      }}</span>
+      <span class="label-content required"
+        >{{ 'orgUnitAddress.firstName' | cxTranslate
+        }}<ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template
+      ></span>
       <input
         required="true"
         class="form-control"
@@ -81,9 +86,10 @@
       ></cx-form-errors>
     </label>
     <label>
-      <span class="label-content required">{{
-        'orgUnitAddress.lastName' | cxTranslate
-      }}</span>
+      <span class="label-content required"
+        >{{ 'orgUnitAddress.lastName' | cxTranslate
+        }}<ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template
+      ></span>
       <input
         required="true"
         type="text"
@@ -106,9 +112,10 @@
     </label>
 
     <label class="full-width">
-      <span class="label-content required">{{
-        'orgUnitAddress.address1' | cxTranslate
-      }}</span>
+      <span class="label-content required"
+        >{{ 'orgUnitAddress.address1' | cxTranslate
+        }}<ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template
+      ></span>
       <input
         required="true"
         type="text"
@@ -155,9 +162,10 @@
     </label>
 
     <label>
-      <span class="label-content required">{{
-        'orgUnitAddress.city' | cxTranslate
-      }}</span>
+      <span class="label-content required"
+        >{{ 'orgUnitAddress.city' | cxTranslate
+        }}<ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template
+      ></span>
       <input
         required="true"
         type="text"
@@ -180,9 +188,10 @@
     </label>
 
     <label>
-      <span class="label-content required">{{
-        'orgUnitAddress.zipCode' | cxTranslate
-      }}</span>
+      <span class="label-content required"
+        >{{ 'orgUnitAddress.zipCode' | cxTranslate
+        }}<ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template
+      ></span>
       <input
         required="true"
         type="text"
@@ -212,9 +221,10 @@
         formGroupName="region"
         *ngIf="regions.length > 0"
       >
-        <span class="label-content required">{{
-          'orgUnitAddress.state' | cxTranslate
-        }}</span>
+        <span class="label-content required"
+          >{{ 'orgUnitAddress.state' | cxTranslate
+          }}<ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template
+        ></span>
         <ng-select
           [inputAttrs]="{ required: 'true' }"
           class="region-select"
@@ -244,3 +254,13 @@
     </ng-container>
   </ng-container>
 </cx-org-form>
+
+<ng-template #requiredAsterisk>
+  <abbr
+    *cxFeature="'a11yRequiredAsterisks'"
+    class="text-decoration-none required-asterisk"
+    aria-hidden="true"
+    title="{{ 'common.required' | cxTranslate }}"
+    >*</abbr
+  >
+</ng-template>

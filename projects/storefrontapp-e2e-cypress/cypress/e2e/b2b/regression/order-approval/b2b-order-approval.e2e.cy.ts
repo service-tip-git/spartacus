@@ -192,11 +192,11 @@ function assertButtons() {
 
 function assertPermissionResults(order) {
   cy.get('cx-order-detail-permission-results').within(() => {
-    cy.get('tr').should('have.length', order.permissionResults.length);
+    cy.get('tbody tr').should('have.length', order.permissionResults.length);
   });
 
   order.permissionResults.forEach((permission, index) => {
-    cy.get('cx-order-detail-permission-results tr')
+    cy.get('cx-order-detail-permission-results tbody tr')
       .eq(index)
       .within(() => {
         cy.get('.cx-approval-approverName').should(

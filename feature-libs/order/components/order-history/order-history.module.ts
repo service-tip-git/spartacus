@@ -18,6 +18,7 @@ import {
   UrlModule,
 } from '@spartacus/core';
 import {
+  BtnLikeLinkModule,
   ListNavigationModule,
   MediaModule,
   SpinnerModule,
@@ -56,6 +57,7 @@ const moduleComponents = [
     I18nModule,
     SpinnerModule,
     MediaModule,
+    BtnLikeLinkModule,
   ],
   declarations: [OrderHistoryComponent, ...moduleComponents],
   exports: [OrderHistoryComponent, ...moduleComponents],

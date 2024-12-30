@@ -63,6 +63,15 @@ export function verifyShowReviewsLink() {
     .should('be.focused');
 }
 
+export function verifyReviewsLink() {
+  cy.get(`${infoContainer}`)
+    .contains(/show reviews/i)
+    .click();
+  cy.get(`${tabsHeaderList}`)
+    .contains(/reviews/i)
+    .should('be.focused');
+}
+
 export function verifyTextInTabs() {
   cy.get(activeTabContainer)
     .should(
@@ -140,6 +149,7 @@ export function verifyTabKeyboardNavigation(accordian = false) {
   it('should navigate tab component with keyboard', () => {
     cy.reload();
     cy.get(tabsHeaderList).eq(0).click();
+    cy.get(tabsHeaderList).eq(0).focus();
     cy.focused().contains('Product Details').type('{downArrow}');
     verifySpaceBarKeyForAccordian();
     cy.focused().contains('Specs').type('{rightArrow}');
@@ -232,11 +242,6 @@ export function configureDefaultProduct() {
       baseSite: ['electronics-spa'],
       currency: ['USD'],
     },
-    // TODO: No longer needed to toggle a11yTabComponent feature when set to true
-    // by default.
-    features: {
-      a11yTabComponent: true,
-    },
   });
 
   cy.intercept({
@@ -257,11 +262,6 @@ export function configureApparelProduct() {
     context: {
       baseSite: ['apparel-uk-spa'],
       currency: ['GBP'],
-    },
-    // TODO: No longer needed to toggle a11yTabComponent feature when set to true
-    // by default.
-    features: {
-      a11yTabComponent: true,
     },
   });
   cy.visit('/product/100191');

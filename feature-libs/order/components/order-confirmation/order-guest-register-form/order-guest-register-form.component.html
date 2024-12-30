@@ -9,11 +9,15 @@
     </p>
 
     <form (ngSubmit)="submit()" [formGroup]="guestRegisterForm">
+      <p *cxFeature="'a11yRequiredAsterisks'" class="form-legend">
+        {{ 'formLegend.required' | cxTranslate }}
+      </p>
       <div class="form-group">
         <label>
-          <span class="label-content">{{
-            'register.password.label' | cxTranslate
-          }}</span>
+          <span class="label-content">
+            {{ 'register.password.label' | cxTranslate }}
+            <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
+          </span>
           <input
             required="true"
             class="form-control"
@@ -43,9 +47,10 @@
 
       <div class="form-group">
         <label>
-          <span class="label-content">{{
-            'register.confirmPassword.label' | cxTranslate
-          }}</span>
+          <span class="label-content">
+            {{ 'register.confirmPassword.label' | cxTranslate }}
+            <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
+          </span>
           <input
             required="true"
             class="form-control"
@@ -83,3 +88,13 @@
     </form>
   </div>
 </div>
+
+<ng-template #requiredAsterisk>
+  <abbr
+    *cxFeature="'a11yRequiredAsterisks'"
+    class="text-decoration-none required-asterisk"
+    aria-hidden="true"
+    title="{{ 'common.required' | cxTranslate }}"
+    >*</abbr
+  >
+</ng-template>

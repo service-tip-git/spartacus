@@ -15,6 +15,7 @@ import {
   EventService,
   I18nTestingModule,
   Product,
+  ProductAvailabilityAdapter,
 } from '@spartacus/core';
 import {
   CmsComponentData,
@@ -100,6 +101,8 @@ class MockCurrentProductService {
   }
 }
 
+class MockProductAvailabilityAdapter {}
+
 @Component({
   template: '',
   selector: 'cx-item-counter',
@@ -151,6 +154,10 @@ describe('AddToCartComponent', () => {
           useValue: undefined,
         },
         { provide: EventService, useClass: MockEventService },
+        {
+          provide: ProductAvailabilityAdapter,
+          useClass: MockProductAvailabilityAdapter,
+        },
       ],
     });
   }

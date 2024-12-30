@@ -35,5 +35,17 @@
         box-shadow: 0 0 0 0;
       }
     }
+
+    @include forFeature('a11yKeyboardFocusInSearchBox') {
+      :focus-within {
+        --cx-visual-focus-width: 0;
+      }
+    }
+  }
+
+  main {
+    @include cx-highContrastTheme {
+      background-color: var(--cx-color-background);
+    }
   }
 }

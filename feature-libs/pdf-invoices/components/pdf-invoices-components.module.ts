@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {
   AuthGuard,
   CmsConfig,
+  FeaturesConfigModule,
   I18nModule,
   provideDefaultConfig,
   UrlModule,
@@ -34,6 +35,7 @@ import { InvoicesListComponent } from './invoices-list/invoices-list.component';
     IconModule,
     MediaModule,
     SpinnerModule,
+    FeaturesConfigModule,
   ],
   declarations: [InvoicesListComponent],
   exports: [InvoicesListComponent],

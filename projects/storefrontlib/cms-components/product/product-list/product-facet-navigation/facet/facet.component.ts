@@ -21,7 +21,10 @@ import {
 import { Facet, FacetValue, FeatureConfigService } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { ICON_TYPE } from '../../../../../cms-components/misc/icon/icon.model';
-import { FocusDirective } from '../../../../../layout/a11y/keyboard-focus/focus.directive';
+import {
+  FocusDirective,
+  disableTabbingForTick,
+} from '../../../../../layout/a11y';
 import { FacetCollapseState } from '../facet.model';
 import { FacetService } from '../services/facet.service';
 
@@ -153,7 +156,21 @@ export class FacetComponent implements AfterViewInit {
       case 'ArrowUp':
         this.onArrowUp(event, targetIndex);
         break;
+      case 'Tab':
+        this.onTabNavigation();
+        break;
     }
+  }
+
+  /**
+   * If a11yTabComponent is enabled, we temporarily disable tabbing for the facet values.
+   * This is to use proper keyboard navigation keys(ArrowUp/ArrowDown) for navigating through the facet values.
+   */
+  protected onTabNavigation(): void {
+    if (!this.featureConfigService?.isEnabled('a11yTabComponent')) {
+      return;
+    }
+    disableTabbingForTick(this.values.map((el) => el.nativeElement));
   }
 
   /**
