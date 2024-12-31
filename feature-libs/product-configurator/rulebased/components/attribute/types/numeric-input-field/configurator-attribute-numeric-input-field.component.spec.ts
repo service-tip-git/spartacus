@@ -184,7 +184,7 @@ describe('ConfigAttributeNumericInputFieldComponent', () => {
     );
 
     component = fixture.componentInstance;
-    component.attribute = attribute;
+    component.attribute = structuredClone(attribute);
     component.language = locale;
     fixture.detectChanges();
     htmlElem = fixture.nativeElement;
@@ -509,12 +509,16 @@ describe('ConfigAttributeNumericInputFieldComponent', () => {
   });
 
   describe('getIntervalText', () => {
-    let interval: ConfiguratorAttributeNumericInterval = {
-      minValue: 5,
-      maxValue: 7,
-      minValueIncluded: true,
-      maxValueIncluded: true,
-    };
+    let interval: ConfiguratorAttributeNumericInterval;
+
+    beforeEach(() => {
+      interval = {
+        minValue: 5,
+        maxValue: 7,
+        minValueIncluded: true,
+        maxValueIncluded: true,
+      };
+    });
 
     let minValueFormatted = '5.00';
     let maxValueFormatted = '7.00';
@@ -714,12 +718,16 @@ describe('ConfigAttributeNumericInputFieldComponent', () => {
   });
 
   describe('getAriaLabelComplete', () => {
-    let interval: ConfiguratorAttributeNumericInterval = {
-      minValue: 5,
-      maxValue: 7,
-      minValueIncluded: true,
-      maxValueIncluded: true,
-    };
+    let interval: ConfiguratorAttributeNumericInterval;
+
+    beforeEach(() => {
+      interval = {
+        minValue: 5,
+        maxValue: 7,
+        minValueIncluded: true,
+        maxValueIncluded: true,
+      };
+    });
 
     let minValueFormatted = '5.00';
     let maxValueFormatted = '7.00';

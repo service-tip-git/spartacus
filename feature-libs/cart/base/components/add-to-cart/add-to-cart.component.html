@@ -1,6 +1,11 @@
 <form *ngIf="productCode" [formGroup]="addToCartForm" (submit)="addToCart()">
   <div class="quantity" *ngIf="showQuantity">
-    <label>{{ 'addToCart.quantity' | cxTranslate }}</label>
+    <label *cxFeature="'a11yQTY2Quantity'">{{
+      'addToCart.quantityFull' | cxTranslate
+    }}</label>
+    <label *cxFeature="'!a11yQTY2Quantity'">{{
+      'addToCart.quantity' | cxTranslate
+    }}</label>
     <div class="cx-counter-stock">
       <cx-item-counter
         *ngIf="hasStock"
@@ -24,6 +29,7 @@
     <ng-template
       [cxOutlet]="CartOutlets.ADD_TO_CART_PICKUP_OPTION"
       [(cxComponentRef)]="pickupOptionCompRef"
+      (cxComponentRefChange)="onPickupOptionsCompLoaded()"
     ></ng-template>
   </ng-container>
 
@@ -36,7 +42,7 @@
         : 'btn btn-primary btn-block'
     "
     type="submit"
-    [disabled]="quantity <= 0 || quantity > maxQuantity"
+    [disabled]="disabled || quantity <= 0 || quantity > maxQuantity"
   >
     <span
       *ngIf="

@@ -10,7 +10,11 @@ import {
   inject,
   OnInit,
 } from '@angular/core';
-import { CxDatePipe, TranslationService } from '@spartacus/core';
+import {
+  CxDatePipe,
+  TranslationService,
+  useFeatureStyles,
+} from '@spartacus/core';
 import { QuoteCoreConfig } from '@spartacus/quote/core';
 import {
   FocusConfig,
@@ -43,6 +47,10 @@ export class QuoteConfirmDialogComponent implements OnInit {
   };
 
   confirmationContext$: Observable<ConfirmationContext>;
+
+  constructor() {
+    useFeatureStyles('a11yCroppedFocusRing');
+  }
 
   ngOnInit(): void {
     this.confirmationContext$ = this.launchDialogService.data$.pipe(

@@ -40,8 +40,10 @@ export class ProductMultiDimensionalSelectorGuard {
     activatedRoute: ActivatedRouteSnapshot
   ): Observable<boolean | UrlTree> {
     const productCode = activatedRoute.params?.productCode;
+
     if (!productCode) {
-      return of(false);
+      // Refuse entry unless it is within a SmartEdit environment
+      return of(!!activatedRoute.queryParams?.cmsTicketId);
     }
 
     return this.productService

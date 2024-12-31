@@ -22,6 +22,7 @@ import {
   provideDefaultConfigFactory,
 } from '@spartacus/core';
 import {
+  BtnLikeLinkModule,
   FormErrorsModule,
   MessageComponentModule,
   PasswordVisibilityToggleModule,
@@ -55,6 +56,7 @@ const myAccountV2EmailMapping: CmsConfig = {
     PasswordVisibilityToggleModule,
     FeaturesConfigModule,
     MessageComponentModule,
+    BtnLikeLinkModule,
   ],
   declarations: [UpdateEmailComponent, MyAccountV2EmailComponent],
   exports: [UpdateEmailComponent, MyAccountV2EmailComponent],

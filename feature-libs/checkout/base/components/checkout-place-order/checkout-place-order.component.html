@@ -1,3 +1,6 @@
+<p *cxFeature="'a11yRequiredAsterisks'" class="form-legend">
+  {{ 'formLegend.required' | cxTranslate }}
+</p>
 <form class="cx-place-order-form form-check" [formGroup]="checkoutSubmitForm">
   <div class="form-group">
     <label>
@@ -19,7 +22,8 @@
         </a>
         <abbr
           *cxFeature="'a11yRequiredAsterisks'"
-          class="text-decoration-none"
+          aria-hidden="true"
+          class="text-decoration-none required-asterisk"
           title="{{ 'common.required' | cxTranslate }}"
           >*</abbr
         >

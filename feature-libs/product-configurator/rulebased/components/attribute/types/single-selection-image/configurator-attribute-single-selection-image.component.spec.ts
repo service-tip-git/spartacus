@@ -222,6 +222,7 @@ describe('ConfiguratorAttributeSingleSelectionImageComponent', () => {
     expect(description.nativeElement.innerText).toBe(
       (component.attribute.values ?? [{}])[1].description
     );
+    infoButton.click(); // hide popover after test again
   });
 
   it('should init with val3', () => {
@@ -369,7 +370,7 @@ describe('ConfiguratorAttributeSingleSelectionImageComponent', () => {
         '',
         0,
         'aria-label',
-        'configurator.a11y.description'
+        'configurator.a11y.description value:val2'
       );
     });
 

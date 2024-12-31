@@ -15,6 +15,8 @@ export interface CardAction {
 export interface CardLinkAction {
   link: string;
   name: string;
+  ariaLabel?: string;
+  target?: string;
 }
 
 export interface Card {
@@ -24,6 +26,7 @@ export interface Card {
   text?: Array<string>;
   paragraphs?: Array<{ title?: string; text?: Array<string> }>;
   img?: string;
+  imgLabel?: string;
   actions?: Array<CardAction | CardLinkAction>;
   deleteMsg?: string;
   label?: string;
@@ -125,5 +128,31 @@ export class CardComponent implements OnInit {
   /* eslint @angular-eslint/no-empty-lifecycle-method: 1 */
   ngOnInit() {
     // Intentional empty method
+  }
+
+  /**
+   * ariaDescribedBy: Computes the value for the 'aria-describedby' attribute.
+   * If `content` has a `title`, it returns a string including the title and container IDs, with index if available.
+   * If no title, it returns only the container ID with the index if available.
+   *
+   * @returns {string} The 'aria-describedby' value.
+   */
+  protected get ariaDescribedBy() {
+    if (this.content && this.content.title) {
+      return `${this.getLabel('content-title')} ${this.getLabel('cx-card-container')}`;
+    }
+
+    return `${this.getLabel('cx-card-container')}`;
+  }
+
+  /**
+   * getLabel: Computes a label string by concatenating the provided prefix with the index.
+   * If the index is greater than or equal to 0, it appends the index to the prefix; otherwise, it just returns the prefix.
+   *
+   * @param {string} prefix - The string to prefix to the label.
+   * @returns {string} The computed label, including the index if it's available.
+   */
+  protected getLabel(prefix: string): string {
+    return prefix + (this.index >= 0 ? '-' + this.index : '');
   }
 }
