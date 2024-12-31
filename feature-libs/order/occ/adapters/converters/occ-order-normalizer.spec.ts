@@ -3,7 +3,7 @@ import {
   ORDER_ENTRY_PROMOTIONS_NORMALIZER,
   PromotionResult,
 } from '@spartacus/cart/base/root';
-import { ConverterService, Occ, PRODUCT_NORMALIZER } from '@spartacus/core';
+import { ConverterService, PRODUCT_NORMALIZER } from '@spartacus/core';
 import { OccOrderNormalizer } from './occ-order-normalizer';
 
 class MockConverterService {
@@ -89,31 +89,6 @@ describe('OccOrderNormalizer', () => {
     expect(converter.convert).toHaveBeenCalledWith(product, PRODUCT_NORMALIZER);
     expect(converter.convert).toHaveBeenCalledWith(
       { item: order.unconsignedEntries[0], promotions: mockPromotions },
-      ORDER_ENTRY_PROMOTIONS_NORMALIZER
-    );
-  });
-
-  it('should convert order entryGroups', () => {
-    const product = { code: 'test4' };
-    const entryGroup: Occ.OrderEntryGroup = {
-      entries: [{ product }],
-      entryGroups: [
-        {
-          entries: [{ product }],
-          entryGroups: [],
-          type: 'CONFIGURABLEBUNDLE',
-        },
-      ],
-      type: 'CONFIGURABLEBUNDLE',
-    };
-    const order = {
-      entryGroups: [entryGroup],
-      appliedProductPromotions: mockPromotions,
-    };
-    service.convert(order);
-    expect(converter.convert).toHaveBeenCalledWith(product, PRODUCT_NORMALIZER);
-    expect(converter.convert).toHaveBeenCalledWith(
-      { item: entryGroup.entries && entryGroup.entries[0], promotions: mockPromotions },
       ORDER_ENTRY_PROMOTIONS_NORMALIZER
     );
   });

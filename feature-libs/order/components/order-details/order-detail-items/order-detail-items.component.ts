@@ -69,8 +69,6 @@ export class OrderDetailItemsComponent {
         this.pickupHierarchyTrees = pickup.hierarchyTrees;
         this.deliveryUnConsignedStandAloneEntries = delivery.filteredEntries;
         this.deliveryHierarchyTrees = delivery.hierarchyTrees;
-        console.log('pickup', pickup);
-        console.log('delivery', delivery);
       }
     })
   );

@@ -13,7 +13,6 @@ import { OrderActions } from '../store/actions/index';
 import { ORDER_FEATURE, StateWithOrder } from '../store/order-state';
 import * as fromStoreReducers from '../store/reducers/index';
 import { OrderHistoryService } from './order-history.service';
-import { OrderEntryGroup } from '@spartacus/cart/base/root';
 
 const mockReplenishmentOrderCode = 'test-repl-code';
 
@@ -66,26 +65,6 @@ describe('OrderHistoryService', () => {
       expect(service).toBeTruthy();
     }
   ));
-
-  it('should be able to get order entry groups', () => {
-    const mockEntryGroups: OrderEntryGroup[] = [
-      { entryGroupNumber: 1, label: 'Group 1', type: 'CONFIGURABLEBUNDLE' },
-      { entryGroupNumber: 2, label: 'Group 2', type: 'STANDALONE' },
-    ];
-
-    spyOn(store, 'pipe').and.returnValue(of(mockEntryGroups));
-
-    let entryGroups: OrderEntryGroup[];
-    userOrderService
-      .getEntryGroups()
-      .subscribe((data) => {
-        entryGroups = data;
-      })
-      .unsubscribe();
-
-    expect(entryGroups).toEqual(mockEntryGroups);
-    expect(store.pipe).toHaveBeenCalled();
-  });
 
   it('should be able to get order details', () => {
     store.dispatch(

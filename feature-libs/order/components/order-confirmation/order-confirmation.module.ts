@@ -116,12 +116,6 @@ const orderConfirmationComponents = [
 
         OrderConfirmationShippingComponent: {
           component: OrderConfirmationShippingComponent,
-          providers: [
-            {
-              provide: OrderDetailsService,
-              useExisting: OrderFacade,
-            },
-          ],
           guards: [OrderConfirmationGuard],
         },
 
