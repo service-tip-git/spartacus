@@ -161,6 +161,8 @@ export interface OrderEntry {
   cancelledItemsPrice?: Price;
   cancellableQuantity?: number;
   promotions?: PromotionResult[];
+  expectedQuantity?: number;
+  refundAmount?: Price;
 }
 
 export interface OrderEntryGroup {

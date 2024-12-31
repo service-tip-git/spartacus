@@ -3,14 +3,29 @@
 
   .cx-amend-order-bundle-items {
     margin: 0;
+
     tr {
       border-top: none;
       border-bottom: 1px solid var(--cx-color-medium);
     }
+
     .cx-item-tr-border {
       border-top: 1px solid var(--cx-color-medium);
       border-bottom: 1px solid var(--cx-color-medium);
     }
+
+    th:nth-of-type(1) {
+      width: 46%;
+    }
+
+    th:nth-of-type(2) {
+      width: 15%;
+    }
+
+    th:nth-of-type(3) {
+      width: 18%;
+    }
+
     td {
       padding: 1.25rem;
     }

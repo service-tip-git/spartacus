@@ -12,12 +12,17 @@ import {
   I18nModule,
   provideDefaultConfig,
   UrlModule,
+  FeaturesConfigModule
 } from '@spartacus/core';
 import { MediaModule } from '@spartacus/storefront';
 import { ReturnRequestItemsComponent } from './return-request-items/return-request-items.component';
 import { ReturnRequestOverviewComponent } from './return-request-overview/return-request-overview.component';
 import { ReturnRequestTotalsComponent } from './return-request-totals/return-request-totals.component';
-
+import {
+  HierarchyModule,
+  PromotionsModule,
+  OutletModule,
+} from '@spartacus/storefront';
 const components = [
   ReturnRequestOverviewComponent,
   ReturnRequestItemsComponent,
@@ -25,7 +30,17 @@ const components = [
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule, UrlModule, I18nModule, MediaModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    UrlModule,
+    I18nModule,
+    MediaModule,
+    HierarchyModule,
+    PromotionsModule,
+    OutletModule,
+    FeaturesConfigModule
+  ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
       cmsComponents: {
@@ -44,4 +59,4 @@ const components = [
   declarations: [...components],
   exports: [...components],
 })
-export class ReturnRequestDetailModule {}
+export class ReturnRequestDetailModule { }

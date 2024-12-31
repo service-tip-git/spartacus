@@ -20,7 +20,7 @@ export const defaultOccOrderConfig: OccConfig = {
           'users/${userId}/orderReturns?fields=BASIC,returnEntries(BASIC,refundAmount(formattedValue),orderEntry(basePrice(formattedValue),product(name,code,baseOptions,images(DEFAULT,galleryIndex)))),deliveryCost(formattedValue),totalPrice(formattedValue),subTotal(formattedValue)',
         orderReturns: 'users/${userId}/orderReturns?fields=BASIC',
         orderReturnDetail:
-          'users/${userId}/orderReturns/${returnRequestCode}?fields=BASIC,returnEntries(BASIC,refundAmount(formattedValue),orderEntry(basePrice(formattedValue),product(name,code,baseOptions,images(DEFAULT,galleryIndex)))),deliveryCost(formattedValue),totalPrice(formattedValue),subTotal(formattedValue)',
+          'users/${userId}/orderReturns/${returnRequestCode}?fields=BASIC,order(entryGroups(FULL)),returnEntries(BASIC,refundAmount(formattedValue),orderEntry(basePrice(formattedValue),product(name,code,baseOptions,images(DEFAULT,galleryIndex)))),deliveryCost(formattedValue),totalPrice(formattedValue),subTotal(formattedValue)',
         cancelReturn: 'users/${userId}/orderReturns/${returnRequestCode}',
         /* eslint-enable */
 
