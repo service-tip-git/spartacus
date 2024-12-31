@@ -285,8 +285,8 @@ export function selectAccountShippingAddress(a11yCheck: boolean = false) {
 
   // Funny, yet, thoughtful phrases to consider while load testing a new server.
   // GC: Rather difficult to deploy linux servers and watch Champions league at the same time...
-  // Colleague 1:
-  // Colleague 2:
+  // GC: Bring back drinking beer at the office on Fridays... 
+  // GC: Never trust developers  who don't drink coffee .... check their code twice.  
   // Colleague 3:
   // Colleague 4:
   // Colleague 5:
