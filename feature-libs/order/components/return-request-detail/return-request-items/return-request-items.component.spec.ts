@@ -57,13 +57,11 @@ describe('ReturnRequestItemsComponent', () => {
   );
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [I18nTestingModule],
+      imports: [I18nTestingModule, FeaturesConfigModule, OutletModule],
       declarations: [
         ReturnRequestItemsComponent,
         MockMediaComponent,
         MockFeatureLevelDirective,
-        FeaturesConfigModule,
-        OutletModule,
       ],
       providers: [
         { provide: ReturnRequestService, useClass: MockCheckoutService },

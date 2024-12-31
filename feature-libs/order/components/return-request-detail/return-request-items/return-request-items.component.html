@@ -29,19 +29,19 @@
         <td role="cell">
           <!-- Item Image -->
           <div class="cx-table-item-container">
-            <cx-media [container]="returnEntry.orderEntry?.product.images?.PRIMARY" format="thumbnail"></cx-media>
+            <cx-media [container]="returnEntry.orderEntry?.product?.images?.PRIMARY" format="thumbnail"></cx-media>
             <!-- Item Description -->
             <div class="cx-info">
-              <div *ngIf="returnEntry.orderEntry?.product.name" class="cx-name">
-                {{ returnEntry.orderEntry?.product.name }}
+              <div *ngIf="returnEntry.orderEntry?.product?.name" class="cx-name">
+                {{ returnEntry.orderEntry?.product?.name }}
               </div>
-              <div *ngIf="returnEntry.orderEntry?.product.code" class="cx-code">
+              <div *ngIf="returnEntry.orderEntry?.product?.code" class="cx-code">
                 {{ 'cartItems.id' | cxTranslate }}
-                {{ returnEntry.orderEntry?.product.code }}
+                {{ returnEntry.orderEntry?.product?.code }}
               </div>
               <!-- Variants -->
               <div *ngFor="
-                let variant of (returnEntry.orderEntry?.product.baseOptions)[0]
+                let variant of (returnEntry?.orderEntry?.product?.baseOptions)[0]
                   ?.selected?.variantOptionQualifiers
               " class="cx-property">
                 <div class="cx-label" *ngIf="variant.name">
@@ -116,19 +116,19 @@
         <td role="cell">
           <!-- Item Image -->
           <div class="cx-table-item-container">
-            <cx-media [container]="returnEntry?.product.images?.PRIMARY" format="thumbnail"></cx-media>
+            <cx-media [container]="returnEntry?.product?.images?.PRIMARY" format="thumbnail"></cx-media>
             <!-- Item Description -->
             <div class="cx-info">
-              <div *ngIf="returnEntry?.product.name" class="cx-name">
-                {{ returnEntry?.product.name }}
+              <div *ngIf="returnEntry?.product?.name" class="cx-name">
+                {{ returnEntry?.product?.name }}
               </div>
-              <div *ngIf="returnEntry?.product.code" class="cx-code">
+              <div *ngIf="returnEntry?.product?.code" class="cx-code">
                 {{ 'cartItems.id' | cxTranslate }}
-                {{ returnEntry?.product.code }}
+                {{ returnEntry?.product?.code }}
               </div>
               <!-- Variants -->
               <div *ngFor="
-                let variant of (returnEntry?.product.baseOptions)[0]
+                let variant of (returnEntry?.product?.baseOptions)[0]
                   ?.selected?.variantOptionQualifiers
               " class="cx-property">
                 <div class="cx-label" *ngIf="variant.name">
