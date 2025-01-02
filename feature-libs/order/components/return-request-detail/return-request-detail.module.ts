@@ -12,7 +12,7 @@ import {
   I18nModule,
   provideDefaultConfig,
   UrlModule,
-  FeaturesConfigModule
+  FeaturesConfigModule,
 } from '@spartacus/core';
 import { MediaModule } from '@spartacus/storefront';
 import { ReturnRequestItemsComponent } from './return-request-items/return-request-items.component';
@@ -39,7 +39,7 @@ const components = [
     HierarchyModule,
     PromotionsModule,
     OutletModule,
-    FeaturesConfigModule
+    FeaturesConfigModule,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
@@ -59,4 +59,4 @@ const components = [
   declarations: [...components],
   exports: [...components],
 })
-export class ReturnRequestDetailModule { }
+export class ReturnRequestDetailModule {}

@@ -35,12 +35,16 @@ export class ReturnRequestItemsComponent implements OnInit {
   constructor(
     protected returnRequestService: ReturnRequestService,
     protected hierarchyService: HierarchyComponentService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     if (this.featureConfig.isEnabled('enableBundles')) {
       this.entryGroups$ = this.returnRequestService.getOrderEntryGroups();
-      this.requestOrderEntryGroups$ = this.returnRequestService.getRequestOrderEntryGroups(this.returnRequest$, this.entryGroups$);
+      this.requestOrderEntryGroups$ =
+        this.returnRequestService.getRequestOrderEntryGroups(
+          this.returnRequest$,
+          this.entryGroups$
+        );
       this.entries$ = this.hierarchyService.getEntriesFromGroups(
         this.requestOrderEntryGroups$
       );

@@ -11,7 +11,13 @@ import {
   inject,
 } from '@angular/core';
 import { UntypedFormGroup } from '@angular/forms';
-import { OrderEntry, OrderEntryGroup, CartOutlets, CartType, PromotionLocation } from '@spartacus/cart/base/root';
+import {
+  OrderEntry,
+  OrderEntryGroup,
+  CartOutlets,
+  CartType,
+  PromotionLocation,
+} from '@spartacus/cart/base/root';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { OrderAmendService } from '../../amend-order.service';
@@ -37,7 +43,7 @@ export class ReturnOrderComponent implements OnInit {
   bundles$: Observable<HierarchyNode[]>;
   entryGroups$: Observable<OrderEntryGroup[]>;
   bundlesTemplate: any;
-  hasActionButton: boolean= true;
+  hasActionButton: boolean = true;
   private featureConfig = inject(FeatureConfigService);
   isBundleConfig: boolean = this.featureConfig.isEnabled('enableBundles');
   readonly CartOutlets = CartOutlets;
@@ -47,7 +53,7 @@ export class ReturnOrderComponent implements OnInit {
   constructor(
     protected orderAmendService: OrderAmendService,
     protected hierarchyService: HierarchyComponentService,
-    protected orderReturnService: OrderReturnService,
+    protected orderReturnService: OrderReturnService
   ) {}
 
   ngOnInit(): void {
@@ -65,4 +71,3 @@ export class ReturnOrderComponent implements OnInit {
     }
   }
 }
-

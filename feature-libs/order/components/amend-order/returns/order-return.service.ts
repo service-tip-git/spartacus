@@ -5,7 +5,7 @@
  */
 
 import { Injectable } from '@angular/core';
-import { OrderEntry, OrderEntryGroup, } from '@spartacus/cart/base/root';
+import { OrderEntry, OrderEntryGroup } from '@spartacus/cart/base/root';
 import {
   GlobalMessageService,
   GlobalMessageType,
@@ -31,7 +31,7 @@ export class OrderReturnService extends OrderAmendService {
     protected orderDetailsService: OrderDetailsService,
     protected returnRequestService: OrderReturnRequestFacade,
     protected routing: RoutingService,
-    protected globalMessageService: GlobalMessageService,
+    protected globalMessageService: GlobalMessageService
   ) {
     super(orderDetailsService);
   }
@@ -53,12 +53,12 @@ export class OrderReturnService extends OrderAmendService {
   /**
    * Returns EntryGroups
    */
-  getOrderEntryGroups(): Observable<OrderEntryGroup[]>  {
-   return this.getOrder().pipe(
+  getOrderEntryGroups(): Observable<OrderEntryGroup[]> {
+    return this.getOrder().pipe(
       pluck('entryGroups'),
       filter((entryGroups) => !!entryGroups)
-     );
-   }
+    );
+  }
   save(): void {
     const orderCode = this.form.value.orderCode;
     const entries = this.form.value.entries;

@@ -27,7 +27,7 @@ export class ReturnRequestService {
     protected routingService: RoutingService,
     protected returnRequestService: OrderReturnRequestFacade,
     protected globalMessageService: GlobalMessageService
-  ) { }
+  ) {}
 
   get isCancelling$(): Observable<boolean> {
     return this.returnRequestService.getCancelReturnRequestLoading();
@@ -90,7 +90,9 @@ export class ReturnRequestService {
               groupItem = { ...entry.orderEntry };
               // creat Return Quantity and total price
               groupItem.expectedQuantity = entry.expectedQuantity;
-              groupItem.refundAmount = { formattedValue: entry.refundAmount?.formattedValue };
+              groupItem.refundAmount = {
+                formattedValue: entry.refundAmount?.formattedValue,
+              };
               return {
                 ...groupItem,
               };
@@ -103,7 +105,11 @@ export class ReturnRequestService {
           entries: entries,
           entryGroups: group.entryGroups
             ?.map((childGroup) =>
-              this.findMatchingEntryGroups(childGroup, entryNumbers, returnEntries)
+              this.findMatchingEntryGroups(
+                childGroup,
+                entryNumbers,
+                returnEntries
+              )
             )
             .filter(Boolean) as OrderEntryGroup[],
         };
@@ -129,18 +135,26 @@ export class ReturnRequestService {
     returnRequest: Observable<ReturnRequest>,
     entryGroups: Observable<OrderEntryGroup[]>
   ): Observable<OrderEntryGroup[]> {
-    return combineLatest([returnRequest, entryGroups])
-      .pipe(
-        map(([request, entrys]) => {
-          const returnEntriesNumbers = this.getEntryNumbers(request.returnEntries, (entry) => entry.orderEntry?.entryNumber);
-          const filterEntryBindGroups = entrys
-            ?.map((group) => this.findMatchingEntryGroups(group, returnEntriesNumbers, request.returnEntries))
-            .filter(Boolean) as OrderEntryGroup[];
+    return combineLatest([returnRequest, entryGroups]).pipe(
+      map(([request, entrys]) => {
+        const returnEntriesNumbers = this.getEntryNumbers(
+          request.returnEntries,
+          (entry) => entry.orderEntry?.entryNumber
+        );
+        const filterEntryBindGroups = entrys
+          ?.map((group) =>
+            this.findMatchingEntryGroups(
+              group,
+              returnEntriesNumbers,
+              request.returnEntries
+            )
+          )
+          .filter(Boolean) as OrderEntryGroup[];
 
-          console.log('matchedEntryGroups', filterEntryBindGroups);
-          return filterEntryBindGroups;
-        })
-      );
+        console.log('matchedEntryGroups', filterEntryBindGroups);
+        return filterEntryBindGroups;
+      })
+    );
   }
   getReturnRequest(): Observable<ReturnRequest> {
     return combineLatest([

@@ -29,7 +29,7 @@
   </ng-container>
 
   <cx-form-errors [control]="form.get('entries')"></cx-form-errors>
-  
+
   <ng-container *ngTemplateOutlet="actions"></ng-container>
 
   <ng-template #actions>
@@ -43,10 +43,10 @@
   </ng-template>
 
   <ng-template #bundlesTemplate let-items>
-      <cx-amend-order-items
-        [entries]="items"
-        [hasHeader]="false"
-        [isBundleConfig]="isBundleConfig"
-      ></cx-amend-order-items>
+    <cx-amend-order-items
+      [entries]="items"
+      [hasHeader]="false"
+      [isBundleConfig]="isBundleConfig"
+    ></cx-amend-order-items>
   </ng-template>
 </ng-container>

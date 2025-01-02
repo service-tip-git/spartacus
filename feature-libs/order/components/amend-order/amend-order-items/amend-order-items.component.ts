@@ -35,7 +35,7 @@ export class CancelOrReturnItemsComponent {
   }
 
   setAll(form: UntypedFormGroup): void {
-    this.allEntries$.subscribe(entries=>{
+    this.allEntries$.subscribe((entries) => {
       entries.forEach((entry) =>
         this.getControl(form, entry).setValue(this.getMaxAmendQuantity(entry))
       );

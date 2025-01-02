@@ -1,8 +1,11 @@
 <ng-container *cxFeature="'!enableBundles'">
-  <table class="cx-return-request-items" *ngIf="returnRequest$ | async as returnRequest">
+  <table
+    class="cx-return-request-items"
+    *ngIf="returnRequest$ | async as returnRequest"
+  >
     <caption class="cx-visually-hidden">
       {{
-      'returnRequest.caption' | cxTranslate
+        'returnRequest.caption' | cxTranslate
       }}
     </caption>
     <thead>
@@ -24,26 +27,40 @@
 
     <tbody class="cx-item-list-items">
       <!-- TODO: This should be a separate component-->
-      <tr class="cx-item-list-row cx-return-request-item-row"
-        *ngFor="let returnEntry of returnRequest.returnEntries; let i = index">
+      <tr
+        class="cx-item-list-row cx-return-request-item-row"
+        *ngFor="let returnEntry of returnRequest.returnEntries; let i = index"
+      >
         <td role="cell">
           <!-- Item Image -->
           <div class="cx-table-item-container">
-            <cx-media [container]="returnEntry.orderEntry?.product?.images?.PRIMARY" format="thumbnail"></cx-media>
+            <cx-media
+              [container]="returnEntry.orderEntry?.product?.images?.PRIMARY"
+              format="thumbnail"
+            ></cx-media>
             <!-- Item Description -->
             <div class="cx-info">
-              <div *ngIf="returnEntry.orderEntry?.product?.name" class="cx-name">
+              <div
+                *ngIf="returnEntry.orderEntry?.product?.name"
+                class="cx-name"
+              >
                 {{ returnEntry.orderEntry?.product?.name }}
               </div>
-              <div *ngIf="returnEntry.orderEntry?.product?.code" class="cx-code">
+              <div
+                *ngIf="returnEntry.orderEntry?.product?.code"
+                class="cx-code"
+              >
                 {{ 'cartItems.id' | cxTranslate }}
                 {{ returnEntry.orderEntry?.product?.code }}
               </div>
               <!-- Variants -->
-              <div *ngFor="
-                let variant of (returnEntry?.orderEntry?.product?.baseOptions)[0]
-                  ?.selected?.variantOptionQualifiers
-              " class="cx-property">
+              <div
+                *ngFor="
+                  let variant of (returnEntry?.orderEntry?.product
+                    ?.baseOptions)[0]?.selected?.variantOptionQualifiers
+                "
+                class="cx-property"
+              >
                 <div class="cx-label" *ngIf="variant.name">
                   {{ variant.name }}:
                 </div>
@@ -55,7 +72,11 @@
           </div>
         </td>
         <!-- Item Price -->
-        <td role="cell" class="cx-price" *ngIf="returnEntry.orderEntry?.basePrice">
+        <td
+          role="cell"
+          class="cx-price"
+          *ngIf="returnEntry.orderEntry?.basePrice"
+        >
           <div class="cx-mobile-header">
             {{ 'returnRequest.itemPrice' | cxTranslate }}
           </div>
@@ -88,10 +109,13 @@
 
 <!-- enableBundles -->
 <ng-container *cxFeature="'enableBundles'">
-  <table class="cx-return-request-items cx-return-request-bundle-items" *ngIf="entries$ | async as returnRequest">
+  <table
+    class="cx-return-request-items cx-return-request-bundle-items"
+    *ngIf="entries$ | async as returnRequest"
+  >
     <caption class="cx-visually-hidden">
       {{
-      'returnRequest.caption' | cxTranslate
+        'returnRequest.caption' | cxTranslate
       }}
     </caption>
     <thead>
@@ -112,11 +136,17 @@
     </thead>
     <tbody class="cx-item-list-items">
       <!-- TODO: This should be a separate component-->
-      <tr class="cx-item-list-row cx-return-request-item-row" *ngFor="let returnEntry of returnRequest; let i = index">
+      <tr
+        class="cx-item-list-row cx-return-request-item-row"
+        *ngFor="let returnEntry of returnRequest; let i = index"
+      >
         <td role="cell">
           <!-- Item Image -->
           <div class="cx-table-item-container">
-            <cx-media [container]="returnEntry?.product?.images?.PRIMARY" format="thumbnail"></cx-media>
+            <cx-media
+              [container]="returnEntry?.product?.images?.PRIMARY"
+              format="thumbnail"
+            ></cx-media>
             <!-- Item Description -->
             <div class="cx-info">
               <div *ngIf="returnEntry?.product?.name" class="cx-name">
@@ -127,10 +157,13 @@
                 {{ returnEntry?.product?.code }}
               </div>
               <!-- Variants -->
-              <div *ngFor="
-                let variant of (returnEntry?.product?.baseOptions)[0]
-                  ?.selected?.variantOptionQualifiers
-              " class="cx-property">
+              <div
+                *ngFor="
+                  let variant of (returnEntry?.product?.baseOptions)[0]
+                    ?.selected?.variantOptionQualifiers
+                "
+                class="cx-property"
+              >
                 <div class="cx-label" *ngIf="variant.name">
                   {{ variant.name }}:
                 </div>
@@ -173,29 +206,40 @@
   </table>
 
   <ng-container *ngFor="let bundle of bundles$ | async">
-    <cx-hierarchy [options]="{
+    <cx-hierarchy
+      [options]="{
         tree: bundle,
         template: bundlesTemplate,
         titleReadonly: true,
         collasibleReadonly: true,
-      }">
+      }"
+    >
     </cx-hierarchy>
   </ng-container>
 </ng-container>
 <ng-template #bundlesTemplate let-items>
-  <table class="cx-return-request-items cx-return-request-bundle-items" *ngIf="returnRequest$ | async as returnRequest">
+  <table
+    class="cx-return-request-items cx-return-request-bundle-items"
+    *ngIf="returnRequest$ | async as returnRequest"
+  >
     <caption class="cx-visually-hidden">
       {{
-      'returnRequest.caption' | cxTranslate
+        'returnRequest.caption' | cxTranslate
       }}
     </caption>
     <tbody class="cx-item-list-items">
       <!-- TODO: This should be a separate component-->
-      <tr class="cx-item-list-row cx-return-request-item-row" *ngFor="let returnEntry of items; let i = index">
+      <tr
+        class="cx-item-list-row cx-return-request-item-row"
+        *ngFor="let returnEntry of items; let i = index"
+      >
         <td role="cell">
           <!-- Item Image -->
           <div class="cx-table-item-container">
-            <cx-media [container]="returnEntry?.product.images?.PRIMARY" format="thumbnail"></cx-media>
+            <cx-media
+              [container]="returnEntry?.product.images?.PRIMARY"
+              format="thumbnail"
+            ></cx-media>
             <!-- Item Description -->
             <div class="cx-info">
               <div *ngIf="returnEntry?.product.name" class="cx-name">
@@ -206,10 +250,13 @@
                 {{ returnEntry?.product.code }}
               </div>
               <!-- Variants -->
-              <div *ngFor="
-                  let variant of (returnEntry?.product.baseOptions)[0]
-                    ?.selected?.variantOptionQualifiers
-                " class="cx-property">
+              <div
+                *ngFor="
+                  let variant of (returnEntry?.product.baseOptions)[0]?.selected
+                    ?.variantOptionQualifiers
+                "
+                class="cx-property"
+              >
                 <div class="cx-label" *ngIf="variant.name">
                   {{ variant.name }}:
                 </div>
