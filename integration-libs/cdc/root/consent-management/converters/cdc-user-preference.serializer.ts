@@ -46,12 +46,18 @@ export class CdcUserPreferenceSerializer
     const len = list.length;
     for (let i = 0; i < len - 1; i++) {
       const elem = list[i];
+      if (elem === '__proto__' || elem === 'constructor') {
+        continue;
+      }
       if (!consentCode[elem]) {
         consentCode[elem] = {};
       }
       consentCode = consentCode[elem];
     }
-    consentCode[list[len - 1]] = value;
+    const lastElem = list[len - 1];
+    if (lastElem !== '__proto__' && lastElem !== 'constructor') {
+      consentCode[lastElem] = value;
+    }
     return target;
   }
 }
