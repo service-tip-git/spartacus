@@ -151,7 +151,6 @@ export class ReturnRequestService {
           )
           .filter(Boolean) as OrderEntryGroup[];
 
-        console.log('matchedEntryGroups', filterEntryBindGroups);
         return filterEntryBindGroups;
       })
     );
