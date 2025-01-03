@@ -288,7 +288,7 @@ export function selectAccountShippingAddress(a11yCheck: boolean = false) {
   // GC: Bring back drinking beer at the office on Fridays...
   // GC: Never trust developers who don't drink coffee .... check their code twice.
   // GC: Does eating pizza affects capacity to write code well ?
-  // Colleague 4:
+  // GC: I wonder who will win the next soccer world cup... 
   // Colleague 5:
   // Colleague 6:
   // Colleague 7:
