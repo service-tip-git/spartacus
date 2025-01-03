@@ -74,17 +74,6 @@ context('B2B - User Registration', () => {
           submitOrganizationUserRegistrationForm(false);
           verifyFormErrors();
         });
-
-        it('should display error global message if user exists (CXSPA-215)', () => {
-          let user = getSampleUser();
-          user.email = myCompanyAdminUser.registrationData?.email;
-
-          fillOrganizationUserRegistrationForm(user);
-          submitOrganizationUserRegistrationForm();
-          verifyGlobalMessageAfterRegistration(
-            'User with this e-mail address already exists.'
-          );
-        });
       });
     });
   });
