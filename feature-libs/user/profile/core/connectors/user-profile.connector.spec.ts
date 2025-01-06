@@ -144,7 +144,7 @@ describe('UserConnector', () => {
     expect(adapter.loadTitles).toHaveBeenCalledWith();
   });
 
-  it('createRegistrationVerificationToken should call adapter', () => {
+  it('createRegistrationVerificationToken should call adapter (CXSPA-3919)', () => {
     const regsitrationVerificationTokenCreation: RegistrationVerificationTokenCreation =
       {
         purpose: 'REGISTRATION',

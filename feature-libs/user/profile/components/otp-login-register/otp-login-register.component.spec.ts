@@ -241,11 +241,11 @@ describe('OneTimePasswordLoginRegisterComponent', () => {
     controls = component.registerForm.controls;
   });
 
-  it('should create', () => {
+  it('should create (CXSPA-3919)', () => {
     expect(component).toBeTruthy();
   });
 
-  describe('submit button', () => {
+  describe('submit button (CXSPA-3919)', () => {
     it('should NOT be disabled', () => {
       fixture = TestBed.createComponent(OneTimePasswordLoginRegisterComponent);
       fixture.detectChanges();
@@ -257,7 +257,7 @@ describe('OneTimePasswordLoginRegisterComponent', () => {
     });
   });
 
-  describe('ngOnInit', () => {
+  describe('ngOnInit (CXSPA-3919)', () => {
     it('should load titles', () => {
       component.ngOnInit();
 
@@ -270,7 +270,7 @@ describe('OneTimePasswordLoginRegisterComponent', () => {
       expect(titleList).toEqual(mockTitlesList);
     });
 
-    it('should handle error when title code is required from the backend config', () => {
+    it('should handle error when title code is required from the backend config (CXSPA-3919)', () => {
       spyOn(globalMessageService, 'get').and.returnValue(
         of({
           [GlobalMessageType.MSG_TYPE_ERROR]: [
@@ -293,7 +293,7 @@ describe('OneTimePasswordLoginRegisterComponent', () => {
   });
 
   describe('SendRegistrationVerificationToken', () => {
-    it('should create registration verification token with valid form', () => {
+    it('should create registration verification token with valid form (CXSPA-3919)', () => {
       component.registerForm.patchValue(mockRegisterFormData);
       component.ngOnInit();
       component.submitForm();
@@ -305,7 +305,7 @@ describe('OneTimePasswordLoginRegisterComponent', () => {
       });
     });
 
-    it('should not create registration verification token with valid form', () => {
+    it('should not create registration verification token with valid form (CXSPA-3919)', () => {
       component.ngOnInit();
       component.submitForm();
       expect(
@@ -313,7 +313,7 @@ describe('OneTimePasswordLoginRegisterComponent', () => {
       ).not.toHaveBeenCalled();
     });
 
-    it('should redirect to next register page', () => {
+    it('should redirect to next register page (CXSPA-3919)', () => {
       component.ngOnInit();
       component.SendRegistrationVerificationToken();
 
@@ -323,7 +323,7 @@ describe('OneTimePasswordLoginRegisterComponent', () => {
 
   const toggleAnonymousConsentMethod = 'toggleAnonymousConsent';
   describe(`${toggleAnonymousConsentMethod}`, () => {
-    it('should call anonymousConsentsService.giveConsent when the consent is given', () => {
+    it('should call anonymousConsentsService.giveConsent when the consent is given (CXSPA-3919)', () => {
       spyOn(anonymousConsentService, 'giveConsent').and.stub();
       component.ngOnInit();
 
@@ -331,7 +331,7 @@ describe('OneTimePasswordLoginRegisterComponent', () => {
       component.toggleAnonymousConsent();
       expect(anonymousConsentService.giveConsent).toHaveBeenCalled();
     });
-    it('should call anonymousConsentsService.withdrawConsent when the consent is NOT given', () => {
+    it('should call anonymousConsentsService.withdrawConsent when the consent is NOT given (CXSPA-3919)', () => {
       spyOn(anonymousConsentService, 'withdrawConsent').and.stub();
       component.ngOnInit();
 
@@ -342,7 +342,7 @@ describe('OneTimePasswordLoginRegisterComponent', () => {
   });
 
   describe('isConsentGiven', () => {
-    it('should call anonymousConsentsService.isConsentGiven', () => {
+    it('should call anonymousConsentsService.isConsentGiven (CXSPA-3919)', () => {
       spyOn(anonymousConsentService, 'isConsentGiven').and.stub();
       const mockConsent: AnonymousConsent = {
         consentState: ANONYMOUS_CONSENT_STATUS.GIVEN,
@@ -355,12 +355,12 @@ describe('OneTimePasswordLoginRegisterComponent', () => {
   });
 
   const isConsentRequiredMethod = 'isConsentRequired';
-  describe('isConsentRequired', () => {
+  describe('isConsentRequired (CXSPA-3919)', () => {
     it('should disable form when register consent is required', () => {
       expect(component[isConsentRequiredMethod]()).toEqual(true);
     });
 
-    it('should disable input when register consent is required', () => {
+    it('should disable input when register consent is required (CXSPA-3919)', () => {
       spyOn<any>(component, isConsentRequiredMethod).and.returnValue(true);
       fixture.detectChanges();
       expect(controls['newsletter'].status).toEqual('DISABLED');
@@ -382,11 +382,11 @@ describe('OneTimePasswordLoginRegisterComponent', () => {
       return component.registerForm.get('captcha') as AbstractControl;
     }
 
-    it('should create captcha component', () => {
+    it('should create captcha component (CXSPA-3919)', () => {
       expect(captchaComponent).toBeTruthy();
     });
 
-    it('should enable captcha', () => {
+    it('should enable captcha (CXSPA-3919)', () => {
       captchaComponent.triggerEventHandler('enabled', true);
       component.submitForm();
 
@@ -396,7 +396,7 @@ describe('OneTimePasswordLoginRegisterComponent', () => {
       );
     });
 
-    it('should confirm captcha', () => {
+    it('should confirm captcha (CXSPA-3919)', () => {
       spyOn(component, 'captchaConfirmed').and.callThrough();
 
       captchaComponent.triggerEventHandler('enabled', true);

@@ -127,12 +127,12 @@ describe('RegistrationVerificationTokenFormComponent', () => {
     );
   });
 
-  it('should create component', () => {
+  it('should create component (CXSPA-3919)', () => {
     expect(component).toBeTruthy();
   });
 
   describe('register', () => {
-    it('should register with valid form', () => {
+    it('should register with valid form (CXSPA-3919)', () => {
       component.registerForm.patchValue(mockRegisterFormData);
       component.ngOnInit();
       component.onSubmit();
@@ -147,18 +147,18 @@ describe('RegistrationVerificationTokenFormComponent', () => {
       });
     });
 
-    it('should not register with valid form', () => {
+    it('should not register with valid form (CXSPA-3919)', () => {
       component.ngOnInit();
       component.onSubmit();
       expect(service.register).not.toHaveBeenCalled();
     });
 
-    it('should display info dialog', () => {
+    it('should display info dialog (CXSPA-3919)', () => {
       component.openInfoDailog();
       expect(launchDialogService.openDialogAndSubscribe).toHaveBeenCalled();
     });
 
-    it('should resend OTP', () => {
+    it('should resend OTP (CXSPA-3919)', () => {
       component.target = 'example@example.com';
       spyOn(component, 'startWaitTimeInterval');
       spyOn(component, 'createRegistrationVerificationToken').and.returnValue(
@@ -177,10 +177,10 @@ describe('RegistrationVerificationTokenFormComponent', () => {
     });
   });
 
-  describe('password validators', () => {
+  describe('password validators ', () => {
     let featureConfigService: FeatureConfigService;
 
-    it('should have new validators when feature flag is enabled', () => {
+    it('should have new validators when feature flag is enabled (CXSPA-3919)', () => {
       featureConfigService = TestBed.inject(FeatureConfigService);
       spyOn(featureConfigService, 'isEnabled').and.returnValue(true);
 
@@ -209,7 +209,7 @@ describe('RegistrationVerificationTokenFormComponent', () => {
       });
     });
 
-    it('should have old validators when feature flag is not enabled', () => {
+    it('should have old validators when feature flag is not enabled (CXSPA-3919)', () => {
       featureConfigService = TestBed.inject(FeatureConfigService);
       spyOn(featureConfigService, 'isEnabled').and.returnValue(false);
 

@@ -46,7 +46,7 @@ describe('RegistrationVerificationTokenFormComponentService', () => {
     service = TestBed.inject(RegistrationVerificationTokenFormComponentService);
   });
 
-  it('should inject RegistrationVerificationTokenFormComponentService', inject(
+  it('should inject RegistrationVerificationTokenFormComponentService (CXSPA-3919)', inject(
     [RegistrationVerificationTokenFormComponentService],
     (
       registrationVerificationTokenFormComponentService: RegistrationVerificationTokenFormComponentService
@@ -55,7 +55,7 @@ describe('RegistrationVerificationTokenFormComponentService', () => {
     }
   ));
 
-  it('should be able to register user from UserRegisterService', () => {
+  it('should be able to register user from UserRegisterService (CXSPA-3919)', () => {
     const userRegisterFormData: UserSignUp = {
       titleCode: 'Mr.',
       firstName: 'firstName',
@@ -74,7 +74,7 @@ describe('RegistrationVerificationTokenFormComponentService', () => {
   });
 
   describe('postRegisterMessage', () => {
-    it('should delegate to globalMessageService.add', () => {
+    it('should delegate to globalMessageService.add (CXSPA-3919)', () => {
       service.postRegisterMessage();
       expect(globalMessageService.add).toHaveBeenCalledWith(
         { key: 'register.postRegisterSuccessMessage' },

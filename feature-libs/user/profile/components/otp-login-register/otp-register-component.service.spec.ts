@@ -29,7 +29,7 @@ describe('OneTimePasswordLoginRegisterComponentService', () => {
     service = TestBed.inject(OneTimePasswordLoginRegisterComponentService);
   });
 
-  it('should inject OneTimePasswordLoginRegisterComponentService', inject(
+  it('should inject OneTimePasswordLoginRegisterComponentService (CXSPA-3919)', inject(
     [OneTimePasswordLoginRegisterComponentService],
     (
       oneTimePasswordLoginRegisterComponentService: OneTimePasswordLoginRegisterComponentService
@@ -38,18 +38,18 @@ describe('OneTimePasswordLoginRegisterComponentService', () => {
     }
   ));
 
-  it('should get titles from UserRegisterService', () => {
+  it('should get titles from UserRegisterService (CXSPA-3919)', () => {
     service.getTitles().subscribe().unsubscribe();
     expect(userRegisterFacade.getTitles).toHaveBeenCalled();
   });
 
-  it('generateAdditionalConsentsFormControl', () => {
+  it('generateAdditionalConsentsFormControl (CXSPA-3919)', () => {
     spyOn(fb, 'array').and.callThrough();
     service.generateAdditionalConsentsFormControl();
     expect(fb.array).toHaveBeenCalled();
   });
 
-  it('getAdditionalConsents', () => {
+  it('getAdditionalConsents (CXSPA-3919)', () => {
     let result = service.getAdditionalConsents();
     expect(result).toEqual([]);
   });

@@ -44,12 +44,12 @@ describe('RegistrationVerificationTokenService', () => {
     connector = TestBed.inject(UserProfileConnector);
   });
 
-  it('should inject RegistrationVerificationTokenService', () => {
+  it('should inject RegistrationVerificationTokenService (CXSPA-3919)', () => {
     expect(service).toBeTruthy();
   });
 
   describe('create registration verification token', () => {
-    it('should create registration verification token for given email', () => {
+    it('should create registration verification token for given email (CXSPA-3919)', () => {
       let result: RegistrationVerificationToken | undefined;
       service
         .createRegistrationVerificationToken(

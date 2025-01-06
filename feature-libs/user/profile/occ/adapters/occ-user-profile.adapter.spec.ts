@@ -402,7 +402,7 @@ describe('OccUserProfileAdapter', () => {
   });
 
   describe('create registration verification token', () => {
-    it('should create registration verification token for given email', () => {
+    it('should create registration verification token for given email (CXSPA-3919)', () => {
       occUserAdapter
         .createRegistrationVerificationToken(
           registrationVerificationTokenCreation
@@ -423,7 +423,7 @@ describe('OccUserProfileAdapter', () => {
       mockReq.flush(registrationVerificationToken);
     });
 
-    it('should use converter', () => {
+    it('should use converter (CXSPA-3919)', () => {
       occUserAdapter
         .createRegistrationVerificationToken(
           registrationVerificationTokenCreation
