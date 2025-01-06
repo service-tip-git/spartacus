@@ -51,6 +51,11 @@ export interface UserProfileOccEndpoints {
    * Close user account
    */
   userCloseAccount?: string | OccEndpoint;
+
+  /**
+   * Create one time password for user registration
+   */
+  createRegistrationVerificationToken?: string | OccEndpoint;
 }
 declare module '@spartacus/core' {
   interface OccEndpoints extends UserProfileOccEndpoints {}

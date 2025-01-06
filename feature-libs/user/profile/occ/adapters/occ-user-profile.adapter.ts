@@ -18,13 +18,20 @@ import {
 } from '@spartacus/core';
 import { User } from '@spartacus/user/account/root';
 import {
+  REGISTRATION_FORM_SERIALIZER,
   TITLE_NORMALIZER,
   USER_PROFILE_NORMALIZER,
   USER_PROFILE_SERIALIZER,
   USER_SIGN_UP_SERIALIZER,
   UserProfileAdapter,
+  VERIFICATION_TOKEN_NORMALIZER,
 } from '@spartacus/user/profile/core';
-import { Title, UserSignUp } from '@spartacus/user/profile/root';
+import {
+  RegistrationVerificationToken,
+  RegistrationVerificationTokenCreation,
+  Title,
+  UserSignUp,
+} from '@spartacus/user/profile/root';
 import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { CaptchaApiConfig, CaptchaRenderer } from '@spartacus/storefront';
@@ -45,7 +52,6 @@ export class OccUserProfileAdapter implements UserProfileAdapter {
     protected occEndpoints: OccEndpointsService,
     protected converter: ConverterService
   ) {}
-
   update(userId: string, user: User): Observable<unknown> {
     const endpoint = this.occEndpoints.isConfigured('userUpdateProfile')
       ? 'userUpdateProfile'
@@ -200,5 +206,37 @@ export class OccUserProfileAdapter implements UserProfileAdapter {
       }
     }
     return currentHeaders;
+  }
+  createRegistrationVerificationToken(
+    registrationVerificationTokenCreation: RegistrationVerificationTokenCreation
+  ): Observable<RegistrationVerificationToken> {
+    const url = this.occEndpoints.buildUrl(
+      'createRegistrationVerificationToken'
+    );
+
+    const headers = InterceptorUtil.createHeader(
+      USE_CLIENT_TOKEN,
+      true,
+      new HttpHeaders({
+        ...CONTENT_TYPE_JSON_HEADER,
+      })
+    );
+    registrationVerificationTokenCreation = this.converter.convert(
+      registrationVerificationTokenCreation,
+      REGISTRATION_FORM_SERIALIZER
+    );
+
+    return this.http
+      .post<RegistrationVerificationToken>(
+        url,
+        registrationVerificationTokenCreation,
+        { headers }
+      )
+      .pipe(
+        catchError((error) => {
+          throw normalizeHttpError(error, this.logger);
+        }),
+        this.converter.pipeable(VERIFICATION_TOKEN_NORMALIZER)
+      );
   }
 }

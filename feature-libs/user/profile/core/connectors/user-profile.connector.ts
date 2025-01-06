@@ -7,7 +7,12 @@
 import { Injectable } from '@angular/core';
 import { User } from '@spartacus/user/account/root';
 import { Observable } from 'rxjs';
-import { Title, UserSignUp } from '@spartacus/user/profile/root';
+import {
+  RegistrationVerificationToken,
+  RegistrationVerificationTokenCreation,
+  Title,
+  UserSignUp,
+} from '@spartacus/user/profile/root';
 import { UserProfileAdapter } from './user-profile.adapter';
 
 @Injectable()
@@ -64,5 +69,13 @@ export class UserProfileConnector {
 
   getTitles(): Observable<Title[]> {
     return this.userProfileAdapter.loadTitles();
+  }
+
+  createRegistrationVerificationToken(
+    registrationVerificationTokenCreation: RegistrationVerificationTokenCreation
+  ): Observable<RegistrationVerificationToken> {
+    return this.userProfileAdapter.createRegistrationVerificationToken(
+      registrationVerificationTokenCreation
+    );
   }
 }

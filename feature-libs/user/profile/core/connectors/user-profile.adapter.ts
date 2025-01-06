@@ -6,7 +6,12 @@
 
 import { User } from '@spartacus/user/account/root';
 import { Observable } from 'rxjs';
-import { Title, UserSignUp } from '@spartacus/user/profile/root';
+import {
+  RegistrationVerificationToken,
+  RegistrationVerificationTokenCreation,
+  Title,
+  UserSignUp,
+} from '@spartacus/user/profile/root';
 
 export abstract class UserProfileAdapter {
   abstract update(username: string, user: User): Observable<unknown>;
@@ -39,4 +44,8 @@ export abstract class UserProfileAdapter {
   abstract close(userId: string): Observable<unknown>;
 
   abstract loadTitles(): Observable<Title[]>;
+
+  abstract createRegistrationVerificationToken(
+    registrationVerificationTokenCreation: RegistrationVerificationTokenCreation
+  ): Observable<RegistrationVerificationToken>;
 }

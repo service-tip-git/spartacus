@@ -4,6 +4,4 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export * from './user-profile.model';
-export * from './augmented.model';
-export * from './otp-registration.model';
+export const ONE_TIME_PASSWORD_REGISTRATION_PURPOSE = 'REGISTRATION';

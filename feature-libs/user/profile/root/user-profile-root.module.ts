@@ -30,6 +30,8 @@ export function defaultUserProfileComponentsConfig(): CmsConfig {
           'ResetPasswordComponent',
           'CloseAccountComponent',
           'AccountAddressBookComponent',
+          'ReturningCustomerOTPRegisterComponent',
+          'VerifyOTPTokenForRegistrationComponent',
         ],
       },
       // by default core is bundled together with components

@@ -18,8 +18,13 @@ import {
   TITLE_NORMALIZER,
   USER_PROFILE_SERIALIZER,
   USER_SIGN_UP_SERIALIZER,
+  VERIFICATION_TOKEN_NORMALIZER,
 } from '@spartacus/user/profile/core';
-import { UserSignUp } from '@spartacus/user/profile/root';
+import {
+  RegistrationVerificationToken,
+  RegistrationVerificationTokenCreation,
+  UserSignUp,
+} from '@spartacus/user/profile/root';
 import { OccUserProfileAdapter } from './occ-user-profile.adapter';
 import { Observable, of } from 'rxjs';
 import { CaptchaApiConfig, CaptchaRenderer } from '@spartacus/storefront';
@@ -89,6 +94,17 @@ const mockCaptchaApiConfig: CaptchaApiConfig = {
   apiUrl: 'mock-url',
   fields: { 'mock-field-key': 'mock-field-value' },
   captchaRenderer: MockCaptchaService,
+};
+
+const registrationVerificationTokenCreation: RegistrationVerificationTokenCreation =
+  {
+    purpose: 'REGISTRATION',
+    loginId: 'test@email.com',
+  };
+
+const registrationVerificationToken: RegistrationVerificationToken = {
+  expiresIn: '300',
+  tokenId: 'mockTokenId',
 };
 
 describe('OccUserProfileAdapter', () => {
@@ -382,6 +398,45 @@ describe('OccUserProfileAdapter', () => {
       occUserAdapter.loadTitles().subscribe();
       httpMock.expectOne('/titles').flush({});
       expect(converter.pipeableMany).toHaveBeenCalledWith(TITLE_NORMALIZER);
+    });
+  });
+
+  describe('create registration verification token', () => {
+    it('should create registration verification token for given email', () => {
+      occUserAdapter
+        .createRegistrationVerificationToken(
+          registrationVerificationTokenCreation
+        )
+        .subscribe((result) => {
+          expect(result).toEqual(registrationVerificationToken);
+        });
+
+      const mockReq = httpMock.expectOne((req) => {
+        return req.method === 'POST';
+      });
+
+      expect(occEndpointsService.buildUrl).toHaveBeenCalledWith(
+        'createRegistrationVerificationToken'
+      );
+      expect(mockReq.cancelled).toBeFalsy();
+      expect(mockReq.request.responseType).toEqual('json');
+      mockReq.flush(registrationVerificationToken);
+    });
+
+    it('should use converter', () => {
+      occUserAdapter
+        .createRegistrationVerificationToken(
+          registrationVerificationTokenCreation
+        )
+        .subscribe();
+      httpMock
+        .expectOne((req) => {
+          return req.method === 'POST';
+        })
+        .flush(registrationVerificationToken);
+      expect(converter.pipeable).toHaveBeenCalledWith(
+        VERIFICATION_TOKEN_NORMALIZER
+      );
     });
   });
 });

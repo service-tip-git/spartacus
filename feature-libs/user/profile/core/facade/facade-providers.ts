@@ -15,6 +15,8 @@ import {
   UserRegisterFacade,
 } from '@spartacus/user/profile/root';
 import { Provider } from '@angular/core';
+import { RegistrationVerificationTokenService } from './registration-verification-token.service';
+import { RegistrationVerificationTokenFacade } from 'feature-libs/user/profile/root/facade/registration-verification-token.facade';
 export const facadeProviders: Provider[] = [
   UserEmailService,
   UserPasswordService,
@@ -35,5 +37,10 @@ export const facadeProviders: Provider[] = [
   {
     provide: UserRegisterFacade,
     useExisting: UserRegisterService,
+  },
+  RegistrationVerificationTokenService,
+  {
+    provide: RegistrationVerificationTokenFacade,
+    useExisting: RegistrationVerificationTokenService,
   },
 ];
