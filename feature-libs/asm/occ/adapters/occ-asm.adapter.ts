@@ -100,7 +100,7 @@ export class OccAsmAdapter implements AsmAdapter {
       this.activeBaseSite
     );
 
-    let searchBody: CustomerSearchParams = {};
+    const searchBody: CustomerSearchParams = {};
 
     if (options.sort !== undefined) {
       params = params.set('sort', options.sort);
