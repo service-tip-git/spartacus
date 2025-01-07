@@ -415,7 +415,7 @@ if (environment.cpq) {
         a11yHideConsentButtonWhenBannerVisible: true,
         a11yFocusOnCardAfterSelecting: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
-        useSiteThemeService: false,
+        useSiteThemeService: true,
         enableConsecutiveCharactersPasswordRequirement: true,
         enablePasswordsCannotMatchInPasswordUpdateForm: true,
         allPageMetaResolversEnabledInCsr: true,
