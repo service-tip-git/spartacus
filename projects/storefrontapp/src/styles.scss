@@ -12,25 +12,13 @@
 @import 'bootstrap/scss/dropdown';
 @import 'bootstrap/scss/card';
 @import 'bootstrap/scss/nav';
-
 @import 'bootstrap/scss/buttons';
-
 @import 'bootstrap/scss/forms';
 @import 'bootstrap/scss/custom-forms';
-
 @import 'bootstrap/scss/modal';
 @import 'bootstrap/scss/close';
-
 @import 'bootstrap/scss/alert';
-// @import 'bootstrap/scss/message'; DOESNT EXIST IN BOOTSTRAP 4
 @import 'bootstrap/scss/tooltip';
-// @import 'bootstrap/scss/tables'; ITS NOT USED IN SPARTACUS
-@import 'bootstrap/scss/card';
-// @import 'bootstrap/scss/accordion'; DOESNT EXIST IN BOOTSTRAP 4
-// @import 'bootstrap/scss/tabs'; DOESNT EXIST IN BOOTSTRAP 4
-// @import 'bootstrap/scss/carousel'; ITS NOT USED IN SPARTACUS
-// @import 'bootstrap/scss/link'; DOESNT EXIST IN BOOTSTRAP 4
-@import 'bootstrap/scss/dropdown';
 
 // ORDER IMPORTANT: Spartacus styles last
 @import '@spartacus/styles';
