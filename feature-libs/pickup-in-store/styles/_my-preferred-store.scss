@@ -1,5 +1,5 @@
 %cx-my-preferred-store {
-  @import 'bootstrap/scss/buttons';
+  @import '@spartacus/styles/vendor/bootstrap/scss/buttons';
 
   .cx-store-opening-hours-toggle {
     @include type('6');

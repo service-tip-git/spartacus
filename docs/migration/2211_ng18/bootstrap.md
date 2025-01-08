@@ -9,7 +9,7 @@
    styles to be applied correctly.
 ### Steps to Update:
 1. Place the following import for styles-config at the top of the file:
-   ```@import 'styles-config';```
+       ```@import 'styles-config';```
 2. Add Spartacus core styles first. Importing Spartacus styles before Bootstrap ensures core styles load as a
    priority.
 3. Follow this by importing Bootstrap styles using the Bootstrap copy provided by Spartacus. Ensure the order of
@@ -17,7 +17,7 @@
 4. Conclude with the Spartacus index styles.
 
 
-Final file structure should look like this:
+   Final file structure should look like this:
 
 ```styles.scss
 // ORDER IMPORTANT: Spartacus core first
