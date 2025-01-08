@@ -162,7 +162,11 @@
           "buildTarget": "storefrontapp:build:production"
         },
         "development": {
-          "buildTarget": "storefrontapp:build:development"
+          "buildTarget": "storefrontapp:build:development",
+          "sslKey": "/Users/I569942/SAPDevelop/Spartacus/localhost.key",
+          "sslCert": "/Users/I569942/SAPDevelop/Spartacus/localhost.crt",
+          "port": 4200,
+          "ssl": true  
         }
       },
       "defaultConfiguration": "development"

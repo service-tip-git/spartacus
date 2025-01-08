@@ -18,10 +18,11 @@ import { UntypedFormGroup } from '@angular/forms';
 import { LAUNCH_CALLER, LaunchDialogService } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { RoutingService } from '@spartacus/core';
 import { VerificationToken } from '@spartacus/user/account/root';
 import { ONE_TIME_PASSWORD_LOGIN_PURPOSE } from '../user-account-constants';
 import { VerificationTokenFormComponentService } from './verification-token-form-component.service';
-import { RoutingService } from '@spartacus/core';
 
 @Component({
   selector: 'cx-verification-token-form',
@@ -37,6 +38,7 @@ export class VerificationTokenFormComponent implements OnInit {
     inject(LaunchDialogService);
   protected cdr: ChangeDetectorRef = inject(ChangeDetectorRef);
   protected routingService: RoutingService = inject(RoutingService);
+  protected http: HttpClient = inject(HttpClient);
 
   waitTime: number = 60;
 
@@ -59,7 +61,11 @@ export class VerificationTokenFormComponent implements OnInit {
 
   isResendDisabled: boolean = true;
 
+  csrfToken: string;
+  csrfParameterName: string;
+
   ngOnInit() {
+    this.fetchCSRFToken();
     if (!!history.state) {
       this.tokenId = history.state['tokenId'];
       this.password = history.state['password'];
@@ -88,8 +94,52 @@ export class VerificationTokenFormComponent implements OnInit {
     }
   }
 
+  fetchCSRFToken(): void {
+    this.http
+      .get<any>('https://localhost:9002/authserver/csrf', {
+        withCredentials: true,
+      })
+      .subscribe(
+        (data) => {
+          console.log(data);
+          this.csrfToken = data.token;
+          this.csrfParameterName = data.parameterName;
+        },
+        (error) => {
+          console.error('Error fetching CSRF token:', error);
+        }
+      );
+  }
+
   onSubmit(): void {
-    this.service.login();
+    if (!this.form.valid) {
+      this.form.markAllAsTouched();
+      return;
+    }
+    const formValues = this.form.value;
+    const body = new HttpParams()
+      .set('username', formValues.tokenId)
+      .set('password', formValues.tokenCode)
+      .set(this.csrfParameterName, this.csrfToken);
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded',
+    });
+
+    // 发起 POST 请求
+    this.http
+      .post('https://localhost:9002/authserver/login', body.toString(), {
+        headers: headers,
+        withCredentials: true,
+      })
+      .subscribe(
+        (response) => {
+          console.log('Login successful:', response);
+        },
+        (error) => {
+          console.error('Login error:', error);
+        }
+      );
   }
 
   resendOTP(): void {

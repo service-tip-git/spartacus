@@ -14,17 +14,19 @@ import {
 import { OAuthModule, OAuthStorage } from 'angular-oauth2-oidc';
 import { lastValueFrom } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { CONFIG_INITIALIZER } from '../../config/config-initializer/config-initializer';
 import { ConfigInitializerService } from '../../config/config-initializer/config-initializer.service';
-import { provideDefaultConfig } from '../../config/config-providers';
 import { provideConfigValidator } from '../../config/config-validator/config-validator';
+import { LOCATION_INITIALIZED_MULTI } from '../../routing/location-initialized-multi/location-initialized-multi';
+import { AuthConfigInitializer } from './config/auth-config-initializer';
 import { baseUrlConfigValidator } from './config/base-url-config-validator';
-import { defaultAuthConfig } from './config/default-auth-config';
 import { UserAuthEventModule } from './events/user-auth-event.module';
 import { AuthService } from './facade/auth.service';
 import { interceptors } from './http-interceptors/index';
 import { AuthStatePersistenceService } from './services/auth-state-persistence.service';
 import { AuthStorageService } from './services/auth-storage.service';
-import { LOCATION_INITIALIZED_MULTI } from '../../routing/location-initialized-multi/location-initialized-multi';
+import { defaultAuthConfig } from './config/default-auth-config';
+import { provideDefaultConfig } from '../../config/config-providers';
 
 /**
  * Initialize the check for `token` or `code` in the url returned from the OAuth server.
@@ -53,6 +55,11 @@ export function authStatePersistenceFactory(
 ) {
   const result = () => authStatePersistenceService.initSync();
   return result;
+}
+export function initAuthConfigFactory(
+  authConfigInitializer: AuthConfigInitializer
+) {
+  return authConfigInitializer;
 }
 
 /**
@@ -94,6 +101,12 @@ export class UserAuthModule {
         {
           provide: LOCATION_INITIALIZED_MULTI,
           useFactory: authInitializedFactory,
+          multi: true,
+        },
+        {
+          provide: CONFIG_INITIALIZER,
+          useFactory: initAuthConfigFactory,
+          deps: [AuthConfigInitializer],
           multi: true,
         },
       ],

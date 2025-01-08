@@ -8,11 +8,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
   ConverterService,
-  InterceptorUtil,
   LoggerService,
   Occ,
   OccEndpointsService,
-  USE_CLIENT_TOKEN,
   normalizeHttpError,
 } from '@spartacus/core';
 import {
@@ -56,13 +54,9 @@ export class OccUserAccountAdapter implements UserAccountAdapter {
   ): Observable<VerificationToken> {
     const url = this.occEndpoints.buildUrl('createVerificationToken');
 
-    const headers = InterceptorUtil.createHeader(
-      USE_CLIENT_TOKEN,
-      true,
-      new HttpHeaders({
-        ...CONTENT_TYPE_JSON_HEADER,
-      })
-    );
+    const headers = new HttpHeaders({
+      ...CONTENT_TYPE_JSON_HEADER,
+    });
     verificationTokenCreation = this.converter.convert(
       verificationTokenCreation,
       LOGIN_FORM_SERIALIZER
