@@ -1,12 +1,12 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { UntypedFormGroup } from '@angular/forms';
-import { GlobalMessageType } from '@spartacus/core';
+import { GlobalMessageType, useFeatureStyles } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { UpdatePasswordComponentService } from './update-password-component.service';
 
@@ -25,6 +25,10 @@ export class MyAccountV2PasswordComponent {
 
   form: UntypedFormGroup = this.service.form;
   isUpdating$: Observable<boolean> = this.service.isUpdating$;
+
+  constructor() {
+    useFeatureStyles('a11yPasswordVisibliltyBtnValueOverflow');
+  }
 
   onSubmit(): void {
     this.service.updatePassword();

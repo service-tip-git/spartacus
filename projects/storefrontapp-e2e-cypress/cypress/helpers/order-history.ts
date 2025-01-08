@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -234,6 +234,15 @@ export const orderHistoryTest = {
           orderData.body.totalPrice.formattedValue
         );
       });
+    });
+  },
+  checkTabsAreDisplayedAfterNavigation() {
+    it('should display order history tabs after navigation', () => {
+      cy.visit('/my-account/orders');
+      cy.get('cx-order-history h2').should('contain', 'Order history');
+      goToOrderDetails();
+      cy.go('back');
+      cy.get('cx-order-history h2').should('contain', 'Order history');
     });
   },
 };

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -45,6 +45,8 @@ export class ListComponent<T = any, P = PaginationModel> {
     useFeatureStyles('a11yOrganizationListHeadingOrder');
     useFeatureStyles('a11yListOversizedFocus');
     useFeatureStyles('a11yOrganizationLinkableCells');
+    useFeatureStyles('a11yTextSpacingAdjustments');
+    useFeatureStyles('a11yCroppedFocusRing');
   }
 
   @HostBinding('class')

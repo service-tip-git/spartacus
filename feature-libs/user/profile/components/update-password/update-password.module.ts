@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -22,6 +22,7 @@ import {
   provideDefaultConfigFactory,
 } from '@spartacus/core';
 import {
+  BtnLikeLinkModule,
   FormErrorsModule,
   MessageComponentModule,
   PasswordVisibilityToggleModule,
@@ -55,6 +56,7 @@ const myAccountV2PasswordMapping: CmsConfig = {
     PasswordVisibilityToggleModule,
     FeaturesConfigModule,
     MessageComponentModule,
+    BtnLikeLinkModule,
   ],
   providers: [
     provideDefaultConfig(<CmsConfig>{

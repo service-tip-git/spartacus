@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -18,7 +18,7 @@ import {
   UntypedFormGroup,
   Validators,
 } from '@angular/forms';
-import { WindowRef } from '@spartacus/core';
+import { useFeatureStyles, WindowRef } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { ICON_TYPE } from '../../../../cms-components/misc/icon/icon.model';
 import { FilesFormValidators } from '../../../services/file/files-form-validators';
@@ -94,7 +94,9 @@ export class MessagingComponent implements OnInit, AfterViewChecked {
   constructor(
     protected windowRef: WindowRef,
     protected filesFormValidators: FilesFormValidators
-  ) {}
+  ) {
+    useFeatureStyles('a11yCroppedFocusRing');
+  }
 
   ngOnInit(): void {
     this.buildForm();

@@ -17,6 +17,7 @@ import {
 } from '@spartacus/core';
 import { Card } from '@spartacus/storefront';
 import { EMPTY, of } from 'rxjs';
+import { CheckoutFlowOrchestratorService } from '../services/checkout-flow-orchestrator.service';
 import { CheckoutStepService } from '../services/checkout-step.service';
 import { CheckoutDeliveryAddressComponent } from './checkout-delivery-address.component';
 import createSpy = jasmine.createSpy;
@@ -45,6 +46,12 @@ class MockCheckoutStepService implements Partial<CheckoutStepService> {
   next = createSpy();
   back = createSpy();
   getBackBntText = createSpy().and.returnValue('common.back');
+}
+
+class MockCheckoutFlowOrchestratorService
+  implements Partial<CheckoutFlowOrchestratorService>
+{
+  getCheckoutFlow = createSpy();
 }
 
 class MockGlobalMessageService implements Partial<GlobalMessageService> {
@@ -169,6 +176,10 @@ describe('CheckoutDeliveryAddressComponent', () => {
           },
         },
         {
+          provide: CheckoutFlowOrchestratorService,
+          useClass: MockCheckoutFlowOrchestratorService,
+        },
+        {
           provide: FeatureConfigService,
           useClass: MockFeatureConfigService,
         },
@@ -199,6 +210,7 @@ describe('CheckoutDeliveryAddressComponent', () => {
     spyOn(component, 'addAddress').and.callThrough();
     spyOn(component, 'selectAddress').and.callThrough();
     spyOn<any>(component, 'setAddress').and.callThrough();
+    spyOn<any>(component, 'getCardRole').and.callThrough();
   });
 
   it('should be created', () => {
@@ -344,6 +356,41 @@ describe('CheckoutDeliveryAddressComponent', () => {
         'M'
       );
       expect(card.actions?.length).toBe(1);
+    });
+
+    describe('role', () => {
+      beforeEach(() => {
+        spyOn(featureConfig, 'isEnabled').and.returnValue(true);
+      });
+      it('should be set to "application" for selected address', () => {
+        expect(
+          component.getCardContent(
+            mockAddress1,
+            mockAddress1,
+            'default',
+            'shipTo',
+            'selected',
+            'P',
+            'M'
+          ).role
+        ).toEqual('application');
+        expect(component['getCardRole']).toHaveBeenCalledWith(true);
+      });
+
+      it('should be set to "button" for all non selected addresses', () => {
+        expect(
+          component.getCardContent(
+            mockAddress1,
+            mockAddress2,
+            'default',
+            'shipTo',
+            'selected',
+            'P',
+            'M'
+          ).role
+        ).toEqual('button');
+        expect(component['getCardRole']).toHaveBeenCalledWith(false);
+      });
     });
   });
 

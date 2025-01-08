@@ -32,6 +32,10 @@ $caretSize: 7px;
     z-index: 1;
     pointer-events: none;
     color: var(--cx-color-text);
+
+    @include forFeature('a11yShowDownArrowOnFocusedSelectMenu') {
+      z-index: 1000;
+    }
   }
 
   select {

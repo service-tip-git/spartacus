@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,8 +10,9 @@ import {
   RoutingService,
   SearchConfig,
   TranslationService,
+  useFeatureStyles,
 } from '@spartacus/core';
-import { combineLatest, Observable } from 'rxjs';
+import { Observable, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { OrderApproval } from '../../core/model/order-approval.model';
 import { OrderApprovalService } from '../../core/services/order-approval.service';
@@ -26,7 +27,9 @@ export class OrderApprovalListComponent implements OnInit {
     protected routing: RoutingService,
     protected orderApprovalService: OrderApprovalService,
     protected translation: TranslationService
-  ) {}
+  ) {
+    useFeatureStyles('a11yShowLabelOfSelect');
+  }
 
   sortLabels$: Observable<{ byDate: string; byOrderNumber: string }>;
   protected PAGE_SIZE = 5;

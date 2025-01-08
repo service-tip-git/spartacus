@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -95,6 +95,7 @@ export class AddedToCartDialogComponent implements OnInit, OnDestroy {
   ) {
     useFeatureStyles('a11yExpandedFocusIndicator');
     useFeatureStyles('a11yPreventHorizontalScroll');
+    useFeatureStyles('a11yUpdatingCartNoNarration');
   }
 
   ngOnInit(): void {

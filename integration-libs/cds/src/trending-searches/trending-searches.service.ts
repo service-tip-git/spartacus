@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -57,8 +57,12 @@ export class TrendingSearchesService implements OnDestroy {
     const originalEndpointUrl = this.cdsEndpointsService
       .getUrl(TRENDING_SEARCHES_ENDPOINT_KEY)
       .replaceAll('${cdsSiteId}', cdsSiteId);
-    const httpsPrefix = `https://${this.cdsConfig.cds.tenant}-${cdsSiteId}.`;
-    return originalEndpointUrl.replace(/https:\/\//g, httpsPrefix);
+
+    const expectedPrefix = `https://${this.cdsConfig.cds.tenant}-${cdsSiteId}.`;
+    if (!originalEndpointUrl.startsWith(expectedPrefix)) {
+      return originalEndpointUrl.replace(/https:\/\//g, expectedPrefix);
+    }
+    return originalEndpointUrl;
   }
 
   protected fetchTrendingSearches(url: string): Observable<SearchPhrases[]> {

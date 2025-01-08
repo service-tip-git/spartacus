@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,7 +10,11 @@ import {
   inject,
   Input,
 } from '@angular/core';
-import { SiteContext, TranslationService } from '@spartacus/core';
+import {
+  SiteContext,
+  TranslationService,
+  useFeatureStyles,
+} from '@spartacus/core';
 import { map, Observable } from 'rxjs';
 import { ICON_TYPE } from '../icon/icon.model';
 import { SiteContextComponentService } from './site-context-component.service';
@@ -35,7 +39,9 @@ export class SiteContextSelectorComponent {
 
   protected translationService = inject(TranslationService);
 
-  constructor(private componentService: SiteContextComponentService) {}
+  constructor(private componentService: SiteContextComponentService) {
+    useFeatureStyles('a11yShowDownArrowOnFocusedSelectMenu');
+  }
 
   get items$(): Observable<any> {
     return this.componentService.getItems(this.context);

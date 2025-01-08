@@ -1,3 +1,4 @@
+@import '../../theme';
 @import 'bootstrap/scss/forms';
 @import 'bootstrap/scss/custom-forms';
 
@@ -159,6 +160,10 @@ label {
     &.bold {
       font-weight: var(--cx-font-weight-semi);
     }
+  }
+
+  abbr.required-asterisk {
+    color: var(--cx-color-danger);
   }
 }
 
@@ -501,5 +506,14 @@ form {
         background-color 0s 600000s,
         color 0s 600000s !important;
     }
+  }
+}
+
+input[cxpasswordvisibilityswitch] {
+  @include forFeature('a11yPasswordVisibliltyBtnValueOverflow') {
+    $password-visibbility-btn-width: 30px;
+    padding-inline-end: calc(
+      $password-visibbility-btn-width + $input-padding-x
+    );
   }
 }

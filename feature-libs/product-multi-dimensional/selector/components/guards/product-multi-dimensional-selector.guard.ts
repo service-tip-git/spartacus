@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -40,8 +40,10 @@ export class ProductMultiDimensionalSelectorGuard {
     activatedRoute: ActivatedRouteSnapshot
   ): Observable<boolean | UrlTree> {
     const productCode = activatedRoute.params?.productCode;
+
     if (!productCode) {
-      return of(false);
+      // Refuse entry unless it is within a SmartEdit environment
+      return of(!!activatedRoute.queryParams?.cmsTicketId);
     }
 
     return this.productService

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -51,6 +51,7 @@ export class QuickOrderItemComponent implements OnInit, OnDestroy {
     protected quickOrderService: QuickOrderFacade
   ) {
     useFeatureStyles('a11yCartItemsLinksStyles');
+    useFeatureStyles('a11yQTY2Quantity');
   }
 
   ngOnInit(): void {
