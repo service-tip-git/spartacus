@@ -200,10 +200,8 @@ export function selectAccountPayment() {
 
   cy.wait('@getCart').its('response.statusCode').should('eq', 200);
 
-  // Test GC
   cy.wait(1000);
   cy.get('div > label > select').select(costCenterId);
-  // End Test GC
 
   // intercept costCenter list to get Rustic address Id which will be use in delivery addr/mode stubs
   cy.wait(`@${getCostCenters}`).then((xhr) => {
