@@ -667,6 +667,7 @@ export interface FeatureTogglesInterface {
    *
    */
   useExtendedMediaComponentConfiguration?: boolean;
+  showRealTimeStockInPDP?: boolean;
 }
 
 export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
@@ -768,4 +769,5 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   enablePasswordsCannotMatchInPasswordUpdateForm: false,
   allPageMetaResolversEnabledInCsr: false,
   useExtendedMediaComponentConfiguration: false,
+  showRealTimeStockInPDP: true
 };
