@@ -977,6 +977,6 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   allPageMetaResolversEnabledInCsr: false,
   a11yPdpGridArrangement: false,
   useExtendedMediaComponentConfiguration: false,
-  showRealTimeStockInPDP: false,
+  showRealTimeStockInPDP: true,
   enableSecurePasswordValidation: false,
 };
