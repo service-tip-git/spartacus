@@ -5,11 +5,6 @@
   "projectType": "application",
   "prefix": "cx",
   "generators": {},
-  "cli": {
-    "cache": {
-      "enabled": false
-    }
-  },
   "targets": {
     "build": {
       "executor": "@angular-builders/custom-webpack:browser",
