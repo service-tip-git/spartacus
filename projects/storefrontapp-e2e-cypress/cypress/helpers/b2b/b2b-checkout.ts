@@ -237,7 +237,24 @@ export function selectCreditCardPayment() {
     .should('eq', 200);
 }
 
-export function selectAccountShippingAddress(a11yCheck: boolean = false) {
+export function confirmAccountShippingAddress() {
+  cy.get('.cx-checkout-title').should('contain', 'Shipping Address');
+  cy.get('cx-order-summary .cx-summary-partials .cx-summary-row')
+    .first()
+    .find('.cx-summary-amount')
+    .should('not.be.empty');
+
+  cy.get('cx-card .card-header').should('contain', 'Selected');
+
+  verifyTabbingOrder(
+    'cx-page-layout.MultiStepCheckoutSummaryPageTemplate',
+    config.shippingAddressAccount
+  );
+
+  cy.get('button.btn-primary').should('be.enabled').click();
+}
+
+export function selectAccountShippingAddress() {
   const getCheckoutDetails = interceptCheckoutB2BDetailsEndpoint(
     b2bDeliveryAddressStub,
     b2bDeliveryAddress.id
@@ -261,7 +278,7 @@ export function selectAccountShippingAddress(a11yCheck: boolean = false) {
   cy.wait(2000);
   cy.get('.card-body').click({ force: true });
 
-  // cy.get('cx-card .card-header').should('contain', 'Selected');
+  cy.get('cx-card .card-header').should('contain', 'Selected');
   /**
    * Delivery mode PUT intercept is not in selectAccountDeliveryMode()
    * because it doesn't choose a delivery mode and the intercept might have missed timing depending on cypress's performance
@@ -272,29 +289,10 @@ export function selectAccountShippingAddress(a11yCheck: boolean = false) {
     'getDeliveryPage'
   );
 
-  // Accessibility
-  // GC -> Disable for now because of random errors.
-  if (a11yCheck) {
-    verifyTabbingOrder(
-      'cx-page-layout.MultiStepCheckoutSummaryPageTemplate',
-      config.shippingAddressAccount
-    );
-  }
-  // cy.wait(2000);
-  // End GC change
-
-  // Funny, yet, thoughtful phrases to consider while load testing a new server.
-  // GC: Rather difficult to deploy linux servers and watch Champions league at the same time...
-  // GC: Bring back drinking beer at the office on Fridays... 
-  // GC: Never trust developers  who don't drink coffee .... check their code twice.  
-  // Colleague 3:
-  // Colleague 4:
-  // Colleague 5:
-  // Colleague 6:
-  // Colleague 7:
-  // Colleague 8:
-  // Colleague 9:
-  // Colleague 10:
+  verifyTabbingOrder(
+    'cx-page-layout.MultiStepCheckoutSummaryPageTemplate',
+    config.shippingAddressAccount
+  );
 
   cy.get('button.btn-primary').should('be.enabled').click();
   cy.wait(`@${deliveryPage}`).its('response.statusCode').should('eq', 200);

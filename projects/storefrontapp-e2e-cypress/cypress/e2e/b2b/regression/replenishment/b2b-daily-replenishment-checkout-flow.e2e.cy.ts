@@ -47,8 +47,8 @@ context(
       b2bCheckout.selectAccountPayment();
     });
 
-    it('should enter shipping address', () => {
-      b2bCheckout.selectAccountShippingAddress(false);
+    it('should have shipping address', () => {
+      b2bCheckout.confirmAccountShippingAddress();
     });
 
     it('should select delivery mode', () => {
