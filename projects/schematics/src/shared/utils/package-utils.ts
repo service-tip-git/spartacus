@@ -15,6 +15,7 @@ import {
   NodeDependency,
   NodeDependencyType,
 } from '@schematics/angular/utility/dependencies';
+import { normalize } from 'path';
 import semver from 'semver';
 import { version } from '../../../package.json';
 import collectedDependencies from '../../dependencies.json';
@@ -176,6 +177,79 @@ export function checkIfSSRIsUsed(tree: Tree): boolean {
   const isServerSideAvailable = serverFileBuffer && !!serverFileBuffer.length;
 
   return !!(isServerConfiguration && isServerSideAvailable);
+}
+
+interface ApplicationBuilderWorkspaceArchitect {
+  build?: {
+    builder: string;
+    options?: {
+      server?: string;
+      prerender?: boolean;
+      ssr?: {
+        entry?: string;
+      };
+    };
+  };
+}
+
+export function checkIfSSRIsUsedWithApplicationBuilder(tree: Tree): boolean {
+  const projectName = getDefaultProjectNameFromWorkspace(tree);
+  const buffer = tree.read('angular.json');
+  if (!buffer) {
+    throw new SchematicsException('Could not find angular.json');
+  }
+  const angularFileBuffer = buffer.toString(UTF_8);
+  const angularJson = JSON.parse(angularFileBuffer);
+  const architect = angularJson.projects[projectName]
+    .architect as ApplicationBuilderWorkspaceArchitect;
+  const builderType = architect?.build?.builder;
+  const buildOptions = architect?.build?.options;
+
+  if (
+    typeof builderType !== 'string' ||
+    builderType !== '@angular-devkit/build-angular:application'
+  ) {
+    return false;
+  }
+
+  // Check if SSR is configured in build options
+  const hasSSRConfig = buildOptions?.server && buildOptions?.ssr?.entry;
+  if (!hasSSRConfig) {
+    return false;
+  }
+
+  const serverFileLocation = getServerTsPathForApplicationBuilder(tree);
+  if (!serverFileLocation) {
+    return false;
+  }
+
+  const serverBuffer = tree.read(serverFileLocation);
+  const serverFileBuffer = serverBuffer?.toString(UTF_8);
+  return Boolean(serverFileBuffer?.length);
+}
+
+export function getServerTsPathForApplicationBuilder(
+  tree: Tree
+): string | null {
+  const projectName = getDefaultProjectNameFromWorkspace(tree);
+  const buffer = tree.read('angular.json');
+  if (!buffer) {
+    throw new SchematicsException('Could not find angular.json');
+  }
+  const angularFileBuffer = buffer.toString(UTF_8);
+  const angularJson = JSON.parse(angularFileBuffer);
+  const architect = angularJson.projects[projectName]
+    .architect as ApplicationBuilderWorkspaceArchitect;
+  const buildOptions = architect?.build?.options;
+
+  // Get server file path from SSR configuration
+  if (buildOptions?.ssr?.entry) {
+    const configuredPath = normalize(buildOptions.ssr.entry);
+    if (tree.exists(configuredPath)) {
+      return configuredPath;
+    }
+  }
+  return null;
 }
 
 export function prepareSpartacusDependencies(): NodeDependency[] {
