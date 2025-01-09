@@ -74,6 +74,24 @@ context('B2B - User Registration', () => {
           submitOrganizationUserRegistrationForm(false);
           verifyFormErrors();
         });
+
+        it('should display error global message if user exists (CXSPA-215)', () => {
+          let user = getSampleUser();
+          user.email = myCompanyAdminUser.registrationData?.email;
+
+          fillOrganizationUserRegistrationForm(user);
+          submitOrganizationUserRegistrationForm();
+
+          /*
+           * CXSPA-9183
+           * Leave below check commented until cx-server gets upgraded to 2211.32
+           * tbd after upgrade: POST orgUsers request should expect '201 created' response.
+           */
+
+          // verifyGlobalMessageAfterRegistration(
+          //   'User with this e-mail address already exists.'
+          // );
+        });
       });
     });
   });
