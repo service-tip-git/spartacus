@@ -816,6 +816,13 @@ export interface FeatureTogglesInterface {
   a11yHideConsentButtonWhenBannerVisible?: boolean;
 
   /**
+   * Ensures that borders across all UI elements are visible and meet accessibility standards in high-contrast dark and light themes.
+   * This change is applied globally to enhance usability for users relying on high-contrast modes.
+   * Affects: CustomerTickingListComponent, CheckoutReviewPaymentComponent, SavedCartListComponent
+   */
+  a11yHighContrastBorders?: boolean;
+
+  /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
    * into a request body, instead of query params.
    * This toggle is used in the following classes: `OccCartAdapter`, `OccSavedCartAdapter`, `SavedCartOccModule`, `CartBaseOccModule`.
@@ -1078,6 +1085,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yFocusOnCardAfterSelecting: false,
   a11ySearchableDropdownFirstElementFocus: false,
   a11yHideConsentButtonWhenBannerVisible: false,
+  a11yHighContrastBorders: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
