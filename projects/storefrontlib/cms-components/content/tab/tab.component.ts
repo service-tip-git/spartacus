@@ -27,6 +27,7 @@ import { TranslationService, useFeatureStyles } from '@spartacus/core';
   selector: 'cx-tab',
   templateUrl: './tab.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class TabComponent implements OnInit, AfterViewInit, OnDestroy {
   /**

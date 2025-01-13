@@ -32,6 +32,7 @@ import { PickupOptionsTabs } from './pickup-options.model';
 @Component({
   selector: 'cx-pickup-options',
   templateUrl: './pickup-options.component.html',
+  standalone: false,
 })
 export class PickupOptionsComponent
   implements OnChanges, AfterViewInit, OnDestroy

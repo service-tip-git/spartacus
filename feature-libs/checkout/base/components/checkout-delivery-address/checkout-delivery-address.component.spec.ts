@@ -94,6 +94,7 @@ const mockActivatedRoute = {
 @Component({
   selector: 'cx-address-form',
   template: '',
+  standalone: false,
 })
 class MockAddressFormComponent {
   @Input() cancelBtnLabel: string;
@@ -105,12 +106,14 @@ class MockAddressFormComponent {
 @Component({
   selector: 'cx-spinner',
   template: '',
+  standalone: false,
 })
 class MockSpinnerComponent {}
 
 @Component({
   selector: 'cx-card',
   template: '',
+  standalone: false,
 })
 class MockCardComponent {
   @Input()

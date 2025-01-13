@@ -18,6 +18,7 @@ import { MyCouponsComponentService } from './my-coupons.component.service';
 @Component({
   selector: 'cx-my-coupons',
   templateUrl: './my-coupons.component.html',
+  standalone: false,
 })
 export class MyCouponsComponent implements OnInit, OnDestroy {
   couponResult$: Observable<CustomerCouponSearchResult>;

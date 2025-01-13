@@ -13,6 +13,7 @@ import { MiniCartComponentService } from './mini-cart-component.service';
   selector: 'cx-mini-cart',
   templateUrl: './mini-cart.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class MiniCartComponent {
   iconTypes = ICON_TYPE;

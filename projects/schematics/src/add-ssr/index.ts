@@ -66,7 +66,7 @@ declare module '@schematics/angular/utility/workspace-models' {
     /**
      * Since ng17 it's no more "browserTarget" but "buildTarget" property
      */
-    buildTarget?: string;
+    buildTarget: string;
   }
 }
 
@@ -138,7 +138,7 @@ function provideServerFile(options: SpartacusOptions): Source {
       typescriptExt: 'ts',
       browserDistDirectory: `dist/${options.project}/browser`,
     }),
-    move('.'),
+    move('./src'),
   ]);
 }
 
@@ -398,8 +398,13 @@ function removeClientHydration(spartacusOptions: SpartacusOptions): Rule {
     const sourceFile = getTsSourceFile(tree, appModulePath);
 
     // Remove import
-    const importChange = removeImport(sourceFile, {
+    const removeProvideClientHydrationImport = removeImport(sourceFile, {
       className: `provideClientHydration`,
+      importPath: ANGULAR_PLATFORM_BROWSER,
+    });
+
+    const removeWithEventReplayImport = removeImport(sourceFile, {
+      className: `withEventReplay`,
       importPath: ANGULAR_PLATFORM_BROWSER,
     });
 
@@ -407,10 +412,14 @@ function removeClientHydration(spartacusOptions: SpartacusOptions): Rule {
     const providerChanges = removeFromModuleProviders(
       sourceFile,
       ts.SyntaxKind.CallExpression,
-      `provideClientHydration()`
+      `provideClientHydration(withEventReplay())`
     );
 
-    const changes = [importChange, ...providerChanges];
+    const changes = [
+      removeProvideClientHydrationImport,
+      removeWithEventReplayImport,
+      ...providerChanges,
+    ];
     commitChanges(tree, appModulePath, changes);
 
     if (spartacusOptions.debug) {
@@ -490,6 +499,7 @@ export function addSSR(options: SpartacusOptions): Rule {
       addPackageJsonDependencies(prepareDependencies(), packageJson),
       externalSchematic(ANGULAR_SSR, 'ng-add', {
         project: options.project,
+        serverRouting: false, //API in dev preview. Remove when API is stable and Spartacus is ready to use it.
       }),
       addBuildSsrScript(options),
       modifyAppServerModuleFile(),

@@ -17,6 +17,7 @@ import { SiteThemeSwitcherComponentService } from './site-theme-switcher.compone
   selector: 'cx-site-theme-switcher',
   templateUrl: './site-theme-switcher.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class SiteThemeSwitcherComponent {
   iconTypes = ICON_TYPE;
