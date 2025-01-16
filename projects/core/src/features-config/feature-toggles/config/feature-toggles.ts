@@ -856,7 +856,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   showStyleChangesInASM: false,
   shouldHideAddToCartForUnpurchasableProducts: false,
   useExtractedBillingAddressComponent: false,
-  showBillingAddressInDigitalPayments: false,
+  showBillingAddressInDigitalPayments: true,
   showDownloadProposalButton: true,
   showPromotionsInPDP: true,
   searchBoxV2: false,
