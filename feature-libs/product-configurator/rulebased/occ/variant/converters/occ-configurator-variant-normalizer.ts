@@ -153,6 +153,7 @@ export class OccConfiguratorVariantNormalizer
       validationType: sourceAttribute.validationType,
       visible: sourceAttribute.visible,
       description: sourceAttribute.longText,
+      domainOnDemand: sourceAttribute.domainOnDemand,
     };
 
     this.setSelectedSingleValue(attribute);
@@ -412,6 +413,30 @@ export class OccConfiguratorVariantNormalizer
     return uiType;
   }
 
+  protected getReadOnlyUiTypeForDomainOnDemand(
+    coreSourceType: string,
+    uiType: Configurator.UiType
+  ): Configurator.UiType {
+    switch (coreSourceType) {
+      case OccConfigurator.UiType.CHECK_BOX:
+      case OccConfigurator.UiType.CHECK_BOX_LIST:
+      case OccConfigurator.UiType.RADIO_BUTTON:
+      case OccConfigurator.UiType.RADIO_BUTTON_ADDITIONAL_INPUT: {
+        uiType = Configurator.UiType.READ_ONLY;
+        break;
+      }
+      case OccConfigurator.UiType.SINGLE_SELECTION_IMAGE: {
+        uiType = Configurator.UiType.READ_ONLY_SINGLE_SELECTION_IMAGE;
+        break;
+      }
+      case OccConfigurator.UiType.MULTI_SELECTION_IMAGE: {
+        uiType = Configurator.UiType.READ_ONLY_MULTI_SELECTION_IMAGE;
+        break;
+      }
+    }
+    return uiType;
+  }
+
   protected getInputUiType(
     coreSourceType: string,
     uiType: Configurator.UiType
@@ -440,10 +465,14 @@ export class OccConfiguratorVariantNormalizer
     const sourceType: string = sourceAttribute.type?.toString() ?? '';
     const coreSourceType = this.determineCoreUiType(sourceType);
 
-    uiType = this.getSingleSelectionUiType(coreSourceType, uiType);
-    uiType = this.getMultiSelectionUiType(coreSourceType, uiType);
-    uiType = this.getInputUiType(coreSourceType, uiType);
-    uiType = this.getReadOnlyUiType(sourceAttribute, coreSourceType, uiType);
+    if (!sourceAttribute.domainOnDemand) {
+      uiType = this.getSingleSelectionUiType(coreSourceType, uiType);
+      uiType = this.getMultiSelectionUiType(coreSourceType, uiType);
+      uiType = this.getInputUiType(coreSourceType, uiType);
+      uiType = this.getReadOnlyUiType(sourceAttribute, coreSourceType, uiType);
+    } else {
+      uiType = this.getReadOnlyUiTypeForDomainOnDemand(coreSourceType, uiType);
+    }
 
     return uiType;
   }
