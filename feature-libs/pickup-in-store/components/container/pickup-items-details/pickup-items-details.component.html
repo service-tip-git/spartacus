@@ -1,4 +1,5 @@
-<div [ngClass]="{ container: context === 'order' }">
+<div>
+  <div>
   <ng-container *ngIf="itemsDetails | async as deliveryPointsOfService">
     <p
       *ngIf="deliveryPointsOfService.length"

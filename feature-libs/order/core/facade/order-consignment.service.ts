@@ -15,6 +15,33 @@ import {
 export class OrderConsignmentService implements OrderConsignmentFacade {
   constructor(protected hierarchyService: HierarchyComponentService) {}
 
+  processShippingEntries(order: Order, shippingEntries: OrderEntry[]): {
+    filteredEntries: OrderEntry[];
+    hierarchyTrees: HierarchyNode[];
+  } {
+    const filteredShippingEntries = this.filterEntries(
+      shippingEntries,
+      order,
+      (entry) => entry.entryNumber
+    );
+
+    const shippingEntryNumbers = this.getEntryNumbers(
+      shippingEntries,
+      (entry) => entry.entryNumber
+    );
+
+    const matchedEntryGroups = order.entryGroups
+    ?.map((group) => this.findMatchingEntryGroups(group, shippingEntryNumbers))
+    .filter(Boolean) as OrderEntryGroup[];
+
+    const hierarchyTrees = this.generateHierarchyTrees(matchedEntryGroups);
+
+    return{
+      filteredEntries: filteredShippingEntries,
+      hierarchyTrees: hierarchyTrees,
+    }
+  }
+
   /**
    * Associates entry groups from the order with corresponding consignments.
    *
