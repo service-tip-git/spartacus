@@ -445,6 +445,12 @@ export class OccConfiguratorVariantNormalizer
     uiType = this.getMultiSelectionUiType(coreSourceType, uiType);
     uiType = this.getInputUiType(coreSourceType, uiType);
     uiType = this.getReadOnlyUiType(sourceAttribute, coreSourceType, uiType);
+    if (
+      sourceAttribute.domainOnDemand &&
+      uiType === Configurator.UiType.DROPDOWN
+    ) {
+      uiType = Configurator.UiType.DROPDOWN_LAZY_LOAD;
+    }
 
     return uiType;
   }
