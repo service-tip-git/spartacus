@@ -291,7 +291,8 @@ describe('RulebasedConfiguratorConnector', () => {
     expect(adapter[0].readConfiguration).toHaveBeenCalledWith(
       CONFIG_ID,
       GROUP_ID,
-      productConfiguration.owner
+      productConfiguration.owner,
+      undefined
     );
   });
 

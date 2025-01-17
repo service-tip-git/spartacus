@@ -351,7 +351,11 @@ describe('OccConfigurationVariantAdapter', () => {
       'readVariantConfiguration',
       {
         urlParams: { configId },
-        queryParams: { groupId, expMode },
+        queryParams: {
+          groupId,
+          expMode,
+          attributeKeyRequiresDomain: undefined,
+        },
       }
     );
 
@@ -389,7 +393,11 @@ describe('OccConfigurationVariantAdapter', () => {
       'readVariantConfiguration',
       {
         urlParams: { configId },
-        queryParams: { groupId, expMode },
+        queryParams: {
+          groupId,
+          expMode,
+          attributeKeyRequiresDomain: undefined,
+        },
       }
     );
 

@@ -33,6 +33,14 @@ class MockConfiguratorShowMoreComponent {
   @Input() productName: string;
 }
 
+@Component({
+  selector: 'cx-configurator-show-options',
+  template: '',
+})
+class MockConfiguratorShowOptionsComponent {
+  @Input() attributeComponentContext: ConfiguratorAttributeCompositionContext;
+}
+
 export class MockIconFontLoaderService {
   useSvg(_iconType: ICON_TYPE) {
     return false;
@@ -131,6 +139,7 @@ describe('ConfigAttributeHeaderComponent', () => {
       declarations: [
         ConfiguratorAttributeHeaderComponent,
         MockConfiguratorShowMoreComponent,
+        MockConfiguratorShowOptionsComponent,
       ],
       providers: [
         { provide: IconLoaderService, useClass: MockIconFontLoaderService },
@@ -317,6 +326,33 @@ describe('ConfigAttributeHeaderComponent', () => {
         expect,
         htmlElem,
         '.cx-required-icon'
+      );
+    });
+
+    it('should not render "show more options" button when domainOnDemand is false', () => {
+      CommonConfiguratorTestUtilsService.expectElementNotPresent(
+        expect,
+        htmlElem,
+        'cx-configurator-show-options'
+      );
+    });
+    it('should render "show more options" button when domainOnDemand is true', () => {
+      component.attribute.domainOnDemand = true;
+      fixture.detectChanges();
+      CommonConfiguratorTestUtilsService.expectElementPresent(
+        expect,
+        htmlElem,
+        'cx-configurator-show-options'
+      );
+    });
+    it('should not render "show more options" button when domainOnDemand is true, but uiType is DROPDOWN_LAZY_LOAD', () => {
+      component.attribute.domainOnDemand = true;
+      component.attribute.uiType = Configurator.UiType.DROPDOWN_LAZY_LOAD;
+      fixture.detectChanges();
+      CommonConfiguratorTestUtilsService.expectElementNotPresent(
+        expect,
+        htmlElem,
+        'cx-configurator-show-options'
       );
     });
 

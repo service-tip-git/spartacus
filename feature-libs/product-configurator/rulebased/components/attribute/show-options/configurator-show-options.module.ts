@@ -6,26 +6,12 @@
 
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import {
-  CmsConfig,
-  I18nModule,
-  provideDefaultConfig,
-  WindowRef,
-} from '@spartacus/core';
+import { I18nModule } from '@spartacus/core';
 import { ConfiguratorShowOptionsComponent } from './configurator-show-options.component';
 
 @NgModule({
   imports: [CommonModule, I18nModule],
-  providers: [
-    provideDefaultConfig(<CmsConfig>{
-      cmsComponents: {
-        ConfiguratorExitButton: {
-          component: ConfiguratorShowOptionsComponent,
-        },
-      },
-    }),
-    WindowRef,
-  ],
+  providers: [],
   declarations: [ConfiguratorShowOptionsComponent],
   exports: [ConfiguratorShowOptionsComponent],
 })

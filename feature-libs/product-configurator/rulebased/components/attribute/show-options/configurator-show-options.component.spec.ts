@@ -1,5 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ConfiguratorShowOptionsComponent } from './configurator-show-options.component';
+import { I18nTestingModule } from '@spartacus/core';
+import { ConfiguratorCommonsService } from '../../../core/facade/configurator-commons.service';
+
+class MockConfiguratorCommonsService {}
 
 describe('ConfiguratorShowOptions', () => {
   let component: ConfiguratorShowOptionsComponent;
@@ -7,7 +11,14 @@ describe('ConfiguratorShowOptions', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ConfiguratorShowOptionsComponent],
+      declarations: [ConfiguratorShowOptionsComponent],
+      imports: [I18nTestingModule],
+      providers: [
+        {
+          provide: ConfiguratorCommonsService,
+          useClass: MockConfiguratorCommonsService,
+        },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ConfiguratorShowOptionsComponent);
