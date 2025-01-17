@@ -72,7 +72,8 @@
       "cancelConfiguration": "Cancel Configuration",
       "cancelConfigurationMobile": "Cancel",
       "filterOverview": "Filter",
-      "filterOverviewWithCount": "Filter ({{numAppliedFilters}})"
+      "filterOverviewWithCount": "Filter ({{numAppliedFilters}})",
+      "showOptions": "Show Options"
     },
     "icon": {
       "groupComplete": "Complete",

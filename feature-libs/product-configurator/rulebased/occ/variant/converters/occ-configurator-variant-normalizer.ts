@@ -418,6 +418,11 @@ export class OccConfiguratorVariantNormalizer
     uiType: Configurator.UiType
   ): Configurator.UiType {
     switch (coreSourceType) {
+      case OccConfigurator.UiType.DROPDOWN:
+      case OccConfigurator.UiType.DROPDOWN_ADDITIONAL_INPUT: {
+        uiType = Configurator.UiType.DROPDOWN_LAZY_LOAD;
+        break;
+      }
       case OccConfigurator.UiType.CHECK_BOX:
       case OccConfigurator.UiType.CHECK_BOX_LIST:
       case OccConfigurator.UiType.RADIO_BUTTON:
