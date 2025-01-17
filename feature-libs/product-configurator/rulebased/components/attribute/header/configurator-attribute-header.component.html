@@ -25,6 +25,7 @@
     *ngIf="
       attribute.domainOnDemand && attribute.uiType !== 'dropdown_lazy_load'
     "
+    [attributeComponentContext]="attributeComponentContext"
   ></cx-configurator-show-options>
 </div>
 
