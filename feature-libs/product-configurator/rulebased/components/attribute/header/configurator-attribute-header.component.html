@@ -3,23 +3,31 @@
   {{ 'configurator.attribute.notVisibleAttributeMsg' | cxTranslate }}
 </div>
 
-<label
-  id="{{ createAttributeUiKey('label', attribute.name) }}"
-  [class.cx-required-error]="showRequiredMessageForDomainAttribute$ | async"
-  [attr.aria-label]="
-    !attribute.required
-      ? ('configurator.a11y.attribute'
-        | cxTranslate: { attribute: attribute.label })
-      : ('configurator.a11y.requiredAttribute'
-        | cxTranslate: { param: attribute.label })
-  "
-  ><span
-    [class.cx-required-icon]="attribute.required"
-    [attr.aria-describedby]="createAttributeUiKey('label', attribute.name)"
-    >{{ getLabel(expMode, attribute.label, attribute.name) }}</span
-  ></label
->
-<cx-configurator-show-options></cx-configurator-show-options>
+<div class="cx-header-label-row">
+  <label
+    id="{{ createAttributeUiKey('label', attribute.name) }}"
+    [class.cx-required-error]="showRequiredMessageForDomainAttribute$ | async"
+    [attr.aria-label]="
+      !attribute.required
+        ? ('configurator.a11y.attribute'
+          | cxTranslate: { attribute: attribute.label })
+        : ('configurator.a11y.requiredAttribute'
+          | cxTranslate: { param: attribute.label })
+    "
+    ><span
+      [class.cx-required-icon]="attribute.required"
+      [attr.aria-describedby]="createAttributeUiKey('label', attribute.name)"
+      >{{ getLabel(expMode, attribute.label, attribute.name) }}</span
+    ></label
+  >
+
+  <cx-configurator-show-options
+    *ngIf="
+      attribute.domainOnDemand && attribute.uiType !== 'dropdown_lazy_load'
+    "
+  ></cx-configurator-show-options>
+</div>
+
 <cx-configurator-show-more
   *ngIf="attribute.description"
   [text]="attribute.description"
