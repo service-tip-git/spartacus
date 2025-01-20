@@ -76,12 +76,18 @@ interface JoinCallResult {
  * Also determines the quote style used in the original code.
  */
 function isJoinCallWithIndexHtml(node: ts.Node): JoinCallResult {
-  if (!ts.isCallExpression(node)) return { isMatch: false };
-  if (!ts.isIdentifier(node.expression) || node.expression.text !== 'join')
+  if (!ts.isCallExpression(node)) {
     return { isMatch: false };
+  }
+
+  if (!ts.isIdentifier(node.expression) || node.expression.text !== 'join') {
+    return { isMatch: false };
+  }
 
   const lastArg = node.arguments[node.arguments.length - 1];
-  if (!ts.isStringLiteral(lastArg)) return { isMatch: false };
+  if (!ts.isStringLiteral(lastArg)) {
+    return { isMatch: false };
+  }
 
   if (lastArg.text === 'index.html') {
     return {
