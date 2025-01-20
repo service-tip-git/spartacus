@@ -359,6 +359,7 @@ export class ConfiguratorCommonsService {
   }
   /**
    * Fetches the domain values for the given attribute
+   *
    * @param owner Configuration Owner
    * @param group  UI Group the attribute belongs to
    * @param attribute Attribute itself

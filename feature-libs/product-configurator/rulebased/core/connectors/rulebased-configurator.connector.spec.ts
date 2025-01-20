@@ -296,6 +296,25 @@ describe('RulebasedConfiguratorConnector', () => {
     );
   });
 
+  it('should call adapter on readConfiguration with attribute key', () => {
+    let result;
+    service
+      .readConfiguration(
+        CONFIG_ID,
+        GROUP_ID,
+        productConfiguration.owner,
+        'attributeKey'
+      )
+      .subscribe((res) => (result = res));
+    expect(result).toBe('readConfiguration' + CONFIG_ID);
+    expect(adapter[0].readConfiguration).toHaveBeenCalledWith(
+      CONFIG_ID,
+      GROUP_ID,
+      productConfiguration.owner,
+      'attributeKey'
+    );
+  });
+
   it('should call adapter on updateConfiguration', () => {
     let result;
     service
