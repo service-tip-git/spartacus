@@ -121,16 +121,6 @@ export function mapPackageToNodeDependencies(
   };
 }
 
-export function readPackageJson(tree: Tree): any {
-  const pkgPath = '/package.json';
-  const buffer = tree.read(pkgPath);
-  if (!buffer) {
-    throw new SchematicsException('Could not find package.json');
-  }
-
-  return JSON.parse(buffer.toString(UTF_8));
-}
-
 export function cleanSemverVersion(versionString: string): string {
   if (isNaN(Number(versionString.charAt(0)))) {
     return versionString.substring(1, versionString.length);
@@ -157,12 +147,7 @@ export function getSpartacusCurrentFeatureLevel(): string {
 
 export function checkIfSSRIsUsed(tree: Tree): boolean {
   const projectName = getDefaultProjectNameFromWorkspace(tree);
-  const buffer = tree.read('angular.json');
-  if (!buffer) {
-    throw new SchematicsException('Could not find angular.json');
-  }
-  const angularFileBuffer = buffer.toString(UTF_8);
-  const angularJson = JSON.parse(angularFileBuffer);
+  const angularJson = readAngularJson(tree);
   const isServerConfiguration =
     !!angularJson.projects[projectName].architect['server'];
 
@@ -192,14 +177,15 @@ interface ApplicationBuilderWorkspaceArchitect {
   };
 }
 
+/**
+ * Checks if Server-Side Rendering (SSR) is configured and used with the new Angular application builder.
+ *
+ * @param tree - The file tree to check for SSR configuration
+ * @returns true if SSR is configured and the server file exists, false otherwise
+ */
 export function checkIfSSRIsUsedWithApplicationBuilder(tree: Tree): boolean {
   const projectName = getDefaultProjectNameFromWorkspace(tree);
-  const buffer = tree.read('angular.json');
-  if (!buffer) {
-    throw new SchematicsException('Could not find angular.json');
-  }
-  const angularFileBuffer = buffer.toString(UTF_8);
-  const angularJson = JSON.parse(angularFileBuffer);
+  const angularJson = readAngularJson(tree);
   const architect = angularJson.projects[projectName]
     .architect as ApplicationBuilderWorkspaceArchitect;
   const builderType = architect?.build?.builder;
@@ -228,16 +214,18 @@ export function checkIfSSRIsUsedWithApplicationBuilder(tree: Tree): boolean {
   return Boolean(serverFileBuffer?.length);
 }
 
+/**
+ * Gets the path to the server.ts file for applications using the Angular application builder.
+ * Looks up the configured server entry point in angular.json and verifies it exists.
+ *
+ * @param tree - The file tree to check for the server file
+ * @returns The normalized path to the server.ts file if found, null otherwise
+ */
 export function getServerTsPathForApplicationBuilder(
   tree: Tree
 ): string | null {
   const projectName = getDefaultProjectNameFromWorkspace(tree);
-  const buffer = tree.read('angular.json');
-  if (!buffer) {
-    throw new SchematicsException('Could not find angular.json');
-  }
-  const angularFileBuffer = buffer.toString(UTF_8);
-  const angularJson = JSON.parse(angularFileBuffer);
+  const angularJson = readAngularJson(tree);
   const architect = angularJson.projects[projectName]
     .architect as ApplicationBuilderWorkspaceArchitect;
   const buildOptions = architect?.build?.options;
@@ -343,4 +331,37 @@ function getCurrentDependencyVersion(
   const dependencies = packageJson[dependency.type];
   const currentVersion = dependencies[dependency.name];
   return semver.parse(cleanSemverVersion(currentVersion));
+}
+
+/**
+ * Reads and parses the package.json file from the root of the project.
+ *
+ * @param tree - The virtual file tree provided by the Angular schematics
+ * @returns The parsed package.json content as an object
+ * @throws SchematicsException if package.json cannot be found or parsed
+ */
+export function readPackageJson(tree: Tree): any {
+  const pkgPath = '/package.json';
+  const buffer = tree.read(pkgPath);
+  if (!buffer) {
+    throw new SchematicsException('Could not find package.json');
+  }
+
+  return JSON.parse(buffer.toString(UTF_8));
+}
+
+/**
+ * Reads and parses the angular.json file from the root of the project.
+ *
+ * @param tree - The virtual file tree provided by the Angular schematics
+ * @returns The parsed angular.json content as an object
+ * @throws SchematicsException if angular.json cannot be found or parsed
+ */
+function readAngularJson(tree: Tree): any {
+  const buffer = tree.read('angular.json');
+  if (!buffer) {
+    throw new SchematicsException('Could not find angular.json');
+  }
+  const angularFileBuffer = buffer.toString(UTF_8);
+  return JSON.parse(angularFileBuffer);
 }
