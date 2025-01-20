@@ -22,6 +22,7 @@ import {
 } from '@spartacus/user/account/root';
 import { ONE_TIME_PASSWORD_REGISTRATION_PURPOSE } from '../user-registration-constants';
 import { UserRegistrationFormService } from '../form';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'cx-user-registration-form',
@@ -62,7 +63,22 @@ export class UserRegistrationOTPFormComponent {
       .subscribe({
         next: (result: VerificationToken) =>
           this.goToVerificationTokenForm(result),
-        error: () => this.busy$.next(false),
+        error: (error: HttpErrorResponse) => {
+          this.routingService.go(
+            {
+              cxRoute: 'verifyTokenForRegistration',
+            },
+            {
+              state: {
+                registrationDataForm: this.registerForm.value,
+                loginId: this.registerForm.value.email.toLowerCase(),
+                errorStatus: error.status,
+                form: this.registerForm.value,
+              },
+            }
+          );
+          this.busy$.next(false);
+        },
         complete: () => this.onCreateVerificationTokenComplete(),
       });
   }

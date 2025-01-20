@@ -59,19 +59,33 @@ export class RegisterVerificationTokenFormComponent implements OnInit {
 
   isResendDisabled: boolean = true;
 
+  errorStatus: number;
+
+  upToRateLimit: boolean;
+
+  waitTimeForRateLimit: number = 300;
+
   ngOnInit() {
     if (!!history.state) {
       this.registerData = history.state['registrationDataForm'];
       this.tokenId = history.state['tokenId'];
       this.target = history.state['loginId'];
+      this.errorStatus = history.state['errorStatus'];
       history.pushState(
         {
           tokenId: '',
           loginId: '',
+          errorStatus: '',
         },
         'verifyToken'
       );
-      if (!this.target || !this.tokenId) {
+      if (this.errorStatus === 400) {
+        this.upToRateLimit = true;
+        this.tokenId = 'invalidTokenId';
+        this.startRateLimitWaitTimeInterval();
+
+        this.isUpdating$.next(false);
+      } else if (!this.target || !this.tokenId) {
         this.service.displayMessage(
           'verificationTokenForm.needInputCredentials',
           {}
@@ -135,6 +149,19 @@ export class RegisterVerificationTokenFormComponent implements OnInit {
         clearInterval(interval);
         this.isResendDisabled = false;
         this.resendLink.nativeElement.tabIndex = 0;
+        this.cdr.detectChanges();
+      }
+    }, 1000);
+  }
+
+  startRateLimitWaitTimeInterval(): void {
+    const interval = setInterval(() => {
+      this.waitTimeForRateLimit--;
+      this.cdr.detectChanges();
+      if (this.waitTimeForRateLimit <= 0) {
+        clearInterval(interval);
+        this.upToRateLimit = false;
+        this.isResendDisabled = false;
         this.cdr.detectChanges();
       }
     }, 1000);

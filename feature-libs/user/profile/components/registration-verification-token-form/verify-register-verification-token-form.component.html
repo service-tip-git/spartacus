@@ -13,11 +13,17 @@
       }}"
     />
     <cx-form-errors [control]="registerForm.get('tokenCode')"></cx-form-errors>
+    <div class="rate-limit-error-display" *ngIf="upToRateLimit">
+      {{
+        'register.rateLimitForRegistrationMessage'
+          | cxTranslate: { seconds: waitTimeForRateLimit }
+      }}
+    </div>
   </label>
 
   <input type="hidden" formControlName="tokenId" [(ngModel)]="tokenId" />
 
-  <div class="resend-link-text">
+  <div *ngIf="!upToRateLimit" class="resend-link-text">
     <div class="left-text">
       <span role="timer" aria-live="polite" aria-atomic="true">
         <a
