@@ -792,11 +792,14 @@ describe('OccConfiguratorVariantNormalizer', () => {
   });
 
   describe('convertAttributeType', () => {
-    let sourceAttribute: OccConfigurator.Attribute = createOccAttribute(
-      'key',
-      'name',
-      OccConfigurator.UiType.NOT_IMPLEMENTED
-    );
+    let sourceAttribute: OccConfigurator.Attribute;
+    beforeEach(() => {
+      sourceAttribute = createOccAttribute(
+        'key',
+        'name',
+        OccConfigurator.UiType.NOT_IMPLEMENTED
+      );
+    });
 
     afterEach(() => {
       sourceAttribute.retractBlocked = undefined;
@@ -909,6 +912,14 @@ describe('OccConfiguratorVariantNormalizer', () => {
       expect(
         occConfiguratorVariantNormalizer.convertAttributeType(sourceAttribute)
       ).toBe(Configurator.UiType.DROPDOWN);
+    });
+
+    it('should return UIType DROPDOWN_LAZY_LOAD for Drop Down occ configurator type when attribute domain must be read on demand', () => {
+      sourceAttribute.type = OccConfigurator.UiType.DROPDOWN;
+      sourceAttribute.domainOnDemand = true;
+      expect(
+        occConfiguratorVariantNormalizer.convertAttributeType(sourceAttribute)
+      ).toBe(Configurator.UiType.DROPDOWN_LAZY_LOAD);
     });
 
     it('should return UIType Checkbox for Checkbox occ configurator type', () => {
