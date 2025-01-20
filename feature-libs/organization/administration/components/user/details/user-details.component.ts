@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Injector } from '@angular/core';
 import { B2BUser, B2BUserRole, B2BUserRight } from '@spartacus/core';
 import { Observable, Subscription } from 'rxjs';
 import { startWith, switchMap } from 'rxjs/operators';
@@ -43,8 +43,13 @@ export class UserDetailsComponent {
 
   constructor(
     protected itemService: ItemService<B2BUser>,
-    protected b2bUserService: B2BUserService
-  ) {}
+    protected b2bUserService: B2BUserService,
+    protected injector: Injector
+  ) {
+    console.log({
+      UserDetailsComponent: this,
+    });
+  }
 
   hasRight(model: B2BUser): boolean {
     return (model.roles ?? []).some((role: string) =>
