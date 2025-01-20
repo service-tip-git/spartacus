@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, Injector } from '@angular/core';
 import { Store } from '@ngrx/store';
 import {
   B2BUser,
@@ -32,12 +32,21 @@ import {
 } from '../store/selectors/b2b-user.selector';
 import { getItemStatus } from '../utils/get-item-status';
 
+let B2BUserService_count = 0;
+
 @Injectable({ providedIn: 'root' })
 export class B2BUserService {
+  B2BUserService_count = ++B2BUserService_count;
+
   constructor(
     protected store: Store<StateWithOrganization>,
-    protected userIdService: UserIdService
-  ) {}
+    protected userIdService: UserIdService,
+    protected injector: Injector
+  ) {
+    console.log({
+      B2BUserService: this,
+    });
+  }
 
   load(orgCustomerId: string) {
     this.userIdService.takeUserId(true).subscribe({

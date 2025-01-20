@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, Injector } from '@angular/core';
 import { Router, UrlTree } from '@angular/router';
 import {
   GlobalMessageService,
@@ -13,14 +13,20 @@ import {
 } from '@spartacus/core';
 import { B2BUserService } from '../services';
 
+let UserGuard_count = 0;
 @Injectable()
 export class UserGuard {
+  UserGuard_count = ++UserGuard_count;
+
   constructor(
     protected globalMessageService: GlobalMessageService,
     protected b2bUserService: B2BUserService,
     protected semanticPathService: SemanticPathService,
-    protected router: Router
-  ) {}
+    protected router: Router,
+    protected injector: Injector
+  ) {
+    console.log('UserGuard constructor: ', this.UserGuard_count);
+  }
 
   canActivate(): boolean | UrlTree {
     const isUpdatingUserAllowed = this.b2bUserService.isUpdatingUserAllowed();
