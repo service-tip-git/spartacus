@@ -65,7 +65,7 @@ export class PickUpItemsDetailsComponent implements OnInit {
             this.context = data.context;
             this.itemsDetails =
               data.context === 'order'
-                ? this.deliveryPointsService.getDeliveryPointsOfServiceFromOrder()
+                ? this.deliveryPointsService.getDeliveryPointsOfServiceFromOrderWithEntryGroups()
                 : this.deliveryPointsService.getDeliveryPointsOfServiceFromCartWithEntryGroups();
           }),
           take(1)

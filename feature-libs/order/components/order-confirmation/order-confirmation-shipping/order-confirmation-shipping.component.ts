@@ -8,6 +8,7 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  inject,
   Input,
   OnDestroy,
   OnInit,
@@ -18,19 +19,18 @@ import {
   CartOutlets,
   DeliveryMode,
   OrderEntry,
-  OrderEntryGroup,
 } from '@spartacus/cart/base/root';
-import { Address, TranslationService } from '@spartacus/core';
+import { Address, FeatureConfigService, TranslationService } from '@spartacus/core';
 import {
   Order,
   OrderFacade,
   deliveryAddressCard,
   deliveryModeCard,
 } from '@spartacus/order/root';
-import { Card, HierarchyComponentService, HierarchyNode, OutletContextData } from '@spartacus/storefront';
+import { Card, HierarchyNode, OutletContextData } from '@spartacus/storefront';
 import { Observable, Subscription, combineLatest, of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { OrderDetailsService } from '../../order-details/order-details.service';
+import { OrderConsignmentService } from '@spartacus/order/core';
 
 @Component({
   selector: 'cx-order-confirmation-shipping',
@@ -38,7 +38,7 @@ import { OrderDetailsService } from '../../order-details/order-details.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OrderConfirmationShippingComponent implements OnInit, OnDestroy {
-  // private featureConfig = inject(FeatureConfigService);
+  private featureConfig = inject(FeatureConfigService);
 
   @Input() showItemList: boolean = true;
 
@@ -54,20 +54,25 @@ export class OrderConfirmationShippingComponent implements OnInit, OnDestroy {
         this.entries = order?.entries?.filter(
           (entry) => !entry.deliveryPointOfService
         );
+
+        if (this.featureConfig.isEnabled('enableBundles') && order && this.entries) {
+          const { filteredEntries, hierarchyTrees }
+             = this.orderConsignmentService.processShippingEntries(order, this.entries);
+          this.entries = filteredEntries;
+          this.shippingHierarchyTrees = hierarchyTrees;
+        }
       })
     );
 
   protected subscription = new Subscription();
 
-  entryGroups$: Observable<OrderEntryGroup[]> = of([]);
-  bundles$: Observable<HierarchyNode[]>;
+  shippingHierarchyTrees: HierarchyNode[];
 
   constructor(
     protected orderFacade: OrderFacade,
     protected translationService: TranslationService,
     protected cd: ChangeDetectorRef,
-    protected orderDetailsService: OrderDetailsService,
-    protected hierachyService: HierarchyComponentService,
+    protected orderConsignmentService: OrderConsignmentService,
     @Optional()
     protected outlet?: OutletContextData<{
       showItemList?: boolean;
@@ -87,20 +92,6 @@ export class OrderConfirmationShippingComponent implements OnInit, OnDestroy {
         this.cd.markForCheck();
       })
     );
-
-    // if (this.featureConfig.isEnabled('enableBundles')) {
-    //   // All entryGroups from order
-    //   this.entryGroups$ = this.orderDetailsService.getDeliveryEntryGroups();
-    //   this.hierachyService.getEntriesFromGroups(this.entryGroups$)
-    //   .pipe(
-    //     tap((result) => {
-    //       this.entries = result.length > 0 ? result : undefined;;
-    //     })
-    //   ).subscribe();
-    //   this.bundles$ = this.hierachyService.getBundlesFromGroups(
-    //     this.entryGroups$
-    //   );
-    // }
   }
 
   getDeliveryAddressCard(
