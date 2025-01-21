@@ -305,7 +305,7 @@ describe('OneTimePasswordRegisterComponent', () => {
       });
     });
 
-    it('should not create registration verification token with valid form', () => {
+    it('should not create registration verification token with invalid form', () => {
       spyOn(
         registrationVerificationTokenFacade,
         'createVerificationToken'
