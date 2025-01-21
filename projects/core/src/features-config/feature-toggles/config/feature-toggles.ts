@@ -175,6 +175,11 @@ export interface FeatureTogglesInterface {
   a11yNavigationUiKeyboardControls?: boolean;
 
   /**
+   * In `FutureStockAccordionComponent` use `cx-color-text` for button color
+   */
+  a11yUseProperTextColorForFutureStockAccordion?: boolean;
+
+  /**
    * Improves screen reader(VoiceOver, JAWS) narration of menu buttons inside of 'NavigationUIComponent'.
    */
   a11yNavMenuExpandStateReadout?: boolean;
@@ -210,6 +215,16 @@ export interface FeatureTogglesInterface {
    * Element containing the 'PopoverDirective' will be refocused after the popover is closed.
    */
   a11yPopoverFocus?: boolean;
+
+  /**
+   * Fix popover appearance when a High Contrast Theme is applied.
+   */
+  a11yPopoverHighContrast?: boolean;
+
+  /**
+   * 'TabComponent' disallow automatic tab activation.
+   */
+  a11yTabsManualActivation?: boolean;
 
   /**
    * Adds Datepicker and Combobox label and corrects heading order for 'CheckoutScheduleReplenishmentOrderComponent'.
@@ -588,6 +603,8 @@ export interface FeatureTogglesInterface {
   /**
    * 'NgSelectA11yDirective' will now provide a count of items for each availble option.
    * Including this count in aria-label will help screen readers to provide more context to the user.
+   * Update (since 2211.33): This feature toggle and the logic behind it should be removed
+   * in next major relase since ng-select now correctly handles aria-label values of select options.
    */
   a11yNgSelectOptionsCount?: boolean;
 
@@ -816,6 +833,12 @@ export interface FeatureTogglesInterface {
   a11yHideConsentButtonWhenBannerVisible?: boolean;
 
   /**
+   * Adds a unique `aria-label` to repeating buttons that contain the same text.
+   * Affects: SetPreferredStoreComponent
+   */
+  a11yRepeatingButtonsUniqueLabels?: boolean;
+
+  /**
    * Ensures that borders across all UI elements are visible and meet accessibility standards in high-contrast dark and light themes.
    * This change is applied globally to enhance usability for users relying on high-contrast modes.
    * Affects: CustomerTickingListComponent, CheckoutReviewPaymentComponent, SavedCartListComponent
@@ -977,6 +1000,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yRequiredAsterisks: true,
   a11yQuantityOrderTabbing: true,
   a11yNavigationUiKeyboardControls: true,
+  a11yUseProperTextColorForFutureStockAccordion: false,
   a11yNavMenuExpandStateReadout: false,
   a11yOrderConfirmationHeadingOrder: true,
   a11yStarRating: true,
@@ -984,6 +1008,8 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yPreventHorizontalScroll: false,
   a11yReorderDialog: true,
   a11yPopoverFocus: true,
+  a11yPopoverHighContrast: false,
+  a11yTabsManualActivation: false,
   a11yScheduleReplenishment: true,
   a11yScrollToTop: true,
   a11ySavedCartsZoom: true,
@@ -1085,6 +1111,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yFocusOnCardAfterSelecting: false,
   a11ySearchableDropdownFirstElementFocus: false,
   a11yHideConsentButtonWhenBannerVisible: false,
+  a11yRepeatingButtonsUniqueLabels: false,
   a11yHighContrastBorders: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
