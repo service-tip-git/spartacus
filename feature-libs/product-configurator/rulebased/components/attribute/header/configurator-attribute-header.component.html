@@ -3,7 +3,7 @@
   {{ 'configurator.attribute.notVisibleAttributeMsg' | cxTranslate }}
 </div>
 
-<div class="cx-header-label-row">
+<div class="cx-header-label-container">
   <label
     id="{{ createAttributeUiKey('label', attribute.name) }}"
     [class.cx-required-error]="showRequiredMessageForDomainAttribute$ | async"

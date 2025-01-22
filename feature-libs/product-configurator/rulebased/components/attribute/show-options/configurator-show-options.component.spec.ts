@@ -10,7 +10,7 @@ class MockConfiguratorCommonsService {
   readAttributeDomain() {}
 }
 
-describe('ConfiguratorShowOptions', () => {
+describe('ConfiguratorShowOptionsComponent', () => {
   let component: ConfiguratorShowOptionsComponent;
   let fixture: ComponentFixture<ConfiguratorShowOptionsComponent>;
   let htmlElem: HTMLElement;
@@ -43,7 +43,7 @@ describe('ConfiguratorShowOptions', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render show options button', () => {
+  it('should render "Show Options" button', () => {
     CommonConfiguratorTestUtilsService.expectElementPresent(
       expect,
       htmlElem,
@@ -51,7 +51,7 @@ describe('ConfiguratorShowOptions', () => {
     );
   });
 
-  it('should delegate to configurator commons service when clicking show more options button', () => {
+  it('should delegate to configurator commons service when clicking "Show Options" button', () => {
     fixture.debugElement.query(By.css('.btn')).nativeElement.click();
     expect(configuratorCommonsService.readAttributeDomain).toHaveBeenCalledWith(
       component.attributeComponentContext.owner,

@@ -13,12 +13,16 @@ import { ConfiguratorAttributeCompositionContext } from '../composition/configur
   templateUrl: './configurator-show-options.component.html',
 })
 export class ConfiguratorShowOptionsComponent {
+  @Input() attributeComponentContext: ConfiguratorAttributeCompositionContext;
+
   constructor(
     protected configuratorCommonsService: ConfiguratorCommonsService
   ) {}
 
-  @Input() attributeComponentContext: ConfiguratorAttributeCompositionContext;
-
+  /**
+   * fires a request to read the attribute domain,
+   * so that all options of the attribute become visible on the UI
+   */
   showOptions() {
     this.configuratorCommonsService.readAttributeDomain(
       this.attributeComponentContext.owner,

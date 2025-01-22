@@ -192,6 +192,7 @@ describe('ConfigAttributeHeaderComponent', () => {
     component.groupId = 'testGroup';
     component.attribute.required = false;
     component.attribute.incomplete = true;
+    component.attribute.domainOnDemand = false;
     component.attribute.uiType = Configurator.UiType.RADIOBUTTON;
     component.groupType = Configurator.GroupType.ATTRIBUTE_GROUP;
     component.isNavigationToGroupEnabled = true;
@@ -328,14 +329,14 @@ describe('ConfigAttributeHeaderComponent', () => {
       );
     });
 
-    it('should not render "show more options" button when domainOnDemand is false', () => {
+    it('should not render "Show Options" button when domainOnDemand is false', () => {
       CommonConfiguratorTestUtilsService.expectElementNotPresent(
         expect,
         htmlElem,
         'cx-configurator-show-options'
       );
     });
-    it('should render "show more options" button when domainOnDemand is true', () => {
+    it('should render "Show Options" button when domainOnDemand is true', () => {
       component.attribute.domainOnDemand = true;
       fixture.detectChanges();
       CommonConfiguratorTestUtilsService.expectElementPresent(

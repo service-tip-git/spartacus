@@ -395,7 +395,7 @@ describe('ConfiguratorEffect', () => {
       attributeKey: attributeKey,
     });
 
-    it('should emit update price action abd success action with content in case connector call goes fine', () => {
+    it('should emit update price action and success action with content in case connector call goes fine', () => {
       const readSuccessAction =
         new ConfiguratorActions.ReadConfigurationSuccess(productConfiguration);
       const updatePricesAction = new ConfiguratorActions.UpdatePriceSummary({
@@ -426,7 +426,7 @@ describe('ConfiguratorEffect', () => {
       expect(configEffects.readAttributeDomain$).toBeObservable(expected);
     });
 
-    it('must not emit anything in case source action is not covered', () => {
+    it('should not emit anything in case source action is not covered', () => {
       const action = new ConfiguratorActions.ReadConfiguration({
         configuration: productConfiguration,
         groupId: groupId,
