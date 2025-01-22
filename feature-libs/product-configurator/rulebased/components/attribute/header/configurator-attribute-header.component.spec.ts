@@ -344,16 +344,6 @@ describe('ConfigAttributeHeaderComponent', () => {
         'cx-configurator-show-options'
       );
     });
-    it('should not render "show more options" button when domainOnDemand is true, but uiType is DROPDOWN_LAZY_LOAD', () => {
-      component.attribute.domainOnDemand = true;
-      component.attribute.uiType = Configurator.UiType.DROPDOWN_LAZY_LOAD;
-      fixture.detectChanges();
-      CommonConfiguratorTestUtilsService.expectElementNotPresent(
-        expect,
-        htmlElem,
-        'cx-configurator-show-options'
-      );
-    });
 
     it('should render a label as required', () => {
       component.attribute.required = true;

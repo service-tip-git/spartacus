@@ -54,15 +54,9 @@
 
   .cx-header-label-row {
     display: flex;
-    @include media-breakpoint-down(xs) {
-      flex-direction: column;
-    }
+    flex-direction: column;
     .btn {
-      padding-block-start: 0;
-      padding-block-end: 8px;
-      @include media-breakpoint-down(xs) {
-        padding-inline-start: 0;
-      }
+      padding: 0;
     }
   }
 }

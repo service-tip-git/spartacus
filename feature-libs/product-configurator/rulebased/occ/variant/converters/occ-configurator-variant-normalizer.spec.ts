@@ -914,14 +914,6 @@ describe('OccConfiguratorVariantNormalizer', () => {
       ).toBe(Configurator.UiType.DROPDOWN);
     });
 
-    it('should return UIType DROPDOWN_LAZY_LOAD for Drop Down occ configurator type when attribute domain must be read on demand', () => {
-      sourceAttribute.type = OccConfigurator.UiType.DROPDOWN;
-      sourceAttribute.domainOnDemand = true;
-      expect(
-        occConfiguratorVariantNormalizer.convertAttributeType(sourceAttribute)
-      ).toBe(Configurator.UiType.DROPDOWN_LAZY_LOAD);
-    });
-
     it('should return UIType Checkbox for Checkbox occ configurator type', () => {
       sourceAttribute.type = OccConfigurator.UiType.CHECK_BOX_LIST;
       expect(
