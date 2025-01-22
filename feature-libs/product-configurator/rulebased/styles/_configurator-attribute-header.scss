@@ -58,10 +58,10 @@
       flex-direction: column;
     }
     .btn {
-      padding-top: 0;
-      padding-bottom: 8px;
+      padding-block-start: 0;
+      padding-block-end: 8px;
       @include media-breakpoint-down(xs) {
-        padding-left: 0;
+        padding-inline-start: 0;
       }
     }
   }
