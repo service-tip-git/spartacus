@@ -136,6 +136,10 @@ export class CustomerTicketingCreateDialogComponent
     }
   }
 
+  associatedToSelected(associatedTo: AssociatedObject | undefined): void {
+    this.form.get('associatedTo')?.setValue(associatedTo);
+  }
+
   protected handleError(error: any): void {
     if (error instanceof HttpErrorModel) {
       (error.details ?? []).forEach((err) => {

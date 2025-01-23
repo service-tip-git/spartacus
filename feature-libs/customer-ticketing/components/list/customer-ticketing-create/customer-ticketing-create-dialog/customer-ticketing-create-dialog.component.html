@@ -35,6 +35,7 @@
           </span>
           <textarea
             [maxLength]="inputCharactersForSubject"
+            required="true"
             class="form-control"
             formControlName="subject"
             rows="1"
@@ -47,7 +48,7 @@
             [control]="form.get('subject')"
           ></cx-form-errors>
           <p class="cx-customer-ticket-input-hint">
-            {{
+            {{  
               'customerTicketing.charactersLeft'
                 | cxTranslate: { count: subjectCharacterLeft }
             }}
@@ -55,24 +56,29 @@
         </label>
 
         <label *ngIf="ticketCategories$ | async as ticketCategories">
-          <span class="cx-customer-ticket-label label-content">
+          <span class="cx-customer-ticket-label label-content required">
             {{ 'createCustomerTicket.category' | cxTranslate }}
             <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
           </span>
-          <select class="form-control" formControlName="ticketCategory">
-            <option value="" disabled selected>
-              {{ 'createCustomerTicket.selectCategory' | cxTranslate }}
-            </option>
-            <option
-              *ngFor="let category of ticketCategories"
-              [ngValue]="category"
-              [selected]="category.id === selectedCategory?.id"
-            >
-              {{ category.name }}
-            </option>
-          </select>
+          <ng-select
+            [inputAttrs]="{ required: 'true' }"
+            class="ticket-category-select"
+            id="ticket-category-select"
+            [searchable]="true"
+            [clearable]="false"
+            [items]="ticketCategories"
+            [placeholder]="'createCustomerTicket.selectCategory' | cxTranslate"
+            bindLabel="name"
+            bindValue="id"
+            formControlName="ticketCategory"
+            [cxNgSelectA11y]="{}"
+            [attr.aria-describedby]="'ticketCategoryError'"
+          >
+          </ng-select>
 
           <cx-form-errors
+            id="ticketCategoryError"
+            aria-live="off"
             [control]="form.get('ticketCategory')"
           ></cx-form-errors>
         </label>
@@ -84,24 +90,22 @@
             <span class="cx-customer-ticket-label label-content">
               {{ 'createCustomerTicket.associateTo' | cxTranslate }}
             </span>
-            <select class="form-control" formControlName="associatedTo">
-              <option value="" disabled selected>
-                {{
-                  'createCustomerTicket.optionallySelectAssociatedObject'
-                    | cxTranslate
-                }}
-              </option>
-              <option
-                *ngFor="let associatedObject of ticketAssociatedObjects"
-                [ngValue]="associatedObject"
-                [selected]="
-                  associatedObject.code === selectedAssociatedObject?.code
-                "
-              >
-                {{ associatedObject.type }}
-                {{ associatedObject.code }}
-              </option>
-            </select>
+            <ng-select
+              [clearable]="false"
+              [items]="ticketAssociatedObjects"
+              [placeholder]="'createCustomerTicket.optionallySelectAssociatedObject' | cxTranslate"
+              [searchable]="false"
+              bindLabel="code"
+              bindValue="type"
+              formControlName="associatedTo"
+              id="associated-to-select"
+              (change)="associatedToSelected($event)"
+              [cxNgSelectA11y]="{}"
+            >
+              <ng-template ng-option-tmp let-item="item" let-search="searchTerm" let-index="index">
+                <span >{{ item.type + ' ' + item.code }}</span>
+              </ng-template>
+            </ng-select>
           </label>
         </ng-container>
 
@@ -111,6 +115,7 @@
             <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
           </span>
           <textarea
+            required="true"
             [maxLength]="inputCharactersLimit"
             class="form-control"
             formControlName="message"
