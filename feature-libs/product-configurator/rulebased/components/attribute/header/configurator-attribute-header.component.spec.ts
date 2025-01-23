@@ -37,6 +37,7 @@ class MockConfiguratorShowMoreComponent {
 @Component({
   selector: 'cx-configurator-show-options',
   template: '',
+  standalone: false,
 })
 class MockConfiguratorShowOptionsComponent {
   @Input() attributeComponentContext: ConfiguratorAttributeCompositionContext;

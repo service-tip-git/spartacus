@@ -11,6 +11,7 @@ import { ConfiguratorAttributeCompositionContext } from '../composition/configur
 @Component({
   selector: 'cx-configurator-show-options',
   templateUrl: './configurator-show-options.component.html',
+  standalone: false,
 })
 export class ConfiguratorShowOptionsComponent {
   @Input() attributeComponentContext: ConfiguratorAttributeCompositionContext;
