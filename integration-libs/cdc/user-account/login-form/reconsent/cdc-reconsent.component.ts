@@ -121,9 +121,7 @@ export class CdcReconsentComponent implements OnInit, OnDestroy {
     }
   }
 
-  private buildPreferenceList(
-    templates: ConsentTemplate[]
-  ): CdcConsent[] {
+  private buildPreferenceList(templates: ConsentTemplate[]): CdcConsent[] {
     const preferences: Record<string, CdcConsent> =
       this.reconsentEvent.preferences || {};
     const consents = Object.entries(preferences).map(([id, value]) => ({

@@ -13,7 +13,10 @@ import {
 import { UserProfileFacade } from '@spartacus/user/profile/root';
 import { Observable, throwError } from 'rxjs';
 import { CdcConsentsLocalStorageService } from './cdc-consents-local-storage.service';
-import { CDC_PREFERENCE_SERIALIZER, CDC_USER_PREFERENCE_SERIALIZER } from '../converters/converter';
+import {
+  CDC_PREFERENCE_SERIALIZER,
+  CDC_USER_PREFERENCE_SERIALIZER,
+} from '../converters/converter';
 import { tap } from 'rxjs/operators';
 import { CdcJsService } from '../../service';
 import { CdcConsent } from '../model';

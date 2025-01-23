@@ -9,9 +9,7 @@ import { Converter } from '@spartacus/core';
 import { CdcConsent } from '../model';
 
 @Injectable({ providedIn: 'root' })
-export class CdcPreferenceSerializer
-  implements Converter<CdcConsent[], any>
-{
+export class CdcPreferenceSerializer implements Converter<CdcConsent[], any> {
   /**
    * Generate CDC preferences from consent objects
    * @param cdcConsents List of consents with their statuses
