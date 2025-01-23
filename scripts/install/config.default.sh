@@ -61,6 +61,7 @@ CLONE_DIR="clone"
 INSTALLATION_DIR="apps"
 E2E_TEST_DIR=${CLONE_DIR}/projects/storefrontapp-e2e-cypress
 
+# TODO: CXSPA-9115 change to `^19.0.4` after merging https://github.com/SAP/spartacus/pull/19772
 ANGULAR_CLI_VERSION='^18.2.9'
 SPARTACUS_VERSION='latest'
 
