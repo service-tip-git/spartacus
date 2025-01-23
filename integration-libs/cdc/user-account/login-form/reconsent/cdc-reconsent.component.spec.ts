@@ -29,7 +29,7 @@ class MockCdcConsentManagementComponentService
 {
   getConsents = createSpy().and.returnValue(of([]));
   getCdcConsentIDs = createSpy().and.returnValue(of([]));
-  checkIfMandatory = createSpy().and.returnValue(true);
+  isConsentMandatory = createSpy().and.returnValue(true);
 }
 
 class MockAnonymousConsentsService

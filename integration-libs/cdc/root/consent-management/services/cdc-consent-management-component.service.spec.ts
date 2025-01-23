@@ -70,14 +70,14 @@ describe('CdcConsentManagementService', () => {
       expect(service.getCdcConsentIDs).toHaveBeenCalled();
     });
   });
-  describe('checkIfMandatory', () => {
+  describe('isConsentMandatory', () => {
     it('should return true if consent is mandatory', () => {
       service.getCdcConsentIDs = createSpy().and.returnValue(['a']);
-      expect(service.checkIfMandatory('a')).toEqual(true);
+      expect(service.isConsentMandatory('a')).toEqual(true);
     });
     it('should return false if consent is not mandatory', () => {
       service.getCdcConsentIDs = createSpy().and.returnValue(['a']);
-      expect(service.checkIfMandatory('b')).toEqual(false);
+      expect(service.isConsentMandatory('b')).toEqual(false);
     });
   });
 });

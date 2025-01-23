@@ -179,7 +179,7 @@ export class CDCRegisterComponentService extends RegisterComponentService {
     const consentArray = this.fb.array([]);
     const templates: ConsentTemplate[] = this.fetchCdcConsentsForRegistration();
     for (const template of templates) {
-      const isMandatory = this.cdcConsentManagementService.checkIfMandatory(
+      const isMandatory = this.cdcConsentManagementService.isConsentMandatory(
         template.id ?? ''
       );
       consentArray.push(
@@ -209,7 +209,7 @@ export class CDCRegisterComponentService extends RegisterComponentService {
       const returnConsent: any = {};
       returnConsent['template'] = template;
       returnConsent['required'] =
-        this.cdcConsentManagementService.checkIfMandatory(template.id ?? '');
+        this.cdcConsentManagementService.isConsentMandatory(template.id ?? '');
       returnConsents.push(returnConsent);
     }
     return returnConsents;

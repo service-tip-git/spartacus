@@ -94,7 +94,7 @@ class MockCdcConsentManagementService
   implements Partial<CdcConsentManagementComponentService>
 {
   getCdcConsentIDs = createSpy();
-  checkIfMandatory(_id: string): boolean {
+  isConsentMandatory(_id: string): boolean {
     return true;
   }
 }
@@ -420,7 +420,7 @@ describe('CdcRegisterComponentService', () => {
     expect(fb.array).toHaveBeenCalled();
   });
   it('loadAdditionalConsents', () => {
-    spyOn(cdcConsentManagementService, 'checkIfMandatory')
+    spyOn(cdcConsentManagementService, 'isConsentMandatory')
       .withArgs('consent2.terms2')
       .and.returnValue(false)
       .withArgs('consent3.terms3')
