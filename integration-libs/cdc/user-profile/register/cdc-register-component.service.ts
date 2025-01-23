@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import {
   UntypedFormArray,
   UntypedFormBuilder,
@@ -15,8 +15,7 @@ import {
   CdcConsentManagementComponentService,
   CdcJsService,
   CdcLoadUserTokenFailEvent,
-  CdcUserConsentService,
-  CDC_USER_PREFERENCE_SERIALIZER,
+  CDC_PREFERENCE_SERIALIZER,
 } from '@spartacus/cdc/root';
 import {
   AnonymousConsentsService,
@@ -36,12 +35,11 @@ import {
   UserRegisterFacade,
   UserSignUp,
 } from '@spartacus/user/profile/root';
-import { merge, Observable, throwError } from 'rxjs';
+import { Observable, merge, throwError } from 'rxjs';
 import { filter, map, switchMap, tap } from 'rxjs/operators';
 
 @Injectable()
 export class CDCRegisterComponentService extends RegisterComponentService {
-  protected cdcUserConsentService = inject(CdcUserConsentService);
   protected registerCommand: Command<{ user: UserSignUp }, User> =
     this.command.create(
       ({ user }) =>
@@ -140,7 +138,7 @@ export class CDCRegisterComponentService extends RegisterComponentService {
       consent.currentConsent.consentGivenDate = new Date();
       const serializedPreference: any = this.converter.convert(
         consent,
-        CDC_USER_PREFERENCE_SERIALIZER
+        CDC_PREFERENCE_SERIALIZER
       );
       preferences = Object.assign(preferences ?? {}, serializedPreference);
     }
@@ -232,8 +230,10 @@ export class CDCRegisterComponentService extends RegisterComponentService {
       password,
       titleCode,
       uid: email.toLowerCase(),
-      preferences:
-        this.cdcUserConsentService.generateCdcPreferences(additionalConsents),
+      preferences: this.converter.convert(
+        additionalConsents,
+        CDC_PREFERENCE_SERIALIZER
+      ),
     };
   }
 }

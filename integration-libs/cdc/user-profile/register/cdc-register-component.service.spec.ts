@@ -5,7 +5,6 @@ import { Store } from '@ngrx/store';
 import {
   CdcConsentManagementComponentService,
   CdcJsService,
-  CdcUserConsentService,
 } from '@spartacus/cdc/root';
 import {
   AnonymousConsentsService,
@@ -74,9 +73,6 @@ class MockAuthService implements Partial<AuthService> {
 
 class MockEventService implements Partial<EventService> {
   get = createSpy().and.callFake(() => of(false)); //no failures
-}
-class MockCdcUserConsentService implements Partial<CdcUserConsentService> {
-  generateCdcPreferences = createSpy().and.returnValue({});
 }
 
 class MockCDCJsService implements Partial<CdcJsService> {
@@ -169,10 +165,6 @@ describe('CdcRegisterComponentService', () => {
         {
           provide: AnonymousConsentsService,
           useClass: MockAnonymousConsentsService,
-        },
-        {
-          provide: CdcUserConsentService,
-          useClass: MockCdcUserConsentService,
         },
         CDCRegisterComponentService,
         provideHttpClient(withInterceptorsFromDi()),

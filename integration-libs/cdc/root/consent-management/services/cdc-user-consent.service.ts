@@ -13,7 +13,7 @@ import {
 import { UserProfileFacade } from '@spartacus/user/profile/root';
 import { Observable, throwError } from 'rxjs';
 import { CdcConsentsLocalStorageService } from './cdc-consents-local-storage.service';
-import { CDC_USER_PREFERENCE_SERIALIZER } from '../converters/converter';
+import { CDC_PREFERENCE_SERIALIZER } from '../converters/converter';
 import { tap } from 'rxjs/operators';
 import { CdcJsService } from '../../service';
 import { CdcConsentWithStatus } from '../model';
@@ -57,7 +57,7 @@ export class CdcUserConsentService {
       }
       const preference: any = this.converter.convert(
         consent,
-        CDC_USER_PREFERENCE_SERIALIZER
+        CDC_PREFERENCE_SERIALIZER
       );
       serializedPreference = Object.assign(serializedPreference, preference);
     }
@@ -98,7 +98,10 @@ export class CdcUserConsentService {
     user?: string,
     regToken?: string
   ): Observable<{ errorCode: number; errorMessage: string }> {
-    const serializedPreference = this.generateCdcPreferences(consentCodes);
+    const serializedPreference: any = this.converter.convert(
+      consentCodes,
+      CDC_PREFERENCE_SERIALIZER
+    );
 
     let userId: string = '';
     if (user === undefined) {
@@ -146,40 +149,5 @@ export class CdcUserConsentService {
       .subscribe((language) => (currentLanguage = language))
       .unsubscribe();
     return currentLanguage;
-  }
-
-  generateCdcPreferences(cdcConsents: CdcConsentWithStatus[]): any {
-    let preferences = null;
-    for (const cdcConsent of cdcConsents) {
-      const consent: ConsentTemplate = {};
-      consent.id = cdcConsent.id;
-      consent.currentConsent = {};
-      if (cdcConsent.isConsentGranted === true) {
-        consent.currentConsent.consentGivenDate = new Date();
-      } else if (cdcConsent.isConsentGranted === false) {
-        consent.currentConsent.consentWithdrawnDate = new Date();
-      }
-      const serializedPreference: any = this.converter.convert(
-        consent,
-        CDC_USER_PREFERENCE_SERIALIZER
-      );
-      preferences = this.deepMerge(preferences ?? {}, serializedPreference);
-    }
-    return preferences;
-  }
-
-  private deepMerge(target: any, source: any): any {
-    for (const key of Object.keys(source)) {
-      if (
-        source[key] &&
-        typeof source[key] === 'object' &&
-        !Array.isArray(source[key])
-      ) {
-        target[key] = this.deepMerge(target[key] ?? {}, source[key]);
-      } else {
-        target[key] = source[key];
-      }
-    }
-    return target;
   }
 }

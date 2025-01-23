@@ -23,7 +23,7 @@ import {
   ICON_TYPE,
   LaunchDialogService,
 } from '@spartacus/storefront';
-import { Subscription, BehaviorSubject, Observable, map } from 'rxjs';
+import { Subscription, Observable, map, of } from 'rxjs';
 import { CdcReconsentComponentService } from './cdc-reconsent-component.service';
 
 @Component({
@@ -39,13 +39,16 @@ export class CdcReconsentComponent implements OnInit, OnDestroy {
 
   form: UntypedFormGroup = new UntypedFormGroup({});
   iconTypes = ICON_TYPE;
-  loaded$ = new BehaviorSubject<boolean>(false);
+  loaded$: Observable<boolean> = of(false);
   templateList$: Observable<ConsentTemplate[]>;
   reconsentEvent: any = {};
   requiredReconsents: string[] = [];
   selectedConsents: string[] = [];
   disableSubmitButton: boolean = true;
-  totalConsents: number = 0;
+  /**
+   * @deprecated since 2211-ng19.0
+   */
+  totalConsents: number = 0; // CXSPA-9292: remove this property in next major release
 
   focusConfig: FocusConfig = {
     trap: true,
@@ -85,7 +88,7 @@ export class CdcReconsentComponent implements OnInit, OnDestroy {
         .includes(id)
     );
     this.disableSubmitButton = this.requiredReconsents.length > 0;
-    this.loaded$.next(true);
+    this.loaded$ = of(true);
   }
 
   onConsentChange(event: { given: boolean; template: ConsentTemplate }) {
@@ -103,9 +106,9 @@ export class CdcReconsentComponent implements OnInit, OnDestroy {
 
   dismissDialog(reason?: any, message?: string): void {
     if (reason === 'Proceed To Login') {
-      this.loaded$.next(false);
+      this.loaded$ = of(false);
       this.templateList$.subscribe((templates) => {
-        const consents = this.buildConsents(templates);
+        const consents = this.buildPreferenceList(templates);
         if (consents.length) {
           this.cdcReconsentService.savePreferencesAndLogin(
             consents,
@@ -118,7 +121,9 @@ export class CdcReconsentComponent implements OnInit, OnDestroy {
     }
   }
 
-  private buildConsents(templates: ConsentTemplate[]): CdcConsentWithStatus[] {
+  private buildPreferenceList(
+    templates: ConsentTemplate[]
+  ): CdcConsentWithStatus[] {
     const preferences: Record<string, CdcConsent> =
       this.reconsentEvent.preferences || {};
     const consents = Object.entries(preferences).map(([id, value]) => ({
@@ -142,7 +147,7 @@ export class CdcReconsentComponent implements OnInit, OnDestroy {
     return consents;
   }
 
-  areAllMandatoryConsentsGiven(): Observable<boolean> {
+  private areAllMandatoryConsentsGiven(): Observable<boolean> {
     return this.templateList$.pipe(
       map((templates) =>
         templates.every(

@@ -6,8 +6,17 @@
 
 import { InjectionToken } from '@angular/core';
 import { Converter, ConsentTemplate } from '@spartacus/core';
+import { CdcConsentWithStatus } from '../model';
 
+/**
+ * @deprecated since 2211-ng19.0
+ */
+// CXSPA-9292: remove this in next major release
 //maintaining target as any because 'preferences' in cdc can have any structure
 export const CDC_USER_PREFERENCE_SERIALIZER = new InjectionToken<
   Converter<ConsentTemplate, any>
 >('CdcUserPreferenceSerializer');
+
+export const CDC_PREFERENCE_SERIALIZER = new InjectionToken<
+  Converter<CdcConsentWithStatus[], any>
+>('CdcPreferenceSerializer');

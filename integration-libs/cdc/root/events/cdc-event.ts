@@ -27,5 +27,5 @@ export class CdcReConsentEvent extends CxEvent {
   consentIds: string[];
   errorMessage: string;
   regToken: string;
-  preferences: Record<string, CdcConsent>;
+  preferences?: Record<string, CdcConsent>;
 }
