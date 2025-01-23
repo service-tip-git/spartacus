@@ -24,13 +24,17 @@ export class CdcReconsentComponentService implements OnDestroy {
   ) {}
   protected subscription: Subscription = new Subscription();
 
-  //TODO: CXSPA-XXXX: Rename this method to `saveConsentAndLogin` in next major release
-  saveConsentAndLoginV2(consents: CdcConsentWithStatus[], userParams: any) {
+  /**
+   * saves the preferences given in reconsent pop-up and triggers a re-login
+   * @param consents array of consent ID with status
+   * @param userParams data from login session
+   */
+  savePreferencesAndLogin(consents: CdcConsentWithStatus[], userParams: any) {
     this.subscription.add(
       this.cdcJsService.didLoad().subscribe((cdcLoaded) => {
         if (cdcLoaded) {
           this.cdcUserConsentService
-            .updateCdcConsentV2(
+            .updateCdcUserPreferences(
               consents,
               userParams?.user,
               userParams?.regToken
@@ -74,8 +78,9 @@ export class CdcReconsentComponentService implements OnDestroy {
    * saves the consent given from reconsent pop-up and triggers a re-login
    * @param consentId - array of consent IDs
    * @param userParams - data from login session
-   * @deprecated since 22XX.XX. Use saveConsentAndLoginV2 instead
+   * @deprecated since 22XX.XX. Use method savePreferencesAndLogin instead
    */
+  // CXSPA-9292: remove it in next major release
   saveConsentAndLogin(consentId: string[], userParams: any) {
     this.subscription.add(
       this.cdcJsService.didLoad().subscribe((cdcLoaded) => {

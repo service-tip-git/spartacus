@@ -35,8 +35,9 @@ export class CdcUserConsentService {
    * @param user - If user is not passed, the logged in user id will be fetched and used. If passed, it will be considered.
    * @param regToken - token
    * @returns - returns Observable with error code and status
-   * @deprecated since 22XX.XX. Use updateCdcConsentV2 instead
+   * @deprecated since 22XX.XX. Use method updateCdcUserPreferences instead
    */
+  // CXSPA-9292: remove it in next major release
   updateCdcConsent(
     isConsentGranted: boolean,
     consentCodes: string[],
@@ -85,8 +86,14 @@ export class CdcUserConsentService {
       );
   }
 
-  //TODO: CXSPA-XXXX: Rename this method to `updateCdcConsent` in next major release
-  updateCdcConsentV2(
+  /**
+   *
+   * @param consentCodes an array of consent ID with status
+   * @param user If user is not passed, the logged in user id will be fetched and used. If passed, it will be considered.
+   * @param regToken token
+   * @returns returns Observable with error code and status
+   */
+  updateCdcUserPreferences(
     consentCodes: CdcConsentWithStatus[],
     user?: string,
     regToken?: string
@@ -152,7 +159,6 @@ export class CdcUserConsentService {
       } else if (cdcConsent.isConsentGranted === false) {
         consent.currentConsent.consentWithdrawnDate = new Date();
       }
-      // consent.currentConsent.consentGivenDate = new Date();
       const serializedPreference: any = this.converter.convert(
         consent,
         CDC_USER_PREFERENCE_SERIALIZER

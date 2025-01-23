@@ -45,7 +45,9 @@ export class CdcUserConsentAdapter extends OccUserConsentAdapter {
       );
     } else {
       return this.cdcUserConsentService
-        .updateCdcConsentV2([{ id: consentTemplateId, isConsentGranted: true }])
+        .updateCdcUserPreferences([
+          { id: consentTemplateId, isConsentGranted: true },
+        ])
         .pipe(
           catchError((error: any) => throwError(error)),
           switchMap((result) => {
@@ -71,7 +73,9 @@ export class CdcUserConsentAdapter extends OccUserConsentAdapter {
       return super.withdrawConsent(userId, consentCode);
     } else {
       return this.cdcUserConsentService
-        .updateCdcConsentV2([{ id: consentId ?? '', isConsentGranted: false }])
+        .updateCdcUserPreferences([
+          { id: consentId ?? '', isConsentGranted: false },
+        ])
         .pipe(
           catchError((error: any) => throwError(error)),
           switchMap((result) => {

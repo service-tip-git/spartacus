@@ -89,9 +89,9 @@ export class RegisterComponentService {
     return {
       firstName,
       lastName,
-      uid: email.toLowerCase(),
       password,
       titleCode,
+      uid: email.toLowerCase(),
     };
   }
 }

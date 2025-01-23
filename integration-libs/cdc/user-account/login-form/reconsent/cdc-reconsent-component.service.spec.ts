@@ -22,7 +22,7 @@ class MockLaunchDialogService implements Partial<LaunchDialogService> {
   closeDialog = createSpy();
 }
 class MockCdcUserConsentService implements Partial<CdcUserConsentService> {
-  updateCdcConsentV2 = createSpy();
+  updateCdcUserPreferences = createSpy();
   updateCdcConsent = createSpy();
 }
 class MockCdcJsService implements Partial<CdcJsService> {
@@ -98,9 +98,10 @@ describe('CdcReconsentComponentService', () => {
       cdcJsService.loginUserWithoutScreenSet = createSpy().and.returnValue(
         of({ status: 'ok' })
       );
-      cdcUserConsentService.updateCdcConsentV2 = createSpy().and.returnValue(
-        of({ errorCode: 404, errorMessage: 'error during process' })
-      );
+      cdcUserConsentService.updateCdcUserPreferences =
+        createSpy().and.returnValue(
+          of({ errorCode: 404, errorMessage: 'error during process' })
+        );
       globalMessageService.add = createSpy().and.stub();
       service.saveConsentAndLogin(reconsentIds, userParams);
       expect(cdcJsService.didLoad).toHaveBeenCalled();
@@ -109,38 +110,38 @@ describe('CdcReconsentComponentService', () => {
       expect(globalMessageService.add).toHaveBeenCalled();
     });
   });
-  describe('saveConsentAndLoginV2', () => {
+  describe('savePreferencesAndLogin', () => {
     it('on successful save of re-consent and re-login', () => {
       cdcJsService.didLoad = createSpy().and.returnValue(of(true));
-      cdcUserConsentService.updateCdcConsentV2 = createSpy().and.returnValue(
-        of({ errorCode: 0, errorMessage: '' })
-      );
+      cdcUserConsentService.updateCdcUserPreferences =
+        createSpy().and.returnValue(of({ errorCode: 0, errorMessage: '' }));
       cdcJsService.loginUserWithoutScreenSet = createSpy().and.returnValue(
         of({ status: 'OK' })
       );
       spyOn(service, 'handleReconsentUpdateError').and.stub();
-      service.saveConsentAndLoginV2(reconsentIdsWithStatus, userParams);
+      service.savePreferencesAndLogin(reconsentIdsWithStatus, userParams);
       expect(cdcJsService.didLoad).toHaveBeenCalled();
       expect(cdcJsService.loginUserWithoutScreenSet).toHaveBeenCalledWith(
         userParams.user,
         userParams.password
       );
-      expect(cdcUserConsentService.updateCdcConsentV2).toHaveBeenCalled();
+      expect(cdcUserConsentService.updateCdcUserPreferences).toHaveBeenCalled();
       expect(service.handleReconsentUpdateError).not.toHaveBeenCalled();
     });
     it('on error during save of re-consent', () => {
       cdcJsService.didLoad = createSpy().and.returnValue(of(true));
-      cdcUserConsentService.updateCdcConsentV2 = createSpy().and.returnValue(
-        throwError({ errorCode: 404, errorMessage: 'error during process' })
-      );
+      cdcUserConsentService.updateCdcUserPreferences =
+        createSpy().and.returnValue(
+          throwError({ errorCode: 404, errorMessage: 'error during process' })
+        );
       cdcJsService.loginUserWithoutScreenSet = createSpy().and.returnValue(
         of({ status: 'OK' })
       );
       launchDialogService.closeDialog = createSpy().and.stub();
       spyOn(service, 'handleReconsentUpdateError').and.stub();
-      service.saveConsentAndLoginV2(reconsentIdsWithStatus, userParams);
+      service.savePreferencesAndLogin(reconsentIdsWithStatus, userParams);
       expect(cdcJsService.didLoad).toHaveBeenCalled();
-      expect(cdcUserConsentService.updateCdcConsentV2).toHaveBeenCalled();
+      expect(cdcUserConsentService.updateCdcUserPreferences).toHaveBeenCalled();
       expect(cdcJsService.loginUserWithoutScreenSet).not.toHaveBeenCalled();
       expect(service.handleReconsentUpdateError).toHaveBeenCalled();
     });
@@ -149,14 +150,17 @@ describe('CdcReconsentComponentService', () => {
       cdcJsService.loginUserWithoutScreenSet = createSpy().and.returnValue(
         of({ status: 'ok' })
       );
-      cdcUserConsentService.updateCdcConsentV2 = createSpy().and.returnValue(
-        of({ errorCode: 404, errorMessage: 'error during process' })
-      );
+      cdcUserConsentService.updateCdcUserPreferences =
+        createSpy().and.returnValue(
+          of({ errorCode: 404, errorMessage: 'error during process' })
+        );
       globalMessageService.add = createSpy().and.stub();
-      service.saveConsentAndLoginV2(reconsentIdsWithStatus, userParams);
+      service.savePreferencesAndLogin(reconsentIdsWithStatus, userParams);
       expect(cdcJsService.didLoad).toHaveBeenCalled();
       expect(cdcJsService.loginUserWithoutScreenSet).not.toHaveBeenCalled();
-      expect(cdcUserConsentService.updateCdcConsentV2).not.toHaveBeenCalled();
+      expect(
+        cdcUserConsentService.updateCdcUserPreferences
+      ).not.toHaveBeenCalled();
       expect(globalMessageService.add).toHaveBeenCalled();
     });
   });

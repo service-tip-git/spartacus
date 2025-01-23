@@ -89,7 +89,9 @@ export class CdcReconsentComponent implements OnInit, OnDestroy {
   }
 
   onConsentChange(event: { given: boolean; template: ConsentTemplate }) {
-    if (!event.template?.id) return;
+    if (!event.template?.id) {
+      return;
+    }
 
     const { given, template } = event;
     this.updateSelectedConsents(given, template.id ?? '');
@@ -105,8 +107,7 @@ export class CdcReconsentComponent implements OnInit, OnDestroy {
       this.templateList$.subscribe((templates) => {
         const consents = this.buildConsents(templates);
         if (consents.length) {
-          console.log(consents);
-          this.cdcReconsentService.saveConsentAndLoginV2(
+          this.cdcReconsentService.savePreferencesAndLogin(
             consents,
             this.reconsentEvent
           );
@@ -129,11 +130,10 @@ export class CdcReconsentComponent implements OnInit, OnDestroy {
       const existingIndex = consents.findIndex(
         (consent) => consent.id === template.id
       );
-      // If the id is already present, remove the existing item
+      // If id is already present, remove the existing entry
       if (existingIndex !== -1) {
         consents.splice(existingIndex, 1);
       }
-      //Push the new object into the array
       consents.push({
         id: template.id || '',
         isConsentGranted: this.selectedConsents.includes(template.id || ''),

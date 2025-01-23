@@ -188,7 +188,7 @@ describe('CdcReconsentComponent', () => {
     });
     describe('proceed to login', () => {
       it('should provide consent for a consent with new version', () => {
-        cdcReconsentService.saveConsentAndLoginV2 = createSpy().and.stub();
+        cdcReconsentService.savePreferencesAndLogin = createSpy().and.stub();
         component.reconsentEvent = {
           preferences: {
             'terms.use': { isConsentGranted: true },
@@ -199,7 +199,9 @@ describe('CdcReconsentComponent', () => {
         component.selectedConsents = ['terms.marketing'];
         component.loaded$ = new BehaviorSubject<boolean>(false);
         component.dismissDialog('Proceed To Login');
-        expect(cdcReconsentService.saveConsentAndLoginV2).toHaveBeenCalledWith(
+        expect(
+          cdcReconsentService.savePreferencesAndLogin
+        ).toHaveBeenCalledWith(
           [
             { id: 'terms.use', isConsentGranted: true },
             { id: 'terms.marketing', isConsentGranted: true },
@@ -208,7 +210,7 @@ describe('CdcReconsentComponent', () => {
         );
       });
       it('should provide consent for a newly added consent', () => {
-        cdcReconsentService.saveConsentAndLoginV2 = createSpy().and.stub();
+        cdcReconsentService.savePreferencesAndLogin = createSpy().and.stub();
         component.reconsentEvent = {
           preferences: {
             'terms.use': { isConsentGranted: true },
@@ -219,7 +221,9 @@ describe('CdcReconsentComponent', () => {
         component.selectedConsents = ['terms.marketing'];
         component.loaded$ = new BehaviorSubject<boolean>(false);
         component.dismissDialog('Proceed To Login');
-        expect(cdcReconsentService.saveConsentAndLoginV2).toHaveBeenCalledWith(
+        expect(
+          cdcReconsentService.savePreferencesAndLogin
+        ).toHaveBeenCalledWith(
           [
             { id: 'terms.use', isConsentGranted: true },
             { id: 'consent.survey', isConsentGranted: false },
@@ -229,7 +233,7 @@ describe('CdcReconsentComponent', () => {
         );
       });
       it('should not provide consent for a consent with new version, if not checked in reconsent popup', () => {
-        cdcReconsentService.saveConsentAndLoginV2 = createSpy().and.stub();
+        cdcReconsentService.savePreferencesAndLogin = createSpy().and.stub();
         component.reconsentEvent = {
           preferences: {
             'terms.use': { isConsentGranted: true },
@@ -240,7 +244,9 @@ describe('CdcReconsentComponent', () => {
         component.selectedConsents = [];
         component.loaded$ = new BehaviorSubject<boolean>(false);
         component.dismissDialog('Proceed To Login');
-        expect(cdcReconsentService.saveConsentAndLoginV2).toHaveBeenCalledWith(
+        expect(
+          cdcReconsentService.savePreferencesAndLogin
+        ).toHaveBeenCalledWith(
           [
             { id: 'terms.use', isConsentGranted: true },
             { id: 'consent.survey', isConsentGranted: false },
@@ -249,7 +255,7 @@ describe('CdcReconsentComponent', () => {
         );
       });
       it('should provide consent for a consent if checked in popup', () => {
-        cdcReconsentService.saveConsentAndLoginV2 = createSpy().and.stub();
+        cdcReconsentService.savePreferencesAndLogin = createSpy().and.stub();
         component.reconsentEvent.preference = {
           preferences: {
             'terms.use': { isConsentGranted: true },
@@ -260,7 +266,9 @@ describe('CdcReconsentComponent', () => {
         component.selectedConsents = ['consent.survey'];
         component.loaded$ = new BehaviorSubject<boolean>(false);
         component.dismissDialog('Proceed To Login');
-        expect(cdcReconsentService.saveConsentAndLoginV2).toHaveBeenCalledWith(
+        expect(
+          cdcReconsentService.savePreferencesAndLogin
+        ).toHaveBeenCalledWith(
           [
             { id: 'consent.survey', isConsentGranted: true },
             //{ id: 'terms.use', isConsentGranted: true },
