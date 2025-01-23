@@ -16,6 +16,7 @@ import {
   CdcJsService,
   CdcLoadUserTokenFailEvent,
   CDC_PREFERENCE_SERIALIZER,
+  CDC_USER_PREFERENCE_SERIALIZER,
 } from '@spartacus/cdc/root';
 import {
   AnonymousConsentsService,
@@ -138,7 +139,7 @@ export class CDCRegisterComponentService extends RegisterComponentService {
       consent.currentConsent.consentGivenDate = new Date();
       const serializedPreference: any = this.converter.convert(
         consent,
-        CDC_PREFERENCE_SERIALIZER
+        CDC_USER_PREFERENCE_SERIALIZER
       );
       preferences = Object.assign(preferences ?? {}, serializedPreference);
     }

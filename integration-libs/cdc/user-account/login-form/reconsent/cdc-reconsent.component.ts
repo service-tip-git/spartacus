@@ -12,7 +12,7 @@ import {
   inject,
 } from '@angular/core';
 import { UntypedFormGroup } from '@angular/forms';
-import { ConsentTemplate, AnonymousConsentsService } from '@spartacus/core';
+import { AnonymousConsentsService, ConsentTemplate } from '@spartacus/core';
 import {
   CdcConsent,
   CdcConsentManagementComponentService,

@@ -13,7 +13,7 @@ import {
 import { UserProfileFacade } from '@spartacus/user/profile/root';
 import { Observable, throwError } from 'rxjs';
 import { CdcConsentsLocalStorageService } from './cdc-consents-local-storage.service';
-import { CDC_PREFERENCE_SERIALIZER } from '../converters/converter';
+import { CDC_PREFERENCE_SERIALIZER, CDC_USER_PREFERENCE_SERIALIZER } from '../converters/converter';
 import { tap } from 'rxjs/operators';
 import { CdcJsService } from '../../service';
 import { CdcConsentWithStatus } from '../model';
@@ -57,7 +57,7 @@ export class CdcUserConsentService {
       }
       const preference: any = this.converter.convert(
         consent,
-        CDC_PREFERENCE_SERIALIZER
+        CDC_USER_PREFERENCE_SERIALIZER
       );
       serializedPreference = Object.assign(serializedPreference, preference);
     }
