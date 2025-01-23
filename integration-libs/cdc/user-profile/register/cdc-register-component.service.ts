@@ -4,9 +4,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import {
-  FormControl,
   UntypedFormArray,
   UntypedFormBuilder,
   Validators,
@@ -16,6 +15,7 @@ import {
   CdcConsentManagementComponentService,
   CdcJsService,
   CdcLoadUserTokenFailEvent,
+  CdcUserConsentService,
   CDC_USER_PREFERENCE_SERIALIZER,
 } from '@spartacus/cdc/root';
 import {
@@ -36,11 +36,12 @@ import {
   UserRegisterFacade,
   UserSignUp,
 } from '@spartacus/user/profile/root';
-import { Observable, merge, throwError } from 'rxjs';
+import { merge, Observable, throwError } from 'rxjs';
 import { filter, map, switchMap, tap } from 'rxjs/operators';
 
 @Injectable()
 export class CDCRegisterComponentService extends RegisterComponentService {
+  protected cdcUserConsentService = inject(CdcUserConsentService);
   protected registerCommand: Command<{ user: UserSignUp }, User> =
     this.command.create(
       ({ user }) =>
@@ -91,8 +92,6 @@ export class CDCRegisterComponentService extends RegisterComponentService {
     if (!user.firstName || !user.lastName || !user.uid || !user.password) {
       return throwError(() => `The provided user is not valid: ${user}`);
     }
-    /** fill the user preferences */
-    user.preferences = this.generatePreferencesObject();
     return this.cdcJSService.didLoad().pipe(
       tap((cdcLoaded) => {
         if (!cdcLoaded) {
@@ -128,6 +127,7 @@ export class CDCRegisterComponentService extends RegisterComponentService {
   /**
    * Return preferences object that needs to be updated during register process
    * @returns preference object
+   * @deprecated since XXXX
    */
   generatePreferencesObject(): any {
     let preferences = null;
@@ -178,8 +178,16 @@ export class CDCRegisterComponentService extends RegisterComponentService {
   generateAdditionalConsentsFormControl(): UntypedFormArray {
     const consentArray = this.fb.array([]);
     const templates: ConsentTemplate[] = this.fetchCdcConsentsForRegistration();
-    for (const _template of templates) {
-      consentArray.push(new FormControl(false, [Validators.requiredTrue]));
+    for (const template of templates) {
+      const isMandatory = this.cdcConsentManagementService.checkIfMandatory(
+        template.id ?? ''
+      );
+      consentArray.push(
+        this.fb.group({
+          id: [template.id],
+          isConsentGranted: [false, isMandatory ? Validators.requiredTrue : []],
+        })
+      );
     }
     return consentArray;
   }
@@ -200,9 +208,31 @@ export class CDCRegisterComponentService extends RegisterComponentService {
     for (const template of templates) {
       const returnConsent: any = {};
       returnConsent['template'] = template;
-      returnConsent['required'] = true; //these consents are always mandatory
+      returnConsent['required'] =
+        this.cdcConsentManagementService.checkIfMandatory(template.id ?? '');
       returnConsents.push(returnConsent);
     }
     return returnConsents;
+  }
+
+  collectDataFromRegisterForm(formData: any): UserSignUp {
+    const {
+      firstName,
+      lastName,
+      email,
+      password,
+      titleCode,
+      additionalConsents,
+    } = formData;
+
+    return {
+      firstName,
+      lastName,
+      uid: email.toLowerCase(),
+      password,
+      titleCode,
+      preferences:
+        this.cdcUserConsentService.generateCdcPreferences(additionalConsents),
+    };
   }
 }

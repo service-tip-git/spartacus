@@ -39,6 +39,9 @@ export class ConsentManagementFormComponent implements OnInit, OnChanges {
 
   @Input() disabled: boolean = false;
 
+  @Input()
+  showMandatory: boolean = false;
+
   @Output()
   consentChanged = new EventEmitter<{
     given: boolean;

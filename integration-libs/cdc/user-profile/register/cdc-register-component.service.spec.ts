@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import {
   CdcConsentManagementComponentService,
   CdcJsService,
+  CdcUserConsentService,
 } from '@spartacus/cdc/root';
 import {
   AnonymousConsentsService,
@@ -35,7 +36,13 @@ const userRegisterFormData: UserSignUp = {
   lastName: 'lastName',
   uid: 'uid',
   password: 'password',
-  preferences: {},
+  preferences: {
+    others: {
+      survey: {
+        isConsentGranted: true,
+      },
+    },
+  },
 };
 
 class MockUserProfileFacade implements Partial<UserProfileFacade> {
@@ -64,6 +71,9 @@ class MockAuthService implements Partial<AuthService> {
 class MockEventService implements Partial<EventService> {
   get = createSpy().and.callFake(() => of(false)); //no failures
 }
+class MockCdcUserConsentService implements Partial<CdcUserConsentService> {
+  generateCdcPreferences = createSpy().and.returnValue({});
+}
 
 class MockCDCJsService implements Partial<CdcJsService> {
   didLoad = createSpy().and.callFake(() => of(true));
@@ -84,6 +94,9 @@ class MockCdcConsentManagementService
   implements Partial<CdcConsentManagementComponentService>
 {
   getCdcConsentIDs = createSpy();
+  checkIfMandatory(_id: string): boolean {
+    return true;
+  }
 }
 class MockAnonymousConsentsService
   implements Partial<AnonymousConsentsService>
@@ -152,6 +165,10 @@ describe('CdcRegisterComponentService', () => {
         {
           provide: AnonymousConsentsService,
           useClass: MockAnonymousConsentsService,
+        },
+        {
+          provide: CdcUserConsentService,
+          useClass: MockCdcUserConsentService,
         },
         CDCRegisterComponentService,
       ],
@@ -265,7 +282,13 @@ describe('CdcRegisterComponentService', () => {
             lastName: 'lastName',
             uid: 'uid',
             password: 'password',
-            preferences: {},
+            preferences: {
+              others: {
+                survey: {
+                  isConsentGranted: true,
+                },
+              },
+            },
           });
         },
       });
@@ -391,6 +414,7 @@ describe('CdcRegisterComponentService', () => {
       },
     ]);
     fb.array = createSpy().and.returnValue([]);
+    fb.group = createSpy().and.returnValue({});
     cdcUserRegisterService.generateAdditionalConsentsFormControl();
     expect(
       cdcUserRegisterService.fetchCdcConsentsForRegistration
@@ -398,6 +422,11 @@ describe('CdcRegisterComponentService', () => {
     expect(fb.array).toHaveBeenCalled();
   });
   it('loadAdditionalConsents', () => {
+    spyOn(cdcConsentManagementService, 'checkIfMandatory')
+      .withArgs('consent2.terms2')
+      .and.returnValue(false)
+      .withArgs('consent3.terms3')
+      .and.returnValue(true);
     spyOn(
       cdcUserRegisterService,
       'fetchCdcConsentsForRegistration'
@@ -422,7 +451,7 @@ describe('CdcRegisterComponentService', () => {
           id: 'consent2.terms2',
           description: 'sample consent 2',
         },
-        required: true,
+        required: false,
       },
       {
         template: {

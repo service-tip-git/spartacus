@@ -24,6 +24,9 @@
       </div>
       <div class="cx-dialog-description">
         {{ 'reconsent.dialog.description' | cxTranslate }}
+        <div *cxFeature="'a11yRequiredAsterisks'" class="form-legend">
+          {{ 'formLegend.required' | cxTranslate }}
+        </div>
         <div
           class="cx-dialog-separator col-sm-12 d-xs-block d-sm-block d-md-none"
         ></div>
@@ -38,6 +41,9 @@
           <cx-consent-management-form
             [consentTemplate]="consentTemplate"
             (consentChanged)="onConsentChange($event)"
+            [showMandatory]="
+              requiredReconsents.includes(consentTemplate.id ?? '')
+            "
           ></cx-consent-management-form>
         </div>
       </div>

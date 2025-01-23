@@ -249,6 +249,7 @@
             <div
               class="form-check"
               *ngFor="let control of additionalConsents.controls; let i = index"
+              [formGroupName]="i"
             >
               <div *ngIf="consents[i]?.template?.id as id">
                 <label>
@@ -257,12 +258,18 @@
                     [required]="consents[i].required"
                     [name]="id"
                     (change)="updateAdditionalConsents($any($event), i)"
-                    [formControlName]="i"
+                    formControlName="isConsentGranted"
                   />
                   <span class="form-check-label">
                     {{ consents[i].template.description }}
+                    <ng-template
+                      *ngIf="consents[i].required"
+                      [ngTemplateOutlet]="requiredAsterisk"
+                    ></ng-template>
                   </span>
-                  <cx-form-errors [control]="control"></cx-form-errors>
+                  <cx-form-errors
+                    [control]="control.get('isConsentGranted')"
+                  ></cx-form-errors>
                 </label>
               </div>
             </div>

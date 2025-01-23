@@ -16,6 +16,7 @@ import { CdcConsentsLocalStorageService } from './cdc-consents-local-storage.ser
 import { CDC_USER_PREFERENCE_SERIALIZER } from '../converters/converter';
 import { tap } from 'rxjs/operators';
 import { CdcJsService } from '../../service';
+import { CdcConsentWithStatus } from '../model';
 
 @Injectable({ providedIn: 'root' })
 export class CdcUserConsentService {
@@ -34,6 +35,7 @@ export class CdcUserConsentService {
    * @param user - If user is not passed, the logged in user id will be fetched and used. If passed, it will be considered.
    * @param regToken - token
    * @returns - returns Observable with error code and status
+   * @deprecated since 22XX.XX. Use updateCdcConsentV2 instead
    */
   updateCdcConsent(
     isConsentGranted: boolean,
@@ -83,6 +85,37 @@ export class CdcUserConsentService {
       );
   }
 
+  //TODO: CXSPA-XXXX: Rename this method to `updateCdcConsent` in next major release
+  updateCdcConsentV2(
+    consentCodes: CdcConsentWithStatus[],
+    user?: string,
+    regToken?: string
+  ): Observable<{ errorCode: number; errorMessage: string }> {
+    const serializedPreference = this.generateCdcPreferences(consentCodes);
+
+    let userId: string = '';
+    if (user === undefined) {
+      userId = this.getUserID() ?? '';
+    } else if (user !== undefined) {
+      userId = user;
+    }
+    const currentLanguage = this.getActiveLanguage();
+    return this.cdcJsService
+      .setUserConsentPreferences(
+        userId,
+        currentLanguage,
+        serializedPreference,
+        regToken
+      )
+      .pipe(
+        tap({
+          error: (error) => {
+            throwError(error);
+          },
+        })
+      );
+  }
+
   /**
    * Returns logged in User ID
    * @returns user id
@@ -106,5 +139,41 @@ export class CdcUserConsentService {
       .subscribe((language) => (currentLanguage = language))
       .unsubscribe();
     return currentLanguage;
+  }
+
+  generateCdcPreferences(cdcConsents: CdcConsentWithStatus[]): any {
+    let preferences = null;
+    for (const cdcConsent of cdcConsents) {
+      const consent: ConsentTemplate = {};
+      consent.id = cdcConsent.id;
+      consent.currentConsent = {};
+      if (cdcConsent.isConsentGranted === true) {
+        consent.currentConsent.consentGivenDate = new Date();
+      } else if (cdcConsent.isConsentGranted === false) {
+        consent.currentConsent.consentWithdrawnDate = new Date();
+      }
+      // consent.currentConsent.consentGivenDate = new Date();
+      const serializedPreference: any = this.converter.convert(
+        consent,
+        CDC_USER_PREFERENCE_SERIALIZER
+      );
+      preferences = this.deepMerge(preferences ?? {}, serializedPreference);
+    }
+    return preferences;
+  }
+
+  private deepMerge(target: any, source: any): any {
+    for (const key of Object.keys(source)) {
+      if (
+        source[key] &&
+        typeof source[key] === 'object' &&
+        !Array.isArray(source[key])
+      ) {
+        target[key] = this.deepMerge(target[key] ?? {}, source[key]);
+      } else {
+        target[key] = source[key];
+      }
+    }
+    return target;
   }
 }

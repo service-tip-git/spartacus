@@ -124,6 +124,7 @@ class MockRegisterComponentService
   postRegisterMessage = createSpy();
   getAdditionalConsents = createSpy();
   generateAdditionalConsentsFormControl = createSpy();
+  collectDataFromRegisterForm = createSpy();
 }
 
 class MockSiteAdapter {
@@ -309,14 +310,10 @@ describe('RegisterComponent', () => {
   describe('collectDataFromRegisterForm()', () => {
     it('should return correct register data', () => {
       const form = mockRegisterFormData;
-
-      expect(component.collectDataFromRegisterForm(form)).toEqual({
-        firstName: form.firstName,
-        lastName: form.lastName,
-        uid: form.email_lowercase,
-        password: form.password,
-        titleCode: form.titleCode,
-      });
+      component.collectDataFromRegisterForm(form);
+      expect(
+        registerComponentService.collectDataFromRegisterForm
+      ).toHaveBeenCalledWith(form);
     });
   });
 

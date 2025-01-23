@@ -26,7 +26,16 @@ export interface CdcSiteConsentTemplate {
   };
 }
 
+export interface CdcConsent {
+  isConsentGranted?: boolean;
+}
+
 export interface CdcLocalStorageTemplate {
   id: string;
   required: boolean;
+}
+
+export interface CdcConsentWithStatus {
+  id: string;
+  isConsentGranted: boolean;
 }
