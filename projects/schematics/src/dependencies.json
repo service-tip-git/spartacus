@@ -117,6 +117,7 @@
     "@angular/core": "^19.0.3",
     "@angular/forms": "^19.0.3",
     "@angular/router": "^19.0.3",
+    "@ng-select/ng-select": "^14.1.0",
     "@spartacus/cart": "2211.32.0",
     "@spartacus/core": "2211.32.0",
     "@spartacus/schematics": "2211.32.0",
