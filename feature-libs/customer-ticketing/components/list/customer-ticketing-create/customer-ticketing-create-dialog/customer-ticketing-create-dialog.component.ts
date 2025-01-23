@@ -22,7 +22,7 @@ import {
   HttpErrorModel,
   TranslationService,
 } from '@spartacus/core';
-import { catchError, first, tap } from 'rxjs/operators';
+import { catchError, first, map, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'cx-customer-ticketing-create-dialog',
@@ -41,6 +41,10 @@ export class CustomerTicketingCreateDialogComponent
     );
   ticketAssociatedObjects$: Observable<AssociatedObject[]> =
     this.customerTicketingFacade.getTicketAssociatedObjects().pipe(
+      map(ao => ao.map(cao => ({
+        ...cao,
+        label: `${cao.type} ${cao.code}`,
+      }))),
       catchError((error: any) => {
         this.handleError(error);
         return of([]);
@@ -135,10 +139,6 @@ export class CustomerTicketingCreateDialogComponent
           },
         });
     }
-  }
-
-  associatedToSelected(associatedTo: AssociatedObject | undefined): void {
-    this.form.get('associatedTo')?.setValue(associatedTo);
   }
 
   protected handleError(error: any): void {
