@@ -16,7 +16,7 @@ import { CdcConsentsLocalStorageService } from './cdc-consents-local-storage.ser
 import { CDC_PREFERENCE_SERIALIZER, CDC_USER_PREFERENCE_SERIALIZER } from '../converters/converter';
 import { tap } from 'rxjs/operators';
 import { CdcJsService } from '../../service';
-import { CdcConsentWithStatus } from '../model';
+import { CdcConsent } from '../model';
 
 @Injectable({ providedIn: 'root' })
 export class CdcUserConsentService {
@@ -94,7 +94,7 @@ export class CdcUserConsentService {
    * @returns returns Observable with error code and status
    */
   updateCdcUserPreferences(
-    consentCodes: CdcConsentWithStatus[],
+    consentCodes: CdcConsent[],
     user?: string,
     regToken?: string
   ): Observable<{ errorCode: number; errorMessage: string }> {

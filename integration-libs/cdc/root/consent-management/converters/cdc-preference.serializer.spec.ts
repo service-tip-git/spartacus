@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { CdcPreferenceSerializer } from './cdc-preference.serializer';
-import { CdcConsentWithStatus } from '../model';
-const mockInput: CdcConsentWithStatus[] = [
+import { CdcConsent } from '../model';
+const mockInput: CdcConsent[] = [
   { id: 'terms.of.use', isConsentGranted: true },
   { id: 'terms.marketing', isConsentGranted: false },
   { id: 'others.analytics', isConsentGranted: true },

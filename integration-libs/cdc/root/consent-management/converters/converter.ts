@@ -6,7 +6,7 @@
 
 import { InjectionToken } from '@angular/core';
 import { Converter, ConsentTemplate } from '@spartacus/core';
-import { CdcConsentWithStatus } from '../model';
+import { CdcConsent } from '../model';
 
 /**
  * @deprecated since 2211-ng19.0
@@ -18,5 +18,5 @@ export const CDC_USER_PREFERENCE_SERIALIZER = new InjectionToken<
 >('CdcUserPreferenceSerializer');
 
 export const CDC_PREFERENCE_SERIALIZER = new InjectionToken<
-  Converter<CdcConsentWithStatus[], any>
+  Converter<CdcConsent[], any>
 >('CdcPreferenceSerializer');

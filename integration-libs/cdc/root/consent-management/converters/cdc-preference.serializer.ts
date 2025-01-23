@@ -6,18 +6,18 @@
 
 import { Injectable } from '@angular/core';
 import { Converter } from '@spartacus/core';
-import { CdcConsentWithStatus } from '../model';
+import { CdcConsent } from '../model';
 
 @Injectable({ providedIn: 'root' })
 export class CdcPreferenceSerializer
-  implements Converter<CdcConsentWithStatus[], any>
+  implements Converter<CdcConsent[], any>
 {
   /**
    * Generate CDC preferences from consent objects
    * @param cdcConsents List of consents with their statuses
    * @returns Serialized and deeply nested preferences object
    */
-  convert(source: CdcConsentWithStatus[], _target?: any): any {
+  convert(source: CdcConsent[], _target?: any): any {
     return source.reduce((preferences: any, cdcConsent) => {
       if (!cdcConsent.id) {
         return preferences;

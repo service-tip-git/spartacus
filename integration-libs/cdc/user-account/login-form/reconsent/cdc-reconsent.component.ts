@@ -16,7 +16,6 @@ import { AnonymousConsentsService, ConsentTemplate } from '@spartacus/core';
 import {
   CdcConsent,
   CdcConsentManagementComponentService,
-  CdcConsentWithStatus,
 } from '@spartacus/cdc/root';
 import {
   FocusConfig,
@@ -124,7 +123,7 @@ export class CdcReconsentComponent implements OnInit, OnDestroy {
 
   private buildPreferenceList(
     templates: ConsentTemplate[]
-  ): CdcConsentWithStatus[] {
+  ): CdcConsent[] {
     const preferences: Record<string, CdcConsent> =
       this.reconsentEvent.preferences || {};
     const consents = Object.entries(preferences).map(([id, value]) => ({

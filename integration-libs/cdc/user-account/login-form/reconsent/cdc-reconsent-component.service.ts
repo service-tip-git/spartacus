@@ -9,7 +9,7 @@ import { GlobalMessageService, GlobalMessageType } from '@spartacus/core';
 import { Subscription } from 'rxjs';
 import { LaunchDialogService } from '@spartacus/storefront';
 import {
-  CdcConsentWithStatus,
+  CdcConsent,
   CdcJsService,
   CdcUserConsentService,
 } from '@spartacus/cdc/root';
@@ -29,7 +29,7 @@ export class CdcReconsentComponentService implements OnDestroy {
    * @param consents array of consent ID with status
    * @param userParams data from login session
    */
-  savePreferencesAndLogin(consents: CdcConsentWithStatus[], userParams: any) {
+  savePreferencesAndLogin(consents: CdcConsent[], userParams: any) {
     this.subscription.add(
       this.cdcJsService.didLoad().subscribe((cdcLoaded) => {
         if (cdcLoaded) {
