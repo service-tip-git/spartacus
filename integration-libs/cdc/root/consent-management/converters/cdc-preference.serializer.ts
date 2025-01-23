@@ -17,19 +17,15 @@ export class CdcPreferenceSerializer
    * @param cdcConsents List of consents with their statuses
    * @returns Serialized and deeply nested preferences object
    */
-  convert(source: CdcConsentWithStatus[], target?: any): any {
+  convert(source: CdcConsentWithStatus[], _target?: any): any {
     return source.reduce((preferences: any, cdcConsent) => {
       if (!cdcConsent.id) {
         return preferences;
       }
-
       const path = `${cdcConsent.id}.isConsentGranted`;
       const value = cdcConsent.isConsentGranted === true;
-
       const serializedPreference = this.convertToCdcPreference(path, value);
-
-      target = this.deepMerge(preferences, serializedPreference);
-      return target;
+      return this.deepMerge(preferences, serializedPreference);
     }, {});
   }
 
