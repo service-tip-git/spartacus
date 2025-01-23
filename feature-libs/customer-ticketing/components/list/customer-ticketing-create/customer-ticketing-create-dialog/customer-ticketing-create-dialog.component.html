@@ -51,7 +51,7 @@
             [control]="form.get('subject')"
           ></cx-form-errors>
           <p class="cx-customer-ticket-input-hint">
-            {{  
+            {{
               'customerTicketing.charactersLeft'
                 | cxTranslate: { count: subjectCharacterLeft }
             }}
@@ -95,14 +95,22 @@
             <ng-select
               [clearable]="false"
               [items]="ticketAssociatedObjects"
-              [placeholder]="'createCustomerTicket.optionallySelectAssociatedObject' | cxTranslate"
+              [placeholder]="
+                'createCustomerTicket.optionallySelectAssociatedObject'
+                  | cxTranslate
+              "
               [searchable]="false"
               formControlName="associatedTo"
               id="associated-to-select"
               [cxNgSelectA11y]="{}"
             >
-              <ng-template ng-option-tmp let-item="item" let-search="searchTerm" let-index="index">
-                <span >{{ item.type + ' ' + item.code }}</span>
+              <ng-template
+                ng-option-tmp
+                let-item="item"
+                let-search="searchTerm"
+                let-index="index"
+              >
+                <span>{{ item.type + ' ' + item.code }}</span>
               </ng-template>
             </ng-select>
           </label>

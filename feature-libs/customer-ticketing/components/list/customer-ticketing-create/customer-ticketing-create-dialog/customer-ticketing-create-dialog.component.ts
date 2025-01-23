@@ -41,10 +41,12 @@ export class CustomerTicketingCreateDialogComponent
     );
   ticketAssociatedObjects$: Observable<AssociatedObject[]> =
     this.customerTicketingFacade.getTicketAssociatedObjects().pipe(
-      map(ao => ao.map(cao => ({
-        ...cao,
-        label: `${cao.type} ${cao.code}`,
-      }))),
+      map((ao) =>
+        ao.map((cao) => ({
+          ...cao,
+          label: `${cao.type} ${cao.code}`,
+        }))
+      ),
       catchError((error: any) => {
         this.handleError(error);
         return of([]);
