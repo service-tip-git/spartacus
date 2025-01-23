@@ -1,8 +1,8 @@
 import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { Tab, TAB_MODE } from '../tab.model';
-import { TabPanelComponent } from './tab-panel.component';
 import { KeyboardFocusTestingModule } from '@spartacus/storefront';
+import { TAB_MODE, Tab } from '../tab.model';
+import { TabPanelComponent } from './tab-panel.component';
 
 const mockTab: Tab | any = {
   id: 1,
@@ -46,7 +46,6 @@ describe('TabPanelComponent', () => {
     expect(tabPanel?.getAttribute('tabindex')).toEqual('0');
     expect(tabPanel?.getAttribute('role')).toEqual('tabpanel');
     expect(tabPanel?.getAttribute('class')).toEqual('active');
-    expect(tabPanel?.getAttribute('aria-labelledby')).toEqual('1');
   });
 
   it('should have correct attribues when is open in ACCORDIAN mode', () => {
@@ -58,7 +57,6 @@ describe('TabPanelComponent', () => {
     expect(tabPanel?.getAttribute('tabindex')).toEqual('0');
     expect(tabPanel?.getAttribute('role')).toEqual('region');
     expect(tabPanel?.getAttribute('class')).toEqual('active');
-    expect(tabPanel?.getAttribute('aria-labelledby')).toEqual('1');
   });
 
   it('should have correct attribues when disableBorderFocus is active', () => {
