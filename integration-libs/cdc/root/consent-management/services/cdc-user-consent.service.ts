@@ -35,9 +35,9 @@ export class CdcUserConsentService {
    * @param user - If user is not passed, the logged in user id will be fetched and used. If passed, it will be considered.
    * @param regToken - token
    * @returns - returns Observable with error code and status
-   * @deprecated since 22XX.XX. Use method updateCdcUserPreferences instead
+   * @deprecated since 2211-ng19.0, use method updateCdcUserPreferences instead
    */
-  // CXSPA-9292: remove it in next major release
+  // CXSPA-9292: remove this method in next major release
   updateCdcConsent(
     isConsentGranted: boolean,
     consentCodes: string[],

@@ -127,9 +127,9 @@ export class CDCRegisterComponentService extends RegisterComponentService {
   /**
    * Return preferences object that needs to be updated during register process
    * @returns preference object
-   * @deprecated since 22XX.XX
+   * @deprecated since 2211-ng19.0
    */
-  // CXSPA-9292: remove it in next major release
+  // CXSPA-9292: remove this method in next major release
   generatePreferencesObject(): any {
     let preferences = null;
     const consentIDs = this.cdcConsentManagementService.getCdcConsentIDs(); //fetch all active consents

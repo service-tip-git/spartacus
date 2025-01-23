@@ -317,6 +317,14 @@ describe('RegisterComponent', () => {
 
   describe('register', () => {
     it('should register with valid form', () => {
+      regComponentService.collectDataFromRegisterForm =
+        createSpy().and.returnValue({
+          firstName: mockRegisterFormData.firstName,
+          lastName: mockRegisterFormData.lastName,
+          uid: mockRegisterFormData.email_lowercase,
+          password: mockRegisterFormData.password,
+          titleCode: mockRegisterFormData.titleCode,
+        });
       component.registerForm.patchValue(mockRegisterFormData);
       component.ngOnInit();
       component.submitForm();
