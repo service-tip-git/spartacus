@@ -1,34 +1,47 @@
 {
   "name": "punchout",
-  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "punchout/src",
+  "sourceRoot": "integration-libs/punchout",
   "prefix": "cx",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:ng-packagr",
+      "executor": "./tools/build-lib:augmented-types",
       "options": {
-        "project": "punchout/ng-package.json"
+        "tsConfig": "integration-libs/punchout/tsconfig.lib.json",
+        "project": "integration-libs/punchout/ng-package.json"
       },
       "configurations": {
         "production": {
-          "tsConfig": "punchout/tsconfig.lib.prod.json"
-        },
-        "development": {
-          "tsConfig": "punchout/tsconfig.lib.json"
+          "tsConfig": "integration-libs/punchout/tsconfig.lib.prod.json"
         }
-      },
-      "defaultConfiguration": "production"
+      }
     },
     "test": {
       "executor": "@angular-devkit/build-angular:karma",
       "options": {
-        "tsConfig": "punchout/tsconfig.spec.json",
-        "polyfills": [
-          "zone.js",
-          "zone.js/testing"
+        "main": "integration-libs/punchout/test.ts",
+        "tsConfig": "integration-libs/punchout/tsconfig.spec.json",
+        "polyfills": ["zone.js", "zone.js/testing"],
+        "karmaConfig": "integration-libs/punchout/karma.conf.js"
+      }
+    },
+    "test-jest": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run test:schematics",
+        "cwd": "integration-libs/punchout"
+      }
+    },
+    "lint": {
+      "executor": "@angular-eslint/builder:lint",
+      "options": {
+        "lintFilePatterns": [
+          "integration-libs/punchout/**/*.ts",
+          "integration-libs/punchout/**/*.html"
         ]
       }
     }
-  }
+  },
+  "tags": ["type:integration"]
 }

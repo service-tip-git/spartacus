@@ -813,6 +813,9 @@
       "@spartacus/opps/root": [
         "integration-libs/opps/root/public_api"
       ],
+      "@spartacus/punchout": [
+        "integration-libs/punchout/public_api"
+      ],
       "@spartacus/s4-service/assets": [
         "integration-libs/s4-service/assets/public_api"
       ],
@@ -851,9 +854,6 @@
       ],
       "@spartacus/storefront": [
         "projects/storefrontlib/public_api"
-      ],
-      "punchout": [
-        "./dist/punchout"
       ]
     },
     "useDefineForClassFields": false
