@@ -1,0 +1,34 @@
+{
+  "name": "punchout",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "punchout/src",
+  "prefix": "cx",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:ng-packagr",
+      "options": {
+        "project": "punchout/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "punchout/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "punchout/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "tsConfig": "punchout/tsconfig.spec.json",
+        "polyfills": [
+          "zone.js",
+          "zone.js/testing"
+        ]
+      }
+    }
+  }
+}

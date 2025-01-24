@@ -851,6 +851,9 @@
       ],
       "@spartacus/storefront": [
         "projects/storefrontlib/public_api"
+      ],
+      "punchout": [
+        "./dist/punchout"
       ]
     },
     "useDefineForClassFields": false
