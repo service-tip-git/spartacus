@@ -68,6 +68,9 @@ function buildCdsConfig(
       cds: {
         tenant: '${options.tenant || 'TENANT_PLACEHOLDER'}',
         baseUrl: '${options.baseUrl || 'BASE_URL_PLACEHOLDER'}',
+        endpoints: {
+          strategyProducts: '/strategy/\${tenant}/strategies/\${strategyId}/products',
+        },
         merchandising: {
           defaultCarouselViewportThreshold: 80,
         },
