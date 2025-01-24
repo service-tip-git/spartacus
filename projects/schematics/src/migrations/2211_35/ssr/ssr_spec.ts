@@ -9,7 +9,7 @@ jest.mock('../../../shared/utils/package-utils', () => ({
 }));
 
 const collectionPath = join(__dirname, '../../migrations.json');
-const MIGRATION_SCRIPT_NAME = '01-migration-v2212-ssr';
+const MIGRATION_SCRIPT_NAME = '01-migration-v2211_35-ssr';
 
 describe('Update SSR Migration', () => {
   let tree: Tree;
