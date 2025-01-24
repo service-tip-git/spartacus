@@ -388,6 +388,9 @@ export const SPARTACUS_CPQ_QUOTE = `@spartacus/cpq-quote`;
 export const SPARTACUS_CPQ_QUOTE_ROOT = `@spartacus/cpq-quote/root`;
 export const SPARTACUS_CPQ_QUOTE_ASSETS = `@spartacus/cpq-quote/assets`;
 
+export const SPARTACUS_PUNCHOUT = `@spartacus/punchout`;
+export const PUNCHOUT_FEATURE_NAME = 'Punchout';
+
 export const SPARTACUS_BOOTSTRAP_FUNCTIONS =
   '@spartacus/styles/vendor/bootstrap/scss/functions';
 export const SPARTACUS_BOOTSTRAP_VARIABLES =

@@ -63,6 +63,7 @@ import {
   USE_MY_ACCOUNT_V2_NOTIFICATION_PREFERENCE,
   VideoModule,
 } from '@spartacus/storefront';
+import { PunchoutModule } from 'integration-libs/punchout/punchout.module';
 import { environment } from '../../environments/environment';
 import { AsmCustomer360FeatureModule } from './features/asm/asm-customer-360-feature.module';
 import { AsmFeatureModule } from './features/asm/asm-feature.module';
@@ -151,6 +152,9 @@ if (environment.s4om) {
 }
 if (environment.opf) {
   featureModules.push(OpfFeatureModule);
+}
+if (environment.punchout) {
+  featureModules.push(PunchoutModule);
 }
 if (environment.segmentRefs) {
   featureModules.push(SegmentRefsFeatureModule);
