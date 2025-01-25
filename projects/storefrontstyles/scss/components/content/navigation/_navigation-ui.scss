@@ -229,6 +229,8 @@
         padding-top: 10px;
         padding-bottom: 12px;
         padding-inline-start: 0;
+        margin-top: 10px;
+        margin-bottom: 10px;
       }
       ul.childs > li > button:hover {
         color: var(--cx-color-text);
@@ -319,7 +321,8 @@
 
 %cx-navigation-ui {
   display: flex;
-  display: contents;
+  flex-direction: column;
+    width: 100%;
 
   @include media-breakpoint-up(lg) {
     background-color: var(--cx-color-text);
