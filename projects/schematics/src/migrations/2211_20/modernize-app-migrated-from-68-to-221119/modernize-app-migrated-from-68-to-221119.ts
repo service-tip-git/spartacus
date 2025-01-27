@@ -15,6 +15,7 @@ import * as ts from 'typescript';
 import { insertImport } from '@schematics/angular/utility/ast-utils';
 import { Change, InsertChange } from '@schematics/angular/utility/change';
 import { removeImport, ClassType } from '../../../shared/utils/file-utils';
+import { parse } from 'jsonc-parser';
 
 /**
  * Migrates the Angular application to use the new application builder
@@ -91,7 +92,7 @@ function updateTsConfig(): Rule {
 
     const tsConfigContent = tree.read(tsconfigPath);
     if (tsConfigContent) {
-      const tsConfig = JSON.parse(tsConfigContent.toString());
+      const tsConfig = parse(tsConfigContent.toString());
 
       if (tsConfig.compilerOptions) {
         delete tsConfig.compilerOptions.baseUrl;
@@ -192,7 +193,7 @@ function updatePackageJsonScripts(): Rule {
       return;
     }
 
-    const packageJson = JSON.parse(content.toString());
+    const packageJson = parse(content.toString());
 
     if (packageJson.scripts) {
       // Remove scripts
@@ -228,7 +229,7 @@ function updateTsConfigsForSsr(): Rule {
     if (tree.exists(tsconfigAppPath)) {
       const tsConfigAppContent = tree.read(tsconfigAppPath);
       if (tsConfigAppContent) {
-        const tsConfigApp = JSON.parse(tsConfigAppContent.toString());
+        const tsConfigApp = parse(tsConfigAppContent.toString());
 
         // Add node types
         if (!tsConfigApp.types) {
