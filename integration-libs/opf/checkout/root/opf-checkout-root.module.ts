@@ -32,21 +32,8 @@ export function defaultOpfCheckoutComponentsConfig() {
   return config;
 }
 
-export function initializeCheckoutListener(
-  service: CheckoutGuardService
-): () => void {
-  return () => service.listenToCheckoutRoute();
-}
-
 @NgModule({
   providers: [
-    // Only 1 of them should be applied CheckoutGuardService OR OpfCheckoutAuthGuard
-    {
-      provide: APP_INITIALIZER,
-      useFactory: initializeCheckoutListener,
-      deps: [CheckoutGuardService],
-      multi: true,
-    },
     {
       provide: CheckoutAuthGuard,
       useClass: OpfCheckoutAuthGuard,
