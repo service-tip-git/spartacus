@@ -20,20 +20,29 @@ import { removeImport, ClassType } from '../../../shared/utils/file-utils';
  * Migrates the Angular application to use the new application builder
  */
 function migrateToApplicationBuilder(): Rule {
-  return (tree: Tree, _context: SchematicContext) => {
+  return (tree: Tree, context: SchematicContext) => {
+    context.logger.info(
+      '⏳ Migrating to the new Angular application builder...'
+    );
+
     const { workspace, path } = getWorkspace(tree);
     const project = workspace.projects[Object.keys(workspace.projects)[0]];
 
     if (!project) {
+      context.logger.warn('⚠️ No project found in workspace');
       return;
     }
 
     const buildTarget = project.architect?.build as any;
     if (!buildTarget) {
+      context.logger.warn('⚠️ No build target found in project');
       return;
     }
 
     // Update builder
+    context.logger.info(
+      '⏳ Updating builder to @angular-devkit/build-angular:application'
+    );
     buildTarget.builder = '@angular-devkit/build-angular:application';
 
     // Update options
@@ -62,6 +71,7 @@ function migrateToApplicationBuilder(): Rule {
       delete devConfig.namedChunks;
     }
 
+    context.logger.info('✅ Successfully migrated to application builder');
     tree.overwrite(path, JSON.stringify(workspace, null, 2));
   };
 }
@@ -70,26 +80,32 @@ function migrateToApplicationBuilder(): Rule {
  * Updates TypeScript configurations
  */
 function updateTsConfig(): Rule {
-  return (tree: Tree) => {
-    // Update tsconfig.json
+  return (tree: Tree, context: SchematicContext) => {
+    context.logger.info('⏳ Updating TypeScript configuration...');
+
     const tsconfigPath = 'tsconfig.json';
-    if (tree.exists(tsconfigPath)) {
-      const tsConfigContent = tree.read(tsconfigPath);
-      if (tsConfigContent) {
-        const tsConfig = JSON.parse(tsConfigContent.toString());
-
-        if (tsConfig.compilerOptions) {
-          delete tsConfig.compilerOptions.baseUrl;
-          delete tsConfig.compilerOptions.forceConsistentCasingInFileNames;
-          delete tsConfig.compilerOptions.downlevelIteration;
-
-          tsConfig.compilerOptions.skipLibCheck = true;
-          tsConfig.compilerOptions.esModuleInterop = true;
-        }
-
-        tree.overwrite(tsconfigPath, JSON.stringify(tsConfig, null, 2));
-      }
+    if (!tree.exists(tsconfigPath)) {
+      context.logger.warn('⚠️ No tsconfig.json found');
+      return;
     }
+
+    const tsConfigContent = tree.read(tsconfigPath);
+    if (tsConfigContent) {
+      const tsConfig = JSON.parse(tsConfigContent.toString());
+
+      if (tsConfig.compilerOptions) {
+        delete tsConfig.compilerOptions.baseUrl;
+        delete tsConfig.compilerOptions.forceConsistentCasingInFileNames;
+        delete tsConfig.compilerOptions.downlevelIteration;
+
+        tsConfig.compilerOptions.skipLibCheck = true;
+        tsConfig.compilerOptions.esModuleInterop = true;
+      }
+
+      tree.overwrite(tsconfigPath, JSON.stringify(tsConfig, null, 2));
+    }
+
+    context.logger.info('✅ Successfully updated TypeScript configuration');
   };
 }
 
@@ -97,11 +113,14 @@ function updateTsConfig(): Rule {
  * Updates SSR-specific configurations
  */
 function migrateSSRConfig(): Rule {
-  return (tree: Tree, _context: SchematicContext) => {
+  return (tree: Tree, context: SchematicContext) => {
+    context.logger.info('⏳ Migrating SSR configuration...');
+
     const { workspace, path } = getWorkspace(tree);
     const project = workspace.projects[Object.keys(workspace.projects)[0]];
 
     if (!project) {
+      context.logger.warn('⚠️ No project found for SSR migration');
       return;
     }
 
@@ -144,6 +163,7 @@ function migrateSSRConfig(): Rule {
     delete project.architect?.['serve-ssr'];
     delete project.architect?.prerender;
 
+    context.logger.info('✅ Successfully migrated SSR configuration');
     tree.overwrite(path, JSON.stringify(workspace, null, 2));
   };
 }
@@ -152,8 +172,11 @@ function migrateSSRConfig(): Rule {
  * Updates package.json scripts with the correct app name
  */
 function updatePackageJsonScripts(): Rule {
-  return (tree: Tree) => {
+  return (tree: Tree, context: SchematicContext) => {
+    context.logger.info('⏳ Updating package.json scripts...');
+
     if (!tree.exists('package.json')) {
+      context.logger.warn('⚠️ No package.json found');
       return;
     }
 
@@ -181,12 +204,15 @@ function updatePackageJsonScripts(): Rule {
         packageJson.scripts['build:ssr'] = 'ng build';
       }
       if (packageJson.scripts['serve:ssr']) {
-        packageJson.scripts[`serve:ssr:${projectName}`] =
-          `node dist/${projectName}/server/server.mjs`;
+        packageJson.scripts[
+          `serve:ssr:${projectName}`
+        ] = `node dist/${projectName}/server/server.mjs`;
       }
     }
 
     tree.overwrite('package.json', JSON.stringify(packageJson, null, 2));
+
+    context.logger.info('✅ Successfully updated package.json scripts');
   };
 }
 
@@ -194,7 +220,9 @@ function updatePackageJsonScripts(): Rule {
  * Updates tsconfig.app.json and tsconfig.server.json for SSR projects
  */
 function updateTsConfigsForSsr(): Rule {
-  return (tree: Tree) => {
+  return (tree: Tree, context: SchematicContext) => {
+    context.logger.info('⏳ Updating TypeScript configurations for SSR...');
+
     // Update tsconfig.app.json
     const tsconfigAppPath = 'tsconfig.app.json';
     if (tree.exists(tsconfigAppPath)) {
@@ -232,6 +260,10 @@ function updateTsConfigsForSsr(): Rule {
     if (tree.exists(tsconfigServerPath)) {
       tree.delete(tsconfigServerPath);
     }
+
+    context.logger.info(
+      '✅ Successfully updated TypeScript configurations for SSR'
+    );
   };
 }
 
@@ -239,17 +271,26 @@ function updateTsConfigsForSsr(): Rule {
  * Renames app.server.module.ts to app.module.server.ts
  */
 function renameAppServerModule(): Rule {
-  return (tree: Tree) => {
-    // Rename app.server.module.ts to app.module.server.ts
+  return (tree: Tree, context: SchematicContext) => {
+    context.logger.info(
+      '⏳ Renaming app.server.module.ts to app.module.server.ts...'
+    );
+
     const appServerModulePath_OLD = 'src/app/app.server.module.ts';
     const appModuleServerPath_NEW = 'src/app/app.module.server.ts';
-    if (tree.exists(appServerModulePath_OLD)) {
-      const content = tree.read(appServerModulePath_OLD);
-      if (content) {
-        tree.create(appModuleServerPath_NEW, content.toString());
-        tree.delete(appServerModulePath_OLD);
-      }
+
+    if (!tree.exists(appServerModulePath_OLD)) {
+      context.logger.warn('⚠️ No app.server.module.ts found to rename');
+      return;
     }
+
+    const content = tree.read(appServerModulePath_OLD);
+    if (content) {
+      tree.create(appModuleServerPath_NEW, content.toString());
+      tree.delete(appServerModulePath_OLD);
+    }
+
+    context.logger.info('✅ Successfully renamed server module file');
   };
 }
 
@@ -257,21 +298,27 @@ function renameAppServerModule(): Rule {
  * Updates main.server.ts to import AppServerModule from new path and export as default
  */
 function updateMainServerTs(): Rule {
-  return (tree: Tree) => {
-    // Update main.server.ts
+  return (tree: Tree, context: SchematicContext) => {
+    context.logger.info('⏳ Updating main.server.ts...');
+
     const mainServerPath = 'src/main.server.ts';
-    if (tree.exists(mainServerPath)) {
-      const mainServerContent = tree.read(mainServerPath);
-      if (mainServerContent) {
-        const updatedContent = mainServerContent
-          .toString()
-          .replace(
-            /export \{ AppServerModule \} from '\.\/app\/app\.server\.module';/,
-            "export { AppServerModule as default } from './app/app.module.server';"
-          );
-        tree.overwrite(mainServerPath, updatedContent);
-      }
+    if (!tree.exists(mainServerPath)) {
+      context.logger.warn('⚠️ No main.server.ts found');
+      return;
     }
+
+    const mainServerContent = tree.read(mainServerPath);
+    if (mainServerContent) {
+      const updatedContent = mainServerContent
+        .toString()
+        .replace(
+          /export \{ AppServerModule \} from '\.\/app\/app\.server\.module';/,
+          "export { AppServerModule as default } from './app/app.module.server';"
+        );
+      tree.overwrite(mainServerPath, updatedContent);
+    }
+
+    context.logger.info('✅ Successfully updated main.server.ts');
   };
 }
 
@@ -279,9 +326,14 @@ function updateMainServerTs(): Rule {
  * Updates server.ts with new Angular v17 configuration
  */
 function updateServerTs(): Rule {
-  return (tree: Tree) => {
+  return (tree: Tree, context: SchematicContext) => {
+    context.logger.info(
+      '⏳ Updating server.ts with new Angular v17 configuration...'
+    );
+
     const serverTsPath = 'server.ts';
     if (!tree.exists(serverTsPath)) {
+      context.logger.warn('⚠️ No server.ts found');
       return;
     }
 
@@ -444,6 +496,8 @@ function updateServerTs(): Rule {
     );
 
     tree.overwrite('server.ts', updatedContent);
+
+    context.logger.info('✅ Successfully updated server.ts');
   };
 }
 
@@ -451,9 +505,12 @@ function updateServerTs(): Rule {
  * Updates app.module.ts with new Angular APIs
  */
 function updateAppModule(): Rule {
-  return (tree: Tree) => {
+  return (tree: Tree, context: SchematicContext) => {
+    context.logger.info('⏳ Updating app.module.ts with new Angular APIs...');
+
     const appModulePath = 'src/app/app.module.ts';
     if (!tree.exists(appModulePath)) {
+      context.logger.warn('⚠️ No app.module.ts found');
       return;
     }
 
@@ -499,6 +556,8 @@ function updateAppModule(): Rule {
     );
 
     tree.overwrite(appModulePath, sourceText);
+
+    context.logger.info('✅ Successfully updated app.module.ts');
   };
 }
 
@@ -506,7 +565,11 @@ function updateAppModule(): Rule {
  * Main migration function that orchestrates all the migration steps
  */
 export function migrate(): Rule {
-  return (_tree: Tree, _context: SchematicContext) => {
+  return (_tree: Tree, context: SchematicContext) => {
+    context.logger.info(
+      '⏳ Starting migration to modernize app from Angular 6.8 to 2211.19...'
+    );
+
     return chain([
       migrateToApplicationBuilder,
       updateTsConfig,
