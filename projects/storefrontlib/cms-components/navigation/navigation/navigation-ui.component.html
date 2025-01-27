@@ -52,11 +52,10 @@
           else heading
         "
         [ariaLabel]="
-          'navigation.linkItemInList'
-            | cxTranslate
-              : {
-                  title: node.title,
-                }
+          navAriaLabel !== ('navigation.myAccountSideNavigation' | cxTranslate)
+            ? ('navigation.linkItemInList'
+              | cxTranslate: { title: node.title, position, listLength })
+            : undefined
         "
         [url]="node.url"
         [target]="node.target"
@@ -104,6 +103,7 @@
         </ng-container>
         <ng-container *cxFeature="'a11yNavigationUiKeyboardControls'">
           <button
+            aria-level="4"
             [attr.role]="(isDesktop$ | async) && depth ? 'heading' : 'button'"
             [attr.aria-haspopup]="true"
             [attr.aria-expanded]="false"
@@ -128,7 +128,27 @@
         </ng-container>
       </ng-container>
       <ng-template #title>
-        <span *ngIf="node.title" [attr.tabindex]="0">
+        <span
+          [attr.role]="
+            navAriaLabel !==
+            ('navigation.myAccountSideNavigation' | cxTranslate)
+              ? 'heading'
+              : 'presentation'
+          "
+          [attr.aria-level]="
+            navAriaLabel !==
+            ('navigation.myAccountSideNavigation' | cxTranslate)
+              ? 4
+              : null
+          "
+          *ngIf="node.title"
+          [attr.tabindex]="
+            navAriaLabel !==
+            ('navigation.myAccountSideNavigation' | cxTranslate)
+              ? -1
+              : 0
+          "
+        >
           {{ node.title }}
         </span>
       </ng-template>
