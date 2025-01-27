@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -23,6 +23,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'cx-guest-register-form',
   templateUrl: './order-guest-register-form.component.html',
+  standalone: false,
 })
 export class OrderGuestRegisterFormComponent implements OnDestroy {
   // TODO: (CXSPA-7315) Remove feature toggle in the next major
@@ -74,7 +75,7 @@ export class OrderGuestRegisterFormComponent implements OnDestroy {
     protected authService: AuthService,
     protected fb: UntypedFormBuilder
   ) {
-    useFeatureStyles('a11yPasswordVisibilityBtnValueOverflow');
+    useFeatureStyles('a11yPasswordVisibliltyBtnValueOverflow');
   }
 
   submit() {

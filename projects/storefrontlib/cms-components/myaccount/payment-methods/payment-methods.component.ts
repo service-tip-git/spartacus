@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -20,6 +20,7 @@ import { Card } from '../../../shared/components/card/card.component';
 @Component({
   selector: 'cx-payment-methods',
   templateUrl: './payment-methods.component.html',
+  standalone: false,
 })
 export class PaymentMethodsComponent implements OnInit {
   paymentMethods$: Observable<PaymentDetails[]>;

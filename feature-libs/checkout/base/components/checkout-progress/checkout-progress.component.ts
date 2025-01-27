@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -14,6 +14,7 @@ import { CheckoutStepService } from '../services/checkout-step.service';
   selector: 'cx-checkout-progress',
   templateUrl: './checkout-progress.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class CheckoutProgressComponent {
   private _steps$: BehaviorSubject<CheckoutStep[]> =

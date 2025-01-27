@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -30,6 +30,7 @@ import { ONE_TIME_PASSWORD_LOGIN_PURPOSE } from '../user-account-constants';
   selector: 'cx-otp-login-form',
   templateUrl: './otp-login-form.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class OneTimePasswordLoginFormComponent {
   protected routingService = inject(RoutingService);
@@ -59,7 +60,7 @@ export class OneTimePasswordLoginFormComponent {
   @HostBinding('class.user-form') style = true;
 
   constructor() {
-    useFeatureStyles('a11yPasswordVisibilityBtnValueOverflow');
+    useFeatureStyles('a11yPasswordVisibliltyBtnValueOverflow');
   }
 
   onSubmit(): void {

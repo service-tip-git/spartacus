@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -14,6 +14,7 @@ import { UpdatePasswordComponentService } from './update-password-component.serv
   selector: 'cx-my-account-v2-password',
   templateUrl: './my-account-v2-password.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class MyAccountV2PasswordComponent {
   protected service = inject(UpdatePasswordComponentService);
@@ -27,7 +28,7 @@ export class MyAccountV2PasswordComponent {
   isUpdating$: Observable<boolean> = this.service.isUpdating$;
 
   constructor() {
-    useFeatureStyles('a11yPasswordVisibilityBtnValueOverflow');
+    useFeatureStyles('a11yPasswordVisibliltyBtnValueOverflow');
   }
 
   onSubmit(): void {

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -25,6 +25,7 @@ import { CdcReconsentComponentService } from './cdc-reconsent-component.service'
   selector: 'cx-anonymous-consent-dialog', //reusing existing selector
   templateUrl: './cdc-reconsent.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class CdcReconsentComponent implements OnInit, OnDestroy {
   protected subscription = new Subscription();

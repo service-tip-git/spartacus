@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -20,6 +20,7 @@ import { map, tap } from 'rxjs/operators';
   selector: 'cx-unit-level-order-history',
   templateUrl: './unit-level-order-history.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class UnitLevelOrderHistoryComponent implements OnDestroy {
   private PAGE_SIZE = 5;
@@ -38,6 +39,7 @@ export class UnitLevelOrderHistoryComponent implements OnDestroy {
     protected translation: TranslationService
   ) {
     useFeatureStyles('a11yTruncatedTextForResponsiveView');
+    useFeatureStyles('a11yTruncatedTextUnitLevelOrderHistory');
   }
 
   orders$: Observable<OrderHistoryList | undefined> = this.unitOrdersFacade

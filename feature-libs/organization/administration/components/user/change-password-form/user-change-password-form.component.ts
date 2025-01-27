@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -19,6 +19,7 @@ import { UserChangePasswordFormService } from './user-change-password-form.servi
   templateUrl: './user-change-password-form.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'content-wrapper' },
+  standalone: false,
 })
 export class UserChangePasswordFormComponent {
   form$: Observable<UntypedFormGroup | null> = this.itemService.current$.pipe(
@@ -30,7 +31,7 @@ export class UserChangePasswordFormComponent {
     protected formService: UserChangePasswordFormService,
     protected messageService: MessageService
   ) {
-    useFeatureStyles('a11yPasswordVisibilityBtnValueOverflow');
+    useFeatureStyles('a11yPasswordVisibliltyBtnValueOverflow');
   }
 
   save(form: UntypedFormGroup): void {

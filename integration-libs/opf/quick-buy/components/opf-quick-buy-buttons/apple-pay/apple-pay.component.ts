@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -27,6 +27,7 @@ import { ApplePayService } from './apple-pay.service';
   selector: 'cx-opf-apple-pay',
   templateUrl: './apple-pay.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ApplePayComponent implements OnInit {
   @Input() activeConfiguration: OpfActiveConfiguration;

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -15,10 +15,11 @@ import { UpdateEmailComponentService } from './update-email-component.service';
   templateUrl: './update-email.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'user-form' },
+  standalone: false,
 })
 export class UpdateEmailComponent {
   constructor(protected service: UpdateEmailComponentService) {
-    useFeatureStyles('a11yPasswordVisibilityBtnValueOverflow');
+    useFeatureStyles('a11yPasswordVisibliltyBtnValueOverflow');
   }
 
   form: UntypedFormGroup = this.service.form;

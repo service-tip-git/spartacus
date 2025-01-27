@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -74,6 +74,7 @@ export class OpfGooglePayService {
       shippingAddressParameters: {
         phoneNumberRequired: false,
       },
+      emailRequired: true,
     };
 
   protected readonly defaultGooglePayCardParameters: any = {
@@ -378,6 +379,13 @@ export class OpfGooglePayService {
                 paymentDataResponse.paymentMethodData.info?.billingAddress
               )
             ),
+            switchMap(() => {
+              return paymentDataResponse?.email
+                ? this.opfQuickBuyTransactionService.updateCartGuestUserEmail(
+                    paymentDataResponse.email
+                  )
+                : of(true);
+            }),
             switchMap(() => {
               const encryptedToken = btoa(
                 paymentDataResponse.paymentMethodData.tokenizationData.token

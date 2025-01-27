@@ -28,6 +28,7 @@ const VALUE_NAME_3 = 'val3';
 
 @Directive({
   selector: '[cxFocus]',
+  standalone: false,
 })
 export class MockFocusDirective {
   @Input('cxFocus') protected config: any;
@@ -36,6 +37,7 @@ export class MockFocusDirective {
 @Component({
   selector: 'cx-configurator-price',
   template: '',
+  standalone: false,
 })
 class MockConfiguratorPriceComponent {
   @Input() formula: ConfiguratorPriceComponentOptions;
@@ -387,7 +389,7 @@ describe('ConfiguratorAttributeMultiSelectionImageComponent', () => {
         '',
         1,
         'aria-label',
-        'configurator.a11y.description'
+        'configurator.a11y.description value:val4'
       );
     });
 

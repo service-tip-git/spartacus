@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -78,6 +78,7 @@ export function orderEntryWithRequiredFields(
 @Component({
   selector: 'cx-cart-pickup-options-container',
   templateUrl: 'cart-pickup-options-container.component.html',
+  standalone: false,
 })
 export class CartPickupOptionsContainerComponent implements OnInit, OnDestroy {
   // TODO: Remove element reference once 'a11yDialogTriggerRefocus' feature flag is removed.

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -23,6 +23,7 @@ import { map, switchMap } from 'rxjs/operators';
   selector: 'cx-estimated-delivery-date',
   templateUrl: './estimated-delivery-date.component.html',
   providers: [CxDatePipe],
+  standalone: false,
 })
 export class EstimatedDeliveryDateComponent {
   @Optional() protected cartItemContext = inject(CartItemContext);

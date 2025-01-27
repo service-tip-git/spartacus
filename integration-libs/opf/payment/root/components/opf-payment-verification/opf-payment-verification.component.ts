@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -22,6 +22,7 @@ import { OpfPaymentVerificationService } from './opf-payment-verification.servic
 @Component({
   selector: 'cx-opf-verify-payment',
   templateUrl: './opf-payment-verification.component.html',
+  standalone: false,
 })
 export class OpfPaymentVerificationComponent implements OnInit, OnDestroy {
   protected route = inject(ActivatedRoute);

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -24,6 +24,7 @@ import { CartItemContextSource } from './model/cart-item-context-source.model';
     CartItemContextSource,
     { provide: CartItemContext, useExisting: CartItemContextSource },
   ],
+  standalone: false,
 })
 export class CartItemComponent implements OnChanges {
   @Input() compact = false;

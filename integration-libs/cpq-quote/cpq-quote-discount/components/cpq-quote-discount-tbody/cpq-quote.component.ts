@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -17,6 +17,7 @@ interface ExtendedOrderEntry extends OrderEntry {
 @Component({
   selector: 'cx-cpq-quote',
   templateUrl: './cpq-quote.component.html',
+  standalone: false,
 })
 export class CpqQuoteDiscountComponent implements OnInit, OnDestroy {
   quoteDiscountData: ExtendedOrderEntry | null;

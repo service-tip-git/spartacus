@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -39,6 +39,7 @@ import { ConfiguratorExpertModeService } from '../../core/services/configurator-
   selector: 'cx-configurator-form',
   templateUrl: './configurator-form.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ConfiguratorFormComponent implements OnInit, OnDestroy {
   protected subscription = new Subscription();

@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -30,6 +30,7 @@ import { ConfirmationContext } from './quote-confirm-dialog.model';
   templateUrl: './quote-confirm-dialog.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [CxDatePipe],
+  standalone: false,
 })
 export class QuoteConfirmDialogComponent implements OnInit {
   protected launchDialogService = inject(LaunchDialogService);

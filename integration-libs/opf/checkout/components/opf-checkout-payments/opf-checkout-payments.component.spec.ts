@@ -32,11 +32,19 @@ import { OpfCheckoutPaymentsComponent } from './opf-checkout-payments.component'
 @Component({
   template: '',
   selector: 'cx-pagination',
+  standalone: false,
 })
 class MockPaginationComponent {
   @Input() pagination: PaginationModel;
   @Output() viewPageEvent = new EventEmitter<string>();
 }
+
+@Component({
+  template: '',
+  selector: 'cx-opf-checkout-payment-wrapper',
+  standalone: false,
+})
+class MockOpfCheckoutPaymentWrapperComponent {}
 
 const mockActiveConfigurations: OpfActiveConfiguration[] = [
   {
@@ -109,7 +117,11 @@ describe('OpfCheckoutPaymentsComponent', () => {
     );
     await TestBed.configureTestingModule({
       imports: [I18nTestingModule, OpfCheckoutTermsAndConditionsAlertModule],
-      declarations: [OpfCheckoutPaymentsComponent, MockPaginationComponent],
+      declarations: [
+        OpfCheckoutPaymentsComponent,
+        MockOpfCheckoutPaymentWrapperComponent,
+        MockPaginationComponent,
+      ],
       providers: [
         {
           provide: OpfBaseFacade,

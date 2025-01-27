@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -33,6 +33,7 @@ import { OpfCheckoutPaymentWrapperService } from './opf-checkout-payment-wrapper
   selector: 'cx-opf-checkout-payment-wrapper',
   templateUrl: './opf-checkout-payment-wrapper.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class OpfCheckoutPaymentWrapperComponent implements OnInit, OnDestroy {
   protected service = inject(OpfCheckoutPaymentWrapperService);

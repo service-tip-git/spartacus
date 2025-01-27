@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -27,5 +27,6 @@ import { Directive } from '@angular/core';
     // Add Space keydown click mimic native Button's behaviour
     '(keydown.space)': '$event.preventDefault() ; $event.target.click() ;',
   },
+  standalone: false,
 })
 export class BtnLikeLinkDirective {}

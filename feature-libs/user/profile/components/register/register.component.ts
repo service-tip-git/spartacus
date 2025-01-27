@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -35,6 +35,7 @@ import { RegisterComponentService } from './register-component.service';
 @Component({
   selector: 'cx-register',
   templateUrl: './register.component.html',
+  standalone: false,
 })
 export class RegisterComponent implements OnInit, OnDestroy {
   // TODO: (CXSPA-7315) Remove feature toggle in the next major
@@ -124,7 +125,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
     protected authConfigService: AuthConfigService,
     protected registerComponentService: RegisterComponentService
   ) {
-    useFeatureStyles('a11yPasswordVisibilityBtnValueOverflow');
+    useFeatureStyles('a11yPasswordVisibliltyBtnValueOverflow');
   }
 
   ngOnInit() {

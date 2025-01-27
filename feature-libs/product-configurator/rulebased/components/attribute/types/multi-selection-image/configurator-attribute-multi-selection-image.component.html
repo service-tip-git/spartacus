@@ -118,7 +118,6 @@
             }}"
             class="form-check-label"
             [style.cursor]="!isReadOnly(attribute) ? 'pointer' : 'default'"
-            title="{{ getLabel(expMode, value.valueDisplay, value.valueCode) }}"
           >
             <img
               *ngIf="getImage(value) as image"
@@ -141,7 +140,28 @@
                 appendToBody: true,
                 displayCloseButton: true,
               }"
-              [attr.aria-label]="'configurator.a11y.description' | cxTranslate"
+              title="{{
+                'configurator.a11y.description'
+                  | cxTranslate
+                    : {
+                        value: getImageLabel(
+                          expMode,
+                          value.valueDisplay,
+                          value.valueCode
+                        ),
+                      }
+              }}"
+              [attr.aria-label]="
+                'configurator.a11y.description'
+                  | cxTranslate
+                    : {
+                        value: getImageLabel(
+                          expMode,
+                          value.valueDisplay,
+                          value.valueCode
+                        ),
+                      }
+              "
             >
               <cx-icon [type]="iconTypes.INFO"></cx-icon>
             </button>

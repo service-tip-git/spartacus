@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -21,6 +21,7 @@ import { DeliveryPointsService } from '../../services/delivery-points.service';
   selector: 'cx-pick-up-in-store-items-details',
   templateUrl: './pickup-items-details.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class PickUpItemsDetailsComponent implements OnInit {
   @Input() showEdit: boolean;
