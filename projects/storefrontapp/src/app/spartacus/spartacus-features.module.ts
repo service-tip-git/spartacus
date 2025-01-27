@@ -63,7 +63,6 @@ import {
   USE_MY_ACCOUNT_V2_NOTIFICATION_PREFERENCE,
   VideoModule,
 } from '@spartacus/storefront';
-import { PunchoutModule } from 'integration-libs/punchout/punchout.module';
 import { environment } from '../../environments/environment';
 import { AsmCustomer360FeatureModule } from './features/asm/asm-customer-360-feature.module';
 import { AsmFeatureModule } from './features/asm/asm-feature.module';
@@ -98,6 +97,7 @@ import { BulkPricingFeatureModule } from './features/product/product-bulk-pricin
 import { FutureStockFeatureModule } from './features/product/product-future-stock-feature.module';
 import { ProductImageZoomFeatureModule } from './features/product/product-image-zoom-feature.module';
 import { ProductVariantsFeatureModule } from './features/product/product-variants-feature.module';
+import { PunchoutFeatureModule } from './features/punchout/punchout-feature.module';
 import { QualtricsFeatureModule } from './features/qualtrics/qualtrics-feature.module';
 import { QuoteFeatureModule } from './features/quote-feature.module';
 import { OrganizationUserRegistrationFeatureModule } from './features/registration-feature.module';
@@ -154,7 +154,7 @@ if (environment.opf) {
   featureModules.push(OpfFeatureModule);
 }
 if (environment.punchout) {
-  featureModules.push(PunchoutModule);
+  featureModules.push(PunchoutFeatureModule);
 }
 if (environment.segmentRefs) {
   featureModules.push(SegmentRefsFeatureModule);

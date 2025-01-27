@@ -438,6 +438,7 @@
     "@spartacus/storefront": "2211.35.0",
     "rxjs": "^7.8.0"
   },
+  "@spartacus/punchout": {},
   "@spartacus/s4-service": {
     "@angular-devkit/schematics": "^19.0.4",
     "@angular/common": "^19.0.3",

@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/schema",
   "$id": "PunchoutSchematics",
-  "title": "Customer Ticketing Schematics",
+  "title": "Punchout",
   "type": "object",
   "properties": {
     "project": {
@@ -18,7 +18,7 @@
     },
     "lazy": {
       "type": "boolean",
-      "description": "Lazy load the customer ticketing features.",
+      "description": "Lazy load the punchout features.",
       "default": true
     },
     "features": {
