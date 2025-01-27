@@ -239,9 +239,9 @@
       "factory": "./2211_0/angular-json-styles/angular-json-styles#migrate",
       "description": "Update the angular.json with the style preprocessor options"
     },
-    "01-migration-v2211-20-modernize-app-migrated-from68to221119": {
+    "01-migration-v2211-20-modernize-app-migrated-from-68-to-221119": {
       "version": "2211.20.0",
-      "factory": "./2211_0/modernize-app-migrated-from68to221119/modernize-app-migrated-from68to221119#migrate",
+      "factory": "./2211_20/modernize-app-migrated-from-68-to-221119/modernize-app-migrated-from-68-to-221119#migrate",
       "description": "Modernize the app migrated from 6.8 to 2211.19"
     }
   }
