@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { PunchoutModule } from '@spartacus/punchout';
+import { PunchoutRootModule } from '@spartacus/punchout/root';
 
 @NgModule({
-  imports: [PunchoutModule],
+  imports: [PunchoutRootModule],
 })
 export class PunchoutFeatureModule {}
