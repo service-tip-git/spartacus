@@ -37,6 +37,19 @@
             <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
           </span>
           <textarea
+            *cxFeature="
+              '!a11ySelectImprovementsCustomerTicketingRequiredFieldsClass'
+            "
+            [maxLength]="inputCharactersForSubject"
+            class="form-control"
+            formControlName="subject"
+            rows="1"
+            [attr.aria-describedby]="'subjectError'"
+          ></textarea>
+          <textarea
+            *cxFeature="
+              'a11ySelectImprovementsCustomerTicketingRequiredFieldsClass'
+            "
             [maxLength]="inputCharactersForSubject"
             required="true"
             class="form-control"
@@ -59,11 +72,35 @@
         </label>
 
         <label *ngIf="ticketCategories$ | async as ticketCategories">
-          <span class="cx-customer-ticket-label label-content required">
+          <span
+            class="cx-customer-ticket-label label-content"
+            [ngClass]="{ required: isAddRequiredFieldsClassEnabled }"
+          >
             {{ 'createCustomerTicket.category' | cxTranslate }}
             <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
           </span>
+          <select
+            *cxFeature="
+              '!a11ySelectImprovementsCustomerTicketingCreateSelectbox'
+            "
+            class="form-control"
+            formControlName="ticketCategory"
+          >
+            <option value="" disabled selected>
+              {{ 'createCustomerTicket.selectCategory' | cxTranslate }}
+            </option>
+            <option
+              *ngFor="let category of ticketCategories"
+              [ngValue]="category"
+              [selected]="category.id === selectedCategory?.id"
+            >
+              {{ category.name }}
+            </option>
+          </select>
           <ng-select
+            *cxFeature="
+              'a11ySelectImprovementsCustomerTicketingCreateSelectbox'
+            "
             [inputAttrs]="{ required: 'true' }"
             class="ticket-category-select"
             id="ticket-category-select"
@@ -92,7 +129,34 @@
             <span class="cx-customer-ticket-label label-content">
               {{ 'createCustomerTicket.associateTo' | cxTranslate }}
             </span>
+            <select
+              *cxFeature="
+                '!a11ySelectImprovementsCustomerTicketingCreateSelectbox'
+              "
+              class="form-control"
+              formControlName="associatedTo"
+            >
+              <option value="" disabled selected>
+                {{
+                  'createCustomerTicket.optionallySelectAssociatedObject'
+                    | cxTranslate
+                }}
+              </option>
+              <option
+                *ngFor="let associatedObject of ticketAssociatedObjects"
+                [ngValue]="associatedObject"
+                [selected]="
+                  associatedObject.code === selectedAssociatedObject?.code
+                "
+              >
+                {{ associatedObject.type }}
+                {{ associatedObject.code }}
+              </option>
+            </select>
             <ng-select
+              *cxFeature="
+                'a11ySelectImprovementsCustomerTicketingCreateSelectbox'
+              "
               [clearable]="false"
               [items]="ticketAssociatedObjects"
               [placeholder]="
@@ -122,6 +186,19 @@
             <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
           </span>
           <textarea
+            *cxFeature="
+              '!a11ySelectImprovementsCustomerTicketingRequiredFieldsClass'
+            "
+            [maxLength]="inputCharactersLimit"
+            class="form-control"
+            formControlName="message"
+            rows="5"
+            [attr.aria-describedby]="'messageError'"
+          ></textarea>
+          <textarea
+            *cxFeature="
+              'a11ySelectImprovementsCustomerTicketingRequiredFieldsClass'
+            "
             required="true"
             [maxLength]="inputCharactersLimit"
             class="form-control"

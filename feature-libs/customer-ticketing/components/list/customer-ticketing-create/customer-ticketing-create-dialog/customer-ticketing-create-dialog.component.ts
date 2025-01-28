@@ -4,22 +4,37 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Component, inject, Input, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  inject,
+  Input,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {
   AssociatedObject,
   Category,
+  CustomerTicketingConfig,
+  CustomerTicketingFacade,
   MAX_ENTRIES_FOR_ATTACHMENT,
   TicketDetails,
   TicketStarter,
 } from '@spartacus/customer-ticketing/root';
-import { FormUtils } from '@spartacus/storefront';
+import {
+  FilesFormValidators,
+  FormUtils,
+  LaunchDialogService,
+} from '@spartacus/storefront';
 import { Observable, of, Subscription } from 'rxjs';
 import { CustomerTicketingDialogComponent } from '../../../shared/customer-ticketing-dialog/customer-ticketing-dialog.component';
 import {
+  FeatureConfigService,
   GlobalMessageService,
   GlobalMessageType,
   HttpErrorModel,
+  RoutingService,
   TranslationService,
 } from '@spartacus/core';
 import { catchError, first, map, tap } from 'rxjs/operators';
@@ -62,6 +77,8 @@ export class CustomerTicketingCreateDialogComponent
 
   attachment: File;
 
+  isAddRequiredFieldsClassEnabled: boolean;
+
   protected globalMessage = inject(GlobalMessageService);
 
   protected translationService = inject(TranslationService);
@@ -73,6 +90,37 @@ export class CustomerTicketingCreateDialogComponent
       associatedTo: form?.get('associatedTo')?.value || undefined,
       ticketCategory: form?.get('ticketCategory')?.value,
     };
+  }
+
+  constructor(
+    protected launchDialogService: LaunchDialogService,
+    protected el: ElementRef,
+    protected customerTicketingConfig: CustomerTicketingConfig,
+    protected filesFormValidators: FilesFormValidators,
+    protected customerTicketingFacade: CustomerTicketingFacade,
+    protected routingService: RoutingService,
+    protected featureService: FeatureConfigService
+  ) {
+    super(
+      launchDialogService,
+      el,
+      customerTicketingConfig,
+      filesFormValidators,
+      customerTicketingFacade,
+      routingService
+    );
+    this.isAddRequiredFieldsClassEnabled = this.featureService.isEnabled(
+      'a11ySelectImprovementsCustomerTicketingRequiredFieldsClass'
+    );
+
+    if (
+      this.featureService.isEnabled(
+        'a11ySelectImprovementsCustomerTicketingCreateSelectbox'
+      )
+    ) {
+      this.focusConfig.trap = false;
+      this.focusConfig.trapTabOnly = true;
+    }
   }
 
   ngOnInit(): void {
