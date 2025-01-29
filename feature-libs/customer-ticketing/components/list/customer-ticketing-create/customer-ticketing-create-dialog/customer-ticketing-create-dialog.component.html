@@ -37,19 +37,6 @@
             <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
           </span>
           <textarea
-            *cxFeature="
-              '!a11ySelectImprovementsCustomerTicketingRequiredFieldsClass'
-            "
-            [maxLength]="inputCharactersForSubject"
-            class="form-control"
-            formControlName="subject"
-            rows="1"
-            [attr.aria-describedby]="'subjectError'"
-          ></textarea>
-          <textarea
-            *cxFeature="
-              'a11ySelectImprovementsCustomerTicketingRequiredFieldsClass'
-            "
             [maxLength]="inputCharactersForSubject"
             required="true"
             class="form-control"
@@ -183,19 +170,6 @@
             <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
           </span>
           <textarea
-            *cxFeature="
-              '!a11ySelectImprovementsCustomerTicketingRequiredFieldsClass'
-            "
-            [maxLength]="inputCharactersLimit"
-            class="form-control"
-            formControlName="message"
-            rows="5"
-            [attr.aria-describedby]="'messageError'"
-          ></textarea>
-          <textarea
-            *cxFeature="
-              'a11ySelectImprovementsCustomerTicketingRequiredFieldsClass'
-            "
             required="true"
             [maxLength]="inputCharactersLimit"
             class="form-control"

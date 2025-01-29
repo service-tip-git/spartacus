@@ -34,11 +34,10 @@ export abstract class CustomerTicketingDialogComponent {
   );
 
   focusConfig: FocusConfig = {
-    trap: false,
+    trap: true,
     block: true,
     autofocus: 'button',
     focusOnEscape: true,
-    trapTabOnly: true,
   };
 
   get messagesCharacterLeft(): number {
