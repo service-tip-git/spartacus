@@ -73,8 +73,10 @@ const commands = [
 type Command = typeof commands[number];
 
 const buildLibRegEx = new RegExp('build (.*?)/schematics');
-const verdaccioUrl = 'http://localhost:4873/';
-const npmUrl = 'https://registry.npmjs.org/';
+const verdaccioRegistryUrl = 'http://localhost:4873/';
+const originalRegistryUrl = execSync('npm config get @spartacus:registry')
+  .toString()
+  .trim();
 
 function startVerdaccio(): ChildProcess {
   execSync('rm -rf ./scripts/install/storage');
@@ -82,7 +84,7 @@ function startVerdaccio(): ChildProcess {
   console.log('Waiting for verdaccio to boot...');
   const res = exec('verdaccio --config ./scripts/install/config.yaml');
   try {
-    execSync(`npx wait-on ${verdaccioUrl} --timeout 10000`);
+    execSync(`npx wait-on ${verdaccioRegistryUrl} --timeout 10000`);
   } catch (_e) {
     console.log(
       chalk.red(
@@ -92,13 +94,13 @@ function startVerdaccio(): ChildProcess {
     process.exit(1);
   }
   console.log('Pointing npm to verdaccio');
-  execSync(`npm config set @spartacus:registry ${verdaccioUrl}`);
+  execSync(`npm config set @spartacus:registry ${verdaccioRegistryUrl}`);
   return res;
 }
 
 function beforeExit(): void {
   console.log('Setting npm back to npmjs.org');
-  execSync(`npm config set @spartacus:registry ${npmUrl}`);
+  execSync(`npm config set @spartacus:registry ${originalRegistryUrl}`);
   if (verdaccioProcess) {
     try {
       console.log('Killing verdaccio');
@@ -130,7 +132,7 @@ function publishLibs(): void {
     const dir = path.dirname(packagePath);
     console.log(`\nPublishing ${content.name}`);
     execSync(
-      `cd ${dir} && npm publish --registry=${verdaccioUrl} --no-git-tag-version`,
+      `cd ${dir} && npm publish --registry=${verdaccioRegistryUrl} --no-git-tag-version`,
       { stdio: 'inherit' }
     );
   });
