@@ -72,10 +72,7 @@
         </label>
 
         <label *ngIf="ticketCategories$ | async as ticketCategories">
-          <span
-            class="cx-customer-ticket-label label-content"
-            [ngClass]="{ required: isAddRequiredFieldsClassEnabled }"
-          >
+          <span class="cx-customer-ticket-label label-content">
             {{ 'createCustomerTicket.category' | cxTranslate }}
             <ng-template [ngTemplateOutlet]="requiredAsterisk"></ng-template>
           </span>
