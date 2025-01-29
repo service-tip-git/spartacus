@@ -376,6 +376,9 @@ function updateServerTs(): Rule {
 
       /** is it a _default_ import? */
       isDefault?: boolean;
+
+      /** alias name */
+      asName?: string;
     }[] = [
       {
         importPath: '@angular/common',
