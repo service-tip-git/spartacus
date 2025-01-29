@@ -14,7 +14,7 @@ import { getWorkspace } from '../../../shared/utils/workspace-utils';
 import * as ts from 'typescript';
 import { insertImport } from '@schematics/angular/utility/ast-utils';
 import { Change, InsertChange } from '@schematics/angular/utility/change';
-import { removeImport, ClassType } from '../../../shared/utils/file-utils';
+import { removeImport } from '../../../shared/utils/file-utils';
 import { parse } from 'jsonc-parser';
 
 /**
@@ -352,65 +352,67 @@ function updateServerTs(): Rule {
     );
 
     // List of imports to remove
-    const importsToRemove: ClassType[] = [
-      { className: 'zone', importPath: 'zone.js/node' },
-      { className: 'ngExpressEngine', importPath: '@spartacus/setup/ssr' },
+    const importsToRemove: { symbolName: string; importPath: string }[] = [
+      { symbolName: 'zone', importPath: 'zone.js/node' },
+      { symbolName: 'ngExpressEngine', importPath: '@spartacus/setup/ssr' },
       {
-        className: 'NgExpressEngineDecorator',
+        symbolName: 'NgExpressEngineDecorator',
         importPath: '@spartacus/setup/ssr',
       },
-      { className: 'express', importPath: 'express' },
-      { className: 'join', importPath: 'path' },
-      { className: 'AppServerModule', importPath: './src/main.server' },
-      { className: 'APP_BASE_HREF', importPath: '@angular/common' },
-      { className: 'existsSync', importPath: 'fs' },
+      { symbolName: 'express', importPath: 'express' },
+      { symbolName: 'join', importPath: 'path' },
+      { symbolName: 'AppServerModule', importPath: './src/main.server' },
+      { symbolName: 'APP_BASE_HREF', importPath: '@angular/common' },
+      { symbolName: 'existsSync', importPath: 'fs' },
     ];
 
     // List of new imports to add
-    const importsToAdd = [
+    const importsToAdd: {
+      /** from where we import */
+      importPath: string;
+
+      /** what we import */
+      symbolName: string;
+
+      /** is it a _default_ import? */
+      isDefault?: boolean;
+    }[] = [
       {
-        moduleSpecifier: '@angular/common',
+        importPath: '@angular/common',
         symbolName: 'APP_BASE_HREF',
-        isDefault: false,
       },
       {
-        moduleSpecifier: '@spartacus/setup/ssr',
+        importPath: '@spartacus/setup/ssr',
         symbolName: 'NgExpressEngineDecorator',
-        isDefault: false,
       },
       {
-        moduleSpecifier: '@spartacus/setup/ssr',
+        importPath: '@spartacus/setup/ssr',
         symbolName: 'ngExpressEngine',
-        isDefault: false,
         asName: 'engine',
       },
       {
-        moduleSpecifier: 'express',
+        importPath: 'express',
         symbolName: 'express',
         isDefault: true,
       },
       {
-        moduleSpecifier: 'node:path',
+        importPath: 'node:path',
         symbolName: 'dirname',
-        isDefault: false,
       },
       {
-        moduleSpecifier: 'node:path',
+        importPath: 'node:path',
         symbolName: 'join',
-        isDefault: false,
       },
       {
-        moduleSpecifier: 'node:path',
+        importPath: 'node:path',
         symbolName: 'resolve',
-        isDefault: false,
       },
       {
-        moduleSpecifier: 'node:url',
+        importPath: 'node:url',
         symbolName: 'fileURLToPath',
-        isDefault: false,
       },
       {
-        moduleSpecifier: './src/main.server',
+        importPath: './src/main.server',
         symbolName: 'AppServerModule',
         isDefault: true,
       },
@@ -420,7 +422,11 @@ function updateServerTs(): Rule {
 
     // Remove old imports using our utility
     const importRemovalChanges: Change[] = importsToRemove.map(
-      (importToRemove) => removeImport(sourceFile, importToRemove)
+      (importToRemove) =>
+        removeImport(sourceFile, {
+          className: importToRemove.symbolName,
+          importPath: importToRemove.importPath,
+        })
     );
 
     // Apply changes for removing imports
@@ -448,7 +454,7 @@ function updateServerTs(): Rule {
         updatedSourceFile,
         serverTsPath,
         imp.symbolName,
-        imp.moduleSpecifier,
+        imp.importPath,
         imp.isDefault,
         imp.asName
       )
