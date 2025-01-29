@@ -226,8 +226,9 @@
 
           <div class="form-group">
             <div class="form-check">
-              <label *ngIf="anonymousConsent$ | async as anonymousConsent">
-                <input
+              <ng-container *ngIf="anonymousConsent$ | async as anonymousConsent">
+              <label *ngIf="anonymousConsent.template">
+                <input 
                   type="checkbox"
                   name="newsletter"
                   class="form-check-input"
@@ -238,6 +239,7 @@
                   {{ anonymousConsent.template }}
                 </span>
               </label>
+            </ng-container>
             </div>
           </div>
 
