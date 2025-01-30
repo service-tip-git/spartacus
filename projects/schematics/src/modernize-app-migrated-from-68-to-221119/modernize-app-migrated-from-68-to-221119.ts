@@ -17,7 +17,7 @@ import { updateAngularJsonForSsr } from './ssr/update-angular-json-for-ssr';
 import { updateTsConfigApp } from './ssr/update-ts-config-app';
 import { renameAppServerModule } from './ssr/rename-app-server-module';
 import { updateMainServerTs } from './ssr/update-main-server-ts';
-import { updateServerTs } from './ssr/update-server-ts';
+import { updateServerTs } from './ssr/update-server-ts/update-server-ts';
 import { updateAppModule } from './csr-and-ssr/update-app-module';
 import { updatePackageJsonServerScripts } from './ssr/update-package-json-server-scripts';
 import { isUsingOldServerBuilder } from './is-using-old-server-builder';
