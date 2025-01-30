@@ -615,6 +615,12 @@ export interface FeatureTogglesInterface {
   a11yNgSelectCloseDropdownOnEscape?: boolean;
 
   /**
+   * 'NgSelectA11yDirective' will customize a ng-select dropdowns by setting custom
+   * ariaLabelDropdown ng-select attribute value to provided common.ngSelectDropdownOptionsList translation
+   */
+  a11yNgSelectAriaLabelDropdownCustomized?: boolean;
+
+  /**
    * 'NgSelectA11yDirective' will close a dropdown with options on Escape key press
    * when a screen reader is used.
    * Replaces select with ng-select component in the following component:
@@ -1093,6 +1099,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yNgSelectOptionsCount: false,
   a11yNgSelectCloseDropdownOnEscape: false,
   a11ySelectImprovementsCustomerTicketingCreateSelectbox: false,
+  a11yNgSelectAriaLabelDropdownCustomized: false,
   a11yRepeatedCancelOrderError: false,
   a11yAddedToCartActiveDialog: false,
   a11yNgSelectMobileReadout: false,

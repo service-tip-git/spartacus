@@ -390,6 +390,7 @@ if (environment.cpq) {
         a11yNgSelectOptionsCount: false,
         a11yNgSelectCloseDropdownOnEscape: true,
         a11ySelectImprovementsCustomerTicketingCreateSelectbox: true,
+        a11yNgSelectAriaLabelDropdownCustomized: true,
         a11yRepeatedCancelOrderError: true,
         a11yAddedToCartActiveDialog: true,
         a11yNgSelectMobileReadout: true,
