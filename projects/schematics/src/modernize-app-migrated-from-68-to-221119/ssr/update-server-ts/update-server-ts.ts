@@ -105,6 +105,89 @@ function replaceMethodCallArgument(
   }, fileContent);
 }
 
+function removeWebpackSpecificCode(
+  sourceFile: ts.SourceFile,
+  fileContent: string
+): string {
+  // Find all nodes we want to remove
+  const variableNodes = findNodes(sourceFile, ts.SyntaxKind.VariableStatement);
+  const ifNodes = findNodes(sourceFile, ts.SyntaxKind.IfStatement);
+  const nodes = [...variableNodes, ...ifNodes];
+
+  // Filter and sort nodes in reverse order (to not affect positions)
+  const nodesToRemove = nodes
+    .filter((node) => {
+      // For variable declarations
+      if (ts.isVariableStatement(node)) {
+        const declaration = node.declarationList.declarations[0];
+        if (!declaration) return false;
+
+        // Check for the declare const __non_webpack_require__
+        if (
+          node.modifiers?.some(
+            (mod) => mod.kind === ts.SyntaxKind.DeclareKeyword
+          )
+        ) {
+          return (
+            ts.isIdentifier(declaration.name) &&
+            declaration.name.text === '__non_webpack_require__'
+          );
+        }
+
+        // Check for const mainModule or moduleFilename
+        return (
+          ts.isIdentifier(declaration.name) &&
+          (declaration.name.text === 'mainModule' ||
+            declaration.name.text === 'moduleFilename')
+        );
+      }
+
+      // For if statement
+      if (ts.isIfStatement(node)) {
+        const condition = node.expression;
+        return (
+          condition.getText().includes('moduleFilename === __filename') ||
+          condition.getText().includes("moduleFilename.includes('iisnode')")
+        );
+      }
+
+      return false;
+    })
+    .sort((a, b) => b.getStart() - a.getStart());
+
+  // Remove the nodes one by one
+  return nodesToRemove.reduce((content, node) => {
+    const start = node.getFullStart(); // Include leading trivia
+    const end = node.getEnd();
+    return content.slice(0, start) + content.slice(end);
+  }, fileContent);
+}
+
+function removeExportStatement(
+  sourceFile: ts.SourceFile,
+  fileContent: string
+): string {
+  const nodes = findNodes(sourceFile, ts.SyntaxKind.ExportDeclaration);
+
+  const exportNode = nodes.find((node) => {
+    if (!ts.isExportDeclaration(node)) return false;
+    const moduleSpecifier = node.moduleSpecifier;
+    if (!moduleSpecifier) return false;
+    return (
+      ts.isStringLiteral(moduleSpecifier) &&
+      moduleSpecifier.text === './src/main.server'
+    );
+  });
+
+  if (!exportNode) {
+    return fileContent;
+  }
+
+  const start = exportNode.getFullStart(); // Include leading trivia
+  const end = exportNode.getEnd();
+  return fileContent.slice(0, start) + fileContent.slice(end);
+}
+
 /**
  * Updates `server.ts` file for new Angular v17 standards.
  *
@@ -221,17 +304,50 @@ export function updateServerTs(): Rule {
       0 // first argument
     );
 
-    // Remove webpack-specific code
-    updatedContent = updatedContent.replace(
-      /\/\/\s*Webpack will replace ['"]require['"]\s*with\s*['"]__webpack_require__['"][\s\S]*?export\s*\*\s*from\s*['"]\.\/src\/main\.server['"];\s*$/,
-      'run();'
+    // Remove webpack-specific code using AST
+    const sourceFileBeforeWebpackRemoval = ts.createSourceFile(
+      serverTsPath,
+      updatedContent,
+      ts.ScriptTarget.Latest,
+      true
     );
 
-    // Remove the old import
-    updatedContent = updatedContent.replace(
-      /import\s*{\s*AppServerModule\s*}\s*from\s*['"]\.\/src\/main\.server['"];\s*$/,
-      ''
+    updatedContent = removeWebpackSpecificCode(
+      sourceFileBeforeWebpackRemoval,
+      updatedContent
     );
+
+    // Create new source file after webpack code removal
+    const sourceFileBeforeExportRemoval = ts.createSourceFile(
+      serverTsPath,
+      updatedContent,
+      ts.ScriptTarget.Latest,
+      true
+    );
+
+    // Remove export statement
+    updatedContent = removeExportStatement(
+      sourceFileBeforeExportRemoval,
+      updatedContent
+    );
+
+    // Remove webpack-specific comments with regex
+    updatedContent = updatedContent
+      .replace(
+        /\/\/ Webpack will replace 'require' with '__webpack_require__'\n/,
+        ''
+      )
+      .replace(
+        /\/\/ '__non_webpack_require__' is a proxy to Node 'require'\n/,
+        ''
+      )
+      .replace(
+        /\/\/ The below code is to ensure that the server is run only when not requiring the bundle\.\n/,
+        ''
+      );
+
+    // Add run() call
+    updatedContent += 'run();\n';
 
     tree.overwrite(serverTsPath, updatedContent);
 
