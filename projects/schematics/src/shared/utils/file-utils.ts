@@ -806,6 +806,28 @@ export function removeImport(
 
   let position: number;
   let toRemove = importToRemove.className;
+
+  // First check for namespace imports (import * as name)
+  const namespaceImports = findNodes(
+    importDeclarationNode,
+    ts.SyntaxKind.NamespaceImport
+  );
+  if (namespaceImports.length > 0) {
+    const namespaceImport = namespaceImports[0];
+    const nameNode = findNode(
+      namespaceImport,
+      ts.SyntaxKind.Identifier,
+      importToRemove.className
+    );
+    if (nameNode) {
+      // If we found a matching namespace import, remove the whole import declaration
+      position = importDeclarationNode.getStart();
+      toRemove = importDeclarationNode.getText();
+      return new RemoveChange(source.fileName, position, toRemove);
+    }
+  }
+
+  // Then check for named imports (import { name })
   const importSpecifierNodes = findNodes(
     importDeclarationNode,
     ts.SyntaxKind.ImportSpecifier
@@ -828,9 +850,9 @@ export function removeImport(
           i,
         };
       })
-      .filter((result) => result.importNode)[0];
+      .filter((result) => result?.importNode)?.[0];
 
-    if (!importSpecifier.importNode) {
+    if (!importSpecifier?.importNode) {
       return new NoopChange();
     }
 

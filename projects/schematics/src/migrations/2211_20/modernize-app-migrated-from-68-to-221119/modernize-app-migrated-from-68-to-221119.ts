@@ -13,7 +13,11 @@ import {
 import { getWorkspace } from '../../../shared/utils/workspace-utils';
 import * as ts from 'typescript';
 import { insertImport } from '@schematics/angular/utility/ast-utils';
-import { Change, InsertChange } from '@schematics/angular/utility/change';
+import {
+  Change,
+  InsertChange,
+  RemoveChange,
+} from '@schematics/angular/utility/change';
 import { removeImport } from '../../../shared/utils/file-utils';
 import { parse } from 'jsonc-parser';
 
@@ -434,12 +438,14 @@ function updateServerTs(): Rule {
 
     // Apply changes for removing imports
     importRemovalChanges.forEach((change) => {
-      if (change instanceof InsertChange) {
-        const start = change.pos;
-        updatedContent =
-          updatedContent.slice(0, start) +
-          change.toAdd +
-          updatedContent.slice(start);
+      if (change instanceof RemoveChange) {
+        const searchText = change.toRemove;
+        const searchIndex = updatedContent.indexOf(searchText);
+        if (searchIndex !== -1) {
+          updatedContent =
+            updatedContent.slice(0, searchIndex) +
+            updatedContent.slice(searchIndex + searchText.length);
+        }
       }
     });
 
@@ -478,8 +484,8 @@ function updateServerTs(): Rule {
     updatedContent = updatedContent.replace(
       /const\s+distFolder\s*=\s*join\s*\(\s*process\.cwd\s*\(\s*\)\s*,\s*['"]dist\/.*\/browser['"]\s*\)\s*;\s*\n*const\s+indexHtml\s*=\s*existsSync\s*\(\s*join\s*\(\s*distFolder\s*,\s*['"]index\.original\.html['"]\s*\)\s*\)\s*\n*\s*\?\s*['"]index\.original\.html['"]\s*\n*\s*:\s*['"]index['"]\s*;/,
       `const serverDistFolder = dirname(fileURLToPath(import.meta.url));
-    const browserDistFolder = resolve(serverDistFolder, '../browser');
-    const indexHtml = join(browserDistFolder, 'index.html');`
+  const browserDistFolder = resolve(serverDistFolder, '../browser');
+  const indexHtml = join(browserDistFolder, 'index.html');`
     );
 
     // Update server configuration
