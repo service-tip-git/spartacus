@@ -70,9 +70,11 @@ function buildCdsConfig(
         tenant: '${options.tenant || 'TENANT_PLACEHOLDER'}',
         baseUrl: '${options.baseUrl || 'BASE_URL_PLACEHOLDER'}',
         endpoints: {
-          strategyProducts: '${options.sciEnabled
-            ? '/strategy/v1/sites/\${baseSite}/strategies/\${strategyId}/products'
-            : '/strategy/\${tenant}/strategies/\${strategyId}/products'}',
+          strategyProducts: '${
+            options.sciEnabled
+              ? '/strategy/v1/sites/${baseSite}/strategies/${strategyId}/products'
+              : '/strategy/${tenant}/strategies/${strategyId}/products'
+          }',
           searchIntelligence:
             '/search-intelligence/v1/sites/\${cdsSiteId}/trendingSearches',
         },

@@ -27,7 +27,6 @@ import {
  * @see CdsModule.forRoot
  */
 
-
 const cds1: CdsConfig = {
   cds: {
     baseSite: ['electronics-spa', 'electronics', 'electronics-standalone'],
@@ -36,7 +35,8 @@ const cds1: CdsConfig = {
     profileTag: {
       javascriptUrl:
         'https://tag.static.stage.context.cloud.sap/js/profile-tag.js',
-      configUrl: 'https://tag.static.stage.context.cloud.sap/config/mytenant-main-default',
+      configUrl:
+        'https://tag.static.stage.context.cloud.sap/config/mytenant-main-default',
       allowInsecureCookies: true,
     },
   },
