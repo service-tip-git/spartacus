@@ -33,6 +33,78 @@ function replaceVariableDeclaration(
   return fileContent.slice(0, start) + newDeclaration + fileContent.slice(end);
 }
 
+function replaceMethodCallArgument(
+  sourceFile: ts.SourceFile,
+  fileContent: string,
+  objectName: string,
+  methodName: string,
+  oldArgName: string,
+  newArgName: string,
+  argPosition?: number
+): string {
+  const nodes = findNodes(
+    sourceFile,
+    ts.SyntaxKind.CallExpression,
+    undefined,
+    true
+  );
+
+  // Find all matching method calls
+  const targetNodes = nodes.filter((node) => {
+    if (!ts.isCallExpression(node)) return false;
+    const expression = node.expression;
+    if (!ts.isPropertyAccessExpression(expression)) return false;
+
+    const object = expression.expression;
+    const method = expression.name;
+
+    if (!ts.isIdentifier(object) || !ts.isIdentifier(method)) return false;
+
+    // Check if this is the method call we're looking for
+    const isTargetMethod =
+      object.text === objectName && method.text === methodName;
+    if (!isTargetMethod) return false;
+
+    // If argPosition is specified, check if the argument at that position is what we want to replace
+    if (typeof argPosition === 'number') {
+      const arg = node.arguments[argPosition];
+      return ts.isIdentifier(arg) && arg.text === oldArgName;
+    }
+
+    // Otherwise check if any argument matches what we want to replace
+    return node.arguments.some(
+      (arg) => ts.isIdentifier(arg) && arg.text === oldArgName
+    );
+  });
+
+  if (!targetNodes.length) {
+    return fileContent;
+  }
+
+  // Process all matches
+  return targetNodes.reduce((content, targetNode) => {
+    if (!ts.isCallExpression(targetNode)) return content;
+
+    // Find the argument to replace
+    let argToReplace: ts.Node | undefined;
+    if (typeof argPosition === 'number') {
+      argToReplace = targetNode.arguments[argPosition];
+    } else {
+      argToReplace = targetNode.arguments.find(
+        (arg) => ts.isIdentifier(arg) && arg.text === oldArgName
+      );
+    }
+
+    if (!argToReplace) return content;
+
+    return (
+      content.slice(0, argToReplace.getStart()) +
+      newArgName +
+      content.slice(argToReplace.getEnd())
+    );
+  }, fileContent);
+}
+
 /**
  * Updates `server.ts` file for new Angular v17 standards.
  *
@@ -113,15 +185,40 @@ export function updateServerTs(): Rule {
       `const indexHtml = join(browserDistFolder, 'index.html');`
     );
 
-    // Update server configuration
-    updatedContent = updatedContent.replace(
-      /server\.set\s*\(\s*['"]views['"]\s*,\s*distFolder\s*\)\s*;/g,
-      `server.set('views', browserDistFolder);`
+    // Create new source file after second update
+    const sourceFileAfterIndexHtml = ts.createSourceFile(
+      serverTsPath,
+      updatedContent,
+      ts.ScriptTarget.Latest,
+      true
     );
 
-    updatedContent = updatedContent.replace(
-      /express\.static\s*\(\s*distFolder\s*,/g,
-      `express.static(browserDistFolder,`
+    // Update server configuration using AST
+    updatedContent = replaceMethodCallArgument(
+      sourceFileAfterIndexHtml,
+      updatedContent,
+      'server',
+      'set',
+      'distFolder',
+      'browserDistFolder',
+      1 // second argument
+    );
+
+    const sourceFileAfterServerSet = ts.createSourceFile(
+      serverTsPath,
+      updatedContent,
+      ts.ScriptTarget.Latest,
+      true
+    );
+
+    updatedContent = replaceMethodCallArgument(
+      sourceFileAfterServerSet,
+      updatedContent,
+      'express',
+      'static',
+      'distFolder',
+      'browserDistFolder',
+      0 // first argument
     );
 
     // Remove webpack-specific code
