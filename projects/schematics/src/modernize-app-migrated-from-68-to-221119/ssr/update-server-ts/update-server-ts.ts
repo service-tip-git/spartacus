@@ -1,12 +1,7 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import * as ts from 'typescript';
-import { insertImport } from '@schematics/angular/utility/ast-utils';
-import {
-  Change,
-  InsertChange,
-  RemoveChange,
-} from '@schematics/angular/utility/change';
-import { removeImport } from '../../../shared/utils/file-utils';
+import { removeImportsFromServerTs } from './remove-imports-from-server-ts';
+import { addImportsToServerTs } from './add-imports-to-server-ts';
 
 /**
  * Updates `server.ts` file for new Angular v17 standards.
@@ -38,57 +33,9 @@ export function updateServerTs(): Rule {
       true
     );
 
-    // List of new imports to add
-    const importsToAdd: {
-      importPath: string;
-      symbolName: string;
-      isDefault?: boolean;
-      asName?: string;
-    }[] = [
-      {
-        importPath: '@angular/common',
-        symbolName: 'APP_BASE_HREF',
-      },
-      {
-        importPath: '@spartacus/setup/ssr',
-        symbolName: 'NgExpressEngineDecorator',
-      },
-      {
-        importPath: '@spartacus/setup/ssr',
-        symbolName: 'ngExpressEngine',
-        asName: 'engine',
-      },
-      {
-        importPath: 'express',
-        symbolName: 'express',
-        isDefault: true,
-      },
-      {
-        importPath: 'node:path',
-        symbolName: 'dirname',
-      },
-      {
-        importPath: 'node:path',
-        symbolName: 'join',
-      },
-      {
-        importPath: 'node:path',
-        symbolName: 'resolve',
-      },
-      {
-        importPath: 'node:url',
-        symbolName: 'fileURLToPath',
-      },
-      {
-        importPath: './src/main.server',
-        symbolName: 'AppServerModule',
-        isDefault: true,
-      },
-    ];
-
     let updatedContent = sourceText;
 
-    updatedContent = removeImportsInServerTs(updatedContent, sourceFile);
+    updatedContent = removeImportsFromServerTs(updatedContent, sourceFile);
 
     // Create new source file after removals
     const updatedSourceFile = ts.createSourceFile(
@@ -98,28 +45,11 @@ export function updateServerTs(): Rule {
       true
     );
 
-    // Add new imports
-    const importAdditionChanges: Change[] = importsToAdd.map((imp) =>
-      insertImport(
-        updatedSourceFile,
-        serverTsPath,
-        imp.symbolName,
-        imp.importPath,
-        imp.isDefault,
-        imp.asName
-      )
+    updatedContent = addImportsToServerTs(
+      updatedContent,
+      updatedSourceFile,
+      serverTsPath
     );
-
-    // Apply changes for adding imports
-    importAdditionChanges.forEach((change) => {
-      if (change instanceof InsertChange) {
-        const start = change.pos;
-        updatedContent =
-          updatedContent.slice(0, start) +
-          change.toAdd +
-          updatedContent.slice(start);
-      }
-    });
 
     // Update dist folder constants
     updatedContent = updatedContent.replace(
@@ -152,51 +82,8 @@ export function updateServerTs(): Rule {
       ''
     );
 
-    tree.overwrite('server.ts', updatedContent);
+    tree.overwrite(serverTsPath, updatedContent);
 
     context.logger.info(`✅ Updated ${serverTsPath} implementation`);
   };
-}
-
-function removeImportsInServerTs(
-  updatedContent: string,
-  sourceFile: ts.SourceFile
-): string {
-  // List of imports to remove
-  const importsToRemove: { symbolName: string; importPath: string }[] = [
-    { symbolName: 'zone', importPath: 'zone.js/node' },
-    { symbolName: 'ngExpressEngine', importPath: '@spartacus/setup/ssr' },
-    {
-      symbolName: 'NgExpressEngineDecorator',
-      importPath: '@spartacus/setup/ssr',
-    },
-    { symbolName: 'express', importPath: 'express' },
-    { symbolName: 'join', importPath: 'path' },
-    { symbolName: 'AppServerModule', importPath: './src/main.server' },
-    { symbolName: 'APP_BASE_HREF', importPath: '@angular/common' },
-    { symbolName: 'existsSync', importPath: 'fs' },
-  ];
-
-  // Remove old imports using our utility
-  const importRemovalChanges: Change[] = importsToRemove.map((importToRemove) =>
-    removeImport(sourceFile, {
-      className: importToRemove.symbolName,
-      importPath: importToRemove.importPath,
-    })
-  );
-
-  // Apply changes for removing imports
-  importRemovalChanges.forEach((change) => {
-    if (change instanceof RemoveChange) {
-      const searchText = change.toRemove;
-      const searchIndex = updatedContent.indexOf(searchText);
-      if (searchIndex !== -1) {
-        updatedContent =
-          updatedContent.slice(0, searchIndex) +
-          updatedContent.slice(searchIndex + searchText.length);
-      }
-    }
-  });
-
-  return updatedContent;
 }
