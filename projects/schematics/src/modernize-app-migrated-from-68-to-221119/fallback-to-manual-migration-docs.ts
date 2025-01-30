@@ -18,8 +18,8 @@ export function withFallbackToManualMigrationDocs(rule: Rule): Rule {
       context.logger.error(
         `⚠️ ${err instanceof Error ? err.message : 'Unknown error'}`
       );
-      context.logger.warn(
-        `Please follow the manual migration steps at: ${DOCS_FOR_MODERNIZING_NG17_APP}`
+      context.logger.error(
+        `Could not migrate the step automatically. For manual migration steps, please refer to: ${DOCS_FOR_MODERNIZING_NG17_APP}`
       );
       return tree;
     }

@@ -32,24 +32,22 @@ export function migrate(): Rule {
       'Modernizing an app migrated from Angular 6.8 to 2211.19...'
     );
 
-    return withFallbackToManualMigrationDocs(
-      chain([
-        migrateToApplicationBuilder,
-        updateTsConfig,
+    return chain([
+      withFallbackToManualMigrationDocs(migrateToApplicationBuilder()),
+      withFallbackToManualMigrationDocs(updateTsConfig()),
 
-        ...(isUsingOldServerBuilder(tree, context)
-          ? [
-              migrateSSRConfig,
-              updatePackageJsonServerScripts,
-              updateTsConfigsForSsr,
-              renameAppServerModule,
-              updateMainServerTs,
-              updateServerTs,
-            ]
-          : []),
+      ...(isUsingOldServerBuilder(tree, context)
+        ? [
+            withFallbackToManualMigrationDocs(migrateSSRConfig()),
+            withFallbackToManualMigrationDocs(updatePackageJsonServerScripts()),
+            withFallbackToManualMigrationDocs(updateTsConfigsForSsr()),
+            withFallbackToManualMigrationDocs(renameAppServerModule()),
+            withFallbackToManualMigrationDocs(updateMainServerTs()),
+            withFallbackToManualMigrationDocs(updateServerTs()),
+          ]
+        : []),
 
-        updateAppModule,
-      ])
-    );
+      withFallbackToManualMigrationDocs(updateAppModule()),
+    ]);
   };
 }
