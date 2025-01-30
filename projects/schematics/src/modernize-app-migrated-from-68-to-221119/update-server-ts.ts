@@ -16,17 +16,18 @@ import { removeImport } from '../shared/utils/file-utils';
  */
 export function updateServerTs(): Rule {
   return (tree: Tree, context: SchematicContext) => {
-    context.logger.info('⏳ Updating server.ts configuration...');
-
     const serverTsPath = 'server.ts';
+
+    context.logger.info(`⏳ Updating ${serverTsPath} implementation...`);
+
     if (!tree.exists(serverTsPath)) {
-      context.logger.warn('⚠️ No server.ts found');
+      context.logger.warn(`⚠️ ${serverTsPath} file not found`);
       return;
     }
 
     const content = tree.read(serverTsPath);
     if (!content) {
-      return;
+      throw new Error(`Failed to read ${serverTsPath} file`);
     }
 
     const sourceText = content.toString();
@@ -188,6 +189,6 @@ export function updateServerTs(): Rule {
 
     tree.overwrite('server.ts', updatedContent);
 
-    context.logger.info('✅ Updated server.ts configuration');
+    context.logger.info(`✅ Updated ${serverTsPath} implementation`);
   };
 }

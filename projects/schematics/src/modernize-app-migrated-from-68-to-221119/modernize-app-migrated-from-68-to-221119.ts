@@ -11,10 +11,10 @@ import {
   chain,
 } from '@angular-devkit/schematics';
 
-import { migrateToApplicationBuilder } from './migrate-to-application-builder';
+import { updateAngularJsonForApplicationBuilder } from './update-angular-json-for-application-builder';
 import { updateTsConfig } from './update-ts-config';
-import { migrateSSRConfig } from './migrate-ssr-config';
-import { updateTsConfigsForSsr } from './update-ts-configs-for-ssr';
+import { updateAngularJsonForSsr } from './update-angular-json-for-ssr';
+import { updateTsConfigApp } from './update-ts-config-app';
 import { renameAppServerModule } from './rename-app-server-module';
 import { updateMainServerTs } from './update-main-server-ts';
 import { updateServerTs } from './update-server-ts';
@@ -22,32 +22,31 @@ import { updateAppModule } from './update-app-module';
 import { updatePackageJsonServerScripts } from './update-package-json-server-scripts';
 import { isUsingOldServerBuilder } from './is-using-old-server-builder';
 import { withFallbackToManualMigrationDocs } from './fallback-to-manual-migration-docs';
+import { removeTsConfigServer } from './remove-ts-config-server';
 
 /**
  * Modernizes an application to use new Angular v17 standards.
  */
 export function migrate(): Rule {
   return (tree: Tree, context: SchematicContext) => {
-    context.logger.info(
-      'Modernizing an app migrated from Angular 6.8 to 2211.19...'
-    );
-
     return chain([
-      withFallbackToManualMigrationDocs(migrateToApplicationBuilder()),
+      withFallbackToManualMigrationDocs(
+        updateAngularJsonForApplicationBuilder()
+      ),
       withFallbackToManualMigrationDocs(updateTsConfig()),
+      withFallbackToManualMigrationDocs(updateAppModule()),
 
       ...(isUsingOldServerBuilder(tree, context)
         ? [
-            withFallbackToManualMigrationDocs(migrateSSRConfig()),
+            withFallbackToManualMigrationDocs(updateAngularJsonForSsr()),
             withFallbackToManualMigrationDocs(updatePackageJsonServerScripts()),
-            withFallbackToManualMigrationDocs(updateTsConfigsForSsr()),
+            withFallbackToManualMigrationDocs(updateTsConfigApp()),
+            withFallbackToManualMigrationDocs(removeTsConfigServer()),
             withFallbackToManualMigrationDocs(renameAppServerModule()),
             withFallbackToManualMigrationDocs(updateMainServerTs()),
             withFallbackToManualMigrationDocs(updateServerTs()),
           ]
         : []),
-
-      withFallbackToManualMigrationDocs(updateAppModule()),
     ]);
   };
 }

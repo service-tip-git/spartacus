@@ -10,10 +10,12 @@ import { parse } from 'jsonc-parser';
  */
 export function updatePackageJsonServerScripts(): Rule {
   return (tree: Tree, context: SchematicContext) => {
-    context.logger.info('⏳ Updating package.json scripts...');
+    const packageJsonPath = 'package.json';
 
-    if (!tree.exists('package.json')) {
-      throw new Error('package.json file not found');
+    context.logger.info(`⏳ Updating ${packageJsonPath} scripts...`);
+
+    if (!tree.exists(packageJsonPath)) {
+      throw new Error(`${packageJsonPath} file not found`);
     }
 
     // Get app name from workspace
@@ -23,15 +25,15 @@ export function updatePackageJsonServerScripts(): Rule {
       throw new Error('No project found in workspace');
     }
 
-    const content = tree.read('package.json');
+    const content = tree.read(packageJsonPath);
     if (!content) {
-      throw new Error('Failed to read package.json file');
+      throw new Error(`Failed to read ${packageJsonPath} file`);
     }
 
     const packageJson = parse(content.toString());
 
     if (!packageJson.scripts) {
-      throw new Error('No scripts section found in package.json');
+      throw new Error(`No scripts section found in ${packageJsonPath}`);
     }
 
     // Remove scripts
@@ -48,8 +50,8 @@ export function updatePackageJsonServerScripts(): Rule {
       ] = `node dist/${projectName}/server/server.mjs`;
     }
 
-    tree.overwrite('package.json', JSON.stringify(packageJson, null, 2));
+    tree.overwrite(packageJsonPath, JSON.stringify(packageJson, null, 2));
 
-    context.logger.info('✅ Updated package.json scripts');
+    context.logger.info(`✅ Updated ${packageJsonPath} scripts`);
   };
 }

@@ -2,17 +2,17 @@ import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { parse } from 'jsonc-parser';
 
 /**
- * Updates TypeScript configurations related to SSR to align with new Angular v17 standards.
+ * Updates `tsconfig.app.json` to align with new Angular v17 standards.
  *
- * Adds NodeJS types and server files to `tsconfig.app.json`,
- * and removes the `tsconfig.server.json` which is no longer needed.
+ * Adds NodeJS types and server files to `tsconfig.app.json`.
  */
-export function updateTsConfigsForSsr(): Rule {
+export function updateTsConfigApp(): Rule {
   return (tree: Tree, context: SchematicContext) => {
-    context.logger.info('⏳ Updating TypeScript configurations for SSR...');
+    const tsconfigAppPath = 'tsconfig.app.json';
+
+    context.logger.info(`⏳ Updating ${tsconfigAppPath} configuration...`);
 
     // Update tsconfig.app.json
-    const tsconfigAppPath = 'tsconfig.app.json';
     if (!tree.exists(tsconfigAppPath)) {
       throw new Error('tsconfig.app.json file not found');
     }
@@ -47,12 +47,6 @@ export function updateTsConfigsForSsr(): Rule {
 
     tree.overwrite(tsconfigAppPath, JSON.stringify(tsConfigApp, null, 2));
 
-    // Remove tsconfig.server.json
-    const tsconfigServerPath = 'tsconfig.server.json';
-    if (tree.exists(tsconfigServerPath)) {
-      tree.delete(tsconfigServerPath);
-    }
-
-    context.logger.info('✅ Updated TypeScript configurations for SSR');
+    context.logger.info(`✅ Updated ${tsconfigAppPath} configuration`);
   };
 }

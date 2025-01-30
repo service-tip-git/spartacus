@@ -7,9 +7,9 @@ import { getWorkspace } from '../shared/utils/workspace-utils';
  * Sets up SSR options in the build configuration, adds 'noSsr' mode,
  * and removes obsolete SSR-related architect sections.
  */
-export function migrateSSRConfig(): Rule {
+export function updateAngularJsonForSsr(): Rule {
   return (tree: Tree, context: SchematicContext) => {
-    context.logger.info('⏳ Migrating SSR configuration...');
+    context.logger.info('⏳ Updating angular.json for SSR...');
 
     const { workspace, path } = getWorkspace(tree);
     const project = workspace.projects[Object.keys(workspace.projects)[0]];
@@ -58,6 +58,6 @@ export function migrateSSRConfig(): Rule {
     delete project.architect?.prerender;
 
     tree.overwrite(path, JSON.stringify(workspace, null, 2));
-    context.logger.info('✅ Migrated SSR configuration');
+    context.logger.info('✅ Updated angular.json for SSR');
   };
 }

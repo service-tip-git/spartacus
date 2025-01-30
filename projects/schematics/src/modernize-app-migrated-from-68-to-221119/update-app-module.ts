@@ -9,9 +9,9 @@ import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
  */
 export function updateAppModule(): Rule {
   return (tree: Tree, context: SchematicContext) => {
-    context.logger.info('⏳ Updating app.module.ts...');
-
     const appModulePath = 'src/app/app.module.ts';
+    context.logger.info(`⏳ Updating ${appModulePath}...`);
+
     if (!tree.exists(appModulePath)) {
       context.logger.warn('⚠️ No app.module.ts found');
       return;
@@ -60,6 +60,6 @@ export function updateAppModule(): Rule {
 
     tree.overwrite(appModulePath, sourceText);
 
-    context.logger.info('✅ Updated app.module.ts');
+    context.logger.info(`✅ Updated ${appModulePath}`);
   };
 }

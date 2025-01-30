@@ -8,9 +8,9 @@ import { getWorkspace } from '../shared/utils/workspace-utils';
  * '@angular-devkit/build-angular:application',
  * updates output paths, and removes obsolete build options.
  */
-export function migrateToApplicationBuilder(): Rule {
+export function updateAngularJsonForApplicationBuilder(): Rule {
   return (tree: Tree, context: SchematicContext) => {
-    context.logger.info('⏳ Migrating to application builder...');
+    context.logger.info('⏳ Updating angular.json for application builder...');
 
     const { workspace, path } = getWorkspace(tree);
     const project = workspace.projects[Object.keys(workspace.projects)[0]];
@@ -25,9 +25,6 @@ export function migrateToApplicationBuilder(): Rule {
     }
 
     // Update builder
-    context.logger.info(
-      '⏳ Updating builder to @angular-devkit/build-angular:application'
-    );
     buildTarget.builder = '@angular-devkit/build-angular:application';
 
     // Update options
@@ -56,7 +53,7 @@ export function migrateToApplicationBuilder(): Rule {
       delete devConfig.namedChunks;
     }
 
-    context.logger.info('✅ Migrated to application builder');
+    context.logger.info('✅ Updated angular.json for application builder');
     tree.overwrite(path, JSON.stringify(workspace, null, 2));
   };
 }
