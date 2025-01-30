@@ -15,13 +15,12 @@ export function migrateSSRConfig(): Rule {
     const project = workspace.projects[Object.keys(workspace.projects)[0]];
 
     if (!project) {
-      context.logger.warn('⚠️ No project found for SSR migration');
-      return;
+      throw new Error('No project found for SSR migration');
     }
 
     const buildTarget = project.architect?.build as any;
     if (!buildTarget) {
-      return;
+      throw new Error('No build target found in project configuration');
     }
 
     // Add SSR options
@@ -58,7 +57,7 @@ export function migrateSSRConfig(): Rule {
     delete project.architect?.['serve-ssr'];
     delete project.architect?.prerender;
 
-    context.logger.info('✅ Migrated SSR configuration');
     tree.overwrite(path, JSON.stringify(workspace, null, 2));
+    context.logger.info('✅ Migrated SSR configuration');
   };
 }

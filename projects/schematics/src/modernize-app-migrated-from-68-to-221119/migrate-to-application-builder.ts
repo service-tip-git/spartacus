@@ -16,14 +16,12 @@ export function migrateToApplicationBuilder(): Rule {
     const project = workspace.projects[Object.keys(workspace.projects)[0]];
 
     if (!project) {
-      context.logger.warn('⚠️ No project found in workspace');
-      return;
+      throw new Error('No project found in workspace');
     }
 
     const buildTarget = project.architect?.build as any;
     if (!buildTarget) {
-      context.logger.warn('⚠️ No build target found in project');
-      return;
+      throw new Error('No build target found in project configuration');
     }
 
     // Update builder

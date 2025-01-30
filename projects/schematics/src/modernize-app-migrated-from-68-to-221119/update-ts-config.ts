@@ -12,25 +12,28 @@ export function updateTsConfig(): Rule {
 
     const tsconfigPath = 'tsconfig.json';
     if (!tree.exists(tsconfigPath)) {
-      context.logger.warn('⚠️ No tsconfig.json found');
-      return;
+      throw new Error('tsconfig.json file not found');
     }
 
     const tsConfigContent = tree.read(tsconfigPath);
-    if (tsConfigContent) {
-      const tsConfig = parse(tsConfigContent.toString());
-
-      if (tsConfig.compilerOptions) {
-        delete tsConfig.compilerOptions.baseUrl;
-        delete tsConfig.compilerOptions.forceConsistentCasingInFileNames;
-        delete tsConfig.compilerOptions.downlevelIteration;
-
-        tsConfig.compilerOptions.skipLibCheck = true;
-        tsConfig.compilerOptions.esModuleInterop = true;
-      }
-
-      tree.overwrite(tsconfigPath, JSON.stringify(tsConfig, null, 2));
+    if (!tsConfigContent) {
+      throw new Error('Failed to read tsconfig.json file');
     }
+
+    const tsConfig = parse(tsConfigContent.toString());
+
+    if (!tsConfig.compilerOptions) {
+      throw new Error('No compilerOptions found in tsconfig.json');
+    }
+
+    delete tsConfig.compilerOptions.baseUrl;
+    delete tsConfig.compilerOptions.forceConsistentCasingInFileNames;
+    delete tsConfig.compilerOptions.downlevelIteration;
+
+    tsConfig.compilerOptions.skipLibCheck = true;
+    tsConfig.compilerOptions.esModuleInterop = true;
+
+    tree.overwrite(tsconfigPath, JSON.stringify(tsConfig, null, 2));
 
     context.logger.info('✅ Updated TypeScript configuration');
   };

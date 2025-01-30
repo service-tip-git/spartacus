@@ -13,38 +13,39 @@ export function updatePackageJsonServerScripts(): Rule {
     context.logger.info('⏳ Updating package.json scripts...');
 
     if (!tree.exists('package.json')) {
-      context.logger.warn('⚠️ No package.json found');
-      return;
+      throw new Error('package.json file not found');
     }
 
     // Get app name from workspace
     const { workspace } = getWorkspace(tree);
     const projectName = Object.keys(workspace.projects)[0];
     if (!projectName) {
-      return;
+      throw new Error('No project found in workspace');
     }
 
     const content = tree.read('package.json');
     if (!content) {
-      return;
+      throw new Error('Failed to read package.json file');
     }
 
     const packageJson = parse(content.toString());
 
-    if (packageJson.scripts) {
-      // Remove scripts
-      delete packageJson.scripts['dev:ssr'];
-      delete packageJson.scripts['prerender'];
+    if (!packageJson.scripts) {
+      throw new Error('No scripts section found in package.json');
+    }
 
-      // Update scripts
-      if (packageJson.scripts['build:ssr']) {
-        packageJson.scripts['build:ssr'] = 'ng build';
-      }
-      if (packageJson.scripts['serve:ssr']) {
-        packageJson.scripts[
-          `serve:ssr:${projectName}`
-        ] = `node dist/${projectName}/server/server.mjs`;
-      }
+    // Remove scripts
+    delete packageJson.scripts['dev:ssr'];
+    delete packageJson.scripts['prerender'];
+
+    // Update scripts
+    if (packageJson.scripts['build:ssr']) {
+      packageJson.scripts['build:ssr'] = 'ng build';
+    }
+    if (packageJson.scripts['serve:ssr']) {
+      packageJson.scripts[
+        `serve:ssr:${projectName}`
+      ] = `node dist/${projectName}/server/server.mjs`;
     }
 
     tree.overwrite('package.json', JSON.stringify(packageJson, null, 2));

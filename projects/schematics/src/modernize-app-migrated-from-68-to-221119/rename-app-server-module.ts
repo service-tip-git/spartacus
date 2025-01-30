@@ -12,15 +12,16 @@ export function renameAppServerModule(): Rule {
     const appModuleServerPath_NEW = 'src/app/app.module.server.ts';
 
     if (!tree.exists(appServerModulePath_OLD)) {
-      context.logger.warn('⚠️ No app.server.module.ts found to rename');
-      return;
+      throw new Error('app.server.module.ts file not found');
     }
 
     const content = tree.read(appServerModulePath_OLD);
-    if (content) {
-      tree.create(appModuleServerPath_NEW, content.toString());
-      tree.delete(appServerModulePath_OLD);
+    if (!content) {
+      throw new Error('Failed to read app.server.module.ts file');
     }
+
+    tree.create(appModuleServerPath_NEW, content.toString());
+    tree.delete(appServerModulePath_OLD);
 
     context.logger.info('✅ Renamed server module files');
   };
