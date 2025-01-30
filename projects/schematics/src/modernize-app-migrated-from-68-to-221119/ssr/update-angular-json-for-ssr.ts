@@ -1,5 +1,5 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
-import { getWorkspace } from '../shared/utils/workspace-utils';
+import { getWorkspace } from '../../shared/utils/workspace-utils';
 
 /**
  * Updates the Angular configuration related to SSR for new Angular v17 standards.

@@ -11,18 +11,18 @@ import {
   chain,
 } from '@angular-devkit/schematics';
 
-import { updateAngularJsonForApplicationBuilder } from './update-angular-json-for-application-builder';
-import { updateTsConfig } from './update-ts-config';
-import { updateAngularJsonForSsr } from './update-angular-json-for-ssr';
-import { updateTsConfigApp } from './update-ts-config-app';
-import { renameAppServerModule } from './rename-app-server-module';
-import { updateMainServerTs } from './update-main-server-ts';
-import { updateServerTs } from './update-server-ts';
-import { updateAppModule } from './update-app-module';
-import { updatePackageJsonServerScripts } from './update-package-json-server-scripts';
+import { updateAngularJsonForApplicationBuilder } from './csr-and-ssr/update-angular-json-for-application-builder';
+import { updateTsConfig } from './csr-and-ssr/update-ts-config';
+import { updateAngularJsonForSsr } from './ssr/update-angular-json-for-ssr';
+import { updateTsConfigApp } from './ssr/update-ts-config-app';
+import { renameAppServerModule } from './ssr/rename-app-server-module';
+import { updateMainServerTs } from './ssr/update-main-server-ts';
+import { updateServerTs } from './ssr/update-server-ts';
+import { updateAppModule } from './csr-and-ssr/update-app-module';
+import { updatePackageJsonServerScripts } from './ssr/update-package-json-server-scripts';
 import { isUsingOldServerBuilder } from './is-using-old-server-builder';
-import { withFallbackToManualMigrationDocs } from './fallback-to-manual-migration-docs';
-import { removeTsConfigServer } from './remove-ts-config-server';
+import { removeTsConfigServer } from './ssr/remove-ts-config-server';
+import { withFallbackToShowingDocs } from './with-fallback-to-showing-docs';
 
 /**
  * Modernizes an application to use new Angular v17 standards.
@@ -30,21 +30,19 @@ import { removeTsConfigServer } from './remove-ts-config-server';
 export function migrate(): Rule {
   return (tree: Tree, context: SchematicContext) => {
     return chain([
-      withFallbackToManualMigrationDocs(
-        updateAngularJsonForApplicationBuilder()
-      ),
-      withFallbackToManualMigrationDocs(updateTsConfig()),
-      withFallbackToManualMigrationDocs(updateAppModule()),
+      withFallbackToShowingDocs(updateAngularJsonForApplicationBuilder()),
+      withFallbackToShowingDocs(updateTsConfig()),
+      withFallbackToShowingDocs(updateAppModule()),
 
       ...(isUsingOldServerBuilder(tree, context)
         ? [
-            withFallbackToManualMigrationDocs(updateAngularJsonForSsr()),
-            withFallbackToManualMigrationDocs(updatePackageJsonServerScripts()),
-            withFallbackToManualMigrationDocs(updateTsConfigApp()),
-            withFallbackToManualMigrationDocs(removeTsConfigServer()),
-            withFallbackToManualMigrationDocs(renameAppServerModule()),
-            withFallbackToManualMigrationDocs(updateMainServerTs()),
-            withFallbackToManualMigrationDocs(updateServerTs()),
+            withFallbackToShowingDocs(updateAngularJsonForSsr()),
+            withFallbackToShowingDocs(updatePackageJsonServerScripts()),
+            withFallbackToShowingDocs(updateTsConfigApp()),
+            withFallbackToShowingDocs(removeTsConfigServer()),
+            withFallbackToShowingDocs(renameAppServerModule()),
+            withFallbackToShowingDocs(updateMainServerTs()),
+            withFallbackToShowingDocs(updateServerTs()),
           ]
         : []),
     ]);

@@ -6,7 +6,7 @@ import {
   InsertChange,
   RemoveChange,
 } from '@schematics/angular/utility/change';
-import { removeImport } from '../shared/utils/file-utils';
+import { removeImport } from '../../shared/utils/file-utils';
 
 /**
  * Updates `server.ts` file for new Angular v17 standards.

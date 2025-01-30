@@ -10,7 +10,7 @@ export const DOCS_FOR_MODERNIZING_NG17_APP =
  * Higher-order function that wraps a Rule with error handling.
  * If the wrapped Rule throws an error, it logs the error and provides a link to manual migration docs.
  */
-export function withFallbackToManualMigrationDocs(rule: Rule): Rule {
+export function withFallbackToShowingDocs(rule: Rule): Rule {
   return (tree: Tree, context: SchematicContext) => {
     try {
       return rule(tree, context);
