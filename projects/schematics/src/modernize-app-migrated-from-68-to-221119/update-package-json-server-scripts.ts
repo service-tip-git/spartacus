@@ -8,7 +8,7 @@ import { parse } from 'jsonc-parser';
  * Removes deprecated SSR scripts and updates existing ones to use
  * the new file paths and commands for Angular v17 SSR.
  */
-export function updatePackageJsonScripts(): Rule {
+export function updatePackageJsonServerScripts(): Rule {
   return (tree: Tree, context: SchematicContext) => {
     context.logger.info('⏳ Updating package.json scripts...');
 
