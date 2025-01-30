@@ -2,6 +2,36 @@ import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import * as ts from 'typescript';
 import { removeImportsFromServerTs } from './remove-imports-from-server-ts';
 import { addImportsToServerTs } from './add-imports-to-server-ts';
+import { findNodes } from '@schematics/angular/utility/ast-utils';
+
+function replaceVariableDeclaration(
+  sourceFile: ts.SourceFile,
+  fileContent: string,
+  variableName: string,
+  newDeclaration: string
+): string {
+  // Find all variable declarations
+  const nodes = findNodes(sourceFile, ts.SyntaxKind.VariableDeclaration);
+
+  // Find the specific variable declaration we want to replace
+  const targetNode = nodes.find((node) => {
+    if (!ts.isVariableDeclaration(node)) return false;
+    const name = node.name;
+    return ts.isIdentifier(name) && name.text === variableName;
+  });
+
+  if (!targetNode) {
+    return fileContent;
+  }
+
+  // Get the parent VariableStatement to include the 'const' keyword
+  const statement = targetNode.parent.parent;
+  const start = statement.getStart();
+  const end = statement.getEnd();
+
+  // Replace the entire statement
+  return fileContent.slice(0, start) + newDeclaration + fileContent.slice(end);
+}
 
 /**
  * Updates `server.ts` file for new Angular v17 standards.
@@ -51,12 +81,36 @@ export function updateServerTs(): Rule {
       serverTsPath
     );
 
-    // Update dist folder constants
-    updatedContent = updatedContent.replace(
-      /const\s+distFolder\s*=\s*join\s*\(\s*process\.cwd\s*\(\s*\)\s*,\s*['"]dist\/.*\/browser['"]\s*\)\s*;\s*\n*const\s+indexHtml\s*=\s*existsSync\s*\(\s*join\s*\(\s*distFolder\s*,\s*['"]index\.original\.html['"]\s*\)\s*\)\s*\n*\s*\?\s*['"]index\.original\.html['"]\s*\n*\s*:\s*['"]index['"]\s*;/,
+    const updatedSourceFileAfterImports = ts.createSourceFile(
+      serverTsPath,
+      updatedContent,
+      ts.ScriptTarget.Latest,
+      true
+    );
+
+    // Update dist folder declaration
+    updatedContent = replaceVariableDeclaration(
+      updatedSourceFileAfterImports,
+      updatedContent,
+      'distFolder',
       `const serverDistFolder = dirname(fileURLToPath(import.meta.url));
-  const browserDistFolder = resolve(serverDistFolder, '../browser');
-  const indexHtml = join(browserDistFolder, 'index.html');`
+  const browserDistFolder = resolve(serverDistFolder, '../browser');`
+    );
+
+    // Create new source file after first update
+    const sourceFileAfterDistFolder = ts.createSourceFile(
+      serverTsPath,
+      updatedContent,
+      ts.ScriptTarget.Latest,
+      true
+    );
+
+    // Update index.html declaration
+    updatedContent = replaceVariableDeclaration(
+      sourceFileAfterDistFolder,
+      updatedContent,
+      'indexHtml',
+      `const indexHtml = join(browserDistFolder, 'index.html');`
     );
 
     // Update server configuration
