@@ -26,9 +26,7 @@ import { parse } from 'jsonc-parser';
  */
 function migrateToApplicationBuilder(): Rule {
   return (tree: Tree, context: SchematicContext) => {
-    context.logger.info(
-      '⏳ Migrating to the new Angular application builder...'
-    );
+    context.logger.info('⏳ Migrating to application builder...');
 
     const { workspace, path } = getWorkspace(tree);
     const project = workspace.projects[Object.keys(workspace.projects)[0]];
@@ -76,7 +74,7 @@ function migrateToApplicationBuilder(): Rule {
       delete devConfig.namedChunks;
     }
 
-    context.logger.info('✅ Successfully migrated to application builder');
+    context.logger.info('✅ Migrated to application builder');
     tree.overwrite(path, JSON.stringify(workspace, null, 2));
   };
 }
@@ -110,7 +108,7 @@ function updateTsConfig(): Rule {
       tree.overwrite(tsconfigPath, JSON.stringify(tsConfig, null, 2));
     }
 
-    context.logger.info('✅ Successfully updated TypeScript configuration');
+    context.logger.info('✅ Updated TypeScript configuration');
   };
 }
 
@@ -168,7 +166,7 @@ function migrateSSRConfig(): Rule {
     delete project.architect?.['serve-ssr'];
     delete project.architect?.prerender;
 
-    context.logger.info('✅ Successfully migrated SSR configuration');
+    context.logger.info('✅ Migrated SSR configuration');
     tree.overwrite(path, JSON.stringify(workspace, null, 2));
   };
 }
@@ -217,7 +215,7 @@ function updatePackageJsonScripts(): Rule {
 
     tree.overwrite('package.json', JSON.stringify(packageJson, null, 2));
 
-    context.logger.info('✅ Successfully updated package.json scripts');
+    context.logger.info('✅ Updated package.json scripts');
   };
 }
 
@@ -266,9 +264,7 @@ function updateTsConfigsForSsr(): Rule {
       tree.delete(tsconfigServerPath);
     }
 
-    context.logger.info(
-      '✅ Successfully updated TypeScript configurations for SSR'
-    );
+    context.logger.info('✅ Updated TypeScript configurations for SSR');
   };
 }
 
@@ -277,9 +273,7 @@ function updateTsConfigsForSsr(): Rule {
  */
 function renameAppServerModule(): Rule {
   return (tree: Tree, context: SchematicContext) => {
-    context.logger.info(
-      '⏳ Renaming app.server.module.ts to app.module.server.ts...'
-    );
+    context.logger.info('⏳ Renaming server module files...');
 
     const appServerModulePath_OLD = 'src/app/app.server.module.ts';
     const appModuleServerPath_NEW = 'src/app/app.module.server.ts';
@@ -295,7 +289,7 @@ function renameAppServerModule(): Rule {
       tree.delete(appServerModulePath_OLD);
     }
 
-    context.logger.info('✅ Successfully renamed server module file');
+    context.logger.info('✅ Renamed server module files');
   };
 }
 
@@ -323,7 +317,7 @@ function updateMainServerTs(): Rule {
       tree.overwrite(mainServerPath, updatedContent);
     }
 
-    context.logger.info('✅ Successfully updated main.server.ts');
+    context.logger.info('✅ Updated main.server.ts');
   };
 }
 
@@ -332,9 +326,7 @@ function updateMainServerTs(): Rule {
  */
 function updateServerTs(): Rule {
   return (tree: Tree, context: SchematicContext) => {
-    context.logger.info(
-      '⏳ Updating server.ts with new Angular v17 configuration...'
-    );
+    context.logger.info('⏳ Updating server.ts configuration...');
 
     const serverTsPath = 'server.ts';
     if (!tree.exists(serverTsPath)) {
@@ -513,7 +505,7 @@ function updateServerTs(): Rule {
 
     tree.overwrite('server.ts', updatedContent);
 
-    context.logger.info('✅ Successfully updated server.ts');
+    context.logger.info('✅ Updated server.ts configuration');
   };
 }
 
@@ -522,7 +514,7 @@ function updateServerTs(): Rule {
  */
 function updateAppModule(): Rule {
   return (tree: Tree, context: SchematicContext) => {
-    context.logger.info('⏳ Updating app.module.ts with new Angular APIs...');
+    context.logger.info('⏳ Updating app.module.ts...');
 
     const appModulePath = 'src/app/app.module.ts';
     if (!tree.exists(appModulePath)) {
@@ -573,7 +565,7 @@ function updateAppModule(): Rule {
 
     tree.overwrite(appModulePath, sourceText);
 
-    context.logger.info('✅ Successfully updated app.module.ts');
+    context.logger.info('✅ Updated app.module.ts');
   };
 }
 
@@ -583,7 +575,7 @@ function updateAppModule(): Rule {
 export function migrate(): Rule {
   return (_tree: Tree, context: SchematicContext) => {
     context.logger.info(
-      '⏳ Starting migration to modernize app from Angular 6.8 to 2211.19...'
+      'Modernizing an app migrated from Angular 6.8 to 2211.19...'
     );
 
     return chain([
