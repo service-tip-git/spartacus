@@ -47,6 +47,12 @@
       "type": "string",
       "description": "Configuration URL for ProfileTag. (e.g. https://tag.static.stage.context.cloud.sap/config/my-config123)",
       "x-prompt": "[CDS] What is the ProfileTag configuration URL?"
+    },
+    "sciEnabled": {
+      "type": "boolean",
+      "description": "Set to true, if you want to enable SCI.",
+      "default": false,
+      "x-prompt": "[CDS] Do you want to enable SCI?"
     }
   }
 }
