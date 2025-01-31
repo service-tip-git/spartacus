@@ -21,6 +21,11 @@ import { I18nConfig, provideConfig } from "@spartacus/core";
     cds: {
       tenant: 'my-tenant',
       baseUrl: 'my-base-url.com',
+      endpoints: {
+        strategyProducts: '/strategy/${tenant}/strategies/${strategyId}/products',
+        searchIntelligence:
+          '/search-intelligence/v1/sites/${cdsSiteId}/trendingSearches',
+      },
       merchandising: {
         defaultCarouselViewportThreshold: 80,
       },
@@ -34,6 +39,7 @@ import { I18nConfig, provideConfig } from "@spartacus/core";
         configUrl:
           'profile-tag-config-url.com',
         allowInsecureCookies: true,
+        sciEnabled: false
       },
     },
   })
@@ -64,6 +70,11 @@ import { I18nConfig, provideConfig } from "@spartacus/core";
     cds: {
       tenant: 'my-tenant',
       baseUrl: 'my-base-url.com',
+      endpoints: {
+        strategyProducts: '/strategy/${tenant}/strategies/${strategyId}/products',
+        searchIntelligence:
+          '/search-intelligence/v1/sites/${cdsSiteId}/trendingSearches',
+      },
       merchandising: {
         defaultCarouselViewportThreshold: 80,
       },
@@ -77,6 +88,7 @@ import { I18nConfig, provideConfig } from "@spartacus/core";
         configUrl:
           'PROFILE_TAG_CONFIG_URL_PLACEHOLDER',
         allowInsecureCookies: true,
+        sciEnabled: false
       },
     },
   })
