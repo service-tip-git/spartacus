@@ -5,11 +5,17 @@ import { addImportsToServerTs } from './add-imports-to-server-ts';
 import { findNodes } from '@schematics/angular/utility/ast-utils';
 
 function replaceVariableDeclaration(
-  sourceFile: ts.SourceFile,
   fileContent: string,
   variableName: string,
   newDeclaration: string
 ): string {
+  const sourceFile = ts.createSourceFile(
+    'server.ts',
+    fileContent,
+    ts.ScriptTarget.Latest,
+    true
+  );
+
   // Find all variable declarations
   const nodes = findNodes(sourceFile, ts.SyntaxKind.VariableDeclaration);
 
@@ -34,7 +40,6 @@ function replaceVariableDeclaration(
 }
 
 function replaceMethodCallArgument(
-  sourceFile: ts.SourceFile,
   fileContent: string,
   objectName: string,
   methodName: string,
@@ -42,6 +47,13 @@ function replaceMethodCallArgument(
   newArgName: string,
   argPosition?: number
 ): string {
+  const sourceFile = ts.createSourceFile(
+    'server.ts',
+    fileContent,
+    ts.ScriptTarget.Latest,
+    true
+  );
+
   const nodes = findNodes(
     sourceFile,
     ts.SyntaxKind.CallExpression,
@@ -105,10 +117,14 @@ function replaceMethodCallArgument(
   }, fileContent);
 }
 
-function removeWebpackSpecificCode(
-  sourceFile: ts.SourceFile,
-  fileContent: string
-): string {
+function removeWebpackSpecificCode(fileContent: string): string {
+  const sourceFile = ts.createSourceFile(
+    'server.ts',
+    fileContent,
+    ts.ScriptTarget.Latest,
+    true
+  );
+
   // Find all nodes we want to remove
   const variableNodes = findNodes(sourceFile, ts.SyntaxKind.VariableStatement);
   const ifNodes = findNodes(sourceFile, ts.SyntaxKind.IfStatement);
@@ -163,10 +179,14 @@ function removeWebpackSpecificCode(
   }, fileContent);
 }
 
-function removeMainServerTsReexport(
-  sourceFile: ts.SourceFile,
-  fileContent: string
-): string {
+function removeMainServerTsReexport(fileContent: string): string {
+  const sourceFile = ts.createSourceFile(
+    'server.ts',
+    fileContent,
+    ts.ScriptTarget.Latest,
+    true
+  );
+
   const nodes = findNodes(sourceFile, ts.SyntaxKind.ExportDeclaration);
 
   const exportNode = nodes.find((node) => {
@@ -228,129 +248,56 @@ export function updateServerTs(): Rule {
       throw new Error(`Failed to read ${serverTsPath} file`);
     }
 
-    const sourceText = content.toString();
-    const sourceFile = ts.createSourceFile(
-      'server.ts',
-      sourceText,
-      ts.ScriptTarget.Latest,
-      true
-    );
+    let updatedContent = content.toString();
 
-    let updatedContent = sourceText;
+    // Remove imports
+    updatedContent = removeImportsFromServerTs(updatedContent);
 
-    updatedContent = removeImportsFromServerTs(updatedContent, sourceFile);
-
-    // Create new source file after removals
-    const updatedSourceFile = ts.createSourceFile(
-      serverTsPath,
-      updatedContent,
-      ts.ScriptTarget.Latest,
-      true
-    );
-
-    updatedContent = addImportsToServerTs(
-      updatedContent,
-      updatedSourceFile,
-      serverTsPath
-    );
-
-    const updatedSourceFileAfterImports = ts.createSourceFile(
-      serverTsPath,
-      updatedContent,
-      ts.ScriptTarget.Latest,
-      true
-    );
+    // Add new imports
+    updatedContent = addImportsToServerTs(updatedContent, serverTsPath);
 
     // Update dist folder declaration
     updatedContent = replaceVariableDeclaration(
-      updatedSourceFileAfterImports,
       updatedContent,
       'distFolder',
       `const serverDistFolder = dirname(fileURLToPath(import.meta.url));
   const browserDistFolder = resolve(serverDistFolder, '../browser');`
     );
 
-    // Create new source file after first update
-    const sourceFileAfterDistFolder = ts.createSourceFile(
-      serverTsPath,
-      updatedContent,
-      ts.ScriptTarget.Latest,
-      true
-    );
-
     // Update index.html declaration
     updatedContent = replaceVariableDeclaration(
-      sourceFileAfterDistFolder,
       updatedContent,
       'indexHtml',
       `const indexHtml = join(browserDistFolder, 'index.html');`
     );
 
-    // Create new source file after second update
-    const sourceFileAfterIndexHtml = ts.createSourceFile(
-      serverTsPath,
-      updatedContent,
-      ts.ScriptTarget.Latest,
-      true
-    );
-
-    // Update server configuration using AST
+    // Update server configuration
     updatedContent = replaceMethodCallArgument(
-      sourceFileAfterIndexHtml,
       updatedContent,
       'server',
       'set',
       'distFolder',
       'browserDistFolder',
-      1 // second argument
-    );
-
-    const sourceFileAfterServerSet = ts.createSourceFile(
-      serverTsPath,
-      updatedContent,
-      ts.ScriptTarget.Latest,
-      true
+      1
     );
 
     updatedContent = replaceMethodCallArgument(
-      sourceFileAfterServerSet,
       updatedContent,
       'express',
       'static',
       'distFolder',
       'browserDistFolder',
-      0 // first argument
-    );
-
-    // Remove webpack-specific code using AST
-    const sourceFileBeforeWebpackRemoval = ts.createSourceFile(
-      serverTsPath,
-      updatedContent,
-      ts.ScriptTarget.Latest,
-      true
-    );
-
-    updatedContent = removeWebpackSpecificCode(
-      sourceFileBeforeWebpackRemoval,
-      updatedContent
-    );
-
-    // Create new source file after webpack code removal
-    const sourceFileBeforeExportRemoval = ts.createSourceFile(
-      serverTsPath,
-      updatedContent,
-      ts.ScriptTarget.Latest,
-      true
-    );
-
-    // Remove export statement
-    updatedContent = removeMainServerTsReexport(
-      sourceFileBeforeExportRemoval,
-      updatedContent
+      0
     );
 
     // Remove webpack-specific comments and add run() call
     updatedContent = removeWebpackSpecificComments(updatedContent);
+
+    // Remove webpack-specific code
+    updatedContent = removeWebpackSpecificCode(updatedContent);
+
+    // Remove export statement
+    updatedContent = removeMainServerTsReexport(updatedContent);
 
     tree.overwrite(serverTsPath, updatedContent);
 

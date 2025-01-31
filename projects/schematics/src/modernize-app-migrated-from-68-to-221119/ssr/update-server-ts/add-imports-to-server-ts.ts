@@ -4,9 +4,15 @@ import { Change, InsertChange } from '@schematics/angular/utility/change';
 
 export function addImportsToServerTs(
   updatedContent: string,
-  sourceFile: ts.SourceFile,
   serverTsPath: string
 ): string {
+  const sourceFile = ts.createSourceFile(
+    serverTsPath,
+    updatedContent,
+    ts.ScriptTarget.Latest,
+    true
+  );
+
   // List of new imports to add
   const importsToAdd: {
     importPath: string;
