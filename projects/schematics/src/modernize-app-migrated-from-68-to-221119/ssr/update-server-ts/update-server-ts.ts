@@ -196,8 +196,7 @@ export function updateServerTs(): Rule {
       methodName: 'set',
       argument: {
         position: 1,
-        old: 'distFolder',
-        new: 'browserDistFolder',
+        newText: 'browserDistFolder',
       },
     });
 
@@ -217,8 +216,7 @@ export function updateServerTs(): Rule {
       methodName: 'static',
       argument: {
         position: 0,
-        old: 'distFolder',
-        new: 'browserDistFolder',
+        newText: 'browserDistFolder',
       },
     });
 

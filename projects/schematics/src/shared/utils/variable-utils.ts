@@ -8,6 +8,11 @@ interface ReplaceVariableDeclarationParams {
   newDeclaration: string;
 }
 
+interface RemoveVariableDeclarationParams {
+  fileContent: string;
+  variableName: string;
+}
+
 /**
  * Replaces a variable declaration in the given file content.
  *
@@ -20,10 +25,10 @@ export function replaceVariableDeclaration({
 }: ReplaceVariableDeclarationParams): string {
   const sourceFile = parseTsFileContent(fileContent);
 
-  // Find all variable declarations
+  // Get all variables
   const nodes = findNodes(sourceFile, ts.SyntaxKind.VariableDeclaration);
 
-  // Find the specific variable declaration we want to replace
+  // Find variable by name
   const targetNode = nodes.find((node) => {
     if (!ts.isVariableDeclaration(node)) return false;
     const name = node.name;
@@ -34,18 +39,13 @@ export function replaceVariableDeclaration({
     return fileContent;
   }
 
-  // Get the parent VariableStatement to include the 'const' keyword
+  // Get the parent VariableStatement - to include the `const` keyword
   const statement = targetNode.parent.parent;
   const start = statement.getStart();
   const end = statement.getEnd();
 
-  // Replace the entire statement
+  // Replace the whole statement
   return fileContent.slice(0, start) + newDeclaration + fileContent.slice(end);
-}
-
-interface RemoveVariableDeclarationParams {
-  fileContent: string;
-  variableName: string;
 }
 
 /**

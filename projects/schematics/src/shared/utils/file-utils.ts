@@ -807,8 +807,8 @@ export function removeImport(
     return new NoopChange();
   }
 
-  // Handle side-effect imports (e.g. `import 'zone.js/node'`)
-  // which don't import any specific item from the path
+  // Handle cases where we want to remove the whole import,
+  // not only a specific item (e.g. `import 'zone.js/node'`).
   if (!importToRemove.className) {
     const position = importDeclarationNode.getStart();
     const toRemove = importDeclarationNode.getText();
@@ -818,7 +818,7 @@ export function removeImport(
   let position: number;
   let toRemove = importToRemove.className;
 
-  // First check for namespace imports (import * as name)
+  // Handle cases where we want to remove a namespace import (e.g. `import * as 'express'`).
   const namespaceImports = findNodes(
     importDeclarationNode,
     ts.SyntaxKind.NamespaceImport
@@ -838,7 +838,8 @@ export function removeImport(
     }
   }
 
-  // Then check for named imports (import { name })
+  // Handle cases where we want to remove a named import
+  // (e.g. `import { join } from 'path'`).
   const importSpecifierNodes = findNodes(
     importDeclarationNode,
     ts.SyntaxKind.ImportSpecifier
@@ -862,9 +863,9 @@ export function removeImport(
           i,
         };
       })
-      .filter((result) => result?.importNode)?.[0];
+      .filter((result) => result.importNode)[0];
 
-    if (!importSpecifier?.importNode) {
+    if (!importSpecifier.importNode) {
       return new NoopChange();
     }
 

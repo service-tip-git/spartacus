@@ -8,13 +8,13 @@ interface ReplaceMethodCallArgumentParams {
   methodName: string;
   argument: {
     position: number;
-    old: string;
-    new: string;
+    newText: string;
   };
 }
 
 /**
  * Replaces an argument in a method call in the given file content.
+ * Works for multiple occurrences of the method call.
  *
  * Returns the updated file content.
  */
@@ -26,6 +26,7 @@ export function replaceMethodCallArgument({
 }: ReplaceMethodCallArgumentParams): string {
   const sourceFile = parseTsFileContent(fileContent);
 
+  // Get all method calls
   const nodes = findNodes(
     sourceFile,
     ts.SyntaxKind.CallExpression,
@@ -33,44 +34,49 @@ export function replaceMethodCallArgument({
     true
   );
 
-  // Find all matching method calls
-  const targetNodes = nodes.filter((node) => {
-    if (!ts.isCallExpression(node)) return false;
+  // Find a method call by name of object and name of method
+  // and the presence of some argument at the expected position
+  const targetNodes = nodes.filter((node): node is ts.CallExpression => {
+    if (!ts.isCallExpression(node)) {
+      return false;
+    }
     const expression = node.expression;
-    if (!ts.isPropertyAccessExpression(expression)) return false;
+    if (!ts.isPropertyAccessExpression(expression)) {
+      return false;
+    }
 
     const object = expression.expression;
     const method = expression.name;
 
-    if (!ts.isIdentifier(object) || !ts.isIdentifier(method)) return false;
+    if (!ts.isIdentifier(object) || !ts.isIdentifier(method)) {
+      return false;
+    }
 
-    // Check if this is the method call we're looking for
-    const isTargetMethod =
-      object.text === objectName && method.text === methodName;
-    if (!isTargetMethod) return false;
+    if (node.arguments.length <= argument.position) {
+      return false;
+    }
 
-    const arg = node.arguments[argument.position];
-    return ts.isIdentifier(arg) && arg.text === argument.old;
+    return object.text === objectName && method.text === methodName;
   });
 
   if (!targetNodes.length) {
     return fileContent;
   }
 
-  // Process all matches
-  return targetNodes.reduce((content, targetNode) => {
-    if (!ts.isCallExpression(targetNode)) return content;
+  // Replace all occurrences of the method call
+  let updatedContent = fileContent;
 
-    // Find the argument to replace
-    let argToReplace: ts.Node | undefined;
-    argToReplace = targetNode.arguments[argument.position];
+  targetNodes
+    // Replace occurrences from last to first - to not interfere with
+    // the already calculated start and end positions of the other occurrences
+    .reverse()
+    .forEach((targetNode) => {
+      const argumentToReplace = targetNode.arguments[argument.position];
+      updatedContent =
+        updatedContent.slice(0, argumentToReplace.getStart()) +
+        argument.newText +
+        updatedContent.slice(argumentToReplace.getEnd());
+    });
 
-    if (!argToReplace) return content;
-
-    return (
-      content.slice(0, argToReplace.getStart()) +
-      argument.new +
-      content.slice(argToReplace.getEnd())
-    );
-  }, fileContent);
+  return updatedContent;
 }
