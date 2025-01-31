@@ -20,12 +20,16 @@ export function updateMainServerTs(): Rule {
       throw new Error(`Failed to read ${mainServerPath} file`);
     }
 
-    const updatedContent = mainServerContent
-      .toString()
-      .replace(
-        /export \{ AppServerModule \} from ['"]\.\/app\/app\.server\.module['"];/,
-        `export { AppServerModule as default } from './app/app.module.server';`
-      );
+    const expectedPattern =
+      /export \{ AppServerModule \} from ['"]\.\/app\/app\.server\.module['"];/;
+    const newPattern = `export { AppServerModule as default } from './app/app.module.server';`;
+
+    let updatedContent = mainServerContent.toString();
+    if (!expectedPattern.test(updatedContent)) {
+      throw new Error(`${mainServerPath} does not contain the expected export`);
+    }
+
+    updatedContent = updatedContent.replace(expectedPattern, newPattern);
     tree.overwrite(mainServerPath, updatedContent);
 
     context.logger.info(`✅ Updated ${mainServerPath}`);
