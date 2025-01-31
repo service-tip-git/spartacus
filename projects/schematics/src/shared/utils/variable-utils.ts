@@ -42,3 +42,24 @@ export function replaceVariableDeclaration({
   // Replace the entire statement
   return fileContent.slice(0, start) + newDeclaration + fileContent.slice(end);
 }
+
+interface RemoveVariableDeclarationParams {
+  fileContent: string;
+  variableName: string;
+}
+
+/**
+ * Removes a variable declaration in the given file content.
+ *
+ * Returns the updated file content.
+ */
+export function removeVariableDeclaration({
+  fileContent,
+  variableName,
+}: RemoveVariableDeclarationParams): string {
+  return replaceVariableDeclaration({
+    fileContent,
+    variableName,
+    newDeclaration: '',
+  });
+}

@@ -4,8 +4,11 @@ import { removeImportsFromServerTs } from './remove-imports-from-server-ts';
 import { addImportsToServerTs } from './add-imports-to-server-ts';
 import { findNodes } from '@schematics/angular/utility/ast-utils';
 import { parseTsFileContent } from '../../../shared/utils/file-utils';
-import { replaceMethodCallArgument } from 'projects/schematics/src/shared/utils/method-call-utils';
-import { replaceVariableDeclaration } from 'projects/schematics/src/shared/utils/variable-utils';
+import { replaceMethodCallArgument } from '../../../shared/utils/method-call-utils';
+import {
+  removeVariableDeclaration,
+  replaceVariableDeclaration,
+} from '../../../shared/utils/variable-utils';
 
 /**
  * Removes the Webpack-specific comments.
@@ -16,21 +19,19 @@ import { replaceVariableDeclaration } from 'projects/schematics/src/shared/utils
  *   - // The below code is to ensure that the server is run only when not requiring the bundle.
  */
 function removeWebpackSpecificComments(fileContent: string): string {
-  return (
-    fileContent
-      .replace(
-        /\/\/ Webpack will replace 'require' with '__webpack_require__'\n/,
-        ''
-      )
-      .replace(
-        /\/\/ '__non_webpack_require__' is a proxy to Node 'require'\n/,
-        ''
-      )
-      .replace(
-        /\/\/ The below code is to ensure that the server is run only when not requiring the bundle\.\n/,
-        ''
-      ) + `\nrun()\n`
-  );
+  return fileContent
+    .replace(
+      /\/\/ Webpack will replace 'require' with '__webpack_require__'\n/,
+      ''
+    )
+    .replace(
+      /\/\/ '__non_webpack_require__' is a proxy to Node 'require'\n/,
+      ''
+    )
+    .replace(
+      /\/\/ The below code is to ensure that the server is run only when not requiring the bundle\.\n/,
+      ''
+    );
 }
 
 /**
@@ -47,60 +48,45 @@ function removeWebpackSpecificComments(fileContent: string): string {
  *   ```
  */
 function removeWebpackSpecificCode(fileContent: string): string {
-  const sourceFile = parseTsFileContent(fileContent);
+  let updatedContent = fileContent;
 
-  // Find all nodes we want to remove
-  const variableNodes = findNodes(sourceFile, ts.SyntaxKind.VariableStatement);
+  updatedContent = removeVariableDeclaration({
+    fileContent: updatedContent,
+    variableName: '__non_webpack_require__',
+  });
+
+  updatedContent = removeVariableDeclaration({
+    fileContent: updatedContent,
+    variableName: 'mainModule',
+  });
+
+  updatedContent = removeVariableDeclaration({
+    fileContent: updatedContent,
+    variableName: 'moduleFilename',
+  });
+
+  // Remove if statement
+  const sourceFile = parseTsFileContent(updatedContent);
   const ifNodes = findNodes(sourceFile, ts.SyntaxKind.IfStatement);
-  const nodes = [...variableNodes, ...ifNodes];
-
-  // Filter and sort nodes in reverse order (to not affect positions)
-  const nodesToRemove = nodes
-    .filter((node) => {
-      // For variable declarations
-      if (ts.isVariableStatement(node)) {
-        const declaration = node.declarationList.declarations[0];
-        if (!declaration) return false;
-
-        // Check for the declare const __non_webpack_require__
-        if (
-          node.modifiers?.some(
-            (mod) => mod.kind === ts.SyntaxKind.DeclareKeyword
-          )
-        ) {
-          return (
-            ts.isIdentifier(declaration.name) &&
-            declaration.name.text === '__non_webpack_require__'
-          );
-        }
-
-        // Check for const mainModule or moduleFilename
-        return (
-          ts.isIdentifier(declaration.name) &&
-          (declaration.name.text === 'mainModule' ||
-            declaration.name.text === 'moduleFilename')
-        );
-      }
-
-      // For if statement
-      if (ts.isIfStatement(node)) {
-        const condition = node.expression;
-        return (
-          condition.getText().includes('moduleFilename === __filename') ||
-          condition.getText().includes("moduleFilename.includes('iisnode')")
-        );
-      }
-
+  const ifNode = ifNodes.find((node) => {
+    if (!ts.isIfStatement(node)) {
       return false;
-    })
-    .sort((a, b) => b.getStart() - a.getStart());
+    }
+    const condition = node.expression;
+    return (
+      condition.getText().includes('moduleFilename === __filename') &&
+      condition.getText().includes("moduleFilename.includes('iisnode')")
+    );
+  });
 
-  // Remove the nodes one by one
-  return nodesToRemove.reduce((content, node) => {
-    const start = node.getFullStart(); // Include leading trivia
-    const end = node.getEnd();
-    return content.slice(0, start) + content.slice(end);
-  }, fileContent);
+  if (ifNode) {
+    const start = ifNode.getFullStart();
+    const end = ifNode.getEnd();
+    updatedContent = updatedContent.slice(0, start) + updatedContent.slice(end);
+  }
+
+  // Add run() call
+  return updatedContent + 'run();\n';
 }
 
 /**
@@ -112,13 +98,16 @@ function removeWebpackSpecificCode(fileContent: string): string {
  */
 function removeMainServerTsReexport(fileContent: string): string {
   const sourceFile = parseTsFileContent(fileContent);
-
   const nodes = findNodes(sourceFile, ts.SyntaxKind.ExportDeclaration);
 
   const exportNode = nodes.find((node) => {
-    if (!ts.isExportDeclaration(node)) return false;
+    if (!ts.isExportDeclaration(node)) {
+      return false;
+    }
     const moduleSpecifier = node.moduleSpecifier;
-    if (!moduleSpecifier) return false;
+    if (!moduleSpecifier) {
+      return false;
+    }
     return (
       ts.isStringLiteral(moduleSpecifier) &&
       moduleSpecifier.text === './src/main.server'
@@ -129,7 +118,7 @@ function removeMainServerTsReexport(fileContent: string): string {
     return fileContent;
   }
 
-  const start = exportNode.getFullStart(); // Include leading trivia
+  const start = exportNode.getFullStart();
   const end = exportNode.getEnd();
   return fileContent.slice(0, start) + fileContent.slice(end);
 }
