@@ -27,7 +27,8 @@ export function updateAppModule(): Rule {
 
     // Remove import of HttpClientModule
     updatedContent = removeImportFromContent(updatedContent, {
-      importPath: 'HttpClientModule',
+      symbolName: 'HttpClientModule',
+      importPath: '@angular/common/http',
     });
 
     // Remove usage of HttpClientModule
