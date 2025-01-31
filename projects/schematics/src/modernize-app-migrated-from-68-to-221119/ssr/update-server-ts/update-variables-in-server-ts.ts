@@ -53,6 +53,7 @@ export function updateVariablesInServerTs(updatedContent: string): string {
     methodName: 'set',
     argument: {
       position: 1,
+      oldText: 'distFolder',
       newText: 'browserDistFolder',
     },
     throwErrorIfNotFound: true,
@@ -74,6 +75,7 @@ export function updateVariablesInServerTs(updatedContent: string): string {
     methodName: 'static',
     argument: {
       position: 0,
+      oldText: 'distFolder',
       newText: 'browserDistFolder',
     },
     throwErrorIfNotFound: true,

@@ -8,6 +8,7 @@ interface ReplaceMethodCallArgumentParams {
   methodName: string;
   argument: {
     position: number;
+    oldText: string;
     newText: string;
   };
   throwErrorIfNotFound?: boolean;
@@ -126,6 +127,18 @@ export function replaceMethodCallArgument({
     fileContent,
     objectName,
     methodName,
+  }).filter((node) => {
+    // filter out method calls with less arguments than the expected argument position
+    if (node.arguments.length <= argument.position) {
+      return false;
+    }
+
+    // filter out method calls with the wrong argument text
+    if (node.arguments[argument.position].getText() !== argument.oldText) {
+      return false;
+    }
+
+    return true;
   });
 
   if (!targetNodes.length) {
