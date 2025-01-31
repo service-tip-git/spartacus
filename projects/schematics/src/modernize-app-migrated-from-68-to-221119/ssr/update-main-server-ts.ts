@@ -24,7 +24,7 @@ export function updateMainServerTs(): Rule {
       .toString()
       .replace(
         /export \{ AppServerModule \} from ['"]\.\/app\/app\.server\.module['"];/,
-        "export { AppServerModule as default } from './app/app.module.server';"
+        `export { AppServerModule as default } from './app/app.module.server';`
       );
     tree.overwrite(mainServerPath, updatedContent);
 
