@@ -39,16 +39,13 @@ export function updatePackageJsonServerScripts(): Rule {
     // Remove scripts
     delete packageJson.scripts['dev:ssr'];
     delete packageJson.scripts['prerender'];
+    delete packageJson.scripts['serve:ssr'];
 
     // Update scripts
-    if (packageJson.scripts['build:ssr']) {
-      packageJson.scripts['build:ssr'] = 'ng build';
-    }
-    if (packageJson.scripts['serve:ssr']) {
-      packageJson.scripts[
-        `serve:ssr:${projectName}`
-      ] = `node dist/${projectName}/server/server.mjs`;
-    }
+    packageJson.scripts['build:ssr'] = 'ng build';
+    packageJson.scripts[
+      `serve:ssr:${projectName}`
+    ] = `node dist/${projectName}/server/server.mjs`;
 
     tree.overwrite(packageJsonPath, JSON.stringify(packageJson, null, 2));
 

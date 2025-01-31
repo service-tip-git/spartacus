@@ -24,29 +24,17 @@ export function updateTsConfigApp(): Rule {
 
     const tsConfigApp = parse(tsConfigAppContent.toString());
 
-    // Add node types under compilerOptions
-    if (!tsConfigApp.compilerOptions) {
-      tsConfigApp.compilerOptions = {};
-    }
-    if (!tsConfigApp.compilerOptions.types) {
-      tsConfigApp.compilerOptions.types = [];
-    }
-    if (!tsConfigApp.compilerOptions.types.includes('node')) {
-      tsConfigApp.compilerOptions.types.push('node');
-    }
+    // Update `compilerOptions.types`
+    tsConfigApp.compilerOptions = {
+      ...tsConfigApp.compilerOptions,
+      types: [...(tsConfigApp.compilerOptions?.types || []), 'node'],
+    };
 
-    // Add 'main.server.ts' and 'server.ts' to files
-    if (!tsConfigApp.files) {
-      tsConfigApp.files = [];
-    }
-    const mainServerTsPath = 'src/main.server.ts';
-    if (!tsConfigApp.files.includes(mainServerTsPath)) {
-      tsConfigApp.files.push(mainServerTsPath);
-    }
-    const serverTsPath = 'server.ts';
-    if (!tsConfigApp.files.includes(serverTsPath)) {
-      tsConfigApp.files.push(serverTsPath);
-    }
+    // Update `files`
+    const serverFiles = ['src/main.server.ts', 'server.ts'];
+    tsConfigApp.files = [
+      ...new Set([...(tsConfigApp.files || []), ...serverFiles]),
+    ];
 
     tree.overwrite(tsconfigAppPath, JSON.stringify(tsConfigApp, null, 2));
 

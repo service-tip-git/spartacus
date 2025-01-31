@@ -12,44 +12,49 @@ export function updateAngularJsonForSsr(): Rule {
     context.logger.info('⏳ Updating angular.json for SSR...');
 
     const { workspace, path } = getWorkspace(tree);
-    const project = workspace.projects[Object.keys(workspace.projects)[0]];
+    const [firstProjectKey] = Object.keys(workspace.projects);
+    const project = workspace.projects[firstProjectKey];
 
     if (!project) {
       throw new Error('No project found for SSR migration');
     }
 
-    const buildTarget = project.architect?.build as any;
-    if (!buildTarget) {
+    if (!project.architect?.build) {
       throw new Error('No build target found in project configuration');
     }
 
-    // Add SSR options
-    if (buildTarget.options) {
-      const options = buildTarget.options as any;
-      options.server = 'src/main.server.ts';
-      options.prerender = false;
-      options.ssr = {
-        entry: 'server.ts',
-      };
-    }
-
-    // Add noSsr configuration
-    if (buildTarget.configurations) {
-      buildTarget.configurations.noSsr = {
-        ssr: false,
+    // Update build target with SSR options
+    project.architect.build = {
+      ...project.architect.build,
+      options: {
+        ...(project.architect.build as any).options,
+        server: 'src/main.server.ts',
         prerender: false,
-      };
-    }
+        ssr: { entry: 'server.ts' },
+      },
+      configurations: {
+        ...(project.architect.build as any).configurations,
+        noSsr: { ssr: false, prerender: false },
+      },
+    };
 
-    // Update serve configurations
-    const serveTarget = project.architect?.serve as any;
-    if (serveTarget?.configurations) {
-      if (serveTarget.configurations.production?.buildTarget) {
-        serveTarget.configurations.production.buildTarget += ',noSsr';
-      }
-      if (serveTarget.configurations.development?.buildTarget) {
-        serveTarget.configurations.development.buildTarget += ',noSsr';
-      }
+    // Update serve configurations with noSsr
+    const serveConfigs = project.architect?.serve?.configurations;
+    if (serveConfigs) {
+      project.architect.serve = {
+        ...project.architect.serve,
+        configurations: {
+          ...serveConfigs,
+          production: {
+            ...serveConfigs.production,
+            buildTarget: `${serveConfigs.production?.buildTarget},noSsr`,
+          },
+          development: {
+            ...serveConfigs.development,
+            buildTarget: `${serveConfigs.development?.buildTarget},noSsr`,
+          },
+        },
+      } as any;
     }
 
     // Remove obsolete targets
