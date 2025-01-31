@@ -32,9 +32,9 @@ export function updateTsConfigApp(): Rule {
 
     // Update `files`
     const serverFiles = ['src/main.server.ts', 'server.ts'];
-    tsConfigApp.files = [
-      ...new Set([...(tsConfigApp.files || []), ...serverFiles]),
-    ];
+    tsConfigApp.files = Array.from(
+      new Set([...(tsConfigApp.files || []), ...serverFiles])
+    );
 
     tree.overwrite(tsconfigAppPath, JSON.stringify(tsConfigApp, null, 2));
 
