@@ -81,7 +81,12 @@ function removeWebpackSpecificCode(fileContent: string): string {
   }
 
   // Add run() call
-  return updatedContent + 'run();\n';
+  return (
+    updatedContent +
+    `
+run();
+`
+  );
 }
 
 /**
