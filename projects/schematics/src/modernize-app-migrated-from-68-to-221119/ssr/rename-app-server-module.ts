@@ -6,28 +6,28 @@ import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
  */
 export function renameAppServerModule(): Rule {
   return (tree: Tree, context: SchematicContext) => {
-    const appServerModulePaths = {
-      old: 'src/app/app.server.module.ts',
-      new: 'src/app/app.module.server.ts',
-    };
+    enum AppServerModulePaths {
+      old = 'src/app/app.server.module.ts',
+      new = 'src/app/app.module.server.ts',
+    }
     context.logger.info(
-      `⏳ Renaming ${appServerModulePaths.old} to ${appServerModulePaths.new}...`
+      `⏳ Renaming ${AppServerModulePaths.old} to ${AppServerModulePaths.new}...`
     );
 
-    if (!tree.exists(appServerModulePaths.old)) {
+    if (!tree.exists(AppServerModulePaths.old)) {
       throw new Error('app.server.module.ts file not found');
     }
 
-    const content = tree.read(appServerModulePaths.old);
+    const content = tree.read(AppServerModulePaths.old);
     if (!content) {
       throw new Error('Failed to read app.server.module.ts file');
     }
 
-    tree.create(appServerModulePaths.new, content.toString());
-    tree.delete(appServerModulePaths.old);
+    tree.create(AppServerModulePaths.new, content.toString());
+    tree.delete(AppServerModulePaths.old);
 
     context.logger.info(
-      `✅ Renamed ${appServerModulePaths.old} to ${appServerModulePaths.new}`
+      `✅ Renamed ${AppServerModulePaths.old} to ${AppServerModulePaths.new}`
     );
   };
 }

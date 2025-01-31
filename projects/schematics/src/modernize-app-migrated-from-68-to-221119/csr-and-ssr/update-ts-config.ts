@@ -4,7 +4,8 @@ import { parse } from 'jsonc-parser';
 /**
  * Updates the `tsconfig.json` file for new Angular v17 standards.
  *
- * Removes some of the `compilerOptions` and adds new recommended ones.
+ * 1. Removes the properties `"baseUrl"`, `"forceConsistentCasingInFileNames"`, `"downlevelIteration"`,
+ * 2. Adds `"skipLibCheck": true`, `"esModuleInterop": true`
  */
 export function updateTsConfig(): Rule {
   return (tree: Tree, context: SchematicContext) => {

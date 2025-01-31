@@ -2,6 +2,21 @@ import { insertImport } from '@schematics/angular/utility/ast-utils';
 import { Change, InsertChange } from '@schematics/angular/utility/change';
 import { parseTsFileContent } from '../../../shared/utils/file-utils';
 
+/**
+ * Adds new imports to server.ts file, to align with Angular v17 standards.
+ *
+ * ```diff
+ * + import { APP_BASE_HREF } from '@angular/common';
+ * + import {
+ * +   NgExpressEngineDecorator,
+ * +   ngExpressEngine as engine,
+ * + } from '@spartacus/setup/ssr';
+ * + import express from 'express';
+ * + import { dirname, join, resolve } from 'node:path';
+ * + import { fileURLToPath } from 'node:url';
+ * + import AppServerModule from './src/main.server';
+```
+ */
 export function addImportsToServerTs(updatedContent: string): string {
   const sourceFile = parseTsFileContent(updatedContent);
 

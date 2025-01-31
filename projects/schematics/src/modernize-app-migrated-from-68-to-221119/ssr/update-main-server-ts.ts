@@ -3,8 +3,8 @@ import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 /**
  * Updates `main.server.ts` file for new Angular v17 standards.
  *
- * Modifies the `AppServerModule` import to use the new file path
- * and exports it as the default export.
+ * 1. Changes the the export path of the `AppServerModule` from `./app/app.server.module'` to `./app/app.module.server'`.
+ * 2. Exports `AppServerModule` using `as default`.
  */
 export function updateMainServerTs(): Rule {
   return (tree: Tree, context: SchematicContext) => {
@@ -23,7 +23,7 @@ export function updateMainServerTs(): Rule {
     const updatedContent = mainServerContent
       .toString()
       .replace(
-        /export \{ AppServerModule \} from '\.\/app\/app\.server\.module';/,
+        /export \{ AppServerModule \} from ['"]\.\/app\/app\.server\.module['"];/,
         "export { AppServerModule as default } from './app/app.module.server';"
       );
     tree.overwrite(mainServerPath, updatedContent);

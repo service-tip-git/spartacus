@@ -5,7 +5,8 @@ import { mergeArraysWithoutDuplicates } from '../../shared/utils/array-utils';
 /**
  * Updates `tsconfig.app.json` to align with new Angular v17 standards.
  *
- * Adds NodeJS types and server files to `tsconfig.app.json`.
+ * 1. Adds 1 new item to the array in the property `"types"`: `"node"`
+ * 2. Adds 2 new items to the in the `"files"` array: `"src/main.server.ts"` , `"server.ts"`
  */
 export function updateTsConfigApp(): Rule {
   return (tree: Tree, context: SchematicContext) => {
@@ -32,7 +33,6 @@ export function updateTsConfigApp(): Rule {
       ]),
     };
 
-    // Update `files`
     const serverFiles = ['src/main.server.ts', 'server.ts'];
     tsConfigApp.files = mergeArraysWithoutDuplicates(
       tsConfigApp.files,

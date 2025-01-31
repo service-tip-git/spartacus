@@ -6,6 +6,19 @@ import {
 
 /**
  * Removes imports from server.ts file, to align with Angular v17 standards.
+ *
+ * ```diff
+ * - import 'zone.js/node';
+ *
+ * - import { ngExpressEngine as engine } from - '@spartacus/setup/ssr';
+ * - import { NgExpressEngineDecorator } from - '@spartacus/setup/ssr';
+ * - import * as express from 'express';
+ * - import { join } from 'path';
+ *
+ * - import { AppServerModule } from './src/main.- server';
+ * - import { APP_BASE_HREF } from '@angular/common';
+ * - import { existsSync } from 'fs';
+ * ```
  */
 export function removeImportsFromServerTs(updatedContent: string): string {
   const sourceFile = parseTsFileContent(updatedContent);

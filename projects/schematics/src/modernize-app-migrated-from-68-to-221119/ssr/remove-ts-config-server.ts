@@ -9,9 +9,13 @@ export function removeTsConfigServer(): Rule {
     const tsconfigServerPath = 'tsconfig.server.json';
 
     context.logger.info(`⏳ Removing ${tsconfigServerPath}...`);
-    // Remove tsconfig.server.json
+
     if (tree.exists(tsconfigServerPath)) {
       tree.delete(tsconfigServerPath);
+    } else {
+      throw new Error(
+        `${tsconfigServerPath} could not be removed, because it does not exist`
+      );
     }
 
     context.logger.info(`✅ Removed ${tsconfigServerPath}`);

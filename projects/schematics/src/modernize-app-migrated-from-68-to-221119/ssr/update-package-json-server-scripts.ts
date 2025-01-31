@@ -5,8 +5,10 @@ import { parse } from 'jsonc-parser';
 /**
  * Updates `package.json` scripts related to SSR to align with new Angular v17 standards.
  *
- * Removes deprecated SSR scripts and updates existing ones to use
- * the new file paths and commands for Angular v17 SSR.
+ * 1. Removes properties `"dev:ssr"` and `"prerender"`
+ * 2. Changes value of the property `"build:ssr"` to `"ng build"`
+ * 3. Renames the property `"serve:ssr"` to `"serve:ssr:YOUR-APP-NAME"` and change its value to `"node dist/YOUR-APP-NAME/server/server.mjs"`
+ * ```
  */
 export function updatePackageJsonServerScripts(): Rule {
   return (tree: Tree, context: SchematicContext) => {
