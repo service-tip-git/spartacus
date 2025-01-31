@@ -10,13 +10,11 @@ export function removeTsConfigServer(): Rule {
 
     context.logger.info(`⏳ Removing ${tsconfigServerPath}...`);
 
-    if (tree.exists(tsconfigServerPath)) {
-      tree.delete(tsconfigServerPath);
-    } else {
-      throw new Error(
-        `${tsconfigServerPath} could not be removed, because it does not exist`
-      );
+    if (!tree.exists(tsconfigServerPath)) {
+      throw new Error(`${tsconfigServerPath} file not found`);
     }
+
+    tree.delete(tsconfigServerPath);
 
     context.logger.info(`✅ Removed ${tsconfigServerPath}`);
   };

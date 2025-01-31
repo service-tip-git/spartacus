@@ -20,6 +20,7 @@ export function updateVariablesInServerTs(updatedContent: string): string {
     variableName: 'distFolder',
     newText: `const serverDistFolder = dirname(fileURLToPath(import.meta.url));
   const browserDistFolder = resolve(serverDistFolder, '../browser');`,
+    throwErrorIfNotFound: true,
   });
 
   /*
@@ -35,6 +36,7 @@ export function updateVariablesInServerTs(updatedContent: string): string {
     fileContent: updatedContent,
     variableName: 'indexHtml',
     newText: `const indexHtml = join(browserDistFolder, 'index.html');`,
+    throwErrorIfNotFound: true,
   });
 
   /*
@@ -53,6 +55,7 @@ export function updateVariablesInServerTs(updatedContent: string): string {
       position: 1,
       newText: 'browserDistFolder',
     },
+    throwErrorIfNotFound: true,
   });
 
   /*
@@ -73,6 +76,7 @@ export function updateVariablesInServerTs(updatedContent: string): string {
       position: 0,
       newText: 'browserDistFolder',
     },
+    throwErrorIfNotFound: true,
   });
 
   return updatedContent;

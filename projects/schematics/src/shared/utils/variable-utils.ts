@@ -6,6 +6,7 @@ interface ReplaceVariableDeclarationParams {
   fileContent: string;
   variableName: string;
   newText: string;
+  throwErrorIfNotFound?: boolean;
 }
 
 interface RemoveVariableDeclarationParams {
@@ -22,6 +23,7 @@ export function replaceVariableDeclaration({
   fileContent,
   variableName,
   newText,
+  throwErrorIfNotFound = false,
 }: ReplaceVariableDeclarationParams): string {
   const sourceFile = parseTsFileContent(fileContent);
 
@@ -36,6 +38,9 @@ export function replaceVariableDeclaration({
   });
 
   if (!targetNode) {
+    if (throwErrorIfNotFound) {
+      throw new Error(`Could not replace ${variableName} variable`);
+    }
     return fileContent;
   }
 

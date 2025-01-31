@@ -10,6 +10,7 @@ interface ReplaceMethodCallArgumentParams {
     position: number;
     newText: string;
   };
+  throwErrorIfNotFound?: boolean;
 }
 
 /**
@@ -23,6 +24,7 @@ export function replaceMethodCallArgument({
   objectName,
   methodName,
   argument,
+  throwErrorIfNotFound = false,
 }: ReplaceMethodCallArgumentParams): string {
   const sourceFile = parseTsFileContent(fileContent);
 
@@ -60,6 +62,11 @@ export function replaceMethodCallArgument({
   });
 
   if (!targetNodes.length) {
+    if (throwErrorIfNotFound) {
+      throw new Error(
+        `Could not replace ${objectName}.${methodName}() method call argument on position ${argument.position}`
+      );
+    }
     return fileContent;
   }
 

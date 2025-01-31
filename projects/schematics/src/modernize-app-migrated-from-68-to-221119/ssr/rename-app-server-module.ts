@@ -15,12 +15,12 @@ export function renameAppServerModule(): Rule {
     );
 
     if (!tree.exists(AppServerModulePaths.old)) {
-      throw new Error('app.server.module.ts file not found');
+      throw new Error(`${AppServerModulePaths.old} file not found`);
     }
 
     const content = tree.read(AppServerModulePaths.old);
     if (!content) {
-      throw new Error('Failed to read app.server.module.ts file');
+      throw new Error(`Failed to read ${AppServerModulePaths.old} file`);
     }
 
     tree.create(AppServerModulePaths.new, content.toString());

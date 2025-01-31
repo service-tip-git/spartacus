@@ -1,4 +1,4 @@
-import { Change, RemoveChange } from '@schematics/angular/utility/change';
+import { RemoveChange } from '@schematics/angular/utility/change';
 import {
   parseTsFileContent,
   removeImport,
@@ -39,7 +39,7 @@ export function removeImportsFromServerTs(updatedContent: string): string {
   ];
 
   // Remove old imports using our utility
-  const importRemovalChanges: Change[] = importsToRemove.map((importToRemove) =>
+  const importRemovalChanges = importsToRemove.map((importToRemove) =>
     removeImport(sourceFile, {
       className: importToRemove.symbolName,
       importPath: importToRemove.importPath,

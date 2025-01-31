@@ -13,6 +13,8 @@ export function removeReexportFromServerTs(fileContent: string): string {
   const sourceFile = parseTsFileContent(fileContent);
   const nodes = findNodes(sourceFile, ts.SyntaxKind.ExportDeclaration);
 
+  const reexportPath = './src/main.server';
+
   const exportNode = nodes.find((node) => {
     if (!ts.isExportDeclaration(node)) {
       return false;
@@ -23,12 +25,14 @@ export function removeReexportFromServerTs(fileContent: string): string {
     }
     return (
       ts.isStringLiteral(moduleSpecifier) &&
-      moduleSpecifier.text === './src/main.server'
+      moduleSpecifier.text === reexportPath
     );
   });
 
   if (!exportNode) {
-    return fileContent;
+    throw new Error(
+      `Could not remove the re-export of the path ${reexportPath}`
+    );
   }
 
   const start = exportNode.getFullStart();

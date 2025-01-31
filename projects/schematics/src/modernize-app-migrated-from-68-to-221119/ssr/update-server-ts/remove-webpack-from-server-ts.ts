@@ -76,6 +76,8 @@ function removeWebpackSpecificCode(fileContent: string): string {
     const start = ifNode.getFullStart();
     const end = ifNode.getEnd();
     updatedContent = updatedContent.slice(0, start) + updatedContent.slice(end);
+  } else {
+    throw new Error('Could not remove the Webpack-specific `if` block');
   }
 
   // Add run() call
