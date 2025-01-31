@@ -34,7 +34,7 @@
     },
     "modernize-app-migrated-from-68-to-221119": {
       "description": "Modernize Angular application migrated from 6.8 to 22.11.19",
-      "factory": "./modernize-app-migrated-from-68-to-221119/modernize-app-migrated-from-68-to-221119#migrate",
+      "factory": "./modernize-app-migrated-from-68-to-221119/index#migrate",
       "aliases": ["modernize-ng17-app"]
     }
   }
