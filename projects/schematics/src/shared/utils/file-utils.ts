@@ -1340,3 +1340,11 @@ export function getServerTsPath(host: Tree): string | undefined {
 
   return angularJson.projects[projectName].architect?.server?.options?.main;
 }
+
+/**
+ * Takes a string of content and returns a ts.SourceFile object.
+ * This is useful for creating a temporary source file for AST operations.
+ */
+export function parseTsFileContent(fileContent: string): ts.SourceFile {
+  return ts.createSourceFile('', fileContent, ts.ScriptTarget.Latest, true);
+}

@@ -1,17 +1,9 @@
-import * as ts from 'typescript';
 import { insertImport } from '@schematics/angular/utility/ast-utils';
 import { Change, InsertChange } from '@schematics/angular/utility/change';
+import { parseTsFileContent } from '../../../shared/utils/file-utils';
 
-export function addImportsToServerTs(
-  updatedContent: string,
-  serverTsPath: string
-): string {
-  const sourceFile = ts.createSourceFile(
-    serverTsPath,
-    updatedContent,
-    ts.ScriptTarget.Latest,
-    true
-  );
+export function addImportsToServerTs(updatedContent: string): string {
+  const sourceFile = parseTsFileContent(updatedContent);
 
   // List of new imports to add
   const importsToAdd: {
@@ -65,7 +57,7 @@ export function addImportsToServerTs(
   const importAdditionChanges: Change[] = importsToAdd.map((imp) =>
     insertImport(
       sourceFile,
-      serverTsPath,
+      '',
       imp.symbolName,
       imp.importPath,
       imp.isDefault,

@@ -3,18 +3,14 @@ import * as ts from 'typescript';
 import { removeImportsFromServerTs } from './remove-imports-from-server-ts';
 import { addImportsToServerTs } from './add-imports-to-server-ts';
 import { findNodes } from '@schematics/angular/utility/ast-utils';
+import { parseTsFileContent } from '../../../shared/utils/file-utils';
 
 function replaceVariableDeclaration(
   fileContent: string,
   variableName: string,
   newDeclaration: string
 ): string {
-  const sourceFile = ts.createSourceFile(
-    'server.ts',
-    fileContent,
-    ts.ScriptTarget.Latest,
-    true
-  );
+  const sourceFile = parseTsFileContent(fileContent);
 
   // Find all variable declarations
   const nodes = findNodes(sourceFile, ts.SyntaxKind.VariableDeclaration);
@@ -47,12 +43,7 @@ function replaceMethodCallArgument(
   newArgName: string,
   argPosition?: number
 ): string {
-  const sourceFile = ts.createSourceFile(
-    'server.ts',
-    fileContent,
-    ts.ScriptTarget.Latest,
-    true
-  );
+  const sourceFile = parseTsFileContent(fileContent);
 
   const nodes = findNodes(
     sourceFile,
@@ -118,12 +109,7 @@ function replaceMethodCallArgument(
 }
 
 function removeWebpackSpecificCode(fileContent: string): string {
-  const sourceFile = ts.createSourceFile(
-    'server.ts',
-    fileContent,
-    ts.ScriptTarget.Latest,
-    true
-  );
+  const sourceFile = parseTsFileContent(fileContent);
 
   // Find all nodes we want to remove
   const variableNodes = findNodes(sourceFile, ts.SyntaxKind.VariableStatement);
@@ -180,12 +166,7 @@ function removeWebpackSpecificCode(fileContent: string): string {
 }
 
 function removeMainServerTsReexport(fileContent: string): string {
-  const sourceFile = ts.createSourceFile(
-    'server.ts',
-    fileContent,
-    ts.ScriptTarget.Latest,
-    true
-  );
+  const sourceFile = parseTsFileContent(fileContent);
 
   const nodes = findNodes(sourceFile, ts.SyntaxKind.ExportDeclaration);
 
@@ -254,7 +235,7 @@ export function updateServerTs(): Rule {
     updatedContent = removeImportsFromServerTs(updatedContent);
 
     // Add new imports
-    updatedContent = addImportsToServerTs(updatedContent, serverTsPath);
+    updatedContent = addImportsToServerTs(updatedContent);
 
     // Update dist folder declaration
     updatedContent = replaceVariableDeclaration(

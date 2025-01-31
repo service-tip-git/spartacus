@@ -1,17 +1,15 @@
-import * as ts from 'typescript';
 import { Change, RemoveChange } from '@schematics/angular/utility/change';
-import { removeImport } from '../../../shared/utils/file-utils';
+import {
+  parseTsFileContent,
+  removeImport,
+} from '../../../shared/utils/file-utils';
 
 /**
  * Removes imports from server.ts file, to align with Angular v17 standards.
  */
 export function removeImportsFromServerTs(updatedContent: string): string {
-  const sourceFile = ts.createSourceFile(
-    'server.ts',
-    updatedContent,
-    ts.ScriptTarget.Latest,
-    true
-  );
+  const sourceFile = parseTsFileContent(updatedContent);
+
   // List of imports to remove
   const importsToRemove: { symbolName?: string; importPath: string }[] = [
     { importPath: 'zone.js/node' },
