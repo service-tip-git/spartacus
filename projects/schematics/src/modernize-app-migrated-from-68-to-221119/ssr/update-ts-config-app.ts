@@ -24,12 +24,15 @@ export function updateTsConfigApp(): Rule {
 
     const tsConfigApp = parse(tsConfigAppContent.toString());
 
-    // Add node types
-    if (!tsConfigApp.types) {
-      tsConfigApp.types = [];
+    // Add node types under compilerOptions
+    if (!tsConfigApp.compilerOptions) {
+      tsConfigApp.compilerOptions = {};
     }
-    if (!tsConfigApp.types.includes('node')) {
-      tsConfigApp.types.push('node');
+    if (!tsConfigApp.compilerOptions.types) {
+      tsConfigApp.compilerOptions.types = [];
+    }
+    if (!tsConfigApp.compilerOptions.types.includes('node')) {
+      tsConfigApp.compilerOptions.types.push('node');
     }
 
     // Add 'main.server.ts' and 'server.ts' to files
