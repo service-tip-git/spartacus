@@ -23,6 +23,7 @@ import { updatePackageJsonServerScripts } from './ssr/update-package-json-server
 import { isUsingSsr } from './is-using-ssr';
 import { removeTsConfigServer } from './ssr/remove-ts-config-server';
 import { withFallbackToShowingDocs } from './with-fallback-to-showing-docs';
+import { updateAppModuleForSsr } from './ssr/update-app-module-for-ssr';
 
 /**
  * Modernizes an application to use new Angular v17 standards.
@@ -43,6 +44,7 @@ export function migrate(): Rule {
             withFallbackToShowingDocs(renameAppServerModule()),
             withFallbackToShowingDocs(updateMainServerTs()),
             withFallbackToShowingDocs(updateServerTs()),
+            withFallbackToShowingDocs(updateAppModuleForSsr()),
           ]
         : []),
     ]);

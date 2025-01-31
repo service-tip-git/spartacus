@@ -1,8 +1,4 @@
-import { RemoveChange } from '@schematics/angular/utility/change';
-import {
-  parseTsFileContent,
-  removeImport,
-} from '../../../shared/utils/file-utils';
+import { removeImportFromContent } from '../../../shared/utils/file-utils';
 
 /**
  * Removes imports from server.ts file, to align with Angular v17 standards.
@@ -21,9 +17,6 @@ import {
  * ```
  */
 export function removeImportsFromServerTs(updatedContent: string): string {
-  const sourceFile = parseTsFileContent(updatedContent);
-
-  // List of imports to remove
   const importsToRemove: { symbolName?: string; importPath: string }[] = [
     { importPath: 'zone.js/node' },
     { symbolName: 'ngExpressEngine', importPath: '@spartacus/setup/ssr' },
@@ -39,24 +32,8 @@ export function removeImportsFromServerTs(updatedContent: string): string {
   ];
 
   // Remove old imports using our utility
-  const importRemovalChanges = importsToRemove.map((importToRemove) =>
-    removeImport(sourceFile, {
-      className: importToRemove.symbolName,
-      importPath: importToRemove.importPath,
-    })
-  );
-
-  // Apply changes for removing imports
-  importRemovalChanges.forEach((change) => {
-    if (change instanceof RemoveChange) {
-      const searchText = change.toRemove;
-      const searchIndex = updatedContent.indexOf(searchText);
-      if (searchIndex !== -1) {
-        updatedContent =
-          updatedContent.slice(0, searchIndex) +
-          updatedContent.slice(searchIndex + searchText.length);
-      }
-    }
+  importsToRemove.forEach((importToRemove) => {
+    updatedContent = removeImportFromContent(updatedContent, importToRemove);
   });
 
   return updatedContent;

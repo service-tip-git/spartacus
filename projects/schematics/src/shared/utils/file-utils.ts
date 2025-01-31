@@ -879,6 +879,30 @@ export function removeImport(
   return new RemoveChange(source.fileName, position, toRemove);
 }
 
+export function removeImportFromContent(
+  updatedContent: string,
+  importToRemove: { symbolName?: string; importPath: string }
+): string {
+  const sourceFile = parseTsFileContent(updatedContent);
+
+  const change = removeImport(sourceFile, {
+    className: importToRemove.symbolName,
+    importPath: importToRemove.importPath,
+  });
+
+  if (change instanceof RemoveChange) {
+    const searchText = change.toRemove;
+    const searchIndex = updatedContent.indexOf(searchText);
+    if (searchIndex !== -1) {
+      updatedContent =
+        updatedContent.slice(0, searchIndex) +
+        updatedContent.slice(searchIndex + searchText.length);
+    }
+  }
+
+  return updatedContent;
+}
+
 function getImportDeclarationNode(
   source: ts.SourceFile,
   importToCheck: { className?: string; importPath: string }

@@ -1,4 +1,5 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
+import { removeImportFromContent } from '../../shared';
 
 /**
  * Updates `app.module.ts` file for new Angular v17 standards.
@@ -22,18 +23,19 @@ export function updateAppModule(): Rule {
       return;
     }
 
-    let sourceText = content.toString();
+    let updatedContent = content.toString();
 
-    // Remove HttpClientModule from imports
-    sourceText = sourceText.replace(/HttpClientModule,?\s*/g, '');
-    sourceText = sourceText.replace(
-      /import\s*{\s*HttpClientModule\s*}\s*from\s*'@angular\/common\/http'\s*;\s*\n?/g,
-      ''
-    );
+    // Remove import of HttpClientModule
+    updatedContent = removeImportFromContent(updatedContent, {
+      importPath: 'HttpClientModule',
+    });
+
+    // Remove usage of HttpClientModule
+    updatedContent = updatedContent.replace(/HttpClientModule,?\s*/g, '');
 
     // Add provideHttpClient to providers
-    if (!sourceText.includes('provideHttpClient')) {
-      sourceText = sourceText.replace(
+    if (!updatedContent.includes('provideHttpClient')) {
+      updatedContent = updatedContent.replace(
         /providers:\s*\[/,
         'providers: [\n    provideHttpClient(withFetch(), withInterceptorsFromDi()),'
       );
@@ -41,24 +43,15 @@ export function updateAppModule(): Rule {
       // Add imports
       const httpImport =
         "import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';\n";
-      if (sourceText.includes('import {')) {
-        sourceText = sourceText.replace(/import {/, `${httpImport}import {`);
-      } else {
-        // Add at the top after any license comments
-        sourceText = sourceText.replace(
-          /^(\s*\/\*[\s\S]*?\*\/\s*)?/,
-          `$1${httpImport}\n`
+      if (updatedContent.includes('import {')) {
+        updatedContent = updatedContent.replace(
+          /import {/,
+          `${httpImport}import {`
         );
       }
     }
 
-    // For SSR apps, update BrowserModule
-    sourceText = sourceText.replace(
-      /BrowserModule\.withServerTransition\(\s*{\s*appId:\s*['"]serverApp['"]\s*}\s*\)/,
-      'BrowserModule'
-    );
-
-    tree.overwrite(appModulePath, sourceText);
+    tree.overwrite(appModulePath, updatedContent);
 
     context.logger.info(`✅ Updated ${appModulePath}`);
   };
