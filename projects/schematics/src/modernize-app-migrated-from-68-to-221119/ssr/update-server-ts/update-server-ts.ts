@@ -347,7 +347,9 @@ export function updateServerTs(): Rule {
       );
 
     // Add run() call
-    updatedContent += 'run();\n';
+    updatedContent += `
+run()
+`;
 
     tree.overwrite(serverTsPath, updatedContent);
 
