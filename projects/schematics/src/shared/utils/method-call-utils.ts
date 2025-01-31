@@ -13,19 +13,29 @@ interface ReplaceMethodCallArgumentParams {
   throwErrorIfNotFound?: boolean;
 }
 
+interface RemoveMethodCallParams {
+  fileContent: string;
+  objectName: string;
+  methodName: string;
+  throwErrorIfNotFound?: boolean;
+}
+
+interface FindMethodCallsParams {
+  fileContent: string;
+  objectName: string;
+  methodName: string;
+}
+
 /**
- * Replaces an argument in a method call in the given file content.
- * Works for multiple occurrences of the method call.
+ * Finds all method calls in the given file content.
  *
- * Returns the updated file content.
+ * Returns the method calls.
  */
-export function replaceMethodCallArgument({
+export function findMethodCalls({
   fileContent,
   objectName,
   methodName,
-  argument,
-  throwErrorIfNotFound = false,
-}: ReplaceMethodCallArgumentParams): string {
+}: FindMethodCallsParams): ts.CallExpression[] {
   const sourceFile = parseTsFileContent(fileContent);
 
   // Get all method calls
@@ -36,9 +46,7 @@ export function replaceMethodCallArgument({
     true
   );
 
-  // Find a method call by name of object and name of method
-  // and the presence of some argument at the expected position
-  const targetNodes = nodes.filter((node): node is ts.CallExpression => {
+  return nodes.filter((node): node is ts.CallExpression => {
     if (!ts.isCallExpression(node)) {
       return false;
     }
@@ -54,11 +62,70 @@ export function replaceMethodCallArgument({
       return false;
     }
 
-    if (node.arguments.length <= argument.position) {
-      return false;
-    }
-
     return object.text === objectName && method.text === methodName;
+  });
+}
+
+export function removeMethodCalls({
+  fileContent,
+  objectName,
+  methodName,
+  throwErrorIfNotFound = false,
+}: RemoveMethodCallParams): string {
+  const targetNodes = findMethodCalls({
+    fileContent,
+    objectName,
+    methodName,
+  });
+
+  if (!targetNodes.length) {
+    if (throwErrorIfNotFound) {
+      throw new Error(
+        `Could not remove ${objectName}.${methodName}() method call`
+      );
+    }
+    return fileContent;
+  }
+
+  let updatedContent = fileContent;
+
+  targetNodes
+    // Remove occurrences from last to first to not interfere with positions
+    .reverse()
+    .forEach((targetNode) => {
+      let start = targetNode.getStart();
+      let end = targetNode.getEnd();
+
+      // If the parent is an ExpressionStatement, remove the entire statement including semicolon
+      if (ts.isExpressionStatement(targetNode.parent)) {
+        start = targetNode.parent.getStart();
+        end = targetNode.parent.getEnd();
+      }
+
+      updatedContent =
+        updatedContent.slice(0, start) + updatedContent.slice(end);
+    });
+
+  return updatedContent;
+}
+
+/**
+ * Replaces an argument in a method call in the given file content.
+ * Works for multiple occurrences of the method call.
+ *
+ * Returns the updated file content.
+ */
+export function replaceMethodCallArgument({
+  fileContent,
+  objectName,
+  methodName,
+  argument,
+  throwErrorIfNotFound = false,
+}: ReplaceMethodCallArgumentParams): string {
+  const targetNodes = findMethodCalls({
+    fileContent,
+    objectName,
+    methodName,
   });
 
   if (!targetNodes.length) {
@@ -77,8 +144,8 @@ export function replaceMethodCallArgument({
     // Replace occurrences from last to first - to not interfere with
     // the already calculated start and end positions of the other occurrences
     .reverse()
-    .forEach((targetNode) => {
-      const argumentToReplace = targetNode.arguments[argument.position];
+    .forEach((methodCallNode) => {
+      const argumentToReplace = methodCallNode.arguments[argument.position];
       updatedContent =
         updatedContent.slice(0, argumentToReplace.getStart()) +
         argument.newText +
