@@ -4,111 +4,48 @@ import { removeImportsFromServerTs } from './remove-imports-from-server-ts';
 import { addImportsToServerTs } from './add-imports-to-server-ts';
 import { findNodes } from '@schematics/angular/utility/ast-utils';
 import { parseTsFileContent } from '../../../shared/utils/file-utils';
+import { replaceMethodCallArgument } from 'projects/schematics/src/shared/utils/method-call-utils';
+import { replaceVariableDeclaration } from 'projects/schematics/src/shared/utils/variable-utils';
 
-interface ReplaceVariableDeclarationParams {
-  fileContent: string;
-  variableName: string;
-  newDeclaration: string;
-}
-
-function replaceVariableDeclaration({
-  fileContent,
-  variableName,
-  newDeclaration,
-}: ReplaceVariableDeclarationParams): string {
-  const sourceFile = parseTsFileContent(fileContent);
-
-  // Find all variable declarations
-  const nodes = findNodes(sourceFile, ts.SyntaxKind.VariableDeclaration);
-
-  // Find the specific variable declaration we want to replace
-  const targetNode = nodes.find((node) => {
-    if (!ts.isVariableDeclaration(node)) return false;
-    const name = node.name;
-    return ts.isIdentifier(name) && name.text === variableName;
-  });
-
-  if (!targetNode) {
-    return fileContent;
-  }
-
-  // Get the parent VariableStatement to include the 'const' keyword
-  const statement = targetNode.parent.parent;
-  const start = statement.getStart();
-  const end = statement.getEnd();
-
-  // Replace the entire statement
-  return fileContent.slice(0, start) + newDeclaration + fileContent.slice(end);
-}
-
-interface ReplaceMethodCallArgumentParams {
-  fileContent: string;
-  objectName: string;
-  methodName: string;
-  argument: {
-    position: number;
-    old: string;
-    new: string;
-  };
-}
-
-function replaceMethodCallArgument({
-  fileContent,
-  objectName,
-  methodName,
-  argument,
-}: ReplaceMethodCallArgumentParams): string {
-  const sourceFile = parseTsFileContent(fileContent);
-
-  const nodes = findNodes(
-    sourceFile,
-    ts.SyntaxKind.CallExpression,
-    undefined,
-    true
+/**
+ * Removes the Webpack-specific comments.
+ *
+ *   ```diff
+ *   - // Webpack will replace 'require' with '__webpack_require__'
+ *   - // '__non_webpack_require__' is a proxy to Node 'require'
+ *   - // The below code is to ensure that the server is run only when not requiring the bundle.
+ */
+function removeWebpackSpecificComments(fileContent: string): string {
+  return (
+    fileContent
+      .replace(
+        /\/\/ Webpack will replace 'require' with '__webpack_require__'\n/,
+        ''
+      )
+      .replace(
+        /\/\/ '__non_webpack_require__' is a proxy to Node 'require'\n/,
+        ''
+      )
+      .replace(
+        /\/\/ The below code is to ensure that the server is run only when not requiring the bundle\.\n/,
+        ''
+      ) + `\nrun()\n`
   );
-
-  // Find all matching method calls
-  const targetNodes = nodes.filter((node) => {
-    if (!ts.isCallExpression(node)) return false;
-    const expression = node.expression;
-    if (!ts.isPropertyAccessExpression(expression)) return false;
-
-    const object = expression.expression;
-    const method = expression.name;
-
-    if (!ts.isIdentifier(object) || !ts.isIdentifier(method)) return false;
-
-    // Check if this is the method call we're looking for
-    const isTargetMethod =
-      object.text === objectName && method.text === methodName;
-    if (!isTargetMethod) return false;
-
-    const arg = node.arguments[argument.position];
-    return ts.isIdentifier(arg) && arg.text === argument.old;
-  });
-
-  if (!targetNodes.length) {
-    return fileContent;
-  }
-
-  // Process all matches
-  return targetNodes.reduce((content, targetNode) => {
-    if (!ts.isCallExpression(targetNode)) return content;
-
-    // Find the argument to replace
-    let argToReplace: ts.Node | undefined;
-    argToReplace = targetNode.arguments[argument.position];
-
-    if (!argToReplace) return content;
-
-    return (
-      content.slice(0, argToReplace.getStart()) +
-      argument.new +
-      content.slice(argToReplace.getEnd())
-    );
-  }, fileContent);
 }
 
+/**
+ * Removes the Webpack-specific code and replaces with a simple `run()` call.
+ *
+ *   ```diff
+ *   - declare const __non_webpack_require__: NodeRequire;
+ *   - const mainModule = __non_webpack_require__.main;
+ *   - const moduleFilename = (mainModule && mainModule.- filename) || '';
+ *   - if (moduleFilename === __filename || moduleFilename.- includes('iisnode')) {
+ *   -   run();
+ *   - }
+ *   + run();
+ *   ```
+ */
 function removeWebpackSpecificCode(fileContent: string): string {
   const sourceFile = parseTsFileContent(fileContent);
 
@@ -166,6 +103,13 @@ function removeWebpackSpecificCode(fileContent: string): string {
   }, fileContent);
 }
 
+/**
+ * Removes the re-export of the path `./src/main.server`.
+ *
+ *   ```diff
+ *   - export * from './src/main.server';
+ *   ```
+ */
 function removeMainServerTsReexport(fileContent: string): string {
   const sourceFile = parseTsFileContent(fileContent);
 
@@ -188,24 +132,6 @@ function removeMainServerTsReexport(fileContent: string): string {
   const start = exportNode.getFullStart(); // Include leading trivia
   const end = exportNode.getEnd();
   return fileContent.slice(0, start) + fileContent.slice(end);
-}
-
-function removeWebpackSpecificComments(fileContent: string): string {
-  return (
-    fileContent
-      .replace(
-        /\/\/ Webpack will replace 'require' with '__webpack_require__'\n/,
-        ''
-      )
-      .replace(
-        /\/\/ '__non_webpack_require__' is a proxy to Node 'require'\n/,
-        ''
-      )
-      .replace(
-        /\/\/ The below code is to ensure that the server is run only when not requiring the bundle\.\n/,
-        ''
-      ) + `\nrun()\n`
-  );
 }
 
 /**
@@ -233,9 +159,18 @@ export function updateServerTs(): Rule {
     let updatedContent = content.toString();
 
     updatedContent = removeImportsFromServerTs(updatedContent);
-
     updatedContent = addImportsToServerTs(updatedContent);
 
+    /*
+     * Removes `distFolder` variable declaration and replaces with 2 new variables:
+     * `serverDistFolder` and `browserDistFolder`
+     *
+     *   ```diff
+     *   - const distFolder = join(process.cwd(), 'dist/<APP-NAME>/browser');
+     *   +  const serverDistFolder = dirname(fileURLToPath(import.meta.url));
+     *   +  const browserDistFolder = resolve(serverDistFolder, '../browser');
+     *   ```
+     */
     updatedContent = replaceVariableDeclaration({
       fileContent: updatedContent,
       variableName: 'distFolder',
@@ -243,13 +178,29 @@ export function updateServerTs(): Rule {
   const browserDistFolder = resolve(serverDistFolder, '../browser');`,
     });
 
+    /*
+     * Replace `indexHtml` variable declaration to use `browserDistFolder`
+     *   ```diff
+     *   - const indexHtml = existsSync(join(distFolder, 'index.original.html'))
+     *   -   ? 'index.original.html'
+     *   -   : 'index';
+     *   +  const indexHtml = join(browserDistFolder, 'index.html');
+     *   ```
+     */
     updatedContent = replaceVariableDeclaration({
       fileContent: updatedContent,
       variableName: 'indexHtml',
       newDeclaration: `const indexHtml = join(browserDistFolder, 'index.html');`,
     });
 
-    // Change `server.set(_, distFolder)` to `server.set(_, browserDistFolder)`
+    /*
+     * Change `server.set(_, distFolder)` to `server.set(_, browserDistFolder)`
+     *
+     *   ```diff
+     *   -  server.set('views', distFolder);
+     *   +  server.set('views', browserDistFolder);
+     *   ```
+     */
     updatedContent = replaceMethodCallArgument({
       fileContent: updatedContent,
       objectName: 'server',
@@ -261,7 +212,16 @@ export function updateServerTs(): Rule {
       },
     });
 
-    // Change `express.static(distFolder, ...)` to `express.static(browserDistFolder, ...)`
+    /*
+     * Change `express.static(distFolder, { ... })` to `express.static(browserDistFolder, { ... })`
+     *
+     *   ```diff
+     *   server.get(
+     *     '*.*',
+     *   -    express.static(distFolder, {
+     *   +    express.static(browserDistFolder, {
+     *   ```
+     */
     updatedContent = replaceMethodCallArgument({
       fileContent: updatedContent,
       objectName: 'express',
@@ -274,9 +234,7 @@ export function updateServerTs(): Rule {
     });
 
     updatedContent = removeWebpackSpecificComments(updatedContent);
-
     updatedContent = removeWebpackSpecificCode(updatedContent);
-
     updatedContent = removeMainServerTsReexport(updatedContent);
 
     tree.overwrite(serverTsPath, updatedContent);
