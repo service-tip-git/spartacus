@@ -5,11 +5,17 @@ import { addImportsToServerTs } from './add-imports-to-server-ts';
 import { findNodes } from '@schematics/angular/utility/ast-utils';
 import { parseTsFileContent } from '../../../shared/utils/file-utils';
 
-function replaceVariableDeclaration(
-  fileContent: string,
-  variableName: string,
-  newDeclaration: string
-): string {
+interface ReplaceVariableDeclarationParams {
+  fileContent: string;
+  variableName: string;
+  newDeclaration: string;
+}
+
+function replaceVariableDeclaration({
+  fileContent,
+  variableName,
+  newDeclaration,
+}: ReplaceVariableDeclarationParams): string {
   const sourceFile = parseTsFileContent(fileContent);
 
   // Find all variable declarations
@@ -35,14 +41,23 @@ function replaceVariableDeclaration(
   return fileContent.slice(0, start) + newDeclaration + fileContent.slice(end);
 }
 
-function replaceMethodCallArgument(
-  fileContent: string,
-  objectName: string,
-  methodName: string,
-  oldArgName: string,
-  newArgName: string,
-  argPosition?: number
-): string {
+interface ReplaceMethodCallArgumentParams {
+  fileContent: string;
+  objectName: string;
+  methodName: string;
+  argument: {
+    position: number;
+    old: string;
+    new: string;
+  };
+}
+
+function replaceMethodCallArgument({
+  fileContent,
+  objectName,
+  methodName,
+  argument,
+}: ReplaceMethodCallArgumentParams): string {
   const sourceFile = parseTsFileContent(fileContent);
 
   const nodes = findNodes(
@@ -68,16 +83,8 @@ function replaceMethodCallArgument(
       object.text === objectName && method.text === methodName;
     if (!isTargetMethod) return false;
 
-    // If argPosition is specified, check if the argument at that position is what we want to replace
-    if (typeof argPosition === 'number') {
-      const arg = node.arguments[argPosition];
-      return ts.isIdentifier(arg) && arg.text === oldArgName;
-    }
-
-    // Otherwise check if any argument matches what we want to replace
-    return node.arguments.some(
-      (arg) => ts.isIdentifier(arg) && arg.text === oldArgName
-    );
+    const arg = node.arguments[argument.position];
+    return ts.isIdentifier(arg) && arg.text === argument.old;
   });
 
   if (!targetNodes.length) {
@@ -90,19 +97,13 @@ function replaceMethodCallArgument(
 
     // Find the argument to replace
     let argToReplace: ts.Node | undefined;
-    if (typeof argPosition === 'number') {
-      argToReplace = targetNode.arguments[argPosition];
-    } else {
-      argToReplace = targetNode.arguments.find(
-        (arg) => ts.isIdentifier(arg) && arg.text === oldArgName
-      );
-    }
+    argToReplace = targetNode.arguments[argument.position];
 
     if (!argToReplace) return content;
 
     return (
       content.slice(0, argToReplace.getStart()) +
-      newArgName +
+      argument.new +
       content.slice(argToReplace.getEnd())
     );
   }, fileContent);
@@ -231,53 +232,51 @@ export function updateServerTs(): Rule {
 
     let updatedContent = content.toString();
 
-    // Remove imports
     updatedContent = removeImportsFromServerTs(updatedContent);
 
-    // Add new imports
     updatedContent = addImportsToServerTs(updatedContent);
 
-    // Update dist folder declaration
-    updatedContent = replaceVariableDeclaration(
-      updatedContent,
-      'distFolder',
-      `const serverDistFolder = dirname(fileURLToPath(import.meta.url));
-  const browserDistFolder = resolve(serverDistFolder, '../browser');`
-    );
+    updatedContent = replaceVariableDeclaration({
+      fileContent: updatedContent,
+      variableName: 'distFolder',
+      newDeclaration: `const serverDistFolder = dirname(fileURLToPath(import.meta.url));
+  const browserDistFolder = resolve(serverDistFolder, '../browser');`,
+    });
 
-    // Update index.html declaration
-    updatedContent = replaceVariableDeclaration(
-      updatedContent,
-      'indexHtml',
-      `const indexHtml = join(browserDistFolder, 'index.html');`
-    );
+    updatedContent = replaceVariableDeclaration({
+      fileContent: updatedContent,
+      variableName: 'indexHtml',
+      newDeclaration: `const indexHtml = join(browserDistFolder, 'index.html');`,
+    });
 
-    // Update server configuration
-    updatedContent = replaceMethodCallArgument(
-      updatedContent,
-      'server',
-      'set',
-      'distFolder',
-      'browserDistFolder',
-      1
-    );
+    // Change `server.set(_, distFolder)` to `server.set(_, browserDistFolder)`
+    updatedContent = replaceMethodCallArgument({
+      fileContent: updatedContent,
+      objectName: 'server',
+      methodName: 'set',
+      argument: {
+        position: 1,
+        old: 'distFolder',
+        new: 'browserDistFolder',
+      },
+    });
 
-    updatedContent = replaceMethodCallArgument(
-      updatedContent,
-      'express',
-      'static',
-      'distFolder',
-      'browserDistFolder',
-      0
-    );
+    // Change `express.static(distFolder, ...)` to `express.static(browserDistFolder, ...)`
+    updatedContent = replaceMethodCallArgument({
+      fileContent: updatedContent,
+      objectName: 'express',
+      methodName: 'static',
+      argument: {
+        position: 0,
+        old: 'distFolder',
+        new: 'browserDistFolder',
+      },
+    });
 
-    // Remove webpack-specific comments and add run() call
     updatedContent = removeWebpackSpecificComments(updatedContent);
 
-    // Remove webpack-specific code
     updatedContent = removeWebpackSpecificCode(updatedContent);
 
-    // Remove export statement
     updatedContent = removeMainServerTsReexport(updatedContent);
 
     tree.overwrite(serverTsPath, updatedContent);
