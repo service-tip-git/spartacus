@@ -36,12 +36,16 @@ export function updateAngularJsonForApplicationBuilder(): Rule {
         options.outputPath.endsWith('/browser')
       ) {
         options.outputPath = options.outputPath.replace(/\/browser$/, '');
+      } else {
+        throw new Error('Could not update "outputPath" in angular.json');
       }
 
       // Rename main to browser
       if (options.main) {
         options.browser = options.main;
         delete options.main;
+      } else {
+        throw new Error('Could not rename "main" to "browser" in angular.json');
       }
     }
 
@@ -51,6 +55,10 @@ export function updateAngularJsonForApplicationBuilder(): Rule {
       delete devConfig.buildOptimizer;
       delete devConfig.vendorChunk;
       delete devConfig.namedChunks;
+    } else {
+      throw new Error(
+        'Could not update "development" configuration in angular.json'
+      );
     }
 
     context.logger.info('✅ Updated angular.json for application builder');

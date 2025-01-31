@@ -23,7 +23,6 @@ export function updateTsConfigApp(): Rule {
       throw new Error(`Failed to read ${tsconfigAppPath} file`);
     }
 
-    // Parse using jsonc-parser, to not throw an error on comments
     const tsConfigApp = parse(tsConfigAppContent.toString());
 
     tsConfigApp.compilerOptions = {
