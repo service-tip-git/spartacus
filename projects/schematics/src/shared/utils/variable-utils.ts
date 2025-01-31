@@ -5,7 +5,7 @@ import * as ts from 'typescript';
 interface ReplaceVariableDeclarationParams {
   fileContent: string;
   variableName: string;
-  newDeclaration: string;
+  newText: string;
 }
 
 interface RemoveVariableDeclarationParams {
@@ -21,7 +21,7 @@ interface RemoveVariableDeclarationParams {
 export function replaceVariableDeclaration({
   fileContent,
   variableName,
-  newDeclaration,
+  newText,
 }: ReplaceVariableDeclarationParams): string {
   const sourceFile = parseTsFileContent(fileContent);
 
@@ -45,7 +45,7 @@ export function replaceVariableDeclaration({
   const end = statement.getEnd();
 
   // Replace the whole statement
-  return fileContent.slice(0, start) + newDeclaration + fileContent.slice(end);
+  return fileContent.slice(0, start) + newText + fileContent.slice(end);
 }
 
 /**
@@ -60,6 +60,6 @@ export function removeVariableDeclaration({
   return replaceVariableDeclaration({
     fileContent,
     variableName,
-    newDeclaration: '',
+    newText: '',
   });
 }

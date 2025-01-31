@@ -18,7 +18,7 @@ export function updateVariablesInServerTs(updatedContent: string): string {
   updatedContent = replaceVariableDeclaration({
     fileContent: updatedContent,
     variableName: 'distFolder',
-    newDeclaration: `const serverDistFolder = dirname(fileURLToPath(import.meta.url));
+    newText: `const serverDistFolder = dirname(fileURLToPath(import.meta.url));
   const browserDistFolder = resolve(serverDistFolder, '../browser');`,
   });
 
@@ -34,7 +34,7 @@ export function updateVariablesInServerTs(updatedContent: string): string {
   updatedContent = replaceVariableDeclaration({
     fileContent: updatedContent,
     variableName: 'indexHtml',
-    newDeclaration: `const indexHtml = join(browserDistFolder, 'index.html');`,
+    newText: `const indexHtml = join(browserDistFolder, 'index.html');`,
   });
 
   /*
