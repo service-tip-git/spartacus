@@ -114,6 +114,9 @@ export function removeMethodCalls({
  * Replaces an argument in a method call in the given file content.
  * Works for multiple occurrences of the method call.
  *
+ * It matches the call by the object name, method name, position of the argument,
+ * and the argument text.
+ *
  * Returns the updated file content.
  */
 export function replaceMethodCallArgument({
