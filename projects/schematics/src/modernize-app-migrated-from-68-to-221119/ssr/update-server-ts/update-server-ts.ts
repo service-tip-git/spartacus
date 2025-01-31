@@ -163,7 +163,7 @@ function removeWebpackSpecificCode(
   }, fileContent);
 }
 
-function removeExportStatement(
+function removeMainServerTsReexport(
   sourceFile: ts.SourceFile,
   fileContent: string
 ): string {
@@ -186,6 +186,24 @@ function removeExportStatement(
   const start = exportNode.getFullStart(); // Include leading trivia
   const end = exportNode.getEnd();
   return fileContent.slice(0, start) + fileContent.slice(end);
+}
+
+function removeWebpackSpecificComments(fileContent: string): string {
+  return (
+    fileContent
+      .replace(
+        /\/\/ Webpack will replace 'require' with '__webpack_require__'\n/,
+        ''
+      )
+      .replace(
+        /\/\/ '__non_webpack_require__' is a proxy to Node 'require'\n/,
+        ''
+      )
+      .replace(
+        /\/\/ The below code is to ensure that the server is run only when not requiring the bundle\.\n/,
+        ''
+      ) + `\nrun()\n`
+  );
 }
 
 /**
@@ -326,30 +344,13 @@ export function updateServerTs(): Rule {
     );
 
     // Remove export statement
-    updatedContent = removeExportStatement(
+    updatedContent = removeMainServerTsReexport(
       sourceFileBeforeExportRemoval,
       updatedContent
     );
 
-    // Remove webpack-specific comments with regex
-    updatedContent = updatedContent
-      .replace(
-        /\/\/ Webpack will replace 'require' with '__webpack_require__'\n/,
-        ''
-      )
-      .replace(
-        /\/\/ '__non_webpack_require__' is a proxy to Node 'require'\n/,
-        ''
-      )
-      .replace(
-        /\/\/ The below code is to ensure that the server is run only when not requiring the bundle\.\n/,
-        ''
-      );
-
-    // Add run() call
-    updatedContent += `
-run()
-`;
+    // Remove webpack-specific comments and add run() call
+    updatedContent = removeWebpackSpecificComments(updatedContent);
 
     tree.overwrite(serverTsPath, updatedContent);
 
