@@ -622,7 +622,10 @@ export function removeConstructorParam(
   const changes: Change[] = [];
 
   if (shouldRemoveImportAndParam(source, paramToRemove)) {
-    const importRemovalChange = removeImport(source, paramToRemove);
+    const importRemovalChange = removeImport(source, {
+      className: paramToRemove.className,
+      importPath: paramToRemove.importPath || '',
+    });
     const injectImportRemovalChange = removeInjectImports(
       source,
       constructorNode,
@@ -794,7 +797,7 @@ export function removeInjectImports(
 
 export function removeImport(
   source: ts.SourceFile,
-  importToRemove: ClassType
+  importToRemove: { className?: string; importPath: string }
 ): Change {
   const importDeclarationNode = getImportDeclarationNode(
     source,
@@ -802,6 +805,14 @@ export function removeImport(
   );
   if (!importDeclarationNode) {
     return new NoopChange();
+  }
+
+  // Handle side-effect imports (e.g. `import 'zone.js/node'`)
+  // which don't import any specific item from the path
+  if (!importToRemove.className) {
+    const position = importDeclarationNode.getStart();
+    const toRemove = importDeclarationNode.getText();
+    return new RemoveChange(source.fileName, position, toRemove);
   }
 
   let position: number;
@@ -843,7 +854,8 @@ export function removeImport(
         const importNode = findNode(
           node,
           ts.SyntaxKind.Identifier,
-          importToRemove.className
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          importToRemove.className!
         );
         return {
           importNode,
@@ -868,7 +880,7 @@ export function removeImport(
 
 function getImportDeclarationNode(
   source: ts.SourceFile,
-  importToCheck: ClassType
+  importToCheck: { className?: string; importPath: string }
 ): ts.Node | undefined {
   if (!importToCheck.importPath) {
     return undefined;

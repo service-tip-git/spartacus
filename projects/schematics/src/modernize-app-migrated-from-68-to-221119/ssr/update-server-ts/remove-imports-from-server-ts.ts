@@ -10,8 +10,8 @@ export function removeImportsFromServerTs(
   sourceFile: ts.SourceFile
 ): string {
   // List of imports to remove
-  const importsToRemove: { symbolName: string; importPath: string }[] = [
-    { symbolName: 'zone', importPath: 'zone.js/node' },
+  const importsToRemove: { symbolName?: string; importPath: string }[] = [
+    { importPath: 'zone.js/node' },
     { symbolName: 'ngExpressEngine', importPath: '@spartacus/setup/ssr' },
     {
       symbolName: 'NgExpressEngineDecorator',
