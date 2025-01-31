@@ -8,18 +8,18 @@ export const DOCS_FOR_MODERNIZING_NG17_APP =
 
 /**
  * Higher-order function that wraps a Rule with error handling.
- * If the wrapped Rule throws an error, it logs the error and provides a link to manual migration docs.
+ * If the wrapped Rule throws an error, it logs the error and prints a link to manual migration docs.
  */
 export function withFallbackToShowingDocs(rule: Rule): Rule {
   return (tree: Tree, context: SchematicContext) => {
     try {
       return rule(tree, context);
-    } catch (err) {
+    } catch (error) {
       context.logger.error(
-        `⚠️ ${err instanceof Error ? err.message : 'Unknown error'}`
+        `⚠️ ${error instanceof Error ? error.message : 'Unknown error'}`
       );
       context.logger.error(
-        `Could not migrate the step automatically. For manual migration steps, please refer to: ${DOCS_FOR_MODERNIZING_NG17_APP}`
+        `Could not migrate this step automatically. For manual migration steps, please refer to: ${DOCS_FOR_MODERNIZING_NG17_APP}`
       );
       return tree;
     }

@@ -2,13 +2,11 @@ import { SchematicContext, Tree } from '@angular-devkit/schematics';
 import { getWorkspace } from '../shared';
 
 /**
- * Returns whether the application is using the old SSR builder.
+ * Returns whether the app is using SSR
+ *
+ * It checks if the `angular.json` contains an old build architect named "server".
  */
-export function isUsingOldServerBuilder(
-  tree: Tree,
-  context: SchematicContext
-): boolean {
-  // check if the workspace settings has "server" in the "architect" section
+export function isUsingSsr(tree: Tree, context: SchematicContext): boolean {
   const { workspace } = getWorkspace(tree);
   const project = workspace.projects[Object.keys(workspace.projects)[0]];
 
@@ -17,6 +15,5 @@ export function isUsingOldServerBuilder(
     return false;
   }
 
-  const serverTarget = project.architect?.server as any;
-  return !!serverTarget;
+  return !!project.architect?.server;
 }

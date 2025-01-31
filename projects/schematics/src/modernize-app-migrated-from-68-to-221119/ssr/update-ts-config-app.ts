@@ -1,5 +1,6 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { parse } from 'jsonc-parser';
+import { mergeArraysWithoutDuplicates } from '../../shared/utils/array-utils';
 
 /**
  * Updates `tsconfig.app.json` to align with new Angular v17 standards.
@@ -12,28 +13,30 @@ export function updateTsConfigApp(): Rule {
 
     context.logger.info(`⏳ Updating ${tsconfigAppPath} configuration...`);
 
-    // Update tsconfig.app.json
     if (!tree.exists(tsconfigAppPath)) {
-      throw new Error('tsconfig.app.json file not found');
+      throw new Error(`${tsconfigAppPath} file not found`);
     }
 
     const tsConfigAppContent = tree.read(tsconfigAppPath);
     if (!tsConfigAppContent) {
-      throw new Error('Failed to read tsconfig.app.json file');
+      throw new Error(`Failed to read ${tsconfigAppPath} file`);
     }
 
+    // Parse using jsonc-parser, to not throw an error on comments
     const tsConfigApp = parse(tsConfigAppContent.toString());
 
-    // Update `compilerOptions.types`
     tsConfigApp.compilerOptions = {
       ...tsConfigApp.compilerOptions,
-      types: [...(tsConfigApp.compilerOptions?.types || []), 'node'],
+      types: mergeArraysWithoutDuplicates(tsConfigApp.compilerOptions?.types, [
+        'node',
+      ]),
     };
 
     // Update `files`
     const serverFiles = ['src/main.server.ts', 'server.ts'];
-    tsConfigApp.files = Array.from(
-      new Set([...(tsConfigApp.files || []), ...serverFiles])
+    tsConfigApp.files = mergeArraysWithoutDuplicates(
+      tsConfigApp.files,
+      serverFiles
     );
 
     tree.overwrite(tsconfigAppPath, JSON.stringify(tsConfigApp, null, 2));

@@ -20,7 +20,7 @@ import { updateMainServerTs } from './ssr/update-main-server-ts';
 import { updateServerTs } from './ssr/update-server-ts/update-server-ts';
 import { updateAppModule } from './csr-and-ssr/update-app-module';
 import { updatePackageJsonServerScripts } from './ssr/update-package-json-server-scripts';
-import { isUsingOldServerBuilder } from './is-using-old-server-builder';
+import { isUsingSsr as isUsingSsr } from './is-using-old-server-builder';
 import { removeTsConfigServer } from './ssr/remove-ts-config-server';
 import { withFallbackToShowingDocs } from './with-fallback-to-showing-docs';
 
@@ -34,7 +34,7 @@ export function migrate(): Rule {
       withFallbackToShowingDocs(updateTsConfig()),
       withFallbackToShowingDocs(updateAppModule()),
 
-      ...(isUsingOldServerBuilder(tree, context)
+      ...(isUsingSsr(tree, context)
         ? [
             withFallbackToShowingDocs(updateAngularJsonForSsr()),
             withFallbackToShowingDocs(updatePackageJsonServerScripts()),
