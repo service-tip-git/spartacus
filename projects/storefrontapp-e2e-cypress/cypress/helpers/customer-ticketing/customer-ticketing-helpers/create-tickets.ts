@@ -35,9 +35,9 @@ export function fillTicketDetails(ticketDetails: TestTicketDetails) {
       .eq(CATEGORY_SELECT)
       .then((select) => {
         if (select.is('ng-select')) {
-          cy.wrap(select).ngSelect(ticketDetails.ticketCategory.name)
+          cy.wrap(select).ngSelect(ticketDetails.ticketCategory.name);
         } else {
-          cy.wrap(select).select(ticketDetails.ticketCategory.name)
+          cy.wrap(select).select(ticketDetails.ticketCategory.name);
         }
       });
     cy.get(`textarea[formcontrolname="${MESSAGE_CONTROL}"]`).type(
