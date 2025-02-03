@@ -170,14 +170,12 @@
         {{ 'pickupOptions.legend' | cxTranslate }}
       </div>
 
-      <div>
-        <cx-tab
-          *ngIf="tabs"
-          [disabled]="disableControls"
-          [tabs]="tabs"
-          [config]="tabConfig"
-        ></cx-tab>
-      </div>
+      <cx-tab
+        *ngIf="tabs"
+        [disabled]="disableControls"
+        [tabs]="tabs"
+        [config]="tabConfig"
+      ></cx-tab>
     </div>
     <div aria-live="assertive" aria-atomic="true">
       <span *ngIf="validationError" tabindex="0" class="cx-invalid-message">
