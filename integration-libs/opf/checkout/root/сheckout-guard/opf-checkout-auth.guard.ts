@@ -5,66 +5,55 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
-import { UrlTree } from '@angular/router';
-import { isEmail } from '@spartacus/cart/base/core';
+import { inject, Injectable } from '@angular/core';
+import { GuardResult, UrlTree } from '@angular/router';
 import { CheckoutAuthGuard } from '@spartacus/checkout/base/components';
-import { combineLatest } from 'rxjs';
+import { UserIdService } from '@spartacus/core';
+import { combineLatest, filter, map, switchMap, tap } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
-import { filter, map } from 'rxjs/operators';
+import { OpfCartUserEmailCheckerService } from '../services';
 
 @Injectable({
   providedIn: 'root',
 })
 export class OpfCheckoutAuthGuard extends CheckoutAuthGuard {
-  canActivate(): Observable<boolean | UrlTree> {
-    console.log('opf checkout guard');
+  protected userIdService = inject(UserIdService);
+  protected opfCartUserEmailChecker = inject(OpfCartUserEmailCheckerService);
 
-    return combineLatest([
-      this.authService.isUserLoggedIn(),
-      this.activeCartFacade.isGuestCart(),
-      this.activeCartFacade.isStable(),
-      this.activeCartFacade.getActive(),
-    ]).pipe(
-      map(([isLoggedIn, isGuestCart, isStable, activeCart]) => ({
-        isLoggedIn,
-        isGuestCart,
-        isStable,
-        cartUserUid: activeCart?.user?.uid,
-      })),
-      filter((data) => data.isStable),
-      map((data) => {
-        const isEmailExistsInCart = isEmail(
-          data.cartUserUid?.split('|').slice(1).join('|')
-        );
-
-        this.router.events.subscribe((event) => console.log(event));
-
-        if (!data.isLoggedIn && data.isGuestCart && !isEmailExistsInCart) {
-          console.log('here');
-          return this.handleGuestUserWithoutEmail();
-        } // This check should be add before original checks and after this call super.canActivate()
-
-        if (!data.isLoggedIn) {
-          return data.isGuestCart && isEmailExistsInCart
-            ? true
-            : this.handleAnonymousUser();
+  canActivate(): Observable<GuardResult> {
+    return this.activeCartFacade.isStable().pipe(
+      filter((isStable) => isStable),
+      switchMap(() => this.activeCartFacade.isGuestCart()),
+      switchMap((isGuestCart) => {
+        if (!isGuestCart) {
+          return super.canActivate();
         }
-        return data.isLoggedIn;
+
+        return combineLatest([
+          this.userIdService.getUserId(),
+          this.activeCartFacade.getActiveCartId(),
+        ]).pipe(
+          switchMap(([userId, cartId]) => {
+            console.log('test', userId, cartId);
+            return this.opfCartUserEmailChecker.isCartUserHasEmail(
+              userId,
+              cartId
+            );
+          }),
+          tap((val) => console.log(val)),
+          map((isCartUserHasEmail) => {
+            return isCartUserHasEmail || this.handleGuestUserWithoutEmail();
+          })
+        );
       })
     );
   }
 
   protected handleGuestUserWithoutEmail(): boolean | UrlTree {
-    // this.authRedirectService.saveCurrentNavigationUrl();
-    if (this.checkoutConfigService.isGuestCheckout()) {
-      return this.router.createUrlTree([
-        this.semanticPathService.get('checkoutLogin'),
-      ]);
-    } else {
-      return this.router.parseUrl(
-        this.semanticPathService.get('checkoutLogin') ?? ''
-      );
-    }
+    this.authRedirectService.saveCurrentNavigationUrl();
+
+    return this.router.createUrlTree([
+      this.semanticPathService.get('opfCheckoutLogin'),
+    ]);
   }
 }

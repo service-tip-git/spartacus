@@ -4,21 +4,25 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CheckoutAuthGuard } from '@spartacus/checkout/base/components';
 import {
   CmsConfig,
   provideDefaultConfig,
   provideDefaultConfigFactory,
 } from '@spartacus/core';
+import { OpfApiCheckoutAdapter } from './adapters/opf-api-checkout.adapter';
+import { defaultOccOpfCheckoutConfig } from './config';
 import { defaultOpfCheckoutConfig } from './config/default-opf-checkout-config';
 import { defaultOpfCheckoutRoutingConfig } from './config/default-opf-checkout-routing-config';
+import { OpfCheckoutAdapter, OpfCheckoutConnector } from './connectors';
 import { OPF_CHECKOUT_FEATURE } from './feature-name';
+import { OpfCartUserEmailCheckerService } from './services';
 import { OpfCheckoutAuthGuard } from './сheckout-guard/opf-checkout-auth.guard';
-import { CheckoutGuardService } from './сheckout-guard/сheckout-guard.service';
 
 export const CHECKOUT_OPF_CMS_COMPONENTS: string[] = [
   'OpfCheckoutPaymentAndReview',
+  'OpfCheckoutLoginComponent',
 ];
 
 export function defaultOpfCheckoutComponentsConfig() {
@@ -38,7 +42,14 @@ export function defaultOpfCheckoutComponentsConfig() {
       provide: CheckoutAuthGuard,
       useClass: OpfCheckoutAuthGuard,
     },
+    {
+      provide: OpfCheckoutAdapter,
+      useClass: OpfApiCheckoutAdapter,
+    },
+    OpfCheckoutConnector,
+    OpfCartUserEmailCheckerService,
     provideDefaultConfig(defaultOpfCheckoutRoutingConfig),
+    provideDefaultConfig(defaultOccOpfCheckoutConfig),
     provideDefaultConfig(defaultOpfCheckoutConfig),
     provideDefaultConfigFactory(defaultOpfCheckoutComponentsConfig),
   ],

@@ -7,14 +7,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {
-  CmsConfig,
-  FeaturesConfigModule,
-  I18nModule,
-  provideDefaultConfig,
-} from '@spartacus/core';
+import { CmsConfig, I18nModule, provideDefaultConfig } from '@spartacus/core';
 import { FormErrorsModule } from '@spartacus/storefront';
-import { CheckoutLoginComponent } from './checkout-login.component';
+import { OpfCheckoutLoginComponent } from './opf-checkout-login.component';
 
 @NgModule({
   imports: [
@@ -23,22 +18,17 @@ import { CheckoutLoginComponent } from './checkout-login.component';
     FormsModule,
     ReactiveFormsModule,
     FormErrorsModule,
-    FeaturesConfigModule,
   ],
+  declarations: [OpfCheckoutLoginComponent],
   providers: [
     provideDefaultConfig(<CmsConfig>{
       cmsComponents: {
-        GuestCheckoutLoginComponent: {
-          component: CheckoutLoginComponent,
+        OpfCheckoutLoginComponent: {
+          component: OpfCheckoutLoginComponent,
         },
       },
     }),
   ],
-  declarations: [CheckoutLoginComponent],
-  exports: [CheckoutLoginComponent],
+  exports: [OpfCheckoutLoginComponent],
 })
-export class CheckoutLoginModule {
-  constructor() {
-    console.log('CheckoutLoginModule');
-  }
-}
+export class OpfCheckoutLoginModule {}
