@@ -14,6 +14,7 @@ import {
   provideDefaultConfig,
 } from '@spartacus/core';
 import { FormErrorsModule } from '@spartacus/storefront';
+import { NotCheckoutAuthGuard } from '../guards/not-checkout-auth.guard';
 import { CheckoutLoginComponent } from './checkout-login.component';
 
 @NgModule({
@@ -30,6 +31,7 @@ import { CheckoutLoginComponent } from './checkout-login.component';
       cmsComponents: {
         GuestCheckoutLoginComponent: {
           component: CheckoutLoginComponent,
+          guards: [NotCheckoutAuthGuard],
         },
       },
     }),
