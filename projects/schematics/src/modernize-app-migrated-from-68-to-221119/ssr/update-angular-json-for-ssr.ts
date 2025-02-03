@@ -51,6 +51,20 @@ export function updateAngularJsonForSsr(): Rule {
       },
     };
 
+    // Update outputPath if it ends with /browser
+    const buildOptions = (project.architect?.build as any)?.options;
+    if (
+      typeof buildOptions.outputPath === 'string' &&
+      buildOptions.outputPath.endsWith('/browser')
+    ) {
+      buildOptions.outputPath = buildOptions.outputPath.replace(
+        /\/browser$/,
+        ''
+      );
+    } else {
+      throw new Error('Could not update "outputPath" in angular.json');
+    }
+
     // Update serve configurations with `,noSsr`
     const serveConfigs = project.architect?.serve?.configurations;
     if (serveConfigs) {

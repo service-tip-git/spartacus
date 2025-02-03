@@ -27,26 +27,13 @@ export function updateAngularJsonForApplicationBuilder(): Rule {
     // Update builder
     buildTarget.builder = '@angular-devkit/build-angular:application';
 
-    // Update options
+    // Rename main to browser
     const options = buildTarget.options as any;
-    if (options) {
-      // Update outputPath
-      if (
-        typeof options.outputPath === 'string' &&
-        options.outputPath.endsWith('/browser')
-      ) {
-        options.outputPath = options.outputPath.replace(/\/browser$/, '');
-      } else {
-        throw new Error('Could not update "outputPath" in angular.json');
-      }
-
-      // Rename main to browser
-      if (options.main) {
-        options.browser = options.main;
-        delete options.main;
-      } else {
-        throw new Error('Could not rename "main" to "browser" in angular.json');
-      }
+    if (options?.main) {
+      options.browser = options.main;
+      delete options.main;
+    } else {
+      throw new Error('Could not rename "main" to "browser" in angular.json');
     }
 
     // Update development configuration
