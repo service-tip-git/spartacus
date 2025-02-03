@@ -33,7 +33,8 @@ export const rule = ESLintUtils.RuleCreator(() => __filename)({
   meta: {
     type: 'problem',
     docs: {
-      description: ``,
+      description:
+        'Ensures NgRx Failure Actions implement ErrorAction interface',
     },
     schema: [], // no options
     messages: {
@@ -44,31 +45,29 @@ export const rule = ESLintUtils.RuleCreator(() => __filename)({
   },
   defaultOptions: [],
   create(context) {
+    const Constants = {
+      ErrorAction: 'ErrorAction',
+      SpartacusCore: '@spartacus/core',
+    };
+
     return {
       'ClassDeclaration[id.name=/Fail/]'(node: TSESTree.ClassDeclaration) {
-        const Constants = {
-          ErrorAction: 'ErrorAction',
-          SpartacusCore: '@spartacus/core',
-        };
-
         if (!hasImplementsInterface(node, Constants.ErrorAction)) {
           context.report({
             node: node.id ?? node,
             messageId: 'missingImplementsErrorAction',
             fix(fixer) {
-              const sourceCode = context.sourceCode;
               return [
                 ...fixMissingImplementsInterface({
                   node,
                   interfaceName: Constants.ErrorAction,
-                  sourceCode,
+                  sourceCode: context.sourceCode,
                   fixer,
                 }),
-
                 ...fixPossiblyMissingImport({
                   importedIdentifier: Constants.ErrorAction,
                   importPath: Constants.SpartacusCore,
-                  sourceCode,
+                  sourceCode: context.sourceCode,
                   fixer,
                 }),
               ];
