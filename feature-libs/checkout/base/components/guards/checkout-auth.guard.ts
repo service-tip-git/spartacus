@@ -52,7 +52,6 @@ export class CheckoutAuthGuard {
 
   protected handleAnonymousUser(): boolean | UrlTree {
     this.authRedirectService.saveCurrentNavigationUrl();
-
     if (this.checkoutConfigService.isGuestCheckout()) {
       return this.router.createUrlTree(
         [this.semanticPathService.get('login')],

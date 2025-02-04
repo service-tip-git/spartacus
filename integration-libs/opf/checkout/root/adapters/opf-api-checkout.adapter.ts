@@ -17,6 +17,13 @@ export class OpfApiCheckoutAdapter implements OpfCheckoutAdapter {
   protected converter = inject(ConverterService);
   protected occEndpointsService = inject(OccEndpointsService);
 
+  /**
+   * Retrieves the email associated with a specific cart for a given user.
+   *
+   * @param {string} userId - The unique identifier of the user.
+   * @param {string} cartId - The unique identifier of the cart.
+   * @returns {Observable<CartUserEmailResponse>} - An observable containing the cart user email response.
+   */
   getCartUserEmail(
     userId: string,
     cartId: string

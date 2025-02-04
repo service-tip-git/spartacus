@@ -9,17 +9,29 @@ import { inject, Injectable } from '@angular/core';
 import { GuardResult, UrlTree } from '@angular/router';
 import { CheckoutAuthGuard } from '@spartacus/checkout/base/components';
 import { UserIdService } from '@spartacus/core';
-import { combineLatest, filter, map, switchMap, tap } from 'rxjs';
+import { combineLatest, filter, map, switchMap } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 import { OpfCartUserEmailCheckerService } from '../services';
 
 @Injectable({
   providedIn: 'root',
 })
+/**
+ * A checkout authentication guard that extends `CheckoutAuthGuard` and applies additional logic for guest carts.
+ * If the cart belongs to a guest user, it verifies whether the user has a valid email before allowing access.
+ */
 export class OpfCheckoutAuthGuard extends CheckoutAuthGuard {
   protected userIdService = inject(UserIdService);
   protected opfCartUserEmailChecker = inject(OpfCartUserEmailCheckerService);
 
+  /**
+   * Determines whether the user can activate the checkout route.
+   * - If the cart is **not a guest cart**, it defers to the parent `CheckoutAuthGuard`.
+   * - If the cart **belongs to a guest user**, it checks whether the guest user has a valid email.
+   * - If the guest user **does not have an email**, they are redirected to the OPF checkout login page.
+   *
+   * @returns {Observable<GuardResult>} - An observable that emits `true` to allow navigation, or a `UrlTree` to redirect the user.
+   */
   canActivate(): Observable<GuardResult> {
     return this.activeCartFacade.isStable().pipe(
       filter((isStable) => isStable),
@@ -34,13 +46,11 @@ export class OpfCheckoutAuthGuard extends CheckoutAuthGuard {
           this.activeCartFacade.getActiveCartId(),
         ]).pipe(
           switchMap(([userId, cartId]) => {
-            console.log('test', userId, cartId);
             return this.opfCartUserEmailChecker.isCartUserHasEmail(
               userId,
               cartId
             );
           }),
-          tap((val) => console.log(val)),
           map((isCartUserHasEmail) => {
             return isCartUserHasEmail || this.handleGuestUserWithoutEmail();
           })
@@ -50,8 +60,6 @@ export class OpfCheckoutAuthGuard extends CheckoutAuthGuard {
   }
 
   protected handleGuestUserWithoutEmail(): boolean | UrlTree {
-    this.authRedirectService.saveCurrentNavigationUrl();
-
     return this.router.createUrlTree([
       this.semanticPathService.get('opfCheckoutLogin'),
     ]);

@@ -39,8 +39,4 @@ import { CheckoutLoginComponent } from './checkout-login.component';
   declarations: [CheckoutLoginComponent],
   exports: [CheckoutLoginComponent],
 })
-export class CheckoutLoginModule {
-  constructor() {
-    console.log('CheckoutLoginModule');
-  }
-}
+export class CheckoutLoginModule {}
