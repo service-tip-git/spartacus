@@ -1,0 +1,32 @@
+name: Check Translation Changes
+
+on:
+  pull_request:
+    paths:
+      - '**/assets/translations/**'
+
+jobs:
+  check-translations:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Run translation change script
+        run: |
+          changed_files=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep 'assets/translations')
+          if [ -n "$changed_files" ]; then
+            for file in $changed_files; do
+              folder_path=$(dirname "$file")
+              echo "Changes detected in $folder_path"
+              echo "$folder_path"
+            done
+          else
+            echo "No translation changes detected"
+          fi
