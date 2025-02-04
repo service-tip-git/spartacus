@@ -28,5 +28,5 @@ jobs:
               echo "$folder_path"
             done
           else
-            echo "No translation changes detected"
+            echo "No translation change detected"
           fi
