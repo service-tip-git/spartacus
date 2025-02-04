@@ -27,8 +27,18 @@ export class AuthInterceptor implements HttpInterceptor {
     protected authHttpHeaderService: AuthHttpHeaderService,
     protected authConfigService: AuthConfigService
   ) {}
-
   intercept(
+    httpRequest: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<HttpEvent<any>> {
+    return next.handle(httpRequest).pipe(
+      catchError((errResponse: any) => {
+        throw errResponse;
+      })
+    );
+  }
+
+  xintercept(
     httpRequest: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
