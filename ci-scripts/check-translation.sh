@@ -18,9 +18,8 @@ for folder in $translation_folders; do
   statement="from './$folder/index';"
   if ! grep -q "$statement" "$translations_file"; then
     echo "Export statement for folder $folder not found in $translations_file"
-    # Add your logic here to update the translations.ts file if needed
+    exit 1
   else
     echo "Export statement for folder $folder is already listed in $translations_file"
-    exit 1
   fi
 done
