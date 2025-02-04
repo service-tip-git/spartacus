@@ -21,5 +21,6 @@ for folder in $translation_folders; do
     # Add your logic here to update the translations.ts file if needed
   else
     echo "Export statement for folder $folder is already listed in $translations_file"
+    exit 1
   fi
 done
