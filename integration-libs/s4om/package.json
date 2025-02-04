@@ -1,9 +1,6 @@
 {
   "name": "@spartacus/s4om",
   "version": "2211.35.0-1",
-  "engines": {
-    "node": "^22.0.0"
-  },
   "description": "S/4HANA Order Management (b2b feature)",
   "keywords": [
     "spartacus",
@@ -34,6 +31,9 @@
     "@spartacus/storefront": "2211.35.0-1",
     "@spartacus/styles": "2211.35.0-1",
     "rxjs": "^7.8.0"
+  },
+  "engines": {
+    "node": "^22.0.0"
   },
   "publishConfig": {
     "access": "public"

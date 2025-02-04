@@ -1,9 +1,6 @@
 {
   "name": "@spartacus/pickup-in-store",
   "version": "2211.35.0-1",
-  "engines": {
-    "node": "^22.0.0"
-  },
   "description": "",
   "keywords": [
     "spartacus",
@@ -44,6 +41,9 @@
     "@spartacus/styles": "2211.35.0-1",
     "@spartacus/user": "2211.35.0-1",
     "rxjs": "^7.8.0"
+  },
+  "engines": {
+    "node": "^22.0.0"
   },
   "publishConfig": {
     "access": "public"

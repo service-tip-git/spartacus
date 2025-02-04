@@ -1,9 +1,6 @@
 {
   "name": "ssr-tests",
   "version": "2211.35.0-1",
-  "engines": {
-    "node": "^22.0.0"
-  },
   "private": true,
   "description": "Spartacus SSR Tests",
   "keywords": [
@@ -24,5 +21,8 @@
     "http-proxy": "^1.18.1",
     "jest-circus": "^29.0.0",
     "jest-environment-node": "^29.0.0"
+  },
+  "engines": {
+    "node": "^22.0.0"
   }
 }
