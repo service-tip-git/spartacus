@@ -29,7 +29,7 @@ jobs:
             for file in $changed_files; do
               folder_path=$(dirname "$(dirname "$file")")
               echo "Changes detected in $folder_path"
-              sh ./scripts/handle-translation-changes.sh "$folder_path"
+              sh ./ci-scripts/check-translation.sh "$folder_path"
             done
           else
             echo "No translation changes detected"
