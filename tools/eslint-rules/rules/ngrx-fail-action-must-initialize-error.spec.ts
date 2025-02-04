@@ -29,6 +29,7 @@ ruleTester.run(RULE_NAME, rule, {
     `
     export class SearchProductsFail implements ErrorAction {
         readonly type = SEARCH_PRODUCTS_FAIL;
+        error: any;
         constructor(public payload: any) {
             this.error = payload; // Constructor assignment
         }
@@ -45,47 +46,34 @@ ruleTester.run(RULE_NAME, rule, {
     `,
     `
     export class SearchProductsFail {
-      readonly type = SEARCH_PRODUCTS_FAIL;
+        readonly type = SEARCH_PRODUCTS_FAIL;
       constructor(public payload: any) {}
     }
     `,
   ],
   invalid: [
     convertAnnotatedSourceToFailureCase({
-      description:
-        'Fail action has no error property initialization in constructor',
+      description: 'Error property declared but not initialized in constructor',
       annotatedSource: `
         export class SearchProductsFail implements ErrorAction {
                      ~~~~~~~~~~~~~~~~~~
           readonly type = SEARCH_PRODUCTS_FAIL;
+          error: any;
           constructor(public payload: any) {}
         }
       `,
-      messageId: 'missingErrorProperty',
+      messageId: 'missingErrorInitialization',
     }),
-
     convertAnnotatedSourceToFailureCase({
-      description:
-        'Fail action has error property declared but not initialized',
+      description: 'Error property declared but not initialized at all',
       annotatedSource: `
         export class SearchProductsFail implements ErrorAction {
                      ~~~~~~~~~~~~~~~~~~
           readonly type = SEARCH_PRODUCTS_FAIL;
-          error: any; // Only declared but not initialized
+          error: any;
         }
       `,
-      messageId: 'missingErrorProperty',
-    }),
-
-    convertAnnotatedSourceToFailureCase({
-      description: 'Fail action has no error property at all',
-      annotatedSource: `
-        export class SearchProductsFail implements ErrorAction {
-                     ~~~~~~~~~~~~~~~~~~
-          readonly type = SEARCH_PRODUCTS_FAIL;
-        }
-      `,
-      messageId: 'missingErrorProperty',
+      messageId: 'missingErrorInitialization',
     }),
   ],
 });

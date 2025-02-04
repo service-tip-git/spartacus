@@ -13,35 +13,80 @@ export const rule = ESLintUtils.RuleCreator(() => __filename)({
   meta: {
     type: 'problem',
     docs: {
-      description: 'Ensures NgRx Failure Actions initialize error property',
+      description:
+        'Ensures declared `error` property in NgRx Failure Actions is initialized',
     },
     schema: [],
     messages: {
-      missingErrorProperty:
-        '[Spartacus] NgRx Failure Action must initialize the error property. You can do this in the constructor, as a property initializer, or in any other initialization logic.',
+      missingErrorInitialization:
+        '[Spartacus] NgRx Failure Action that implements `ErrorAction` interface must initialize the `error` property. You can do this in the constructor, as a property initializer, or in any other initialization logic.',
     },
     // Removing fixable since we don't want to enforce any particular initialization pattern
     fixable: undefined,
   },
   defaultOptions: [],
   create(context) {
-    function hasInitializedErrorProperty(
+    /**
+     * Checks if the class has an `error` property declaration.
+     * This function only verifies the existence of the property declaration,
+     * not its initialization state.
+     *
+     * @param {TSESTree.ClassDeclaration} node - The class declaration node to check
+     * @returns {boolean} True if the class has an `error` property declaration
+     */
+    function hasErrorPropertyDeclaration(
       node: TSESTree.ClassDeclaration
     ): boolean {
-      const constructor = node.body.body.find(
-        (member): member is TSESTree.MethodDefinition =>
-          member.type === 'MethodDefinition' && member.kind === 'constructor'
+      return node.body.body.some(
+        (member) =>
+          member.type === TSESTree.AST_NODE_TYPES.PropertyDefinition &&
+          member.key.type === TSESTree.AST_NODE_TYPES.Identifier &&
+          member.key.name === 'error'
+      );
+    }
+
+    /**
+     * Checks if the `error` property is properly initialized in the class.
+     * The property is considered initialized if any of the following is true:
+     * 1. It has an initializer in the property declaration
+     * 2. It's initialized via a constructor parameter
+     * 3. It's assigned a value in the constructor body
+     *
+     * @param {TSESTree.ClassDeclaration} node - The class declaration node to check
+     * @returns {boolean} True if the `error` property is initialized
+     */
+    function isErrorPropertyInitialized(
+      node: TSESTree.ClassDeclaration
+    ): boolean {
+      // Check for property initializer
+      const hasInitializer = node.body.body.some(
+        (member) =>
+          member.type === TSESTree.AST_NODE_TYPES.PropertyDefinition &&
+          member.key.type === TSESTree.AST_NODE_TYPES.Identifier &&
+          member.key.name === 'error' &&
+          member.value !== null
       );
 
-      // Check constructor parameters
+      if (hasInitializer) {
+        return true;
+      }
+
+      // Check constructor
+      const constructor = node.body.body.find(
+        (member): member is TSESTree.MethodDefinition =>
+          member.type === TSESTree.AST_NODE_TYPES.MethodDefinition &&
+          member.kind === 'constructor'
+      );
+
       if (constructor) {
+        // Check constructor parameters
         const constructorParams = (
           constructor.value as TSESTree.FunctionExpression
         ).params;
         const hasErrorParam = constructorParams.some((param) => {
-          if (param.type === 'TSParameterProperty') {
+          if (param.type === TSESTree.AST_NODE_TYPES.TSParameterProperty) {
             return (
-              param.parameter.type === 'Identifier' &&
+              param.parameter.type === TSESTree.AST_NODE_TYPES.Identifier &&
               param.parameter.name === 'error'
             );
           }
@@ -56,35 +101,24 @@ export const rule = ESLintUtils.RuleCreator(() => __filename)({
         const constructorBody = (
           constructor.value as TSESTree.FunctionExpression
         ).body;
-        const hasErrorAssignment = constructorBody.body.some((statement) => {
-          if (statement.type === 'ExpressionStatement') {
+        return constructorBody.body.some((statement) => {
+          if (statement.type === TSESTree.AST_NODE_TYPES.ExpressionStatement) {
             const expr = statement.expression;
-            if (expr.type === 'AssignmentExpression') {
+            if (expr.type === TSESTree.AST_NODE_TYPES.AssignmentExpression) {
               const left = expr.left;
               return (
-                left.type === 'MemberExpression' &&
-                left.object.type === 'ThisExpression' &&
-                left.property.type === 'Identifier' &&
+                left.type === TSESTree.AST_NODE_TYPES.MemberExpression &&
+                left.object.type === TSESTree.AST_NODE_TYPES.ThisExpression &&
+                left.property.type === TSESTree.AST_NODE_TYPES.Identifier &&
                 left.property.name === 'error'
               );
             }
           }
           return false;
         });
-
-        if (hasErrorAssignment) {
-          return true;
-        }
       }
 
-      // Check for class property initializers
-      return node.body.body.some(
-        (member) =>
-          member.type === 'PropertyDefinition' &&
-          member.key.type === 'Identifier' &&
-          member.key.name === 'error' &&
-          member.value !== null
-      );
+      return false;
     }
 
     return {
@@ -93,16 +127,21 @@ export const rule = ESLintUtils.RuleCreator(() => __filename)({
         const implementsClause = node.implements?.[0];
         if (
           !implementsClause ||
-          implementsClause.expression.type !== 'Identifier' ||
+          implementsClause.expression.type !==
+            TSESTree.AST_NODE_TYPES.Identifier ||
           implementsClause.expression.name !== 'ErrorAction'
         ) {
           return;
         }
 
-        if (!hasInitializedErrorProperty(node)) {
+        // Only check if error property is declared but not initialized
+        if (
+          hasErrorPropertyDeclaration(node) &&
+          !isErrorPropertyInitialized(node)
+        ) {
           context.report({
             node: node.id ?? node,
-            messageId: 'missingErrorProperty',
+            messageId: 'missingErrorInitialization',
           });
         }
       },
