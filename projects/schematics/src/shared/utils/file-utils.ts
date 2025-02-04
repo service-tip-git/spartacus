@@ -622,7 +622,10 @@ export function removeConstructorParam(
   const changes: Change[] = [];
 
   if (shouldRemoveImportAndParam(source, paramToRemove)) {
-    const importRemovalChange = removeImport(source, paramToRemove);
+    const importRemovalChange = removeImport(source, {
+      className: paramToRemove.className,
+      importPath: paramToRemove.importPath || '',
+    });
     const injectImportRemovalChange = removeInjectImports(
       source,
       constructorNode,
@@ -794,7 +797,7 @@ export function removeInjectImports(
 
 export function removeImport(
   source: ts.SourceFile,
-  importToRemove: ClassType
+  importToRemove: { className?: string; importPath: string }
 ): Change {
   const importDeclarationNode = getImportDeclarationNode(
     source,
@@ -804,8 +807,39 @@ export function removeImport(
     return new NoopChange();
   }
 
+  // Handle cases where we want to remove the whole import,
+  // not only a specific item (e.g. `import 'zone.js/node'`).
+  if (!importToRemove.className) {
+    const position = importDeclarationNode.getStart();
+    const toRemove = importDeclarationNode.getText();
+    return new RemoveChange(source.fileName, position, toRemove);
+  }
+
   let position: number;
   let toRemove = importToRemove.className;
+
+  // Handle cases where we want to remove a namespace import (e.g. `import * as 'express'`).
+  const namespaceImports = findNodes(
+    importDeclarationNode,
+    ts.SyntaxKind.NamespaceImport
+  );
+  if (namespaceImports.length > 0) {
+    const namespaceImport = namespaceImports[0];
+    const nameNode = findNode(
+      namespaceImport,
+      ts.SyntaxKind.Identifier,
+      importToRemove.className
+    );
+    if (nameNode) {
+      // If we found a matching namespace import, remove the whole import declaration
+      position = importDeclarationNode.getStart();
+      toRemove = importDeclarationNode.getText();
+      return new RemoveChange(source.fileName, position, toRemove);
+    }
+  }
+
+  // Handle cases where we want to remove a named import
+  // (e.g. `import { join } from 'path'`).
   const importSpecifierNodes = findNodes(
     importDeclarationNode,
     ts.SyntaxKind.ImportSpecifier
@@ -821,7 +855,8 @@ export function removeImport(
         const importNode = findNode(
           node,
           ts.SyntaxKind.Identifier,
-          importToRemove.className
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          importToRemove.className!
         );
         return {
           importNode,
@@ -844,9 +879,33 @@ export function removeImport(
   return new RemoveChange(source.fileName, position, toRemove);
 }
 
+export function removeImportFromContent(
+  updatedContent: string,
+  importToRemove: { symbolName?: string; importPath: string }
+): string {
+  const sourceFile = parseTsFileContent(updatedContent);
+
+  const change = removeImport(sourceFile, {
+    className: importToRemove.symbolName,
+    importPath: importToRemove.importPath,
+  });
+
+  if (change instanceof RemoveChange) {
+    const searchText = change.toRemove;
+    const searchIndex = updatedContent.indexOf(searchText);
+    if (searchIndex !== -1) {
+      updatedContent =
+        updatedContent.slice(0, searchIndex) +
+        updatedContent.slice(searchIndex + searchText.length);
+    }
+  }
+
+  return updatedContent;
+}
+
 function getImportDeclarationNode(
   source: ts.SourceFile,
-  importToCheck: ClassType
+  importToCheck: { className?: string; importPath: string }
 ): ts.Node | undefined {
   if (!importToCheck.importPath) {
     return undefined;
@@ -1305,4 +1364,12 @@ export function getServerTsPath(host: Tree): string | undefined {
   const angularJson = getAngularJsonFile(host);
 
   return angularJson.projects[projectName].architect?.server?.options?.main;
+}
+
+/**
+ * Takes a string of content and returns a ts.SourceFile object.
+ * This is useful for creating a temporary source file for AST operations.
+ */
+export function parseTsFileContent(fileContent: string): ts.SourceFile {
+  return ts.createSourceFile('', fileContent, ts.ScriptTarget.Latest, true);
 }
