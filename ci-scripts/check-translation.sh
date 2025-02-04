@@ -13,7 +13,7 @@ check_export_statements() {
     echo "$statement not found in $file"
     exit 1
   else
-    echo "$statement is already listed in $file"
+    echo "$folder/index is already listed in $file"
   fi
 }
 
@@ -30,7 +30,7 @@ check_import_statements() {
       echo "$statement not found in $index_file"
       exit 1
     else
-      echo "$statement is already listed in $index_file"
+      echo "$json_file is already listed in $index_file"
     fi
   done
 }
