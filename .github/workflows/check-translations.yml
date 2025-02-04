@@ -20,13 +20,15 @@ jobs:
 
       - name: Run translation change script
         run: |
-          changed_files=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep 'assets/translations')
+          BASE_COMMIT=${{ github.event.pull_request.base.sha }}
+          HEAD_COMMIT=${{ github.event.pull_request.head.sha }}
+          changed_files=$(git diff --name-only $BASE_COMMIT $HEAD_COMMIT | grep 'assets/translations')
           if [ -n "$changed_files" ]; then
             for file in $changed_files; do
               folder_path=$(dirname "$file")
               echo "Changes detected in $folder_path"
-              echo "$folder_path"
+              sh ./scripts/handle-translation-changes.sh "$folder_path"
             done
           else
-            echo "No translation change detected"
+            echo "No translation changes detected"
           fi
