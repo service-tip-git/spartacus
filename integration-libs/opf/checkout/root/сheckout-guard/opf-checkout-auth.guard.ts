@@ -9,8 +9,7 @@ import { inject, Injectable } from '@angular/core';
 import { GuardResult, UrlTree } from '@angular/router';
 import { CheckoutAuthGuard } from '@spartacus/checkout/base/components';
 import { UserIdService } from '@spartacus/core';
-import { combineLatest, filter, map, switchMap } from 'rxjs';
-import { Observable } from 'rxjs/internal/Observable';
+import { combineLatest, filter, map, Observable, switchMap } from 'rxjs';
 import { OpfCartUserEmailCheckerService } from '../services';
 
 @Injectable({
