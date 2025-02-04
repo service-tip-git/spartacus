@@ -10,7 +10,7 @@ check_export_statements() {
   local file=$2
   local statement="from './$folder/index';"
   if ! grep -q "$statement" "$file"; then
-    echo "$statement not found in $file"
+    echo "$folder not found in $file"
     exit 1
   else
     echo "$folder/index is already listed in $file"
@@ -27,7 +27,7 @@ check_import_statements() {
   for json_file in $json_files; do
     local statement="from './$json_file';"
     if ! grep -q "$statement" "$index_file"; then
-      echo "$statement not found in $index_file"
+      echo "$json_file not found in $index_file"
       exit 1
     else
       echo "$json_file is already listed in $index_file"
