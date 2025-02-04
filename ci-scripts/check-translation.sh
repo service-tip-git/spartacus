@@ -13,12 +13,19 @@ fi
 # Get the list of translation folders
 translation_folders=$(find "$folder_path" -mindepth 1 -maxdepth 1 -type d -exec basename {} \;)
 
-# Check if each folder is listed in the translations file
+# Convert string to lowercase
+to_lowercase() {
+  echo "$1" | tr '[:upper:]' '[:lower:]'
+}
+
+# Check if each folder and index file is listed in the translations file
 for folder in $translation_folders; do
-  if ! grep -q "$folder" "$translations_file"; then
-    echo "Folder $folder not found in $translations_file"
+  lowercase_folder=$(to_lowercase "$folder")
+  lowercase_export_statement=$(to_lowercase "export { $folder as cpqquoteTranslations${folder^} } from './$folder/index';")
+  if ! grep -qi "$lowercase_export_statement" "$translations_file"; then
+    echo "Export statement for folder $folder not found in $translations_file"
     # Add your logic here to update the translations.ts file if needed
   else
-    echo "Folder $folder is already listed in $translations_file"
+    echo "Export statement for folder $folder is already listed in $translations_file"
   fi
 done
