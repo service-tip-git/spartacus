@@ -25,8 +25,13 @@ check_import_statements() {
 
   json_files=$(find "$folder_path/$folder" -maxdepth 1 -type f -name "*.json" -exec basename {} \;)
   for json_file in $json_files; do
-    check_export_statements "from './$json_file';" "$index_file"
-    echo "Import statement for $json_file is already listed in $index_file"
+    local statement="from './$json_file';"
+    if ! grep -q "$statement" "$index_file"; then
+      echo "$statement not found in $index_file"
+      exit 1
+    else
+      echo "$statement is already listed in $index_file"
+    fi
   done
 }
 
