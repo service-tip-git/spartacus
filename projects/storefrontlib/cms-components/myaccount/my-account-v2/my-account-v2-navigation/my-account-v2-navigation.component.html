@@ -3,5 +3,6 @@
   [node]="node"
   [flyout]="false"
   [ngClass]="(styleClass$ | async) ?? ''"
-  [navAriaLabel]="navAriaLabel$ | async"
+  [navAriaLabel]="name$ | async"
+  [isMyAccount]="isMyAccount"
 ></cx-navigation-ui>

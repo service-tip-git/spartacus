@@ -52,10 +52,10 @@
           else heading
         "
         [ariaLabel]="
-          navAriaLabel !== ('navigation.myAccountSideNavigation' | cxTranslate)
-            ? ('navigation.linkItemInList'
+          isMyAccount
+            ? undefined
+            : ('navigation.linkItemInList'
               | cxTranslate: { title: node.title, position, listLength })
-            : undefined
         "
         [url]="node.url"
         [target]="node.target"
@@ -129,25 +129,10 @@
       </ng-container>
       <ng-template #title>
         <span
-          [attr.role]="
-            navAriaLabel !==
-            ('navigation.myAccountSideNavigation' | cxTranslate)
-              ? 'heading'
-              : 'presentation'
-          "
-          [attr.aria-level]="
-            navAriaLabel !==
-            ('navigation.myAccountSideNavigation' | cxTranslate)
-              ? 4
-              : null
-          "
+          [attr.role]="isMyAccount ? null : 'heading'"
+          [attr.aria-level]="isMyAccount ? null : 4"
           *ngIf="node.title"
-          [attr.tabindex]="
-            navAriaLabel !==
-            ('navigation.myAccountSideNavigation' | cxTranslate)
-              ? -1
-              : 0
-          "
+          [attr.tabindex]="isMyAccount ? 0 : -1"
         >
           {{ node.title }}
         </span>

@@ -54,6 +54,7 @@ export class NavigationUIComponent implements OnInit, OnDestroy {
    * Flag indicates whether to reset the state of menu navigation (ie. Collapse all submenus) when the menu is closed.
    */
   @Input() resetMenuOnClose: boolean | undefined;
+  @Input() isMyAccount: boolean;
 
   @Input() navAriaLabel: string | null | undefined;
   /**
