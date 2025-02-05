@@ -12,6 +12,7 @@ export const cdcTranslationChunksConfig: TranslationChunksConfig = {
 
 export { cs as cdcTranslationsCs } from './cs/index';
 export { de as cdcTranslationsDe } from './de/index';
+export { en as cdcTranslationsEn } from './en/index';
 export { es as cdcTranslationsEs } from './es/index';
 export { es_CO as cdcTranslationsEs_CO } from './es_CO/index';
 export { fr as cdcTranslationsFr } from './fr/index';
