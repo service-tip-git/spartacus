@@ -14,7 +14,7 @@ export function updateServerTs(): Rule {
     const newPath = 'src/server.ts';
 
     context.logger.info(
-      `\n⏳ Moving ${oldPath} to ${newPath} and updating implementation...`
+      `\n⏳ Moving "${oldPath}" to "${newPath}" and relative import paths...`
     );
 
     if (!tree.exists(oldPath)) {
@@ -31,7 +31,7 @@ export function updateServerTs(): Rule {
     let serverTs = content.toString();
 
     context.logger.info(
-      '  ↳ Updating import path from "./src/main.server" to "./main.server"'
+      '  ↳ Updating relative import path from "./src/main.server" to "./main.server"'
     );
     serverTs = serverTs.replace(
       /from ['"]\.\/src\/main\.server['"];/,

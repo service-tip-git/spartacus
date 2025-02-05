@@ -36,26 +36,21 @@ export function updateTsConfig(): Rule {
     }
 
     context.logger.info(
-      '  ↳ Adding "isolatedModules": true to compilerOptions'
+      '  ↳ Adding `"isolatedModules": true` to "compilerOptions"'
     );
     tsConfig.compilerOptions.isolatedModules = true;
 
-    context.logger.info('  ↳ Removing "sourceMap" from compilerOptions');
-    delete tsConfig.compilerOptions.sourceMap;
-
-    context.logger.info('  ↳ Removing "declaration" from compilerOptions');
-    delete tsConfig.compilerOptions.declaration;
-
     context.logger.info(
-      '  ↳ Removing "useDefineForClassFields" from compilerOptions'
+      '  ↳ Removing "sourceMap", "declaration", "useDefineForClassFields", "lib", "moduleResolution" from "compilerOptions"'
     );
+    delete tsConfig.compilerOptions.sourceMap;
+    delete tsConfig.compilerOptions.declaration;
     delete tsConfig.compilerOptions.useDefineForClassFields;
-
-    context.logger.info('  ↳ Removing "lib" from compilerOptions');
     delete tsConfig.compilerOptions.lib;
+    delete tsConfig.compilerOptions.moduleResolution;
 
     context.logger.info(
-      '  ↳ Updating "moduleResolution" to "bundler" in compilerOptions'
+      '  ↳ Updating "moduleResolution" to "bundler" in "compilerOptions"'
     );
     tsConfig.compilerOptions.moduleResolution = 'bundler';
 

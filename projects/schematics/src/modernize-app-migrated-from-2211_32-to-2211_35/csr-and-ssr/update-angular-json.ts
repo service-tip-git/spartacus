@@ -44,11 +44,16 @@ export function updateAngularJson(): Rule {
       { glob: '**/*', input: 'public' },
     ];
 
-    // Update config for "build" target
+    context.logger.info(
+      `  ↳ Removing "assets" configuration for ${oldAssets
+        .map((x) => `"${x}"`)
+        .join(', ')}`
+    );
+    context.logger.info(
+      '  ↳ Adding "assets" configuration: `{ glob: "**/*", input: "public" }`'
+    );
+
     if (Array.isArray(buildTarget.options?.assets)) {
-      context.logger.info(
-        '  ↳ Replacing "src/favicon.ico" and "src/assets" with the new "/public" assets config in "build" options'
-      );
       buildTarget.options.assets = buildTarget.options.assets.filter(
         (asset: string | object) => !oldAssets.includes(asset)
       );
@@ -58,13 +63,15 @@ export function updateAngularJson(): Rule {
         ...newAssets,
         ...buildTarget.options.assets,
       ];
+    } else {
+      printErrorWithDocs(
+        'Could not find "assets" array in "build" target configuration',
+        context
+      );
     }
 
     // Update config for "test" target
     if (Array.isArray(testTarget?.options?.assets)) {
-      context.logger.info(
-        '  ↳ Replacing "src/favicon.ico" and "src/assets" with the new "/public" assets config in "test" options'
-      );
       testTarget.options.assets = testTarget.options.assets.filter(
         (asset: string | object) => !oldAssets.includes(asset)
       );
@@ -73,7 +80,7 @@ export function updateAngularJson(): Rule {
       testTarget.options.assets = [...newAssets, ...testTarget.options.assets];
     } else {
       printErrorWithDocs(
-        'Could not find "test" target in project configuration',
+        'Could not find "assets" array in "test" target configuration',
         context
       );
     }

@@ -10,11 +10,12 @@ import * as ts from 'typescript';
  * If it is, it updates the path from `../../assets` to `../../../public`.
  * Otherwise, no changes are made.
  */
-export function updateI18nConfig(): Rule {
+export function updateI18nLazyLoadingConfig(): Rule {
   return (tree: Tree, context: SchematicContext) => {
-    const configurationModulePath = 'src/app/spartacus-configuration.module.ts';
+    const configurationModulePath =
+      'src/app/spartacus/spartacus-configuration.module.ts';
     context.logger.info(
-      `\n⏳ Updating config for i18n lazy loading in "${configurationModulePath}", if present...`
+      `\n⏳ Updating config for i18n lazy loading in "${configurationModulePath}", if needed...`
     );
 
     if (!tree.exists(configurationModulePath)) {
@@ -34,16 +35,17 @@ export function updateI18nConfig(): Rule {
     let updatedContent = content.toString();
 
     context.logger.info(
-      '  ↳ Checking if app has a config for i18n lazy loading...'
+      '    ↳ Checking if app has a config for i18n lazy loading...'
     );
     if (!hasConfigForLazyLoadingI18n(updatedContent)) {
+      context.logger.info('      ↳ No.');
       context.logger.info(
-        '  ↳ No i18n lazy loading config found that needs updating'
+        `✅ Updating config for i18n lazy loading in "${configurationModulePath}" was not needed`
       );
       return;
     }
     context.logger.info(
-      '  ↳ i18n lazy loading config has been detected. Updating the path from "../../assets" to "../../../public"'
+      '      ↳ Updating the path from "../../assets" to "../../../public"'
     );
 
     if (updatedContent.includes('import(`../../assets/')) {

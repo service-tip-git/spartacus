@@ -16,19 +16,12 @@ export function moveFaviconToPublic(): Rule {
     const newPath = `${newDir}/${fileName}`;
 
     context.logger.info(
-      `\n⏳ Moving ${fileName} from "${oldPath}" to "${newPath}"...`
+      `\n⏳ Moving ${fileName} from "${oldDir}/" to "${newDir}/"...`
     );
 
     if (!tree.exists(oldPath)) {
       printErrorWithDocs(`Favicon not found at ${oldPath}`, context);
       return;
-    }
-
-    if (!tree.exists(newDir)) {
-      context.logger.info(
-        `  ↳ Creating "${newDir}" directory because it didn't exist`
-      );
-      tree.create(newDir, '');
     }
 
     const content = tree.read(oldPath);

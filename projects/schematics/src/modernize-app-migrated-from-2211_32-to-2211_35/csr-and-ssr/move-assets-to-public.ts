@@ -13,23 +13,19 @@ export function moveAssetsToPublic(): Rule {
       `\n⏳ Moving assets folder from "${oldPath}/" to "${newPath}/"...`
     );
 
-    if (!tree.exists(oldPath)) {
-      printErrorWithDocs(`Assets folder not found at ${oldPath}`, context);
+    const sourceDir = tree.getDir(oldPath);
+    if (!sourceDir.subfiles.length && !sourceDir.subdirs.length) {
+      printErrorWithDocs(
+        `Assets folder not found or empty at ${oldPath}`,
+        context
+      );
       return;
     }
 
-    if (!tree.exists(newPath)) {
-      context.logger.info(
-        `  ↳ Creating "${newPath}" directory because it did not exist`
-      );
-      tree.create(newPath, '');
-    }
-
-    context.logger.info(
-      `  ↳ Moving all files from "${oldPath}" to "${newPath}"`
-    );
     try {
       tree.getDir(oldPath).visit((filePath) => {
+        context.logger.info(`  ↳ Moving file "${filePath}" to "${newPath}/"`);
+
         const content = tree.read(`${oldPath}/${filePath}`);
         if (content) {
           tree.create(`${newPath}/${filePath}`, content);
@@ -42,8 +38,15 @@ export function moveAssetsToPublic(): Rule {
       );
     }
 
-    context.logger.info(`  ↳ Deleting old "${oldPath}" directory`);
-    tree.delete(oldPath);
+    context.logger.info(`  ↳ Deleting old "${oldPath}/" directory`);
+    try {
+      tree.delete(oldPath);
+    } catch (error) {
+      printErrorWithDocs(
+        `Error deleting old assets directory "${oldPath}". Error: ${error}`,
+        context
+      );
+    }
 
     context.logger.info(
       `✅ Moved assets folder from "${oldPath}/" to "${newPath}/"`

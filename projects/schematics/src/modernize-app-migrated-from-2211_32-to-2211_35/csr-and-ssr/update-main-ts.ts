@@ -23,9 +23,15 @@ export function updateMainTs(): Rule {
     }
     let originalContent = content.toString();
 
+    context.logger.info(
+      '  ↳ Updating `bootstrapModule()` call to include `ngZoneEventCoalescing: true`'
+    );
     const updatedContent = updateBootstrapCall(originalContent);
     if (updatedContent === originalContent) {
-      context.logger.info('  ↳ No changes needed for bootstrapModule options');
+      printErrorWithDocs(
+        'Could not update `bootstrapModule()` call to include `ngZoneEventCoalescing: true`',
+        context
+      );
       return;
     }
 
