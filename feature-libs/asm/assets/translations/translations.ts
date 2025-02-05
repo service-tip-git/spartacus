@@ -12,6 +12,7 @@ export const asmTranslationChunksConfig: TranslationChunksConfig = {
 
 export { cs as asmTranslationsCs } from './cs/index';
 export { de as asmTranslationsDe } from './de/index';
+export { en as asmTranslationsEn } from './en/index';
 export { es as asmTranslationsEs } from './es/index';
 export { es_CO as asmTranslationsEs_CO } from './es_CO/index';
 export { fr as asmTranslationsFr } from './fr/index';
