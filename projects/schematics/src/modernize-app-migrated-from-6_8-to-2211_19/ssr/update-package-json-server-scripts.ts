@@ -7,7 +7,7 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { getWorkspace } from '../../shared/utils/workspace-utils';
 import { parse } from 'jsonc-parser';
-import { printErrorWithAdviceToFollowDocs } from '../fallback-advice-to-follow-docs';
+import { printErrorWithDocsForMigrated_6_8_To_2211_19 } from '../fallback-advice-to-follow-docs';
 
 /**
  * Updates `package.json` scripts related to SSR to align with new Angular v17 standards.
@@ -24,7 +24,7 @@ export function updatePackageJsonServerScripts(): Rule {
     context.logger.info(`\n⏳ Updating ${packageJsonPath} scripts...`);
 
     if (!tree.exists(packageJsonPath)) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         `${packageJsonPath} file not found`,
         context
       );
@@ -35,7 +35,7 @@ export function updatePackageJsonServerScripts(): Rule {
     const { workspace } = getWorkspace(tree);
     const projectName = Object.keys(workspace.projects)[0];
     if (!projectName) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         'No project found in workspace',
         context
       );
@@ -44,7 +44,7 @@ export function updatePackageJsonServerScripts(): Rule {
 
     const content = tree.read(packageJsonPath);
     if (!content) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         `Failed to read ${packageJsonPath} file`,
         context
       );
@@ -54,7 +54,7 @@ export function updatePackageJsonServerScripts(): Rule {
     const packageJson = parse(content.toString());
 
     if (!packageJson.scripts) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         `No scripts section found in ${packageJsonPath}`,
         context
       );

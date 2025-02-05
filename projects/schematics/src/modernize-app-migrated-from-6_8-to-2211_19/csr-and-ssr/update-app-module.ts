@@ -6,7 +6,7 @@
 
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { removeImportFromContent } from '../../shared';
-import { printErrorWithAdviceToFollowDocs } from '../fallback-advice-to-follow-docs';
+import { printErrorWithDocsForMigrated_6_8_To_2211_19 } from '../fallback-advice-to-follow-docs';
 
 /**
  * Updates `app.module.ts` file for new Angular v17 standards.
@@ -21,13 +21,16 @@ export function updateAppModule(): Rule {
     context.logger.info(`\n⏳ Updating ${appModulePath}...`);
 
     if (!tree.exists(appModulePath)) {
-      printErrorWithAdviceToFollowDocs(`No ${appModulePath} found`, context);
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
+        `No ${appModulePath} found`,
+        context
+      );
       return;
     }
 
     const content = tree.read(appModulePath);
     if (!content) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         `Could not read content of ${appModulePath}`,
         context
       );

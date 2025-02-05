@@ -5,7 +5,7 @@
  */
 
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
-import { printErrorWithAdviceToFollowDocs } from '../fallback-advice-to-follow-docs';
+import { printErrorWithDocsForMigrated_6_8_To_2211_19 } from '../fallback-advice-to-follow-docs';
 
 /**
  * Updates `main.server.ts` file for new Angular v17 standards.
@@ -19,7 +19,7 @@ export function updateMainServerTs(): Rule {
     context.logger.info(`\n⏳ Updating ${mainServerPath}...`);
 
     if (!tree.exists(mainServerPath)) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         `${mainServerPath} file not found`,
         context
       );
@@ -28,7 +28,7 @@ export function updateMainServerTs(): Rule {
 
     const mainServerContent = tree.read(mainServerPath);
     if (!mainServerContent) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         `Failed to read ${mainServerPath} file`,
         context
       );
@@ -42,7 +42,7 @@ export function updateMainServerTs(): Rule {
 
     let updatedContent = mainServerContent.toString();
     if (!expectedPattern.test(updatedContent)) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         `${mainServerPath} does not contain the expected export`,
         context
       );

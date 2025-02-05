@@ -10,7 +10,7 @@ import { removeImportsFromServerTs } from './update-server-ts/remove-imports-fro
 import { removeReexportFromServerTs } from './update-server-ts/remove-reexport-from-server-ts';
 import { removeWebpackFromServerTs } from './update-server-ts/remove-webpack-from-server-ts';
 import { updateVariablesInServerTs } from './update-server-ts/update-variables-in-server-ts';
-import { printErrorWithAdviceToFollowDocs } from '../fallback-advice-to-follow-docs';
+import { printErrorWithDocsForMigrated_6_8_To_2211_19 } from '../fallback-advice-to-follow-docs';
 
 /**
  * Updates `server.ts` file for new Angular v17 standards.
@@ -25,7 +25,7 @@ export function updateServerTs(): Rule {
     context.logger.info(`\n⏳ Updating ${serverTsPath} implementation...`);
 
     if (!tree.exists(serverTsPath)) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         `${serverTsPath} file not found`,
         context
       );
@@ -34,7 +34,7 @@ export function updateServerTs(): Rule {
 
     const content = tree.read(serverTsPath);
     if (!content) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         `Failed to read ${serverTsPath} file`,
         context
       );

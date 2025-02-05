@@ -9,7 +9,7 @@ import { parseTsFileContent } from '../../../shared/utils/file-utils';
 import { removeVariableDeclaration } from '../../../shared/utils/variable-utils';
 import * as ts from 'typescript';
 import { SchematicContext } from '@angular-devkit/schematics';
-import { printErrorWithAdviceToFollowDocs } from '../../fallback-advice-to-follow-docs';
+import { printErrorWithDocsForMigrated_6_8_To_2211_19 } from '../../fallback-advice-to-follow-docs';
 
 /**
  * Removes the Webpack-specific comments.
@@ -99,7 +99,7 @@ function removeWebpackSpecificCode(
     const end = ifNode.getEnd();
     updatedContent = updatedContent.slice(0, start) + updatedContent.slice(end);
   } else {
-    printErrorWithAdviceToFollowDocs(
+    printErrorWithDocsForMigrated_6_8_To_2211_19(
       'Could not remove the Webpack-specific `if` block',
       context
     );

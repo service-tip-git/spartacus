@@ -7,7 +7,7 @@
 import { SchematicContext } from '@angular-devkit/schematics';
 import { replaceMethodCallArgument } from '../../../shared/utils/method-call-utils';
 import { replaceVariableDeclaration } from '../../../shared/utils/variable-utils';
-import { printErrorWithAdviceToFollowDocs } from '../../fallback-advice-to-follow-docs';
+import { printErrorWithDocsForMigrated_6_8_To_2211_19 } from '../../fallback-advice-to-follow-docs';
 
 /**
  * Updates variables and method calls in server.ts file.
@@ -38,7 +38,7 @@ export function updateVariablesInServerTs(
       throwErrorIfNotFound: true,
     });
   } catch (error) {
-    printErrorWithAdviceToFollowDocs(
+    printErrorWithDocsForMigrated_6_8_To_2211_19(
       `Could not replace "distFolder" variable declaration`,
       context
     );
@@ -64,7 +64,7 @@ export function updateVariablesInServerTs(
       throwErrorIfNotFound: true,
     });
   } catch (error) {
-    printErrorWithAdviceToFollowDocs(
+    printErrorWithDocsForMigrated_6_8_To_2211_19(
       `Could not replace "indexHtml" variable declaration`,
       context
     );
@@ -94,7 +94,7 @@ export function updateVariablesInServerTs(
       throwErrorIfNotFound: true,
     });
   } catch (error) {
-    printErrorWithAdviceToFollowDocs(
+    printErrorWithDocsForMigrated_6_8_To_2211_19(
       `Could not replace argument "distFolder" in "server.set()" method call`,
       context
     );
@@ -126,7 +126,7 @@ export function updateVariablesInServerTs(
       throwErrorIfNotFound: true,
     });
   } catch (error) {
-    printErrorWithAdviceToFollowDocs(
+    printErrorWithDocsForMigrated_6_8_To_2211_19(
       `Could not replace argument "distFolder" in "express.static()" method call`,
       context
     );

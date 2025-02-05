@@ -17,7 +17,7 @@ export const FALLBACK_ADVICE_TO_FOLLOW_DOCS = `Could not update this file automa
 /**
  * Prints an error message and a link to the manual migration steps.
  */
-export function printErrorWithAdviceToFollowDocs(
+export function printErrorWithDocsForMigrated_6_8_To_2211_19(
   message: string,
   context: SchematicContext
 ) {
@@ -28,12 +28,12 @@ export function printErrorWithAdviceToFollowDocs(
 /**
  * If the wrapped Rule throws an error, it logs the error and prints a link to manual migration docs.
  */
-export function withFallbackToShowingDocs(rule: Rule): Rule {
+export function withFallbackDocsForMigrated_6_8_To_2211_19(rule: Rule): Rule {
   return (tree: Tree, context: SchematicContext) => {
     try {
       return rule(tree, context);
     } catch (error) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         error instanceof Error ? error.message : 'Unknown error',
         context
       );

@@ -8,7 +8,7 @@ import { findNodes } from '@schematics/angular/utility/ast-utils';
 import { parseTsFileContent } from '../../../shared/utils/file-utils';
 import * as ts from 'typescript';
 import { SchematicContext } from '@angular-devkit/schematics';
-import { printErrorWithAdviceToFollowDocs } from '../../fallback-advice-to-follow-docs';
+import { printErrorWithDocsForMigrated_6_8_To_2211_19 } from '../../fallback-advice-to-follow-docs';
 
 /**
  * Removes the re-export of the path `./src/main.server`.
@@ -45,7 +45,7 @@ export function removeReexportFromServerTs(
   });
 
   if (!exportNode) {
-    printErrorWithAdviceToFollowDocs(
+    printErrorWithDocsForMigrated_6_8_To_2211_19(
       `Could not remove the re-export of the path ${reexportPath}`,
       context
     );

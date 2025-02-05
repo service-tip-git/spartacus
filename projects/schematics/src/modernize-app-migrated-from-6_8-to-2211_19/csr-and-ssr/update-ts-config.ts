@@ -6,7 +6,7 @@
 
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { parse } from 'jsonc-parser';
-import { printErrorWithAdviceToFollowDocs } from '../fallback-advice-to-follow-docs';
+import { printErrorWithDocsForMigrated_6_8_To_2211_19 } from '../fallback-advice-to-follow-docs';
 
 /**
  * Updates the `tsconfig.json` file for new Angular v17 standards.
@@ -20,7 +20,7 @@ export function updateTsConfig(): Rule {
     context.logger.info(`\n⏳ Updating ${tsconfigPath}...`);
 
     if (!tree.exists(tsconfigPath)) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         `${tsconfigPath} file not found`,
         context
       );
@@ -29,7 +29,7 @@ export function updateTsConfig(): Rule {
 
     const tsConfigContent = tree.read(tsconfigPath);
     if (!tsConfigContent) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         `Failed to read ${tsconfigPath} file`,
         context
       );
@@ -39,7 +39,7 @@ export function updateTsConfig(): Rule {
     const tsConfig = parse(tsConfigContent.toString());
 
     if (!tsConfig.compilerOptions) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         `No compilerOptions found in ${tsconfigPath}`,
         context
       );

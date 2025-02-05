@@ -6,7 +6,7 @@
 
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { getWorkspace } from '../../shared/utils/workspace-utils';
-import { printErrorWithAdviceToFollowDocs } from '../fallback-advice-to-follow-docs';
+import { printErrorWithDocsForMigrated_6_8_To_2211_19 } from '../fallback-advice-to-follow-docs';
 
 /**
  * Updates the Angular configuration related to SSR for new Angular v17 standards.
@@ -36,7 +36,7 @@ export function updateAngularJsonForSsr(): Rule {
     const project = workspace.projects[firstProjectKey];
 
     if (!project) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         'No project found for SSR migration',
         context
       );
@@ -44,7 +44,7 @@ export function updateAngularJsonForSsr(): Rule {
     }
 
     if (!project.architect?.build) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         'No build target found in project configuration',
         context
       );
@@ -79,7 +79,7 @@ export function updateAngularJsonForSsr(): Rule {
         ''
       );
     } else {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         'Could not update "outputPath" in angular.json',
         context
       );
@@ -104,7 +104,7 @@ export function updateAngularJsonForSsr(): Rule {
         },
       } as any;
     } else {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         'Could not update "serve" configurations in angular.json',
         context
       );

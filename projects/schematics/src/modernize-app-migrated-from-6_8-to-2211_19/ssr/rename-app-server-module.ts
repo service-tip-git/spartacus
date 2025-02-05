@@ -5,7 +5,7 @@
  */
 
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
-import { printErrorWithAdviceToFollowDocs } from '../fallback-advice-to-follow-docs';
+import { printErrorWithDocsForMigrated_6_8_To_2211_19 } from '../fallback-advice-to-follow-docs';
 
 /**
  * Renames `app.server.module.ts` to `app.module.server.ts`
@@ -22,7 +22,7 @@ export function renameAppServerModule(): Rule {
     );
 
     if (!tree.exists(AppServerModulePaths.old)) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         `${AppServerModulePaths.old} file not found`,
         context
       );
@@ -31,7 +31,7 @@ export function renameAppServerModule(): Rule {
 
     const content = tree.read(AppServerModulePaths.old);
     if (!content) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         `Failed to read ${AppServerModulePaths.old} file`,
         context
       );

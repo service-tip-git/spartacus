@@ -6,7 +6,7 @@
 
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { getWorkspace } from '../../shared/utils/workspace-utils';
-import { printErrorWithAdviceToFollowDocs } from '../fallback-advice-to-follow-docs';
+import { printErrorWithDocsForMigrated_6_8_To_2211_19 } from '../fallback-advice-to-follow-docs';
 
 /**
  * Updates the Angular configuration file to new Angular v17 standards.
@@ -25,7 +25,7 @@ export function updateAngularJsonForApplicationBuilder(): Rule {
     const project = workspace.projects[Object.keys(workspace.projects)[0]];
 
     if (!project) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         'No project found in workspace',
         context
       );
@@ -34,7 +34,7 @@ export function updateAngularJsonForApplicationBuilder(): Rule {
 
     const buildTarget = project.architect?.build as any;
     if (!buildTarget) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         'No build target found in project configuration',
         context
       );
@@ -53,7 +53,7 @@ export function updateAngularJsonForApplicationBuilder(): Rule {
       options.browser = options.main;
       delete options.main;
     } else {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         'Could not rename "main" to "browser" in angular.json',
         context
       );
@@ -69,7 +69,7 @@ export function updateAngularJsonForApplicationBuilder(): Rule {
       delete devConfig.vendorChunk;
       delete devConfig.namedChunks;
     } else {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         'Could not update "development" configuration in angular.json',
         context
       );

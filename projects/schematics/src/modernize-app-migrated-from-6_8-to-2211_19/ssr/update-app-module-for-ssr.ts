@@ -5,14 +5,14 @@
  */
 
 import { Rule } from '@angular-devkit/schematics';
-import { printErrorWithAdviceToFollowDocs } from '../fallback-advice-to-follow-docs';
+import { printErrorWithDocsForMigrated_6_8_To_2211_19 } from '../fallback-advice-to-follow-docs';
 export function updateAppModuleForSsr(): Rule {
   return (tree, context) => {
     const appModulePath = 'src/app/app.module.ts';
     context.logger.info(`\n⏳ Updating ${appModulePath} for SSR...`);
 
     if (!tree.exists(appModulePath)) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_6_8_To_2211_19(
         `Could not find ${appModulePath}`,
         context
       );

@@ -22,7 +22,7 @@ import { updateAppModule } from './csr-and-ssr/update-app-module';
 import { updatePackageJsonServerScripts } from './ssr/update-package-json-server-scripts';
 import { isUsingSsr } from './is-using-ssr';
 import { removeTsConfigServer } from './ssr/remove-ts-config-server';
-import { withFallbackToShowingDocs } from './fallback-advice-to-follow-docs';
+import { withFallbackDocsForMigrated_6_8_To_2211_19 as withFallbackDocs } from './fallback-advice-to-follow-docs';
 import { updateAppModuleForSsr } from './ssr/update-app-module-for-ssr';
 
 /**
@@ -31,20 +31,20 @@ import { updateAppModuleForSsr } from './ssr/update-app-module-for-ssr';
 export function migrate(): Rule {
   return (tree: Tree, context: SchematicContext) => {
     return chain([
-      withFallbackToShowingDocs(updateAngularJsonForApplicationBuilder()),
-      withFallbackToShowingDocs(updateTsConfig()),
-      withFallbackToShowingDocs(updateAppModule()),
+      withFallbackDocs(updateAngularJsonForApplicationBuilder()),
+      withFallbackDocs(updateTsConfig()),
+      withFallbackDocs(updateAppModule()),
 
       ...(isUsingSsr(tree, context)
         ? [
-            withFallbackToShowingDocs(updateAngularJsonForSsr()),
-            withFallbackToShowingDocs(updatePackageJsonServerScripts()),
-            withFallbackToShowingDocs(updateTsConfigApp()),
-            withFallbackToShowingDocs(removeTsConfigServer()),
-            withFallbackToShowingDocs(renameAppServerModule()),
-            withFallbackToShowingDocs(updateMainServerTs()),
-            withFallbackToShowingDocs(updateServerTs()),
-            withFallbackToShowingDocs(updateAppModuleForSsr()),
+            withFallbackDocs(updateAngularJsonForSsr()),
+            withFallbackDocs(updatePackageJsonServerScripts()),
+            withFallbackDocs(updateTsConfigApp()),
+            withFallbackDocs(removeTsConfigServer()),
+            withFallbackDocs(renameAppServerModule()),
+            withFallbackDocs(updateMainServerTs()),
+            withFallbackDocs(updateServerTs()),
+            withFallbackDocs(updateAppModuleForSsr()),
           ]
         : []),
     ]);
