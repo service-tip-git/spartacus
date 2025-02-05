@@ -9,6 +9,7 @@ import {
   Component,
   ComponentRef,
   OnDestroy,
+  OnInit,
   ViewContainerRef,
 } from '@angular/core';
 import {
@@ -16,10 +17,15 @@ import {
   UntypedFormGroup,
   Validators,
 } from '@angular/forms';
-import { RoutingService } from '@spartacus/core';
+import { Router } from '@angular/router';
+import {
+  CurrencyService,
+  LanguageService,
+  RoutingService,
+} from '@spartacus/core';
 import { OrderFacade } from '@spartacus/order/root';
 import { LaunchDialogService, LAUNCH_CALLER } from '@spartacus/storefront';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 
 @Component({
   selector: 'cx-place-order',
@@ -27,8 +33,12 @@ import { Observable } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: false,
 })
-export class CheckoutPlaceOrderComponent implements OnDestroy {
+export class CheckoutPlaceOrderComponent implements OnDestroy, OnInit {
   placedOrder: void | Observable<ComponentRef<any> | undefined>;
+  currency: string;
+  termsAndConditionUrl$ = new BehaviorSubject<string>('');
+  private currency$ = this.currencyService.getActive();
+  private language$ = this.languageService.getActive();
 
   checkoutSubmitForm: UntypedFormGroup = this.fb.group({
     termsAndConditions: [false, Validators.requiredTrue],
@@ -43,8 +53,15 @@ export class CheckoutPlaceOrderComponent implements OnDestroy {
     protected routingService: RoutingService,
     protected fb: UntypedFormBuilder,
     protected launchDialogService: LaunchDialogService,
-    protected vcr: ViewContainerRef
+    protected vcr: ViewContainerRef,
+    protected route: Router,
+    protected currencyService: CurrencyService,
+    protected languageService: LanguageService
   ) {}
+
+  ngOnInit() {
+    this.setTermsOfConditionUrl();
+  }
 
   submitForm(): void {
     if (this.checkoutSubmitForm.valid) {
@@ -76,6 +93,16 @@ export class CheckoutPlaceOrderComponent implements OnDestroy {
 
   onSuccess(): void {
     this.routingService.go({ cxRoute: 'orderConfirmation' });
+  }
+
+  setTermsOfConditionUrl(): void {
+    combineLatest([this.currency$, this.language$]).subscribe(
+      ([currency, language]) => {
+        const segments = this.route.url.split('/').filter((s) => !!s);
+        const url = `/${segments[0]}/${language}/${currency}/terms-and-conditions`;
+        this.termsAndConditionUrl$.next(url);
+      }
+    );
   }
 
   ngOnDestroy(): void {
