@@ -10,10 +10,10 @@ check_export_statements() {
   local file=$2
   local statement="from './$folder/index';"
   if ! grep -q "$statement" "$file"; then
-    echo "$folder not found in $file"
+    echo "$folder is not listed in $file"
     exit 1
   else
-    echo "$folder/index is already listed in $file"
+    echo "$folder is already listed in $file"
   fi
 }
 
