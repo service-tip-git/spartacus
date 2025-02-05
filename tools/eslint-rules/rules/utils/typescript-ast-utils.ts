@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import * as ts from 'typescript';
+import ts from 'typescript';
 
 /**
  * Checks if a given node is an interface declaration with a specific name

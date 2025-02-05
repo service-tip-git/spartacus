@@ -25,7 +25,7 @@ export const rule = ESLintUtils.RuleCreator(() => __filename)({
     schema: [],
     messages: {
       missingErrorInitialization:
-        '[Spartacus] NgRx Failure Action that implements `ErrorAction` interface must initialize the `error` property. You can do this in the constructor, as a property initializer, or in any other initialization logic.',
+        '[Spartacus] NgRx Failure Action that implements `ErrorAction` interface must initialize the `error` property. You can do this in the constructor or as a property initializer',
     },
     // Removing fixable since we don't want to enforce any particular initialization pattern
     fixable: undefined,
