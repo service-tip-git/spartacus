@@ -14,6 +14,41 @@ export const RULE_NAME = 'ngrx-fail-action-must-initialize-error';
 const ERROR_PROPERTY_NAME = 'error';
 const ERROR_ACTION_INTERFACE = 'ErrorAction';
 
+/**
+ * ESLint rule that enforces proper error initialization in NgRx failure actions that implement the `ErrorAction` interface.
+ *
+ * This rule checks that any class implementing the `ErrorAction` interface and having 'Fail' in its name
+ * properly initializes its `error` property, either through a constructor, property initializer or across the class hierarchy.
+ *
+ * @example
+ * // ❌ Invalid - error property not initialized
+ * export class LoadProductFail implements ErrorAction {
+ *   readonly type = LOAD_PRODUCT_FAIL;
+ *   error: any; // Not initialized
+ * }
+ *
+ * // ✅ Valid - error initialized in constructor
+ * export class LoadProductFail implements ErrorAction {
+ *   readonly type = LOAD_PRODUCT_FAIL;
+ *   constructor(public error: any) {}
+ * }
+ *
+ * // ✅ Valid - error initialized as property
+ * export class LoadProductFail implements ErrorAction {
+ *   readonly type = LOAD_PRODUCT_FAIL;
+ *   error = 'error';
+ * }
+ *
+ * // ✅ Valid - error initialized in parent class
+ * class MyParentActionFail implements ErrorAction {
+ *   readonly type = LOAD_PRODUCT_FAIL;
+ *   error = 'error';
+ * }
+ *
+ * export class LoadProductFail extends MyParentActionFail implements ErrorAction {
+ *   readonly type = LOAD_PRODUCT_FAIL;
+ * }
+ */
 export const rule = ESLintUtils.RuleCreator(() => __filename)({
   name: RULE_NAME,
   meta: {
