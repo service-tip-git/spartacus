@@ -20,7 +20,7 @@ import { updateServerTs } from './ssr/update-server-ts';
 import { updateAngularJsonForSsr } from './ssr/update-angular-json-for-ssr';
 import { updateTsConfigApp } from './ssr/update-ts-config-app';
 import { isUsingSsr } from './is-using-ssr';
-import { withFallbackToDocsForModernizingFrom2211_31To2211_35 } from './fallback-advice-to-follow-docs';
+import { withFallbackDocsForMigrated_2211_32_To_2211_35 as withFallbackDocs } from './fallback-advice-to-follow-docs';
 
 /**
  * Modernizes an application migrated from Angular v2211.32 to v2211.35
@@ -29,28 +29,18 @@ import { withFallbackToDocsForModernizingFrom2211_31To2211_35 } from './fallback
 export function migrate(): Rule {
   return (tree: Tree, context: SchematicContext) => {
     return chain([
-      withFallbackToDocsForModernizingFrom2211_31To2211_35(updateAngularJson()),
-      withFallbackToDocsForModernizingFrom2211_31To2211_35(updateTsConfig()),
-      withFallbackToDocsForModernizingFrom2211_31To2211_35(
-        moveAssetsToPublic()
-      ),
-      withFallbackToDocsForModernizingFrom2211_31To2211_35(
-        moveFaviconToPublic()
-      ),
-      withFallbackToDocsForModernizingFrom2211_31To2211_35(updateMainTs()),
-      withFallbackToDocsForModernizingFrom2211_31To2211_35(updateI18nConfig()),
+      withFallbackDocs(updateAngularJson()),
+      withFallbackDocs(updateTsConfig()),
+      withFallbackDocs(moveAssetsToPublic()),
+      withFallbackDocs(moveFaviconToPublic()),
+      withFallbackDocs(updateMainTs()),
+      withFallbackDocs(updateI18nConfig()),
 
       ...(isUsingSsr(tree, context)
         ? [
-            withFallbackToDocsForModernizingFrom2211_31To2211_35(
-              updateServerTs()
-            ),
-            withFallbackToDocsForModernizingFrom2211_31To2211_35(
-              updateAngularJsonForSsr()
-            ),
-            withFallbackToDocsForModernizingFrom2211_31To2211_35(
-              updateTsConfigApp()
-            ),
+            withFallbackDocs(updateServerTs()),
+            withFallbackDocs(updateAngularJsonForSsr()),
+            withFallbackDocs(updateTsConfigApp()),
           ]
         : []),
     ]);

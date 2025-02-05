@@ -1,6 +1,6 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { parse } from 'jsonc-parser';
-import { printErrorWithAdviceToFollowDocs } from '../fallback-advice-to-follow-docs';
+import { printErrorWithDocsForMigrated_2211_32_To_2211_35 } from '../fallback-advice-to-follow-docs';
 
 export function updateTsConfigApp(): Rule {
   return (tree: Tree, context: SchematicContext) => {
@@ -8,7 +8,7 @@ export function updateTsConfigApp(): Rule {
     context.logger.info(`\n⏳ Updating ${tsconfigAppPath}...`);
 
     if (!tree.exists(tsconfigAppPath)) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_2211_32_To_2211_35(
         `${tsconfigAppPath} file not found`,
         context
       );
@@ -17,7 +17,7 @@ export function updateTsConfigApp(): Rule {
 
     const tsConfigContent = tree.read(tsconfigAppPath);
     if (!tsConfigContent) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_2211_32_To_2211_35(
         `Failed to read ${tsconfigAppPath} file`,
         context
       );
@@ -36,14 +36,14 @@ export function updateTsConfigApp(): Rule {
       if (serverTsIndex !== -1) {
         tsConfig.files[serverTsIndex] = newPath;
       } else {
-        printErrorWithAdviceToFollowDocs(
+        printErrorWithDocsForMigrated_2211_32_To_2211_35(
           `Path "${oldPath}" not found in "files" array`,
           context
         );
         return;
       }
     } else {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_2211_32_To_2211_35(
         `"files" array not found in ${tsconfigAppPath}`,
         context
       );

@@ -1,5 +1,5 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
-import { printErrorWithAdviceToFollowDocs } from '../fallback-advice-to-follow-docs';
+import { printErrorWithDocsForMigrated_2211_32_To_2211_35 } from '../fallback-advice-to-follow-docs';
 import * as ts from 'typescript';
 
 export function updateI18nConfig(): Rule {
@@ -10,7 +10,7 @@ export function updateI18nConfig(): Rule {
     );
 
     if (!tree.exists(configurationModulePath)) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_2211_32_To_2211_35(
         `${configurationModulePath} file not found`,
         context
       );
@@ -19,7 +19,7 @@ export function updateI18nConfig(): Rule {
 
     const content = tree.read(configurationModulePath);
     if (!content) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_2211_32_To_2211_35(
         `Failed to read ${configurationModulePath} file`,
         context
       );
@@ -40,7 +40,7 @@ export function updateI18nConfig(): Rule {
           'import(`../../../public/'
         );
       } else {
-        printErrorWithAdviceToFollowDocs(
+        printErrorWithDocsForMigrated_2211_32_To_2211_35(
           '  ↳ No i18n configuration found that needs updating',
           context
         );

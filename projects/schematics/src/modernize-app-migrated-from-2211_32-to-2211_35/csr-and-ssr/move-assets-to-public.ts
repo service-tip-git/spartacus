@@ -1,5 +1,5 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
-import { printErrorWithAdviceToFollowDocs } from '../fallback-advice-to-follow-docs';
+import { printErrorWithDocsForMigrated_2211_32_To_2211_35 } from '../fallback-advice-to-follow-docs';
 
 export function moveAssetsToPublic(): Rule {
   return (tree: Tree, context: SchematicContext) => {
@@ -10,7 +10,7 @@ export function moveAssetsToPublic(): Rule {
     );
 
     if (!tree.exists(oldPath)) {
-      printErrorWithAdviceToFollowDocs(
+      printErrorWithDocsForMigrated_2211_32_To_2211_35(
         `Assets folder not found at ${oldPath}`,
         context
       );
