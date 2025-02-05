@@ -1,6 +1,10 @@
 import {
-  HttpClientTestingModule,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
+import {
   HttpTestingController,
+  provideHttpClientTesting,
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import {
@@ -27,12 +31,13 @@ describe('OpfApiCheckoutAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
       providers: [
         OpfApiCheckoutAdapter,
         ConverterService,
         OccEndpointsService,
         LoggerService,
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
         provideConfig({
           backend: {
             occ: {
