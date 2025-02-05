@@ -2,7 +2,7 @@
 # scripts/handle-translation-changes.sh
 
 folder_path=$1
-translations_file="$folder_path/translations.ts"
+translations_file="$folder_path/translations/translations.ts"
 
 # Function to check if an export statement exists in a file
 check_export_statements() {
