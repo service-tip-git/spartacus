@@ -993,6 +993,14 @@ export interface FeatureTogglesInterface {
    * as well as enforcing both a minimum and maximum password length.
    */
   enableSecurePasswordValidation?: boolean;
+
+  /**
+   * When enabled, checks before accessing checkout
+   * if user has email assigned to the current cart.
+   * If not - redirects user to `/opf-checkout-login` page.
+   * After providing email user will be redirected back to checkout.
+   */
+  opfEnablePreventingFromCheckoutWithoutEmail?: boolean;
 }
 
 export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
@@ -1148,4 +1156,5 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   enableSecurePasswordValidation: false,
   enableCarouselCategoryProducts: false,
   enableClaimCustomerCouponWithCodeInRequestBody: false,
+  opfEnablePreventingFromCheckoutWithoutEmail: false,
 };
