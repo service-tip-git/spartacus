@@ -5,8 +5,8 @@
  */
 
 import { Injectable, inject } from '@angular/core';
-import { CartUserEmailResponse } from '@spartacus/opf/checkout/root';
 import { Observable } from 'rxjs';
+import { CartUserEmailResponse } from '../model';
 import { OpfCheckoutAdapter } from './opf-checkout.adapter';
 
 @Injectable()

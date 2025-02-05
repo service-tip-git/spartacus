@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { CartUserEmailResponse } from '@spartacus/opf/checkout/root';
 import { Observable } from 'rxjs';
+import { CartUserEmailResponse } from '../model';
 
 export abstract class OpfCheckoutAdapter {
   /**
