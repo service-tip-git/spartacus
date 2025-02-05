@@ -30,7 +30,7 @@ jobs:
           changed_files=$(git diff --name-only $BASE_COMMIT $HEAD_COMMIT | grep 'assets/translations')
           if [ -n "$changed_files" ]; then
             for file in $changed_files; do
-              folder_path=$(dirname "$(dirname "$file")")
+              folder_path=$(dirname "$file")
               echo "Changes detected in $folder_path"
               sh ./ci-scripts/validate-translations.sh "$folder_path"
             done
