@@ -6,6 +6,7 @@
 
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { removeImportFromContent } from '../../shared';
+import { printErrorWithAdviceToFollowDocs } from '../fallback-advice-to-follow-docs';
 
 /**
  * Updates `app.module.ts` file for new Angular v17 standards.
@@ -17,15 +18,19 @@ import { removeImportFromContent } from '../../shared';
 export function updateAppModule(): Rule {
   return (tree: Tree, context: SchematicContext) => {
     const appModulePath = 'src/app/app.module.ts';
-    context.logger.info(`⏳ Updating ${appModulePath}...`);
+    context.logger.info(`\n⏳ Updating ${appModulePath}...`);
 
     if (!tree.exists(appModulePath)) {
-      context.logger.warn('⚠️ No app.module.ts found');
+      printErrorWithAdviceToFollowDocs(`No ${appModulePath} found`, context);
       return;
     }
 
     const content = tree.read(appModulePath);
     if (!content) {
+      printErrorWithAdviceToFollowDocs(
+        `Could not read content of ${appModulePath}`,
+        context
+      );
       return;
     }
 

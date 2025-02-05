@@ -7,6 +7,7 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { parse } from 'jsonc-parser';
 import { mergeArraysWithoutDuplicates } from '../../shared/utils/array-utils';
+import { printErrorWithAdviceToFollowDocs } from '../fallback-advice-to-follow-docs';
 
 /**
  * Updates `tsconfig.app.json` to align with new Angular v17 standards.
@@ -18,15 +19,23 @@ export function updateTsConfigApp(): Rule {
   return (tree: Tree, context: SchematicContext) => {
     const tsconfigAppPath = 'tsconfig.app.json';
 
-    context.logger.info(`⏳ Updating ${tsconfigAppPath} configuration...`);
+    context.logger.info(`\n⏳ Updating ${tsconfigAppPath} configuration...`);
 
     if (!tree.exists(tsconfigAppPath)) {
-      throw new Error(`${tsconfigAppPath} file not found`);
+      printErrorWithAdviceToFollowDocs(
+        `${tsconfigAppPath} file not found`,
+        context
+      );
+      return;
     }
 
     const tsConfigAppContent = tree.read(tsconfigAppPath);
     if (!tsConfigAppContent) {
-      throw new Error(`Failed to read ${tsconfigAppPath} file`);
+      printErrorWithAdviceToFollowDocs(
+        `Failed to read ${tsconfigAppPath} file`,
+        context
+      );
+      return;
     }
 
     const tsConfigApp = parse(tsConfigAppContent.toString());

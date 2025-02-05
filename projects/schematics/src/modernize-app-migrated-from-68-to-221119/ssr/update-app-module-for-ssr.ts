@@ -5,14 +5,17 @@
  */
 
 import { Rule } from '@angular-devkit/schematics';
-
+import { printErrorWithAdviceToFollowDocs } from '../fallback-advice-to-follow-docs';
 export function updateAppModuleForSsr(): Rule {
   return (tree, context) => {
     const appModulePath = 'src/app/app.module.ts';
-    context.logger.info(`⏳ Updating ${appModulePath} for SSR...`);
+    context.logger.info(`\n⏳ Updating ${appModulePath} for SSR...`);
 
     if (!tree.exists(appModulePath)) {
-      context.logger.warn('⚠️ No app.module.ts found');
+      printErrorWithAdviceToFollowDocs(
+        `Could not find ${appModulePath}`,
+        context
+      );
       return;
     }
 

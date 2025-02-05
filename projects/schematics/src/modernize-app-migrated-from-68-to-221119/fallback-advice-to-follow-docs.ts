@@ -12,8 +12,20 @@ import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 export const DOCS_FOR_MODERNIZING_NG17_APP =
   'https://help.sap.com/docs/SAP_COMMERCE_COMPOSABLE_STOREFRONT';
 
+export const FALLBACK_ADVICE_TO_FOLLOW_DOCS = `Could not update this file automatically. To complete the migration, please follow the manual steps: ${DOCS_FOR_MODERNIZING_NG17_APP}`;
+
 /**
- * Higher-order function that wraps a Rule with error handling.
+ * Prints an error message and a link to the manual migration steps.
+ */
+export function printErrorWithAdviceToFollowDocs(
+  message: string,
+  context: SchematicContext
+) {
+  context.logger.error(`⚠️ ${message}`);
+  context.logger.error(FALLBACK_ADVICE_TO_FOLLOW_DOCS);
+}
+
+/**
  * If the wrapped Rule throws an error, it logs the error and prints a link to manual migration docs.
  */
 export function withFallbackToShowingDocs(rule: Rule): Rule {
@@ -21,11 +33,9 @@ export function withFallbackToShowingDocs(rule: Rule): Rule {
     try {
       return rule(tree, context);
     } catch (error) {
-      context.logger.error(
-        `⚠️ ${error instanceof Error ? error.message : 'Unknown error'}`
-      );
-      context.logger.error(
-        `Could not migrate this step automatically. For manual migration steps, please refer to: ${DOCS_FOR_MODERNIZING_NG17_APP}`
+      printErrorWithAdviceToFollowDocs(
+        error instanceof Error ? error.message : 'Unknown error',
+        context
       );
       return tree;
     }

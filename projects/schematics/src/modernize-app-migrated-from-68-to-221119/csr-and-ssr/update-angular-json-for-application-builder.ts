@@ -6,6 +6,7 @@
 
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { getWorkspace } from '../../shared/utils/workspace-utils';
+import { printErrorWithAdviceToFollowDocs } from '../fallback-advice-to-follow-docs';
 
 /**
  * Updates the Angular configuration file to new Angular v17 standards.
@@ -16,18 +17,28 @@ import { getWorkspace } from '../../shared/utils/workspace-utils';
  */
 export function updateAngularJsonForApplicationBuilder(): Rule {
   return (tree: Tree, context: SchematicContext) => {
-    context.logger.info('⏳ Updating angular.json for application builder...');
+    context.logger.info(
+      '\n⏳ Updating angular.json for application builder...'
+    );
 
     const { workspace, path } = getWorkspace(tree);
     const project = workspace.projects[Object.keys(workspace.projects)[0]];
 
     if (!project) {
-      throw new Error('No project found in workspace');
+      printErrorWithAdviceToFollowDocs(
+        'No project found in workspace',
+        context
+      );
+      return;
     }
 
     const buildTarget = project.architect?.build as any;
     if (!buildTarget) {
-      throw new Error('No build target found in project configuration');
+      printErrorWithAdviceToFollowDocs(
+        'No build target found in project configuration',
+        context
+      );
+      return;
     }
 
     // Update builder
@@ -39,7 +50,11 @@ export function updateAngularJsonForApplicationBuilder(): Rule {
       options.browser = options.main;
       delete options.main;
     } else {
-      throw new Error('Could not rename "main" to "browser" in angular.json');
+      printErrorWithAdviceToFollowDocs(
+        'Could not rename "main" to "browser" in angular.json',
+        context
+      );
+      return;
     }
 
     // Update development configuration
@@ -49,9 +64,11 @@ export function updateAngularJsonForApplicationBuilder(): Rule {
       delete devConfig.vendorChunk;
       delete devConfig.namedChunks;
     } else {
-      throw new Error(
-        'Could not update "development" configuration in angular.json'
+      printErrorWithAdviceToFollowDocs(
+        'Could not update "development" configuration in angular.json',
+        context
       );
+      return;
     }
 
     context.logger.info('✅ Updated angular.json for application builder');

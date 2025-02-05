@@ -22,7 +22,7 @@ import { updateAppModule } from './csr-and-ssr/update-app-module';
 import { updatePackageJsonServerScripts } from './ssr/update-package-json-server-scripts';
 import { isUsingSsr } from './is-using-ssr';
 import { removeTsConfigServer } from './ssr/remove-ts-config-server';
-import { withFallbackToShowingDocs } from './with-fallback-to-showing-docs';
+import { withFallbackToShowingDocs } from './fallback-advice-to-follow-docs';
 import { updateAppModuleForSsr } from './ssr/update-app-module-for-ssr';
 
 /**

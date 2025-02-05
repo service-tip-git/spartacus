@@ -7,6 +7,8 @@
 import { findNodes } from '@schematics/angular/utility/ast-utils';
 import { parseTsFileContent } from '../../../shared/utils/file-utils';
 import * as ts from 'typescript';
+import { SchematicContext } from '@angular-devkit/schematics';
+import { printErrorWithAdviceToFollowDocs } from '../../fallback-advice-to-follow-docs';
 
 /**
  * Removes the re-export of the path `./src/main.server`.
@@ -15,7 +17,10 @@ import * as ts from 'typescript';
  *   - export * from './src/main.server';
  *   ```
  */
-export function removeReexportFromServerTs(fileContent: string): string {
+export function removeReexportFromServerTs(
+  fileContent: string,
+  context: SchematicContext
+): string {
   const sourceFile = parseTsFileContent(fileContent);
   const nodes = findNodes(sourceFile, ts.SyntaxKind.ExportDeclaration);
 
@@ -36,9 +41,11 @@ export function removeReexportFromServerTs(fileContent: string): string {
   });
 
   if (!exportNode) {
-    throw new Error(
-      `Could not remove the re-export of the path ${reexportPath}`
+    printErrorWithAdviceToFollowDocs(
+      `Could not remove the re-export of the path ${reexportPath}`,
+      context
     );
+    return fileContent;
   }
 
   const start = exportNode.getFullStart();

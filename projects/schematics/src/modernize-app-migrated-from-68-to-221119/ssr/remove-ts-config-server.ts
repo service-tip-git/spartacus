@@ -5,6 +5,7 @@
  */
 
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
+import { printErrorWithAdviceToFollowDocs } from '../fallback-advice-to-follow-docs';
 
 /**
  * Removes the `tsconfig.server.json` file from the project,
@@ -14,10 +15,14 @@ export function removeTsConfigServer(): Rule {
   return (tree: Tree, context: SchematicContext) => {
     const tsconfigServerPath = 'tsconfig.server.json';
 
-    context.logger.info(`⏳ Removing ${tsconfigServerPath}...`);
+    context.logger.info(`\n⏳ Removing ${tsconfigServerPath}...`);
 
     if (!tree.exists(tsconfigServerPath)) {
-      throw new Error(`${tsconfigServerPath} file not found`);
+      printErrorWithAdviceToFollowDocs(
+        `${tsconfigServerPath} file not found`,
+        context
+      );
+      return;
     }
 
     tree.delete(tsconfigServerPath);

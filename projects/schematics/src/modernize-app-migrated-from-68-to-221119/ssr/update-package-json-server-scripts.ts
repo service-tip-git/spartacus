@@ -7,6 +7,7 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { getWorkspace } from '../../shared/utils/workspace-utils';
 import { parse } from 'jsonc-parser';
+import { printErrorWithAdviceToFollowDocs } from '../fallback-advice-to-follow-docs';
 
 /**
  * Updates `package.json` scripts related to SSR to align with new Angular v17 standards.
@@ -20,28 +21,44 @@ export function updatePackageJsonServerScripts(): Rule {
   return (tree: Tree, context: SchematicContext) => {
     const packageJsonPath = 'package.json';
 
-    context.logger.info(`⏳ Updating ${packageJsonPath} scripts...`);
+    context.logger.info(`\n⏳ Updating ${packageJsonPath} scripts...`);
 
     if (!tree.exists(packageJsonPath)) {
-      throw new Error(`${packageJsonPath} file not found`);
+      printErrorWithAdviceToFollowDocs(
+        `${packageJsonPath} file not found`,
+        context
+      );
+      return;
     }
 
     // Get app name from workspace
     const { workspace } = getWorkspace(tree);
     const projectName = Object.keys(workspace.projects)[0];
     if (!projectName) {
-      throw new Error('No project found in workspace');
+      printErrorWithAdviceToFollowDocs(
+        'No project found in workspace',
+        context
+      );
+      return;
     }
 
     const content = tree.read(packageJsonPath);
     if (!content) {
-      throw new Error(`Failed to read ${packageJsonPath} file`);
+      printErrorWithAdviceToFollowDocs(
+        `Failed to read ${packageJsonPath} file`,
+        context
+      );
+      return;
     }
 
     const packageJson = parse(content.toString());
 
     if (!packageJson.scripts) {
-      throw new Error(`No scripts section found in ${packageJsonPath}`);
+      printErrorWithAdviceToFollowDocs(
+        `No scripts section found in ${packageJsonPath}`,
+        context
+      );
+      return;
     }
 
     // Remove scripts
@@ -51,9 +68,8 @@ export function updatePackageJsonServerScripts(): Rule {
 
     // Update scripts
     packageJson.scripts['build:ssr'] = 'ng build';
-    packageJson.scripts[
-      `serve:ssr:${projectName}`
-    ] = `node dist/${projectName}/server/server.mjs`;
+    packageJson.scripts[`serve:ssr:${projectName}`] =
+      `node dist/${projectName}/server/server.mjs`;
 
     tree.overwrite(packageJsonPath, JSON.stringify(packageJson, null, 2));
 

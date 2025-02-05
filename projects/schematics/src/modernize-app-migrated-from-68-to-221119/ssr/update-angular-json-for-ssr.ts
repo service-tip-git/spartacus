@@ -6,6 +6,7 @@
 
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { getWorkspace } from '../../shared/utils/workspace-utils';
+import { printErrorWithAdviceToFollowDocs } from '../fallback-advice-to-follow-docs';
 
 /**
  * Updates the Angular configuration related to SSR for new Angular v17 standards.
@@ -28,18 +29,26 @@ import { getWorkspace } from '../../shared/utils/workspace-utils';
  */
 export function updateAngularJsonForSsr(): Rule {
   return (tree: Tree, context: SchematicContext) => {
-    context.logger.info('⏳ Updating angular.json for SSR...');
+    context.logger.info('\n⏳ Updating angular.json for SSR...');
 
     const { workspace, path } = getWorkspace(tree);
     const [firstProjectKey] = Object.keys(workspace.projects);
     const project = workspace.projects[firstProjectKey];
 
     if (!project) {
-      throw new Error('No project found for SSR migration');
+      printErrorWithAdviceToFollowDocs(
+        'No project found for SSR migration',
+        context
+      );
+      return;
     }
 
     if (!project.architect?.build) {
-      throw new Error('No build target found in project configuration');
+      printErrorWithAdviceToFollowDocs(
+        'No build target found in project configuration',
+        context
+      );
+      return;
     }
 
     // Update build target with SSR options
@@ -68,7 +77,11 @@ export function updateAngularJsonForSsr(): Rule {
         ''
       );
     } else {
-      throw new Error('Could not update "outputPath" in angular.json');
+      printErrorWithAdviceToFollowDocs(
+        'Could not update "outputPath" in angular.json',
+        context
+      );
+      return;
     }
 
     // Update serve configurations with `,noSsr`

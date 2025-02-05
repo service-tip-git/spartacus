@@ -5,11 +5,12 @@
  */
 
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
-import { removeImportsFromServerTs } from './update-server-ts/remove-imports-from-server-ts';
 import { addImportsToServerTs } from './update-server-ts/add-imports-to-server-ts';
+import { removeImportsFromServerTs } from './update-server-ts/remove-imports-from-server-ts';
+import { removeReexportFromServerTs } from './update-server-ts/remove-reexport-from-server-ts';
 import { removeWebpackFromServerTs } from './update-server-ts/remove-webpack-from-server-ts';
 import { updateVariablesInServerTs } from './update-server-ts/update-variables-in-server-ts';
-import { removeReexportFromServerTs } from './update-server-ts/remove-reexport-from-server-ts';
+import { printErrorWithAdviceToFollowDocs } from '../fallback-advice-to-follow-docs';
 
 /**
  * Updates `server.ts` file for new Angular v17 standards.
@@ -21,24 +22,31 @@ export function updateServerTs(): Rule {
   return (tree: Tree, context: SchematicContext) => {
     const serverTsPath = 'server.ts';
 
-    context.logger.info(`⏳ Updating ${serverTsPath} implementation...`);
+    context.logger.info(`\n⏳ Updating ${serverTsPath} implementation...`);
 
     if (!tree.exists(serverTsPath)) {
-      context.logger.warn(`⚠️ ${serverTsPath} file not found`);
+      printErrorWithAdviceToFollowDocs(
+        `${serverTsPath} file not found`,
+        context
+      );
       return;
     }
 
     const content = tree.read(serverTsPath);
     if (!content) {
-      throw new Error(`Failed to read ${serverTsPath} file`);
+      printErrorWithAdviceToFollowDocs(
+        `Failed to read ${serverTsPath} file`,
+        context
+      );
+      return;
     }
 
     let updatedContent = content.toString();
     updatedContent = removeImportsFromServerTs(updatedContent);
     updatedContent = addImportsToServerTs(updatedContent);
-    updatedContent = updateVariablesInServerTs(updatedContent);
-    updatedContent = removeWebpackFromServerTs(updatedContent);
-    updatedContent = removeReexportFromServerTs(updatedContent);
+    updatedContent = updateVariablesInServerTs(updatedContent, context);
+    updatedContent = removeWebpackFromServerTs(updatedContent, context);
+    updatedContent = removeReexportFromServerTs(updatedContent, context);
 
     tree.overwrite(serverTsPath, updatedContent);
 

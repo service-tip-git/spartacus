@@ -8,6 +8,8 @@ import { findNodes } from '@schematics/angular/utility/ast-utils';
 import { parseTsFileContent } from '../../../shared/utils/file-utils';
 import { removeVariableDeclaration } from '../../../shared/utils/variable-utils';
 import * as ts from 'typescript';
+import { SchematicContext } from '@angular-devkit/schematics';
+import { printErrorWithAdviceToFollowDocs } from '../../fallback-advice-to-follow-docs';
 
 /**
  * Removes the Webpack-specific comments.
@@ -46,7 +48,10 @@ function removeWebpackSpecificComments(fileContent: string): string {
  *   + run();
  *   ```
  */
-function removeWebpackSpecificCode(fileContent: string): string {
+function removeWebpackSpecificCode(
+  fileContent: string,
+  context: SchematicContext
+): string {
   let updatedContent = fileContent;
 
   updatedContent = removeVariableDeclaration({
@@ -83,7 +88,11 @@ function removeWebpackSpecificCode(fileContent: string): string {
     const end = ifNode.getEnd();
     updatedContent = updatedContent.slice(0, start) + updatedContent.slice(end);
   } else {
-    throw new Error('Could not remove the Webpack-specific `if` block');
+    printErrorWithAdviceToFollowDocs(
+      'Could not remove the Webpack-specific `if` block',
+      context
+    );
+    return updatedContent;
   }
 
   // Add run() call
@@ -98,8 +107,11 @@ run();
 /**
  * Removes the Webpack-specific code and comments from the server.ts file.
  */
-export function removeWebpackFromServerTs(updatedContent: string): string {
+export function removeWebpackFromServerTs(
+  updatedContent: string,
+  context: SchematicContext
+): string {
   updatedContent = removeWebpackSpecificComments(updatedContent);
-  updatedContent = removeWebpackSpecificCode(updatedContent);
+  updatedContent = removeWebpackSpecificCode(updatedContent, context);
   return updatedContent;
 }

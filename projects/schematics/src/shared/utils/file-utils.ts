@@ -883,21 +883,27 @@ export function removeImportFromContent(
   updatedContent: string,
   importToRemove: { symbolName?: string; importPath: string }
 ): string {
-  const sourceFile = parseTsFileContent(updatedContent);
+  try {
+    const sourceFile = parseTsFileContent(updatedContent);
 
-  const change = removeImport(sourceFile, {
-    className: importToRemove.symbolName,
-    importPath: importToRemove.importPath,
-  });
+    const change = removeImport(sourceFile, {
+      className: importToRemove.symbolName,
+      importPath: importToRemove.importPath,
+    });
 
-  if (change instanceof RemoveChange) {
-    const searchText = change.toRemove;
-    const searchIndex = updatedContent.indexOf(searchText);
-    if (searchIndex !== -1) {
-      updatedContent =
-        updatedContent.slice(0, searchIndex) +
-        updatedContent.slice(searchIndex + searchText.length);
+    if (change instanceof RemoveChange) {
+      const searchText = change.toRemove;
+      const searchIndex = updatedContent.indexOf(searchText);
+      if (searchIndex !== -1) {
+        updatedContent =
+          updatedContent.slice(0, searchIndex) +
+          updatedContent.slice(searchIndex + searchText.length);
+      }
     }
+  } catch (error) {
+    throw new Error(
+      `Could not remove the import declaration for ${importToRemove.symbolName} from ${importToRemove.importPath} - ERROR: ${error}`
+    );
   }
 
   return updatedContent;

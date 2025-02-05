@@ -5,6 +5,7 @@
  */
 
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
+import { printErrorWithAdviceToFollowDocs } from '../fallback-advice-to-follow-docs';
 
 /**
  * Updates `main.server.ts` file for new Angular v17 standards.
@@ -15,15 +16,23 @@ import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 export function updateMainServerTs(): Rule {
   return (tree: Tree, context: SchematicContext) => {
     const mainServerPath = 'src/main.server.ts';
-    context.logger.info(`⏳ Updating ${mainServerPath}...`);
+    context.logger.info(`\n⏳ Updating ${mainServerPath}...`);
 
     if (!tree.exists(mainServerPath)) {
-      throw new Error(`${mainServerPath} file not found`);
+      printErrorWithAdviceToFollowDocs(
+        `${mainServerPath} file not found`,
+        context
+      );
+      return;
     }
 
     const mainServerContent = tree.read(mainServerPath);
     if (!mainServerContent) {
-      throw new Error(`Failed to read ${mainServerPath} file`);
+      printErrorWithAdviceToFollowDocs(
+        `Failed to read ${mainServerPath} file`,
+        context
+      );
+      return;
     }
 
     const expectedPattern =
@@ -32,7 +41,11 @@ export function updateMainServerTs(): Rule {
 
     let updatedContent = mainServerContent.toString();
     if (!expectedPattern.test(updatedContent)) {
-      throw new Error(`${mainServerPath} does not contain the expected export`);
+      printErrorWithAdviceToFollowDocs(
+        `${mainServerPath} does not contain the expected export`,
+        context
+      );
+      return;
     }
 
     updatedContent = updatedContent.replace(expectedPattern, newPattern);
