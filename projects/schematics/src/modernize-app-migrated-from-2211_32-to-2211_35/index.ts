@@ -1,0 +1,58 @@
+/*
+ * SPDX-FileCopyrightText: 2025 SAP Spartacus team <spartacus-team@sap.com>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+import {
+  Rule,
+  SchematicContext,
+  Tree,
+  chain,
+} from '@angular-devkit/schematics';
+import { updateAngularJson } from './csr-and-ssr/update-angular-json';
+import { updateTsConfig } from './csr-and-ssr/update-ts-config';
+import { moveAssetsToPublic } from './csr-and-ssr/move-assets-to-public';
+import { moveFaviconToPublic } from './csr-and-ssr/move-favicon-to-public';
+import { updateMainTs } from './csr-and-ssr/update-main-ts';
+import { updateI18nConfig } from './csr-and-ssr/update-i18n-config';
+import { updateServerTs } from './ssr/update-server-ts';
+import { updateAngularJsonForSsr } from './ssr/update-angular-json-for-ssr';
+import { updateTsConfigApp } from './ssr/update-ts-config-app';
+import { isUsingSsr } from './is-using-ssr';
+import { withFallbackToDocsForModernizingFrom2211_31To2211_35 } from './fallback-advice-to-follow-docs';
+
+/**
+ * Modernizes an application migrated from Angular v2211.32 to v2211.35
+ * to align with new Angular 19 standards.
+ */
+export function migrate(): Rule {
+  return (tree: Tree, context: SchematicContext) => {
+    return chain([
+      withFallbackToDocsForModernizingFrom2211_31To2211_35(updateAngularJson()),
+      withFallbackToDocsForModernizingFrom2211_31To2211_35(updateTsConfig()),
+      withFallbackToDocsForModernizingFrom2211_31To2211_35(
+        moveAssetsToPublic()
+      ),
+      withFallbackToDocsForModernizingFrom2211_31To2211_35(
+        moveFaviconToPublic()
+      ),
+      withFallbackToDocsForModernizingFrom2211_31To2211_35(updateMainTs()),
+      withFallbackToDocsForModernizingFrom2211_31To2211_35(updateI18nConfig()),
+
+      ...(isUsingSsr(tree, context)
+        ? [
+            withFallbackToDocsForModernizingFrom2211_31To2211_35(
+              updateServerTs()
+            ),
+            withFallbackToDocsForModernizingFrom2211_31To2211_35(
+              updateAngularJsonForSsr()
+            ),
+            withFallbackToDocsForModernizingFrom2211_31To2211_35(
+              updateTsConfigApp()
+            ),
+          ]
+        : []),
+    ]);
+  };
+}
