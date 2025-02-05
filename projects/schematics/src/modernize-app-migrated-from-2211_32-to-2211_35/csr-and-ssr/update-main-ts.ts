@@ -1,5 +1,5 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
-import { printErrorWithDocsForMigrated_2211_32_To_2211_35 } from '../fallback-advice-to-follow-docs';
+import { printErrorWithDocsForMigrated_2211_32_To_2211_35 as printErrorWithDocs } from '../fallback-advice-to-follow-docs';
 
 export function updateMainTs(): Rule {
   return (tree: Tree, context: SchematicContext) => {
@@ -7,19 +7,13 @@ export function updateMainTs(): Rule {
     context.logger.info(`\n⏳ Updating ${mainTsPath}...`);
 
     if (!tree.exists(mainTsPath)) {
-      printErrorWithDocsForMigrated_2211_32_To_2211_35(
-        `${mainTsPath} file not found`,
-        context
-      );
+      printErrorWithDocs(`${mainTsPath} file not found`, context);
       return;
     }
 
     const content = tree.read(mainTsPath);
     if (!content) {
-      printErrorWithDocsForMigrated_2211_32_To_2211_35(
-        `Failed to read ${mainTsPath} file`,
-        context
-      );
+      printErrorWithDocs(`Failed to read ${mainTsPath} file`, context);
       return;
     }
 

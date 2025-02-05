@@ -1,5 +1,5 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
-import { printErrorWithDocsForMigrated_2211_32_To_2211_35 } from '../fallback-advice-to-follow-docs';
+import { printErrorWithDocsForMigrated_2211_32_To_2211_35 as printErrorWithDocs } from '../fallback-advice-to-follow-docs';
 
 export function moveFaviconToPublic(): Rule {
   return (tree: Tree, context: SchematicContext) => {
@@ -16,10 +16,7 @@ export function moveFaviconToPublic(): Rule {
     );
 
     if (!tree.exists(oldPath)) {
-      printErrorWithDocsForMigrated_2211_32_To_2211_35(
-        `Favicon not found at ${oldPath}`,
-        context
-      );
+      printErrorWithDocs(`Favicon not found at ${oldPath}`, context);
       return;
     }
 
@@ -35,10 +32,7 @@ export function moveFaviconToPublic(): Rule {
       tree.create(newPath, content);
       tree.delete(oldPath);
     } else {
-      printErrorWithDocsForMigrated_2211_32_To_2211_35(
-        `Failed to read ${oldPath} file`,
-        context
-      );
+      printErrorWithDocs(`Failed to read ${oldPath} file`, context);
       return;
     }
 

@@ -1,6 +1,6 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { getWorkspace } from '../../shared/utils/workspace-utils';
-import { printErrorWithDocsForMigrated_2211_32_To_2211_35 } from '../fallback-advice-to-follow-docs';
+import { printErrorWithDocsForMigrated_2211_32_To_2211_35 as printErrorWithDocs } from '../fallback-advice-to-follow-docs';
 import { ApplicationBuilderOptions } from '@angular-devkit/build-angular';
 
 export function updateAngularJsonForSsr(): Rule {
@@ -11,16 +11,13 @@ export function updateAngularJsonForSsr(): Rule {
     const project = workspace.projects[Object.keys(workspace.projects)[0]];
 
     if (!project) {
-      printErrorWithDocsForMigrated_2211_32_To_2211_35(
-        'No project found in workspace',
-        context
-      );
+      printErrorWithDocs('No project found in workspace', context);
       return;
     }
 
     const buildTarget = project.architect?.build as ApplicationBuilderOptions;
     if (!buildTarget) {
-      printErrorWithDocsForMigrated_2211_32_To_2211_35(
+      printErrorWithDocs(
         'No build target found in project configuration',
         context
       );
@@ -35,10 +32,7 @@ export function updateAngularJsonForSsr(): Rule {
     if (buildTarget.options?.ssr?.entry) {
       buildTarget.options.ssr.entry = newEntryPath;
     } else {
-      printErrorWithDocsForMigrated_2211_32_To_2211_35(
-        'No "ssr.entry" path found in build target',
-        context
-      );
+      printErrorWithDocs('No "ssr.entry" path found in build target', context);
       return;
     }
 

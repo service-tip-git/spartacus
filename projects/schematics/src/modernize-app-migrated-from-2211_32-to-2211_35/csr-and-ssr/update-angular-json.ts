@@ -1,6 +1,6 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { getWorkspace } from '../../shared/utils/workspace-utils';
-import { printErrorWithDocsForMigrated_2211_32_To_2211_35 } from '../fallback-advice-to-follow-docs';
+import { printErrorWithDocsForMigrated_2211_32_To_2211_35 as printErrorWithDocs } from '../fallback-advice-to-follow-docs';
 import {
   BrowserBuilderBaseOptions,
   BrowserBuilderTarget,
@@ -14,10 +14,7 @@ export function updateAngularJson(): Rule {
     const project = workspace.projects[Object.keys(workspace.projects)[0]];
 
     if (!project) {
-      printErrorWithDocsForMigrated_2211_32_To_2211_35(
-        'No project found in workspace',
-        context
-      );
+      printErrorWithDocs('No project found in workspace', context);
       return;
     }
 
@@ -25,7 +22,7 @@ export function updateAngularJson(): Rule {
     const testTarget = project.architect?.test;
 
     if (!buildTarget) {
-      printErrorWithDocsForMigrated_2211_32_To_2211_35(
+      printErrorWithDocs(
         'Could not find "build" target in project configuration',
         context
       );
@@ -68,7 +65,7 @@ export function updateAngularJson(): Rule {
       // Add the new public assets config
       testTarget.options.assets = [...newAssets, ...testTarget.options.assets];
     } else {
-      printErrorWithDocsForMigrated_2211_32_To_2211_35(
+      printErrorWithDocs(
         'Could not find "test" target in project configuration',
         context
       );
