@@ -5,8 +5,10 @@
  */
 
 import { Component, Input } from '@angular/core';
+import { delay, filter, switchMap, take } from 'rxjs/operators';
 import { ConfiguratorCommonsService } from '../../../core/facade/configurator-commons.service';
 import { ConfiguratorAttributeCompositionContext } from '../composition/configurator-attribute-composition.model';
+import { ConfiguratorStorefrontUtilsService } from '../../service/configurator-storefront-utils.service';
 
 @Component({
   selector: 'cx-configurator-show-options',
@@ -17,7 +19,8 @@ export class ConfiguratorShowOptionsComponent {
   @Input() attributeComponentContext: ConfiguratorAttributeCompositionContext;
 
   constructor(
-    protected configuratorCommonsService: ConfiguratorCommonsService
+    protected configuratorCommonsService: ConfiguratorCommonsService,
+    protected configuratorStorefrontUtilsService: ConfiguratorStorefrontUtilsService
   ) {}
 
   /**
@@ -30,5 +33,33 @@ export class ConfiguratorShowOptionsComponent {
       this.attributeComponentContext.group,
       this.attributeComponentContext.attribute
     );
+    this.focusFirstValue();
+  }
+
+  protected focusFirstValue(): void {
+    this.configuratorCommonsService
+      .isConfigurationLoading(this.attributeComponentContext.owner)
+      .pipe(
+        filter((isLoading) => isLoading),
+        take(1),
+        switchMap(() =>
+          this.configuratorCommonsService
+            .isConfigurationLoading(this.attributeComponentContext.owner)
+            .pipe(
+              filter((isLoading) => !isLoading),
+              take(1),
+              delay(0) //we need to consider the re-rendering of the page
+            )
+        )
+      )
+      .subscribe(() =>
+        this.configuratorStorefrontUtilsService.focusFirstActiveElement(
+          '#' +
+            this.configuratorStorefrontUtilsService.createAttributeUiKey(
+              'group-attribute',
+              this.attributeComponentContext.attribute.name
+            )
+        )
+      );
   }
 }
