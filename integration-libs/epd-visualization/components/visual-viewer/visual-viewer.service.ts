@@ -593,7 +593,7 @@ export class VisualViewerService implements OnDestroy {
     this._navigationMode = navigationMode;
     this.executeWhenSceneLoaded(() => {
       if (this.drawerToolbar && this.viewport) {
-        (this.drawerToolbar as any).setNavigationMode(navigationMode);
+        this.drawerToolbar.setNavigationMode(navigationMode);
       }
     });
   }
