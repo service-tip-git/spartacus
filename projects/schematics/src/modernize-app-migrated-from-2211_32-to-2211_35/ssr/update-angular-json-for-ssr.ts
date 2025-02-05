@@ -3,6 +3,13 @@ import { getWorkspace } from '../../shared/utils/workspace-utils';
 import { printErrorWithDocsForMigrated_2211_32_To_2211_35 as printErrorWithDocs } from '../fallback-advice-to-follow-docs';
 import { ApplicationBuilderOptions } from '@angular-devkit/build-angular';
 
+/**
+ * Updates the Angular configuration related to SSR for new Angular v19 standards.
+ *
+ * It updates the "ssr.entry" path in the "build" target,
+ * to use the new path with the `src/server.ts` file,
+ * instead of `server.ts`.
+ */
 export function updateAngularJsonForSsr(): Rule {
   return (tree: Tree, context: SchematicContext) => {
     context.logger.info('\n⏳ Updating angular.json for SSR...');

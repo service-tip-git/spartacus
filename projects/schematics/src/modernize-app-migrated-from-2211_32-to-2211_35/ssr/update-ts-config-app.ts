@@ -2,6 +2,11 @@ import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { parse } from 'jsonc-parser';
 import { printErrorWithDocsForMigrated_2211_32_To_2211_35 as printErrorWithDocs } from '../fallback-advice-to-follow-docs';
 
+/**
+ * Updates the `tsconfig.app.json` to adapt to the new Angular v19 standards.
+ *
+ * It updates the path in the "files" array from `server.ts` to `src/server.ts`.
+ */
 export function updateTsConfigApp(): Rule {
   return (tree: Tree, context: SchematicContext) => {
     const tsconfigAppPath = 'tsconfig.app.json';

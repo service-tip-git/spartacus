@@ -2,11 +2,19 @@ import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { printErrorWithDocsForMigrated_2211_32_To_2211_35 as printErrorWithDocs } from '../fallback-advice-to-follow-docs';
 import * as ts from 'typescript';
 
+/**
+ * Updates the i18n lazy loading config to use the new path with the `public/` folder,
+ * instead of `../../assets`, because of moving the assets folder with respect to the new Angular v19 standards.
+ *
+ * It checks whether the config for i18n lazy loading is present.
+ * If it is, it updates the path from `../../assets` to `../../../public`.
+ * Otherwise, no changes are made.
+ */
 export function updateI18nConfig(): Rule {
   return (tree: Tree, context: SchematicContext) => {
     const configurationModulePath = 'src/app/spartacus-configuration.module.ts';
     context.logger.info(
-      `\n⏳ Checking configuration for lazy loaded i18n assets in "${configurationModulePath}"...`
+      `\n⏳ Updating config for i18n lazy loading in "${configurationModulePath}", if present...`
     );
 
     if (!tree.exists(configurationModulePath)) {
@@ -25,35 +33,50 @@ export function updateI18nConfig(): Rule {
 
     let updatedContent = content.toString();
 
-    context.logger.info('  ↳ Checking if using lazy loaded i18n...');
-    if (hasConfigForLazyLoadingI18n(updatedContent)) {
+    context.logger.info(
+      '  ↳ Checking if app has a config for i18n lazy loading...'
+    );
+    if (!hasConfigForLazyLoadingI18n(updatedContent)) {
       context.logger.info(
-        '  ↳ i18n lazy loading has been detected. Updating the path from "../../assets" to "../../../public"'
+        '  ↳ No i18n lazy loading config found that needs updating'
       );
-
-      if (updatedContent.includes('import(`../../assets/')) {
-        updatedContent = updatedContent.replace(
-          /import\(`\.\.\/\.\.\/assets\//g,
-          'import(`../../../public/'
-        );
-      } else {
-        printErrorWithDocs(
-          '  ↳ No i18n configuration found that needs updating',
-          context
-        );
-        return;
-      }
-
-      tree.overwrite(configurationModulePath, updatedContent);
-      context.logger.info('✅ Updated i18n configuration');
-    } else {
-      context.logger.info(
-        '  ↳ No i18n configuration found that needs updating'
-      );
+      return;
     }
+    context.logger.info(
+      '  ↳ i18n lazy loading config has been detected. Updating the path from "../../assets" to "../../../public"'
+    );
+
+    if (updatedContent.includes('import(`../../assets/')) {
+      updatedContent = updatedContent.replace(
+        /import\(`\.\.\/\.\.\/assets\//g,
+        'import(`../../../public/'
+      );
+    } else {
+      printErrorWithDocs(
+        '  ↳ No i18n lazy loading config found that would need updating',
+        context
+      );
+      return;
+    }
+
+    tree.overwrite(configurationModulePath, updatedContent);
+    context.logger.info('✅ Updated config for i18n lazy loading');
   };
 }
 
+/**
+ * Checks if the content has a config for lazy loaded i18n.
+ *
+ * It looks for an object literal with the following structure:
+ * ```
+ * {
+ *   i18n: {
+ *     backend: {
+ *       loader: ...
+ *     }
+ *   }
+ * }
+ */
 function hasConfigForLazyLoadingI18n(content: string): boolean {
   const sourceFile = ts.createSourceFile(
     '',
@@ -67,6 +90,20 @@ function hasConfigForLazyLoadingI18n(content: string): boolean {
   return hasValidConfig;
 }
 
+/**
+ * Checks if the given node is a config for lazy loaded i18n.
+ *
+ * It looks for an object literal with the following structure:
+ * ```
+ * {
+ *   i18n: {
+ *     backend: {
+ *       loader: ...
+ *     }
+ *   }
+ * }
+ * ```
+ */
 function isConfigForLazyLoadingI18n(node: ts.ObjectLiteralExpression): boolean {
   const i18nProp = node.properties.find(
     (prop): prop is ts.PropertyAssignment =>
@@ -95,6 +132,9 @@ function isConfigForLazyLoadingI18n(node: ts.ObjectLiteralExpression): boolean {
   return false;
 }
 
+/**
+ * Returns all object literals in the given node.
+ */
 function findObjectLiterals(node: ts.Node): ts.ObjectLiteralExpression[] {
   const objects: ts.ObjectLiteralExpression[] = [];
 

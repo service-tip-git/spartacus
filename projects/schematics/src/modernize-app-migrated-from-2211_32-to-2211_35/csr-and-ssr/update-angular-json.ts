@@ -6,6 +6,13 @@ import {
   BrowserBuilderTarget,
 } from '@schematics/angular/utility/workspace-models';
 
+/**
+ * Updates the Angular configuration file to new Angular v19 standards.
+ *
+ * It updates the "assets" property for the "build" and "test" targets,
+ * to use the new path with the `public/` folder,
+ * instead of `src/assets` and `src/favicon.ico`.
+ */
 export function updateAngularJson(): Rule {
   return (tree: Tree, context: SchematicContext) => {
     context.logger.info('\n⏳ Updating angular.json assets configuration...');

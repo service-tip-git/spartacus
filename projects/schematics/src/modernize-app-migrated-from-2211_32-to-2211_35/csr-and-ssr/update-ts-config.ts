@@ -2,6 +2,13 @@ import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { parse } from 'jsonc-parser';
 import { printErrorWithDocsForMigrated_2211_32_To_2211_35 as printErrorWithDocs } from '../fallback-advice-to-follow-docs';
 
+/**
+ * It updates the "compilerOptions" in the `tsconfig.json` file,
+ * to adapt to the new Angular v19 standards.
+ *
+ * 1. Adds `"isolatedModules": true`
+ * 2. Removes `"sourceMap"`, `"declaration"`, `"useDefineForClassFields"`, `"lib"`, `"moduleResolution"`
+ */
 export function updateTsConfig(): Rule {
   return (tree: Tree, context: SchematicContext) => {
     const tsconfigPath = 'tsconfig.json';

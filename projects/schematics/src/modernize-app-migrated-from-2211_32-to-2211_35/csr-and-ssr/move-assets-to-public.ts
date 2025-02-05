@@ -1,6 +1,10 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { printErrorWithDocsForMigrated_2211_32_To_2211_35 as printErrorWithDocs } from '../fallback-advice-to-follow-docs';
 
+/**
+ * Moves the `src/assets/` folder to the root and renames it to `public/`,
+ * to adapt to the new Angular v19 standards.
+ */
 export function moveAssetsToPublic(): Rule {
   return (tree: Tree, context: SchematicContext) => {
     const oldPath = 'src/assets';
@@ -14,22 +18,29 @@ export function moveAssetsToPublic(): Rule {
       return;
     }
 
-    context.logger.info(
-      `  ↳ Creating "${newPath}" directory if it does not exist`
-    );
     if (!tree.exists(newPath)) {
+      context.logger.info(
+        `  ↳ Creating "${newPath}" directory because it did not exist`
+      );
       tree.create(newPath, '');
     }
 
     context.logger.info(
       `  ↳ Moving all files from "${oldPath}" to "${newPath}"`
     );
-    tree.getDir(oldPath).visit((filePath) => {
-      const content = tree.read(`${oldPath}/${filePath}`);
-      if (content) {
-        tree.create(`${newPath}/${filePath}`, content);
-      }
-    });
+    try {
+      tree.getDir(oldPath).visit((filePath) => {
+        const content = tree.read(`${oldPath}/${filePath}`);
+        if (content) {
+          tree.create(`${newPath}/${filePath}`, content);
+        }
+      });
+    } catch (error) {
+      printErrorWithDocs(
+        `Error moving assets file from "${oldPath}" to "${newPath}". Error: ${error}`,
+        context
+      );
+    }
 
     context.logger.info(`  ↳ Deleting old "${oldPath}" directory`);
     tree.delete(oldPath);

@@ -1,6 +1,10 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { printErrorWithDocsForMigrated_2211_32_To_2211_35 as printErrorWithDocs } from '../fallback-advice-to-follow-docs';
 
+/**
+ * Moves the `favicon.ico` file from the `src/` folder to the `public/` folder,
+ * to adapt to the new Angular v19 standards.
+ */
 export function moveFaviconToPublic(): Rule {
   return (tree: Tree, context: SchematicContext) => {
     const fileName = 'favicon.ico';

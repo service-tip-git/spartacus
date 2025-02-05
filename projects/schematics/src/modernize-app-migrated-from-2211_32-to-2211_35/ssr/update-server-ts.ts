@@ -1,6 +1,13 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { printErrorWithDocsForMigrated_2211_32_To_2211_35 as printErrorWithDocs } from '../fallback-advice-to-follow-docs';
 
+/**
+ * Moves the `server.ts` file to the `src/` folder and updates the implementation,
+ * to adapt to the new Angular v19 standards.
+ *
+ * 1. Moves the `server.ts` file to the `src/` folder.
+ * 2. Updates the import path from `./src/main.server` to `./main.server`.
+ */
 export function updateServerTs(): Rule {
   return (tree: Tree, context: SchematicContext) => {
     const oldPath = 'server.ts';
