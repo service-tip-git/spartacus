@@ -26,6 +26,10 @@ export function removeReexportFromServerTs(
 
   const reexportPath = './src/main.server';
 
+  context.logger.info(
+    `  ↳ Removing the re-export of the path "${reexportPath}"`
+  );
+
   const exportNode = nodes.find((node) => {
     if (!ts.isExportDeclaration(node)) {
       return false;

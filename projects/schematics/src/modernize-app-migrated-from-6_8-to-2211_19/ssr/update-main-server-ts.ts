@@ -35,6 +35,7 @@ export function updateMainServerTs(): Rule {
       return;
     }
 
+    context.logger.info('  ↳ Updating export path of "AppServerModule"');
     const expectedPattern =
       /export \{ AppServerModule \} from ['"]\.\/app\/app\.server\.module['"];/;
     const newPattern = `export { AppServerModule as default } from './app/app.module.server';`;

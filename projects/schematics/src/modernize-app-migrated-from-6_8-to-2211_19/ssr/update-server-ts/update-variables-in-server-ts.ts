@@ -27,6 +27,9 @@ export function updateVariablesInServerTs(
    *   ```
    */
   try {
+    context.logger.info(
+      '  ↳ Replacing "distFolder" variable declaration with "serverDistFolder" and "browserDistFolder"'
+    );
     updatedContent = replaceVariableDeclaration({
       fileContent: updatedContent,
       variableName: 'distFolder',
@@ -51,6 +54,9 @@ export function updateVariablesInServerTs(
    *   ```
    */
   try {
+    context.logger.info(
+      '  ↳ Changing "indexHtml" variable declaration to use "browserDistFolder"'
+    );
     updatedContent = replaceVariableDeclaration({
       fileContent: updatedContent,
       variableName: 'indexHtml',
@@ -73,6 +79,9 @@ export function updateVariablesInServerTs(
    *   ```
    */
   try {
+    context.logger.info(
+      '  ↳ Replacing argument "distFolder" with "browserDistFolder" in "server.set()" method call'
+    );
     updatedContent = replaceMethodCallArgument({
       fileContent: updatedContent,
       objectName: 'server',
@@ -102,6 +111,9 @@ export function updateVariablesInServerTs(
    *   ```
    */
   try {
+    context.logger.info(
+      '  ↳ Replacing argument "distFolder" with "browserDistFolder" in "express.static()" method call'
+    );
     updatedContent = replaceMethodCallArgument({
       fileContent: updatedContent,
       objectName: 'express',

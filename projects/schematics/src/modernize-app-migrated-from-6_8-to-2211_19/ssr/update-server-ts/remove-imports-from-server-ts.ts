@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { SchematicContext } from '@angular-devkit/schematics';
 import { removeImportFromContent } from '../../../shared/utils/file-utils';
 
 /**
@@ -22,7 +23,10 @@ import { removeImportFromContent } from '../../../shared/utils/file-utils';
  * - import { existsSync } from 'fs';
  * ```
  */
-export function removeImportsFromServerTs(updatedContent: string): string {
+export function removeImportsFromServerTs(
+  updatedContent: string,
+  context: SchematicContext
+): string {
   const importsToRemove: { symbolName?: string; importPath: string }[] = [
     { importPath: 'zone.js/node' },
     { symbolName: 'express', importPath: 'express' },
@@ -31,8 +35,13 @@ export function removeImportsFromServerTs(updatedContent: string): string {
     { symbolName: 'existsSync', importPath: 'fs' },
   ];
 
-  // Remove old imports using our utility
+  context.logger.info('  ↳ Removing old imports');
   importsToRemove.forEach((importToRemove) => {
+    context.logger.info(
+      `    ↳ Removing import of "${
+        importToRemove.symbolName ? importToRemove.symbolName + ' from ' : ''
+      }${importToRemove.importPath}"`
+    );
     updatedContent = removeImportFromContent(updatedContent, importToRemove);
   });
 

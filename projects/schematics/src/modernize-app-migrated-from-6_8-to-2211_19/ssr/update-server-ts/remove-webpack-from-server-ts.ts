@@ -19,7 +19,11 @@ import { printErrorWithAdviceToFollowDocs } from '../../fallback-advice-to-follo
  *   - // '__non_webpack_require__' is a proxy to Node 'require'
  *   - // The below code is to ensure that the server is run only when not requiring the bundle.
  */
-function removeWebpackSpecificComments(fileContent: string): string {
+function removeWebpackSpecificComments(
+  fileContent: string,
+  context: SchematicContext
+): string {
+  context.logger.info('  ↳ Removing Webpack-specific code comments //');
   return fileContent
     .replace(
       /\/\/ Webpack will replace 'require' with '__webpack_require__'\n/,
@@ -54,22 +58,29 @@ function removeWebpackSpecificCode(
 ): string {
   let updatedContent = fileContent;
 
+  context.logger.info('  ↳ Removing Webpack-specific code');
+
+  context.logger.info('    ↳ Removing const "__non_webpack_require__"');
   updatedContent = removeVariableDeclaration({
     fileContent: updatedContent,
     variableName: '__non_webpack_require__',
   });
 
+  context.logger.info('    ↳ Removing const "mainModule"');
   updatedContent = removeVariableDeclaration({
     fileContent: updatedContent,
     variableName: 'mainModule',
   });
 
+  context.logger.info('    ↳ Removing const "moduleFilename"');
   updatedContent = removeVariableDeclaration({
     fileContent: updatedContent,
     variableName: 'moduleFilename',
   });
 
-  // Remove if statement
+  context.logger.info(
+    '    ↳ Removing "if" statement wrapping the "run()" call'
+  );
   const sourceFile = parseTsFileContent(updatedContent);
   const ifNodes = findNodes(sourceFile, ts.SyntaxKind.IfStatement);
   const ifNode = ifNodes.find((node) => {
@@ -95,7 +106,7 @@ function removeWebpackSpecificCode(
     return updatedContent;
   }
 
-  // Add run() call
+  context.logger.info('    ↳ Adding standalone "run()" call');
   return (
     updatedContent +
     `
@@ -111,7 +122,7 @@ export function removeWebpackFromServerTs(
   updatedContent: string,
   context: SchematicContext
 ): string {
-  updatedContent = removeWebpackSpecificComments(updatedContent);
+  updatedContent = removeWebpackSpecificComments(updatedContent, context);
   updatedContent = removeWebpackSpecificCode(updatedContent, context);
   return updatedContent;
 }

@@ -41,10 +41,13 @@ export function updateAngularJsonForApplicationBuilder(): Rule {
       return;
     }
 
-    // Update builder
-    buildTarget.builder = '@angular-devkit/build-angular:application';
+    const newBuilder = '@angular-devkit/build-angular:application';
+    context.logger.info(
+      `  ↳ Updating builder to "${newBuilder}" from "${buildTarget.builder}"`
+    );
+    buildTarget.builder = newBuilder;
 
-    // Rename main to browser
+    context.logger.info('  ↳ Renaming "main" to "browser" in build options');
     const options = buildTarget.options as any;
     if (options?.main) {
       options.browser = options.main;
@@ -57,7 +60,9 @@ export function updateAngularJsonForApplicationBuilder(): Rule {
       return;
     }
 
-    // Update development configuration
+    context.logger.info(
+      '  ↳ Removing obsolete build options from "development" configuration'
+    );
     const devConfig = buildTarget.configurations?.development as any;
     if (devConfig) {
       delete devConfig.buildOptimizer;

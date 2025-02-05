@@ -51,7 +51,9 @@ export function updateAngularJsonForSsr(): Rule {
       return;
     }
 
-    // Update build target with SSR options
+    context.logger.info(
+      '  ↳ Updating build target with SSR options: "server: "src/main.server.ts", "prerender": false, "ssr": { "entry": "server.ts" }'
+    );
     project.architect.build = {
       ...project.architect.build,
       options: {
@@ -66,7 +68,7 @@ export function updateAngularJsonForSsr(): Rule {
       },
     };
 
-    // Update outputPath if it ends with /browser
+    context.logger.info('  ↳ Updating "outputPath" if it ends with /browser');
     const buildOptions = (project.architect?.build as any)?.options;
     if (
       typeof buildOptions.outputPath === 'string' &&
@@ -84,7 +86,7 @@ export function updateAngularJsonForSsr(): Rule {
       return;
     }
 
-    // Update serve configurations with `,noSsr`
+    context.logger.info('  ↳ Updating "serve" configurations with `,noSsr`');
     const serveConfigs = project.architect?.serve?.configurations;
     if (serveConfigs) {
       project.architect.serve = {
@@ -101,9 +103,17 @@ export function updateAngularJsonForSsr(): Rule {
           },
         },
       } as any;
+    } else {
+      printErrorWithAdviceToFollowDocs(
+        'Could not update "serve" configurations in angular.json',
+        context
+      );
+      return;
     }
 
-    // Remove obsolete architect targets
+    context.logger.info(
+      '  ↳ Removing obsolete "architect" targets: "server", "serve-ssr", "prerender"'
+    );
     delete project.architect?.server;
     delete project.architect?.['serve-ssr'];
     delete project.architect?.prerender;

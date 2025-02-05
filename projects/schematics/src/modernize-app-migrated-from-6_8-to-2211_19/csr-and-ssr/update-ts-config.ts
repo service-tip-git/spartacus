@@ -46,7 +46,26 @@ export function updateTsConfig(): Rule {
       return;
     }
 
-    // Remove options
+    context.logger.info('  ↳ Removing "baseUrl" from compilerOptions');
+    delete tsConfig.compilerOptions.baseUrl;
+
+    context.logger.info(
+      '  ↳ Removing "forceConsistentCasingInFileNames" from compilerOptions'
+    );
+    delete tsConfig.compilerOptions.forceConsistentCasingInFileNames;
+
+    context.logger.info(
+      '  ↳ Removing "downlevelIteration" from compilerOptions'
+    );
+    delete tsConfig.compilerOptions.downlevelIteration;
+
+    context.logger.info('  ↳ Adding "skipLibCheck": true to compilerOptions');
+    tsConfig.compilerOptions.skipLibCheck = true;
+
+    context.logger.info(
+      '  ↳ Adding "esModuleInterop": true to compilerOptions'
+    );
+    tsConfig.compilerOptions.esModuleInterop = true;
     delete tsConfig.compilerOptions.baseUrl;
     delete tsConfig.compilerOptions.forceConsistentCasingInFileNames;
     delete tsConfig.compilerOptions.downlevelIteration;

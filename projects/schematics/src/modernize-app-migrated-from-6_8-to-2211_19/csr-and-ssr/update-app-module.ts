@@ -36,23 +36,27 @@ export function updateAppModule(): Rule {
 
     let updatedContent = content.toString();
 
-    // Remove import of HttpClientModule
+    context.logger.info(
+      '  ↳ Removing import of HttpClientModule from @angular/common/http'
+    );
     updatedContent = removeImportFromContent(updatedContent, {
       symbolName: 'HttpClientModule',
       importPath: '@angular/common/http',
     });
 
-    // Remove usage of HttpClientModule
+    context.logger.info('  ↳ Removing usage of HttpClientModule');
     updatedContent = updatedContent.replace(/HttpClientModule,?\s*/g, '');
 
-    // Add provideHttpClient to providers
+    context.logger.info('  ↳ Adding provideHttpClient to NgModule providers');
     if (!updatedContent.includes('provideHttpClient')) {
       updatedContent = updatedContent.replace(
         /providers:\s*\[/,
         'providers: [\n    provideHttpClient(withFetch(), withInterceptorsFromDi()),'
       );
 
-      // Add imports
+      context.logger.info(
+        '  ↳ Adding imports of provideHttpClient, withFetch, withInterceptorsFromDi from @angular/common/http'
+      );
       const httpImport =
         "import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';\n";
       if (updatedContent.includes('import {')) {

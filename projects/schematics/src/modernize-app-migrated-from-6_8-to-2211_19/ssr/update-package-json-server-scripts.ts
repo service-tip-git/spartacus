@@ -61,13 +61,19 @@ export function updatePackageJsonServerScripts(): Rule {
       return;
     }
 
-    // Remove scripts
+    context.logger.info('  ↳ Removing "dev:ssr" script');
     delete packageJson.scripts['dev:ssr'];
+
+    context.logger.info('  ↳ Removing "prerender" script');
     delete packageJson.scripts['prerender'];
+
+    context.logger.info('  ↳ Removing "serve:ssr" script');
     delete packageJson.scripts['serve:ssr'];
 
-    // Update scripts
+    context.logger.info('  ↳ Updating "build:ssr" script');
     packageJson.scripts['build:ssr'] = 'ng build';
+
+    context.logger.info(`  ↳ Adding "serve:ssr:${projectName}" script`);
     packageJson.scripts[`serve:ssr:${projectName}`] =
       `node dist/${projectName}/server/server.mjs`;
 

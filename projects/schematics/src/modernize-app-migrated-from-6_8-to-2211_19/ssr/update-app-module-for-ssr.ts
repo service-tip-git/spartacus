@@ -26,7 +26,9 @@ export function updateAppModuleForSsr(): Rule {
 
     let updatedContent = content.toString();
 
-    // For SSR apps, update BrowserModule
+    context.logger.info(
+      '  ↳ Removing "withServerTransition()" call from the "BrowserModule" import'
+    );
     updatedContent = updatedContent.replace(
       /BrowserModule\.withServerTransition\(\s*{\s*appId:\s*['"]serverApp['"]\s*}\s*\)/,
       'BrowserModule'

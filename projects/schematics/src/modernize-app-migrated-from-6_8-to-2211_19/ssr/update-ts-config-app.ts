@@ -40,6 +40,7 @@ export function updateTsConfigApp(): Rule {
 
     const tsConfigApp = parse(tsConfigAppContent.toString());
 
+    context.logger.info('  ↳ Adding "node" to "types" array');
     tsConfigApp.compilerOptions = {
       ...tsConfigApp.compilerOptions,
       types: mergeArraysWithoutDuplicates(tsConfigApp.compilerOptions?.types, [
@@ -48,6 +49,11 @@ export function updateTsConfigApp(): Rule {
     };
 
     const serverFiles = ['src/main.server.ts', 'server.ts'];
+    context.logger.info(
+      `  ↳ Adding ${serverFiles
+        .map((x) => `"${x}"`)
+        .join(', ')} to "files" array`
+    );
     tsConfigApp.files = mergeArraysWithoutDuplicates(
       tsConfigApp.files,
       serverFiles

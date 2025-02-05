@@ -42,8 +42,8 @@ export function updateServerTs(): Rule {
     }
 
     let updatedContent = content.toString();
-    updatedContent = removeImportsFromServerTs(updatedContent);
-    updatedContent = addImportsToServerTs(updatedContent);
+    updatedContent = removeImportsFromServerTs(updatedContent, context);
+    updatedContent = addImportsToServerTs(updatedContent, context);
     updatedContent = updateVariablesInServerTs(updatedContent, context);
     updatedContent = removeWebpackFromServerTs(updatedContent, context);
     updatedContent = removeReexportFromServerTs(updatedContent, context);
