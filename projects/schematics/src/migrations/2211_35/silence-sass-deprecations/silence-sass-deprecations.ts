@@ -10,6 +10,7 @@ import {
   getDefaultProjectNameFromWorkspace,
   createSassSilenceDeprecations,
 } from '../../../shared/utils/workspace-utils';
+import { BrowserBuilderOptions } from '@angular-devkit/build-angular';
 
 export function migrate(): Rule {
   return (tree: Tree, context: SchematicContext) => {
@@ -18,7 +19,7 @@ export function migrate(): Rule {
     const project = angularJson.projects[projectName];
     const architect = project.architect;
 
-    const buildOptions = architect?.build?.options as any;
+    const buildOptions = architect?.build?.options as BrowserBuilderOptions;
     const buildStylePreprocessorOptions = buildOptions.stylePreprocessorOptions;
     buildOptions.stylePreprocessorOptions = {
       ...buildStylePreprocessorOptions,
