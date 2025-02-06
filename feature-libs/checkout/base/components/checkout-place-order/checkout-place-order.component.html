@@ -16,8 +16,8 @@
       />
       <span class="form-check-label">
         {{ 'checkoutReview.confirmThatRead' | cxTranslate }}
-         <a
-          [attr.href]="termsAndConditionUrl$ | async"
+        <a
+          [routerLink]="{ cxRoute: 'termsAndConditions', params: [(language$|async),(currency$|async)] } | cxUrl"
           class="cx-tc-link"
           target="_blank"
           rel="noopener noreferrer"

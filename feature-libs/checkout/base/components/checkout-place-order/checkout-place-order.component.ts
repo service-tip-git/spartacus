@@ -25,7 +25,7 @@ import {
 } from '@spartacus/core';
 import { OrderFacade } from '@spartacus/order/root';
 import { LaunchDialogService, LAUNCH_CALLER } from '@spartacus/storefront';
-import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'cx-place-order',
@@ -35,11 +35,8 @@ import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 })
 export class CheckoutPlaceOrderComponent implements OnDestroy, OnInit {
   placedOrder: void | Observable<ComponentRef<any> | undefined>;
-  currency: string;
-  termsAndConditionUrl$ = new BehaviorSubject<string>('');
-  private currency$ = this.currencyService.getActive();
-  private language$ = this.languageService.getActive();
-
+  currency$ = new Observable<string>();
+  language$ = new Observable<string>();
   checkoutSubmitForm: UntypedFormGroup = this.fb.group({
     termsAndConditions: [false, Validators.requiredTrue],
   });
@@ -60,7 +57,8 @@ export class CheckoutPlaceOrderComponent implements OnDestroy, OnInit {
   ) {}
 
   ngOnInit() {
-    this.setTermsOfConditionUrl();
+    this.currency$ = this.currencyService.getActive();
+    this.language$ = this.languageService.getActive();
   }
 
   submitForm(): void {
@@ -93,16 +91,6 @@ export class CheckoutPlaceOrderComponent implements OnDestroy, OnInit {
 
   onSuccess(): void {
     this.routingService.go({ cxRoute: 'orderConfirmation' });
-  }
-
-  setTermsOfConditionUrl(): void {
-    combineLatest([this.currency$, this.language$]).subscribe(
-      ([currency, language]) => {
-        const segments = this.route.url.split('/').filter((s) => !!s);
-        const url = `/${segments[0]}/${language}/${currency}/terms-and-conditions`;
-        this.termsAndConditionUrl$.next(url);
-      }
-    );
   }
 
   ngOnDestroy(): void {
