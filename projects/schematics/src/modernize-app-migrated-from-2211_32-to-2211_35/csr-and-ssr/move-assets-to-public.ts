@@ -13,49 +13,53 @@ import { printErrorWithDocsForMigrated_2211_32_To_2211_35 as printErrorWithDocs 
  */
 export function moveAssetsToPublic(): Rule {
   return (tree: Tree, context: SchematicContext) => {
-    const oldPath = 'src/assets';
-    const newPath = 'public';
+    const oldDir = 'src/assets';
+    const newDir = 'public';
     context.logger.info(
-      `\n⏳ Moving assets folder from "${oldPath}/" to "${newPath}/"...`
+      `\n⏳ Moving assets folder from "${oldDir}/" to "${newDir}/"...`
     );
 
-    const sourceDir = tree.getDir(oldPath);
+    const sourceDir = tree.getDir(oldDir);
     if (!sourceDir.subfiles.length && !sourceDir.subdirs.length) {
       printErrorWithDocs(
-        `Assets folder not found or empty at ${oldPath}`,
+        `Assets folder not found or empty at ${oldDir}`,
         context
       );
       return;
     }
 
     try {
-      tree.getDir(oldPath).visit((filePath) => {
-        context.logger.info(`  ↳ Moving file "${filePath}" to "${newPath}/"`);
+      tree.getDir(oldDir).visit((filePath) => {
+        const fileName = filePath.replace(`${oldDir}/`, '');
+        context.logger.info(`  ↳ Moving file "${filePath}" to "${newDir}/"`);
 
-        const content = tree.read(`${oldPath}/${filePath}`);
+        const content = tree.read(filePath);
         if (content) {
-          tree.create(`${newPath}/${filePath}`, content);
+          tree.create(`${newDir}/${fileName}`, content);
+        } else {
+          printErrorWithDocs(`Failed to read ${filePath} file`, context);
+          return;
         }
       });
     } catch (error) {
       printErrorWithDocs(
-        `Error moving assets file from "${oldPath}" to "${newPath}". Error: ${error}`,
+        `Error moving assets file from "${oldDir}" to "${newDir}". Error: ${error}`,
         context
       );
     }
 
-    context.logger.info(`  ↳ Deleting old "${oldPath}/" directory`);
+    context.logger.info(`  ↳ Deleting old "${oldDir}/" directory`);
     try {
-      tree.delete(oldPath);
+      tree.delete(oldDir);
     } catch (error) {
       printErrorWithDocs(
-        `Error deleting old assets directory "${oldPath}". Error: ${error}`,
+        `Error deleting old assets directory "${oldDir}". Error: ${error}`,
         context
       );
     }
 
     context.logger.info(
-      `✅ Moved assets folder from "${oldPath}/" to "${newPath}/"`
+      `✅ Moved assets folder from "${oldDir}/" to "${newDir}/"`
     );
   };
 }
