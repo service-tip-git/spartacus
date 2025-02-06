@@ -40,7 +40,7 @@ export function moveFaviconToPublic(): Rule {
     }
 
     context.logger.info(
-      `✅ Moved favicon.ico from "${oldPath}" to "${newPath}"`
+      `✅ Moved ${fileName} from "${oldDir}/" to "${newDir}/"`
     );
   };
 }
