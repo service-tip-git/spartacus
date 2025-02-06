@@ -8,6 +8,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   ComponentRef,
+  inject,
   OnDestroy,
   OnInit,
   ViewContainerRef,
@@ -40,6 +41,9 @@ export class CheckoutPlaceOrderComponent implements OnDestroy, OnInit {
     termsAndConditions: [false, Validators.requiredTrue],
   });
 
+  private currencyService = inject(CurrencyService);
+  private languageService = inject(LanguageService);
+
   get termsAndConditionInvalid(): boolean {
     return this.checkoutSubmitForm.invalid;
   }
@@ -49,9 +53,7 @@ export class CheckoutPlaceOrderComponent implements OnDestroy, OnInit {
     protected routingService: RoutingService,
     protected fb: UntypedFormBuilder,
     protected launchDialogService: LaunchDialogService,
-    protected vcr: ViewContainerRef,
-    protected currencyService: CurrencyService,
-    protected languageService: LanguageService
+    protected vcr: ViewContainerRef
   ) {}
 
   ngOnInit() {

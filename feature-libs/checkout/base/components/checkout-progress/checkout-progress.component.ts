@@ -4,7 +4,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { CheckoutStep, CheckoutStepState } from '@spartacus/checkout/base/root';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
@@ -18,16 +23,15 @@ import { CurrencyService, LanguageService } from '@spartacus/core';
   standalone: false,
 })
 export class CheckoutProgressComponent implements OnInit {
-  private _steps$: BehaviorSubject<CheckoutStep[]> =
-    this.checkoutStepService.steps$;
   currency$ = new Observable<string>();
   language$ = new Observable<string>();
 
-  constructor(
-    protected checkoutStepService: CheckoutStepService,
-    protected currencyService: CurrencyService,
-    protected languageService: LanguageService
-  ) {}
+  private _steps$: BehaviorSubject<CheckoutStep[]> =
+    this.checkoutStepService.steps$;
+  private currencyService = inject(CurrencyService);
+  private languageService = inject(LanguageService);
+
+  constructor(protected checkoutStepService: CheckoutStepService) {}
 
   activeStepIndex: number;
   activeStepIndex$: Observable<number> =
