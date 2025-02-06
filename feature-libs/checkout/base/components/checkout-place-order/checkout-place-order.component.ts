@@ -17,7 +17,6 @@ import {
   UntypedFormGroup,
   Validators,
 } from '@angular/forms';
-import { Router } from '@angular/router';
 import {
   CurrencyService,
   LanguageService,
@@ -51,7 +50,6 @@ export class CheckoutPlaceOrderComponent implements OnDestroy, OnInit {
     protected fb: UntypedFormBuilder,
     protected launchDialogService: LaunchDialogService,
     protected vcr: ViewContainerRef,
-    protected route: Router,
     protected currencyService: CurrencyService,
     protected languageService: LanguageService
   ) {}

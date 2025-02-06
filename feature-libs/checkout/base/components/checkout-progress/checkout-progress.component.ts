@@ -9,7 +9,6 @@ import { CheckoutStep, CheckoutStepState } from '@spartacus/checkout/base/root';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { CheckoutStepService } from '../services/checkout-step.service';
-import { Router } from '@angular/router';
 import { CurrencyService, LanguageService } from '@spartacus/core';
 
 @Component({
@@ -26,7 +25,6 @@ export class CheckoutProgressComponent implements OnInit {
 
   constructor(
     protected checkoutStepService: CheckoutStepService,
-    protected route: Router,
     protected currencyService: CurrencyService,
     protected languageService: LanguageService
   ) {}

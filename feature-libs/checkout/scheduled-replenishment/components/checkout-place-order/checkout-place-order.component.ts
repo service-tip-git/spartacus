@@ -13,8 +13,11 @@ import {
 } from '@angular/core';
 import { UntypedFormBuilder } from '@angular/forms';
 import { CheckoutPlaceOrderComponent } from '@spartacus/checkout/base/components';
-import { CurrencyService, LanguageService, RoutingService } from '@spartacus/core';
-import { Router } from '@angular/router';
+import {
+  CurrencyService,
+  LanguageService,
+  RoutingService,
+} from '@spartacus/core';
 import {
   OrderFacade,
   ORDER_TYPE,
@@ -51,7 +54,6 @@ export class CheckoutScheduledReplenishmentPlaceOrderComponent
     protected vcr: ViewContainerRef,
     protected checkoutReplenishmentFormService: CheckoutReplenishmentFormService,
     protected scheduledReplenishmentOrderFacade: ScheduledReplenishmentOrderFacade,
-    protected route: Router,
     protected currencyService: CurrencyService,
     protected languageService: LanguageService
   ) {
@@ -61,7 +63,6 @@ export class CheckoutScheduledReplenishmentPlaceOrderComponent
       fb,
       launchDialogService,
       vcr,
-      route,
       currencyService,
       languageService
     );
