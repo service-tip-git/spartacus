@@ -5,7 +5,7 @@
  */
 
 import { findNodes } from '@schematics/angular/utility/ast-utils';
-import * as ts from 'typescript';
+import ts from 'typescript';
 import { parseTsFileContent } from './file-utils';
 
 interface ReplaceMethodCallArgumentParams {

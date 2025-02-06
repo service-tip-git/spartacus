@@ -6,7 +6,7 @@
 
 import { findNodes } from '@schematics/angular/utility/ast-utils';
 import { parseTsFileContent } from './file-utils';
-import * as ts from 'typescript';
+import ts from 'typescript';
 
 interface ReplaceVariableDeclarationParams {
   fileContent: string;
