@@ -59,7 +59,11 @@ export function updateTsConfigApp(): Rule {
       serverFiles
     );
 
-    tree.overwrite(tsconfigAppPath, JSON.stringify(tsConfigApp, null, 2));
+    const JSON_INDENT = 2;
+    tree.overwrite(
+      tsconfigAppPath,
+      JSON.stringify(tsConfigApp, null, JSON_INDENT)
+    );
 
     context.logger.info(`✅ Updated ${tsconfigAppPath} configuration`);
   };

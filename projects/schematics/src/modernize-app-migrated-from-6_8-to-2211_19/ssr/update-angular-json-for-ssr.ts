@@ -7,6 +7,7 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { getWorkspace } from '../../shared/utils/workspace-utils';
 import { printErrorWithDocsForMigrated_6_8_To_2211_19 } from '../fallback-advice-to-follow-docs';
+import { ApplicationBuilderOptions } from '@angular-devkit/build-angular';
 
 /**
  * Updates the Angular configuration related to SSR for new Angular v17 standards.
@@ -57,19 +58,20 @@ export function updateAngularJsonForSsr(): Rule {
     project.architect.build = {
       ...project.architect.build,
       options: {
-        ...(project.architect.build as any).options,
+        ...project.architect.build.options,
         server: 'src/main.server.ts',
         prerender: false,
         ssr: { entry: 'server.ts' },
-      },
+      } as ApplicationBuilderOptions,
       configurations: {
-        ...(project.architect.build as any).configurations,
+        ...project.architect.build.configurations,
         noSsr: { ssr: false, prerender: false },
-      },
+      } as any,
     };
 
     context.logger.info('  ↳ Updating "outputPath" if it ends with /browser');
-    const buildOptions = (project.architect?.build as any)?.options;
+    const buildOptions = project.architect?.build
+      ?.options as ApplicationBuilderOptions;
     if (
       typeof buildOptions.outputPath === 'string' &&
       buildOptions.outputPath.endsWith('/browser')
@@ -118,7 +120,8 @@ export function updateAngularJsonForSsr(): Rule {
     delete project.architect?.['serve-ssr'];
     delete project.architect?.prerender;
 
-    tree.overwrite(path, JSON.stringify(workspace, null, 2));
+    const JSON_INDENT = 2;
+    tree.overwrite(path, JSON.stringify(workspace, null, JSON_INDENT));
     context.logger.info('✅ Updated angular.json for SSR');
   };
 }

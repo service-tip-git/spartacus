@@ -810,13 +810,16 @@ export function removeImport(
   // Handle cases where we want to remove the whole import,
   // not only a specific item (e.g. `import 'zone.js/node'`).
   if (!importToRemove.className) {
-    const position = importDeclarationNode.getStart();
-    const toRemove = importDeclarationNode.getText();
-    return new RemoveChange(source.fileName, position, toRemove);
+    return new RemoveChange(
+      source.fileName,
+      importDeclarationNode.getStart(),
+      importDeclarationNode.getText()
+    );
   }
 
   let position: number;
-  let toRemove = importToRemove.className;
+  const className = importToRemove.className;
+  let toRemove = className;
 
   // Handle cases where we want to remove a namespace import (e.g. `import * as 'express'`).
   const namespaceImports = findNodes(
@@ -828,7 +831,7 @@ export function removeImport(
     const nameNode = findNode(
       namespaceImport,
       ts.SyntaxKind.Identifier,
-      importToRemove.className
+      className
     );
     if (nameNode) {
       // If we found a matching namespace import, remove the whole import declaration
@@ -852,12 +855,7 @@ export function removeImport(
     // delete only the specified import, and leave the rest
     const importSpecifier = importSpecifierNodes
       .map((node, i) => {
-        const importNode = findNode(
-          node,
-          ts.SyntaxKind.Identifier,
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          importToRemove.className!
-        );
+        const importNode = findNode(node, ts.SyntaxKind.Identifier, className);
         return {
           importNode,
           i,
