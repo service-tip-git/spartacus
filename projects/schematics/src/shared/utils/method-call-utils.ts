@@ -114,7 +114,7 @@ export function replaceMethodCallArgument({
 
   // Replace occurrences from last to first - to not interfere with
   // the already calculated start and end positions of the other occurrences
-  const targetNodesReversed = targetNodes.reverse();
+  const targetNodesReversed = [...targetNodes].reverse();
   targetNodesReversed.forEach((methodCallNode) => {
     const argumentToReplace = methodCallNode.arguments[argument.position];
     updatedContent =

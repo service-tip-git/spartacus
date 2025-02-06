@@ -7,7 +7,6 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { getWorkspace } from '../../shared/utils/workspace-utils';
 import { printErrorWithDocsForMigrated_6_8_To_2211_19 } from '../fallback-advice-to-follow-docs';
-import { ApplicationBuilderOptions } from '@angular-devkit/build-angular';
 
 /**
  * Updates the Angular configuration related to SSR for new Angular v17 standards.
@@ -62,7 +61,7 @@ export function updateAngularJsonForSsr(): Rule {
         server: 'src/main.server.ts',
         prerender: false,
         ssr: { entry: 'server.ts' },
-      } as ApplicationBuilderOptions,
+      } as any,
       configurations: {
         ...project.architect.build.configurations,
         noSsr: { ssr: false, prerender: false },
@@ -70,8 +69,7 @@ export function updateAngularJsonForSsr(): Rule {
     };
 
     context.logger.info('  ↳ Updating "outputPath" if it ends with /browser');
-    const buildOptions = project.architect?.build
-      ?.options as ApplicationBuilderOptions;
+    const buildOptions = project.architect?.build?.options as any;
     if (
       typeof buildOptions.outputPath === 'string' &&
       buildOptions.outputPath.endsWith('/browser')
