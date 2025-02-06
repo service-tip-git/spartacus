@@ -6,7 +6,7 @@
 
 import { findNodes } from '@schematics/angular/utility/ast-utils';
 import { parseTsFileContent } from '../../../shared/utils/file-utils';
-import * as ts from 'typescript';
+import ts from 'typescript';
 import { SchematicContext } from '@angular-devkit/schematics';
 import { printErrorWithDocsForMigrated_6_8_To_2211_19 } from '../../fallback-advice-to-follow-docs';
 

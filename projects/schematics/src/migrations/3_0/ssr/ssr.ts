@@ -34,7 +34,7 @@ import {
 } from '../../../shared/utils/lib-utils';
 import { createImportChange } from '../../../shared/utils/module-file-utils';
 import {
-  checkIfSSRIsUsed,
+  isUsingLegacyServerBuilder as checkIfSSRIsUsed,
   getSpartacusSchematicsVersion,
   readPackageJson,
 } from '../../../shared/utils/package-utils';
