@@ -7,7 +7,6 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { getWorkspace } from '../../shared/utils/workspace-utils';
 import { printErrorWithDocsForMigrated_2211_32_To_2211_35 as printErrorWithDocs } from '../fallback-advice-to-follow-docs';
-import { ApplicationBuilderOptions } from '@angular-devkit/build-angular';
 
 /**
  * Updates the Angular configuration related to SSR for new Angular v19 standards.
@@ -28,7 +27,7 @@ export function updateAngularJsonForSsr(): Rule {
       return;
     }
 
-    const buildTarget = project.architect?.build as ApplicationBuilderOptions;
+    const buildTarget = project.architect?.build as any;
     if (!buildTarget) {
       printErrorWithDocs(
         'No build target found in project configuration',
