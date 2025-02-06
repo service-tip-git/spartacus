@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { Params } from '@angular/router';
 import {
   isNotUndefined,
@@ -27,7 +27,7 @@ import { filter, map, take, tap } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: false,
 })
-export class OrderHistoryComponent implements OnDestroy {
+export class OrderHistoryComponent implements OnInit, OnDestroy {
   constructor(
     protected routing: RoutingService,
     protected orderHistoryFacade: OrderHistoryFacade,
@@ -37,12 +37,12 @@ export class OrderHistoryComponent implements OnDestroy {
     useFeatureStyles('a11yTabComponent');
   }
 
-  private PAGE_SIZE = 5;
+  protected PAGE_SIZE = 5;
   sortType: string;
   hasPONumber: boolean | undefined;
 
   orders$: Observable<OrderHistoryList | undefined> = this.orderHistoryFacade
-    .getOrderHistoryList(this.PAGE_SIZE)
+    .getOrderHistoryList()
     .pipe(
       tap((orders: OrderHistoryList | undefined) => {
         this.setOrderHistoryParams(orders);
@@ -73,6 +73,10 @@ export class OrderHistoryComponent implements OnDestroy {
     filter(isNotUndefined),
     take(1)
   );
+
+  ngOnInit() {
+    this.orderHistoryFacade.loadOrderList(this.PAGE_SIZE);
+  }
 
   ngOnDestroy(): void {
     this.orderHistoryFacade.clearOrderList();
