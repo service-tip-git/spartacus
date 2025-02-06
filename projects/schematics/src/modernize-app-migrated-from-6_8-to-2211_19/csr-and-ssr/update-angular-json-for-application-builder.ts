@@ -7,7 +7,6 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { getWorkspace } from '../../shared/utils/workspace-utils';
 import { printErrorWithDocsForMigrated_6_8_To_2211_19 } from '../fallback-advice-to-follow-docs';
-import { ApplicationBuilderOptions } from '@angular-devkit/build-angular';
 
 /**
  * Updates the Angular configuration file to new Angular v17 standards.
@@ -49,7 +48,7 @@ export function updateAngularJsonForApplicationBuilder(): Rule {
     buildTarget.builder = newBuilder as any;
 
     context.logger.info('  ↳ Renaming "main" to "browser" in build options');
-    const options = buildTarget.options as ApplicationBuilderOptions;
+    const options = buildTarget.options as any;
     if (options?.main) {
       options.browser = options.main;
       delete options.main;
