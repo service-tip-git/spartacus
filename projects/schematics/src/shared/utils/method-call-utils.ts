@@ -20,13 +20,6 @@ interface ReplaceMethodCallArgumentParams {
   throwErrorIfNotFound?: boolean;
 }
 
-interface RemoveMethodCallParams {
-  fileContent: string;
-  objectName: string;
-  methodName: string;
-  throwErrorIfNotFound?: boolean;
-}
-
 interface FindMethodCallsParams {
   fileContent: string;
   objectName: string;
@@ -71,49 +64,6 @@ export function findMethodCalls({
 
     return object.text === objectName && method.text === methodName;
   });
-}
-
-export function removeMethodCalls({
-  fileContent,
-  objectName,
-  methodName,
-  throwErrorIfNotFound = false,
-}: RemoveMethodCallParams): string {
-  const targetNodes = findMethodCalls({
-    fileContent,
-    objectName,
-    methodName,
-  });
-
-  if (!targetNodes.length) {
-    if (throwErrorIfNotFound) {
-      throw new Error(
-        `Could not remove ${objectName}.${methodName}() method call`
-      );
-    }
-    return fileContent;
-  }
-
-  let updatedContent = fileContent;
-
-  targetNodes
-    // Remove occurrences from last to first to not interfere with positions
-    .reverse()
-    .forEach((targetNode) => {
-      let start = targetNode.getStart();
-      let end = targetNode.getEnd();
-
-      // If the parent is an ExpressionStatement, remove the entire statement including semicolon
-      if (ts.isExpressionStatement(targetNode.parent)) {
-        start = targetNode.parent.getStart();
-        end = targetNode.parent.getEnd();
-      }
-
-      updatedContent =
-        updatedContent.slice(0, start) + updatedContent.slice(end);
-    });
-
-  return updatedContent;
 }
 
 /**
