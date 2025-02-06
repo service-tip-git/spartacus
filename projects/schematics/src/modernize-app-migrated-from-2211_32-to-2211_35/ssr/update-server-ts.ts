@@ -16,21 +16,23 @@ import { printErrorWithDocsForMigrated_2211_32_To_2211_35 as printErrorWithDocs 
  */
 export function updateServerTs(): Rule {
   return (tree: Tree, context: SchematicContext) => {
-    const oldPath = 'server.ts';
-    const newPath = 'src/server.ts';
+    enum ServerTsPaths {
+      OLD = 'server.ts',
+      NEW = 'src/server.ts',
+    }
 
     context.logger.info(
-      `\n⏳ Moving "${oldPath}" to "${newPath}" and relative import paths...`
+      `\n⏳ Moving "${ServerTsPaths.OLD}" to "${ServerTsPaths.NEW}" and relative import paths...`
     );
 
-    if (!tree.exists(oldPath)) {
-      printErrorWithDocs(`${oldPath} file not found`, context);
+    if (!tree.exists(ServerTsPaths.OLD)) {
+      printErrorWithDocs(`${ServerTsPaths.OLD} file not found`, context);
       return;
     }
 
-    const content = tree.read(oldPath);
+    const content = tree.read(ServerTsPaths.OLD);
     if (!content) {
-      printErrorWithDocs(`Failed to read ${oldPath} file`, context);
+      printErrorWithDocs(`Failed to read ${ServerTsPaths.OLD} file`, context);
       return;
     }
 
@@ -45,11 +47,13 @@ export function updateServerTs(): Rule {
     );
 
     context.logger.info(
-      `  ↳ Moving the file "${oldPath}" to "${newPath}" with the updated content`
+      `  ↳ Moving the file "${ServerTsPaths.OLD}" to "${ServerTsPaths.NEW}" with the updated content`
     );
-    tree.create(newPath, serverTs);
-    tree.delete(oldPath);
+    tree.create(ServerTsPaths.NEW, serverTs);
+    tree.delete(ServerTsPaths.OLD);
 
-    context.logger.info(`✅ Moved and updated ${oldPath} to ${newPath}`);
+    context.logger.info(
+      `✅ Moved and updated ${ServerTsPaths.OLD} to ${ServerTsPaths.NEW}`
+    );
   };
 }
