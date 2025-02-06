@@ -77,7 +77,11 @@ export function updatePackageJsonServerScripts(): Rule {
     packageJson.scripts[`serve:ssr:${projectName}`] =
       `node dist/${projectName}/server/server.mjs`;
 
-    tree.overwrite(packageJsonPath, JSON.stringify(packageJson, null, 2));
+    const JSON_INDENT = 2;
+    tree.overwrite(
+      packageJsonPath,
+      JSON.stringify(packageJson, null, JSON_INDENT)
+    );
 
     context.logger.info(`✅ Updated ${packageJsonPath} scripts`);
   };

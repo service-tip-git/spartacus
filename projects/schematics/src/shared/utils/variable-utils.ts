@@ -38,7 +38,9 @@ export function replaceVariableDeclaration({
 
   // Find variable by name
   const targetNode = nodes.find((node) => {
-    if (!ts.isVariableDeclaration(node)) return false;
+    if (!ts.isVariableDeclaration(node)) {
+      return false;
+    }
     const name = node.name;
     return ts.isIdentifier(name) && name.text === variableName;
   });

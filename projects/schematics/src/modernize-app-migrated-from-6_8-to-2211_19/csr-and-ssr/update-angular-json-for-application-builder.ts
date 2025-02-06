@@ -7,6 +7,7 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { getWorkspace } from '../../shared/utils/workspace-utils';
 import { printErrorWithDocsForMigrated_6_8_To_2211_19 } from '../fallback-advice-to-follow-docs';
+import { ApplicationBuilderOptions } from '@angular-devkit/build-angular';
 
 /**
  * Updates the Angular configuration file to new Angular v17 standards.
@@ -32,7 +33,7 @@ export function updateAngularJsonForApplicationBuilder(): Rule {
       return;
     }
 
-    const buildTarget = project.architect?.build as any;
+    const buildTarget = project.architect?.build;
     if (!buildTarget) {
       printErrorWithDocsForMigrated_6_8_To_2211_19(
         'No build target found in project configuration',
@@ -45,10 +46,10 @@ export function updateAngularJsonForApplicationBuilder(): Rule {
     context.logger.info(
       `  ↳ Updating builder to "${newBuilder}" from "${buildTarget.builder}"`
     );
-    buildTarget.builder = newBuilder;
+    buildTarget.builder = newBuilder as any;
 
     context.logger.info('  ↳ Renaming "main" to "browser" in build options');
-    const options = buildTarget.options as any;
+    const options = buildTarget.options as ApplicationBuilderOptions;
     if (options?.main) {
       options.browser = options.main;
       delete options.main;
@@ -63,7 +64,7 @@ export function updateAngularJsonForApplicationBuilder(): Rule {
     context.logger.info(
       '  ↳ Removing obsolete build options from "development" configuration'
     );
-    const devConfig = buildTarget.configurations?.development as any;
+    const devConfig = (buildTarget as any).configurations?.development;
     if (devConfig) {
       delete devConfig.buildOptimizer;
       delete devConfig.vendorChunk;
@@ -77,6 +78,7 @@ export function updateAngularJsonForApplicationBuilder(): Rule {
     }
 
     context.logger.info('✅ Updated angular.json for application builder');
-    tree.overwrite(path, JSON.stringify(workspace, null, 2));
+    const JSON_INDENT = 2;
+    tree.overwrite(path, JSON.stringify(workspace, null, JSON_INDENT));
   };
 }
