@@ -30,12 +30,12 @@ export function moveAssetsToPublic(): Rule {
 
     try {
       tree.getDir(oldDir).visit((filePath) => {
-        const fileName = filePath.replace(`${oldDir}/`, '');
-        context.logger.info(`  ↳ Moving file "${filePath}" to "${newDir}/"`);
+        const relativeFilePath = filePath.replace(`${oldDir}/`, '');
+        context.logger.info(`  ↳ Moving file "${filePath}"`);
 
         const content = tree.read(filePath);
         if (content) {
-          tree.create(`${newDir}/${fileName}`, content);
+          tree.create(`${newDir}/${relativeFilePath}`, content);
         } else {
           printErrorWithDocs(`Failed to read ${filePath} file`, context);
           return;
