@@ -20,6 +20,11 @@ const ERROR_ACTION_INTERFACE = 'ErrorAction';
  * This rule checks that any class implementing the `ErrorAction` interface and having 'Fail' in its name
  * properly initializes its `error` property, either through a constructor, property initializer or across the class hierarchy.
  *
+ * **NOTE:** To ensure errors are properly handled in NgRx, failure actions that implements `ErrorAction` interface must have the `error` property initialized.
+ * This allows the `ErrorActionService` to catch and forward them to the global `ErrorHandler`.
+ * In Server-Side Rendering (SSR), this results in an Error Response to the client.
+ * If an action fails without the `error` property set, the final HTML may be broken and returned with a 200 status, negatively impacting SEO.
+ *
  * @example
  * // ❌ Invalid - error property not initialized
  * export class LoadProductFail implements ErrorAction {
