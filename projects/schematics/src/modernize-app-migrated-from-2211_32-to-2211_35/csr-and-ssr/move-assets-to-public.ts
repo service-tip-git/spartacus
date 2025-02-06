@@ -13,29 +13,32 @@ import { printErrorWithDocsForMigrated_2211_32_To_2211_35 as printErrorWithDocs 
  */
 export function moveAssetsToPublic(): Rule {
   return (tree: Tree, context: SchematicContext) => {
-    const oldDir = 'src/assets';
-    const newDir = 'public';
+    enum AssetsDirs {
+      OLD = 'src/assets',
+      NEW = 'public',
+    }
+
     context.logger.info(
-      `\n⏳ Moving assets folder from "${oldDir}/" to "${newDir}/"...`
+      `\n⏳ Moving assets folder from "${AssetsDirs.OLD}/" to "${AssetsDirs.NEW}/"...`
     );
 
-    const sourceDir = tree.getDir(oldDir);
+    const sourceDir = tree.getDir(AssetsDirs.OLD);
     if (!sourceDir.subfiles.length && !sourceDir.subdirs.length) {
       printErrorWithDocs(
-        `Assets folder not found or empty at ${oldDir}`,
+        `Assets folder not found or empty at ${AssetsDirs.OLD}`,
         context
       );
       return;
     }
 
     try {
-      tree.getDir(oldDir).visit((filePath) => {
-        const relativeFilePath = filePath.replace(`${oldDir}/`, '');
+      tree.getDir(AssetsDirs.OLD).visit((filePath) => {
+        const relativeFilePath = filePath.replace(`${AssetsDirs.OLD}/`, '');
         context.logger.info(`  ↳ Moving file "${filePath}"`);
 
         const content = tree.read(filePath);
         if (content) {
-          tree.create(`${newDir}/${relativeFilePath}`, content);
+          tree.create(`${AssetsDirs.NEW}/${relativeFilePath}`, content);
         } else {
           printErrorWithDocs(`Failed to read ${filePath} file`, context);
           return;
@@ -43,23 +46,23 @@ export function moveAssetsToPublic(): Rule {
       });
     } catch (error) {
       printErrorWithDocs(
-        `Error moving assets file from "${oldDir}" to "${newDir}". Error: ${error}`,
+        `Error moving assets file from "${AssetsDirs.OLD}" to "${AssetsDirs.NEW}". Error: ${error}`,
         context
       );
     }
 
-    context.logger.info(`  ↳ Deleting old "${oldDir}/" directory`);
+    context.logger.info(`  ↳ Deleting old "${AssetsDirs.OLD}/" directory`);
     try {
-      tree.delete(oldDir);
+      tree.delete(AssetsDirs.OLD);
     } catch (error) {
       printErrorWithDocs(
-        `Error deleting old assets directory "${oldDir}". Error: ${error}`,
+        `Error deleting old assets directory "${AssetsDirs.OLD}". Error: ${error}`,
         context
       );
     }
 
     context.logger.info(
-      `✅ Moved assets folder from "${oldDir}/" to "${newDir}/"`
+      `✅ Moved assets folder from "${AssetsDirs.OLD}/" to "${AssetsDirs.NEW}/"`
     );
   };
 }
