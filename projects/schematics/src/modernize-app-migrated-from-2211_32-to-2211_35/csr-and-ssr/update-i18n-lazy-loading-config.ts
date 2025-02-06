@@ -54,18 +54,7 @@ export function updateI18nLazyLoadingConfig(): Rule {
       '      ↳ Updating the path from "../../assets" to "../../../public"'
     );
 
-    if (updatedContent.includes('import(`../../assets/')) {
-      updatedContent = updatedContent.replace(
-        /import\(`\.\.\/\.\.\/assets\//g,
-        'import(`../../../public/'
-      );
-    } else {
-      printErrorWithDocs(
-        '  ↳ No i18n lazy loading config found that would need updating',
-        context
-      );
-      return;
-    }
+    updatedContent = updateDynamicImportPath(updatedContent);
 
     tree.overwrite(configurationModulePath, updatedContent);
     context.logger.info('✅ Updated config for i18n lazy loading');
@@ -113,31 +102,41 @@ function hasConfigForLazyLoadingI18n(content: string): boolean {
  * ```
  */
 function isConfigForLazyLoadingI18n(node: ts.ObjectLiteralExpression): boolean {
+  // Expecting syntax: `i18n: { ... }`
   const i18nProp = node.properties.find(
     (prop): prop is ts.PropertyAssignment =>
       ts.isPropertyAssignment(prop) &&
       ts.isIdentifier(prop.name) &&
       prop.name.text === 'i18n'
   );
-
-  if (i18nProp && ts.isObjectLiteralExpression(i18nProp.initializer)) {
-    const backendProp = i18nProp.initializer.properties.find(
-      (prop): prop is ts.PropertyAssignment =>
-        ts.isPropertyAssignment(prop) &&
-        ts.isIdentifier(prop.name) &&
-        prop.name.text === 'backend'
-    );
-
-    if (backendProp && ts.isObjectLiteralExpression(backendProp.initializer)) {
-      return backendProp.initializer.properties.some(
-        (prop) =>
-          ts.isPropertyAssignment(prop) &&
-          ts.isIdentifier(prop.name) &&
-          prop.name.text === 'loader'
-      );
-    }
+  if (!i18nProp || !ts.isObjectLiteralExpression(i18nProp.initializer)) {
+    return false;
   }
-  return false;
+
+  // Expecting syntax: `backend: { ... }`
+  const backendProp = i18nProp.initializer.properties.find(
+    (prop): prop is ts.PropertyAssignment =>
+      ts.isPropertyAssignment(prop) &&
+      ts.isIdentifier(prop.name) &&
+      prop.name.text === 'backend'
+  );
+  if (!backendProp || !ts.isObjectLiteralExpression(backendProp.initializer)) {
+    return false;
+  }
+
+  // Expecting one of the following syntaxes:
+  // - `loader: (lang: string, chunkName: string) => { ... }`
+  // - `loader(lang: string, chunkName: string) { ... }`
+  return backendProp.initializer.properties.some((prop) => {
+    if (!ts.isPropertyAssignment(prop) && !ts.isMethodDeclaration(prop)) {
+      return false;
+    }
+    const name = prop.name;
+    return (
+      (ts.isIdentifier(name) || ts.isStringLiteral(name)) &&
+      name.text === 'loader'
+    );
+  });
 }
 
 /**
@@ -155,4 +154,68 @@ function findObjectLiterals(node: ts.Node): ts.ObjectLiteralExpression[] {
   });
 
   return objects;
+}
+
+/**
+ * Updates the path of dynamic imports by replacing `../../assets` with `../../../public`.
+ */
+function updateDynamicImportPath(content: string): string {
+  const sourceFile = ts.createSourceFile(
+    '',
+    content,
+    ts.ScriptTarget.Latest,
+    true
+  );
+
+  enum ImportPathPrefixes {
+    OLD = '../../assets/',
+    NEW = '../../../public/',
+  }
+
+  function visitor(node: ts.Node): void {
+    // Expect syntax: import(    )
+    if (!isDynamicImport(node)) {
+      ts.forEachChild(node, visitor);
+      return;
+    }
+
+    // Expect syntax: import( ` ... ` )
+    const argument = node.arguments[0];
+    if (!ts.isTemplateLiteral(argument)) {
+      ts.forEachChild(node, visitor);
+      return;
+    }
+
+    // Expect syntax: import( `... <old path part> ...` )
+    const importPath = content.substring(
+      argument.getStart(),
+      argument.getEnd()
+    );
+    if (!importPath.includes(ImportPathPrefixes.OLD)) {
+      ts.forEachChild(node, visitor);
+      return;
+    }
+
+    // Update the path
+    const updatedPath = importPath.replace(
+      ImportPathPrefixes.OLD,
+      ImportPathPrefixes.NEW
+    );
+    content =
+      content.slice(0, argument.getStart()) +
+      updatedPath +
+      content.slice(argument.getEnd());
+
+    ts.forEachChild(node, visitor);
+  }
+
+  visitor(sourceFile);
+  return content;
+}
+
+function isDynamicImport(node: ts.Node): node is ts.CallExpression {
+  return (
+    ts.isCallExpression(node) &&
+    node.expression.kind === ts.SyntaxKind.ImportKeyword
+  );
 }
