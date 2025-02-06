@@ -4,12 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {
-  Rule,
-  SchematicContext,
-  Tree,
-  chain,
-} from '@angular-devkit/schematics';
+import { Rule, Tree, chain } from '@angular-devkit/schematics';
 
 import { updateAngularJsonForApplicationBuilder } from './csr-and-ssr/update-angular-json-for-application-builder';
 import { updateTsConfig } from './csr-and-ssr/update-ts-config';
@@ -20,22 +15,23 @@ import { updateMainServerTs } from './ssr/update-main-server-ts';
 import { updateServerTs } from './ssr/update-server-ts';
 import { updateAppModule } from './csr-and-ssr/update-app-module';
 import { updatePackageJsonServerScripts } from './ssr/update-package-json-server-scripts';
-import { isUsingSsr } from './is-using-ssr';
 import { removeTsConfigServer } from './ssr/remove-ts-config-server';
 import { withFallbackDocsForMigrated_6_8_To_2211_19 as withFallbackDocs } from './fallback-advice-to-follow-docs';
 import { updateAppModuleForSsr } from './ssr/update-app-module-for-ssr';
+import { isUsingLegacyServerBuilder } from '../shared/utils/package-utils';
 
 /**
  * Modernizes an application to use new Angular v17 standards.
  */
 export function migrate(): Rule {
-  return (tree: Tree, context: SchematicContext) => {
+  return (tree: Tree) => {
     return chain([
       withFallbackDocs(updateAngularJsonForApplicationBuilder()),
       withFallbackDocs(updateTsConfig()),
       withFallbackDocs(updateAppModule()),
 
-      ...(isUsingSsr(tree, context)
+      // Only for SSR with legacy configuration (not using Application Builder):
+      ...(isUsingLegacyServerBuilder(tree)
         ? [
             withFallbackDocs(updateAngularJsonForSsr()),
             withFallbackDocs(updatePackageJsonServerScripts()),
