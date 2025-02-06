@@ -20,7 +20,7 @@ import { updateAngularJsonForSsr } from './ssr/update-angular-json-for-ssr';
 import { updateTsConfigApp } from './ssr/update-ts-config-app';
 import { withFallbackDocsForMigrated_2211_32_To_2211_35 as withFallbackDocs } from './fallback-advice-to-follow-docs';
 import { updateI18nLazyLoadingConfig } from './csr-and-ssr/update-i18n-lazy-loading-config';
-import { checkIfSSRIsUsedWithApplicationBuilder } from '../shared/utils/package-utils';
+import { isSsrUsed } from '../shared/utils/package-utils';
 
 /**
  * Modernizes an application migrated from Angular v2211.32 to v2211.35
@@ -36,7 +36,7 @@ export function migrate(): Rule {
       withFallbackDocs(updateMainTs()),
       withFallbackDocs(updateI18nLazyLoadingConfig()),
 
-      ...(checkIfSSRIsUsedWithApplicationBuilder(tree)
+      ...(isSsrUsed(tree)
         ? [
             withFallbackDocs(updateServerTs()),
             withFallbackDocs(updateAngularJsonForSsr()),
