@@ -12,7 +12,7 @@ import {
   UserIdService,
 } from '@spartacus/core';
 import { of } from 'rxjs';
-import { OpfCheckoutLoginComponent } from './opf-checkout-login.component';
+import { OpfCheckoutEmailUpdateComponent } from './opf-checkout-email-update.component';
 
 @Pipe({
   name: 'cxTranslate',
@@ -33,9 +33,9 @@ class MockFormErrorsComponent {
   translationParams: { [key: string]: string | null };
 }
 
-describe('OpfCheckoutLoginComponent', () => {
-  let component: OpfCheckoutLoginComponent;
-  let fixture: ComponentFixture<OpfCheckoutLoginComponent>;
+describe('OpfCheckoutEmailUpdateComponent', () => {
+  let component: OpfCheckoutEmailUpdateComponent;
+  let fixture: ComponentFixture<OpfCheckoutEmailUpdateComponent>;
   let cartGuestUserFacade: jasmine.SpyObj<CartGuestUserFacade>;
   let multiCartFacade: jasmine.SpyObj<MultiCartFacade>;
   let userIdService: jasmine.SpyObj<UserIdService>;
@@ -63,7 +63,7 @@ describe('OpfCheckoutLoginComponent', () => {
 
     await TestBed.configureTestingModule({
       declarations: [
-        OpfCheckoutLoginComponent,
+        OpfCheckoutEmailUpdateComponent,
         MockTranslatePipe,
         MockFormErrorsComponent,
       ],
@@ -77,7 +77,7 @@ describe('OpfCheckoutLoginComponent', () => {
       ],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(OpfCheckoutLoginComponent);
+    fixture = TestBed.createComponent(OpfCheckoutEmailUpdateComponent);
     component = fixture.componentInstance;
 
     cartGuestUserFacade = TestBed.inject(

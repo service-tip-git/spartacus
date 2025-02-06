@@ -9,7 +9,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CmsConfig, I18nModule, provideDefaultConfig } from '@spartacus/core';
 import { FormErrorsModule } from '@spartacus/storefront';
-import { OpfCheckoutLoginComponent } from './opf-checkout-login.component';
+import { OpfCheckoutEmailUpdateComponent } from './opf-checkout-email-update.component';
 
 @NgModule({
   imports: [
@@ -19,16 +19,16 @@ import { OpfCheckoutLoginComponent } from './opf-checkout-login.component';
     ReactiveFormsModule,
     FormErrorsModule,
   ],
-  declarations: [OpfCheckoutLoginComponent],
+  declarations: [OpfCheckoutEmailUpdateComponent],
   providers: [
     provideDefaultConfig(<CmsConfig>{
       cmsComponents: {
-        OpfCheckoutLoginComponent: {
-          component: OpfCheckoutLoginComponent,
+        OpfCheckoutEmailUpdateComponent: {
+          component: OpfCheckoutEmailUpdateComponent,
         },
       },
     }),
   ],
-  exports: [OpfCheckoutLoginComponent],
+  exports: [OpfCheckoutEmailUpdateComponent],
 })
-export class OpfCheckoutLoginModule {}
+export class OpfCheckoutEmailUpdateModule {}

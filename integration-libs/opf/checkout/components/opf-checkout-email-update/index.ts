@@ -4,5 +4,5 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export * from './opf-checkout-login.component';
-export * from './opf-checkout-login.module';
+export * from './opf-checkout-email-update.component';
+export * from './opf-checkout-email-update.module';

@@ -168,15 +168,15 @@ describe('OpfCheckoutAuthGuard', () => {
     });
   });
 
-  it('should redirect to opfCheckoutLogin if guest cart user does not have email', (done) => {
+  it('should redirect to opfCheckoutEmail if guest cart user does not have email', (done) => {
     userIdService.getUserId.and.returnValue(of('guest-user'));
     opfCartUserEmailChecker.isCartUserHasEmail.and.returnValue(of(false));
-    semanticPathService.get.and.returnValue('/opf-checkout-login');
+    semanticPathService.get.and.returnValue('/opf-checkout-email');
     const urlTree = new UrlTree();
     routingService.createUrlTree.and.returnValue(urlTree);
 
     guard.canActivate().subscribe((result: any) => {
-      expect(result.toString()).toEqual('/opf-checkout-login');
+      expect(result.toString()).toEqual('/opf-checkout-email');
       done();
     });
   });

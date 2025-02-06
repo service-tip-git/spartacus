@@ -28,7 +28,7 @@ export class OpfCheckoutAuthGuard extends CheckoutAuthGuard {
    * Determines whether the user can activate the checkout route.
    * - If the cart is **not a guest cart**, it defers to the parent `CheckoutAuthGuard`.
    * - If the cart **belongs to a guest user**, it checks whether the guest user has a valid email.
-   * - If the guest user **does not have an email**, they are redirected to the OPF checkout login page.
+   * - If the guest user **does not have an email**, they are redirected to the OPF checkout email update page.
    *
    * @returns {Observable<GuardResult>} - An observable that emits `true` to allow navigation, or a `UrlTree` to redirect the user.
    */
@@ -69,7 +69,7 @@ export class OpfCheckoutAuthGuard extends CheckoutAuthGuard {
 
   protected handleGuestUserWithoutEmail(): boolean | UrlTree {
     return this.router.createUrlTree([
-      this.semanticPathService.get('opfCheckoutLogin'),
+      this.semanticPathService.get('opfCheckoutEmail'),
     ]);
   }
 }

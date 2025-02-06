@@ -997,7 +997,7 @@ export interface FeatureTogglesInterface {
   /**
    * When enabled, checks before accessing checkout
    * if user has email assigned to the current cart.
-   * If not - redirects user to `/opf-checkout-login` page.
+   * If not - redirects user to `/opf-checkout-email` page.
    * After providing email user will be redirected back to checkout.
    */
   opfEnablePreventingFromCheckoutWithoutEmail?: boolean;

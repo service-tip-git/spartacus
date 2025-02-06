@@ -6,7 +6,7 @@
 
 import { NgModule } from '@angular/core';
 import { OpfCheckoutBillingAddressFormModule } from './opf-checkout-billing-address-form/opf-checkout-billing-address-form.module';
-import { OpfCheckoutLoginModule } from './opf-checkout-login/opf-checkout-login.module';
+import { OpfCheckoutEmailUpdateModule } from './opf-checkout-email-update/opf-checkout-email-update.module';
 import { OpfCheckoutPaymentAndReviewModule } from './opf-checkout-payment-and-review/opf-checkout-payment-and-review.module';
 import { OpfCheckoutPaymentWrapperModule } from './opf-checkout-payment-wrapper/opf-checkout-payment-wrapper.module';
 import { OpfCheckoutPaymentsModule } from './opf-checkout-payments/opf-checkout-payments.module';
@@ -17,7 +17,7 @@ import { OpfCheckoutPaymentsModule } from './opf-checkout-payments/opf-checkout-
     OpfCheckoutPaymentsModule,
     OpfCheckoutBillingAddressFormModule,
     OpfCheckoutPaymentWrapperModule,
-    OpfCheckoutLoginModule,
+    OpfCheckoutEmailUpdateModule,
   ],
 })
 export class OpfCheckoutComponentsModule {}

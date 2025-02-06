@@ -24,11 +24,11 @@ import { CustomFormValidators } from '@spartacus/storefront';
 import { combineLatest, switchMap, take, tap } from 'rxjs';
 
 @Component({
-  selector: 'cx-opf-checkout-login',
-  templateUrl: './opf-checkout-login.component.html',
+  selector: 'cx-opf-checkout-email-update',
+  templateUrl: './opf-checkout-email-update.component.html',
   standalone: false,
 })
-export class OpfCheckoutLoginComponent {
+export class OpfCheckoutEmailUpdateComponent {
   protected cartGuestUserFacade = inject(CartGuestUserFacade);
   protected multiCartFacade = inject(MultiCartFacade);
   protected userIdService = inject(UserIdService);

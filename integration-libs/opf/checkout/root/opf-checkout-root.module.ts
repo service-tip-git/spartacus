@@ -22,7 +22,7 @@ import { OpfCheckoutAuthGuard } from './сheckout-guard/opf-checkout-auth.guard'
 
 export const CHECKOUT_OPF_CMS_COMPONENTS: string[] = [
   'OpfCheckoutPaymentAndReview',
-  'OpfCheckoutLoginComponent',
+  'OpfCheckoutEmailUpdateComponent',
 ];
 
 export function defaultOpfCheckoutComponentsConfig() {
