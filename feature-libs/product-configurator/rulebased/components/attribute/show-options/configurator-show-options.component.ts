@@ -5,7 +5,7 @@
  */
 
 import { Component, Input } from '@angular/core';
-import { delay, filter, switchMap, take } from 'rxjs/operators';
+import { delay, take, distinctUntilChanged, skip } from 'rxjs/operators';
 import { ConfiguratorCommonsService } from '../../../core/facade/configurator-commons.service';
 import { ConfiguratorAttributeCompositionContext } from '../composition/configurator-attribute-composition.model';
 import { ConfiguratorStorefrontUtilsService } from '../../service/configurator-storefront-utils.service';
@@ -28,29 +28,22 @@ export class ConfiguratorShowOptionsComponent {
    * so that all options of the attribute become visible on the UI
    */
   showOptions() {
+    this.focusFirstValue();
     this.configuratorCommonsService.readAttributeDomain(
       this.attributeComponentContext.owner,
       this.attributeComponentContext.group,
       this.attributeComponentContext.attribute
     );
-    this.focusFirstValue();
   }
 
   protected focusFirstValue(): void {
     this.configuratorCommonsService
       .isConfigurationLoading(this.attributeComponentContext.owner)
       .pipe(
-        filter((isLoading) => isLoading),
+        distinctUntilChanged(),
+        skip(2), // first isLoading=false as it is called before the readAttributeDomain, second is Loading=true, third is loading=false
         take(1),
-        switchMap(() =>
-          this.configuratorCommonsService
-            .isConfigurationLoading(this.attributeComponentContext.owner)
-            .pipe(
-              filter((isLoading) => !isLoading),
-              take(1),
-              delay(0) //we need to consider the re-rendering of the page
-            )
-        )
+        delay(0) // we need to consider the re-rendering of the page
       )
       .subscribe(() =>
         this.configuratorStorefrontUtilsService.focusFirstActiveElement(

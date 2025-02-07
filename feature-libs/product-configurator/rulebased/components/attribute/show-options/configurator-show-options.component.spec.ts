@@ -84,9 +84,10 @@ describe('ConfiguratorShowOptionsComponent', () => {
       //we need to run the test in a test scheduler
       //because of the delay() in method focusFirstValue
       getTestScheduler().run(({ cold, flush }) => {
-        const configurationLoading = cold('-a-b', {
-          a: true,
-          b: false,
+        const configurationLoading = cold('-a-b-c', {
+          a: false,
+          b: true,
+          c: false,
         });
         spyOn(
           configuratorCommonsService,
