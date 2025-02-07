@@ -40,6 +40,28 @@
           {{ 'quote.links.download' | cxTranslate }}
         </button>
       </li>
+      <ng-container *cxFeature="'showOrderQuoteLink'">
+        <li *ngIf="quoteDetails.orderCode">
+          <a
+            [attr.aria-label]="
+              'quote.links.a11y.order'
+                | cxTranslate: { code: quoteDetails.orderCode }
+            "
+            class="link cx-action-link"
+            [routerLink]="
+              {
+                cxRoute: 'orderDetails',
+                params: { code: quoteDetails.orderCode },
+              } | cxUrl
+            "
+          >
+            {{
+              'quote.links.order'
+                | cxTranslate: { code: quoteDetails.orderCode }
+            }}</a
+          >
+        </li>
+      </ng-container>
     </ul>
   </section>
 </ng-container>

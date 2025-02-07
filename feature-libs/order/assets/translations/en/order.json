@@ -97,7 +97,8 @@
       "reject": "No",
       "cancelSuccess": "Replenishment order #{{replenishmentOrderCode}} has been successfully cancelled"
     },
-    "caption": "Order contents."
+    "caption": "Order contents.",
+    "viewQuote": "View Quote"
   },
   "orderHistory": {
     "orderHistory": "Order history",
