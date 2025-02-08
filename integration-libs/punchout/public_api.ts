@@ -7,4 +7,4 @@
 /*
  * Public API Surface of punchout
  */
-export * from './components/index';
+export * from './punchout.module';
