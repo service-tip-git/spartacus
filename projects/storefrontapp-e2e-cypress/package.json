@@ -5,6 +5,7 @@
   "author": "SAP, Spartacus team",
   "license": "Apache-2.0",
   "scripts": {
+    "preinstall": "node scripts/preinstall.js",
     "cy:open": "cypress open",
     "cy:open:ci": "cypress open --config-file cypress.config.ci.ts",
     "cy:open:ci:b2b": "cypress open --config-file cypress.config.ci.ts --env BASE_SITE=powertools-spa,OCC_PREFIX_USER_ENDPOINT=orgUsers",
@@ -44,7 +45,6 @@
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.2",
-    "@continuum/continuum-javascript-professional": "^6.7.0",
     "@cypress/webpack-preprocessor": "^6.0.0",
     "@testing-library/cypress": "10.0.2",
     "babel-loader": "^9.0.0",
@@ -54,5 +54,8 @@
     "ts-loader": "^9.4.2",
     "typescript": "^5.0.0",
     "webpack": "^5.94.0"
+  },
+  "optionalDependencies": {
+    "@continuum/continuum-javascript-professional": "^6.7.0"
   }
 }
