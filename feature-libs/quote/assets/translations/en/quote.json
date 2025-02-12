@@ -176,12 +176,12 @@
       "newCart": "New Cart",
       "quotes": "Quotes",
       "download": "Download Proposal",
-      "order": "Order {{code}}",
+      "order": "View Order",
       "a11y": {
         "newCart": "Create new empty cart and navigate to it.",
         "quotes": "Navigate to quote search result list.",
         "download": "Start downloading a quote proposal",
-        "order": "Navigate to details page of order {{code}}"
+        "order": "Navigate to order associated with this quote"
       }
     },
     "list": {

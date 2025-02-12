@@ -45,7 +45,7 @@
           <a
             [attr.aria-label]="
               'quote.links.a11y.order'
-                | cxTranslate: { code: quoteDetails.orderCode }
+                | cxTranslate
             "
             class="link cx-action-link"
             [routerLink]="
@@ -57,7 +57,7 @@
           >
             {{
               'quote.links.order'
-                | cxTranslate: { code: quoteDetails.orderCode }
+                | cxTranslate
             }}</a
           >
         </li>
