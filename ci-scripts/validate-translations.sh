@@ -45,6 +45,9 @@ process_translation_folder() {
 
   # Check if each folder and index file is listed in the translations file
   for folder in $translation_folders; do
+    if echo "$folder" | grep -q -e "dist" -e "node_modules"; then
+      continue
+    fi
     check_export_statements "$folder" "$translations_file"
     check_import_statements "$folder"
   done
@@ -53,7 +56,7 @@ process_translation_folder() {
 # Check if folder_path is provided as an argument
 if [ -z "$1" ]; then
   # Find all translation folders in the repository
-  translation_paths=$(find . -type d -path '*/assets/translations')
+  translation_paths=$(find . -type d \( -path '*/assets/translations' -o -path '*/assets/src/translations' \))
 
   for path in $translation_paths; do
     process_translation_folder "$path"
