@@ -4,14 +4,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { BehaviorSubject, Observable, lastValueFrom } from 'rxjs';
+import { BehaviorSubject, lastValueFrom, Observable } from 'rxjs';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 import { OCC_USER_ID_CURRENT } from '../../../occ/utils/occ-constants';
 import { RoutingService } from '../../../routing/facade/routing.service';
 import { StateWithClientAuth } from '../../client-auth/store/client-auth-state';
 import { OAuthTryLoginResult } from '../models/oauth-try-login-response';
+import { AuthConfigService } from '../services';
 import { AuthMultisiteIsolationService } from '../services/auth-multisite-isolation.service';
 import { AuthRedirectService } from '../services/auth-redirect.service';
 import { AuthStorageService } from '../services/auth-storage.service';
@@ -46,6 +47,8 @@ export class AuthService {
     protected authMultisiteIsolationService?: AuthMultisiteIsolationService
   ) {}
 
+  protected authConfigService = inject(AuthConfigService);
+
   /**
    * Check params in url and if there is an code/token then try to login with those.
    */
@@ -68,6 +71,10 @@ export class AuthService {
         // Redirection should not be done in cases we get the token from storage (eg. refreshing the page).
         if (loginResult.tokenReceived) {
           this.authRedirectService.redirect();
+        }
+      } else {
+        if (this.authConfigService.getOAuthLibConfig()?.useSilentRefresh) {
+          await this.oAuthLibWrapperService.trySilentLogin();
         }
       }
     } catch {}
