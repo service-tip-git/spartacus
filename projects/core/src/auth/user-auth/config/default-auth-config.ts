@@ -45,8 +45,6 @@ export const defaultAuthConfig: AuthConfig = {
   //     silentRefreshRedirectUri:
   //       'http://localhost:4200/assets/silent-refresh.html',
   //     useSilentRefresh: true,
-  //     silentRefreshShowIFrame: true,
-  //     showDebugInformation: true,
   //     silentRefreshTimeout: 3000,
   //   },
   // },
@@ -69,8 +67,6 @@ export const defaultAuthConfig: AuthConfig = {
       silentRefreshRedirectUri:
         'http://localhost:4200/assets/silent-refresh.html',
       useSilentRefresh: true,
-      silentRefreshShowIFrame: true,
-      showDebugInformation: true,
       silentRefreshTimeout: 3000,
     },
   },
