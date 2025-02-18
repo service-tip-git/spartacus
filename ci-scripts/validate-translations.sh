@@ -37,7 +37,7 @@ process_translation_folder() {
   local folder_path=$1
   local translations_file="$folder_path/translations.ts"
   
-  if echo "$folder" | grep -q -e "/dist/" -e "/node_modules/"; then
+  if echo "$folder_path" | grep -q -e "/dist/" -e "/node_modules/"; then
     return
   fi
 
