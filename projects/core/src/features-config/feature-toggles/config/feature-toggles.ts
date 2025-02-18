@@ -93,6 +93,12 @@ export interface FeatureTogglesInterface {
   pdfInvoicesSortByInvoiceDate?: boolean;
 
   /**
+   * In `CardComponent` it truncates the paragraph text
+   * (analogically to the existing truncating of the label).
+   */
+  storeFrontLibCardParagraphTruncated?: boolean;
+
+  /**
    * When enabled, the batch API is used `ProductCarouselComponent` to load products. It increases the component's performance.
    *
    * _NOTE_: When flag is enabled, custom OCC config for the `productSearch` endpoint has to be adjusted to have an object representation:
@@ -1009,6 +1015,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   recentSearches: true,
   trendingSearches: false,
   pdfInvoicesSortByInvoiceDate: true,
+  storeFrontLibCardParagraphTruncated: true,
   useProductCarouselBatchApi: false,
   productConfiguratorAttributeTypesV2: true,
   propagateErrorsToServer: false,
