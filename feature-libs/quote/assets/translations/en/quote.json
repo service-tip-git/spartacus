@@ -176,7 +176,7 @@
       "newCart": "New Cart",
       "quotes": "Quotes",
       "download": "Download Proposal",
-      "order": "View Order",
+      "order": "Order Detail",
       "a11y": {
         "newCart": "Create new empty cart and navigate to it.",
         "quotes": "Navigate to quote search result list.",

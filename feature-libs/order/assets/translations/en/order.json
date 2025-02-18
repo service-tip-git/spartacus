@@ -10,6 +10,7 @@
     "placed": "Placed",
     "placedBy": "Placed By",
     "unit": "Unit",
+    "quoteCode": "Quote ID",
     "costCenter": "Cost Center",
     "costCenterAndUnit": "Cost Center / Unit",
     "costCenterAndUnitValue": "{{costCenterName}} / {{unitName}}",
@@ -97,8 +98,7 @@
       "reject": "No",
       "cancelSuccess": "Replenishment order #{{replenishmentOrderCode}} has been successfully cancelled"
     },
-    "caption": "Order contents.",
-    "viewQuote": "View Quote"
+    "caption": "Order contents."
   },
   "orderHistory": {
     "orderHistory": "Order history",

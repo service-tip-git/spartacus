@@ -38,20 +38,5 @@
         {{ 'orderDetails.cancellationAndReturn.returnAction' | cxTranslate }}
       </a>
     </div>
-    <ng-container *cxFeature="'showOrderQuoteLink'">
-    <div *ngIf="order.quoteCode" class="col-xs-12 col-md-4 col-lg-3">
-      <button
-        [routerLink]="
-          {
-            cxRoute: 'quoteDetails',
-            params: { quoteId: order.quoteCode },
-          } | cxUrl
-        "
-        class="btn btn-block btn-secondary"
-      >
-        {{ 'orderDetails.viewQuote' | cxTranslate }}
-      </button>
-    </div>
-    </ng-container>
   </div>
 </ng-container>

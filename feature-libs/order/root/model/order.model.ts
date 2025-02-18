@@ -142,5 +142,5 @@ export interface Order {
   user?: Principal;
   returnable?: boolean;
   cancellable?: boolean;
-  quoteCode?: string;
+  sapQuoteCode?: string;
 }

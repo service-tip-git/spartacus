@@ -118,6 +118,16 @@ export class OrderOverviewComponent {
     );
   }
 
+  getQuoteCardContent(quoteCode: string): Observable<Card> {
+    return this.translation.translate('orderDetails.quoteCode').pipe(
+      filter(() => Boolean(quoteCode)),
+      map((textTitle) => ({
+        title: textTitle,
+        text: [quoteCode],
+      }))
+    );
+  }
+
   getOrderCurrentDateCardContent(isoDate: string | null): Observable<Card> {
     return this.translation.translate('orderDetails.placedOn').pipe(
       filter(() => Boolean(isoDate)),
