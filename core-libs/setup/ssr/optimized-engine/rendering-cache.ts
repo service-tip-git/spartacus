@@ -9,6 +9,7 @@ import { SsrOptimizationOptions } from './ssr-optimization-options';
 
 export class RenderingCache {
   protected renders = new Map<string, RenderingEntry>();
+  protected usedCacheSize = 0;
 
   constructor(private options?: SsrOptimizationOptions) {}
 
@@ -22,19 +23,31 @@ export class RenderingCache {
 
   store(key: string, err?: Error | null, html?: string) {
     const entry: RenderingEntry = { err, html };
+    let htmlSize = 0;
+
     if (this.options?.ttl) {
       entry.time = Date.now();
     }
     if (this.options?.cacheSize) {
+      if (html) {
+        htmlSize = Buffer.byteLength(html, 'utf8');
+      }
+
       this.renders.delete(key);
+      // if (this.options.cacheSizeKb > this.usedCacheSize) {
       if (this.renders.size >= this.options.cacheSize) {
         const oldestKey = this.renders.keys().next().value;
         if (oldestKey !== undefined) {
+          const oldestHtmlSize = Buffer.byteLength(
+            this.renders.get(oldestKey)?.html || '',
+            'utf8'
+          );
           this.renders.delete(oldestKey);
+          this.usedCacheSize -= oldestHtmlSize;
         }
       }
     }
-    // cache only if shouldCacheRenderingResult return true
+
     if (
       this.options?.shouldCacheRenderingResult?.({
         options: this.options,
@@ -42,6 +55,7 @@ export class RenderingCache {
       })
     ) {
       this.renders.set(key, entry);
+      this.usedCacheSize += htmlSize;
     }
   }
 

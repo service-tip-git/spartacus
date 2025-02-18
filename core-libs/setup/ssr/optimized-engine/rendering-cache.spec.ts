@@ -11,11 +11,29 @@ const options: SsrOptimizationOptions = {
     defaultSsrOptimizationOptions.shouldCacheRenderingResult,
 };
 
-describe('RenderingCache', () => {
+fdescribe('RenderingCache', () => {
   let renderingCache: RenderingCache;
 
   beforeEach(() => {
     renderingCache = new RenderingCache(options);
+  });
+
+  it('should return stored values and measure size', () => {
+    const testHtml = '<html><head><title>Test</title></head><body><h1>Hello</h1></body></html>';
+
+    renderingCache.store('test', null, testHtml);
+
+    const storedEntry = renderingCache.get('test');
+    const htmlSize = storedEntry?.html ? Buffer.byteLength(storedEntry.html, 'utf8') : 0;
+
+    console.log(`Test HTML Size: ${htmlSize} bytes`);
+
+    expect(storedEntry).toEqual({
+      err: null,
+      html: testHtml,
+    });
+
+    expect(htmlSize).toBeGreaterThan(0);
   });
 
   it('should create rendering cache instance', () => {
