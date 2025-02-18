@@ -36,6 +36,10 @@ check_import_statements() {
 process_translation_folder() {
   local folder_path=$1
   local translations_file="$folder_path/translations.ts"
+  
+  if echo "$folder" | grep -q -e "/dist/" -e "/node_modules/"; then
+    return
+  fi
 
   # Ensure the translations file exists
   [ -f "$translations_file" ] || { echo "Translations file not found: $translations_file"; exit 1; }
@@ -45,9 +49,6 @@ process_translation_folder() {
 
   # Check if each folder and index file is listed in the translations file
   for folder in $translation_folders; do
-    if echo "$folder" | grep -q -e "dist" -e "node_modules"; then
-      continue
-    fi
     check_export_statements "$folder" "$translations_file"
     check_import_statements "$folder"
   done
