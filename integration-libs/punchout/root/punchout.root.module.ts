@@ -22,7 +22,7 @@ export function defaultPunchoutCmsComponentsConfig(): CmsConfig {
   const config: CmsConfig = {
     featureModules: {
       [PUNCHOUT_FEATURE]: {
-        cmsComponents: ['PunchoutComponent'],
+        cmsComponents: ['PunchoutSessionComponent'],
       },
     },
   };

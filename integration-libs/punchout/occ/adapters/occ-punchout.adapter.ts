@@ -1,7 +1,9 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import {
+  backOff,
   ConverterService,
+  isJaloError,
   LoggerService,
   normalizeHttpError,
   OccEndpointsService,
@@ -32,6 +34,7 @@ export class OccPunchoutAdapter implements PunchoutAdapter {
         catchError((error: HttpErrorResponse) => {
           throw normalizeHttpError(error, this.logger);
         }),
+        backOff({ shouldRetry: isJaloError }),
         this.converter.pipeable(PUNCHOUT_SESSION_NORMALIZER)
       );
   }

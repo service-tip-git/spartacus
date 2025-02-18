@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CmsConfig, provideDefaultConfig } from '@spartacus/core';
-import { PunchoutComponent } from './punchout.component';
+import { PunchoutSessionComponent } from './punchout-session/punchout-session.component';
 import { PunchoutComponentService } from './punchout.component.service';
 
 @NgModule({
-  declarations: [PunchoutComponent],
-  exports: [PunchoutComponent],
+  declarations: [PunchoutSessionComponent],
+  exports: [PunchoutSessionComponent],
   providers: [
     PunchoutComponentService,
     provideDefaultConfig(<CmsConfig>{
       cmsComponents: {
-        PunchoutComponent: {
-          component: PunchoutComponent,
+        PunchoutSessionComponent: {
+          component: PunchoutSessionComponent,
         },
       },
     }),
