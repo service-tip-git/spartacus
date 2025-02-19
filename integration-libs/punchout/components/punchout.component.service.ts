@@ -10,7 +10,11 @@ import {
   RoutingService,
   UserIdService,
 } from '@spartacus/core';
-import { PunchoutFacade, PunchoutSession } from '@spartacus/punchout/root';
+import {
+  PunchoutFacade,
+  PunchoutSession,
+  PunchoutStateService,
+} from '@spartacus/punchout/root';
 import { from, map, Observable, of, switchMap, take, tap } from 'rxjs';
 
 @Injectable()
@@ -23,11 +27,7 @@ export class PunchoutComponentService {
   protected routingService = inject(RoutingService);
   protected globalMessageService = inject(GlobalMessageService);
   protected multiCartFacade = inject(MultiCartFacade);
-  protected sessionId?: string;
-
-  setSessionId(value: string) {
-    this.sessionId = value;
-  }
+  protected punchoutStateService = inject(PunchoutStateService);
 
   logout(): Observable<boolean> {
     return this.authService.isUserLoggedIn().pipe(
@@ -49,7 +49,14 @@ export class PunchoutComponentService {
   }
 
   getPunchoutSession(sId: string): Observable<PunchoutSession> {
-    return this.punchoutFacade.getPunchoutSession(sId);
+    return this.punchoutFacade.getPunchoutSession(sId).pipe(
+      tap((punchoutSession) => {
+        this.punchoutStateService.setPunchoutState({
+          session: punchoutSession,
+          sId,
+        });
+      })
+    );
   }
 
   loginWithToken(accessToken: string, userId: string) {
@@ -85,8 +92,4 @@ export class PunchoutComponentService {
       })
     );
   }
-  //extract sid
-  //logout
-  //
 }
-// onlyOneRestrictionMustApply

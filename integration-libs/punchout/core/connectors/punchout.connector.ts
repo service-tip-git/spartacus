@@ -3,9 +3,7 @@ import { PunchoutRequisition, PunchoutSession } from '@spartacus/punchout/root';
 import { Observable } from 'rxjs';
 import { PunchoutAdapter } from './punchout.adapter';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class PunchoutConnector {
   constructor(protected adapter: PunchoutAdapter) {}
 

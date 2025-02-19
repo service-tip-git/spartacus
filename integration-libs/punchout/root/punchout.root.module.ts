@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CmsConfig, provideDefaultConfigFactory } from '@spartacus/core';
 import { PUNCHOUT_FEATURE } from './feature-name';
+import { interceptors } from './interceptors';
+import { PunchoutStateService } from './services/punchout-state.service';
 
 // const routes: Routes = [
 //   {
@@ -30,6 +32,10 @@ export function defaultPunchoutCmsComponentsConfig(): CmsConfig {
 }
 
 @NgModule({
-  providers: [provideDefaultConfigFactory(defaultPunchoutCmsComponentsConfig)],
+  providers: [
+    PunchoutStateService,
+    ...interceptors,
+    provideDefaultConfigFactory(defaultPunchoutCmsComponentsConfig),
+  ],
 })
 export class PunchoutRootModule {}

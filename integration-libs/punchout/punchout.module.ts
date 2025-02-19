@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { PunchoutComponentsModule } from './components';
-import { PunchoutCoreModule } from './core/punchout-core.module';
-import { PunchoutOccModule } from './occ/punchout-occ.module';
+import { PunchoutComponentsModule } from '@spartacus/punchout/components';
+import { PunchoutCoreModule } from '@spartacus/punchout/core';
+import { PunchoutOccModule } from '@spartacus/punchout/occ';
 
 @NgModule({
   imports: [PunchoutComponentsModule, PunchoutCoreModule, PunchoutOccModule],

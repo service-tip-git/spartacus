@@ -12,6 +12,11 @@ export interface PunchoutSession {
   };
 }
 
+export interface PunchoutState {
+  session: PunchoutSession;
+  sId?: string;
+}
+
 export interface PunchoutRequisition {
   browseFormPostUrl: string;
   orderAsCXML: string;
