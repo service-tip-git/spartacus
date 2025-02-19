@@ -170,7 +170,7 @@ describe('Navigation UI Component', () => {
       expect(navigationComponent.getColumnCount(11)).toEqual(3);
     });
 
-    fit('should return 2 for 12', () => {
+    it('should return 2 for 12', () => {
       console.log(navigationComponent.wrapAfter);
       expect(navigationComponent.getColumnCount(12)).toEqual(3);
     });
