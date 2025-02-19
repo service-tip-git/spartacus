@@ -1,0 +1,8 @@
+{
+    "/api": {
+      "target": "https://auth.demo-public.myhybris.cloud:9002",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
+  }

@@ -167,6 +167,15 @@
           "sslCert": "/Users/I569942/SAPDevelop/Spartacus/localhost.crt",
           "port": 4200,
           "ssl": true  
+        },
+        "developmentproxy": {
+          "buildTarget": "storefrontapp:build:development",
+          "proxyConfig": "/Users/I569942/SAPDevelop/Spartacus/spartacus/proxy.conf.json",
+          "sslKey": "/Users/I569942/SAPDevelop/Spartacus/localhost.key",
+          "sslCert": "/Users/I569942/SAPDevelop/Spartacus/localhost.crt",
+          "host": "shop.demo-public.myhybris.cloud",
+          "port": 4200,
+          "ssl": true  
         }
       },
       "defaultConfiguration": "development"
