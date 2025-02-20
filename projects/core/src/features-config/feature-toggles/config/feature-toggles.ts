@@ -62,6 +62,11 @@ export interface FeatureTogglesInterface {
   showSearchingCustomerByOrderInASM?: boolean;
 
   /**
+   * After the feature toggle is enabled, Customer Support Agent logs in ASM with the Authorization Code flow.
+   */
+  showOauth2AsmloginPage?: boolean;
+
+  /**
    * New REDESIGNED search-box component
    */
   searchBoxV2?: boolean;
@@ -999,6 +1004,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   showDeliveryOptionsTranslation: false,
   formErrorsDescriptiveMessages: true,
   showSearchingCustomerByOrderInASM: true,
+  showOauth2AsmloginPage: false,
   showStyleChangesInASM: true,
   shouldHideAddToCartForUnpurchasableProducts: true,
   useExtractedBillingAddressComponent: true,
