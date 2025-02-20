@@ -78,8 +78,10 @@ export class PunchoutComponentService {
   }
 
   routeToTargetPage(punchoutSession: PunchoutSession) {
-    if (punchoutSession?.punchOutLevel === 'STORE') {
+    if (!punchoutSession?.selectedItem) {
       this.routingService.go('/');
+    } else {
+      this.routingService.go(`/product/${punchoutSession?.selectedItem}`);
     }
   }
 

@@ -15,7 +15,7 @@ import { PunchoutComponentService } from '../punchout.component.service';
 
 @Component({
   selector: 'cx-punchout',
-  template: ` <p>punchout works!</p> `,
+  template: ` <p>Punchout loading</p> `,
   standalone: false,
 })
 export class PunchoutSessionComponent implements OnInit {

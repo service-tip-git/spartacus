@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PunchoutState } from '@spartacus/punchout/root';
+import { PunchoutSession, PunchoutState } from '@spartacus/punchout/root';
 
 @Injectable()
 export class PunchoutStateService {
@@ -12,9 +12,12 @@ export class PunchoutStateService {
     };
   }
 
-  getPunchoutState() {
+  getPunchoutState(): PunchoutState {
     return {
-      ...this._punchoutState,
+      session: {
+        ...(this._punchoutState?.session as PunchoutSession),
+      },
+      sId: this._punchoutState?.sId,
     };
   }
 }
