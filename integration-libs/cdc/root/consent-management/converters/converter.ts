@@ -9,7 +9,7 @@ import { Converter, ConsentTemplate } from '@spartacus/core';
 import { CdcConsent } from '../model';
 
 /**
- * @deprecated since 2211-ng19.0
+ * @deprecated since 2211.21
  */
 // CXSPA-9292: remove this in next major release
 //maintaining target as any because 'preferences' in cdc can have any structure

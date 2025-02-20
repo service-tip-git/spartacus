@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 import { ConsentTemplate, Converter } from '@spartacus/core';
 
 /**
- * @deprecated since 2211-ng19.0, use class CdcPreferenceSerializer instead
+ * @deprecated since 2211.21, use class CdcPreferenceSerializer instead
  */
 // CXSPA-9292: remove this service in next major release
 @Injectable({ providedIn: 'root' })

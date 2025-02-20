@@ -126,7 +126,7 @@ export class CDCRegisterComponentService extends RegisterComponentService {
   /**
    * Return preferences object that needs to be updated during register process
    * @returns preference object
-   * @deprecated since 2211-ng19.0
+   * @deprecated since 2211.21
    */
   // CXSPA-9292: remove this method in next major release
   generatePreferencesObject(): any {

@@ -46,7 +46,7 @@ export class CdcReconsentComponent implements OnInit, OnDestroy {
   selectedConsents: string[] = [];
   disableSubmitButton: boolean = true;
   /**
-   * @deprecated since 2211-ng19.0
+   * @deprecated since 2211.21
    */
   totalConsents: number = 0; // CXSPA-9292: remove this property in next major release
 

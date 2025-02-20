@@ -78,7 +78,7 @@ export class CdcReconsentComponentService implements OnDestroy {
    * saves the consent given from reconsent pop-up and triggers a re-login
    * @param consentId - array of consent IDs
    * @param userParams - data from login session
-   * @deprecated since 2211-ng19.0, use method savePreferencesAndLogin instead
+   * @deprecated since 2211.21, use method savePreferencesAndLogin instead
    */
   // CXSPA-9292: remove this method in next major release
   saveConsentAndLogin(consentId: string[], userParams: any) {
