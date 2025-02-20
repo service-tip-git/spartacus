@@ -5,7 +5,7 @@
  */
 
 import { Injectable } from '@angular/core';
-import { Converter } from '@spartacus/core';
+import { Converter, deepMerge } from '@spartacus/core';
 import { CdcConsent } from '../model';
 
 @Injectable({ providedIn: 'root' })
@@ -23,7 +23,7 @@ export class CdcPreferenceSerializer implements Converter<CdcConsent[], any> {
       const path = `${cdcConsent.id}.isConsentGranted`;
       const value = cdcConsent.isConsentGranted === true;
       const serializedPreference = this.convertToCdcPreference(path, value);
-      return this.deepMerge(preferences, serializedPreference);
+      return deepMerge(preferences, serializedPreference);
     }, {});
   }
 
@@ -35,23 +35,5 @@ export class CdcPreferenceSerializer implements Converter<CdcConsent[], any> {
    */
   private convertToCdcPreference(path: string, value: any): any {
     return path.split('.').reduceRight((acc, key) => ({ [key]: acc }), value);
-  }
-
-  /**
-   * Merges two objects into one.
-   */
-  private deepMerge(target: any, source: any): any {
-    for (const key of Object.keys(source)) {
-      if (
-        source[key] &&
-        typeof source[key] === 'object' &&
-        !Array.isArray(source[key])
-      ) {
-        target[key] = this.deepMerge(target[key] ?? {}, source[key]);
-      } else {
-        target[key] = source[key];
-      }
-    }
-    return target;
   }
 }

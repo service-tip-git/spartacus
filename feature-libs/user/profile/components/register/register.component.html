@@ -226,20 +226,22 @@
 
           <div class="form-group">
             <div class="form-check">
-              <ng-container *ngIf="anonymousConsent$ | async as anonymousConsent">
-              <label *ngIf="anonymousConsent.template">
-                <input 
-                  type="checkbox"
-                  name="newsletter"
-                  class="form-check-input"
-                  formControlName="newsletter"
-                  [checked]="isConsentGiven(anonymousConsent.consent)"
-                />
-                <span class="form-check-label">
-                  {{ anonymousConsent.template }}
-                </span>
-              </label>
-            </ng-container>
+              <ng-container
+                *ngIf="anonymousConsent$ | async as anonymousConsent"
+              >
+                <label *ngIf="anonymousConsent.template">
+                  <input
+                    type="checkbox"
+                    name="newsletter"
+                    class="form-check-input"
+                    formControlName="newsletter"
+                    [checked]="isConsentGiven(anonymousConsent.consent)"
+                  />
+                  <span class="form-check-label">
+                    {{ anonymousConsent.template }}
+                  </span>
+                </label>
+              </ng-container>
             </div>
           </div>
 
