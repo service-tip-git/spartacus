@@ -415,7 +415,7 @@ if (environment.cpq) {
         allPageMetaResolversEnabledInCsr: true,
         a11yPdpGridArrangement: true,
         useExtendedMediaComponentConfiguration: true,
-        showRealTimeStockInPDP: true,
+        showRealTimeStockInPDP: false,
         a11yWrapReviewOrderInSection: true,
         enableSecurePasswordValidation: true,
       };
