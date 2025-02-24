@@ -4,4 +4,5 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export {};
+import qsTestTranslations from './qs-test-file.json';
+export { };
