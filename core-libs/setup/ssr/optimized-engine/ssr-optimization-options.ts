@@ -212,7 +212,6 @@ type DefaultSsrOptimizationOptions = Omit<
       'ssrFeatureToggles'
     >
   >;
-
 export const defaultSsrOptimizationOptions: DefaultSsrOptimizationOptions = {
   cache: false,
   cacheSize: 3000,
