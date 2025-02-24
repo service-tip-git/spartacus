@@ -123,7 +123,6 @@ export class OrderOverviewComponent {
       filter(() => Boolean(quoteCode)),
       map((textTitle) => ({
         title: textTitle,
-        text: [quoteCode],
       }))
     );
   }
