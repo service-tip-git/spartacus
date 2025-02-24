@@ -5,7 +5,6 @@
  */
 
 import { TranslationChunksConfig } from '@spartacus/core';
-import qsTestTranslations from './qs-test/qs-test-file.json';
 
 export const s4omTranslationChunksConfig: TranslationChunksConfig = {
   s4omScheduleLines: ['s4omScheduleLines'],
@@ -28,4 +27,4 @@ export { pt as s4omTranslationsPt } from './pt/index';
 export { ru as s4omTranslationsRu } from './ru/index';
 export { zh as s4omTranslationsZh } from './zh/index';
 export { zh_TW as s4omTranslationsZh_TW } from './zh_TW/index';
-export { qsTestTranslations };
+export * as qsTestTranslations from './qs-test/index';
