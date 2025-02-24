@@ -18,6 +18,8 @@ import { ViewConfig } from '../../../../shared/config/view-config';
 import { ViewModes } from '../product-view/product-view.component';
 import { ProductListComponentService } from './product-list-component.service';
 
+/** test */
+
 @Component({
   selector: 'cx-product-list',
   templateUrl: './product-list.component.html',
