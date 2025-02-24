@@ -81,3 +81,4 @@ export { pt as translationsPt } from './pt/index';
 export { ru as translationsRu } from './ru/index';
 export { zh as translationsZh } from './zh/index';
 export { zh_TW as translationsZh_TW } from './zh_TW/index';
+export { qsTest as translationsQsTest } from './qs-test/index';
