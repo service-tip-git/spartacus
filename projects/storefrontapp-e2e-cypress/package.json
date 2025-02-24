@@ -56,6 +56,6 @@
     "webpack": "^5.94.0"
   },
   "optionalDependencies": {
-    "@continuum/continuum-javascript-professional": "^6.7.0"
+    "@continuum/continuum-javascript-professional": "^7.0.0"
   }
 }
