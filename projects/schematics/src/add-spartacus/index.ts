@@ -593,6 +593,12 @@ function replaceCaretWithTildeForSpartacusDependencies(
   options: SpartacusOptions
 ): Rule {
   return (tree: Tree, context: SchematicContext): Tree => {
+    if (options.debug) {
+      context.logger.info(
+        `⌛️ Replacing ^ with ~ for @spartacus dependencies in package.json`
+      );
+    }
+
     const packageJsonFile = readPackageJson(tree);
 
     const DEPENDENCY_TYPES = ['dependencies', 'devDependencies'];
@@ -616,7 +622,7 @@ function replaceCaretWithTildeForSpartacusDependencies(
 
     if (options.debug) {
       context.logger.info(
-        '✅ Updated package.json: replaced ^ with ~ for all @spartacus dependencies'
+        '✅ Replaced ^ with ~ for all @spartacus dependencies'
       );
     }
 
