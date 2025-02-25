@@ -22,18 +22,15 @@ export class PunchoutInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     const punchoutState = this.punchoutStateService.getPunchoutState();
-    console.log('punchoutState', punchoutState);
-    console.log('in PunchoutInterceptor');
+
     if (
       punchoutState?.sId &&
       punchoutState?.session?.cartId &&
       request.url.includes(`/carts/${punchoutState.session.cartId}`)
     ) {
-      console.log('in condition');
       request = request.clone({
         headers: request.headers.append('punchoutsid', punchoutState.sId),
       });
-      console.log('in condition request', request);
     }
     return next.handle(request);
   }
