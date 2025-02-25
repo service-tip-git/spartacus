@@ -17,11 +17,13 @@ import {
   UserIdService,
 } from '@spartacus/core';
 import {
+  PUNCHOUT_REQUISITION_PAGE_URL,
   PunchoutFacade,
+  PunchoutRequisition,
   PunchoutSession,
   PunchoutStateService,
 } from '@spartacus/punchout/root';
-import { from, map, Observable, of, switchMap, take, tap } from 'rxjs';
+import { EMPTY, from, map, Observable, of, switchMap, take, tap } from 'rxjs';
 
 @Injectable()
 export class PunchoutComponentService {
@@ -34,6 +36,10 @@ export class PunchoutComponentService {
   protected globalMessageService = inject(GlobalMessageService);
   protected multiCartFacade = inject(MultiCartFacade);
   protected punchoutStateService = inject(PunchoutStateService);
+
+  getPunchoutState() {
+    return this.punchoutStateService.getPunchoutState();
+  }
 
   logout(): Observable<boolean> {
     return this.authService.isUserLoggedIn().pipe(
@@ -65,6 +71,12 @@ export class PunchoutComponentService {
     );
   }
 
+  getPunchoutRequisition(): Observable<PunchoutRequisition> {
+    const sId = this.punchoutStateService.getPunchoutState().sId;
+    console.log('getPunchoutRequisition sId', sId);
+    return sId ? this.punchoutFacade.getPunchoutRequisition(sId) : EMPTY;
+  }
+
   loginWithToken(accessToken: string, userId: string) {
     console.log('Punchout loginWithToken');
     // Code mostly based on auth lib we use and the way it handles token properties
@@ -83,6 +95,10 @@ export class PunchoutComponentService {
     } else {
       this.routingService.go(`/product/${punchoutSession?.selectedItem}`);
     }
+  }
+
+  navigateToRequistionPage() {
+    this.routingService.go(PUNCHOUT_REQUISITION_PAGE_URL);
   }
 
   loadCart(cartId: string, userId2?: string) {

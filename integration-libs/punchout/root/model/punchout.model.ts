@@ -5,6 +5,7 @@
  */
 
 export const PUNCHOUT_SESSION_KEY = 'sid';
+export const PUNCHOUT_REQUISITION_PAGE_URL = '/punchout/cxml/requisition';
 
 export interface PunchoutSession {
   customerId: string;

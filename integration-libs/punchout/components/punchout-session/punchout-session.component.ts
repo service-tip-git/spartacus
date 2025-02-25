@@ -4,7 +4,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Component, inject, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import {
   PUNCHOUT_SESSION_KEY,
@@ -14,8 +19,9 @@ import { switchMap, take, tap } from 'rxjs';
 import { PunchoutComponentService } from '../punchout.component.service';
 
 @Component({
-  selector: 'cx-punchout',
+  selector: 'cx-punchout-session',
   template: ` <p>Punchout loading</p> `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: false,
 })
 export class PunchoutSessionComponent implements OnInit {

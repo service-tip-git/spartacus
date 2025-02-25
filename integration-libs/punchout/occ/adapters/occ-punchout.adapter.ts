@@ -56,6 +56,7 @@ export class OccPunchoutAdapter implements PunchoutAdapter {
         catchError((error: HttpErrorResponse) => {
           throw normalizeHttpError(error, this.logger);
         }),
+        backOff({ shouldRetry: isJaloError }),
         this.converter.pipeable(PUNCHOUT_REQUISITION_NORMALIZER)
       );
   }

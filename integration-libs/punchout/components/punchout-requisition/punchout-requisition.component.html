@@ -1,0 +1,21 @@
+<p>Return to Ariba</p>
+<div *ngIf="punchoutRequisition$ | async as pchtReq">
+  <p>Punchout Requisition on progress</p>
+  <form
+    ngNoForm
+    #pchtForm
+    *ngIf="pchtReq?.orderAsCXML"
+    method="post"
+    action="{{ pchtReq.browseFormPostUrl }}"
+  >
+    <input type="hidden" name="orderAsCXML" [value]="pchtReq.orderAsCXML" />
+  </form>
+
+  <!-- <form ngNoForm
+  [formGroup]="testGroup"
+  action="{{ pchtReq.browseFormPostUrl }}"
+  method='POST'
+  #testForm>
+    <input name='Email' type='hidden' [value]="pchtReq.orderAsCXML">
+</form> -->
+</div>
