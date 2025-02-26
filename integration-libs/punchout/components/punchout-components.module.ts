@@ -6,7 +6,7 @@
 
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CmsConfig, provideDefaultConfig } from '@spartacus/core';
 import { PunchoutButtonsComponent } from './punchout-buttons/punchout-buttons.component';
 import { PunchoutRequisitionComponent } from './punchout-requisition/punchout-requisition.component';
@@ -24,7 +24,7 @@ import { PunchoutComponentService } from './punchout.component.service';
     PunchoutButtonsComponent,
     PunchoutRequisitionComponent,
   ],
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   providers: [
     PunchoutComponentService,
     provideDefaultConfig(<CmsConfig>{
