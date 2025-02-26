@@ -43,10 +43,7 @@
       <ng-container *cxFeature="'showOrderQuoteLink'">
         <li *ngIf="quoteDetails.sapOrderCode">
           <a
-            [attr.aria-label]="
-              'quote.links.a11y.order'
-                | cxTranslate
-            "
+            [attr.aria-label]="'quote.links.a11y.order' | cxTranslate"
             class="link cx-action-link"
             [routerLink]="
               {
@@ -55,10 +52,7 @@
               } | cxUrl
             "
           >
-            {{
-              'quote.links.order'
-                | cxTranslate
-            }}</a
+            {{ 'quote.links.order' | cxTranslate }}</a
           >
         </li>
       </ng-container>

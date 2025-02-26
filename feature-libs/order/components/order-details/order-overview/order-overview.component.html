@@ -63,24 +63,12 @@
             [content]="getOrderStatusCardContent(order.statusDisplay) | async"
           ></cx-card>
 
-          <ng-container *cxFeature="'showOrderQuoteLink'">
-            <ng-container *ngIf="order.sapQuoteCode">
-              <cx-card
-                [content]="getQuoteCardContent(order.sapQuoteCode) | async"
-              ></cx-card>
-              <a
-                [routerLink]="
-                  {
-                    cxRoute: 'quoteDetails',
-                    params: { quoteId: order.sapQuoteCode },
-                  } | cxUrl
-                "
-                class="cx-action-link"
-              >
-                {{ order.sapQuoteCode }}</a
-              >
-            </ng-container>
-          </ng-container>
+          <ng-container
+            *ngTemplateOutlet="
+              showQuoteCode;
+              context: { sapQuoteCode: order.sapQuoteCode }
+            "
+          ></ng-container>
 
           <ng-template
             [cxOutlet]="cartOutlets.ORDER_OVERVIEW"
@@ -172,24 +160,12 @@
           [content]="getOrderStatusCardContent(order.statusDisplay) | async"
         ></cx-card>
 
-        <ng-container *cxFeature="'showOrderQuoteLink'">
-          <ng-container *ngIf="order.sapQuoteCode">
-            <cx-card
-              [content]="getQuoteCardContent(order.sapQuoteCode) | async"
-            ></cx-card>
-            <a
-              [routerLink]="
-                {
-                  cxRoute: 'quoteDetails',
-                  params: { quoteId: order.sapQuoteCode },
-                } | cxUrl
-              "
-              class="cx-action-link"
-            >
-              {{ order.sapQuoteCode }}</a
-            >
-          </ng-container>
-        </ng-container>
+        <ng-container
+          *ngTemplateOutlet="
+            showQuoteCode;
+            context: { sapQuoteCode: order.sapQuoteCode }
+          "
+        ></ng-container>
 
         <ng-template
           [cxOutlet]="cartOutlets.ORDER_OVERVIEW"
@@ -206,3 +182,21 @@
     </div>
   </ng-container>
 </div>
+
+<ng-template #showQuoteCode let-quoteCode="sapQuoteCode">
+  <ng-container *cxFeature="'showOrderQuoteLink'">
+    <div class="card-body cx-card-body" *ngIf="quoteCode">
+      <div class="cx-card-title">
+        {{ 'orderDetails.quoteCode' | cxTranslate }}
+      </div>
+      <a
+        [routerLink]="
+          { cxRoute: 'quoteDetails', params: { quoteId: quoteCode } } | cxUrl
+        "
+        class="cx-card-actions"
+      >
+        {{ quoteCode }}
+      </a>
+    </div>
+  </ng-container>
+</ng-template>

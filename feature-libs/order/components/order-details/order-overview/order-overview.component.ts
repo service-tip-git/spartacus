@@ -11,6 +11,7 @@ import {
   CmsOrderDetailOverviewComponent,
   CostCenter,
   PaymentDetails,
+  RoutingService,
   TranslationService,
 } from '@spartacus/core';
 import { Card, CmsComponentData } from '@spartacus/storefront';
@@ -30,6 +31,7 @@ export class OrderOverviewComponent {
   protected orderOverviewComponentService = inject(
     OrderOverviewComponentService
   );
+  protected routingService = inject(RoutingService);
   readonly cartOutlets = CartOutlets;
   readonly orderOutlets = OrderOutlets;
 
@@ -114,15 +116,6 @@ export class OrderOverviewComponent {
       map((textTitle) => ({
         title: textTitle,
         text: [orderCode],
-      }))
-    );
-  }
-
-  getQuoteCardContent(quoteCode: string): Observable<Card> {
-    return this.translation.translate('orderDetails.quoteCode').pipe(
-      filter(() => Boolean(quoteCode)),
-      map((textTitle) => ({
-        title: textTitle,
       }))
     );
   }

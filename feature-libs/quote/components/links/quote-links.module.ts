@@ -18,7 +18,13 @@ import {
 import { QuoteLinksComponent } from './quote-links.component';
 
 @NgModule({
-  imports: [CommonModule, I18nModule, RouterModule, UrlModule, FeaturesConfigModule],
+  imports: [
+    CommonModule,
+    I18nModule,
+    RouterModule,
+    UrlModule,
+    FeaturesConfigModule,
+  ],
   providers: [
     provideDefaultConfig(<CmsConfig>{
       cmsComponents: {
