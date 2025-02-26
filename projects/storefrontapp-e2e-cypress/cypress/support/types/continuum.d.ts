@@ -34,14 +34,6 @@ declare global {
       a11YContinuumPrintResults(): Chainable<void>;
 
       /**
-       * Submits accessibility concerns to AMP (Accessibility Management Platform).
-       * Requires AMP_API_TOKEN, AMP_ORG_ID, and AMP_ASSET_ID environment variables to be set.
-       *
-       * @param reportName - Name of the report in AMP (default: 'AMP Report')
-       */
-      a11yContinuumSubmitConcernsToAmp(reportName?: string): Chainable<void>;
-
-      /**
        * Fails the test if any accessibility concerns are found.
        * Uses Cypress expect assertion to check if the number of concerns is 0.
        */

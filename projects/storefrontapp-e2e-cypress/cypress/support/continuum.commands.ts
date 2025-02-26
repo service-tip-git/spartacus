@@ -141,53 +141,6 @@ const a11YContinuumFailIfConcerns = withContinuum(() => {
   ).to.have.lengthOf(0);
 });
 
-const a11yContinuumSubmitConcernsToAmp = withContinuum(
-  (reportName = 'AMP Report') => {
-    const accessibilityConcerns = Continuum.getAccessibilityConcerns();
-    if (accessibilityConcerns.length <= 0) {
-      return;
-    }
-
-    if (
-      Cypress.env('AMP_API_TOKEN') &&
-      (Cypress.env('AMP_API_TOKEN') !== '' ||
-        Cypress.env('AMP_API_TOKEN') !== 'undefined')
-    ) {
-      cy.log('Submitting accessibility concerns to AMP...');
-
-      cy.title({ log: false }).then((pageTitle) => {
-        cy.url({ log: false }).then({ timeout: 30000 }, async (pageUrl) => {
-          const ampReportingService = Continuum.AMPReportingService;
-
-          await ampReportingService.setActiveOrganization(
-            Cypress.env('AMP_ORG_ID')
-          );
-          await ampReportingService.setActiveAsset(Cypress.env('AMP_ASSET_ID'));
-          await ampReportingService.setActiveReportByName(reportName);
-          await ampReportingService.setActiveModuleByName(pageTitle, pageUrl);
-          await ampReportingService.setActiveReportManagementStrategy(
-            ReportManagementStrategy.APPEND
-          );
-          await ampReportingService.setActiveModuleManagementStrategy(
-            ModuleManagementStrategy.OVERWRITE
-          );
-          await ampReportingService.submitAccessibilityConcernsToAMP(
-            accessibilityConcerns
-          );
-
-          cy.log(
-            `Accessibility concerns submitted to AMP: ${ampReportingService.activeModule.getAMPUrl()}`
-          );
-        });
-      });
-    } else {
-      cy.log(
-        'Failed to submit accessibility concerns to AMP. AMP_API_TOKEN not set.'
-      );
-    }
-  }
-);
-
 const isContinuumAvailable = () => {
   try {
     require.resolve('@continuum/continuum-javascript-professional');
@@ -203,8 +156,4 @@ Cypress.Commands.add('a11YContinuumPrintResults', a11YContinuumPrintResults);
 Cypress.Commands.add(
   'a11YContinuumFailIfConcerns',
   a11YContinuumFailIfConcerns
-);
-Cypress.Commands.add(
-  'a11yContinuumSubmitConcernsToAmp',
-  a11yContinuumSubmitConcernsToAmp
 );
