@@ -297,12 +297,9 @@ if (environment.cpq) {
         showBillingAddressInDigitalPayments: false,
         showDownloadProposalButton: false,
         showOrderQuoteLink: false,
-        showPromotionsInPDP: false,
         searchBoxV2: false,
-        recentSearches: true,
         trendingSearches: false,
         pdfInvoicesSortByInvoiceDate: true,
-        storeFrontLibCardParagraphTruncated: true,
         useProductCarouselBatchApi: true,
         productConfiguratorAttributeTypesV2: true,
         propagateErrorsToServer: true,
@@ -452,4 +449,4 @@ if (environment.cpq) {
     }),
   ],
 })
-export class SpartacusFeaturesModule {}
+export class SpartacusFeaturesModule { }

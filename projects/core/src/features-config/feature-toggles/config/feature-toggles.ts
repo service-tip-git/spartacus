@@ -57,11 +57,6 @@ export interface FeatureTogglesInterface {
   showDownloadProposalButton?: boolean;
 
   /**
-   * In `ProductSummaryComponent` it shows the promotions info.
-   */
-  showPromotionsInPDP?: boolean;
-
-  /**
    * In `ASM` it shows searching customer by order ID.
    */
   showSearchingCustomerByOrderInASM?: boolean;
@@ -77,11 +72,6 @@ export interface FeatureTogglesInterface {
   showStyleChangesInASM?: boolean;
 
   /**
-   * In `SearchBoxComponent` it shows the recent searches.
-   */
-  recentSearches?: boolean;
-
-  /**
    * In `SearchBoxComponent` it shows the trending searches.
    */
   trendingSearches?: boolean;
@@ -91,12 +81,6 @@ export interface FeatureTogglesInterface {
    * Previously the sorting was done by the date of creating an invoice entry.
    */
   pdfInvoicesSortByInvoiceDate?: boolean;
-
-  /**
-   * In `CardComponent` it truncates the paragraph text
-   * (analogically to the existing truncating of the label).
-   */
-  storeFrontLibCardParagraphTruncated?: boolean;
 
   /**
    * When enabled, the batch API is used `ProductCarouselComponent` to load products. It increases the component's performance.
@@ -1002,7 +986,7 @@ export interface FeatureTogglesInterface {
 
 export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   showOrderQuoteLink: false,
-  showDeliveryOptionsTranslation: false,
+  showDeliveryOptionsTranslation: true,
   formErrorsDescriptiveMessages: true,
   showSearchingCustomerByOrderInASM: true,
   showStyleChangesInASM: true,
@@ -1010,22 +994,19 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   useExtractedBillingAddressComponent: true,
   showBillingAddressInDigitalPayments: true,
   showDownloadProposalButton: true,
-  showPromotionsInPDP: true,
   searchBoxV2: false,
-  recentSearches: true,
   trendingSearches: false,
   pdfInvoicesSortByInvoiceDate: true,
-  storeFrontLibCardParagraphTruncated: true,
-  useProductCarouselBatchApi: false,
+  useProductCarouselBatchApi: true,
   productConfiguratorAttributeTypesV2: true,
   propagateErrorsToServer: false,
   ssrStrictErrorHandlingForHttpAndNgrx: false,
-  productConfiguratorDeltaRendering: false,
+  productConfiguratorDeltaRendering: true,
   a11yRequiredAsterisks: true,
   a11yQuantityOrderTabbing: true,
   a11yNavigationUiKeyboardControls: true,
   a11yUseProperTextColorForFutureStockAccordion: false,
-  a11yNavMenuExpandStateReadout: false,
+  a11yNavMenuExpandStateReadout: true,
   a11yOrderConfirmationHeadingOrder: true,
   a11yStarRating: true,
   a11yViewChangeAssistiveMessage: true,
@@ -1092,19 +1073,19 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yFormErrorMuteIcon: true,
   a11yCxMessageFocus: true,
   a11yLinkBtnsToTertiaryBtns: false,
-  a11yRepeatedPageTitleFix: false,
+  a11yRepeatedPageTitleFix: true,
   a11yDeliveryModeRadiogroup: true,
-  a11yNgSelectOptionsCount: false,
+  a11yNgSelectOptionsCount: true,
   a11yNgSelectCloseDropdownOnEscape: false,
   a11yNgSelectAriaLabelDropdownCustomized: false,
-  a11yRepeatedCancelOrderError: false,
-  a11yAddedToCartActiveDialog: false,
+  a11yRepeatedCancelOrderError: true,
+  a11yAddedToCartActiveDialog: true,
   a11yNgSelectMobileReadout: true,
   a11yDeliveryMethodFieldset: false,
   a11yShowMoreReviewsBtnFocus: false,
-  a11yQuickOrderAriaControls: false,
-  a11yRemoveStatusLoadedRole: false,
-  a11yDialogsHeading: false,
+  a11yQuickOrderAriaControls: true,
+  a11yRemoveStatusLoadedRole: true,
+  a11yDialogsHeading: true,
   a11yDialogTriggerRefocus: false,
   a11yAddToWishlistFocus: false,
   a11ySearchBoxFocusOnEscape: false,
