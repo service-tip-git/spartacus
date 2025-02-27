@@ -24,8 +24,8 @@ describe('RenderingCache', () => {
         ...options,
         cacheLimit: 3000,
         ssrFeatureToggles: {
-          cacheSizeInBytes: true
-        }
+          cacheSizeInBytes: true,
+        },
       });
     });
 

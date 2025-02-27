@@ -37,7 +37,10 @@ export class RenderingCache {
         this.renders.delete(key);
 
         // if new html exceeds capacity?
-        while (this.usedCacheSize + htmlSize > this.options.cacheLimit && this.usedCacheSize > 0) {
+        while (
+          this.usedCacheSize + htmlSize > this.options.cacheLimit &&
+          this.usedCacheSize > 0
+        ) {
           const oldestKey = this.renders.keys().next().value;
           if (oldestKey !== undefined) {
             const oldestEntry = this.renders.get(oldestKey);
@@ -53,6 +56,7 @@ export class RenderingCache {
         }
       }
 
+      // cache only if shouldCacheRenderingResult return true
       if (
         this.options?.shouldCacheRenderingResult?.({
           options: this.options,
