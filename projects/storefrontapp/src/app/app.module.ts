@@ -33,7 +33,6 @@ import {
   StorefrontComponent,
   USE_LEGACY_MEDIA_COMPONENT,
 } from '@spartacus/storefront';
-import { RouteLoadStrategy } from '../../../core/src/routing/configurable-routes';
 import { environment } from '../environments/environment';
 import { TestOutletModule } from '../test-outlets/test-outlet.module';
 import { SpartacusModule } from './spartacus/spartacus.module';
@@ -65,12 +64,18 @@ if (!environment.production) {
       backend: {
         occ: {
           baseUrl:
-            'https://composable-storefront-demo.eastus.cloudapp.azure.com:8443',
+            // 'https://composable-storefront-demo.eastus.cloudapp.azure.com:8443',
+
+            // 'https://api.cg79x9wuu9-eccommerc1-p5-public.model-t.myhybris.cloud',
+
+            'https://sparta-api.platis.dev', // use a CDN over P5
+
           // baseUrl: environment.occBaseUrl,
           prefix: environment.occApiPrefix,
         },
         media: {
-          baseUrl: 'https://sparta.sirv.com',
+          // baseUrl: 'https://sparta.sirv.com',
+          // baseUrl: 'https://sparta-image-rewrite-context.platis.dev',
           // baseUrl: 'http://localhost:9002',
           // baseUrl: 'https://40.76.109.9:9002',
         },
@@ -79,7 +84,8 @@ if (!environment.production) {
     // SPIKE NEW:
     provideConfig(<RoutingConfig>{
       routing: {
-        loadStrategy: RouteLoadStrategy.ONCE,
+        // SPIKE TODO BRING BACK the optimization:
+        // loadStrategy: RouteLoadStrategy.ONCE,
       },
     }),
 

@@ -217,10 +217,14 @@ export class MediaService {
         ? url
         : this.getBaseUrl() + url;
 
-    const contextPattern = /\?context=(.*)$/;
-    if (contextPattern.test(result)) {
-      return result.replace(contextPattern, '__context_$1');
-    }
+    // const contextPattern = /\?context=(.*)$/;
+    // if (contextPattern.test(result)) {
+    //   return result.replace(contextPattern, '__context_$1');
+    // }
+
+    // SPIKE NEW - use Cloudflare Image Transformation via URL
+    // /format=auto/ - converts to avif/webp
+    return 'https://sparta-api.platis.dev/cdn-cgi/image/format=auto/' + result;
 
     return result;
   }
