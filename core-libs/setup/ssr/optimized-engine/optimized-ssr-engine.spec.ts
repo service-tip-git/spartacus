@@ -138,7 +138,7 @@ const getCurrentConcurrency = (
   };
 };
 
-xdescribe('OptimizedSsrEngine', () => {
+describe('OptimizedSsrEngine', () => {
   describe('SsrOptimizationOptions', () => {
     it('should use the defaults if an empty object is provided', () => {
       const engineRunner = new TestEngineRunner({});
@@ -190,6 +190,7 @@ xdescribe('OptimizedSsrEngine', () => {
     options: {
       cache: false,
       cacheSize: 3000,
+      cacheLimit: 3221225472,
       ttl: undefined,
       concurrency: 10,
       timeout: 50,
@@ -203,7 +204,7 @@ xdescribe('OptimizedSsrEngine', () => {
       renderKeyResolver: 'function getRequestUrl(req) {\\n' +
         '    return (0, express_request_origin_1.getRequestOrigin)(req) + req.originalUrl;\\n' +
         '}',
-      ssrFeatureToggles: { avoidCachingErrors: false }
+      ssrFeatureToggles: { avoidCachingErrors: false, cacheSizeInBytes: false }
     }
   }
 }",
@@ -1471,6 +1472,7 @@ xdescribe('OptimizedSsrEngine', () => {
   {
     "options": {
       "cache": false,
+      "cacheLimit": 3221225472,
       "cacheSize": 3000,
       "concurrency": 10,
       "forcedSsrTimeout": 60000,
@@ -1492,6 +1494,7 @@ xdescribe('OptimizedSsrEngine', () => {
         Boolean(entry.err))",
       "ssrFeatureToggles": {
         "avoidCachingErrors": false,
+        "cacheSizeInBytes": false,
       },
       "timeout": 3000,
       "ttl": undefined,

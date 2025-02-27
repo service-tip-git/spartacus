@@ -28,7 +28,7 @@ export interface SsrOptimizationOptions {
 
   /**
    *
-   * @deprecated
+   * @deprecated since ?
    *
    * Limit the cache size
    *
@@ -43,6 +43,18 @@ export interface SsrOptimizationOptions {
    */
   cacheSize?: number;
 
+  /**
+   * Limits the cache size in bytes.
+   *
+   * Specifies the maximum memory (in bytes) allocated for caching,
+   * helping to keep memory usage under control.
+   *
+   * The default value is set to 3GB.
+   *
+   * You can use the provided function `getCacheLimitInBytes` to adjust this limit as needed:
+   *
+   * `cacheLimit: getCacheLimitInBytes(3, 'GB')`
+   */
   cacheLimit?: number;
 
   /**
@@ -179,7 +191,7 @@ export interface SsrOptimizationOptions {
      */
     avoidCachingErrors?: boolean;
 
-    cacheSizeInKb?: boolean;
+    cacheSizeInBytes?: boolean;
   };
 }
 
@@ -195,6 +207,26 @@ export enum RenderingStrategy {
 type DeepRequired<T> = {
   [P in keyof T]-?: DeepRequired<T[P]>;
 };
+
+/**
+ * Converts a given size (KB, MB, GB) to its equivalent value in bytes.
+ *
+ * @param limit - The numerical value representing the cache size.
+ * @param unit - The unit of measurement ('KB', 'MB', 'GB').
+ * @returns The corresponding cache size in bytes.
+ */
+export function getCacheLimitInBytes(
+  limit: number,
+  unit: 'KB' | 'MB' | 'GB'
+): number {
+  const unitMap: Record<string, number> = {
+    KB: 1024,
+    MB: 1024 * 1024,
+    GB: 1024 * 1024 * 1024,
+  };
+
+  return limit * unitMap[unit];
+}
 
 /**
  * Returns the full url for the given SSR Request.
@@ -223,7 +255,7 @@ type DefaultSsrOptimizationOptions = Omit<
 export const defaultSsrOptimizationOptions: DefaultSsrOptimizationOptions = {
   cache: false,
   cacheSize: 3000,
-  cacheLimit: 1048576 * 3,
+  cacheLimit: getCacheLimitInBytes(3, 'GB'),
   ttl: undefined,
   concurrency: 10,
   timeout: 3_000,
@@ -242,6 +274,6 @@ export const defaultSsrOptimizationOptions: DefaultSsrOptimizationOptions = {
   renderKeyResolver: getDefaultRenderKey,
   ssrFeatureToggles: {
     avoidCachingErrors: false,
-    cacheSizeInKb: false,
+    cacheSizeInBytes: false,
   },
 };

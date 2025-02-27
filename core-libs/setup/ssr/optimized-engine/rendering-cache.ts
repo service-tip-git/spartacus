@@ -28,7 +28,7 @@ export class RenderingCache {
       entry.time = Date.now();
     }
 
-    if (this.options?.ssrFeatureToggles?.cacheSizeInKb) {
+    if (this.options?.ssrFeatureToggles?.cacheSizeInBytes) {
       if (this.options?.cacheLimit) {
         if (html) {
           htmlSize = this.getHtmlSize(html);

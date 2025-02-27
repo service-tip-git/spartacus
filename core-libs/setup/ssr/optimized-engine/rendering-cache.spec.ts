@@ -18,13 +18,13 @@ describe('RenderingCache', () => {
     renderingCache = new RenderingCache(options);
   });
 
-  describe('#cache in kb', () => {
+  describe('Handling of cache size limit in bytes', () => {
     beforeEach(() => {
       renderingCache = new RenderingCache({
         ...options,
-        cacheLimit: 3000, // 3MB limit
+        cacheLimit: 3000,
         ssrFeatureToggles: {
-          cacheSizeInKb: true
+          cacheSizeInBytes: true
         }
       });
     });
