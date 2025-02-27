@@ -27,6 +27,9 @@ export interface SsrOptimizationOptions {
   cache?: boolean;
 
   /**
+   *
+   * @deprecated
+   *
    * Limit the cache size
    *
    * Specified number of entries that will be kept in cache, allows to keep
@@ -40,7 +43,7 @@ export interface SsrOptimizationOptions {
    */
   cacheSize?: number;
 
-  cacheSizeKb?: number;
+  cacheLimit?: number;
 
   /**
    * Limit number of concurrent rendering
@@ -175,6 +178,8 @@ export interface SsrOptimizationOptions {
      * Custom implementations of `shouldCacheRenderingResult` may ignore this setting.
      */
     avoidCachingErrors?: boolean;
+
+    cacheSizeInKb?: boolean;
   };
 }
 
@@ -218,7 +223,7 @@ type DefaultSsrOptimizationOptions = Omit<
 export const defaultSsrOptimizationOptions: DefaultSsrOptimizationOptions = {
   cache: false,
   cacheSize: 3000,
-  cacheSizeKb: 1048576 * 3,
+  cacheLimit: 1048576 * 3,
   ttl: undefined,
   concurrency: 10,
   timeout: 3_000,
@@ -237,5 +242,6 @@ export const defaultSsrOptimizationOptions: DefaultSsrOptimizationOptions = {
   renderKeyResolver: getDefaultRenderKey,
   ssrFeatureToggles: {
     avoidCachingErrors: false,
+    cacheSizeInKb: false,
   },
 };
