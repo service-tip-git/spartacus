@@ -11,7 +11,9 @@ import {
   Component,
   inject,
   Input,
+  SecurityContext,
 } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Config, useFeatureStyles } from '@spartacus/core';
 
 @Component({
@@ -33,7 +35,10 @@ export class ConfiguratorShowMoreComponent implements AfterViewInit {
   @Input() productName: string;
   @Input() tabIndex = -1;
 
-  constructor(protected cdRef: ChangeDetectorRef) {
+  constructor(
+    protected cdRef: ChangeDetectorRef,
+    protected sanitizer: DomSanitizer
+  ) {
     useFeatureStyles('productConfiguratorAttributeTypesV2');
   }
 
@@ -60,6 +65,11 @@ export class ConfiguratorShowMoreComponent implements AfterViewInit {
   }
 
   protected normalize(text: string = ''): string {
-    return text.replace(/<[^>]*>/g, '');
+    const sanitizedHTML =
+      this.sanitizer.sanitize(
+        SecurityContext.HTML,
+        text.replace(/<[^>]*>/g, '')
+      ) || '';
+    return sanitizedHTML;
   }
 }
