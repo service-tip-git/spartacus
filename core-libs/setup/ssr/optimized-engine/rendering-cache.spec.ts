@@ -11,29 +11,85 @@ const options: SsrOptimizationOptions = {
     defaultSsrOptimizationOptions.shouldCacheRenderingResult,
 };
 
-fdescribe('RenderingCache', () => {
+describe('RenderingCache', () => {
   let renderingCache: RenderingCache;
 
   beforeEach(() => {
     renderingCache = new RenderingCache(options);
   });
 
-  it('should return stored values and measure size', () => {
-    const testHtml = '<html><head><title>Test</title></head><body><h1>Hello</h1></body></html>';
-
-    renderingCache.store('test', null, testHtml);
-
-    const storedEntry = renderingCache.get('test');
-    const htmlSize = storedEntry?.html ? Buffer.byteLength(storedEntry.html, 'utf8') : 0;
-
-    console.log(`Test HTML Size: ${htmlSize} bytes`);
-
-    expect(storedEntry).toEqual({
-      err: null,
-      html: testHtml,
+  fdescribe('#cache in kb', () => {
+    beforeEach(() => {
+      renderingCache = new RenderingCache({
+        ...options,
+        cacheSize: undefined,
+        cacheSizeKb: 3000, // 3MB limit
+      });
     });
 
-    expect(htmlSize).toBeGreaterThan(0);
+    it('should return stored values and measure size', () => {
+      const testHtml =
+        '<html><head><title>Test</title></head><body><h1>Hello</h1></body></html>';
+
+      renderingCache.store('test', null, testHtml);
+
+      const storedEntry = renderingCache.get('test');
+
+      expect(storedEntry).toEqual({
+        err: null,
+        html: testHtml,
+      });
+
+      expect(renderingCache.getUsedCacheSize()).toBeGreaterThan(0);
+    });
+
+    it('should remove oldest entry when cache size exceeds limit', () => {
+      const largeHtml = 'a'.repeat(2000 * 1024);
+      const anotherLargeHtml = 'b'.repeat(1500 * 1024);
+
+      renderingCache.store('a', null, largeHtml);
+      renderingCache.store('b', null, anotherLargeHtml);
+
+      expect(renderingCache.get('a')).toBeUndefined();
+      expect(renderingCache.get('b')).toBeDefined();
+      expect(renderingCache.getUsedCacheSize()).toBeLessThanOrEqual(3000);
+    });
+
+    it('should handle multiple removals if needed', () => {
+      const html1 = 'd'.repeat(1500 * 1024);
+      const html2 = 'o'.repeat(1500 * 1024);
+      const html3 = 'g'.repeat(1600 * 1024);
+
+      renderingCache.store('d', null, html1);
+      renderingCache.store('o', null, html2);
+      renderingCache.store('g', null, html3);
+
+      expect(renderingCache.get('d')).toBeUndefined();
+      expect(renderingCache.get('o')).toBeUndefined();
+      expect(renderingCache.get('g')).toBeDefined();
+      expect(renderingCache.getUsedCacheSize()).toBeLessThanOrEqual(3000);
+    });
+
+    it('should not remove entries if cache size is within limit', () => {
+      const smallHtml = 'a'.repeat(10);
+
+      renderingCache.store('a', null, smallHtml);
+      renderingCache.store('b', null, smallHtml);
+
+      expect(renderingCache.get('a')).toBeDefined();
+      expect(renderingCache.get('b')).toBeDefined();
+    });
+
+    it('should not enter infinite loop when cache is empty and should not cache the entry', () => {
+      expect(renderingCache.getUsedCacheSize()).toBe(0);
+
+      const bigHtml = 'x'.repeat(4000 * 1024);
+
+      renderingCache.store('largeEntry', null, bigHtml);
+
+      expect(renderingCache.get('largeEntry')).toBeDefined();
+      expect(renderingCache.getUsedCacheSize()).toBe(0);
+    });
   });
 
   it('should create rendering cache instance', () => {

@@ -27,6 +27,7 @@ const ssrOptions: SsrOptimizationOptions = {
   ssrFeatureToggles: {
     avoidCachingErrors: true,
   },
+  cacheSize: undefined
 };
 
 const ngExpressEngine = NgExpressEngineDecorator.get(engine, ssrOptions);

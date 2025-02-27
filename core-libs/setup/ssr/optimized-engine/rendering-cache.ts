@@ -9,7 +9,9 @@ import { SsrOptimizationOptions } from './ssr-optimization-options';
 
 export class RenderingCache {
   protected renders = new Map<string, RenderingEntry>();
-  protected usedCacheSize = 0;
+  protected usedCacheKbSize = 0;
+
+  readonly sizeUnit = 1024; //Kb
 
   constructor(private options?: SsrOptimizationOptions) {}
 
@@ -24,26 +26,36 @@ export class RenderingCache {
   store(key: string, err?: Error | null, html?: string) {
     const entry: RenderingEntry = { err, html };
     let htmlSize = 0;
-
     if (this.options?.ttl) {
       entry.time = Date.now();
     }
     if (this.options?.cacheSize) {
-      if (html) {
-        htmlSize = Buffer.byteLength(html, 'utf8');
-      }
-
       this.renders.delete(key);
-      // if (this.options.cacheSizeKb > this.usedCacheSize) {
       if (this.renders.size >= this.options.cacheSize) {
         const oldestKey = this.renders.keys().next().value;
         if (oldestKey !== undefined) {
-          const oldestHtmlSize = Buffer.byteLength(
-            this.renders.get(oldestKey)?.html || '',
-            'utf8'
-          );
           this.renders.delete(oldestKey);
-          this.usedCacheSize -= oldestHtmlSize;
+        }
+      }
+    }
+
+    if (this.options?.cacheSizeKb) {
+      if (html) {
+        htmlSize = this.getHtmlSize(html);
+      }
+
+      this.renders.delete(key);
+
+      // if new html exceeds capacity?
+      while (this.usedCacheKbSize + htmlSize > this.options.cacheSizeKb) {
+        const oldestKey = this.renders.keys().next().value;
+        if (oldestKey !== undefined) {
+          const oldestEntry = this.renders.get(oldestKey);
+          const oldestHtmlSize = this.getHtmlSize(oldestEntry?.html || '');
+          this.renders.delete(oldestKey);
+          this.usedCacheKbSize -= oldestHtmlSize;
+        } else {
+          break; // Prevent infinite loop if cache is empty
         }
       }
     }
@@ -54,8 +66,13 @@ export class RenderingCache {
         entry,
       })
     ) {
-      this.renders.set(key, entry);
-      this.usedCacheSize += htmlSize;
+
+      if (this.options?.cacheSizeKb && htmlSize <= this.options.cacheSizeKb) {
+        this.renders.set(key, entry);
+        this.usedCacheKbSize += htmlSize;
+      } else {
+        this.renders.set(key, entry);
+      }
     }
   }
 
@@ -79,5 +96,13 @@ export class RenderingCache {
     }
 
     return Date.now() - (this.renders.get(key)?.time ?? 0) < this.options?.ttl;
+  }
+
+  getHtmlSize(html: string) {
+    return Buffer.byteLength(html, 'utf8') / this.sizeUnit;
+  }
+
+  getUsedCacheSize() {
+    return this.usedCacheKbSize;
   }
 }

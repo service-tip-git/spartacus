@@ -40,6 +40,8 @@ export interface SsrOptimizationOptions {
    */
   cacheSize?: number;
 
+  cacheSizeKb?: number;
+
   /**
    * Limit number of concurrent rendering
    */
@@ -216,6 +218,7 @@ type DefaultSsrOptimizationOptions = Omit<
 export const defaultSsrOptimizationOptions: DefaultSsrOptimizationOptions = {
   cache: false,
   cacheSize: 3000,
+  cacheSizeKb: 1048576 * 3,
   ttl: undefined,
   concurrency: 10,
   timeout: 3_000,

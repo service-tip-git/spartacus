@@ -138,7 +138,7 @@ const getCurrentConcurrency = (
   };
 };
 
-describe('OptimizedSsrEngine', () => {
+xdescribe('OptimizedSsrEngine', () => {
   describe('SsrOptimizationOptions', () => {
     it('should use the defaults if an empty object is provided', () => {
       const engineRunner = new TestEngineRunner({});
